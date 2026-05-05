@@ -1,0 +1,135 @@
+{
+  "feature_name": "Console support for Premium Tier regional load balancers",
+  "feature_slug": "console-support-for-premium-tier-regional-load-balancers",
+  "summary": "Google Cloud Console can create Premium Tier regional external Application Load Balancers and regional external proxy Network Load Balancers.",
+  "extended_definition": "Google Cloud Console can create Premium Tier regional external Application Load Balancers and regional external proxy Network Load Balancers.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/network",
+      "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regional external passthrough Network Load Balancers support both Standard Tier and Premium Tier for regional external IPv4 addresses.",
+          "Limitations You cannot use the Google Cloud console to do the following tasks: Create or modify a regional external passthrough Network Load Balancer whose forwarding rule uses the L3 DEFAULT protocol.",
+          "Location of load balancing resources 1 Required location of IP address resource Host project Host project Service project Service project or host project 1 Includes the forwarding rule, backend service, health check, and backends (NEGs and managed or unmanaged instance groups) Traffic distribution Regional external passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, weighted load balancing, and failover."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you create a regional external Application Load Balancer in Premium Tier using the Google Cloud console, only regions supporting Standard Tier are available in the Google Cloud console.",
+          "Load balancer mode Load balancing scheme Forwarding rule Network tier Global external Application Load Balancer EXTERNAL MANAGED Global Premium Classic Application Load Balancer EXTERNAL Global Standard or Premium Regional external Application Load Balancer EXTERNAL MANAGED Specifies a region Standard or Premium Important: After you create a load balancer, you can't edit its mode.",
+          "Load balancer mode Supported backends on a backend service 1 Supports backend buckets Supports Cloud Armor Supports Cloud CDN 2 Supports IAP 2 Supports Service Extensions Instance groups 3 Zonal NEGs 4 Internet NEGs Serverless NEGs Hybrid NEGs Private Service Connect NEGs Global external Application Load Balancer Classic Application Load Balancer Premium Tier Regional external Application Load Balancer 1 Backends on a backend service must be the same type: all instance groups or all the same type of NEG."
+        ]
+      },
+      {
+        "title": "\"Regional external passthrough Network Load Balancer logging and monitoring\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "For backend service-based regional external passthrough Network Load Balancers, the name of the backend service. forwarding rule name string The name of the forwarding rule. forwarding rule network tier string The network tier of the forwarding rule. backend name string The name of the backend that handled the connection.",
+          "Example API requests Get all bytes sent from all regional external passthrough Network Load Balancers in the project during 12:00-12:02 PM UTC on 2019-07-01 with 1m aggregates. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/egress bytes count\" interval.start time: 2019-07-01T12:00:00Z interval.end time: 2019-07-01T12:02:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.perSeriesAligner: ALIGN SUM Get median RTT measurement over all regional external passthrough Network Load Balancers in the project during 12:19-12:20 PM UTC on 2019-07-01, broken down by client country. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/rtt latencies\" interval.start time: 2019-07-01T12:19:00Z interval.end time: 2019-07-01T12:20:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.groupByFields: metric.label.client country aggregation.perSeriesAligner: ALIGN PERCENTILE 50 Get total bytes from a specific regional external passthrough Network Load Balancer during 12:19-12:20 PM UTC on 2019-07-01, broken down by endpoint zone and client continent. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND resource.label.load balancer name = \"netlb-bs-1\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/ingress bytes count\" interval.start time: 2019-07-01T12:19:00Z interval.end time: 2017-07-01T12:20:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.groupByFields: metric.label.client continent aggregation.groupByFields: resource.label.endpoint zone aggregation.perSeriesAligner: ALIGN SUM What's next Read conceptual information about regional external passthrough Network Load Balancers Set up a regional external passthrough Network Load Balancer Read about Monitoring Metrics, time series, and resources Read about forwarding rules Read about troubleshoot logging issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Resource types Regional external passthrough Network Load Balancers use the following resource types: tcp lb rule udp lb rule loadbalancing.googleapis.com/ExternalNetworkLoadBalancerRule A regional external passthrough Network Load Balancer can support TCP, UDP, ESP, GRE, ICMP, and ICMPv6 traffic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aggregation.alignmentPeriod",
+      "aggregation.crossSeriesReducer",
+      "aggregation.groupByFields",
+      "aggregation.perSeriesAligner",
+      "interval.end",
+      "interval.start",
+      "loadbalancing.googleapis.com",
+      "metric.label.client",
+      "metric.name",
+      "resource.label.endpoint",
+      "resource.label.load",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

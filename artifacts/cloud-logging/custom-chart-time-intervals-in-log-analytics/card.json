@@ -1,0 +1,102 @@
+{
+  "feature_name": "Custom chart time intervals in Log Analytics",
+  "feature_slug": "custom-chart-time-intervals-in-log-analytics",
+  "summary": "Log Analytics charts support custom time intervals specified in minutes, hours, or days.",
+  "extended_definition": "Log Analytics charts support custom time intervals specified in minutes, hours, or days.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Log-based metrics overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It also simplifies the process of creating charts and alerting policies, as there is no ambiguity as to which time-series data is charted or monitored.",
+          "For these charts and alerting policies, you can use labels to filter or combine time series.",
+          "Charts and alerting policies in Cloud Monitoring You can use both system and user-defined log-based metrics in Cloud Monitoring to create charts and alerting policies."
+        ]
+      },
+      {
+        "title": "OpsAnalyticsQuery \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation QueryBuilderConfig JSON representation FilterPredicate JSON representation OperatorType FilterExpression JSON representation FieldSource JSON representation ProjectedField JSON representation FieldOperation FunctionApplication JSON representation Comparator SortOrderParameter JSON representation SortOrder Describes a query that can be run in Log Analytics.",
+          "Examples: - \". (autoscaler. )$\" will be converted to REGEXP EXTRACT(JSON VALUE(field),\"request(. (autoscaler. )$)\") in SQL. - \"\\(test value\\)$\" will be converted to REGEXP EXTRACT(JSON VALUE(field),\"request(\\(test value\\)$)\") in SQL. truncationGranularity string The truncation granularity when grouping by a time/date field.",
+          "This can be either a date or a time granularity found at https://cloud.google.com/bigquery/docs/reference/standard-sql/timestamp functions#timestamp trunc granularity date and https://cloud.google.com/bigquery/docs/reference/standard-sql/timestamp functions#timestamp trunc granularity time respectively."
+        ]
+      },
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about creating charts from your query results and saving charts to a custom dashboard, see Chart query results with Observability Analytics .",
+          "Set preferences for viewing log data To customize how your logs data is presented in the query results, click the settings Preferences button, and select View , Format , or Manage summary fields : To show or hide the Timeline and Fields panes, to hide summary chips in your query results, or to change the sorting order of your logs, select View .",
+          "The copied URL has the corresponding absolute time range represented by the time range of your query; for example, 7:49:37 PM - 8:49:37 PM . settings Preferences : Adjust the view of the Logs Explorer page, and customize the format of your query results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "field.value",
+      "labels.message",
+      "spaces.data"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/logs-based-metrics",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

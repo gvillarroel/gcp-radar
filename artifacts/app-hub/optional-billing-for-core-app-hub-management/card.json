@@ -1,0 +1,131 @@
+{
+  "feature_name": "Optional billing for core App Hub management",
+  "feature_slug": "optional-billing-for-core-app-hub-management",
+  "summary": "Core App Hub application management can be used without a billing account, with billing required only for additional application-centric features.",
+  "extended_definition": "Core App Hub application management can be used without a billing account, with billing required only for additional application-centric features.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/best-practices",
+      "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+      "https://docs.cloud.google.com/app-hub/docs/manage-applications"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for application management \\_|\\_ App Hub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/best-practices",
+        "source_id": "site-docs-root-2",
+        "final_score": 136,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Core principles of application management Adhering to the following core principles helps you maximize the value you get from managing your Google Cloud infrastructure in an application-centric way: Define clear boundaries: Set the application management boundary in a way that is logical for your operations, monitoring, governance, and troubleshooting.",
+          "As you define your applications, it's important to apply the core principles of application management , such as using attributes to establish clear ownership and metadata.",
+          "Data model recommendations By understanding how to model your real-world systems as applications, services, and workloads within App Hub's framework , you can effectively use application management capabilities in your Google Cloud environment."
+        ]
+      },
+      {
+        "title": "Enable APIs on the management project \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "source_id": "site-docs-root-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Required or recommended More information App Optimize API ( appoptimize.googleapis.com ) Optimize costs in Cost Explorer and Cloud Hub Required Retrieve data from Cloud Billing and Cloud Monitoring Recommender API ( recommender.googleapis.com ) Generate recommendations and insights to help you optimize your Google Cloud resources Required Recommender pricing VPC Service Controls Service Health API ( servicehealth.googleapis.com ) Identify Google Cloud service disruptions relevant to your applications Required Personalized Service Health pricing VPC Service Controls Security and compliance APIs Security Command Center is a risk management solution that helps security professionals to prevent, detect, and respond to security issues.",
+          "You can perform the following tasks at no charge and without linking a billing account to the management project: Use App Hub to organize your existing resources into applications.",
+          "For example, the following features require a linked billing account for the management project: Use App Design Center to deploy applications from the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Manage App Hub applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/manage-applications",
+        "source_id": "site-docs-root-2",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to manage applications in App Hub, ask your administrator to grant you the following IAM roles on the management project that defines your application management boundary : Update and delete applications: App Hub Editor ( roles/apphub.editor ) View applications: App Hub Viewer ( roles/apphub.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Filter the list of applications based on attributes, using the --filter flag : gcloud apphub applications list \\ --project = PROJECT ID \\ --location = LOCATION \\ --filter = FILTER EXPRESSION \\ Replace the following: PROJECT ID : the ID of your management project.",
+          "Display a list of your applications using one of the following options: List all applications: gcloud apphub applications list \\ --project = PROJECT ID \\ --location = LOCATION Replace the following: PROJECT ID : the ID of your management project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.editor",
+      "apphub.viewer",
+      "appoptimize.googleapis.com",
+      "recommender.googleapis.com",
+      "servicehealth.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.editor",
+      "roles/apphub.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/best-practices",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/best-practices",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/best-practices",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/best-practices",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/manage-applications"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/best-practices",
+        "https://docs.cloud.google.com/app-hub/docs/enabled-apis",
+        "https://docs.cloud.google.com/app-hub/docs/manage-applications"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.337Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub"
+}

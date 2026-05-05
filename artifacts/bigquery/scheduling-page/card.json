@@ -1,0 +1,143 @@
+{
+  "feature_name": "Scheduling page",
+  "feature_slug": "scheduling-page",
+  "summary": "BigQuery's Scheduling page now centralizes schedule viewing, creation, and management for multiple asset types.",
+  "extended_definition": "BigQuery's Scheduling page now centralizes schedule viewing, creation, and management for multiple asset types.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+      "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use one of the following values: amazon s3 - Amazon S3 data transfer azure blob storage - Azure Blob Storage data transfer dcm dt - Campaign Manager data transfer google cloud storage - Cloud Storage data transfer cross region copy - Dataset Copy dfp dt - Google Ad Manager data transfer displayvideo - Display & Video 360 data transfer google ads - Google Ads data transfer merchant center - Google Merchant Center data transfer mysql - MySQL data transfer play - Google Play data transfer scheduled query - Scheduled queries data transfer search ads - Search Ads 360 data transfer youtube channel - YouTube Channel data transfer youtube content owner - YouTube Content Owner data transfer redshift - Amazon Redshift migration on premises - Teradata migration Note: The redshift and on premises values are for data migrations; before you use the bq mk --transfer config command with these values, consult the linked documentation from the preceding list. --display name= DISPLAY NAME Specifies the display name for the transfer configuration. --no auto scheduling={true false} Disables automatic scheduling of data transfer runs for this configuration.",
+          "If you have more than 1000 jobs, then you can use the page token flag to list all jobs using pagination. -- min creation time= MIN CREATION TIME MS An integer that represents a Unix epoch timestamp in milliseconds.",
+          "For example: --filter \"labels.department:marketing labels.team:sales\" For transfer configurations, use dataSourceIds as the key, and one of the following data sources as the value: amazon s3 - Amazon S3 data transfer azure blob storage - Azure Blob Storage data transfer dcm dt - Campaign Manager data transfer google cloud storage - Cloud Storage data transfer cross region copy - Dataset Copy dfp dt - Google Ad Manager data transfer displayvideo - Display & Video 360 data transfer google ads - Google Ads data transfer merchant center - Google Merchant Center data transfer mysql - MySQL data transfer play - Google Play data transfer scheduled query - Scheduled queries data transfer search ads - Search Ads 360 data transfer youtube channel - YouTube Channel data transfer youtube content owner - YouTube Content Owner data transfer redshift - Amazon Redshift migration on premises - Teradata migration For example: --filter labels.dataSourceIds:dcm dt For transfer runs, use states as the key and one or more of the following transfer states as the value: SUCCEEDED FAILED PENDING RUNNING CANCELLED For example: --filter=\"states:FAILED\" For jobs, use states as the key and one or more of the following job states as the value: RUNNING PENDING DONE For example: bq ls --jobs --filter=\"states:RUNNING\" bq ls --jobs --filter=\"states:RUNNING,PENDING\" --jobs={true false} or -j={true false} To list jobs, set to true ."
+        ]
+      },
+      {
+        "title": "\"Build ELT pipeline for marketing analytics data \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "Delete the Dataform development workspace and configurations Dataform development workspace creation incurs no costs, but to delete the development workspace you can follow these steps: In the Google Cloud console, go to the Dataform page.",
+          "Schedule recurring data transfers To keep BigQuery up to date with the latest marketing data from your data source, set up recurring data transfers using the BigQuery Data Transfer Service to extract and load data on a schedule.",
+          "Delete the Dataform repository Dataform repository creation incurs no costs, but to delete the repository you can follow these steps: In the Google Cloud console, go to the Dataform page."
+        ]
+      },
+      {
+        "title": "\"Monitor health, resource utilization, and jobs \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "JOBS BY ORGANIZATION WHERE creation time >= START TIME AND creation time END TIME AND ( statement type != \"SCRIPT\" OR statement type IS NULL ) AND reservation id = RESERVATION ID Replace the following: PROJECT ID : the ID of the project REGION NAME : the region for your project START TIME : the creation time you want to start viewing the data END TIME : the creation time you want to stop viewing the data RESERVATION ID : the reservation ID The following example gets the job details over a five day period: SELECT AVG ( TIMESTAMP DIFF ( end time , creation time , MILLISECOND )) as avg latency ms , SUM ( total bytes processed ) as total bytes , COUNT ( ) as query numbers , FROM myproject.region-us .",
+          "View operational health charts To view information about the operational health of your organization, follow these steps: In the Google Cloud console, go to the BigQuery Monitoring page.",
+          "View and configure resource utilization charts To view and configure resource utilization charts, follow these steps: In the Google Cloud console, go to the BigQuery Monitoring page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "labels.dataSourceIds",
+      "labels.department",
+      "labels.team",
+      "myproject.region"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/elt-tutorial-marketing",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

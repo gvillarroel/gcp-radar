@@ -1,0 +1,119 @@
+{
+  "feature_name": "Raw log search filter by log source",
+  "feature_slug": "raw-log-search-filter-by-log-source",
+  "summary": "Raw log search can filter results by one or more log sources.",
+  "extended_definition": "Raw log search can filter results by one or more log sources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "Refine the search results Use the Search page features to filter and refine results, as an alternative to modifying and rerunning the search.",
+          "You can filter and refine the search results to display the older results, as an alternative to modifying and rerunning the search."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-api-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Centralized Investigation: The IOC Matches page serves as the central hub for viewing matched IOCs, filtering results (by Type, Priority, Status, Source: Mandiant, etc.), and drilling down into event details, UDM context, threat intelligence rationale, and associations.",
+          "See activate enterprise tier Validate Security Command Center Detection Services are enabled: See How to configure Security Command Center Connect Security Command Center to AWS to get configuration and resource data that flows through to the Entity Graph: See Connect Security Command Center to AWS Preview - Connect Security Command Center to Azure to get configuration and resource data that flows through to the Entity Graph. (Optional) Integrate Security Command Center with ticketing systems.",
+          "Further Resources to get started: Model Armor Documentation AI Protection Overview Blog Post Security Command Center Documentation Sensitive Data Protection Documentation Continuous Security Validation: Stop Reacting, Start Preventing with Google SecOps Security teams in SOCs are constantly overwhelmed trying to keep up with the ever-changing threat landscape."
+        ]
+      },
+      {
+        "title": "\"View alerts and IOC matches \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "source_id": "site-api-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example of filtering for Applied Threat Intelligence IOCs If you want to view only Applied Threat Intelligence IOCs, select Sources in the left column, Show only in the middle column, and Mandiant in the right column.",
+          "Example SQL to query for specific IP-address IOC matches: -- Add your IP IOC Matches here DECLARE IP IOCS ARRAY < STRING > ; SET IP IOCS = [ '40.79.150.120' ]; ------ SELECT MIN ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS first observed , MAX ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS last observed , COUNT ( 4 ) AS hits , ioc value , feed log type , is global , CONCAT ( COALESCE ( asset . namespace , \"untagged\" ), \":\" , COALESCE ( asset . hostname , asset . asset ip address , asset . mac , \"-\" )) AS asset FROM datalake . ioc matches WHERE ioc value IN UNNEST ( IP IOCS ) AND ioc type = \"IOC TYPE IP\" GROUP BY 4 , 5 , 6 , 7 Here are the truncated results: Row first observed last observed hits ioc value feed log type is global asset 1 2025-02-23 2025-03-05 64 40.79.150.120 CATCH ALL false untagged:192.168.12.16 2 2025-02-27 2025-03-05 29 40.79.150.120 CATCH ALL false untagged:192.168.12.129 You can also query the datalake.events table for multi-dimensional IOC matching by constructing a concatenated string, for example: DECLARE IOC MULTIPLE ATTRIBUTES ARRAY < STRING > ; SET IOC MULTIPLE ATTRIBUTES = [ '1.2.3.4,80' , '1.2.3.4,443' ]; SELECT MIN ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS first seen , MAX ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS last seen , target ip , target . port FROM datalake . events , UNNEST ( target . ip ) target ip WHERE DATE ( hour time bucket ) BETWEEN DATE SUB ( CURRENT DATE , INTERVAL 60 DAY ) AND DATE SUB ( CURRENT DATE , INTERVAL 1 DAY ) AND target ip != \"\" AND target . port > 0 AND CONCAT ( target ip , \",\" , CAST ( target . port AS STRING )) IN UNNEST ( IOC MULTIPLE ATTRIBUTES ) GROUP BY 3 , 4 Note: The Google SecOps Data Lake typically retains data for six months.",
+          "Example YARA-L rule using GLOBAL CONTEXT : rule google safebrowsing process launch { meta : author = \"noam@\" description = \"Detects Process Launch events against Critical or High severity Google's SafeBrowsing database.\" events : $e . metadata . event type = \"PROCESS LAUNCH\" $e . target . process . file . sha256 = $hash $g . graph . metadata . entity type = \"FILE\" $g . graph . entity . file . sha256 = $hash $g . graph . metadata . source type = \"GLOBAL CONTEXT\" $g . graph . metadata . threat . severity = \"CRITICAL\" or $g . graph . metadata . threat . severity = \"HIGH\" match : $hash over 10 m condition : $e and $g } IOC matching with data tables and YARA-L rules You can use data tables within YARA-L rules to match against lists of IOCs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datalake.events",
+      "e.metadata.event",
+      "e.principal.ip",
+      "susupicious.ip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

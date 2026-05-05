@@ -1,0 +1,104 @@
+{
+  "feature_name": "DOCX",
+  "feature_slug": "docx",
+  "summary": "Enterprise Search adds preview support for searching unstructured content in PPTX, DOCX, and TXT files (in addition to HTML and PDF).",
+  "extended_definition": "Enterprise Search adds preview support for searching unstructured content in PPTX, DOCX, and TXT files (in addition to HTML and PDF).",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure results for the search widget \\_|\\_ Vertex AI Search \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/configure-widget-attributes",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure search results for unstructured or website data The search widget for unstructured and website data offers the following search customizations: Search (single-turn) Search with an answer (single-turn search with summarization) Search with follow-ups (multi-turn search) For search with an answer and search with follow-ups, you need turn on some advanced settings: For search apps with unstructured data: Generative responses For website search apps: Generative responses and Advanced website indexing To configure how the widget displays search results for unstructured data: In the Google Cloud console, go to the AI Applications page.",
+          "Image in answers : This feature returns the following kinds of images with the answers: Charts generated from information in the answer Images selected from an unstructured data store that a layout parser parses Use this feature with Search with an answer or Search with follow-ups and the stable large language model or any Gemini model 2.0 or later.",
+          "Next steps Get search results Add the search widget to a web page Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported types: application/pdf (PDF, only native PDFs are supported for now) text/html (HTML) text/plain (TXT) application/xml or text/xml (XML) application/json (JSON) application/vnd.openxmlformats-officedocument.wordprocessingml.document (DOCX) application/vnd.openxmlformats-officedocument.presentationml.presentation (PPTX) application/vnd.openxmlformats-officedocument.spreadsheetml.sheet (XLSX) application/vnd.ms-excel.sheet.macroenabled.12 (XLSM) The following types are supported only if layout parser is enabled in the data store: image/bmp (BMP) image/gif (GIF) image/jpeg (JPEG) image/png (PNG) image/tiff (TIFF) See https://www.iana.org/assignments/media-types/media-types.xhtml .",
+          "SearchRequest JSON representation { \"servingConfig\" : string , \"branch\" : string , \"query\" : string , \"pageCategories\" : [ string ] , \"imageQuery\" : { object ( ImageQuery ) } , \"pageSize\" : integer , \"pageToken\" : string , \"offset\" : integer , \"oneBoxPageSize\" : integer , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"filter\" : string , \"canonicalFilter\" : string , \"orderBy\" : string , \"userInfo\" : { object ( UserInfo ) } , \"languageCode\" : string , \"regionCode\" : string , \"facetSpecs\" : [ { object ( FacetSpec ) } ] , \"boostSpec\" : { object ( BoostSpec ) } , \"params\" : { string : value , ... } , \"queryExpansionSpec\" : { object ( QueryExpansionSpec ) } , \"spellCorrectionSpec\" : { object ( SpellCorrectionSpec ) } , \"userPseudoId\" : string , \"useLatestData\" : boolean , \"contentSearchSpec\" : { object ( ContentSearchSpec ) } , \"embeddingSpec\" : { object ( EmbeddingSpec ) } , \"rankingExpression\" : string , \"rankingExpressionBackend\" : enum ( RankingExpressionBackend ) , \"safeSearch\" : boolean , \"userLabels\" : { string : string , ... } , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } , \"searchAsYouTypeSpec\" : { object ( SearchAsYouTypeSpec ) } , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"displaySpec\" : { object ( DisplaySpec ) } , \"crowdingSpecs\" : [ { object ( CrowdingSpec ) } ] , \"session\" : string , \"sessionSpec\" : { object ( SessionSpec ) } , \"relevanceThreshold\" : enum ( RelevanceThreshold ) , \"relevanceFilterSpec\" : { object ( RelevanceFilterSpec ) } , \"personalizationSpec\" : { object ( PersonalizationSpec ) } , \"relevanceScoreSpec\" : { object ( RelevanceScoreSpec ) } , \"searchAddonSpec\" : { object ( SearchAddonSpec ) } } Fields servingConfig string Required.",
+          "ContentSearchSpec JSON representation { \"snippetSpec\" : { object ( SnippetSpec ) } , \"summarySpec\" : { object ( SummarySpec ) } , \"extractiveContentSpec\" : { object ( ExtractiveContentSpec ) } , \"searchResultMode\" : enum ( SearchResultMode ) , \"chunkSpec\" : { object ( ChunkSpec ) } } Fields snippetSpec object ( SnippetSpec ) If snippetSpec is not specified, snippets are not included in the search response. summarySpec object ( SummarySpec ) If summarySpec is not specified, summaries are not included in the search response. extractiveContentSpec object ( ExtractiveContentSpec ) If there is no extractive content spec provided, there will be no extractive answer in the search response. searchResultMode enum ( SearchResultMode ) Specifies the search result mode."
+        ]
+      },
+      {
+        "title": "About apps and data stores \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unstructured data stores support documents in TXT, PDF, HTML, DOCX, PPTX, XLSX, and XLSM formats.",
+          "A document is a file in any of the following formats: TXT, PDF, HTML, DOCX, PPTX, XLSX, and XLSM.",
+          "Blended search allows the following fields in search requests : boostSpec contentSearchSpec dataStoreSpecs facetSpecs filter languageCode offset oneBoxPageSize orderBy query pageSize pageToken relevanceScoreSpec relevanceThreshold session sessionSpec spellCorrectionSpec userInfo userPseudoId Blended search allows the following fields in DataStoreSpec : dataStore boostSpec : If there are boost specs specified for both SearchRequest and dataStoreSpecs , both boost specs are applied to search results filter : If there are filters specified for both SearchRequest and dataStoreSpecs , both filters are applied to search results Create, Read, Update, and Delete (CRUD) operations on serving configs are supported for blended apps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com",
+      "excel.sheet.macroenabled.12",
+      "officedocument.presentationml.presentation",
+      "officedocument.spreadsheetml.sheet",
+      "officedocument.wordprocessingml.document",
+      "types.xhtml",
+      "vnd.ms",
+      "vnd.openxmlformats"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-datastore-ingest",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:55.115Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

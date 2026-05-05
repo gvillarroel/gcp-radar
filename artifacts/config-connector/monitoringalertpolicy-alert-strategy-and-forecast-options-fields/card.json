@@ -1,0 +1,249 @@
+{
+  "feature_name": "MonitoringAlertPolicy alert strategy and forecast options fields",
+  "feature_slug": "monitoringalertpolicy-alert-strategy-and-forecast-options-fields",
+  "summary": "Config Connector now supports notification channel strategy and forecast options fields for the MonitoringAlertPolicy resource.",
+  "extended_definition": "Config Connector now supports notification channel strategy and forecast options fields for the MonitoringAlertPolicy resource.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ContainerCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more details on how to debug and fix an issue which could lead to a permanent diff, please refer to the Config Connector Troubleshooting page Property Value Google Cloud Service Name Kubernetes Engine Google Cloud Service Documentation /kubernetes-engine/docs/ Google Cloud REST Resource Name v1.projects.locations.clusters Google Cloud REST Resource Documentation /kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters Config Connector Resource Short Names gcpcontainercluster gcpcontainerclusters containercluster Config Connector Service Name container.googleapis.com Config Connector Resource Fully Qualified Name containerclusters.container.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/remove-default-node-pool Spec Schema addonsConfig : cloudrunConfig : disabled : boolean loadBalancerType : string configConnectorConfig : enabled : boolean dnsCacheConfig : enabled : boolean gcePersistentDiskCsiDriverConfig : enabled : boolean gcpFilestoreCsiDriverConfig : enabled : boolean gcsFuseCsiDriverConfig : enabled : boolean gkeBackupAgentConfig : enabled : boolean horizontalPodAutoscaling : disabled : boolean httpLoadBalancing : disabled : boolean istioConfig : auth : string disabled : boolean kalmConfig : enabled : boolean networkPolicyConfig : disabled : boolean allowNetAdmin : boolean authenticatorGroupsConfig : securityGroup : string binaryAuthorization : enabled : boolean evaluationMode : string clusterAutoscaling : autoProvisioningDefaults : bootDiskKMSKeyRef : external : string name : string namespace : string diskSize : integer imageType : string management : autoRepair : boolean autoUpgrade : boolean upgradeOptions : - autoUpgradeStartTime : string description : string minCpuPlatform : string oauthScopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean upgradeSettings : blueGreenSettings : nodePoolSoakDuration : string standardRolloutPolicy : batchNodeCount : integer batchPercentage : float batchSoakDuration : string maxSurge : integer maxUnavailable : integer strategy : string autoscalingProfile : string defaultComputeClassConfig : enabled : boolean enabled : boolean resourceLimits : - maximum : integer minimum : integer resourceType : string clusterIpv4Cidr : string clusterTelemetry : type : string confidentialNodes : enabled : boolean controlPlaneEndpointsConfig : dnsEndpointConfig : allowExternalTraffic : boolean enableK8sTokensViaDns : boolean ipEndpointsConfig : enabled : boolean costManagementConfig : enabled : boolean databaseEncryption : keyName : string state : string datapathProvider : string defaultMaxPodsPerNode : integer defaultSnatStatus : disabled : boolean description : string dnsConfig : clusterDns : string clusterDnsDomain : string clusterDnsScope : string enableAutopilot : boolean enableBinaryAuthorization : boolean enableCiliumClusterwideNetworkPolicy : boolean enableFqdnNetworkPolicy : boolean enableIntranodeVisibility : boolean enableK8sBetaApis : enabledApis : - string enableKubernetesAlpha : boolean enableL4IlbSubsetting : boolean enableLegacyAbac : boolean enableMultiNetworking : boolean enableShieldedNodes : boolean enableTpu : boolean gatewayApiConfig : channel : string identityServiceConfig : enabled : boolean initialNodeCount : integer ipAllocationPolicy : additionalPodRangesConfig : podRangeNames : - string clusterIpv4CidrBlock : string clusterSecondaryRangeName : string podCidrOverprovisionConfig : disabled : boolean servicesIpv4CidrBlock : string servicesSecondaryRangeName : string stackType : string location : string loggingConfig : enableComponents : - string loggingService : string maintenancePolicy : dailyMaintenanceWindow : duration : string startTime : string maintenanceExclusion : - endTime : string exclusionName : string exclusionOptions : scope : string startTime : string recurringWindow : endTime : string recurrence : string startTime : string masterAuth : clientCertificate : string clientCertificateConfig : issueClientCertificate : boolean clientKey : string clusterCaCertificate : string password : value : string valueFrom : secretKeyRef : key : string name : string username : string masterAuthorizedNetworksConfig : cidrBlocks : - cidrBlock : string displayName : string gcpPublicCidrsAccessEnabled : boolean meshCertificates : enableCertificates : boolean minMasterVersion : string monitoringConfig : advancedDatapathObservabilityConfig : - enableMetrics : boolean relayMode : string enableComponents : - string managedPrometheus : enabled : boolean monitoringService : string networkPolicy : enabled : boolean provider : string networkRef : external : string name : string namespace : string networkingMode : string nodeConfig : advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer bootDiskKMSCryptoKeyRef : external : string name : string namespace : string confidentialNodes : enabled : boolean diskSizeGb : integer diskType : string ephemeralStorageConfig : localSsdCount : integer ephemeralStorageLocalSsdConfig : localSsdCount : integer fastSocket : enabled : boolean gcfsConfig : enabled : boolean guestAccelerator : - count : integer gpuDriverInstallationConfig : gpuDriverVersion : string gpuPartitionSize : string gpuSharingConfig : gpuSharingStrategy : string maxSharedClientsPerGpu : integer type : string gvnic : enabled : boolean hostMaintenancePolicy : maintenanceInterval : string imageType : string kubeletConfig : cpuCfsQuota : boolean cpuCfsQuotaPeriod : string cpuManagerPolicy : string podPidsLimit : integer labels : string : string linuxNodeConfig : cgroupMode : string sysctls : string : string localNvmeSsdBlockConfig : localSsdCount : integer localSsdCount : integer loggingVariant : string machineType : string metadata : string : string minCpuPlatform : string nodeGroupRef : external : string name : string namespace : string oauthScopes : - string preemptible : boolean reservationAffinity : consumeReservationType : string key : string values : - string resourceLabels : string : string sandboxConfig : sandboxType : string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean soleTenantConfig : nodeAffinity : - key : string operator : string values : - string spot : boolean tags : - string taint : - effect : string key : string value : string workloadMetadataConfig : mode : string nodeMetadata : string nodeLocations : - string nodePoolAutoConfig : networkTags : tags : - string nodePoolDefaults : nodeConfigDefaults : gcfsConfig : enabled : boolean loggingVariant : string nodeVersion : string notificationConfig : pubsub : enabled : boolean filter : eventType : - string topicRef : external : string name : string namespace : string podSecurityPolicyConfig : enabled : boolean privateClusterConfig : enablePrivateEndpoint : boolean enablePrivateNodes : boolean masterGlobalAccessConfig : enabled : boolean masterIpv4CidrBlock : string peeringName : string privateEndpoint : string privateEndpointSubnetworkRef : external : string name : string namespace : string publicEndpoint : string privateIpv6GoogleAccess : string protectConfig : workloadConfig : auditMode : string workloadVulnerabilityMode : string releaseChannel : channel : string resourceID : string resourceUsageExportConfig : bigqueryDestination : datasetId : string enableNetworkEgressMetering : boolean enableResourceConsumptionMetering : boolean securityPostureConfig : mode : string vulnerabilityMode : string serviceExternalIpsConfig : enabled : boolean subnetworkRef : external : string name : string namespace : string verticalPodAutoscaling : enabled : boolean workloadIdentityConfig : identityNamespace : string workloadPool : string Fields addonsConfig Optional object The configuration for addons supported by GKE. addonsConfig.cloudrunConfig Optional object The status of the CloudRun addon.",
+          "More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/ clusterAutoscaling.autoProvisioningDefaults.shieldedInstanceConfig Optional object Shielded Instance options. clusterAutoscaling.autoProvisioningDefaults.shieldedInstanceConfig.enableIntegrityMonitoring Optional boolean Defines whether the instance has integrity monitoring enabled. clusterAutoscaling.autoProvisioningDefaults.shieldedInstanceConfig.enableSecureBoot Optional boolean Defines whether the instance has Secure Boot enabled. clusterAutoscaling.autoProvisioningDefaults.upgradeSettings Optional object Specifies the upgrade settings for NAP created node pools. clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.blueGreenSettings Optional object Settings for blue-green upgrade strategy. clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.blueGreenSettings.nodePoolSoakDuration Optional string Time needed after draining entire blue pool.",
+          "Example: \"3.5s\". clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.maxSurge Optional integer The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.maxUnavailable Optional integer The maximum number of nodes that can be simultaneously unavailable during the upgrade process. clusterAutoscaling.autoProvisioningDefaults.upgradeSettings.strategy Optional string Update strategy of the node pool. clusterAutoscaling.autoscalingProfile Optional string Configuration options for the Autoscaling profile feature, which lets you choose whether the cluster autoscaler should optimize for resource utilization or resource availability when deciding to remove nodes from a cluster."
+        ]
+      },
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "To further explain the difference introduced by this annotation, assume there is a spec with the following schema: foo1 : string foo2 : string bars : - bar : br1 : string br2 : string barz : bz1 : string bz2 : string Also assume you have specified the spec in your YAML as: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" Then by default, the populated spec in the created Kubernetes resource might be: spec : foo1 : \"foo1\" foo2 : \"foo2\" bars : - br1 : \"1 br1\" br2 : \"1 br2\" - br1 : \"2 br1\" br2 : \"2 br2\" barz : bz1 : \"bz1\" bz2 : \"bz2\" While if you set cnrm.cloud.google.com/state-into-spec: absent , the final spec in the created Kubernetes resource will be: spec : foo1 : \"foo1\" bars : - br1 : \"1 br1\" - br1 : \"2 br1\" barz : bz1 : \"bz1\" When to use cnrm.cloud.google.com/state-into-spec: absent In most cases, you'll want to set cnrm.cloud.google.com/state-into-spec: absent to get the Absent populating behavior for spec fields.",
+          "Configure the cluster-level or namespace-level stateIntoSpec override When installing Config Connector, or updating the Config Connector installation, you can configure the cluster-level or namespace-level stateIntoSpec override to be Absent in the ConfigConnector CR or ConfigConnectorContext CR. spec : stateIntoSpec : Absent This makes Absent the default spec fields populating behavior for any new resources created in the cluster or in the namespace when you don't specify the cnrm.cloud.google.com/state-into-spec annotation in the new resource YAMLs."
+        ]
+      },
+      {
+        "title": "Reconciliation strategy \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resources are not recreated when modifying immutable fields Some fields in a resource are immutable, and can't be reconciled without deleting, then re-creating the target resource.",
+          "If you want to revert the 0 reconciliation interval, you have the following options: Modify the resource spec with the reconciliation interval value to enable new reconciliations.",
+          "Mutable but unreadable fields are actuated on change only Some APIs expose fields that are not readable, but are mutable (for example, the password for a SQL user)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "container.googleapis.com",
+      "containerclusters.container.cnrm.cloud.google.com",
+      "kubernetes.io",
+      "projects.locations.clusters",
+      "v1.projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/container/containercluster",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/reconciliation"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:20.276Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

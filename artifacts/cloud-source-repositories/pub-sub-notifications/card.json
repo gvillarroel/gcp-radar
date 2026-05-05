@@ -1,0 +1,178 @@
+{
+  "feature_name": "Pub/Sub notifications",
+  "feature_slug": "pub-sub-notifications",
+  "summary": "Cloud Source Repositories supports Pub/Sub notifications for repository events.",
+  "extended_definition": "Cloud Source Repositories supports Pub/Sub notifications for repository events.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+      "https://docs.cloud.google.com/source-repositories/docs/concepts",
+      "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+      "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configuring Pub/Sub notifications \\_|\\_ Cloud Source Repositories \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "source_id": "site-iam-reference",
+        "final_score": 353,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Pub/Sub topic For each Cloud Source Repositories project or repository for which you'd like notifications, you need to create a Pub/Sub topic.",
+          "To set the format for a topic, you can use the --message-format parameter when you add the topic: gcloud source project - configs update --add-topic=[TOPIC NAME] --message-format=[json protobuf] You can also use the set-format command: gcloud source project - configs update --update-topic=[TOPIC NAME] --message-format=[json protobuf] What's next Learn more about Pub/Sub notifications for Cloud Source Repositories .",
+          "For more information, see Pub/Sub notifications for Cloud Source Repositories ."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.repos \\_|\\_ Cloud Source Repositories \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "source_id": "site-api-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"size\" : string , \"url\" : string , \"mirrorConfig\" : { object ( MirrorConfig ) } , \"pubsubConfigs\" : { string : { object ( PubsubConfig ) } , ... } } Fields name string Resource name of the repository, of the form projects/<project>/repos/<repo> .",
+          "Resource: Repo JSON representation MirrorConfig JSON representation PubsubConfig JSON representation MessageFormat Methods Resource: Repo A repository (or repo) is a Git repository storing versioned source content.",
+          "The project needs to be the same project as this config is in. messageFormat enum ( MessageFormat ) The format of the Cloud Pub/Sub messages. serviceAccountEmail string Email address of the service account used for publishing Cloud Pub/Sub messages."
+        ]
+      },
+      {
+        "title": "Concepts \\_|\\_ Cloud Source Repositories \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "source_id": "site-iam-reference",
+        "final_score": 215,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Pub/Sub notifications Learn about configuring Pub/Sub notifications with Cloud Source Repositories.",
+          "For alternative source hosting options, Secure Source Manager is a regionally deployed, single tenant, managed source code repository hosted on Google Cloud.",
+          "Access control with IAM Configure roles and permissions for Cloud Source Repositories resources."
+        ]
+      },
+      {
+        "title": "Cloud Source Repositories audit logging information \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/source-repositories/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Resource types Cloud Source Repositories audit logs use the resource type csr repository for all audit logs.",
+          "Here are some reasons you might want to route your audit logs: To keep audit logs for a longer period of time or to use more powerful search capabilities, you can route copies of your audit logs to Cloud Storage, BigQuery, or Pub/Sub.",
+          "Home Documentation Application development Cloud Source Repositories Guides Send feedback Cloud Source Repositories audit logging information Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.repos"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/source-repositories/docs/configuring-notifications",
+        "https://docs.cloud.google.com/source-repositories/docs/reference/rest/v1/projects.repos",
+        "https://docs.cloud.google.com/source-repositories/docs/concepts",
+        "https://docs.cloud.google.com/source-repositories/docs/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.645Z",
+  "source_step08_card": "data/step-08/current/products/cloud-source-repositories/card.json",
+  "product_name": "Cloud Source Repositories",
+  "product_slug": "cloud-source-repositories"
+}

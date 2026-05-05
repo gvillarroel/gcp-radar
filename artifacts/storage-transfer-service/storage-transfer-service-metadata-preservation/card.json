@@ -1,0 +1,109 @@
+{
+  "feature_name": "Storage Transfer Service metadata preservation",
+  "feature_slug": "storage-transfer-service-metadata-preservation",
+  "summary": "Metadata preservation is now generally available, enabling transfers to retain POSIX attributes and symlinks across POSIX filesystems and object ACLs, CMEK, temporary holds, and object creation time when moving objects between Cloud Storage buckets; Storage Transfer Service now supports preserving metadata during data transfers.",
+  "extended_definition": "Metadata preservation is now generally available, enabling transfers to retain POSIX attributes and symlinks across POSIX filesystems and object ACLs, CMEK, temporary holds, and object creation time when moving objects between Cloud Storage buckets; Storage Transfer Service now supports preserving metadata during data transfers.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+      "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+      "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Metadata preservation \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Transfers between Cloud Storage buckets Metadata example Preservation behavior Cloud Storage fixed-key metadata fields, such as: Cache-Control , Content-Disposition , and Content-Type .",
+          "Metadata preservation behavior The following sections list metadata examples from different source storage systems and how Storage Transfer Service preserves metadata from each.",
+          "Home Documentation Storage Storage Transfer Service Send feedback Metadata preservation Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Transfer from S3-compatible storage to Cloud Storage \\_|\\_ Storage Transfer\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the Amazon S3 or S3-compatible storage to Cloud Storage section of Metadata preservation for details on which metadata can be preserved, and how to configure your transfer.",
+          "Metadata preservation When transferring files from S3-compatible storage, Storage Transfer Service can optionally preserve certain attributes as custom metadata.",
+          "StorageTransferServiceClient (); / Creates a transfer from an AWS S3-compatible source to GCS / async function transferFromS3CompatibleSource () { // Runs the request and creates the job const [ transferJob ] = await client . createTransferJob ({ transferJob : { projectId , transferSpec : { sourceAgentPoolName , awsS3CompatibleDataSource : { region , s3Metadata : { authMethod , protocol , requestModel , }, endpoint , bucketName : sourceBucketName , path : sourcePath , }, gcsDataSink : { bucketName : gcsSinkBucket , path : gcsPath , }, }, status : ' ENABLED ' , }, }); await client . runTransferJob ({ jobName : transferJob . name , projectId , }); console . log ( Created and ran a transfer job from ' ${ sourceBucketName } ' to ' ${ gcsSinkBucket } ' with name ${ transferJob . name } ` ); } transferFromS3CompatibleSource (); Python To learn how to install and use the client library for Storage Transfer Service, see Storage Transfer Service client libraries ."
+        ]
+      },
+      {
+        "title": "\"Transfer from Amazon S3 to Cloud Storage \\_|\\_ Storage Transfer Service\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the Amazon S3 to Cloud Storage section of Metadata preservation for details on which metadata can be preserved, and how to configure your transfer.",
+          "Metadata preservation When transferring files from S3, Storage Transfer Service can optionally preserve certain attributes as custom metadata.",
+          "Supported regions Storage Transfer Service supports the following Amazon S3 regions: af-south-1 ap-east-1 ap-northeast-1 ap-northeast-2 ap-northeast-3 ap-south-1 ap-south-2 ap-southeast-1 ap-southeast-2 ap-southeast-3 ap-southeast-4 ca-central-1 ca-west-1 eu-central-1 eu-central-2 eu-north-1 eu-south-1 eu-south-2 eu-west-1 eu-west-2 eu-west-3 il-central-1 me-central-1 me-south-1 sa-east-1 us-east-1 us-east-2 us-west-1 us-west-2 Transfers using the managed private network support the following AWS regions: ap-east-1 ap-northeast-1 ap-northeast-2 ap-northeast-3 ap-south-1 ap-south-2 ap-southeast-1 ca-central-1 ca-west-1 eu-central-1 eu-central-2 eu-north-1 eu-south-1 eu-south-2 eu-west-1 eu-west-2 eu-west-3 us-east-1 us-east-2 us-west-1 us-west-2 Transfer options The following Storage Transfer Service features are available for transfers from S3 to Cloud Storage Transfer specific files using a manifest You can pass a list of files for Storage Transfer Service to act on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agent-based/s3-compatible",
+        "https://docs.cloud.google.com/storage-transfer/docs/create-transfers/agentless/s3"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:53.219Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service"
+}

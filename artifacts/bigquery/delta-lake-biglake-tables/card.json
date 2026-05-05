@@ -1,0 +1,170 @@
+{
+  "feature_name": "Delta Lake BigLake tables",
+  "feature_slug": "delta-lake-biglake-tables",
+  "summary": "BigLake supports Delta Lake tables for open source tabular data stored at petabyte scale.",
+  "extended_definition": "BigLake supports Delta Lake tables for open source tabular data stored at petabyte scale.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigLake tables support the following formats: Avro CSV Delta Lake Iceberg JSON ORC Parquet You can't use cached metadata with Apache Iceberg external tables ; BigQuery already uses the metadata that Iceberg captures in manifest files.",
+          "To find information about metadata refresh jobs, query the INFORMATION SCHEMA.JOBS view , as shown in the following example: SELECT FROM region-us.INFORMATION SCHEMA.JOBS BY PROJECT WHERE job id LIKE '%metadata cache refresh%' AND creation time > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 6 HOUR ) ORDER BY start time DESC LIMIT 10 ; For Cloud Storage BigLake tables that are based on Parquet files, table statistics are collected during the metadata cache refresh and used to improve query plans.",
+          "Supported data stores You can use BigLake tables with the following data stores: Amazon S3 by using BigQuery Omni Blob Storage by using BigQuery Omni Cloud Storage Temporary table support BigLake tables based on Cloud Storage can be temporary or permanent."
+        ]
+      },
+      {
+        "title": "Use the BigLake metastore Iceberg REST catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "source_id": "site-docs-reference-5",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Prior Iceberg releases For open source Iceberg releases prior to 1.10, you can configure standard OAuth authentication by configuring a session with the following: import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( 'spark.jars.packages' , 'org.apache.iceberg:iceberg-spark-runtime-3.5 2.12:1.9.1,org.apache.iceberg:iceberg-gcp-bundle:1.9.1' ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , ' WAREHOUSE PATH ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f \"spark.sql.catalog. { catalog name } .token\" , \" TOKEN \" ) \\ . config ( f \"spark.sql.catalog. { catalog name } .oauth2-server-uri\" , \"https://oauth2.googleapis.com/token\" ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () Replace the following: CATALOG NAME : the name of your Iceberg REST catalog.",
+          "Enable the API Required roles To get the permissions that you need to use the Iceberg REST catalog in BigLake metastore, ask your administrator to grant you the following IAM roles: Perform administrative tasks, such as managing catalog user access, storage access, and the catalog's credential vending mode: BigLake Admin ( roles/biglake.admin ) on the project Storage Admin ( roles/storage.admin ) on the Cloud Storage bucket Read table data in credential vending mode: BigLake Viewer ( roles/biglake.viewer ) on the project Write table data in credential vending mode: BigLake Editor ( roles/biglake.editor ) on the project Read catalog resources and table data in non-credential vending mode: BigLake Viewer ( roles/biglake.viewer ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the Cloud Storage bucket Manage catalog resources and write table data in non-credential vending mode: BigLake Editor ( roles/biglake.editor ) on the project Storage Object User ( roles/storage.objectUser ) on the Cloud Storage bucket Perform data manipulation language (DML) operations with BigQuery catalog federation: BigQuery Data Editor ( roles/bigquery.dataEditor ) on the project Storage Admin ( roles/storage.admin ) on the Cloud Storage bucket.",
+          "Credential vending is a storage access delegation mechanism that lets BigLake metastore administrators control permissions directly on BigLake metastore resources, eliminating the need for catalog users to have direct access to Cloud Storage buckets."
+        ]
+      },
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Applicable only to tables with table type set to CLONE or SNAPSHOT . replica source catalog STRING For materialized view replicas , the base materialized view's project. replica source schema STRING For materialized view replicas , the base materialized view's dataset. replica source name STRING For materialized view replicas , the base materialized view's name. replication status STRING For materialized view replicas , the status of the replication from the base materialized view to the materialized view replica; one of the following: REPLICATION STATUS UNSPECIFIED ACTIVE : Replication is active with no errors SOURCE DELETED : The source materialized view has been deleted PERMISSION DENIED : The source materialized view hasn't been authorized on the dataset that contains the source Amazon S3 BigLake tables used in the query that created the materialized view.",
+          "The managed table type; one of the following: NATIVE : A standard table BIGLAKE : A BigLake table for Apache Iceberg in BigQuery is insertable into STRING YES or NO depending on whether the table supports DML INSERT statements is fine grained mutations enabled STRING YES or NO depending on whether fine-grained DML mutations are enabled on the table is typed STRING The value is always NO is change history enabled STRING YES or NO depending on whether change history is enabled creation time TIMESTAMP The table's creation time base table catalog STRING For table clones and table snapshots , the base table's project.",
+          "Applies to: CSV, JSON, and Google Sheets data. max staleness INTERVAL Applicable for BigLake tables and object tables ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.admin",
+      "biglake.editor",
+      "biglake.googleapis.com",
+      "biglake.viewer",
+      "bigquery.dataEditor",
+      "data.usa",
+      "header.x",
+      "names.usa",
+      "oauth2.googleapis.com",
+      "org.apache.iceberg",
+      "org.apache.iceberg.gcp.gcs.GCSFileIO",
+      "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "pyspark.context",
+      "pyspark.sql",
+      "spark.jars.packages",
+      "spark.sql.catalog",
+      "spark.sql.defaultCatalog",
+      "spark.sql.extensions",
+      "storage.admin",
+      "storage.objectUser",
+      "storage.objectViewer",
+      "us.INFORMATION"
+    ],
+    "missing_inventory_roles": [
+      "roles/biglake.admin",
+      "roles/biglake.editor",
+      "roles/biglake.viewer",
+      "roles/bigquery.dataEditor",
+      "roles/storage.admin",
+      "roles/storage.objectUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "https://docs.cloud.google.com/bigquery/docs/tables"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

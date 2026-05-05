@@ -1,0 +1,140 @@
+{
+  "feature_name": "Semantic search control in Apigee API hub",
+  "feature_slug": "semantic-search-control-in-apigee-api-hub",
+  "summary": "Adds the ability to enable and disable semantic search from the API hub Settings actions in Google Cloud console.",
+  "extended_definition": "Adds the ability to enable and disable semantic search from the API hub Settings actions in Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+      "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+      "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get started with semantic caching policies \\_|\\_ Apigee \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 137,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create and deploy a Vector Search index To create and deploy a Vector Search index: Create a Vector Search index that allows streaming updates: ACCESS TOKEN = $( gcloud auth print-access-token ) && curl --location --request POST \\ \"https:// $REGION -aiplatform.googleapis.com/v1/projects/ $PROJECT ID /locations/ $REGION /indexes\" \\ --header \"Authorization: Bearer $ACCESS TOKEN \" \\ --header 'Content-Type: application/json' \\ --data-raw \\ '{ \"displayName\": \"semantic-cache-index\", \"description\": \"semantic-cache-index\", \"metadata\": { \"config\": { \"dimensions\": \"768\", \"approximateNeighborsCount\": 150, \"distanceMeasureType\": \"DOT PRODUCT DISTANCE\", \"featureNormType\": \"NONE\", \"algorithmConfig\": { \"treeAhConfig\": { \"leafNodeEmbeddingCount\": \"10000\", \"fractionLeafNodesToSearch\": 0.05 } }, \"shardSize\": \"SHARD SIZE MEDIUM\" }, }, \"indexUpdateMethod\": \"STREAM UPDATE\" }' The $REGION defines the region where the Vector Search index deploys.",
+          "Create an IndexEndpoint using the following command: gcloud ai index-endpoints create \\ --display-name = semantic-cache-index-endpoint \\ --public-endpoint-enabled \\ --region = $REGION \\ --project = $PROJECT ID This step may take several minutes to complete.",
+          "Create an API proxy to enable semantic caching In this step, create a new API proxy using the Proxy with Semantic Cache template, if you have not done so already."
+        ]
+      },
+      {
+        "title": "Provision API hub in the Cloud console \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "source_id": "site-docs-root-required-3",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the Enable Vertex search capability option is enabled (the default), you must select the multi-region location in which to store your Vertex AI-based search data, the data associated with the Semantic Search feature of API hub.",
+          "If you deselect the Enable Vertex search capability option, Semantic Search is disabled, and the multi-region selector is hidden.",
+          "The Vertex search option enables the Vertex AI-powered Semantic Search feature of API hub."
+        ]
+      },
+      {
+        "title": "Provision API hub using Terraform \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform",
+        "source_id": "site-iam-reference",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "SEMANTIC SEARCH BOOLEAN : false if you want to enable semantic search, true otherwise.",
+          "SEMANTIC SEARCH BOOLEAN : false if you want to enable semantic search, true otherwise.",
+          "Using CMEK resource \"google apihub api hub instance\" \"apihub-instance-search\"{ project = \" PROJECT ID \" api hub instance id = \" API HUB INSTANCE ID \" description = \" DESCRIPTION \" location = \" LOCATION \" config { encryption type = \"CMEK\" cmek key name = \"projects/ PROJECT ID /locations/ HUB LOCATION /keyRings/ KEY RING ID /cryptoKeys/ KEY ID \" disable search = SEMANTIC SEARCH BOOLEAN vertex location = \" VERTEX AI LOCATION \" } } Replace the following: PROJECT ID : the ID of the Google Cloud project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-semantic-caching-policies",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision",
+        "https://docs.cloud.google.com/apigee/docs/apihub/provision-terraform"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.329Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

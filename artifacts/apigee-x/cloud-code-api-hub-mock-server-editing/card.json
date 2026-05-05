@@ -1,0 +1,150 @@
+{
+  "feature_name": "Cloud Code API hub mock server editing",
+  "feature_slug": "cloud-code-api-hub-mock-server-editing",
+  "summary": "Cloud Code can interact with APIs in API hub through a mock server, update them, and publish changes back to API hub.",
+  "extended_definition": "Cloud Code can interact with APIs in API hub through a mock server, update them, and publish changes back to API hub.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Building a simple API proxy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Using mock APIs : You can create mock APIs to simulate API behavior before the backend implementation is complete to enable frontend development to progress independently.",
+          "To learn more about creating mock APIs, see OpenAPI Mock API Proxy .",
+          "Create the instance template gcloud compute instance - templates create $ MIG NAME \\ -- project $ PROJECT ID \\ -- region $ REGION \\ -- network $ VPC NAME \\ -- subnet $ VPC SUBNET \\ -- tags = https - server , apigee - mig - proxy , gke - apigee - proxy \\ -- machine - type e2 - medium -- image - family debian - 12 \\ -- image - project debian - cloud -- boot - disk - size 20 GB \\ -- no - address \\ -- metadata ENDPOINT = $ APIGEE ENDPOINT , startup - script - url = gs : //apigee-5g-saas/apigee-envoy-proxy-release/latest/conf/startup-script.sh Create the managed instance group gcloud compute instance - groups managed create $MIG NAME \\ -- project $PROJECT ID -- base - instance - name apigee - mig \\ -- size 2 -- template $MIG NAME -- region $REGION Configure autoscaling gcloud compute instance - groups managed set - autoscaling $MIG NAME \\ -- project $PROJECT ID -- region $REGION -- max - num - replicas 50 \\ -- target - cpu - utilization 0.75 -- cool - down - period 90 Define a named port gcloud compute instance - groups managed set - named - ports $MIG NAME \\ -- project $PROJECT ID -- region $REGION -- named - ports https: 443 Create a Google-managed SSL certificate and key for the load balancer gcloud compute ssl-certificates create $CERTIFICATE NAME \\ --domains=$DOMAIN HOSTNAME \\ --project $PROJECT ID \\ --global Validate that the certificate is provisioned gcloud compute ssl-certificates describe $CERTIFICATE NAME \\ --global \\ --format=\"get(name,managed.status, managed.Status)\" Create the Global Cloud Load Balancer (GCLB) Create a health check gcloud compute health-checks create https hc-apigee-envoy-443 \\ --project $PROJECT ID --port 443 --global \\ --request-path /healthz/ingress Create the backend service for http1 gcloud compute backend - services create YOUR BACKEND 1 \\ -- project $ PROJECT ID \\ -- protocol HTTPS \\ -- health - checks hc - apigee - envoy - 443 \\ -- port - name https \\ -- timeout 302 s \\ -- connection - draining - timeout 300 s \\ -- global Create the backend service for http2 gcloud compute backend - services create YOUR BACKEND 2 \\ -- project $ PROJECT ID \\ -- protocol HTTP2 \\ -- health - checks hc - apigee - envoy - 443 \\ -- port - name https \\ -- timeout 302 s \\ -- connection - draining - timeout 300 s \\ -- global Add MIGs to the backend service."
+        ]
+      },
+      {
+        "title": "Streaming server-sent events \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "An EventFlow can be placed inside a TargetEndpoint or a ProxyEndpoint definition as shown in the following code samples: <ProxyEndpoint> <ProxyEndpoint name=\"default\"> <Description/> <FaultRules/> <PreFlow name=\"PreFlow\"> <Request/> <Response/> </PreFlow> <PostFlow name=\"PostFlow\"> <Request/> <Response/> </PostFlow> <Flows/> <EventFlow name=\"EventFlow\" content-type=\"text/event-stream\"> <Response/> </EventFlow> <HTTPProxyConnection> <Properties/> <URL>https://httpbin.org/sse</URL> </HTTPProxyConnection> </ProxyEndpoint> <TargetEndpoint> <TargetEndpoint name=\"default\"> <Description/> <FaultRules/> <PreFlow name=\"PreFlow\"> <Request/> <Response/> </PreFlow> <PostFlow name=\"PostFlow\"> <Request/> <Response/> </PostFlow> <Flows/> <EventFlow name=\"EventFlow\" content-type=\"text/event-stream\"> <Response/> </EventFlow> <HTTPTargetConnection> <Properties/> <URL>https://httpbin.org/sse</URL> </HTTPTargetConnection> </TargetEndpoint> Note: If you add multiple EventFlow stanzas to a endpoint, only the last one in the endpoint definition is executed.",
+          "This step ensures that the EventFlow processes the policy during response handling: <TargetEndpoint> < ? xml version = \"1.0\" encoding = \"UTF-8\" standalone = \"yes\" ? > < TargetEndpoint name = \"default\" > < EventFlow content - type = \"text/event-stream\" > < Response > < Step > < Name>js - error < / Name > < / Step > < / Response > < / EventFlow > < HTTPTargetConnection > < URL>https : //generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent</URL> < / HTTPTargetConnection > < / TargetEndpoint > <ProxyEndpoint> < ? xml version = \"1.0\" encoding = \"UTF-8\" standalone = \"yes\" ? > < ProxyEndpoint name = \"default\" > < EventFlow content - type = \"text/event-stream\" > < Response > < Step > < Name>js - error < / Name > < / Step > < / Response > < / EventFlow > < HTTPProxyConnection > < URL>https : //generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent</URL> < / HTTPProxyConnection > < / ProxyEndpoint > Deploy the API proxy.",
+          "The following examples show an EventFlow with a conditional RaiseFault policy step added: <ProxyEndpoint> < ProxyEndpoint name = \"default\" > < EventFlow content - type = \"text/event-stream\" > < Response > < Step > < Name>Raise - Fault - Cred - Invalid < / Name > < Condition>fault . name equals \"invalid access token\" < / Condition > < / Step > < / Response > < / EventFlow > < HTTPProxyConnection > < / ProxyEndpoint >< / pre > <TargetEndpoint> < TargetEndpoint name = \"default\" > < EventFlow content - type = \"text/event-stream\" > < Response > < Step > < Name>Raise - Fault - Cred - Invalid < / Name > < Condition>fault . name equals \"invalid access token\" < / Condition > < / Step > < / Response > < / EventFlow > < HTTPTargetConnection > < / TargetEndpoint >< / pre > For more EventFlow code examples, see the EventFlow use cases and examples section."
+        ]
+      },
+      {
+        "title": "AssignMessage policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Optional Type Complex type Parent Element <Set> Child Elements <HeaderName> <GoogleAccessToken> <GoogleIdToken> The Authentication element uses the following syntax: Syntax <AssignMessage> ... <Set> <Authentication> <HeaderName> HEADER NAME </HeaderName> --EITHER-- <GoogleAccessToken> <Scopes> <Scope> SCOPE </Scope> ... </Scopes> <GoogleAccessToken> --OR-- <GoogleIDToken> <Audience ref=\" FLOW VARIABLE \"> TARGET URL </Audience> </GoogleIDToken> </Authentication> </Set> ... </AssignMessage> Using Access Token The following example shows the GoogleAccessToken element: <Authentication> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scope> </Scopes> </GoogleAccessToken> </Authentication> Using ID Token The following example shows the GoogleIDToken element: <Authentication> <GoogleIDToken> <Audience>https://httpserver0-bar.run.app</Audience> </GoogleIDToken> </Authentication> Using HeaderName The following example shows the HeaderName element: <Authentication> <HeaderName>Authorization</HeaderName> <GoogleAccessToken> <Scopes> <Scope>https://www.googleapis.com/auth/cloud-platform</Scopes> </Scopes> </GoogleAccessToken> </Authentication> <HeaderName> (child of <Authentication> ) By default, when an Authentication configuration is present, Apigee generates a bearer token and injects it into the Authorization header in the message sent to the target system.",
+          "Required Type Complex object Parent Element N/A Child Elements <Add> <AssignTo> <AssignVariable> <Copy> <DisplayName> <IgnoreUnresolvedVariables> <Remove> <Set> The <AssignMessage> element uses the following syntax: Syntax The <AssignMessage> element uses the following syntax: < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < !-- All AssignMessage child elements are optional -- > < Add > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < / Add > < AssignTo createNew = \"[true false]\" transport = \"http\" type = \"[request response]\" > DESTINATION VARIABLE NAME < / AssignTo > < AssignVariable > < Name> VARIABLE NAME < / Name > < PropertySetRef> SOURCE VARIABLE < / PropertySetRef > < Ref> SOURCE VARIABLE < / Ref > < ResourceURL> RESOURCE URL OR TEMPLATE < / ResourceURL > < Template> MESSAGE TEMPLATE < / Template > or < Template ref = ' TEMPLATE VARIABLE ' >< / Template > < Value> VARIABLE VALUE < / Value > < / AssignVariable > < Copy source = \" VARIABLE NAME \" > < !-- Can also be an empty array ( < FormParams / > ) --> < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < !-- Copy all headers -- > < Headers / > < !-- or , copy specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Path > [ false true ] < / Path > < Payload > [ false true ] < / Payload > < !-- Can also be an empty array ( < QueryParams / > ) --> < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode > [ false true ] < / StatusCode > < Verb > [ false true ] < / Verb > < Version > [ false true ] < / Version > < / Copy > < DisplayName> POLICY DISPLAY NAME < / DisplayName > < IgnoreUnresolvedVariables > [ true false ] < / IgnoreUnresolvedVariables > < !-- Can also be empty to remove everything from the message ( < Remove / > ) -- > < Remove > < !-- Remove all form parameters -- > < FormParams / > < !-- or , remove specific form parameters by name -- > < FormParams > < FormParam name = \" FORMPARAM NAME \" / > < !-- or -- > < FormParam name = \" FORMPARAM NAME \" > [ false true ] < / FormParam > ... < / FormParams > < !-- Remove all headers -- > < Headers / > < !-- or , remove specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Payload > [ false true ] < / Payload > < !-- Remove all query parameters -- > < QueryParams / > < !-- or , remove specific query parameters by name -- > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" / > < !-- or -- > < QueryParam name = \" QUERYPARAM NAME \" > [ false true ] < / QueryParam > ... < / QueryParams > < / Remove > < Set > < Authentication > < HeaderName> HEADER NAME < / HeaderName > < !-- Use either GoogleAccessToken or GoogleIDToken -- > < GoogleAccessToken > < Scopes > < Scope> SCOPE < / Scope > ... < / Scopes > < / GoogleAccessToken > ----- or ----- < GoogleIDToken > < Audience ref = ' FLOW VARIABLE NAME > TARGET URL </Scope> < / GoogleAccessToken > < / Authentication > < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < Headers > < Header name = \" HEADER NAME \" > HEADER VALUE < / Header > ... < / Headers > < Path> PATH < / Path > < Payload contentType = \" CONTENT TYPE \" variablePrefix = \" PREFIX \" variableSuffix = \" SUFFIX \" > NEW PAYLOAD < / Payload > < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode> HTTP STATUS CODE or { variable } < / StatusCode > < Verb > [ GET POST PUT PATCH DELETE { variable }] < / Verb > < Version > [ 1.0 1.1 { variable }] < / Verb > < / Set > < / AssignMessage > Default Policy The following example shows the default settings when you add an AssignMessage policy to your flow in the Apigee UI.",
+          "The <Copy> element uses the following syntax: Syntax < AssignMessage continueOnError = \"[false true]\" enabled = \"[true false]\" name = \" POLICY NAME \" > < Copy source = \" VARIABLE NAME \" > < !-- Can also be an empty array ( < FormParams / > ) --> < FormParams > < FormParam name = \" FORMPARAM NAME \" > FORMPARAM VALUE < / FormParam > ... < / FormParams > < !-- Copy all headers -- > < Headers / > < !-- or , copy specific headers by name -- > < Headers > < Header name = \" HEADER NAME \" / > < !-- or -- > < Header name = \" HEADER NAME \" > [ false true ] < / Header > ... < / Headers > < Path > [ false true ] < / Path > < Payload > [ false true ] < / Payload > < !-- Can also be an empty array ( < QueryParams / > ) --> < QueryParams > < QueryParam name = \" QUERYPARAM NAME \" > QUERYPARAM VALUE < / QueryParam > ... < / QueryParams > < StatusCode > [ false true ] < / StatusCode > < Verb > [ false true ] < / Verb > < Version > [ false true ] < / Version > < / Copy > < !-- Used as the destination for the < Copy > values -- > < AssignTo createNew = \"[true false]\" transport = \"http\" type = \"[request response]\" > DESTINATION VARIABLE NAME < / AssignTo > < / AssignMessage > Example 1 The following example copies a header, three form parameters, the path, and all query parameters from the request message to a new, custom request named newRequest : < AssignMessage name = \"AM-copy-1\" > < AssignTo createNew = \"true\" transport = \"http\" type = \"request\" > newRequest < / AssignTo > < Copy source = \"request\" > < Headers > < Header name = \"Header Name 1\" / > < / Headers > < FormParams > < FormParam name = \"Form Param Name 1\" / > < FormParam name = \"Form Param Name 2\" / > < FormParam name = \"Form Param Name 3\" / > < / FormParams > < Path>true < / Path > < QueryParams / > < / Copy > < / AssignMessage > Because elements like <Payload> and <Verb> are not present, the policy does not copy those parts of the message."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bar.run.app",
+      "developer.app.partner",
+      "generativelanguage.googleapis.com",
+      "httpbin.org",
+      "managed.status",
+      "managed.Status",
+      "request.queryparam.lang",
+      "request.queryparam.name",
+      "request.queryparam.zipCode",
+      "script.sh",
+      "verifyapikey.VAK"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/assign-message-policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

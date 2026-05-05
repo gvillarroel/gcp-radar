@@ -1,0 +1,85 @@
+{
+  "feature_name": "OpenCensus custom metrics library",
+  "feature_slug": "opencensus-custom-metrics-library",
+  "summary": "OpenCensus is the generally available official library for writing user-defined metrics to Stackdriver Monitoring.",
+  "extended_definition": "OpenCensus is the generally available official library for writing user-defined metrics to Stackdriver Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/monitoring/docs/reference/libraries",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitoring client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/reference/libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This client only needs to be created // once, and can be reused for multiple requests. try ( MetricServiceClient metricServiceClient = MetricServiceClient . create ()) { // Prepares an individual data point TimeInterval interval = TimeInterval . newBuilder () . setEndTime ( Timestamps . fromMillis ( System . currentTimeMillis ())) . build (); TypedValue value = TypedValue . newBuilder (). setDoubleValue ( 123.45 ). build (); Point point = Point . newBuilder (). setInterval ( interval ). setValue ( value ). build (); List<Point> pointList = new ArrayList <> (); pointList . add ( point ); ProjectName name = ProjectName . of ( projectId ); // Prepares the metric descriptor Map<String , String > metricLabels = new HashMap <> (); metricLabels . put ( \"store id\" , \"Pittsburg\" ); Metric metric = Metric . newBuilder () . setType ( \"custom.googleapis.com/stores/daily sales\" ) . putAllLabels ( metricLabels ) . build (); // Prepares the monitored resource descriptor Map<String , String > resourceLabels = new HashMap <> (); resourceLabels . put ( \"project id\" , projectId ); MonitoredResource resource = MonitoredResource . newBuilder (). setType ( \"global\" ). putAllLabels ( resourceLabels ). build (); // Prepares the time series request TimeSeries timeSeries = TimeSeries . newBuilder () . setMetric ( metric ) . setResource ( resource ) . addAllPoints ( pointList ) . build (); List<TimeSeries> timeSeriesList = new ArrayList <> (); timeSeriesList . add ( timeSeries ); CreateTimeSeriesRequest request = CreateTimeSeriesRequest . newBuilder () . setName ( name . toString ()) . addAllTimeSeries ( timeSeriesList ) . build (); // Writes time series data metricServiceClient . createTimeSeries ( request ); System . out . printf ( \"Done writing time series data.%n\" ); } } } Node.js // Imports the Google Cloud client library const monitoring = require ( ' @google-cloud/monitoring ' ); async function quickstart () { // Creates a client const client = new monitoring .",
+          "MetricServiceClient (); // TODO(developer): Uncomment and set the following variables // const projectId = \"PROJECT ID\" // Prepares an individual data point const dataPoint = { interval : { endTime : { seconds : Date . now () / 1000 , }, }, value : { // The amount of sales doubleValue : 123.45 , }, }; // Prepares the time series request const request = { name : client . projectPath ( projectId ), timeSeries : [ { // Ties the data point to a custom metric metric : { type : 'custom.googleapis.com/stores/daily sales' , labels : { store id : 'Pittsburgh' , }, }, resource : { type : 'global' , labels : { project id : projectId , }, }, points : [ dataPoint ], }, ], }; // Writes time series data const [ result ] = await client . createTimeSeries ( request ); console . log ( 'Done writing time series data.' , result ); } quickstart (); PHP Includes the autoloader for libraries installed with composer require once DIR . '/vendor/autoload.php'; Imports the Google Cloud client library use Google\\Api\\Metric; use Google\\Api\\MonitoredResource; use Google\\Cloud\\Monitoring\\V3\\Client\\MetricServiceClient; use Google\\Cloud\\Monitoring\\V3\\CreateTimeSeriesRequest; use Google\\Cloud\\Monitoring\\V3\\Point; use Google\\Cloud\\Monitoring\\V3\\TimeInterval; use Google\\Cloud\\Monitoring\\V3\\TimeSeries; use Google\\Cloud\\Monitoring\\V3\\TypedValue; use Google\\Protobuf\\Timestamp; // These variables are set by the App Engine environment.",
+          "To test locally, // ensure these are set or manually change their values. $projectId = getenv('GCLOUD PROJECT') ?: 'YOUR PROJECT ID'; $instanceId = '1234567890123456789'; $zone = 'us-central1-f'; try { $client = new MetricServiceClient(); $formattedProjectName = 'projects/' . $projectId; $labels = [ 'instance id' => $instanceId, 'zone' => $zone, ]; $m = new Metric(); $m->setType('custom.googleapis.com/my metric'); $r = new MonitoredResource(); $r->setType('gce instance'); $r->setLabels($labels); $value = new TypedValue(); $value->setDoubleValue(3.14); $timestamp = new Timestamp(); $timestamp->setSeconds(time()); $interval = new TimeInterval(); $interval->setStartTime($timestamp); $interval->setEndTime($timestamp); $point = new Point(); $point->setValue($value); $point->setInterval($interval); $points = [$point]; $timeSeries = new TimeSeries(); $timeSeries->setMetric($m); $timeSeries->setResource($r); $timeSeries->setPoints($points); $createTimeSeriesRequest = (new CreateTimeSeriesRequest()) ->setName($formattedProjectName) ->setTimeSeries([$timeSeries]); $client->createTimeSeries($createTimeSeriesRequest); print('Successfully submitted a time series' ."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.",
+          "The following table describes the categories of billable metrics available on the Metrics Management page and whether they are measured by bytes or samples ingested: Domain Metric prefix Pricing model Meaning Agent agent.googleapis.com Bytes Metrics that are collected from external resources by agents ."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceAsyncClient (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "User-created metric descriptors define custom metrics <https://cloud.google.com/monitoring/custom-metrics> .",
+          "Only user-created custom metrics <https://cloud.google.com/monitoring/custom-metrics> can be deleted.",
+          "The new custom metric https://cloud.google.com/monitoring/custom-metrics descriptor."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agent.googleapis.com",
+      "autoload.php",
+      "custom.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

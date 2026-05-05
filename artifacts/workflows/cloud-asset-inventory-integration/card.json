@@ -1,0 +1,140 @@
+{
+  "feature_name": "Cloud Asset Inventory integration",
+  "feature_slug": "cloud-asset-inventory-integration",
+  "summary": "Workflows resources are supported in Cloud Asset Inventory.",
+  "extended_definition": "Workflows resources are supported in Cloud Asset Inventory.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/resources",
+      "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+      "https://docs.cloud.google.com/workflows/docs/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Resources \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/resources",
+        "source_id": "site-api-reference",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Workflows Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Billing questions Learn about resources for answering common billing questions.",
+          "Quotas and limits Usage policies for your Workflows resources."
+        ]
+      },
+      {
+        "title": "\"Resources \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iam/docs/resources",
+        "source_id": "site-iam-reference-required-2",
+        "final_score": 45,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Security IAM Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Billing questions Resources for answering common billing questions."
+        ]
+      },
+      {
+        "title": "Choose Workflows or Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "source_id": "site-docs-root-2",
+        "final_score": 45,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use Application Integration If you are an enterprise architect, integration developer, or business analyst, who needs a way to connect, map, transform, and integrate data between business systems like Salesforce, ServiceNow, or a Cloud SQL database: Application Integration is ideal for integrating applications that have differing data structures and for exchanging data.",
+          "If you need a connector that can be used to integrate and map data between a Google Cloud service such as BigQuery and a third-party service such as ServiceNow: An Application Integration connector hides the complexity of application-specific data structures and protocols.",
+          "Example: Using Application Integration to map and extract data The following diagram shows an example of using Application Integration to map and extract data from an external system: A Salesforce trigger is subscribed to the Salesforce opportunity channel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/resources",
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/iam/docs/resources"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/resources",
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/iam/docs/resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/resources",
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/iam/docs/resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/resources",
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/iam/docs/resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/resources",
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/iam/docs/resources"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/resources",
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/iam/docs/resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

@@ -1,0 +1,138 @@
+{
+  "feature_name": "Database Connection Pooling",
+  "feature_slug": "database-connection-pooling",
+  "summary": "Database connection pooling is now generally available and is available as a connection-level setting for supported dialects.",
+  "extended_definition": "Database connection pooling is now generally available and is available as a connection-level setting for supported dialects.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Connections \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Actions available for some connections Depending on the connection dialect, the gear drop-down menu to the right of the connection may offer the following additional options: Option Description Show Tables This option brings you to a Looker Explore page that lets you create Looker Explore queries based on the metadata of your connection.",
+          "Actions available for all connections All connections offer these options from the gear drop-down menu to the far right of each connection: Option Description SQL Runner This option brings you to Looker's SQL Runner, with the proper connection and schema already selected.",
+          "Three-dot Options menu more vert Actions that you can take for an SSH server configuration: test connections to an SSH server , add a database connection to an SSH server , edit an SSH server configuration , or delete an SSH server configuration."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "See more about how this setting and a user's permissions affect their ability to deliver Looker content and alert notifications in the Permissions overview section on this page. looker internal email domain allowlist user attribute In addition to the email domains that are included in the global Email Domain Allowlist for Scheduled Content field, you can also specify email domains on a per-group level using the looker internal email domain allowlist user attribute .",
+          "Application Time Zone When displaying data in an Explore, a Look, or a dashboard, Looker can convert time data from the connection's Database Time Zone to the appropriate time zone for that user.",
+          "Force BigQuery Readonly Scope usage Enabling this setting signs out users that have OAuth credentials that allow read and write scope on any of BigQuery connections."
+        ]
+      },
+      {
+        "title": "\"Access control and permission management \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control the actions a user can perform Create a permission set with the appropriate permissions, then assign a group or user to a role with that permission set Control what fields a user can access Create a model with the appropriate fields, then assign a group or user to a role with that model Control what data a user can access Create a model with the appropriate data limitations, then assign a group or user to a role with that model - or - Use access filters to limit a user to the appropriate data - or - Use user attributes to provide differing database credentials to a group or user - or - Use user attributes with access grants to restrict access to specific Explores, joins, views, or fields Control what database connections a Looker developer can access Create a project with the appropriate connections, associate the project with a set of models, then assign a group or user to a role with those models Feature access can also affect content access .",
+          "Folders let you set access levels that determine which users may edit folder contents (such as Looks and dashboards), view the contents in a folder, and change settings: A user needs to have at least the View access level to a folder to see that the folder exists, to view the Looks and dashboards inside it, and to copy the Looks and dashboards in the folder.",
+          "Control developer access to database connections Unlike regular users, Looker developers are not fully constrained by models and access filters, because they can make additions or changes to LookML models."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-connections",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

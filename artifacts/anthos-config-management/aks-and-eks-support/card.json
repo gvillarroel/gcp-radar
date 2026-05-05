@@ -1,0 +1,125 @@
+{
+  "feature_name": "AKS and EKS support",
+  "feature_slug": "aks-and-eks-support",
+  "summary": "AKS and EKS support allows Anthos Config Management to run on supported Kubernetes clusters in Amazon EKS and Azure AKS.",
+  "extended_definition": "AKS and EKS support allows Anthos Config Management to run on supported Kubernetes clusters in Amazon EKS and Azure AKS.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Deploy Kubernetes resources across a fleet \\_|\\_ Config Sync\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you haven't previously enabled Config Sync, clicking Confirm also enables the anthosconfigmanagement.googleapis.com API.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Connect the repository to Cloud Build Config Sync's fleet package service uses Cloud Build to sync and fetch the Kubernetes resources from your Git repository."
+        ]
+      },
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, https://github.com/GoogleCloudPlatform/anthos-config-management-samples uses the HTTPS protocol.",
+          "For example, https://github.com/GoogleCloudPlatform/anthos-config-management-samples uses the HTTPS protocol.",
+          "For example, https://github.com/GoogleCloudPlatform/anthos-config-management-samples uses the HTTPS protocol."
+        ]
+      },
+      {
+        "title": "\"Configure Kubernetes with Kustomize \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "source_id": "site-docs-root",
+        "final_score": 55,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Configure Kubernetes with Kustomize Stay organized with collections Save and categorize content based on your preferences.",
+          "Kustomize is a Kubernetes configuration transformation tool that lets you customize untemplated YAML files, leaving the original files untouched.",
+          "The following diagram shows you the directory structure: ├── example │ ├── base │ │ ├── kustomization.yaml │ │ ├── namespace.yaml │ │ ├── networkpolicy.yaml │ │ ├── rolebinding.yaml │ │ └── role.yaml │ ├── kustomization.yaml │ ├── README.md │ ├── team-a │ │ └── kustomization.yaml │ ├── team-b │ │ └── kustomization.yaml │ └── team-c │ └── kustomization.yaml ├── external-team │ └── kustomization.yaml └── external-data.txt The following kustomization.yaml file is in the root of the source of truth and it contains references to the four overlays with a ConfigMap generator from a local file: ./example/kustomization.yaml resources : - team-a - team-b - team-c - ../external-team configMapGenerator : - name : my-configmap namespace : my-namespace files : - ../external-data.txt The following kustomize.yaml is in the team-a directory and is the overlay for team-a : ./example/team-a/kustomization.yaml namespace : team-a resources : - ../base patches : - target : kind : RoleBinding name : team-admin-rolebinding patch : - - op: replace path: /subjects/0/name value: team-a-admin@mydomain.com - target : kind : Namespace name : default patch : - - op: replace path: /metadata/name value: team-a The following kustomization.yaml is in the base directory and is the Kustomize base: ./example/base/kustomization.yaml resources : - namespace.yaml - rolebinding.yaml - role.yaml - networkpolicy.yaml You can explore an example repository in the configuring namespace-specific policies directory in GitHub."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosconfigmanagement.googleapis.com",
+      "data.txt",
+      "github.com",
+      "kustomization.yaml",
+      "kustomize.yaml",
+      "mydomain.com",
+      "namespace.yaml",
+      "networkpolicy.yaml",
+      "role.yaml",
+      "rolebinding.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/fleet-package-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

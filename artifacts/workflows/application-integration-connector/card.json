@@ -1,0 +1,125 @@
+{
+  "feature_name": "Application Integration connector",
+  "feature_slug": "application-integration-connector",
+  "summary": "This connector integrates Workflows with Application Integration.",
+  "extended_definition": "This connector integrates Workflows with Application Integration.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+      "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/translation-connector"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Choose Workflows or Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "source_id": "site-docs-root-2",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you need a connector that can be used to integrate and map data between a Google Cloud service such as BigQuery and a third-party service such as ServiceNow: An Application Integration connector hides the complexity of application-specific data structures and protocols.",
+          "Supported connectors include a connector to Application Integration so that you can use both products together; in this document, see Use Application Integration and Workflows together .",
+          "Workflows supports a connector to Application Integration so that you can use both products together."
+        ]
+      },
+      {
+        "title": "Connectors reference \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "List of supported connectors Google Cloud product Connector Long-running operation type AI Platform Training ml Job Application Integration integrations None Batch batch Job Operation BigQuery bigquery Job BigQuery Data Transfer Service bigquerydatatransfer TransferRun Cloud Build cloudbuild Operation Cloud Run functions cloudfunctions Operation Cloud Natural Language API language None Cloud Run run None Cloud Scheduler cloudscheduler None Cloud SQL sqladmin Operation Cloud Storage storage None Cloud Tasks cloudtasks None Cloud Translation translate Operation Compute Engine compute Operation Dataflow dataflow Job Document AI documentai Operation Processor Firestore firestore Operation Google Forms forms None Google Kubernetes Engine container Operation Google Sheets sheets None Kubernetes API (control plane) gke None Pub/Sub pubsub None Resource Manager cloudresourcemanager None Secret Manager secretmanager None Spanner spanner Operation Storage Transfer Service storagetransfer Operation Transcoder API transcoder Job Vertex AI aiplatform (Vertex AI) Artifact Execution Job Operation Pipeline Schedule Study Trial Workflows workflows workflowexecutions Operation Execution Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Application development Workflows Reference Send feedback Connectors reference Stay organized with collections Save and categorize content based on your preferences.",
+          "You can specify a timeout value and polling policy using the connector params block: - STEP NAME : call : CONNECTOR args : ARG : ARG VALUE [ ... ] body : KEY : KEY VALUE [...] connector params : timeout : TIMEOUT IN SECONDS polling policy : initial delay : INITIAL DELAY IN SECONDS multiplier : MULTIPLIER VALUE max delay : MAX DELAY IN SECONDS skip polling : SKIP POLLING SWITCH scopes : OAUTH2 SCOPE result : RESPONSE VALUE Replace the following: STEP NAME : the name of the step."
+        ]
+      },
+      {
+        "title": "\"Run a batch translation using the Cloud Translation connector \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/translation-connector",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application development Workflows Guides Send feedback Run a batch translation using the Cloud Translation connector Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a Cloud Storage bucket to hold the files to translate: BUCKET INPUT = ${ GOOGLE CLOUD PROJECT } -input-files gcloud storage buckets create gs:// ${ BUCKET INPUT } Create two files in English and upload them to the input bucket: echo \"Hello World!\" > file1.txt gcloud storage cp file1.txt gs:// ${ BUCKET INPUT } echo \"Workflows connectors simplify calling services.\" > file2.txt gcloud storage cp file2.txt gs:// ${ BUCKET INPUT } Deploy and execute the workflow A workflow is made up of a series of steps described using the Workflows syntax, which can be written in either YAML or JSON format.",
+          "If using an AutoML Translation model or glossary other than the default, ensure that it resides in the same location as the call to the connector; otherwise, an INVALID ARGUMENT (400) error is returned."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "file1.txt",
+      "file2.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/translation-connector"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/translation-connector"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/translation-connector"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/translation-connector"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/choose-app-integ-or-workflows",
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/translation-connector"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

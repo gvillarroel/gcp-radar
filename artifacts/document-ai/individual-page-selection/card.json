@@ -1,0 +1,136 @@
+{
+  "feature_name": "Individual page selection",
+  "feature_slug": "individual-page-selection",
+  "summary": "Developers can specify which pages Document AI should process within a document.",
+  "extended_definition": "Developers can specify which pages Document AI should process within a document.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+      "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"skipHumanReview\": skipHumanReview , \"rawDocument\": { \"mimeType\": \" MIME TYPE \", \"content\": \" IMAGE CONTENT \" }, \"fieldMask\": \" FIELD MASK \", \"processOptions\": { \"ocrConfig\": { \"enableNativePdfParsing\": ENABLE NATIVE PDF PARSING , \"enableImageQualityScores\": ENABLE IMAGE QUALITY SCORES , \"enableSymbol\": ENABLE SYMBOL , \"disableCharacterBoxesDetection\": DISABLE CHARACTER BOXES DETECTION , \"hints\": { \"languageHints\": [ \" LANGUAGE HINTS \" ] }, \"advancedOcrOptions\": [\" ADVANCED OCR OPTIONS \"], \"premiumFeatures\": { \"enableSelectionMarkDetection\": ENABLE SELECTION MARK DETECTION , \"computeStyleInfo\": COMPUTE STYLE INFO , \"enableMathOcr\": ENABLE MATH OCR , } }, \"individualPageSelector\" { \"pages\": [ INDIVIDUAL PAGES ] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableSelectionMarkDetection to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"premiumFeatures\" : { \"enableSelectionMarkDetection\" : true } } } } Output The checkbox output appears in Document.pages[].visualElements[] with \"type\": \"unfilled checkbox\" or \"type\": \"filled checkbox\" . \"visualElements\" : [ { \"layout\" : { \"confidence\" : 0.89363575 , \"boundingPoly\" : { \"vertices\" : [ { \"x\" : 11 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 56 }, { \"x\" : 11 , \"y\" : 56 } ], \"normalizedVertices\" : [ { \"x\" : 0.017488075 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.9032258 }, { \"x\" : 0.017488075 , \"y\" : 0.9032258 } ] } }, \"type\" : \"unfilled checkbox\" }, { \"layout\" : { \"confidence\" : 0.9148201 , \"boundingPoly\" : ... }, \"type\" : \"filled checkbox\" } ], You can check the full Document JSON output in this link .",
+          "PremiumFeatures ( compute style info = True , enable math ocr = False , # Enable to use Math OCR Model enable selection mark detection = True , ), ) ) Online processing request to Document AI document = process document ( project id , location , processor id , processor version , file path , mime type , process options = process options , ) text = document . text print ( f \"Full document text: { text } \\n \" ) print ( f \"There are { len ( document . pages ) } page(s) in this document. \\n \" ) for page in document . pages : print ( f \"Page { page . page number } :\" ) print page dimensions ( page . dimension ) print detected languages ( page . detected languages ) print blocks ( page . blocks , text ) print paragraphs ( page . paragraphs , text ) print lines ( page . lines , text ) print tokens ( page . tokens , text ) if page . symbols : print symbols ( page . symbols , text ) if page . image quality scores : print image quality scores ( page . image quality scores ) if page . visual elements : print visual elements ( page . visual elements , text ) def print page dimensions ( dimension : documentai ."
+        ]
+      },
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "source_id": "site-docs-root-2",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"skipHumanReview\": skipHumanReview , \"rawDocument\": { \"mimeType\": \" MIME TYPE \", \"content\": \" IMAGE CONTENT \" }, \"fieldMask\": \" FIELD MASK \", \"processOptions\": { \"ocrConfig\": { \"enableNativePdfParsing\": ENABLE NATIVE PDF PARSING , \"enableImageQualityScores\": ENABLE IMAGE QUALITY SCORES , \"enableSymbol\": ENABLE SYMBOL , \"disableCharacterBoxesDetection\": DISABLE CHARACTER BOXES DETECTION , \"hints\": { \"languageHints\": [ \" LANGUAGE HINTS \" ] }, \"advancedOcrOptions\": [\" ADVANCED OCR OPTIONS \"], \"premiumFeatures\": { \"enableSelectionMarkDetection\": ENABLE SELECTION MARK DETECTION , \"computeStyleInfo\": COMPUTE STYLE INFO , \"enableMathOcr\": ENABLE MATH OCR , } }, \"individualPageSelector\" { \"pages\": [ INDIVIDUAL PAGES ] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableSelectionMarkDetection to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"premiumFeatures\" : { \"enableSelectionMarkDetection\" : true } } } } Output The checkbox output appears in Document.pages[].visualElements[] with \"type\": \"unfilled checkbox\" or \"type\": \"filled checkbox\" . \"visualElements\" : [ { \"layout\" : { \"confidence\" : 0.89363575 , \"boundingPoly\" : { \"vertices\" : [ { \"x\" : 11 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 56 }, { \"x\" : 11 , \"y\" : 56 } ], \"normalizedVertices\" : [ { \"x\" : 0.017488075 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.9032258 }, { \"x\" : 0.017488075 , \"y\" : 0.9032258 } ] } }, \"type\" : \"unfilled checkbox\" }, { \"layout\" : { \"confidence\" : 0.9148201 , \"boundingPoly\" : ... }, \"type\" : \"filled checkbox\" } ], You can check the full Document JSON output in this link .",
+          "PremiumFeatures ( compute style info = True , enable math ocr = False , # Enable to use Math OCR Model enable selection mark detection = True , ), ) ) Online processing request to Document AI document = process document ( project id , location , processor id , processor version , file path , mime type , process options = process options , ) text = document . text print ( f \"Full document text: { text } \\n \" ) print ( f \"There are { len ( document . pages ) } page(s) in this document. \\n \" ) for page in document . pages : print ( f \"Page { page . page number } :\" ) print page dimensions ( page . dimension ) print detected languages ( page . detected languages ) print blocks ( page . blocks , text ) print paragraphs ( page . paragraphs , text ) print lines ( page . lines , text ) print tokens ( page . tokens , text ) if page . symbols : print symbols ( page . symbols , text ) if page . image quality scores : print image quality scores ( page . image quality scores ) if page . visual elements : print visual elements ( page . visual elements , text ) def print page dimensions ( dimension : documentai ."
+        ]
+      },
+      {
+        "title": "Managing processor versions \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "source_id": "site-docs-root-2",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "ProcessorVersion ; public class SyncListProcessorVersions { public static void main ( String [] args ) throws Exception { syncListProcessorVersions (); } public static void syncListProcessorVersions () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { ListProcessorVersionsRequest request = ListProcessorVersionsRequest . newBuilder () . setParent ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); for ( ProcessorVersion element : documentProcessorServiceClient . listProcessorVersions ( request ). iterateAll ()) { // doThingsWith(element); } } } } Python For more information, see the Document AI Python API reference documentation .",
+          "You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::DocumentAI::V1::ProcessorVersion. p item end end View details about a version Console In the Google Cloud console, in the Document AI section, go to the Processors page.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions\" Select-Object -Expand Content The response contains a list of ProcessorVersions , which contains information about each processor version such as its name , state , and other details. { \"processorVersions\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/pretrained-ocr-v1.1-2022-09-12\", \"displayName\": \"Google Release Candidate\", \"state\": \"DEPLOYED\", \"createTime\": \"2022-09-13T23:39:12.156648Z\", \"googleManaged\": true }, { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/pretrained-ocr-v1.0-2020-09-23\", \"displayName\": \"Google Stable\", \"state\": \"DEPLOYED\", \"createTime\": \"2022-09-12T23:35:09.829557Z\", \"googleManaged\": true, \"deprecationInfo\": { \"deprecationTime\": \"1970-01-01T00:00:00Z\" } } ] } C# For more information, see the Document AI C# API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.documentai.v1 (2.92.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1",
+        "source_id": "site-java-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Page anchors can be cross-page, consist of multiple bounding polygons and optionally com. google. cloud. documentai. v1.",
+          "Page anchors can be cross-page, consist of multiple bounding polygons and optionally com. google. cloud. documentai. v1.",
+          "Individual Page Selector A list of individual page numbers. com. google. cloud. documentai. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1",
+      "documentai.googleapis.com",
+      "v1.0",
+      "v1.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-document-ai/latest/com.google.cloud.documentai.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:28.926Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

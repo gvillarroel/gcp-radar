@@ -1,0 +1,117 @@
+{
+  "feature_name": "Cloud SQL backup migration to AlloyDB",
+  "feature_slug": "cloud-sql-backup-migration-to-alloydb",
+  "summary": "AlloyDB supports migration from Cloud SQL for PostgreSQL by using a Cloud SQL backup, including Google Cloud CLI support; AlloyDB supports setting up clusters by using a copy of a Cloud SQL for PostgreSQL backup.",
+  "extended_definition": "AlloyDB supports migration from Cloud SQL for PostgreSQL by using a Cloud SQL backup, including Google Cloud CLI support; AlloyDB supports setting up clusters by using a copy of a Cloud SQL for PostgreSQL backup.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+      "https://docs.cloud.google.com/alloydb/docs/overview",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automatic and adaptive database features The fully PostgreSQL-compatible database engine that powers every AlloyDB node has several features that continuously analyze the structure and frequency of the queries that your instances handle, using this information to suggest schema improvements or automatically apply optimizations: An index advisor helps you find opportunities to optimize your database schema using new indexes based on your usage patterns.",
+          "AlloyDB is designed for demanding workloads, including: Hybrid Transactional and Analytical Processing (HTAP): run complex analytical queries against your live transactional data without impacting performance or availability.",
+          "You can focus on your data and let AlloyDB handle the following operations: Backups: protect your data with on-demand and automated scheduled backups, and a continuous recovery system that enables point-in-time recovery."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Ready - AlloyDB Partners \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "For advanced database users, DBeaver suggests a powerful SQL editor, plenty of administration features, abilities of data and schema migration, monitoring database connection sessions, and a lot more Partner references Database driver AlloyDB for PostgreSQL Powering AlloyDB with DBeaver Partner Advantage page Direct link Hex Solution Hex Category Advanced Analytics Description Hex is a platform for collaborative analytics and data science.",
+          "Partner references AlloyDB integration with Hightouch Sync data to AlloyDB with Hightouch Sync data from PostgreSQL to AlloyDB Partner Advantage page Direct link Integrate.io Integrate.io ETL Solution Integrate.io ETL Category Data integration and migration Description Integrate.io ETL platform lets organizations integrate, process, and prepare data for analytics on the cloud.",
+          "It is specifically designed to handle complex migrations to PostgreSQL-compatible engines like AlloyDB, automating schema conversion, code remediation, and data validation to accelerate the modernization journey."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"clusterType\" : enum ( ClusterType ) , \"databaseVersion\" : enum ( DatabaseVersion ) , \"networkConfig\" : { object ( NetworkConfig ) } , \"network\" : string , \"etag\" : string , \"annotations\" : { string : string , ... } , \"reconciling\" : boolean , \"initialUser\" : { object ( UserPassword ) } , \"automatedBackupPolicy\" : { object ( AutomatedBackupPolicy ) } , \"sslConfig\" : { object ( SslConfig ) } , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"encryptionInfo\" : { object ( EncryptionInfo ) } , \"continuousBackupConfig\" : { object ( ContinuousBackupConfig ) } , \"continuousBackupInfo\" : { object ( ContinuousBackupInfo ) } , \"secondaryConfig\" : { object ( SecondaryConfig ) } , \"primaryConfig\" : { object ( PrimaryConfig ) } , \"satisfiesPzs\" : boolean , \"pscConfig\" : { object ( PscConfig ) } , \"maintenanceUpdatePolicy\" : { object ( MaintenanceUpdatePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"subscriptionType\" : enum ( SubscriptionType ) , \"trialMetadata\" : { object ( TrialMetadata ) } , \"tags\" : { string : string , ... } , \"backupdrInfo\" : { object ( BackupDrInfo ) } , \"dataplexConfig\" : { object ( DataplexConfig ) } , // Union field source can be only one of the following: \"backupSource\" : { object ( BackupSource ) } , \"migrationSource\" : { object ( MigrationSource ) } , \"cloudsqlBackupRunSource\" : { object ( CloudSQLBackupRunSource ) } , \"backupdrBackupSource\" : { object ( BackupDrBackupSource ) } // End of list of possible types for union field source . // Union field maintenance version can be only one of the following: \"maintenanceVersionSelectionPolicy\" : enum ( MaintenanceVersionSelectionPolicy ) // End of list of possible types for union field maintenance version . } Fields name string Output only.",
+          "The name of the backup resource with the format: projects/{project}/locations/{region}/backups/{backup id} MigrationSource JSON representation { \"hostPort\" : string , \"referenceId\" : string , \"sourceType\" : enum ( MigrationSourceType ) } Fields hostPort string Output only.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback MCP Tools Reference: alloydb Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

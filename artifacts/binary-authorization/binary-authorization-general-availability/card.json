@@ -1,0 +1,171 @@
+{
+  "feature_name": "Binary Authorization General Availability",
+  "feature_slug": "binary-authorization-general-availability",
+  "summary": "Binary Authorization reached General Availability as part of the Anthos platform, with usage included in an Anthos subscription.",
+  "extended_definition": "Binary Authorization reached General Availability as part of the Anthos platform, with usage included in an Anthos subscription.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+      "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+      "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a cluster \\_|\\_ Binary Authorization \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "source_id": "site-iam-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME \\ --location = LOCATION \\ --binauthz-evaluation-mode = POLICY BINDINGS AND PROJECT SINGLETON POLICY ENFORCE \\ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 1 /platforms/gke/policies/ POLICY ID 1 \\ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 2 /platforms/gke/policies/ POLICY ID 2 \\ --project = CLUSTER PROJECT ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME --location = LOCATION --binauthz-evaluation-mode = POLICY BINDINGS AND PROJECT SINGLETON POLICY ENFORCE --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 1 /platforms/gke/policies/ POLICY ID 1 --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 2 /platforms/gke/policies/ POLICY ID 2 ` --project = CLUSTER PROJECT ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME ^ --location = LOCATION ^ --binauthz-evaluation-mode = POLICY BINDINGS AND PROJECT SINGLETON POLICY ENFORCE ^ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 1 /platforms/gke/policies/ POLICY ID 1 ^ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 2 /platforms/gke/policies/ POLICY ID 2 ^ --project = CLUSTER PROJECT ID Important: The cluster creation process does not check the validity or existence of the provided platform policies.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME \\ --location = LOCATION \\ --binauthz-evaluation-mode = POLICY BINDINGS \\ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 1 /platforms/gke/policies/ POLICY ID 1 \\ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 2 /platforms/gke/policies/ POLICY ID 2 \\ --project = CLUSTER PROJECT ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME --location = LOCATION --binauthz-evaluation-mode = POLICY BINDINGS --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 1 /platforms/gke/policies/ POLICY ID 1 --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 2 /platforms/gke/policies/ POLICY ID 2 --project = CLUSTER PROJECT ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME ^ --location = LOCATION ^ --binauthz-evaluation-mode = POLICY BINDINGS ^ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 1 /platforms/gke/policies/ POLICY ID 1 ^ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID 2 /platforms/gke/policies/ POLICY ID 2 ^ --project = CLUSTER PROJECT ID Important: The cluster creation process does not check the validity or existence of the provided platform policies.",
+          "Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME \\ --location = LOCATION \\ --binauthz-evaluation-mode = POLICY BINDINGS AND PROJECT SINGLETON POLICY ENFORCE \\ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID /platforms/gke/policies/ POLICY ID \\ --project = CLUSTER PROJECT ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME --location = LOCATION --binauthz-evaluation-mode = POLICY BINDINGS AND PROJECT SINGLETON POLICY ENFORCE --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID /platforms/gke/policies/ POLICY ID --project = CLUSTER PROJECT ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud beta container clusters create CLUSTER NAME ^ --location = LOCATION ^ --binauthz-evaluation-mode = POLICY BINDINGS AND PROJECT SINGLETON POLICY ENFORCE ^ --binauthz-policy-bindings = name = projects/ POLICY PROJECT ID /platforms/gke/policies/ POLICY ID ^ --project = CLUSTER PROJECT ID Important: The cluster creation process does not check the validity or existence of the provided platform policies."
+        ]
+      },
+      {
+        "title": "\"Configure a policy using the Google Cloud console \\_|\\_ Binary Authorization\\",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: This page describes how to configure a policy for the container-based platforms that Binary Authorization supports, including Google Kubernetes Engine (GKE), Distributed Cloud, Cloud Run, and Cloud Service Mesh.",
+          "Enable Binary Authorization for your platform: Google Kubernetes Engine (GKE) users : Create a cluster with Binary Authorization enabled .",
+          "Policy settings, such as rule type, rule parameters, and parameter format can vary depending on the platforms you use."
+        ]
+      },
+      {
+        "title": "\"Get started using the Google Cloud console (GKE) \\_|\\_ Binary Authorization\\",
+        "url": "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console",
+        "source_id": "site-docs-root",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "Objectives In this tutorial, you learn how to: Create a (GKE) cluster with Binary Authorization enabled Create an attestor that the Binary Authorization enforcer uses to verify the signature on an attestation Configure a policy that requires an attestation Create a cryptographic key pair to sign attestations and later verify them Sign a container image digest, creating a signature Create an attestation using the signature Test the policy by deploying a container image to GKE Costs In this document, you use the following billable components of Google Cloud: Artifact Registry Binary Authorization GKE Optional: Cloud Key Management Service To generate a cost estimate based on your projected usage, use the pricing calculator .",
+          "Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/binary-authorization/docs/creating-cluster",
+        "https://docs.cloud.google.com/binary-authorization/docs/configuring-policy-console",
+        "https://docs.cloud.google.com/binary-authorization/docs/getting-started-console"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:06.989Z",
+  "source_step08_card": "data/step-08/current/products/binary-authorization/card.json",
+  "product_name": "Binary Authorization",
+  "product_slug": "binary-authorization"
+}

@@ -1,0 +1,154 @@
+{
+  "feature_name": "Autoscaler recommendation reasoning details",
+  "feature_slug": "autoscaler-recommendation-reasoning-details",
+  "summary": "Dataproc exposes autoscaler recommendation reasoning details in Cloud Logging logs.",
+  "extended_definition": "Dataproc exposes autoscaler recommendation reasoning details in Cloud Logging logs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging",
+      "https://docs.cloud.google.com/dataproc/docs/guides/logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managed Service for Apache Spark logs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "source_id": "site-iam-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Log Type Log Name Description Notes Master daemon logs hadoop-hdfs hadoop-hdfs-namenode hadoop-hdfs-secondarynamenode hadoop-hdfs-zkfc hadoop-yarn-resourcemanager hadoop-yarn-timelineserver hive-metastore hive-server2 hadoop-mapred-historyserver zookeeper Journal node HDFS namenode HDFS secondary namenode Zookeeper failover controller YARN resource manager YARN timeline server Hive metastore Hive server2 Mapreduce job history server Zookeeper server Worker daemon logs hadoop-hdfs-datanode hadoop-yarn-nodemanager HDFS datanode YARN nodemanager System logs autoscaler google.dataproc.agent google.dataproc.startup Managed Service for Apache Spark autoscaler log Managed Service for Apache Spark agent log Managed Service for Apache Spark startup script log + initialization action log Extended (additional) logs knox gateway-audit zeppelin ranger-usersync jupyter notebook jupyter kernel gateway spark-history-server All logs inside /var/log/ subdirectories matching: knox (includes gateway-audit.log) zeppelin ranger-usersync jupyter notebook jupyter kernel gateway spark-history-server Setting the dataproc:dataproc.logging.extended.enabled=false property disables the collection of extended logs on the cluster VM syslogs syslog Syslogs from cluster's master and worker nodes Setting the dataproc:dataproc.logging.syslog.enabled=false property disables the collection of VM syslogs on the cluster Access cluster logs in Cloud Logging You can access Managed Service for Apache Spark cluster logs using the Logs Explorer , the gcloud logging command, or the Logging API .",
+          "The following command uses cluster labels to filter the returned log entries. gcloud logging read <<'EOF' \"resource.type=cloud dataproc cluster resource.labels.region= cluster-region resource.labels.cluster name= cluster-name resource.labels.cluster uuid= cluster-uuid \" EOF Sample output (partial): jsonPayload: class: org.apache.hadoop.yarn.server.resourcemanager.ResourceTrackerService filename: hadoop-yarn-resourcemanager-cluster-name-m.log ... logName: projects/project-id/logs/hadoop-yarn-resourcemanager --- jsonPayload: class: org.apache.hadoop.yarn.server.resourcemanager.ResourceTrackerService filename: hadoop-yarn-resourcemanager-component-gateway-cluster-m.log ... logName: projects/project-id/logs/hadoop-yarn-resourcemanager Run gcloud dataproc clusters describe cluster-name --region= region to list cluster labels that you can use to filter logging results.",
+          "The following command uses cluster labels to filter the returned log entries. gcloud logging read \\ \"resource.type=cloud dataproc job \\ resource.labels.region= cluster-region \\ resource.labels.job id= my-job-id \" Sample output (partial): jsonPayload: class: org.apache.hadoop.hdfs.StateChange filename: hadoop-hdfs-namenode-test-dataproc-resize-cluster-20190410-38an-m-0.log ,,, logName: projects/project-id/logs/hadoop-hdfs-namenode --- jsonPayload: class: SecurityLogger.org.apache.hadoop.security.authorize.ServiceAuthorizationManager filename: cluster-name-dataproc-resize-cluster-20190410-38an-m-0.log ... logName: projects/google.com:hadoop-cloud-dev/logs/hadoop-hdfs-namenode REST API You can use the Logging REST API to list log entries (see entries.list )."
+        ]
+      },
+      {
+        "title": "Cloud Logging \\_|\\_ Dataproc Metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 99,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Console In the Google Cloud console, go to the Cloud Logging > Logs (Logs Explorer) page: Go to the Logs Explorer page Select an existing Dataproc Metastore Google Cloud project.",
+          "Access job logs in Logging When you run Dataproc Metastore, a Hive metastore process output is streamed to the Google Cloud console.",
+          "Dataproc Metastore service logs in Logging Dataproc Metastore exports request and system logs to Cloud Logging."
+        ]
+      },
+      {
+        "title": "\"Enable GKE logging \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging",
+        "source_id": "site-docs-root",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can search for Spark driver and executor logs in Cloud Logging using the following labels: dataproc.googleapis.com/cluster-uuid = Managed Service for Apache Spark cluster UUID dataproc.googleapis.com/job-uuid = Managed Service for Apache Spark job UUID dataproc.googleapis.com/role Sample queries: labels.\"k8s-pod/dataproc googleapis com/cluster-uuid\"=\" Managed Service for Apache Spark cluster UUID \" labels.\"k8s-pod/dataproc googleapis com/job-uuid\"=\" Managed Service for Apache Spark job UUID \" labels.\"k8s-pod/dataproc googleapis com/role\"=\"driver\" What's next Learn how to access Managed Service for Apache Spark on GKE job and cluster logs in Logging .",
+          "Job driver logs See Managed Service for Apache Spark job logs in Logging for information on configuring and viewing Managed Service for Apache Spark on GKE Spark job driver logs.",
+          "Cloud Logging Enable Logging to view, search, filter, and archive Managed Service for Apache Spark on GKE logs in Cloud Logging."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "audit.log",
+      "dataproc.googleapis.com",
+      "dataproc.job.driver",
+      "dataproc.job.yarn.container",
+      "dataproc.logging.extended.enabled",
+      "dataproc.logging.syslog.enabled",
+      "entries.list",
+      "m.log",
+      "org.apache.hadoop.hdfs.StateChange",
+      "org.apache.hadoop.security.authorize.ServiceAuthorizationManager",
+      "org.apache.hadoop.yarn.server.resourcemanager.ResourceTrackerService",
+      "resource.labels.cluster",
+      "resource.labels.job",
+      "resource.labels.region",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/logging",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

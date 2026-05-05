@@ -1,0 +1,152 @@
+{
+  "feature_name": "maintenance windows",
+  "feature_slug": "maintenance-windows",
+  "summary": "You can find and set maintenance windows for Memorystore for Redis Cluster; Memorystore for Redis Cluster supports maintenance windows in Preview.",
+  "extended_definition": "You can find and set maintenance windows for Memorystore for Redis Cluster; Memorystore for Redis Cluster supports maintenance windows in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+      "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About maintenance \\_|\\_ Memorystore for Redis Cluster \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Upcoming maintenance notifications To ensure you stay informed about maintenance events on your cluster, you can set up email notifications regarding upcoming maintenance at least one week before it's scheduled.",
+          "After you schedule maintenance for your cluster, you can either start the update for your cluster immediately or defer the update for up to two weeks from the originally scheduled maintenance date and time.",
+          "After you configure a maintenance window for a cluster, Memorystore for Redis Cluster schedules automatic maintenance in the future according to the preferences that you set for maintenance windows."
+        ]
+      },
+      {
+        "title": "\"About cross-region replication \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Settings that a secondary cluster copies from the primary cluster When you create a secondary cluster, this cluster copies the following settings from the primary cluster: Shard count IAM authentication mode In-transit encryption mode Cluster configurations Redis version Node type Persistence mode Override default settings When you create a secondary cluster, you can use the following settings to override the default settings: Zone distribution configuration Replica count Maintenance windows Deletion protection Automated backups Update cluster settings When you update the settings for your cluster in Memorystore for Redis Cluster, you can change some settings only on the primary cluster.",
+          "Shard count Cluster configurations Persistence mode Redis version Node type Configure local settings You configure the following settings locally: Deletion protection Replica count Maintenance windows Cluster endpoints Automated backups Best practices for switching primary and secondary clusters When you perform a switchover , we recommend that you follow the instructions in this section.",
+          "You can perform a switchover for the following reasons: Test your disaster recovery setup Switch over during an actual disaster recovery scenario Perform a migration of your workload After you complete the switchover, Memorystore for Redis Cluster reverses the direction of replication."
+        ]
+      },
+      {
+        "title": "\"High availability and replicas \\_|\\_ Memorystore for Redis Cluster \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using recommended best practices allows your OSS Redis client to automatically and gracefully handle the role (automatic failovers), and slot assignment changes (node replacement, consumer scale out/in) for your cluster without any downtime.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Cluster Guides Send feedback High availability and replicas Stay organized with collections Save and categorize content based on your preferences.",
+          "Failover and node repair duration Automatic failovers can take time on the order of tens of seconds for unplanned events such as a primary node process crash, or a hardware failure."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis Cluster\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance",
+        "source_id": "site-api-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you use the default HTTP mapping, the name should be a resource name ending with operations/{unique id} . metadata object { createTime : The time the operation was created. endTime : The time the operation finished running. target : Server-defined resource path for the target of the operation. verb : Name of the verb executed by the operation. statusDetail : Human-readable status of the operation, if any. cancelRequested : Identifies whether the user has requested cancellation of the operation.",
+          "All type URL strings must be legal URI references with the additional restriction (for the text format) that the content of the reference must consist only of alphanumeric characters, percent-encoded escapes, and characters in the following set (not including the outer backticks): /-. !$&() +,;= .",
+          "Example: type.googleapis.com/google.protobuf.StringValue This string must contain at least one / character, and the content after the last / must be the fully-qualified name of the type in canonical form, without a leading dot."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-maintenance",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/about-cross-region-replication",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/ha-and-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/cluster/reference/mcp/tools_list/reschedule_cluster_maintenance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.228Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis-cluster/card.json",
+  "product_name": "Memorystore for Redis Cluster",
+  "product_slug": "memorystore-for-redis-cluster"
+}

@@ -1,0 +1,106 @@
+{
+  "feature_name": "Logging for Network Load Balancing and Internal TCP/UDP Load Balancing",
+  "feature_slug": "logging-for-network-load-balancing-and-internal-tcp-udp-load-balancing",
+  "summary": "Network Load Balancing and Internal TCP/UDP Load Balancing support logging.",
+  "extended_definition": "Network Load Balancing and Internal TCP/UDP Load Balancing support logging.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Regional external passthrough Network Load Balancer logging and monitoring\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example API requests Get all bytes sent from all regional external passthrough Network Load Balancers in the project during 12:00-12:02 PM UTC on 2019-07-01 with 1m aggregates. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/egress bytes count\" interval.start time: 2019-07-01T12:00:00Z interval.end time: 2019-07-01T12:02:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.perSeriesAligner: ALIGN SUM Get median RTT measurement over all regional external passthrough Network Load Balancers in the project during 12:19-12:20 PM UTC on 2019-07-01, broken down by client country. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/rtt latencies\" interval.start time: 2019-07-01T12:19:00Z interval.end time: 2019-07-01T12:20:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.groupByFields: metric.label.client country aggregation.perSeriesAligner: ALIGN PERCENTILE 50 Get total bytes from a specific regional external passthrough Network Load Balancer during 12:19-12:20 PM UTC on 2019-07-01, broken down by endpoint zone and client continent. timeSeries.list parameters: name: projects/ PROJECT ID Filter: resource.type = \"tcp lb rule\" AND resource.label.load balancer name = \"netlb-bs-1\" AND metric.name=\"loadbalancing.googleapis.com/l3/external/ingress bytes count\" interval.start time: 2019-07-01T12:19:00Z interval.end time: 2017-07-01T12:20:00Z aggregation.alignmentPeriod: 60s aggregation.crossSeriesReducer: REDUCE SUM aggregation.groupByFields: metric.label.client continent aggregation.groupByFields: resource.label.endpoint zone aggregation.perSeriesAligner: ALIGN SUM What's next Read conceptual information about regional external passthrough Network Load Balancers Set up a regional external passthrough Network Load Balancer Read about Monitoring Metrics, time series, and resources Read about forwarding rules Read about troubleshoot logging issues Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Networking Load Balancing Guides Send feedback Regional external passthrough Network Load Balancer logging and monitoring Stay organized with collections Save and categorize content based on your preferences.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /backendServices Exclude all optional fields { \"name\": \" BACKEND SERVICE \", \"loadBalancingScheme\": \"EXTERNAL\", \"logConfig\": { \"enable\": true, \"sampleRate\": SAMPLE RATE } } Include all optional fields { \"name\": \" BACKEND SERVICE \", \"loadBalancingScheme\": \"EXTERNAL\", \"logConfig\": { \"enable\": true, \"sampleRate\": SAMPLE RATE , \"optionalMode\": \"INCLUDE ALL OPTIONAL\" } } Include a custom list of optional fields { \"name\": \" BACKEND SERVICE \", \"loadBalancingScheme\": \"EXTERNAL\", \"logConfig\": { \"enable\": true, \"sampleRate\": SAMPLE RATE , \"optionalMode\": \"CUSTOM\", \"optionalFields\": [\"field1\",\"field2\",...] } } Enable logging on an existing backend service Console In the Google Cloud console, go to the Load balancing page."
+        ]
+      },
+      {
+        "title": "\"Internal passthrough Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "An internal passthrough Network Load Balancer doesn't support the following: Backend VMs in multiple regions Balancing traffic that originates from the internet, unless you're using it with an external load balancer IPv6 packets with fragmented headers Internal IP address Internal passthrough Network Load Balancers support IPv4-only, dual-stack, and IPv6-only subnets.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Internal passthrough Network Load Balancer overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Protocols, scheme, and scope Each internal passthrough Network Load Balancer supports the following: One backend service with load balancing scheme INTERNAL and a supported protocol."
+        ]
+      },
+      {
+        "title": "\"Health check logging information \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-logging",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Load Balancing Guides Send feedback Health check logging information Stay organized with collections Save and categorize content based on your preferences.",
+          "Find all health check results for a particular instance group logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fhealthchecks\" AND resource.type=\"gce instance group\" AND resource.labels.instance group name=\" INSTANCE GROUP NAME \" Find all health check results for a particular NEG logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fhealthchecks\" AND resource.type=\"gce network endpoint group\" AND resource.labels.network endpoint group id=\" ENDPOINT GROUP ID \" Find all health check transitions for backend instance IP address 10.128.15.201 logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fhealthchecks\" jsonPayload.healthCheckProbeResult.ipAddress=\"10.128.15.201\" Find all endpoints that were previously HEALTHY but now TIMEOUT logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fhealthchecks\" jsonPayload.healthCheckProbeResult.previousDetailedHealthState=\"HEALTHY\" jsonPayload.healthCheckProbeResult.detailedHealthState=\"TIMEOUT\" Find health logs from a specific time range logName=\"projects/ PROJECT ID /logs/compute.googleapis.com%2Fhealthchecks\" timestamp>\"2019-02-14T02:20:00.0Z\" timestamp Limitations Logs are generated for endpoint health transition only.",
+          "Terraform To create a health check for different protocols with logging, use the google compute health check resource . resource \"google compute health check\" \"health check tcp with logging\" { provider = google-beta name = \"health-check-tcp\" timeout sec = 1 check interval sec = 1 tcp health check { port = \"22\" } log config { enable = true } } For a regional load balancer, use the google compute region health check resource ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aggregation.alignmentPeriod",
+      "aggregation.crossSeriesReducer",
+      "aggregation.groupByFields",
+      "aggregation.perSeriesAligner",
+      "compute.googleapis.com",
+      "interval.end",
+      "interval.start",
+      "loadbalancing.googleapis.com",
+      "metric.label.client",
+      "metric.name",
+      "resource.label.endpoint",
+      "resource.label.load",
+      "resource.labels.instance",
+      "resource.labels.network",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/network/networklb-monitoring",
+        "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

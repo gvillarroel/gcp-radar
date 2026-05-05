@@ -1,0 +1,138 @@
+{
+  "feature_name": "Read pool autoscaling",
+  "feature_slug": "read-pool-autoscaling",
+  "summary": "Read pool autoscaling automatically scales Cloud SQL for PostgreSQL read pools based on CPU usage or client connection thresholds.",
+  "extended_definition": "Read pool autoscaling automatically scales Cloud SQL for PostgreSQL read pools based on CPU usage or client connection thresholds.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+      "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About read pools \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "source_id": "site-iam-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Create and manage read pools Read pool autoscaling Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Read pool autoscaling To see how to configure your read pool to automatically resize to adapt to your application's changing workload needs, see Read pool autoscaling .",
+          "In addition to operations that aren't supported on read replicas, the following operations aren't supported on read pools: Enable and disable replication Promote replica Restart Import Export Failover Re-encrypt Clone SSL/TLS certificates with shared CA or customer-managed CA can't be used with a read pool."
+        ]
+      },
+      {
+        "title": "\"REST Resource: instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "The list of settings for requested automatically-setup Private Service Connect (PSC) consumer endpoints that can be used to connect to this read pool node. name string Output only.",
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource."
+        ]
+      },
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "source_id": "site-iam-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "The list of settings for requested automatically-setup Private Service Connect (PSC) consumer endpoints that can be used to connect to this read pool node. name string Output only.",
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/about-read-pools",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/instances",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/rest/v1/instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

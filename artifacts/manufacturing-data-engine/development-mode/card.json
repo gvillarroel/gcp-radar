@@ -1,0 +1,126 @@
+{
+  "feature_name": "Development Mode",
+  "feature_slug": "development-mode",
+  "summary": "Allows deletion of MDE entities and configuration packages for development use.",
+  "extended_definition": "Allows deletion of MDE entities and configuration packages for development use.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/development-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Development mode \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/development-mode",
+        "source_id": "site-docs-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After enabling the Development Mode the following actions are allowed: MDE entities (types, message classes, parsers, metadata buckets and file ingestion especifications) can be deleted.",
+          "If any of these actions are triggered in Production Mode ( Development Mode is disabled), you will receive an error similar to this: 412 - The system is not in development mode and no delete operations can be executed.",
+          "Starting on v1.5.0, Manufacturing Data Engine (MDE) has a Development Mode to protect the deployment from involuntary changes that could have an impact on the configuration of the system."
+        ]
+      },
+      {
+        "title": "\"Model records and metadata \\_|\\_ Manufacturing Data Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data",
+        "source_id": "site-docs-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, while attributes of the machine to which the tag belongs to (for example, the manufacturer of a sensor installed in the machine) could be modelled in two separate buckets (tag bucket and machine bucket), it's generally better to model such hierarchical relationships in a single bucket.",
+          "Modelling types Types describe semantically and structurally similar records that you want to store together and describe with a common set of metadata, and for which you want to establish a common constraint on the data field.",
+          "General recommendations Before starting with metadata modeling, you should understand the following: The data consumption needs of downstream users ."
+        ]
+      },
+      {
+        "title": "Package lifecycle \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle",
+        "source_id": "site-docs-reference",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete an existing configuration package Starting in v1.5.0, MDE supports an environment flag that can change the environment to development mode , which lets you delete configuration entities and delete configuration packages.",
+          "After the package is uploaded, MDE will process it by running the following stages: Validation : In this stage, MDE validates the contents of the package, it ensures that all the files are syntactically correct and that they are in the right place.",
+          "Activation : In this stage MDE activates the configuration and makes it visible to the rest of the environment users."
+        ]
+      },
+      {
+        "title": "\"Use the LookML Library \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the LookML Library The LookML Library for MDE provides abstract core files, and packaged views, explores and dashboards to help you get started with building your own LookML models on top of the MDE data in BigQuery.",
+          "The following example shows how you can extend the base view to define a dimension called device : include : \"//mde lookml lib/mde abstract core/views/dimension/ .view\" view : dim source { derived table : { sql : SELECT FROM mde dimension.metadata-store where bucket number = BUCKET NUMBER ;; } view label : \"DIM - Device\" extends : [ dim base ] dimension : device name { type : string sql : JSON VALUE(${TABLE}.instance,\"$.device name\") ;; } } And, similarly, the library provides base views per MDE archetype for modeling record tables in BigQuery as fact tables.",
+          "If you used the MDE Project Template to bootstrap a new MDE project, the provided Looker model automatically imports the views and explores from the default package: connection : \"@{looker connection}\" DEFAULT MDE EXPLORES ########## include : \"//mde lookml lib/mde packages/default/explores/default.explore.lkml\" CUSTOM VIEWS ################ include : \"/views/dimension/ .view\" include : \"/views/fact/ .view\" Once your project is set up, you can use the default default explores in Looker to analyze data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "default.explore.lkml",
+      "dimension.metadata",
+      "v1.5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/development-mode",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/development-mode",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/operate/development-mode",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-model-data",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/configuration/lifecycle",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/analyze/how-to-use-the-mde-lookml-lib"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.810Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine"
+}

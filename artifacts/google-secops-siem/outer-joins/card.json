@@ -1,0 +1,92 @@
+{
+  "feature_name": "Outer joins",
+  "feature_slug": "outer-joins",
+  "summary": "Left and right outer joins return unmatched records from the primary source with null values for missing fields.",
+  "extended_definition": "Left and right outer joins return unmatched records from the primary source with null values for missing fields.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Explore the alert overview tab \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "source_id": "site-api-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "When searching Values , UDM Lookup does not return matches in the following cases: Matches in the following UDM fields: metadata.product log id network.session id security result.rule id network.parent session id Matches in UDM fields with a full path that ends in one of the following values: .pid For example target.process.pid . .asset id For example principal.asset id . .product specific process id For example principal.process.product specific process id . .resource.id For example principal.resource.id .",
+          "Searching for text in Values returns results as follows: If the string is found at the beginning or end of the value, it is highlighted in the result, along with the UDM field name and the log ingestion time.",
+          "You can summarize by the following options: sum count count distinct average stddev min max Specify a value of Event count to return the number of events identified for this particular search and Pivot Table."
+        ]
+      },
+      {
+        "title": "\"Explore the Playbooks page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "source_id": "site-api-reference",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metadata.product",
+      "network.parent",
+      "network.session",
+      "principal.asset",
+      "principal.process.product",
+      "principal.resource.id",
+      "resource.id",
+      "result.rule",
+      "target.process.pid"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

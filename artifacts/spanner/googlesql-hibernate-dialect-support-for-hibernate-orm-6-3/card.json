@@ -1,0 +1,92 @@
+{
+  "feature_name": "GoogleSQL Hibernate dialect support for Hibernate ORM 6.3",
+  "feature_slug": "googlesql-hibernate-dialect-support-for-hibernate-orm-6-3",
+  "summary": "Spanner now supports Hibernate ORM 6.3 via the GoogleSQL Hibernate dialect.",
+  "extended_definition": "Spanner now supports Hibernate ORM 6.3 via the GoogleSQL Hibernate dialect.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/choose-googlesql-or-postgres",
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dialect parity between GoogleSQL and PostgreSQL \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer id BIGINT PRIMARY KEY, first name VARCHAR(1024), last name VARCHAR(1024), singer info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed rows AS ( SELECT , ABS(MOD(spanner.farm fingerprint( CONCAT( singer id::text, first name, last name, singer info::text ) ), 100)) AS hash value FROM singers ) -- Sample data SELECT FROM hashed rows WHERE hash value < 10 -- sample roughly 10% LIMIT 10; / Optional: LIMIT to a max of 10 rows to be returned / VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x x - 1)); APPROX COSINE DISTANCE No recommendation available.",
+          "Home Documentation Databases Spanner Reference Send feedback Dialect parity between GoogleSQL and PostgreSQL Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes the dialect differences between GoogleSQL and PostgreSQL and offers recommendations for using PostgreSQL approaches for specific GoogleSQL features."
+        ]
+      },
+      {
+        "title": "\"Choosing the Right Dialect for Your Spanner Database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/choose-googlesql-or-postgres",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Spanner implementation of GoogleSQL and the PostgreSQL interface: Feature parity: Both GoogleSQL and PostgreSQL dialects provide equivalent support for Spanner's unique features, such as interleaved tables and query hints.",
+          "Familiarity: if your team is already familiar with either PostgreSQL or GoogleSQL syntax and tools, choosing that dialect can streamline development and reduce the learning curve.",
+          "This page lists the deciding factors between using GoogleSQL and PostgreSQL interface dialect databases."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Spanner Reference Send feedback Information schema for GoogleSQL-dialect databases Stay organized with collections Save and categorize content based on your preferences.",
+          "Tables in the INFORMATION SCHEMA The following sections describe the tables in the INFORMATION SCHEMA for GoogleSQL-dialect databases.",
+          "If you are using a PostgreSQL-dialect database, see Information schema for PostgreSQL-dialect databases ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spanner.farm"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/choose-googlesql-or-postgres",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

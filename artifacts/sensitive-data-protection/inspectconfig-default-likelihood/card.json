@@ -1,0 +1,108 @@
+{
+  "feature_name": "InspectConfig default likelihood",
+  "feature_slug": "inspectconfig-default-likelihood",
+  "summary": "InspectConfig applies a default likelihood so findings below POSSIBLE are excluded automatically.",
+  "extended_definition": "InspectConfig applies a default likelihood so findings below POSSIBLE are excluded automatically.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "InspectConfig \\_|\\_ Sensitive Data Protection \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "source_id": "site-api-reference",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"likelihoodAdjustment\" : { object ( LikelihoodAdjustment ) } , // Union field conditions can be only one of the following: \"adjustByMatchingInfoTypes\" : { object ( AdjustByMatchingInfoTypes ) } , \"adjustByImageFindings\" : { object ( AdjustByImageFindings ) } // End of list of possible types for union field conditions . } Fields likelihoodAdjustment object ( LikelihoodAdjustment ) Likelihood adjustment to apply to the infoType.",
+          "If you need precise control and predictability as to what detectors are run you should specify specific InfoTypes listed in the reference, otherwise a default list will be used, which may change over time. minLikelihood enum ( Likelihood ) Only returns findings equal to or above this threshold.",
+          "If this field is not set, the system uses the InspectConfig minLikelihood. limits object ( FindingLimits ) Configuration to control the number of findings returned."
+        ]
+      },
+      {
+        "title": "\"Creating and scheduling Sensitive Data Protection inspection jobs \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON output: { \"jobTriggers\" : [ { \"name\":\"projects/[PROJECT ID ]/ jobTriggers /[ JOB TRIGGER NAME ] \", \" displayName \":\" JobTrigger1 \", \" description \":\" Starts an inspection of a Datastore kind \", \" inspectJob \":{ \" storageConfig \":{ \" datastoreOptions \":{ \" partitionId \":{ \" projectId \":\" [ PROJECT ID ] \", \" namespaceId \":\" [ NAMESPACE ID ] \" }, \" kind \":{ \" name \":\" Example - Kind \" } } }, \" inspectConfig \":{ \" infoTypes \":[ { \" name \":\" PHONE NUMBER \" } ], \" minLikelihood \":\" LIKELY \", \" limits \":{ }, \" includeQuote \":true }, \" actions \":[ { \" saveFindings \":{ \" outputConfig \":{ \" table \":{ \" projectId \":\" [ PROJECT ID ] \", \" datasetId \":\" [ BIGQUERY DATASET NAME ] \", \" tableId \":\" [ BIGQUERY TABLE NAME ] \" } } } } ] }, \" triggers \":[ { \" schedule \":{ \" recurrencePeriodDuration \":\" 86400 s \" } } ], \" createTime \":\" 2018 - 11 - 30 T01 : 52 : 41.171857 Z \", \" updateTime \":\" 2018 - 11 - 30 T01 : 52 : 41.171857 Z \", \" status \":\" HEALTHY \" }, ... ], \" nextPageToken \":\" KkwKCQjivJ2UpPreAgo Kj1wcm9qZWN0cy92ZWx2ZXR5LXN0dWR5LTE5NjEwMS9qb2JUcmlnZ2Vycy8xNTA5NzEyOTczMDI0MDc1NzY0 \" } To quickly try this out, you can use the API Explorer that's embedded below.",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\CloudStorageOptions; use Google\\Cloud\\Dlp\\V2\\CloudStorageOptions\\FileSet; use Google\\Cloud\\Dlp\\V2\\CreateJobTriggerRequest; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectConfig\\FindingLimits; use Google\\Cloud\\Dlp\\V2\\InspectJobConfig; use Google\\Cloud\\Dlp\\V2\\JobTrigger; use Google\\Cloud\\Dlp\\V2\\JobTrigger\\Status; use Google\\Cloud\\Dlp\\V2\\JobTrigger\\Trigger; use Google\\Cloud\\Dlp\\V2\\Likelihood; use Google\\Cloud\\Dlp\\V2\\Schedule; use Google\\Cloud\\Dlp\\V2\\StorageConfig; use Google\\Cloud\\Dlp\\V2\\StorageConfig\\TimespanConfig; use Google\\Protobuf\\Duration; / Create a Data Loss Prevention API job trigger. @param string $callingProjectId The project ID to run the API call under @param string $bucketName The name of the bucket to scan @param string $triggerId (Optional) The name of the trigger to be created @param string $displayName (Optional) The human-readable name to give the trigger @param string $description (Optional) A description for the trigger to be created @param int $scanPeriod (Optional) How often to wait between scans, in days (minimum = 1 day) @param bool $autoPopulateTimespan (Optional) Automatically limit scan to new content only @param int $maxFindings (Optional) The maximum number of findings to report per request (0 = server maximum) / function create trigger( string $callingProjectId, string $bucketName, string $triggerId, string $displayName, string $description, int $scanPeriod, bool $autoPopulateTimespan, int $maxFindings ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // ----- Construct job config ----- // The infoTypes of information to match $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$personNameInfoType, $phoneNumberInfoType]; // The minimum likelihood required before returning a match $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // Specify finding limits $limits = (new FindingLimits()) ->setMaxFindingsPerRequest($maxFindings); // Create the inspectConfig object $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes); // Create triggers $duration = (new Duration()) ->setSeconds($scanPeriod 60 60 24); $schedule = (new Schedule()) ->setRecurrencePeriodDuration($duration); $triggerObject = (new Trigger()) ->setSchedule($schedule); // Create the storageConfig object $fileSet = (new FileSet()) ->setUrl('gs://' . $bucketName . '/ '); $storageOptions = (new CloudStorageOptions()) ->setFileSet($fileSet); // Auto-populate start and end times in order to scan new objects only. $timespanConfig = (new TimespanConfig()) ->setEnableAutoPopulationOfTimespanConfig($autoPopulateTimespan); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions($storageOptions) ->setTimespanConfig($timespanConfig); // Construct the jobConfig object $jobConfig = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig); // ----- Construct trigger object ----- $jobTriggerObject = (new JobTrigger()) ->setTriggers([$triggerObject]) ->setInspectJob($jobConfig) ->setStatus(Status::HEALTHY) ->setDisplayName($displayName) ->setDescription($description); // Run trigger creation request $parent = $dlp->locationName($callingProjectId, 'global'); $createJobTriggerRequest = (new CreateJobTriggerRequest()) ->setParent($parent) ->setJobTrigger($jobTriggerObject) ->setTriggerId($triggerId); $trigger = $dlp->createJobTrigger($createJobTriggerRequest); // Print results printf('Successfully created trigger %s' .",
+          "Example : gs://GOOGLE STORAGE BUCKET NAME/dlp sample.csv / function create job( string $callingProjectId, string $gcsPath ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // Set autoPopulateTimespan to true to scan only new content. $timespanConfig = (new TimespanConfig()) ->setEnableAutoPopulationOfTimespanConfig(true); // Specify the GCS file to be inspected. $cloudStorageOptions = (new CloudStorageOptions()) ->setFileSet((new FileSet()) ->setUrl($gcsPath)); $storageConfig = (new StorageConfig()) ->setCloudStorageOptions(($cloudStorageOptions)) ->setTimespanConfig($timespanConfig); // ----- Construct inspection config ----- $emailAddressInfoType = (new InfoType()) ->setName('EMAIL ADDRESS'); $personNameInfoType = (new InfoType()) ->setName('PERSON NAME'); $locationInfoType = (new InfoType()) ->setName('LOCATION'); $phoneNumberInfoType = (new InfoType()) ->setName('PHONE NUMBER'); $infoTypes = [$emailAddressInfoType, $personNameInfoType, $locationInfoType, $phoneNumberInfoType]; // Whether to include the matching string in the response. $includeQuote = true; // The minimum likelihood required before returning a match. $minLikelihood = likelihood::LIKELIHOOD UNSPECIFIED; // The maximum number of findings to report (0 = server maximum). $limits = (new FindingLimits()) ->setMaxFindingsPerRequest(100); // Create the Inspect configuration object. $inspectConfig = (new InspectConfig()) ->setMinLikelihood($minLikelihood) ->setLimits($limits) ->setInfoTypes($infoTypes) ->setIncludeQuote($includeQuote); // Specify the action that is triggered when the job completes. $action = (new Action()) ->setPublishSummaryToCscc(new PublishSummaryToCscc()); // Configure the inspection job we want the service to perform. $inspectJobConfig = (new InspectJobConfig()) ->setInspectConfig($inspectConfig) ->setStorageConfig($storageConfig) ->setActions([$action]); // Send the job creation request and process the response. $parent = \"projects/$callingProjectId/locations/global\"; $createDlpJobRequest = (new CreateDlpJobRequest()) ->setParent($parent) ->setInspectJob($inspectJobConfig); $job = $dlp->createDlpJob($createDlpJobRequest); // Print results. printf($job->getName()); } Python To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries ."
+        ]
+      },
+      {
+        "title": "\"Customizing match likelihood \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\ContentItem; use Google\\Cloud\\Dlp\\V2\\CustomInfoType; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\DetectionRule\\HotwordRule; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\DetectionRule\\LikelihoodAdjustment; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\DetectionRule\\Proximity; use Google\\Cloud\\Dlp\\V2\\CustomInfoType\\Regex; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InspectConfig; use Google\\Cloud\\Dlp\\V2\\InspectContentRequest; use Google\\Cloud\\Dlp\\V2\\InspectionRule; use Google\\Cloud\\Dlp\\V2\\InspectionRuleSet; use Google\\Cloud\\Dlp\\V2\\Likelihood; / Inspect data with a hotword rule This sample uses a custom regex with a hotword rule to increase the likelihood of match. @param string $projectId The Google Cloud project id to use as a parent resource. @param string $textToInspect The string to inspect. / function inspect hotword rule( // TODO(developer): Replace sample parameters before running the code. string $projectId, string $textToInspect = \"Patient's MRN 444-5-22222 and just a number 333-2-33333\" ): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify what content you want the service to Inspect. $item = (new ContentItem()) ->setValue($textToInspect); // Specify the regex pattern the inspection will look for. $customRegexPattern = '[1-9]{3}-[1-9]{1}-[1-9]{5}'; $hotwordRegexPattern = '(?i)(mrn medical)(?-i)'; // Construct the custom regex detector. $cMrnDetector = (new InfoType()) ->setName('C MRN'); $customInfoType = (new CustomInfoType()) ->setInfoType($cMrnDetector) ->setLikelihood(Likelihood::POSSIBLE) ->setRegex((new Regex()) ->setPattern($customRegexPattern)); // Specify hotword likelihood adjustment. $likelihoodAdjustment = (new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY LIKELY); // Specify a window around a finding to apply a detection rule. $proximity = (new Proximity()) ->setWindowBefore(10); $hotwordRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern($hotwordRegexPattern)) ->setLikelihoodAdjustment($likelihoodAdjustment) ->setProximity($proximity); // Construct rule set for the inspect config. $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$cMrnDetector]) ->setRules([ (new InspectionRule()) ->setHotwordRule($hotwordRule) ]); // Construct the configuration for the Inspect request. $inspectConfig = (new InspectConfig()) ->setCustomInfoTypes([$customInfoType]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]); // Run request $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' .",
+          "This approach is helpful, for example, if you want to exclude a column of data from inspection results. @param string $projectId The Google Cloud project id to use as a parent resource. / function inspect column values w custom hotwords(string $projectId): void { // Instantiate a client. $dlp = new DlpServiceClient(); $parent = \"projects/$projectId/locations/global\"; // Specify the table to be inspected. $tableToDeIdentify = (new Table()) ->setHeaders([ (new FieldId()) ->setName('Fake Social Security Number'), (new FieldId()) ->setName('Real Social Security Number'), ]) ->setRows([ (new Row())->setValues([ (new Value()) ->setStringValue('111-11-1111'), (new Value()) ->setStringValue('222-22-2222') ]) ]); $item = (new ContentItem()) ->setTable($tableToDeIdentify); // Specify the regex pattern the inspection will look for. $hotwordRegexPattern = 'Fake Social Security Number'; // Specify hotword likelihood adjustment. $likelihoodAdjustment = (new LikelihoodAdjustment()) ->setFixedLikelihood(Likelihood::VERY UNLIKELY); // Specify a window around a finding to apply a detection rule. $proximity = (new Proximity()) ->setWindowBefore(1); // Construct the hotword rule. $hotwordRule = (new HotwordRule()) ->setHotwordRegex((new Regex()) ->setPattern($hotwordRegexPattern)) ->setLikelihoodAdjustment($likelihoodAdjustment) ->setProximity($proximity); // Construct rule set for the inspect config. $infotype = (new InfoType()) ->setName('US SOCIAL SECURITY NUMBER'); $inspectionRuleSet = (new InspectionRuleSet()) ->setInfoTypes([$infotype]) ->setRules([ (new InspectionRule()) ->setHotwordRule($hotwordRule) ]); // Construct the configuration for the Inspect request. $inspectConfig = (new InspectConfig()) ->setInfoTypes([$infotype]) ->setIncludeQuote(true) ->setRuleSet([$inspectionRuleSet]) ->setMinLikelihood(Likelihood::POSSIBLE); // Run request. $inspectContentRequest = (new InspectContentRequest()) ->setParent($parent) ->setInspectConfig($inspectConfig) ->setItem($item); $response = $dlp->inspectContent($inspectContentRequest); // Print the results. $findings = $response->getResult()->getFindings(); if (count($findings) == 0) { printf('No findings.' .",
+          "POSSIBLE , \"include quote\" : True , } Convert the project id into a full resource id. parent = f \"projects/ { project } /locations/global\" Call the API response = dlp . inspect content ( request = { \"parent\" : parent , \"inspect config\" : inspect config , \"item\" : item , } ) Print out the results. if response . result . findings : for finding in response . result . findings : try : if finding . quote : print ( f \"Quote: { finding . quote } \" ) except AttributeError : pass print ( f \"Info type: { finding . info type . name } \" ) print ( f \"Likelihood: { finding . likelihood } \" ) else : print ( \"No findings.\" ) REST JSON input: { \"item\" : { \"table\" : { \"headers\" : [ { \"name\" : \"Fake Social Security Number\" }, { \"name\" : \"Real Social Security Number\" } ], \"rows\" : [ { \"values\" : [ { \"stringValue\" : \"111-11-1111\" }, { \"stringValue\" : \"222-22-2222\" } ] } ] } }, \"inspectConfig\" : { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"includeQuote\" : true , \"ruleSet\" : [ { \"infoTypes\" : [ { \"name\" : \"US SOCIAL SECURITY NUMBER\" } ], \"rules\" : [ { \"hotwordRule\" : { \"hotwordRegex\" : { \"pattern\" : \"(Fake Social Security Number)\" }, \"likelihoodAdjustment\" : { \"fixedLikelihood\" : \"VERY UNLIKELY\" }, \"proximity\" : { \"windowBefore\" : 1 } } } ] } ], \"minLikelihood\" : \"POSSIBLE\" } } JSON output: { \"result\": { \"findings\": [ { \"quote\": \"222-22-2222\", \"infoType\": { \"name\": \"US SOCIAL SECURITY NUMBER\" }, \"likelihood\": \"VERY LIKELY\", \"location\": { \"byteRange\": { \"end\": \"11\" }, \"codepointRange\": { \"end\": \"11\" }, \"contentLocations\": [ { \"recordLocation\": { \"fieldId\": { \"name\": \"Real Social Security Number\" }, \"tableLocation\": {} } } ] }, \"createTime\": \" TIMESTAMP \", \"findingId\": \" TIMESTAMP \" } ] } } The value 111-11-1111, which is in the Fake Social Security Number column, matched the hotword rule, so Sensitive Data Protection assigned to it the VERY UNLIKELY likelihood level ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sample.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/reference/rest/v2/InspectConfig",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes-likelihood"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:50.160Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection"
+}

@@ -1,0 +1,197 @@
+{
+  "feature_name": "Custom metadata label detector",
+  "feature_slug": "custom-metadata-label-detector",
+  "summary": "Detects client-provided metadata labels in content; Detects metadata labels in content.",
+  "extended_definition": "Detects client-provided metadata labels in content; Detects metadata labels in content.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a custom metadata label detector \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 356,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Scan for client-provided metadata To scan for client-provided metadata labels, follow these steps: Create a custom metadata label infoType detector.",
+          "This custom infoType detects a Microsoft Purview Information Protection label that contains the GUID 12345678-9012-3456-7890-123456789012 and is enabled: { \"inspect config\" : { \"custom info types\" : [ { \"info type\" : { \"name\" : \"CUSTOM MIP HIGHLY CONFIDENTIAL\" }, \"likelihood\" : \"VERY LIKELY\" , \"metadata key value expression\" : { \"key regex\" : \"MSIP Label 12345678-9012-3456-7890-123456789012 Enabled\" , \"value regex\" : \"true\" } } ], \"min likelihood\" : \"POSSIBLE\" } } When you use this configuration in an inspection job, Sensitive Data Protection generates a CUSTOM MIP HIGHLY CONFIDENTIAL finding if it finds content where the metadata key MSIP Label 12345678-9012-3456-7890-123456789012 Enabled has the value true .",
+          "The CustomInfoType object has the following properties: { \"inspect config\" : { \"custom info types\" : [ { \"info type\" : { \"name\" : \" CUSTOM METADATA LABEL NAME \" }, \"likelihood\" : \" LIKELIHOOD \" , \"sensitivityScore\" :{ \"score\" : \" SENSITIVITY SCORE \" }, \"metadata key value expression\" : { \"key regex\" : \" KEY REGULAR EXPRESSION \" , \"value regex\" : \" VALUE REGULAR EXPRESSION \" } } ] } } Replace the following: CUSTOM METADATA LABEL NAME : The name to assign to the custom infoType detector."
+        ]
+      },
+      {
+        "title": "De-identifying sensitive data | Sensitive Data Protection | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "De-identifying sensitive data | Sensitive Data Protection | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español Español – América Latina Français Indonesia Italiano Português Português – Brasil 中文 – 简体 中文 – 繁體 日本語 한국어 Sign in Sensitive Data Protection Start free Overview Guides Reference Samples Resources Technology areas More Overview Guides Reference Samples Resources Cross-product tools More Console Discover Product overview Plan your data risk management strategy Evaluate your data risk management needs Learn about your data through discovery and inspection Recommended strategies for mitigating data risk Release notes Pricing Locations Global and regional endpoints for Sensitive Data Protection Sensitive Data Protection locations Specify a processing location Service method types Supported file types and scanning modes Get started Quickstarts Inspect text using the command-line tool Inspect text using a JSON request Schedule an inspection scan Create an inspection template De-identify and re-identify sensitive text Google Cloud Skills Boost labs Detect sensitive data Discover and profile data resources Overview of sensitive data discovery Common discovery enablement scenarios Allow discovery within service perimeters Profile your data Profile a single data resource Profile BigQuery data Estimate BigQuery data profiling cost Estimate the cost of profiling BigQuery data in a project Estimate the cost of profiling BigQuery data in an organization or folder Profile BigQuery data in a project Profile BigQuery data in an organization or folder Profile Cloud SQL data Profile Cloud SQL data in a project Profile Cloud SQL data in an organization or folder Manage connections Profile Cloud Storage data Profile Cloud Storage data in a project Profile Cloud Storage data in an organization or folder Profile Vertex AI data Sensitive data discovery for Vertex AI data Profile Vertex AI data in a project Profile Vertex AI data in an organization or folder Profile Amazon S3 data Sensitive data discovery for Amazon S3 data Profile Amazon S3 data Profile Azure Blob Storage data Report secrets in environment variables to Security Command Center Grant data profiling access to a service agent Manage data profiles Control IAM access to resources based on data sensitivity Send discovery insights to other services Enable discovery actions Send data profiles to Security Command Center Receive and parse Pub/Sub messages about data profiles Tag tables in Data Catalog based on insights from data profiles Add Knowledge Catalog aspects based on insights from data profiles Analyze and visualize data profiles Visualize data profiles in the discovery dashboard Analyze data profiles Remediate findings from the data profiler Manage scan configurations Troubleshoot issues with the data profiler Metrics reference Data risk and sensitivity levels Inspect for sensitive data Inspect data stored in Google Cloud Inspect data from any source Inspect unstructured text synchronously Inspect structured text synchronously Inspect an image synchronously Asynchronous inspection overview Inspect data from any source asynchronously Quote the sensitive data in the results Work with inspection results Actions Send inspection results to Knowledge Catalog as aspects Send inspection results to Data Catalog Send inspection results to Security Command Center Analyze and report on inspection findings Query inspection findings in BigQuery Parse findings stored as Protobuf text Jobs and job triggers Overview of jobs and job triggers Create and manage jobs and job triggers Web-based inspection demonstration app Configure detection Templates Overview of templates Create inspection templates InfoTypes and infoType detectors Overview of infoTypes and infoType detectors Built-in infoType detectors List built-in infoType detectors InfoType detector reference Custom infoType detectors Overview of custom infoType detectors Create a regular custom dictionary detector Create a large custom dictionary detector Create a custom regex detector Create a custom metadata label detector Custom infoType examples Manage infoTypes through the Google Cloud console Modify infoType detectors to refine scan results Match likelihood Likelihood overview Customize match likelihood Mask and de-identify data Overview Transformation methods Transformation reference Text classification and redaction Date shifting Generalization and bucketing Pseudonymization De-identify sensitive data De-identify data stored in Google Cloud Overview Through the Cloud console Through the DLP API Transformation details reference De-identify data from any source De-identify text or tabular content Examples of text redaction Examples of tabular data de-identification Image inspection and redaction Redact sensitive data from images Create a de-identification template Create a wrapped key De-identify BigQuery data at query time De-identification and re-identification of PII in large-scale datasets Redact sensitive data from PDF files Analyze re-identification risk Overview of re-identification risk analysis Re-identification risk analysis techniques Compute k-anonymity for a dataset Compute l-diversity for a dataset Compute k-map for a dataset Compute δ-presence for a dataset Compute numerical and categorical statistics Visualize re-identification risk using Looker Studio Connect to other services Use Sensitive Data Protection with BigQuery Use Sensitive Data Protection with Cloud Storage Use Sensitive Data Protection with Cloud Storage Automate the classification of data uploaded to Cloud Storage Send inspection results to Data Catalog Send inspection results to Security Command Center Monitor your usage with Cloud Monitoring Use Sensitive Data Protection with AWS S3 Use Sensitive Data Protection with JDBC Databases Use Sensitive Data Protection with Apigee Use Sensitive Data Protection with Data Fusion Build a secure anomaly detection solution using Dataflow, BigQuery ML, and Sensitive Data Protection Troubleshoot Troubleshoot issues with the data profiler Control access Authentication IAM roles IAM permissions Control access with VPC Service Controls Monitor Audit logging Monitor your usage with Cloud Monitoring Develop All Sensitive Data Protection code samples AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Cloud Data Loss Prevention (Cloud DLP) is now a part of Sensitive Data Protection.",
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Dlp\\V2\\Client\\DlpServiceClient; use Google\\Cloud\\Dlp\\V2\\ContentItem; use Google\\Cloud\\Dlp\\V2\\CryptoKey; use Google\\Cloud\\Dlp\\V2\\CryptoReplaceFfxFpeConfig; use Google\\Cloud\\Dlp\\V2\\CryptoReplaceFfxFpeConfig\\FfxCommonNativeAlphabet; use Google\\Cloud\\Dlp\\V2\\DeidentifyConfig; use Google\\Cloud\\Dlp\\V2\\DeidentifyContentRequest; use Google\\Cloud\\Dlp\\V2\\InfoType; use Google\\Cloud\\Dlp\\V2\\InfoTypeTransformations; use Google\\Cloud\\Dlp\\V2\\InfoTypeTransformations\\InfoTypeTransformation; use Google\\Cloud\\Dlp\\V2\\KmsWrappedCryptoKey; use Google\\Cloud\\Dlp\\V2\\PrimitiveTransformation; /** * Deidentify a string using Format-Preserving Encryption (FPE). * * @param string $callingProjectId The GCP Project ID to run the API call under * @param string $string The string to deidentify * @param string $keyName The name of the Cloud KMS key used to encrypt (wrap) the AES-256 key * @param string $wrappedKey The name of the Cloud KMS key use, encrypted with the KMS key in $keyName * @param string $surrogateTypeName (Optional) surrogate custom info type to enable reidentification */ function deidentify_fpe( string $callingProjectId, string $string, string $keyName, string $wrappedKey, string $surrogateTypeName = '' ): void { // Instantiate a client. $dlp = new DlpServiceClient(); // The infoTypes of information to mask $ssnInfoType = (new InfoType()) ->setName('US_SOCIAL_SECURITY_NUMBER'); $infoTypes = [$ssnInfoType]; // Create the wrapped crypto key configuration object $kmsWrappedCryptoKey = (new KmsWrappedCryptoKey()) ->setWrappedKey(base64_decode($wrappedKey)) ->setCryptoKeyName($keyName); // The set of characters to replace sensitive ones with // For more information, see https://cloud.google.com/dlp/docs/reference/rest/V2/organizations.deidentifyTemplates#ffxcommonnativealphabet $commonAlphabet = FfxCommonNativeAlphabet::NUMERIC; // Create the crypto key configuration object $cryptoKey = (new CryptoKey()) ->setKmsWrapped($kmsWrappedCryptoKey); // Create the crypto FFX FPE configuration object $cryptoReplaceFfxFpeConfig = (new CryptoReplaceFfxFpeConfig()) ->setCryptoKey($cryptoKey) ->setCommonAlphabet($commonAlphabet); if ($surrogateTypeName) { $surrogateType = (new InfoType()) ->setName($surrogateTypeName); $cryptoReplaceFfxFpeConfig->setSurrogateInfoType($surrogateType); } // Create the information transform configuration objects $primitiveTransformation = (new PrimitiveTransformation()) ->setCryptoReplaceFfxFpeConfig($cryptoReplaceFfxFpeConfig); $infoTypeTransformation = (new InfoTypeTransformation()) ->setPrimitiveTransformation($primitiveTransformation) ->setInfoTypes($infoTypes); $infoTypeTransformations = (new InfoTypeTransformations()) ->setTransformations([$infoTypeTransformation]); // Create the deidentification configuration object $deidentifyConfig = (new DeidentifyConfig()) ->setInfoTypeTransformations($infoTypeTransformations); $content = (new ContentItem()) ->setValue($string); $parent = \"projects/$callingProjectId/locations/global\"; // Run request $deidentifyContentRequest = (new DeidentifyContentRequest()) ->setParent($parent) ->setDeidentifyConfig($deidentifyConfig) ->setItem($content); $response = $dlp->deidentifyContent($deidentifyContentRequest); // Print the results $deidentifiedValue = $response->getItem()->getValue(); print($deidentifiedValue); } C# To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .",
+          "DlpServiceClient (); // The project ID to run the API call under // const projectId = 'my-project'; // The string to deidentify // const string = 'My SSN is 372819127'; // The set of characters to replace sensitive ones with // For more information, see https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#ffxcommonnativealphabet // const alphabet = 'ALPHA_NUMERIC'; // The name of the Cloud KMS key used to encrypt ('wrap') the AES-256 key // const keyName = 'projects/YOUR_GCLOUD_PROJECT/locations/YOUR_LOCATION/keyRings/YOUR_KEYRING_NAME/cryptoKeys/YOUR_KEY_NAME'; // The encrypted ('wrapped') AES-256 key to use // This key should be encrypted using the Cloud KMS key specified above // const wrappedKey = 'YOUR_ENCRYPTED_AES_256_KEY' // (Optional) The name of the surrogate custom info type to use // Only necessary if you want to reverse the deidentification process // Can be essentially any arbitrary string, as long as it doesn't appear // in your dataset otherwise. // const surrogateType = 'SOME_INFO_TYPE_DEID'; async function deidentifyWithFpe () { // Construct FPE config const cryptoReplaceFfxFpeConfig = { cryptoKey : { kmsWrapped : { wrappedKey : wrappedKey , cryptoKeyName : keyName , }, }, commonAlphabet : alphabet , }; if ( surrogateType ) { cryptoReplaceFfxFpeConfig . surrogateInfoType = { name : surrogateType , }; } // Construct deidentification request const item = { value : string }; const request = { parent : `projects/ ${ projectId } /locations/global` , deidentifyConfig : { infoTypeTransformations : { transformations : [ { primitiveTransformation : { cryptoReplaceFfxFpeConfig : cryptoReplaceFfxFpeConfig , }, }, ], }, }, item : item , }; // Run deidentification request const [ response ] = await dlp . deidentifyContent ( request ); const deidentifiedItem = response . item ; console . log ( deidentifiedItem . value ); } deidentifyWithFpe (); Python To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries ."
+        ]
+      },
+      {
+        "title": "\"Creating and scheduling Sensitive Data Protection inspection jobs \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also add custom infoType detectors in the Custom infoTypes section, and customize both built-in and custom infoType detectors in the Inspection rulesets section.",
+          "Inspection rulesets Inspection rulesets let you customize both built-in and custom infoType detectors using context rules.",
+          "Inspection rulesets Inspection rulesets let you customize both built-in and custom infoType detectors using context rules."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "organizations.deidentifyTemplates"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/create-custom-infotypes-metadata-labels",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-job-triggers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:50.160Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection"
+}

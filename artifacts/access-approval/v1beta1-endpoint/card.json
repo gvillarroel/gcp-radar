@@ -1,0 +1,123 @@
+{
+  "feature_name": "v1beta1 endpoint",
+  "feature_slug": "v1beta1-endpoint",
+  "summary": "The v1beta1 endpoint is the beta Access Approval API endpoint being retired in favor of v1; deprecated on 2020-08-01.",
+  "extended_definition": "The v1beta1 endpoint is the beta Access Approval API endpoint being retired in favor of v1; deprecated on 2020-08-01.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-27",
+    "deprecation_date": "2020-08-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/authentication",
+      "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authenticate to Access Approval \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/authentication",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can access the API in the following ways: Google Cloud CLI REST Google Cloud CLI When you use the gcloud CLI to access Access Approval, you log in to the gcloud CLI with a user account, which provides the credentials used by the gcloud CLI commands.",
+          "Technology areas Reference Authenticate to Access Approval Stay organized with collections Save and categorize content based on your preferences.",
+          "How you authenticate to Access Approval depends on the interface you use to access the API and the environment where your code is running."
+        ]
+      },
+      {
+        "title": "\"Class AccessApprovalAsyncClient (1.19.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 31,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import accessapproval v1 async def sample get access approval service account(): Create a client client = accessapproval v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import accessapproval v1 async def sample delete access approval settings(): Create a client client = accessapproval v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import accessapproval v1 async def sample update access approval settings(): Create a client client = accessapproval v1 ."
+        ]
+      },
+      {
+        "title": "\"Class AccessApprovalClient (1.19.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "source_id": "site-python-reference",
+        "final_score": 31,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import accessapproval v1 def sample get access approval service account(): Create a client client = accessapproval v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import accessapproval v1 def sample delete access approval settings(): Create a client client = accessapproval v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import accessapproval v1 def sample update access approval settings(): Create a client client = accessapproval v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [
+      "accessapproval"
+    ],
+    "missing_inventory_permissions": [
+      "folders.approvalRequests",
+      "googleapis.dev",
+      "options.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/authentication",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.605Z",
+  "source_step08_card": "data/step-08/current/products/access-approval/card.json",
+  "product_name": "Access Approval",
+  "product_slug": "access-approval"
+}

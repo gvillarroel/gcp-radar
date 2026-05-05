@@ -1,0 +1,46 @@
+# Semantic search
+
+Product: Dataplex
+Feature slug: `semantic-search`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Dataplex Search supports Gemini-powered natural language semantic search within a project.
+
+## Lifecycle
+
+- Latest feature date: 2024-11-04
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- allow (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- armor (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- auth (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- constraint (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- encrypt (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- iam (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- identity (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- key (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- logging (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- permission (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- private (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- role (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- security (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- threat (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+- token (evidence: [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets), [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax), [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support), [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/dataplex/docs/data-insights](https://docs.cloud.google.com/dataplex/docs/data-insights)
+- [https://docs.cloud.google.com/dataplex/docs/search-assets](https://docs.cloud.google.com/dataplex/docs/search-assets)
+- [https://docs.cloud.google.com/dataplex/docs/search-syntax](https://docs.cloud.google.com/dataplex/docs/search-syntax)
+- [https://docs.cloud.google.com/dataplex/docs/support/getting-support](https://docs.cloud.google.com/dataplex/docs/support/getting-support)

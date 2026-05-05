@@ -1,0 +1,97 @@
+{
+  "feature_name": "ComputeRouterNAT max ports per VM",
+  "feature_slug": "computerouternat-max-ports-per-vm",
+  "summary": "Config Connector supports the maxPortsPerVm field for ComputeRouterNAT resources.",
+  "extended_definition": "Config Connector supports the maxPortsPerVm field for ComputeRouterNAT resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+      "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Organizing your resources \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Configure container resources and replicas \\_|\\_ Config Connector \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"AccessContextManagerServicePerimeter \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/how-to/organizing-resources/overview",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/customizing-container-resources",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:20.276Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

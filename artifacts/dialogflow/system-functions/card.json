@@ -1,0 +1,104 @@
+{
+  "feature_name": "System functions",
+  "feature_slug": "system-functions",
+  "summary": "Dialogflow CX provides system functions for use in expressions and conversational logic.",
+  "extended_definition": "Dialogflow CX provides system functions for use in expressions and conversational logic.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/condition"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Conditions reference \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/condition",
+        "source_id": "site-docs-reference",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This syntax allows from very simple to very complex expressions using parameter values , sentiment values , comparison operators , boolean operators , and system functions .",
+          "The remainder of this section provides examples for using system functions in conditions.",
+          "Boolean constants The following boolean constants are defined: true false To force a route to be called upon evaluation, use the following condition: true System functions The system functions you can use in conditions are found in the system functions reference ."
+        ]
+      },
+      {
+        "title": "Data store search configuration \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Runtime substitution errors If a ConditionBoostSpec JSON string is valid and parsable but an error occurs during the runtime substitution of Dialogflow CX expressions within its fields (such as the condition string), these errors will be reported in diagnostic info as SystemFunctionResults .",
+          "For more information about expression syntax, see the Dialogflow CX conditions and system functions reference .",
+          "You can use Dialogflow CX expressions to make the results dynamic, such as $session.params.YOUR PARAM NAME or $request.end-user-metadata.YOUR KEY . boost : (Number) A value between -1.0 and 1.0 that determines the strength of the boost."
+        ]
+      },
+      {
+        "title": "Fulfillments \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "The general format is: if [condition] [response] elif [condition] [response] elif [condition] [response] else [response] endif where: [condition] is the same format that is used for route conditions [response] is a text response elif and else blocks are optional For example: if $session.params.user-age >= 21 Ok, you may enter. else Sorry, you cannot enter. endif Both [condition] and [response] can use inline system functions to generate dynamic values during conversations.",
+          "Dialogflow CX doesn't impose any structure on this data, so you can choose any structure that suits your system.",
+          "Dialogflow CX doesn't impose any structure on this data, so you can choose any structure that suits your system."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "metadata.YOUR",
+      "request.end",
+      "session.params.user",
+      "session.params.YOUR"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/condition",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/condition",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

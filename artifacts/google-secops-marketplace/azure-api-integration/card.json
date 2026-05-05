@@ -1,0 +1,231 @@
+{
+  "feature_name": "Azure API integration",
+  "feature_slug": "azure-api-integration",
+  "summary": "Adds a new Azure API integration.",
+  "extended_definition": "Adds a new Azure API integration.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate from CrowdStrike Detects API to Alerts API \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Option 1: Update permissions for your existing CrowdStrike API client (Recommended) Option 2: Create and use a new CrowdStrike API client Option 1: Update permissions for your existing CrowdStrike API client (Recommended) This approach requires configuration changes only in your CrowdStrike Falcon console and has the lowest impact on existing detection rules that reference the CS DETECTS log type.",
+          "CrowdStrike's deprecation of this API affects the following actions and connectors: Add Comment to Detection Close Detection Update Detection CrowdStrike - Detections Connector The SOAR CrowdStrike integration already supports the Alerts API, which replaces the Detections API.",
+          "CrowdStrike Detections API deprecation in SOAR integration The CrowdStrike Falcon SOAR integration used the Detections API within its actions and connectors."
+        ]
+      },
+      {
+        "title": "\"Integrate APIVoid with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. if data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") > threshold Enrichment field name Logic - When to apply domain blacklist Returns if it exists in JSON result html forms Returns if it exists in JSON result server details Returns if it exists in JSON result response headers Returns if it exists in JSON result redirection Returns if it exists in JSON result file type Returns if it exists in JSON result risk score Returns if it exists in JSON result security checks Returns if it exists in JSON result geo location Returns if it exists in JSON result url parts Returns if it exists in JSON result site category Returns if it exists in JSON result web page Returns if it exists in JSON result dns records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain blacklist\" : { \"detections\" : 0 , \"engines\" : [{ \"detected\" : false , \"name\" : \"SpamhausDBL\" , \"reference\" : \"https://www.spamhaus.org/lookup/\" }, { \"detected\" : false , \"name\" : \"ThreatLog\" , \"reference\" : \"http://www.threatlog.com/\" }, { \"detected\" : false , \"name\" : \"OpenPhish\" , \"reference\" : \"http://www.openphish.com/\" }, { \"detected\" : false , \"name\" : \"PhishTank\" , \"reference\" : \"http://www.phishtank.com/\" }, { \"detected\" : false , \"name\" : \"Phishing.Database\" , \"reference\" : \"https://github.com/mitchellkrogza/Phishing.Database\" }, { \"detected\" : false , \"name\" : \"PhishStats\" , \"reference\" : \"https://phishstats.info/\" }, { \"detected\" : false , \"name\" : \"URLVir\" , \"reference\" : \"http://www.urlvir.com/\" }, { \"detected\" : false , \"name\" : \"URLhaus\" , \"reference\" : \"https://urlhaus.abuse.ch/\" }, { \"detected\" : false , \"name\" : \"RPiList Not Serious\" , \"reference\" : \"https://github.com/RPiList/specials\" }, { \"detected\" : false , \"name\" : \"precisionsec\" , \"reference\" : \"https://precisionsec.com/\" }, { \"detected\" : false , \"name\" : \"AntiSocial Blacklist\" , \"reference\" : \"https://theantisocialengineer.com/\" }, { \"detected\" : false , \"name\" : \"PhishFeed\" , \"reference\" : \"https://phishfeed.com/\" }, { \"detected\" : false , \"name\" : \"Spam404\" , \"reference\" : \"https://www.spam404.com/\" }]}, \"html forms\" : { \"number of total input fields\" : 0 , \"email field present\" : false , \"number of total forms\" : 0 , \"password field present\" : false , \"two text inputs in a form\" : false , \"credit card field present\" : false }, \"server details\" : { \"continent name\" : \"Asia\" , \"hostname\" : \"example.com\" , \"region name\" : \"Seoul-teukbyeolsi\" , \"ip\" : \"192.0.2.141\" , \"isp\" : \"Example Corporation\" , \"continent code\" : \"AS\" , \"country name\" : \"Korea (Republic of)\" , \"city name\" : \"Seoul\" , \"longitude\" : 126.97782897949219 , \"country code\" : \"KR\" , \"latitude\" : 37.568260192871094 }, \"response headers\" : { \"status\" : \"HTTP/1.1 404 Not Found\" , \"content-length\" : \"177\" , \"code\" : 404 , \"server\" : \"nginx/1.4.6 (Ubuntu)\" , \"connection\" : \"keep-alive\" , \"date\" : \"Wed, 15 Jul 2020 08:21:54 GMT\" , \"content-type\" : \"text/html\" }, \"redirection\" : { \"url\" : null , \"found\" : false , \"external\" : false }, \"file type\" : { \"headers\" : \"HTML\" , \"extension\" : \"HTML\" , \"signature\" : \" \" }, \"risk score\" : { \"result\" : 10 }, \"security checks\" : { \"is suspended page\" : false , \"is defaced heuristic\" : false , \"is windows exe file\" : false , \"is credit card field\" : false , \"is windows exe file on free hosting\" : false , \"is masked linux elf file\" : false , \"is exe on directory listing\" : false , \"is php on directory listing\" : false , \"is masked windows exe file\" : false , \"is sinkholed domain\" : false , \"is robots noindex\" : false , \"is windows exe file on free dynamic dns\" : false , \"is doc on directory listing\" : false , \"is non standard port\" : false , \"is linux elf file on free dynamic dns\" : false , \"is suspicious domain\" : false , \"is suspicious url pattern\" : false , \"is china country\" : false , \"is risky geo location\" : false , \"is pdf on directory listing\" : false , \"is valid https\" : false , \"is external redirect\" : false , \"is windows exe file on ipv4\" : false , \"is phishing heuristic\" : false , \"is linux elf file on ipv4\" : false , \"is email address on url query\" : false , \"is uncommon clickable url\" : false , \"is most abused tld\" : false , \"is domain blacklisted\" : false , \"is host an ipv4\" : false , \"is linux elf file on free hosting\" : false , \"is zip on directory listing\" : false , \"is password field\" : false , \"is linux elf file\" : false , \"is empty page title\" : false , \"is directory listing\" : false , \"is masked file\" : false , \"is suspicious file extension\" : false , \"is suspicious content\" : false }, \"geo location\" : { \"countries\" : [ \"KR\" ] }, \"url parts\" : { \"host nowww\" : \"example.com\" , \"host\" : \"www.example.com\" , \"path\" : \"/dynamic/example.html\" , \"query\" : null , \"scheme\" : \"http\" , \"port\" : 80 }, \"site category\" : { \"is vpn provider\" : false , \"is url shortener\" : false , \"is anonymizer\" : false , \"is torrent\" : false , \"is free dynamic dns\" : false , \"is free hosting\" : false }, \"web page\" : { \"keywords\" : \"\" , \"description\" : \"\" , \"title\" : \"404 Not Found\" }, \"dns records\" : { \"ns\" : { \"records\" : [{ \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.95\" , \"isp\" : \"Example Corporation\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }, { \"country name\" : \"Korea (Republic of)\" , \"ip\" : \"192.0.2.26\" , \"isp\" : \"LX\" , \"target\" : \"example.com\" , \"country code\" : \"KR\" }]}, \"mx\" : { \"records\" : [] }}}, \"Entity\" : \"www.example.com:80/dynamic/example.html\" } ] Case wall Result type Description Type Output message Successful entities: \"APIVoid: Fetched reputation for the following entities: <entities identifer list> Failed entities: \"An error occurred on the following entities: <entities identifer list>\" Missing entities (no data): 'Can not found reputation for the following entities: <entities identifer list>\" Alert without URL entities: \"APIVoid: No URLs found.\" General CSV Case wall If data available create new entity csv table: domain blocklist report: data.get(\"report\",{}).get(\"domain blacklist\",{}).get(\"engines\", []) General Enrichment If data available add the following as entity enrichment: (don't forget to add prefix \"APIVoid\") geo location: data.get(\"report\",{}).get(\"geo location\",{}).get(\"countries\", []) is suspicious domain: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is suspicious domain\") is domain blacklisted: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is domain blacklisted\") is risky geo location: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is risky geo location\") risk score: data.get(\"report\", {}).get(\"risk score\", {}).get(\"result\") is external redirect: data.get(\"report\",{}).get(\"security checks\",{}).get(\"is external redirect\") Entity Get Screenshot Capture a high-quality screenshot of any website or URL.",
+          "Action results Entity enrichment Mark entity as suspicious if the number of negative engines is equal or above the given threshold. is suspicious: if data.get(\"score\") > threshold Enrichment field name Logic - When to apply domain Returns if it exists in JSON result should block Returns if it exists in JSON result score Returns if it exists in JSON result disposable Returns if it exists in JSON result has mx records Returns if it exists in JSON result has spf records Returns if it exists in JSON result Script result Script result name Value options Example is success True/False is success:False JSON result [ { \"EntityResult\" : { \"domain\" : \"example.com\" , \"valid tld\" : true , \"email\" : \"user@example.co\" , \"role address\" : false , \"should block\" : false , \"risky tld\" : false , \"dirty words username\" : false , \"suspicious domain\" : false , \"score\" : 100 , \"educational domain\" : false , \"dirty words domain\" : false , \"did you mean\" : \" \" , \"username\" : \"user\" , \"valid format\" : true , \"is spoofable \" : false , \"disposable\" : false , \"government domain\" : false , \"has spf records\" : true , \"domain popular\" : false , \"has mx records\" : true , \"china free email\" : false , \"free email\" : false , \"russian free email\" : false , \"police domain\" : false , \"dmarc enforced\" : false , \"suspicious username\" : false }, \"Entity\" : \"USER@EXAMPLE.COM\" } ] Case wall Result type Description Type Output message Successful entities: \"APIVoid: Added screenshots for the following entities: <entities identifier list>\" Failed entities: \"An error occurred on the following entities: <entities identifier list>\" Missing entities (no data): 'No screenshots found for the following entities: <entities identifier list>\" Alert without URL entities: \"APIVoid: No URL entities found for capturing screenshots.\" To big entities (attachment file size > 3MB): \"Failed to add screenshots as attachments on the following entities: <<entities identifier list>>\" General Attachments If data is available, create a new file object: attachment title: 'Screenshot - {0}'.format(entity.identifier) filename should be the URL without the suffix (https/http) + ' capture.<file format>' screenshot is returned in base64 encoded string --> file content should be b64decode(data.get('base64 file')) Don't forget to add try, except - we have 3MB limitation from the platform.",
+          "Network Function Default port Direction Protocol API Multivalues Outbound apikey Integration parameters Use the following parameters to configure the integration: Parameter name Type Default value Is mandatory Description Instance Name String N/A No Name of the Instance you intend to configure integration for."
+        ]
+      },
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Release notes The general structure for the release note should follow the following format: {integration item} - {update} For example: Get Case Details - Added ability to fetch information about affected IOCs Depending on the situation, there are unique release notes for specific scenarios: If it's a new integration: New Integration Added - {integration name} If a new action is added: New Action Added - {action name} If a new connector is added: New Connector Added - {connector name} If a new job is added: New Job Added - {job name} If a predefined widget is added to an action: {action name} - Added Predefined Widget.",
+          "Configuration parameters All integrations should contain configuration parameters (API Root + Auth parameters), unless the underlying API doesn't require any authentication and the API Root can be hardcoded.",
+          "You should validate the logo on the following pages: Response > Integration Setup Response > Playbooks > Playbook Designer Cases > Alert > Alert Playbook View The following is an example of an SVG logo, designed to match our style guide: <?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer 1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 21 23\"> <defs> <style> .cls-1 { stroke-width: 0px; } </style> </defs> <path class=\"cls-1\" d=\"M15.51,4.79H5.49c-.4,0-.72.32-.72.72v5.75c0,2.3,1.71,4.15,3.69,5.38.54.34,1.1.62,1.66.86l.09.04c.06.02.12.05.18.06.03,0,.07,0,.1,0,.1,0,.19-.03.28-.07l.09-.04c.76-.33,2.22-1.03,3.46-2.24,1.24-1.22,1.89-2.6,1.89-4v-5.75c0-.4-.32-.72-.72-.72ZM14.32,11.26c0,.88-.44,1.77-1.32,2.63-.65.64-1.55,1.22-2.5,1.68-.95-.46-1.84-1.04-2.5-1.68-.88-.86-1.32-1.75-1.32-2.63v-4.55h7.64v4.55ZM20.28,0H.72c-.4,0-.72.32-.72.72v10.77c0,2.56,1.18,4.99,3.51,7.21,2.29,2.18,5.12,3.56,6.61,4.2l.09.04s.1.04.15.05c.04,0,.09.01.13.01.1,0,.19-.02.28-.06l.09-.04c.53-.23,1.23-.55,2.02-.97,1.42-.75,3.11-1.82,4.59-3.23,2.33-2.22,3.51-4.64,3.51-7.21V.72c0-.4-.32-.72-.72-.72ZM16.17,17.31c-1.9,1.81-4.24,3.04-5.67,3.69-1.43-.65-3.77-1.88-5.67-3.69-1.94-1.84-2.92-3.8-2.92-5.82V1.92h17.18v9.57c0,2.02-.98,3.98-2.92,5.82Z\"/></svg> Be sure to encode the SVG before adding it to the integration definition file, as can be found in other integrations in the Content Hub."
+        ]
+      },
+      {
+        "title": "\"Migrate SOAR endpoints to Chronicle API \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Regional addresses: africa-south1: https://chronicle.africa-south1.rep.googleapis.com asia-northeast1: https://chronicle.asia-northeast1.rep.googleapis.com asia-south1: https://chronicle.asia-south1.rep.googleapis.com asia-southeast1: https://chronicle.asia-southeast1.rep.googleapis.com asia-southeast2: https://chronicle.asia-southeast2.rep.googleapis.com australia-southeast1: https://chronicle.australia-southeast1.rep.googleapis.com europe-west12: https://chronicle.europe-west12.rep.googleapis.com europe-west2: https://chronicle.europe-west2.rep.googleapis.com europe-west3: https://chronicle.europe-west3.rep.googleapis.com europe-west6: https://chronicle.europe-west6.rep.googleapis.com europe-west9: https://chronicle.europe-west9.rep.googleapis.com me-central1: https://chronicle.me-central1.rep.googleapis.com me-central2: https://chronicle.me-central2.rep.googleapis.com me-west1: https://chronicle.me-west1.rep.googleapis.com northamerica-northeast2: https://chronicle.northamerica-northeast2.rep.googleapis.com southamerica-east1: https://chronicle.southamerica-east1.rep.googleapis.com us: https://chronicle.us.rep.googleapis.com eu: https://chronicle.eu.rep.googleapis.com For example, to get a list of all cases on a project in the US: GET https://chronicle.us.rep.googleapis.com/v1alpha/projects/my-project-name-or-id/locations/us/instances/408bfb7b-5746-4a50-885a-50a323023529/cases Update the authentication method The new API uses Google Cloud IAM for authentication.",
+          "Key changes and enhancements The following table highlights the major differences between the old and new API surfaces: Feature area Old API New API Details Authentication API token OAuth 2.0 The new authentication method provides enhanced security and standardizes the process.",
+          "Migration steps This section outlines the steps to successfully migrate your applications to Chronicle API: Review the documentation Familiarize yourself with the comprehensive documentation for the new API, including the Chronicle API reference guide."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central1.rep.googleapis.com",
+      "central2.rep.googleapis.com",
+      "chronicle.africa",
+      "chronicle.asia",
+      "chronicle.australia",
+      "chronicle.eu.rep.googleapis.com",
+      "chronicle.europe",
+      "chronicle.me",
+      "chronicle.northamerica",
+      "chronicle.southamerica",
+      "chronicle.us.rep.googleapis.com",
+      "data.get",
+      "east1.rep.googleapis.com",
+      "entity.identifier",
+      "example.co",
+      "example.com",
+      "example.html",
+      "github.com",
+      "northeast1.rep.googleapis.com",
+      "northeast2.rep.googleapis.com",
+      "phishfeed.com",
+      "phishstats.info",
+      "precisionsec.com",
+      "south1.rep.googleapis.com",
+      "southeast1.rep.googleapis.com",
+      "southeast2.rep.googleapis.com",
+      "theantisocialengineer.com",
+      "urlhaus.abuse.ch",
+      "west1.rep.googleapis.com",
+      "west12.rep.googleapis.com",
+      "west2.rep.googleapis.com",
+      "west3.rep.googleapis.com",
+      "west6.rep.googleapis.com",
+      "west9.rep.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/apivoid",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.044Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace"
+}

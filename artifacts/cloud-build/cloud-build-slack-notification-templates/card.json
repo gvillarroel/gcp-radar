@@ -1,0 +1,98 @@
+{
+  "feature_name": "Cloud Build Slack notification templates",
+  "feature_slug": "cloud-build-slack-notification-templates",
+  "summary": "Cloud Build now supports customizable Slack notifications using notifier templates.",
+  "extended_definition": "Cloud Build now supports customizable Slack notifications using notifier templates.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+      "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+      "https://docs.cloud.google.com/docs/buildpacks/python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate builds in response to Pub/Sub events \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": [
+          "Pub/Sub topic : Select the gcs topic from the drop-down menu or manually create the topic using instructions in Configuring Pub/Sub notifications for Cloud Storage .",
+          "Pub/Sub topic : Select the gcr topic from the drop-down menu or manually create the topic using instructions in Configuring Pub/Sub notifications .",
+          "To see more examples of the Pub/Sub notification payload, see Notification examples ."
+        ]
+      },
+      {
+        "title": "Build a Python application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/python",
+        "source_id": "site-docs-reference",
+        "final_score": 37,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported buildpacks configurations Python buildpacks supports the following configurations: pip buildpack : Installs dependencies directly from pyproject.toml if it detects all the following conditions: A pyproject.toml file is present in the root directory and you don't configure high-precedence tools such as a poetry.lock file, a [tool.poetry] section, or a uv.lock file.",
+          "Example: pack build sample-python \\ --builder gcr.io/buildpacks/builder --env \"GOOGLE ENTRYPOINT='gunicorn --bind :$PORT main:app'\" Environment Variables The Python buildpack supports the following environment variables to customize your container PIP <key> See pip documentation .",
+          "You set the GOOGLE PYTHON PACKAGE MANAGER environment variable to pip . uv buildpack : Supports Python projects you manage with uv ."
+        ]
+      },
+      {
+        "title": "Building a Node.js application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "source_id": "site-docs-reference",
+        "final_score": 33,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specify the yarn version in the engines.yarn field of your package.json file. buildpack supports Yarn2 PnP mode if your project includes a .yarn/cache folder.",
+          "Bun package manager The Node.js buildpack supports the Bun package manager, google.nodejs.bun buildpack for installing dependencies.",
+          "The Node.js buildpack supports the following environment variables to customize your container."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "engines.yarn",
+      "gcr.io",
+      "package.json",
+      "poetry.lock",
+      "pyproject.toml",
+      "tool.poetry",
+      "uv.lock"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+        "https://docs.cloud.google.com/docs/buildpacks/python",
+        "https://docs.cloud.google.com/docs/buildpacks/nodejs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

@@ -1,0 +1,196 @@
+{
+  "feature_name": "CMEK for application-layer encryption",
+  "feature_slug": "cmek-for-application-layer-encryption",
+  "summary": "Customer-managed encryption keys can encrypt GKE Autopilot application-layer data.",
+  "extended_definition": "Customer-managed encryption keys can encrypt GKE Autopilot application-layer data.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Encrypt secrets at the application layer \\_|\\_ GKE security \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Create . gcloud To create a cluster that supports application-layer secrets encryption, specify a value for the --database-encryption-key parameter in your creation command. gcloud container clusters create-auto CLUSTER NAME \\ --cluster-version = latest \\ --location = CONTROL PLANE LOCATION \\ --database-encryption-key = projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/ RING NAME /cryptoKeys/ KEY NAME \\ --project = CLUSTER PROJECT ID Replace the following: CLUSTER NAME : the name you choose for your new cluster.",
+          "Click Save Changes . gcloud To enable application-layer secrets encryptions on an existing cluster, run the following command: gcloud container clusters update CLUSTER NAME \\ --location = CONTROL PLANE LOCATION \\ --database-encryption-key = projects/ KEY PROJECT ID /locations/ LOCATION /keyRings/ RING NAME /cryptoKeys/ KEY NAME \\ --project = CLUSTER PROJECT ID Replace the following: CLUSTER NAME : the name of your cluster.",
+          "Rotate your keys Best practice : Rotate your keys on a regular schedule, including after you enable application-layer secrets encryption."
+        ]
+      },
+      {
+        "title": "\"Encrypt your data in-transit in GKE with user-managed encryption keys \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "source_id": "site-iam-reference",
+        "final_score": 174,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE security Send feedback Encrypt your data in-transit in GKE with user-managed encryption keys Stay organized with collections Save and categorize content based on your preferences.",
+          "Standard This page shows you how to encrypt in-transit data for Pod communications across Google Kubernetes Engine (GKE) nodes by using user-managed encryption keys.",
+          "The encryption keys are provided and managed by Google."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption gcfsConfig object ( GcfsConfig ) Google Container File System (image streaming) configs. advancedMachineFeatures object ( AdvancedMachineFeatures ) Advanced features for the Compute Engine VM. gvnic object ( VirtualNIC ) Enable or disable gvnic in the node pool. spot boolean Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag. confidentialNodes object ( ConfidentialNodes ) Confidential nodes config.",
+          "For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption imageType string The image type to use for NAP created node.",
+          "Cluster JSON representation { \"name\" : string , \"description\" : string , \"initialNodeCount\" : integer , \"nodeConfig\" : { object ( NodeConfig ) } , \"masterAuth\" : { object ( MasterAuth ) } , \"loggingService\" : string , \"monitoringService\" : string , \"network\" : string , \"clusterIpv4Cidr\" : string , \"addonsConfig\" : { object ( AddonsConfig ) } , \"subnetwork\" : string , \"nodePools\" : [ { object ( NodePool ) } ] , \"locations\" : [ string ] , \"enableKubernetesAlpha\" : boolean , \"alphaClusterFeatureGates\" : [ string ] , \"resourceLabels\" : { string : string , ... } , \"labelFingerprint\" : string , \"legacyAbac\" : { object ( LegacyAbac ) } , \"networkPolicy\" : { object ( NetworkPolicy ) } , \"ipAllocationPolicy\" : { object ( IPAllocationPolicy ) } , \"masterAuthorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"autoscaling\" : { object ( ClusterAutoscaling ) } , \"networkConfig\" : { object ( NetworkConfig ) } , \"defaultMaxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"resourceUsageExportConfig\" : { object ( ResourceUsageExportConfig ) } , \"authenticatorGroupsConfig\" : { object ( AuthenticatorGroupsConfig ) } , \"privateClusterConfig\" : { object ( PrivateClusterConfig ) } , \"databaseEncryption\" : { object ( DatabaseEncryption ) } , \"verticalPodAutoscaling\" : { object ( VerticalPodAutoscaling ) } , \"shieldedNodes\" : { object ( ShieldedNodes ) } , \"releaseChannel\" : { object ( ReleaseChannel ) } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"meshCertificates\" : { object ( MeshCertificates ) } , \"costManagementConfig\" : { object ( CostManagementConfig ) } , \"notificationConfig\" : { object ( NotificationConfig ) } , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"identityServiceConfig\" : { object ( IdentityServiceConfig ) } , \"selfLink\" : string , \"zone\" : string , \"endpoint\" : string , \"initialClusterVersion\" : string , \"currentMasterVersion\" : string , \"currentNodeVersion\" : string , \"createTime\" : string , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"nodeIpv4CidrSize\" : integer , \"servicesIpv4Cidr\" : string , \"instanceGroupUrls\" : [ string ] , \"currentNodeCount\" : integer , \"expireTime\" : string , \"location\" : string , \"enableTpu\" : boolean , \"tpuIpv4CidrBlock\" : string , \"conditions\" : [ { object ( StatusCondition ) } ] , \"autopilot\" : { object ( Autopilot ) } , \"id\" : string , \"loggingConfig\" : { object ( LoggingConfig ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"nodePoolAutoConfig\" : { object ( NodePoolAutoConfig ) } , \"podAutoscaling\" : { object ( PodAutoscaling ) } , \"etag\" : string , \"fleet\" : { object ( Fleet ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"controlPlaneEndpointsConfig\" : { object ( ControlPlaneEndpointsConfig ) } , \"enableK8sBetaApis\" : { object ( K8sBetaAPIConfig ) } , \"enterpriseConfig\" : { object ( EnterpriseConfig ) } , \"secretManagerConfig\" : { object ( SecretManagerConfig ) } , \"compliancePostureConfig\" : { object ( CompliancePostureConfig ) } , \"gkeAutoUpgradeConfig\" : { object ( GkeAutoUpgradeConfig ) } , \"anonymousAuthenticationConfig\" : { object ( AnonymousAuthenticationConfig ) } , \"scheduleUpgradeConfig\" : { object ( ScheduleUpgradeConfig ) } , \"managedOpentelemetryConfig\" : { object ( ManagedOpenTelemetryConfig ) } , \"managedMachineLearningDiagnosticsConfig\" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: \"nodePoolDefaults\" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: \"userManagedKeysConfig\" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: \"rbacBindingConfig\" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/encrypting-secrets",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/enable-inter-node-transparent-encryption",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

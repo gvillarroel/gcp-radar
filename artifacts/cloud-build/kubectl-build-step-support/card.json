@@ -1,0 +1,125 @@
+{
+  "feature_name": "Kubectl build step support",
+  "feature_slug": "kubectl-build-step-support",
+  "summary": "Kubectl was added as a supported Cloud Build build step.",
+  "extended_definition": "Kubectl was added as a supported Cloud Build build step.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/build-config",
+      "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+      "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploying to GKE \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: When deploying to multiple GKE clusters, Cloud Build persists the home directory across build steps, which means that the kubectl context of the previous step to be used by subsequent steps by default.",
+          "Building and deploying a new container image To build a new container image and deploy the new container image: Update your Kubernetes resource file with the new container image using the --image attribute: YAML steps : build the container image - name : \"gcr.io/cloud-builders/docker\" args : [ \"build\" , \"-t\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \".\" ] push container image - name : \"gcr.io/cloud-builders/docker\" args : [ \"push\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" ] deploy container image to GKE - name : \"gcr.io/cloud-builders/gke-deploy\" args : - run - --filename= KUBERNETES RESOURCE FILE - --image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG - --location= CLUSTER LOCATION - --cluster= CLUSTER JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \".\" ] }, { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"push\" , \" LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" ] }, { \"name\" : \"gcr.io/cloud-builders/gke-deploy\" , \"args\" : [ \"run\" , \"--filename= KUBERNETES RESOURCE FILE \" , \"--image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \"--location= CLUSTER LOCATION \" , \"--cluster= CLUSTER \" ] } ] } Where: LOCATION is one of the supported build locations .",
+          "If you want to deploy to a different cluster, you can use the same build configuration and only need to change the values of the substitution variables: YAML steps : ... deploy container image to GKE - name : \"gcr.io/cloud-builders/gke-deploy\" args : - run - --filename= KUBERNETES RESOURCE FILE - --image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG - --location=${ CLOUDSDK COMPUTE ZONE} - --cluster=${ CLOUDSDK CONTAINER CLUSTER} JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/gke-deploy\" , \"args\" : [ \"run\" , \"--filename= KUBERNETES RESOURCE FILE \" , \"--image= LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE NAME : TAG \" , \"--location=${ CLOUDSDK COMPUTE ZONE}\" , \"--cluster=${ CLOUDSDK CONTAINER CLUSTER}\" ] } ] } Where: KUBERNETES RESOURCE FILE is the path of your Kubernetes configuration file or the directory path containing your Kubernetes resource files."
+        ]
+      },
+      {
+        "title": "Build configuration file schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/build-config",
+        "source_id": "site-docs-root-2",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following build config the env field of the build step sets the Compute Engine zone and the GKE cluster prior to executing kubectl : YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] - name : 'gcr.io/cloud-builders/kubectl' args : [ 'set' , 'image' , 'deployment/myimage' , 'frontend=gcr.io/myproject/myimage' ] env : - 'CLOUDSDK COMPUTE ZONE=us-east1-b' - 'CLOUDSDK CONTAINER CLUSTER=node-example-cluster' JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/myproject/myimage\" , \".\" ] }, { \"name\" : \"gcr.io/cloud-builders/kubectl\" , \"args\" : [ \"set\" , \"image\" , \"deployment/myimage\" , \"frontend=gcr.io/myproject/myimage\" ], \"env\" : [ \"CLOUDSDK COMPUTE ZONE=us-east1-b\" , \"CLOUDSDK CONTAINER CLUSTER=node-example-cluster\" ] } ] } allowFailure In a build step, if you set the value of the allowFailure field to true , and the build step fails, then the build succeeds as long as all other build steps in that build succeed.",
+          "Here's a snippet of the kind of configuration you might set in the steps field: YAML steps : - name : 'gcr.io/cloud-builders/kubectl' args : [ 'set' , 'image' , 'deployment/mydepl' , 'my-image=gcr.io/my-project/myimage' ] env : - 'CLOUDSDK COMPUTE ZONE=us-east4-b' - 'CLOUDSDK CONTAINER CLUSTER=my-cluster' - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/my-project-id/myimage' , '.' ] JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/kubectl\" , \"args\" : [ \"set\" , \"image\" \"deployment/mydepl\" \"my-image=gcr.io/my-project/myimage\" ], \"env\" : [ \"CLOUDSDK COMPUTE ZONE=us-east4-b\" , \"CLOUDSDK CONTAINER CLUSTER=my-cluster\" ] }, { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/my-project-id/myimage\" , \".\" ] } ] } name Use the name field of a build step to specify a cloud builder , which is a container image running common tools.",
+          "A build config file has the following structure: YAML steps : - name : string args : [ string , string , ... ] env : [ string , string , ... ] allowFailure : boolean allowExitCodes : [ string (int64 format) , string (int64 format) , ... ] dir : string id : string waitFor : [ string , string , ... ] entrypoint : string secretEnv : string volumes : object(Volume) timeout : string (Duration format) script : string automapSubstitutions : boolean - name : string ... - name : string ... timeout : string (Duration format) queueTtl : string (Duration format) logsBucket : string options : env : [ string , string , ... ] secretEnv : string volumes : object(Volume) sourceProvenanceHash : enum(HashType) machineType : enum(MachineType) diskSizeGb : string (int64 format) substitutionOption : enum(SubstitutionOption) dynamicSubstitutions : boolean automapSubstitutions : boolean logStreamingOption : enum(LogStreamingOption) logging : enum(LoggingMode) defaultLogsBucketBehavior : enum(DefaultLogsBucketBehavior) pool : object(PoolOption) pubsubTopic : string requestedVerifyOption : enum(RequestedVerifyOption) substitutions: map (key : string, value : string) tags : [ string , string , ... ] serviceAccount : string secrets : object(Secret) availableSecrets : object(Secrets) artifacts : object(Artifacts) goModules : [ object(GoModules) , ... ] mavenArtifacts : [ object(MavenArtifact) , ... ] pythonPackages : [ object(PythonPackage) , ... ] npmPackages : [ object(npmPackage) , ... ] images : - [ string , string , ... ] JSON { \"steps\" : [ { \"name\" : \"string\" , \"args\" : [ \"string\" , \"string\" , \"...\" ], \"env\" : [ \"string\" , \"string\" , \"...\" ], \"allowFailure\" : \"boolean\" , \"allowExitCodes: [ \" s tr i n g (i nt 64 f orma t ) \", \" s tr i n g (i nt 64 f orma t ) \", \" ... \" ], \" dir \": \" s tr i n g \", \" id \": \" s tr i n g \", \" wai t For \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" e ntr ypoi nt \": \" s tr i n g \", \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" scrip t \" : \" s tr i n g \", \" au t omapSubs t i tut io ns \" : \" boolea n \" }, { \" na me \": \" s tr i n g \" ... }, { \" na me \": \" s tr i n g \" ... } ], \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" queueT tl \": \" s tr i n g (Dura t io n f orma t ) \", \" logsBucke t \": \" s tr i n g \", \" op t io ns \": { \" sourceProve nan ceHash \": \" e nu m(HashType) \", \" machi ne Type \": \" e nu m(Machi ne Type) \", \" diskSizeGb \": \" s tr i n g (i nt 64 f orma t ) \", \" subs t i tut io n Op t io n \": \" e nu m(Subs t i tut io n Op t io n ) \", \" dy na micSubs t i tut io ns \": \" boolea n \", \" au t omapSubs t i tut io ns \": \" boolea n \", \" logS trea mi n gOp t io n \": \" e nu m(LogS trea mi n gOp t io n ) \", \" loggi n g \": \" e nu m(Loggi n gMode) \" \" de fault LogsBucke t Behavior \": \" e nu m(De fault LogsBucke t Behavior) \" \" e n v \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" pool \": \" objec t (PoolOp t io n ) \" \" reques te dVeri f yOp t io n \": \" e nu m(Reques te dVeri f yOp t io n ) \" }, \" subs t i tut io ns \": \" map (key : s tr i n g , value : s tr i n g) \", \" ta gs \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" serviceAccou nt \": \" s tr i n g \", \" secre ts \": \" objec t (Secre t ) \", \" availableSecre ts \": \" objec t (Secre ts ) \", \" ar t i fa c ts \": \" objec t (Ar t i fa c ts ) \", \" goModules \": [object(GoModules), ...], \" mave n Ar t i fa c ts \": [\" objec t (Mave n Ar t i fa c t ) \", ...], \" py t ho n Packages \": [\" objec t (Py t ho n Package) \", ...], \" n pmPackages \": [\" objec t ( n pmPackage) \", ...], \" images \": [ \" s tr i n g \", \" s tr i n g \", \" ...\" ] } Each of the sections of the build config file defines a part of the task you want Cloud Build to execute: Build steps A build step specifies an action that you want Cloud Build to perform."
+        ]
+      },
+      {
+        "title": "Build configuration file schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/build-config-file-schema",
+        "source_id": "site-docs-root-2",
+        "final_score": 58,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following build config the env field of the build step sets the Compute Engine zone and the GKE cluster prior to executing kubectl : YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] - name : 'gcr.io/cloud-builders/kubectl' args : [ 'set' , 'image' , 'deployment/myimage' , 'frontend=gcr.io/myproject/myimage' ] env : - 'CLOUDSDK COMPUTE ZONE=us-east1-b' - 'CLOUDSDK CONTAINER CLUSTER=node-example-cluster' JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/myproject/myimage\" , \".\" ] }, { \"name\" : \"gcr.io/cloud-builders/kubectl\" , \"args\" : [ \"set\" , \"image\" , \"deployment/myimage\" , \"frontend=gcr.io/myproject/myimage\" ], \"env\" : [ \"CLOUDSDK COMPUTE ZONE=us-east1-b\" , \"CLOUDSDK CONTAINER CLUSTER=node-example-cluster\" ] } ] } allowFailure In a build step, if you set the value of the allowFailure field to true , and the build step fails, then the build succeeds as long as all other build steps in that build succeed.",
+          "Here's a snippet of the kind of configuration you might set in the steps field: YAML steps : - name : 'gcr.io/cloud-builders/kubectl' args : [ 'set' , 'image' , 'deployment/mydepl' , 'my-image=gcr.io/my-project/myimage' ] env : - 'CLOUDSDK COMPUTE ZONE=us-east4-b' - 'CLOUDSDK CONTAINER CLUSTER=my-cluster' - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/my-project-id/myimage' , '.' ] JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/kubectl\" , \"args\" : [ \"set\" , \"image\" \"deployment/mydepl\" \"my-image=gcr.io/my-project/myimage\" ], \"env\" : [ \"CLOUDSDK COMPUTE ZONE=us-east4-b\" , \"CLOUDSDK CONTAINER CLUSTER=my-cluster\" ] }, { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/my-project-id/myimage\" , \".\" ] } ] } name Use the name field of a build step to specify a cloud builder , which is a container image running common tools.",
+          "A build config file has the following structure: YAML steps : - name : string args : [ string , string , ... ] env : [ string , string , ... ] allowFailure : boolean allowExitCodes : [ string (int64 format) , string (int64 format) , ... ] dir : string id : string waitFor : [ string , string , ... ] entrypoint : string secretEnv : string volumes : object(Volume) timeout : string (Duration format) script : string automapSubstitutions : boolean - name : string ... - name : string ... timeout : string (Duration format) queueTtl : string (Duration format) logsBucket : string options : env : [ string , string , ... ] secretEnv : string volumes : object(Volume) sourceProvenanceHash : enum(HashType) machineType : enum(MachineType) diskSizeGb : string (int64 format) substitutionOption : enum(SubstitutionOption) dynamicSubstitutions : boolean automapSubstitutions : boolean logStreamingOption : enum(LogStreamingOption) logging : enum(LoggingMode) defaultLogsBucketBehavior : enum(DefaultLogsBucketBehavior) pool : object(PoolOption) pubsubTopic : string requestedVerifyOption : enum(RequestedVerifyOption) substitutions: map (key : string, value : string) tags : [ string , string , ... ] serviceAccount : string secrets : object(Secret) availableSecrets : object(Secrets) artifacts : object(Artifacts) goModules : [ object(GoModules) , ... ] mavenArtifacts : [ object(MavenArtifact) , ... ] pythonPackages : [ object(PythonPackage) , ... ] npmPackages : [ object(npmPackage) , ... ] images : - [ string , string , ... ] JSON { \"steps\" : [ { \"name\" : \"string\" , \"args\" : [ \"string\" , \"string\" , \"...\" ], \"env\" : [ \"string\" , \"string\" , \"...\" ], \"allowFailure\" : \"boolean\" , \"allowExitCodes: [ \" s tr i n g (i nt 64 f orma t ) \", \" s tr i n g (i nt 64 f orma t ) \", \" ... \" ], \" dir \": \" s tr i n g \", \" id \": \" s tr i n g \", \" wai t For \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" e ntr ypoi nt \": \" s tr i n g \", \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" scrip t \" : \" s tr i n g \", \" au t omapSubs t i tut io ns \" : \" boolea n \" }, { \" na me \": \" s tr i n g \" ... }, { \" na me \": \" s tr i n g \" ... } ], \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" queueT tl \": \" s tr i n g (Dura t io n f orma t ) \", \" logsBucke t \": \" s tr i n g \", \" op t io ns \": { \" sourceProve nan ceHash \": \" e nu m(HashType) \", \" machi ne Type \": \" e nu m(Machi ne Type) \", \" diskSizeGb \": \" s tr i n g (i nt 64 f orma t ) \", \" subs t i tut io n Op t io n \": \" e nu m(Subs t i tut io n Op t io n ) \", \" dy na micSubs t i tut io ns \": \" boolea n \", \" au t omapSubs t i tut io ns \": \" boolea n \", \" logS trea mi n gOp t io n \": \" e nu m(LogS trea mi n gOp t io n ) \", \" loggi n g \": \" e nu m(Loggi n gMode) \" \" de fault LogsBucke t Behavior \": \" e nu m(De fault LogsBucke t Behavior) \" \" e n v \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" pool \": \" objec t (PoolOp t io n ) \" \" reques te dVeri f yOp t io n \": \" e nu m(Reques te dVeri f yOp t io n ) \" }, \" subs t i tut io ns \": \" map (key : s tr i n g , value : s tr i n g) \", \" ta gs \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" serviceAccou nt \": \" s tr i n g \", \" secre ts \": \" objec t (Secre t ) \", \" availableSecre ts \": \" objec t (Secre ts ) \", \" ar t i fa c ts \": \" objec t (Ar t i fa c ts ) \", \" goModules \": [object(GoModules), ...], \" mave n Ar t i fa c ts \": [\" objec t (Mave n Ar t i fa c t ) \", ...], \" py t ho n Packages \": [\" objec t (Py t ho n Package) \", ...], \" n pmPackages \": [\" objec t ( n pmPackage) \", ...], \" images \": [ \" s tr i n g \", \" s tr i n g \", \" ...\" ] } Each of the sections of the build config file defines a part of the task you want Cloud Build to execute: Build steps A build step specifies an action that you want Cloud Build to perform."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "gcr.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-gke",
+        "https://docs.cloud.google.com/build/docs/build-config",
+        "https://docs.cloud.google.com/build/docs/build-config-file-schema"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

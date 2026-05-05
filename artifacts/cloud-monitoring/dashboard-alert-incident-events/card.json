@@ -1,0 +1,134 @@
+{
+  "feature_name": "Dashboard alert incident events",
+  "feature_slug": "dashboard-alert-incident-events",
+  "summary": "This feature lets dashboards show events for when alerting incidents were opened.",
+  "extended_definition": "This feature lets dashboards show events for when alerting incidents were opened.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+      "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is the project that you use to view your application's telemetry data: To get the permissions that you need to view log and metric data, and to create alerting policies and customize dashboards, ask your administrator to grant you the following IAM roles: Logs Viewer ( roles/logging.viewer ) on your App Hub host project or management project and any other projects listed in its default log scope.",
+          "To view closed incident and those that opened outside the dashboard's time range setting, in the toolbar of the Incidents section, disable Grouped by policy , and then enable Show closed incidents .",
+          "View topology To see a dynamic view of your application's services and dashboards, incidents, and traffic, on the dashboard for the application, select the Topology tab."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These dashboards show information like an application's log or metric data, and the number of open alerts.",
+          "Charts and tables that show metric data Log data and error groups Charts for alerting policies Information about alerts Text Events , such as a reboot or a crash, that affects the operation of a system.",
+          "These dashboards show curated information that helps you understand the health of your resources and applications."
+        ]
+      },
+      {
+        "title": "\"Set up Google Cloud Observability for Application Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you add these labels, incidents associated with your application are shown on the Application Monitoring dashboards.",
+          "If you deploy workloads on Google Kubernetes Engine and want the traffic, latency, and error rate golden signals displayed on your Application Monitoring dashboards, then instrument your application with OpenTelemetry.",
+          "Instead, for your project, you configure the following: The default log scope Configure this scope so that when you open the Logs Explorer page or view dashboards, your application's log data is displayed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

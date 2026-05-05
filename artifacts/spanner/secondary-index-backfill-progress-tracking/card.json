@@ -1,0 +1,106 @@
+{
+  "feature_name": "Secondary index backfill progress tracking",
+  "feature_slug": "secondary-index-backfill-progress-tracking",
+  "summary": "Cloud Spanner now allows you to track the progress of long-running secondary index backfill operations via the gcloud CLI, REST API, and RPC API.",
+  "extended_definition": "Cloud Spanner now allows you to track the progress of long-running secondary index backfill operations via the gcloud CLI, REST API, and RPC API.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "In load tests, this model does an acceptable job of distributing the secondary index read and write load across multiple Spanner splits, as illustrated in the following diagram: Although the synthetic data used in the load test is similar to the eventual steady state of the game where Attribute values are well distributed, the game design dictates that all players start with Attribute=50 .",
+          "If your game allows players to have separate saved progress for multiple characters, like many large persistent massively multiplayer games, then this table typically contains a row for each character instead.",
+          "Tracking valuable in-game items or critical player progress typically requires transactions and is challenging to work around in many types of distributed databases."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tables with a PRIMARY KEY specification have a pseudo-index entry generated with the name PRIMARY KEY , which allows the fields of the primary key to be determined.",
+          "PARENT TABLE NAME STRING Secondary indexes can be interleaved in a parent table, as discussed in Creating a secondary index .",
+          "Spanner does not begin enforcing the constraint until the foreign key's backing indexes are created and backfilled."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Possible values and the states they represent are: NULL : the index type is PRIMARY KEY PREPARE : creating empty tables for a new index WRITE ONLY : backfilling data for a new index WRITE ONLY CLEANUP : cleaning up a new index WRITE ONLY VALIDATE UNIQUE : checking uniqueness of data in a new index READ WRITE : normal index operation spanner is managed character varying Whether the index is managed by Spanner.",
+          "Tables created with a PRIMARY KEY clause have a pseudo-index entry generated with the name PRIMARY KEY , which allows the fields of the primary key to be identified. index type character varying The type of the index.",
+          "A table can go through multiple states during creation, if bulk operations are involved, for example, when the table is created with a foreign key that requires backfilling of its referenced index."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

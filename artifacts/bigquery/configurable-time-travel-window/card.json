@@ -1,0 +1,102 @@
+{
+  "feature_name": "Configurable time travel window",
+  "feature_slug": "configurable-time-travel-window",
+  "summary": "The time travel window can be configured from two to seven days; This feature lets you set the time travel retention window from two to seven days.",
+  "extended_definition": "The time travel window can be configured from two to seven days; This feature lets you set the time travel retention window from two to seven days.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+      "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tables: mytable and MyTable can coexist in the same dataset if case-sensitivity for the dataset is turned on. is primary BOOLEAN Declares if the dataset is the primary replica. labels <ARRAY<STRUCT<STRING, STRING>>> An array of labels for the dataset, expressed as key-value pairs. max time travel hours SMALLINT Specifies the duration in hours of the time travel window for the dataset.",
+          "If you specify this option and also explicitly set the location for the query job, the two values must match; otherwise the query fails. max time travel hours SMALLINT Specifies the duration in hours of the time travel window for the dataset.",
+          "If you have configured dataset-level table expiration , the renamed table might be immediately deleted if its original creation timestamp falls outside of the expiration window."
+        ]
+      },
+      {
+        "title": "Estimate and control costs \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unexpected storage charges Scenarios that could lead to storage charge increases: Increases in the amount of data that is stored in your tables—use the INFORMATION SCHEMA.TABLE STORAGE USAGE TIMELINE view to monitor the change in bytes for your tables Changing dataset billing models Increasing the time-travel window for physical billing model datasets Modification of tables that have data in long-term storage , causing them to become active storage Deletion of table(s) or dataset(s) resulted in higher BigQuery storage costs The BigQuery time travel feature retains deleted data for duration of the configured time-travel window and an additional 7 days for fail-safe recovery.",
+          "Reducing the time travel window from the default value of seven days reduces the retention period for data deleted from or changed in a table.",
+          "When you overwrite a table, for example by using the --replace parameter in batch load jobs or using the TRUNCATE TABLE SQL statement, the replaced data is kept for the duration of the time travel and failsafe windows."
+        ]
+      },
+      {
+        "title": "Create continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+        "source_id": "site-docs-reference-5",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "CURRENT TIMESTAMP () - INTERVAL 10 MINUTE ) WHERE ride status = 'enroute' ); Specify a starting point earlier than the time travel window To include data that is outside of the seven day time travel window, use a standard query to backfill data up to a particular point in time, and then start a continuous query from that point.",
+          "When specifying the start timestamp argument, the value must fall within the table's time travel window, which defaults to seven days for standard tables.",
+          "FOR SYSTEM TIME AS OF '2025-01-01 00:00:00 UTC' WHERE ride status = 'dropoff' ; Run a continuous query from the point in time at which the query stopped: INSERT INTO myproject.real time taxi streaming.transformed taxirides SELECT timestamp , meter reading , ride status , passenger count , ST Distance ( ST GeogPoint ( pickup longitude , pickup latitude ), ST GeogPoint ( dropoff longitude , dropoff latitude )) AS euclidean trip distance , SAFE DIVIDE ( meter reading , passenger count ) AS cost per passenger FROM APPENDS ( TABLE myproject.real time taxi streaming.taxirides , -- Configure the APPENDS TVF start timestamp to start processing -- data right where the batch query left off + 1 microsecond. -- This timestamp must be within the time travel window."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "myproject.real",
+      "streaming.taxirides",
+      "streaming.transformed"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/controlling-costs",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

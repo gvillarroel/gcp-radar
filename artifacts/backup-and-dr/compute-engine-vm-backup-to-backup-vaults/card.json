@@ -1,0 +1,141 @@
+{
+  "feature_name": "Compute Engine VM backup to backup vaults",
+  "feature_slug": "compute-engine-vm-backup-to-backup-vaults",
+  "summary": "Backup and DR adds support for backing up Compute Engine VMs directly to backup vaults.",
+  "extended_definition": "Backup and DR adds support for backing up Compute Engine VMs directly to backup vaults.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+      "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+      "https://docs.cloud.google.com/compute/docs/compute-optimized-machines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Back up Compute Engine instances \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table lists the permissions required for each API call: Resource Action to be Performed on the Resource Permissions required for each API call Project where it needs to be assigned Backup vault Create BackupVault backupdr.backupVaults.create Admin project Delete BackupVault backupdr.backupVaults.delete Admin project Update BackupVault backupdr.backupVaults.update Admin project List BackupVaults backupdr.backupVaults.list Admin project Get BackupVault backupdr.backupVaults.get Admin project Backup plan Create BackupPlan backupdr.backupPlans.create Admin project Delete BackupPlan backupdr.backupPlans.delete Admin project Get BackupPlan backupdr.backupPlans.get Admin project List Backup Plans backupdr.backupPlans.list Admin project Backup Plan Associations Create Backup Plan Association Workload project backupdr.backupPlanAssociations.createForComputeInstance Workload project backupdr.backupPlans.useForComputeInstance Admin project Delete Backup Plan Association backupdr.backupPlanAssociations.deleteForComputeInstance Workload project Trigger an on-demand backup on Backup Plan Association backupdr.backupPlanAssociations.triggerBackupForComputeInstance Workload project Get Backup Plan Association backupdr.backupPlanAssociations.getForComputeInstance Workload project List Backup Plan Associations backupdr.backupPlanAssociations.list Workload project Fetch Backup Plan Associations backupdr.backupPlanAssociations.fetchForComputeInstance Workload project Data Source Get DataSource backupdr.bvdataSources.get Admin project List DataSources backupdr.backupPlanAssociations.list Admin project Backups Get Backup backupdr.bvbackups.get Admin project List Backups backupdr.bvbackups.list Admin project Delete Backup backupdr.bvbackups.delete Admin project Restore Backup backupdr.bvbackups.restore Admin project Operations List Operations backupdr.operations.list Respective project Get Operations backupdr.operations.get Respective project Grant backup vault access in the Compute Engine project To back up a Compute Engine VM instance in a project different from where the backup vault is created, you must grant the Backup and DR Compute Engine Operator ( roles/backupdr.computeEngineOperator ) IAM role to the backup vault service agent within the Compute Engine project.",
+          "Use the management console to back up Compute Engine instances : if you have any of the following backup requirements, you can use the management console to back up Compute Engine instances: Cross-region backups Backups of specific disks attached to a virtual machine (VM) Automated protection of Compute Engine VMs based on tags If the Google Cloud console-based backup plans and backup vaults are not in a location that is compatible with the region where your source VMs are running.",
+          "There are two main methods for backing up Compute Engine instances: Use the Google Cloud console to back up Compute Engine instances : in the Google Cloud console, you can back up Compute Engine instances to a backup vault by applying backup plans."
+        ]
+      },
+      {
+        "title": "Compute-optimized machine family for Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/compute-optimized-machines",
+        "source_id": "site-docs-reference-2",
+        "final_score": 128,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Machine Workloads H4D machine series HPC workloads and multi-node workloads Manufacturing Weather forecasting Electronic design automation (EDA) Healthcare and life sciences Scientific computing H3 machine series HPC workloads Computational fluid dynamics Crash safety Genomics Financial modeling General scientific and engineering computing C2D machine series Memory-bound workloads Gaming (AAA game servers) High performance computing (HPC) High performance databases Electronic Design Automation (EDA) Media transcoding C2 machine series Compute-bound workloads High-performance web serving Gaming (AAA game servers) Ad serving High performance computing (HPC) Media transcoding AI/ML The following machine series are available in this machine family: H4D instances are powered by Titanium and fifth generation AMD EPYC Turin processors which have a base frequency of 2.7 GHz and a maximum frequency of 4.1 GHz.",
+          "Home Documentation Compute Compute Engine Guides Send feedback Compute-optimized machine family for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "Maintenance experience for H4D instances During the lifecycle of a Compute Engine instance , the host machine that your instance runs on undergoes multiple host events ."
+        ]
+      },
+      {
+        "title": "\"Understand autoscaler decisions \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions",
+        "source_id": "site-docs-reference-2",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You are autoscaling using a Cloud Monitoring metric but the metric you provided does not exist, lacks the necessary labels, or is not accessible to the Compute Engine Service Agent .",
+          "Home Documentation Compute Compute Engine Guides Send feedback Understand autoscaler decisions Stay organized with collections Save and categorize content based on your preferences.",
+          "Monitor autoscaling charts and logs Compute Engine provides several charts and logs that let you monitor your managed instance group's behavior at any point in time."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.backupPlanAssociations.createForComputeInstance",
+      "backupdr.backupPlanAssociations.deleteForComputeInstance",
+      "backupdr.backupPlanAssociations.fetchForComputeInstance",
+      "backupdr.backupPlanAssociations.getForComputeInstance",
+      "backupdr.backupPlanAssociations.list",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeInstance",
+      "backupdr.backupPlans.create",
+      "backupdr.backupPlans.delete",
+      "backupdr.backupPlans.get",
+      "backupdr.backupPlans.list",
+      "backupdr.backupPlans.useForComputeInstance",
+      "backupdr.backupVaults.create",
+      "backupdr.backupVaults.delete",
+      "backupdr.backupVaults.get",
+      "backupdr.backupVaults.list",
+      "backupdr.backupVaults.update",
+      "backupdr.bvbackups.delete",
+      "backupdr.bvbackups.get",
+      "backupdr.bvbackups.list",
+      "backupdr.bvbackups.restore",
+      "backupdr.bvdataSources.get",
+      "backupdr.computeEngineOperator",
+      "backupdr.operations.get",
+      "backupdr.operations.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/backupdr.computeEngineOperator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/compute/docs/compute-optimized-machines",
+        "https://docs.cloud.google.com/compute/docs/autoscaler/understanding-autoscaler-decisions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

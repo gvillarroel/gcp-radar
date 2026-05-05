@@ -1,0 +1,41 @@
+# Workflows triggers
+
+Product: Eventarc
+Feature slug: `workflows-triggers`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Eventarc can create triggers for Workflows destinations from the Eventarc page in Cloud Console; Eventarc can trigger Workflows destinations.
+
+## Lifecycle
+
+- Latest feature date: 2022-03-31
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- allow (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- audit (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- auth (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- constraint (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- iam (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- key (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- logging (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- permission (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- policy (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- role (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+- token (evidence: [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform), [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers), [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage), [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform](https://docs.cloud.google.com/eventarc/docs/creating-triggers-terraform)
+- [https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints](https://docs.cloud.google.com/eventarc/standard/docs/custom-constraints)
+- [https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers](https://docs.cloud.google.com/eventarc/standard/docs/gke/migrating-event-triggers)
+- [https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage](https://docs.cloud.google.com/eventarc/standard/docs/workflows/quickstart-storage)

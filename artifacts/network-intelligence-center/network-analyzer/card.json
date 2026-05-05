@@ -1,0 +1,162 @@
+{
+  "feature_name": "Network Analyzer",
+  "feature_slug": "network-analyzer",
+  "summary": "Network Analyzer adds an insight that flags routes whose next hop IP address is not assigned to a forwarding rule in the relevant networks; Network Analyzer provides network analysis and troubleshooting capabilities in Network Intelligence Center.",
+  "extended_definition": "Network Analyzer adds an insight that flags routes whose next hop IP address is not assigned to a forwarding rule in the relevant networks; Network Analyzer provides network analysis and troubleshooting capabilities in Network Intelligence Center.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network Analyzer overview \\_|\\_ Network Intelligence Center - Network Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "source_id": "site-docs-root",
+        "final_score": 356,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shared VPC insights For Shared VPC cases, there are two scenarios: Host project: Network Analyzer provides relevant information for VPC networks in the host project, such as IP address utilization insights that display the IP address allocation percentage of subnets.",
+          "It provides insights about network topology, firewall rules, routes, configuration dependencies, and connectivity to services and applications.",
+          "Analysis schedule Network Analyzer generates insights whenever relevant configuration changes are made, as well as periodically."
+        ]
+      },
+      {
+        "title": "\"Flow Analyzer overview \\_|\\_ Network Intelligence Center - Flow Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Flow Analyzer, you can do the following: Query logs reported by VPC Flow Logs Use SQL filters to refine your queries Sort query results by total traffic, aggregate packets, or latency View traffic for a specific time period View the top five flows with the highest traffic or latency, for the selected time period View resources with the highest traffic or latency, for the selected time period View traffic details for specific source and destination pairs in your query results How it works VPC Flow Logs samples packets in your VPC network to generate flow logs, which can be stored in Cloud Logging or routed to supported destinations, such as BigQuery or a third-party platform through Pub/Sub.",
+          "Home Documentation Networking Network Intelligence Center Flow Analyzer Guides Flow Analyzer overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Flow Analyzer lets you perform opinionated network traffic analysis with 5-tuple granularity (source IP, destination IP, source port, destination port, and protocol)."
+        ]
+      },
+      {
+        "title": "Network Intelligence Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It provides insights about network topology, firewall rules, routes, configuration dependencies, and connectivity to services and applications.",
+          "Network Topology Network Topology is a visualization tool that shows the topology of your network infrastructure: Infrastructure view: Shows Virtual Private Cloud (VPC) networks, hybrid connectivity to and from your on-premises networks, connectivity to Google-managed services, and the associated metrics.",
+          "Network Analyzer Network Analyzer automatically monitors your Virtual Private Cloud (VPC) network configurations and detects misconfigurations and suboptimal configurations."
+        ]
+      },
+      {
+        "title": "\"Enable Cloud Network Insights \\_|\\_ Network Intelligence Center - Cloud\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+        "source_id": "site-iam-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to Cloud Network Insights If the page fails to load, reach out to your Technical Account Manager to verify that your project has been granted access.",
+          "Home Documentation Networking Network Intelligence Center Cloud Network Insights Guides Enable Cloud Network Insights Stay organized with collections Save and categorize content based on your preferences.",
+          "Cloud Network Insights Editor ( roles/networkmanagement.CloudNetworkInsightsEditor ): To enable Cloud Network Insights and editing permissions for Cloud Network Insights resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networkmanagement.CloudNetworkInsightsEditor"
+    ],
+    "missing_inventory_roles": [
+      "roles/networkmanagement.CloudNetworkInsightsEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/flow-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:47.484Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center"
+}

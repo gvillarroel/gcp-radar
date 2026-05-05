@@ -1,0 +1,109 @@
+{
+  "feature_name": "YouTube Analytics advanced service",
+  "feature_slug": "youtube-analytics-advanced-service",
+  "summary": "Apps Script added an advanced service for the YouTube Analytics API.",
+  "extended_definition": "Apps Script added an advanced service for the YouTube Analytics API.",
+  "lifecycle": {
+    "latest_feature_date": "2013-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/youtube",
+      "https://developers.google.com/apps-script/advanced/youtube-analytics",
+      "https://developers.google.com/apps-script/advanced/youtube-content-id"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "YouTube Analytics Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/youtube-analytics",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Like all advanced services in Apps Script, the YouTube Analytics service uses the same objects, methods, and parameters as the public API.",
+          "Page Summary outlined flag The YouTube Analytics service in Apps Script allows you to use the YouTube Analytics API to retrieve viewing statistics, popularity metrics, and demographic information for YouTube videos and channels.",
+          "Sample code The following sample code uses version 2 of the YouTube Analytics API, as well as version 3 of the YouTube Data API, which you can access through the YouTube service in Apps Script."
+        ]
+      },
+      {
+        "title": "YouTube Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/youtube",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reference For detailed information on this service, see the following reference documentation: YouTube Data API YouTube Live Streaming API Like all advanced services in Apps Script, the YouTube service uses the same objects, methods, and parameters as the public API.",
+          "The YouTube service in Apps Script is an advanced service that must be enabled before use and utilizes the same objects, methods, and parameters as the public API.",
+          "PlaylistItems . list ( \"snippet\" , { playlistId : playlistId , maxResults : 25 , pageToken : nextPageToken , }); if ( ! playlistResponse playlistResponse . items . length === 0 ) { console . log ( \"No Playlist found.\" ); break ; } for ( let j = 0 ; j < playlistResponse . items . length ; j ++ ) { const playlistItem = playlistResponse . items [ j ]; console . log ( \"[%s] Title: %s\" , playlistItem . snippet . resourceId . videoId , playlistItem . snippet . title , ); } nextPageToken = playlistResponse . nextPageToken ; } while ( nextPageToken ); } } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with err %s\" , err . message ); } } Subscribe to channel This sample subscribes the user to the Google Developers channel on YouTube. advanced/youtube.gs View on GitHub / This sample subscribes the user to the Google Developers channel on YouTube. @see https://developers.google.com/youtube/v3/docs/subscriptions/insert / function addSubscription () { // Replace this channel ID with the channel ID you want to subscribe to const channelId = \"UC x5XG1OV2P6uZZ5FSM9Ttw\" ; const resource = { snippet : { resourceId : { kind : \"youtube#channel\" , channelId : channelId , }, }, }; try { const response = YouTube ."
+        ]
+      },
+      {
+        "title": "YouTube Content ID Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/youtube-content-id",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Like all advanced services in Apps Script, the advanced YouTube Content ID service uses the same objects, methods, and parameters as the public API.",
+          "Page Summary outlined flag The YouTube Content ID service in Apps Script allows developers to use the YouTube Content ID API to interact with YouTube's rights management system.",
+          "Home Google Workspace Apps Script Reference Send feedback YouTube Content ID Service Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "youtube.gs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/youtube-analytics",
+        "https://developers.google.com/apps-script/advanced/youtube",
+        "https://developers.google.com/apps-script/advanced/youtube-content-id"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/youtube-analytics",
+        "https://developers.google.com/apps-script/advanced/youtube",
+        "https://developers.google.com/apps-script/advanced/youtube-content-id"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/youtube-analytics",
+        "https://developers.google.com/apps-script/advanced/youtube",
+        "https://developers.google.com/apps-script/advanced/youtube-content-id"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

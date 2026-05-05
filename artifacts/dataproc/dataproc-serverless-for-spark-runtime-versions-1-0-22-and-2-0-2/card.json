@@ -1,0 +1,110 @@
+{
+  "feature_name": "Dataproc Serverless for Spark runtime versions 1.0.22 and 2.0.2",
+  "feature_slug": "dataproc-serverless-for-spark-runtime-versions-1-0-22-and-2-0-2",
+  "summary": "Dataproc Serverless for Spark runtime versions 1.0.22 and 2.0.2 were deprecated for new batch submissions; deprecated on 2022-11-11.",
+  "extended_definition": "Dataproc Serverless for Spark runtime versions 1.0.22 and 2.0.2 were deprecated for new batch submissions; deprecated on 2022-11-11.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-11",
+    "deprecation_date": "2022-11-11",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize your Spark job runtime environment with Docker on YARN \\_|\\_ Managed\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Download the Miniconda3 installer. wget https://repo.anaconda.com/miniconda/Miniconda3-py39 4.10.3-Linux-x86 64.sh Python module example: cat >test util.py <<EOF def hello ( name ) : print ( \"hello {}\" .format ( name )) def read lines ( path ) : with open ( path ) as f: return f.readlines () EOF Build and push the image. docker build -t \" ${ IMAGE } \" . docker push \" ${ IMAGE } \" Create a Managed Service for Apache Spark cluster After creating a Docker image that customizes your Spark environment, create a Managed Service for Apache Spark cluster that will use your Docker image when running Spark jobs. gcloud gcloud dataproc clusters create CLUSTER NAME \\ --region= REGION \\ --image-version= DP IMAGE \\ --optional-components=DOCKER \\ --properties=dataproc:yarn.docker.enable=true,dataproc:yarn.docker.image= DOCKER IMAGE \\ other flags Replace the following; CLUSTER NAME : The cluster name.",
+          "DP IMAGE : Managed Service for Apache Spark image version must be 2.0.49 or later ( --image-version=2.0 will use a qualified minor version later than 2.0.49 ). --optional-components=DOCKER : Enables the Docker component on the cluster. --properties flag: dataproc:yarn.docker.enable=true : Required property to enable the Managed Service for Apache Spark Docker on YARN feature. dataproc:yarn.docker.image : Optional property that you can add to specify your DOCKER IMAGE using the following Container Registry image naming format: {hostname}/{project-id}/{image}:{tag} ."
+        ]
+      },
+      {
+        "title": "\"Managed Service for Apache Spark on GKE release versions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Spark Engine 3.5 Component 3.5-dataproc-22 3.5-dataproc-17 Apache Spark 3.5.0 3.5.0 Hadoop Libraries 3.3.6 3.3.6 Cloud Storage Connector 3.0.0 3.0.0 Java 11 11 Python 3.8.5 3.8.5 Conda 4.9.2 4.9.2 R 4.3.0 4.3.0 Spark Engine 3.1(Deprecated) Component 3.1-dataproc-17 3.1-dataproc-16 3.1-dataproc-15 3.1-dataproc-14 Apache Spark 3.1.3 3.1.3 3.1.3 3.1.3 Hadoop Libraries 3.2.3 3.2.3 3.2.3 3.2.3 Cloud Storage Connector hadoop3-2.2.13 hadoop3-2.2.13 hadoop3-2.2.11 hadoop3-2.2.11 Java 8 8 8 8 Python 3.8.5 3.8.5 3.8.5 3.8.5 Conda 4.9.2 23.5.0 4.9.2 4.9.2 R 4.3.0 4.3.0 4.2.3 4.2.3 Spark Engine 2.4(Deprecated) Spark 2.4 has reached EOL for support in DPGKE.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Component 2.4-dataproc-17 2.4-dataproc-16 2.4-dataproc-15 2.4-dataproc-14 Apache Spark 2.4.8 2.4.8 2.4.8 2.4.8 Hadoop Libraries 2.10.2 2.10.2 2.10.2 2.10.2 Cloud Storage Connector hadoop2-2.1.9 hadoop2-2.1.9 hadoop2-2.1.9 hadoop2-2.1.9 Java 8 8 8 8 Python 3.7.4 3.7.4 3.7.4 3.7.4 Conda 4.7.12 22.11.1 22.11.1 22.1.0 R 3.6.3 3.6.3 3.6.3 3.6.3 Spark version formats on Managed Service for Apache Spark on GKE A fully qualified Spark engine release version is expressed as: 3.1-dataproc-[NUMBER] or 3.5-dataproc-[NUMBER] , for example, 3.1-dataproc-17 or 3.5-dataproc-17 ."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud Storage connector with Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Replace the version placeholders in the file to show the Spark and Scala library versions used by your cluster's image version . scalaVersion := \" Scala version, for example, 2.11.8 \" name := \"word-count\" organization := \"dataproc.codelab\" version := \"1.0\" libraryDependencies ++ = Seq ( \"org.scala-lang\" % \"scala-library\" % scalaVersion . value % \"provided\" , \"org.apache.spark\" %% \"spark-core\" % \" Spark version, for example, 2.3.1 \" % \"provided\" ) Copy word-count.scala to your local machine.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Create a set of directories with the path src/main/java/dataproc/codelab : mkdir -p src/main/java/dataproc/codelab Copy WordCount.java to your local machine into src/main/java/dataproc/codelab : cp WordCount.java src/main/java/dataproc/codelab WordCount.java is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab ; import java.util.Arrays ; import org.apache.spark.SparkConf ; import org.apache.spark.api.java.JavaPairRDD ; import org.apache.spark.api.java.JavaRDD ; import org.apache.spark.api.java.JavaSparkContext ; import scala.Tuple2 ; public class WordCount { public static void main ( String [] args ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( \"Exactly 2 arguments are required: <inputUri> <outputUri>\" ); } String inputPath = args [ 0 ] ; String outputPath = args [ 1 ] ; JavaSparkContext sparkContext = new JavaSparkContext ( new SparkConf (). setAppName ( \"Word Count\" )); JavaRDD<String> lines = sparkContext . textFile ( inputPath ); JavaRDD<String> words = lines . flatMap ( ( String line ) - > Arrays . asList ( line . split ( \" \" )). iterator () ); JavaPairRDD<String , Integer > wordCounts = words . mapToPair ( ( String word ) - > new Tuple2 <> ( word , 1 ) ). reduceByKey ( ( Integer count1 , Integer count2 ) - > count1 + count2 ); wordCounts . saveAsTextFile ( outputPath ); } } Build the package. mvn clean package If the build is successful, a target/word-count-1.0.jar is created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "count.scala",
+      "dataproc.codelab",
+      "f.readlines",
+      "java.util.Arrays",
+      "major.minor",
+      "maven.apache.org",
+      "org.apache.spark",
+      "org.apache.spark.api.java.JavaPairRDD",
+      "org.apache.spark.api.java.JavaRDD",
+      "org.apache.spark.api.java.JavaSparkContext",
+      "org.apache.spark.SparkConf",
+      "org.scala",
+      "repo.anaconda.com",
+      "scala.Tuple2",
+      "spark.executorEnv.PYTHONPATH",
+      "spark.yarn.appMasterEnv.PYTHONPATH",
+      "util.py",
+      "yarn.docker.enable",
+      "yarn.docker.image"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-versions",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-docker-yarn",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

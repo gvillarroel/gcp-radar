@@ -1,0 +1,152 @@
+{
+  "feature_name": "Apigee UI accessibility improvements",
+  "feature_slug": "apigee-ui-accessibility-improvements",
+  "summary": "The Apigee UI includes accessibility improvements for screen reader output, tooltip handling, and accessible action menus in the API Proxies view.",
+  "extended_definition": "The Apigee UI includes accessibility improvements for screen reader output, tooltip handling, and accessible action menus in the API Proxies view.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Chaining API proxies together \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 90,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: If you are using Apigee hybrid v1.14 or newer and your organization is entitled to use the Enhanced per-environment proxy limits feature, you must set the enhanceProxyLimits property to true in your overrides.yaml file in order to use proxy chaining.",
+          "Home Documentation Application development Apigee Guides Send feedback Chaining API proxies together Stay organized with collections Save and categorize content based on your preferences.",
+          "Apigee currently doesn't support bundling the second proxy in a separate API product that clients shouldn't have access to."
+        ]
+      },
+      {
+        "title": "\"Downloading and uploading an API proxy configuration bundle \\_|\\_ Apigee\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 76,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Apigee API To upload an API proxy configuration using the API, see Update an existing API proxy revision Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You may want to download an API proxy configuration bundle (as a zip file) from Apigee to perform one of the following tasks: Import an API proxy using the API proxy configuration bundle to another organization, as described in Importing an API proxy from an API proxy bundle .",
+          "Home Documentation Application development Apigee Guides Send feedback Downloading and uploading an API proxy configuration bundle Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "UI overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table maps each Apigee UI feature page to its current location in the Apigee UI: Feature Apigee UI Proxies Proxy development > API proxies Go to API proxies Sharedflows Proxy development > Sharedflows Go to Sharedflows Offline debug Proxy development > Offline debug Go to Offline debug API products Distribution > API products Go to API products Portals Distribution > Portals Go to Portals Monetization Distribution > Monetization Go to Monetization Developers Distribution > Developers Go to Developers Apps Distribution > Apps Go to Apps API monitoring Proxy development > API monitoring Go to API monitoring API metrics Analytics > API metrics Go to API metrics Developer Engagement Analytics > Developer analysis Go to Developer analysis Traffic Composition Analytics > Developer analysis Go to Developer analysis Devices Analytics > End user analysis Go to End user analysis Geomap Analytics > End user analysis Go to End user analysis Custom reports Analytics > Custom reports Go to Custom reports Instances Management > Instances Go to Instances Data collectors Management > Data collectors Go to Data collectors Environments Management > Environments Go to Environments Endpoint attachments Management > Endpoint attachments Go to Endpoint attachments Roles Identity and Access Management (IAM) > Roles Go to Roles Users IAM Go to IAM Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Whether you are a Pay-as-you-go or Subscription customer, this view provides you with a snapshot of key resource usage, as well as shortcuts to other monitoring and identity management resources for your organization, including: Cloud Monitoring Cloud Billing Identity and Access Management Explore Apigee API management features From the main navigation menu, you can explore the range of Apigee API management features available for your organization, as described in the table below: Main navigation menu Purpose Proxy development Develop and deploy API proxies .",
+          "Apigee API management From the Overview page, you can: Get started as a new Apigee user Test your Apigee runtime View key resource usage metrics Explore Apigee API management features Get started as a new Apigee user If you just are new to Apigee, you can begin your API management journey with quickstart learning options launched from the Overview page: Begin by deploying your first proxy : Watch a video tutorial that walks you through the steps required to create and deploy an API proxy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "overrides.yaml",
+      "v1.14"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/connecting-proxies-other-proxies",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/ui-overview",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/download-api-proxies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.504Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui"
+}

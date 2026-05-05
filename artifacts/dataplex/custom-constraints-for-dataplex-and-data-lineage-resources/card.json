@@ -1,0 +1,168 @@
+{
+  "feature_name": "Custom constraints for Dataplex and data lineage resources",
+  "feature_slug": "custom-constraints-for-dataplex-and-data-lineage-resources",
+  "summary": "Organization Policy custom constraints can enforce granular controls on selected Dataplex and data lineage resource fields.",
+  "extended_definition": "Organization Policy custom constraints can enforce granular controls on selected Dataplex and data lineage resource fields.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/cmek",
+      "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+      "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage data lineage resources using custom constraints \\_|\\_ Knowledge Catalog\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 316,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output is the following: Operation denied by org policy on resource 'projects/ PROJECT ID /locations/ LOCATION ': [\"customConstraints/custom.denyLineageProcess\"] Data lineage supported resources and operations The following custom constraint fields are available to use when you create or update a data lineage process: resource.name resource.displayName resource.origin.name resource.origin.sourceType Custom constraints are checked for the following methods: CreateProcess UpdateProcess ProcessopenLineageRunEvent Example custom organization policies for common use cases The following table provides the syntax of some custom constraints for common use cases: For more information about CEL macros available for use in custom constraint conditions, see Common Expression Language .",
+          "Disable the creation of data lineage processes by BigQuery or Managed Service for Apache Spark name : organizations/ ORGANIZATION ID /customConstraints/custom.denyLineageProcessesCreation resourceTypes : - datalineage.googleapis.com/Process methodTypes : - CREATE condition : \"resource.origin.sourceType == 'BIGQUERY' resource.origin.sourceType == 'DATAPROC'\" actionType : DENY displayName : Deny data lineage processes created by BigQuery or Managed Service for Apache Spark.",
+          "To create a YAML file for a custom constraint: name : organizations/ ORGANIZATION ID /customConstraints/ CONSTRAINT NAME resourceTypes : - datalineage.googleapis.com/ RESOURCE TYPE methodTypes : - CREATE - UPDATE condition : \" CONDITION \" actionType : ACTION displayName : DISPLAY NAME description : DESCRIPTION Replace the following: ORGANIZATION ID : your organization ID, such as 123456789 ."
+        ]
+      },
+      {
+        "title": "\"Manage Dataplex Universal Catalog resources using custom constraints \\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 307,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Limitations Custom constraints and organization policies aren't supported on the following resources: dataplex.googleapis.com/Lake dataplex.googleapis.com/Zone dataplex.googleapis.com/Task dataplex.googleapis.com/Asset dataplex.googleapis.com/Environment Before you begin Sign in to your Google Cloud account.",
+          "Description Constraint syntax Require a specific aspect type for entry types name : organizations/ ORGANIZATION ID /customConstraints/custom.requireAspectTypeForEntryType resourceTypes : - dataplex.googleapis.com/EntryType methodTypes : - CREATE - UPDATE condition : \"resource.requiredAspects.exists(value, value.type ==\" projects/ PROJECT ID /locations/ LOCATION /aspectTypes/exampleAspectType\") actionType : DENY displayName : All entry types require aspect type exampleAspectType description : All entry types require the aspect type exampleAspectType Require a minimum sampling rate for data profiling scans name : organizations/ ORGANIZATION ID /customConstraints/custom.minimumSamplingDataScans resourceTypes : - dataplex.googleapis.com/DataScan methodTypes : - CREATE - UPDATE condition : \"resource.dataProfileSpec.samplingPercent > = 20.0\" actionType : ALLOW displayName : Require minimum sampling for data profiling scans description : All data profiling scans need at least 20% sampling rate Dataplex Universal Catalog supported resources The following table lists the Dataplex Universal Catalog resources that you can reference in custom constraints.",
+          "Before you begin, you must know the following: Your organization ID A project ID Create the constraint Save the following file as constraint-valid-entry-groups.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.denyDataplexEntryGroup resourceTypes : - dataplex.googleapis.com/EntryGroup methodTypes : - CREATE condition : \"resource.description.contains('invalid name')\" actionType : DENY displayName : Validate entry group description description : All new entry groups have valid descriptions."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataplex.v1 (1.86.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "source_id": "site-java-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The primary resources offered by this service are Lakes, Zones and Assets which collectively allow a data administrator to organize, manage, secure and catalog data across their organization located across cloud projects in a variety of storage systems including Cloud Storage and BigQuery. com. google. cloud. dataplex. v1.",
+          "They collectively let data administrators organize, manage, secure, and catalog data located across cloud projects in their organization in a variety of storage systems, including Cloud Storage and BigQuery. com. google. cloud. dataplex. v1.",
+          "Builder A lake is a centralized repository for managing enterprise data across the organization distributed across many cloud projects, and stored in a variety of storage services such as Google Cloud Storage and BigQuery."
+        ]
+      },
+      {
+        "title": "\"Enable customer-managed encryption keys \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Upgrade existing CMEK configurations If you enabled CMEK in Knowledge Catalog before November 7, 2025, run the following command to extend CMEK coverage to Knowledge Catalog and Knowledge Catalog search: gcloud dataplex encryption-config update organizations/ ORG ID /locations/ LOCATION /encryptionConfigs/default --enable-metastore-encryption Replace ORG ID with the ID of the organization that contains the key.",
+          "Supported features Knowledge Catalog supports CMEK encryption for the following features: Auto data quality Data profiling Data discovery Data insights Knowledge Catalog Business Glossary Knowledge Catalog search Data Lineage doesn't store customer core content or sensitive data, and therefore doesn't require CMEK encryption.",
+          "These constraints help to ensure that data within Knowledge Catalog is consistently protected by CMEK. constraints/gcp.restrictNonCmekServices enforces mandatory CMEK usage for Knowledge Catalog resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataplex.v1",
+      "custom.denyDataplexEntryGroup",
+      "custom.denyLineageProcess",
+      "custom.denyLineageProcessesCreation",
+      "custom.minimumSamplingDataScans",
+      "custom.requireAspectTypeForEntryType",
+      "datalineage.googleapis.com",
+      "dataplex.googleapis.com",
+      "gcp.restrictNonCmekServices",
+      "groups.yaml",
+      "resource.dataProfileSpec.samplingPercent",
+      "resource.description.contains",
+      "resource.displayName",
+      "resource.name",
+      "resource.origin.name",
+      "resource.origin.sourceType",
+      "resource.requiredAspects.exists",
+      "value.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/cmek"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "https://docs.cloud.google.com/dataplex/docs/dataplex-custom-constraints",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataplex/latest/com.google.cloud.dataplex.v1",
+        "https://docs.cloud.google.com/dataplex/docs/cmek"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.306Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex"
+}

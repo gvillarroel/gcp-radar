@@ -1,0 +1,143 @@
+{
+  "feature_name": "VPC network 1500 MTU support",
+  "feature_slug": "vpc-network-1500-mtu-support",
+  "summary": "VPC networks now support a maximum transmission unit (MTU) of 1500 bytes.",
+  "extended_definition": "VPC networks now support a maximum transmission unit (MTU) of 1500 bytes.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Change the MTU setting of a VPC network \\_|\\_ Virtual Private Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PATCH https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/ NETWORK { \"mtu\": MTU } Replace the placeholders with valid values: PROJECT ID is the ID of the project that contains the VPC network to modify.",
+          "For detailed considerations regarding changing the MTU of a network, see the maximum transmission unit overview .",
+          "MTU is the maximum transmission unit of the network."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . resource \"google compute network\" \"vpc network\" { project = var.project id # Replace this with your project ID in quotes name = \"my-auto-mode-network\" auto create subnetworks = true mtu = 1460 } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . resource \"google compute network\" \"vpc network\" { project = var.project id # Replace this with your project ID in quotes name = \"my-custom-mode-network\" auto create subnetworks = false mtu = 1460 } Next, add subnets to your network.",
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-custom-mode-network\" mtu = 1460 subnets = [ { subnet name = \"subnet-01\" subnet ip = \"10.10.10.0/24\" subnet region = \"us-west1\" }, { subnet name = \"subnet-02\" subnet ip = \"10.10.20.0/24\" subnet region = \"us-west1\" subnet private access = \"true\" subnet flow logs = \"true\" }, { subnet name = \"subnet-03\" subnet ip = \"10.10.30.0/24\" subnet region = \"us-west1\" subnet flow logs = \"true\" subnet flow logs interval = \"INTERVAL 10 MIN\" subnet flow logs sampling = 0.7 subnet flow logs metadata = \"INCLUDE ALL METADATA\" subnet flow logs filter = \"false\" } ] } Next, create firewall rules ."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 220,
+        "relevance": "",
+        "evidence_snippets": [
+          "Maximum transmission unit For more information about the maximum transmission unit (MTU) setting for a VPC network and its connected VMs, see Maximum transmission unit .",
+          "For information about changing the MTU of a VPC network, or migrating VMs between VPC networks with different MTU settings, see Change the MTU setting of a VPC network .",
+          "Route advertisements and internal IP addresses The following IP addresses are advertised within a VPC network: Regional internal IPv4 addresses Used for primary and secondary IPv4 subnet address ranges Regional internal and external IPv6 addresses Used for internal and external IPv6 subnet address ranges Global internal IPv4 addresses Used for Private Service Connect endpoints for Google APIs If you connect VPC networks using VPC Network Peering, subnet ranges using private IPv4 addresses are always exchanged."
+        ]
+      },
+      {
+        "title": "\"Test connectivity within VPC networks \\_|\\_ Network Intelligence Center\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks",
+        "source_id": "site-iam-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud console screenshot for a trace that's blocked by a hierarchical firewall policy rule (click to enlarge) Test failures for Shared VPC networks In Shared VPC networks, not having permissions to the host project or the service project can cause the test failures listed in the following table.",
+          "Home Documentation Networking Network Intelligence Center Connectivity Tests Guides Send feedback Test connectivity within VPC networks Stay organized with collections Save and categorize content based on your preferences.",
+          "Test failures for VPC Network Peering networks With VPC Network Peering, not having permission to the peered network's Google Cloud project from the primary network can cause the test result listed in the following table."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/test-within-vpc-networks"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

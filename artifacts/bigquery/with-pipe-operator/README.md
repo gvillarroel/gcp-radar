@@ -1,0 +1,31 @@
+# WITH pipe operator
+
+Product: BigQuery
+Feature slug: `with-pipe-operator`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The WITH pipe operator defines common table expressions in pipe syntax queries.
+
+## Lifecycle
+
+- Latest feature date: 2025-07-17
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- allow (evidence: [https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide](https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide), [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql), [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax))
+- constraint (evidence: [https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide](https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide), [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql), [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide](https://docs.cloud.google.com/bigquery/docs/pipe-syntax-guide)
+- [https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql](https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql)
+- [https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax](https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax)

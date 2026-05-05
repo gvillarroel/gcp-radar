@@ -1,0 +1,221 @@
+{
+  "feature_name": "Cloud TPU Trillium machine types for Autopilot clusters",
+  "feature_slug": "cloud-tpu-trillium-machine-types-for-autopilot-clusters",
+  "summary": "Cloud TPU Trillium (v6e) machine types are in public preview for GKE Autopilot clusters.",
+  "extended_definition": "Cloud TPU Trillium (v6e) machine types are in public preview for GKE Autopilot clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run workloads in Autopilot mode in Standard clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "source_id": "site-docs-reference-2",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a new custom Autopilot ComputeClass Save one of the following example ComputeClass manifests: Select specific machines : apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : n4-class spec : autopilot : enabled : true priorities : - machineFamily : n4 spot : true minCores : 16 - machineFamily : n4 spot : true - machineFamily : n4 spot : false activeMigration : optimizeRulePriority : true This manifest includes the following fields: autopilot : enables Autopilot mode for the ComputeClass.",
+          "If you specify this field in a ComputeClass that you deploy to an Autopilot cluster, GKE ignores the field. priorities : defines an array of three different N4 machine family configurations. activeMigration : lets GKE migrate Pods to configurations that are higher in the list of priorities when resources become available.",
+          "For more information about the implications of running an Autopilot workload in your Standard clusters, including differences that you might notice when you deploy those workloads, see About Autopilot mode workloads in GKE Standard ."
+        ]
+      },
+      {
+        "title": "\"Serve an LLM using TPUs on GKE with KubeRay \\_|\\_ GKE AI/ML \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 153,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use Cloud Shell to create an Autopilot or Standard cluster: Autopilot Create a GKE Autopilot cluster with the Ray Operator add-on enabled: gcloud container clusters create-auto ${ CLUSTER NAME } \\ --enable-ray-operator \\ --release-channel = rapid \\ --location = ${ COMPUTE REGION } Standard Create a Standard cluster with the Ray Operator add-on enabled: gcloud container clusters create ${ CLUSTER NAME } \\ --release-channel = rapid \\ --location = ${ COMPUTE ZONE } \\ --workload-pool = ${ PROJECT ID } .svc.id.goog \\ --machine-type = \"n1-standard-4\" \\ --addons = RayOperator,GcsFuseCsiDriver Create a single-host TPU slice node pool: Llama-3-8B-Instruct gcloud container node-pools create tpu-1 \\ --location = ${ COMPUTE ZONE } \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = ct5lp-hightpu-8t \\ --num-nodes = 1 GKE creates a TPU v5e node pool with a ct5lp-hightpu-8t machine type.",
+          "Set up your environment: export ASSIST MODEL ID = meta-llama/Meta-Llama-3-8B-Instruct export SUMMARIZER MODEL ID = google/gemma-7b-it For Standard clusters, create an additional single-host TPU slice node pool: gcloud container node-pools create tpu-2 \\ --location = ${ COMPUTE ZONE } \\ --cluster = ${ CLUSTER NAME } \\ --machine-type = MACHINE TYPE \\ --num-nodes = 1 Replace the MACHINE TYPE with any of the following machine types: ct5lp-hightpu-8t to provision TPU v5e. ct6e-standard-8t to provision TPU v6e.",
+          "Configure kubectl to communicate with your cluster To configure kubectl to communicate with your cluster, run the following command: Autopilot gcloud container clusters get-credentials ${ CLUSTER NAME } \\ --location = ${ COMPUTE REGION } Standard gcloud container clusters get-credentials ${ CLUSTER NAME } \\ --location = ${ COMPUTE ZONE } Create a Kubernetes Secret for Hugging Face credentials To create a Kubernetes Secret that contains the Hugging Face token, run the following command: kubectl create secret generic hf-secret \\ --from-literal = hf api token = ${ HF TOKEN } \\ --dry-run = client -o yaml kubectl --namespace ${ NAMESPACE } apply -f - Create a Cloud Storage bucket To accelerate the vLLM deployment startup time and minimize required disk space per node, use the Cloud Storage FUSE CSI driver to mount the downloaded model and compilation cache to the Ray nodes."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"description\" : string , \"initialNodeCount\" : integer , \"nodeConfig\" : { object ( NodeConfig ) } , \"masterAuth\" : { object ( MasterAuth ) } , \"loggingService\" : string , \"monitoringService\" : string , \"network\" : string , \"clusterIpv4Cidr\" : string , \"addonsConfig\" : { object ( AddonsConfig ) } , \"subnetwork\" : string , \"nodePools\" : [ { object ( NodePool ) } ] , \"locations\" : [ string ] , \"enableKubernetesAlpha\" : boolean , \"alphaClusterFeatureGates\" : [ string ] , \"resourceLabels\" : { string : string , ... } , \"labelFingerprint\" : string , \"legacyAbac\" : { object ( LegacyAbac ) } , \"networkPolicy\" : { object ( NetworkPolicy ) } , \"ipAllocationPolicy\" : { object ( IPAllocationPolicy ) } , \"masterAuthorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"autoscaling\" : { object ( ClusterAutoscaling ) } , \"networkConfig\" : { object ( NetworkConfig ) } , \"defaultMaxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"resourceUsageExportConfig\" : { object ( ResourceUsageExportConfig ) } , \"authenticatorGroupsConfig\" : { object ( AuthenticatorGroupsConfig ) } , \"privateClusterConfig\" : { object ( PrivateClusterConfig ) } , \"databaseEncryption\" : { object ( DatabaseEncryption ) } , \"verticalPodAutoscaling\" : { object ( VerticalPodAutoscaling ) } , \"shieldedNodes\" : { object ( ShieldedNodes ) } , \"releaseChannel\" : { object ( ReleaseChannel ) } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"meshCertificates\" : { object ( MeshCertificates ) } , \"costManagementConfig\" : { object ( CostManagementConfig ) } , \"notificationConfig\" : { object ( NotificationConfig ) } , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"identityServiceConfig\" : { object ( IdentityServiceConfig ) } , \"selfLink\" : string , \"zone\" : string , \"endpoint\" : string , \"initialClusterVersion\" : string , \"currentMasterVersion\" : string , \"currentNodeVersion\" : string , \"createTime\" : string , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"nodeIpv4CidrSize\" : integer , \"servicesIpv4Cidr\" : string , \"instanceGroupUrls\" : [ string ] , \"currentNodeCount\" : integer , \"expireTime\" : string , \"location\" : string , \"enableTpu\" : boolean , \"tpuIpv4CidrBlock\" : string , \"conditions\" : [ { object ( StatusCondition ) } ] , \"autopilot\" : { object ( Autopilot ) } , \"id\" : string , \"loggingConfig\" : { object ( LoggingConfig ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"nodePoolAutoConfig\" : { object ( NodePoolAutoConfig ) } , \"podAutoscaling\" : { object ( PodAutoscaling ) } , \"etag\" : string , \"fleet\" : { object ( Fleet ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"controlPlaneEndpointsConfig\" : { object ( ControlPlaneEndpointsConfig ) } , \"enableK8sBetaApis\" : { object ( K8sBetaAPIConfig ) } , \"enterpriseConfig\" : { object ( EnterpriseConfig ) } , \"secretManagerConfig\" : { object ( SecretManagerConfig ) } , \"compliancePostureConfig\" : { object ( CompliancePostureConfig ) } , \"gkeAutoUpgradeConfig\" : { object ( GkeAutoUpgradeConfig ) } , \"anonymousAuthenticationConfig\" : { object ( AnonymousAuthenticationConfig ) } , \"scheduleUpgradeConfig\" : { object ( ScheduleUpgradeConfig ) } , \"managedOpentelemetryConfig\" : { object ( ManagedOpenTelemetryConfig ) } , \"managedMachineLearningDiagnosticsConfig\" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: \"nodePoolDefaults\" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: \"userManagedKeysConfig\" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: \"rbacBindingConfig\" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster.",
+          "NodeConfig JSON representation { \"machineType\" : string , \"diskSizeGb\" : integer , \"oauthScopes\" : [ string ] , \"serviceAccount\" : string , \"metadata\" : { string : string , ... } , \"imageType\" : string , \"labels\" : { string : string , ... } , \"localSsdCount\" : integer , \"tags\" : [ string ] , \"preemptible\" : boolean , \"accelerators\" : [ { object ( AcceleratorConfig ) } ] , \"diskType\" : string , \"minCpuPlatform\" : string , \"workloadMetadataConfig\" : { object ( WorkloadMetadataConfig ) } , \"taints\" : [ { object ( NodeTaint ) } ] , \"sandboxConfig\" : { object ( SandboxConfig ) } , \"nodeGroup\" : string , \"reservationAffinity\" : { object ( ReservationAffinity ) } , \"shieldedInstanceConfig\" : { object ( ShieldedInstanceConfig ) } , \"linuxNodeConfig\" : { object ( LinuxNodeConfig ) } , \"kubeletConfig\" : { object ( NodeKubeletConfig ) } , \"bootDiskKmsKey\" : string , \"gcfsConfig\" : { object ( GcfsConfig ) } , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"gvnic\" : { object ( VirtualNIC ) } , \"spot\" : boolean , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"resourceLabels\" : { string : string , ... } , \"loggingConfig\" : { object ( NodePoolLoggingConfig ) } , \"windowsNodeConfig\" : { object ( WindowsNodeConfig ) } , \"localNvmeSsdBlockConfig\" : { object ( LocalNvmeSsdBlockConfig ) } , \"ephemeralStorageLocalSsdConfig\" : { object ( EphemeralStorageLocalSsdConfig ) } , \"soleTenantConfig\" : { object ( SoleTenantConfig ) } , \"containerdConfig\" : { object ( ContainerdConfig ) } , \"resourceManagerTags\" : { object ( ResourceManagerTags ) } , \"enableConfidentialStorage\" : boolean , \"secondaryBootDisks\" : [ { object ( SecondaryBootDisk ) } ] , \"storagePools\" : [ string ] , \"maxRunDuration\" : string , \"effectiveCgroupMode\" : enum ( EffectiveCgroupMode ) , \"bootDisk\" : { object ( BootDisk ) } , \"consolidationDelay\" : string , // Union field fast socket can be only one of the following: \"fastSocket\" : { object ( FastSocket ) } // End of list of possible types for union field fast socket . // Union field secondary boot disk update strategy can be only one of the // following: \"secondaryBootDiskUpdateStrategy\" : { object ( SecondaryBootDiskUpdateStrategy ) } // End of list of possible types for union field // secondary boot disk update strategy . // Union field gpu direct config can be only one of the following: \"gpuDirectConfig\" : { object ( GPUDirectConfig ) } // End of list of possible types for union field gpu direct config . // Union field local ssd encryption mode can be only one of the following: \"localSsdEncryptionMode\" : enum ( LocalSsdEncryptionMode ) // End of list of possible types for union field local ssd encryption mode . // Union field flex start can be only one of the following: \"flexStart\" : boolean // End of list of possible types for union field flex start . // Union field taint config can be only one of the following: \"taintConfig\" : { object ( TaintConfig ) } // End of list of possible types for union field taint config . } Fields machineType string The name of a Google Compute Engine machine type If unspecified, the default machine type is e2-medium . diskSizeGb integer Size of the disk attached to each node, specified in GB.",
+          "AutoIpamConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . } Fields Union field enabled . enabled can be only one of the following: enabled boolean The flag that enables Auto IPAM on this cluster MasterAuthorizedNetworksConfig JSON representation { \"enabled\" : boolean , \"cidrBlocks\" : [ { object ( CidrBlock ) } ] , // Union field gcp public cidrs access enabled can be only one of the // following: \"gcpPublicCidrsAccessEnabled\" : boolean // End of list of possible types for union field // gcp public cidrs access enabled . // Union field private endpoint enforcement enabled can be only one of the // following: \"privateEndpointEnforcementEnabled\" : boolean // End of list of possible types for union field // private endpoint enforcement enabled . } Fields enabled boolean Whether or not master authorized networks is enabled. cidrBlocks[] object ( CidrBlock ) cidr blocks define up to 50 external networks that could access Kubernetes master through HTTPS."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/serve-llm-tpu-ray",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

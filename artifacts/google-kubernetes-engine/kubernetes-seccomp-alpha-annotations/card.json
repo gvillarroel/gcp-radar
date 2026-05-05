@@ -1,0 +1,210 @@
+{
+  "feature_name": "Kubernetes seccomp alpha annotations",
+  "feature_slug": "kubernetes-seccomp-alpha-annotations",
+  "summary": "The alpha seccomp annotations are deprecated in favor of the seccompProfile field; The alpha seccomp annotations are deprecated in favor of the seccompProfile field; deprecated on 2021-01-19.",
+  "extended_definition": "The alpha seccomp annotations are deprecated in favor of the seccompProfile field; The alpha seccomp annotations are deprecated in favor of the seccompProfile field; deprecated on 2021-01-19.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-19",
+    "deprecation_date": "2021-01-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"description\" : string , \"initialNodeCount\" : integer , \"nodeConfig\" : { object ( NodeConfig ) } , \"masterAuth\" : { object ( MasterAuth ) } , \"loggingService\" : string , \"monitoringService\" : string , \"network\" : string , \"clusterIpv4Cidr\" : string , \"addonsConfig\" : { object ( AddonsConfig ) } , \"subnetwork\" : string , \"nodePools\" : [ { object ( NodePool ) } ] , \"locations\" : [ string ] , \"enableKubernetesAlpha\" : boolean , \"alphaClusterFeatureGates\" : [ string ] , \"resourceLabels\" : { string : string , ... } , \"labelFingerprint\" : string , \"legacyAbac\" : { object ( LegacyAbac ) } , \"networkPolicy\" : { object ( NetworkPolicy ) } , \"ipAllocationPolicy\" : { object ( IPAllocationPolicy ) } , \"masterAuthorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"autoscaling\" : { object ( ClusterAutoscaling ) } , \"networkConfig\" : { object ( NetworkConfig ) } , \"defaultMaxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"resourceUsageExportConfig\" : { object ( ResourceUsageExportConfig ) } , \"authenticatorGroupsConfig\" : { object ( AuthenticatorGroupsConfig ) } , \"privateClusterConfig\" : { object ( PrivateClusterConfig ) } , \"databaseEncryption\" : { object ( DatabaseEncryption ) } , \"verticalPodAutoscaling\" : { object ( VerticalPodAutoscaling ) } , \"shieldedNodes\" : { object ( ShieldedNodes ) } , \"releaseChannel\" : { object ( ReleaseChannel ) } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"meshCertificates\" : { object ( MeshCertificates ) } , \"costManagementConfig\" : { object ( CostManagementConfig ) } , \"notificationConfig\" : { object ( NotificationConfig ) } , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"identityServiceConfig\" : { object ( IdentityServiceConfig ) } , \"selfLink\" : string , \"zone\" : string , \"endpoint\" : string , \"initialClusterVersion\" : string , \"currentMasterVersion\" : string , \"currentNodeVersion\" : string , \"createTime\" : string , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"nodeIpv4CidrSize\" : integer , \"servicesIpv4Cidr\" : string , \"instanceGroupUrls\" : [ string ] , \"currentNodeCount\" : integer , \"expireTime\" : string , \"location\" : string , \"enableTpu\" : boolean , \"tpuIpv4CidrBlock\" : string , \"conditions\" : [ { object ( StatusCondition ) } ] , \"autopilot\" : { object ( Autopilot ) } , \"id\" : string , \"loggingConfig\" : { object ( LoggingConfig ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"nodePoolAutoConfig\" : { object ( NodePoolAutoConfig ) } , \"podAutoscaling\" : { object ( PodAutoscaling ) } , \"etag\" : string , \"fleet\" : { object ( Fleet ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"controlPlaneEndpointsConfig\" : { object ( ControlPlaneEndpointsConfig ) } , \"enableK8sBetaApis\" : { object ( K8sBetaAPIConfig ) } , \"enterpriseConfig\" : { object ( EnterpriseConfig ) } , \"secretManagerConfig\" : { object ( SecretManagerConfig ) } , \"compliancePostureConfig\" : { object ( CompliancePostureConfig ) } , \"gkeAutoUpgradeConfig\" : { object ( GkeAutoUpgradeConfig ) } , \"anonymousAuthenticationConfig\" : { object ( AnonymousAuthenticationConfig ) } , \"scheduleUpgradeConfig\" : { object ( ScheduleUpgradeConfig ) } , \"managedOpentelemetryConfig\" : { object ( ManagedOpenTelemetryConfig ) } , \"managedMachineLearningDiagnosticsConfig\" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: \"nodePoolDefaults\" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: \"userManagedKeysConfig\" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: \"rbacBindingConfig\" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster.",
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!",
+          "AutoIpamConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . } Fields Union field enabled . enabled can be only one of the following: enabled boolean The flag that enables Auto IPAM on this cluster MasterAuthorizedNetworksConfig JSON representation { \"enabled\" : boolean , \"cidrBlocks\" : [ { object ( CidrBlock ) } ] , // Union field gcp public cidrs access enabled can be only one of the // following: \"gcpPublicCidrsAccessEnabled\" : boolean // End of list of possible types for union field // gcp public cidrs access enabled . // Union field private endpoint enforcement enabled can be only one of the // following: \"privateEndpointEnforcementEnabled\" : boolean // End of list of possible types for union field // private endpoint enforcement enabled . } Fields enabled boolean Whether or not master authorized networks is enabled. cidrBlocks[] object ( CidrBlock ) cidr blocks define up to 50 external networks that could access Kubernetes master through HTTPS."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"description\" : string , \"initialNodeCount\" : integer , \"nodeConfig\" : { object ( NodeConfig ) } , \"masterAuth\" : { object ( MasterAuth ) } , \"loggingService\" : string , \"monitoringService\" : string , \"network\" : string , \"clusterIpv4Cidr\" : string , \"addonsConfig\" : { object ( AddonsConfig ) } , \"subnetwork\" : string , \"nodePools\" : [ { object ( NodePool ) } ] , \"locations\" : [ string ] , \"enableKubernetesAlpha\" : boolean , \"alphaClusterFeatureGates\" : [ string ] , \"resourceLabels\" : { string : string , ... } , \"labelFingerprint\" : string , \"legacyAbac\" : { object ( LegacyAbac ) } , \"networkPolicy\" : { object ( NetworkPolicy ) } , \"ipAllocationPolicy\" : { object ( IPAllocationPolicy ) } , \"masterAuthorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"autoscaling\" : { object ( ClusterAutoscaling ) } , \"networkConfig\" : { object ( NetworkConfig ) } , \"defaultMaxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"resourceUsageExportConfig\" : { object ( ResourceUsageExportConfig ) } , \"authenticatorGroupsConfig\" : { object ( AuthenticatorGroupsConfig ) } , \"privateClusterConfig\" : { object ( PrivateClusterConfig ) } , \"databaseEncryption\" : { object ( DatabaseEncryption ) } , \"verticalPodAutoscaling\" : { object ( VerticalPodAutoscaling ) } , \"shieldedNodes\" : { object ( ShieldedNodes ) } , \"releaseChannel\" : { object ( ReleaseChannel ) } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"meshCertificates\" : { object ( MeshCertificates ) } , \"costManagementConfig\" : { object ( CostManagementConfig ) } , \"notificationConfig\" : { object ( NotificationConfig ) } , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"identityServiceConfig\" : { object ( IdentityServiceConfig ) } , \"selfLink\" : string , \"zone\" : string , \"endpoint\" : string , \"initialClusterVersion\" : string , \"currentMasterVersion\" : string , \"currentNodeVersion\" : string , \"createTime\" : string , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"nodeIpv4CidrSize\" : integer , \"servicesIpv4Cidr\" : string , \"instanceGroupUrls\" : [ string ] , \"currentNodeCount\" : integer , \"expireTime\" : string , \"location\" : string , \"enableTpu\" : boolean , \"tpuIpv4CidrBlock\" : string , \"conditions\" : [ { object ( StatusCondition ) } ] , \"autopilot\" : { object ( Autopilot ) } , \"id\" : string , \"loggingConfig\" : { object ( LoggingConfig ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"nodePoolAutoConfig\" : { object ( NodePoolAutoConfig ) } , \"podAutoscaling\" : { object ( PodAutoscaling ) } , \"etag\" : string , \"fleet\" : { object ( Fleet ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"controlPlaneEndpointsConfig\" : { object ( ControlPlaneEndpointsConfig ) } , \"enableK8sBetaApis\" : { object ( K8sBetaAPIConfig ) } , \"enterpriseConfig\" : { object ( EnterpriseConfig ) } , \"secretManagerConfig\" : { object ( SecretManagerConfig ) } , \"compliancePostureConfig\" : { object ( CompliancePostureConfig ) } , \"gkeAutoUpgradeConfig\" : { object ( GkeAutoUpgradeConfig ) } , \"anonymousAuthenticationConfig\" : { object ( AnonymousAuthenticationConfig ) } , \"scheduleUpgradeConfig\" : { object ( ScheduleUpgradeConfig ) } , \"managedOpentelemetryConfig\" : { object ( ManagedOpenTelemetryConfig ) } , \"managedMachineLearningDiagnosticsConfig\" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: \"nodePoolDefaults\" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: \"userManagedKeysConfig\" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: \"rbacBindingConfig\" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster.",
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!",
+          "AutoIpamConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . } Fields Union field enabled . enabled can be only one of the following: enabled boolean The flag that enables Auto IPAM on this cluster MasterAuthorizedNetworksConfig JSON representation { \"enabled\" : boolean , \"cidrBlocks\" : [ { object ( CidrBlock ) } ] , // Union field gcp public cidrs access enabled can be only one of the // following: \"gcpPublicCidrsAccessEnabled\" : boolean // End of list of possible types for union field // gcp public cidrs access enabled . // Union field private endpoint enforcement enabled can be only one of the // following: \"privateEndpointEnforcementEnabled\" : boolean // End of list of possible types for union field // private endpoint enforcement enabled . } Fields enabled boolean Whether or not master authorized networks is enabled. cidrBlocks[] object ( CidrBlock ) cidr blocks define up to 50 external networks that could access Kubernetes master through HTTPS."
+        ]
+      },
+      {
+        "title": "\"Migrate nodes to containerd 2 \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also use the Google Cloud CLI or the Recommender API, by filtering with the following subtypes: DEPRECATION CONTAINERD V1 SCHEMA IMAGES: Docker Schema 1 images DEPRECATION CONTAINERD V1ALPHA2 CRI API: CRI v1alpha2 API DEPRECATION CONTAINERD V2 CONFIG REGISTRY CONFIGS : Deprecated CRI registry.configs properties, including registry.configs.auth and registry.configs.tls Migrate from deprecated features Review the following content to understand how to migrate from features deprecated with containerd 2.",
+          "For example, replace the following application code: runtimeapi \"k8s.io/cri-api/pkg/apis/runtime/v1alpha2\" Update the code to use v1: runtimeapi \"k8s.io/cri-api/pkg/apis/runtime/v1\" Migrate from deprecated containerd config properties The registry.auths , registry.configs , and registry.mirrors containerd config properties in the CRI plugin are deprecated and will be removed in containerd 2.2, with a GKE version yet to be announced. registry.configs.tls , however, was already removed in containerd 2.0.",
+          "How GKE is transitioning to containerd 2 Review the following timeline to understand how GKE is transitioning existing clusters to use containerd 2: For Linux nodes with 1.32 and Windows Server nodes with 1.34, GKE uses containerd 1.7. containerd 1.7 deprecated both Docker Schema 1 images and the Container Runtime Interface (CRI) v1alpha2 API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "k8s.io",
+      "registry.auths",
+      "registry.configs",
+      "registry.configs.auth",
+      "registry.configs.tls",
+      "registry.mirrors"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

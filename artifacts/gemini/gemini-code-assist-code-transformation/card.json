@@ -1,0 +1,152 @@
+{
+  "feature_name": "Gemini Code Assist code transformation",
+  "feature_slug": "gemini-code-assist-code-transformation",
+  "summary": "Users can request code changes with commands or natural language prompts and review the resulting diff.",
+  "extended_definition": "Users can request code changes with commands or natural language prompts and review the resulting diff.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 305,
+        "relevance": "",
+        "evidence_snippets": [
+          "Prompt Gemini Code Assist with code transformation Code transformation allows you to use commands or natural language prompts in the Quick Pick menu to request modifications to your code, and provides you with a diff view to show pending changes to your code.",
+          "This document describes how you can use Gemini Code Assist , an AI-powered collaborator in your IDE, to help you do the following in VS Code or IntelliJ and other supported JetBrains IDEs : Generate code for your project with code transformation.",
+          "Finish changes in a file Gemini Code Assist can generate code suggestion to complete your file's pseudocode, #TODOs, and half-written code."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 269,
+        "relevance": "",
+        "evidence_snippets": [
+          "Revert to a checkpoint in chat After applying the changes that Gemini Code Assist generates based on your prompt, you can choose to revert the modified code file(s) to a certain checkpoint, which reverts all of the applied changes to the code file(s).",
+          "You can trigger this diff any time you ask Gemini Code Assist to make changes to your code.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info 'Activate Gemini Code Assist' still appears after selecting Gemini Code Assist project If you selected your project per the instructions in this guide, which includes enabling the Gemini for Google Cloud API, then there may be an issue with the LS server."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root-2",
+        "final_score": 262,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you've exhausted your daily quota for Gemini Code Assist agent mode, you can continue to use the service by providing an API key.",
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode.",
+          "The following example Gemini settings JSON file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in VS Code. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Open the command palette and select Developer: Reload Window ."
+        ]
+      },
+      {
+        "title": "\"Generate Gemini Code Assist metrics \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output is similar to the following: 2024-10-30,user1@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user2@company.com 2024-10-29,user1@company.com 2024-10-28,user1@company.com Create a chart that displays daily usage The following steps show how to use Monitoring to create daily use graphs that show the aggregate total of daily active Gemini Code Assist users and the number of their requests per day.",
+          "List the number of unique users The following instructions describe how to use the gcloud CLI to list the number of unique users of Gemini Code Assist in the most recent 28-day period: In a shell environment, ensure that you have updated all installed components of the gcloud CLI to the latest version: gcloud components update Read the log entries for Gemini Code Assist users and usage: gcloud logging read 'resource.type=cloudaicompanion.googleapis.com/Instance labels.product= \"code assist\"' \\ --freshness 28d \\ --project PROJECT ID \\ --format \"csv(timestamp.date('%Y-%m-%d'),labels.user id)\" Replace PROJECT ID with your Google Cloud project ID.",
+          "Create a Monitoring metric from your log data that records the number of Gemini Code Assist users: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bindings.mcp.cloudflare.com",
+      "cloudaicompanion.googleapis.com",
+      "company.com",
+      "grpc.health.v1.Health",
+      "instance.com",
+      "labels.product",
+      "labels.user",
+      "mcp.json",
+      "observability.mcp.cloudflare.com",
+      "resource.type",
+      "timestamp.date"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.293Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

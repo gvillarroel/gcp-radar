@@ -1,0 +1,229 @@
+{
+  "feature_name": "Case List persistent preferences",
+  "feature_slug": "case-list-persistent-preferences",
+  "summary": "Case List preferences are now saved permanently for each user.",
+  "extended_definition": "Case List preferences are now saved permanently for each user.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cases overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "The case queue—automatically refreshed every minute—lists all active cases and lets you manually refresh, sort, filter, add, or close cases as needed.",
+          "Analysts can also: Automatically group additional alerts into existing cases based on shared entities and configurable rules.",
+          "Alert Overview tab: Lists all alerts linked to the case, including associated events and metadata."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon GuardDuty with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "source_id": "site-api-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Brute force attacks are used to gain unauthorized access to your instance by guessing the RDP password.\" , \"Id\" : \" ID \" , \"Partition\" : \"aws\" , \"Region\" : \"us-east-1\" , \"Resource\" : { \"InstanceDetails\" : { \"AvailabilityZone\" : \"us-east-1e\" , \"ImageId\" : \"ami- IMAGE ID \" , \"InstanceId\" : \"i- INSTANCE ID \" , \"InstanceState\" : \"running\" , \"InstanceType\" : \"t2.micro\" , \"LaunchTime\" : \"2020-05-27T08:54:03Z\" , \"NetworkInterfaces\" : [{ \"Ipv6Addresses\" : [], \"NetworkInterfaceId\" : \"eni-012d9b8a1a3b4e40a\" , \"PrivateDnsName\" : \"ip-192.0.2.1.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.1\" , \"PrivateIpAddresses\" : [{ \"PrivateDnsName\" : \"ip-192.0.2.1.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.1\" }], \"PublicDnsName\" : \"ec2-54-234-69-236.compute-1.amazonaws.com\" , \"PublicIp\" : \"198.51.100.236\" , \"SecurityGroups\" : [{ \"GroupId\" : \"sg-0fa42e04e9cd15407\" , \"GroupName\" : \"Windows Server 2016\" }], \"SubnetId\" : \"subnet-2edddf10\" , \"VpcId\" : \"vpc-48a7ac32\" }], \"Platform\" : \"windows\" , \"ProductCodes\" : [], \"Tags\" : [{ \"Key\" : \"Name\" , \"Value\" : \"CiscoAMP-win2012\" }]}, \"ResourceType\" : \"Instance\" }, \"SchemaVersion\" : \"2.0\" , \"Service\" : { \"Action\" : { \"ActionType\" : \"NETWORK CONNECTION\" , \"NetworkConnectionAction\" : { \"Blocked\" : false , \"ConnectionDirection\" : \"INBOUND\" , \"LocalPortDetails\" : { \"Port\" : 3389 , \"PortName\" : \"RDP\" }, \"Protocol\" : \"TCP\" , \"LocalIpDetails\" : { \"IpAddressV4\" : \"192.0.2.1\" }, \"RemoteIpDetails\" : { \"IpAddressV4\" : \"203.0.113.9\" , \"Organization\" : { \"Asn\" : \"24875\" , \"AsnOrg\" : \"Example Inc.\" , \"Isp\" : \"Example Inc.\" , \"Org\" : \"Example Inc.\" }}, \"RemotePortDetails\" : { \"Port\" : 1549 , \"PortName\" : \"Unknown\" }}}, \"Archived\" : false , \"Count\" : 5 , \"DetectorId\" : \" DETECTOR ID \" , \"EventFirstSeen\" : \"2020-10-06T05:10:58Z\" , \"EventLastSeen\" : \"2020-10-06T05:46:59Z\" , \"ResourceRole\" : \"TARGET\" , \"ServiceName\" : \"guardduty\" }, \"Severity\" : 2 , \"Title\" : \"203.0.113.9 is performing RDP brute force attacks against i- INSTANCE ID .\" , \"Type\" : \"UnauthorizedAccess:EC2/RDPBruteForce\" , \"UpdatedAt\" : \"2020-10-06T06:01:46.380Z\" }] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If \"ErrorCode\" is reported (is success=false): \"Action wasn't able to get Findings details.",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result { \"Format\" : \"TXT\" , \"Location\" : \"https: //example.s3.amazonaws.com/test.txt\" , \"Name\" : \"API Test\" , \"ResponseMetadata\" : { \"HTTPHeaders\" : { \"connection\" : \"keep-alive\" , \"content-length\" : \"149\" , \"content-type\" : \"application/json\" , \"date\" : \"Mon,19 Oct 2020 06: 23: 22 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-requestid\" : \" REQUEST ID \" , \"x-amzn-trace-id\" : \" TRACE ID \" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \" REQUEST ID \" , \"RetryAttempts\" : 0 }, \"Status\" : \"ERROR\" , \"Tags\" : {} } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details about at list one set (is success=true): \"Successfully retrieved details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If unsuccessful for some of the IDs (is success=true): \"Action wasn't able to retrieve details about the following Threat Intelligence Sets from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If no IDs are used: \"No details were retrieved about the provided Threat Intelligence Sets.\".format(list of ids) The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"List Threat Intelligence Sets\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result { \"ip set id\" : { \"Format\" : \"response['Format']\" , \"Location\" : \"response['Location']\" , \"Name\" : \"response['Name']\" , \"Status\" : \"response['Status']\" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned details (is success=true): \"Successfully retrieved details about the following Trusted IP Lists from Amazon GuardDuty:\\n{0}.\".format(list of ids)\" If not successful for some of the IDs (is success=true) : \"Action wasn't able to retrieve details about the following Trusted IP Lists from Amazon GuardDuty:\\n{0}.\".format(list of ids) If no IDs are used (is success=false): \"No details were retrieved about the provided Trusted IP Lists\".format(list of ids)\" The action should fail and stop a playbook execution: If a fatal error, SDK error, like wrong credentials, no connection to the server, other is reported: \"Error executing action \"List Trusted IP Lists\"."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-root-2",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample ingress rule - ingressFrom: identities: - serviceAccount:8911409095528497-0-account@partnercontent.gserviceaccount.com sources: - accessLevel: \" \" ingressTo: operations: - serviceName: storage.googleapis.com methodSelectors: - method: google.storage.objects.list - method: google.storage.objects.get - method: google.storage.objects.delete resources: - projects/PROJECT ID Egress rules The following egress rules must be allowed for feeds using GOOGLE CLOUD STORAGE V2 , GOOGLE CLOUD STORAGE EVENT DRIVEN , AMAZON S3 V2 , AMAZON SQS V2 , and AZURE BLOBSTORE V2 to operate when VPCSC is enabled.",
+          "Impact of changing your linked Cloud Project on data feeds If you are updating the Google Cloud project associated with your Google SecOps instance, all feeds ingesting data using the following connectors will stop, and must be re-created manually: AMAZON S3 V2 AMAZON SQS V2 GOOGLE CLOUD STORAGE V2 AZURE BLOBSTORE V2 GOOGLE CLOUD STORAGE EVENT DRIVEN For all other feeds that are not utilizing these connectors, ingestion continues without any interruption.",
+          "Ingress rules The following Cloud Storage methods must be allowed in the ingress rule: google.storage.objects.list : Required for a single file feed. google.storage.objects.get : Required for feeds that require directory or subdirectory access. google.storage.objects.delete : Required for feeds that require deletion of the source file."
+        ]
+      },
+      {
+        "title": "TIPCommon 2.1.0 \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "TIPCommon 2.1.0 The TIPCommon 2.1.0 library contains the following modules: TIPCommon.adapters PubSubAdapter TIPCommon.base parse case attachment() parse case comment() Action soar action api client name action start time logger params global context entity types entities to update json results attachments contents data tables html reports links entity insights case insights result value output message error output message action start time api client attachments case insights contents data tables entities to update entity insights entity types error output message execution state html reports is first run links logger name output message params result value run() soar action EnrichAction enrichment data entity results global context ActionParamType BOOLEAN CASE PRIORITIES CLOSE CASE REASONS CLOSE ROOT CAUSE CODE CONTENT DDL EMAIL CONTENT ENTITY TYPE MULTI VALUES NULL PASSWORD PLAYBOOK NAME STAGE STRING USER Attachment title filename file contents additional data CaseAttachment attachment id attachment type description is favorite CaseComment comment comment for client modification time unix time in ms for client last editor last editor full name is deleted creator user id creator full name comment id comment type case id is favorite modification time unix time in ms creation time unix time in ms alert identifier CaseInsight title triggered by content severity insight type entity identifier additional data additional data type additional data title CasePriority CRITICAL HIGH INFORMATIONAL LOW MEDIUM CaseStage ASSESSMENT IMPROVEMENT INCIDENT INVESTIGATION RESEARCH TRIAGE CloseCaseOrAlertInconclusiveRootCauses NO CLEAR CONCLUSION CloseCaseOrAlertMaintenanceRootCauses LAB TEST OTHER RULE UNDER CONSTRUCTION CloseCaseOrAlertMaliciousRootCauses EXTERNAL ATTACK INFRASTRUCTURE ISSUE IRRELEVANT TCP UDP PORT MISCONFIGURED SYSTEM OTHER SIMILAR CASE IS ALREADY UNDER INVESTIGATION SYSTEM APPLICATION MALFUNCTION SYSTEM CLOCKED THE ATTACK UNFORESEEN EFFECTS OF CHANGE UNKNOWN CloseCaseOrAlertNotMaliciousRootCauses EMPLOYEE ERROR HUMAN ERROR LAB TEST LEGIT ACTION MISCONFIGURED SYSTEM NONE NORMAL BEHAVIOR OTHER PENETRATION TEST RULE UNDER CONSTRUCTION SIMILAR CASE IS ALREADY UNDER INVESTIGATION UNKNOWN USER MISTAKE CloseCaseOrAlertReasons INCONCLUSIVE MAINTENANCE MALICIOUS NOT MALICIOUS Content title content DataTable title data table EntityInsight entity message triggered by original requesting user EntityTypesEnum ADDRESS ALERT APPLICATION CHILD HASH CHILD PROCESS CLUSTER CONTAINER CREDIT CARD CVE CVE ID DATABASE DEPLOYMENT DESTINATION DOMAIN DOMAIN EMAIL MESSAGE EVENT FILE HASH FILE NAME GENERIC HOST NAME IP SET MAC ADDRESS PARENT HASH PARENT PROCESS PHONE NUMBER POD PROCESS SERVICE SOURCE DOMAIN THREAT ACTOR THREAT CAMPAIGN THREAT SIGNATURE URL USB USER ExecutionState COMPLETED FAILED IN PROGRESS TIMED OUT FullDetailsConfigurationParameter full dict id integration identifier creation time modification time is mandatory description name display name value type optional values HTMLReport title report name report contents IntegrationParamType BOOLEAN EMAIL INTEGER IP NULL PASSWORD STRING Link title link ScriptParameter full dict id creation time modification time custom action id is mandatory default value description name value type optional values Apiable Authable authenticat session() Logger debug() error() exception() info() warn() Session headers verify delete() get() patch() post() put() request() Job api client error msg job start time logger name params soar job start() RefreshTokenRenewalJob api client SuccessFailureTuple failure list success list validate param csv to multi value() JobParameter full dict id is mandatory name type value ActionJsonOutput ActionOutput ConnectorJsonOutput ConnectorOutput alert info from json() TIPCommon.rest build credentials from sa() build credentials from sa attr() generate jwt from credentials() generate jwt from sa() get adc() get auth request() get impersonated credentials() get secops siem tenant credentials() GcpErrorReason IAM PERMISSION DENIED GcpPermissions IAM SA GET ACCESS TOKEN extract project id from sa email() extract project id from sa key() get http client() get workload sa email() retrieve project id() validate impersonation() get auth session() SoarApiErrorServer batch set custom field values() get alert events() get case attachments() get case overview details() get connector cards() get entity data() get env action def files() get federation cases() get full case details() get installed integrations of environment() get installed jobs() get integration full details() get user profile cards() get workflow instance card() list custom field values() list custom fields() remove case tag() save attachment to case wall() set alert priority() set case score bulk() set custom field values() validate response() data models Module AlertCard from json() AlertEvent from json() AlertPriority CRITICAL HIGH INFORMATIVE LOW MEDIUM UNCHANGED BaseAlert raw data alert id to json() BaseDataModel raw data to json() CaseDataStatus ALL CLOSED CREATION PENDING MERGED NEW OPENED CaseDetails from json() is closed is open CasePriority CRITICAL HIGH INFORMATIVE LOW MEDIUM UNCHANGED CaseWallAttachment base64 blob case id file type is important name ConnectorCard from json() ConnectorConnectivityStatusEnum LIVE NO CONNECTIVITY ConnectorParamTypes BOOLEAN DOMAIN EMAIL HOST INTEGER IP NULL PASSWORD SCRIPT STRING URL ConnectorParameter name value type mode is mandatory Container CustomField description display name id scopes type from json() CustomFieldScope ALERTS CASE build parent path() CustomFieldValue custom field id identifier scope values from json() DatabaseContextType ALERT CASE CONNECTOR GLOBAL JOB EventPropertyField from json() FieldGroupItem from json() FieldItem from json() FieldsGroup from json() GoogleServiceAccount to dict() InstalledIntegrationInstance to dict() JobParamType BOOLEAN DOMAIN HOST INTEGER IP NULL PASSWORD STRING URL Parameter raw data SLA from json() ScriptContext action definition name alert id async polling interval in sec async total duration deadline case id connector context default result value environment environment api key execution deadline unix time ms integration identifier integration instance job api key max json result size original requesting user parameters script timeout deadline target entities unique identifier use proxy settings vault settings workflow id workflow instance id to json() update() SmimeEmailConfig ca certificate b64 certificate b64 email private key b64 SmimeType ENCRYPTED SIGNED TypedContainer UserProfileCard from json() encryption Module decrypt() decrypt email() encrypt() get private key() exceptions Module ActionSetupError AlreadyExistsError BadGatewayError CaseResultError ConnectorContextError ConnectorProcessingError ConnectorSetupError ConnectorValidationError DeadlineExceededError EmptyMandatoryValues EnrichActionError FailedPreconditionError GeneralActionException GeneralConnectorException GeneralJobException GoogleCloudException ImpersonationUnauthorizedError InternalJSONDecoderError InvalidArgumentError InvalidTimeException JobSetupError NotFoundError OauthError ParameterExtractionError ParameterValidationError PermissionDeniedError RefreshTokenRenewalJobException ResourceExhaustedError SDKWrapperError SMIMEMailError UnauthenticatedError UnavailableError extraction Module extract action param() extract configuration param() extract connector param() extract job param() extract script param() get connector detailed params() filters Module filter list by type() filter none kwargs() filter old alerts() filter old ids() filter old ids by timestamp() pass whitelist filter() OAuth Module AuthenticationError AuthorizedOauthClient close() request() CredStorage get instance identifier() get token() set token() EncryptionError OAuthAdapter abstractcheck signer() abstractprepare authorized client() abstractrefresh token() abstract static validate bad credentials() OauthManager prepare authorized client() refresh if bad credentials() refresh if expired() save token() OauthToken access token additional data expiration time refresh token signer from cache() to cache() smp io Module read and repair existing content() read content() read ids() read ids by timestamp() write content() write ids() write ids with timestamp() smp time Module change timezone() convert string to timestamp() datetime to rfc3339() get last success time() get timestamps() get timestamps from range() is approaching action timeout() is approaching timeout() save timestamp() siemplify fetch timestamp() siemplify save timestamp() validate timestamp() soar ops Module create slo message() get clean comment body() get file() get secops mode() get soar case comments() get user by id() get user profile cards with pagination() is slo comment() remove prefix from comments() save file() transformation Module add prefix to dict() add prefix to dict keys() adjust to csv() construct csv() convert comma separated to list() convert dict to json result dict() convert list to comma string() dict to flat() flat dict to csv() get unicode() removeprefix() removesuffix() rename dict key() string to multi value() utils Module camel to snake case() cast keys to int() clean result() create and write to tempfiles() get entity original identifier() get function arg names() get unique items by difference() is empty string or none() is first run() is overflowed() is python 37() is test run() none to default value() platform supports 1p api() platform supports db() safe cast bool value from str() safe cast int value from str() validation Module ParameterValidator validate csv() validate ddl() validate email() validate float() validate integer() validate json() lower limit() validate non negative() validate non zero() validate percentage() validate positive() validate range() validate severity() validate upper limit() Need more help?",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Security Google Security Operations Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "ec2.internal",
+      "example.s3.amazonaws.com",
+      "partnercontent.gserviceaccount.com",
+      "storage.googleapis.com",
+      "t2.micro",
+      "test.txt"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:41.039Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar"
+}

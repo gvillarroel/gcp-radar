@@ -1,0 +1,154 @@
+{
+  "feature_name": "Artifact Registry regional availability in me-west1",
+  "feature_slug": "artifact-registry-regional-availability-in-me-west1",
+  "summary": "Artifact Registry is available in the me-west1 region (Tel Aviv, Israel).",
+  "extended_definition": "Artifact Registry is available in the me-west1 region (Tel Aviv, Israel).",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure authentication to Artifact Registry for Docker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, to add the regions us-west1 and asia-northeast1 , run the command: docker-credential-gcr configure-docker --registries=us-west1-docker.pkg.dev,asia-northeast1-docker.pkg.dev The specified hostnames are added to the credential helper configuration.",
+          "For example, to add the regions us-west1 and asia-northeast1 , run the command: gcloud auth configure-docker us-west1-docker.pkg.dev,asia-northeast1-docker.pkg.dev The specified hostnames are added to the credential helper configuration.",
+          "Run the following command, replacing ACCOUNT with your service account email address and LOCATION with the regional or multi-regional location of the repository."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the project with your cluster, create an imagePullSecret secret called artifact-registry with the service account key. kubectl create secret docker-registry artifact-registry \\ --docker-server = https:// LOCATION -docker.pkg.dev \\ --docker-email = SERVICE-ACCOUNT-EMAIL \\ --docker-username = json key \\ --docker-password = \" $( cat KEY-FILE ) \" Replace the following: LOCATION is the regional or multi-regional location of the repository.",
+          "LOCATION is the regional or multi-regional location of the repository.",
+          "LOCATION is the regional or multi-regional location of the repository."
+        ]
+      },
+      {
+        "title": "Manage images \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To list all files in the default project, repository, and location when the default values are configured : gcloud artifacts files list To list files in a specified project, repository, and location, run the command: gcloud artifacts files list \\ --project = PROJECT \\ --repository = REPOSITORY \\ --location = LOCATION To list files for all versions of a specific container image: gcloud artifacts files list \\ --project = PROJECT \\ --repository = REPOSITORY \\ --location = LOCATION \\ --package = PACKAGE To list files for a specific container image version: gcloud artifacts files list \\ --project = PROJECT \\ --repository = REPOSITORY \\ --location = LOCATION \\ --package = PACKAGE \\ --version = VERSION To list files for a specific tag: gcloud artifacts files list \\ --project = PROJECT \\ --repository = REPOSITORY \\ --location = LOCATION \\ --package = PACKAGE \\ --tag = TAG Replace the following values: LOCATION : the regional or multi-regional location of the repository.",
+          "Click an image to see its versions. gcloud To list all images in the default project, repository, and location when the default values are configured : gcloud artifacts docker images list To list images in a repository in a specific location, run the command: gcloud artifacts docker images list LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY To list all digests and tags for a specific image, run the command: gcloud artifacts docker images list LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE \\ --include-tags Replace the following values: LOCATION is the regional or multi-regional location of the repository.",
+          "In the confirmation dialog, click DELETE . gcloud To delete an image and all its tags, run the command: gcloud artifacts docker images delete LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE --delete-tags To delete a specific image version, use one of the following commands. gcloud artifacts docker images delete LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE : TAG [ --delete-tags ] or gcloud artifacts docker images delete LOCATION -docker.pkg.dev/ PROJECT / REPOSITORY / IMAGE @ IMAGE-DIGEST [ --delete-tags ] Where LOCATION is the regional or multi-regional location of the repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "artifactregistry.writer",
+      "docker.pkg.dev",
+      "gmail.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/artifactregistry.writer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/authentication",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/manage-images"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.090Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry"
+}

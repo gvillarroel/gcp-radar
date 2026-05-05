@@ -1,0 +1,126 @@
+{
+  "feature_name": "Batch regional availability",
+  "feature_slug": "batch-regional-availability",
+  "summary": "Batch availability was expanded to the australia-southeast2, europe-west8, europe-west12, me-west1, northamerica-northeast2, southamerica-east1, and us-east5 regions; Batch became available in the europe-west10 (Berlin) region.",
+  "extended_definition": "Batch availability was expanded to the australia-southeast2, europe-west8, europe-west12, me-west1, northamerica-northeast2, southamerica-east1, and us-east5 regions; Batch became available in the europe-west10 (Berlin) region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/batch/docs/create-run-job",
+      "https://docs.cloud.google.com/batch/docs/locations",
+      "https://docs.cloud.google.com/iam/docs/authentication"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Batch locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Region description Region name Details Taiwan asia-east1 Hong Kong asia-east2 Tokyo asia-northeast1 Osaka asia-northeast2 Seoul asia-northeast3 Mumbai asia-south1 Delhi asia-south2 Singapore asia-southeast1 Jakarta asia-southeast2 Sydney australia-southeast1 Melbourne australia-southeast2 Recommended zones to obtain GPUs from Dynamic Workload Scheduler When you create and run a job that uses GPUs and use calendar-mode reservations ( Preview ) or Flex-start VMs ( Preview ), which both use Dynamic Workload Scheduler, we recommend that you use the following zones.",
+          "A4 A3 Ultra A3 Mega A3 High GPU machine series Recommended zones for Dynamic Workload Scheduler capacity Details A4 asia-southeast1-b (Singapore) us-central1-b (Iowa) Low CO 2 us-south1-b (Dallas) Low CO 2 A3 Ultra asia-south1-b (Mumbai) asia-south2-c (Delhi) europe-west1-b (Belgium) Low CO 2 europe-west4-a (Netherlands) Low CO 2 us-central1-b (Iowa) Low CO 2 us-east4-b (Northern Virginia) us-south1-b (Dallas) Low CO 2 A3 Mega europe-west1-c (Belgium) Low CO 2 europe-west4-b (Netherlands) Low CO 2 europe-west4-c (Netherlands) Low CO 2 us-central1-a (Iowa) Low CO 2 us-central1-b (Iowa) Low CO 2 us-central1-c (Iowa) Low CO 2 us-east4-b (Northern Virginia) A3 High asia-east1-c (Taiwan) europe-west1-b (Belgium) Low CO 2 us-central1-a (Iowa) Low CO 2 us-central1-b (Iowa) Low CO 2 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Region description Region name Details Montréal northamerica-northeast1 Low CO 2 Toronto northamerica-northeast2 Low CO 2 São Paulo southamerica-east1 Low CO 2 Santiago southamerica-west1 Low CO 2 Iowa us-central1 Low CO 2 South Carolina us-east1 Northern Virginia us-east4 Columbus us-east5 Dallas us-south1 Low CO 2 Oregon us-west1 Low CO 2 Los Angeles us-west2 Salt Lake City us-west3 Las Vegas us-west4 The following table lists the regions in Europe and the Middle East where Batch is available."
+        ]
+      },
+      {
+        "title": "Job creation and execution overview \\_|\\_ Batch \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "source_id": "site-docs-root",
+        "final_score": 45,
+        "relevance": "",
+        "evidence_snippets": [
+          "Job resources Each Batch job runs on a regional managed instance group (MIG), which is a group of one or more matching Compute Engine virtual machine (VM) instances that are each located in one of the included zones.",
+          "Secondly, a job is more likely to be delayed or fail if any of its required resources are in low capacity relative to the current demand due to resource availability errors .",
+          "Firstly, a job cannot run if you happen to specify any resources that aren't offered in that location—when this happens, the job fails with a zone availability error ."
+        ]
+      },
+      {
+        "title": "\"Authenticate to IAM \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/batch/docs/locations",
+        "https://docs.cloud.google.com/batch/docs/create-run-job",
+        "https://docs.cloud.google.com/iam/docs/authentication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.474Z",
+  "source_step08_card": "data/step-08/current/products/batch/card.json",
+  "product_name": "Batch",
+  "product_slug": "batch"
+}

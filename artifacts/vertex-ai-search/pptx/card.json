@@ -1,0 +1,100 @@
+{
+  "feature_name": "PPTX",
+  "feature_slug": "pptx",
+  "summary": "Adds generally available support in Vertex AI Search for parsing DOCX, PPTX, and XLSX formats in the layout parser, while both layout and digital parsers continue to support PDF and HTML.",
+  "extended_definition": "Adds generally available support in Vertex AI Search for parsing DOCX, PPTX, and XLSX formats in the layout parser, while both layout and digital parsers continue to support PDF and HTML.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a custom recommendations data store \\_|\\_ Vertex AI Search \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can put the JSON string of the document in a consistent format directly in each line, and Vertex AI Search automatically generates the IDs for each document imported. content : Upload unstructured documents (PDF, HTML, DOC, TXT, PPTX).",
+          "GcsSource ( Multiple URIs are supported input uris = [ gcs uri ], Options: - content - Unstructured documents (PDF, HTML, DOC, TXT, PPTX) - custom - Unstructured documents with custom JSONL metadata - document - Structured documents in the discoveryengine.Document format. - csv - Unstructured documents with CSV metadata data schema = \"content\" , ), Options: FULL, INCREMENTAL reconciliation mode = discoveryengine .",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation ."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can put the JSON string of the document in a consistent format directly in each line, and Vertex AI Search automatically generates the IDs for each document imported. content : Upload unstructured documents (PDF, HTML, DOC, TXT, PPTX).",
+          "GcsSource ( Multiple URIs are supported input uris = [ gcs uri ], Options: - content - Unstructured documents (PDF, HTML, DOC, TXT, PPTX) - custom - Unstructured documents with custom JSONL metadata - document - Structured documents in the discoveryengine.Document format. - csv - Unstructured documents with CSV metadata data schema = \"content\" , ), Options: FULL, INCREMENTAL reconciliation mode = discoveryengine .",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported types: application/pdf (PDF, only native PDFs are supported for now) text/html (HTML) text/plain (TXT) application/xml or text/xml (XML) application/json (JSON) application/vnd.openxmlformats-officedocument.wordprocessingml.document (DOCX) application/vnd.openxmlformats-officedocument.presentationml.presentation (PPTX) application/vnd.openxmlformats-officedocument.spreadsheetml.sheet (XLSX) application/vnd.ms-excel.sheet.macroenabled.12 (XLSM) The following types are supported only if layout parser is enabled in the data store: image/bmp (BMP) image/gif (GIF) image/jpeg (JPEG) image/png (PNG) image/tiff (TIFF) See https://www.iana.org/assignments/media-types/media-types.xhtml .",
+          "Only available if the SearchRequest.ContentSearchSpec.search result mode is set to CHUNKS SnippetSpec JSON representation { \"maxSnippetCount\" : integer , \"referenceOnly\" : boolean , \"returnSnippet\" : boolean } Fields maxSnippetCount (deprecated) integer This item is deprecated! [DEPRECATED] This field is deprecated.",
+          "Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.Document",
+      "discoveryengine.googleapis.com",
+      "excel.sheet.macroenabled.12",
+      "officedocument.presentationml.presentation",
+      "officedocument.spreadsheetml.sheet",
+      "officedocument.wordprocessingml.document",
+      "types.xhtml",
+      "vnd.ms",
+      "vnd.openxmlformats"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:55.115Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

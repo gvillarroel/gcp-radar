@@ -1,0 +1,156 @@
+{
+  "feature_name": "bcp utility support",
+  "feature_slug": "bcp-utility-support",
+  "summary": "Cloud SQL supports the SQL Server bcp utility for importing and exporting data.",
+  "extended_definition": "Cloud SQL supports the SQL Server bcp utility for importing and exporting data.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mcp/authenticate-mcp",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Export and import using BAK files and transaction log files \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, Cloud SQL for SQL Server supports change data capture (CDC) for the following database versions: SQL Server 2017 Standard SQL Server 2017 Enterprise SQL Server 2019 Standard SQL Server 2019 Enterprise SQL Server 2022 Standard SQL Server 2022 Enterprise When importing a CDC-enabled database, the KEEP CDC flag is retained.",
+          "MySQL PostgreSQL SQL Server This page describes exporting and importing data into Cloud SQL instances using BAK files and importing data into Cloud SQL instances using transaction log files.",
+          "Required roles and permissions for exporting from Cloud SQL for SQL Server To export data from Cloud SQL into Cloud Storage, the user initiating the export must have one of the following roles: The Cloud SQL Editor role A custom role , including the following permissions: cloudsql.instances.get cloudsql.instances.export Additionally, the service account for the Cloud SQL instance must have one of the following roles: The storage.objectAdmin Identity and Access Management (IAM) role A custom role, including the following permissions: storage.objects.create storage.objects.list (for striped export and transaction log export) storage.objects.delete (for striped export and transaction log export) storage.buckets.get (for transaction log export only) For help with IAM roles, see Identity and Access Management ."
+        ]
+      },
+      {
+        "title": "\"Export and import using SQL dump files \\_|\\_ Cloud SQL for SQL Server \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server This page describes exporting and importing data into Cloud SQL instances using SQL dump files.",
+          "Import data to Cloud SQL for SQL Server Required roles and permissions for importing to Cloud SQL for SQL Server To import data from Cloud Storage into Cloud SQL, the user initiating the import must have one of the following roles: The Cloud SQL Admin role A custom role , including the following permissions: cloudsql.instances.get cloudsql.instances.import Additionally, the service account for the Cloud SQL instance must have one of the following roles: The storage.objectAdmin IAM role A custom role, including the following permissions: storage.objects.get storage.objects.list (for striped import only) For help with IAM roles, see Identity and Access Management .",
+          "Export data from Cloud SQL for SQL Server Exporting from Cloud SQL to a SQL dump file is not supported for SQL Server."
+        ]
+      },
+      {
+        "title": "Authenticate to Google and Google Cloud MCP servers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mcp/authenticate-mcp",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Local development environment To set up credentials for a local development environment, use one of the following ways: User credentials and ADC for MCP servers Service account impersonation User credentials and ADC for MCP servers To use your own identity for local development, provide your user credentials to Application Default Credentials (ADC).",
+          "Home Documentation Developer tools Google Cloud MCP servers Guides Send feedback Authenticate to Google and Google Cloud MCP servers Stay organized with collections Save and categorize content based on your preferences.",
+          "Create an OAuth client ID for your AI application Create an OAuth client ID and client secret to permit your AI application to authenticate to Google and Google Cloud remote MCP servers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.instances.export",
+      "cloudsql.instances.get",
+      "cloudsql.instances.import",
+      "storage.buckets.get",
+      "storage.objectAdmin",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-bak",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/import-export/import-export-sql",
+        "https://docs.cloud.google.com/mcp/authenticate-mcp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:16.697Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

@@ -1,0 +1,160 @@
+{
+  "feature_name": "NULL marker options for CSV loads",
+  "feature_slug": "null-marker-options-for-csv-loads",
+  "summary": "CREATE EXTERNAL TABLE and LOAD DATA support null_markers to define which CSV strings represent NULL values.",
+  "extended_definition": "CREATE EXTERNAL TABLE and LOAD DATA support null_markers to define which CSV strings represent NULL values.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "TABLES WHERE table name = 'population by zip 2010' ; The result is similar to the following: +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ table name ddl +------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+ population by zip 2010 CREATE TABLE bigquery-public-data.census bureau usa.population by zip 2010 ( geo id STRING OPTIONS(description=\"Geo code\"), zipcode STRING NOT NULL OPTIONS(description=\"Five digit ZIP Code Tabulation Area Census Code\"), population INT64 OPTIONS(description=\"The total count of the population for this segment.\"), minimum age INT64 OPTIONS(description=\"The minimum age in the age range.",
+          "Take this step only if you want to grant access to the table to principals who don't have access to the dataset in which the table resides. resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days labels = { billing group = \"accounting\", pii = \"sensitive\" } } resource \"google bigquery table\" \"default\" { dataset id = google bigquery dataset.default.dataset id table id = \"mytable\" schema = <<EOF [ { \"name\": \"ID\", \"type\": \"INT64\", \"mode\": \"NULLABLE\", \"description\": \"Item ID\" }, { \"name\": \"Item\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" } ] EOF } data \"google iam policy\" \"default\" { binding { role = \"roles/bigquery.dataOwner\" members = [ \"user:raha@altostrat.com\", ] } } resource \"google bigquery table iam policy\" \"policy\" { dataset id = google bigquery table.default.dataset id table id = google bigquery table.default.table id policy data = data.google iam policy.default.policy data } Create a table with a customer-managed encryption key The following example creates a table named mytable , and also uses the google kms crypto key and google kms key ring resources to specify a Cloud Key Management Service key for the table.",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryDestinationTable () { // Queries the U.S. given names dataset for the state of Texas // and saves results to permanent table. / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // const tableId = 'my table'; // Create destination table reference const dataset = bigquery . dataset ( datasetId ); const destinationTable = dataset . table ( tableId ); const query = SELECT name FROM \\bigquery-public-data.usa names.usa 1910 2013\\ WHERE state = 'TX' LIMIT 100 ; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , destination : destinationTable , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); console . log ( Query results loaded to table ${ destinationTable . id } ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "",
+        "evidence_snippets": [
+          "CsvOptions csvOptions = CsvOptions . newBuilder (). setSkipLeadingRows ( 1 ). build (); TableId tableId = TableId . of ( datasetName , tableName ); LoadJobConfiguration loadConfig = LoadJobConfiguration . newBuilder ( tableId , sourceUri , csvOptions ). setSchema ( schema ). build (); // Load data from a GCS CSV file into the table Job job = bigquery . create ( JobInfo . of ( loadConfig )); // Blocks until this load table job completes its execution, either failing or succeeding. job = job . waitFor (); if ( job . isDone ()) { System . out . println ( \"CSV from GCS successfully added during load append job\" ); } else { System . out . println ( \"BigQuery was unable to load into the table due to an error:\" + job . getStatus (). getError ()); } } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Column not added during load append \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "DAYS ). toMillis ()) . build (); LoadJobConfiguration loadJobConfig = LoadJobConfiguration . builder ( tableId , sourceUri ) . setFormatOptions ( FormatOptions . csv ()) . setSchema ( schema ) . setTimePartitioning ( partitioning ) . build (); // Create a job ID so that we can safely retry.",
+          "GetTableReference ( tableId : \"us states\" ); // Create job configuration var jobOptions = new CreateLoadJobOptions () { // The source format defaults to CSV; line below is optional."
+        ]
+      },
+      {
+        "title": "\"Create external table with hive partitioning \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); // Configuring partitioning options HivePartitioningOptions hivePartitioningOptions = HivePartitioningOptions . newBuilder () . setMode ( \"CUSTOM\" ) . setRequirePartitionFilter ( true ) . setSourceUriPrefix ( sourceUriPrefix ) . build (); TableId tableId = TableId . of ( datasetName , tableName ); ExternalTableDefinition customTable = ExternalTableDefinition . newBuilder ( sourceUri , FormatOptions . parquet ()) . setAutodetect ( true ) . setHivePartitioningOptions ( hivePartitioningOptions ) . build (); bigquery . create ( TableInfo . of ( tableId , customTable )); System . out . println ( \"External table created using hivepartitioningoptions\" ); } catch ( BigQueryException e ) { System . out . println ( \"External table was not created\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "String datasetName = \"MY DATASET NAME\" ; String tableName = \"MY TABLE NAME\" ; String sourceUri = \"gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/ \" ; String sourceUriPrefix = \"gs://cloud-samples-data/bigquery/hive-partitioning-samples/customlayout/{pkey:STRING}/\" ; createTableExternalHivePartitioned ( datasetName , tableName , sourceUriPrefix , sourceUri ); } public static void createTableExternalHivePartitioned ( String datasetName , String tableName , String sourceUriPrefix , String sourceUri ) { try { // Initialize client that will be used to send requests.",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // createTableExternalHivePartitioned demonstrates creating an external table with hive partitioning. func createTableExternalHivePartitioned ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydatasetid\" // tableID := \"mytableid\" ctx := context ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "bigquery.dataOwner",
+      "data.census",
+      "data.google",
+      "data.usa",
+      "dataset.default.dataset",
+      "names.usa",
+      "policy.default.policy",
+      "table.default.dataset",
+      "table.default.table",
+      "usa.population"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataOwner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-external-hivepartitioned"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,116 @@
+{
+  "feature_name": "Terrain mode during active navigation",
+  "feature_slug": "terrain-mode-during-active-navigation",
+  "summary": "Terrain mode during active navigation in the Navigation SDK for iOS is deprecated and will be replaced by normal mode; deprecated on 2024-05-28.",
+  "extended_definition": "Terrain mode during active navigation in the Navigation SDK for iOS is deprecated and will be replaced by normal mode; deprecated on 2024-05-28.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-28",
+    "deprecation_date": "2024-05-28",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Modify the navigation UI \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Swift mapView . settings . showsTrafficLights = true mapView . settings . showsStopSigns = true Objective-C mapView . settings . showsTrafficLights = YES ; mapView . settings . showsStopSigns = YES ; Speedometer control When navigation is enabled and the travel mode is set to driving, the Navigation SDK for iOS displays a speed limit control in the lower corner of the map that shows the current speed limit.",
+          "Swift mapView . settings . isRecenterButtonEnabled = true Objective-C mapView . settings . recenterButtonEnabled = YES ; Map UI accessories The Navigation SDK provides UI accessories that appear during navigation similar to those found in the Google Maps for iOS application.",
+          "Traffic lights and stop signs You can enable the display of traffic lights and stop signs during active navigation in the mapView , which provides additional context for routes and trip maneuvers."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "source_id": "site-docs-reference",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Declaration Swift var lightingMode : GMSNavigationLightingMode { get set } Objective-C @property ( nonatomic ) GMSNavigationLightingMode lightingMode ; shouldDisplaySpeedLimit Determines whether the speed limit should be displayed when guidance is active and speed limit data is available.",
+          "Setting this value will override the default Navigation SDK zoom level when the camera is following device location (i.e. cameraMode equals GMSNavigationCameraModeFollowing).",
+          "Declaration Swift var followingPerspective : GMSNavigationCameraPerspective { get set } Objective-C @property ( nonatomic ) GMSNavigationCameraPerspective followingPerspective ; travelMode The travel mode which determines what type of routes will be fetched and the way that device course is determined."
+        ]
+      },
+      {
+        "title": "Navigation SDK overview \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Leverage the Navigation SDK to support various modes of transportation, including driving, walking, cycling, and two-wheel vehicles, and customize UI elements for a personalized user experience.",
+          "Integrating navigation into your app lets you provide a superior experience for your users, while applying your own branding and leveraging trip data: Control the end-to-end experience and increase engagement by keeping users within your app during navigation, eliminating the need to switch between apps.",
+          "How to use the Navigation SDK The steps below cover a typical use case scenario for using the Navigation SDK: 1 Get set up Create a Google Cloud project, add the Maps and Navigation SDKs to your API, and set up your Xcode project."
+        ]
+      },
+      {
+        "title": "\"The Google navigation experience \\_|\\_ Navigation SDK for iOS \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "During active navigation, the Navigation SDK provides UI components, which are similar to those in the Google Maps apps.",
+          "The Google navigation experience refers to using the Navigation SDK to embed a turn-by-turn navigation experience that uses Google-provided UI elements and visuals, which are similar to the navigation experience within the Google Maps apps.",
+          "Page Summary outlined flag The Navigation SDK offers the Google navigation experience, providing a pre-built, customizable turn-by-turn navigation feature similar to Google Maps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "i.e"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:46.841Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios"
+}

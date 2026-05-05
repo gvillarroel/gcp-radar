@@ -1,0 +1,83 @@
+{
+  "feature_name": "Gzip file loading from Cloud Storage",
+  "feature_slug": "gzip-file-loading-from-cloud-storage",
+  "summary": "Gzip file loading from Cloud Storage lets BigQuery load compressed files directly from Google Cloud Storage.",
+  "extended_definition": "Gzip file loading from Cloud Storage lets BigQuery load compressed files directly from Google Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2012-02-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+      "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+      "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Loading CSV data from Cloud Storage \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/loading-data-cloud-storage-csv",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following gcloud storage cat command streams the file from Cloud Storage, decompresses the file, identifies the appropriate byte offset, and prints the line with the format error: gcloud storage cat gs://my-bucket/mytable.csv.gz gunzip - tail -c +1406 head -n 1 The output is similar to the following: 16,Abraham Lincoln,\"March 4, 1861\", \"April 15, \"1865 ,Republican Troubleshoot quota errors Use the information in this section to troubleshoot quota or limit errors related to loading CSV files into BigQuery.",
+          "You can set a default value for the location using the .bigqueryrc file . format is CSV . dataset is an existing dataset. table is the name of the table into which you're loading data. path to source is a fully-qualified Cloud Storage URI or a comma-separated list of URIs.",
+          "You can set a default value for the location using the .bigqueryrc file . format is CSV . dataset is an existing dataset. table is the name of the table into which you're loading data. path to source is a fully-qualified Cloud Storage URI or a comma-separated list of URIs."
+        ]
+      },
+      {
+        "title": "Batch loading data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-loading-data",
+        "source_id": "site-docs-reference-5",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In general, if bandwidth is limited, compress your CSV and JSON files by using gzip before uploading them to Cloud Storage. gzip is the only supported file compression type for CSV and JSON files when loading data into BigQuery.",
+          "However, BigQuery doesn't support loading files in these formats that have themselves been compressed, for example by using the gzip utility.",
+          "Because uncompressed files are larger, using them can lead to bandwidth limitations and higher Cloud Storage costs for data staged in Cloud Storage prior to being loaded into BigQuery."
+        ]
+      },
+      {
+        "title": "\"Introduction to Cloud Storage transfers \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/cloud-storage-transfer-overview",
+        "source_id": "site-api-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported file formats The BigQuery Data Transfer Service supports loading data from Cloud Storage in one of the following formats: Comma-separated values (CSV) JSON (newline-delimited) Avro Parquet ORC Supported compression types The BigQuery Data Transfer Service for Cloud Storage supports loading compressed data.",
+          "All BigQuery quotas and limits on load jobs apply to recurring Cloud Storage load jobs, with the following additional considerations: Value Limit Maximum size per load job transfer run 15 TB Maximum number of files per transfer run 10,000 files Pricing After data is transferred to BigQuery, standard BigQuery storage and query pricing applies.",
+          "Introduction to Cloud Storage transfers The BigQuery Data Transfer Service for Cloud Storage lets you schedule recurring data loads from Cloud Storage buckets to BigQuery."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mytable.csv.gz"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

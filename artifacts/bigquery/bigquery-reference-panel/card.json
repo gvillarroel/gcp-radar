@@ -1,0 +1,164 @@
+{
+  "feature_name": "BigQuery Reference panel",
+  "feature_slug": "bigquery-reference-panel",
+  "summary": "The BigQuery console Reference panel previews schema details, opens resources in new tabs, and inserts snippets or field names into queries and notebooks.",
+  "extended_definition": "The BigQuery console Reference panel previews schema details, opens resources in new tabs, and inserts snippets or field names into queries and notebooks.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+      "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate code with the batch SQL translator \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "source_id": "site-docs-reference-5",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example shows a translation configuration YAML file for a Teradata to BigQuery translation: tasks: translation task: type: Teradata2BigQuery Translation translationDetails: sourceTargetMapping: - sourceSpec: baseUri: gs://bq-translations/input targetSpec: relativePath: output targetBaseUri: gs://bq-translations targetTypes: - sql sourceEnvironment: defaultDatabase: default db schemaSearchPath: - foo The following example shows a translation configuration JSON file for a Teradata to BigQuery translation: { \"tasks\" : { \"translation task\" : { \"type\" : \"Teradata2BigQuery Translation\" , \"translationDetails\" : { \"sourceTargetMapping\" : [ { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 1\" , \"relativePath\" : \"my input 1\" } , \"encoding\" : \"UTF-8\" } } , { \"sourceSpec\" : { \"literal\" : { \"literalString\" : \"sel 2\" , \"relativePath\" : \"my input 2\" } , \"encoding\" : \"UTF-8\" } } ] , \"targetReturnLiterals\" : [ \"sql/my input 1\" , \"sql/my input 2\" ] } } } } Once the translation configuration is created, run the following command to run the translation job. bq mk --migration workflow --location = LOCATION --config file = CONFIG FILE NAME .json Replace the following: LOCATION : the location of the Google Cloud project that is running this translation job.",
+          "You can have all the above necessary Cloud Storage permissions from the following roles: roles/storage.objectAdmin roles/storage.admin Enable the BigQuery Migration API If your Google Cloud CLI project was created before February 15, 2022, enable the BigQuery Migration API as follows: In the Google Cloud console, go to the BigQuery Migration API page.",
+          "Upload input files to Cloud Storage If you want to use the Google Cloud console or the BigQuery Migration API to perform a translation job, you must upload the source files containing the queries and scripts you want to translate to Cloud Storage."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Synopsis bq insert [ FLAGS ] TABLE FILE Examples bq insert --ignore unknown values --template suffix = insert myDataset.myTable /tmp/myData.json echo '{\"a\":1, \"b\":2}' bq insert myDataset.myTable Flags and arguments The bq insert command uses the following flags and arguments: --ignore unknown values={true false} or -i={true false} When set to true , BigQuery ignores any key-value pairs that don't match the table's schema, and inserts the row with the data that does match the schema.",
+          "The default is false . --parquet enable list inference={true false} If the --source format flag is set to PARQUET , then this flag indicates whether to use schema inference for Parquet LIST logical types. --reference file schema uri= URI Specifies the path to a reference file with the expected table schema for creating external tables.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences. bq command-line tool reference This document describes the syntax, commands, flags, and arguments for bq , the Python-based command-line tool for BigQuery."
+        ]
+      },
+      {
+        "title": "\"Analyze multimodal data with SQL and BigQuery DataFrames \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up ADC for a local development environment . df manuals agg The results look similar to the following: +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ manual.uri manual.version manual.authorizer manual.details chunks.uri chunks.version chunks.authorizer chunks.details +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ gs://cloud-samples-data/bigquery/ 1742492785900455 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pef\", gs://cloud-samples-data/bigquery/ 1745875761227129 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"c9032b037693d15a33210d638c763d0e\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"5a1116cce4978ec1b094d8e8b49a1d7c\", crittercuisine 5000 user manual.pdf \"size\":566105,\"updated\":1742492785941000}} crittercuisine 5000 user manual page1.pdf \"size\":504583,\"updated\":1745875761266000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ crittercuisine 5000 user manual page1.pdf 1745875760613874 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"application/pdf\", tutorials/cymbal-pets/documents/ \"md5 hash\":\"94d03ec65d28b173bc87eac7e587b325\", crittercuisine 5000 user manual page2.pdf \"size\":94622,\"updated\":1745875760649000}} +-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ ... ... ... ... +-------------------------------------+--------------------------------+-----------------------------------+------------------------------------------------------+-------------------------------------------+---------------------------------+------------------------------------+-------------------------------------------------------+ Run the following to generate a single response from a Gemini model based on the analysis of an array of ObjectRef values: SQL WITH manuals AS ( SELECT OBJ .",
+          "For more information, see Set up ADC for a local development environment . df products mm [[ \"product name\" , \"image\" ]] The results look similar to the following: +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ product name image.uri image.version image.authorizer image.details +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ AquaClear Aquarium Background gs://cloud-samples-data/bigquery/ 1234567891011 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"image/png\", tutorials/cymbal-pets/images/ \"md5 hash\":\"494f63b9b137975ff3e7a11b060edb1d\", aquaclear-aquarium-background.png \"size\":1282805,\"updated\":1742492680017000}} +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ AquaClear Aquarium gs://cloud-samples-data/bigquery/ 2345678910112 myproject.region.myconnection {\"gcs metadata\":{\"content type\":\"image/png\", Gravel Vacuum tutorials/cymbal-pets/images/ \"md5 hash\":\"b7bfc2e2641a77a402a1937bcf0003fd\", aquaclear-aquarium-gravel-vacuum.png \"size\":820254,\"updated\":1742492682411000}} +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ ... ... ... ... +--------------------------------+--------------------------------------+-----------------------------------------------+------------------------------------------------+ Generate product information by using a Gemini model Use a Gemini model to generate the following data for the pet store products: Add an image description column to the products mm table.",
+          "DataFrame ( { \"uri\" : [ \"gs://cloud-samples-data/bigquery/tutorials/cymbal-pets/images/cozy-naps-cat-scratching-post-with-condo.png\" ] } ) . cache () df image [ \"image\" ] = bbq . obj . make ref ( df image [ \"uri\" ], \"us.cymbal conn\" ) df search = bbq . ai . generate embedding ( embedding model , bbq . obj . get access url ( bbq . obj . fetch metadata ( df image [ \"image\" ]), \"R\" ), ) search result = bbq . vector search ( \"cymbal pets.products embedding\" , \"embedding\" , df search [ \"embedding\" ] ) search result The results look similar to the following: +-----------------+-----------------+----------------+----------------------------------------------+--------------------+-------------------------------+------------------------------------------------+----------------+ query.embedding base.product id base.embedding base.image.uri base.image.version base.image.authorizer base.image.details distance +-----------------+-----------------+----------------+----------------------------------------------+--------------------+-------------------------------+------------------------------------------------+----------------+ -0.0112330541 181 -0.0112330541 gs://cloud-samples-data/bigquery/ 12345678910 myproject.region.myconnection {\"gcs metadata\":{\"content type\": 0.0 0.0142525584 0.0142525584 tutorials/cymbal-pets/images/ \"image/png\",\"md5 hash\":\"21234567hst16555w60j\", 0.0135886827 0.0135886827 cozy-naps-cat-scratching-post-with-condo.png \"size\":828318,\"updated\":1742492688982000}} 0.0149955815 0.0149955815 ... ... +-----------------+-----------------+----------------+----------------------------------------------+--------------------+-------------------------------+------------------------------------------------+----------------+ -0.0112330541 187 -0.0190353896 gs://cloud-samples-data/bigquery/ 23456789101 myproject.region.myconnection {\"gcs metadata\":{\"content type\": 0.4216330832.."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "background.png",
+      "base.embedding",
+      "base.image.authorizer",
+      "base.image.details",
+      "base.image.uri",
+      "base.image.version",
+      "base.product",
+      "chunks.authorizer",
+      "chunks.details",
+      "chunks.uri",
+      "chunks.version",
+      "condo.png",
+      "image.authorizer",
+      "image.details",
+      "image.uri",
+      "image.version",
+      "manual.authorizer",
+      "manual.details",
+      "manual.pdf",
+      "manual.uri",
+      "manual.version",
+      "myproject.region.myconnection",
+      "page1.pdf",
+      "page2.pdf",
+      "pets.products",
+      "query.embedding",
+      "storage.admin",
+      "storage.objectAdmin",
+      "us.cymbal",
+      "vacuum.png"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.admin",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/batch-sql-translator",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "https://docs.cloud.google.com/bigquery/docs/multimodal-data-sql-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

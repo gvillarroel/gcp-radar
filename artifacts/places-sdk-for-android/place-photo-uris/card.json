@@ -1,0 +1,127 @@
+{
+  "feature_name": "Place photo URIs",
+  "feature_slug": "place-photo-uris",
+  "summary": "Adds the ability to retrieve photo URIs for a place in addition to photo bitmaps.",
+  "extended_definition": "Adds the ability to retrieve photo URIs for a place in addition to photo bitmaps.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+      "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AutocompleteSessionToken"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Place Photos (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To retrieve a place photo, you must first fetch a Place object using Place Details (New) with the PHOTO METADATAS field, then use this metadata to request the photo URI via the Places SDK.",
+          "PHOTO METADATAS ); // Get a Place object final FetchPlaceRequest placeRequest = FetchPlaceRequest . newInstance ( placeId , fields ); placesClient . fetchPlace ( placeRequest ). addOnSuccessListener (( response ) -> { final Place place = response . getPlace (); // Get the photo metadata. final List<PhotoMetadata> metadata = place . getPhotoMetadatas (); if ( metadata == null metadata . isEmpty ()) { Log . w ( TAG , \"No photo metadata.\" ); return ; } final PhotoMetadata photoMetadata = metadata . get ( 0 ); // Get the attribution text and author attributions. final String attributions = photoMetadata . getAttributions (); final AuthorAttributions authorAttributions = photoMetadata . getAuthorAttributions (); // Create a FetchResolvedPhotoUriRequest. final FetchResolvedPhotoUriRequest photoRequest = FetchResolvedPhotoUriRequest . builder ( photoMetadata ) . setMaxWidth ( 500 ) . setMaxHeight ( 300 ) . build (); // Request the photo URI placesClient . fetchResolvedPhotoUri ( photoRequest ). addOnSuccessListener (( fetchResolvedPhotoUriResponse ) -> { Uri uri = fetchResolvedPhotoUriResponse . getUri (); RequestOptions requestOptions = new RequestOptions (). override ( Target .",
+          "SIZE ORIGINAL ); Glide . with ( this ). load ( uri ). apply ( requestOptions ). into ( imageView ); }). addOnFailureListener (( exception ) -> { if ( exception instanceof ApiException ) { final ApiException apiException = ( ApiException ) exception ; Log . e ( TAG , \"Place not found: \" + exception . getMessage ()); final int statusCode = apiException . getStatusCode (); // TODO: Handle error with given status code. } }); }); Attributions In most cases, place photos can be used without attribution, or will have the required attribution included as part of the image."
+        ]
+      },
+      {
+        "title": "AutocompleteSessionToken \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AutocompleteSessionToken",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Summary Public constructors AutocompleteSessionToken () Public methods static AutocompleteSessionToken newInstance () final String toString () Inherited Constants From android.os.Parcelable static final int CONTENTS FILE DESCRIPTOR = 1 static final int PARCELABLE STABILITY LOCAL = 0 static final int PARCELABLE STABILITY VINTF = 1 static final int PARCELABLE WRITE RETURN VALUE = 1 Inherited methods From android.os.Parcelable abstract int describeContents () int getStability () abstract void writeToParcel ( Parcel p, int p1) Public constructors AutocompleteSessionToken public AutocompleteSessionToken () Public methods newInstance public static AutocompleteSessionToken newInstance () toString public final String toString () Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Once that is done, the token can then be used in a subsequent com.google.android.libraries.places.api.net.FetchPlaceRequest to conclude the session.",
+          "Multiple instances of com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest can be created using the same session token."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "source_id": "site-docs-reference",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Place Photo (New) adds the AuthorAttributions to the PhotoMetadata class.",
+          "SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.",
+          "New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example \"pizza in New York\" or \"shoe stores near Ottawa\" or \"123 Main Street\"."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "source_id": "site-docs-root-2",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "Place Photo (New) adds the AuthorAttributions to the PhotoMetadata class.",
+          "SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.",
+          "New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example \"pizza in New York\" or \"shoe stores near Ottawa\" or \"123 Main Street\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.os.Parcelable",
+      "com.google.android.libraries.places.api.net.FetchPlaceRequest",
+      "com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AutocompleteSessionToken",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AutocompleteSessionToken",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-photos",
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/model/AutocompleteSessionToken",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.086Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android"
+}

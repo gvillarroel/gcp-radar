@@ -1,0 +1,98 @@
+{
+  "feature_name": "Vertical Autoscaling for batch jobs",
+  "feature_slug": "vertical-autoscaling-for-batch-jobs",
+  "summary": "Vertical Autoscaling automatically adjusts worker machine resources for batch jobs.",
+  "extended_definition": "Vertical Autoscaling automatically adjusts worker machine resources for batch jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+      "https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime",
+      "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use Dataflow Prime \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime",
+        "source_id": "site-docs-reference-2",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vertical Autoscaling This feature automatically adjusts the memory available to the Dataflow worker VMs to fit the needs of the pipeline and help prevent out-of-memory errors.",
+          "Feature Dataflow Prime Dataflow Runner v2 Default feature with no option to turn off for batch jobs and optional for streaming jobs Default feature with an option to turn off for batch jobs and optional for streaming jobs Dataflow Shuffle for batch jobs Default feature with an option to turn off Default feature with an option to turn off Streaming Engine for streaming jobs Optional feature for Java pipelines and always on for Python pipelines Optional feature for Java pipelines and always on for Python pipelines since 2.45.0 Horizontal Autoscaling Default feature with option to turn off Default feature with option to turn off Vertical Autoscaling Default feature with option to turn off Not applicable Right fitting Optional feature Optional feature Billing Serverless billing Standard billing What's next Read about Dataflow quotas .",
+          "Unsupported features Dataflow Prime doesn't support the following: Designating specific VM types by using the flag --worker machine type or --machine type for Python pipelines and --workerMachineType for Java pipelines."
+        ]
+      },
+      {
+        "title": "\"Best practices for large batch pipelines \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Speculative execution can help pipelines complete faster by providing an alternative execution path for work items that are experiencing delays due to slow worker machines or other transient issues such as nondeterministic bugs, resource throttling, or connectivity issues.",
+          "Because Vertical Autoscaling might increase the cost of your job and doesn't prevent all out-of-memory failures, you still need to address excessive memory consumption issues.",
+          "Enable Vertical Autoscaling If you are unsure how much memory your job needs or think that your job is at risk of running out of memory, enable Vertical Autoscaling."
+        ]
+      },
+      {
+        "title": "Deploy Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These features include the following: Horizontal Autoscaling Vertical Autoscaling Dynamic work rebalancing Note: With the introduction of Vertical Autoscaling, the feature that was previously called Autoscaling has been renamed to Horizontal Autoscaling.",
+          "Dataflow Flexible Resource Scheduling Dataflow FlexRS reduces batch processing costs by using advanced scheduling techniques , the Dataflow Shuffle service, and a combination of preemptible virtual machine (VM) instances and regular VMs.",
+          "Streaming Engine By default, the Dataflow pipeline runner executes the steps of your streaming pipeline entirely on worker virtual machines, consuming worker CPU, memory, and Persistent Disk storage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime",
+        "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices",
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/enable-dataflow-prime",
+        "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices",
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:24.520Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

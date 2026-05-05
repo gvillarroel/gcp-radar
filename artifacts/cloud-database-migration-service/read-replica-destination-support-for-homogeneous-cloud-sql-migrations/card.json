@@ -1,0 +1,113 @@
+{
+  "feature_name": "Read-replica destination support for homogeneous Cloud SQL migrations",
+  "feature_slug": "read-replica-destination-support-for-homogeneous-cloud-sql-migrations",
+  "summary": "Database Migration Service now supports homogeneous MySQL and PostgreSQL migrations to existing destination Cloud SQL instances that have read replicas enabled.",
+  "extended_definition": "Database Migration Service now supports homogeneous MySQL and PostgreSQL migrations to existing destination Cloud SQL instances that have read replicas enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview",
+      "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview",
+      "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview",
+      "https://docs.cloud.google.com/database-migration/docs/sqlserver/scenario-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Database Migration Service for heterogeneous SQL Server to Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview",
+        "source_id": "site-api-reference",
+        "final_score": 304,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page provides an overview of the key Database Migration Service features for heterogeneous SQL Server to Cloud SQL for PostgreSQL migrations: Supported source and destination lists all SQL Server versions supported by Database Migration Service.",
+          "Failback migrations Failback migrations (sometimes referred to as reverse replication ), allow you to push CDC updates back to your original SQL Server source from the destination Cloud SQL for PostgreSQL cluster after you complete the migration.",
+          "During this phase, Database Migration Service connects to your source instance, reads the contents of the tables you selected for migration, and then loads the data to the Cloud SQL for PostgreSQL destination instance."
+        ]
+      },
+      {
+        "title": "\"Database Migration Service for heterogeneous SQL Server to AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview",
+        "source_id": "site-api-reference",
+        "final_score": 282,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page provides an overview of the key Database Migration Service features for heterogeneous SQL Server to AlloyDB for PostgreSQL migrations: Supported sources and destinations lists all SQL Server versions supported by Database Migration Service.",
+          "Failback migrations Failback migrations (sometimes referred to as reverse replication ), allow you to push CDC updates back to your original SQL Server source from the destination AlloyDB for PostgreSQL cluster after you complete the migration.",
+          "During this phase, Database Migration Service connects to your source instance, reads the contents of the tables you selected for migration, and then loads the data to the AlloyDB for PostgreSQL destination cluster."
+        ]
+      },
+      {
+        "title": "\"Oracle to Cloud SQL for PostgreSQL migration overview \\_|\\_ Database Migration\\",
+        "url": "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview",
+        "source_id": "site-api-reference",
+        "final_score": 272,
+        "relevance": "",
+        "evidence_snippets": [
+          "There are two ways in which you can complete full dump: Automatic: Database Migration Service connects to your source instance, reads the contents of the tables you selected for migration, and then loads the data to the AlloyDB for PostgreSQL destination instance.",
+          "This page provides an overview of the key Database Migration Service features for heterogeneous Oracle to Cloud SQL for PostgreSQL migrations: Supported source and destination lists all Oracle versions supported by Database Migration Service.",
+          "During this phase, Database Migration Service connects to your source instance, reads the contents of the tables you selected for migration, and then loads the data to the AlloyDB for PostgreSQL destination instance."
+        ]
+      },
+      {
+        "title": "Database Migration Service for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/database-migration/docs/sqlserver/scenario-overview",
+        "source_id": "site-api-reference",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table lists all supported SQL Server source and destination databases: Source databases Destination databases Amazon RDS Cloud SQL for SQL Server versions 2022, 2019, 2017 Self-managed SQL Server (on premises or on any cloud VM that you fully control) Continuous migrations data flow For homogeneous SQL Server migrations to Cloud SQL, Database Migration Service supports the continuous migration flow.",
+          "This page provides an overview of the key Database Migration Service features for homogeneous SQL Server migrations: Supported source and destination lists all SQL Server versions supported by Database Migration Service.",
+          "You can stop the ongoing replication and promote the migration job when you want to switch your application to so that it uses the Cloud SQL for SQL Server destination instance as the production database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview",
+        "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview",
+        "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview",
+        "https://docs.cloud.google.com/database-migration/docs/sqlserver/scenario-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-csql-pgsql/scenario-overview",
+        "https://docs.cloud.google.com/database-migration/docs/sqlserver-to-alloydb/scenario-overview",
+        "https://docs.cloud.google.com/database-migration/docs/oracle-to-postgresql/scenario-overview",
+        "https://docs.cloud.google.com/database-migration/docs/sqlserver/scenario-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.641Z",
+  "source_step08_card": "data/step-08/current/products/cloud-database-migration-service/card.json",
+  "product_name": "Cloud Database Migration Service",
+  "product_slug": "cloud-database-migration-service"
+}

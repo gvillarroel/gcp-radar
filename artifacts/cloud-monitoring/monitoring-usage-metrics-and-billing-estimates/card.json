@@ -1,0 +1,96 @@
+{
+  "feature_name": "Monitoring Usage Metrics and Billing Estimates",
+  "feature_slug": "monitoring-usage-metrics-and-billing-estimates",
+  "summary": "Monitoring provides usage metrics and estimated billing based on the new pricing model.",
+  "extended_definition": "Monitoring provides usage metrics and estimated billing based on the new pricing model.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "View summaries of metric usage To view summaries of the number of billable metrics, rates of metric ingestion, and error rate, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "To view the table of usage data for each billable metric, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "Usage of the metrics Used metrics are metrics that have been queried in the last 30 days by the Cloud Monitoring API or other tools, or that are used in a custom dashboard or alerting policy."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceAsyncClient (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Developer tools Python Client libraries Send feedback Class MetricServiceAsyncClient (2.30.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "User-created metric descriptors define custom metrics <https://cloud.google.com/monitoring/custom-metrics> .",
+          "Only user-created custom metrics <https://cloud.google.com/monitoring/custom-metrics> can be deleted."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceClient (2.30.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: :: metric.type = \"compute.googleapis.com/instance/cpu/usage time\" AND metric.labels.instance name = \"my-instance-name\" This corresponds to the filter field on the request instance; if request is provided, this should not be set. interval google.cloud.monitoring v3.types.TimeInterval Required.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class MetricServiceClient (2.30.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "User-created metric descriptors define custom metrics <https://cloud.google.com/monitoring/custom-metrics> ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "metric.labels.instance",
+      "metric.type",
+      "projects.timeSeries.create",
+      "v3.types.TimeInterval"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

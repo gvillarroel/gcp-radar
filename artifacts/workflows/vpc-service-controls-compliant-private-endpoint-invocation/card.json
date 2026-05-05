@@ -1,0 +1,157 @@
+{
+  "feature_name": "VPC Service Controls-compliant private endpoint invocation",
+  "feature_slug": "vpc-service-controls-compliant-private-endpoint-invocation",
+  "summary": "Workflows can invoke private endpoints that comply with VPC Service Controls.",
+  "extended_definition": "Workflows can invoke private endpoints that comply with VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/compliance-controls",
+      "https://docs.cloud.google.com/workflows/docs/http-requests",
+      "https://docs.cloud.google.com/workflows/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Workflows overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When you create a private endpoint within a Virtual Private Cloud (VPC) network, you can set up a service perimeter and use VPC Service Controls with Workflows to mitigate data exfiltration risks.",
+          "You can target a private endpoint for HTTP calls from your workflow execution by using Service Directory's service registry with Workflows.",
+          "For more information, see Invoke a private endpoint using Service Directory's service registry ."
+        ]
+      },
+      {
+        "title": "Make an HTTP request \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "source_id": "site-api-reference-required-3",
+        "final_score": 58,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "YAML Use a custom exception handler to catch exceptions and return predefined error messages; if the exception isn't recognized, the workflow execution fails and throws the exception returned by the GET request - read item : try : call : http.get args : url : https://example.com/someapi auth : type : OIDC result : API response except : as : e steps : - known errors : switch : - condition : ${not(\"HttpError\" in e.tags)} next : connection problem - condition : ${e.code == 404} next : url not found - condition : ${e.code == 403} next : auth problem - unhandled exception : raise : ${e} - url found : return : ${API response.body} - connection problem : return : \"Connection problem; check URL\" - url not found : return : \"Sorry, URL wasn't found\" - auth problem : return : \"Authentication error\" JSON [ { \"read item\" : { \"try\" : { \"call\" : \"http.get\" , \"args\" : { \"url\" : \"https://example.com/someapi\" , \"auth\" : { \"type\" : \"OIDC\" } }, \"result\" : \"API response\" }, \"except\" : { \"as\" : \"e\" , \"steps\" : [ { \"known errors\" : { \"switch\" : [ { \"condition\" : \"${not(\\\"HttpError\\\" in e.tags)}\" , \"next\" : \"connection problem\" }, { \"condition\" : \"${e.code == 404}\" , \"next\" : \"url not found\" }, { \"condition\" : \"${e.code == 403}\" , \"next\" : \"auth problem\" } ] } }, { \"unhandled exception\" : { \"raise\" : \"${e}\" } } ] } } }, { \"url found\" : { \"return\" : \"${API response.body}\" } }, { \"connection problem\" : { \"return\" : \"Connection problem; check URL\" } }, { \"url not found\" : { \"return\" : \"Sorry, URL wasn't found\" } }, { \"auth problem\" : { \"return\" : \"Authentication error\" } } ] What's next Use Workflows with Cloud Run and Cloud Run functions tutorial Invoke a private endpoint using Service Directory's service registry Invoke an IAP-secured endpoint Workflows syntax reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more information, see Invoke a private endpoint using Service Directory's service registry .",
+          "YAML main : params : [ input ] steps : - checkSearchTermInInput : switch : - condition : '${\"searchTerm\" in input}' assign : - searchTerm : '${input.searchTerm}' next : readWikipedia - getLocation : call : sys.get env args : name : GOOGLE CLOUD LOCATION result : location - setFromCallResult : assign : - searchTerm : '${text.split(location, \"-\")[0]}' - readWikipedia : call : http.get args : url : 'https://en.wikipedia.org/w/api.php' query : action : opensearch search : '${searchTerm}' result : wikiResult - returnOutput : return : '${wikiResult.body[1]}' JSON { \"main\" : { \"params\" : [ \"input\" ], \"steps\" : [ { \"checkSearchTermInInput\" : { \"switch\" : [ { \"condition\" : \"${\\\"searchTerm\\\" in input}\" , \"assign\" : [ { \"searchTerm\" : \"${input.searchTerm}\" } ], \"next\" : \"readWikipedia\" } ] } }, { \"getLocation\" : { \"call\" : \"sys.get env\" , \"args\" : { \"name\" : \"GOOGLE CLOUD LOCATION\" }, \"result\" : \"location\" } }, { \"setFromCallResult\" : { \"assign\" : [ { \"searchTerm\" : \"${text.split(location, \\\"-\\\")[0]}\" } ] } }, { \"readWikipedia\" : { \"call\" : \"http.get\" , \"args\" : { \"url\" : \"https://en.wikipedia.org/w/api.php\" , \"query\" : { \"action\" : \"opensearch\" , \"search\" : \"${searchTerm}\" } }, \"result\" : \"wikiResult\" } }, { \"returnOutput\" : { \"return\" : \"${wikiResult.body[1]}\" } } ] } } Make an external HTTP POST request This sample makes a POST request to an external HTTP endpoint."
+        ]
+      },
+      {
+        "title": "Compliance controls \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/compliance-controls",
+        "source_id": "site-docs-root-2",
+        "final_score": 51,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Workflows regularly undergoes independent verification of its security, privacy, and compliance controls, achieving certifications, attestations, and audit reports to demonstrate compliance.",
+          "Home Documentation Application development Workflows Guides Send feedback Compliance controls Stay organized with collections Save and categorize content based on your preferences.",
+          "Workflows is compliant with the following certifications and standards."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.php",
+      "e.code",
+      "e.tags",
+      "en.wikipedia.org",
+      "example.com",
+      "http.get",
+      "input.searchTerm",
+      "response.body",
+      "sys.get",
+      "text.split"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/http-requests",
+        "https://docs.cloud.google.com/workflows/docs/compliance-controls"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

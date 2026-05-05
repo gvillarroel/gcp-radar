@@ -1,0 +1,143 @@
+{
+  "feature_name": "Per-version user-managed service account",
+  "feature_slug": "per-version-user-managed-service-account",
+  "summary": "Each App Engine version can be deployed with a user-managed service account; Each App Engine version can be deployed with a user-managed service account.",
+  "extended_definition": "Each App Engine version can be deployed with a user-managed service account; Each App Engine version can be deployed with a user-managed service account.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control",
+      "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "source_id": "site-docs-reference-2",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you use Cloud Load Balancing and serverless network endpoint group (NEGS) to route traffic to your App Engine app, we recommend that you map your custom domain to the load balancer instead of directly to your app, and use Google-managed SSL certificates that are created for the load balancer.",
+          "Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.",
+          "Delegating ownership to other Google Cloud users or service accounts If you need to delegate the ownership of your domain to other users or service accounts, you can add permission through the Search Console page."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you need to use a unique identity for a version of your App Engine app when accessing other Google Cloud services or executing tasks, you can specify a user-managed service account in App Engine.",
+          "A user account can be used to authenticate from the following tools: Google Cloud console Google Cloud CLI IDEs and build tools that use the gcloud CLI to test and deploy App Engine apps A service account , which is intended to represent an application or a process instead of a person.",
+          "A service account can be used to authenticate from the following tools: gcloud CLI IDEs and build tools that use gcloud CLI tools to test and deploy App Engine apps Creating a user account Open the IAM page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you need to use a unique identity for a version of your App Engine app when accessing other Google Cloud services or executing tasks, you can specify a user-managed service account in App Engine.",
+          "A user account can be used to authenticate from the following tools: Google Cloud console Google Cloud CLI IDEs and build tools that use the gcloud CLI to test and deploy App Engine apps A service account , which is intended to represent an application or a process instead of a person.",
+          "A service account can be used to authenticate from the following tools: gcloud CLI IDEs and build tools that use gcloud CLI tools to test and deploy App Engine apps Creating a user account Open the IAM page in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.appAdmin",
+      "appengine.applications.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/appengine.appAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/flexible/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/ruby/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.830Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby"
+}

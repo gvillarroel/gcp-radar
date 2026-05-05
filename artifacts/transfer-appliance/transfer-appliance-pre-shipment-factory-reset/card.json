@@ -1,0 +1,185 @@
+{
+  "feature_name": "Transfer Appliance pre-shipment factory reset",
+  "feature_slug": "transfer-appliance-pre-shipment-factory-reset",
+  "summary": "Transfer Appliance supports performing a factory reset after an appliance is prepared for shipment to the Google upload facility.",
+  "extended_definition": "Transfer Appliance supports performing a factory reset after an appliance is prepared for shipment to the Google upload facility.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "High-level overview \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Prepare for the appliance To prepare for Transfer Appliance, do the following: When you're ready to transfer your data, apply for Transfer Appliance from the same Google Cloud project as your destination Cloud Storage bucket.",
+          "Home Documentation Storage Transfer Appliance Guides Send feedback High-level overview Stay organized with collections Save and categorize content based on your preferences.",
+          "The maximum path length is 1024 bytes, which includes the optional object prefix specified when you provide Transfer Appliance Team with bucket configuration details."
+        ]
+      },
+      {
+        "title": "\"Enable or disable online transfer \\_|\\_ Transfer Appliance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Storage Transfer Appliance Guides Send feedback Enable or disable online transfer Stay organized with collections Save and categorize content based on your preferences.",
+          "To enable online transfer mode, follow the instructions below: Verify your outbound connectivity from the appliance to the HTTPS endpoints listed below: https://gcr.io https://storage.googleapis.com https://oauth2.googleapis.com https://storagetransfer.googleapis.com https://pubsub.googleapis.com Run the following command using each of the HTTPS endpoints: ping URL If the command fails, it may indicate that DNS is misconfigured on the appliance.",
+          "Optional: change the transfer destination bucket and the job object prefix. ta online --bucket= BUCKET --object prefix= OBJECT PREFIX Replace BUCKET with the destination bucket and OBJECT PREFIX with the object prefix you are updating to."
+        ]
+      },
+      {
+        "title": "Known limitations \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you anticipate ordering many appliances for a large transfer and cannot follow the limitations listed below, you must perform an initial proof-of-concept transfer with a single Transfer Appliance and representative data to ensure performance is suitable before you order multiple appliances.",
+          "Supported file metadata Transfer Appliance preserves symlinks, numeric MODE and the last modified time ( mtime ) from Transfer Appliance file system to copy into the corresponding Cloud Storage destination object.",
+          "Home Documentation Storage Transfer Appliance Guides Send feedback Known limitations Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Role details The following table describes in detail the predefined roles for Transfer Appliance: Role Description Included Permissions Transfer Appliance Admin ( roles/transferappliance. admin ) Provides all Transfer Appliance permissions, including the ability to order new appliances and update existing appliance metadata. transferappliance.appliances. list get create update delete transferappliance.orders. list get create update delete transferappliance.savedAddresses. list get create update delete transferappliance.operations. list get cancel delete transferappliance.locations. list get transferappliance.projects. list get transferappliance.credentials. get Transfer Appliance Viewer ( roles/transferappliance. viewer ) Grants the required permissions for read-only access to all Transfer Appliance resources. transferappliance.appliances. list get transferappliance.orders. list get transferappliance.savedAddresses. list get transferappliance.operations. list get transferappliance.locations. list get resourcemanager.projects. list get Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Storage Transfer Appliance Resources Send feedback Access control with IAM Stay organized with collections Save and categorize content based on your preferences.",
+          "Predefined roles This section describes the predefined roles for Transfer Appliance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "oauth2.googleapis.com",
+      "pubsub.googleapis.com",
+      "resourcemanager.projects",
+      "storage.googleapis.com",
+      "storagetransfer.googleapis.com",
+      "transferappliance.appliances",
+      "transferappliance.appliances.get",
+      "transferappliance.appliances.list",
+      "transferappliance.credentials",
+      "transferappliance.locations",
+      "transferappliance.operations",
+      "transferappliance.orders",
+      "transferappliance.projects",
+      "transferappliance.savedAddresses"
+    ],
+    "missing_inventory_roles": [
+      "roles/transferappliance"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/known-limitations",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:53.904Z",
+  "source_step08_card": "data/step-08/current/products/transfer-appliance/card.json",
+  "product_name": "Transfer Appliance",
+  "product_slug": "transfer-appliance"
+}

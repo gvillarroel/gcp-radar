@@ -1,0 +1,162 @@
+{
+  "feature_name": "Premium parsers",
+  "feature_slug": "premium-parsers",
+  "summary": "Certain high-volume parsers are classified as premium and receive expedited support.",
+  "extended_definition": "Certain high-volume parsers are classified as premium and receive expedited support.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-docs-reference",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "CDIR SCC Enhanced rule sets All rule sets that begin with the name CDIR SCC Enhanced use Security Command Center Premium findings contextualized with several other Google Cloud log sources, including the following: Cloud Audit Logs Cloud DNS logs Identity and Access Management (IAM) analysis Sensitive Data Protection context BigQuery context Compute Engine context To use the CDIR SCC Enhanced rule sets, we recommend that you collect the following Google Cloud data: Log data listed in the All rule sets section.",
+          "Curated detections for Office 365 data Office 365 rule sets in this category help identify threats in Office 365 environments using event and context data, and includes the following rule sets: Office 365 - Administrative : Detects malicious, suspicious and high-risk activities in Office 365, including backup policy changes, Microsoft Purview, and ATP detections.",
+          "Azure - Defender for Cloud : Identifies alerts received from context-aware Microsoft Defender for Cloud related to user behavior, credential access, cryptomining, discovery, evasion, execution, exfiltration, impact, initial access, malware, penetration testing, persistence, policy, privilege escalation, or unauthorized access across all Azure cloud services."
+        ]
+      },
+      {
+        "title": "\"Dashboards overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data Ingestion and Health dashboard The Data Ingestion and Health dashboard provides information about the type, volume, and health of data being ingested into your Google Security Operations SIEM tenant.",
+          "Cloud Data Coverage : provides information about all available Google Cloud services, parsers that cover each service, first seen event, last seen event, and the total throughput.",
+          "This dashboard provides visualizations that help you understand the volume of ingested logs, ingestion errors, and other relevant information."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "See Curated Detections Examples CDIR : An analyst receives a high priority CDIR SCC Enhanced Privilege Escalation alert (one of many driven by Cloud Threat Curated Detections ) that gets automatically mapped to a Google SecOps case.",
+          "Focus response efforts on alerts classified as Active Breach, High, or Medium based on contextualized IOC matches.",
+          "Getting Started with Google Chrome and Google SecOps Configure the Chrome Enterprise Premium Reporting Connector to send data to Google SecOps Connect Chrome Enterprise Premium to Google SecOps Enable Chrome Enterprise Threats Curated Detections Examples Investigating Malicious Browser Extensions A user downloads and installs a malicious browser extension from outside the Chrome Web Store, that once installed, reads their session cookies and posts them to a server on a suspicious domain that was registered within the last week."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/dashboards-user-guide",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

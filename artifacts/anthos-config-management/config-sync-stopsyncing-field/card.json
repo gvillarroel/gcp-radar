@@ -1,0 +1,122 @@
+{
+  "feature_name": "Config Sync stopSyncing field",
+  "feature_slug": "config-sync-stopsyncing-field",
+  "summary": "Config Sync adds the spec.configSync.stopSyncing field to stop and resume syncing.",
+  "extended_definition": "Config Sync adds the spec.configSync.stopSyncing field to stop and resume syncing.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "gcloud apply spec fields \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Config Sync always remediates drifts no matter the value of this field. spec.configSync.stopSyncing If true , stops syncing configurations for a single cluster.",
+          "You can't use this field to override other fields in a Deployment, such as the number of replicas. applySpecVersion : 1 spec : configSync : enabled : true deploymentOverrides : - name : reconciler-manager namespace : config-management-system containers : - name : reconciler-manager cpuRequest : 50m cpuLimit : 100m memoryRequest : 256Mi memoryLimit : 512Mi Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Example gcloud apply spec applySpecVersion : 1 spec : configSync : enabled : true sourceFormat : unstructured syncRepo : https://github.com/GoogleCloudPlatform/anthos-config-management-samples syncBranch : main secretType : none policyDir : config-sync-quickstart/multirepo/root Example gcloud apply spec with deployment resource overrides If you want to customize Config Sync resource requests and limits, add the deploymentOverrides field in your apply spec."
+        ]
+      },
+      {
+        "title": "\"gcloud configuration field behavior \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "source_id": "site-docs-reference",
+        "final_score": 183,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example shows a basic configuration: configSync : enabled : true sourceFormat : unstructured git : syncRepo : https://github.com/GoogleCloudPlatform/anthos-config-management-samples syncBranch : main secretType : none policyDir : config-sync-quickstart/multirepo/root The following example shows a more complex configuration: configSync : enabled : true stopSyncing : true sourceFormat : unstructured git : syncRepo : https://github.com/GoogleCloudPlatform/anthos-config-management-samples syncBranch : main secretType : none policyDir : config-sync-quickstart/multirepo/root deploymentOverrides : - deploymentName : reconciler-manager deploymentNamespace : config-management-system containers : - containerName : reconciler-manager cpuRequest : 50m cpuLimit : 100m memoryRequest : 256Mi memoryLimit : 512Mi Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Default field values Field Description configSync.enabled If the user specifies the configSync field, configSync.enabled defaults to true . version For the --config flag, the Config Sync version defaults to its existing value in the membership configuration, or if it's not configured, the version of Config Sync installed on the membership cluster.",
+          "The configSync.deploymentOverrides[].deploymentName field is spec.configSync.deploymentOverrides[].name for the apply command."
+        ]
+      },
+      {
+        "title": "\"Monitor RootSync and RepoSync objects \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "source_id": "site-docs-root",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "To change log verbosity, use the .spec.override.logLevels field as shown in the following example: apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : root-sync namespace : config-management-system spec : override : logLevels : - containerName : \"reconciler\" logLevel : 0 - containerName : \"git-sync\" logLevel : 10 The value in the containerName field must be one of the following: reconciler , git-sync , hydration-controller , oci-sync , or helm-sync .",
+          "View errors RootSync and RepoSync objects use the status field to track errors encountered when syncing the configs from the source of truth to a cluster.",
+          "To get the ResourceGroup object for a RootSync object: kubectl get resourcegroup ROOT SYNC NAME -n config-management-system -o yaml To get the ResourceGroup object for a RepoSync object: kubectl get resourcegroup REPO SYNC NAME -n REPO SYNC NAMESPACE -o yaml Replace the following: ROOT SYNC NAME : the name of the ResourceGroup object that you want to look up."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configsync.gke.io",
+      "github.com",
+      "spec.configSync.deploymentOverrides",
+      "spec.configSync.metricsGcpServiceAccountEmail",
+      "spec.configSync.secretType",
+      "spec.configSync.stopSyncing",
+      "spec.override.logLevels"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-apply-fields",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/gcloud-configuration-field-behavior",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

@@ -1,0 +1,210 @@
+{
+  "feature_name": "Service traffic distribution",
+  "feature_slug": "service-traffic-distribution",
+  "summary": "This feature adds beta, default-on traffic distribution for Services; This feature adds beta, default-on traffic distribution for Services.",
+  "extended_definition": "This feature adds beta, default-on traffic distribution for Services; This feature adds beta, default-on traffic distribution for Services.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unrelated fields omitted Or by using Policy Controller or Gatekeeper with this constraint template and applying it, for example: Dropping CAP NET RAW with Gatekeeper (requires the K8sPSPCapabilities template) apiversion: constraints.gatekeeper.sh/v1beta1 kind: K8sPSPCapabilities metadata: name: forbid-cap-net-raw spec: match: kinds: - apiGroups: [\"\"] kinds: [\"Pod\"] namespaces: #List of namespaces to enforce this constraint on - default If running gatekeeper >= v3.1.0-beta.5, you can exclude namespaces rather than including them above. excludedNamespaces: - kube-system parameters: requiredDropCapabilities: - \"NET RAW\" Or by updating your Pod specs: Dropping CAP NET RAW from a Pod: apiVersion: v1 kind: Pod metadata: name: no-cap-net-raw spec: containers: -name: my-container ... securityContext: capabilities: drop: -NET RAW Note: GKE Sandbox pods already disable CAP NET RAW by default and do not require the changes above.",
+          "Unrelated fields omitted Or by using Policy Controller or Gatekeeper with this constraint template and applying it, for example: Dropping CAP NET RAW with Gatekeeper (requires the K8sPSPCapabilities template) apiversion: constraints.gatekeeper.sh/v1beta1 kind: K8sPSPCapabilities metadata: name: forbid-cap-net-raw spec: match: kinds: - apiGroups: [\"\"] kinds: [\"Pod\"] namespaces: #List of namespaces to enforce this constraint on - default If running gatekeeper >= v3.1.0-beta.5, you can exclude namespaces rather than including them above. excludedNamespaces: - kube-system parameters: requiredDropCapabilities: - \"NET RAW\" Or by updating your Pod specs: Dropping CAP NET RAW from a Pod: apiVersion: v1 kind: Pod metadata: name: no-cap-net-raw spec: containers: -name: my-container ... securityContext: capabilities: drop: -NET RAW Note: GKE Sandbox pods already disable CAP NET RAW by default and do not require the changes above.",
+          "Unrelated fields omitted Or by using Policy Controller or Gatekeeper with this constraint template and applying it, for example: Dropping CAP NET RAW with Gatekeeper (requires the K8sPSPCapabilities template) apiversion: constraints.gatekeeper.sh/v1beta1 kind: K8sPSPCapabilities metadata: name: forbid-cap-net-raw spec: match: kinds: - apiGroups: [\"\"] kinds: [\"Pod\"] namespaces: #List of namespaces to enforce this constraint on - default If running gatekeeper >= v3.1.0-beta.5, you can exclude namespaces rather than including them above. excludedNamespaces: - kube-system parameters: requiredDropCapabilities: - \"NET RAW\" Or by updating your Pod specs: Dropping CAP NET RAW from a Pod: apiVersion: v1 kind: Pod metadata: name: no-cap-net-raw spec: containers: -name: my-container ... securityContext: capabilities: drop: -NET RAW What vulnerability is addressed by this patch?"
+        ]
+      },
+      {
+        "title": "\"Collect and view control plane metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "PromQL metric name Launch stage Cloud Monitoring metric name Kind, Type, Unit Monitored resources Required GKE version Description Labels apiserver current inflight requests GA apiserver current inflight requests/gauge Gauge , Double , 1 prometheus target 1.22.13+ Maximal number of currently used inflight request limit of this apiserver per request kind in last second. request kind apiserver flowcontrol current executing seats BETA apiserver flowcontrol current executing seats/gauge Gauge , Double , 1 prometheus target 1.28.3+ Concurrency (number of seats) occupied by the currently executing (initial stage for a WATCH, any stage otherwise) requests in the API Priority and Fairness subsystem. flow schema priority level apiserver flowcontrol current inqueue requests BETA apiserver flowcontrol current inqueue requests/gauge Gauge , Double , 1 prometheus target 1.28.3+ (1.25.16-gke.1360000+, 1.26.11+, 1.27.8+ for prior minor versions) Number of requests currently pending in queues of the API Priority and Fairness subsystem. flow schema priority level apiserver flowcontrol nominal limit seats BETA apiserver flowcontrol nominal limit seats/gauge Gauge , Double , 1 prometheus target 1.28.3+ (1.26.11+, 1.27.8+ for prior minor versions) Nominal number of execution seats configured for each priority level. priority level apiserver flowcontrol rejected requests total BETA apiserver flowcontrol rejected requests total/counter Cumulative , Double , 1 prometheus target 1.28.3+ (1.25.16-gke.1360000+, 1.26.11+, 1.27.8+ for prior minor versions) Number of requests rejected by the API Priority and Fairness subsystem. flow schema priority level reason apiserver flowcontrol request wait duration seconds BETA apiserver flowcontrol request wait duration seconds/histogram Cumulative , Distribution , s prometheus target 1.28.3+ (1.25.16-gke.1360000+, 1.26.11+, 1.27.8+ for prior minor versions) Length of time a request spent waiting in its queue. execute flow schema priority level apiserver request duration seconds GA apiserver request duration seconds/histogram Cumulative , Distribution , s prometheus target 1.23.6+ Response latency distribution in seconds for each verb, dry run value, group, version, resource, subresource, scope and component. component dry run group resource scope subresource verb version apiserver request total GA apiserver request total/counter Cumulative , Double , 1 prometheus target 1.22.13+ Counter of apiserver requests broken out for each verb, dry run value, group, version, resource, scope, component, and HTTP response code. code component dry run group resource scope subresource verb version apiserver response sizes GA apiserver response sizes/histogram Cumulative , Distribution , 1 prometheus target 1.22.13+ Response size distribution in bytes for each group, version, verb, resource, subresource, scope and component. component group resource scope subresource verb version apiserver storage objects GA apiserver storage objects/gauge Gauge , Double , 1 prometheus target 1.22.13+ Number of stored objects at the time of last check split by kind. resource apiserver admission controller admission duration seconds GA apiserver admission controller admission duration seconds/histogram Cumulative , Distribution , s prometheus target 1.23.6+ Admission controller latency histogram in seconds, identified by name and broken out for each operation and API resource and type (validate or admit). name operation rejected type apiserver admission step admission duration seconds GA apiserver admission step admission duration seconds/histogram Cumulative , Distribution , s prometheus target 1.22.13+ Admission sub-step latency histogram in seconds, broken out for each operation and API resource and step type (validate or admit). operation rejected type apiserver admission webhook admission duration seconds GA apiserver admission webhook admission duration seconds/histogram Cumulative , Distribution , s prometheus target 1.22.13+ Admission webhook latency histogram in seconds, identified by name and broken out for each operation and API resource and type (validate or admit). name operation rejected type This following sections provide additional information about the API server metrics. apiserver request duration seconds Use this metric to monitor latency in the API server.",
+          "1.30 and replaced by scheduler pod scheduling sli duration seconds .] E2e latency for a pod being scheduled which may include multiple scheduling attempts. attempts scheduler pod scheduling sli duration seconds BETA scheduler pod scheduling sli duration seconds/histogram Cumulative , Distribution , 1 prometheus target 1.30+ E2e latency for a pod being scheduled, from the time the pod enters the scheduling queue, and might involve multiple scheduling attempts. attempts scheduler preemption attempts total GA scheduler preemption attempts total/counter Cumulative , Double , 1 prometheus target 1.22.13+ Total preemption attempts in the cluster till now scheduler preemption victims GA scheduler preemption victims/histogram Cumulative , Distribution , 1 prometheus target 1.22.13+ Number of selected preemption victims scheduler scheduling attempt duration seconds GA scheduler scheduling attempt duration seconds/histogram Cumulative , Distribution , 1 prometheus target 1.23.6+ Scheduling attempt latency in seconds (scheduling algorithm + binding). profile result scheduler schedule attempts total GA scheduler schedule attempts total/counter Cumulative , Double , 1 prometheus target 1.22.13+ Number of attempts to schedule pods, by the result. 'unschedulable' means a pod could not be scheduled, while 'error' means an internal scheduler problem. profile result This following sections provide additional information about the API server metrics. scheduler pending pods You can use the scheduler pending pods metric to monitor the load on your scheduler.",
+          "For example, to measure the API server traffic per instance of the Kubernetes control plane, use the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \"}[1m])) To query the unsuccessful requests, filter the code label for 4xx and 5xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"[45]..\"}[5m])) To query the successful requests, filter the code label for 2xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"2..\"}[5m])) To query the rejected requests by the API server per instance of the Kubernetes control plane, filter the code label for the value 429 ( http.StatusTooManyRequests ) by using the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \", code=\"429\"}[1m])) Saturation You can measure the saturation in your system by using the apiserver current inflight requests and apiserver storage objects metrics."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster JSON representation { \"name\" : string , \"description\" : string , \"initialNodeCount\" : integer , \"nodeConfig\" : { object ( NodeConfig ) } , \"masterAuth\" : { object ( MasterAuth ) } , \"loggingService\" : string , \"monitoringService\" : string , \"network\" : string , \"clusterIpv4Cidr\" : string , \"addonsConfig\" : { object ( AddonsConfig ) } , \"subnetwork\" : string , \"nodePools\" : [ { object ( NodePool ) } ] , \"locations\" : [ string ] , \"enableKubernetesAlpha\" : boolean , \"alphaClusterFeatureGates\" : [ string ] , \"resourceLabels\" : { string : string , ... } , \"labelFingerprint\" : string , \"legacyAbac\" : { object ( LegacyAbac ) } , \"networkPolicy\" : { object ( NetworkPolicy ) } , \"ipAllocationPolicy\" : { object ( IPAllocationPolicy ) } , \"masterAuthorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"autoscaling\" : { object ( ClusterAutoscaling ) } , \"networkConfig\" : { object ( NetworkConfig ) } , \"defaultMaxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"resourceUsageExportConfig\" : { object ( ResourceUsageExportConfig ) } , \"authenticatorGroupsConfig\" : { object ( AuthenticatorGroupsConfig ) } , \"privateClusterConfig\" : { object ( PrivateClusterConfig ) } , \"databaseEncryption\" : { object ( DatabaseEncryption ) } , \"verticalPodAutoscaling\" : { object ( VerticalPodAutoscaling ) } , \"shieldedNodes\" : { object ( ShieldedNodes ) } , \"releaseChannel\" : { object ( ReleaseChannel ) } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"meshCertificates\" : { object ( MeshCertificates ) } , \"costManagementConfig\" : { object ( CostManagementConfig ) } , \"notificationConfig\" : { object ( NotificationConfig ) } , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"identityServiceConfig\" : { object ( IdentityServiceConfig ) } , \"selfLink\" : string , \"zone\" : string , \"endpoint\" : string , \"initialClusterVersion\" : string , \"currentMasterVersion\" : string , \"currentNodeVersion\" : string , \"createTime\" : string , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"nodeIpv4CidrSize\" : integer , \"servicesIpv4Cidr\" : string , \"instanceGroupUrls\" : [ string ] , \"currentNodeCount\" : integer , \"expireTime\" : string , \"location\" : string , \"enableTpu\" : boolean , \"tpuIpv4CidrBlock\" : string , \"conditions\" : [ { object ( StatusCondition ) } ] , \"autopilot\" : { object ( Autopilot ) } , \"id\" : string , \"loggingConfig\" : { object ( LoggingConfig ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"nodePoolAutoConfig\" : { object ( NodePoolAutoConfig ) } , \"podAutoscaling\" : { object ( PodAutoscaling ) } , \"etag\" : string , \"fleet\" : { object ( Fleet ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"controlPlaneEndpointsConfig\" : { object ( ControlPlaneEndpointsConfig ) } , \"enableK8sBetaApis\" : { object ( K8sBetaAPIConfig ) } , \"enterpriseConfig\" : { object ( EnterpriseConfig ) } , \"secretManagerConfig\" : { object ( SecretManagerConfig ) } , \"compliancePostureConfig\" : { object ( CompliancePostureConfig ) } , \"gkeAutoUpgradeConfig\" : { object ( GkeAutoUpgradeConfig ) } , \"anonymousAuthenticationConfig\" : { object ( AnonymousAuthenticationConfig ) } , \"scheduleUpgradeConfig\" : { object ( ScheduleUpgradeConfig ) } , \"managedOpentelemetryConfig\" : { object ( ManagedOpenTelemetryConfig ) } , \"managedMachineLearningDiagnosticsConfig\" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: \"nodePoolDefaults\" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: \"userManagedKeysConfig\" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: \"rbacBindingConfig\" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster.",
+          "NodeConfig JSON representation { \"machineType\" : string , \"diskSizeGb\" : integer , \"oauthScopes\" : [ string ] , \"serviceAccount\" : string , \"metadata\" : { string : string , ... } , \"imageType\" : string , \"labels\" : { string : string , ... } , \"localSsdCount\" : integer , \"tags\" : [ string ] , \"preemptible\" : boolean , \"accelerators\" : [ { object ( AcceleratorConfig ) } ] , \"diskType\" : string , \"minCpuPlatform\" : string , \"workloadMetadataConfig\" : { object ( WorkloadMetadataConfig ) } , \"taints\" : [ { object ( NodeTaint ) } ] , \"sandboxConfig\" : { object ( SandboxConfig ) } , \"nodeGroup\" : string , \"reservationAffinity\" : { object ( ReservationAffinity ) } , \"shieldedInstanceConfig\" : { object ( ShieldedInstanceConfig ) } , \"linuxNodeConfig\" : { object ( LinuxNodeConfig ) } , \"kubeletConfig\" : { object ( NodeKubeletConfig ) } , \"bootDiskKmsKey\" : string , \"gcfsConfig\" : { object ( GcfsConfig ) } , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"gvnic\" : { object ( VirtualNIC ) } , \"spot\" : boolean , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"resourceLabels\" : { string : string , ... } , \"loggingConfig\" : { object ( NodePoolLoggingConfig ) } , \"windowsNodeConfig\" : { object ( WindowsNodeConfig ) } , \"localNvmeSsdBlockConfig\" : { object ( LocalNvmeSsdBlockConfig ) } , \"ephemeralStorageLocalSsdConfig\" : { object ( EphemeralStorageLocalSsdConfig ) } , \"soleTenantConfig\" : { object ( SoleTenantConfig ) } , \"containerdConfig\" : { object ( ContainerdConfig ) } , \"resourceManagerTags\" : { object ( ResourceManagerTags ) } , \"enableConfidentialStorage\" : boolean , \"secondaryBootDisks\" : [ { object ( SecondaryBootDisk ) } ] , \"storagePools\" : [ string ] , \"maxRunDuration\" : string , \"effectiveCgroupMode\" : enum ( EffectiveCgroupMode ) , \"bootDisk\" : { object ( BootDisk ) } , \"consolidationDelay\" : string , // Union field fast socket can be only one of the following: \"fastSocket\" : { object ( FastSocket ) } // End of list of possible types for union field fast socket . // Union field secondary boot disk update strategy can be only one of the // following: \"secondaryBootDiskUpdateStrategy\" : { object ( SecondaryBootDiskUpdateStrategy ) } // End of list of possible types for union field // secondary boot disk update strategy . // Union field gpu direct config can be only one of the following: \"gpuDirectConfig\" : { object ( GPUDirectConfig ) } // End of list of possible types for union field gpu direct config . // Union field local ssd encryption mode can be only one of the following: \"localSsdEncryptionMode\" : enum ( LocalSsdEncryptionMode ) // End of list of possible types for union field local ssd encryption mode . // Union field flex start can be only one of the following: \"flexStart\" : boolean // End of list of possible types for union field flex start . // Union field taint config can be only one of the following: \"taintConfig\" : { object ( TaintConfig ) } // End of list of possible types for union field taint config . } Fields machineType string The name of a Google Compute Engine machine type If unspecified, the default machine type is e2-medium . diskSizeGb integer Size of the disk attached to each node, specified in GB.",
+          "Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version. workloadIdentityConfig object ( WorkloadIdentityConfig ) Configuration for the use of Kubernetes Service Accounts in IAM policies. meshCertificates object ( MeshCertificates ) Configuration for issuance of mTLS keys and certificates to Kubernetes pods. costManagementConfig object ( CostManagementConfig ) Configuration for the fine-grained cost management feature. notificationConfig object ( NotificationConfig ) Notification configuration of the cluster. confidentialNodes object ( ConfidentialNodes ) Configuration of Confidential Nodes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beta.5",
+      "constraints.gatekeeper.sh",
+      "container.googleapis.com",
+      "gke.1360000",
+      "gke.3100",
+      "http.StatusTooManyRequests",
+      "v3.1.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

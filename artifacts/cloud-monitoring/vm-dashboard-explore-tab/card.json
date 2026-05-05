@@ -1,0 +1,138 @@
+{
+  "feature_name": "VM dashboard Explore tab",
+  "feature_slug": "vm-dashboard-explore-tab",
+  "summary": "The VM Instances dashboard Explore tab summarizes additional metrics and links to related metric types.",
+  "extended_definition": "The VM Instances dashboard Explore tab summarizes additional metrics and links to related metric types.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "System and application metrics that the Ops Agent collects about system resources and applications running on Compute Engine instances.",
+          "The chart service, Metrics Explorer , lets you quickly visualize and explore time-series data.",
+          "The metricKind field describes the relationship between adjacent measurements within a time series: GAUGE metrics store the value of the thing being measured at a given moment in time—for example, an hourly temperature record."
+        ]
+      },
+      {
+        "title": "Collect Prometheus metrics \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "source_id": "site-iam-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following sections describe the query tools available in Cloud Monitoring with Metrics Explorer: PromQL Monitoring filters You can create Cloud Monitoring dashboards and alerting policies for your metrics.",
+          "The full structure of the Prometheus receiver is shown in the following: metrics: receivers: prom application: type: prometheus config: scrape configs: - job name: ' STRING ' # must be unique across all Prometheus receivers scrape interval: # duration, like 10m or 15s scrape timeout: # duration, like 10m or 15s metrics path: # resource path for metrics, default = /metrics honor timestamps: # boolean, default = false scheme: # http or https, default = http params: - STRING : STRING basic auth: username: STRING password: SECRET password file: STRING authorization: type: STRING # default = Bearer credentials: SECRET credentials file: FILENAME oauth2: OAUTH2 # See Prometheus oauth2 follow redirects: # boolean, default = true enable http2: # boolean, default = true tls config: TLS CONFIG # See Prometheus tls config proxy url: STRING static configs: STATIC CONFIG # See Prometheus static config relabel configs: RELABEL CONFIG # See Prometheus relabel config metric relabel configs: METRIC RELABEL CONFIGS # See Prometheus metric relabel configs For examples of relabeling configs, see Additional receiver configuration .",
+          "The simplest way to verify that your Prometheus data is being ingested is to use the Cloud Monitoring Metrics Explorer page in the Google Cloud console: In the Google Cloud console, go to the leaderboard Metrics explorer page: Go to Metrics explorer If you use the search bar to find this page, then select the result whose subheading is Monitoring ."
+        ]
+      },
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Explore trace data Note: If your dashboards aren't displaying the trace data that you expect, then you might need to configure the default trace scope or you might need additional Identity and Access Management permissions.",
+          "Explore log data Note: If your dashboards aren't displaying the log data that you expect, then you might need to configure the default log scope or you might need additional Identity and Access Management permissions.",
+          "Explore metric data The charts and tables on your dashboard display golden signals and other metric data that is relevant for the resources used by your application, service, or workload."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/prometheus",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

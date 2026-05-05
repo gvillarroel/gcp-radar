@@ -1,0 +1,116 @@
+{
+  "feature_name": "Processor gallery",
+  "feature_slug": "processor-gallery",
+  "summary": "The processor gallery has been upgraded.",
+  "extended_definition": "The processor gallery has been upgraded.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/create-processor",
+      "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+      "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Creating and managing processors \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Processor ; public class SyncListProcessors { public static void main ( String [] args ) throws Exception { syncListProcessors (); } public static void syncListProcessors () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { ListProcessorsRequest request = ListProcessorsRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); for ( Processor element : documentProcessorServiceClient . listProcessors ( request ). iterateAll ()) { // doThingsWith(element); } } } } Ruby For more information, see the Document AI Ruby API reference documentation .",
+          "Processor ; public class SyncCreateProcessor { public static void main ( String [] args ) throws Exception { syncCreateProcessor (); } public static void syncCreateProcessor () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { CreateProcessorRequest request = CreateProcessorRequest . newBuilder () . setParent ( LocationName . of ( \"[PROJECT]\" , \"[LOCATION]\" ). toString ()) . setProcessor ( Processor . newBuilder (). build ()) . build (); Processor response = documentProcessorServiceClient . createProcessor ( request ); } } } Ruby For more information, see the Document AI Ruby API reference documentation .",
+          "ProcessorName ; public class SyncDisableProcessor { public static void main ( String [] args ) throws Exception { syncDisableProcessor (); } public static void syncDisableProcessor () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { DisableProcessorRequest request = DisableProcessorRequest . newBuilder () . setName ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . build (); DisableProcessorResponse response = documentProcessorServiceClient . disableProcessorAsync ( request ). get (); } } } Ruby For more information, see the Document AI Ruby API reference documentation ."
+        ]
+      },
+      {
+        "title": "\"Class DocumentProcessorServiceAsyncClient (3.14.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "AsyncOperation Disables a processor This snippet has been automatically generated and should be regarded as a code template only.",
+          "AsyncOperation Enables a processor This snippet has been automatically generated and should be regarded as a code template only.",
+          "Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create processor create processor ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class DocumentProcessorServiceClient (3.14.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operation Disables a processor This snippet has been automatically generated and should be regarded as a code template only.",
+          "Operation Enables a processor This snippet has been automatically generated and should be regarded as a code template only.",
+          "Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create processor create processor ( request : typing ."
+        ]
+      },
+      {
+        "title": "Managing processor versions \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "source_id": "site-docs-root-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "SetDefaultProcessorVersionResponse ; public class SyncSetDefaultProcessorVersion { public static void main ( String [] args ) throws Exception { syncSetDefaultProcessorVersion (); } public static void syncSetDefaultProcessorVersion () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { SetDefaultProcessorVersionRequest request = SetDefaultProcessorVersionRequest . newBuilder () . setProcessor ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . setDefaultProcessorVersion ( ProcessorVersionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" , \"[PROCESSOR VERSION]\" ) . toString ()) . build (); SetDefaultProcessorVersionResponse response = documentProcessorServiceClient . setDefaultProcessorVersionAsync ( request ). get (); } } } Python For more information, see the Document AI Python API reference documentation .",
+          "ProcessorVersion ; public class SyncListProcessorVersions { public static void main ( String [] args ) throws Exception { syncListProcessorVersions (); } public static void syncListProcessorVersions () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { ListProcessorVersionsRequest request = ListProcessorVersionsRequest . newBuilder () . setParent ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); for ( ProcessorVersion element : documentProcessorServiceClient . listProcessorVersions ( request ). iterateAll ()) { // doThingsWith(element); } } } } Python For more information, see the Document AI Python API reference documentation .",
+          "UndeployProcessorVersionResponse ; public class SyncUndeployProcessorVersion { public static void main ( String [] args ) throws Exception { syncUndeployProcessorVersion (); } public static void syncUndeployProcessorVersion () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { UndeployProcessorVersionRequest request = UndeployProcessorVersionRequest . newBuilder () . setName ( ProcessorVersionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" , \"[PROCESSOR VERSION]\" ) . toString ()) . build (); UndeployProcessorVersionResponse response = documentProcessorServiceClient . undeployProcessorVersionAsync ( request ). get (); } } } Python For more information, see the Document AI Python API reference documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1.CreateProcessorRequest",
+      "v1.types.ProcessResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:28.926Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

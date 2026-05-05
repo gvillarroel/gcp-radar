@@ -1,0 +1,83 @@
+{
+  "feature_name": "Data Manipulation Language",
+  "feature_slug": "data-manipulation-language",
+  "summary": "BigQuery Standard SQL supports Data Manipulation Language for inserting, updating, and deleting data.",
+  "extended_definition": "BigQuery Standard SQL supports Data Manipulation Language for inserting, updating, and deleting data.",
+  "lifecycle": {
+    "latest_feature_date": "2016-09-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+      "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Transform data with data manipulation language (DML) \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "source_id": "site-docs-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Transform data with data manipulation language (DML) The BigQuery data manipulation language (DML) lets you update, insert, and delete data from your BigQuery tables.",
+          "Rows that were recently written using the tabledata.insertall streaming method can't be modified with data manipulation language (DML), such as UPDATE , DELETE , MERGE , or TRUNCATE statements.",
+          "For more information, see Use data manipulation language (DML) with recently streamed data ."
+        ]
+      },
+      {
+        "title": "\"Data manipulation language (DML) statements in GoogleSQL \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On-demand query size calculation If you use on-demand billing, BigQuery charges for data manipulation language (DML) statements based on the number of bytes processed by the statement.",
+          "Data manipulation language (DML) statements in GoogleSQL The BigQuery data manipulation language (DML) enables you to update, insert, and delete data from your BigQuery tables.",
+          "For information about how to use DML statements, see Transform data with data manipulation language and Update partitioned table data using DML ."
+        ]
+      },
+      {
+        "title": "BigQuery Graph and ISO standards \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+        "source_id": "site-api-reference",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how BigQuery Graph supports these standards.",
+          "BigQuery Graph and ISO standards The document describes how BigQuery Graph supports the ISO international standard query language for graph databases.",
+          "Standard SQL/PGQ GQL BigQuery Graph Query Graph pattern matching capabilities Shares the core Graph Pattern Matching Language (GPML) functionalities with GQL."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tabledata.insertall"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

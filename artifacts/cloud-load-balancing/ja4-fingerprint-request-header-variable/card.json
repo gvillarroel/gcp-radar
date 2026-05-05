@@ -1,0 +1,117 @@
+{
+  "feature_name": "JA4 fingerprint request header variable",
+  "feature_slug": "ja4-fingerprint-request-header-variable",
+  "summary": "Global external Application Load Balancers can add the JA4 fingerprint to custom request headers by using the tls_ja4_fingerprint variable.",
+  "extended_definition": "Global external Application Load Balancers can add the JA4 fingerprint to custom request headers by using the tls_ja4_fingerprint variable.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/quotas",
+      "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "Load balancer mode Target proxy types Proxy-added headers Custom headers supported Global external Application Load Balancer Global HTTP , Global HTTPS The proxies set HTTP request/response headers as follows: Via: 1.1 google (requests and responses) X-Forwarded-Proto : [http https] (requests only) X-Forwarded-For : [<supplied-value>,]<client-ip>,<load-balancer-ip> (see X-Forwarded-For header ) (requests only) The proxies also set the X-Cloud-Trace-Context header if it is not already present.",
+          "In addition to headers added by the target proxy, the load balancer adjusts other HTTP headers in the following ways: For the global external Application Load Balancer , both request and response headers might be converted to lowercase.",
+          "The following table summarizes the required source IP address ranges for the firewall rules: Load balancer mode Health check source ranges Request source ranges Global external Application Load Balancer 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 The source of GFE traffic depends on the backend type: Instance groups and zonal NEGs ( GCE VM IP PORT ): 130.211.0.0/22 35.191.0.0/16 For IPv6 traffic to the backends: 2600:2d00:1:1::/64 Hybrid connectivity NEGs ( NON GCP PRIVATE IP PORT ): 130.211.0.0/22 35.191.0.0/16 Internet NEGs ( INTERNET FQDN PORT and INTERNET IP PORT ): 34.96.0.0/20 34.127.192.0/18 SERVERLESS NEGs and backend buckets: Google's production network handles packet routing Classic Application Load Balancer 35.191.0.0/16 130.211.0.0/22 The source of GFE traffic depends on the backend type: Instance groups, zonal NEGs ( GCE VM IP PORT ), and hybrid connectivity NEGs ( NON GCP PRIVATE IP PORT ): 35.191.0.0/16 130.211.0.0/22 Internet NEGs ( INTERNET FQDN PORT and INTERNET IP PORT ): 34.96.0.0/20 34.127.192.0/18 SERVERLESS NEGs and backend buckets: Google's production network handles packet routing."
+        ]
+      },
+      {
+        "title": "URL maps overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For regional external Application Load Balancers, internal Application Load Balancers, and Cloud Service Mesh, possible destinations are the following: Default backend service Non-default backend service Additionally, global external Application Load Balancers support the following: Default backend bucket Non-default backend bucket For example, assume that you have the following setup: One IP address: All requests to your organization go to the same IP address and the same load balancer.",
+          "Add path rules that direct requests for the exact URL path /video/sd or the URL path prefix /video/sd/ to an existing backend service named video-sd . gcloud compute url-maps add-path-matcher video-org-url-map \\ --path-matcher-name=video-matcher \\ --default-service=video-site \\ --path-rules=/video/hd=video-hd,/video/hd/ =video-hd,/video/sd=video-sd,/video/sd/ =video-sd Create a host rule for the example.net hostname that references the video-matcher path matcher. gcloud compute url-maps add-host-rule video-org-url-map \\ --hosts=example.net \\ --path-matcher-name=video-matcher The video-org-url-map URL map should look like this: gcloud compute url-maps describe video-org-url-map creationTimestamp: '2021-03-05T13:34:15.833-08:00' defaultService: https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/org-site fingerprint: mfyJIT7Zurs= hostRules: - hosts: - ' ' pathMatcher: video-matcher - hosts: - example.net pathMatcher: video-matcher id: '8886405179645041976' kind: compute#urlMap name: video-org-url-map pathMatchers: - defaultService: https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/video-site name: video-matcher pathRules: - paths: - /video/hd - /video/hd/ service: https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/video-hd - paths: - /video/sd - /video/sd/ service: https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/video-sd selfLink: https://www.googleapis.com/compute/v1/projects/ PROJECT ID /global/urlMaps/video-org-url-map The video-org-url-map URL map directs requested URLs to backends in the following way.",
+          "For example, in the following sample URL maps, the route rule regular expression, /videos/hd. , would apply to a URL with the path /videos/hd-abcd?key=245 . defaultService : projects/example-project/global/backendServices/org-site name : rule-match-url-map hostRules : - hosts : - ' ' # Match any host pathMatcher : video-matcher - hosts : - example.net pathMatcher : video-matcher pathMatchers : - name : video-matcher Optional: default service for this path matcher if no routeRules match defaultService : projects/example-project/global/backendServices/video-site routeRules : - priority : 100000 matchRules : - regexMatch : /videos/hd. routeAction : weightedBackendServices : - backendService : projects/example-project/global/backendServices/video-hd weight : 100 Here is an explanation for each field of the sample URL map: defaultService : Specifies the default backend service to use if no other rules in the URL map match the incoming request. name : Assigns the name rule-match-url-map to this URL map configuration. hostRules : Defines a list of rules for matching the host header of incoming requests."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Header size for Application Load Balancers Item Quotas and limits Notes Maximum client request header size for global external Application Load Balancers 60 KiB This limit cannot be increased.",
+          "Host rules, path matchers per URL map Limit: 1000 Limit: 2000 Path rules or route rules per path matcher Limit: 1000 Limit: 1000 Hosts per host rule Limit: 1000 Limit: 1000 Predicates per path matcher Limit: 1000 Limit: 1000 pathTemplateMatch predicates per path matcher Global external Application Load Balancers and regional external Application Load Balancers: Limit: 100 Not supported for classic Application Load Balancers Limit: 100 Number of distinct backend services or backend buckets that can be referenced by a URL map Limit: 2500 Limit: 2500 Maximum number of regular expressions per path matcher For regional external Application Load Balancers: 5 Global external Application Load Balancers don't support regular expressions.",
+          "Quota name: GLOBAL EXTERNAL MANAGED FORWARDING RULES Available metrics: compute.googleapis.com/quota/global external managed forwarding rules/limit compute.googleapis.com/quota/global external managed forwarding rules/usage compute.googleapis.com/quota/global external managed forwarding rules/exceeded Regional external Application Load Balancer and Regional external proxy Network Load Balancer forwarding rules per region per network Quota This is a per-region and per-network quota defining the maximum number of forwarding rules for regional external Application Load Balancers and global external proxy Network Load Balancers whose backends are located in a region of a VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "example.net"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

@@ -1,0 +1,115 @@
+{
+  "feature_name": "CORR support with OVER clause",
+  "feature_slug": "corr-support-with-over-clause",
+  "summary": "BigQuery standard SQL supports using CORR with the OVER clause.",
+  "extended_definition": "BigQuery standard SQL supports using CORR with the OVER clause.",
+  "lifecycle": {
+    "latest_feature_date": "2017-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery Graph and ISO standards \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how BigQuery Graph supports these standards.",
+          "BigQuery Graph and ISO standards The document describes how BigQuery Graph supports the ISO international standard query language for graph databases.",
+          "BigQuery Graph supports additional features in the ISO standards."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.",
+          "Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.bireservations.update BI Engine reservation Examples Allocating BI Engine capacity without preferred tables ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 250 ) Deallocating BI capacity ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 0 ) Removing a set of preferred tables from reservation ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( preferred tables = NULL ) Allocating BI Capacity with preferred tables list ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 250 , preferred tables = [ \"data project1.dataset1.table1\" , \"data project2.dataset2.table2\" ] ) Overwriting list of preferred tables without changing the size ALTER BI CAPACITY region-us.default SET OPTIONS ( preferred tables = [ \"dataset1.table1\" , \"data project2.dataset2.table2\" ] ) ALTER CAPACITY SET OPTIONS statement Alters an existing capacity commitment.",
+          "For more information about editions, see Introduction to BigQuery editions . autoscale max slots INTEGER The maximum number of slots that could be added to the reservation by autoscaling. secondary location STRING The secondary location to use in the case of disaster recovery. max slots INTEGER The maximum number of slots the reservation can consume."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example This query adds the GROUPING function to the previous example to better identify the rows added because of the ROLLUP function. legacySQL SELECT year , GROUPING ( year ) as rollup year , is male , GROUPING ( is male ) as rollup gender , COUNT ( 1 ) as count FROM [ bigquery - public - data : samples . natality ] WHERE year > = 2000 AND year < = 2002 GROUP BY ROLLUP ( year , is male ) ORDER BY year , is male ; These are the result the new query returns. +------+-------------+---------+---------------+----------+ year rollup year is male rollup gender count +------+-------------+---------+---------------+----------+ NULL 1 NULL 1 12122730 2000 0 NULL 1 4063823 2000 0 false 0 1984255 2000 0 true 0 2079568 2001 0 NULL 1 4031531 2001 0 false 0 1970770 2001 0 true 0 2060761 2002 0 NULL 1 4027376 2002 0 false 0 1966519 2002 0 true 0 2060857 +------+-------------+---------+---------------+----------+ Notes: Non-aggregated fields in the SELECT clause must be listed in the GROUP BY clause. legacySQL SELECT word , corpus , COUNT ( word ) FROM [ bigquery - public - data : samples . shakespeare ] WHERE word CONTAINS \"th\" GROUP BY word , corpus ; / Succeeds because all non-aggregated fields are group keys. / legacySQL SELECT word , corpus , COUNT ( word ) FROM [ bigquery - public - data : samples . shakespeare ] WHERE word CONTAINS \"th\" GROUP BY word ; / Fails because corpus is not aggregated nor is it a group key. / Expressions computed in the SELECT clause cannot be used in the corresponding GROUP BY clause. legacySQL SELECT word , corpus , COUNT ( word ) word count FROM [ bigquery - public - data : samples . shakespeare ] WHERE word CONTAINS \"th\" GROUP BY word , corpus , word count ; / Fails because word count is not visible to this GROUP BY clause. / Grouping by float and double values is not supported, because the equality function for those types is not well-defined.",
+          "This window function requires ORDER BY in the OVER clause. legacySQL SELECT word , word count , RANK () OVER ( PARTITION BY corpus ORDER BY word count DESC ) rank , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count rank handkerchief 29 1 satisfaction 5 2 displeasure 4 3 instruments 4 3 circumstance 3 5 RATIO TO REPORT( <column> ) Returns the ratio of each value to the sum of the values, as a double between 0 and 1. legacySQL SELECT word , word count , RATIO TO REPORT ( word count ) OVER ( PARTITION BY corpus ORDER BY word count DESC ) r to r , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count r to r handkerchief 29 0.6444444444444445 satisfaction 5 0.1111111111111111 displeasure 4 0.08888888888888889 instruments 4 0.08888888888888889 circumstance 3 0.06666666666666667 ROW NUMBER() Returns the current row number of the query result over the window, starting with 1. legacySQL SELECT word , word count , ROW NUMBER () OVER ( PARTITION BY corpus ORDER BY word count DESC ) row num , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count row num handkerchief 29 1 satisfaction 5 2 displeasure 4 3 instruments 4 4 circumstance 3 5 Other functions Syntax Other functions CASE WHEN ...",
+          "This window function requires ORDER BY in the OVER clause. legacySQL SELECT word , word count , DENSE RANK () OVER ( PARTITION BY corpus ORDER BY word count DESC ) dense rank , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count dense rank handkerchief 29 1 satisfaction 5 2 displeasure 4 3 instruments 4 3 circumstance 3 4 FIRST VALUE( <field name> ) Returns the first value of <field name> in the window. legacySQL SELECT word , word count , FIRST VALUE ( word ) OVER ( PARTITION BY corpus ORDER BY word count DESC ) fv , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 1 Returns: word word count fv imperfectly 1 imperfectly LAG( <expr> [, <offset> [, <default value> ]]) Enables you to read data from a previous row within a window."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.bireservations.update",
+      "data.usa",
+      "dataset1.table1",
+      "names.usa",
+      "project.region",
+      "project1.dataset1.table1",
+      "project2.dataset2.table2",
+      "us.default"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/graph-iso-standards"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

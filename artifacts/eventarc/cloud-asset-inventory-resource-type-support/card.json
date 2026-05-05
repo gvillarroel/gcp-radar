@@ -1,0 +1,124 @@
+{
+  "feature_name": "Cloud Asset Inventory resource type support",
+  "feature_slug": "cloud-asset-inventory-resource-type-support",
+  "summary": "Eventarc is supported as a Cloud Asset Inventory resource type.",
+  "extended_definition": "Eventarc is supported as a Cloud Asset Inventory resource type.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.pagers.ListGoogleApiSourcesAsyncPager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Disable Eventarc Advanced resources \\_|\\_ Eventarc Standard \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "source_id": "site-iam-reference",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you have entered a value into each field, the equivalent YAML configuration for this custom constraint appears on the right. gcloud To create a custom constraint, create a YAML file using the following format: name : organizations/ ORGANIZATION ID /customConstraints/ CONSTRAINT NAME resourceTypes : RESOURCE NAME methodTypes : - CREATE condition : \" CONDITION \" actionType : ACTION displayName : DISPLAY NAME description : DESCRIPTION Replace the following: ORGANIZATION ID : your organization ID, such as 123456789 .",
+          "You can create a custom constraint using the following Eventarc Advanced resource types: Enrollment GoogleApiSource MessageBus Pipeline Set up a custom constraint Console To create a custom constraint, do the following: In the Google Cloud console, go to the Organization policies page.",
+          "Home Documentation Application development Eventarc Standard Guides Send feedback Disable Eventarc Advanced resources Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class EventarcAsyncClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 246,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.eventarc v1.types.Trigger A representation of the trigger resource. google api source path google api source path ( project : str , location : str , google api source : str ) - > str Returns a fully-qualified google api source string. google channel config path google channel config path ( project : str , location : str ) - > str Returns a fully-qualified google channel config string. list channel connections list channel connections ( request : typing .",
+          "ListMessageBusEnrollmentsRequest ( parent=\"parent value\", ) Make the request page result = client. list message bus enrollments (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.eventarc v1.types.ListMessageBusEnrollmentsRequest , dict]] The request object.",
+          "ListChannelConnectionsRequest ( parent=\"parent value\", ) Make the request page result = client. list channel connections (request=request) Handle the response async for response in page result: print(response) Parameters Name Description request Optional[Union[ google.cloud.eventarc v1.types.ListChannelConnectionsRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class EventarcClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "source_id": "site-python-reference",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.eventarc v1.types.Trigger A representation of the trigger resource. google api source path google api source path ( project : str , location : str , google api source : str ) - > str Returns a fully-qualified google api source string. google channel config path google channel config path ( project : str , location : str ) - > str Returns a fully-qualified google channel config string. list channel connections list channel connections ( request : typing .",
+          "Returns Type Description google.cloud.eventarc v1.types.GoogleChannelConfig A GoogleChannelConfig is a resource that stores the custom settings respected by Eventarc first-party triggers in the matching region.",
+          "Returns Type Description google.cloud.eventarc v1.types.GoogleChannelConfig A GoogleChannelConfig is a resource that stores the custom settings respected by Eventarc first-party triggers in the matching region."
+        ]
+      },
+      {
+        "title": "\"Class ListGoogleApiSourcesAsyncPager (1.20.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.pagers.ListGoogleApiSourcesAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.eventarc v1.types.ListGoogleApiSourcesRequest The initial request object. response google.cloud.eventarc v1.types.ListGoogleApiSourcesResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "ListGoogleApiSourcesResponse ], ], request : google . cloud . eventarc v1 . types . eventarc .",
+          "ListGoogleApiSourcesResponse ], ], request : google . cloud . eventarc v1 . types . eventarc ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.AsyncRetry",
+      "custom.disableEventarcAdvancedResources",
+      "operation.result",
+      "v1.types.CreateGoogleApiSourceRequest",
+      "v1.types.GoogleChannelConfig",
+      "v1.types.ListChannelConnectionsRequest",
+      "v1.types.ListGoogleApiSourcesRequest",
+      "v1.types.ListGoogleApiSourcesResponse",
+      "v1.types.ListMessageBusEnrollmentsRequest",
+      "v1.types.Trigger"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.pagers.ListGoogleApiSourcesAsyncPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/standard/docs/disable-eventarc-advanced",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcClient",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.pagers.ListGoogleApiSourcesAsyncPager"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:31.673Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc"
+}

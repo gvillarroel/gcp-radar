@@ -1,0 +1,81 @@
+{
+  "feature_name": "Auto vector embeddings",
+  "feature_slug": "auto-vector-embeddings",
+  "summary": "Auto vector embeddings automate the lifecycle of vector embeddings for large-scale datasets and keep embeddings synchronized with transactional data.",
+  "extended_definition": "Auto vector embeddings automate the lifecycle of vector embeddings for large-scale datasets and keep embeddings synchronized with transactional data.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/example-embeddings",
+      "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables",
+      "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate and manage auto vector embeddings for large tables \\_|\\_ AlloyDB\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/generate-manage-auto-embeddings-for-tables",
+        "source_id": "site-docs-reference",
+        "final_score": 301,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This solution is particularly useful for facilitating semantic search and Retrieval Augmented Generation (RAG) on text content, including the following: Creating initial vector embedding for a new table Generating embeddings after a large data import Refreshing embeddings after significant data changes Maintaining embeddings incrementally Understand auto vector embeddings Auto vector embeddings in AlloyDB provide a scalable way to automate the generation and maintenance of vector embeddings for your data.",
+          "For large datasets, you can improve performance by refreshing embeddings for distinct partitions in parallel from different database connections: To refresh the entire table, run the following: CALL ai . refresh embeddings ( table name = > 'documents' , -- This is the root partitioned table embedding column = > 'content embeddings' ); To refresh a single partition, run the following: CALL ai . refresh embeddings ( table name = > 'documents eu' , embedding column = > 'content embeddings' ); Refresh embeddings for newly added or attached partitions The auto-embedding feature supports generating embeddings for partitions that are incorporated into your main table after the initial setup.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Generate and manage auto vector embeddings for large tables Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Perform a vector search \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Performance improvements come from the columnar engine's built-in efficiency in scanning large datasets and applying filters —such as LIKE predicates— coupled with its ability, using vector support, to pre-filter rows.",
+          "To learn more about using ScaNN at scale, see Getting started with Vector Embeddings with AlloyDB AI .",
+          "To learn how to perform a vector search with Vertex AI embeddings, see Getting started with Vector Embeddings with AlloyDB AI ."
+        ]
+      },
+      {
+        "title": "\"Perform a vector search \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/example-embeddings",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Performance improvements come from the columnar engine's built-in efficiency in scanning large datasets and applying filters —such as LIKE predicates— coupled with its ability, using vector support, to pre-filter rows.",
+          "To learn more about using ScaNN at scale, see Getting started with Vector Embeddings with AlloyDB AI .",
+          "To learn how to perform a vector search with Vertex AI embeddings, see Getting started with Vector Embeddings with AlloyDB AI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

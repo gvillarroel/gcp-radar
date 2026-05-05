@@ -1,0 +1,147 @@
+{
+  "feature_name": "Cloud Console interactive quickstart for Cloud Healthcare API",
+  "feature_slug": "cloud-console-interactive-quickstart-for-cloud-healthcare-api",
+  "summary": "An interactive quickstart for Cloud Healthcare API is now available in the Google Cloud Console.",
+  "extended_definition": "An interactive quickstart for Cloud Healthcare API is now available in the Google Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+      "https://docs.cloud.google.com/healthcare-api/docs/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Store healthcare data with curl and PowerShell \\_|\\_ Cloud Healthcare\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Response { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.OperationMetadata\", \"apiMethodName\": \"google.cloud.healthcare.v1.dataset.DatasetService.CreateDataset\", \"createTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"endTime\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"logsUrl\": \"https://console.cloud.google.com/ CLOUD LOGGING URL \" \"counter\": { \"success\": \" SUCCESS COUNT \", // If there were any failures, they display in the failure field. \"failure\": \" FAILURE COUNT \" } }, \"done\": true, // The response field only displays if there were no errors. \"response\": { \"@type\": \"type.googleapis.com/google.cloud.healthcare.v1.dataset.Dataset\", \"name\": \"projects/ PROJECT ID /locations/us-central1/datasets/my-dataset\", }, // If there were any errors, an error field displays instead of a response field. // See Troubleshooting long-running operations for a list of response codes. \"error\": { \"code\": ERROR CODE , \"message\": \" DESCRIPTION \", \"details\": [ { \"@type\": \"...\", FIELD1 : ..., ... } ] } } To complete this quickstart, choose from one of the following sections: Store and view a DICOM instance Store and view FHIR resources Store and view an HL7v2 message Store and view a DICOM instance This section shows how to complete the following tasks: Create a DICOM store.",
+          "What's next See the following sections for general information on the Cloud Healthcare API and how to perform the tasks in this quickstart using another interface: Read an overview of Cloud Healthcare API concepts Store healthcare data with client libraries Store healthcare data with the Google Cloud console Store healthcare data with the gcloud CLI DICOM Create and manage DICOM stores Connect a PACS to the Cloud Healthcare API Use the DICOMweb standard Import and export DICOM data using Cloud Storage See the DICOM conformance statement for information on how the Cloud Healthcare API implements the DICOMweb standard.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/fhirStores/my-fhir-store/fhir/Patient\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"entry\": [ { \"fullUrl\": \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/fhirStores/my-fhir-store/fhir/Patient/ PATIENT ID \", \"resource\": { \"birthDate\": \"1970-01-01\", \"gender\": \"female\", \"id\": \" PATIENT ID \", \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"versionId\": \"MTY5MDQxMDk5ODU1OTkxNTAwMA\" }, \"name\": [ { \"family\": \"Smith\", \"given\": [ \"Darcy\" ], \"use\": \"official\" } ], \"resourceType\": \"Patient\" }, \"search\": { \"mode\": \"match\" } } ], \"link\": [ { \"relation\": \"search\", \"url\": \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/fhirStores/my-fhir-store/fhir/Patient/?\" }, { \"relation\": \"first\", \"url\": \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/fhirStores/my-fhir-store/fhir/Patient/?\" }, { \"relation\": \"self\", \"url\": \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/datasets/my-dataset/fhirStores/my-fhir-store/fhir/Patient/?\" } ], \"resourceType\": \"Bundle\", \"total\": 1, \"type\": \"searchset\" } After storing and viewing a FHIR resource in the Cloud Healthcare API, continue to Clean up to avoid incurring charges to your Google Cloud account for the resources used in this page."
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR resources \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"resourceType\": \"Observation\", \"status\": \"final\", \"subject\": { \"reference\": \"Patient/ PATIENT ID \" }, \"effectiveDateTime\": \"2020-01-01T00:00:00+00:00\", \"identifier\": [ { \"system\": \"my-code-system\", \"value\": \"ABC-12345\" } ], \"code\": { \"coding\": [ { \"system\": \"http://loinc.org\", \"code\": \"8867-4\", \"display\": \"Heart rate\" } ] }, \"valueQuantity\": { \"value\": 80, \"unit\": \"bpm\" }, \"encounter\": { \"reference\": \"Encounter/ ENCOUNTER ID \" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/fhir+json\" -InFile request.json -Uri \"https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Observation\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"code\": { \"coding\": [ { \"code\": \"8867-4\", \"display\": \"Heart rate\", \"system\": \"http://loinc.org\" } ] }, \"effectiveDateTime\": \"2020-01-01T00:00:00+00:00\", \"encounter\": { \"reference\": \"Encounter/ ENCOUNTER ID \" }, \"id\": \" OBSERVATION ID \", \"identifier\": [ { \"system\": \"my-code-system\", \"value\": \"ABC-12345\" } ], \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"versionId\": \" VERSION ID \" }, \"resourceType\": \"Observation\", \"status\": \"final\", \"subject\": { \"reference\": \"Patient/ PATIENT ID \" }, \"valueQuantity\": { \"unit\": \"bpm\", \"value\": 80 } } Python Before trying this sample, follow the Python setup instructions in the Cloud Healthcare API quickstart using client libraries .",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), headers : { 'Content-Type' : 'application/json-patch+json' }, }); async function patchFhirResource () { // TODO(developer): replace patchOptions with your desired JSON patch body const patchOptions = [{ op : 'replace' , path : '/active' , value : false }]; // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const resourceType = 'Patient'; // const resourceId = '16e8a860-33b3-49be-9b03-de979feed14a'; const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } /fhir/ ${ resourceType } / ${ resourceId } ; const request = { name , requestBody : patchOptions , }; await healthcare . projects . locations . datasets . fhirStores . fhir . patch ( request ); console . log ( Patched ${ resourceType } resource ); } patchFhirResource (); Python Imports the types Dict and Any for runtime type hints. from typing import Any , Dict # noqa: E402 def patch resource ( project id : str , location : str , dataset id : str , fhir store id : str , resource type : str , resource id : str , ) - > Dict [ str , Any ]: \"\"\"Updates part of an existing FHIR resource by applying the operations specified in a JSON Patch document.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), headers : { 'Content-Type' : 'application/fhir+json' }, }); async function createFhirResource () { // Replace the following body with the data for the resource you want to // create. const body = { name : [{ use : 'official' , family : 'Smith' , given : [ 'Darcy' ]}], gender : 'female' , birthDate : '1970-01-01' , resourceType : 'Patient' , }; // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const resourceType = 'Patient'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } ; const request = { parent , type : resourceType , requestBody : body }; const resource = await healthcare . projects . locations . datasets . fhirStores . fhir . create ( request ); console . log ( Created FHIR resource with ID ${ resource . data . id } ); console . log ( resource . data ); } createFhirResource (); Python Imports the types Dict and Any for runtime type hints. from typing import Any , Dict # noqa: E402 def create patient ( project id : str , location : str , dataset id : str , fhir store id : str , ) - > Dict [ str , Any ]: \"\"\"Creates a new Patient resource in a FHIR store."
+        ]
+      },
+      {
+        "title": "\"Using the DICOMweb standard \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "source_id": "site-docs-root",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); const fileName = 'instance file.dcm' ; const dicomWebRetrieveInstance = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; // const seriesUid = '2.24.52329571877967561426579904912379710633'; // const instanceUid = '1.3.6.2.4.2.14619.5.2.1.6280.6001.129311971280445372188125744148'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } /series/ ${ seriesUid } /instances/ ${ instanceUid } ; const request = { parent , dicomWebPath }; const instance = await healthcare . projects . locations . datasets . dicomStores . studies . series . instances . retrieveInstance ( request , { headers : { Accept : 'application/dicom; transfer-syntax= ' }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( instance . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved DICOM instance and saved to ${ fileName } in current directory ); }; dicomWebRetrieveInstance (); Python def dicomweb retrieve instance ( project id , location , dataset id , dicom store id , study uid , series uid , instance uid , ): \"\"\"Handles the GET requests specified in the DICOMweb standard.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); const fileName = 'rendered image.png' ; const dicomWebRetrieveRendered = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; // const seriesUid = '2.24.52329571877967561426579904912379710633'; // const instanceUid = '1.3.6.2.4.2.14619.5.2.1.6280.6001.129311971280445372188125744148'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } /series/ ${ seriesUid } /instances/ ${ instanceUid } /rendered ; const request = { parent , dicomWebPath }; const rendered = await healthcare . projects . locations . datasets . dicomStores . studies . series . instances . retrieveRendered ( request , { headers : { Accept : 'image/png' }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( rendered . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved rendered image and saved to ${ fileName } in current directory ); }; dicomWebRetrieveRendered (); Python def dicomweb retrieve rendered ( project id , location , dataset id , dicom store id , study uid , series uid , instance uid , ): \"\"\"Handles the GET requests specified in the DICOMweb standard.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); // When specifying the output file, use an extension like \".multipart.\" // Then, parse the downloaded multipart file to get each individual // DICOM file. const fileName = 'study file.multipart' ; const dicomWebRetrieveStudy = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } ; const request = { parent , dicomWebPath }; const study = await healthcare . projects . locations . datasets . dicomStores . studies . retrieveStudy ( request , { headers : { Accept : 'multipart/related; type=application/dicom; transfer-syntax= ' , }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( study . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved study and saved to ${ fileName } in current directory ); }; dicomWebRetrieveStudy (); Python def dicomweb retrieve study ( project id , location , dataset id , dicom store id , study uid ): \"\"\"Handles the GET requests specified in the DICOMweb standard."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "console.cloud.google.com",
+      "file.dcm",
+      "file.multipart",
+      "healthcare.googleapis.com",
+      "image.png",
+      "loinc.org",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/quickstart",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.317Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

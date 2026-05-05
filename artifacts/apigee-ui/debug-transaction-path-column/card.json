@@ -1,0 +1,130 @@
+{
+  "feature_name": "Debug transaction path column",
+  "feature_slug": "debug-transaction-path-column",
+  "summary": "The Debug transactions table includes a column showing the path used by each transaction to call the proxy.",
+  "extended_definition": "The Debug transactions table includes a column showing the path used by each transaction to call the proxy.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View message data with the Debug view \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The default is None (All transactions) , which includes all transactions in the debug data.",
+          "In the dialog: Select the Environment in which you want to run the debug session. (Optional) From the Filter list, select a filter to apply to all transactions in the debug session you are creating.",
+          "Call the API proxy using curl (or with the URL in a web browser) several times until you see at least one 200 response and one 429 response in the Transactions pane."
+        ]
+      },
+      {
+        "title": "Streaming server-sent events \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table shows the execution of EventFlow stanzas based on endpoint placement: ProxyEndpoint TargetEndpoint EventFlow used EventFlow in ProxyEndpoint EventFlow in TargetEndpoint EventFlow in TargetEndpoint No EventFlow EventFlow in TargetEndpoint EventFlow in TargetEndpoint EventFlow in ProxyEndpoint No EventFlow EventFlow in ProxyEndpoint Add policies to an EventFlow You can add up to a total of four policies to the Response element of the EventFlow .",
+          "Note that the response includes a modelVersion\": \"gemini-2.5-flash\" attribute. data: { \"candidates\": [ { \"content\": { \"parts\": [ { \"text\": \"ara found the pen tucked away in a dusty antique shop, nestled amongst chipped tea\" } ], \"role\": \"model\" } } ], \"usageMetadata\": { \"promptTokenCount\": 8, \"totalTokenCount\": 8 }, \"modelVersion\": \"gemini-2.5-flash\" } This is another sample response with the JavaScript policy applied.",
+          "Call the deployed proxy: curl -X POST -H 'Content-Type: application/json' \\ \"https:// YOUR APIGEE ENVIRONMENT GROUP HOSTNAME / YOUR API PATH \" \\ -d '{ \"contents\":[{\"parts\":[{\"text\": \"Write a story about a magic pen.\"}]}]}' Show a sample response Here's a sample of how the response might look without applying any filtering."
+        ]
+      },
+      {
+        "title": "\"Best practices for API proxy design and development with Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "Build a ServiceCallout request message using the AssignMessage policy, and populate the request object in a message variable. (This includes setting the request payload, path, and method.) The URL that is configured within the policy requires the protocol specification, meaning the protocol portion of the URL, https:// for example, cannot be specified by a variable.",
+          "For example, use the standard AssignMessage policy and ExtractVariables policy policies instead of JavaScript (when possible) to create payloads, extract information from payloads (XPath, JSONPath), and so on.",
+          "For example, looking up a location (endpoint) from a routing table based on a key found in a request and dynamically applying a target endpoint or a custom/proprietary authentication method, etc."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/develop/server-sent-events",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.504Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui"
+}

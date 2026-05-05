@@ -1,0 +1,116 @@
+{
+  "feature_name": "Answer API with summaries and follow-ups",
+  "feature_slug": "answer-api-with-summaries-and-follow-ups",
+  "summary": "The Answer API adds Public Preview support for generating answers with summaries and follow-up search interactions to handle more complex, multi-step retrieval queries.",
+  "extended_definition": "The Answer API adds Public Preview support for generating answers with summaries and follow-up search interactions to handle more complex, multi-step retrieval queries.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "If no results are determined to be sufficiently relevant, then instead of generating an answer from non-relevant or minimally-relevant results, you can choose to return a fallback answer: \" We do not have a summary for your query. \" The following command shows how to return the fallback answer in the case of irrelevant results when calling the answer method.",
+          "Example command and partial result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/123456/locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" \\ -d '{ \"query\": { \"text\": \"When can an NCD be made?\"}, \"groundingSpec\": { \"filtering level\": \"FILTERING LEVEL HIGH\" } }' { answer { state: SUCCEEDED answer text: \"We do not have a summary for your query.\" steps { state: SUCCEEDED description: \"Rephrase the query and search.\" actions { search action { query: \"test?\" } observation { search results { document: \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f7f5cfde02\" uri: \"gs://my-bucket-123/data/CoverageDocumentation.pdf\" title: \"ABC345 0101\" chunk info { content: \"This notice implements part of section 731 of the Medicare Prescription Drug, Improvement, and Modernization Act of 2003 by describing a method of developing, and making available to the public, guidance documents under the Medicare program… \" } ... search results { document: \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/f7f5cfde02\" uri: \"gs://my-bucket-123/data/CoverageDocumentation.pdf\" title: \"ABC345 0101\" chunk info { content: \"For the purposes of this notice, the term guidance documents means documents prepared for our staff, potential requestors of National Coverage Determinations, and other interested parties explaining the NCD process… \" } } } } } answer skipped reasons: LOW GROUNDED CONTENT } In this example, no answer is returned because the high threshold wasn't met.",
+          "Example command and partial result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1beta/projects/my-project-123//locations/global/collections/default collection/engines/my-app/servingConfigs/default search:answer\" -d '{ \"query\": { \"text\": \"Display the ranking of generations from highest to lowest based on their spending on holiday items using cards.\"}, \"answerGenerationSpec\": {\"includeCitations\": true, \"model spec\": { \"model version\": \"gemini-2.0-flash-001/answer gen/v1\" }, \"multimodalSpec\": { \"imageSource\": \"CORPUS IMAGE ONLY\" } }, \"searchSpec\": { \"searchParams\": { \"maxReturnResults\": 5 } } }' { \"answer\": { \"state\": \"SUCCEEDED\", \"answerText\": \"Holiday spending over November-December was weakest among Gen Xers, followed by Millennials, while Baby Boomer spending was relatively more solid."
+        ]
+      },
+      {
+        "title": "Get search results \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "source_id": "site-iam-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Get search results for an app with website data Console To use the Google Cloud console to preview search results for an app with website data, follow these steps: In the Google Cloud console, go to the AI Applications page.",
+          "To use the Google Cloud console to preview search results for an app with structured or unstructured data, follow these steps: Open the Preview page in the console.",
+          "Select Search with follow-ups to enable conversation search with generative summaries and follow-up questions."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Answer generation model versions and lifecycle . preview : string. (Public preview) Uses a preview model.",
+          "ContentSearchSpec JSON representation { \"snippetSpec\" : { object ( SnippetSpec ) } , \"summarySpec\" : { object ( SummarySpec ) } , \"extractiveContentSpec\" : { object ( ExtractiveContentSpec ) } , \"searchResultMode\" : enum ( SearchResultMode ) , \"chunkSpec\" : { object ( ChunkSpec ) } } Fields snippetSpec object ( SnippetSpec ) If snippetSpec is not specified, snippets are not included in the search response. summarySpec object ( SummarySpec ) If summarySpec is not specified, summaries are not included in the search response. extractiveContentSpec object ( ExtractiveContentSpec ) If there is no extractive content spec provided, there will be no extractive answer in the search response. searchResultMode enum ( SearchResultMode ) Specifies the search result mode.",
+          "If this field is set to true , we skip generating summaries for adversarial queries and return fallback messages instead. ignoreNonSummarySeekingQuery boolean Specifies whether to filter out queries that are not summary-seeking."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/preview-search-results",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:55.115Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

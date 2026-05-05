@@ -1,0 +1,152 @@
+{
+  "feature_name": "Google Workspace Studio add-ons",
+  "feature_slug": "google-workspace-studio-add-ons",
+  "summary": "Developers can build add-ons that extend Google Workspace Studio; Developers in the Gemini Alpha program can build add-ons that extend Google Workspace Flows.",
+  "extended_definition": "Developers can build add-ons that extend Google Workspace Studio; Developers in the Gemini Alpha program can build add-ons that extend Google Workspace Flows.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes",
+      "https://developers.google.com/workspace/add-ons/guides/using-addons",
+      "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+      "https://developers.google.com/workspace/add-ons/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Add-ons overview \\_|\\_ Google Workspace add-ons \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/add-ons/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 326,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Developers can build two types of add-ons: Google Workspace add-ons and Editor add-ons, each offering unique capabilities and functionalities.",
+          "Developers can build Google Workspace or Editor add-ons.",
+          "With add-ons, you can do the following: Create customized user interfaces that are directly integrated into Google Workspace applications."
+        ]
+      },
+      {
+        "title": "UI style guide for Google Workspace add-ons \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Google Workspace Marketplace When you configure your add-on for publication, you provide a number of graphical and text assets to build the Google Workspace Marketplace listing.",
+          "For dropdowns, sort the options alphabetically or by a logical scheme that all users can understand (such as presenting the days of the week in order, starting from Sunday or Monday).",
+          "Home Google Workspace Add-ons Send feedback UI style guide for Google Workspace add-ons Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Open and use installed add-ons \\_|\\_ Google Workspace add-ons \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/using-addons",
+        "source_id": "site-docs-root",
+        "final_score": 282,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Start a Google Workspace add-on Google Workspace add-ons that you have installed automatically appear in the host application interface as a column of icons (under icons for Google products like Calendar, Keep, and Tasks).",
+          "On mobile (Gmail only) On mobile, the Google Workspace add-ons that extend Gmail have icons that appear as a horizontal row at the bottom of the open message or draft.",
+          "Gmail compose Google Workspace add-ons can extend the Gmail compose UI , which provides add-on functionality from Gmail's \"compose message\" window."
+        ]
+      },
+      {
+        "title": "\"Build a Google Workspace add-on using HTTP endpoints \\_|\\_ Google Workspace\\",
+        "url": "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes",
+        "source_id": "site-docs-root",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Widgets are defined within a section.\" }, \"cardActions\" : { \"type\" : \"object\" , \"description\" : \"The actions of this card.\" , \"$ref\" : \"#/definitions/cardAction\" }, \"name\" : { \"type\" : \"string\" , \"description\" : \"Name of the card which is used as an identifier for the card in the card navigation.\" }, \"fixedFooter\" : { \"type\" : \"object\" , \"description\" : \"The fixed footer that is shown at the bottom of this card.\" , \"$ref\" : \"#/definitions/cardFixedFooter\" }, \"displayStyle\" : { \"type\" : \"string\" , \"description\" : \"The Display Style for the peekCardHeader.\" , \"enum\" : [ \"DISPLAY STYLE UNSPECIFIED\" , \"PEEK\" , \"REPLACE\" ] }, \"peekCardHeader\" : { \"type\" : \"object\" , \"description\" : \"When displaying contextual content, the peek card header acts as a placeholder so that the user can\\nnavigate forward between the homepage cards and the contextual cards.\" , \"$ref\" : \"#/definitions/cardHeader\" } } }, \"action\" : { \"$id\" : \"/properties/action\" , \"type\" : \"object\" , \"description\" : \"An action that describes the behavior when a form is submitted - triggered from an onclick event on an input widget (e.g. button).\" , \"required\" : [ \"function\" ], \"properties\" : { \"function\" : { \"description\" : \"The apps script callback function or the HTTPS endpoint if using HTTP deployments.\" , \"type\" : \"string\" } } } }, \"type\" : \"object\" , \"$ref\" : \"#/definitions/card\" } Expense app { \"action\": { \"navigations\": [ { \"pushCard\": { \"sections\": [ { \"header\": \"Budget Performance\", \"widgets\": [ { \"decoratedText\": { \"text\": \" Current Quarter Budget $18,000 (Ends in 5 days) Spent: $410.75 \", \"wrapText\": true } }, { \"decoratedText\": { \"text\": \" Top Expense Category \" } }, { \"decoratedText\": { \"text\": \"Flights · 30%\", \"icon\": { \"iconUrl\" : \"http://ssl.gstatic.com/travel-trips-fe/icon flight grey 64.png\" } } }, { \"decoratedText\": { \"text\": \"Hotels · 50%\", \"icon\": { \"iconUrl\" : \"http://ssl.gstatic.com/travel-trips-fe/icon hotel grey 64.png\" } } } ] }, { \"header\": \"Expense Awaiting Your Approval\", \"widgets\": [ { \"decoratedText\": { \"text\": \"Submitted by Pam Bee\", \"icon\": { \"iconUrl\" : \"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDQGRxqHJ2XZenPL496tC1EkP2b8wtvENQ4QIClnde2Hq1C7u3\" } } }, { \"decoratedText\": { \"text\": \" Team Lunch (Internal) Cost: $85.00 USD Date: 10/16/2019 Expense no. #7453 \" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Approve\", \"color\": { \"red\": 0, \"green\": 0.4784, \"blue\": 0.353 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/approve\" } } }, { \"text\": \"Decline\", \"color\": { \"red\": 1, \"green\": 0.07843, \"blue\": 0.07843 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/decline\" } } }, { \"text\": \"View Details\", \"color\": { \"red\": 0.650, \"green\": 0.650, \"blue\": 0.650 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/view\" } } } ] } } ] }, { \"widgets\": [ { \"decoratedText\": { \"text\": \"Submitted by Dwight Smith\", \"icon\": { \"iconUrl\" : \"https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDQGRxqHJ2XZenPL496tC1EkP2b8wtvENQ4QIClnde2Hq1C7u3\" } } }, { \"decoratedText\": { \"text\": \" Flight to New York Cost: 530.00 USD Date: 11/21/2019 Expense no. #9866 \" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Approve\", \"color\": { \"red\": 0, \"green\": 0.4784, \"blue\": 0.353 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/approve\" } } }, { \"text\": \"Decline\", \"color\": { \"red\": 1, \"green\": 0.07843, \"blue\": 0.07843 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/decline\" } } }, { \"text\": \"View Details\", \"color\": { \"red\": 0.650, \"green\": 0.650, \"blue\": 0.650 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/view\" } } } ] } } ] } ] } } ] } } Form submit / A sample Google Workspace add - on with a form submit with a happy / sad button . / exports . homepage = ( req , res ) => { console . log ( \"event: \" , req . body ); console . log ( \"headers: \" , JSON . stringify ( req . headers )); let parameters = req . body . commonEventObject . parameters ; if ( parameters ) { let happy = parameters . happy ; if ( happy == '1' ) { res . status ( 200 ) . send ( createHappyCard ()); } else { res . status ( 200 ) . send ( createSadCard ()); } } else { res . status ( 200 ) . send ( createQuestionCard ()); } }; function createSadCard () { return { \"renderActions\" : { \"action\" : { \"navigations\" : [ { \"pushCard\" : { \"sections\" : [ { \"widgets\" : [ { \"image\" : { \"imageUrl\" : \"https://cdn.pixabay.com/photo/2017/08/15/12/58/emoticon-2643814 960 720.jpg\" } } ] } ] } } ] } } }; } function createHappyCard () { return { \"renderActions\" : { \"action\" : { \"navigations\" : [ { \"pushCard\" : { \"sections\" : [ { \"widgets\" : [ { \"image\" : { \"imageUrl\" : \"https://dg.imgix.net/do-you-think-you-re-happy-jgdbfiey-en/landscape/do-you-think-you-re-happy-jgdbfiey-9bb0198eeccd0a3c3c13aed064e2e2b3.jpg\" } } ] } ] } } ] } } }; } function createQuestionCard () { return { \"action\" : { \"navigations\" : [ { \"pushCard\" : { \"sections\" : [ { \"widgets\" : [ { \"textParagraph\" : { \"text\" : \"Are you having a good day today?\" } }, { \"buttonList\" : { \"buttons\" : [ { \"text\" : \"Happy\" , \"color\" : { \"red\" : 0 , \"green\" : 0.4784 , \"blue\" : 0.353 }, \"onClick\" : { \"action\" : { \"function\" : \"https://us-central1-elevated-surge-267316.cloudfunctions.net/HttpGSAO\" , \"parameters\" : [ { \"key\" : \"happy\" , \"value\" : \"1\" } ] } } }, { \"text\" : \"Sad\" , \"color\" : { \"red\" : 1 , \"green\" : 0.07843 , \"blue\" : 0.07843 }, \"onClick\" : { \"action\" : { \"function\" : \"https://us-central1-elevated-surge-267316.cloudfunctions.net/HttpGSAO\" , \"parameters\" : [ { \"key\" : \"happy\" , \"value\" : \"0\" } ] } } } ] } } ] } ] } } ] } }; } Approval { \"action\": { \"navigations\": [ { \"pushCard\": { \"sections\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"You have a new request:\" } }, { \"textParagraph\": { \"text\": \" John Dolittle - New Device Request \" } }, { \"decoratedText\": { \"topLabel\": \"Type:\", \"text\": \"Computer (laptop)\" } }, { \"decoratedText\": { \"topLabel\": \"When:\", \"text\": \"Submitted Aug 10\" } }, { \"decoratedText\": { \"topLabel\": \"Reason:\", \"text\": \"Keyboard is not working\" } }, { \"decoratedText\": { \"topLabel\": \"Specs:\", \"text\": \"Cheetah Pro 15\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Approve\", \"color\": { \"red\": 0, \"green\": 0.4784, \"blue\": 0.353 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/approve\" } } }, { \"text\": \"Deny\", \"color\": { \"red\": 1, \"green\": 0.07843, \"blue\": 0.07843 }, \"onClick\": { \"openLink\": { \"url\": \"https://www.domain.com/deny\" } } } ] } } ] } ] } } ] } } Contacts list / A sample Google Workspace add - on that creates a top level card with a list of contacts .",
+          "When returned to Gmail, the bolded text should say AFTER. \\nText BEFORE opening the link.\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Open tab, close, refresh\", \"onClick\": { \"openLink\": { \"url\": \"https://www.google.ca/\", \"onClose\": \"RELOAD\", \"openAs\": \"OVERLAY\" } } } ] } } ] } ] } } ] } } Response to form submit { \"$schema\": \"/Users/dummy user/Documents/JSON schema/submit form response schema.json\", \"stateChanged\": true, \"renderActions\": { \"action\": { \"navigations\": [ { \"pushCard\": { \"peekCardHeader\": { \"title\": \"Peek Card\" }, \"header\": { \"title\": \"Generic Submit Form Response Card\" }, \"sections\": [ { \"widgets\": [ { \"image\": { \"imageUrl\": \"https://cataas.com/cat\" } } ] } ] } } ] } } } Grid { \"$schema\" : \"/Users/dummy user/Documents/JSON schema/render action schema.json\" , \"action\" : { \"navigations\" : [ { \"pushCard\" : { \"header\" : { \"title\" : \"Main Card\" }, \"sections\" : [ { \"header\" : \"Grid Widget\" , \"widgets\" : [ { \"grid\" : { \"title\" : \"A fine collection of cats\" , \"borderStyle\" : { \"type\" : \"STROKE\" , \"cornerRadius\" : 5.0 }, \"columnCount\" : 2 , \"items\" : [ { \"id\" : \"itemA\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.001\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"First cat\" }, { \"id\" : \"itemB\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.002\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Second cat\" , \"subtitle\" : \"Top rated\" }, { \"id\" : \"itemC\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.003\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Third cat\" }, { \"id\" : \"itemD\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.004\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Fourth cat\" , }, { \"id\" : \"itemE\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.005\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Fifth cat\" , \"subtitle\" : \"Top rated\" }, { \"id\" : \"itemF\" , \"image\" : { \"imageUri\" : \"https://cataas.com/cat?0.006\" , \"cropStyle\" : { \"type\" : \"CIRCLE\" } }, \"title\" : \"Sixth cat\" } ], \"onClick\" : { \"action\" : { \"function\" : \"https://dummy-function-from-resources.net/grid item clicked\" , \"parameters\" : [ { \"key\" : \"datasource\" , \"value\" : \"Favorite cat pics\" } ] } } } } ] } ] } } ] } } JSON Event Objects Common (Gmail, Calendar, Drive, and Editors) { \"$schema\" : \"http://json-schema.org/draft-07/schema#\" , \"type\" : \"object\" , \"definitions\" : { \"eventObject\" : { \"$id\" : \"/properties/eventObject\" , \"type\" : \"object\" , \"description\" : \"Event objects are JSON structures that are automatically constructed and passed as parameters to trigger or callback functions when a user interacts with an add-on (https://developers.google.com/workspace/add-ons/concepts/event-objects)\" , \"properties\" : { \"commonEventObject\" : { \"$ref\" : \"#/definitions/commonEventObject\" } , \"authorizationEventObject\" : { \"$ref\" : \"#/definitions/authorizationEventObject\" , \"description\" : \"Set for requests to HTTP endpoints\" } , \"gmail\" : { \"$ref\" : \"./gmail event object schema.json#/definitions/gmailEventObject\" , \"description\" : \"An object containing Gmail information.\" } , \"drive\" : { \"$ref\" : \"./drive event object schema.json#/definitions/driveEventObject\" , \"description\" : \"An object containing Drive information.\" } , \"docs\" : { \"$ref\" : \"./docs event object schema.json#/definitions/docsEventObject\" , \"description\" : \"An object containing Docs information.\" } , \"sheets\" : { \"$ref\" : \"./sheets event object schema.json#/definitions/sheetsEventObject\" , \"description\" : \"An object containing Sheets information.\" } , \"slides\" : { \"$ref\" : \"./slides event object schema.json#/definitions/slidesEventObject\" , \"description\" : \"An object containing Slides information.\" } , \"calendar\" : { \"$ref\" : \"./calendar event object schema.json#/definitions/calendarEventObject\" , \"description\" : \"An object containing calendar and event information.\" } } } , \"commonEventObject\" : { \"$id\" : \"/properties/commonEventObject\" , \"type\" : \"object\" , \"description\" : \"An object containing information common to all event objects, regardless of the host application.\" , \"properties\" : { \"userLocale\" : { \"type\" : \"string\" , \"description\" : \"The user's language and country/region identifier in the format of ISO 639 language code-ISO 3166 country/region code.",
+          "See https://developers.google.com/workspace/add-ons/how-tos/access-user-locale for more details\" , \"minimum\" : - 2147483648 , \"maximum\" : 2147483647 } } } , \"stringInputs\" : { \"$id\" : \"/properties/stringInputs\" , \"type\" : \"object\" , \"description\" : \"Input parameter for regular widgets. \\n For single-valued widgets, it will be a single value list; for \\n multi-valued widgets, such as checkbox, all the values are presented.\" , \"properties\" : { \"value\" : { \"type\" : \"array\" , \"items\" : { \"type\" : \"string\" } } } } , \"dateTimeInput\" : { \"$id\" : \"/properties/dateTimeInput\" , \"type\" : \"object\" , \"description\" : \"Input Parameter for Date and Time Picker widget.\" , \"properties\" : { \"msSinceEpoch\" : { \"type\" : \"integer\" , \"description\" : \"The time selected by the user, in milliseconds since epoch (00:00:00 UTC on 1 January 1970).\" , \"minimum\" : - 9223372036854775808 , \"maximum\" : 9223372036854775807 } , \"hasDate\" : { \"type\" : \"boolean\" , \"description\" : \"true if the input date time includes a date; if false only a time is included.\" } , \"hasTime\" : { \"type\" : \"boolean\" , \"description\" : \"true if the input date time includes a time; if false only a date is included.\" } } } , \"dateInput\" : { \"$id\" : \"/properties/dateInput\" , \"type\" : \"object\" , \"description\" : \"Input Parameter for Date Picker widget.\" , \"properties\" : { \"msSinceEpoch\" : { \"type\" : \"integer\" , \"description\" : \"The time selected by the user, in milliseconds since epoch (00:00:00 UTC on 1 January 1970).\" , \"minimum\" : - 9223372036854775808 , \"maximum\" : 9223372036854775807 } } } , \"timeInput\" : { \"description\" : \"Input Parameter for Time Picker widget.\" , \"$id\" : \"/properties/timeInput\" , \"type\" : \"object\" , \"properties\" : { \"hours\" : { \"type\" : \"integer\" , \"description\" : \"The hour number selected by the user.\" , \"minimum\" : 0 , \"maximum\" : 23 } , \"minutes\" : { \"type\" : \"integer\" , \"description\" : \"The minute number selected by the user.\" , \"minimum\" : 0 , \"maximum\" : 59 } } } } , \"$ref\" : \"#/definitions/eventObject\" } Gmail { \"$schema\" : \"http://json-schema.org/draft-07/schema#\" , \"type\" : \"object\" , \"definitions\" : { \"gmailEventObject\" : { \"$id\" : \"/properties/gmailEventObject\" , \"type\" : \"object\" , \"description\" : \"The Gmail event object is the portion of the overall event object that carries information about a user's Gmail messages."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cataas.com",
+      "cdn.pixabay.com",
+      "cloudfunctions.net",
+      "developers.google.com",
+      "dg.imgix.net",
+      "e.g",
+      "resources.net",
+      "schema.json",
+      "schema.org",
+      "ssl.gstatic.com",
+      "tbn0.gstatic.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/overview",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/using-addons",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/overview",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/using-addons",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/overview",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/using-addons",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/overview",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/using-addons",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/add-ons/overview",
+        "https://developers.google.com/workspace/add-ons/guides/workspace-style",
+        "https://developers.google.com/workspace/add-ons/guides/using-addons",
+        "https://developers.google.com/workspace/add-ons/guides/alternate-runtimes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:41.345Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-add-ons/card.json",
+  "product_name": "Google Workspace add-ons",
+  "product_slug": "google-workspace-add-ons"
+}

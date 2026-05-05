@@ -1,0 +1,125 @@
+{
+  "feature_name": "bq export with remote service",
+  "feature_slug": "bq-export-with-remote-service",
+  "summary": "The bq export command supports Mainframe Connector Remote Service.",
+  "extended_definition": "The bq export command supports Mainframe Connector Remote Service.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+      "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you execute the gsutil cp or bq export commands with the --remote flag to perform remote transcoding , Mainframe Connector uses the local value set for the BQSH FEATURE CUSTOM CHARSET environment variable.",
+          "Performance tuning configuration for the bq export command Mainframe Connector supports the following performance tuning configuration for the bq export command: exporter thread count : (Optional) Set the number of worker threads.",
+          "Product Command Description Supports remote transcoding BigQuery commands bq export Use this command to create a binary file."
+        ]
+      },
+      {
+        "title": "\"Transcode mainframe data remotely on Google Cloud \\_|\\_ Mainframe Connector\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 253,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example JCL //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT= PROJECT NAME DATASET ID= DATASET ID DESTINATION TABLE= DESTINATION TABLE BUCKET= BUCKET bq export --project id=$PROJECT \\ --dataset id=$DATASET ID \\ --destination table=$DESTINATION TABLE \\ --location=\"US\" \\ --bucket=$BUCKET \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query.",
+          "For the complete list of environment variables supported by Mainframe Connector, see Environment variables . //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //STDIN DD gsutil cp --replace gs://mybucket/tablename.orc --remote \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / If you want to log the commands executed during this process, you can enable load statistics . (Optional) Create and submit a BigQuery query job that executes a SQL read from the QUERY DD file .",
+          "Example JCL //STEP03 EXEC BQSH //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT= PROJECT NAME LOCATION= LOCATION bq query --project id=$PROJECT \\ --location=$LOCATION \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443/ / Additionally, you must set the environment variable BQ QUERY REMOTE EXECUTION=true ."
+        ]
+      },
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The bq export command uses the following flags and arguments: --project id = ID Specify the project to use to execute this command. --allow large results (Optional) Use large destination table sizes for legacy SQL queries. --batch (Optional) Run the query in batch mode. --bucket = BUCKET (Optional) Specify a location within Cloud Storage to write the command's output.",
+          "To run the query in remote mode, set the BQ QUERY REMOTE EXECUTION environment variable. --replace (Optional) Overwrite the destination table with the query results. --report row limit = LIMIT (Optional) Specify the maximum rows to print in the audit report.",
+          "If you don't provide a value, Mainframe Connector reads from DD COPYBOOK . --dataset id = ID (Optional) Specify the default dataset to use with the command."
+        ]
+      },
+      {
+        "title": "\"Move data transcoded locally on the mainframe to Google Cloud \\_|\\_ Mainframe\\",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your input dataset is a Queued Sequential Access Method (QSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME qsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / If your input dataset is a Virtual Storage Access Method (VSAM) file with fixed or variable record length, use the following command: //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.CPY //CONFIG DD DISP=SHR,DSN=<HLQ>.CONFIG.SETTINGS //STDIN DD BUCKET= BUCKET NAME vsam decode --copybook dd:COPYBOOK --transcode-configuration dd:CONFIG dd:INFILE gs://$BUCKET/tablename / Replace BUCKET NAME with the name of the Cloud Storage bucket to which you want to copy mainframe data.",
+          "Example JCL //STEP04 EXEC BQSH //OUTFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //QUERY DD DSN=<HLQ>.QUERY.FILENAME,DISP=SHR //STDIN DD PROJECT= PROJECT NAME DATASET ID= DATASET ID DESTINATION TABLE= DESTINATION TABLE bq export --project id=$PROJECT \\ --dataset id=$DATASET ID \\ --destination table=$DESTINATION TABLE \\ --location=\"US\" \\ --remoteHost <mainframe-connector-url>.a.run.app \\ --remotePort 443 / Replace the following: PROJECT NAME : The name of the project in which you want to execute the query.",
+          "The input dataset must be a Queued Sequential Access Method (QSAM) file with fixed or variable record length. //STEP01 EXEC BQSH //INFILE DD DSN=<HLQ>.DATA.FILENAME,DISP=SHR //COPYBOOK DD DISP=SHR,DSN=<HLQ>.COPYBOOK.FILENAME //STDIN DD BUCKET= BUCKET NAME gsutil cp --replace gs://$BUCKET/tablename.orc / Replace BUCKET NAME with the name of the Cloud Storage bucket to which you want to copy mainframe data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.run.app",
+      "tablename.orc"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/remote-transcoding",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/local-transcoding"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.391Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector"
+}

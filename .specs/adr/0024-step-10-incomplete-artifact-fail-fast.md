@@ -77,8 +77,9 @@ must also be official Google HTTP(S) URLs before reports can be rewritten.
 
 Step 10 also checks promoted feature README content against the promoted
 feature card before rewriting reports. It rejects README drift in feature
-identity, lifecycle lines, official evidence links, IAM status and rendered IAM
-detail, security capability names, and official security evidence links.
+title, identity, lifecycle lines, official evidence links, IAM status and
+rendered IAM detail, security capability names, and official security evidence
+links.
 
 Step 10 also checks that each promoted feature card still satisfies the Step 09
 promotion eligibility contract before rewriting reports. A promoted feature

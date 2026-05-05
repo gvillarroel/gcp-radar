@@ -1,0 +1,251 @@
+{
+  "feature_name": "Anthos CLI for Anthos Service Mesh installation",
+  "feature_slug": "anthos-cli-for-anthos-service-mesh-installation",
+  "summary": "The Anthos CLI simplifies installing Anthos Service Mesh on new or existing clusters in beta; The Anthos CLI simplifies installing Anthos Service Mesh on new or existing clusters in beta.",
+  "extended_definition": "The Anthos CLI simplifies installing Anthos Service Mesh on new or existing clusters in beta; The Anthos CLI simplifies installing Anthos Service Mesh on new or existing clusters in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2020-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+      "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+      "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configuring audit policies for your services \\_|\\_ Cloud Service Mesh \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "source_id": "site-docs-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you run asmcli install , include the following option: --option audit-authorizationpolicy For example: ./asmcli install \\ --project id PROJECT ID \\ --cluster name CLUSTER NAME \\ --cluster location CLUSTER LOCATION \\ --ca mesh ca \\ --output dir DIR PATH \\ --enable all \\ --option audit-authorizationpolicy Be sure to specify any other overlay files that you need to configure Cloud Service Mesh.",
+          "When you run asmcli install , include the following option: --option audit-authorizationpolicy For example: ./asmcli install \\ --project id PROJECT ID \\ --cluster name CLUSTER NAME \\ --cluster location CLUSTER LOCATION \\ --ca mesh ca \\ --output dir DIR PATH \\ --enable all \\ --option audit-authorizationpolicy Be sure to specify any other overlay files that you need to configure Cloud Service Mesh.",
+          "Before you begin Follow the steps in Install dependent tools and validate cluster to: Install required tools Download asmcli Grant cluster admin permissions Validate your project and cluster Prepare gateway configuration Cloud Service Mesh gives you the option to deploy and manage gateways as part of your service mesh."
+        ]
+      },
+      {
+        "title": "\"Migrate from Istio 1.11 or later to Cloud Service Mesh \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "source_id": "site-docs-root",
+        "final_score": 211,
+        "relevance": "",
+        "evidence_snippets": [
+          "Download sample code Clone the git repositories containing the Kubernetes and Istio resources you will use: git clone https://github.com/GoogleCloudPlatform/anthos-service-mesh-samples.git git clone https://github.com/GoogleCloudPlatform/microservices-demo.git Set up the cluster with Istio Create the cluster and install Istio In the section, you create your cluster that uses Istio.",
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace onlineboutique Use the istio.io/rev=asm-managed label to add the onlineboutique namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace onlineboutique 'istio.io/rev=asm-managed' Deploy Online Boutique's 12 services, including the load generator that imitates user traffic: kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/kubernetes-manifests.yaml kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/virtual-service.yaml Get the external IP address of the Cloud Service Mesh ingress gateway: kubectl \\ --context cluster-with-csm \\ --namespace asm-ingress \\ get service --output jsonpath = '{.items[0].status.loadBalancer.ingress[0].ip}' Copy the external IP address of the asm-ingressgateway Service, and access it through your web browser.",
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace asm-ingress Use the istio.io/rev=asm-managed label to add the asm-ingress namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace asm-ingress 'istio.io/rev=asm-managed' Deploy the Cloud Service Mesh ingress gateway : kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/asm-gateway-deployment-svc.yaml kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/gateway.yaml The output is similar to: namespace/asm-ingress configured serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Note: You can browse the resources in the official Cloud Service Mesh samples GitHub repository ."
+        ]
+      },
+      {
+        "title": "\"Downloading the troubleshooting tool \\_|\\_ Cloud Service Mesh \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "source_id": "site-docs-reference",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download istioctl Managed control plane Update Google Cloud CLI: gcloud components update Download the embedded Cloud Service Mesh troubleshooting tool: gcloud components install istioctl If you receive error message You cannot perform this action because the Google Cloud CLI component manager is disabled for this installation , you have previously installed Google Cloud CLI through Debian/Ubuntu .",
+          "Use the following commands instead: Update Google Cloud CLI sudo apt-get update Download the embedded Cloud Service Mesh troubleshooting tool: sudo apt-get install google-cloud-sdk-istioctl In-cluster control plane Linux Download the Cloud Service Mesh installation file to your current working directory: curl -LO https://storage.googleapis.com/gke-release/asm/istio-1.28.5-asm.9-linux-amd64.tar.gz Download the signature file and use openssl to verify the signature: curl -LO https://storage.googleapis.com/gke-release/asm/istio-1.28.5-asm.9-linux-amd64.tar.gz.1.sig openssl dgst -verify /dev/stdin -signature istio-1.28.5-asm.9-linux-amd64.tar.gz.1.sig istio-1.28.5-asm.9-linux-amd64.tar.gz The expected output is: Verified OK .",
+          "For example, to extract the contents to the current working directory: tar xzf istio-1.28.5-asm.9-linux-amd64.tar.gz The command creates an installation directory in your current working directory named istio-1.28.5-asm.9 that contains: - Sample applications in the samples directory . - The istioctl command - line tool that you use to install Cloud Service Mesh is in the < code>bin < / code > directory . - The Cloud Service Mesh configuration profiles are in the manifests/profiles directory ."
+        ]
+      },
+      {
+        "title": "\"VPC Service Controls for Cloud Service Mesh (Managed) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc",
+        "source_id": "site-docs-root-2",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you don't add the Mesh Configuration API to the service perimeter, the installation will fail and the workloads won't receive their Envoy configuration from the managed control plane.",
+          "Unless you are installing Cloud Service Mesh from an in-perimeter network, add an ingress rule to allow the identity running the asmcli command access to the service perimeter.",
+          "Repeat steps c - f, to add: Cloud Service Mesh Certificate Authority API GKE Hub API Cloud IAM API Cloud Monitoring API Cloud Trace API Cloud Monitoring API Google Cloud Resource Manager API Google Compute Engine API Google Container Registry API Artifact Registry API Google Cloud Storage API Cloud Logging API Security Token Service API Click Save . gcloud To update the list of restricted services, use the update command and specify the services to add as a comma-delimited list: gcloud access-context-manager perimeters update PERIMETER NAME \\ --add-restricted-services = meshconfig.googleapis.com,meshca.googleapis.com,gkehub.googleapis.com,iam.googleapis.com,monitoring.googleapis.com,cloudtrace.googleapis.com,monitoring.googleapis.com,cloudresourcemanager.googleapis.com,compute.googleapis.com,containerregistry.googleapis.com,artifactregistry.googleapis.com,storage.googleapis.com,logging.googleapis.com,sts.googleapis.com \\ --policy = POLICY NAME Where: PERIMETER NAME is the name of the service perimeter that you want to update."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amd64.tar.gz",
+      "amd64.tar.gz.1.sig",
+      "artifactregistry.googleapis.com",
+      "asm.9",
+      "cloudresourcemanager.googleapis.com",
+      "cloudtrace.googleapis.com",
+      "compute.googleapis.com",
+      "containerregistry.googleapis.com",
+      "demo.git",
+      "deployment.apps",
+      "entry.yaml",
+      "gateway.networking.istio.io",
+      "gateway.yaml",
+      "github.com",
+      "gkehub.googleapis.com",
+      "iam.googleapis.com",
+      "istio.io",
+      "logging.googleapis.com",
+      "manifests.yaml",
+      "meshca.googleapis.com",
+      "meshconfig.googleapis.com",
+      "monitoring.googleapis.com",
+      "osx.tar.gz",
+      "samples.git",
+      "service.yaml",
+      "status.loadBalancer.ingress",
+      "storage.googleapis.com",
+      "sts.googleapis.com",
+      "svc.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/authz-audit-policies",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/docs/downloading-istioctl",
+        "https://docs.cloud.google.com/service-mesh/docs/managed/vpc-sc"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.079Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh"
+}

@@ -1,0 +1,113 @@
+{
+  "feature_name": "API hub overview and metrics dashboard",
+  "feature_slug": "api-hub-overview-and-metrics-dashboard",
+  "summary": "The Get Started with API hub page now includes charts and scorecards for a quick overview of the API landscape.",
+  "extended_definition": "The Get Started with API hub page now includes charts and scorecards for a quick overview of the API landscape.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/getting-started-apihub",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/cluster-monitoring-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/getting-started-apihub",
+        "source_id": "site-docs-reference-2",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can perform the following tasks: Register APIs Attach Apigee runtimes Experience semantic search Add user-defined attributes Manage API Supply chain dependencies View your API landscape overview The Get Started with API hub page also displays a dashboard with charts and scorecards.",
+          "The following table lists the charts and scorecards displayed on the Get Started with API hub page: Chart or scorecard Description Total APIs Displays the total count of APIs registered and available in your API hub instance.",
+          "To view the Get Started with API hub page, go to API hub in the Google Cloud console and click Get Started with API hub from the navigation menu."
+        ]
+      },
+      {
+        "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/cluster-monitoring-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: in production, trigger an event notification if the write clientrequest latency value of 99thPercentile is 5 seconds for 3 minutes Cloud Monitoring dashboard MQL query : fetch k8s container metric 'apigee.googleapis.com/cassandra/clientrequest latency' filter (metric.scope == 'Write' && metric.unit == '99thPercentile') group by 1m, [value clientrequest latency mean: mean(value.clientrequest latency)] every 1m group by [metric.scope, metric.unit], [value clientrequest latency mean aggregate: aggregate(value clientrequest latency mean)] Apigee Control plane Apigee Synchronizer service SLI metrics provide request and response counts and latencies between the Apigee control plane and the Hybrid runtime plane.",
+          "Cloud Monitoring dashboard MQL query : fetch k8s container metric 'kubernetes.io/container/restart count' filter (resource.container name = '. cassandra. ' && resource.namespace name == 'apigee') align rate(1m) every 1m group by [resource.cluster name, resource.namespace name, resource.pod name, resource.container name], [value restart count aggregate: aggregate(value.restart count)] Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Cloud Monitoring dashboard MQL query : fetch k8s container metric 'apigee.googleapis.com/upstream/response count' filter (resource.container name == 'apigee-synchronizer') && (metric.response code != '200' && metric.type == 'CONTRACT') align rate(1m) every 1m group by [metric.method, metric.response code, metric.type, resource.container name], [value response count aggregate: aggregate(value.response count)] Infrastructure GKE and other Kubernetes platforms provide system-level SLI metrics."
+        ]
+      },
+      {
+        "title": "Cluster monitoring guidelines \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example: in production, trigger an event notification if the write clientrequest latency value of 99thPercentile is 5 seconds for 3 minutes Cloud Monitoring dashboard MQL query : fetch k8s container metric 'apigee.googleapis.com/cassandra/clientrequest latency' filter (metric.scope == 'Write' && metric.unit == '99thPercentile') group by 1m, [value clientrequest latency mean: mean(value.clientrequest latency)] every 1m group by [metric.scope, metric.unit], [value clientrequest latency mean aggregate: aggregate(value clientrequest latency mean)] Apigee Control plane Apigee Synchronizer service SLI metrics provide request and response counts and latencies between the Apigee control plane and the Hybrid runtime plane.",
+          "Cloud Monitoring dashboard MQL query : fetch k8s container metric 'kubernetes.io/container/restart count' filter (resource.container name = '. cassandra. ' && resource.namespace name == 'apigee') align rate(1m) every 1m group by [resource.cluster name, resource.namespace name, resource.pod name, resource.container name], [value restart count aggregate: aggregate(value.restart count)] Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Cloud Monitoring dashboard MQL query : fetch k8s container metric 'apigee.googleapis.com/upstream/response count' filter (resource.container name == 'apigee-synchronizer') && (metric.response code != '200' && metric.type == 'CONTRACT') align rate(1m) every 1m group by [metric.method, metric.response code, metric.type, resource.container name], [value response count aggregate: aggregate(value.response count)] Infrastructure GKE and other Kubernetes platforms provide system-level SLI metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "kubernetes.io",
+      "metric.method",
+      "metric.percentile",
+      "metric.policy",
+      "metric.response",
+      "metric.scope",
+      "metric.type",
+      "metric.unit",
+      "resource.cluster",
+      "resource.container",
+      "resource.namespace",
+      "resource.pod",
+      "v1.10",
+      "v1.11",
+      "v1.12",
+      "v1.13",
+      "v1.14",
+      "value.clientrequest",
+      "value.latencies",
+      "value.response",
+      "value.restart"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/getting-started-apihub",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.14/cluster-monitoring-guidelines",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.10/cluster-monitoring-guidelines"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.329Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

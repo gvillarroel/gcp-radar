@@ -1,0 +1,259 @@
+{
+  "feature_name": "ComputeDisk interface field",
+  "feature_slug": "computedisk-interface-field",
+  "summary": "The spec.interface field on ComputeDisk resources is deprecated and no longer used by the API; ComputeDisk supports the interface field; deprecated on 2021-10-01.",
+  "extended_definition": "The spec.interface field on ComputeDisk resources is deprecated and no longer used by the API; ComputeDisk supports the interface field; deprecated on 2021-10-01.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-10",
+    "deprecation_date": "2021-10-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Configure the cluster-level or namespace-level stateIntoSpec override When installing Config Connector, or updating the Config Connector installation, you can configure the cluster-level or namespace-level stateIntoSpec override to be Absent in the ConfigConnector CR or ConfigConnectorContext CR. spec : stateIntoSpec : Absent This makes Absent the default spec fields populating behavior for any new resources created in the cluster or in the namespace when you don't specify the cnrm.cloud.google.com/state-into-spec annotation in the new resource YAMLs.",
+          "It means Config Connector will skip populating unspecified fields into the Kubernetes resource spec for these resources."
+        ]
+      },
+      {
+        "title": "ComputeInstance | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "source_id": "feature-recovery-http",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "ComputeInstance | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Sample YAML(s) Cloud Machine Instance # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstance metadata : annotations : cnrm.cloud.google.com/allow-stopping-for-update : \"true\" name : computeinstance-sample-cloudmachine labels : created-from : \"image\" network-type : \"subnetwork\" spec : machineType : n1-standard-1 zone : us-west1-a bootDisk : initializeParams : size : 24 type : pd-ssd sourceImageRef : external : debian-cloud/debian-11 networkInterface : - subnetworkRef : name : computeinstance-dep-cloudmachine aliasIpRange : - ipCidrRange : /24 subnetworkRangeName : cloudrange attachedDisk : - sourceDiskRef : name : computeinstance-dep1-cloudmachine mode : READ_ONLY deviceName : proxycontroldisk diskEncryptionKeyRaw : valueFrom : secretKeyRef : name : computeinstance-dep-cloudmachine key : diskEncryptionKey - sourceDiskRef : name : computeinstance-dep2-cloudmachine mode : READ_WRITE deviceName : persistentdisk minCpuPlatform : \"Intel Skylake\" serviceAccount : serviceAccountRef : name : inst-dep-cloudmachine scopes : - compute-rw - logging-write --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeDisk metadata : name : computeinstance-dep1-cloudmachine spec : description : a sample encrypted, blank disk physicalBlockSizeBytes : 4096 size : 1 type : pd-ssd location : us-west1-a diskEncryptionKey : rawKey : valueFrom : secretKeyRef : name : computeinstance-dep-cloudmachine key : diskEncryptionKey --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeDisk metadata : name : computeinstance-dep2-cloudmachine spec : size : 1 type : pd-ssd location : us-west1-a --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeinstance-dep-cloudmachine spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computeinstance-dep-cloudmachine spec : networkRef : name : computeinstance-dep-cloudmachine ipCidrRange : 10.2.0.0/16 region : us-west1 secondaryIpRange : - rangeName : cloudrange ipCidrRange : 10.3.16.0/20 --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : name : inst-dep-cloudmachine --- apiVersion : v1 kind : Secret metadata : name : computeinstance-dep-cloudmachine stringData : diskEncryptionKey : \"SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0=\" Instance From Template # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstance metadata : annotations : cnrm.cloud.google.com/allow-stopping-for-update : \"false\" name : computeinstance-sample-fromtemplate labels : created-from : \"template\" override-type : \"largermachine\" spec : machineType : n1-standard-2 instanceTemplateRef : name : computeinstance-dep-fromtemplate zone : us-west1-c --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeDisk metadata : name : computeinstance-dep-fromtemplate spec : physicalBlockSizeBytes : 4096 size : 1 type : pd-ssd location : us-west1-c --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstanceTemplate metadata : name : computeinstance-dep-fromtemplate spec : machineType : n1-standard-1 region : us-west1 disk : - sourceDiskRef : name : computeinstance-dep-fromtemplate boot : true networkInterface : - networkRef : name : computeinstance-dep-fromtemplate --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeinstance-dep-fromtemplate spec : routingMode : REGIONAL autoCreateSubnetworks : true Instance With Networkipref # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstance metadata : annotations : cnrm.cloud.google.com/allow-stopping-for-update : \"true\" name : computeinstance-sample-networkipref labels : label-one : \"value-one\" spec : description : an basic instance example machineType : n1-standard-1 zone : us-west1-a bootDisk : sourceDiskRef : name : computeinstance-dep1-networkipref autoDelete : false attachedDisk : - sourceDiskRef : name : computeinstance-dep2-networkipref serviceAccount : serviceAccountRef : name : inst-dep-networkipref scopes : - cloud-platform networkInterface : - networkRef : name : computeinstance-dep-networkipref networkIpRef : kind : ComputeAddress name : computeinstance-dep-networkipref metadataStartupScript : \"echo hi > /test.txt\" metadata : - key : foo value : bar - key : bar value : baz scheduling : preemptible : true automaticRestart : false onHostMaintenance : TERMINATE --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : computeinstance-dep-networkipref spec : description : a external address for the test compute instance location : us-west1 addressType : INTERNAL purpose : GCE_ENDPOINT --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeDisk metadata : name : computeinstance-dep1-networkipref spec : location : us-west1-a imageRef : external : debian-cloud/debian-11 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeDisk metadata : name : computeinstance-dep2-networkipref spec : description : \"an attached disk for Compute Instance\" location : us-west1-a --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeinstance-dep-networkipref spec : routingMode : REGIONAL autoCreateSubnetworks : true --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : name : inst-dep-networkipref Network Worker Instance # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeInstance metadata : annotations : cnrm.cloud.google.com/allow-stopping-for-update : \"false\" name : computeinstance-sample-networkworker labels : created-from : \"disk\" network-type : \"global\" spec : machineType : n1-standard-1 zone : us-west2-a bootDisk : sourceDiskRef : name : computeinstance-dep-networkworker autoDelete : false deviceName : proxycontroldisk mode : READ_ONLY diskEncryptionKeyRaw : valueFrom : secretKeyRef : name : computeinstance-dep-networkworker key : diskEncryptionKey networkInterface : - networkRef : name : computeinstance-dep-networkworker subnetworkRef : name : computeinstance-dep-networkworker networkIp : \"10.2.0.4\" accessConfig : - natIpRef : name : computeinstance-dep-networkworker scratchDisk : - interface : SCSI - interface : NVME scheduling : preemptible : true automaticRestart : false onHostMaintenance : TERMINATE canIpForward : true --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeAddress metadata : name : computeinstance-dep-networkworker spec : description : a sample external address location : us-west2 --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeDisk metadata : name : computeinstance-dep-networkworker spec : description : a sample encrypted, blank disk physicalBlockSizeBytes : 4096 size : 1 type : pd-ssd location : us-west2-a diskEncryptionKey : rawKey : valueFrom : secretKeyRef : name : computeinstance-dep-networkworker key : diskEncryptionKey --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeNetwork metadata : name : computeinstance-dep-networkworker spec : routingMode : REGIONAL autoCreateSubnetworks : false --- apiVersion : compute.cnrm.cloud.google.com/v1beta1 kind : ComputeSubnetwork metadata : name : computeinstance-dep-networkworker spec : ipCidrRange : 10.2.0.0/16 region : us-west2 description : a sample subnetwork privateIpGoogleAccess : false networkRef : name : computeinstance-dep-networkworker logConfig : aggregationInterval : INTERVAL_10_MIN flowSampling : 0.5 metadata : INCLUDE_ALL_METADATA --- apiVersion : v1 kind : Secret metadata : name : computeinstance-dep-networkworker stringData : diskEncryptionKey : \"SGVsbG8gZnJvbSBHb29nbGUgQ2xvdWQgUGxhdGZvcm0=\" Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "ComputeInstance Property Value Google Cloud Service Name Compute Engine Google Cloud Service Documentation /compute/docs/ Google Cloud REST Resource Name v1.instances Google Cloud REST Resource Documentation /compute/docs/reference/rest/v1/instances Config Connector Resource Short Names gcpcomputeinstance gcpcomputeinstances computeinstance Config Connector Service Name compute.googleapis.com Config Connector Resource Fully Qualified Name computeinstances.compute.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions Yes Supports IAM Audit Configs No IAM External Reference Format projects/{{project}}/zones/{{zone}}/instances/{{name}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/allow-stopping-for-update cnrm.cloud.google.com/project-id Spec Schema advancedMachineFeatures : enableNestedVirtualization : boolean threadsPerCore : integer visibleCoreCount : integer attachedDisk : - deviceName : string diskEncryptionKeyRaw : value : string valueFrom : secretKeyRef : key : string name : string diskEncryptionKeySha256 : string kmsKeyRef : external : string name : string namespace : string mode : string sourceDiskRef : external : string name : string namespace : string bootDisk : autoDelete : boolean deviceName : string diskEncryptionKeyRaw : value : string valueFrom : secretKeyRef : key : string name : string diskEncryptionKeySha256 : string initializeParams : labels : {} resourceManagerTags : {} size : integer sourceImageRef : external : string name : string namespace : string type : string kmsKeyRef : external : string name : string namespace : string mode : string sourceDiskRef : external : string name : string namespace : string canIpForward : boolean confidentialInstanceConfig : enableConfidentialCompute : boolean deletionProtection : boolean description : string desiredStatus : string enableDisplay : boolean guestAccelerator : - count : integer type : string hostname : string instanceTemplateRef : external : string name : string namespace : string machineType : string metadata : - key : string value : string metadataStartupScript : string minCpuPlatform : string networkInterface : - accessConfig : - natIpRef : external : string name : string namespace : string networkTier : string publicPtrDomainName : string aliasIpRange : - ipCidrRange : string subnetworkRangeName : string internalIpv6PrefixLength : integer ipv6AccessConfig : - externalIpv6 : string externalIpv6PrefixLength : string name : string networkTier : string publicPtrDomainName : string ipv6AccessType : string ipv6Address : string name : string networkIp : string networkIpRef : external : string kind : string name : string namespace : string networkRef : external : string name : string namespace : string nicType : string queueCount : integer stackType : string subnetworkProject : string subnetworkRef : external : string name : string namespace : string networkPerformanceConfig : totalEgressBandwidthTier : string params : resourceManagerTags : {} reservationAffinity : specificReservation : key : string values : - string type : string resourceID : string resourcePolicies : - external : string name : string namespace : string scheduling : automaticRestart : boolean instanceTerminationAction : string localSsdRecoveryTimeout : nanos : integer seconds : integer maintenanceInterval : string maxRunDuration : nanos : integer seconds : integer minNodeCpus : integer nodeAffinities : - value : {} onHostMaintenance : string preemptible : boolean provisioningModel : string scratchDisk : - interface : string size : integer serviceAccount : scopes : - string serviceAccountRef : external : string name : string namespace : string shieldedInstanceConfig : enableIntegrityMonitoring : boolean enableSecureBoot : boolean enableVtpm : boolean tags : - string zone : string Fields advancedMachineFeatures Optional object Controls for advanced machine-related behavior features. advancedMachineFeatures.enableNestedVirtualization Optional boolean Whether to enable nested virtualization or not. advancedMachineFeatures.threadsPerCore Optional integer The number of threads per physical core."
+        ]
+      },
+      {
+        "title": "Config Connector resources \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resources",
+        "source_id": "site-docs-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud Product Config Connector Resource Name Access Context Manager AccessContextManagerAccessLevel Access Context Manager AccessContextManagerAccessPolicy Access Context Manager AccessContextManagerServicePerimeter Access Context Manager AccessContextManagerServicePerimeterResource AlloyDB for PostgreSQL AlloyDBBackup AlloyDB for PostgreSQL AlloyDBCluster AlloyDB for PostgreSQL AlloyDBInstance AlloyDB for PostgreSQL AlloyDBUser API Gateway APIGatewayAPI Apigee ApigeeEndpointAttachment Apigee ApigeeEnvgroup Apigee ApigeeEnvgroupAttachment Apigee ApigeeEnvironment Apigee ApigeeInstance Apigee ApigeeInstanceAttachment Apigee ApigeeOrganization App Hub AppHubApplication Artifact Registry ArtifactRegistryRepository BigQuery sharing BigQueryAnalyticsHubDataExchange BigQuery sharing BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection Backup and DR BackupDRBackupPlan Backup and DR BackupDRBackupPlanAssociation Backup and DR BackupDRBackupVault BigQuery BigQueryDataset BigQuery BigQueryJob BigQuery BigQueryRoutine BigQuery BigQueryTable BigQuery BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQuery Reservation BigQueryReservationReservation Cloud Billing Budget Bigtable BigtableAppProfile Bigtable BigtableGCPolicy Bigtable BigtableInstance Bigtable BigtableTable Cloud Billing Budget BillingBudgetsBudget Binary Authorization BinaryAuthorizationAttestor Binary Authorization BinaryAuthorizationPolicy Cloud Build CloudBuildTrigger Cloud Build CloudBuildWorkerPool Cloud Asset Inventory AssetFeed Cloud Asset Inventory AssetSavedQuery Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings Cloud Quotas APIQuotaPreference Cloud Run functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup Cloud Identity CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Certificate Manager CertificateManagerCertificate Certificate Manager CertificateManagerCertificateMap Certificate Manager CertificateManagerCertificateMapEntry Certificate Manager CertificateManagerDNSAuthorization Compute Engine ComputeAddress Compute Engine ComputeBackendBucket Compute Engine ComputeBackendService Compute Engine ComputeDisk Compute Engine ComputeExternalVPNGateway Compute Engine ComputeFirewall Compute Engine ComputeFirewallPolicy Compute Engine ComputeFirewallPolicyAssociation Compute Engine ComputeFirewallPolicyRule Compute Engine ComputeForwardingRule Compute Engine ComputeHealthCheck Compute Engine ComputeHTTPHealthCheck Compute Engine ComputeHTTPSHealthCheck Compute Engine ComputeImage Compute Engine ComputeInstance Compute Engine ComputeInstanceGroup Compute Engine ComputeInstanceGroupManager Compute Engine ComputeInstanceTemplate Compute Engine ComputeInterconnectAttachment Compute Engine ComputeManagedSSLCertificate Compute Engine ComputeNetwork Compute Engine ComputeNetworkEndpointGroup Compute Engine ComputeNetworkFirewallPolicy Compute Engine ComputeNetworkFirewallPolicyAssociation Compute Engine ComputeNetworkPeering Compute Engine ComputeNodeGroup Compute Engine ComputeNodeTemplate Compute Engine ComputePacketMirroring Compute Engine ComputeProjectMetadata Compute Engine ComputeRegionNetworkEndpointGroup Compute Engine ComputeReservation Compute Engine ComputeResourcePolicy Compute Engine ComputeRoute Compute Engine ComputeRouter Compute Engine ComputeRouterInterface Compute Engine ComputeRouterNAT Compute Engine ComputeRouterPeer Compute Engine ComputeSecurityPolicy Compute Engine ComputeServiceAttachment Compute Engine ComputeSharedVPCHostProject Compute Engine ComputeSharedVPCServiceProject Compute Engine ComputeSnapshot Compute Engine ComputeSSLCertificate Compute Engine ComputeSSLPolicy Compute Engine ComputeSubnetwork Compute Engine ComputeTargetGrpcProxy Compute Engine ComputeTargetHttpProxy Compute Engine ComputeTargetHttpsProxy Compute Engine ComputeTargetInstance Compute Engine ComputeTargetPool Compute Engine ComputeTargetSslProxy Compute Engine ComputeTargetTcpProxy Compute Engine ComputeTargetVPNGateway Compute Engine ComputeURLMap Compute Engine ComputeVPNGateway Compute Engine ComputeVPNTunnel Config Controller ConfigControllerInstance Artifact Analysis ContainerAnalysisNote Data Catalog DataCatalogPolicyTag Data Catalog DataCatalogTaxonomy Dataflow DataflowJob Dataflow DataflowFlexTemplateJob Dataform DataformRepository Cloud Data Fusion DatafusionInstance Managed Service for Apache Spark DataprocAutoscalingPolicy Managed Service for Apache Spark DataprocCluster Managed Service for Apache Spark DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Cloud Data Loss Prevention DLPDeidentifyTemplate Cloud Data Loss Prevention DLPInspectTemplate Cloud Data Loss Prevention DLPJobTrigger Cloud Data Loss Prevention DLPStoredInfoType Cloud DNS DNSManagedZone Cloud DNS DNSPolicy Cloud DNS DNSRecordSet Google Distributed Cloud EdgeContainerCluster Google Distributed Cloud EdgeContainerNodePool Google Distributed Cloud EdgeContainerVPNConnection Google Distributed Cloud EdgeNetworkNetwork Google Distributed Cloud EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact Eventarc EventarcTrigger Filestore FilestoreBackup Filestore FilestoreInstance Firestore FirestoreDatabase Firestore FirestoreIndex GKE attached clusters ContainerAttachedCluster GKE Hub GKEHubMembership GKE Hub GKEHubFeature GKE Hub GKEHubFeatureMembership Google Kubernetes Engine ContainerCluster Google Kubernetes Engine ContainerNodePool Identity and Access Management IAMAccessBoundaryPolicy Identity and Access Management IAMAuditConfig Identity and Access Management IAMCustomRole Identity and Access Management IAMPartialPolicy Identity and Access Management IAMPolicy Identity and Access Management IAMPolicyMember Identity and Access Management IAMServiceAccount Identity and Access Management IAMServiceAccountKey Identity and Access Management IAMWorkforcePool Identity and Access Management IAMWorkforcePoolProvider Identity and Access Management IAMWorkloadIdentityPool Identity and Access Management IAMWorkloadIdentityPoolProvider Identity-Aware Proxy IAPBrand Identity-Aware Proxy IAPIdentityAwareProxyClient Identity-Aware Proxy IAPSettings Identity Platform IdentityPlatformOAuthIDPConfig Identity Platform IdentityPlatformConfig Identity Platform IdentityPlatformTenant Identity Platform IdentityPlatformTenantOAuthIDPConfig Cloud Key Management Service KMSCryptoKey Cloud Key Management Service KMSKeyRing Cloud Key Management Service KMSAutokeyConfig Cloud Key Management Service KMSImportJob Cloud Key Management Service KMSKeyHandle Cloud Logging LoggingLink Cloud Logging LoggingLogBucket Cloud Logging LoggingLogExclusion Cloud Logging LoggingLogMetric Cloud Logging LoggingLogSink Cloud Logging LoggingLogView Google Cloud Managed Service for Apache Kafka ManagedKafkaCluster Google Cloud Managed Service for Apache Kafka ManagedKafkaTopic Memorystore for Memcached MemcacheInstance Memorystore for Valkey MemorystoreInstance Cloud Monitoring MonitoringAlertPolicy Cloud Monitoring MonitoringDashboard Cloud Monitoring MonitoringGroup Cloud Monitoring MonitoringMetricDescriptor Cloud Monitoring MonitoringMonitoredProject Cloud Monitoring MonitoringNotificationChannel Cloud Monitoring MonitoringService Cloud Monitoring MonitoringServiceLevelObjective Cloud Monitoring MonitoringUptimeCheckConfig Network Connectivity NetworkConnectivityHub Network Connectivity NetworkConnectivitySpoke Notebooks NotebooksInstance OS Config OSConfigGuestPolicy OS Config OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Private CA PrivateCACAPool Private CA PrivateCACertificate Private CA PrivateCACertificateAuthority Private CA PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema Pub/Sub PubSubSnapshot Pub/Sub PubSubSubscription Pub/Sub PubSubTopic Pub/Sub Lite PubSubLiteReservation Memorystore RedisCluster Memorystore RedisInstance reCAPTCHA RecaptchaEnterpriseKey Resource Manager Folder Resource Manager Project Resource Manager ResourceManagerLien Resource Manager ResourceManagerPolicy Cloud Run RunJob Cloud Run RunService Secret Manager SecretManagerSecret Secret Manager SecretManagerSecretVersion Secure Source Manager SecureSourceManagerInstance Secure Source Manager SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint Service Directory ServiceDirectoryNamespace Service Directory ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service Service Usage ServiceIdentity Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass Speech-to-Text SpeechPhraseSet Speech-to-Text SpeechRecognizer Spanner SpannerBackupSchedule Spanner SpannerDatabase Spanner SpannerInstance Cloud SQL SQLDatabase Cloud SQL SQLInstance Cloud SQL SSLCert Cloud SQL SQLUser Cloud Storage StorageAnywhereCache Cloud Storage StorageBucket Cloud Storage StorageBucketAccessControl Cloud Storage StorageDefaultObjectAccessControl Cloud Storage StorageNotification Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding Tags TagsTagBinding Tags TagsTagKey Tags TagsTagValue Cloud Service Mesh NetworkSecurityAuthorizationPolicy Cloud Service Mesh NetworkSecurityClientTLSPolicy Cloud Service Mesh NetworkSecurityServerTLSPolicy Cloud Service Mesh NetworkServicesEndpointPolicy Cloud Service Mesh NetworkServicesGateway Cloud Service Mesh NetworkServicesGRPCRoute Cloud Service Mesh NetworkServicesHTTPRoute Cloud Service Mesh NetworkServicesMesh Cloud Service Mesh NetworkServicesTCPRoute Cloud Service Mesh NetworkServicesTLSRoute Vertex AI VertexAIDataset Vertex AI VertexAIEndpoint Vertex AI VertexAIIndex Vertex AI VertexAIMetadataStore Google Cloud VMware Engine VMwareEngineExternalAddress Serverless VPC Access VPCAccessConnector Cloud Workstations WorkstationCluster Cloud Workstations WorkstationConfig Cloud Workstations Workstation The following resources are not supported in Config Connector starting from the corresponding version: Google Cloud Product Config Connector Resource Name Deprecation Version Game Servers Realm GameServicesRealm 1.101.0 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "All Config Connector resources have a Kubernetes API group of cnrm.cloud.google.com .",
+          "Config Connector resources Config Connector supports the following resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "compute.cnrm.cloud.google.com",
+      "compute.googleapis.com",
+      "computeinstances.compute.cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "spec.interface",
+      "test.txt",
+      "v1.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/compute/computeinstance",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:20.276Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

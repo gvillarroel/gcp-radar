@@ -1,0 +1,171 @@
+{
+  "feature_name": "Apache Iceberg resource management in BigQuery metastore",
+  "feature_slug": "apache-iceberg-resource-management-in-bigquery-metastore",
+  "summary": "BigQuery metastore now supports creating, viewing, modifying, and deleting Apache Iceberg resources.",
+  "extended_definition": "BigQuery metastore now supports creating, viewing, modifying, and deleting Apache Iceberg resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+      "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+      "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate Apache Hive Metastore tables to Google Cloud \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Hive Metastore migration connector supports files stored in the following data sources: Apache Hadoop Distributed File System (HDFS) Amazon Simple Storage Service (Amazon S3) Azure Blob Storage or Azure Data Lake Storage Gen2 With the Hive Metastore migration connector, you can use Cloud Storage as the file storage and register your Hive Metastore tables with one of the following metastores: BigLake metastore Iceberg REST Catalog We recommend using the BigLake metastore Iceberg REST Catalog for all your Iceberg data.",
+          "Migrate Apache Hive Metastore tables to Google Cloud This document shows you how to migrate your Iceberg and Hive tables managed by Apache Hive Metastore to Google Cloud using the BigQuery Data Transfer Service .",
+          "The Apache Hive Metastore migration connector in the BigQuery Data Transfer Service lets you seamlessly migrate your Hive Metastore tables to Google Cloud at scale."
+        ]
+      },
+      {
+        "title": "Create and manage resources in BigLake metastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "source_id": "site-docs-reference-5",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TABLE ( id bigint , data string ) USING iceberg ; Replace the following: SPARK CATALOG : the name of your Spark catalog NAMESPACE : the name of your namespace TABLE : the name of your new table Terraform resource \"google bigquery table\" \"default\" { deletion protection = false dataset id = google bigquery dataset.default.dataset id table id = \" TABLE \" external catalog table options { storage descriptor { location uri = \" STORAGE URI \" input format = \"org.apache.hadoop.mapred.FileInputFormat\" output format = \"org.apache.hadoop.mapred.FileOutputFormat\" } parameters = { \"table type\" = \"iceberg\" \"metadata location\" = \" METADATA URI \" \"write.parquet.compression-codec\" : \"zstd\" \"EXTERNAL\" : \"TRUE\" } } } Replace the following: TABLE : the name of the target table.",
+          "Enable the APIs Required roles To get the permissions that you need to manage Iceberg resources in BigLake metastore, ask your administrator to grant you the following IAM roles on your project: BigQuery Data Editor ( roles/bigquery.dataEditor ) Storage Object User ( roles/storage.objectUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "NAMESPACE ; Replace the following: SPARK CATALOG : the name of your Spark catalog NAMESPACE : the name of your new namespace Terraform provider \"google\" { project = \" PROJECT ID \" } resource \"google bigquery dataset\" \"default\" { dataset id = \" DATASET ID \" location = \" LOCATION \" external catalog dataset options { default storage location uri = \" URI \" parameters = { ... } } } Replace the following: PROJECT ID : the ID of the project that contains your target dataset DATASET ID : the ID of your target dataset LOCATION : the BigQuery location that you want to create the dataset in URI : the Cloud Storage URI for all tables in the dataset Create Iceberg tables Select one of the following options: API Use the tables.insert method , and specify the ExternalCatalogTableOptions field in the table resource that you pass in. { \"tableReference\" : { \"projectId\" : \" PROJECT ID \" , \"datasetId\" : \" DATASET ID \" , \"tableId\" : \" TABLE ID \" }, \"externalCatalogTableOptions\" : { \"parameters\" : { \"table type\" : \"iceberg\" , \"metadata location\" : \" METADATA URI \" }, \"connection id\" : \" CONNECTION ID \" } } Replace the following: PROJECT ID : the ID of the project that contains your target table."
+        ]
+      },
+      {
+        "title": "Use the BigLake metastore Iceberg REST catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog",
+        "source_id": "site-docs-reference-5",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable the API Required roles To get the permissions that you need to use the Iceberg REST catalog in BigLake metastore, ask your administrator to grant you the following IAM roles: Perform administrative tasks, such as managing catalog user access, storage access, and the catalog's credential vending mode: BigLake Admin ( roles/biglake.admin ) on the project Storage Admin ( roles/storage.admin ) on the Cloud Storage bucket Read table data in credential vending mode: BigLake Viewer ( roles/biglake.viewer ) on the project Write table data in credential vending mode: BigLake Editor ( roles/biglake.editor ) on the project Read catalog resources and table data in non-credential vending mode: BigLake Viewer ( roles/biglake.viewer ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the Cloud Storage bucket Manage catalog resources and write table data in non-credential vending mode: BigLake Editor ( roles/biglake.editor ) on the project Storage Object User ( roles/storage.objectUser ) on the Cloud Storage bucket Perform data manipulation language (DML) operations with BigQuery catalog federation: BigQuery Data Editor ( roles/bigquery.dataEditor ) on the project Storage Admin ( roles/storage.admin ) on the Cloud Storage bucket.",
+          "The following are the general steps to follow when using the Apache Iceberg REST catalog in BigLake metastore: Based on the Iceberg REST catalog overview , choose your catalog warehouse location (either Cloud Storage or BigQuery).",
+          "The following is an example of how to configure Apache Spark to use the BigLake metastore Iceberg REST catalog. import pyspark from pyspark.context import SparkContext from pyspark.sql import SparkSession catalog name = \" CATALOG NAME \" spark = SparkSession . builder . appName ( \" APP NAME \" ) \\ . config ( f 'spark.sql.catalog. { catalog name } ' , 'org.apache.iceberg.spark.SparkCatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .type' , 'rest' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .uri' , 'https://biglake.googleapis.com/iceberg/v1/restcatalog' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .warehouse' , ' WAREHOUSE PATH ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .header.x-goog-user-project' , ' PROJECT ID ' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest.auth.type' , 'org.apache.iceberg.gcp.auth.GoogleAuthManager' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .io-impl' , 'org.apache.iceberg.gcp.gcs.GCSFileIO' ) \\ . config ( f 'spark.sql.catalog. { catalog name } .rest-metrics-reporting-enabled' , 'false' ) \\ . config ( 'spark.sql.extensions' , 'org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions' ) \\ . config ( 'spark.sql.defaultCatalog' , ' CATALOG NAME ' ) \\ . getOrCreate () Replace the following: CATALOG NAME : the name of your Iceberg REST catalog."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "biglake.admin",
+      "biglake.editor",
+      "biglake.googleapis.com",
+      "biglake.viewer",
+      "bigquery.dataEditor",
+      "dataset.default.dataset",
+      "header.x",
+      "org.apache.hadoop.mapred.FileInputFormat",
+      "org.apache.hadoop.mapred.FileOutputFormat",
+      "org.apache.iceberg.gcp.auth.GoogleAuthManager",
+      "org.apache.iceberg.gcp.gcs.GCSFileIO",
+      "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions",
+      "org.apache.iceberg.spark.SparkCatalog",
+      "pyspark.context",
+      "pyspark.sql",
+      "rest.auth.type",
+      "spark.sql.catalog",
+      "spark.sql.defaultCatalog",
+      "spark.sql.extensions",
+      "storage.admin",
+      "storage.objectUser",
+      "storage.objectViewer",
+      "tables.insert",
+      "write.parquet.compression"
+    ],
+    "missing_inventory_roles": [
+      "roles/biglake.admin",
+      "roles/biglake.editor",
+      "roles/biglake.viewer",
+      "roles/bigquery.dataEditor",
+      "roles/storage.admin",
+      "roles/storage.objectUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-manage-resources",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "https://docs.cloud.google.com/bigquery/docs/blms-rest-catalog"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

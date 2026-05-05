@@ -1,0 +1,198 @@
+{
+  "feature_name": "GKE Gateway extensions",
+  "feature_slug": "gke-gateway-extensions",
+  "summary": "GKE Gateway now supports using extensions to insert custom logic into the load balancing processing path.",
+  "extended_definition": "GKE Gateway now supports using extensions to insert custom logic into the load balancing processing path.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-extensions/docs/callouts-overview",
+      "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+      "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+      "https://docs.cloud.google.com/service-extensions/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure an extension to call a Google service \\_|\\_ Service Extensions\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "source_id": "site-docs-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the sample values provided. cat >traffic callout service.yaml <<EOF apiVersion : networking.gke.io/v1 kind : GCPTrafficExtension metadata : name : traffic-ext spec : targetRefs : - group : \"gateway.networking.k8s.io\" kind : Gateway name : inference-gateway extensionChains : - name : \"chain1-model-armor\" matchCondition : celExpressions : - celMatcher : 'request.path == \"/v1/chat/completions\"' extensions : - name : extension-chain-1-model-armor googleAPIServiceName : modelarmor.us-central1.rep.googleapis.com failOpen : true supportedEvents : - RequestHeaders - RequestBody - RequestTrailers - ResponseHeaders - ResponseBody - ResponseTrailers timeout : 1s metadata : model armor settings : '[ { \"model\": \" MODEL NAME \", \"model response template id\": \"projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ RESPONSE TEMPLATE \", \"user prompt template id\": \"projects/ TEMPLATE PROJECT ID /locations/ LOCATION /templates/ PROMPT TEMPLATE \" } ]' EOF Replace the following: MODEL NAME : the name of the model as configured with the InferenceModel resource —for example, meta-llama/Llama-3.1-8B-Instruct TEMPLATE PROJECT ID : the project ID of the Model Armor templates LOCATION : the location of the Model Armor template—for example, us-central1 RESPONSE TEMPLATE : the response template for the model to use PROMPT TEMPLATE : the prompt template for the model to use In the metadata field, specify the Model Armor settings and templates to be used while screening prompts and responses corresponding to specific models.",
+          "Use the gcloud service-extensions lb-traffic-extensions import command with the following sample values. gcloud service-extensions lb-traffic-extensions import traffic-ext \\ --source=traffic callout service.yaml \\ --location=us-central1 kubectl If you are using a GKE version earlier than v1.32.2-gke.1182001, install the traffic extension CRD: kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/gke-gateway-api/refs/heads/main/config/crd/networking.gke.io gcptrafficextensions.yaml Define the extension in a YAML file.",
+          "Configure a traffic extension to call the Model Armor service You can configure a traffic extension to call Model Armor to uniformly enforce security policies on generative AI inference traffic to application load balancers, including GKE Inference Gateway ."
+        ]
+      },
+      {
+        "title": "Service Extensions overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "GKE extensions The Google Kubernetes Engine (GKE) Gateway supports using extensions to add custom code into the load balancing processing path.",
+          "For more information, see Customize GKE Gateway traffic routing using Service Extensions .",
+          "You can configure an extension to call Model Armor to uniformly enforce security policies on inference traffic on application load balancers, including GKE Inference Gateway ."
+        ]
+      },
+      {
+        "title": "\"Manage resources by using custom constraints \\_|\\_ Service Extensions \\_\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "source_id": "site-docs-reference",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Benefits You can use custom organization policies with Service Extensions to do the following: Allow only one type of the load balancing scheme Disallow certain supported events types Restrict the number of extension chains and extensions Before you begin Ensure that you know your organization ID .",
+          "Home Documentation Networking Service Extensions Guides Send feedback Manage resources by using custom constraints Stay organized with collections Save and categorize content based on your preferences.",
+          "Test the policy Test the policy by creating a Cloud Load Balancing traffic extension with the supportedEvents field set to REQUEST BODY : gcloud service-extensions lb-traffic-extensions import TRAFFIC EXTENSION NAME \\ --source = PATH TO EXTENSION FILE \\ --location = LOCATION ID Replace the following: TRAFFIC EXTENSION NAME : a unique name for the traffic extension PATH TO EXTENSION FILE : the path of the extension file LOCATION ID : the location of the project The output is similar to the following: ERROR: (gcloud.service-extensions.lb-traffic-extensions.import) FAILED PRECONDITION: Operation denied by org policy on resource 'projects/123456/locations/global/lbTrafficExtensions/trafficExtension1': [\"customConstraints/custom.prohibitBodyModifyingEvents\": \"Deny traffic extensions that are called for REQUEST BODY or RESPONSE BODY.\"]."
+        ]
+      },
+      {
+        "title": "\"Cloud Load Balancing callouts overview \\_|\\_ Service Extensions \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/callouts-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Configure a user-managed callout backend service A callout backend service is a prerequisite to configuring route, authorization, and user-managed traffic extensions by using callouts.",
+          "Supported backends for user-managed callout backend services You can host user-managed callout extensions on a backend service that uses one of the following types of backends that run Envoy gRPC services: All managed and unmanaged instance group backends All zonal NEGs All hybrid connectivity NEGs Private Service Connect NEGs pointing to VPC services Serverless NEGs pointing to Cloud Run services Note: When hosting the extension on Cloud Run, the Cloud Run service must listen on a plaintext gRPC port.",
+          "The following diagram shows how you can deploy the callout backend service with a gRPC server on a user-managed compute resource, such as a VM instance or Google Kubernetes Engine (GKE) cluster, and represent it to the load balancer as a regular backend service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central1.rep.googleapis.com",
+      "chain.extensions.exists",
+      "custom.LbTrafficExtensionDenyBodyEvents",
+      "custom.prohibitBodyModifyingEvents",
+      "event.contains",
+      "events.yaml",
+      "extension.supportedEvents.exists",
+      "extensions.import",
+      "extensions.lb",
+      "gateway.networking.k8s.io",
+      "gcloud.service",
+      "gcptrafficextensions.yaml",
+      "gke.1182001",
+      "modelarmor.us",
+      "networking.gke.io",
+      "networkservices.googleapis.com",
+      "raw.githubusercontent.com",
+      "request.path",
+      "resource.extensionChains.exists",
+      "service.yaml",
+      "v1.32.2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/configure-extensions-to-google-services",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/custom-constraints",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.288Z",
+  "source_step08_card": "data/step-08/current/products/service-extensions/card.json",
+  "product_name": "Service Extensions",
+  "product_slug": "service-extensions"
+}

@@ -1,0 +1,102 @@
+{
+  "feature_name": "SKU-Group Overrides in Repricing Configurations",
+  "feature_slug": "sku-group-overrides-in-repricing-configurations",
+  "summary": "Adds the option to add one override per SKU group in repricing configurations for customer discount or markup customization.",
+  "extended_definition": "Adds the option to add one override per SKU group in repricing configurations for customer discount or markup customization.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+      "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries",
+      "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage repricing configurations \\_|\\_ Channel Services \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add overrides to a custom rule You can use overrides to set repricing configurations for specific SKU groups ( Learn more about SKU Groups ).",
+          "You can use custom repricing configurations to markup or discount direct customer costs, list prices, and specific SKU groups by a set percentage.",
+          "The repricing management pane has a table with the following columns: Active on : The date an upcoming configuration becomes active, the date the current configuration became active, and the date when past configurations were active."
+        ]
+      },
+      {
+        "title": "Google Cloud SKU groups \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Channel Services SKU groups All public SKU groups in addition to the following SKU groups are available for use when you create and manage custom repricing configurations: Third Party Marketplace (Id: 31f47c09-96ff-43dc-912b-bb3808148be2) Google Maps Platform (Id: d56c1f4c-d3bb-4a7b-acb0-8376793b4105) GCP Reseller (Id: 3d50fd57-3157-4577-a5a9-a219b8490041) Marketplace vendor SKU Groups The SKUs in the groups under this category include private SKUs and might not be visible to all partners.",
+          "But there might be individual ISV-level margins available to you via overrides on ISV SKU groups above.",
+          "Elastic Marketplace SKUs (Id: 4935495f-6ae7-44b8-b3b5-e3545492b732) Splunk Marketplace SKUs (Id: d4806ac5-1df1-4a95-9dfc-c22784c3ea0d) MongoDB Marketplace SKUs (Id: 3c98e00f-626d-40b1-8806-678b19ec51f8) Netapp Marketplace SKUs (Id: cd701612-f7a4-436e-ab6f-9398172307b2) Palo Alto Networks Marketplace SKUs (Id: d8938e23-f696-4242-8385-ab3f86e0b0f0) Redis Marketplace SKUs (Id: de0c79ce-c2fd-49bd-b1b2-66277e14b278) Itopia Marketplace SKUs (Id: 2e573702-a404-4d9f-bcb8-67f31faa571d) HashiCorp Marketplace SKUs (Id: 53ce8604-8e0b-4e8a-9540-85f2e5154a03) Third party Marketplace SKU group This group includes product SKUs from third-party software providers."
+        ]
+      },
+      {
+        "title": "\"BigQuery export query examples \\_|\\_ Channel Services \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 64,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The values channel partner cost and credit.channel partner amount show your Repricing configurations.",
+          "The values customer cost and credit.customer amount show your Repricing configurations.",
+          "DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id = ' EXTERNAL BILLING ACCOUNT ID ' AND invoice . month = ' INVOICE MONTH ' GROUP BY domain name , customer id , sku name , sku id , description , order name , start date , end date , po number HAVING amount != 0 ORDER BY domain name , order name , start date , end date ; Other columns of interest to add to SELECT and GROUP BY clauses: billing account id : Represents the Customer Cloud Identity ID. customer name : Represents the customer resource which can be used in API calls. channel partner name : (For distributors) Represents the channel partner. entitlement name : Resource name of the Entitlement in Channel Services. customer correlation id : A Customer Relationship Management (CRM) ID that you can define for a customer. usage.amount : For Google Workspace seat-based usage, this indicates paid seats."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credit.channel",
+      "credit.customer",
+      "usage.amount"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/manage-repricing-configurations",
+        "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.326Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services"
+}

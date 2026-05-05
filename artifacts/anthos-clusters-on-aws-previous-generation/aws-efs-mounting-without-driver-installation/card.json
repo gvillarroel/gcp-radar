@@ -1,0 +1,101 @@
+{
+  "feature_name": "AWS EFS mounting without driver installation",
+  "feature_slug": "aws-efs-mounting-without-driver-installation",
+  "summary": "Anthos clusters on AWS supports mounting AWS Elastic File System file systems without requiring driver installation.",
+  "extended_definition": "Anthos clusters on AWS supports mounting AWS Elastic File System file systems without requiring driver installation.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Storage overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+        "source_id": "site-iam-reference",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuring cluster storage If you want to provision storage volumes with a non-default StorageClass, you can Create a custom StorageClass in a cluster that uses different parameters or a different storage driver.",
+          "Supported in-tree drivers include the following: configMap emptyDir hostPath nfs projected secrets Note: Using a vendor-supported in-tree volume plugin (for example, awsElasticBlockStore ) is not recommended.",
+          "The driver pre-installed with GKE on AWS provides the following StorageClasses by default: standard-rwo (default): Used for provisioning EBS gp2 volumes. premium-rwo : Used for provisioning EBS io1 volumes."
+        ]
+      },
+      {
+        "title": "About surge updates \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates",
+        "source_id": "site-iam-reference",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table shows three example settings, and highlights their impact on the speed of the update and the potential disruption to your workloads: Name Description Configuration Balanced setting (default) Balanced, slower but least disruptive. maxSurge=1, maxUnavailable=0 Rapid updates without extra resources Fast, no surge resources, most disruptive. maxSurge=0, maxUnavailable=20 Rapid updates that are less disruptive Fast, most surge resources and less disruptive. maxSurge=20, maxUnavailable=0 Each of the settings in the table is described in the following sections.",
+          "If GKE on AWS can apply changes to a node pool without having to restart or recreate resources, it will do so to prevent disruptions.",
+          "This additional node incurs charges while it's active, slightly raising the overall expense compared to methods without surge nodes."
+        ]
+      },
+      {
+        "title": "\"Create a VPC and cluster with Terraform \\_|\\_ GKE on AWS \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform",
+        "source_id": "site-docs-root-2",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "To configure your AWS environment and create clusters without using Terraform, see AWS prerequisites overview and the instructions to create a cluster .",
+          "You can configure your AWS environment and create your clusters in it either with Terraform or with the GKE on AWS installation instructions .",
+          "Prerequisites Install the Google Cloud CLI with the Google Cloud CLI installation instructions ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.21",
+      "v1.22"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/storage",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/how-to/create-cluster-with-terraform",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/about-surge-updates"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.966Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation"
+}

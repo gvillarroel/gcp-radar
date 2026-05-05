@@ -1,0 +1,130 @@
+{
+  "feature_name": "Looker Continuous Integration",
+  "feature_slug": "looker-continuous-integration",
+  "summary": "Looker Continuous Integration validates content through CI suites and integrates with GitHub-triggered runs; Looker CI lets you run validators on LookML projects to catch SQL, data test, content, and LookML issues before production.",
+  "extended_definition": "Looker Continuous Integration validates content through CI suites and integrates with GitHub-triggered runs; Looker CI lets you run validators on LookML projects to catch SQL, data test, content, and LookML issues before production.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/action-hub",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Admin settings - Continuous Integration \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+        "source_id": "site-docs-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To automatically run CI suites on your repository, Continuous Integration needs the following permissions: Read access to your repository's metadata and pull requests Read and write access to your repository's commit statuses, repository hooks, and workflows These permissions are not set up when you set up a Git connection for your LookML project in the Looker IDE.",
+          "Home Documentation Data analytics Looker Guides Send feedback Admin settings - Continuous Integration Stay organized with collections Save and categorize content based on your preferences.",
+          "Integrations If you use GitHub as a remote repository for your LookML project, you can configure Continuous Integration to automatically run CI suites when LookML developers submit pull requests to your LookML repository ."
+        ]
+      },
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Looker CI Users role has the following permissions that are required to perform CI runs: deploy : required for setting up the GitHub webhooks that are required for CI runs see ci : required to view the results of CI runs, view the CI Suites page, and run CI suites manage ci : required to create CI suites, manage CI users, and configure the Git connection with Continuous Integration Gemini The Gemini role cannot be renamed or deleted and contains only the gemini in looker permission in its permission set.",
+          "Default permission sets For new installations, Looker includes several default permission sets that you can start with: Permission Set Included Permissions Admin All permissions Developer access data , can create forecast , clear cache refresh , create custom fields , create table calculations , deploy , develop , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see drill overlay , see lookml , see lookml dashboards , see looks , see pdts , see sql , see user dashboards , send to integration , schedule without limit , use sql runner NOTE : The see pdts permission is included in the Developer default permission only for Looker installations that were created with Looker 21.18 or later.",
+          "If you assign the manage project connections restricted permission to a user, the user will be able to see, edit, and create project-scoped connections for any projects included in the model set. see ci develop Instance Wide NN Added 25.6 Users can view the results of Continuous Integration runs, view the Continuous Integration Suites page, and run test suites. manage ci see ci Instance Wide NN Added 25.6 Users can create Continuous Integration suites, manage Continuous Integration users, and configure the git connection with Continuous Integration."
+        ]
+      },
+      {
+        "title": "Sharing data through an action hub \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/action-hub",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "In addition to delivering content to Looker's built-in destinations, you can use actions — also called integrations — to deliver content to third-party services that are integrated with Looker through an action hub server.",
+          "Define a valid value for the user attribute for the users or user groups that need to deliver content to your action destination. (These users must also have send to integration permissions.) The params parameter represents the form fields that a Looker admin must configure on the action's enablement page from the Actions list in the Admin panel.",
+          "Home Documentation Data analytics Looker Guides Send feedback Sharing data through an action hub Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/action-hub"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/action-hub"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/action-hub"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/action-hub"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/action-hub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-ci",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/action-hub"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

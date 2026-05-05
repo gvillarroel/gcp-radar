@@ -1,0 +1,133 @@
+{
+  "feature_name": "Dedicated etcd instance for etcd-events",
+  "feature_slug": "dedicated-etcd-instance-for-etcd-events",
+  "summary": "Adds a separate always-on etcd instance for the etcd-events object.",
+  "extended_definition": "Adds a separate always-on etcd instance for the etcd-events object.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/bmctl-backup-restore",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Back up and restore clusters with bmctl \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/bmctl-backup-restore",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: To improve cluster performance, Google Distributed Cloud uses a separate etcd instance to store Event objects.",
+          "The cluster restore operation creates a new, empty etcd-events instance, so you lose existing Event objects.",
+          "When the restore finishes, use the following steps to verify that it was successful: Run the following commands to verify the node readiness and system pods running with the generated kubeconfig file: There are two types of etcd pods: etcd- HOST NAME , which corresponds to the main etcd Pod etcd-events- HOST NAME , which corresponds to the etcd-events Pod kubectl get pods -n kube-system --kubeconfig GENERATED KUBECONFIG kubectl get nodes --kubeconfig GENERATED KUBECONFIG For each etcd pod, run following to verify etcd healthiness: kubectl exec ETCD POD NAME -n kube-system \\ --kubeconfig GENERATED KUBECONFIG \\ -- /bin/sh -c 'ETCDCTL API=3 etcdctl --endpoints=https://127.0.0.1:2379 \\ --cacert=/etc/kubernetes/pki/etcd/ca.crt --key=/etc/kubernetes/pki/etcd/peer.key \\ --cert=/etc/kubernetes/pki/etcd/peer.crt endpoint health' For a healthy etcd member, the response should look like the following: https://127.0.0.1:2379 is healthy: successfully committed proposal: took = 11.514177ms For each etcd-events Pod, run following command to verify etcd-events healthiness: kubectl exec ETCD EVENTS POD NAME -n kube-system \\ --kubeconfig GENERATED KUBECONFIG \\ -- /bin/sh -c 'ETCDCTL API=3 etcdctl --endpoints=https://127.0.0.1:2382 \\ --cacert=/etc/kubernetes/pki/etcd/ca.crt --key=/etc/kubernetes/pki/etcd/peer.key \\ --cert=/etc/kubernetes/pki/etcd/peer.crt endpoint health' For a healthy etcd-events member, the response should look like the following: https://127.0.0.1:2382 is healthy: successfully committed proposal: took = 14.308148ms Troubleshoot If you have problems with the backup or restore process, the following sections might help you to troubleshoot the issue."
+        ]
+      },
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to prevent workloads from running on a node in the load balancer node pool, add the following taint to the node: node-role.kubernetes.io/load-balancer:NoSchedule Google Distributed Cloud software adds tolerations for this taint to the pods that are required for load balancing.",
+          "When you specify the optional k8sIP address for a node, it's dedicated to handling data and Kubernetes traffic for the node, such as requests and responses for the Kubernetes API, the kubelet, and workloads.",
+          "When you specify the optional k8sIP address for a node, it's dedicated to handling data and Kubernetes traffic for the node, such as requests and responses for the Kubernetes API, the kubelet, and workloads."
+        ]
+      },
+      {
+        "title": "\"Create a user cluster using GKE On-Prem API clients \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api",
+        "source_id": "site-docs-reference-2",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "All the nodes are labeled with cp-node-pool-key=cp-node-pool-value and have the taint dedicated=experimental:PreferNoSchedule . --control-plane-node-configs='node-ip=192.0.2.1' \\ --control-plane-node-configs='node-ip=192.0.2.2,labels=key2.1=value2.1' \\ --control-planer-node-configs='node-ip=192.0.2.3,labels=key3.1=value3.1;key3.2=value3.2' \\ --control-plane-node-labels=cp-node-pool-key=cp-node-pool-value \\ --control-plane-node-taints=dedicated=experimental:PreferNoSchedule \\ Virtual IPs CONTROL PLANE VIP : The IP address that you have chosen to configure on the load balancer for the Kubernetes API server of the user cluster.",
+          "All the nodes are labeled with cp-node-pool-key=cp-node-pool-value and have the taint dedicated=experimental:PreferNoSchedule . --control-plane-node-configs='node-ip=192.0.2.1' \\ --control-plane-node-configs='node-ip=192.0.2.2,labels=key2.1=value2.1' \\ --control-planer-node-configs='node-ip=192.0.2.3,labels=key3.1=value3.1;key3.2=value3.2' \\ --control-plane-node-labels=cp-node-pool-key=cp-node-pool-value \\ --control-plane-node-taints=dedicated=experimental:PreferNoSchedule \\ Virtual IPs CONTROL PLANE VIP : The IP address that you have chosen to configure on the load balancer for the Kubernetes API server of the user cluster.",
+          "All the nodes are labeled with lb-pool-key=lb-pool-value and have the taint dedicated=experimental:PreferNoSchedule , --metal-lb-load-balancer-node-configs='node-ip=192.0.2.1' \\ --metal-lb-load-balancer-node-configs='node-ip=192.0.2.2,labels=key2.1=value2.1' \\ --metal-lb-load-balancer-node-configs='node-ip=192.0.2.3,labels=key3.1=value3.1;key3.2=value3.2' \\ --metal-lb-load-balancer-node-labels=lb-pool-key=lb-pool-value \\ --metal-lb-load-balancer-node-taints=dedicated=experimental:PreferNoSchedule \\ Control plane nodes --control-plane-node-configs : The IPv4 address of a control plane node."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ca.crt",
+      "key2.1",
+      "key3.1",
+      "key3.2",
+      "peer.crt",
+      "peer.key",
+      "role.kubernetes.io",
+      "value2.1",
+      "value3.1",
+      "value3.2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/bmctl-backup-restore",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/bmctl-backup-restore",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/bmctl-backup-restore",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/bmctl-backup-restore",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/bmctl-backup-restore",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/creating-clusters/create-user-cluster-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.225Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal"
+}

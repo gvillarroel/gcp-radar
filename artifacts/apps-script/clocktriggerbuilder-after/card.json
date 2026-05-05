@@ -1,0 +1,94 @@
+{
+  "feature_name": "ClockTriggerBuilder.after",
+  "feature_slug": "clocktriggerbuilder-after",
+  "summary": "ClockTriggerBuilder can now create one-off triggers more easily with after(durationMilliseconds).",
+  "extended_definition": "ClockTriggerBuilder can now create one-off triggers more easily with after(durationMilliseconds).",
+  "lifecycle": {
+    "latest_feature_date": "2013-01-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/triggers",
+      "https://developers.google.com/apps-script/guides/triggers/installable",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Added the method after(durationMilliseconds) to class ClockTriggerBuilder to simplify the creation of one-off triggers.",
+          "Made some modifications to the calculation of CPU time for scripts running on triggers, so that time spent waiting on certain processes is not counted toward that limi April 16, 2012 Fixed Fixed an issue in the Script Editor where the debugger would not terminate after executing the last statement of a script.",
+          "Issue 3533 : The Trigger methods getEventType() and getTriggerSource() no longer throw an exception if the trigger belongs to a spreadsheet created by the new version of Google Sheets ."
+        ]
+      },
+      {
+        "title": "Installable Triggers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers/installable",
+        "source_id": "site-docs-reference",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create this trigger from a standalone script, replace SpreadsheetApp.getActive() with a call to SpreadsheetApp.openById(id) . triggers/triggers.gs View on GitHub / Creates a trigger for when a spreadsheet opens. @see https://developers.google.com/apps-script/guides/triggers/installable / function createSpreadsheetOpenTrigger () { const ss = SpreadsheetApp . getActive (); ScriptApp . newTrigger ( \"myFunction\" ). forSpreadsheet ( ss ). onOpen (). create (); } To programmatically modify an existing installable trigger, you must delete it and create a new one.",
+          "Time-driven triggers let scripts execute at a particular time or on a recurring interval, as frequently as every minute or as infrequently as once per month. (An add-on can use a time-driven trigger once per hour at most.) The time might be slightly randomized—for example, if you create a recurring 9 AM trigger, Apps Script chooses a time between 9 AM and 10 AM, then keeps that timing consistent from day to day so that 24 hours elapse before the trigger fires again.",
+          "The following example shows how to create two time-driven triggers—one that fires every 6 hours, and one that fires every Monday at 9 a.m. (in the time zone that your script is set to). triggers/triggers.gs View on GitHub / Creates two time-driven triggers. @see https://developers.google.com/apps-script/guides/triggers/installable#time-driven triggers / function createTimeDrivenTriggers () { // Trigger every 6 hours."
+        ]
+      },
+      {
+        "title": "Simple Triggers \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/triggers",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the following example, if an empty cell is selected, the onSelectionChange(e) function sets the cell's background to red. triggers/triggers.gs View on GitHub / The event handler triggered when the selection changes in the spreadsheet. @param {Event} e The onSelectionChange event. @see https://developers.google.com/apps-script/guides/triggers#onselectionchangee / function onSelectionChange ( e ) { // Set background to red if a single empty cell is selected. const range = e . range ; if ( range . getNumRows () === 1 && range . getNumColumns () === 1 && range . getCell ( 1 , 1 ). getValue () === \"\" ) { range . setBackground ( \"red\" ); } } doGet(e) and doPost(e) The doGet(e) trigger runs automatically when a user visits a web app or a program sends an HTTP GET request to a web app. doPost(e) runs when a program sends an HTTP POST request to a web app.",
+          "For example, the onEdit(e) function below sets a comment on the cell that records the last time it was edited. triggers/triggers.gs View on GitHub / The event handler triggered when editing the spreadsheet. @param {Event} e The onEdit event. @see https://developers.google.com/apps-script/guides/triggers#onedite / function onEdit ( e ) { // Set a comment on the edited cell to indicate when it was changed. const range = e . range ; range . setNote ( Last modified: ${ new Date () } ); } The onEdit() trigger only queues up to 2 trigger events. onSelectionChange(e) The onSelectionChange(e) trigger runs automatically when a user changes the selection in a spreadsheet.",
+          "These restrictions don't apply to doGet(e) or doPost(e) . onOpen(e) The onOpen(e) trigger runs automatically when a user opens a spreadsheet, document, presentation, or form that they have permission to edit. (The trigger does not run when responding to a form, only when opening the form to edit it.) onOpen(e) is most commonly used to add custom menu items to Google Sheets, Slides, Docs, or Forms. triggers/triggers.gs View on GitHub / The event handler triggered when opening the spreadsheet. @param {Event} e The onOpen event. @see https://developers.google.com/apps-script/guides/triggers#onopene / function onOpen ( e ) { // Add a custom menu to the spreadsheet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.m",
+      "developers.google.com",
+      "triggers.gs"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/triggers/installable",
+        "https://developers.google.com/apps-script/guides/triggers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

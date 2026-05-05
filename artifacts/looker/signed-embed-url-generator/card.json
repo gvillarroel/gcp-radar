@@ -1,0 +1,130 @@
+{
+  "feature_name": "Signed Embed URL Generator",
+  "feature_slug": "signed-embed-url-generator",
+  "summary": "The signed embed URL generator can include themes, current parameters, and external group IDs.",
+  "extended_definition": "The signed embed URL generator can include themes, current parameters, and external group IDs.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create Signed Embed Url \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "source_id": "site-api-reference",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If provided and valid, the embed domain will be added to the embed domain allowlist if it is not currently in the list Response 200: Signed Embed URL Datatype Description (object) EmbedUrlResponse url lock string The embed URL.",
+          "If the Looker instance is behind a load balancer or other proxy, target uri must be the public-facing domain name and port required to reach the Looker instance, not the actual internal network machine name of the Looker instance. session length integer Number of seconds the signed embed session will be valid after the embed session is started.",
+          "Request POST /embed/sso url Datatype Description Request HTTP Request body HTTP Body Expand HTTP Body definition... body EmbedSsoParams Signed Embed URL parameters Expand EmbedSsoParams definition... target url string The complete URL of the Looker UI page to display in the embed context."
+        ]
+      },
+      {
+        "title": "Admin settings - Embed \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you enter a signed embed URL, the Embed URI quick check section will display the parameters and values that are included in the signed embed URL.",
+          "Embed domain URL with Looker IDs — The URL in the custom link will include the domain that is selected in the Domain field in the scheduling or alerts dialog and the Looker path to the embedded dashboard, using the content ID.",
+          "Embed domain URL with Looker slugs — The URL in the custom link includes the domain that is selected in the Domain field in the scheduling or alerts dialog and the Looker path to the embedded dashboard, using the content slug."
+        ]
+      },
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.",
+          "Support Advanced Editor access data , clear cache refresh , create custom fields , create table calculations , develop , explore , follow alerts , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Support Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.",
+          "Users who have the save content permission but not the embed save shared space permission will only have the option to save content to their personal embed folder . manage embed settings None Instance Wide CM Users can edit embed settings on the Embed page in the Platform section of the Admin menu. manage themes None Instance Wide CM Users can configure theme settings for embedded dashboards, Looks, and Explores on the Themes page in the Platform section of the Admin menu."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

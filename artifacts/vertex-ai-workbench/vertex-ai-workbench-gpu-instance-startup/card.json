@@ -1,0 +1,144 @@
+{
+  "feature_name": "Vertex AI Workbench GPU instance startup",
+  "feature_slug": "vertex-ai-workbench-gpu-instance-startup",
+  "summary": "A fix enables Vertex AI Workbench instances with GPUs to start correctly.",
+  "extended_definition": "A fix enables Vertex AI Workbench instances with GPUs to start correctly.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+      "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.instances.getInstanceHealth \\_|\\_ Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "source_id": "site-api-reference-2",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Reference Send feedback Method: projects.locations.instances.getInstanceHealth Stay organized with collections Save and categorize content based on your preferences.",
+          "Format: projects/{projectId}/locations/{location}/instances/{instanceId} Authorization requires the following IAM permission on the specified resource name : notebooks.instances.getHealth Request body The request body must be empty.",
+          "UNHEALTHY The instance is known to be in an unhealthy state (for example, critical daemons are not running) Applies to ACTIVE state."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime",
+        "source_id": "site-api-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "Following system labels exist for NotebookRuntime: \"aiplatform.googleapis.com/notebook runtime gce instance id\": output only, its value is the Compute Engine instance id. \"aiplatform.googleapis.com/colab enterprise entry service\": its value is either \"bigquery\" or \"vertex\"; if absent, it should be \"vertex\".",
+          "ShieldedVmConfig JSON representation { \"enableSecureBoot\" : boolean } Fields enableSecureBoot boolean Defines whether the instance has Secure Boot enabled.",
+          "NotebookSoftwareConfig JSON representation { \"env\" : [ { object ( EnvVar ) } ] , \"postStartupScriptConfig\" : { object ( PostStartupScriptConfig ) } , // Union field runtime image can be only one of the following: \"colabImage\" : { object ( ColabImage ) } // End of list of possible types for union field runtime image . } Fields env[] object ( EnvVar ) Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "source_id": "site-api-reference",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "ShieldedVmConfig JSON representation { \"enableSecureBoot\" : boolean } Fields enableSecureBoot boolean Defines whether the instance has Secure Boot enabled.",
+          "NotebookSoftwareConfig JSON representation { \"env\" : [ { object ( EnvVar ) } ] , \"postStartupScriptConfig\" : { object ( PostStartupScriptConfig ) } , // Union field runtime image can be only one of the following: \"colabImage\" : { object ( ColabImage ) } // End of list of possible types for union field runtime image . } Fields env[] object ( EnvVar ) Optional.",
+          "The Compute Engine tags to add to runtime (see Tagging instances ). encryptionSpec object ( EncryptionSpec ) Customer-managed encryption key spec for the notebook runtime. softwareConfig object ( NotebookSoftwareConfig ) Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "notebooks.googleapis.com",
+      "notebooks.instances.getHealth",
+      "projects.locations.instances",
+      "projects.locations.instances.getInstanceHealth"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/workbench/reference/rest/v1/projects.locations.instances/getInstanceHealth",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime_template",
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/colab_enterprise_create_notebook_runtime"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:55.831Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-workbench/card.json",
+  "product_name": "Vertex AI Workbench",
+  "product_slug": "vertex-ai-workbench"
+}

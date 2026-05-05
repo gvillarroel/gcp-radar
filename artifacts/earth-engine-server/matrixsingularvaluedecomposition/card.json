@@ -1,0 +1,98 @@
+{
+  "feature_name": "matrixSingularValueDecomposition",
+  "feature_slug": "matrixsingularvaluedecomposition",
+  "summary": "Computes the singular value decomposition for image and array data.",
+  "extended_definition": "Computes the singular value decomposition for image and array data.",
+  "lifecycle": {
+    "latest_feature_date": "2017-05-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/arrays_array_images",
+      "https://developers.google.com/earth-engine/guides/arrays_sorting_reducing",
+      "https://developers.google.com/earth-engine/guides/charts_array"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Arrays and Array Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ) . select ( [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ] ) Make an Array Image, with a 1-D Array per pixel. array image 1d = image . toArray () Make an Array Image with a 2-D Array per pixel, 6x1. array image 2d = array image 1d . toArray ( 1 ) In this example, note that toArray() converts image to an array image in which each pixel is a 1-D vector, the entries of which correspond to the 6 values at the corresponding positions in the bands of image .",
+          "Key actions include: creating a TC coefficient array; confirming its dimensions using length(); extracting a sub-matrix (e.g., 'greenness') using slice(); converting multi-band Landsat images into Array Images with toArray() for per-pixel band value arrays; performing matrix multiplication; casting to regular, single band images with arrayGet(), and using arrayProject() and arrayFlatten() for multi band array images.\\n\"]]",
+          "To do that, first convert the multi-band Landsat image into an “Array Image”, where each pixel is an Array of band values."
+        ]
+      },
+      {
+        "title": "Array and List Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_array",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Chart . array . values ({ array : y , axis : 0 , xLabels : x }) . setChartType ( 'ScatterChart' ) . setOptions ({ title : 'Landsat 8 Image Collection Metadata (045030)' , colors : [ '96356f' ], hAxis : { title : 'Cloud cover (%)' , titleTextStyle : { italic : false , bold : true } }, vAxis : { title : 'Geometric RMSE (m)' , titleTextStyle : { italic : false , bold : true } }, pointSize : 5 , dataOpacity : 0.6 , legend : { position : 'none' }, }); print ( chart ); ee.List mapped function scatter & line plot Map a function over a list of x values to calculate a corresponding list of y values.",
+          "Chart . array . values ({ array : y , axis : 0 , xLabels : x }). setOptions ({ title : 'Relationship Among Spectral Bands for Forest Pixels' , colors : [ 'cf513e' ], hAxis : { title : 'Red reflectance (x1e4)' , titleTextStyle : { italic : false , bold : true } }, vAxis : { title : 'SWIR reflectance (x1e4)' , titleTextStyle : { italic : false , bold : true } }, pointSize : 4 , dataOpacity : 0.4 , legend : { position : 'none' }, }); print ( chart ); ee.List transect line plot Image region reduction by ee.Reducer.toList() produces a dictionary of pixel value lists, one for each image band.",
+          "Note that any set of lists and/or arrays having the same length along a given axis can be plotted by ui.Chart.array.values . ee.Array region scatter plot Image region reduction by ee.Reducer.toList() produces a dictionary of pixel value lists, one for each band in a given image."
+        ]
+      },
+      {
+        "title": "Array Sorting and Reducing \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/arrays_sorting_reducing",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Array sorting is useful for obtaining custom quality mosaics which involve reducing a subset of image bands according to the values in a different band.",
+          "Page Summary outlined flag Array sorting enables the creation of custom quality mosaics by reducing image bands based on values in another band.",
+          "Then, a collection of images is filtered by location and date range, transformed into an array, and sorted by descending NDVI values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "e.g",
+      "ee.Array",
+      "ee.List",
+      "ee.Reducer.toList",
+      "geemap.core",
+      "ui.Chart.array.values"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/guides/arrays_sorting_reducing",
+        "https://developers.google.com/earth-engine/guides/charts_array"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

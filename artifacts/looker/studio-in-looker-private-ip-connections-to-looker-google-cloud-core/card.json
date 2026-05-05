@@ -1,0 +1,133 @@
+{
+  "feature_name": "Studio in Looker private IP connections to Looker (Google Cloud core)",
+  "feature_slug": "studio-in-looker-private-ip-connections-to-looker-google-cloud-core",
+  "summary": "The Looker connector can connect to private IP Looker (Google Cloud core) instances using the Looker instance ID.",
+  "extended_definition": "The Looker connector can connect to private IP Looker (Google Cloud core) instances using the Looker instance ID.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+      "https://docs.cloud.google.com/looker/docs/bi-connectors",
+      "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - BI Connectors \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "source_id": "site-docs-reference",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Microsoft Excel connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .",
+          "The Tableau Desktop connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections .",
+          "The Power BI connector is supported for all configurations of Looker and Looker (Google Cloud core) instances, including customer-hosted Looker instances and Looker (Google Cloud core) instances that are configured for private connections ."
+        ]
+      },
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "These roles won't appear on a Looker (Google Cloud core) instance if the instance uses private connections (private services access or Private Service Connect) networking or hybrid connections networking .",
+          "Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.",
+          "Users must have download with limit and/or download without limit permissions to download the content. create public looks save looks Model Specific Users can mark a saved Look as public , which will then generate URLs that grant access to that Look without authentication. download with limit see looks Model Specific This permission applies to Looks and dashboards in Looker and to reports in Looker Studio that use the Looker connector."
+        ]
+      },
+      {
+        "title": "Connect to Google BigQuery \\_|\\_ Data Studio \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable the BigQuery Storage Read API, grant the following permissions to your BigQuery user who is connected to Data Studio: bigquery.readsessions.create bigquery.readsessions.getData Quotas and general limits The maximum number of rows that can be returned using the BigQuery Connector is 2 million rows.",
+          "Analyze Data Studio queries with job labels All queries that are sent by Data Studio to BigQuery have the BigQuery job label requestor:looker studio .",
+          "The Data Studio BigQuery connector lets you access data from your BigQuery tables within Data Studio."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/bi-connectors",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/studio/connect-to-google-bigquery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

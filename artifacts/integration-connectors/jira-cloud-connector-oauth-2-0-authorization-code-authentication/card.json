@@ -1,0 +1,122 @@
+{
+  "feature_name": "Jira Cloud connector OAuth 2.0 authorization code authentication",
+  "feature_slug": "jira-cloud-connector-oauth-2-0-authorization-code-authentication",
+  "summary": "The Jira Cloud connector now supports OAuth 2.0 authorization code authentication.",
+  "extended_definition": "The Jira Cloud connector now supports OAuth 2.0 authorization code authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select whether to authenticate with OAuth 2.0 - Authorization code or to proceed without authentication.",
+          "Verify the OAuth 2.0 - Authorization code details in the Authentication section.",
+          "Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in BigQuery, you must re-authorize your BigQuery connection."
+        ]
+      },
+      {
+        "title": "Apigee API hub \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following authentication types are supported by the Apigee API hub connection: OAuth 2.0 - Authorization code Service account authentication To understand how to configure these authentication types, see Configure authentication .",
+          "Verify the OAuth 2.0 - Authorization code details in the Authentication section.",
+          "Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in the Apigee API hub, you must re-authorize your Apigee API hub connection."
+        ]
+      },
+      {
+        "title": "Azure Synapse \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.",
+          "Verify the OAuth 2.0 - Authorization code details in the Authentication section.",
+          "Re-authorization for authorization code If you are using Authorization code authentication type and have made any cofiguration changes in your Azure Synapse application, you must re-authorize your Azure Synapse connection."
+        ]
+      },
+      {
+        "title": "Confluence \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.",
+          "Verify the OAuth 2.0 - Authorization code details in the Authentication section.",
+          "Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in your Confluence application, you must re-authorize your Confluence connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigquery/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/azuresynapse/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/confluence/configure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.597Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors"
+}

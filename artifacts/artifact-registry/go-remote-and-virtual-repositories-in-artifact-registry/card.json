@@ -1,0 +1,149 @@
+{
+  "feature_name": "Go remote and virtual repositories in Artifact Registry",
+  "feature_slug": "go-remote-and-virtual-repositories-in-artifact-registry",
+  "summary": "Go remote repositories and virtual repositories in Artifact Registry reached general availability.",
+  "extended_definition": "Go remote repositories and virtual repositories in Artifact Registry reached general availability.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+      "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.repositories \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"format\" : enum ( Format ) , \"description\" : string , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"kmsKeyName\" : string , \"mode\" : enum ( Mode ) , \"cleanupPolicies\" : { string : { object ( CleanupPolicy ) } , ... } , \"sizeBytes\" : string , \"satisfiesPzs\" : boolean , \"cleanupPolicyDryRun\" : boolean , \"vulnerabilityScanningConfig\" : { object ( VulnerabilityScanningConfig ) } , \"disallowUnspecifiedMode\" : boolean , \"satisfiesPzi\" : boolean , \"registryUri\" : string , // Union field format config can be only one of the following: \"mavenConfig\" : { object ( MavenRepositoryConfig ) } , \"dockerConfig\" : { object ( DockerRepositoryConfig ) } // End of list of possible types for union field format config . // Union field mode config can be only one of the following: \"virtualRepositoryConfig\" : { object ( VirtualRepositoryConfig ) } , \"remoteRepositoryConfig\" : { object ( RemoteRepositoryConfig ) } // End of list of possible types for union field mode config . } Fields name string The name of the repository, for example: projects/p1/locations/us-central1/repositories/repo1 .",
+          "Resource: Repository JSON representation MavenRepositoryConfig JSON representation VersionPolicy DockerRepositoryConfig JSON representation VirtualRepositoryConfig JSON representation UpstreamPolicy JSON representation RemoteRepositoryConfig JSON representation DockerRepository JSON representation PublicRepository CustomRepository JSON representation MavenRepository JSON representation PublicRepository CustomRepository JSON representation NpmRepository JSON representation PublicRepository CustomRepository JSON representation PythonRepository JSON representation PublicRepository CustomRepository JSON representation AptRepository JSON representation PublicRepository JSON representation RepositoryBase CustomRepository JSON representation YumRepository JSON representation PublicRepository JSON representation RepositoryBase CustomRepository JSON representation CommonRemoteRepository JSON representation UpstreamCredentials JSON representation UsernamePasswordCredentials JSON representation Format Mode CleanupPolicy JSON representation CleanupPolicyCondition JSON representation TagState CleanupPolicyMostRecentVersions JSON representation Action VulnerabilityScanningConfig JSON representation EnablementConfig EnablementState Methods Resource: Repository A Repository for storing artifacts with a specific format.",
+          "Repository configuration specific to the Mode value being selected (Remote or Virtual) mode config can be only one of the following: virtualRepositoryConfig object ( VirtualRepositoryConfig ) Configuration specific for a Virtual Repository. remoteRepositoryConfig object ( RemoteRepositoryConfig ) Configuration specific for a Remote Repository."
+        ]
+      },
+      {
+        "title": "Repository overview \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's Next Create standard repositories Learn more about remote repositories Learn more about virtual repositories Create remote repositories Create virtual repositories Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Remote repositories reduce latency and improve availability for builds and deployments on Google Cloud.",
+          "You can also mitigate dependency confusion attacks by configuring your upstream policy to prioritize repositories with your private artifacts over remote repositories that cache public artifacts."
+        ]
+      },
+      {
+        "title": "\"Package com.google.devtools.artifactregistry.v1 (1.87.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1",
+        "source_id": "site-java-reference",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Public Repository Publicly available Apt repositories constructed from a common repository base and a custom repository path. com. google. devtools. artifactregistry. v1.",
+          "Public Repository Publicly available Yum repositories constructed from a common repository base and a custom repository path. com. google. devtools. artifactregistry. v1.",
+          "Builder Builder for projects/{project}/locations/{location}/repositories/{repository}/packages/{package}/versions/{version}. com. google. devtools. artifactregistry. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.devtools.artifactregistry.v1",
+      "projects.locations.repositories"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-artifact-registry/latest/com.google.devtools.artifactregistry.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.090Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry"
+}

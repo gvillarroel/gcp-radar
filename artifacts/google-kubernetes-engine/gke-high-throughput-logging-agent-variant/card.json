@@ -1,0 +1,135 @@
+{
+  "feature_name": "GKE high-throughput Logging agent variant",
+  "feature_slug": "gke-high-throughput-logging-agent-variant",
+  "summary": "GKE Standard clusters can deploy an alternative Logging agent variant that increases per-node log throughput.",
+  "extended_definition": "GKE Standard clusters can deploy an alternative Logging agent variant that increases per-node log throughput.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Adjust log throughput \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+        "source_id": "site-docs-reference-2",
+        "final_score": 218,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To manage the node pools explicitly, you must specify your cluster without a default node pool. resource \"google container cluster\" \"with example logging variants\" { provider = google name = \" CLUSTER NAME \" location = \" COMPUTE LOCATION \" initial node count = 1 remove default node pool = true # We want to manage our node pools separately. } To specify a node pool that uses the high-throughput agent, use the node config field to specify the Logging agent variant as MAX THROUGHPUT and an appropriate machine type: resource \"google container node pool\" \"with example logging variant\" { provider = google name = \"example-node-pool-with-htl\" cluster = google container cluster.with example logging variants.name location = \" COMPUTE LOCATION \" node config { logging variant = \"MAX THROUGHPUT\" Use a machine type with enough CPU to accommodate the high-throughput agent, such as e2-standard-8. machine type = \"e2-standard-8\" } node count = 1 } To specify a node pool that uses the default agent, use the node config field to specify the Logging agent variant as DEFAULT : resource \"google container node pool\" \"with default logging variant\" { provider = google name = \"example-node-pool-with-default-logging\" cluster = google container cluster.with example logging variants.name location = \" COMPUTE LOCATION \" node config { logging variant = \"DEFAULT\" } node count = 1 } Disable high-throughput logging If you no longer want to use the high-throughput Logging agent, deploy the default Logging agent to the cluster or node pool.",
+          "If you change the logging agent for an existing cluster, the existing node pools are unaffected and the change only applies to new node pools added to the cluster. gcloud CLI To enable high-throughput logging on all nodes in a new cluster: gcloud container clusters create CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --logging-variant = MAX THROUGHPUT \\ --machine-type = MACHINE TYPE Replace the following: CLUSTER NAME : the name of the new cluster.",
+          "To confirm if high-throughput logging is already set for an existing cluster, use the gcloud container cluster describe command: gcloud container clusters describe CLUSTER NAME \\ --location = COMPUTE LOCATION \\ --format = \"value(nodePoolDefaults[].loggingConfig.variantConfig.variant)\" Replace the following: CLUSTER NAME : the name of the cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!",
+          "Unique id for the cluster. loggingConfig object ( LoggingConfig ) Logging configuration for the cluster. monitoringConfig object ( MonitoringConfig ) Monitoring configuration for the cluster. nodePoolAutoConfig object ( NodePoolAutoConfig ) Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters. podAutoscaling object ( PodAutoscaling ) The config for pod autoscaling. etag string This checksum is computed by the server based on the value of cluster fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding. fleet object ( Fleet ) Fleet information for the cluster. securityPostureConfig object ( SecurityPostureConfig ) Optional.",
+          "ResourceLabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string NodePoolLoggingConfig JSON representation { \"variantConfig\" : { object ( LoggingVariantConfig ) } } Fields variantConfig object ( LoggingVariantConfig ) Logging variant configuration."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!",
+          "Unique id for the cluster. loggingConfig object ( LoggingConfig ) Logging configuration for the cluster. monitoringConfig object ( MonitoringConfig ) Monitoring configuration for the cluster. nodePoolAutoConfig object ( NodePoolAutoConfig ) Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters. podAutoscaling object ( PodAutoscaling ) The config for pod autoscaling. etag string This checksum is computed by the server based on the value of cluster fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding. fleet object ( Fleet ) Fleet information for the cluster. securityPostureConfig object ( SecurityPostureConfig ) Optional.",
+          "ResourceLabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string NodePoolLoggingConfig JSON representation { \"variantConfig\" : { object ( LoggingVariantConfig ) } } Fields variantConfig object ( LoggingVariantConfig ) Logging variant configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.with",
+      "container.googleapis.com",
+      "v1.12",
+      "variants.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/adjust-log-throughput",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

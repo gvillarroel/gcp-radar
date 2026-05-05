@@ -1,0 +1,228 @@
+{
+  "feature_name": "Metadata export from modeling resources",
+  "feature_slug": "metadata-export-from-modeling-resources",
+  "summary": "Adds the ability to export metadata from engine config, model, backtest, and prediction resources via the API.",
+  "extended_definition": "Adds the ability to export metadata from engine config, model, backtest, and prediction resources via the API.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary",
+      "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+      "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Train and test models designed to detect money laundering \\_|\\_ Anti Money\\",
+        "url": "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "These roles fulfill the following required permissions: Required permissions The following permissions are required to complete this quickstart: Permission Description resourcemanager.projects.get Get a Google Cloud project resourcemanager.projects.list List Google Cloud projects cloudkms.keyRings.create Create a Cloud KMS key ring cloudkms.cryptoKeys.create Create a Cloud KMS key financialservices.v1instances.create Create an AML AI instance financialservices.operations.get Get an AML AI operation cloudkms.cryptoKeys.getIamPolicy Get the IAM policy on a Cloud KMS key cloudkms.cryptoKeys.setIamPolicy Set the IAM policy on a Cloud KMS key bigquery.datasets.create Create a BigQuery dataset bigquery.datasets.get Get a BigQuery dataset bigquery.transfers.get Get a BigQuery Data Transfer Service transfer bigquery.transfers.update Create or delete a BigQuery Data Transfer Service transfer bigquery.datasets.setIamPolicy Set the IAM policy on a BigQuery dataset bigquery.datasets.update Update a BigQuery dataset financialservices.v1datasets.create Create an AML AI dataset financialservices.v1engineconfigs.create Create an AML AI engine config financialservices.v1models.copyFrom Copy from an AML AI model financialservices.v1models.copyTo Copy to an AML AI instance financialservices.v1models.create Create an AML AI model financialservices.v1backtests.create Create an AML AI backtest result financialservices.v1backtests.exportMetadata Export metadata from an AML AI backtest result financialservices.v1instances.importRegisteredParties Import registered parties into an AML AI instance financialservices.v1predictions.create Create an AML AI prediction result bigquery.jobs.create Create a BigQuery job bigquery.tables.getData Get data from a BigQuery table financialservices.v1predictions.delete Delete an AML AI prediction result financialservices.v1backtests.delete Delete an AML AI backtest result financialservices.v1models.delete Delete an AML AI model financialservices.v1engineconfigs.delete Delete an AML AI engine config financialservices.v1datasets.delete Delete an AML AI dataset financialservices.v1instances.delete Delete an AML AI instance bigquery.datasets.delete Delete a BigQuery dataset The API requests in this guide use the same Google Cloud project and location and hard-coded resource IDs to make the guide easier to complete.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"model\": \"projects/ PROJECT ID /locations/ LOCATION /instances/my-instance/models/my-model\", \"dataset\": \"projects/ PROJECT ID /locations/ LOCATION /instances/my-instance/datasets/my-dataset\", \"endTime\": \"2023-01-01T00:00:00Z\", \"predictionPeriods\": \"12\", \"outputs\": { \"predictionDestination\": { \"tableUri\": \"bq:// PROJECT ID .my bq output dataset.my prediction results\", \"writeDisposition\": \"WRITE TRUNCATE\" }, \"explainabilityDestination\": { \"tableUri\": \"bq:// PROJECT ID .my bq output dataset.my prediction results explainability\", \"writeDisposition\": \"WRITE TRUNCATE\" } } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://financialservices.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /instances/my-instance/predictionResults?prediction result id=my-prediction-results\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.financialservices.v1.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT ID /locations/ LOCATION /instances/my-instance/predictionResults/my-prediction-results\", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } Analyze a single structuring case in the Google Cloud console Note: Due to differences in engine versions and the evolution of synthetic data over time, these results may not exactly match your outputs.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"tableSpecs\": { \"party\": \"bq:// PROJECT ID .my bq input dataset.party\", \"account party link\": \"bq:// PROJECT ID .my bq input dataset.account party link\", \"transaction\": \"bq:// PROJECT ID .my bq input dataset.transaction\", \"risk case event\": \"bq:// PROJECT ID .my bq input dataset.risk case event\", \"party supplementary data\": \"bq:// PROJECT ID .my bq input dataset.party supplementary data\" }, \"dateRange\": { \"startTime\": \"2020-01-01T00:00:0.00Z\", \"endTime\": \"2023-01-01T00:00:0.00Z\" }, \"timeZone\": { \"id\": \"UTC\" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://financialservices.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /instances/my-instance/datasets?dataset id=my-dataset\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.financialservices.v1.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT ID /locations/ LOCATION /instances/my-instance/datasets/my-dataset\", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } You can check for the result of the operation using the new operation ID. (You can do this for the remaining API requests used in this guide.) Create an engine config Create an AML AI engine config to automatically tune hyperparameters based on a given engine version and the data provided."
+        ]
+      },
+      {
+        "title": "\"AML output data model \\_|\\_ Anti Money Laundering AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Column Type Description resource type STRING Type of AML AI resource, such as an engine config or prediction results resource id STRING Name of the resource name STRING Name of the metadata entry, such as a metric (see the following table) value JSON Value of the metadata entry Metric name Metric description Example metric value ExpectedRecallPreTuning Recall metric measured on a test set when using default hyperparameters of the engine version.",
+          "Column Type Description resource type STRING Type of AML AI resource, such as an engine config or prediction results resource id STRING Name of the resource name STRING Name of the metadata entry, such as a metric (see the following table) value JSON Value of the metadata entry Metric name Metric description Example metric value ObservedRecallValues Recall metric measured on the dataset specified for backtesting.",
+          "Column Type Description resource type STRING Type of AML AI resource, such as an engine config or prediction results resource id STRING Name of the resource name STRING Name of the metadata entry, such as a metric (see the following table) value JSON Value of the metadata entry Metric name Metric description Example metric value Missingness Share of missing values across all features in each feature family."
+        ]
+      },
+      {
+        "title": "AML AI glossary \\_|\\_ Anti Money Laundering AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary",
+        "source_id": "site-iam-reference",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This time period is within the date range of the dataset. engine config An AML AI EngineConfig resource (also known as an \"engine config\") specifies parameters in generating and evaluating an AML AI model and in generating risk scores and explainability.",
+          "See also prediction . export metadata Several AML AI resources store additional information relating to performance and data quality which can be accessed using the export metadata operation.",
+          "M missingness The missingness metric is computed for all feature families when creating the following AML AI resources: engine config, model, backtest results, and prediction results."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.datasets.create",
+      "bigquery.datasets.delete",
+      "bigquery.datasets.get",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.jobs.create",
+      "bigquery.tables.getData",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update",
+      "cloudkms.cryptoKeys.create",
+      "cloudkms.cryptoKeys.getIamPolicy",
+      "cloudkms.cryptoKeys.setIamPolicy",
+      "cloudkms.keyRings.create",
+      "commercial.default.v004.008.202411",
+      "dataset.account",
+      "dataset.my",
+      "dataset.party",
+      "dataset.risk",
+      "dataset.transaction",
+      "financialservices.googleapis.com",
+      "financialservices.operations.get",
+      "financialservices.v1backtests.create",
+      "financialservices.v1backtests.delete",
+      "financialservices.v1backtests.exportMetadata",
+      "financialservices.v1datasets.create",
+      "financialservices.v1datasets.delete",
+      "financialservices.v1engineconfigs.create",
+      "financialservices.v1engineconfigs.delete",
+      "financialservices.v1instances.create",
+      "financialservices.v1instances.delete",
+      "financialservices.v1instances.importRegisteredParties",
+      "financialservices.v1models.copyFrom",
+      "financialservices.v1models.copyTo",
+      "financialservices.v1models.create",
+      "financialservices.v1models.delete",
+      "financialservices.v1predictions.create",
+      "financialservices.v1predictions.delete",
+      "projects.locations.instances.backtestResults",
+      "projects.locations.instances.backtestResults.exportMetadata",
+      "projects.locations.instances.engineConfigs",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/train-models-to-detect-money-laundering",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/reference/schemas/aml-output-data-model",
+        "https://docs.cloud.google.com/financial-services/anti-money-laundering/docs/concepts/glossary"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.239Z",
+  "source_step08_card": "data/step-08/current/products/anti-money-laundering-ai/card.json",
+  "product_name": "Anti Money Laundering AI",
+  "product_slug": "anti-money-laundering-ai"
+}

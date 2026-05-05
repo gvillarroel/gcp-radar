@@ -1,0 +1,126 @@
+{
+  "feature_name": "Memorystore for Redis in Dammam (me-central2)",
+  "feature_slug": "memorystore-for-redis-in-dammam-me-central2",
+  "summary": "Memorystore for Redis is available in the Dammam region.",
+  "extended_definition": "Memorystore for Redis is available in the Dammam region.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+      "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+      "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "High availability for Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "source_id": "site-docs-root",
+        "final_score": 379,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How a failover affects your application When the primary instance fails over to the replica, Memorystore for Redis drops existing connections to the primary endpoint of the instance.",
+          "For information about the metrics that Cloud Monitoring provides for Memorystore for Redis, see Monitor Redis Instances and Supported monitoring metrics for Memorystore for Redis .",
+          "During a failover, if there are connections to the read endpoint, then Memorystore for Redis drops the connections to the replica that's being promoted to the primary instance."
+        ]
+      },
+      {
+        "title": "\"Connect to a Redis instance \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "source_id": "site-docs-root",
+        "final_score": 363,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Connect to a Redis instance from a Compute Engine VM using telnet You can connect to the Memorystore for Redis instance from any Compute Engine VM that uses the instance's authorized network with a supported RFC 1918 IP address .",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Connect to a Redis instance Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: If you are looking for the Memorystore for Redis Cluster documentation, see Connect to a Memorystore for Redis Cluster instance ."
+        ]
+      },
+      {
+        "title": "\"Find and set maintenance windows \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+        "source_id": "site-docs-root-2",
+        "final_score": 363,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reschedule planned maintenance Caution: if you programmatically reschedule maintenance in bulk requests (not natively supported by Memorystore for Redis), limit batch reschedule sizes to 100 instances per batch.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Find and set maintenance windows Stay organized with collections Save and categorize content based on your preferences.",
+          "Find scheduled maintenance If maintenance has been scheduled for your instance, you can view it using the following instructions: Console Go to the Memorystore for Redis page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Memorystore for Redis overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "source_id": "site-docs-root",
+        "final_score": 357,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Tier capabilities The following table describes the differences between the available Memorystore for Redis service tiers: Specifications Basic Tier Standard Tier (read replicas disabled) Standard Tier (read replicas enabled) Description Provides a cache with no replication Provides redundancy and availability using replication Provides redundancy and availability using replication to backup data, and multiple Read replicas to increase read throughput Max Redis primary size 300 GB 300 GB 300 GB Max network bandwidth 16 Gbps 16 Gbps 16 Gbps total for writes.",
+          "Connect to a Memorystore for Redis instance You can use any standard Redis client on the following environments to connect to your Memorystore for Redis instance : App Engine flexible environment App Engine standard environment Compute Engine VM instances Cloud Run functions Cloud Run Google Kubernetes Engine clusters Some serverless environments require a Serverless VPC Access connector as a prerequisite for connectivity with Memorystore for Redis.",
+          "Making this experience snappy is critical, and with its in-memory store and data structure like Sorted Set, Memorystore for Redis makes it easy to maintain a sorted list of scores while providing uniqueness of elements."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance",
+        "https://docs.cloud.google.com/memorystore/docs/redis/find-and-set-maintenance-windows",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.027Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis"
+}

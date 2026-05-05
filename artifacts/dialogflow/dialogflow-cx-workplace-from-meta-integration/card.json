@@ -1,0 +1,111 @@
+{
+  "feature_name": "Dialogflow CX Workplace from Meta integration",
+  "feature_slug": "dialogflow-cx-workplace-from-meta-integration",
+  "summary": "Dialogflow CX provides an integration for Workplace from Meta.",
+  "extended_definition": "Dialogflow CX provides an integration for Workplace from Meta.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create Conversation Model Evaluation Operation Metadata Metadata for a ConversationModels.CreateConversationModelEvaluation operation. com. google. cloud. dialogflow. v2.",
+          "Clear Suggestion Feature Config Operation Metadata Metadata for a ConversationProfiles.ClearSuggestionFeatureConfig operation. com. google. cloud. dialogflow. v2.",
+          "Set Suggestion Feature Config Operation Metadata Metadata for a ConversationProfiles.SetSuggestionFeatureConfig operation. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Data store tools \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is a example of a userMetadata parameter value to refine search results relevant to a specific: \"userMetadata\": { \"favoriteColor\": \"blue\", ... } The fallback parameter provides an answer that the data store tool should respond with if there is no valid summarized answer for the query.",
+          "When creating data store tool examples, the tool input parameter requestBody provides three optional inputs together with the required query string - a filter string, a userMetadata structured object, and a fallback string.",
+          "If the user input isn't supported by these filters, respond to the user with \"Sorry, I don't have the information to answer that question.\" The userMetadata parameter provides information about the end-user."
+        ]
+      },
+      {
+        "title": "Data store search configuration \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to the Session API reference Select a protocol and version for the Session reference: Protocol V3 V3beta1 REST Session resource Session resource RPC Session interface Session interface C++ SessionsClient Not available C# SessionsClient Not available Go SessionsClient Not available Java SessionsClient SessionsClient Node.js SessionsClient SessionsClient PHP Not available Not available Python SessionsClient SessionsClient Ruby Not available Not available Close Dialogflow CX Messenger configuration You can provide search configuration data to the Dialogflow CX Messenger integration.",
+          "You can use Dialogflow CX expressions to make the results dynamic, such as $session.params.YOUR PARAM NAME or $request.end-user-metadata.YOUR KEY . boost : (Number) A value between -1.0 and 1.0 that determines the strength of the boost.",
+          "You can use Dialogflow CX expressions within this string to make the results dynamic, such as $session.params.YOUR PARAM NAME or $request.end-user-metadata.YOUR KEY ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "metadata.YOUR",
+      "request.end",
+      "session.params.YOUR"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/search-configure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

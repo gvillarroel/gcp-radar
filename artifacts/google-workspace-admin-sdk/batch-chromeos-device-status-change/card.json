@@ -1,0 +1,95 @@
+{
+  "feature_name": "Batch ChromeOS device status change",
+  "feature_slug": "batch-chromeos-device-status-change",
+  "summary": "The Directory API can change the status of ChromeOS devices in batch through the customer.devices.chromeos resource.",
+  "extended_definition": "The Directory API can change the status of ChromeOS devices in batch through the customer.devices.chromeos resource.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/admin/directory/reference/rest",
+      "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos",
+      "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: customer.devices.chromeos \\_|\\_ Admin console \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos",
+        "source_id": "site-api-reference",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Admin console Reference Send feedback REST Resource: customer.devices.chromeos Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods batchChangeStatus Changes the status of a batch of ChromeOS devices. countChromeOsDevices Counts ChromeOS devices matching the request. issueCommand Issues a command for the device to execute."
+        ]
+      },
+      {
+        "title": "\"REST Resource: customer.devices.chromeos.commands \\_|\\_ Admin console \\_\\",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands",
+        "source_id": "site-api-reference",
+        "final_score": 275,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Admin console Reference Send feedback REST Resource: customer.devices.chromeos.commands Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"commandId\" : string , \"type\" : enum ( CommandType ) , \"issueTime\" : string , \"state\" : enum ( State ) , \"commandExpireTime\" : string , \"commandResult\" : { object ( DirectoryChromeosdevicesCommandResult ) } , \"payload\" : string } Fields commandId string ( int64 format) Unique ID of a device command. type enum ( CommandType ) The type of the command. issueTime string ( Timestamp format) The timestamp when the command was issued by the admin.",
+          "Examples: \"2014-10-02T15:01:23Z\" , \"2014-10-02T15:01:23.045123456Z\" or \"2014-10-02T15:01:23+05:30\" . commandResult object ( DirectoryChromeosdevicesCommandResult ) The result of the command execution. payload string The payload that the command specified, if any."
+        ]
+      },
+      {
+        "title": "Admin SDK: Directory API \\_|\\_ Admin console \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/admin/directory/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: customer.devices.chromeos Methods batchChangeStatus POST /admin/directory/v1/customer/{customerId}/devices/chromeos:batchChangeStatus Changes the status of a batch of ChromeOS devices. countChromeOsDevices GET /admin/directory/v1/customer/{customerId}/devices/chromeos:countChromeOsDevices Counts ChromeOS devices matching the request. issueCommand POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}:issueCommand Issues a command for the device to execute.",
+          "REST Resource: customer.devices.chromeos.commands Methods get GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId}/commands/{commandId} Gets command data a specific command issued to the device.",
+          "REST Resource: chromeosdevices Methods action (deprecated) POST /admin/directory/v1/customer/{customerId}/devices/chromeos/{resourceId}/action Use BatchChangeChromeOsDeviceStatus instead. get GET /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Retrieves a Chrome OS device's properties. list GET /admin/directory/v1/customer/{customerId}/devices/chromeos Retrieves a paginated list of Chrome OS devices within an account. moveDevicesToOu POST /admin/directory/v1/customer/{customerId}/devices/chromeos/moveDevicesToOu Moves or inserts multiple Chrome OS devices to an organizational unit. patch PATCH /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId . update PUT /admin/directory/v1/customer/{customerId}/devices/chromeos/{deviceId} Updates a device's updatable properties, such as annotatedUser , annotatedLocation , notes , orgUnitPath , or annotatedAssetId ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chromeosdevices.action",
+      "chromeosdevices.get",
+      "customer.devices.chromeos",
+      "customer.devices.chromeos.commands",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos",
+        "https://developers.google.com/workspace/admin/directory/reference/rest/v1/customer.devices.chromeos.commands",
+        "https://developers.google.com/workspace/admin/directory/reference/rest"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:41.467Z",
+  "source_step08_card": "data/step-08/current/products/google-workspace-admin-sdk/card.json",
+  "product_name": "Google Workspace Admin SDK",
+  "product_slug": "google-workspace-admin-sdk"
+}

@@ -1,0 +1,149 @@
+{
+  "feature_name": "Organization policy constraints",
+  "feature_slug": "organization-policy-constraints",
+  "summary": "Organization policy constraints let you control which VPC networks can use Cloud Interconnect; Organization policy constraints let you control which VPC networks can use Cloud Interconnect.",
+  "extended_definition": "Organization policy constraints let you control which VPC networks can use Cloud Interconnect; Organization policy constraints let you control which VPC networks can use Cloud Interconnect.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla",
+      "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshooting \\_|\\_ Cloud Interconnect \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Can't create VLAN attachment If you attempt to create a VLAN attachment for Dedicated Interconnect or Partner Interconnect that violates an organization policy, you see an error message.",
+          "To enter the missing routes, set the following parameters: --set-advertisement-groups = ADVERTISED GROUPS --set-advertisement-ranges = ADVERTISED IP RANGES Replace the following: ADVERTISED GROUPS : a Google-defined group that Cloud Router dynamically advertises; it can have a value of all subnets , which mimics the default behavior of a Cloud Router ADVERTISED IP RANGES : the contents of the new array of IP address ranges; it can have one or more values of your choice For more details and examples, see Advertising custom IP ranges .",
+          "Unable to delete an encrypted VLAN attachment You receive the following error when you try to delete an encrypted VLAN attachment for Dedicated Interconnect or Partner Interconnect: ResourceInUseByAnotherResourceException To fix this issue, make sure that you have first deleted all the HA VPN gateways and tunnels associated with the encrypted VLAN attachment."
+        ]
+      },
+      {
+        "title": "Cloud Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "To control which VPC networks can use Cloud Interconnect, you can set an organization policy.",
+          "Application awareness lets you map your outbound traffic to different traffic classes and set either a bandwidth percentage policy or a strict priority policy, which can help ensure that business critical network traffic is prioritized over lower priority network traffic.",
+          "Which VPC subnets are available depends on the dynamic routing mode of your VPC network."
+        ]
+      },
+      {
+        "title": "Dedicated Interconnect overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "To control which VPC networks can use Cloud Interconnect, you can set an organization policy.",
+          "Dedicated Interconnect lets you transfer large amounts of data between networks, which can be more cost-effective than purchasing additional bandwidth over the public internet.",
+          "Balance egress traffic with redundant connections When you have a redundant topology similar to the 99.99% configuration, there are multiple paths for traffic to traverse from the VPC network to your on-premises network."
+        ]
+      },
+      {
+        "title": "Cloud Dedicated and Partner Interconnect SLA | Google Cloud",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Community forums About Google Privacy Site terms Google Cloud terms Cookies management controls Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe language ‪English‬ ‪English‬ ‪Deutsch‬ ‪Español‬ ‪Español (Latinoamérica)‬ ‪Français‬ ‪Indonesia‬ ‪Italiano‬ ‪Português (Brasil)‬ ‪简体中文‬ ‪繁體中文‬ ‪日本語‬ ‪한국어‬",
+          "See all industry solutions Application Modernization Assess, plan, implement, and measure software practices and capabilities to modernize and simplify your organization’s business application portfolios.",
+          "Virtual Private Cloud Single VPC for an entire organization, isolated within projects."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/support/troubleshooting",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/concepts/dedicated-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/interconnect/sla"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.713Z",
+  "source_step08_card": "data/step-08/current/products/cloud-interconnect/card.json",
+  "product_name": "Cloud Interconnect",
+  "product_slug": "cloud-interconnect"
+}

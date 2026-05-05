@@ -1,0 +1,133 @@
+{
+  "feature_name": "GKE control plane metrics",
+  "feature_slug": "gke-control-plane-metrics",
+  "summary": "Control plane metrics are available for supported GKE clusters.",
+  "extended_definition": "Control plane metrics are available for supported GKE clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect and view control plane metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 240,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To enable control plane metrics from the Observability tab for the cluster, do the following: In the Google Cloud console, go to the Kubernetes clusters page: Go to Kubernetes clusters If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .",
+          "To enable control plane metrics from the Details tab for the cluster, do the following: In the Google Cloud console, go to the Kubernetes clusters page: Go to Kubernetes clusters If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .",
+          "For example, to measure the API server traffic per instance of the Kubernetes control plane, use the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \"}[1m])) To query the unsuccessful requests, filter the code label for 4xx and 5xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"[45]..\"}[5m])) To query the successful requests, filter the code label for 2xx values by using the following PromQL query: sum(rate(apiserver request total{code= \"2..\"}[5m])) To query the rejected requests by the API server per instance of the Kubernetes control plane, filter the code label for the value 429 ( http.StatusTooManyRequests ) by using the following PromQL query: sum by (instance) (increase(apiserver request total{cluster=\" CLUSTER NAME \", code=\"429\"}[1m])) Saturation You can measure the saturation in your system by using the apiserver current inflight requests and apiserver storage objects metrics."
+        ]
+      },
+      {
+        "title": "\"About GKE control plane authority \\_|\\_ GKE security \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "What's next Run your own certificate authorities and signing keys in GKE Encrypt GKE control plane data at rest with your keys Verify GKE control plane VM integrity Verify credential issuance and usage in GKE clusters Verify connections by Google personnel in the cluster control plane Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following documents show you how to view and process the various types of control plane logs: Verify credential issuance and verification operations in GKE clusters Verify connections by Google personnel in the cluster control plane Additional resources about control plane security This section describes other methods that you can use to improve your confidence in your control plane security.",
+          "About GKE control plane authority features In GKE, Google Cloud fully manages the security configuration of the control plane, including encryption of storage at rest , and configuring the keys and certificate authorities (CAs) that sign and verify credentials in your clusters."
+        ]
+      },
+      {
+        "title": "Control plane security \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Traffic on port 2380 between etcd database instances on multiple control plane VMs (such as in regional clusters) is encrypted by mutual TLS .",
+          "Port 2380 isn't used in clusters that store the cluster state in a Spanner database because the database doesn't run in the control plane VMs.",
+          "For details about why you'd use these features and for all of the capabilities that are available, see About GKE control plane authority ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "http.StatusTooManyRequests"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-control-plane-authority",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/control-plane-security"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

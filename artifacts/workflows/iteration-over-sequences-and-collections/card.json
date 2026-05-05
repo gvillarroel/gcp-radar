@@ -1,0 +1,127 @@
+{
+  "feature_name": "Iteration over sequences and collections",
+  "feature_slug": "iteration-over-sequences-and-collections",
+  "summary": "Workflows supports iterating over sequences of numbers and collections of data.",
+  "extended_definition": "Workflows supports iterating over sequences of numbers and collections of data.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/controlling-execution-order",
+      "https://docs.cloud.google.com/workflows/docs/overview",
+      "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Workflows overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 37,
+        "relevance": "",
+        "evidence_snippets": [
+          "Iteration You can use a for loop to iterate over a sequence of numbers or through a collection of data, such as a list or map.",
+          "Home Documentation Application development Workflows Guides Send feedback Workflows overview Stay organized with collections Save and categorize content based on your preferences.",
+          "For example: Track an order from request to fulfillment Automate resource requests with approvals IT process automation Managed execution of service operations —Easily script sequences of Google Cloud service operations."
+        ]
+      },
+      {
+        "title": "Standard library overview \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application development Workflows Reference Send feedback Standard library overview Stay organized with collections Save and categorize content based on your preferences.",
+          "You can use sys.now to generate multiple random numbers. (The function returns a floating point number with nanosecond precision.) If you need only one number, use sys.get env to retrieve the workflow's execution identifier.",
+          "Functions abs Returns the absolute value of a number. floor Returns the floor of a number. max Returns the maximum of two numbers. min Returns the minimum of two numbers."
+        ]
+      },
+      {
+        "title": "\"Control the order of execution in a workflow \\_|\\_ Workflows \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/controlling-execution-order",
+        "source_id": "site-docs-root-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use for loops to iterate You can use for loops to iterate over a sequence of numbers or through a collection of data, such as a list or map.",
+          "The workflow doesn't execute the step friday because the conditional jump skips over it, and the workflow doesn't execute the step workWeek because return stops the execution of the workflow at the end of the weekend step.",
+          "Home Documentation Application development Workflows Guides Send feedback Control the order of execution in a workflow Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sys.get",
+      "sys.now",
+      "uuid.generate"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/controlling-execution-order",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/controlling-execution-order",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/controlling-execution-order",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/controlling-execution-order",
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

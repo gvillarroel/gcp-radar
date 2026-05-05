@@ -1,0 +1,106 @@
+{
+  "feature_name": "Domain controller regional deployment",
+  "feature_slug": "domain-controller-regional-deployment",
+  "summary": "Managed Microsoft AD supports deploying domain controllers in multiple Google Cloud regions.",
+  "extended_definition": "Managed Microsoft AD supports deploying domain controllers in multiple Google Cloud regions.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy domain controllers in additional regions \\_|\\_ Managed Service for\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Access and resource management Managed Microsoft AD Guides Send feedback Deploy domain controllers in additional regions Stay organized with collections Save and categorize content based on your preferences.",
+          "To add domain controllers to an additional region, do the following: Console In the Google Cloud console, go to the Managed Microsoft AD page.",
+          "To remove domain controllers from a region, do the following: Console In the Google Cloud console, go to the Managed Microsoft AD page."
+        ]
+      },
+      {
+        "title": "\"Managed Microsoft AD overview \\_|\\_ Managed Service for Microsoft Active\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Multi-regional support Managed Microsoft AD supports multi-regional deployment of Active Directory forests when peered with Google Cloud's global low-latency Virtual Private Cloud (VPC).",
+          "How Managed Microsoft AD works Managed Microsoft AD runs actual Microsoft Active Directory domain controllers on Windows virtual machines to ensure application compatibility.",
+          "To maintain high availability and improve fault tolerance , Managed Microsoft AD deploys two domain controllers to each region in non-overlapping Google Cloud zones."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a domain \\_|\\_ Managed Service for Microsoft Active Directory\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Join a Windows VM to a domain Join a Linux VM to a domain Connect to a Managed Microsoft AD domain Configure domain peering Deploy domain controllers in additional regions Deploy Managed Microsoft AD with cross-project access using domain peering Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The full resource name of the authorized VPC network, which is in the following format: projects/ PROJECT ID /global/networks/ VPC NETWORK NAME Create the domain To create a domain, complete the following steps: Console Go to the Managed Microsoft AD page.",
+          "However, after you create a Managed Microsoft AD domain, you can create a trust relationship between the Managed Microsoft AD domain and any other non-Managed Microsoft AD domain."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.679Z",
+  "source_step08_card": "data/step-08/current/products/managed-service-for-microsoft-active-directory/card.json",
+  "product_name": "Managed Service for Microsoft Active Directory",
+  "product_slug": "managed-service-for-microsoft-active-directory"
+}

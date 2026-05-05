@@ -1,0 +1,179 @@
+{
+  "feature_name": "Cloud Datastore API v1beta3",
+  "feature_slug": "cloud-datastore-api-v1beta3",
+  "summary": "Cloud Datastore API v1beta3 is an older beta version of the Datastore API; deprecated on 2016-08-16.",
+  "extended_definition": "Cloud Datastore API v1beta3 is an older beta version of the Datastore API; deprecated on 2016-08-16.",
+  "lifecycle": {
+    "latest_feature_date": "2016-08-16",
+    "deprecation_date": "2016-08-16",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+      "https://docs.cloud.google.com/datastore/docs/audit-logging",
+      "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+      "https://docs.cloud.google.com/datastore/docs/reference/data/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Balancing Strong and Eventual Consistency with Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are currently using the older DB Client Library, read the DB to NDB Migration Guide Contents NoSQL and Eventual Consistency Eventual Consistency in Datastore Ancestor Query and Entity Group Limitations of Entity Group and Ancestor Query Alternatives to Ancestor Queries Minimizing Time to Achieve Full Consistency Conclusion Additional Resources NoSQL and Eventual Consistency Non-relational databases, also known as NoSQL databases, have emerged in recent years as an alternative to relational databases.",
+          "Datastore API Read of entity value Read of index Global Query Eventual consistency Eventual consistency Keys-only Global Query N/A Eventual consistency Ancestor Query Strong consistency Strong consistency Lookup by key (get()) Strong consistency N/A Table 1: Datastore queries/get calls and possible consistency behaviors Datastore queries without an ancestor are known as global queries and are designed to work with an eventual consistency model.",
+          "Strong Consistency on Reading Entity Values and Indexes In Datastore, there are only two APIs that provide a strongly consistent view for reading entity values and indexes: (1) the lookup by key method and (2) the ancestor query."
+        ]
+      },
+      {
+        "title": "Cloud Datastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service provides the following discovery documents: https://datastore.googleapis.com/$discovery/rest?version=v1 https://datastore.googleapis.com/$discovery/rest?version=v1beta3 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://datastore.googleapis.com REST Resource: v1beta3.projects Methods allocateIds POST /v1beta3/projects/{projectId}:allocateIds Allocates IDs for the given keys, which is useful for referencing an entity before it is inserted. beginTransaction POST /v1beta3/projects/{projectId}:beginTransaction Begins a new transaction. commit POST /v1beta3/projects/{projectId}:commit Commits a transaction, optionally creating, deleting or modifying some entities. lookup POST /v1beta3/projects/{projectId}:lookup Looks up entities by key. reserveIds POST /v1beta3/projects/{projectId}:reserveIds Prevents the supplied keys' IDs from being auto-allocated by Cloud Datastore. rollback POST /v1beta3/projects/{projectId}:rollback Rolls back a transaction. runAggregationQuery POST /v1beta3/projects/{projectId}:runAggregationQuery Runs an aggregation query. runQuery POST /v1beta3/projects/{projectId}:runQuery Queries for entities.",
+          "REST Resource: v1beta3.projects REST Resource: v1.projects REST Resource: v1.projects.operations Service: datastore.googleapis.com To call this service, we recommend that you use the Google-provided client libraries ."
+        ]
+      },
+      {
+        "title": "\"Getting started with the Firestore in Datastore mode API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Extract the download: unzip master . zip Change directories to the TaskList application: cd google - cloud - ruby - master / google - cloud - datastore / samples Install the dependencies: bundle install At a command prompt, run the following, where <project-id> is the ID of your Google Cloud project. export GOOGLE CLOUD PROJECT = < project - id > (Windows users: use set instead of export .) Run the application! bundle exec ruby tasks . rb Creating an Authorized Service Object In order to make authenticated requests to Google Cloud APIs using the Google APIs Client libraries, you must: Fetch the credential to use for requests.",
+          "Go Clone the TaskList sample application. go get github . com / GoogleCloudPlatform / golang - samples / datastore / tasks Change directories to where you cloned the sample: cd $ GOPATH / src / github . com / GoogleCloudPlatform / golang - samples / datastore / tasks At a command prompt, run the following, where <project-id> is the ID of your Google Cloud project. export DATASTORE PROJECT ID = < project - id > (Windows users: use set instead of export .) Run the application! go run tasks . go Java Ensure you have Maven and Java (version 8 or later) installed.",
+          "Extract the download: unzip master . zip Change directories to the TaskList application: cd nodejs - datastore - master / samples Install the dependencies and link the application: npm install At a command prompt, run the following, where <project-id> is the ID of your Google Cloud project. export GCLOUD PROJECT = < project - id > (Windows users: use set instead of export .) Run the application! node tasks . js PHP Ensure you have PHP (version 5.6 or later) and Composer installed."
+        ]
+      },
+      {
+        "title": "Datastore audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.datastore.admin.v1.DatastoreAdmin.GetIndex google.datastore.admin.v1.DatastoreAdmin.ListIndexes google.longrunning.Operations.GetOperation google.longrunning.Operations.ListOperations ADMIN WRITE google.datastore.admin.v1.DatastoreAdmin.CreateIndex (LRO) google.datastore.admin.v1.DatastoreAdmin.DeleteIndex google.datastore.admin.v1.DatastoreAdmin.ExportEntities (LRO) google.datastore.admin.v1.DatastoreAdmin.ImportEntities (LRO) google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities (LRO) google.datastore.admin.v1beta1.DatastoreAdmin.ImportEntities (LRO) google.longrunning.Operations.CancelOperation google.longrunning.Operations.DeleteOperation DATA READ google.datastore.v1.Datastore.BeginTransaction google.datastore.v1.Datastore.Lookup google.datastore.v1.Datastore.Rollback google.datastore.v1.Datastore.RunAggregationQuery google.datastore.v1.Datastore.RunQuery google.datastore.v1beta3.Datastore.BeginTransaction google.datastore.v1beta3.Datastore.Lookup google.datastore.v1beta3.Datastore.Rollback google.datastore.v1beta3.Datastore.RunAggregationQuery google.datastore.v1beta3.Datastore.RunQuery DATA WRITE google.datastore.v1.Datastore.AllocateIds google.datastore.v1.Datastore.Commit google.datastore.v1.Datastore.ReserveIds google.datastore.v1beta3.Datastore.AllocateIds google.datastore.v1beta3.Datastore.Commit google.datastore.v1beta3.Datastore.ReserveIds API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Datastore. google.datastore.admin.v1.DatastoreAdmin The following audit logs are associated with methods belonging to google.datastore.admin.v1.DatastoreAdmin .",
+          "Filter for this method : protoPayload.methodName=\"google.datastore.v1beta3.Datastore.BeginTransaction\" Commit Method : google.datastore.v1beta3.Datastore.Commit Audit log type : Data access Permissions : datastore.entities.create - DATA WRITE datastore.entities.delete - DATA WRITE datastore.entities.update - DATA WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.datastore.v1beta3.Datastore.AllocateIds\" BeginTransaction Method : google.datastore.v1beta3.Datastore.BeginTransaction Audit log type : Data access Permissions : datastore.databases.get - DATA READ Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.databases.get",
+      "datastore.entities.create",
+      "datastore.entities.delete",
+      "datastore.entities.update",
+      "datastore.googleapis.com",
+      "firestore.googleapis.com",
+      "master.zip",
+      "tasks.php",
+      "v1.projects",
+      "v1.projects.operations",
+      "v1beta3.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/datastore/docs/reference/data/rest",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.286Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

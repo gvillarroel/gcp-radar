@@ -1,0 +1,122 @@
+{
+  "feature_name": "Multiple containers for jobs",
+  "feature_slug": "multiple-containers-for-jobs",
+  "summary": "Cloud Run jobs support deploying multiple containers, including sidecars, in a single job; Cloud Run jobs support deploying multiple containers, including sidecars, in a single job.",
+  "extended_definition": "Cloud Run jobs support deploying multiple containers, including sidecars, in a single job; Cloud Run jobs support deploying multiple containers, including sidecars, in a single job.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/deploying",
+      "https://docs.cloud.google.com/run/docs/reference/container-contract"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploying container images to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploying",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use cases Use cases for sidecars in a Cloud Run service include: Application monitoring, logging and tracing Using Nginx , Envoy or Apache2 as a proxy in front of your application container Adding authentication and authorization filters (for example, Open Policy Agent) Running outbound connection proxies such as the Alloy DB Auth proxy Deploying a service with sidecar containers You can deploy multiple sidecars to a Cloud Run service using the Google Cloud console, the Google Cloud CLI, YAML, or Terraform.",
+          "Deploying multiple containers to a service (sidecars) In a Cloud Run deployment with sidecars, there is one ingress container that handles all incoming HTTPS requests at the container PORT you specify, and there are one or more sidecar containers.",
+          "Exchanging file data between sidecars Multiple containers within a single instance can access a shared in-memory volume , which is accessible to each container using mount points that you create."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Processing a request For Cloud Run services, CPU is always allocated to all containers including sidecars within an instance as long as the Cloud Run revision is processing at least one request.",
+          "Regardless of its state, Cloud Run always allocates CPU to to all containers, including sidecars within a worker pool instance.",
+          "Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Processing a request For Cloud Run services, CPU is always allocated to all containers including sidecars within an instance as long as the Cloud Run revision is processing at least one request.",
+          "Regardless of its state, Cloud Run always allocates CPU to to all containers, including sidecars within a worker pool instance.",
+          "Container requirements When deploying containers to Cloud Run, the following requirements must be met: Container deployed to services must listen for requests on the correct port A Cloud Run service starts Cloud Run instances to handle incoming requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/container-contract"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/container-contract"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/container-contract"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/container-contract"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/run/docs/container-contract"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

@@ -1,0 +1,102 @@
+{
+  "feature_name": "Cron task limit",
+  "feature_slug": "cron-task-limit",
+  "summary": "The cron task limit defines how many scheduled cron tasks an App Engine application can configure.",
+  "extended_definition": "The cron task limit defines how many scheduled cron tasks an App Engine application can configure.",
+  "lifecycle": {
+    "latest_feature_date": "2016-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+      "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Scheduling jobs with cron.yaml \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml",
+        "source_id": "site-docs-reference-required-9",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "About the cron configuration file For all runtimes except for Java, a cron.yaml file in the root directory of your application (alongside app.yaml ) configures scheduled tasks for your app.",
+          "For the Java, a cron.yaml file in the WEB-INF directory of your application (alongside apppengine-web.xml ) configures scheduled tasks for your app.",
+          "The App Engine Cron Service allows you to configure regularly scheduled tasks that operate at defined times or regular intervals."
+        ]
+      },
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following limits apply to task queues according to their type: Push Queue Limits Maximum task size 100KB Queue execution rate 500 task invocations per second per queue Maximum countdown/ETA for a task 30 days from the current date and time Maximum number of tasks that can be added in a batch 100 tasks Maximum number of tasks that can be added in a transaction 5 tasks Default maximum number of task queues 100 queues.",
+          "Task Queue When a task executes, its associated requests count toward the application request quotas These limits apply to all task queues: Resource Daily limit Maximum rate Task Queue management calls (using the Google Cloud console) 10,000 n/a Resource Default limit Maximum number of queues (includes both push and pull queues but not the default queue) 100 queues.",
+          "Resource Default limit Cron job 250 cron jobs URL Fetch URL Fetch API calls The total number of times the application accessed the URL fetch service to perform an HTTP or HTTPS request."
+        ]
+      },
+      {
+        "title": "\"Run asynchronous tasks \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Run asynchronous tasks Stay organized with collections Save and categorize content based on your preferences.",
+          "Create App Engine tasks in the form of an HTTP request and then place them in Cloud Tasks queues, see Create App Engine tasks .",
+          "To run asynchronous tasks, you can: Create Cloud Tasks queues, see Create Cloud Tasks queues ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "cron.yaml",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml",
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml",
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.208Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python"
+}

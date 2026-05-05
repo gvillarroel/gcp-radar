@@ -1,0 +1,150 @@
+{
+  "feature_name": "Out-of-disk recommender",
+  "feature_slug": "out-of-disk-recommender",
+  "summary": "Cloud SQL provides an out-of-disk recommender that proactively suggests actions to reduce downtime risk from low disk space; Cloud SQL provides a preview out-of-disk recommender that proactively suggests actions when instances trend toward storage limits.",
+  "extended_definition": "Cloud SQL provides an out-of-disk recommender that proactively suggests actions to reduce downtime risk from low disk space; Cloud SQL provides a preview out-of-disk recommender that proactively suggests actions when instances trend toward storage limits.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "source_id": "site-docs-reference-3",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"kind\" : string , \"state\" : enum ( SqlInstanceState ) , \"databaseVersion\" : enum ( SqlDatabaseVersion ) , \"settings\" : { object ( Settings ) } , \"etag\" : string , \"failoverReplica\" : { \"name\" : string , \"available\" : boolean } , \"masterInstanceName\" : string , \"replicaNames\" : [ string ] , \"maxDiskSize\" : string , \"currentDiskSize\" : string , \"ipAddresses\" : [ { object ( IpMapping ) } ] , \"serverCaCert\" : { object ( SslCert ) } , \"instanceType\" : enum ( SqlInstanceType ) , \"project\" : string , \"ipv6Address\" : string , \"serviceAccountEmailAddress\" : string , \"onPremisesConfiguration\" : { object ( OnPremisesConfiguration ) } , \"replicaConfiguration\" : { object ( ReplicaConfiguration ) } , \"backendType\" : enum ( SqlBackendType ) , \"selfLink\" : string , \"suspensionReason\" : [ enum ( SqlSuspensionReason ) ] , \"connectionName\" : string , \"name\" : string , \"region\" : string , \"gceZone\" : string , \"secondaryGceZone\" : string , \"diskEncryptionConfiguration\" : { object ( DiskEncryptionConfiguration ) } , \"diskEncryptionStatus\" : { object ( DiskEncryptionStatus ) } , \"rootPassword\" : string , \"scheduledMaintenance\" : { object ( SqlScheduledMaintenance ) } , \"satisfiesPzs\" : boolean , \"databaseInstalledVersion\" : string , \"createTime\" : string , \"availableMaintenanceVersions\" : [ string ] , \"maintenanceVersion\" : string , \"upgradableDatabaseVersions\" : [ { object ( AvailableDatabaseVersion ) } ] , \"replicationCluster\" : { object ( ReplicationCluster ) } , \"satisfiesPzi\" : boolean , \"tags\" : { string : string , ... } , \"nodes\" : [ { object ( PoolNodeConfig ) } ] , \"dnsNames\" : [ { object ( DnsNameMapping ) } ] , \"outOfDiskReport\" : { object ( SqlOutOfDiskReport ) } , \"sqlNetworkArchitecture\" : enum ( SqlNetworkArchitecture ) , \"pscServiceAttachmentLink\" : string , \"dnsName\" : string , \"primaryDnsName\" : string , \"writeEndpoint\" : string , \"geminiConfig\" : { object ( GeminiInstanceConfig ) } , \"switchTransactionLogsToCloudStorageEnabled\" : boolean , \"includeReplicasForMajorVersionUpgrade\" : boolean , \"nodeCount\" : integer } Fields kind string This is always sql#instance . state enum ( SqlInstanceState ) The current serving state of the Cloud SQL instance. databaseVersion enum ( SqlDatabaseVersion ) The database engine type and version.",
+          "JSON representation { \"settingsVersion\" : string , \"authorizedGaeApplications\" : [ string ] , \"tier\" : string , \"kind\" : string , \"userLabels\" : { string : string , ... } , \"availabilityType\" : enum ( SqlAvailabilityType ) , \"pricingPlan\" : enum ( SqlPricingPlan ) , \"replicationType\" : enum ( SqlReplicationType ) , \"storageAutoResizeLimit\" : string , \"activationPolicy\" : enum ( SqlActivationPolicy ) , \"ipConfiguration\" : { object ( IpConfiguration ) } , \"storageAutoResize\" : boolean , \"locationPreference\" : { object ( LocationPreference ) } , \"databaseFlags\" : [ { object ( DatabaseFlags ) } ] , \"dataDiskType\" : enum ( SqlDataDiskType ) , \"maintenanceWindow\" : { object ( MaintenanceWindow ) } , \"backupConfiguration\" : { object ( BackupConfiguration ) } , \"databaseReplicationEnabled\" : boolean , \"crashSafeReplicationEnabled\" : boolean , \"dataDiskSizeGb\" : string , \"activeDirectoryConfig\" : { object ( SqlActiveDirectoryConfig ) } , \"collation\" : string , \"denyMaintenancePeriods\" : [ { object ( DenyMaintenancePeriod ) } ] , \"insightsConfig\" : { object ( InsightsConfig ) } , \"passwordValidationPolicy\" : { object ( PasswordValidationPolicy ) } , \"sqlServerAuditConfig\" : { object ( SqlServerAuditConfig ) } , \"edition\" : enum ( Edition ) , \"connectorEnforcement\" : enum ( ConnectorEnforcement ) , \"deletionProtectionEnabled\" : boolean , \"timeZone\" : string , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"dataCacheConfig\" : { object ( DataCacheConfig ) } , \"replicationLagMaxSeconds\" : integer , \"enableGoogleMlIntegration\" : boolean , \"enableDataplexIntegration\" : boolean , \"retainBackupsOnDelete\" : boolean , \"dataDiskProvisionedIops\" : string , \"dataDiskProvisionedThroughput\" : string , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"finalBackupConfig\" : { object ( FinalBackupConfig ) } , \"readPoolAutoScaleConfig\" : { object ( ReadPoolAutoScaleConfig ) } , \"autoUpgradeEnabled\" : boolean , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields settingsVersion string ( Int64Value format) The version of instance settings.",
+          "Resource: DatabaseInstance JSON representation SqlInstanceState Settings JSON representation SqlAvailabilityType SqlPricingPlan SqlReplicationType SqlActivationPolicy IpConfiguration JSON representation AclEntry JSON representation SslMode PscConfig JSON representation PscAutoConnectionConfig JSON representation CaMode ServerCertificateRotationMode LocationPreference JSON representation DatabaseFlags JSON representation SqlDataDiskType MaintenanceWindow JSON representation SqlUpdateTrack BackupConfiguration JSON representation BackupRetentionSettings JSON representation RetentionUnit TransactionalLogStorageState BackupTier SqlActiveDirectoryConfig JSON representation ActiveDirectoryMode DenyMaintenancePeriod JSON representation InsightsConfig JSON representation PasswordValidationPolicy JSON representation Complexity SqlServerAuditConfig JSON representation Edition ConnectorEnforcement AdvancedMachineFeatures JSON representation DataCacheConfig JSON representation ConnectionPoolConfig JSON representation ConnectionPoolFlags JSON representation FinalBackupConfig JSON representation ReadPoolAutoScaleConfig JSON representation TargetMetric JSON representation DataApiAccess IpMapping JSON representation SqlIpAddressType SqlInstanceType OnPremisesConfiguration JSON representation InstanceReference JSON representation SelectedObjects JSON representation SslOption ReplicaConfiguration JSON representation MySqlReplicaConfiguration JSON representation SqlBackendType SqlSuspensionReason SqlScheduledMaintenance JSON representation SqlOutOfDiskReport JSON representation SqlOutOfDiskState AvailableDatabaseVersion JSON representation SqlNetworkArchitecture ReplicationCluster JSON representation GeminiInstanceConfig JSON representation PoolNodeConfig JSON representation DnsNameMapping JSON representation ConnectionType DnsScope RecordManager Methods Resource: DatabaseInstance A Cloud SQL instance resource."
+        ]
+      },
+      {
+        "title": "\"Configure point-in-time recovery (PITR) \\_|\\_ Cloud SQL for MySQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } Check the storage location of transaction logs used for PITR You can check where your Cloud SQL instance is storing the transaction logs used for PITR. gcloud To determine whether your instance stores logs for PITR on disk or Cloud Storage, use the following command: gcloud sql instances describe INSTANCE NAME Replace INSTANCE NAME with the name of the instance.",
+          "To determine the location for multiple instances, use the following command: gcloud sql instances list --show-transactional-log-storage-state Example response: NAME DATABASE VERSION LOCATION TRANSACTIONAL LOG STORAGE STATE my 01 MYSQL 8 0 us-central-1 DISK my 02 MYSQL 8 0 us-central-1 CLOUD STORAGE ...",
+          "If you want to save disk space, then after the switch process completes, configure the value of the expire logs days or binlog expire logs seconds flags to 1 day to reduce your allocated disk size and disk storage costs."
+        ]
+      },
+      {
+        "title": "\"Perform point-in-time recovery (PITR) \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr",
+        "source_id": "site-docs-reference-3",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud SQL provides the following options to restore your instance using PITR: Perform a PITR on a live instance Perform a PITR using the backup vault Perform a PITR on an unavailable instance Perform a PITR on a deleted instance Perform a PITR using binary log event positions For performing a PITR on an unavailable or deleted instance, you'll need to find the latest and earliest recovery time .",
+          "On the Create a clone page, complete the following actions: In the Instance ID field, update the instance ID, if needed.",
+          "Go to Cloud SQL Instances Open the more actions menu for the instance you want to recover and click Create clone ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api/rest/v1/instances",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/configure-pitr",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/pitr"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

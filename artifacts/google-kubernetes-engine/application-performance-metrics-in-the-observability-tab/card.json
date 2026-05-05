@@ -1,0 +1,119 @@
+{
+  "feature_name": "Application performance metrics in the Observability tab",
+  "feature_slug": "application-performance-metrics-in-the-observability-tab",
+  "summary": "The GKE deployment Observability tab can display application performance metrics from supported sources.",
+  "extended_definition": "The GKE deployment Observability tab can display application performance metrics from supported sources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/observability-with-prometheus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example of a command to enable observability features: gcloud container clusters update $CLUSTER NAME \\ --project = $PROJECT ID \\ --location = $LOCATION \\ --enable-managed-prometheus \\ --logging = SYSTEM,WORKLOAD \\ --monitoring = SYSTEM,DEPLOYMENT,HPA,POD,DCGM \\ --auto-monitoring-scope = ALL For more information, see Monitor your inference workloads . (HPA only) Deploy a metrics adapter : A metrics adapter, such as the Custom Metrics Stackdriver Adapter , is necessary if HPA resources were generated in the deployment manifests.",
+          "For example: gcloud container ai profiles list \\ --model = openai/gpt-oss-20b \\ --pricing-model = on-demand \\ --target-ttft-milliseconds = 300 The output shows supported profiles with performance metrics like throughput, latency, and cost per million tokens at the inflection point.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE AI/ML Guides Send feedback Analyze model serving performance and costs with GKE Inference Quickstart Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Collect and view kube state metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable kube state metrics from the Observability tab for a Deployment, do the following: In the Google Cloud console, go to the Workloads page: Go to Workloads If you use the search bar to find this page, then select the result whose subheading is Kubernetes Engine .",
+          "Configure the collection of kube state metrics You can enable kube state metrics using the Google Cloud console, the gcloud CLI, or Terraform: Console You can enable kube state metrics from the Observability tab for either a cluster or a Deployment within a cluster.",
+          "On the Observability tab for a cluster, you can filter the set of charts for kube state metrics by the following two items: Workloads State : includes the metrics for Pods, Deployments, StatefulSets, DaemonSets, and HorizontalPodAutoscaler resources."
+        ]
+      },
+      {
+        "title": "\"Application observability with Prometheus on GKE \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/observability-with-prometheus",
+        "source_id": "site-docs-root-2",
+        "final_score": 140,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Documentation Guides Send feedback Application observability with Prometheus on GKE Stay organized with collections Save and categorize content based on your preferences.",
+          "See the License for the specific language governing permissions and limitations under the License. --- apiVersion : monitoring.coreos.com/v1 kind : Probe metadata : name : frontend-probe spec : jobName : frontend prober : url : tutorial-kube-prometheus-blackbox-exporter:19115 path : /probe module : http 2xx interval : 60s scrapeTimeout : 30s targets : staticConfig : labels : app : bank-of-anthos static : - frontend:80 --- apiVersion : monitoring.coreos.com/v1 kind : Probe metadata : name : userservice-probe spec : jobName : userservice prober : url : tutorial-kube-prometheus-blackbox-exporter:19115 path : /probe module : http 2xx interval : 60s scrapeTimeout : 30s targets : staticConfig : labels : app : bank-of-anthos static : - userservice:8080/ready --- apiVersion : monitoring.coreos.com/v1 kind : Probe metadata : name : balancereader-probe spec : jobName : balancereader prober : url : tutorial-kube-prometheus-blackbox-exporter:19115 path : /probe module : http 2xx interval : 60s scrapeTimeout : 30s targets : staticConfig : labels : app : bank-of-anthos static : - balancereader:8080/ready --- apiVersion : monitoring.coreos.com/v1 kind : Probe metadata : name : contacts-probe spec : jobName : contacts prober : url : tutorial-kube-prometheus-blackbox-exporter:19115 path : /probe module : http 2xx interval : 60s scrapeTimeout : 30s targets : staticConfig : labels : app : bank-of-anthos static : - contacts:8080/ready --- apiVersion : monitoring.coreos.com/v1 kind : Probe metadata : name : ledgerwriter-probe spec : jobName : ledgerwriter prober : url : tutorial-kube-prometheus-blackbox-exporter:19115 path : /probe module : http 2xx interval : 60s scrapeTimeout : 30s targets : staticConfig : labels : app : bank-of-anthos static : - ledgerwriter:8080/ready --- apiVersion : monitoring.coreos.com/v1 kind : Probe metadata : name : transactionhistory-probe spec : jobName : transactionhistory prober : url : tutorial-kube-prometheus-blackbox-exporter:19115 path : /probe module : http 2xx interval : 60s scrapeTimeout : 30s targets : staticConfig : labels : app : bank-of-anthos static : - transactionhistory:8080/ready This manifest describes Prometheus liveness probes and includes the following fields: spec.jobName : the Job name assigned to scraped metrics. spec.prober.url : the Service URL of the blackbox exporter.",
+          "Delete a Google Cloud project: gcloud projects delete PROJECT ID Delete individual resources Delete the Kubernetes resources: kubectl delete -f kubernetes-manifests Uninstall Prometheus: helm uninstall tutorial Delete the GKE cluster: gcloud container clusters delete CLUSTER NAME --quiet What's next Learn about Google Cloud Managed Service for Prometheus , a fully managed, global metrics solution, based on Prometheus, that is deployed by default in all Autopilot clusters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "monitoring.coreos.com",
+      "secret.yaml",
+      "spec.jobName",
+      "spec.prober.url"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/observability-with-prometheus"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/observability-with-prometheus"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/observability-with-prometheus"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/kube-state-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/observability-with-prometheus"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

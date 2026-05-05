@@ -1,0 +1,111 @@
+{
+  "feature_name": "Migrate to Containers Console UI",
+  "feature_slug": "migrate-to-containers-console-ui",
+  "summary": "The Google Cloud console UI for Migrate to Containers is deprecated; deprecated on 2024-01-03.",
+  "extended_definition": "The Google Cloud console UI for Migrate to Containers is deprecated; deprecated on 2024-01-03.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-03",
+    "deprecation_date": "2024-01-03",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/execute-the-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+      "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrate a Linux VM using Migrate to Containers CLI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "Install Docker and allow the non-root user to run containers: Download the convenience script curl -fsSL https://get.docker.com -o install-docker.sh Install Docker sudo sh install-docker.sh Allow the non-root user to access Docker sudo usermod -aG docker $USER Activate the group changes newgrp docker Install Skaffold: curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \\ sudo install skaffold /usr/local/bin/ Download the Migrate to Containers CLI: curl -O \"https://m2c-cli-release.storage.googleapis.com/ $( curl -s https://m2c-cli-release.storage.googleapis.com/latest ) /linux/amd64/m2c\" chmod +x ./m2c Migrate the source VM A migration typically involves three steps: copying the source VM file system, analyzing the file system to create a migration plan, and generating the migration artifacts.",
+          "Go to Google Cloud console Create a VM: gcloud compute instances create quickstart-source-vm \\ --zone = us-central1-a --machine-type = e2-medium \\ --subnet = default --scopes = \"cloud-platform\" \\ --tags = http-server,https-server --image = ubuntu-2204-jammy-v20240208 \\ --image-project = ubuntu-os-cloud --boot-disk-size = 10GB --boot-disk-type = pd-standard \\ --boot-disk-device-name = quickstart-source-vm Allow a few minutes for the VM creation to complete.",
+          "Go to Google Cloud console Create a VM: gcloud compute instances create quickstart-local-vm \\ --zone = us-central1-a --machine-type = e2-medium \\ --subnet = default --scopes = \"cloud-platform\" \\ --tags = http-server,https-server --image = ubuntu-2204-jammy-v20240208 \\ --image-project = ubuntu-os-cloud --boot-disk-size = 50GB --boot-disk-type = pd-standard \\ --boot-disk-device-name = quickstart-local-vm Allow a few minutes for the VM creation to complete."
+        ]
+      },
+      {
+        "title": "Execute the migration \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/execute-the-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migrate to Containers Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Additionally, Migrate to Containers CLI generates a Skaffold configuration that you can use to build and deploy all of the generated images in a single step."
+        ]
+      },
+      {
+        "title": "\"Monitor migrated workloads \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads",
+        "source_id": "site-docs-root-2",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Migration Migrate to Containers Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "View metrics on the GKE console The GKE console and Cloud Monitoring provide a suite of tools to monitor your containers.",
+          "Monitor migrated workloads You can view logs and metrics from your migrated workloads in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.sh",
+      "filters.txt",
+      "get.docker.com",
+      "release.storage.googleapis.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/execute-the-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/execute-the-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/execute-the-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/monitoring-migrated-workloads"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.501Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

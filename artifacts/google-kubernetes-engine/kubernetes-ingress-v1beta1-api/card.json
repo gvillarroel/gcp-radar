@@ -1,0 +1,139 @@
+{
+  "feature_name": "Kubernetes Ingress v1beta1 API",
+  "feature_slug": "kubernetes-ingress-v1beta1-api",
+  "summary": "The v1beta1 Ingress API is deprecated and will no longer be served in Kubernetes 1.22+; deprecated on 2021-01-19.",
+  "extended_definition": "The v1beta1 Ingress API is deprecated and will no longer be served in Kubernetes 1.22+; deprecated on 2021-01-19.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-19",
+    "deprecation_date": "2021-01-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Check if your GKE clusters are using ingress-nginx by using one of the following commands: Check an individual cluster: kubectl get pods --all-namespaces --selector app.kubernetes.io/name = ingress-nginx Check multiple clusters at once using a Cloud Asset Inventory resource search query : gcloud asset search-all-resources \\ --scope = 'organizations/ ORGANIZATION ID ' \\ --asset-types = 'k8s.io/Pod' \\ --query = 'labels.\"app.kubernetes.io/name\"=\"ingress-nginx\"' Replace ORGANIZATION ID with your organization resource ID.",
+          "The following upcoming GKE on AWS versions or newer will include the fix for this vulnerability, and this bulletin will be updated when they are available: 1.5.0-gke.6 1.4.3-gke.7 Drop the CAP NET RAW capability from containers with one of the following methods: Enforce blocking these capabilities with PodSecurityPolicy , for example: Require dropping CAP NET RAW with a PSP apiversion: extensions/v1beta1 kind: PodSecurityPolicy metadata: name: no-cap-net-raw spec: requiredDropCapabilities: -NET RAW ...",
+          "None GCP-2025-013 Published: 2025-03-24 Reference: CVE-2025-1974 GKE Description Severity Several security issues have been discovered in the NGINX Ingress Controller, ingress-nginx , an open source software component that runs inside Kubernetes clusters to help manage network traffic coming into the cluster."
+        ]
+      },
+      {
+        "title": "\"Feature and API deprecations \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "source_id": "site-iam-reference-required-2",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Container Registry May 15, 2023 March 18, 2025 Transition from Container Registry to Artifact Registry in GKE No GKE Compliance dashboard (Preview) January 28, 2025 June 30, 2025 Posture management feature deprecations No Workload vulnerability scanning GKE security posture dashboard Standard tier: July 23, 2024 Advanced Vulnerability Insights: June 16, 2025 Standard tier: July 31, 2025 Advanced Vulnerability Insights: June 16, 2026 Vulnerability scanning removal from GKE Standard edition Yes Supply chain concerns - Binary Authorization (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations No Kubernetes security posture - advanced tier (Preview) GKE security posture dashboard January 28, 2025 March 31, 2025 Posture management feature deprecations Yes containerd 1.7 features GKE version 1.32 GKE version 1.33 Migrate nodes to containerd 2 Yes Linux cgroupv1 mode GKE version 1.31 TBD Migrate nodes to Linux cgroupv2 No Vulnerability scanning removal from GKE standard edition July 23, 2024 July 31, 2025 Vulnerability scanning removal from GKE Standard edition No TLS certificates signed with SHA-1 algorithm GKE version 1.24 GKE version 1.29 SHA-1 TLS certificates support removal Yes Built-in authentication plugin for Kubernetes clients GKE version 1.22 GKE version 1.25 Deprecated authentication plugin for Kubernetes clients No PodSecurityPolicy GKE version 1.21 GKE version 1.25 PodSecurityPolicy deprecation Yes Docker-based node images GKE version 1.20 GKE version 1.24 Docker node image deprecation Yes X.509 Common Name field in webhook certificates GKE version 1.19 GKE version 1.23 Webhook certificates CN field deprecation Yes Kubernetes API deprecations The following table provides an overview of Kubernetes APIs that are deprecated and no longer served, sorted by Kubernetes version: Kubernetes version More information Does GKE detect and report usage?",
+          "1.32 Kubernetes 1.32 deprecated APIs Yes 1.29 Kubernetes 1.29 deprecated APIs Yes 1.27 Kubernetes 1.27 deprecated APIs Yes 1.26 Kubernetes 1.26 deprecated APIs Yes 1.25 Kubernetes 1.25 deprecated APIs Yes 1.22 Kubernetes 1.22 deprecated APIs , Kubernetes Ingress Beta APIs removed in GKE 1.23 Yes Other feature deprecations The following table provides information on deprecations and removals that are caused by other upstream providers that are not part of the Kubernetes open source project.",
+          "Kubernetes feature deprecations The following table outlines ongoing GKE feature deprecations, as well as the version in which those features are no longer supported: Name Deprecated Removed More information Does GKE detect and report usage?"
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Currently available options: monitoring.googleapis.com/kubernetes - The Cloud Monitoring service with a Kubernetes-native resource model monitoring.googleapis.com - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). none - No metrics will be exported from the cluster.",
+          "Currently available options: logging.googleapis.com/kubernetes - The Cloud Logging service with a Kubernetes-native resource model logging.googleapis.com - The legacy Cloud Logging service (no longer available as of GKE 1.15). none - no logs will be exported from the cluster.",
+          "AddonsConfig JSON representation { \"httpLoadBalancing\" : { object ( HttpLoadBalancing ) } , \"horizontalPodAutoscaling\" : { object ( HorizontalPodAutoscaling ) } , \"kubernetesDashboard\" : { object ( KubernetesDashboard ) } , \"networkPolicyConfig\" : { object ( NetworkPolicyConfig ) } , \"cloudRunConfig\" : { object ( CloudRunConfig ) } , \"dnsCacheConfig\" : { object ( DnsCacheConfig ) } , \"configConnectorConfig\" : { object ( ConfigConnectorConfig ) } , \"gcePersistentDiskCsiDriverConfig\" : { object ( GcePersistentDiskCsiDriverConfig ) } , \"gcpFilestoreCsiDriverConfig\" : { object ( GcpFilestoreCsiDriverConfig ) } , \"gkeBackupAgentConfig\" : { object ( GkeBackupAgentConfig ) } , \"gcsFuseCsiDriverConfig\" : { object ( GcsFuseCsiDriverConfig ) } , \"statefulHaConfig\" : { object ( StatefulHAConfig ) } , \"parallelstoreCsiDriverConfig\" : { object ( ParallelstoreCsiDriverConfig ) } , \"rayOperatorConfig\" : { object ( RayOperatorConfig ) } , \"highScaleCheckpointingConfig\" : { object ( HighScaleCheckpointingConfig ) } , \"lustreCsiDriverConfig\" : { object ( LustreCsiDriverConfig ) } , \"sliceControllerConfig\" : { object ( SliceControllerConfig ) } } Fields httpLoadBalancing object ( HttpLoadBalancing ) Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster. horizontalPodAutoscaling object ( HorizontalPodAutoscaling ) Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods. kubernetesDashboard (deprecated) object ( KubernetesDashboard ) This item is deprecated!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.kubernetes.io",
+      "container.googleapis.com",
+      "gke.6",
+      "gke.7",
+      "k8s.io",
+      "kubernetes.io",
+      "logging.googleapis.com",
+      "monitoring.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/apis-1-16",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

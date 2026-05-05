@@ -1,0 +1,124 @@
+{
+  "feature_name": "Custom AIA and CDP certificate extensions",
+  "feature_slug": "custom-aia-and-cdp-certificate-extensions",
+  "summary": "Certificate authorities can now be configured with custom Authority Information Access (AIA) and CRL Distribution Point (CDP) extensions embedded in issued certificates.",
+  "extended_definition": "Certificate authorities can now be configured with custom Authority Information Access (AIA) and CRL Distribution Point (CDP) extensions embedded in issued certificates.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+      "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a CA pool \\_|\\_ Certificate Authority Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add Authority information access (AIA) OCSP servers The AIA extension in a certificate provides the following information: Address of the OCSP servers from where you can check the revocation status of the certificate.",
+          "When issuing a certificate, the URL to this CA certificate is included in the certificate as an authority information access (AIA) extension.",
+          "You can also specify custom AIA and CRL Distribution Point (CDP) URLs if you want to point to your own OCSP servers or CRL locations."
+        ]
+      },
+      {
+        "title": "\"Access control with IAM \\_|\\_ Certificate Authority Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Issue certificates that attest to third-party identity \\_|\\_ Certificate\\",
+        "url": "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection",
+        "source_id": "site-iam-reference",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.caPools.certificateAuthorities.certificateRevocationLists"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/certificate-authority-service/docs/creating-ca-pool",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/access-control",
+        "https://docs.cloud.google.com/certificate-authority-service/docs/tutorials/using-3pi-with-reflection"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.258Z",
+  "source_step08_card": "data/step-08/current/products/certificate-authority-service/card.json",
+  "product_name": "Certificate Authority Service",
+  "product_slug": "certificate-authority-service"
+}

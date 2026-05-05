@@ -1,0 +1,102 @@
+{
+  "feature_name": "containerd v2 shim shutdown reliability",
+  "feature_slug": "containerd-v2-shim-shutdown-reliability",
+  "summary": "Fixes a containerd issue that prevented some v2 shims from shutting down properly.",
+  "extended_definition": "Fixes a containerd issue that prevented some v2 shims from shutting down properly.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source",
+      "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Support policy \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It is actively patched with security updates (CVEs) and bug-fixes to address issues that impact Google Cloud users.",
+          "The milestone is actively scanned for security vulnerabilities, and security fixes are applied on regular basis.",
+          "To continue having access to bug fixes and security patches, upgrade to one of the newer active milestones."
+        ]
+      },
+      {
+        "title": "Versioning scheme \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Once promoted to the LTS family, the LTS milestone provides the following benefits: A support duration of 2 years Security fixes for the entire support duration Fixes for any production issues A dedicated release notes page listing every change going into the image.",
+          "Production 2 years Active maintenance of milestone by addressing production issues and security fixes with priority.",
+          "A tiered testing setup like this should help to minimize issues when rolling out newer major versions of Container-Optimized OS images to your production environment."
+        ]
+      },
+      {
+        "title": "Building Container-Optimized OS from source \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source",
+        "source_id": "site-docs-reference",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/versioning",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/building-from-open-source"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:23.337Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

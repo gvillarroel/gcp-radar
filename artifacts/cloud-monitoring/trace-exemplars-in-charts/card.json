@@ -1,0 +1,167 @@
+{
+  "feature_name": "Trace exemplars in charts",
+  "feature_slug": "trace-exemplars-in-charts",
+  "summary": "Cloud Trace exemplars can be viewed in Cloud Monitoring charts.",
+  "extended_definition": "Cloud Trace exemplars can be viewed in Cloud Monitoring charts.",
+  "lifecycle": {
+    "latest_feature_date": "2020-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect OpenTelemetry Protocol (OTLP) metrics and traces \\_|\\_ Cloud Monitoring\\",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "source_id": "site-iam-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following tabs show the metric descriptor that each ingestion API creates: Prometheus API { \"name\": \"projects/ PROJECT ID /metricDescriptors/prometheus.googleapis.com/otlp test cumulative/counter\", \"labels\": [ { \"key\": \"instance name\" }, { \"key\": \"machine type\" } ], \"metricKind\": \"CUMULATIVE\", \"valueType\": \"DOUBLE\", \"type\": \"prometheus.googleapis.com/otlp test cumulative/counter\", \"monitoredResourceTypes\": [ \"prometheus target\" ] } Monitoring API { \"name\": \"projects/ PROJECT ID /metricDescriptors/workload.googleapis.com/otlp.test.cumulative\", \"labels\": [ { \"key\": \"instrumentation source\" } ], \"metricKind\": \"CUMULATIVE\", \"valueType\": \"DOUBLE\", \"type\": \"workload.googleapis.com/otlp.test.cumulative\", \"monitoredResourceTypes\": [ \"gce instance\", ...many other types deleted... ] } The following table summarizes some of the format differences imposed by the APIs used to ingest OTLP metrics: Prometheus API Monitoring API Metric domain prometheus.googleapis.com workload.googleapis.com OTLP metric name Modified during ingestion Used as provided Monitored resource prometheus target gce instance Ingestion formats and queries The metrics mode used in the OTLP receiver affects the way you query the resulting metrics in Cloud Monitoring when you build charts, dashboards, and alerting policies.",
+          "To grant this role to the service account, run the following gcloud projects add-iam-policy-binding command: gcloud projects add-iam-policy-binding PROJECT ID --member \"serviceAccount: SERVICE ACCT NAME @ PROJECT ID .iam.gserviceaccount.com\" --role=\"roles/cloudtrace.agent\" You can then run the gcloud projects get-iam-policy command to verify that the change has been made: gcloud projects get-iam-policy PROJECT ID --format=\"table(bindings.role)\" --flatten=\"bindings[].members\" --filter=\"bindings.members: SERVICE ACCT NAME @ PROJECT ID .iam.gserviceaccount.com\" The output now includes roles/cloudtrace.agent : ROLE roles/cloudtrace.agent roles/logging.logWriter roles/monitoring.metricWriter For more information about managing IAM roles, see Manage access to project, folders, and organizations .",
+          "Determine the roles granted to to the service account To see the roles granted to a service account, run the following gcloud projects get-iam-policy command: gcloud projects get-iam-policy PROJECT ID --format=\"table(bindings.role)\" --flatten=\"bindings[].members\" --filter=\"bindings.members: SERVICE ACCT NAME @ PROJECT ID .iam.gserviceaccount.com\" You might see output like the following: ROLE roles/logging.logWriter roles/monitoring.metricWriter If the output includes either roles/cloudtrace.agent or roles/cloudtrace.admin , then the service account has sufficient permission to write traces."
+        ]
+      },
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use dashboard options to explore telemetry The Application Monitoring dashboards display log, metric, trace, and incident information.",
+          "List applications To list the applications you have registered with App Hub, along with information like the number of incidents and the application's location, criticality, and environment, do the following: In the Google Cloud console, go to the Application monitoring page: Go to Application monitoring If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "The following screenshot illustrates the dashboard for a workload: The registration status of a service or workload affects what data Application Monitoring displays on the dashboard for the service or workload: Registered : Application Monitoring uses the application-specific labels and attributes that supported infrastructure and instrumented applications attach to the telemetry they generate."
+        ]
+      },
+      {
+        "title": "\"Set up Google Cloud Observability for Application Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Only configure scopes To get the permissions that you need to configure the observability scope, ask your administrator to grant you the following IAM roles: Observability Editor ( roles/observability.editor ) on your App Hub host project or management project Logs Configuration Writer ( roles/logging.configWriter ) on your App Hub host project or management project Monitoring admin ( roles/monitoring.admin ) on your App Hub host project or management project and on each project that you want to add to the metrics scope Cloud Trace User ( roles/cloudtrace.user ) on your App Hub host project or management project App Hub viewer ( roles/apphub.viewer ) on your App Hub host project or management project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Configure and set the default trace scope Do the following: For each project that will store your application's trace data, we recommend that you enable the Observability API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "To associate an alerting policy with a workload or service by using the Google Cloud console, do the following: In the Google Cloud console, go to the notifications Alerting page: Go to Alerting If you use the search bar to find this page, then select the result whose subheading is Monitoring ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.viewer",
+      "bindings.members",
+      "bindings.role",
+      "cloudtrace.admin",
+      "cloudtrace.agent",
+      "cloudtrace.user",
+      "iam.gserviceaccount.com",
+      "logging.configWriter",
+      "logging.logWriter",
+      "monitoring.admin",
+      "monitoring.metricWriter",
+      "observability.editor",
+      "otlp.test.cumulative",
+      "prometheus.googleapis.com",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "workload.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.viewer",
+      "roles/cloudtrace.admin",
+      "roles/cloudtrace.agent",
+      "roles/cloudtrace.user",
+      "roles/logging.configWriter",
+      "roles/logging.logWriter",
+      "roles/monitoring.admin",
+      "roles/monitoring.metricWriter",
+      "roles/observability.editor",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent/otlp",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

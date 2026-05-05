@@ -1,0 +1,157 @@
+{
+  "feature_name": "max_staleness materialized view option",
+  "feature_slug": "max-staleness-materialized-view-option",
+  "summary": "The max_staleness option for materialized views balances query performance and cost for frequently changing datasets; The max_staleness option lets materialized views balance freshness, performance, and cost for large changing datasets.",
+  "extended_definition": "The max_staleness option for materialized views balances query performance and cost for frequently changing datasets; The max_staleness option lets materialized views balance freshness, performance, and cost for large changing datasets.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+      "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authorized views \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "source_id": "site-docs-reference-5",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Grant Identity and Access Management (IAM) roles that give users the necessary permissions to query the authorized views or authorized materialized views that you share.",
+          "For details about how row-level security interacts with materialized views, see Use row-level security with other BigQuery features .",
+          "Authorized views This document describes how to create authorized views and authorized materialized views in BigQuery."
+        ]
+      },
+      {
+        "title": "Create materialized view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId tableId = TableId . of ( datasetName , materializedViewName ); MaterializedViewDefinition materializedViewDefinition = MaterializedViewDefinition . newBuilder ( query ). build (); bigquery . create ( TableInfo . of ( tableId , materializedViewDefinition )); System . out . println ( \"Materialized view created successfully\" ); } catch ( BigQueryException e ) { System . out . println ( \"Materialized view was not created. \\n\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Explore further For detailed documentation that includes this code sample, see the following: Create materialized views Code sample Go Before trying this sample, follow the Go setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days labels = { billing group = \"accounting\" , pii = \"sensitive\" } } resource \"google bigquery table\" \"default\" { dataset id = google bigquery dataset.default.dataset id table id = \"my materialized view\" materialized view { query = \"SELECT ID, description, date created FROM myproject.orders.items\" enable refresh = \"true\" refresh interval ms = 172800000 # 2 days allow non incremental definition = \"false\" } } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser ."
+        ]
+      },
+      {
+        "title": "bq command-line tool reference \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Idle slots . --max staleness= INTERVAL Specifies an INTERVAL value that determines the maximum staleness allowed when querying a materialized view or an external table.",
+          "For more information about using the bq ls command, see the following: Managing jobs Listing datasets in a project Creating and using tables Listing views in a dataset Working with transfers Listing table snapshots in a dataset bq mk Use the bq mk command to create a BigQuery resource.",
+          "For more information, see Creating and using materialized views . bq mk --reservation Creates a reservation with dedicated slots."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataset.default.dataset",
+      "myproject.orders.items"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/reference/bq-cli-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

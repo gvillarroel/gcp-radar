@@ -1,0 +1,160 @@
+{
+  "feature_name": "Custom sections API",
+  "feature_slug": "custom-sections-api",
+  "summary": "The Chat API lets developers create, update, delete, list, position, and organize custom sections and section items for personalized conversation views; The Chat API lets developers create, update, delete, list, position, and organize custom sections and section items for personalized conversation views.",
+  "extended_definition": "The Chat API lets developers create, update, delete, list, position, and organize custom sections and section items for personalized conversation views; The Chat API lets developers create, update, delete, list, position, and organize custom sections and section items for personalized conversation views.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+      "https://developers.google.com/workspace/chat/create-messages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Send a message using the Google Chat API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/create-messages",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "I created this message by calling ' + 'the Chat API \\' s messages.create() method.' , \"cards v2\" : [{ \"card\" : { \"header\" : { \"title\" : 'About this message' , \"image url\" : 'https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/info/default/24px.svg' }, \"sections\" : [{ \"header\" : \"Contents\" , \"widgets\" : [{ \"text paragraph\" : { \"text\" : '🔡 <b>Text</b> which can include ' + 'hyperlinks 🔗, emojis 😄🎉, and @mentions 🗣️.' }}, { \"text paragraph\" : { \"text\" : '🖼️ A <b>card</b> to display visual elements' + 'and request information such as text 🔤, ' + 'dates and times 📅, and selections ☑️.' }}, { \"text paragraph\" : { \"text\" : '👉🔘 An <b>accessory widget</b> which adds ' + 'a button to the bottom of a message.' }} ]}, { \"header\" : \"What's next\" , \"collapsible\" : True , \"widgets\" : [{ \"text paragraph\" : { \"text\" : \"❤️ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.reactions/create'>Add a reaction</a>.\" }}, { \"text paragraph\" : { \"text\" : \"🔄 <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/patch'>Update</a> \" + \"or ❌ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/delete'>delete</a> \" + \"the message.\" } }] } ] }}], \"accessory widgets\" : [{ \"button list\" : { \"buttons\" : [{ \"text\" : 'View documentation' , \"icon\" : { \"material icon\" : { \"name\" : 'link' }}, \"on click\" : { \"open link\" : { \"url\" : 'https://developers.google.com/workspace/chat/create-messages' }} }]}}] } ) Make the request response = client . create message ( request ) Handle the response print ( response ) create message with app cred () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateMessageAppCred.java View on GitHub import com.google.apps.card.v1.Button ; import com.google.apps.card.v1.ButtonList ; import com.google.apps.card.v1.Card ; import com.google.apps.card.v1.Icon ; import com.google.apps.card.v1.MaterialIcon ; import com.google.apps.card.v1.OnClick ; import com.google.apps.card.v1.OpenLink ; import com.google.apps.card.v1.TextParagraph ; import com.google.apps.card.v1.Widget ; import com.google.apps.card.v1.Card.CardHeader ; import com.google.apps.card.v1.Card.Section ; import com.google.chat.v1.AccessoryWidget ; import com.google.chat.v1.CardWithId ; import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateMessageRequest ; import com.google.chat.v1.Message ; // This sample shows how to create message with app credential. public class CreateMessageAppCred { public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithAppCredentials ()) { CreateMessageRequest .",
+          "I created this message by calling \" + \"the Chat API\\'s messages.create() method.\" ) . addCardsV2 ( CardWithId . newBuilder (). setCard ( Card . newBuilder () . setHeader ( CardHeader . newBuilder () . setTitle ( \"About this message\" ) . setImageUrl ( \"https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/info/default/24px.svg\" )) . addSections ( Section . newBuilder () . setHeader ( \"Contents\" ) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"🔡 <b>Text</b> which can include \" + \"hyperlinks 🔗, emojis 😄🎉, and @mentions 🗣️.\" ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"🖼️ A <b>card</b> to display visual elements \" + \"and request information such as text 🔤, \" + \"dates and times 📅, and selections ☑️.\" ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"👉🔘 An <b>accessory widget</b> which adds \" + \"a button to the bottom of a message.\" )))) . addSections ( Section . newBuilder () . setHeader ( \"What's next\" ) . setCollapsible ( true ) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"❤️ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.reactions/create'>Add a reaction</a>.\" ))) . addWidgets ( Widget . newBuilder (). setTextParagraph ( TextParagraph . newBuilder (). setText ( \"🔄 <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/patch'>Update</a> \" + \"or ❌ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/delete'>delete</a> \" + \"the message.\" )))))) . addAccessoryWidgets ( AccessoryWidget . newBuilder () . setButtonList ( ButtonList . newBuilder () . addButtons ( Button . newBuilder () . setText ( \"View documentation\" ) . setIcon ( Icon . newBuilder () . setMaterialIcon ( MaterialIcon . newBuilder (). setName ( \"link\" ))) . setOnClick ( OnClick . newBuilder () . setOpenLink ( OpenLink . newBuilder () . setUrl ( \"https://developers.google.com/workspace/chat/create-messages\" ))))))); Message response = chatServiceClient . createMessage ( request . build ()); System . out . println ( JsonFormat . printer (). print ( response )); } } } Apps Script chat/advanced-service/Main.gs View on GitHub / This sample shows how to create message with app credential It relies on the OAuth2 scope 'https://www.googleapis.com/auth/chat.bot' used by service accounts. / function createMessageAppCred () { // Initialize request argument(s) // TODO(developer): Replace SPACE NAME here. const parent = \"spaces/SPACE NAME\" ; const message = { text : \"👋🌎 Hello world!",
+          "I created this message by calling ' + \"the Chat API's messages.create() method.\" , cardsV2 : [ { card : { header : { title : 'About this message' , imageUrl : 'https://fonts.gstatic.com/s/i/short-term/release/googlesymbols/info/default/24px.svg' , }, sections : [ { header : 'Contents' , widgets : [ { textParagraph : { text : '🔡 <b>Text</b> which can include ' + 'hyperlinks 🔗, emojis 😄🎉, and @mentions 🗣️.' , }, }, { textParagraph : { text : '🖼️ A <b>card</b> to display visual elements' + 'and request information such as text 🔤, ' + 'dates and times 📅, and selections ☑️.' , }, }, { textParagraph : { text : '👉🔘 An <b>accessory widget</b> which adds ' + 'a button to the bottom of a message.' , }, }, ], }, { header : \"What's next\" , collapsible : true , widgets : [ { textParagraph : { text : \"❤️ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.reactions/create'>Add a reaction</a>.\" , }, }, { textParagraph : { text : \"🔄 <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/patch'>Update</a> \" + \"or ❌ <a href='https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages/delete'>delete</a> \" + 'the message.' , }, }, ], }, ], }, }, ], accessoryWidgets : [ { buttonList : { buttons : [ { text : 'View documentation' , icon : { materialIcon : { name : 'link' }}, onClick : { openLink : { url : 'https://developers.google.com/workspace/chat/create-messages' , }, }, }, ], }, }, ], }, }; // Make the request const response = await chatClient . createMessage ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create message app cred.py View on GitHub from authentication utils import create client with app credentials from google.apps import chat v1 as google chat This sample shows how to create message with app credential def create message with app cred (): Create a client client = create client with app credentials () Initialize request argument(s) request = google chat ."
+        ]
+      },
+      {
+        "title": "Package google.chat.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Index ChatService (interface) AccessoryWidget (message) ActionResponse (message) ActionResponse.ResponseType (enum) ActionResponse.SelectionItems (message) ActionResponse.UpdatedWidget (message) ActionStatus (message) Annotation (message) AnnotationType (enum) AppCommandMetadata (message) AppCommandMetadata.AppCommandType (enum) AttachedGif (message) Attachment (message) Attachment.Source (enum) AttachmentDataRef (message) CalendarEventLinkData (message) CardWithId (message) ChatSpaceLinkData (message) CompleteImportSpaceRequest (message) CompleteImportSpaceResponse (message) ContextualAddOnMarkup (message) ContextualAddOnMarkup.Card (message) ContextualAddOnMarkup.Card.CardAction (message) ContextualAddOnMarkup.Card.CardHeader (message) ContextualAddOnMarkup.Card.CardHeader.ImageStyle (enum) ContextualAddOnMarkup.Card.Section (message) CreateCustomEmojiRequest (message) CreateMembershipRequest (message) CreateMessageRequest (message) CreateMessageRequest.MessageReplyOption (enum) CreateReactionRequest (message) CreateSectionRequest (message) CreateSpaceRequest (message) CustomEmoji (message) CustomEmoji.CustomEmojiPayload (message) CustomEmojiMetadata (message) DeleteCustomEmojiRequest (message) DeleteMembershipRequest (message) DeleteMessageRequest (message) DeleteReactionRequest (message) DeleteSectionRequest (message) DeleteSpaceRequest (message) DeletionMetadata (message) DeletionMetadata.DeletionType (enum) Dialog (message) DialogAction (message) DriveDataRef (message) DriveLinkData (message) Emoji (message) EmojiReactionSummary (message) FindDirectMessageRequest (message) FindGroupChatsRequest (message) FindGroupChatsResponse (message) ForwardedMetadata (message) GetAttachmentRequest (message) GetCustomEmojiRequest (message) GetMembershipRequest (message) GetMessageRequest (message) GetSpaceEventRequest (message) GetSpaceNotificationSettingRequest (message) GetSpaceReadStateRequest (message) GetSpaceRequest (message) GetThreadReadStateRequest (message) Group (message) HistoryState (enum) ListCustomEmojisRequest (message) ListCustomEmojisResponse (message) ListMembershipsRequest (message) ListMembershipsResponse (message) ListMessagesRequest (message) ListMessagesResponse (message) ListReactionsRequest (message) ListReactionsResponse (message) ListSectionItemsRequest (message) ListSectionItemsResponse (message) ListSectionsRequest (message) ListSectionsResponse (message) ListSpaceEventsRequest (message) ListSpaceEventsResponse (message) ListSpacesRequest (message) ListSpacesResponse (message) MatchedUrl (message) MeetSpaceLinkData (message) MeetSpaceLinkData.HuddleStatus (enum) MeetSpaceLinkData.Type (enum) Membership (message) Membership.MembershipRole (enum) Membership.MembershipState (enum) MembershipBatchCreatedEventData (message) MembershipBatchDeletedEventData (message) MembershipBatchUpdatedEventData (message) MembershipCreatedEventData (message) MembershipDeletedEventData (message) MembershipUpdatedEventData (message) Message (message) MessageBatchCreatedEventData (message) MessageBatchDeletedEventData (message) MessageBatchUpdatedEventData (message) MessageCreatedEventData (message) MessageDeletedEventData (message) MessageUpdatedEventData (message) MoveSectionItemRequest (message) MoveSectionItemResponse (message) PositionSectionRequest (message) PositionSectionRequest.Position (enum) PositionSectionResponse (message) QuotedMessageMetadata (message) QuotedMessageMetadata.QuoteType (enum) QuotedMessageSnapshot (message) Reaction (message) ReactionBatchCreatedEventData (message) ReactionBatchDeletedEventData (message) ReactionCreatedEventData (message) ReactionDeletedEventData (message) ReplaceMessageCardsRequest (message) ReplaceMessageCardsResponse (message) RichLinkMetadata (message) RichLinkMetadata.RichLinkType (enum) SearchSpacesRequest (message) SearchSpacesResponse (message) Section (message) Section.SectionType (enum) SectionItem (message) SetUpSpaceRequest (message) SlashCommand (message) SlashCommandMetadata (message) SlashCommandMetadata.Type (enum) Space (message) Space.AccessSettings (message) Space.AccessSettings.AccessState (enum) Space.MembershipCount (message) Space.PermissionSetting (message) Space.PermissionSettings (message) Space.PredefinedPermissionSettings (enum) Space.SpaceDetails (message) Space.SpaceThreadingState (enum) Space.SpaceType (enum) Space.Type (enum) SpaceBatchUpdatedEventData (message) SpaceEvent (message) SpaceNotificationSetting (message) SpaceNotificationSetting.MuteSetting (enum) SpaceNotificationSetting.NotificationSetting (enum) SpaceReadState (message) SpaceUpdatedEventData (message) SpaceView (enum) Thread (message) ThreadReadState (message) UpdateMembershipRequest (message) UpdateMessageRequest (message) UpdateSectionRequest (message) UpdateSpaceNotificationSettingRequest (message) UpdateSpaceReadStateRequest (message) UpdateSpaceRequest (message) User (message) User.Type (enum) UserMentionMetadata (message) UserMentionMetadata.Type (enum) WidgetMarkup (message) WidgetMarkup.Button (message) WidgetMarkup.FormAction (message) WidgetMarkup.FormAction.ActionParameter (message) WidgetMarkup.Icon (enum) WidgetMarkup.Image (message) WidgetMarkup.ImageButton (message) WidgetMarkup.KeyValue (message) WidgetMarkup.OnClick (message) WidgetMarkup.OpenLink (message) WidgetMarkup.TextButton (message) WidgetMarkup.TextParagraph (message) ChatService Enables developers to build Chat apps and integrations on Google Chat Platform.",
+          "Supported event types for messages : New message: google.workspace.chat.message.v1.created Updated message: google.workspace.chat.message.v1.updated Deleted message: google.workspace.chat.message.v1.deleted Multiple new messages: google.workspace.chat.message.v1.batchCreated Multiple updated messages: google.workspace.chat.message.v1.batchUpdated Multiple deleted messages: google.workspace.chat.message.v1.batchDeleted Supported event types for memberships : New membership: google.workspace.chat.membership.v1.created Updated membership: google.workspace.chat.membership.v1.updated Deleted membership: google.workspace.chat.membership.v1.deleted Multiple new memberships: google.workspace.chat.membership.v1.batchCreated Multiple updated memberships: google.workspace.chat.membership.v1.batchUpdated Multiple deleted memberships: google.workspace.chat.membership.v1.batchDeleted Supported event types for reactions : New reaction: google.workspace.chat.reaction.v1.created Deleted reaction: google.workspace.chat.reaction.v1.deleted Multiple new reactions: google.workspace.chat.reaction.v1.batchCreated Multiple deleted reactions: google.workspace.chat.reaction.v1.batchDeleted Supported event types about the space : Updated space: google.workspace.chat.space.v1.updated Multiple space updates: google.workspace.chat.space.v1.batchUpdated Union field payload . payload can be only one of the following: message created event data MessageCreatedEventData Event payload for a new message.",
+          "Lets Chat apps get, update, or delete a message without needing to store the system-assigned ID in the message's resource name (represented in the message name field)."
+        ]
+      },
+      {
+        "title": "Cards v2 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "source_id": "site-api-reference",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: Card message for a Google Chat app To create the sample card message in Google Chat, use the following JSON: { \"cardsV2\": [ { \"cardId\": \"unique-card-id\", \"card\": { \"header\": { \"title\": \"Sasha\", \"subtitle\": \"Software Engineer\", \"imageUrl\": \"https://developers.google.com/workspace/chat/images/quickstart-app-avatar.png\", \"imageType\": \"CIRCLE\", \"imageAltText\": \"Avatar for Sasha\" }, \"sections\": [ { \"header\": \"Contact Info\", \"collapsible\": true, \"uncollapsibleWidgetsCount\": 1, \"widgets\": [ { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"EMAIL\" }, \"text\": \"sasha@example.com\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PERSON\" }, \"text\": \"<font color=\\\"#80e27e\\\">Online</font>\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PHONE\" }, \"text\": \"+1 (555) 555-1234\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Share\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/share\" } } }, { \"text\": \"Edit\", \"onClick\": { \"action\": { \"function\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"EDIT\" } ] } } } ] } } ] } ] } } ] } JSON representation { \"header\" : { object ( CardHeader ) } , \"sections\" : [ { object ( Section ) } ] , \"sectionDividerStyle\" : enum ( DividerStyle ) , \"cardActions\" : [ { object ( CardAction ) } ] , \"name\" : string , \"fixedFooter\" : { object ( CardFixedFooter ) } , \"displayStyle\" : enum ( DisplayStyle ) , \"peekCardHeader\" : { object ( CardHeader ) } , \"expressionData\" : [ { object ( ExpressionData ) } ] } Fields header object ( CardHeader ) The header of the card.",
+          "For example, the following JSON creates an image with alternative text: \"image\": { \"imageUrl\": \"https://developers.google.com/workspace/chat/images/quickstart-app-avatar.png\", \"altText\": \"Chat app avatar\" } decoratedText object ( DecoratedText ) Displays a decorated text item.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-25 UTC.\"],[],[\"Cards in Google Chat and Workspace add-ons are interactive UI elements built with structured layouts, multimedia, and action triggers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.png",
+      "chat.bot",
+      "chat.messages.create",
+      "com.google.apps.card.v1.Button",
+      "com.google.apps.card.v1.ButtonList",
+      "com.google.apps.card.v1.Card",
+      "com.google.apps.card.v1.Card.CardHeader",
+      "com.google.apps.card.v1.Card.Section",
+      "com.google.apps.card.v1.Icon",
+      "com.google.apps.card.v1.MaterialIcon",
+      "com.google.apps.card.v1.OnClick",
+      "com.google.apps.card.v1.OpenLink",
+      "com.google.apps.card.v1.TextParagraph",
+      "com.google.apps.card.v1.Widget",
+      "com.google.chat.v1.AccessoryWidget",
+      "com.google.chat.v1.CardWithId",
+      "com.google.chat.v1.ChatServiceClient",
+      "com.google.chat.v1.CreateMessageRequest",
+      "com.google.chat.v1.Message",
+      "cred.py",
+      "developers.google.com",
+      "example.com",
+      "fonts.gstatic.com",
+      "id.js",
+      "id.py",
+      "messages.create",
+      "spaces.messages",
+      "spaces.messages.reactions",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-messages",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.385Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

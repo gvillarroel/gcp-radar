@@ -1,0 +1,90 @@
+{
+  "feature_name": "Enhanced VMware VM restore and clone performance",
+  "feature_slug": "enhanced-vmware-vm-restore-and-clone-performance",
+  "summary": "Restore and clone operations for VMware virtual machines were improved for higher performance.",
+  "extended_definition": "Restore and clone operations for VMware virtual machines were improved for higher performance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/access-your-managed-data",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Backup and DR Service for VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms",
+        "source_id": "site-api-reference",
+        "final_score": 137,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The VMware administrator's guide Backup and DR for VMware VMs Configure Google Cloud VMware Engine for Backup and DR protection Add vCenter and ESX server hosts to the appliance management console Discover and protect VMware VMs Apply a backup template to protect a VM Configure application settings for VMware VMs Restore a VMware VM Mount a VMware image Clone an image of a VMware VM Create LiveClone workflows Move VM management between two backup/recovery appliances Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "How it works: Backup and DR VMware VM snapshots Data backup with VMware VMs follows these steps: The first successful snapshot of a VMware VM creates a snapshot of each virtual disk (VMDK).",
+          "If an additional virtual disk is added to the VMware VM, this disk is automatically included in the next snapshot of the VM."
+        ]
+      },
+      {
+        "title": "Backup and DR Service for Microsoft SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "source_id": "site-api-reference",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A consistency group can be made up of the following: One or more system databases One or more user databases System or user databases together Zero or more file systems (drive letters or mount points) Individual members of a consistency group can be accessed by mount, clone, LiveClone, and restore operations.",
+          "Individual members of an instance can be accessed by mount, clone, LiveClone, and restore operations as needed.",
+          "Restore operations are typically performed after a massive data corruption."
+        ]
+      },
+      {
+        "title": "\"Different ways to access your protected data \\_|\\_ Backup and DR \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/access-your-managed-data",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can access your protected data in the following ways: Clone LiveClone Mount Restore Workflows Clones Clones are commonly used with SQL Server databases and VMware VMs.",
+          "When to clone VMware VMs For VMware VMs, a clone copies backup images of the VMDKs directly to a targeted datastore before powering on the VM, at which point the VM is independent of the backup/recovery appliance.",
+          "LiveClones provide a crucial building block in managing copy data lifecycle as they combine the performance and independence of a full clone with the efficiency and speed of incremental refreshes of data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-sql-server",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/access-your-managed-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

@@ -1,0 +1,94 @@
+{
+  "feature_name": "Regional availability in us-west3",
+  "feature_slug": "regional-availability-in-us-west3",
+  "summary": "Regional availability in us-west3 lets you create and run App Engine applications in the Salt Lake City region.",
+  "extended_definition": "Regional availability in us-west3 lets you create and run App Engine applications in the Salt Lake City region.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/locations",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a Ruby app in the App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app",
+        "source_id": "site-docs-reference-2",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additional prerequisites Initialize your App Engine app with your project and choose its region: gcloud app create -- project =[ YOUR PROJECT ID ] When prompted, select the region where you want to locate your App Engine application.",
+          "App Engine locations App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .",
+          "Roles required to select or create a project Select a project : Selecting a project doesn't require a specific IAM role—you can select any project that you've been granted a role on."
+        ]
+      },
+      {
+        "title": "\"Ruby Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"App Engine locations \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/locations",
+        "source_id": "site-docs-reference-4",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "App Engine is regional , which means the infrastructure that runs your apps is located in a specific region, and Google manages it so that it is available redundantly across all of the zones within that region .",
+          "The following App Engine app locations create databases that are multi-region: Apps located in us-central create a database in the nam5 multi-region.",
+          "The following App Engine app locations create buckets that are multi-region: Apps located in us-central create a bucket in the US multi-region."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/locations",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/create-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/locations",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.277Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby"
+}

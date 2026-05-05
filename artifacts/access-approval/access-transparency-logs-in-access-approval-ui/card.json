@@ -1,0 +1,227 @@
+{
+  "feature_name": "Access Transparency logs in Access Approval UI",
+  "feature_slug": "access-transparency-logs-in-access-approval-ui",
+  "summary": "The Access Approval UI lets users view Access Transparency logs associated with an approval request.",
+  "extended_definition": "The Access Approval UI lets users view Access Transparency logs associated with an approval request.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Access Approval \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Access Transparency helps you to discover information about when Google personnel access Customer Data , and Access Approval lets you authorize such access requests.",
+          "Access Approval provides an additional layer of control on top of the transparency that Access Transparency logs provide.",
+          "You have the following options for enrolling services in Access Approval: Automatically enable Access Approval for all supported services, regardless of its product launch stage (such as Preview or General Availability (GA))."
+        ]
+      },
+      {
+        "title": "\"Introduction to Access Transparency \\_|\\_ Access Approval \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "source_id": "site-docs-root-2",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Introduction to Access Transparency As a part of Google's long-term commitment to security and transparency, Access Transparency lets you review logs of actions that Google personnel take when accessing certain customer content to fulfill their contractual obligations.",
+          "Access Transparency logs include information about Google personnel activity, including the following: Actions taken by the Cloud Customer Care team to resolve a support ticket that you filed.",
+          "For more information, see Overview of Access Transparency ."
+        ]
+      },
+      {
+        "title": "Viewing historical Access Approval requests \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Optional: If you want to view the Cloud Audit Logs or the Access Transparency logs, click Logs .",
+          "Go to Cloud Logging If you enable Cloud Audit Logs in your Google Cloud project, you can filter by the Audited Resource accessapproval.googleapis.com . cURL curl -H \"$(oauth2l header --json service-account-credentials.json cloud-platform)\" \\ https://accessapproval.googleapis.com/v1/projects/ PROJECT ID /approvalRequests?filter=ALL By default, the API lists all unapproved, approved, auto-approved, and non-expired requests.",
+          "Viewing historical Access Approval requests This document explains how you can view all historical access requests for a project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "derived_from_permission_prefix",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver"
+    ],
+    "derived_permissions": [
+      {
+        "permission": "accessapproval.requests.approve",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      },
+      {
+        "permission": "accessapproval.requests.dismiss",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      },
+      {
+        "permission": "accessapproval.requests.get",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      },
+      {
+        "permission": "accessapproval.requests.invalidate",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      },
+      {
+        "permission": "accessapproval.requests.list",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ],
+        "match_score": 1
+      }
+    ],
+    "related_permission_groups": [
+      "accessapproval"
+    ],
+    "missing_inventory_permissions": [
+      "accessapproval.googleapis.com",
+      "accessapproval.viewer",
+      "credentials.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/accessapproval.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/access-transparency",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.605Z",
+  "source_step08_card": "data/step-08/current/products/access-approval/card.json",
+  "product_name": "Access Approval",
+  "product_slug": "access-approval"
+}

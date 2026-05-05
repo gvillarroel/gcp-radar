@@ -1,0 +1,170 @@
+{
+  "feature_name": "Queue-level HTTP target routing",
+  "feature_slug": "queue-level-http-target-routing",
+  "summary": "Cloud Tasks lets queues define routing for HTTP target tasks so individual tasks do not need routing configuration.",
+  "extended_definition": "Cloud Tasks lets queues define routing for HTTP target tasks so individual tasks do not need routing configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+      "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+      "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+      "https://docs.cloud.google.com/tasks/docs/creating-queues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create HTTP target tasks \\_|\\_ Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 311,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page demonstrates how to programmatically create basic HTTP target tasks and place them in Cloud Tasks queues .",
+          "If your queue does not already use queue-level routing, see Configure queue-level routing for HTTP tasks .",
+          "Removing or replacing it should not affect the execution of the samples in anyway . -- > < parent > < groupId>com . google . cloud . samples < / groupId > < artifactId>shared - configuration < / artifactId > < version>1 .2.0 < / version > < / parent > < properties > < maven . compiler . target>1 .8 < / maven . compiler . target > < maven . compiler . source>1 .8 < / maven . compiler . source > < project . build . sourceEncoding>UTF - 8 < / project . build . sourceEncoding > < / properties > < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>26 .32.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - tasks < / artifactId > < / dependency > < dependency > < groupId>junit < / groupId > < artifactId>junit < / artifactId > < version>4 .13.2 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . truth < / groupId > < artifactId>truth < / artifactId > < version>1 .4.0 < / version > < scope>test < / scope > < / dependency > < / dependencies > < / project > Node.js // Imports the Google Cloud Tasks library. const { CloudTasksClient } = require ( ' @google-cloud/tasks ' ); // Instantiates a client. const client = new CloudTasksClient (); async function createHttpTask () { // TODO(developer): Uncomment these lines and replace with your values. // const project = 'my-project-id'; // const queue = 'my-queue'; // const location = 'us-central1'; // const url = 'https://example.com/taskhandler'; // const payload = 'Hello, World!'; // const inSeconds = 180; // Construct the fully qualified queue name. const parent = client . queuePath ( project , location , queue ); const task = { httpRequest : { headers : { 'Content-Type' : 'text/plain' , // Set content type to ensure compatibility your application's request parsing }, httpMethod : 'POST' , url , }, }; if ( payload ) { task . httpRequest . body = Buffer . from ( payload ). toString ( 'base64' ); } if ( inSeconds ) { // The time when the task is scheduled to be attempted. task . scheduleTime = { seconds : parseInt ( inSeconds ) + Date . now () / 1000 , }; } // Send create task request. console . log ( 'Sending task:' ); console . log ( task ); const request = { parent : parent , task : task }; const [ response ] = await client . createTask ( request ); console . log ( Created task ${ response . name } ); } createHttpTask (); Note the package.json file: { \"name\" : \"appengine-cloudtasks\" , \"description\" : \"Google App Engine Cloud Tasks example.\" , \"license\" : \"Apache-2.0\" , \"author\" : \"Google Inc.\" , \"private\" : true , \"engines\" : { \"node\" : \">=16.0.0\" }, \"files\" : [ \" .js\" ], \"scripts\" : { \"test\" : \"c8 mocha -p -j 2 --timeout 30000\" , \"start\" : \"node server.js\" }, \"dependencies\" : { \"@google-cloud/tasks\" : \"^5.0.0\" , \"express\" : \"^4.16.3\" }, \"devDependencies\" : { \"c8\" : \"^10.0.0\" , \"chai\" : \"^4.5.0\" , \"mocha\" : \"^10.0.0\" , \"uuid\" : \"^10.0.0\" } } PHP use Google\\Cloud\\Tasks\\V2\\Client\\CloudTasksClient; use Google\\Cloud\\Tasks\\V2\\CreateTaskRequest; use Google\\Cloud\\Tasks\\V2\\HttpMethod; use Google\\Cloud\\Tasks\\V2\\HttpRequest; use Google\\Cloud\\Tasks\\V2\\Task; / Uncomment and populate these variables in your code / // $projectId = 'The Google project ID'; // $locationId = 'The Location ID'; // $queueId = 'The Cloud Tasks Queue ID'; // $url = 'The full url path that the task request will be sent to.' // $payload = 'The payload your task should carry to the task handler."
+        ]
+      },
+      {
+        "title": "Configure Cloud Tasks queues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PROJECT ID .appspot.com service : SERVICE name : projects/ PROJECT ID /locations/ LOCATION ID /queues/ QUEUE ID rateLimits : maxBurstSize : 100 maxConcurrentDispatches : 1000 maxDispatchesPerSecond : 500.0 retryConfig : maxAttempts : 100 maxBackoff : 3600s maxDoublings : 16 minBackoff : 0.100s state : RUNNING To remove queue-level routing, run the following command: gcloud tasks queues update QUEUE ID \\ --clear-routing-override When queue-level routing is removed, task-level routing is applied to tasks in the queue and tasks added to the queue in the future.",
+          "The following example uses the REST API to update the host that tasks are routed to: curl -X PATCH -d @- -i \\ -H \"Authorization: Bearer ACCESS TOKEN \" \\ -H \"Content-Type: application/json\" \\ \"https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues/ QUEUE ID ?updateMask=httpTarget.uriOverride\" << EOF { \"httpTarget\" : { \"uriOverride\" : { \"host\" : \" NEW HOST \" }} } EOF Replace the following: ACCESS TOKEN : your access token.",
+          "Resume the queue by running the following command: gcloud tasks queues resume QUEUE ID Configure queue-level routing for App Engine tasks To configure queue-level routing for App Engine tasks, set the queue's appEngineRoutingOverride parameter to your preferred App Engine service and version."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Add an HTTP target task to a Cloud Tasks queue \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In your terminal, create a queue that logs all operations. gcloud tasks queues create QUEUE NAME \\ --log-sampling-ratio = 1 .0 \\ --location = REGION Replace the following: QUEUE NAME : a name for your Cloud Tasks queue REGION : the supported region you deployed your service or app in Wait for the queue to initialize and then verify that it was created successfully. gcloud tasks queues describe QUEUE NAME \\ --location = REGION The output should be similar to the following: name: projects/ PROJECT ID /locations/ LOCATION ID /queues/ QUEUE NAME rateLimits: maxBurstSize: 100 maxConcurrentDispatches: 1000 maxDispatchesPerSecond: 500.0 retryConfig: maxAttempts: 100 maxBackoff: 3600s maxDoublings: 16 minBackoff: 0.100s state: RUNNING Add a task to the Cloud Tasks queue Use the gcloud tasks create-http-task command to create a task that targets an HTTP endpoint and add the task to your queue.",
+          "Verify that the task was executed successfully by reading the logs. gcloud logging read --limit = 3 The logs should look similar to the following: jsonPayload: '@type': type.googleapis.com/google.cloud.tasks.logging.v1.TaskActivityLog task: projects/ PROJECT ID /locations/ REGION /queues/ QUEUE NAME /tasks/ TASK ID taskCreationLog: scheduleTime: '2024-07-04T19:00:27.801837Z' status: OK targetAddress: GET https://www.example.com/ targetType: HTTP Clean up To avoid incurring charges to your Google Cloud account for the resources used on this page, delete the Google Cloud project with the resources.",
+          "Add an HTTP target task to a Cloud Tasks queue This quickstart shows you how to add an HTTP target task to a Cloud Tasks queue using the Cloud Tasks API."
+        ]
+      },
+      {
+        "title": "Create Cloud Tasks queues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/creating-queues",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /queues/ QUEUE ID \" } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues\" Select-Object -Expand Content APIs Explorer (browser) Copy the request body and open the method reference page .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json PROJECT ID /locations/ LOCATION /queues/ QUEUE ID \" } EOF Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://cloudtasks.googleapis.com/v2/projects/ PROJECT ID /locations/ LOCATION /queues\" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Create a queue You can create a queue in the following ways: In the Google Cloud console By using the Google Cloud CLI in either your terminal or Cloud Shell By sending a direct request to the Cloud Tasks API Note: If you are configuring routing for an App Engine queue and you don't explicitly set the target service that contains the appropriate worker, the default service is used."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.com",
+      "cloudtasks.googleapis.com",
+      "com.google.cloud.tasks.v2.AppEngineHttpRequest",
+      "com.google.cloud.tasks.v2.AppEngineHttpRequest.Builder",
+      "com.google.cloud.tasks.v2.CloudTasksClient",
+      "example.com",
+      "iam.gserviceaccount.com",
+      "package.json",
+      "request.json",
+      "server.js",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "https://docs.cloud.google.com/tasks/docs/creating-queues"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "https://docs.cloud.google.com/tasks/docs/creating-queues"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "https://docs.cloud.google.com/tasks/docs/creating-queues"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "https://docs.cloud.google.com/tasks/docs/creating-queues"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "https://docs.cloud.google.com/tasks/docs/creating-queues"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "https://docs.cloud.google.com/tasks/docs/creating-queues"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/tasks/docs/configuring-queues",
+        "https://docs.cloud.google.com/tasks/docs/add-task-queue",
+        "https://docs.cloud.google.com/tasks/docs/creating-queues"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:17.786Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tasks/card.json",
+  "product_name": "Cloud Tasks",
+  "product_slug": "cloud-tasks"
+}

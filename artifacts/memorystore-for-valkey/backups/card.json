@@ -1,0 +1,217 @@
+{
+  "feature_name": "Backups",
+  "feature_slug": "backups",
+  "summary": "Allows managing backups for Memorystore for Valkey instances.",
+  "extended_definition": "Allows managing backups for Memorystore for Valkey instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+      "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create instance . gcloud To create a single-zone instance, run the create command: gcloud memorystore instances create INSTANCE \\ --location= REGION ID \\ --endpoints='[{\"connections\": [{\"pscAutoConnection\": {\"network\": \"projects/ PROJECT ID /global/networks/ NETWORK ID \", \"projectId\": \" PROJECT ID \"}}]}]' \\ --replica-count= REPLICA COUNT \\ --node-type= NODE TYPE \\ --engine-version= ENGINE VERSION \\ --shard-count= SHARD COUNT \\ --zone-distribution-config-mode= ZONE DISTRIBUTION CONFIG MODE \\ --zone-distribution-config= ZONE \\ --mode= MODE Replace the following: INSTANCE is the ID of the Memorystore for Valkey instance you're creating.",
+          "Click Create instance . gcloud To create a Memorystore for Valkey instance, run the create command: gcloud memorystore instances create INSTANCE \\ --location= REGION ID \\ --endpoints='[{\"connections\": [{\"pscAutoConnection\": {\"network\": \"projects/ PROJECT ID /global/networks/ NETWORK ID \", \"projectId\": \" PROJECT ID \"}}]}]' \\ --replica-count= REPLICA COUNT \\ --node-type= NODE TYPE \\ --engine-version= ENGINE VERSION \\ --shard-count= SHARD COUNT \\ --mode= MODE Replace the following: INSTANCE is the ID of the Memorystore for Valkey instance you're creating.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback Create instances Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: memorystore.googleapis.com \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 237,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tool: list instances List all Memorystore for Valkey instances.",
+          "Curl Request curl --location 'https://memorystore.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list instances\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request message for ListInstances .",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Reference Send feedback MCP Tools Reference: memorystore.googleapis.com Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "About backups \\_|\\_ Memorystore for Valkey \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "source_id": "site-iam-reference",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Backups let you restore your Memorystore for Valkey instances to a specific point in time.",
+          "You can also restore backups from Memorystore for Valkey instances.",
+          "Home Documentation Databases Memorystore Memorystore for Valkey Guides Send feedback About backups Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Valkey\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About service accounts When creating an instance with CMEK, you must grant the cloudkms.cryptoKeyEncrypterDecrypter role to the Memorystore for Valkey service account that has the following format: service- PROJECT NUMBER @gcp-sa-memorystore.iam.gserviceaccount.com Granting this permission allows the service account to request key access from Cloud KMS.",
+          "If the Memorystore for Valkey API is in the Deny policy list of services for this constraint, then you can't create non-CMEK-protected instances. constraints/gcp.restrictCmekCryptoKeyProjects : use this constraint to limit which Cloud KMS keys you can use for CMEK protection.",
+          "For CMEK-enabled Memorystore for Valkey instances, Google uses your keys to access all data at rest."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "memorystore.googleapis.com",
+      "memorystore.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/valkey/create-instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/backups",
+        "https://docs.cloud.google.com/memorystore/docs/valkey/about-cmek"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.337Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-valkey/card.json",
+  "product_name": "Memorystore for Valkey",
+  "product_slug": "memorystore-for-valkey"
+}

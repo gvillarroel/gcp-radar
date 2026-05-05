@@ -1,0 +1,104 @@
+{
+  "feature_name": "Smart card support for Gmail client-side encryption",
+  "feature_slug": "smart-card-support-for-gmail-client-side-encryption",
+  "summary": "Gmail API supports using smart cards for client-side encryption in Google Workspace organizations that use hardware key encryption.",
+  "extended_definition": "Gmail API supports using smart cards for client-side encryption in Google Workspace organizations that use hardware key encryption.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.labels/delete",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages.attachments",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: users.messages.import \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "REST Resource: users.messages.attachments \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages.attachments",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Method: users.labels.delete \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.labels/delete",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "users.labels",
+      "users.labels.delete",
+      "users.labels.list",
+      "users.messages",
+      "users.messages.attachments",
+      "users.messages.batchDelete",
+      "users.messages.import"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages.attachments",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.labels/delete"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages.attachments",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/import",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.labels/delete"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.415Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api"
+}

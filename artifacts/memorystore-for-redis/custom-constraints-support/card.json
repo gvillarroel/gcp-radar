@@ -1,0 +1,205 @@
+{
+  "feature_name": "Custom constraints support",
+  "feature_slug": "custom-constraints-support",
+  "summary": "Custom constraints can be used to manage Memorystore for Redis resources.",
+  "extended_definition": "Custom constraints can be used to manage Memorystore for Redis resources.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+      "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+      "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+      "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Memorystore for Redis resources with custom constraints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 361,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memorystore for Redis Instance resource.alternativeLocationId resource.authEnabled resource.authorizedNetwork resource.availableMaintenanceVersions resource.connectMode resource.customerManagedKey resource.displayName resource.locationId resource.maintenancePolicy.description resource.maintenancePolicy.weeklyMaintenanceWindow.day resource.maintenanceVersion resource.memorySizeGb resource.name resource.persistenceConfig.persistenceMode resource.persistenceConfig.rdbSnapshotPeriod resource.persistenceConfig.rdbSnapshotStartTime resource.readReplicasMode resource.redisConfigs resource.redisVersion resource.replicaCount resource.reservedIpRange resource.secondaryIpRange resource.suspensionReasons resource.tier resource.transitEncryptionMode Example custom constraints The following table provides an example custom constraint that restricts Redis instance to one replica: Description Constraint syntax Restrict Redis instances with one replicas name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictInstanceToOnereplica resourceTypes : - redis.googleapis.com/Instance methodTypes : - CREATE - UPDATE condition : \"resource.replicaCount >= 2\" actionType : DENY displayName : Restrict Redis instances to one replica description : Prevent users from creating Redis instances with more than one replica What's next See Introduction to the Organization Policy Service to learn more about organization policies.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Manage Memorystore for Redis resources with custom constraints Stay organized with collections Save and categorize content based on your preferences.",
+          "Benefits You can use a custom organization policy to allow or deny specific Memorystore for Redis resources."
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Memorystore for Redis.",
+          "If Memorystore for Redis can't access any key version being used (for example, you disable all key versions), then Memorystore for Redis shuts down the instance.",
+          "If the Memorystore for Redis API is in the Deny policy list of services for this constraint, then you can't create non-CMEK-protected instances. constraints/gcp.restrictCmekCryptoKeyProjects : use this constraint to limit which Cloud KMS keys you can use for CMEK protection."
+        ]
+      },
+      {
+        "title": "\"About customer-managed encryption keys (CMEK) \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Memorystore for Redis.",
+          "If Memorystore for Redis can't access any key version being used (for example, you disable all key versions), then Memorystore for Redis shuts down the instance.",
+          "If the Memorystore for Redis API is in the Deny policy list of services for this constraint, then you can't create non-CMEK-protected instances. constraints/gcp.restrictCmekCryptoKeyProjects : use this constraint to limit which Cloud KMS keys you can use for CMEK protection."
+        ]
+      },
+      {
+        "title": "\"Memory management best practices \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Memory management best practices Stay organized with collections Save and categorize content based on your preferences.",
+          "System memory is managed automatically by Memorystore to handle memory usage spikes caused by memory intensive operations and memory fragmentation which is common in open source Redis.",
+          "Memory fragmentation Memory fragmentation can cause your Memorystore instance to run out of memory even when the used memory to maxmemory-gb ratio is low."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.restrictInstanceToOnereplica",
+      "gcp.restrictCmekCryptoKeyProjects",
+      "redis.googleapis.com",
+      "resource.alternativeLocationId",
+      "resource.authEnabled",
+      "resource.authorizedNetwork",
+      "resource.availableMaintenanceVersions",
+      "resource.connectMode",
+      "resource.customerManagedKey",
+      "resource.displayName",
+      "resource.locationId",
+      "resource.maintenancePolicy.description",
+      "resource.maintenancePolicy.weeklyMaintenanceWindow.day",
+      "resource.maintenanceVersion",
+      "resource.memorySizeGb",
+      "resource.name",
+      "resource.persistenceConfig.persistenceMode",
+      "resource.persistenceConfig.rdbSnapshotPeriod",
+      "resource.persistenceConfig.rdbSnapshotStartTime",
+      "resource.readReplicasMode",
+      "resource.redisConfigs",
+      "resource.redisVersion",
+      "resource.replicaCount",
+      "resource.reservedIpRange",
+      "resource.secondaryIpRange",
+      "resource.suspensionReasons",
+      "resource.tier",
+      "resource.transitEncryptionMode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/cmek",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memory-management-best-practices"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.027Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis"
+}

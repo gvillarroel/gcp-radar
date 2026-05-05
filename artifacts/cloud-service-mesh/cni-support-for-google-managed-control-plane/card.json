@@ -1,0 +1,195 @@
+{
+  "feature_name": "CNI support for Google-managed control plane",
+  "feature_slug": "cni-support-for-google-managed-control-plane",
+  "summary": "CNI support for Google-managed control plane enables Anthos Service Mesh deployments that use the Container Network Interface; CNI support for Google-managed control plane enables Anthos Service Mesh deployments that use the Container Network Interface.",
+  "extended_definition": "CNI support for Google-managed control plane enables Anthos Service Mesh deployments that use the Container Network Interface; CNI support for Google-managed control plane enables Anthos Service Mesh deployments that use the Container Network Interface.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+      "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+      "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-root",
+        "final_score": 313,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Verify the control plane has been provisioned After a few minutes, verify that the control plane status is ACTIVE : gcloud container fleet mesh describe --project FLEET PROJECT ID The output is similar to: ... membershipSpecs : projects / 746296320118 / locations / us - central1 / memberships / demo - cluster - 1 : mesh : management : MANAGEMENT AUTOMATIC membershipStates : projects / 746296320118 / locations / us - central1 / memberships / demo - cluster - 1 : servicemesh : controlPlaneManagement : details : - code : REVISION READY details : ' Ready : asm - managed ' state : ACTIVE implementation : ISTIOD TRAFFIC DIRECTOR dataPlaneManagement : details : - code : OK details : Service is running . state : ACTIVE state : code : OK description : ' Revision ( s ) ready for use : asm - managed . ' ...",
+          "Role name Role ID Grant location Description Anthos Service Mesh Service Agent roles/anthosservicemesh.serviceAgent Fleet project Mesh Managed Control Plane Service Agent (legacy) roles/meshcontrolplane.serviceAgent Fleet project This is a legacy role that was part of older installations of Cloud Service Mesh.",
+          "Find all the control plane revisions: kubectl get controlplanerevisions -n istio-system Change the annotation: kubectl annotate --overwrite controlplanerevision CONTROL PLANE REVISION NAME -n istio-system mesh.cloud.google.com/proxy = '{\"managed\":\"false\"}' Repeat this step for each control plane revision."
+        ]
+      },
+      {
+        "title": "\"Managed control plane for continuing customers \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 296,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are an Anthos Service Mesh user, the next steps for the control plane in your existing deployment depend on whether you use the managed control plane or the in-cluster control plane.",
+          "Managed control plane for continuing customers This document is for you if you're a continuing Anthos Service Mesh customer using the managed control plane or in-cluster control plane.",
+          "Control plane for new meshes Starting on July 1, 2024, most existing users of the managed istiod control plane implementation began to receive the updated managed control plane with Google's globally available implementation - the Traffic Director (TD) control plane, in new fleets."
+        ]
+      },
+      {
+        "title": "\"Enable optional features on managed control plane \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure the minimum TLS version for your workloads If you directly onboarded to Cloud Service Mesh with a managed TRAFFIC DIRECTOR control plane implementation , then you cannot change this setting.",
+          "If you are using an IstioOperator based configuration today, the Distroless proxy image If you directly onboarded to Cloud Service Mesh with a managed TRAFFIC DIRECTOR control plane implementation , then only the distroless image type is supported.",
+          "End user authentication You can configure managed Cloud Service Mesh user authentication for browser-based end-user authentication and access control to your deployed workloads."
+        ]
+      },
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed control plane supported features Install, upgrade, and rollback Feature Managed (TD) Managed (istiod) Installation on GKE clusters using fleet feature API Upgrades from ASM 1.9 versions that use Mesh CA Direct (skip-level) upgrades from Cloud Service Mesh versions prior to 1.9 (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio OSS (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio-on-GKE add-on (see notes for indirect upgrades) Enabling optional features Note: Indirect migrations and upgrades are supported, meaning that you can follow the standard Cloud Service Mesh upgrade paths through each version until you reach Cloud Service Mesh 1.28 with an in-cluster control plane, then you can migrate to the managed control plane.",
+          "Telemetry Metrics Feature Managed (TD) Managed (istiod) Cloud Monitoring (HTTP in-proxy metrics) Cloud Monitoring (TCP in-proxy metrics) Prometheus metrics export to Grafana (Envoy metrics only) Prometheus metrics export to Kiali Google Cloud Managed Service for Prometheus, not including the Cloud Service Mesh dashboard Istio Telemetry API † Custom adapters/backends, in or out of process Arbitrary telemetry and logging backends † The TRAFFIC DIRECTOR control plane supports a subset of Istio telemetry API used to configure access logs and trace .",
+          "Supported features using Istio APIs (managed control plane) This page describes the supported features and limitations for Cloud Service Mesh using TRAFFIC DIRECTOR or ISTIOD as the control plane and the differences between each implementation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "mesh.cloud.google.com",
+      "mesh.googleapis.com",
+      "meshcontrolplane.serviceAgent",
+      "servicemesh.iam.gserviceaccount.com",
+      "tls.credentialName"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent",
+      "roles/meshcontrolplane.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.079Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh"
+}

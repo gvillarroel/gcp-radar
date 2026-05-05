@@ -1,0 +1,160 @@
+{
+  "feature_name": "Password policies for local database users",
+  "feature_slug": "password-policies-for-local-database-users",
+  "summary": "Password policies for local database users let you enforce password rules on Cloud SQL for PostgreSQL users authenticated locally.",
+  "extended_definition": "Password policies for local database users let you enforce password rules on Cloud SQL for PostgreSQL users authenticated locally.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL built-in database authentication \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "source_id": "site-iam-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server This page describes how built-in authentication works on Cloud SQL instances and how database administrators can set password policies for local database users.",
+          "Cloud SQL uses the following types of authentication for database users: The database's built-in authentication uses a username and a password to authenticate local database users.",
+          "You might create and manage local database users locally within a database to allow specific persons or applications to access a database."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: Starting in Cloud SQL for MySQL 8.4, the mysql native password authentication plugin is deprecated and new database users are created with the caching sha2 password plugin.",
+          "Pooling = true ; // Specify additional properties here. return connectionString ; } } } Ruby To see this snippet in the context of a web application, view the README on GitHub . tcp : & tcp adapter : mysql2 Configure additional properties here Note: Saving credentials in environment variables is convenient, but not secure - consider a more secure solution such as Cloud Secret Manager (https://cloud.google.com/secret-manager) to help keep secrets safe. username : < %= ENV[\"DB USER\"] %> # e.g. \"my-database-user\" password: <%= ENV [ \"DB PASS\" ] % > # e.g. \"my-database-password\" database : < %= ENV.fetch(\"DB NAME\") { \"vote development\" } % > host: \"<%= ENV . fetch ( \"INSTANCE HOST\" ) { \"127.0.0.1\" } %>\" # '172.17.0.1' if deployed to GAE Flex port: <%= ENV.fetch(\" DB PORT \") { 3306 }% > PHP To see this snippet in the context of a web application, view the README on GitHub . namespace Google\\Cloud\\Samples\\CloudSQL\\MySQL; use PDO; use PDOException; use RuntimeException; use TypeError; class DatabaseTcp { public static function initTcpDatabaseConnection(): PDO { try { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. $username = getenv('DB USER'); // e.g. 'your db user' $password = getenv('DB PASS'); // e.g. 'your db password' $dbName = getenv('DB NAME'); // e.g. 'your db name' $instanceHost = getenv('INSTANCE HOST'); // e.g. '127.0.0.1' ('172.17.0.1' for GAE Flex) // Connect using TCP $dsn = sprintf('mysql:dbname=%s;host=%s', $dbName, $instanceHost); // Connect to the database $conn = new PDO( $dsn, $username, $password, ... ); } catch (TypeError $e) { throw new RuntimeException( sprintf( 'Invalid or missing configuration!",
+          "Note: Saving credentials in environment variables is convenient, but not secure - consider a more secure solution such as Cloud Secret Manager (https://cloud.google.com/secret-manager) to help keep secrets safe. username : < %= ENV[\"DB USER\"] %> # e.g. \"my-database-user\" password: <%= ENV [ \"DB PASS\" ] % > # e.g. \"my-database-password\" database : < %= ENV.fetch(\"DB NAME\") { \"vote development\" } % > Specify the Unix socket path as host socket: \"<%= ENV [ \"INSTANCE UNIX SOCKET\" ] % > \" PHP To see this snippet in the context of a web application, view the README on GitHub . namespace Google\\Cloud\\Samples\\CloudSQL\\MySQL; use PDO; use PDOException; use RuntimeException; use TypeError; class DatabaseUnix { public static function initUnixDatabaseConnection(): PDO { try { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. $username = getenv('DB USER'); // e.g. 'your db user' $password = getenv('DB PASS'); // e.g. 'your db password' $dbName = getenv('DB NAME'); // e.g. 'your db name' $instanceUnixSocket = getenv('INSTANCE UNIX SOCKET'); // e.g. '/cloudsql/project:region:instance' // Connect using UNIX sockets $dsn = sprintf( 'mysql:dbname=%s;unix socket=%s', $dbName, $instanceUnixSocket ); // Connect to the database. $conn = new PDO( $dsn, $username, $password, ... ); } catch (TypeError $e) { throw new RuntimeException( sprintf( 'Invalid or missing configuration!"
+        ]
+      },
+      {
+        "title": "\"Create and manage users \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The database role or roles to assign to the user HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USER ID \", \"password\": \" PASSWORD \", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "The database role or roles to assign to the user HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USER ID \", \"password\": \" PASSWORD \", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "The database role or roles to assign to the user. gcloud sql users create USER NAME \\ --instance = INSTANCE NAME \\ --password = PASSWORD \\ --database-roles = ROLE 1 , ROLE 2 , ..., ROLE N If you create a PostgreSQL user that uses built-in authentication, then the user is granted the cloudsqlsuperuser role automatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.zaxxer.hikari.HikariConfig",
+      "com.zaxxer.hikari.HikariDataSource",
+      "e.g",
+      "javax.sql.DataSource",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/built-in-authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

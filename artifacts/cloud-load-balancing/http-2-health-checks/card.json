@@ -1,0 +1,122 @@
+{
+  "feature_name": "HTTP/2 health checks",
+  "feature_slug": "http-2-health-checks",
+  "summary": "Load balancing supports health checks that use the HTTP/2 protocol.",
+  "extended_definition": "Load balancing supports health checks that use the HTTP/2 protocol.",
+  "lifecycle": {
+    "latest_feature_date": "2019-07-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/features",
+      "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+      "https://docs.cloud.google.com/load-balancing/docs/health-checks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Health checks overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Load balancer Health check category and scope Global external Application Load Balancer Classic Application Load Balancer Global external proxy Network Load Balancer Classic proxy Network Load Balancer Cross-region internal Application Load Balancer Cross-region internal proxy Network Load Balancer Health check ( global ) Regional external Application Load Balancer Regional internal Application Load Balancer Regional internal proxy Network Load Balancer Regional external proxy Network Load Balancer Health check ( regional ) Regional external passthrough Network Load Balancer Backend service-based load balancer: Health check ( regional ) Target pool-based load balancer: Legacy health check ( global with the HTTP protocol ) Internal passthrough Network Load Balancer Health check ( global or regional ) For external Application Load Balancers, legacy health checks are not recommended but are sometimes supported, depending on the load balancer mode.",
+          "The two categories are health checks and legacy health checks and their supported protocols are as follows: Health checks Regional (gRPC, gRPC (with TLS), TCP, SSL, HTTP, HTTPS, or HTTP/2) Global (gRPC, gRPC (with TLS), TCP, SSL, HTTP, HTTPS, or HTTP/2) Legacy health checks: Legacy global (HTTP) Legacy global (HTTPS) The protocol and port determine how health check probes are done.",
+          "Certificates and health checks Google Cloud health check probers don't perform certificate validation, even for protocols that require that your backends use certificates (SSL, HTTPS, and HTTP/2)—for example: You can use self-signed certificates or certificates signed by any certificate authority (CA)."
+        ]
+      },
+      {
+        "title": "Use health checks \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This example creates an HTTP health check named hc-http-port-80 using port 80 with default interval, timeout, and health threshold criteria. gcloud compute health-checks create HTTP PROTOCOL hc-http-port-80 \\ COMMON FLAGS \\ PORT SPECIFICATION \\ --host= HOST \\ --proxy-header= PROXY HEADER \\ --request-path= REQUEST PATH \\ --response= RESPONSE HTTP PROTOCOL : Can be http (HTTP/1.1 without TLS), https (HTTP/1.1 with TLS), or http2 (HTTP/2 with TLS).",
+          "A regional external passthrough Network Load Balancer has at least one target pool, and might have a secondary backup pool. gcloud compute target-pools list Identify a legacy health check using the HTTP protocol.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Use health checks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Load balancer feature comparison \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/features",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External gRPC health checks (without TLS) 2 2 2 2 1 gRPC health checks (with TLS) 2 2 2 2 1 HTTP health checks 3 (Only classic and regional mode) 1 HTTPS health checks 3 (Only classic and regional mode) 1 HTTP/2 health checks (Only classic and regional mode) 1 SSL health checks 1 TCP health checks 1 Configurable health checks Configurable request path (HTTP, HTTPS, HTTP/2) Configurable request string or path (TCP or SSL) Configurable expected response string 1 Distributed Envoy health checks (Only regional mode) (Only regional mode) 1 This table documents health checks used by backend service-based regional external passthrough Network Load Balancers.",
+          "Target pool-based load balancers support only legacy HTTP health checks .",
+          "Backends Filter this table: Feature Application Load Balancer Proxy Network Load Balancer Passthrough Network Load Balancer Internal External Internal External Internal External Backends can be in multiple regions (Only cross-region mode) (Only global and classic mode) (Only cross-region mode) (Only global and classic mode) Backends must be in one region (Only regional mode) (Only regional and classic mode) (Only regional mode) (Only regional and classic mode) info info Cloud Storage in backend buckets External endpoints in internet NEGs (Only regional mode) ( Global , regional , and classic modes) (Only regional mode) (Only regional mode) Multiple backend services and a URL map Virtual machine backends on Compute Engine Self-managed Kubernetes and GKE Zonal NEGs GCE VM IP PORT endpoints GCE VM IP PORT endpoints GCE VM IP PORT endpoints GCE VM IP PORT endpoints GCE VM IP endpoints GCE VM IP endpoints Private Service Connect NEGs (Only global and regional mode) (Only global and regional mode) Private external endpoints in hybrid NEG backends info info info info Serverless backends info info Dual-stack (IPV4 and IPv6) backends info (Only global and regional modes) info (Only global and regional modes) info info IPv6-only backends info info Health checks For links to reference information, see Health checks ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/health-check-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/health-checks",
+        "https://docs.cloud.google.com/load-balancing/docs/features"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

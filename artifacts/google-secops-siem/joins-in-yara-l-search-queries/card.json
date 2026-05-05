@@ -1,0 +1,206 @@
+{
+  "feature_name": "Joins in YARA-L Search queries",
+  "feature_slug": "joins-in-yara-l-search-queries",
+  "summary": "Adds join support to statistical YARA-L Search queries that include a match section.",
+  "extended_definition": "Adds join support to statistical YARA-L Search queries that include a match section.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Param data types ARRAY STRINGS , STRING Return type STRING Code samples Here are some examples of how to use the function: Example 1 This example joins an array with non-null elements and a delimiter. arrays.join string([\"foo\", \"bar\"], \",\") = \"foo,bar\" Example 2 This example joins an array with a null element and a delimiter. arrays.join string([\"foo\", NULL, \"bar\"], \",\") = \"foo,bar\" Example 3 This example joins an array with non-null elements and no delimiter. arrays.join string([\"foo\", \"bar\"]) = \"foobar\" arrays.length Supported in: Rules Search arrays.length(repeatedField) Description Returns the number of repeated field elements.",
+          "Functions Supported in: Google secops SIEM This section describes the YARA-L 2.0 functions that you can use in Rules, Search, and Dashboard queries.",
+          "Param data types INT FLOAT , INT FLOAT , INT FLOAT Return type BOOL Code samples Example 1 This example includes timestamp-like values in seconds. math.is increasing(1716769112, 1716769113, 1716769114) = true Example 2 This example includes one negative double, one zero INT64, and one positive INT64 values. math.is increasing(-1.200000, 0, 3) = true Example 3 This example includes one negative double, one zero INT64, and one negative INT64 values. math.is increasing(0-1.200000, 0, 0-3) = false Example 4 This example includes two negative doubles and one zero INT64 value. math.is increasing(0-1.200000, 0-1.50000, 0) = false Example 5 This example includes one negative double and two values that are the same. math.is increasing(0-1.200000, 0, 0) = false math.log Supported in: Rules Search math.log(numericExpression) Description Returns the natural log value of an integer or float expression."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Programmatic access limit Web interface limit QPH limit 2,000 1,000 Simple query concurrency 40 40 Complex query concurrency 10 10 Concurrency limits Concurrency limits define the number of simultaneous search operations allowed per tenant: Simple queries: Queries that span less than one day, use a single data source, and don't include stats.",
+          "Types of grouped UDM fields You can search across all of the following grouped UDM fields: Grouped field name Associated UDM fields domain about.administrative domain about.asset.network domain network.dns.questions.name network.dns domain principal.administrative domain principal.asset.network domain target.administrative domain target.asset.hostname target.asset.network domain target.hostname email intermediary.user.email addresses network.email.from network.email.to principal.user.email addresses security result.about.user.email addresses target.user.email addresses file path principal.file.full path principal.process.file.full path principal.process.parent process.file.full path target.file.full path target.process.file.full path target.process.parent process.file.full path hash about.file.md5 about.file.sha1 about.file.sha256 principal.process.file.md5 principal.process.file.sha1 principal.process.file.sha256 security result.about.file.sha256 target.file.md5 target.file.sha1 target.file.sha256 target.process.file.md5 target.process.file.sha1 target.process.file.sha256 hostname intermediary.hostname observer.hostname principal.asset.hostname principal.hostname src.asset.hostname src.hostname target.asset.hostname target.hostname ip intermediary.ip observer.ip principal.artifact.ip principal.asset.ip principal.ip src.artifact.ip src.asset.ip src.ip target.artifact.ip target.asset.ip target.ip namespace principal.namespace src.namespace target.namespace process id principal.process.parent process.pid principal.process.parent process.product specific process id principal.process.pid principal.process.product specific process id target.process.parent process.pid target.process.parent process.product specific process id target.process.pid target.process.product specific process id user about.user.userid observer.user.userid principal.user.user display name principal.user.userid principal.user.windows sid src.user.userid target.user.user display name target.user.userid target.user.windows sid Find a UDM field for search query While writing a search query, you may not know which UDM field to include.",
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search."
+        ]
+      },
+      {
+        "title": "\"View alerts and IOC matches \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using entity graphs and YARA-L rules An entity graph lets you ingest various types of contextual entities—including those representing IOCs—and join them with event data using YARA-L detection rules.",
+          "Row-based comparison joins UDM event fields to data table columns using equality or comparison operators .",
+          "Example YARA-L rule using GLOBAL CONTEXT : rule google safebrowsing process launch { meta : author = \"noam@\" description = \"Detects Process Launch events against Critical or High severity Google's SafeBrowsing database.\" events : $e . metadata . event type = \"PROCESS LAUNCH\" $e . target . process . file . sha256 = $hash $g . graph . metadata . entity type = \"FILE\" $g . graph . entity . file . sha256 = $hash $g . graph . metadata . source type = \"GLOBAL CONTEXT\" $g . graph . metadata . threat . severity = \"CRITICAL\" or $g . graph . metadata . threat . severity = \"HIGH\" match : $hash over 10 m condition : $e and $g } IOC matching with data tables and YARA-L rules You can use data tables within YARA-L rules to match against lists of IOCs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.administrative",
+      "about.asset.network",
+      "about.file.md5",
+      "about.file.sha1",
+      "about.file.sha256",
+      "about.user.userid",
+      "arrays.join",
+      "arrays.length",
+      "datalake.ioc",
+      "e.network.dhcp.yiaddr",
+      "e.principal.ip",
+      "hat.example.com",
+      "intermediary.hostname",
+      "intermediary.ip",
+      "intermediary.user.email",
+      "math.is",
+      "math.log",
+      "metadata.log",
+      "net.ip",
+      "network.dns",
+      "network.dns.answers.name",
+      "network.dns.questions.name",
+      "network.email.from",
+      "network.email.to",
+      "observer.hostname",
+      "observer.ip",
+      "observer.user.userid",
+      "principal.administrative",
+      "principal.artifact.ip",
+      "principal.asset.hostname",
+      "principal.asset.ip",
+      "principal.asset.network",
+      "principal.file.full",
+      "principal.hostname",
+      "principal.ip",
+      "principal.namespace",
+      "principal.process.file.full",
+      "principal.process.file.md5",
+      "principal.process.file.sha1",
+      "principal.process.file.sha256",
+      "principal.process.parent",
+      "principal.process.pid",
+      "principal.process.product",
+      "principal.user.email",
+      "principal.user.user",
+      "principal.user.userid",
+      "principal.user.windows",
+      "process.file.full",
+      "process.pid",
+      "process.product",
+      "re.regex",
+      "result.about.file.sha256",
+      "result.about.user.email",
+      "src.artifact.ip",
+      "src.asset.hostname",
+      "src.asset.ip",
+      "src.hostname",
+      "src.ip",
+      "src.namespace",
+      "src.user.userid",
+      "target.administrative",
+      "target.artifact.ip",
+      "target.asset.hostname",
+      "target.asset.ip",
+      "target.asset.network",
+      "target.file.full",
+      "target.file.md5",
+      "target.file.sha1",
+      "target.file.sha256",
+      "target.hostname",
+      "target.ip",
+      "target.namespace",
+      "target.process.file.full",
+      "target.process.file.md5",
+      "target.process.file.sha1",
+      "target.process.file.sha256",
+      "target.process.parent",
+      "target.process.pid",
+      "target.process.product",
+      "target.user.email",
+      "target.user.user",
+      "target.user.userid",
+      "target.user.windows"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

@@ -1,0 +1,90 @@
+{
+  "feature_name": "ai.hybrid_search()",
+  "feature_slug": "ai-hybrid-search",
+  "summary": "The ai.hybrid_search() function combines results from multiple search types into a single ranked list using Reciprocal Rank Fusion.",
+  "extended_definition": "The ai.hybrid_search() function combines results from multiple search types into a single ranked list using Reciprocal Rank Fusion.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Run a hybrid vector similarity search | AlloyDB for PostgreSQL | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 302,
+        "relevance": "",
+        "evidence_snippets": [
+          "Perform a hybrid search using the hybrid_search function The ai.hybrid_search() function lets you combine results from multiple search types, such as vector search and full-text search.",
+          "CREATE TABLE product_logs ( log_id_str TEXT PRIMARY KEY , content TEXT , content_tsv tsvector GENERATED ALWAYS AS ( to_tsvector ( 'english' , content )) STORED ); INSERT INTO product_logs ( log_id_str , content ) VALUES ( '999' , 'system start and services initialized' ); CREATE INDEX idx_product_logs_rum ON product_logs USING rum ( content_tsv rum_tsvector_ops ); SELECT id , pg_typeof ( id ) FROM ai . hybrid_search ( ARRAY [ '{ \"data_type\": \"text\", \"table_name\": \"product_logs\", \"key_column\": \"log_id_str\", \"text_column\": \"content_tsv\", \"query_text_input\": \"system\", \"limit\": 1 }' :: jsonb ], id_type = > NULL :: INTEGER ); The output shows that the id column is cast to INTEGER : id | pg_typeof ------+----------- 999 | integer (1 rows) The following example shows why specifying the data type for the return ID column is important, by showing what happens when there's a mismatch.",
+          "DROP TABLE IF EXISTS product_logs ; CREATE TABLE product_logs ( log_id_str TEXT PRIMARY KEY , content TEXT , content_tsv tsvector GENERATED ALWAYS AS ( to_tsvector ( 'english' , content )) STORED ); INSERT INTO product_logs VALUES ( '999' , 'system start' ); SELECT id , pg_typeof ( id ), score FROM ai . hybrid_search ( ARRAY [ '{ \"data_type\": \"text\", \"table_name\": \"product_logs\", \"key_column\": \"log_id_str\", \"text_column\": \"content_tsv\", \"query_text_input\": \"system\", \"limit\": 1 }' :: jsonb ], id_type = > NULL :: INTEGER --- CAST to INT ); Choose a text search query parser When you perform full-text search, AlloyDB provides the g_to_tsquery() function to achieve high-relevance information retrieval. g_to_tsquery() , which is the default, improves information retrieval by transforming plain text or standard tsquery formats into a more data-rich tsquery output."
+        ]
+      },
+      {
+        "title": "\"Hybrid search function parameters \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/ai/hybrid-search-function-parameters",
+        "source_id": "site-api-reference",
+        "final_score": 72,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback Hybrid search function parameters Stay organized with collections Save and categorize content based on your preferences.",
+          "The maximum number of results to return from this search component. weight FLOAT The contribution of this component to the final RRF score, from 0.0 to 1.0.",
+          "The maximum number of results to return from this search component. weight FLOAT The contribution of this component to the final RRF score, from 0.0 to 1.0."
+        ]
+      },
+      {
+        "title": "\"Perform a vector search \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/perform-vector-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "CREATE EXTENSION IF NOT EXISTS vector ; CREATE TABLE items ( id SERIAL PRIMARY KEY , description TEXT , embedding VECTOR ( 512 ) ); Populate the data by running the following statements to insert 1 million rows into the example items table. -- Simplified example of inserting matching ( 0.1%) and non-matching data INSERT INTO items ( description , embedding ) SELECT CASE WHEN g % 1000 = 0 THEN 'product ' md5 ( random ():: text ) ' common' -- 0.1% match ELSE 'generic item ' g ' ' md5 ( random ():: text ) -- 99.9% don't match END , random vector ( 512 ) -- Assumes random vector function exists FROM generate series ( 1 , 999999 ) g ; Measure the baseline performance of the vector similarity search without the columnar engine.",
+          "Even though the word music isn't included in the product description, the result shows products that are relevant to the query: SET LOCAL scann . num leaves to search = 2 ; SELECT FROM product ORDER BY embedding < = > embedding ( 'text-embedding-005' , 'music' ):: vector LIMIT 3 ; The query results are as follows: The scann.num leaves to search query parameter controls the number of leaf nodes that are searched during a similarity search.",
+          "Run the following complex vector search query, which returns relevant results that satisfy the query conditions, even with filters: SET LOCAL scann . num leaves to search = 2 ; SELECT FROM product p JOIN product inventory pi ON p . id = pi . product id WHERE pi . price < 80 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "ai.embedding",
+      "ai.hybrid_search",
+      "scann.num"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/run-hybrid-vector-similarity-search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

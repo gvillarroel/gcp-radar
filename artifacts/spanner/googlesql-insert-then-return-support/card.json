@@ -1,0 +1,106 @@
+{
+  "feature_name": "GoogleSQL INSERT THEN RETURN support",
+  "feature_slug": "googlesql-insert-then-return-support",
+  "summary": "GoogleSQL INSERT OR UPDATE and INSERT OR IGNORE statements now support the THEN RETURN clause, including support for the WITH ACTION option.",
+  "extended_definition": "GoogleSQL INSERT OR UPDATE and INSERT OR IGNORE statements now support the THEN RETURN clause, including support for the WITH ACTION option.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "INSERT INTO Singers ( SingerId , FirstName , LastName , SingerInfo , BirthDate ) VALUES ( < SingerId > , -- type: INT64 < FirstName > , -- type: STRING(1024) < LastName > , -- type: STRING(1024) < SingerInfo > , -- type: BYTES(MAX) < BirthDate > -- type: DATE ) THEN RETURN SingerId , FirstName , LastName , SingerInfo , BirthDate ; PostgreSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.",
+          "INSERT INTO Singers ( SingerId , BirthDate , FirstName , LastName , SingerInfo ) VALUES ( 1 , -- type: INT64 NULL , -- type: DATE 'Marc' , -- type: STRING(1024) 'Richards' , -- type: STRING(1024) NULL -- type: BYTES(MAX) ) THEN RETURN SingerId , FirstName , LastName , SingerInfo , BirthDate ; PostgreSQL -- Add new values in the VALUES clause in order of the column list. -- Each value must be type compatible with its associated column.",
+          "INSERT INTO singers ( singerid , firstname , lastname , singerinfo , birthdate ) VALUES ( < singerid > , -- type: bigint < firstname > , -- type: character varying < lastname > , -- type: character varying < singerinfo > , -- type: bytea < birthdate > -- type: timestamp with time zone ); THEN RETURN singerid , firstname , lastname , singerinfo , birthdate ; Notice that PostgreSQL converts the column names to all lower case."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example: Savepoint support (Click to expand) The following example shows how to enable and disable savepoints support in the Spanner JDBC driver. try ( Connection connection = DriverManager . getConnection ( String . format ( \"jdbc:cloudspanner:/projects/%s/instances/%s/databases/%s\" , \"my-project\" , \"my-instance\" , \"my-database\" ))) { // Savepoints can only be used when AutoCommit=false. connection . setAutoCommit ( false ); // Disables setting a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='DISABLED'\" ); // The following statement fails because savepoints have been disabled. connection . setSavepoint ( \"my savepoint1\" ); // Enables setting a savepoint and releasing a savepoint. // Rolling back to a savepoint is disabled. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='FAIL AFTER ROLLBACK'\" ); Savepoint mySavepoint2 = connection . setSavepoint ( \"my savepoint2\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (1, 'One')\" ); connection . releaseSavepoint ( mySavepoint2 ); connection . commit (); // Enables setting, releasing and rolling back to a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='ENABLED'\" ); Savepoint mySavepoint3 = connection . setSavepoint ( \"my savepoint3\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (2, 'Two')\" ); connection . rollback ( mySavepoint3 ); } What's next Learn how to connect JDBC to a GoogleSQL-dialect database .",
+          "BEGIN ; SET TRANSACTION READ WRITE ; INSERT INTO T ( id , col a , col b ) VALUES ( 1 , 100 , 1 ); COMMIT ; Batch statements The following statements manage batches of DDL statements and send those batches to Spanner.",
+          "This statement returns a timestamp only when you execute it after you commit a read-write transaction and before you execute any subsequent SELECT , DML , or schema change statements."
+        ]
+      },
+      {
+        "title": "Configure fine-grained access control \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/configure-fgac",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To drop the role, go to the Spanner Studio page and enter the following statement: DROP ROLE ROLE NAME ; Click Submit . gcloud To revoke all privileges for a role and then drop the role, use the gcloud spanner databases ddl update command as follows: GoogleSQL gcloud spanner databases ddl update DATABASE NAME \\ --instance = INSTANCE NAME \\ --ddl = 'REVOKE PERMISSIONS ON TABLE TABLE NAME FROM ROLE ROLE NAME ; DROP ROLE ROLE NAME ;' PostgreSQL gcloud spanner databases ddl update DATABASE NAME \\ --instance = INSTANCE NAME \\ --ddl = 'REVOKE PERMISSIONS ON TABLE TABLE NAME FROM ROLE NAME ; DROP ROLE ROLE NAME ;' Valid values for PERMISSIONS are SELECT , INSERT , UPDATE , and DELETE .",
+          "Ruby require \"google/cloud/spanner\" def spanner add and drop database role project id :, instance id :, database id : project id = \"Your Google Cloud project ID\" instance id = \"Your Spanner instance ID\" database id = \"Your Spanner database ID\" admin client = Google :: Cloud :: Spanner :: Admin :: Database :: V1 :: DatabaseAdmin :: Client . new role parent = \"new parent\" role child = \"new child\" db path = admin client . database path project : project id , instance : instance id , database : database id job = admin client . update database ddl database : db path , statements : [ \"CREATE ROLE #{ role parent } \" , \"GRANT SELECT ON TABLE Singers TO ROLE #{ role parent } \" , \"CREATE ROLE #{ role child } \" , \"GRANT ROLE #{ role parent } TO ROLE #{ role child } \" ] job . wait until done! puts \"Created roles #{ role parent } and #{ role child } and granted privileges\" job = admin client . update database ddl database : db path , statements : [ \"REVOKE ROLE #{ role parent } FROM ROLE #{ role child } \" , \"DROP ROLE #{ role child } \" ] job . wait until done! puts \"Revoked privileges and dropped role #{ role child } \" end More information About fine-grained access control Fine-grained access control for change streams Fine-grained access control privileges GoogleSQL DDL reference Make schema updates Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For example, to grant SELECT , INSERT , and UPDATE on the employees and contractors tables to the database role hr analyst in the database hrdb1 in the instance hr , enter the following statement: GoogleSQL gcloud spanner databases ddl update hrdb1 --instance = hr \\ --ddl = 'CREATE ROLE hr analyst; GRANT SELECT, INSERT, UPDATE ON TABLE employees, contractors TO ROLE hr analyst;' PostgreSQL gcloud spanner databases ddl update hrdb1 --instance = hr \\ --ddl = 'CREATE ROLE hr analyst; GRANT SELECT, INSERT, UPDATE ON TABLE employees, contractors TO hr analyst;' Note: Use the same case for schema object names that you used when you created the objects."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/configure-fgac"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

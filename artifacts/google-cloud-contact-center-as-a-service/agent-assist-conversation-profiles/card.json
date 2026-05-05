@@ -1,0 +1,122 @@
+{
+  "feature_name": "Agent Assist conversation profiles",
+  "feature_slug": "agent-assist-conversation-profiles",
+  "summary": "Conversation profiles for Dialogflow CX virtual agents can now be created in europe-west4 and europe-west6; This feature lets administrators onboard, edit, remove, and monitor Agent Assist conversation profiles.",
+  "extended_definition": "Conversation profiles for Dialogflow CX virtual agents can now be created in europe-west4 and europe-west6; This feature lets administrators onboard, edit, remove, and monitor Agent Assist conversation profiles.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent Assist \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "source_id": "site-docs-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In addition, you must grant the following IAM roles to your service account: Dialogflow Agent Assist Client Note: Failure to grant the correct IAM role prevents Agent Assist from working correctly.",
+          "Service account requirements To use Agent Assist, you need to create a Google Cloud Service Account and key in the project where you created your Agent Assist conversation profile .",
+          "Knowledge Assist This feature follows a conversation between a human agent and an end-user and provides the human agent with relevant document suggestions."
+        ]
+      },
+      {
+        "title": "\"Interactive Virtual Assistant (IVA) guide \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Virtual agent escalation using SIP integration This section explains how to create a Dialogflow CX custom payload for virtual agent escalations when you have the following requirements: The virtual agent needs to escalate to human agents on your own contact center using SIP.",
+          "You get access to Dialogflow for natural language understanding, Customer Experience Insights for real-time interaction analysis, and Agent Assist summarization for generating summaries of conversations.",
+          "This option is only used by Dialogflow CX virtual agents."
+        ]
+      },
+      {
+        "title": "\"Customer Experience Insights and Quality AI \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights",
+        "source_id": "site-docs-reference",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The provided labels are imported: Metadata key Calls Chats Description hold duration ✔ Duration that the end-user was put on hold for in seconds. customer phone number ✔ The phone number of the end-user. outbound number ✔ The phone number that the outbound call was placed from (outbound calls only). transfers ✔ ✔ The number of times the call was transferred. has feedback ✔ ✔ Whether the conversation had a feedback response. fail reason ✔ ✔ The reason for the failure of the conversation. out ticket id ✔ ✔ The ticket ID of the conversation. agent assist conversation id X ✔ ✔ The Agent Assist conversation ID of the conversation. dialogflow conversation id X ✔ ✔ The Dialogflow CX conversation ID of the conversation. queue priority level ✔ ✔ The priority level of the conversation. answer type ✔ ✔ The type of the answer. session type v2 ✔ ✔ The type of the session. menu ✔ ✔ The menu of the conversation.",
+          "Quality AI builds on CX Insights to enable comprehensive contact center quality evaluations, including individual conversations, live agents, and virtual agents.",
+          "CX Insights seamlessly integrates with other products, allowing you to import conversations from Dialogflow CX and Agent Assist."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/iva-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/conversational-insights"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

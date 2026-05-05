@@ -1,0 +1,174 @@
+{
+  "feature_name": "Storage Transfer Service transfer creation workflow",
+  "feature_slug": "storage-transfer-service-transfer-creation-workflow",
+  "summary": "The transfer creation workflow in Storage Transfer Service was updated to reflect changes in creating transfer jobs.",
+  "extended_definition": "The transfer creation workflow in Storage Transfer Service was updated to reflect changes in creating transfer jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2015-12-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+      "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+      "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Metadata preservation \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Transfers between Cloud Storage buckets can optionally preserve object ACLs, customer-managed encryption keys, storage class, object creation time (as the value of a customTime field), and temporary holds.",
+          "Similarly, updated reflects the time that metadata for an object is modified in Cloud Storage.",
+          "Similarly, updated reflects the time that metadata for an object is modified in Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"Manage transfer agents \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Source files that were created, updated, or deleted during a transfer may or may not have those changes reflected in the destination data set.",
+          "Both flags delete all agents on the machine; the --uninstall flag additionally uninstalls the agent Docker image. gcloud transfer agents delete --all gcloud transfer agents delete --uninstall File system transfer details Incremental transfers Storage Transfer Service begins all transfers by computing the data present at the source and destination to determine which source files are new, updated, or deleted since the last transfer.",
+          "If your transfer is from AWS S3 or S3-compatible storage, pass your access key ID and secret key using environment variables: sudo docker run --ulimit memlock=64000000 -d --rm \\ -v HOST DIRECTORY : CONTAINER DIRECTORY \\ -v PATH/TO/KEY.JSON :/etc/gcloud/key.json:ro \\ -e AWS ACCESS KEY ID= AWS ACCESS KEY ID \\ -e AWS SECRET ACCESS KEY= AWS SECRET ACCESS KEY \\ gcr.io/cloud-ingest/tsop-agent:latest \\ --project-id= PROJECT ID \\ --creds-file=/etc/gcloud/key.json \\ --hostname=$(hostname) \\ --agent-pool= POOL NAME --gcs-api-endpoint=storage."
+        ]
+      },
+      {
+        "title": "\"Use cross-bucket replication \\_|\\_ Storage Transfer Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication",
+        "source_id": "site-docs-root",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant required roles Cross-bucket replication uses Storage Transfer Service to replicate objects from your source bucket to your destination bucket, and Pub/Sub to receive notifications of changes to your source bucket.",
+          "Cross-bucket replication uses Storage Transfer Service to replicate objects and Pub/Sub to get alerted of changes to the source and destination buckets.",
+          "The Storage Transfer Service service agent or user service account needs the following permissions to replicate your objects and set up Pub/Sub notifications for your source bucket: Required permissions The following permissions must be granted on the source project: pubsub.topics.create pubsub.subscriptions.create pubsub.subscriptions.consume The following permissions must be granted on the source bucket: storage.buckets.get storage.buckets.update storage.objects.get The following permissions must be granted on the destination bucket: storage.buckets.get storage.objects.create storage.objects.get These permissions can be granted through custom roles or by granting all of the following predefined roles : Pub/Sub Editor ( roles/pubsub.editor ) role on the source project Storage Legacy Bucket Owner ( roles/storage.legacyBucketOwner ) and Storage Object Viewer ( roles/storage.objectViewer ) roles on the source bucket Storage Legacy Bucket Writer ( roles/storage.legacyBucketWriter ) and Storage Object Viewer ( roles/storage.objectViewer ) roles on the destination bucket Grant required roles for Pub/Sub Cloud Storage uses a Google-managed service agent to manage Pub/Sub notifications."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "key.json",
+      "pubsub.editor",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.topics.create",
+      "storage.buckets.get",
+      "storage.buckets.update",
+      "storage.legacyBucketOwner",
+      "storage.legacyBucketWriter",
+      "storage.objects.create",
+      "storage.objects.get",
+      "storage.objectViewer",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.editor",
+      "roles/storage.legacyBucketOwner",
+      "roles/storage.legacyBucketWriter",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/metadata-preservation",
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cross-bucket-replication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:53.219Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service"
+}

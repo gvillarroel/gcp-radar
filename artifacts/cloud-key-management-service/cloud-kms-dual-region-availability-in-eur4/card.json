@@ -1,0 +1,183 @@
+{
+  "feature_name": "Cloud KMS dual-region availability in eur4",
+  "feature_slug": "cloud-kms-dual-region-availability-in-eur4",
+  "summary": "Cloud KMS resources can be created in the eur4 dual-region.",
+  "extended_definition": "Cloud KMS resources can be created in the eur4 dual-region.",
+  "lifecycle": {
+    "latest_feature_date": "2018-11-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+      "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+      "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using CMEKs \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operational overhead: Using highly granular keys might require administrative effort or additional tooling for automation to provision a large number of Cloud KMS resources and to manage access controls for service agents so they can only use the appropriate keys.",
+          "For workloads that require high availability or disaster recovery capabilities across multiple locations, it's your responsibility to assess whether your workload is resilient in the event that Cloud KMS becomes unavailable in a certain region.",
+          "Monitor key usage You can view key usage with the Cloud KMS inventory API to help you identify Google Cloud resources in your organization that are dependent on and protected by Cloud KMS keys."
+        ]
+      },
+      {
+        "title": "\"Cloud KMS Inventory Service audit logging \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permission type Methods OTHER google.cloud.kms.inventory.v1.KeyDashboardService.ListCryptoKeys : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com . google.cloud.kms.inventory.v1.KeyTrackingService.GetProtectedResourcesSummary : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com . google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources : To enable this log, enable ADMIN READ under the service cloudkms.googleapis.com .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.kms.inventory.v1.KeyTrackingService.GetProtectedResourcesSummary\" SearchProtectedResources Method : google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources Audit log type : Data access Permissions : cloudkms.cryptoKeys.get - ADMIN READ cloudkms.protectedResources.search - ADMIN READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.kms.inventory.v1.KeyTrackingService.SearchProtectedResources\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Labeling keys \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "source_id": "site-iam-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also add labels to an existing key. gcloud kms keys create KEY NAME \\ --keyring KEY RING \\ --location LOCATION \\ --purpose PURPOSE \\ --labels \" LABEL LIST \" Replace the following: KEY NAME : the name of the key.",
+          "For example: { \"labels\" : [] } Audit logging Cloud Audit Logs for Cloud KMS can be used to log label information when keys are created or updated.",
+          "These limits apply to the key and value for each label, and to the individual Google Cloud resources that have labels."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.keyRings.cryptoKeys.getProtectedResourcesSummary\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary",
+        "source_id": "site-api-reference",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: projects/test-project/locations/us/keyRings/test-keyring/cryptoKeys/test-key/protectedResourcesSummary resourceCount string ( int64 format) The total number of protected resources in the same Cloud organization as the key. projectCount integer The number of distinct Cloud projects in the same Cloud organization as the key that have resources protected by the key. resourceTypes map (key: string, value: string ( int64 format)) The number of resources protected by the key grouped by resource type. cloudProducts map (key: string, value: string ( int64 format)) The number of resources protected by the key grouped by Cloud product. locations map (key: string, value: string ( int64 format)) The number of resources protected by the key grouped by region.",
+          "Home Documentation Security Cloud KMS Reference Send feedback Method: projects.locations.keyRings.cryptoKeys.getProtectedResourcesSummary Stay organized with collections Save and categorize content based on your preferences.",
+          "Response body If successful, the response body contains data with the following structure: Aggregate information about the resources protected by a Cloud KMS key in the same Cloud organization as the key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeys.get",
+      "cloudkms.googleapis.com",
+      "cloudkms.protectedResources.search",
+      "kmsinventory.googleapis.com",
+      "projects.locations.keyRings.cryptoKeys",
+      "projects.locations.keyRings.cryptoKeys.getProtectedResourcesSummary"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/audit-logging-kms-inventory",
+        "https://docs.cloud.google.com/kms/docs/creating-managing-labels",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.locations.keyRings.cryptoKeys/getProtectedResourcesSummary"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.806Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service"
+}

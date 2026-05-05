@@ -1,0 +1,169 @@
+{
+  "feature_name": "Custom constraints for BigQuery Organization Policy",
+  "feature_slug": "custom-constraints-for-bigquery-organization-policy",
+  "summary": "Custom constraints for Organization Policy let you enforce granular controls on specific fields of supported BigQuery resources.",
+  "extended_definition": "Custom constraints for Organization Policy let you enforce granular controls on specific fields of supported BigQuery resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+      "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Sharing data exchanges and listings using custom constraints \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Listing resource must have the restrictedExportPolicy object enabled. name : organizations/ ORGANIZATION ID /customConstraints/custom.listingWithRestrictedExportPolicy resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : has(resource.bigqueryDataset) && has(resource.bigqueryDataset.restrictedExportPolicy) && resource.bigqueryDataset.restrictedExportPolicy.enabled == true action type : DENY display name : The Listing must have restricted export policy. description : The Listing resource must have restrictedExportPolicy enabled to allow egress controls.",
+          "Error Message: Operation denied by org policy on resource 'projects/PROJECT ID/locations/us': [\"customConstraints/custom.enforceDataExchangeDiscovery\": \"All DataExchange resources must be private.\"] Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints.",
+          "Resource Field analyticshub.googleapis.com/DataExchange resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact analyticshub.googleapis.com/Listing resource.allowOnlyMetadataSharing resource.bigqueryDataset.dataset resource.bigqueryDataset.replicaLocations resource.bigqueryDataset.restrictedExportPolicy.enabled resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult resource.bigqueryDataset.selectedResources.routine resource.bigqueryDataset.selectedResources.table resource.categories resource.dataProvider.name resource.dataProvider.primaryContact resource.description resource.discoveryType resource.displayName resource.documentation resource.icon resource.logLinkedDatasetQueryUserEmail resource.primaryContact resource.publisher.name resource.publisher.primaryContact resource.pubsubTopic.dataAffinityRegions resource.pubsubTopic.topic resource.requestAccess resource.restrictedExportConfig.enabled resource.restrictedExportConfig.restrictQueryResult What's next Learn more about custom constraints ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "NAME and VALUE must be one of the following combinations: NAME VALUE Details expiration timestamp TIMESTAMP Example: expiration timestamp=TIMESTAMP \"2025-01-01 00:00:00 UTC\" This property is equivalent to the expirationTime table resource property. friendly name STRING Example: friendly name=\"my view\" This property is equivalent to the friendlyName table resource property. description STRING Example: description=\"a view that expires in 2025\" This property is equivalent to the description table resource property. labels ARRAY<STRUCT<STRING, STRING>> Example: labels=[(\"org unit\", \"development\")] This property is equivalent to the labels table resource property. privacy policy JSON-formatted STRING The policies to enforce when anyone queries the view.",
+          "NAME and VALUE must be one of the following combinations: NAME VALUE Details expiration timestamp TIMESTAMP Example: expiration timestamp=TIMESTAMP \"2025-01-01 00:00:00 UTC\" This property is equivalent to the expirationTime table resource property. friendly name STRING Example: friendly name=\"my view\" This property is equivalent to the friendlyName table resource property. description STRING Example: description=\"a view that expires in 2025\" This property is equivalent to the description table resource property. labels ARRAY<STRUCT<STRING, STRING>> Example: labels=[(\"org unit\", \"development\")] This property is equivalent to the labels table resource property. privacy policy JSON-formatted STRING The policies to enforce when anyone queries the view.",
+          "Note: Constraints cannot be specified on ARRAY or STRUCT elements. column := column name column schema column schema := { simple type STRUCT<field list> ARRAY<array element schema> } [ PRIMARY KEY NOT ENFORCED REFERENCES table name ( column name ) NOT ENFORCED ] [ DEFAULT default expression GENERATED ALWAYS AS ( generation expression ) STORED OPTIONS ( generation option list ) ] [ NOT NULL ] [ OPTIONS ( column option list ) ] simple type := { data type STRING COLLATE collate specification } field list := field name column schema [ , ... ] array element schema := { simple type STRUCT<field list> } [ NOT NULL ] column name is the name of the column."
+        ]
+      },
+      {
+        "title": "\"Best practices for multi-tenant workloads on BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "A dataset-per-tenant design helps to mitigate the following concerns that an organization experiences when it scales to thousands of tenants: Administrative complexity : the total number of new projects and cloud resources on a per customer basis End-to-end latency : how up to date the datastore is for both the tenants and cross-customer analytics solutions Performance expectations : ensuring that tenant performance stays within acceptable limits Configure datasets for each tenant Within a project that is dedicated to storing customer data, each customer's data is separated by BigQuery datasets.",
+          "If your organization needs more flexibility, the following options are available: Cloud Composer jobs : you can schedule Cloud Composer jobs to issue ETL jobs that create regional subsets before triggering the BigQuery Data Transfer Service through its client API .",
+          "The tenant can then decrypt the data either by accessing the key material in an authorized UDF or by passing the key material as a query parameter to BigQuery, where the host organization cannot log the key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "custom.enforceDataExchangeDiscovery",
+      "custom.listingWithRestrictedExportPolicy",
+      "resource.allowOnlyMetadataSharing",
+      "resource.bigqueryDataset",
+      "resource.bigqueryDataset.dataset",
+      "resource.bigqueryDataset.replicaLocations",
+      "resource.bigqueryDataset.restrictedExportPolicy",
+      "resource.bigqueryDataset.restrictedExportPolicy.enabled",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictDirectTableAccess",
+      "resource.bigqueryDataset.restrictedExportPolicy.restrictQueryResult",
+      "resource.bigqueryDataset.selectedResources.routine",
+      "resource.bigqueryDataset.selectedResources.table",
+      "resource.categories",
+      "resource.dataProvider.name",
+      "resource.dataProvider.primaryContact",
+      "resource.description",
+      "resource.discoveryType",
+      "resource.displayName",
+      "resource.documentation",
+      "resource.icon",
+      "resource.logLinkedDatasetQueryUserEmail",
+      "resource.primaryContact",
+      "resource.publisher.name",
+      "resource.publisher.primaryContact",
+      "resource.pubsubTopic.dataAffinityRegions",
+      "resource.pubsubTopic.topic",
+      "resource.requestAccess",
+      "resource.restrictedExportConfig.enabled",
+      "resource.restrictedExportConfig.restrictQueryResult"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

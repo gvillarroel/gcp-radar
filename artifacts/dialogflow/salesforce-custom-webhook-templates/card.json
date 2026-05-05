@@ -1,0 +1,83 @@
+{
+  "feature_name": "Salesforce custom webhook templates",
+  "feature_slug": "salesforce-custom-webhook-templates",
+  "summary": "Dialogflow CX provides custom webhook templates for Salesforce integrations.",
+  "extended_definition": "Dialogflow CX provides custom webhook templates for Salesforce integrations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Dialogflow CX API If none of the ready-to-use integrations are suitable, or you would like to customize the interface for your system, you can use the Dialogflow CX API directly .",
+          "If you use an integration, you do not need to directly call the Dialogflow CX API, as integrations handle this for you.",
+          "Integrations and connecting your services There are multiple ways to integrate with Dialogflow CX agents."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "It provides more controls for customized ranking than the com. google. cloud. dialogflow. v2.",
+          "It provides more controls for customized ranking than the com. google. cloud. dialogflow. v2.",
+          "Answer Feedback Represents feedback the customer has about the quality & correctness of a certain answer in a conversation. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "Fulfillments \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you enable partial response in the first fulfillment, Dialogflow CX returns the first fulfillment message quickly and calls the webhook.",
+          "This makes Dialogflow CX flush the response queue and send all messages as a partial response before calling the webhook.",
+          "Custom payloads are sometimes large and complex, so using templates can help make the agent creation process easier."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

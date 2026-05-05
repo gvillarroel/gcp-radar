@@ -1,0 +1,195 @@
+{
+  "feature_name": "Observability bucket default settings",
+  "feature_slug": "observability-bucket-default-settings",
+  "summary": "Default settings let organizations, folders, and projects preconfigure location and Cloud KMS key values for new observability buckets.",
+  "extended_definition": "Default settings let organizations, folders, and projects preconfigure location and Cloud KMS key values for new observability buckets.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+      "https://docs.cloud.google.com/trace/docs/analytics",
+      "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-iam-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Query and analyze traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/analytics",
+        "source_id": "site-docs-root",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "To make this change, in the toolbar of the Query pane, click settings Settings and then select Analytics (default) .",
+          "To make this change, in the toolbar of the Query pane, click settings Settings and then select Analytics (default) .",
+          "To make this change, in the toolbar of the Query pane, click settings Settings and then select Analytics (default) ."
+        ]
+      },
+      {
+        "title": "\"Collect and view multimodal prompts and responses \\_|\\_ Cloud Trace \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "source_id": "site-docs-root-2",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "When a log bucket is upgraded for Observability Analytics, the results of the describe command include the following statement: analyticsEnabled: true If your log bucket isn't upgraded, then run the following command: gcloud logging buckets update LOG BUCKET ID --location = LOCATION --enable-analytics --async The upgrade can take several minutes to complete.",
+          "Enable the APIs To get the permissions that you need to configure the system so that you can view your multimodal prompts and responses in BigQuery, ask your administrator to grant you the following IAM roles on project: Logs Configuration Writer ( roles/logging.configWriter ) Storage Admin ( roles/storage.admin ) BigQuery Connection Admin ( roles/bigquery.connectionAdmin ) BigQuery Data Viewer ( roles/bigquery.dataViewer ) BigQuery Studio User ( roles/bigquery.studioUser ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "CONNECTION ID The response to this command lists the connection ID, and it lists a service account: { \"serviceAccountId\" : \"bqcx-151560119848-s1pd@gcp-sa-bigquery-condel.iam.gserviceaccount.com\" } Grant the service account for the BigQuery connection an IAM role that lets it read data stored in your Cloud Storage bucket: gcloud storage buckets add-iam-policy-binding gs:// STORAGE BUCKET \\ --member = serviceAccount: SERVICE ACCT EMAIL \\ --role = roles/storage.objectViewer Replace the following before you run the command: STORAGE BUCKET : The name of your Cloud Storage bucket."
+        ]
+      },
+      {
+        "title": "\"Set up Google Cloud Observability for Application Monitoring \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring",
+        "source_id": "site-iam-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Only configure scopes To get the permissions that you need to configure the observability scope, ask your administrator to grant you the following IAM roles: Observability Editor ( roles/observability.editor ) on your App Hub host project or management project Logs Configuration Writer ( roles/logging.configWriter ) on your App Hub host project or management project Monitoring admin ( roles/monitoring.admin ) on your App Hub host project or management project and on each project that you want to add to the metrics scope Cloud Trace User ( roles/cloudtrace.user ) on your App Hub host project or management project App Hub viewer ( roles/apphub.viewer ) on your App Hub host project or management project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "If you are using an app-enabled folder and if you don't have an organization-level aggregated sink or nested folders, then we recommend following: Create an intercepting aggregated sink for your app-enabled folder , and route those logs to the Default log bucket of the management project for your app-enabled folder.",
+          "Configure and set the default trace scope Do the following: For each project that will store your application's trace data, we recommend that you enable the Observability API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.viewer",
+      "bigquery.connectionAdmin",
+      "bigquery.dataViewer",
+      "bigquery.studioUser",
+      "cloudtrace.user",
+      "condel.iam.gserviceaccount.com",
+      "logging.configWriter",
+      "logging.viewer",
+      "monitoring.admin",
+      "observability.editor",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin",
+      "storage.admin",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.viewer",
+      "roles/bigquery.connectionAdmin",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.studioUser",
+      "roles/cloudtrace.user",
+      "roles/logging.configWriter",
+      "roles/logging.viewer",
+      "roles/monitoring.admin",
+      "roles/observability.editor",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/trace/docs/analytics",
+        "https://docs.cloud.google.com/trace/docs/collect-view-multimodal-prompts-responses",
+        "https://docs.cloud.google.com/monitoring/docs/setup-application-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.017Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace"
+}

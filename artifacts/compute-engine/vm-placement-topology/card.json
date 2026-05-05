@@ -1,0 +1,98 @@
+{
+  "feature_name": "VM placement topology",
+  "feature_slug": "vm-placement-topology",
+  "summary": "VM placement topology lets you view how physically close one VM is to another.",
+  "extended_definition": "VM placement topology lets you view how physically close one VM is to another.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/vpc-spokes-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"NCC Gateway overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Hybrid inspection topology : lets you add NCC Gateway spokes to a group to apply policies.",
+          "Effective routes view for gateways and hub route tables You can query hub route tables from the perspective of a region, which takes into account inter-region cost when you select a route, whether it is through the gateway or not.",
+          "NCC Gateway lets you enable security functions such as third-party Security Service Edge (SSE), a cloud-delivered security component of secure access service edge (SASE) , and terminate interconnect connections."
+        ]
+      },
+      {
+        "title": "\"VPC spokes overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/vpc-spokes-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Hybrid spoke compatibility with star topology : A hub configured to use the star topology enforces the following limitations on its hybrid spokes: Hybrid spokes with site-to-site data transfer enabled are only supported in the center spoke group.",
+          "Home Documentation Networking Network Connectivity Network Connectivity Center Guides Send feedback VPC spokes overview Stay organized with collections Save and categorize content based on your preferences.",
+          "You can choose one of the following two preset topologies: Mesh topology Star topology For detailed information about connectivity topologies, see Preset connectivity topologies ."
+        ]
+      },
+      {
+        "title": "Cloud VPN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you first view a Network Topology graph, it aggregates all the base entities into their top-level hierarchy.",
+          "You can view your Cloud VPN gateways and VPN tunnels as entities in the Network Topology view.",
+          "For more information, see the Network Topology overview ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/ncc-gateway-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/vpn/concepts/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.943Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine"
+}

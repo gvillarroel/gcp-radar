@@ -1,0 +1,117 @@
+{
+  "feature_name": "Zonal Reservations",
+  "feature_slug": "zonal-reservations",
+  "summary": "Zonal Reservations let Dataproc clusters use reserved zonal Compute Engine capacity.",
+  "extended_definition": "Zonal Reservations let Dataproc clusters use reserved zonal Compute Engine capacity.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "It cannot be activated on clusters created with supported Dataproc on Compute Engine image versions.",
+          "You can test a node's role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget ): ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ \"${ROLE}\" == 'Master' ]]; then ... master specific actions ... else ... worker specific actions ... fi encryptionConfig object ( EncryptionConfig ) Optional.",
+          "If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging and temp buckets )."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataproc.v1 (4.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "source_id": "site-java-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster Controller Grpc The ClusterControllerService provides methods to manage clusters of Compute Engine instances. com. google. cloud. dataproc. v1.",
+          "Async Service The ClusterControllerService provides methods to manage clusters of Compute Engine instances. com. google. cloud. dataproc. v1.",
+          "Shielded Instance Config Shielded Instance Config for clusters using Compute Engine Shielded VMs . com. google. cloud. dataproc. v1."
+        ]
+      },
+      {
+        "title": "\"Stop and start clusters \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud console Click the cluster name from the Managed Service for Apache Spark Clusters page in the Google Cloud console, then click STOP to stop and START to start the cluster. gcloud CLI Stop a cluster gcloud dataproc clusters stop CLUSTER NAME \\ --region= REGION Start a cluster gcloud dataproc clusters start CLUSTER NAME \\ --region= REGION REST API Stop a cluster Submit a clusters.stop request.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "You can use the gcloud dataproc clusters describe cluster-name command to monitor the transitioning of the cluster's status from RUNNING to STOPPING to STOPPED ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clusters.stop",
+      "com.google.cloud.dataproc.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-start-stop",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

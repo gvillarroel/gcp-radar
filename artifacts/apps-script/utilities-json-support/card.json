@@ -1,0 +1,119 @@
+{
+  "feature_name": "Utilities JSON support",
+  "feature_slug": "utilities-json-support",
+  "summary": "Utilities provides methods for parsing and stringifying JSON.",
+  "extended_definition": "Utilities provides methods for parsing and stringifying JSON.",
+  "lifecycle": {
+    "latest_feature_date": "2010-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/concepts",
+      "https://developers.google.com/apps-script/guides/v8-runtime",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "V8 runtime overview \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/v8-runtime",
+        "source_id": "site-docs-root-3",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following V8 example shows the use of object methods when constructing menu items in Google Sheets: function onOpen () { const ui = SpreadsheetApp . getUi (); // Or DocumentApp , SlidesApp , or FormApp . ui . createMenu ( 'Custom Menu' ) . addItem ( 'First item' , 'menu.item1' ) . addSeparator () . addSubMenu ( ui . createMenu ( 'Sub-menu' ) . addItem ( 'Second item' , 'menu.item2' )) . addToUi (); } const menu = { item1 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: First item' ); }, item2 : function () { SpreadsheetApp . getUi () . alert ( 'You clicked: Second item' ); } } View logs Apps Script provides two logging services: the Logger service and the console class.",
+          "The new runtime recognizes these function definition formats: function normalFunction () {} async function asyncFunction () {} function generatorFunction () {} var varFunction = function () {} let letFunction = function () {} const constFunction = function () {} var namedVarFunction = function alternateNameVarFunction () {} let namedLetFunction = function alternateNameLetFunction () {} const namedConstFunction = function alternateNameConstFunction () {} var varAsyncFunction = async function () {} let letAsyncFunction = async function () {} const constAsyncFunction = async function () {} var namedVarAsyncFunction = async function alternateNameVarAsyncFunction () {} let namedLetAsyncFunction = async function alternateNameLetAsyncFunction () {} const namedConstAsyncFunction = async function alternateNameConstAsyncFunction () {} var varGeneratorFunction = function () {} let letGeneratorFunction = function () {} const constGeneratorFunction = function () {} var namedVarGeneratorFunction = function alternateNameVarGeneratorFunction () {} let namedLetGeneratorFunction = function alternateNameLetGeneratorFunction () {} const namedConstGeneratorFunction = function alternateNameConstGeneratorFunction () {} var varLambda = () => {} let letLambda = () => {} const constLambda = () => {} var varAsyncLambda = async () => {} let letAsyncLambda = async () => {} const constAsyncLambda = async () => {} Call object methods from triggers and callbacks Scripts using V8 can call object methods and class static methods from places where you could already call library methods.",
+          "Unavailable APIs The following standard JavaScript APIs are NOT available in the Apps Script V8 runtime: Timers : setTimeout , setInterval , clearTimeout , clearInterval Streams : ReadableStream , WritableStream , TextEncoder , TextDecoder Web APIs : fetch , FormData , File , Blob , URL , URLSearchParams , DOMException , atob , btoa Crypto : crypto , SubtleCrypto Global Objects : window , navigator , performance , process (Node.js) Use the following Apps Script APIs as alternatives: Timers : Use Utilities.sleep for synchronous pauses."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "November 18, 2013 Deprecated The Apps Script methods Utilities.jsonParse() and Utilities.jsonStringify() have been deprecated in favor of the now-standard JavaScript methods JSON.parse() and JSON.stringify() , which now appear in autocomplete.",
+          "Added two new methods to the Utilities class provide JSON support: Utilities.jsonParse() and Utilities.jsonStringify() .",
+          "May 20, 2015 Deprecated Deprecated the following OAuth class and methods in favor of OAuth libraries : + OAuthConfig + UrlFetchApp.addOAuthService(serviceName) + UrlFetchApp.removeOAuthService(serviceName) Feature Added the following enum and methods to the Script service to allow scripts to identify their installation source and project keys: InstallationSource ScriptApp.getInstallationSource() ScriptApp.getProjectKey() Added several new web-safe base-64 encoding and decoding methods: Utilities.base64DecodeWebSafe(String) Utilities.base64DecodeWebSafe(String, Charset) Utilities.base64EncodeWebSafe(Byte) Utilities.base64EncodeWebSafe(String) Utilities.base64EncodeWebSafe(String, Charset) April 23, 2015 Announcement Add-ons are now out of developer preview."
+        ]
+      },
+      {
+        "title": "Introduction \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/concepts",
+        "source_id": "site-docs-root",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use this resource to monitor script executions initiated using the scripts.run method. scripts — The endpoint that provides methods to remotely execute Apps Script functions.",
+          "The API provides methods to list existing processes and gather information about them, such as type and current status.",
+          "The API provides methods to create, list, update, and delete script project deployments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "menu.item1",
+      "menu.item2",
+      "scripts.run"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/concepts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/concepts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/concepts"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/v8-runtime",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/concepts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

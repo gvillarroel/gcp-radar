@@ -1,0 +1,236 @@
+{
+  "feature_name": "Service Control API rate limiting",
+  "feature_slug": "service-control-api-rate-limiting",
+  "summary": "The Service Control API added support for request rate limiting, released in Public Beta.",
+  "extended_definition": "The Service Control API added support for request rate limiting, released in Public Beta.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-infrastructure/docs/admission-control",
+      "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+      "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Rate Limiting \\_|\\_ Service Infrastructure \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enforcing rate limiting To enforce rate limiting, each server that belongs to a managed service needs to call the Service Control API services.allocateQuota method regularly.",
+          "The Service Management and Service Control APIs allow you to manage and enforce rate limiting.",
+          "Currently, the supported rate limiting is the number of requests per minute per service consumer, where the service consumer is a Google Cloud project as identified by an API key, a project id, or a project number."
+        ]
+      },
+      {
+        "title": "\"Getting Started with the Service Control API \\_|\\_ Service Infrastructure\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Call with invalid request. $ gcurl -d '{ \"operation\": { \"operationId\": \"123e4567-e89b-12d3-a456-426655440000\", \"consumerId\": \"project:endpointsapis-consumer\", \"startTime\": \"2016-06-12T22:00:15Z\", \"operationName\": \"google.example.hello.v1.HelloService.GetHello\" } }' https://servicecontrol.googleapis.com/v1/services/endpointsapis.appspot.com:check { \"checkErrors\": [ { \"code\": \"SERVICE NOT ACTIVATED\", \"detail\": \"Service 'endpointsapis.appspot.com' is not enabled for consumer 'project:endpointsapis-consumer'.\" } ] } Successful call to \"services.check\" method after the API is enabled for the project. $ gcurl -d '{ \"operation\": { \"operationId\": \"123e4567-e89b-12d3-a456-426655440000\", \"consumerId\": \"project:endpointsapis-consumer\", \"startTime\":\"2016-07-31T05:20:00Z\", \"operationName\":\"google.example.hello.v1.HelloService.GetHello\" } }' https://servicecontrol.googleapis.com/v1/services/endpointsapis.appspot.com:check { \"operationId\": \"123e4567-e89b-12d3-a456-426655440000\" } After you have completed the preceding steps: You have a functional local test setup that you can use to call any Google Cloud Platform APIs.",
+          "For security and privacy reasons, the permission check typically happens before other checks. $ gcurl -d '{}' https://servicecontrol.googleapis.com/v1/services/invalid.com:check { \"error\": { \"code\": 403, \"message\": \"Permission 'servicemanagement.services.check' denied on service 'invalid.com'.\", \"status\": \"PERMISSION DENIED\" } } Call without proper permission on a service. $ gcurl -d '{}' https://servicecontrol.googleapis.com/v1/services/servicecontrol.googleapis.com:check { \"error\": { \"code\": 403, \"message\": \"Permission 'servicemanagement.services.check' denied on service 'servicecontrol.googleapis.com'.\", \"status\": \"PERMISSION DENIED\" } } Call with invalid request. $ gcurl -d '{}' https://servicecontrol.googleapis.com/v1/services/endpointsapis.appspot.com:check { \"error\": { \"code\": 400, \"message\": \"Request contains an invalid argument.\", \"status\": \"INVALID ARGUMENT\" } } This and following call assume that the service, operation name and project being checked are \"endpointsapis.appspot.com\", \"google.example.hello.v1.HelloService.GetHello\" and \"endpointsapis-consumer\" correspondingly.",
+          "Test with curl First, define a convenient shell alias for calling Google REST APIs: alias gcurl='curl -H \"Authorization: Bearer $(gcloud auth print-access-token)\" -H \"Content-Type: application/json\" ' The following shell command sequence demonstrates the incremental steps to call the Service Control API."
+        ]
+      },
+      {
+        "title": "\"Service Control API Access Control \\_|\\_ Service Infrastructure \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 211,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Otherwise, for example, if the service producer project runs out of quota for sending requests to the Service Control API, multiple managed services will be impacted.",
+          "To invoke the Service Control API for a managed service , the caller must have the following Identity and Access Management (IAM) permissions on the service: services.check requires permission servicemanagement.services.check . services.report requires permission servicemanagement.services.report . services.allocateQuota requires permission servicemanagement.services.quota .",
+          "Service consumer level permissions require that the request to the Service Control API must contain at least one valid service consumer project ID."
+        ]
+      },
+      {
+        "title": "Admission Control \\_|\\_ Service Infrastructure \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-infrastructure/docs/admission-control",
+        "source_id": "site-iam-reference",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Performing admission control Once you have deployed your service configuration to the Service Management API and your service is ready to serve requests from clients, you can begin calling services.check for your deployed service.",
+          "In other cases, the access can be complicated data import jobs or SQL queries, and the service needs to model the access in terms of a set of virtual API requests and perform admission control on each request.",
+          "Introduction This page describes how to use the Service Control API v2 for admission control for managed services that are integrated with Service Infrastructure."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.gserviceaccount.com",
+      "endpointsapis.appspot.com",
+      "gmail.com",
+      "invalid.com",
+      "servicecontrol.googleapis.com",
+      "servicemanagement.serviceController",
+      "servicemanagement.services.check",
+      "servicemanagement.services.quota",
+      "servicemanagement.services.report",
+      "services.allocateQuota",
+      "services.check",
+      "services.report"
+    ],
+    "missing_inventory_roles": [
+      "roles/servicemanagement.serviceController"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-infrastructure/docs/rate-limiting",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/getting-started",
+        "https://docs.cloud.google.com/service-infrastructure/docs/service-control/access-control",
+        "https://docs.cloud.google.com/service-infrastructure/docs/admission-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.389Z",
+  "source_step08_card": "data/step-08/current/products/service-infrastructure/card.json",
+  "product_name": "Service Infrastructure",
+  "product_slug": "service-infrastructure"
+}

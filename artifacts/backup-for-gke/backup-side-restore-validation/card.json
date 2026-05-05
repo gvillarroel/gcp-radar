@@ -1,0 +1,125 @@
+{
+  "feature_name": "Backup-side restore validation",
+  "feature_slug": "backup-side-restore-validation",
+  "summary": "Backup for GKE introduced Backup-Side Restore Validation to validate that backups from new backup plans are restorable.",
+  "extended_definition": "Backup for GKE introduced Backup-Side Restore Validation to validate that backups from new backup plans are restorable.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Define custom backup and restore logic \\_|\\_ Backup for GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If ready, the application description will show Ready to backup status as true , such as in this example: % kubectl describe protectedapplication nginx Name: nginx Namespace: default API Version: gkebackup.gke.io/v1 Kind: ProtectedApplication Metadata: UID: 90c04a86-9dcd-48f2-abbf-5d84f979b2c2 Spec: Components: Name: nginx Resource Kind: Deployment Resource Names: nginx Strategy: Backup All Restore All: Backup Pre Hooks: Command: /sbin/fsfreeze -f /var/log/nginx Container: nginx Name: freeze Backup Post Hooks: Command: /sbin/fsfreeze -u /var/log/nginx Container: nginx Name: unfreeze Type: BackupAllRestoreAll Resource Selection: Selector: Match Labels: app: nginx Type: Selector Status: Ready To Backup: true Events: <none> What's next Learn more about planning a set of backups .",
+          "Strategy: BackupAllRestoreAll This is the simplest strategy and backs up all the component's volumes at backup time and restores them all from their volume backups at restore time.",
+          "There are three strategies available: BackupAllRestoreAll - backup the volumes associated with all instances of the component and restore them all from the backups."
+        ]
+      },
+      {
+        "title": "Plan a set of restores \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "source_id": "site-docs-root",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "BACKUP PLAN : the source of backups that can be restored with this restore plan: projects/ PROJECT ID /locations/ BACKUP LOCATION /backupPlans/ BACKUP PLAN NAME Ensure that the backup plan is in the same project as the new restore plan.",
+          "Autopilot Standard This page describes how to create a Backup for GKE restore plan, which is used for restoring your backups in Google Kubernetes Engine (GKE).",
+          "Create a restore plan You can create a restore plan for your backups by using the Google Cloud CLI or the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Plan a set of backups \\_|\\_ Backup for GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Backups are retained for seven days and locked for three days after creation: gcloud beta container backup-restore backup-plans create BACKUP PLAN \\ --location = LOCATION \\ --cluster = CLUSTER \\ --all-namespaces \\ --include-secrets \\ --include-volume-data \\ --target-rpo-minutes = 1440 \\ --exclusion-windows-file = window.yaml \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 3 \\ --locked Create a backup plan for all namespaces with 2 hours RPO and multiple exclusion windows Create a window.yaml file, containing a YAML array of exclusionWindows : one weekly window and one single occurrence window. exclusionWindows : - startTime : hours : 15 minutes : 0 duration : \"5400s\" daysOfWeek : daysOfWeek : - MONDAY - FRIDAY - startTime : hours : 1 minutes : 0 duration : \"3600s\" singleOccurrenceDate : day : 1 month : 3 year : 2024 The following command creates a backup plan for all namespaces with 2 hours target RPO and no backups allowed from 1 AM to 2 AM on March 1, 2024 and 3 PM to 4:30 PM every Monday and Friday.",
+          "Backups are retained for three days after creation: gcloud beta container backup-restore backup-plans create BACKUP PLAN \\ --location = LOCATION \\ --cluster = CLUSTER \\ --selected-namespaces = my-ns \\ --include-secrets \\ --include-volume-data \\ --cron-schedule = \"15 \" \\ --backup-retain-days = 3 Create a backup plan for a selected ProtectedApplication The following command creates a backup plan to select the ProtectedApplication ( my-ns/my-app ). gcloud beta container backup-restore backup-plans create BACKUP PLAN \\ --location = LOCATION \\ --cluster = CLUSTER \\ --selected-applications = my-ns1/my-app1,my-ns2/my-app2 \\ --include-secrets \\ --include-volume-data Note: To use this scope for a backup, you must first create ProtectedApplications in the cluster.",
+          "Backups are retained for seven days and locked for three days after creation: gcloud beta container backup-restore backup-plans create BACKUP PLAN \\ --location = LOCATION \\ --cluster = CLUSTER \\ --all-namespaces \\ --include-secrets \\ --include-volume-data \\ --target-rpo-minutes = 120 \\ --exclusion-windows-file = window.yaml \\ --backup-retain-days = 7 \\ --backup-delete-lock-days = 3 \\ --locked Create a backup plan for all namespaces with a daily cron schedule The following command creates a backup plan to schedule daily backup for all namespaces at 5:20 AM every day."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gkebackup.gke.io",
+      "window.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/protected-application",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/restore-plan",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/how-to/backup-plan"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.245Z",
+  "source_step08_card": "data/step-08/current/products/backup-for-gke/card.json",
+  "product_name": "Backup for GKE",
+  "product_slug": "backup-for-gke"
+}

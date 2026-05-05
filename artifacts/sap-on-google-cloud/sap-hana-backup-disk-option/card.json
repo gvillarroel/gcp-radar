@@ -1,0 +1,142 @@
+{
+  "feature_name": "SAP HANA backup disk option",
+  "feature_slug": "sap-hana-backup-disk-option",
+  "summary": "Scale-up SAP HANA Terraform deployments can provision a backup disk with the include_backup_disk argument.",
+  "extended_definition": "Scale-up SAP HANA Terraform deployments can provision a backup disk with the include_backup_disk argument.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"HA scale-up cluster configuration guide for SAP HANA on SLES \\_|\\_ SAP on\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To manually configure a high-availability (HA) cluster for an SAP HANA scale-up system on SLES on Google Cloud, we recommend that you instead see HA scale-up cluster configuration guide for SAP HANA on SLES , which uses Terraform.",
+          "Note: If you deploy SAP HANA using Google Cloud's Terraform module sap hana or sap hana ha , version 202309280828 or later, or the Terraform module manual sap hana scaleup ha , then fast restart is automatically enabled.",
+          "Replace the temporary configuration file: rm /tmp/cluster.tmp vi /tmp/cluster.tmp Copy and paste the resource definitions into the /tmp/cluster.tmp file: SLES for SAP 15 SP5 or earlier primitive rsc SAPHana SID HDB inst num ocf:suse:SAPHana \\ operations \\$id=\"rsc sap SID HDB inst num -operations\" \\ op start interval=\"0\" timeout=\"3600\" \\ op stop interval=\"0\" timeout=\"3600\" \\ op promote interval=\"0\" timeout=\"3600\" \\ op demote interval=\"0\" timeout=\"3600\" \\ op monitor interval=\"60\" role=\"Master\" timeout=\"700\" \\ op monitor interval=\"61\" role=\"Slave\" timeout=\"700\" \\ params SID=\" SID \" InstanceNumber=\" inst num \" PREFER SITE TAKEOVER=\"true\" DUPLICATE PRIMARY TIMEOUT=\"7200\" AUTOMATED REGISTER=\"true\" ms msl SAPHana SID HDB inst num rsc SAPHana SID HDB inst num \\ meta notify=\"true\" clone-max=\"2\" clone-node-max=\"1\" \\ target-role=\"Started\" interleave=\"true\" colocation col saphana ip SID HDB inst num 4000: g-primary:Started \\ msl SAPHana SID HDB inst num :Master order ord SAPHana SID HDB inst num Optional: cln SAPHanaTopology SID HDB inst num \\ msl SAPHana SID HDB inst num SLES for SAP 15 SP6 or later primitive rsc SAPHana SID HDB inst num ocf:suse:SAPHanaController \\ operations \\$id=\"rsc sap SID HDB inst num -operations\" \\ op start interval=\"0\" timeout=\"3600\" \\ op stop interval=\"0\" timeout=\"3600\" \\ op promote interval=\"0\" timeout=\"3600\" \\ op demote interval=\"0\" timeout=\"3600\" \\ op monitor interval=\"60\" role=\"Promoted\" timeout=\"700\" \\ op monitor interval=\"61\" role=\"Unpromoted\" timeout=\"700\" \\ params SID=\" SID \" InstanceNumber=\" inst num \" PREFER SITE TAKEOVER=\"true\" \\ DUPLICATE PRIMARY TIMEOUT=\"7200\" AUTOMATED REGISTER=\"true\" clone mst SAPHana SID HDB inst num rsc SAPHana SID HDB inst num \\ meta clone-node-max=\"1\" interleave=\"true\" promotable=\"true\" colocation col saphana ip SID HDB inst num 4000: g-primary:Started \\ mst SAPHana SID HDB inst num :Promoted order ord SAPHana SID HDB inst num Optional: cln SAPHanaTopology SID HDB inst num \\ mst SAPHana SID HDB inst num Optionally, you can add the ON FAIL ACTION parameter to the SAPHanaController resource."
+        ]
+      },
+      {
+        "title": "\"Deployment Manager: SAP HANA scale-up high-availability cluster configuration\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: If you deploy SAP HANA using Google Cloud's Terraform module sap hana or sap hana ha , version 202309280828 or later, or the Terraform module manual sap hana scaleup ha , then fast restart is automatically enabled.",
+          "To automate the deployment of an SAP HANA scale-up system in a high-availability cluster on Google Cloud, we recommend that you use Terraform.",
+          "For more information, see Terraform: SAP HANA scale-up high-availability cluster configuration guide ."
+        ]
+      },
+      {
+        "title": "\"Reference architecture: SAP S/4HANA on Google Cloud \\_|\\_ SAP on Google\\",
+        "url": "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "source_id": "site-docs-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Recommended storage options for Linux directory structure on SAP HANA: SAP HANA directory Recommended storage option in Google Cloud /usr/sap Balanced Persistent Disk /hana/data SSD-based Persistent Disk or Hyperdisk /hana/log SSD-based Persistent Disk or Hyperdisk /hana/shared Balanced Persistent Disk /hanabackup Balanced Persistent Disk In distributed deployments, /hana/shared and /hanabackup can also be mounted as a network file system using an NFS solution such as Filestore.",
+          "The following diagram shows the flow of the backup feature for SAP HANA: Back up disks using snapshots Another option that you can add to your backup strategy is to take snapshots of entire disks by using the disk snapshot feature of Compute Engine.",
+          "What's next Learn more about the Google Cloud services used in this guide: VPC networks Compute Engine Storage options : Persistent Disk, Hyperdisk, and Cloud Storage Google Cloud console Cloud Monitoring Identity and Access Management Filestore NetApp Cloud Volumes ONTAP Google Cloud NetApp Volumes Backup and DR Service For more reference architectures, design guides, and best practices, explore the Cloud Architecture Center ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.tmp",
+      "corosync.conf",
+      "corosync.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-config-sles",
+        "https://docs.cloud.google.com/sap/docs/architectures/sap-s4hana-on-gcp",
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-dm-deployment"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.702Z",
+  "source_step08_card": "data/step-08/current/products/sap-on-google-cloud/card.json",
+  "product_name": "SAP on Google Cloud",
+  "product_slug": "sap-on-google-cloud"
+}

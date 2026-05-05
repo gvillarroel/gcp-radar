@@ -1,0 +1,175 @@
+{
+  "feature_name": "Vertex AI Search EU customer-managed encryption keys (CMEK)",
+  "feature_slug": "vertex-ai-search-eu-customer-managed-encryption-keys-cmek",
+  "summary": "Adds support for using customer-managed encryption keys to encrypt data at rest for EU multi-region Vertex AI Search data stores in allowlist preview.",
+  "extended_definition": "Adds support for using customer-managed encryption keys to encrypt data at rest for EU multi-region Vertex AI Search data stores in allowlist preview.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Search Send feedback Customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Vertex AI Search.",
+          "For more information about your encryption options, see Customer-managed encryption keys (CMEK) ."
+        ]
+      },
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Troubleshoot data ingestion If you are having problems with data ingestion, review these tips: If you're using customer-managed encryption keys and data import fails (with error message The caller does not have permission ), then make sure that the CryptoKey Encrypter/Decrypter IAM role ( roles/cloudkms.cryptoKeyEncrypterDecrypter ) on the key has been granted to the Cloud Storage service agent.",
+          "Customer-managed encryption keys (CMEK) Your keys only encrypt data within Google Cloud.",
+          "Customer-managed encryption keys (CMEK) Your keys only encrypt data within Google Cloud."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema.",
+          "Home Documentation AI and ML Vertex AI Search Reference Send feedback MCP Tools Reference: discoveryengine.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "SearchRequest JSON representation { \"servingConfig\" : string , \"branch\" : string , \"query\" : string , \"pageCategories\" : [ string ] , \"imageQuery\" : { object ( ImageQuery ) } , \"pageSize\" : integer , \"pageToken\" : string , \"offset\" : integer , \"oneBoxPageSize\" : integer , \"dataStoreSpecs\" : [ { object ( DataStoreSpec ) } ] , \"filter\" : string , \"canonicalFilter\" : string , \"orderBy\" : string , \"userInfo\" : { object ( UserInfo ) } , \"languageCode\" : string , \"regionCode\" : string , \"facetSpecs\" : [ { object ( FacetSpec ) } ] , \"boostSpec\" : { object ( BoostSpec ) } , \"params\" : { string : value , ... } , \"queryExpansionSpec\" : { object ( QueryExpansionSpec ) } , \"spellCorrectionSpec\" : { object ( SpellCorrectionSpec ) } , \"userPseudoId\" : string , \"useLatestData\" : boolean , \"contentSearchSpec\" : { object ( ContentSearchSpec ) } , \"embeddingSpec\" : { object ( EmbeddingSpec ) } , \"rankingExpression\" : string , \"rankingExpressionBackend\" : enum ( RankingExpressionBackend ) , \"safeSearch\" : boolean , \"userLabels\" : { string : string , ... } , \"naturalLanguageQueryUnderstandingSpec\" : { object ( NaturalLanguageQueryUnderstandingSpec ) } , \"searchAsYouTypeSpec\" : { object ( SearchAsYouTypeSpec ) } , \"customFineTuningSpec\" : { object ( CustomFineTuningSpec ) } , \"displaySpec\" : { object ( DisplaySpec ) } , \"crowdingSpecs\" : [ { object ( CrowdingSpec ) } ] , \"session\" : string , \"sessionSpec\" : { object ( SessionSpec ) } , \"relevanceThreshold\" : enum ( RelevanceThreshold ) , \"relevanceFilterSpec\" : { object ( RelevanceFilterSpec ) } , \"personalizationSpec\" : { object ( PersonalizationSpec ) } , \"relevanceScoreSpec\" : { object ( RelevanceScoreSpec ) } , \"searchAddonSpec\" : { object ( SearchAddonSpec ) } } Fields servingConfig string Required."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/cmek",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:55.115Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

@@ -1,0 +1,116 @@
+{
+  "feature_name": "Query queue timeout configuration",
+  "feature_slug": "query-queue-timeout-configuration",
+  "summary": "Query queue timeout configuration lets users set interactive and batch queue timeouts in the default configuration.",
+  "extended_definition": "Query queue timeout configuration lets users set interactive and batch queue timeouts in the default configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following example sets the default time zone to America/Chicago and the default query job timeout to one hour for an organization in the US region: ALTER ORGANIZATION SET OPTIONS ( region-us.default time zone = \"America/Chicago\" , region-us.default job query timeout ms = 3600000 ); The following example sets the default time zone, the default query job timeout, the default interactive and batch queue timeouts, and the default Cloud KMS key, clearing the organization level default settings: ALTER ORGANIZATION SET OPTIONS ( region-us.default time zone = NULL , region-us.default kms key name = NULL , region-us.default query job timeout ms = NULL , region-us.default interactive query queue timeout ms = NULL , region-us.default batch query queue timeout ms = NULL ); ALTER PROJECT SET OPTIONS statement Sets the options on a project.",
+          "ALTER PROJECT project id SET OPTIONS ( region-us.default time zone = \"America/New York\" , region-us.default job query timeout ms = 1800000 ); The following example sets the default time zone, the default query job timeout, the default Cloud KMS key to NULL , and the default interactive and batch queue timeouts and default sql dialect, clearing the project level default settings: ALTER PROJECT project id SET OPTIONS ( region-us.default time zone = NULL , region-us.default kms key name = NULL , region-us.default query job timeout ms = NULL , region-us.default interactive query queue timeout ms = NULL , region-us.default batch query queue timeout ms = NULL , region-us.default sql dialect option = NULL ); ALTER BI CAPACITY SET OPTIONS statement Sets the options on BigQuery BI Engine capacity.",
+          "Sets the default query job timeout time to 30 minutes for all jobs in the us region. default interactive query queue timeout ms INT64 The default amount of time that an interactive query is queued."
+        ]
+      },
+      {
+        "title": "EFFECTIVE_PROJECT_OPTIONS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "source_id": "site-docs-reference-3",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The result is similar to the following: +--------------------------------------------+-------------+---------------------+------------------+--------------------+ option name option type option value option set level option set on id +--------------------------------------------+-------------+---------------------+------------------+--------------------+ default time zone STRING America/Los Angeles organizations my organization id +--------------------------------------------+-------------+---------------------+------------------+--------------------+ default kms key name STRING test/testkey1 projects my project id +--------------------------------------------+-------------+---------------------+------------------+--------------------+ default query job timeout ms INT64 18000000 projects my project id +--------------------------------------------+-------------+---------------------+------------------+--------------------+ default interactive query queue timeout ms INT64 600000 organization my organization id +--------------------------------------------+-------------+---------------------+------------------+--------------------+ default batch query queue timeout ms INT64 1200000 projects my project id +--------------------------------------------+-------------+---------------------+------------------+--------------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Options table option name option type option value default time zone STRING The effective default time zone for this project. default kms key name STRING The effective default key name for this project. default query job timeout ms INT64 The effective default query timeout in milliseconds for this project. default interactive query queue timeout ms STRING The effective default timeout in milliseconds for queued interactive queries for this project. default batch query queue timeout ms STRING The effective default timeout in milliseconds for queued batch queries for this project. enable reservation based fairness BOOL Use reservation-based fairness as opposed to project-based fairness.",
+          "Schema When you query the INFORMATION SCHEMA.EFFECTIVE PROJECT OPTIONS view, the query results contain one row for each configuration in a project."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "It lets users create, explore, and share interactive dashboards directly from cloud data warehouses like Google BigQuery, leveraging live data without extracts and offering embedded analytics capabilities.",
+          "Its built-in connector for BigQuery lets users directly query their data warehouse, create interactive dashboards, and share insights without needing to write complex SQL.",
+          "Partner references Import BigQuery Data into Amplitude Export data to BigQuery AskYourDatabase Solution AskYourDatabase Category BI, ML, & Advanced Analytics Description AskYourDatabase is an AI-powered tool that lets users ask questions in plain English and get instant answers from their database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "us.default"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-effective-project-options",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

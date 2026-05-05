@@ -1,0 +1,92 @@
+{
+  "feature_name": "Routine playbooks",
+  "feature_slug": "routine-playbooks",
+  "summary": "Routine playbooks are generally available; Routine playbooks are a Dialogflow CX playbook type for recurring conversational workflows.",
+  "extended_definition": "Routine playbooks are generally available; Routine playbooks are a Dialogflow CX playbook type for recurring conversational workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Code block system library \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Overrides are queued in order (first added is first to be executed), and can be added at any point inside handlers and actions, but only take effect once the current action/handler has returned, like so: @BeforeActionTrigger : Queued overrides are executed in order, before the triggering next action (the one that triggered the handler) is executed. @PlaybookStart / BeforeModelTrigger : Queued overrides are executed in order, before operation shifts back to the LLM selecting the next action. @Action : The action itself reports its output, then after that the queued overrides are executed in order.",
+          "Sample: Playbook with provided inputs. add override ( playbooks . troubleshooting , { PRECEDING CONVERSATION SUMMARY : \"phone is broken\" , \"device\" : \"phone\" }) Playbook with provided empty inputs. add override ( playbooks . troubleshooting , {}) Flow with generated inputs. add override ( flows . billing ) Tool use. add override ( tools . weather api . get weather , { \"location\" : \"San Francisco\" }) Just like add override, this stacks on top of previously added overrides. respond ( \"Hello\" ) cancel Override the next action to have this playbook return a cancelled state.",
+          "Args: rationale: Your rationale for why the step should be updated step index: The new step formatted as a string, e.g. \"1.2.1\" Returns: A status message message indicating if the update was successful or not. \"\"\" indices = step index . split ( \".\" ) if not indices : return f \"Bad index: { step index } !\" step = playbooks ."
+        ]
+      },
+      {
+        "title": "\"Conversational Agents console overview \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Dialogflow CX console will continue to be supported until the Conversational Agents console is generally available (GA).",
+          "Using the Conversational Agents console, you can create interactive agents that use generative playbooks , generative data stores , and deterministic flows .",
+          "Agents that utilize generative features such as playbooks, data stores, generators, or generative fallback for a request are charged as generative requests."
+        ]
+      },
+      {
+        "title": "Data store tools \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the reference documentation for details. { \"toolUse\" : { \"tool\" : \"projects/PROJECT ID/locations/LOCATION ID/agents/AGENT ID/tools/TOOL ID\" , \"action\" : \"TOOL DISPLAY NAME\" , \"inputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME input\" , \"value\" : { \"query\" : \"QUERY\" } } ], \"outputParameters\" : [ { \"name\" : \"TOOL DISPLAY NAME output\" , \"value\" : { \"answer\" : \"ANSWER\" , \"snippets\" : [ { \"title\" : \"TITLE\" , \"text\" : \"TEXT FROM DATASTORE\" , \"uri\" : \"URI OF DATASTORE\" } ] } } ] } } (Playbooks-based agents only) Data store tool examples Note: Examples work with playbooks-based agents only.",
+          "Best practices for filtering: Specify the fields available for filtering and the valid values for each of these fields, so that the playbook understands the constraints on building valid filters.",
+          "For more information see the dataStoreConnections reference . \"dataStoreConnections\" : [ { \"dataStoreType\" : \"PUBLIC WEB\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" }, { \"dataStoreType\" : \"UNSTRUCTURED\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" }, { \"dataStoreType\" : \"STRUCTURED\" , \"dataStore\" : \"projects/PROJECT NUMBER/locations/LOCATION ID/collections/default collection/dataStores/DATASTORE ID\" } ] Data store tool responses might also contain snippets about the content source that was used to generate the response."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/code-block-system-library",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/console-conversational-agents",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/data-store/handler"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

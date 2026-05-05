@@ -1,0 +1,122 @@
+{
+  "feature_name": "Secure-by-default organization policy enforcement",
+  "feature_slug": "secure-by-default-organization-policy-enforcement",
+  "summary": "A bundle of organization policies is enforced when an organization resource is created to improve its default security posture.",
+  "extended_definition": "A bundle of organization policies is enforced when an organization resource is created to improve its default security posture.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Google Cloud security baseline constraints \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "source_id": "site-iam-reference",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Cloud security baseline addresses insecure security postures with a bundle of organization policies that are enforced when an organization resource is created.",
+          "Manage enforcement of organization policies You can manage the enforcement of organization policies in the following ways: List organization policies To check whether the Google Cloud security baseline constraints are enforced on your organization, use the following command: gcloud resource-manager org-policies list --organization = ORGANIZATION ID Replace ORGANIZATION ID with the unique identifier of your organization.",
+          "Organization policies enforced on organization resources The following table lists the organization policy constraints that are automatically enforced when you create an organization resource."
+        ]
+      },
+      {
+        "title": "Tags overview \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you enforce mandatory tags, you can only create resources that comply with your organization's tagging policies; that is, resources are bound with the tag values for the mandatory tag keys specified in the policy.",
+          "Enforcement of mandatory tags using organization policies Preview This product or feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "You can then write policies that address the enforcement tag key, with conditions that affect a resource if it is enforcement: on or enforcement: off , and a safe case if it is enforcement: default ."
+        ]
+      },
+      {
+        "title": "Policy \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy",
+        "source_id": "site-api-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example 2 (enforcement gets replaced): organizations/foo has a Policy with: {enforced: false} projects/bar has a Policy with: {enforced: true} The constraint at organizations/foo is not enforced.",
+          "Example 3 (RestoreDefault): organizations/foo has a Policy with: {enforced: true} projects/bar has a Policy with: {RestoreDefault: {}} The constraint at organizations/foo is enforced.",
+          "A Policy for that Constraint exhibits the following behavior: - If the Policy at this resource has enforced set to false , serial port connection attempts will be allowed. - If the Policy at this resource has enforced set to true , serial port connection attempts will be refused. - If the Policy at this resource is RestoreDefault , serial port connection attempts will be allowed. - If no Policy is set at this resource or anywhere higher in the resource hierarchy, serial port connection attempts will be allowed. - If no Policy is set at this resource, but one exists higher in the resource hierarchy, the behavior is as if the Policy were set at this resource."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-baseline-constraints",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-overview",
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/Policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.065Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

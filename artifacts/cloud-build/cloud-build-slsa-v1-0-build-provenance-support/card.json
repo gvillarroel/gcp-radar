@@ -1,0 +1,83 @@
+{
+  "feature_name": "Cloud Build SLSA v1.0 build provenance support",
+  "feature_slug": "cloud-build-slsa-v1-0-build-provenance-support",
+  "summary": "Cloud Build can generate verifiable build provenance metadata compliant with SLSA v1.0 for triggered builds using the requestedVerifyOption.",
+  "extended_definition": "Cloud Build can generate verifiable build provenance metadata compliant with SLSA v1.0 for triggered builds using the requestedVerifyOption.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/building/build-go",
+      "https://docs.cloud.google.com/build/docs/building/build-java",
+      "https://docs.cloud.google.com/build/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Build can generate build provenance for container images that provide SLSA level 3 assurance.",
+          "Provenance metadata includes details such as the digests of the built images, the input source locations, the build toolchain, and the build duration.",
+          "Build provenance Build provenance is a collection of verifiable data about a build."
+        ]
+      },
+      {
+        "title": "Build and test Go applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-go",
+        "source_id": "site-docs-root-2",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Enable provenance generation Cloud Build can generate verifiable Supply chain Levels for Software Artifacts (SLSA) build provenance metadata to help secure your continuous integration pipeline.",
+          "This page explains how to use Cloud Build to build and test your Go applications, upload your artifacts to Artifact Registry, generate provenance information, and save your test logs in Cloud Storage.",
+          "You can also view build provenance metadata and validate provenance ."
+        ]
+      },
+      {
+        "title": "Build and test Java applications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/building/build-java",
+        "source_id": "site-docs-root",
+        "final_score": 82,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: Enable provenance generation Cloud Build can generate verifiable Supply chain Levels for Software Artifacts (SLSA) build provenance metadata to help secure your continuous integration pipeline.",
+          "This page explains how to use Cloud Build to build and test Java-based applications, store built artifacts in a Maven repository in Artifact Registry, and generate build provenance information.",
+          "You can also view build provenance metadata and validate provenance ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

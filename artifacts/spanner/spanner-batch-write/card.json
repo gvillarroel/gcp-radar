@@ -1,0 +1,93 @@
+{
+  "feature_name": "Spanner batch write",
+  "feature_slug": "spanner-batch-write",
+  "summary": "Spanner batch write (Preview) allows committing multiple mutations non-atomically in a single low-latency request.",
+  "extended_definition": "Spanner batch write (Preview) allows committing multiple mutations non-atomically in a single low-latency request.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+      "https://docs.cloud.google.com/spanner/docs/batch-write",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Modify data using batch write \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example: @param string $projectId The Google Cloud project ID. @param string $instanceId The Spanner instance ID. @param string $databaseId The Spanner database ID. / function batch write(string $projectId, string $instanceId, string $databaseId): void { $spanner = new SpannerClient(['projectId' => $projectId]); $database = $spanner->instance($instanceId)->database($databaseId); // Create Mutation Groups // All mutations within a single group are applied atomically. // Mutations across groups are applied non-atomically. // Group 1: Single mutation $mutationGroup1 = $database->mutationGroup(); $mutationGroup1->insertOrUpdate('Singers', [ 'SingerId' => 16, 'FirstName' => 'Scarlet', 'LastName' => 'Terry' ]); // Group 2: Multiple mutations $mutationGroup2 = $database->mutationGroup(); $mutationGroup2->insertOrUpdateBatch('Singers', [ ['SingerId' => 17, 'FirstName' => 'Marc'], ['SingerId' => 18, 'FirstName' => 'Catalina', 'LastName' => 'Smith'] ]); $mutationGroup2->insertOrUpdateBatch('Albums', [ ['SingerId' => 17, 'AlbumId' => 1, 'AlbumTitle' => 'Total Junk'], ['SingerId' => 18, 'AlbumId' => 2, 'AlbumTitle' => 'Go, Go, Go'] ]); // Call batchWrite on the high-level Database client. // Equivalent to batchWriteAtLeastOnce in other languages. $responses = $database->batchWrite([$mutationGroup1, $mutationGroup2], [ 'requestOptions' => ['transactionTag' => 'batch-write-tag'] ]); // Check the response code of each response to determine whether the mutation group(s) were applied successfully. // $responses is a Generator yielding V1\\BatchWriteResponse items. // Check the response code of each response to determine whether the mutation group(s) were applied successfully. // $responses is a Generator yielding response arrays. foreach ($responses as $response) { $status = $response['status']; $indexes = implode(', ', $response['indexes']); if ($status['code'] === 0) { $timestamp = $response['commitTimestamp'] ?? 'Unknown'; printf('Mutation group indexes [%s] have been applied with commit timestamp %s' .",
+          "Spanner doesn't need to wait for all mutations to be applied before sending a response, which means that batch write allows for partial failure.",
+          "All mutations in a group are applied atomically. @param project id [String] The ID of the Google Cloud project. @param instance id [String] The ID of the spanner instance. @param database id [String] The ID of the database. def spanner batch write project id :, instance id :, database id : spanner = Google :: Cloud :: Spanner . new project : project id client = spanner . client instance id , database id results = client . batch write do b First mutation group b . mutation group do mg mg . upsert \"Singers\" , [ { SingerId : 16 , FirstName : \"Scarlet\" , LastName : \"Terry\" } ] end Second mutation group b . mutation group do mg mg . upsert \"Singers\" , [ { SingerId : 17 , FirstName : \"Marc\" }, { SingerId : 18 , FirstName : \"Catalina\" , LastName : \"Smith\" } ] mg . upsert \"Albums\" , [ { SingerId : 17 , AlbumId : 1 , AlbumTitle : \"Total Junk\" }, { SingerId : 18 , AlbumId : 2 , AlbumTitle : \"Go, Go, Go\" } ] end end results . each do response if response . ok? puts \"Mutation group indexes applied: #{ response . indexes } \" else puts \"Mutation group failed to apply: #{ response . indexes } \" puts \"Error: #{ response . status . message } \" end end end What's next Learn more about Spanner transactions ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.spanner (6.111.1) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+        "source_id": "site-java-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Batch Read Only Transaction BatchReadOnlyTransaction can be configured to read at timestamps in the past and allows for exporting arbitrarily large amounts of data from Cloud Spanner databases.",
+          "Write Builder Builder for Op#INSERT , Op#INSERT OR UPDATE , Op#UPDATE , and Op#REPLACE mutations. com. google. cloud. spanner.",
+          "Partition Options Defines the configuration for the number and size of partitions returned from BatchReadOnlyTransaction#partitionRead , BatchReadOnlyTransaction#partitionReadUsingIndex and BatchReadOnlyTransaction#partitionQuery Note: these options may not be honored based on the other parameters in the request. com. google. cloud. spanner."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "BEGIN ; SET TRANSACTION READ WRITE ; INSERT INTO T ( id , col a , col b ) VALUES ( 1 , 100 , 1 ); COMMIT ; Batch statements The following statements manage batches of DDL statements and send those batches to Spanner.",
+          "Performing a ROLLBACK of a read-write transaction clears any buffered mutations, rolls back the transaction on Spanner, and releases any locks the transaction held.",
+          "Committing a read-write transaction makes all updates of this transaction visible to other transactions and releases all of the transaction's locks on Spanner."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner",
+      "com.google.cloud.spanner.BatchReadOnlyTransaction"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/batch-write",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

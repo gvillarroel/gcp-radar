@@ -1,0 +1,142 @@
+{
+  "feature_name": "3D-only mode",
+  "feature_slug": "3d-only-mode",
+  "summary": "3D-only mode is available for instances.",
+  "extended_definition": "3D-only mode is available for instances.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/concept",
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+      "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Deploy Immersive Stream for XR experiences \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "While creating a new instance, you can select the 3D-only mode which is available at a cost lower than the 3D/AR mode.",
+          "This may take up to 5 minutes, and you can monitor the progress through the notification bell in the top right corner of the Google Cloud console. gcloud gcloud immersive-stream xr instances update MY INSTANCE \\ --fallback-url=\"https://www.example.com\" \\ --async Default controls 3D mode By default, our 3D mode cameras use the following controls.",
+          "Note: The web client only supports 3D mode in Chrome and Safari on any platform."
+        ]
+      },
+      {
+        "title": "Locations and pricing \\_|\\_ Immersive Stream for XR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There is a 3D-only mode of experience available, and the hourly cost is half of the default price.",
+          "L4 GPUs are only available in some regions, and they only support the 3D-only experience mode.",
+          "Augmented reality experiences are not available through streaming in the 3D-only mode."
+        ]
+      },
+      {
+        "title": "Supported commands \\_|\\_ Immersive Stream for XR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "source_id": "site-docs-root",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This releases all compute resources reserved for streaming. gcloud immersive-stream xr instances delete my-instance --async Synchronously wait for a long running operation to complete. gcloud immersive-stream xr operations wait operation-id Describe the status of a long running operation. gcloud immersive-stream xr operations describe operation-id List all operations created in the past seven days. gcloud immersive-stream xr operations list Note: The following commands are for features that are not yet publicly available.",
+          "AR mode won't be supported by this instance. gcloud immersive-stream xr instances create my-instance --content= my-content --version= my-version-tag --add-region=\"region= region1 ,capacity= capacity1 \" --mode=3d --gpu-class=l4 --async Create an Instance that has autoscaling enabled.",
+          "The values for capacity , autoscaling buffer , and autoscaling min capacity can all be updated individually or multiple/all in one command. gcloud immersive-stream xr instances update my-instance --update-region=\"region= existing-region ,capacity= new-capacity ,enable autoscaling= true ,autoscaling buffer= new-buffer ,autoscaling min capacity= new-min-capacity \" --async Disable autoscaling in a region. gcloud immersive-stream xr instances update my-instance --update-region=\"region= existing-region ,capacity= capacity ,enable autoscaling= false \" --async PowerShell scripts The following table describes the PowerShell scripts in the template project XR Actions folder."
+        ]
+      },
+      {
+        "title": "Immersive Stream for XR overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/immersive-stream/xr/docs/concept",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Features for creators Unreal Engine development Template project with necessary structure and tools Automated workflow from Unreal Editor to a URL that launches the experience Automated builds hosted in Google Cloud Launch using a URL In-engine preview Content guidelines Quickstart guide and template Features for consumers 3D and AR modes available in Android and iOS using the Google app.",
+          "Integrate into Google app and browsers Launch experiences wherever the Google app is installed (1B+ devices) with full support for 3D and AR modes.",
+          "Immersive Stream for XR lets you use Unreal® Engine to interactively stream 3D and AR experiences that can render tens of millions of polygons with photorealistic materials."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "stream.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/concept"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/concept"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/concept"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/concept"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/quickstart",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/locations-and-pricing",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/supported-commands",
+        "https://docs.cloud.google.com/immersive-stream/xr/docs/concept"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.527Z",
+  "source_step08_card": "data/step-08/current/products/immersive-stream-for-xr/card.json",
+  "product_name": "Immersive Stream for XR",
+  "product_slug": "immersive-stream-for-xr"
+}

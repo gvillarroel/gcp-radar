@@ -1,0 +1,142 @@
+{
+  "feature_name": "Developer Connect continuous deployment integration",
+  "feature_slug": "developer-connect-continuous-deployment-integration",
+  "summary": "Cloud Run console integrates with Developer Connect to set up continuous deployments from supported source repositories.",
+  "extended_definition": "Cloud Run console integrates with Developer Connect to set up continuous deployments from supported source repositories.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+      "https://docs.cloud.google.com/run/docs/deploying",
+      "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Continuously deploy from a repository \\_|\\_ Cloud Run \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have source code or functions in a Git repository and want to automate builds and set up continuous deployments from a repository, you can use either Cloud Build or Developer Connect in the Cloud Run console.",
+          "If you select Developer Connect, you can set up continuous deployments from GitHub, GitLab, and Bitbucket repositories.",
+          "Set up continuous deployment from the Cloud Run console The setup procedure varies slightly depending on whether you are setting up continuous deployment on a new service or on an existing service."
+        ]
+      },
+      {
+        "title": "Deploying container images to Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/deploying",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "YAML To disable the deployment health check, add the run.googleapis.com/health-check-disabled annotation with value 'true' to spec.template.metadata.annotations . apiVersion : serving.knative.dev/v1 kind : Service metadata : name : SERVICE spec : template : metadata : annotations : run.googleapis.com/health-check-disabled : 'true' Terraform To disable the deployment health check, set the health check disabled argument to true in the template block. resource \"google cloud run v2 service\" \"default\" { name = \"SERVICE\" ... template { health check disabled = true ... } } What's next After you deploy a new service, you can do the following: Gradual rollouts, rollback revisions, traffic migration View service logs Monitor service performances Set memory limits Set environment variables Change service concurrency Manage the service Manage service revisions Cloud Run OpenTelemetry sidecar example Deploy only trusted images with Binary Authorization ( Preview ) You can automate the builds and deployments of your Cloud Run services using Cloud Build Triggers: Set up Continuous Deployment You can also use Cloud Deploy to set up a continuous-delivery pipeline to deploy Cloud Run services to multiple environments: Deploy an app to Cloud Run using Cloud Deploy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Use cases Use cases for sidecars in a Cloud Run service include: Application monitoring, logging and tracing Using Nginx , Envoy or Apache2 as a proxy in front of your application container Adding authentication and authorization filters (for example, Open Policy Agent) Running outbound connection proxies such as the Alloy DB Auth proxy Deploying a service with sidecar containers You can deploy multiple sidecars to a Cloud Run service using the Google Cloud console, the Google Cloud CLI, YAML, or Terraform.",
+          "Click Containers, Networking, Security to set other optional settings in the appropriate tabs: Concurrency Container configuration CPU limits Memory limits Request timeout Secrets Environment variables Execution environment HTTP/2 Service accounts Cloud SQL connections VPC connection When you are finished configuring your service, click Create to deploy the image to Cloud Run and wait for the deployment to finish."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy to Cloud Run from a Git repository \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously",
+        "source_id": "site-docs-reference-2",
+        "final_score": 126,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can continuously deploy from a repository using Cloud Build or Developer Connect .",
+          "What's next Quickstart: Build and deploy Continuous deployment with Cloud Build Building containers using Buildpacks Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Deploy from the repository To deploy from the repository: In the Google Cloud console, go to the Cloud Run page: Go to Cloud Run Select Services from the menu, and click Connect repo ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "run.googleapis.com",
+      "serving.knative.dev",
+      "spec.template.metadata.annotations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/continuous-deployment-with-cloud-build",
+        "https://docs.cloud.google.com/run/docs/deploying",
+        "https://docs.cloud.google.com/run/docs/quickstarts/deploy-continuously"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

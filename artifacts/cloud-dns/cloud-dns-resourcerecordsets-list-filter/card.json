@@ -1,0 +1,158 @@
+{
+  "feature_name": "Cloud DNS resourceRecordSets.list filter",
+  "feature_slug": "cloud-dns-resourcerecordsets-list-filter",
+  "summary": "Cloud DNS adds a filter query parameter to the resourceRecordSets.list API to return records that match a specified domain.",
+  "extended_definition": "Cloud DNS adds a filter query parameter to the resourceRecordSets.list API to return records that match a specified domain.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+      "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.dnsThreatDetectors.list \\_|\\_ Cloud DNS \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "source_id": "site-docs-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If successful, the response body contains data with the following structure: JSON representation { \"dnsThreatDetectors\" : [ { object ( DnsThreatDetector ) } ] , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Fields dnsThreatDetectors[] object ( DnsThreatDetector ) The list of DnsThreatDetector resources. nextPageToken string A token, which can be sent as pageToken , to retrieve the next page. unreachable[] string Unordered list.",
+          "Home Documentation Networking Cloud DNS Reference Send feedback Method: projects.locations.dnsThreatDetectors.list Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: networksecurity.dnsThreatDetectors.list For more information, see the IAM documentation ."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.dnsThreatDetectors.list \\_|\\_ Cloud DNS \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "source_id": "site-docs-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If successful, the response body contains data with the following structure: JSON representation { \"dnsThreatDetectors\" : [ { object ( DnsThreatDetector ) } ] , \"nextPageToken\" : string , \"unreachable\" : [ string ] } Fields dnsThreatDetectors[] object ( DnsThreatDetector ) The list of DnsThreatDetector resources. nextPageToken string A token, which can be sent as pageToken , to retrieve the next page. unreachable[] string Unordered list.",
+          "Home Documentation Networking Cloud DNS Reference Send feedback Method: projects.locations.dnsThreatDetectors.list Stay organized with collections Save and categorize content based on your preferences.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: networksecurity.dnsThreatDetectors.list For more information, see the IAM documentation ."
+        ]
+      },
+      {
+        "title": "\"Class Dns.RecordSetListOption (2.86.0) \\_|\\_ Java client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "source_id": "site-java-reference",
+        "final_score": 219,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameter Name Description type RecordSet.Type Returns Type Description Dns.RecordSetListOption Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Parameter Name Description dnsName String Returns Type Description Dns.RecordSetListOption fields(Dns.RecordSetField[] fields) public static Dns .",
+          "Parameter Name Description fields RecordSetField [] Returns Type Description Dns.RecordSetListOption pageSize(int pageSize) public static Dns ."
+        ]
+      },
+      {
+        "title": "\"Class Dns.ChangeRequestListOption (2.86.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption",
+        "source_id": "site-java-reference",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Parameter Name Description order Dns.SortingOrder Returns Type Description Dns.ChangeRequestListOption Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Parameter Name Description fields ChangeRequestField [] Returns Type Description Dns.ChangeRequestListOption pageSize(int pageSize) public static Dns .",
+          "Parameter Name Description pageToken String Returns Type Description Dns.ChangeRequestListOption sortOrder(Dns.SortingOrder order) public static Dns ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dns.Dns.ChangeRequestListOption",
+      "com.google.cloud.dns.Dns.RecordSetListOption",
+      "com.google.cloud.dns.Dns.ZoneListOption",
+      "com.google.cloud.dns.DnsBatch",
+      "networksecurity.dnsThreatDetectors.list",
+      "projects.locations.dnsThreatDetectors",
+      "projects.locations.dnsThreatDetectors.list",
+      "projects.locations.dnsThreatDetectors.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/dns/docs/reference/dns-armor/rest/v1beta1/projects.locations.dnsThreatDetectors/list",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.RecordSetListOption",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dns/latest/com.google.cloud.dns.Dns.ChangeRequestListOption"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.153Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns"
+}

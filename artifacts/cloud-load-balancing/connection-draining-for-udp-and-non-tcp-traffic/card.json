@@ -1,0 +1,106 @@
+{
+  "feature_name": "Connection draining for UDP and non-TCP traffic",
+  "feature_slug": "connection-draining-for-udp-and-non-tcp-traffic",
+  "summary": "Internal and external passthrough Network Load Balancers support connection draining for UDP and other non-TCP protocol traffic; Internal and external passthrough Network Load Balancers support connection draining for UDP and other non-TCP protocol traffic.",
+  "extended_definition": "Internal and external passthrough Network Load Balancers support connection draining for UDP and other non-TCP protocol traffic; Internal and external passthrough Network Load Balancers support connection draining for UDP and other non-TCP protocol traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+      "https://docs.cloud.google.com/load-balancing/docs/internal",
+      "https://docs.cloud.google.com/load-balancing/docs/network"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable connection draining \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following is a list of specifications about connection draining: Connection draining is available for backend services that are part of the following load balancers: External Application Load Balancer Internal Application Load Balancer External proxy Network Load Balancer Internal proxy Network Load Balancer Internal passthrough Network Load Balancer Backend service-based Regional external passthrough Network Load Balancer Both internal passthrough Network Load Balancers and regional external passthrough Network Load Balancers support connection draining for TCP, UDP, and other non-TCP protocols.",
+          "The internal and regional external passthrough Network Load Balancers themselves don't send a TCP-RST or TCP-FIN to end existing connections after the connection draining timeout expires.",
+          "The following examples demonstrate how to change the connection draining timeout: For an existing global or cross-region load balancer : gcloud compute backend-services update BACKEND SERVICE \\ --global \\ --connection-draining-timeout= CONNECTION TIMEOUT SECS For an existing regional load balancer : gcloud compute backend-services update BACKEND SERVICE \\ --region= REGION \\ --connection-draining-timeout= CONNECTION TIMEOUT SECS Replace the placeholders with valid values: BACKEND SERVICE : the backend service that you're updating REGION : if applicable, the region of the backend service that you're updating CONNECTION TIMEOUT SECS : the number of seconds to wait before existing connections to instances or endpoints are terminated, between 0 - 3600 seconds, inclusive."
+        ]
+      },
+      {
+        "title": "\"Backend service-based regional external passthrough Network Load Balancer\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/network",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Location of load balancing resources 1 Required location of IP address resource Host project Host project Service project Service project or host project 1 Includes the forwarding rule, backend service, health check, and backends (NEGs and managed or unmanaged instance groups) Traffic distribution Regional external passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, weighted load balancing, and failover.",
+          "Because all supported health check protocols rely on TCP, when you use a regional external passthrough Network Load Balancer to balance connections and traffic for other protocols, backend VMs must run a TCP-based server to answer health check probers.",
+          "The two backend services can be configured with different health checks, different session affinities, or different traffic distribution control policies (connection tracking, connection draining, and failover)."
+        ]
+      },
+      {
+        "title": "\"Internal passthrough Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/internal",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "An internal passthrough Network Load Balancer doesn't support the following: Backend VMs in multiple regions Balancing traffic that originates from the internet, unless you're using it with an external load balancer IPv6 packets with fragmented headers Internal IP address Internal passthrough Network Load Balancers support IPv4-only, dual-stack, and IPv6-only subnets.",
+          "Because all supported health check protocols rely on TCP, when you use an internal passthrough Network Load Balancer to balance connections and traffic for other protocols, backend VMs must run a TCP-based server to answer health check probers.",
+          "Traffic distribution Internal passthrough Network Load Balancers support a variety of traffic distribution customization options, including session affinity, connection tracking, and failover."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/enabling-connection-draining",
+        "https://docs.cloud.google.com/load-balancing/docs/network",
+        "https://docs.cloud.google.com/load-balancing/docs/internal"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

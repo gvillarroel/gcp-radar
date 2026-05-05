@@ -1,0 +1,161 @@
+{
+  "feature_name": "Single project boundary setup",
+  "feature_slug": "single-project-boundary-setup",
+  "summary": "Application Design Center can be set up using a single Google Cloud project boundary.",
+  "extended_definition": "Application Design Center can be set up using a single Google Cloud project boundary.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-design-center/docs/setup",
+      "https://docs.cloud.google.com/iam/docs/overview",
+      "https://docs.cloud.google.com/iam/docs/principal-identifiers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up Application Design Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The application management boundary you choose impacts your Application Design Center setup in the following ways: Single-project boundary Preview : The system quickly configures your project for application management, enables required APIs, and creates a space and storage bucket.",
+          "Before you begin Single-project (Preview) You must have the following roles on the project: If you have the Project Owner ( roles/owner ) role, the system will automatically assign the remaining permissions to your user to complete the setup.",
+          "To enable application management in a single project, see Create a space and enable APIs Folder-level You can use App Design Center in a folder configured for application management, which lets you define, group, and manage applications."
+        ]
+      },
+      {
+        "title": "\"Principal identifiers \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "source_id": "site-iam-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "ATTRIBUTE NAME / ATTRIBUTE VALUE All identities in a workload identity pool principalSet://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ POOL ID / Agent identity (Preview) principal:// TRUST DOMAIN / AGENT UNIQUE IDENTIFIER Example: principal://agents.global.org-123456789012.system.id.goog/resources/aiplatform/projects/9876543210/locations/us-central1/reasoningEngines/my-test-agent All agent identities in a trust domain (Preview) principalSet:// TRUST DOMAIN / Example: principalSet://agents.global.org-123456789012.system.id.goog/ All GKE Pods that use a specific Kubernetes service account By service account name: principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/subject/ns/ NAMESPACE /sa/ KUBERNETES SERVICE ACCOUNT By service account ID: principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/kubernetes.serviceaccount.uid/ SERVICEACCOUNT ID Legacy format: serviceAccount: PROJECT ID .svc.id.goog[ NAMESPACE / KUBERNETES SERVICE ACCOUNT ] All GKE Pods in a Kubernetes namespace, regardless of service account or cluster principalSet://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/namespace/ NAMESPACE All GKE Pods in a specific cluster principalSet://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ PROJECT ID .svc.id.goog/kubernetes.cluster/https://container.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /clusters/ CLUSTER NAME Deleted Google Account 1 deleted:user: USER EMAIL ADDRESS ?uid= UNIQUE ID Example: deleted:user:alex@example.com?uid=123456789012345678901 Deleted service account 1 deleted:serviceAccount: SA EMAIL ADDRESS ?uid= UNIQUE ID Example: deleted:serviceAccount:my-service-account@my-project.iam.gserviceaccount.com?uid=123456789012345678901 Deleted Google group 1 deleted:group: GROUP EMAIL ADDRESS ?uid= UNIQUE ID Example: deleted:group:my-group@example.com?uid=123456789012345678901 Deleted single identity in a workforce identity pool 1 deleted:principal://iam.googleapis.com/locations/global/workforcePools/ POOL ID /subject/ SUBJECT ATTRIBUTE VALUE Example: deleted:principal://iam.googleapis.com/locations/global/workforcePools/my-pool-id/subject/my-subject-attribute-value 1 Don't add deleted principals when creating or modifying policies.",
+          "ATTRIBUTE NAME / ATTRIBUTE VALUE All identities in a workload identity pool principalSet://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ POOL ID / Agent identity (Preview) principal:// TRUST DOMAIN / AGENT RESOURCE PATH / AGENT ID Example: principal://agents.global.org-123456789012.system.id.goog/resources/aiplatform/projects/9876543210/locations/us-central1/reasoningEngines/my-test-agent Deleted Google Account 2 deleted:principal://goog/subject/ USER EMAIL ADDRESS ?uid= UNIQUE ID Example: deleted:principal://goog/subject/alex@example.com?uid=123456789012345678901 Deleted service account 2 deleted:principal://iam.googleapis.com/projects/-/serviceAccounts/ SA EMAIL ADDRESS ?uid= UNIQUE ID Example: deleted:principal://iam.googleapis.com/projects/-/serviceAccounts/my-service-account@my-project.iam.gserviceaccount.com?uid=123456789012345678901 Deleted Google group 2 deleted:principalSet://goog/group/ GROUP EMAIL ADDRESS ?uid= UNIQUE ID Example: deleted:principalSet://goog/group/my-group@example.com?uid=123456789012345678901 Deleted single identity in a workforce identity pool 2 deleted:principal://iam.googleapis.com/locations/global/workforcePools/ POOL ID /subject/ SUBJECT ATTRIBUTE VALUE Example: deleted:principal://iam.googleapis.com/locations/global/workforcePools/my-pool-id/subject/my-subject-attribute-value 1 Learn how to find your Cloud Identity customer ID .",
+          "ATTRIBUTE NAME / ATTRIBUTE VALUE Example: principalSet://iam.googleapis.com/locations/global/workforcePools/altostrat-contractors/attribute.department/administration All identities in a workforce identity pool principalSet://iam.googleapis.com/locations/global/workforcePools/ POOL ID / Example: principalSet://iam.googleapis.com/locations/global/workforcePools/altostrat-contractors/ Single identity in a workload identity pool principal://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ POOL ID /subject/ SUBJECT ATTRIBUTE VALUE Workload identity pool group principalSet://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ POOL ID /group/ GROUP ID All identities in a workload identity pool with a certain attribute principalSet://iam.googleapis.com/projects/ PROJECT NUMBER /locations/global/workloadIdentityPools/ POOL ID /attribute."
+        ]
+      },
+      {
+        "title": "\"IAM overview \\_|\\_ Identity and Access Management (IAM) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iam/docs/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 63,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Log buckets don't have their own allow policies, so to give someone this permission, you can instead grant them the Logs Bucket Writer role ( roles/logging.bucketWriter ) on the project that contains the log bucket.",
+          "However, they have a higher maintenance burden than predefined roles and there's a limit to the number of custom roles that you can have in your project and in your organization.",
+          "Policy inheritance Google Cloud has container resources—such as projects, folders, and organizations—that let you organize your resources in a parent-child hierarchy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "agents.global.org",
+      "attribute.department",
+      "container.googleapis.com",
+      "example.com",
+      "iam.googleapis.com",
+      "kubernetes.cluster",
+      "kubernetes.serviceaccount.uid",
+      "logging.bucketWriter",
+      "project.iam.gserviceaccount.com",
+      "svc.id.goog",
+      "system.id.goog"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.bucketWriter",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-design-center/docs/setup",
+        "https://docs.cloud.google.com/iam/docs/principal-identifiers",
+        "https://docs.cloud.google.com/iam/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.378Z",
+  "source_step08_card": "data/step-08/current/products/application-design-center/card.json",
+  "product_name": "Application Design Center",
+  "product_slug": "application-design-center"
+}

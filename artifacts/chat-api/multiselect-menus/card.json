@@ -1,0 +1,101 @@
+{
+  "feature_name": "Multiselect menus",
+  "feature_slug": "multiselect-menus",
+  "summary": "Cards and dialogs support multiselect menus for selecting Google Workspace users, spaces, or external data items; Cards and dialogs support multiselect menus for selecting Google Workspace users, spaces, or external data items.",
+  "extended_definition": "Cards and dialogs support multiselect menus for selecting Google Workspace users, spaces, or external data items; Cards and dialogs support multiselect menus for selecting Google Workspace users, spaces, or external data items.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cards v2 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To dynamically populate items for a multiselect menu, use one of the following types of data sources: Google Workspace data: Items are populated using data from Google Workspace, such as Google Workspace users or Google Chat spaces.",
+          "The data source. data source can be only one of the following: commonDataSource enum ( CommonDataSource ) A data source shared by all Google Workspace applications, such as users in a Google Workspace organization. hostAppDataSource object ( HostAppDataSourceMarkup ) A data source that's unique to a Google Workspace host application, such spaces in Google Chat.",
+          "To dynamically populate items for a dropdown menu, use one of the following types of data sources: Google Workspace data: Items are populated using data from Google Workspace, such as Google Workspace users or Google Chat spaces."
+        ]
+      },
+      {
+        "title": "Package google.apps.card.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To dynamically populate items for a multiselect menu, use one of the following types of data sources: Google Workspace data: Items are populated using data from Google Workspace, such as Google Workspace users or Google Chat spaces.",
+          "Cards in Google Chat and Workspace add-ons can utilize data sources, like users or spaces, using PlatformDataSource and CommonDataSource components within selection inputs.",
+          "The data source. data source can be only one of the following: common data source CommonDataSource A data source shared by all Google Workspace applications, such as users in a Google Workspace organization. host app data source HostAppDataSourceMarkup A data source that's unique to a Google Workspace host application, such spaces in Google Chat."
+        ]
+      },
+      {
+        "title": "REST Resource: spaces.messages \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages",
+        "source_id": "site-docs-root-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Methods create Creates a message in a Google Chat space. delete Deletes a message. get Returns details about a message. list Lists messages in a space that the caller is a member of, including messages from blocked members and spaces. patch Updates a message. replaceCards Developer Preview: Available as part of the Google Workspace Developer Preview Program , which grants early access to certain features.",
+          "Home Google Workspace Google Chat Reference Send feedback REST Resource: spaces.messages Stay organized with collections Save and categorize content based on your preferences.",
+          "Page Summary outlined flag Google Chat messages are the fundamental units of communication within spaces, containing rich content like text, cards, and attachments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "spaces.messages"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.385Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

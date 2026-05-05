@@ -1,0 +1,163 @@
+{
+  "feature_name": "Form URL path forwarding",
+  "feature_slug": "form-url-path-forwarding",
+  "summary": "App Engine now allows the /form URL path and forwards requests on that path to applications.",
+  "extended_definition": "App Engine now allows the /form URL path and forwards requests on that path to applications.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource \"google project service\" \"vpcaccess-api\" { project = var.project id # Replace this with your project ID in quotes service = \"vpcaccess.googleapis.com\" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-serverless-network\" mtu = 1460 subnets = [ { subnet name = \"serverless-subnet\" subnet ip = \"10.10.10.0/28\" subnet region = \"us-central1\" } ] } module \"serverless-connector\" { source = \"terraform-google-modules/network/google//modules/vpc-serverless-connector-beta\" version = \" > 16.0\" project id = var.project id vpc connectors = [{ name = \"central-serverless\" region = \"us-central1\" subnet name = module.test-vpc-module.subnets[\"us-central1/serverless-subnet\"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = \"central-serverless2\" region = \"us-central1\" network = module.test-vpc-module.network name ip cidr range = \"10.10.11.0/28\" subnet name = null machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Configure your service to use a connector After you have created a Serverless VPC Access connector, you must configure each service in your App Engine app that you want to connect to your VPC network.",
+          "When you have entered a value into each field, the equivalent YAML configuration for this custom constraint appears on the right. gcloud To create a custom constraint, create a YAML file using the following format: name : organizations/ ORGANIZATION ID /customConstraints/ CONSTRAINT NAME resourceTypes : RESOURCE NAME methodTypes : - CREATE condition : \" CONDITION \" actionType : ACTION displayName : DISPLAY NAME description : DESCRIPTION Replace the following: ORGANIZATION ID : your organization ID, such as 123456789 .",
+          "Create a connector using an existing subnet : gcloud compute networks vpc-access connectors create CONNECTOR NAME \\ --region REGION \\ --subnet SUBNET NAME \\ --subnet-project HOST PROJECT ID \\ --min-instances MIN \\ --max-instances MAX \\ --machine-type MACHINE TYPE Replace the following: CONNECTOR NAME : a name for your connector, matching Compute Engine naming conventions , with the additional requirements that the name must be less than 21 characters long, and that hyphens (-) count as two characters."
+        ]
+      },
+      {
+        "title": "\"Communicating between your services \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-14 UTC.\"],[],[]]",
+          "Learn how to authorize the requests between your services and other Google Cloud services: Provide credentials for Application Default Credentials Using user-managed service accounts Your App Engine services can also communicate using Pub/Sub , which provides reliable asynchronous many-to-many messaging between processes, including App Engine.",
+          "Reserved URL paths It is not possible to use the following URL paths: Paths ending with /eventlog Paths starting with / ah/ Some paths ending with z Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Ingress settings \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, to view the ingress settings and other information for the default service run: gcloud app services describe default Edit ingress settings Console Go to the App Engine Services page.",
+          "Allows requests from resources attached to the project's VPC networks, such as: VMs in the same project, including Compute Engine VMs.",
+          "For example: To update the default service of an App Engine app to accept traffic only from Cloud Load Balancing and VPC networks that are in the same project: gcloud app services update default --ingress = internal-and-cloud-load-balancing To update a service named \"internal-requests\" to accept traffic only from VPC networks that are in the same project: gcloud app services update internal-requests --ingress = internal-only Egress settings Note: Egress settings are not available for the PHP runtimes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "module.network",
+      "module.subnets",
+      "module.test",
+      "service.vpcaccess",
+      "var.host",
+      "var.project",
+      "vpcaccess.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.077Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js"
+}

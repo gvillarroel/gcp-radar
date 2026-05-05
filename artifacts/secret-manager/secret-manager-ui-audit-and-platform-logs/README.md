@@ -1,0 +1,41 @@
+# Secret Manager UI audit and platform logs
+
+Product: Secret Manager
+Feature slug: `secret-manager-ui-audit-and-platform-logs`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Cloud Audit Logs and Platform Logs became available directly in the Secret Manager UI.
+
+## Lifecycle
+
+- Latest feature date: 2021-08-27
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- audit (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- auth (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- iam (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- identity (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- key (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- logging (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- permission (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- policy (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- secret (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+- security (evidence: [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging), [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart), [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations), [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/secret-manager/docs/audit-logging](https://docs.cloud.google.com/secret-manager/docs/audit-logging)
+- [https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart](https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart)
+- [https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets](https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets)
+- [https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations](https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-annotations)

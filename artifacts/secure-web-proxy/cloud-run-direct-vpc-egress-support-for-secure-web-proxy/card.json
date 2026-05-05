@@ -1,0 +1,222 @@
+{
+  "feature_name": "Cloud Run Direct VPC egress support for Secure Web Proxy",
+  "feature_slug": "cloud-run-direct-vpc-egress-support-for-secure-web-proxy",
+  "summary": "Cloud Run Direct VPC egress can route traffic through Secure Web Proxy.",
+  "extended_definition": "Cloud Run Direct VPC egress can route traffic through Secure Web Proxy.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+      "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quickstart: Deploy a Secure Web Proxy instance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a firewall rule. gcloud compute firewall-rules create default-allow-ssh \\ --direction=INGRESS \\ --priority=1000 \\ --network=default \\ --action=ALLOW \\ --rules=tcp:22 \\ --source-ranges=0.0.0.0/0 Required roles Make sure that you have the following roles to complete the tasks in this tutorial: Compute Network Admin role ( roles/compute.networkAdmin ) Certificate Manager Editor role ( roles/certificatemanager.editor ) For more information, see the following: Secure Web Proxy roles and permissions Compute Engine IAM roles and permissions Create a Secure Web Proxy policy This section explains the steps to create a Secure Web Proxy policy.",
+          "Cloud Shell gcloud compute instances delete swp-test-vm What's next Deploy Secure Web Proxy as next hop Deploy Secure Web Proxy as a Private Service Connect service Enable TLS inspection Configure VPC Service Controls for Secure Web Proxy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more information about how to configure Secure Web Proxy for TLS inspection and then test your Secure Web Proxy instance, see Enable TLS inspection ."
+        ]
+      },
+      {
+        "title": "\"Publish Secure Web Proxy as a Private Service Connect service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "source_id": "site-iam-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Shell Use the gcloud compute service-attachments create command . gcloud compute service-attachments create SERVICE ATTACHMENT NAME \\ --target-service= SWP INSTANCE URI \\ --connection-preference=ACCEPT AUTOMATIC \\ --nat-subnets= NAT SUBNET NAME \\ --region= REGION \\ --project= PROJECT \\ Replace the following: SERVICE ATTACHMENT NAME : the name of the service attachment SWP INSTANCE URI : the URI of the Secure Web Proxy instance, in the following form: //networkservices.googleapis.com/projects/ PROJECT ID /locations/ REGION /gateways/ INSTANCE NAME NAT SUBNET NAME : the name of the Private Service Connect subnet REGION : the region of the Secure Web Proxy deployment PROJECT : the project of the Secure Web Proxy deployment Create endpoints Create an endpoint in each VPC network and region that needs to send egress traffic through the centralized Secure Web Proxy instance.",
+          "To update your policy with the rule that you defined in rule.yaml , use the following command: gcloud network-security gateway-security-policies rules import RULE NAME \\ --source=rule.yaml \\ --location= REGION \\ --gateway-security-policy=policy1 Deploy a Secure Web Proxy instance Deploy a Secure Web Proxy instance in explicit routing mode in the Virtual Private Cloud (VPC) network that you want to use for egress traffic.",
+          "Publishing Secure Web Proxy as a Private Service Connect service lets you centralize egress traffic management for workloads across multiple VPC networks. (click to enlarge)."
+        ]
+      },
+      {
+        "title": "Policies and rules \\_|\\_ Secure Web Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table shows the various Google Cloud services that support these source identity-based policies: Google Cloud services Service account support Secure tag support Compute Engine virtual machine (VM) Google Kubernetes Engine (GKE) node Google Kubernetes Engine (GKE) container 1 1 Direct VPC for Cloud Run 1 Serverless VPC Access connector 2 2 Cloud VPN 1 1 Cloud Interconnect on premises 1 1 Application Load Balancer Network Load Balancer 1 Not supported by Google Cloud.",
+          "The following table shows whether various Virtual Private Cloud (VPC) architectures are supported when using source identity-based security policies: VPC VPC architecture Support Within VPC Cross project (Shared VPC) Cross VPC Cross peering link (peer VPC) Cross VPC Cross Private Service Connect Cross VPC Cross Network Connectivity Center spokes Destination attributes Secure Web Proxy policies determine whether a destination is approved by analyzing the following attributes of the target website or service: Destination domain : the website's address, such as example.com .",
+          "Application Matcher includes the following items: Full URL path Request method—for example, block all DELETE actions Specific HTTP headers Host matching rules Secure Web Proxy uses hostname matching to verify the destination domain, which varies slightly depending on how your proxy is deployed as shown in the following table."
+        ]
+      },
+      {
+        "title": "\"Assign static IP addresses for outbound traffic \\_|\\_ Secure Web Proxy \\_\\",
+        "url": "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic",
+        "source_id": "site-iam-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Shell To identify the Cloud Router name that was assigned while provisioning your Secure Web Proxy instance, use the gcloud compute routers list command . gcloud compute routers list \\ --region REGION \\ --filter=\"network:( NETWORK NAME ) AND name:(swg-autogen-router- )\" \\ --format=\"get(name)\" Replace the following: REGION : region where the Cloud Router is deployed for your Secure Web Proxy instance NETWORK NAME : name of your VPC network The output is similar to the following: swg-autogen-router-1 To list the external automatically provisioned IP addresses that were assigned while provisioning your Secure Web Proxy instance, use the gcloud compute routers get-status command . gcloud compute routers get-status ROUTER NAME \\ --region= REGION The output is similar to the following: kind : compute#routerStatusResponse result : natStatus : - autoAllocatedNatIps : - 34.144.80.46 - 34.144.83.75 - 34.144.88.111 - 34.144.94.113 minExtraNatIpsNeeded : 0 name : swg-autogen-nat numVmEndpointsWithNatMappings : 3 network : https://www.googleapis.com/compute/projects/ PROJECT NAME /global/networks/ NETWORK NAME This output includes the following values: PROJECT NAME : name of your Google Cloud project NETWORK NAME : name of your VPC network Note: In the preceding output, the swg-autogen-nat Cloud NAT gateway has four automatically provisioned IP addresses.",
+          "DPA mode enables your Secure Web Proxy instance to use the assigned IP addresses. gcloud compute routers nats update swg-autogen-nat \\ --router= ROUTER NAME \\ --min-ports-per-vm=2048 \\ --max-ports-per-vm=4096 \\ --enable-dynamic-port-allocation \\ --region= REGION For the --min-ports-per-vm and --max-ports-per-vm flags, we recommend that you set their values to 2048 and 4096 , respectively.",
+          "Verify that you have the Google Cloud CLI version 406.0.0 or later installed: gcloud version head -n1 If you have an earlier gcloud CLI version installed, update the version: gcloud components update --version=406.0.0 Configure static IP addresses for Secure Web Proxy Console In the Google Cloud console, go to the Cloud Nat page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "certificatemanager.editor",
+      "compute.networkAdmin",
+      "example.com",
+      "networkservices.googleapis.com",
+      "policy.yaml",
+      "rule.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/certificatemanager.editor",
+      "roles/compute.networkAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secure-web-proxy/docs/quickstart",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/deploy-service-attachment",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/policies-and-rules-overview",
+        "https://docs.cloud.google.com/secure-web-proxy/docs/assign-static-ip-addresses-for-egress-traffic"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.971Z",
+  "source_step08_card": "data/step-08/current/products/secure-web-proxy/card.json",
+  "product_name": "Secure Web Proxy",
+  "product_slug": "secure-web-proxy"
+}

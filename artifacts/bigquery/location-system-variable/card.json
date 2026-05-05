@@ -1,0 +1,111 @@
+{
+  "feature_name": "@@location system variable",
+  "feature_slug": "location-system-variable",
+  "summary": "The @@location system variable sets the location where a query runs; The @@location system variable lets you set the location where a query runs.",
+  "extended_definition": "The @@location system variable sets the location where a query runs; The @@location system variable lets you set the location where a query runs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/locations",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: SELECT FROM UNNEST ( ARRAY < STRUCT < x INT64 , y STRING , z STRUCT<a INT64 , b INT64 >>> [ ( 1 , 'foo' , ( 10 , 11 )), ( 3 , 'bar' , ( 20 , 21 )) ] ); / ---+-----+----------+ x y z +---+-----+----------+ 1 foo {10, 11} 3 bar {20, 21} +---+-----+---------- / Because the UNNEST operator returns a value table , you can alias UNNEST to define a range variable that you can reference elsewhere in the query.",
+          "The query uses the LAST and FIRST functions that are unique to the MEASURES clause to compute the number of days between the final electronics purchase in a match and the first following software purchase: SELECT FROM Sales MATCH RECOGNIZE ( PARTITION BY customer ORDER BY sale date MEASURES LAST ( electronics . sale date ) AS last electronics sale date , FIRST ( software . sale date ) AS first software sale date , DATE DIFF ( FIRST ( software . sale date ), LAST ( electronics . sale date ), day ) AS date gap PATTERN ( electronics + any category ? software + ) DEFINE electronics AS product category = 'Electronics' , software AS product category = 'Software' , any category AS TRUE ); / ----------+----------------------------+--------------------------+----------+ customer last electronics sale date first software sale date date gap +----------+----------------------------+--------------------------+----------+ Daisy 2024-01-03 2024-01-04 1 Daisy 2024-06-28 2024-06-30 2 Ian 2024-03-15 2024-03-21 6 +----------+----------------------------+--------------------------+---------- / The following example matches a sequence of rows where amount is less than 50, followed by rows where amount is between 50 and 100, followed by rows where amount is greater than 100.",
+          "Provided there are no comma cross joins in the FROM clause, joins don't require parenthesis, though parenthesis can help readability: FROM A JOIN B JOIN C JOIN D USING ( w ) ON B . x = C . y ON A . z = B . x If your clause contains comma cross joins, you must use parentheses: FROM A , B JOIN C JOIN D ON C . x = D . y ON B . z = C . x // INVALID FROM A , B JOIN ( C JOIN D ON C . x = D . y ) ON B . z = C . x // VALID When comma cross joins are present in a query with a sequence of JOINs, they group from left to right like other JOIN types: FROM A JOIN B USING ( x ) JOIN C USING ( x ), D -- A JOIN B USING (x) = result 1 -- result 1 JOIN C USING (x) = result 2 -- result 2 CROSS JOIN D = return value There can't be a RIGHT JOIN or FULL JOIN after a comma cross join unless it's parenthesized: FROM A , B RIGHT JOIN C ON TRUE // INVALID FROM A , B FULL JOIN C ON TRUE // INVALID FROM A , B JOIN C ON TRUE // VALID FROM A , ( B RIGHT JOIN C ON TRUE ) // VALID FROM A , ( B FULL JOIN C ON TRUE ) // VALID Correlated join operation A join operation is correlated when the right from item contains a reference to at least one range variable or column name introduced by the left from item ."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use DDL commands to create, alter, and delete resources, such as the following: Datasets Tables Table schemas Table clones Table snapshots Views Connections User-defined functions (UDFs) Indexes Capacity commitments and reservations Row-level access policies Default configuration settings Required permissions To create a job that runs a DDL statement, you must have the bigquery.jobs.create permission for the project where you are running the job.",
+          "If you don't specify this option, the dataset is created in the location where the query runs.",
+          "If you don't specify this option, the dataset is created in the location where the query runs."
+        ]
+      },
+      {
+        "title": "BigQuery locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQuery Studio locations BigQuery Studio lets you save, share, and manage versions of code assets such as notebooks and saved queries .",
+          "When you write a SQL query, set the @@location system variable in the first statement of your query.",
+          "The BigQuery SQL translators are available in the following processing locations: Region description Region name Details Asia Pacific Bangkok asia-southeast3 Delhi asia-south2 Hong Kong asia-east2 Jakarta asia-southeast2 Melbourne australia-southeast2 Mumbai asia-south1 Osaka asia-northeast2 Seoul asia-northeast3 Singapore asia-southeast1 Sydney australia-southeast1 Taiwan asia-east1 Tokyo asia-northeast1 Europe Belgium europe-west1 Low CO 2 Berlin europe-west10 EU multi-region eu Finland europe-north1 Low CO 2 Frankfurt europe-west3 London europe-west2 Low CO 2 Madrid europe-southwest1 Low CO 2 Milan europe-west8 Netherlands europe-west4 Low CO 2 Paris europe-west9 Low CO 2 Stockholm europe-north2 Low CO 2 Turin europe-west12 Warsaw europe-central2 Zürich europe-west6 Low CO 2 Americas Columbus, Ohio us-east5 Dallas us-south1 Low CO 2 Iowa us-central1 Low CO 2 Las Vegas us-west4 Los Angeles us-west2 Mexico northamerica-south1 Northern Virginia us-east4 Oregon us-west1 Low CO 2 Québec northamerica-northeast1 Low CO 2 São Paulo southamerica-east1 Low CO 2 Salt Lake City us-west3 Santiago southamerica-west1 Low CO 2 South Carolina us-east1 Toronto northamerica-northeast2 Low CO 2 US multi-region us Africa Johannesburg africa-south1 MiddleEast Dammam me-central2 Doha me-central1 Israel me-west1 BigQuery continuous query locations The following table lists the regions where continuous queries are supported: Region description Region name Details Americas US multi-region us Columbus us-east5 Dallas us-south1 Low CO 2 Iowa us-central1 Low CO 2 Las Vegas us-west4 Los Angeles us-west2 Mexico northamerica-south1 Montréal northamerica-northeast1 Low CO 2 Northern Virginia us-east4 Oklahoma us-central2 Low CO 2 Oregon us-west1 Low CO 2 Salt Lake City us-west3 Santiago southamerica-west1 Low CO 2 São Paulo southamerica-east1 Low CO 2 South Carolina us-east1 Toronto northamerica-northeast2 Low CO 2 Asia Pacific Delhi asia-south2 Hong Kong asia-east2 Jakarta asia-southeast2 Melbourne australia-southeast2 Mumbai asia-south1 Osaka asia-northeast2 Seoul asia-northeast3 Singapore asia-southeast1 Sydney australia-southeast1 Taiwan asia-east1 Tokyo asia-northeast1 Europe EU multi-region eu Belgium europe-west1 Low CO 2 Berlin europe-west10 Finland europe-north1 Low CO 2 Frankfurt europe-west3 London europe-west2 Low CO 2 Madrid europe-southwest1 Low CO 2 Milan europe-west8 Netherlands europe-west4 Low CO 2 Paris europe-west9 Low CO 2 Stockholm europe-north2 Low CO 2 Turin europe-west12 Warsaw europe-central2 Zurich europe-west6 Low CO 2 Middle East Doha me-central1 Dammam me-central2 Tel Aviv me-west1 Africa Johannesburg africa-south1 BigQuery partition and cluster recommender locations The BigQuery partitioning and clustering recommender generates partition or cluster recommendations to optimize your BigQuery tables."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.connections.delegate",
+      "bigquery.connections.use",
+      "bigquery.datasets.create",
+      "bigquery.jobs.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/locations",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

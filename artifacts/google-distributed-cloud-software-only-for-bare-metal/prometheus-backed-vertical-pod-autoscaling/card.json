@@ -1,0 +1,165 @@
+{
+  "feature_name": "Prometheus-backed vertical Pod autoscaling",
+  "feature_slug": "prometheus-backed-vertical-pod-autoscaling",
+  "summary": "Vertical Pod autoscaling can use a Prometheus instance as a persistent history provider for long-term CPU and memory usage data.",
+  "extended_definition": "Vertical Pod autoscaling can use a Prometheus instance as a persistent history provider for long-term CPU and memory usage data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cluster configuration field reference \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your Prometheus instance uses a different authentication method, such as Transport Layer Security (TLS), it isn't supported for use with the vertical Pod autoscaling feature.",
+          "This cluster configuration field enables the use of your own Prometheus instance as a persistent history provider for vertical Pod autoscaling.",
+          "The following example shows a Prometheus configuration that uses basic authentication: apiVersion : baremetal.cluster.gke.io/v1 kind : Cluster metadata : name : cluster1 namespace : cluster-cluster1 annotations : preview.baremetal.cluster.gke.io/vertical-pod-autoscaler : enable spec : ... other cluster spec fields verticalPodAutoscaling : ... # other vertical Pod autoscaling fields prometheus : url : \"http://prometheus.prometheus.svc.cluster.local:9090\" auth : basicAuth : usernameRef : name : prom-basic-creds key : username passwordRef : name : prom-basic-creds key : password For more information, see Use Prometheus as a persistent history provider ."
+        ]
+      },
+      {
+        "title": "\"Configure logging and monitoring \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you installed Prometheus locally and want to collect metrics from system components, you need to give permission to your local Prometheus instance to access the metrics endpoints of system components: Bind the service account for your Prometheus instance to the predefined gke-metrics-agent ClusterRole, and use service account token as credential to scrape metrics from the following system components: kube-apiserver kube-scheduler kube-controller-manager kubelet node-exporter Use the client key and cert stored in the kube-system/stackdriver-prometheus-etcd-scrape secret to authenticate the metric scrape from etcd.",
+          "To install the sample dashboards, do the following: Download the sample JSON files: git clone https://github.com/GoogleCloudPlatform/anthos-samples.git cd anthos-samples/gmp-grafana-dashboards If your Grafana data source was created with a name different with Managed Service for Prometheus , change the datasource field in all the JSON files: sed -i \"s/Managed Service for Prometheus/ [DATASOURCE NAME] /g\" ./ .json Replace [DATASOURCE NAME] with the name of the data source in your Grafana that was pointed to the Prometheus frontend service.",
+          "Additional resources For more information about Google Cloud Managed Service for Prometheus, see the following: Google Cloud Managed Service for Prometheus GKE control plane metrics are PromQL compatible Using Google Cloud Managed Service for Prometheus for user applications on Google Distributed Cloud Log tags Many Google Distributed Cloud logs have an F tag: logtag: \"F\" This tag means that the log entry is complete or full ."
+        ]
+      },
+      {
+        "title": "\"Configure your clusters to use OpenStack \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack",
+        "source_id": "site-iam-reference",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "cluster.local",
+      "github.com",
+      "preview.baremetal.cluster.gke.io",
+      "prometheus.prometheus.svc.cluster.local",
+      "samples.git"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/reference/cluster-config-ref",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/log-monitoring",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/openstack"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.225Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal"
+}

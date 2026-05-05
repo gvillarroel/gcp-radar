@@ -1,0 +1,151 @@
+{
+  "feature_name": "Node Problem Detector",
+  "feature_slug": "node-problem-detector",
+  "summary": "Node Problem Detector runs by default on all nodes.",
+  "extended_definition": "Node Problem Detector runs by default on all nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cluster node machine prerequisites \\_|\\_ Google Distributed Cloud (software\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "source_id": "site-iam-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These checks confirm that the file systems for these directories have enough capacity: Directory Space requirement / (root directory) 4 GiB (4,294,967,296 bytes) /var/log/fluent-bit-buffers 12 GiB (12,884,901,888 bytes) /var/opt/buffered-metrics 10016 MiB (10,502,537,216 bytes) /var/lib/containerd 30 GiB (32,212,254,720 bytes) for control plane nodes 10 GiB (10,485,760 bytes) for worker nodes /var/lib/kubelet 500 MiB (524,288,000 bytes) /var/lib/etcd 20 GiB (21,474,836,480 bytes, applicable to control plane nodes only) /var/lib/etcd-events 5 GiB (5,368,709,120 bytes, applicable to control plane nodes only) To give you more control on the space you allocate for application workloads, preflight checks for cluster creation only check for the required free space for the Google Distributed Cloud system components.",
+          "1.29.0 and earlier Whenever you install Google Distributed Cloud, preflight checks run to ensure that the file systems backing the following directories have the required capacity: Directory Space requirement / (root directory) 17 GiB (18,253,611,008 bytes) /var/lib/containerd 30 GiB (32,212,254,720 bytes) for control plane nodes 10 GiB (10,485,760 bytes) for worker nodes /var/lib/kubelet 500 MiB (524,288,000 bytes) /var/lib/etcd 20 GiB (21,474,836,480 bytes, applicable to control plane nodes only) /var/lib/etcd-events 5 GiB (5,368,709,120 bytes, applicable to control plane nodes only) To give you more control on the space you allocate for application workloads, preflight checks for cluster creation only check for the required free space for the Google Distributed Cloud system components.",
+          "Regardless of your Google Distributed Cloud configuration, your nodes and clusters must have enough CPU, RAM, and storage resources to meet the needs of clusters and the workloads that you're running."
+        ]
+      },
+      {
+        "title": "\"Configure nodes to authenticate to a private registry \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Configure nodes to authenticate to a private registry Stay organized with collections Save and categorize content based on your preferences.",
+          "Once your cluster is configured, all Pods on qualified nodes can use the registries without having to specify imagePullSecrets in the Pod spec.",
+          "You can configure your Google Distributed Cloud cluster so that its worker nodes can use private registries, including Artifact Registry."
+        ]
+      },
+      {
+        "title": "\"Deploy clusters on the edge \\_|\\_ Google Distributed Cloud (software only)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile",
+        "source_id": "site-iam-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On your workstation, initialize the environment variables in a new shell instance: export PROJECT ID = \" PROJECT ID \" export REGION = \"us-central1\" export ZONE = \"us-central1-a\" port on the admin Compute Engine instance you use to set up an nginx proxy this allows to reach the workloads inside the cluster via the VM IP export PROXY PORT = \"8082\" should be a multiple of 3 since N/3 clusters are created with each having 3 nodes export GCE COUNT = \"3\" url to the fork of: https://github.com/GoogleCloudPlatform/anthos-samples export ROOT REPO URL = \"https://github.com/ GITHUB USERNAME /anthos-samples\" this is the username used to authenticate to your fork of this repository export SCM TOKEN USER = \" GITHUB USERNAME \" access token created in the earlier step export SCM TOKEN TOKEN = \" ACCESS TOKEN \" Replace the following values: PROJECT ID : your Google Cloud project ID.",
+          "In this tutorial you use Compute Engine virtual machines (VMs) to emulate nodes deployed on the edge, and a sample point-of-sale application as the edge workload.",
+          "The three Compute Engine virtual machines (VMs) in the preceding diagram represent the physical hardware (or nodes) in a typical edge location."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "gcr.json",
+      "github.com",
+      "preview.baremetal.cluster.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/node-machine-prerequisites",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/how-to/configure-node-private-reg",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/installing/install-edge-profile"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.225Z",
+  "source_step08_card": "data/step-08/current/products/google-distributed-cloud-software-only-for-bare-metal/card.json",
+  "product_name": "Google Distributed Cloud (software only) for bare metal",
+  "product_slug": "google-distributed-cloud-software-only-for-bare-metal"
+}

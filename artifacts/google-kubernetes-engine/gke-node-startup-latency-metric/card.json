@@ -1,0 +1,118 @@
+{
+  "feature_name": "GKE node startup latency metric",
+  "feature_slug": "gke-node-startup-latency-metric",
+  "summary": "This Cloud Monitoring metric measures node startup latency from GCE instance creation to the first Kubernetes Node Ready state.",
+  "extended_definition": "This Cloud Monitoring metric measures node startup latency from GCE instance creation to the first Kubernetes Node Ready state.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collect and view control plane metrics \\_|\\_ Google Kubernetes Engine (GKE)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "source_id": "site-docs-reference-2",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "PromQL metric name Launch stage Cloud Monitoring metric name Kind, Type, Unit Monitored resources Required GKE version Description Labels apiserver current inflight requests GA apiserver current inflight requests/gauge Gauge , Double , 1 prometheus target 1.22.13+ Maximal number of currently used inflight request limit of this apiserver per request kind in last second. request kind apiserver flowcontrol current executing seats BETA apiserver flowcontrol current executing seats/gauge Gauge , Double , 1 prometheus target 1.28.3+ Concurrency (number of seats) occupied by the currently executing (initial stage for a WATCH, any stage otherwise) requests in the API Priority and Fairness subsystem. flow schema priority level apiserver flowcontrol current inqueue requests BETA apiserver flowcontrol current inqueue requests/gauge Gauge , Double , 1 prometheus target 1.28.3+ (1.25.16-gke.1360000+, 1.26.11+, 1.27.8+ for prior minor versions) Number of requests currently pending in queues of the API Priority and Fairness subsystem. flow schema priority level apiserver flowcontrol nominal limit seats BETA apiserver flowcontrol nominal limit seats/gauge Gauge , Double , 1 prometheus target 1.28.3+ (1.26.11+, 1.27.8+ for prior minor versions) Nominal number of execution seats configured for each priority level. priority level apiserver flowcontrol rejected requests total BETA apiserver flowcontrol rejected requests total/counter Cumulative , Double , 1 prometheus target 1.28.3+ (1.25.16-gke.1360000+, 1.26.11+, 1.27.8+ for prior minor versions) Number of requests rejected by the API Priority and Fairness subsystem. flow schema priority level reason apiserver flowcontrol request wait duration seconds BETA apiserver flowcontrol request wait duration seconds/histogram Cumulative , Distribution , s prometheus target 1.28.3+ (1.25.16-gke.1360000+, 1.26.11+, 1.27.8+ for prior minor versions) Length of time a request spent waiting in its queue. execute flow schema priority level apiserver request duration seconds GA apiserver request duration seconds/histogram Cumulative , Distribution , s prometheus target 1.23.6+ Response latency distribution in seconds for each verb, dry run value, group, version, resource, subresource, scope and component. component dry run group resource scope subresource verb version apiserver request total GA apiserver request total/counter Cumulative , Double , 1 prometheus target 1.22.13+ Counter of apiserver requests broken out for each verb, dry run value, group, version, resource, scope, component, and HTTP response code. code component dry run group resource scope subresource verb version apiserver response sizes GA apiserver response sizes/histogram Cumulative , Distribution , 1 prometheus target 1.22.13+ Response size distribution in bytes for each group, version, verb, resource, subresource, scope and component. component group resource scope subresource verb version apiserver storage objects GA apiserver storage objects/gauge Gauge , Double , 1 prometheus target 1.22.13+ Number of stored objects at the time of last check split by kind. resource apiserver admission controller admission duration seconds GA apiserver admission controller admission duration seconds/histogram Cumulative , Distribution , s prometheus target 1.23.6+ Admission controller latency histogram in seconds, identified by name and broken out for each operation and API resource and type (validate or admit). name operation rejected type apiserver admission step admission duration seconds GA apiserver admission step admission duration seconds/histogram Cumulative , Distribution , s prometheus target 1.22.13+ Admission sub-step latency histogram in seconds, broken out for each operation and API resource and step type (validate or admit). operation rejected type apiserver admission webhook admission duration seconds GA apiserver admission webhook admission duration seconds/histogram Cumulative , Distribution , s prometheus target 1.22.13+ Admission webhook latency histogram in seconds, identified by name and broken out for each operation and API resource and type (validate or admit). name operation rejected type This following sections provide additional information about the API server metrics. apiserver request duration seconds Use this metric to monitor latency in the API server.",
+          "PromQL metric name Launch stage Cloud Monitoring metric name Kind, Type, Unit Monitored resources Required GKE version Description Labels node collector evictions total GA node collector evictions total/counter Cumulative , Double , 1 prometheus target 1.24+ Number of Node evictions that happened since current instance of NodeController started. zone Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more information, see Scheduler latency and Resource issues . scheduler scheduling attempt duration seconds This metric measures the duration of a single scheduling attempt within the scheduler itself and is broken down by the result: scheduled, unschedulable, or error."
+        ]
+      },
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example of a command to enable observability features: gcloud container clusters update $CLUSTER NAME \\ --project = $PROJECT ID \\ --location = $LOCATION \\ --enable-managed-prometheus \\ --logging = SYSTEM,WORKLOAD \\ --monitoring = SYSTEM,DEPLOYMENT,HPA,POD,DCGM \\ --auto-monitoring-scope = ALL For more information, see Monitor your inference workloads . (HPA only) Deploy a metrics adapter : A metrics adapter, such as the Custom Metrics Stackdriver Adapter , is necessary if HPA resources were generated in the deployment manifests.",
+          "For example: gcloud container ai profiles list \\ --model = openai/gpt-oss-20b \\ --pricing-model = on-demand \\ --target-ttft-milliseconds = 300 The output shows supported profiles with performance metrics like throughput, latency, and cost per million tokens at the inflection point.",
+          "Important: If PodMonitoring resources have already been deployed to collect metrics from supported workloads , remove them before enabling the auto-monitoring feature to avoid double collection."
+        ]
+      },
+      {
+        "title": "\"About node pool auto-creation \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning",
+        "source_id": "site-docs-reference-2",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you create this example Deployment, GKE creates a node pool that contains a TPU v4 slice with a 2x2x2 topology and two ct4p-hightpu-4t machines. apiVersion: apps/v1 kind: Deployment metadata: name: tpu-workload labels: app: tpu-workload spec: replicas: 2 template: spec: nodeSelector: cloud.google.com/gke-tpu-accelerator: tpu-v4-podslice cloud.google.com/gke-tpu-topology: 2x2x2 containers: - name: tpu-job image: us-docker.pkg.dev/cloud-tpu-images/jax-ai-image/tpu:latest ports: - containerPort: 8431 # Port to export TPU runtime metrics, if supported. securityContext: privileged: true # Required for GKE versions earlier than 1.28 to access TPUs. command: - bash - -c - python -c 'import jax; print(\"Total TPU chips:\", jax.device count())' resources: requests: google.com/tpu: 4 limits: google.com/tpu: 4 ports: - containerPort: 80 In this manifest, the following fields define TPU configuration: cloud.google.com/gke-tpu-accelerator : the TPU version and type .",
+          "The following example configuration file enables node auto-repair and auto-upgrade for any new auto-created node pools: management : autoRepair : true autoUpgrade : true The following example configuration file sets the cluster-wide resource limits for node auto-provisioning and configures multiple default settings: resourceLimits : - resourceType : 'cpu' minimum : 4 maximum : 10 - resourceType : 'memory' maximum : 64 - resourceType : 'nvidia-tesla-t4' maximum : 4 management : autoRepair : true autoUpgrade : true shieldedInstanceConfig : enableSecureBoot : true enableIntegrityMonitoring : true diskSizeGb : 100 This configuration file sets the following default values: Enables node auto-repair and auto-upgrade for any new auto-created node pools.",
+          "GKE creates new node pools less frequently and uses larger machine types for those node pools, so that Pod scheduling can continue while also slowing down progress towards cluster scalability and latency limits."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "gke.1360000",
+      "jax.device"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/control-plane-metrics",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-auto-provisioning"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

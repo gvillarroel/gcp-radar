@@ -1,0 +1,168 @@
+{
+  "feature_name": "Private DNS peering zones for Apigee",
+  "feature_slug": "private-dns-peering-zones-for-apigee",
+  "summary": "Apigee organizations without VPC peering can now resolve private domains by peering DNS zones with Apigee.",
+  "extended_definition": "Apigee organizations without VPC peering can now resolve private domains by peering DNS zones with Apigee.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+      "https://docs.cloud.google.com/apigee/docs/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following resources outline the steps required to select a control plane hosting jurisdiction, based on your organization type: Organization type Provisioning method Documentation Subscription organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering science Pay-as-you-go organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering science Available Apigee API control plane hosting jurisdictions The Apigee control plane directly binds to the API host name. apigee.googleapis.com has a global control plane; if you want to use a regionalized control plane, the API host name is CONTROL PLANE LOCATION -apigee.googleapis.com .",
+          "The following resources outline the steps required to select a runtime hosting region, based on your organization type: Organization type Provisioning method Documentation Evaluation organization Apigee UI in Cloud console Command line interface Provisioning an eval org Provision an eval org with VPC peering Provision an eval org without VPC peering Subscription organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Pay-as-you-go organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Available Apigee runtime regions The following table lists available regions for the Apigee runtime.",
+          "The following resources outline the steps required to select an Apigee API Analytics region, based on your organization type: Organization type Provisioning method Documentation Evaluation Apigee UI in Cloud console Command line interface Provisioning an eval org Provision an eval org with VPC peering Provision an eval org without VPC peering Subscription Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Pay-as-you-go Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Available Apigee API Analytics regions The following table lists available regions for Apigee API Analytics."
+        ]
+      },
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "VALUE=true curl -Ss -v -X PUT \\ \"https://apigee.googleapis.com/v1/organizations/ MYORG /environments/ MYENV \" \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer TOKEN \" \\ -d '{ \"name\": \" MYENV \", \"properties\": { \"property\": [{ \"name\": \"features.SSLInfo.Enforce\", \"value\": \"'\"$VALUE\"'\" }] } }' Output: { ... \"properties\": { \"property\": [ { \"name\": \"features.SSLInfo.Enforce\", \"value\": \"true\" } ] }, ... } Sample target endpoint with outbound client authentication enabled <TargetEndpoint name=\"default\"> <HttpTargetConnection> <URL>https://myservice.com</URL> <SSLInfo> <Enabled>true</Enabled> <Enforce>true</Enforce> <ClientAuthEnabled>true</ClientAuthEnabled> <KeyStore>myKeystore</KeyStore> <KeyAlias>myKey</KeyAlias> <TrustStore>myTruststore</TrustStore> </SSLInfo> </HttpTargetConnection> </TargetEndpoint> For detailed instructions, see Options for configuring TLS .",
+          "For example, shown below is a target endpoint that uses a reference to the keystore: <SSLInfo> <Enabled>true</Enabled> <ClientAuthEnabled>false</ClientAuthEnabled> <KeyStore>ref://keystoreref</KeyStore> <KeyAlias>myKeyAlias</KeyAlias> </SSLInfo> Use the following POST API call to create the reference named keystoreref : curl \"https://apigee.googleapis.com/v1/organizations/ {org} /environments/ {env} /references\" \\ -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -d '<ResourceReference name=\" keystoreref \"> <Refers> myTestKeystore </Refers> <ResourceType>KeyStore</ResourceType> </ResourceReference>' Where $TOKEN is set to your OAuth 2.0 access token, as described in Obtaining an OAuth 2.0 access token .",
+          "To later change the reference to point to a different keystore, ensuring that the alias has the same name, use the following PUT call: curl \"https://apigee.googleapis.com/v1/organizations/ {org} /environments/ {env} /references/ keystoreref \" \\ -X PUT \\ -H \"Authorization: Bearer $TOKEN\" \\ -d '<ResourceReference name=\" keystoreref \"> <Refers> myNewKeystore </Refers> <ResourceType>KeyStore</ResourceType> </ResourceReference>' Where $TOKEN is set to your OAuth 2.0 access token, as described in Obtaining an OAuth 2.0 access token ."
+        ]
+      },
+      {
+        "title": "Understanding organizations \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure",
+        "source_id": "site-docs-reference",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, the following curl request returns a list of all API proxies in an organization using the organizations API : curl https://apigee.googleapis.com/v1/organizations/ ORG ID /apis While you may have created only one organization, you can be authorized in other organizations as a user or administrator with specific permissions.",
+          "For example, define some users as Organization Administrators and Operations Administrators with privileges to modify the organization and its components, and define other users with permissions to create API proxies and API products, but without the privileges to modify other users.",
+          "For example, your company might define multiple organizations on Apigee to support different developer communities, even though internally, the same people build all of the API proxies and API products and are therefore members of all of your organizations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "features.SSLInfo.Enforce",
+      "myservice.com",
+      "organizations.apps",
+      "organizations.apps.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/organization-structure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

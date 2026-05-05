@@ -1,0 +1,177 @@
+{
+  "feature_name": "AppGroups",
+  "feature_slug": "appgroups",
+  "summary": "AppGroups let Apigee organize one or more apps under a shared ownership relationship; AppGroups let Apigee organize one or more apps under a shared ownership relationship.",
+  "extended_definition": "AppGroups let Apigee organize one or more apps under a shared ownership relationship; AppGroups let Apigee organize one or more apps under a shared ownership relationship.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analytics metrics, dimensions, and filters reference \\_|\\_ Apigee \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 133,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In order to get this dimension, app developers or AppGroups must have apps associated with one or more API products that contain the API proxies being called, and the proxies must check for an API key or OAuth token sent with the API call.",
+          "In order to get this dimension, app developers and AppGroups must have apps associated with one or more API products containing the API proxies being called, and the proxies must check for an API key or OAuth token sent with the API calls.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "Organizing client app ownership \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "source_id": "site-iam-reference",
+        "final_score": 127,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The expected syntax to store this is: [{ \"developer\":\"<developer email>\", \"roles\":[ \"<role(s)>\" ] }, ... ] Using developer-app association to organize app ownership A less comprehensive and flexible method of tracking app ownership than AppGroups is tracking apps by developer association.",
+          "Description Permissions Manage AppGroups and associated apps and keys. apigee.appgroups.list apigee.appgroups.get apigee.appgroups.create apigee.appgroups.update apigee.appgroups.delete Manage AppGroup apps. apigee.appgroupapps.list apigee.appgroupapps.get apigee.appgroupapps.create apigee.appgroupapps.manage apigee.appgroupapps.delete Manage app keys for AppGroups: apigee.appkeys.get apigee.appkeys.create apigee.appkeys.manage apigee.appkeys.delete Manage AppGroup subscriptions and monetization configurations. apigee.appgroupbalances.adjust apigee.appgroupbalances.get apigee.appgroupbalances.update apigee.appgroupmonetizationconfigs.get apigee.appgroupmonetizationconfigs.update apigee.appgroupsubscriptions.create apigee.appgroupsubscriptions.get apigee.appgroupsubscriptions.list apigee.appgroupsubscriptions.update Viewing and managing AppGroups This section shows how to view and manage AppGroups.",
+          "Managing AppGroups using the Apigee APIs Use these APIs to manage AppGroups in your orgs: Activities Link View and manage AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups View and manage the apps that belong to AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.apps View and manage the app keys associated to AppGroups https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.apps.keys View and manage AppGroup subscriptions to API products https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.appgroups.subscriptions See also AppGroup subscription management ."
+        ]
+      },
+      {
+        "title": "AccessEntity policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy",
+        "source_id": "site-api-reference",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "For information about AppGroups and supported functionality, see Using AppGroups to organize app ownership .",
+          "Sample XPath, retrieves the second API resource (URI) from the API product named weather free : / ApiProduct [ '@name=weather free' ]/ ApiResources / ApiResource [ 1 ]/ text () Sample profile returned as XML: < ? xml version = \"1.0\" encoding = \"UTF-8\" standalone = \"yes\" ? > < ApiProduct name = \"weather free\" > < ApiResources > < ApiResource > / forecastrss , / reports < / ApiResource > < / ApiResources > < ApprovalType>auto < / ApprovalType > < Attributes > < Attribute > < Name>description < / Name > < Value>Introductory API Product < / Value > < / Attribute > < Attribute > < Name>developer . quota . interval < / Name > < Value>1 < / Value > < / Attribute > < Attribute > < Name>developer . quota . limit < / Name > < Value>1 < / Value > < / Attribute > < Attribute > < Name>developer . quota . timeunit < / Name > < Value>minute < / Value > < / Attribute > < Attribute > < Name>servicePlan < / Name > < Value>Introductory < / Value > < / Attribute > < / Attributes > < CreatedAt>1355847839224 < / CreatedAt > < CreatedBy>andrew @apigee . com < / CreatedBy > < Description>Free API Product < / Description > < DisplayName>Free API Product < / DisplayName > < Environments / > < LastModifiedAt>1355847839224 < / LastModifiedAt > < LastModifiedBy>andrew @apigee . com < / LastModifiedBy > < Proxies / > < Scopes / > < / ApiProduct > Consumer key curl https://apigee.googleapis.com/v1/organizations/ $ORG developers/ $DEVELOPER EMAIL /apps/ $APP /keys/ $KEY \\ -X GET \\ -H \"Accept:text/xml\" \\ -H \"Authorization: Bearer $TOKEN\" See also Get key details for a developer app in the Apigee API reference."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.appgroupapps.create",
+      "apigee.appgroupapps.delete",
+      "apigee.appgroupapps.get",
+      "apigee.appgroupapps.list",
+      "apigee.appgroupapps.manage",
+      "apigee.appgroupbalances.adjust",
+      "apigee.appgroupbalances.get",
+      "apigee.appgroupbalances.update",
+      "apigee.appgroupmonetizationconfigs.get",
+      "apigee.appgroupmonetizationconfigs.update",
+      "apigee.appgroups.create",
+      "apigee.appgroups.delete",
+      "apigee.appgroups.get",
+      "apigee.appgroups.list",
+      "apigee.appgroups.update",
+      "apigee.appgroupsubscriptions.create",
+      "apigee.appgroupsubscriptions.get",
+      "apigee.appgroupsubscriptions.list",
+      "apigee.appgroupsubscriptions.update",
+      "apigee.appkeys.create",
+      "apigee.appkeys.delete",
+      "apigee.appkeys.get",
+      "apigee.appkeys.manage",
+      "apigee.googleapis.com",
+      "organizations.appgroups",
+      "organizations.appgroups.apps",
+      "organizations.appgroups.apps.keys",
+      "organizations.appgroups.subscriptions",
+      "organizations.apps",
+      "organizations.apps.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/publish/organizing-client-app-ownership",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/access-entity-policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

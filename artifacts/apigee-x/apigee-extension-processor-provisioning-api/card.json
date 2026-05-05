@@ -1,0 +1,173 @@
+{
+  "feature_name": "Apigee Extension Processor provisioning API",
+  "feature_slug": "apigee-extension-processor-provisioning-api",
+  "summary": "The Apigee Extension Processor provisioning API lets customers create traffic extensions programmatically.",
+  "extended_definition": "The Apigee Extension Processor provisioning API lets customers create traffic extensions programmatically.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create the traffic extension using the following command to call the Extension Processor provisioning API: curl -X POST -H \"Authorization: Bearer $TOKEN \" \\ https://apigee.googleapis.com/v1/organizations/ $ORG NAME /apimServiceExtensions?apimServiceExtensionId = TRAFFIC EXT NAME \\ -H \"Content-Type:application/json\" -d \\ '{ \"extensionProcessor\": \" TARGET PROXY NAME \" \"lbForwardingRule\": \" LB FORWARDING RULE \", \"network\" : \" NETWORK \", \"networkConfigs\": [ { \"region\": \"$REGION\", \"subnet\": \"project/my-project/regions/$REGION/subnetworks/$SUBNET\" } ], \"extensions\": [ { \"name\": \" TARGET PROXY NAME \", \"matchCondition\": \" CEL EXPRESSION \", \"failOpen\": FAIL OPEN , \"hostname\": \" ENV GROUP HOSTNAME \", \"supportedEvents\": [ \"REQUEST HEADERS\", \"RESPONSE HEADERS\" ] } ] }' Where: TRAFFIC EXT NAME is is the name of the traffic extension you are creating.",
+          "Configure the traffic extension This section describes how to configure the traffic service extension for your Extension Processor, using the following steps: Create the traffic extension with the Extension Processor provisioning API .",
+          "Create the traffic extension with the Extension Processor provisioning API In this step, create a traffic service extension for your Extension Processor using the Extension Processor provisioning API."
+        ]
+      },
+      {
+        "title": "Glossary \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "source_id": "site-api-reference",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You do this when you create the organization in a process known as provisioning .",
+          "Application developers - create applications that consume API Proxies. developer category rate plan A rate plan that applies to all developers in a specific category and is available for purchase by all developers in that category. developer rate plan A rate plan that applies to a specific developer and is available for purchase only by that developer.",
+          "The term \"individual organization\" is used in monetization for non-telecommunications companies. --> Ingress/Ingress controller A containerized app that routes traffic from outside the cluster to services within the cluster."
+        ]
+      },
+      {
+        "title": "Get started with Apigee and MCP \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Add the following content to the file: mcp-quickstart-openapi.yaml --- openapi : 3.0.3 info : title : Cymbal Group Products API description : This is the official API for managing the artists for Cymbal Group Products. version : 1.0.0 servers : - url : https://cymbal.products.com description : Cymbal Group Production Server - url : https://internal.products.com description : Cymbal Group internal Server paths : /artists : get : description : Returns a list of artists operationId : listArtists parameters : - name : limit in : query description : Limits the number of items on a page schema : type : integer - name : offset in : query description : Specifies the page number of the artists to be displayed schema : type : integer responses : \"200\" : description : An array of artists content : application/json : schema : type : array items : $ref : \"#/components/schemas/Artist\" post : summary : Create a new artist operationId : createArtist tags : - artists requestBody : description : The artist to create. required : true content : application/json : schema : $ref : \"#/components/schemas/Artist\" responses : \"201\" : description : The newly created artist profile content : application/json : schema : $ref : \"#/components/schemas/Artist\" \"400\" : description : Invalid username supplied /artists/{username} : get : summary : Info for a specific artist operationId : showArtistByUsername tags : - artists parameters : - name : username in : path required : true description : The username of the artist to retrieve schema : type : string responses : \"200\" : description : Expected response to a valid request content : application/json : schema : $ref : \"#/components/schemas/Artist\" \"404\" : description : Artist not found components : securitySchemes : bearerAuth : type : http scheme : bearer oauth2 : type : oauth2 flows : authorizationCode : authorizationUrl : /oauth/authorize tokenUrl : /oauth/token scopes : artists.read : Grants read access artists.write : Grants write access schemas : Artist : type : object required : - id properties : id : type : string format : uuid description : Unique identifier for the artist Hostname matching requirement It is critical that the value of the hostname in the servers.url field of the OpenAPI specification is an exact match for the environment group hostname of the Apigee environment where the MCP Discovery Proxy is deployed.",
+          "A successful response looks similar to the following: { \"id\" : 1 , \"jsonrpc\" : \"2.0\" , \"result\" : { \"tools\" : [ { \"description\" : \"Returns a list of artists\" , \"inputSchema\" : { \"properties\" : { \"id\" : { \"description\" : \"Unique identifier for the artist\" , \"format\" : \"uuid\" , \"type\" : \"string\" } }, \"type\" : \"object\" }, \"name\" : \"listArtists\" }, { \"description\" : \"Create a new artist\" , \"inputSchema\" : { \"properties\" : { \"id\" : { \"description\" : \"Unique identifier for the artist\" , \"format\" : \"uuid\" , \"type\" : \"string\" } }, \"type\" : \"object\" }, \"name\" : \"createArtist\" }, { \"description\" : \"Info for a specific artist\" , \"inputSchema\" : { \"properties\" : { \"id\" : { \"description\" : \"Unique identifier for the artist\" , \"format\" : \"uuid\" , \"type\" : \"string\" } }, \"type\" : \"object\" }, \"name\" : \"showArtistByUsername\" } ] } } Now that your endpoint is initialized, your MCP tools are discoverable by developers and agents using your API product.",
+          "To confirm that the environment variables are set correctly, run the following command and review the output: echo $PROJECT ID $REGION $RUNTIME HOSTNAME Set the project Set the Google Cloud project in your development environment: gcloud auth login gcloud config set project $PROJECT ID Overview To expose your APIs as MCP tools using Apigee, you create and deploy a new Apigee proxy using the MCP Discovery Proxy template."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.admin",
+      "apigee.apimServiceExtensionAdmin",
+      "apigee.apimServiceExtensionServiceAgent",
+      "apigee.apimServiceExtensionViewer",
+      "apigee.googleapis.com",
+      "artists.read",
+      "artists.write",
+      "compute.instanceAdmin",
+      "compute.loadBalancerAdmin",
+      "compute.networkAdmin",
+      "cymbal.products.com",
+      "iam.serviceAccountAdmin",
+      "internal.products.com",
+      "networkservices.serviceExtensionsAdmin",
+      "openapi.yaml",
+      "servers.url"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.admin",
+      "roles/apigee.apimServiceExtensionAdmin",
+      "roles/apigee.apimServiceExtensionServiceAgent",
+      "roles/apigee.apimServiceExtensionViewer",
+      "roles/compute.instanceAdmin",
+      "roles/compute.loadBalancerAdmin",
+      "roles/compute.networkAdmin",
+      "roles/iam.serviceAccountAdmin",
+      "roles/networkservices.serviceExtensionsAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

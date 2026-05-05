@@ -1,0 +1,107 @@
+{
+  "feature_name": "Manifest-based deployments",
+  "feature_slug": "manifest-based-deployments",
+  "summary": "Apps Script lets developers deploy script projects directly from the project manifest.",
+  "extended_definition": "Apps Script lets developers deploy script projects directly from the project manifest.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/create",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/update"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: projects.deployments.update \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/update",
+        "source_id": "site-api-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.deployments.update Stay organized with collections Save and categorize content based on your preferences.",
+          "Request body The request body contains data with the following structure: JSON representation { \"deploymentConfig\" : { \"scriptId\" : string , \"versionNumber\" : integer , \"manifestFileName\" : string , \"description\" : string } } Fields deploymentConfig.versionNumber integer The version number on which this deployment is based. deploymentConfig.manifestFileName string The manifest file name for this deployment. deploymentConfig.description string The description for this deployment.",
+          "Authorization Scopes Requires the following OAuth scope: https://www.googleapis.com/auth/script.deployments For more information, see the OAuth 2.0 Overview ."
+        ]
+      },
+      {
+        "title": "Method: projects.deployments.create \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/create",
+        "source_id": "site-api-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: projects.deployments.create Stay organized with collections Save and categorize content based on your preferences.",
+          "Request body The request body contains data with the following structure: JSON representation { \"versionNumber\" : integer , \"manifestFileName\" : string , \"description\" : string } Fields versionNumber integer The version number on which this deployment is based. manifestFileName string The manifest file name for this deployment. description string The description for this deployment.",
+          "Authorization Scopes Requires the following OAuth scope: https://www.googleapis.com/auth/script.deployments For more information, see the OAuth 2.0 Overview ."
+        ]
+      },
+      {
+        "title": "REST Resource: projects.deployments \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+        "source_id": "site-api-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback REST Resource: projects.deployments Stay organized with collections Save and categorize content based on your preferences.",
+          "JSON representation { \"scriptId\" : string , \"versionNumber\" : integer , \"manifestFileName\" : string , \"description\" : string } Fields scriptId string The script project's Drive ID. versionNumber integer The version number on which this deployment is based. manifestFileName string The manifest file name for this deployment. description string The description for this deployment.",
+          "Methods create Creates a deployment of an Apps Script project. delete Deletes a deployment of an Apps Script project. get Gets a deployment of an Apps Script project. list Lists the deployments of an Apps Script project. update Updates a deployment of an Apps Script project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "projects.deployments",
+      "projects.deployments.create",
+      "projects.deployments.get",
+      "projects.deployments.list",
+      "projects.deployments.update",
+      "script.deployments",
+      "script.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/update",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/create"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/update",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/projects.deployments/create"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

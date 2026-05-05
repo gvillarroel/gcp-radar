@@ -1,0 +1,136 @@
+{
+  "feature_name": "Regular expression validation",
+  "feature_slug": "regular-expression-validation",
+  "summary": "Agent Settings and Entity Types now support regular expression validation.",
+  "extended_definition": "Agent Settings and Entity Types now support regular expression validation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+      "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to the Agent API reference Select a protocol and version for the Agent reference: Protocol V3 V3beta1 REST Agent resource Agent resource RPC Agent interface Agent interface C++ AgentsClient Not available C# AgentsClient Not available Go AgentsClient Not available Java AgentsClient AgentsClient Node.js AgentsClient AgentsClient PHP Not available Not available Python AgentsClient AgentsClient Ruby Not available Not available Close General settings The following general settings are available for agents: Display name A human-readable name for your agent.",
+          "Go to the Agent API reference Select a protocol and version for the Agent reference: Protocol V3 V3beta1 REST Agent resource Agent resource RPC Agent interface Agent interface C++ AgentsClient Not available C# AgentsClient Not available Go AgentsClient Not available Java AgentsClient AgentsClient Node.js AgentsClient AgentsClient PHP Not available Not available Python AgentsClient AgentsClient Ruby Not available Not available Close The following subsections describe the different categories of agent settings.",
+          "Override request-level synthesized speech configuration link When enabled, the synthesized speech configuration specified in the agent settings overrides the one specified in the API, partner integration, or the conversation profile."
+        ]
+      },
+      {
+        "title": "Agent validation \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "source_id": "site-iam-reference",
+        "final_score": 159,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Consider adding more different examples.\" }, { \"severity\": \"ERROR\", \"entries\": [ \"projects/my-project/agent/intents/26e64b1b-eaa7-4ce2-be46-631a501fccbe/trainingPhrases/a650375e-083c-4bb5-9794-ba9453e51282\", \"projects/my-project/agent/intents/58b44b2d-4967-4a81-b017-12623dcd5d28/trainingPhrases/1d947780-22d3-4f80-8d7a-3f86efbf0be3\" ], \"errorMessage\": \"Multiple intents share training phrases which are too similar:\\n - Intent 'app.notifications.open': training phrase 'open allo notifications settings'\\n - Intent 'app.current.notifications.open': training phrase 'open notifications settings'\" }, ] } Severity States Validation can show the following severity states: Severity Description INFO The agent doesn't follow the best practice.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /agent/validationResult?languageCode=en\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"validationErrors\": [ { \"severity\": \"ERROR\", \"entries\": [ \"projects/my-project/agent/intents/58b44b2d-4967-4a81-b017-12623dcd5d28/parameters/bf6fdf55-b862-4101-b5b1-36f1423629d0\" ], \"errorMessage\": \"Parameter 'test' has an empty value.\" }, { \"severity\": \"WARNING\", \"entries\": [ \"projects/my-project/agent/intents/271e3808-3c91-4e6b-89e8-47951abcec8d\" ], \"errorMessage\": \"Intent 'app.current.update' does not have enough unique training phrases.",
+          "Before using any of the request data, make the following replacements: PROJECT ID : your Google Cloud project ID HTTP method and URL: GET https://dialogflow.googleapis.com/v2/projects/ PROJECT ID /agent/validationResult?languageCode=en To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Class AgentsAsyncClient (2.47.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.dialogflow v2.types.ValidationResult Represents the output of agent validation. import agent import agent ( request : typing .",
+          "Intents and entity types with the same name are replaced with the new versions from xref ImportAgentRequest.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 async def sample restore agent(): Create a client client = dialogflow v2.AgentsAsyncClient() Initialize request argument(s) request = dialogflow v2.RestoreAgentRequest( agent uri=\"agent uri value\", parent=\"parent value\", ) Make the request operation = client. restore agent (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dialogflow v2.types.RestoreAgentRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.current.notifications.open",
+      "app.current.update",
+      "app.notifications.open",
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.googleapis.com",
+      "googleapis.dev",
+      "options.html",
+      "v2.AgentsAsyncClient",
+      "v2.ExportAgentRequest",
+      "v2.RestoreAgentRequest",
+      "v2.types.ExportAgentRequest",
+      "v2.types.RestoreAgentRequest",
+      "v2.types.ValidationResult"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-validation",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.agents.AgentsAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

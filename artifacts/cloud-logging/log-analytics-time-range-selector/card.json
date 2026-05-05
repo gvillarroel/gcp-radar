@@ -1,0 +1,106 @@
+{
+  "feature_name": "Log Analytics time-range selector",
+  "feature_slug": "log-analytics-time-range-selector",
+  "summary": "Log Analytics queries can be filtered with preset, custom, and relative time ranges using a time-range selector.",
+  "extended_definition": "Log Analytics queries can be filtered with preset, custom, and relative time ranges using a time-range selector.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+      "https://docs.cloud.google.com/logging/docs/view/building-queries",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following occurs when you click manage search Analyze results : The time range in the Logs Explorer might be automatically adjusted so that there is meaningful log data in the Observability Analytics page.",
+          "If a query doesn't use a timestamp expression, then the query uses the time-range selector as its time-range restriction.",
+          "View logs by time range To specify a time range for the log entries that you want to view, use the time-range selector ."
+        ]
+      },
+      {
+        "title": "\"Build and save queries by using the Logging query language \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the time-range selector The options in the time-range selector let you select from preset time options, specify a custom start and end time, or center the time range around a specific timestamp.",
+          "If the query-editor field contains an expression with a timestamp, then the time-range selector is disabled, and the query uses the timestamp expression as its time-range restriction.",
+          "View logs by time range There are two ways to display logs that were written in a specific time range: Use the time-range selector."
+        ]
+      },
+      {
+        "title": "OpsAnalyticsQuery \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation QueryBuilderConfig JSON representation FilterPredicate JSON representation OperatorType FilterExpression JSON representation FieldSource JSON representation ProjectedField JSON representation FieldOperation FunctionApplication JSON representation Comparator SortOrderParameter JSON representation SortOrder Describes a query that can be run in Log Analytics.",
+          "Examples: - \". (autoscaler. )$\" will be converted to REGEXP EXTRACT(JSON VALUE(field),\"request(. (autoscaler. )$)\") in SQL. - \"\\(test value\\)$\" will be converted to REGEXP EXTRACT(JSON VALUE(field),\"request(\\(test value\\)$)\") in SQL. truncationGranularity string The truncation granularity when grouping by a time/date field.",
+          "This can be either a date or a time granularity found at https://cloud.google.com/bigquery/docs/reference/standard-sql/timestamp functions#timestamp trunc granularity date and https://cloud.google.com/bigquery/docs/reference/standard-sql/timestamp functions#timestamp trunc granularity time respectively."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/reference/v2/rest/v2/OpsAnalyticsQuery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

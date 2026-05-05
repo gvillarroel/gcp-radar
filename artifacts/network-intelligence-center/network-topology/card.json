@@ -1,0 +1,113 @@
+{
+  "feature_name": "Network Topology",
+  "feature_slug": "network-topology",
+  "summary": "Network Topology provides a GKE Enterprise view with infrastructure, metrics, and topology data for GKE deployments; Network Topology provides dedicated views and insights for VMs and instance groups that generate higher egress, with filters for traffic type.",
+  "extended_definition": "Network Topology provides a GKE Enterprise view with infrastructure, metrics, and topology data for GKE deployments; Network Topology provides dedicated views and insights for VMs and instance groups that generate higher egress, with filters for traffic type.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 398,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Infrastructure view, the insights for metrics for the selected hour on the timeline include the following: High egress instances: aggregated hourly values for various types of egress High egress instance groups: aggregated hourly values for various types of egress In the GKE Enterprise view available for GKE Enterprise projects, the insights for metrics for the selected hour on the timeline include the following: High egress GKE workloads: aggregated hourly values for various types of egress for GKE workloads, in the GKE Enterprise view Filter the traffic based on the traffic types You can further filter the traffic based on the following traffic types: All egress traffic for an entity Cross-zonal egress traffic: useful for analyzing billable traffic Egress to internet: used for analyzing billable traffic and for analyzing the traffic that reaches external endpoints Hybrid egress: used to analyze the volume of traffic to on-premises, including Cloud Interconnect, Cloud VPN, and Router appliance connections In the GKE Enterprise view, you can further filter the traffic based on the following traffic types: All measured egress traffic from the selected entity Cross-zonal egress traffic: useful for analyzing billable traffic between Google Cloud zones Multiple projects Network Topology visualizes resources in your project, or you can use Cloud Monitoring, which can visualize metrics for multiple Google Cloud projects.",
+          "The following list describes the paths that Network Topology visualizes between entities in the GKE Enterprise view, available only for GKE Enterprise projects: Traffic within a GKE cluster such as the traffic between pairs of GKE pods on different GKE nodes.",
+          "Metrics for the selected hour on the timeline include the following: Average hourly throughput available for most entities Average hourly packet loss available for traffic within Google Cloud regions and zones Hourly median latency (RTT) available for many entity types In the GKE Enterprise view available for GKE Enterprise projects, the metrics for the selected hour on the timeline also include the following: Average hourly throughput available for most entities Median latency available for traffic within Google Cloud regions and zones with GKE clusters Network verdict metrics displaying the GKE workloads with the most dropped and most forwarded traffic flows for the selected cluster You can also download the table of outliers in a CSV format for the High egress and Network verdict traffic insights."
+        ]
+      },
+      {
+        "title": "Network Intelligence Center overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Network Topology Network Topology is a visualization tool that shows the topology of your network infrastructure: Infrastructure view: Shows Virtual Private Cloud (VPC) networks, hybrid connectivity to and from your on-premises networks, connectivity to Google-managed services, and the associated metrics.",
+          "GKE Enterprise view (for GKE Enterprise enabled projects): Shows the infrastructure of your Google Kubernetes Engine (GKE) deployments: clusters, namespaces, workloads, pods, and their associated metrics.",
+          "It enables you to monitor your networks in the following ways: View the topology of your network infrastructure and deployments."
+        ]
+      },
+      {
+        "title": "\"Network Analyzer overview \\_|\\_ Network Intelligence Center - Network Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Intelligence Center Network Analyzer Guides Send feedback Network Analyzer overview Stay organized with collections Save and categorize content based on your preferences.",
+          "It provides insights about network topology, firewall rules, routes, configuration dependencies, and connectivity to services and applications.",
+          "Shared VPC insights For Shared VPC cases, there are two scenarios: Host project: Network Analyzer provides relevant information for VPC networks in the host project, such as IP address utilization insights that display the IP address allocation percentage of subnets."
+        ]
+      },
+      {
+        "title": "\"Cloud Network Insights overview \\_|\\_ Network Intelligence Center - Cloud\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Network Insights is an out-of-the-box solution offered in partnership with AppNeta by Broadcom that provides visibility into network health and application performance across complex, multicloud, and hybrid environments.",
+          "Features and benefits Cloud Network Insights provides the following benefits: Proactive detection : Identify network and application performance issues with synthetic testing, often before they impact users.",
+          "Home Documentation Networking Network Intelligence Center Cloud Network Insights Guides Cloud Network Insights overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:47.484Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center"
+}

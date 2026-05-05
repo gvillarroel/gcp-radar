@@ -1,0 +1,98 @@
+{
+  "feature_name": "Data Science Agent table search shortcut",
+  "feature_slug": "data-science-agent-table-search-shortcut",
+  "summary": "The Data Science Agent in BigQuery supports @ syntax to search project tables.",
+  "extended_definition": "The Data Science Agent in BigQuery supports @ syntax to search project tables.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/ai-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+      "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Colab Enterprise Data Science Agent with BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "source_id": "site-docs-reference-5",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Data Science Agent supports the following data sources: CSV files BigQuery tables The code produced by the Data Science Agent only runs in your notebook's runtime.",
+          "For example: \"Help me perform exploratory data analysis and get insights about the data in this table: project id : dataset . table .\" Replace the following: project id : your project ID dataset : the name of the dataset that contains the table you're analyzing table : the name of the table you're analyzing Type @ to search for a BigQuery table in your current project.",
+          "The Data Science Agent (DSA) for Colab Enterprise and BigQuery lets you automate exploratory data analysis, perform machine learning tasks, and deliver insights all within a Colab Enterprise notebook."
+        ]
+      },
+      {
+        "title": "Introduction to AI in BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/ai-introduction",
+        "source_id": "site-docs-reference-2",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use built-in agents or create your own agents to help you process, manage, analyze, and visualize your data: Use the Data Science Agent to automate exploratory data analysis, data processing, ML tasks, and visualization insights within a Colab Enterprise notebook.",
+          "Search BigQuery offers a variety of search functions and features to help you efficiently find specific data or discover similarities between data including multimodal data.",
+          "You can improve search performance by creating a search index , which lets BigQuery optimize queries that use the SEARCH function, as well as other functions and operators."
+        ]
+      },
+      {
+        "title": "\"Extracting metadata from Apache Hive for migration \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata",
+        "source_id": "site-api-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: To get support or provide feedback for this feature, contact bigquery-permission-migration-support@google.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/ai-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-metadata"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

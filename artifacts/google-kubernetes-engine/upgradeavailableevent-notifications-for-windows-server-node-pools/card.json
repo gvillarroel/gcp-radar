@@ -1,0 +1,154 @@
+{
+  "feature_name": "UpgradeAvailableEvent notifications for Windows Server node pools",
+  "feature_slug": "upgradeavailableevent-notifications-for-windows-server-node-pools",
+  "summary": "Notifies Windows Server node pools about new GKE versions and the Windows OS versions they use.",
+  "extended_definition": "Notifies Windows Server node pools about new GKE versions and the Windows OS versions they use.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "Even if you have node auto-upgrade enabled, we recommend that you manually upgrade your cluster and Windows Server node pools to one of the following GKE versions or later: 1.24.17-gke.6100 1.25.15-gke.2000 1.26.10-gke.2000 1.27.7-gke.2000 1.28.3-gke.1600 You can apply patch versions from newer release channels if your cluster runs the same minor version in its own release channel.",
+          "Even if you have node auto-upgrade enabled, we recommend that you manually upgrade your cluster and Windows Server node pools to one of the following GKE on VMware versions or later: 1.28.100-gke.131 1.16.5-gke.28 1.15.8-gke.41 What vulnerabilities are addressed by this patch?",
+          "GKE Autopilot clusters and GKE node pools using GKE Sandbox are not affected because they do not support Windows Server nodes."
+        ]
+      },
+      {
+        "title": "Node images \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about creating Windows Server 2022 node pools, see Create Windows Node Pools For more information about containerd node images, see Containerd node images .",
+          "A single cluster can have multiple Windows Server node pools using different Windows Server versions, but each individual node pool can only use one Windows Server version.",
+          "Windows Server When creating a cluster using Windows Server node pools you can use a Windows Server Long-Term Servicing Channel (LTSC) node image."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "source_id": "site-api-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "NodeConfig JSON representation { \"machineType\" : string , \"diskSizeGb\" : integer , \"oauthScopes\" : [ string ] , \"serviceAccount\" : string , \"metadata\" : { string : string , ... } , \"imageType\" : string , \"labels\" : { string : string , ... } , \"localSsdCount\" : integer , \"tags\" : [ string ] , \"preemptible\" : boolean , \"accelerators\" : [ { object ( AcceleratorConfig ) } ] , \"diskType\" : string , \"minCpuPlatform\" : string , \"workloadMetadataConfig\" : { object ( WorkloadMetadataConfig ) } , \"taints\" : [ { object ( NodeTaint ) } ] , \"sandboxConfig\" : { object ( SandboxConfig ) } , \"nodeGroup\" : string , \"reservationAffinity\" : { object ( ReservationAffinity ) } , \"shieldedInstanceConfig\" : { object ( ShieldedInstanceConfig ) } , \"linuxNodeConfig\" : { object ( LinuxNodeConfig ) } , \"kubeletConfig\" : { object ( NodeKubeletConfig ) } , \"bootDiskKmsKey\" : string , \"gcfsConfig\" : { object ( GcfsConfig ) } , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"gvnic\" : { object ( VirtualNIC ) } , \"spot\" : boolean , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"resourceLabels\" : { string : string , ... } , \"loggingConfig\" : { object ( NodePoolLoggingConfig ) } , \"windowsNodeConfig\" : { object ( WindowsNodeConfig ) } , \"localNvmeSsdBlockConfig\" : { object ( LocalNvmeSsdBlockConfig ) } , \"ephemeralStorageLocalSsdConfig\" : { object ( EphemeralStorageLocalSsdConfig ) } , \"soleTenantConfig\" : { object ( SoleTenantConfig ) } , \"containerdConfig\" : { object ( ContainerdConfig ) } , \"resourceManagerTags\" : { object ( ResourceManagerTags ) } , \"enableConfidentialStorage\" : boolean , \"secondaryBootDisks\" : [ { object ( SecondaryBootDisk ) } ] , \"storagePools\" : [ string ] , \"maxRunDuration\" : string , \"effectiveCgroupMode\" : enum ( EffectiveCgroupMode ) , \"bootDisk\" : { object ( BootDisk ) } , \"consolidationDelay\" : string , // Union field fast socket can be only one of the following: \"fastSocket\" : { object ( FastSocket ) } // End of list of possible types for union field fast socket . // Union field secondary boot disk update strategy can be only one of the // following: \"secondaryBootDiskUpdateStrategy\" : { object ( SecondaryBootDiskUpdateStrategy ) } // End of list of possible types for union field // secondary boot disk update strategy . // Union field gpu direct config can be only one of the following: \"gpuDirectConfig\" : { object ( GPUDirectConfig ) } // End of list of possible types for union field gpu direct config . // Union field local ssd encryption mode can be only one of the following: \"localSsdEncryptionMode\" : enum ( LocalSsdEncryptionMode ) // End of list of possible types for union field local ssd encryption mode . // Union field flex start can be only one of the following: \"flexStart\" : boolean // End of list of possible types for union field flex start . // Union field taint config can be only one of the following: \"taintConfig\" : { object ( TaintConfig ) } // End of list of possible types for union field taint config . } Fields machineType string The name of a Google Compute Engine machine type If unspecified, the default machine type is e2-medium . diskSizeGb integer Size of the disk attached to each node, specified in GB.",
+          "All the nodes in the node pool will be Confidential VM once enabled. resourceLabels map (key: string, value: string) The resource labels for the node pool to use to annotate any related Google Compute Engine resources. loggingConfig object ( NodePoolLoggingConfig ) Logging configuration. windowsNodeConfig object ( WindowsNodeConfig ) Parameters that can be configured on Windows nodes. localNvmeSsdBlockConfig object ( LocalNvmeSsdBlockConfig ) Parameters for using raw-block Local NVMe SSDs. ephemeralStorageLocalSsdConfig object ( EphemeralStorageLocalSsdConfig ) Parameters for the node ephemeral storage using Local SSDs.",
+          "Additionally, to avoid ambiguity, keys must not conflict with any other metadata keys for the project or be one of the reserved keys: \"cluster-location\" \"cluster-name\" \"cluster-uid\" \"configure-sh\" \"containerd-configure-sh\" \"enable-os-login\" \"gci-ensure-gke-docker\" \"gci-metrics-enabled\" \"gci-update-strategy\" \"instance-template\" \"kube-env\" \"startup-script\" \"user-data\" \"disable-address-manager\" \"windows-startup-script-ps1\" \"common-psm1\" \"k8s-node-setup-psm1\" \"install-ssh-psm1\" \"user-profile-psm1\" Values are free-form strings, and only have meaning as interpreted by the image running in the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.131",
+      "gke.1600",
+      "gke.2000",
+      "gke.28",
+      "gke.41",
+      "gke.6100"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-images",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

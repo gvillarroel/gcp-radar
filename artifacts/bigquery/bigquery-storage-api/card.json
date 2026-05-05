@@ -1,0 +1,112 @@
+{
+  "feature_name": "BigQuery Storage API",
+  "feature_slug": "bigquery-storage-api",
+  "summary": "The BigQuery Storage API provides high-throughput access to read data from BigQuery storage; The BigQuery Storage API provides high-throughput access to BigQuery table data.",
+  "extended_definition": "The BigQuery Storage API provides high-throughput access to read data from BigQuery storage; The BigQuery Storage API provides high-throughput access to BigQuery table data.",
+  "lifecycle": {
+    "latest_feature_date": "2020-03-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+      "https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the BigQuery Storage Read API to read table data \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "source_id": "site-docs-reference",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the BigQuery Storage Read API to read table data The BigQuery Storage Read API provides fast access to BigQuery-managed storage by using an rpc-based protocol.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and update read sessions: bigquery.readsessions.create on the project bigquery.readsessions.getData on the table or higher bigquery.readsessions.update on the table or higher You might also be able to get these permissions with custom roles or other predefined roles .",
+          "If you're working in an older version of the Storage Read API, then use the appropriate version of Arrow as follows: v1beta1: Arrow 0.14 and earlier v1: Arrow 0.15 and later Regardless of API version, to access API functions, we recommend that you use the BigQuery Storage API client libraries ."
+        ]
+      },
+      {
+        "title": "BigQuery Storage API Client Libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "C++ #include \"google/cloud/bigquery/storage/v1/bigquery read client.h\" #include <iostream> namespace { void ProcessRowsInAvroFormat ( :: google :: cloud :: bigquery :: storage :: v1 :: AvroSchema const & , :: google :: cloud :: bigquery :: storage :: v1 :: AvroRows const & ) { // Code to deserialize avro rows should be added here. } } // namespace int main ( int argc , char argv []) try { if ( argc != 3 ) { std :: cerr << \"Usage: \" << argv [ 0 ] << \" <project-id> <table-name> \\n \" ; return 1 ; } // project name should be in the format \"projects/<your-gcp-project>\" std :: string const project name = \"projects/\" + std :: string ( argv [ 1 ]); // table name should be in the format: // \"projects/<project-table-resides-in>/datasets/<dataset-table resides-in>/tables/<table // name>\" The project values in project name and table name do not have to be // identical. std :: string const table name = argv [ 2 ]; // Create a namespace alias to make the code easier to read. namespace bigquery storage = :: google :: cloud :: bigquery storage v1 ; constexpr int kMaxReadStreams = 1 ; // Create the ReadSession. auto client = bigquery storage :: BigQueryReadClient ( bigquery storage :: MakeBigQueryReadConnection ()); :: google :: cloud :: bigquery :: storage :: v1 :: ReadSession read session ; read session . set data format ( google :: cloud :: bigquery :: storage :: v1 :: DataFormat :: AVRO ); read session . set table ( table name ); auto session = client .",
+          "It demonstrates API features such as column // projection (limiting the output to a subset of a table's columns), // column filtering (using simple predicates to filter records on the server // side), establishing the snapshot time (reading data from the table at a // specific point in time), decoding Avro row blocks using the third party // \"github.com/linkedin/goavro\" library, and decoding Arrow row blocks using // the third party \"github.com/apache/arrow/go\" library. package main import ( \"bytes\" \"context\" \"encoding/json\" \"flag\" \"fmt\" \"io\" \"log\" \"sort\" \"strings\" \"sync\" \"time\" bqStorage \"cloud.google.com/go/bigquery/storage/apiv1\" \"cloud.google.com/go/bigquery/storage/apiv1/storagepb\" \"github.com/apache/arrow/go/v10/arrow\" \"github.com/apache/arrow/go/v10/arrow/ipc\" \"github.com/apache/arrow/go/v10/arrow/memory\" gax \"github.com/googleapis/gax-go/v2\" goavro \"github.com/linkedin/goavro/v2\" \"google.golang.org/genproto/googleapis/rpc/errdetails\" \"google.golang.org/grpc\" \"google.golang.org/grpc/codes\" \"google.golang.org/grpc/status\" \"google.golang.org/protobuf/types/known/timestamppb\" ) // rpcOpts is used to configure the underlying gRPC client to accept large // messages.",
+          "ReadRows ( session - > streams ( 0 ). name (), kRowOffset ); std :: int64 t num rows = 0 ; for ( auto const & row : read rows ) { if ( row . ok ()) { num rows += row - > row count (); ProcessRowsInAvroFormat ( session - > avro schema (), row - > avro rows ()); } } std :: cout << num rows << \" rows read from table: \" << table name << \" \\n \" ; return 0 ; } catch ( google :: cloud :: Status const & status ) { std :: cerr << \"google::cloud::Status thrown: \" << status << \" \\n \" ; return 1 ; } Go // The bigquery storage quickstart application demonstrates usage of the // BigQuery Storage read API."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "Integrations BigLake tables are accessible from a number of other BigQuery features and gcloud CLI services, including the following, highlighted services.",
+          "The BigQuery Storage API enforces row- and column-level governance policies on all data access to BigLake tables, including through connectors.",
+          "Connectors You can access data in BigLake tables based on Cloud Storage from other data processing tools by using BigQuery connectors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData",
+      "bigquery.readsessions.update",
+      "client.h",
+      "github.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage",
+        "https://docs.cloud.google.com/bigquery/docs/reference/storage/libraries",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

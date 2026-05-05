@@ -1,0 +1,116 @@
+{
+  "feature_name": "Serving stale content (serve-while-stale)",
+  "feature_slug": "serving-stale-content-serve-while-stale",
+  "summary": "Cloud CDN can serve stale cached content when the origin is unavailable or returning errors, based on configured stale duration.",
+  "extended_definition": "Cloud CDN can serve stale cached content when the origin is unavailable or returning errors, based on configured stale duration.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/best-practices",
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/serving-stale-content"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Serve stale content \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/serving-stale-content",
+        "source_id": "site-docs-reference-2",
+        "final_score": 235,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use one of the following API calls: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE Add the following snippet to the JSON request body: \"cdnPolicy\": { \"serveWhileStale\": SECONDS } Disable serving stale content Console In the Google Cloud console, go to the Load balancing page.",
+          "Use one of the following API calls: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendBuckets/ BACKEND BUCKET POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices PUT https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/backendServices/ BACKEND SERVICE Add the following snippet to the JSON request body: \"cdnPolicy\": { \"serveWhileStale\": 0 } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "If a Cloud CDN edge cache does not have a cached copy of the object to serve stale, or the object has reached the maximum stale TTL, Cloud CDN synchronously revalidates the content with the origin."
+        ]
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 165,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Feature GKE ingress through backend configuration GKE gateway using GCPHTTPFilter Basic Caching (Modes/TTLs) Cache Key Customization Negative Caching Serve While Stale Dynamic Compression Signed URLs & Cookies Request Coalescing Cacheable content Cloud CDN caches responses that meet all of the requirements in this section.",
+          "This is done before serving the response, unless you enable serve-while-stale , in which case revalidation is performed asynchronously.",
+          "Serve While Stale 86400s Serves stale content for up to 24 hours if the origin is unreachable."
+        ]
+      },
+      {
+        "title": "Content delivery best practices \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 145,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable pod protection features when using GKE Gateway To help ensure availability in containerized environments where pods are transient, use the following GCPHTTPFilter settings: serveWhileStale : Set serveWhileStale to at least 24 hours to allow Cloud CDN to serve expired content if your GKE pods are restarting or temporarily unreachable. requestCoalescing : Enable requestCoalescing to combine multiple concurrent cache fill requests into a single request to your origin, preventing sudden traffic spikes that can impact Pod CPU and memory limits.",
+          "An external Application Load Balancer can deliver a mix of static and dynamically created content to users through one global IP address from the following types of backends: Instance groups Zonal network endpoint groups (NEGs) Serverless NEGs : One or more App Engine , Cloud Run , or Cloud Run functions services Internet NEGs for external backends Buckets in Cloud Storage Because of the seamless integration with Google Cloud, you have several options for deploying Cloud CDN and managing content.",
+          "This happens because Cloud CDN detects that the origin file has changed (because etag or last-modified changes), deletes any stale content, disconnects any in-progress downloads, and generates an error, which prompts the client to retry."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/serving-stale-content",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/serving-stale-content",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/serving-stale-content",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/best-practices"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/serving-stale-content",
+        "https://docs.cloud.google.com/cdn/docs/caching",
+        "https://docs.cloud.google.com/cdn/docs/best-practices"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.447Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn"
+}

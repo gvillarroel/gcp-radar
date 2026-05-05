@@ -1,0 +1,140 @@
+{
+  "feature_name": "Query Explain",
+  "feature_slug": "query-explain",
+  "summary": "Query Explain returns query plans and billing and performance statistics for query execution.",
+  "extended_definition": "Query Explain returns query plans and billing and performance statistics for query execution.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastore/latest/com.google.cloud.datastore.Datastore",
+      "https://docs.cloud.google.com/python/docs/reference/datastore/latest/aggregations",
+      "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.AggregationQuery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class AggregationQuery (2.24.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.AggregationQuery",
+        "source_id": "site-python-reference",
+        "final_score": 154,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description AggregationIterator The iterator for the aggregation query. sum sum ( property ref , alias = None ) Adds a sum over the nested query Parameter Name Description property ref str The property ref for the sum Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Client (namespace='ns{}'.format(unique)) .. doctest:: aggregation-query-fetch >> andy = datastore.Entity(client.key('Person', 1234)) >> andy['name'] = 'Andy' >> sally = datastore.Entity(client.key('Person', 2345)) >> sally['name'] = 'Sally' >> bobby = datastore.Entity(client.key('Person', 3456)) >> bobby['name'] = 'Bobby' >> client.put multi([andy, sally, bobby]) >> query = client.query(kind='Andy') >> aggregation query = client.aggregation query(query) >> result = aggregation query.count(alias=\"total\").fetch(limit=5) >> result <<xref uid=\"google.cloud.datastore.aggregation.AggregationResultIterator\">google.cloud.datastore.aggregation.AggregationResultIterator</xref> object at ...> .. testcleanup:: aggregation-query-fetch client.delete(andy.key) Parameters Name Description client Client (Optional) client used to connect to datastore.",
+          "2.24.0 (latest) 2.23.0 2.22.0 2.21.0 2.20.2 2.19.0 2.18.0 2.17.0 2.16.1 2.15.2 2.14.0 2.13.2 2.12.0 2.11.1 2.10.0 2.9.0 2.8.3 2.7.2 2.6.2 2.5.1 2.4.0 2.3.0 2.2.0 2.1.6 2.0.1 1.15.5 1.14.0 1.13.2 1.12.0 1.11.0 1.10.0 1.9.0 AggregationQuery ( client , query , explain options = None ) An Aggregation query against the Cloud Datastore."
+        ]
+      },
+      {
+        "title": "\"Interface Datastore (2.37.0) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastore/latest/com.google.cloud.datastore.Datastore",
+        "source_id": "site-java-reference",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Submits a AggregationQuery with specified com.google.cloud.datastore.models.ExplainOptions and returns AggregationResults .",
+          "Submits a Query with specified com.google.cloud.datastore.models.ExplainOptions and returns its result.",
+          "StructuredQuery example: EntityQuery selectAllQuery = Query . newEntityQueryBuilder () . setKind ( \"Task\" ) . build (); AggregationQuery aggregationQuery = Query . newAggregationQueryBuilder () . addAggregation ( count (). as ( \"total count\" )) . over ( selectAllQuery ) . build (); AggregationResults aggregationResults = datastore . runAggregation ( aggregationQuery ); for ( AggregationResult aggregationResult : aggregationResults ) { System . out . println ( aggregationResult . get ( \"total count\" )); } GqlQuery example: GqlQuery selectAllGqlQuery = Query . newGqlQueryBuilder ( \"AGGREGATE COUNT( ) AS total count, COUNT UP TO(100) AS count upto 100 OVER(SELECT FROM Task)\" ) . setAllowLiteral ( true ) . build (); AggregationQuery aggregationQuery = Query . newAggregationQueryBuilder () . over ( selectAllGqlQuery ) . build (); AggregationResults aggregationResults = datastore . runAggregation ( aggregationQuery ); for ( AggregationResult aggregationResult : aggregationResults ) { System . out . println ( aggregationResult . get ( \"total count\" )); System . out . println ( aggregationResult . get ( \"count upto 100\" )); } Parameters Name Description query AggregationQuery options ReadOption [] Returns Type Description AggregationResults AggregationResults runAggregation(AggregationQuery query, ExplainOptions explainOptions, ReadOption[] options) public abstract AggregationResults runAggregation ( AggregationQuery query , ExplainOptions explainOptions , ReadOption [] options ) Beta This feature is covered by the Pre-GA Offerings Terms of the Terms of Service."
+        ]
+      },
+      {
+        "title": "\"Balancing Strong and Eventual Consistency with Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is demonstrated with the Python code below. class Organization(db.Model): name = db.StringProperty() class Person(db.Model): given name = db.StringProperty() surname = db.StringProperty() class MainPage(webapp2.RequestHandler): def post(self): org = Organization.get or insert('ateam', name='ATeam') person = Person(parent=org) person.given name='GI' person.surname='Joe' person.put() q = db.GqlQuery(\"SELECT FROM Person WHERE ANCESTOR IS :1 \", org) people = [] for p in q.run(): people.append({'given name': p.given name, 'surname': p.surname}) This time, with the ancestor org specified in the GqlQuery, the query returns the entity just inserted.",
+          "Define the Person entity class Person(db.Model): given name = db.StringProperty() surname = db.StringProperty() organization = db.StringProperty() Add a person and retrieve the list of all people class MainPage(webapp2.RequestHandler): def post(self): person = Person(given name='GI', surname='Joe', organization='ATeam') person.put() q = db.GqlQuery(\"SELECT FROM Person\") people = [] for p in q.run(): people.append({'given name': p.given name, 'surname': p.surname, 'organization': p.organization}) The problem with this code is that, in most cases, the query will not return the entity added in the statement above it.",
+          "If you are currently using the older DB Client Library, read the DB to NDB Migration Guide Contents NoSQL and Eventual Consistency Eventual Consistency in Datastore Ancestor Query and Entity Group Limitations of Entity Group and Ancestor Query Alternatives to Ancestor Queries Minimizing Time to Achieve Full Consistency Conclusion Additional Resources NoSQL and Eventual Consistency Non-relational databases, also known as NoSQL databases, have emerged in recent years as an alternative to relational databases."
+        ]
+      },
+      {
+        "title": "Aggregations \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastore/latest/aggregations",
+        "source_id": "site-python-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Return type ExplainMetrics Returns The metrics associated with the query execution.",
+          "Return type str Returns The project for the query. sum(property ref, alias=None) Adds a sum over the nested query Parameters property ref ( str ) – The property ref for the sum class google.cloud.datastore.aggregation.AggregationResult(alias, value) Bases: object A class representing result from Aggregation Query Parameters alias ( str ) – The alias for the aggregation. value ( int ) – The resulting value from the aggregation. class google.cloud.datastore.aggregation.AggregationResultIterator(aggregation query, client, limit=None, eventual=False, retry=None, timeout=None, read time=None) Bases: google.api core.page iterator.Iterator Represent the state of a given execution of a Query.",
+          "For example: >> andy = datastore.Entity(client.key('Person', 1234)) >> andy['name'] = 'Andy' >> sally = datastore.Entity(client.key('Person', 2345)) >> sally['name'] = 'Sally' >> bobby = datastore.Entity(client.key('Person', 3456)) >> bobby['name'] = 'Bobby' >> client.put multi([andy, sally, bobby]) >> query = client.query(kind='Andy') >> aggregation query = client.aggregation query(query) >> result = aggregation query.count(alias=\"total\").fetch(limit=5) >> result <google.cloud.datastore.aggregation.AggregationResultIterator object at ...> Parameters client ( google.cloud.datastore.client.Client ) – (Optional) client used to connect to datastore."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "andy.key",
+      "client.aggregation",
+      "client.delete",
+      "client.key",
+      "client.put",
+      "client.query",
+      "com.google.cloud.datastore.AggregationQuery",
+      "com.google.cloud.datastore.AggregationQuery.Builder",
+      "com.google.cloud.datastore.Datastore",
+      "com.google.cloud.datastore.models.ExplainOptions",
+      "core.page",
+      "datastore.Entity",
+      "db.GqlQuery",
+      "db.Model",
+      "db.StringProperty",
+      "iterator.Iterator",
+      "p.given",
+      "p.organization",
+      "p.surname",
+      "people.append",
+      "person.given",
+      "person.put",
+      "person.surname",
+      "q.run",
+      "query.count",
+      "webapp2.RequestHandler"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.AggregationQuery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastore/latest/com.google.cloud.datastore.Datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/aggregations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.AggregationQuery",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastore/latest/com.google.cloud.datastore.Datastore",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/aggregations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.286Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

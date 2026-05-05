@@ -1,0 +1,137 @@
+{
+  "feature_name": "Java 17 runtime for remote and standalone modes",
+  "feature_slug": "java-17-runtime-for-remote-and-standalone-modes",
+  "summary": "Remote and standalone modes use Java 17 instead of Java 8.",
+  "extended_definition": "Remote and standalone modes use Java 17 instead of Java 8.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+      "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+      "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Mainframe Connector command-line reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Source: gcsUri Destination: --destPath This command can run in local, remote, and standalone modes.",
+          "You can specify the value in the following formats: Java format: b/k/m/g/t, for byte, kibibyte, mebibyte, gibibyte, and tebibyte respectively.",
+          "For the remote mode, see the flags --remoteHost , --remotePort , and --remoteUrl , and the environment variable BQ QUERY REMOTE EXECUTION ."
+        ]
+      },
+      {
+        "title": "Run Mainframe Connector in standalone mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "source_id": "site-docs-root-2",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following is an example YAML file: environmentVariables: - name: \"QUERY\" value: \"gs://my bucket/my/input.sql\" - name: \"OUTFILE\" value: \"gs://my bucket/my/output.orc\" - name: \"COPYBOOK\" value: \"gs://my bucket/my/copybook.cpy\" - name: \"TRANSCODE CONFIGURATION\" value: \"gs://my bucket/my/transcode-configuration-file.json\" - name: \"PROJECT ID\" value: \"my-project\" - name: \"LOCATION\" value: \"US\" - name: \"LOG PROJECT\" value: \"my-log-project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Use bq export command environmentVariables: - name: \"COPYBOOK\" value: \" COPYBOOK FILEPATH \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: bq export --project id=\" PROJECT NAME \" --location=\" LOCATION \" --sql=\"select from project.dataset.table\" --bucket=\" BUCKET \" Replace the following: COPYBOOK FILEPATH : The path to the copybook DD.",
+          "Mainframe Connector provides two ways in which you can export BigQuery table: Using qsam commands (release 5.16.0 and later) Using the bq export command Use qsam commands environmentVariables: - name: \"QUERY\" value: \" QUERY PATH \" - name: \"OUTFILE\" value: \" OUTFILE \" - name: \"COPYBOOK\" value: \" COPYBOOK PATH \" - name: \"TRANSCODE CONFIGURATION\" value: \" TRANSCODE CONFIGURATION PATH \" - name: \"PROJECT ID\" value: \" PROJECT ID \" - name: \"LOCATION\" value: \" LOCATION \" - name: \"LOG PROJECT\" value: \" LOG PROJECT \" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam encode \\ $QUERY $OUTFILE --copybook ${COPYBOOK PATH} --transcode-configuration ${TRANSCODE CONFIGURATION PATH} --input-format=BIGQUERY \\ --input-parameter project id=${PROJECT ID} \\ --input-parameter location=${LOCATION} Replace the following: QUERY PATH : The SQL query to execute.",
+          "The following is an example YAML file: environmentVariables: - name: \"INFILE\" value: \"gs://my bucket/my/input.dat\" - name: \"OUTFILE\" value: \"gs://my bucket/my/output.orc\" - name: \"COPYBOOK\" value: \"gs://my bucket/my/copybook.cpy\" - name: \"TRANSCODE CONFIGURATION\" value: \"gs://my bucket/my/transcode-configuration-file.json\" - name: \"LOG PROJECT\" value: \"the log project\" - name: \"IBM JAVA OPTIONS\" value: \"-XX:+UseContainerSupport\" command: qsam decode $INFILE $OUTFILE --copybook $COPYBOOK --transcode-configuration ${TRANSCODE CONFIGURATION} --output-format orc --parallelism 8 --chunk-size \"512Mib\" Note Variables with the suffix FILLER are ignored during the import process."
+        ]
+      },
+      {
+        "title": "Mainframe Connector API commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can provide the value in the following formats: Java format: b/k/m/g/t, for byte, kibibyte, mebibyte, gibibyte, and tebibyte respectively International format: KiB/MiB/GiB/TiB, for kibibyte, mebibyte, gibibyte, and tebibyte respectively Metric format: b/kb/mb/gb/tb, for kilobyte, megabyte, gigabyte, and terabyte respectively Data size parsing is case insensitive.",
+          "If you execute the gsutil cp or bq export commands with the --remote flag to perform remote transcoding , Mainframe Connector uses the local value set for the BQSH FEATURE CUSTOM CHARSET environment variable.",
+          "Note: For the commands that support remote execution, you can use the option remoteUrl instead of remoteHost and remotePort ."
+        ]
+      },
+      {
+        "title": "Install Mainframe Connector on your mainframe \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-connector/docs/installation",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "The service account should be granted Storage, BigQuery and Logging pe GKPATH= \"/opt/google/keyfile\" GKFILE= \"prj-ent-edw-dev-landing-2451-f89d99af31e5.json\" export GKEYFILE= \"$GKPATH/$GKFILE\" Path to directory containing google jar file Edit this is set actual path selected for your site its recommended to have a path with a version identifier and create a symlink to the directory of the latert version GOOGLE DIR= \"/opt/google/mainframe-connector/5.9.0\" GOOGLE CLASSPATH= \"$GOOGLE DIR/ \" #IBM JZOS JDK Location JH= \"/usr/lpp/java/J8.0 64\" export JAVA HOME= \"$JH\" export PATH= \"/bin:$JH/bin\" Log Level export BQSH ROOT LOGGER=DEBUG What's next Move locally transcoded mainframe data to Google Cloud Transcode mainframe data remotely on Google Cloud Transcode mainframe data moved to Google Cloud using a virtual tape library Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "This is strongly recommended when processing high volumes of data. #export SRVREMOTE= #export SRVPORT= Native Libraries JL=\"$JH/lib\" LP=\"/lib:/usr/lib:$JH/bin:$JL/s390x:$JL/s390x/j9vm:$JH/bin/classic\" export LIBPATH=\"$LP:/usr/lib/java runtime64\" Java Classpath CP=\"$JL:$JL/ext:/usr/include/java classes/ \" export CLASSPATH=\"$CP:$GOOGLE CLASSPATH\" JVM options IJO=\"-Xms512m -Xmx512m -Xcompressedrefs -Djava.net.preferIPv4Stack=true\" export IBM JAVA OPTIONS=\"$IJO\" export JZOS MAIN ARGS=\"\" / // PEND To configure Mainframe Connector to work with a TLS intercepting proxy, set the following Java system properties in the BQSH JCL procedure. javax.net.ssl.trustStore javax.net.ssl.trustStorePassword https.proxyHost https.proxyUser https.proxyPassword The BQSH JCL procedure before adding the Java system properties for IBM JAVA OPTIONS is as follows.",
+          "For example, create new JAR file, use a different IBM Java version, or change the JSON key file using environment statements. #BQSH PROC ENV=DEV // // // // Copyright 2022 Google LLC All Rights Reserved // // Licensed under the Apache License, Version 2.0 (the \"License\"); // you may not use this file except in compliance with the License. // You may obtain a copy of the License at // http://www.apache.org/licenses/LICENSE-2.0 // Unless required by applicable law or agreed to in writing , software // distributed under the License is distributed on as \"AS IS\" BASIS, // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express of impl. // See the license for the specific language governing permissions and // limitations under the License. // // //BQSH EXEC PGM=JVMLDM86,REGION=0M, // PARM='/+I com.google.cloud.bqsh.Bqsh' //SYSPRINT DD SYSOUT = //SYSOUT DD SYSOUT = //STDOUT DD SYSOUT = //STDERR DD SYSOUT = //CEEDUMP DD SYSOUT = //ABNLIGNR DD DUMMY //STDIN DD DUMMY //QUERY DD DUMMY //INFILE DD DUMMY //COPYBOOK DD DUMMY //KEYFILE DD DUMMY //STDENV DD DISP=SHR,DSN=SYSP.PARMLIB(EDW&ENV) // DD ,SYMBOLS=EXECSYS Do not modify the 3 lines below Collect system symbols from JES export JOBNAME=&JOBNAME export JOBDATE=&YYMMDD export JOBTIME=&HHMMSS The following is an example of the DEV PARMLIB member showing how the JSON key file and the Mainframe Connector software JAR file are referenced."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bqsh.Bqsh",
+      "copybook.cpy",
+      "f89d99af31e5.json",
+      "file.json",
+      "https.proxyHost",
+      "https.proxyPassword",
+      "https.proxyUser",
+      "input.dat",
+      "input.sql",
+      "javax.net.ssl.trustStore",
+      "javax.net.ssl.trustStorePassword",
+      "net.preferIPv4Stack",
+      "output.orc",
+      "project.dataset.table"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-command-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/standalone-mode",
+        "https://docs.cloud.google.com/mainframe-connector/docs/api-reference",
+        "https://docs.cloud.google.com/mainframe-connector/docs/installation"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.391Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-connector/card.json",
+  "product_name": "Mainframe Connector",
+  "product_slug": "mainframe-connector"
+}

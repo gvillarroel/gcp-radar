@@ -1,0 +1,120 @@
+{
+  "feature_name": "TIFF file support",
+  "feature_slug": "tiff-file-support",
+  "summary": "Allows users to upload and view TIFF files in the UI.",
+  "extended_definition": "Allows users to upload and view TIFF files in the UI.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/file-types",
+      "https://docs.cloud.google.com/document-warehouse/docs",
+      "https://docs.cloud.google.com/document-warehouse/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Users can search for documents within a folder hierarchy e.g. search within AllLoans->State UI - the product includes Web-accessible UI with the following features: Doc Explorer: search documents, filter search results, select documents to bulk-update properties or delete Doc Viewer: view documents, view/update its properties,assign ACLs, add to folders Upload: upload documents and run them through a DocAI extractor (either OCR or a supported specialized parser such as Invoice DocAI).",
+          "Integrated with DocAI : Document AI Warehouse is integrated with Document AI processors at several levels: Document AI processing in UI : Document AI Warehouse UI enables users to upload either scanned PDFs/TIFFs or special document types, both of which are automatically extracted by Document AI OCR or specialized processors respectively before the document is indexed into Document AI Warehouse.",
+          "Files supported - Text PDFs, Images (scanned PDFs, TIFF files, JPEG files), Office (DOCX, PPTX, XLSX) files - run through OCR and indexed."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs",
+        "source_id": "site-api-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Users can search for documents within a folder hierarchy e.g. search within AllLoans->State UI - the product includes Web-accessible UI with the following features: Doc Explorer: search documents, filter search results, select documents to bulk-update properties or delete Doc Viewer: view documents, view/update its properties,assign ACLs, add to folders Upload: upload documents and run them through a DocAI extractor (either OCR or a supported specialized parser such as Invoice DocAI).",
+          "Integrated with DocAI : Document AI Warehouse is integrated with Document AI processors at several levels: Document AI processing in UI : Document AI Warehouse UI enables users to upload either scanned PDFs/TIFFs or special document types, both of which are automatically extracted by Document AI OCR or specialized processors respectively before the document is indexed into Document AI Warehouse.",
+          "Files supported - Text PDFs, Images (scanned PDFs, TIFF files, JPEG files), Office (DOCX, PPTX, XLSX) files - run through OCR and indexed."
+        ]
+      },
+      {
+        "title": "Supported Files \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/file-types",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Name File Extension(s) MIME Type Portable Document Format (PDF) .pdf application/pdf Graphics Interchange Format (GIF) .gif image/gif Tag Image File Format (TIFF) .tiff , .tif image/tiff Joint Photographic Experts Group (JPEG) .jpg , .jpeg image/jpeg Portable Network Graphics (PNG) .png image/png Bitmap (BMP) .bmp image/bmp WebP .webp image/webp HyperText Markup Language (HTML) .html text/html Microsoft Word Office Open XML (OOXML) .docx application/vnd.openxmlformats-officedocument.wordprocessingml.document Microsoft PowerPoint OOXML .pptx application/vnd.openxmlformats-officedocument.presentationml.presentation Microsoft Excel OOXML .xlsx application/vnd.openxmlformats-officedocument.spreadsheetml.sheet Note that some of these image formats are \"lossy\" (for example, JPEG).",
+          "Home Documentation AI and ML Document AI Guides Send feedback Supported Files Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: Document AI includes some supported file types in Preview ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "officedocument.presentationml.presentation",
+      "officedocument.spreadsheetml.sheet",
+      "officedocument.wordprocessingml.document",
+      "vnd.openxmlformats"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-ai/docs/file-types"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-ai/docs/file-types"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-ai/docs/file-types"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/overview",
+        "https://docs.cloud.google.com/document-warehouse/docs",
+        "https://docs.cloud.google.com/document-ai/docs/file-types"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.063Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse"
+}

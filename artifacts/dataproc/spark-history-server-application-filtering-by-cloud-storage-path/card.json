@@ -1,0 +1,163 @@
+{
+  "feature_name": "Spark History Server application filtering by Cloud Storage path",
+  "feature_slug": "spark-history-server-application-filtering-by-cloud-storage-path",
+  "summary": "Dataproc images 1.5 and 2.0 support filtering Spark History Server applications by Cloud Storage path.",
+  "extended_definition": "Dataproc images 1.5 and 2.0 support filtering Spark History Server applications by Cloud Storage path.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Cloud Storage connector with Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a set of directories with the path src/main/java/dataproc/codelab : mkdir -p src/main/java/dataproc/codelab Copy WordCount.java to your local machine into src/main/java/dataproc/codelab : cp WordCount.java src/main/java/dataproc/codelab WordCount.java is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab ; import java.util.Arrays ; import org.apache.spark.SparkConf ; import org.apache.spark.api.java.JavaPairRDD ; import org.apache.spark.api.java.JavaRDD ; import org.apache.spark.api.java.JavaSparkContext ; import scala.Tuple2 ; public class WordCount { public static void main ( String [] args ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( \"Exactly 2 arguments are required: <inputUri> <outputUri>\" ); } String inputPath = args [ 0 ] ; String outputPath = args [ 1 ] ; JavaSparkContext sparkContext = new JavaSparkContext ( new SparkConf (). setAppName ( \"Word Count\" )); JavaRDD<String> lines = sparkContext . textFile ( inputPath ); JavaRDD<String> words = lines . flatMap ( ( String line ) - > Arrays . asList ( line . split ( \" \" )). iterator () ); JavaPairRDD<String , Integer > wordCounts = words . mapToPair ( ( String word ) - > new Tuple2 <> ( word , 1 ) ). reduceByKey ( ( Integer count1 , Integer count2 ) - > count1 + count2 ); wordCounts . saveAsTextFile ( outputPath ); } } Build the package. mvn clean package If the build is successful, a target/word-count-1.0.jar is created.",
+          "This is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab import org.apache.spark.SparkContext import org.apache.spark.SparkConf object WordCount { def main ( args : Array [ String ] ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( \"Exactly 2 arguments are required: <inputPath> <outputPath>\" ) } val inputPath = args ( 0 ) val outputPath = args ( 1 ) val sc = new SparkContext ( new SparkConf (). setAppName ( \"Word Count\" )) val lines = sc . textFile ( inputPath ) val words = lines . flatMap ( line = > line . split ( \" \" )) val wordCounts = words . map ( word = > ( word , 1 )). reduceByKey ( + ) wordCounts . saveAsTextFile ( outputPath ) } } Build the package. sbt clean package If the build is successful, a target/scala-2.11/word-count 2.11-1.0.jar is created.",
+          "Java gcloud dataproc jobs submit spark \\ --cluster=${CLUSTER} \\ --class=dataproc.codelab.WordCount \\ --jars=gs://${BUCKET NAME}/java/word-count-1.0.jar \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Scala gcloud dataproc jobs submit spark \\ --cluster=${CLUSTER} \\ --class=dataproc.codelab.WordCount \\ --jars=gs://${BUCKET NAME}/scala/word-count 2.11-1.0.jar \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Python gcloud dataproc jobs submit pyspark word-count.py \\ --cluster=${CLUSTER} \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ View the output After the job finishes, run the following gcloud CLI command to view the wordcount output. gcloud storage cat gs://${BUCKET NAME}/output/ The wordcount output should be similar to the following: (a,2) (call,1) (What's,1) (sweet.,1) (we,1) (as,1) (name?,1) (any,1) (other,1) (rose,1) (smell,1) (name,1) (would,1) (in,1) (which,1) (That,1) (By,1) Clean up After you finish the tutorial, you can clean up the resources that you created so that they stop using quota and incurring charges."
+        ]
+      },
+      {
+        "title": "\"View cluster diagnostic data \\_|\\_ Managed Service for Apache Spark \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Checkpoint data location Managed Service for Apache Spark saves checkpoint diagnostic data in the cluster temp bucket in Cloud Storage in the following folder (the checkpoint diagnostic data folder ): gs:// TEMP BUCKET /google-cloud-dataproc-diagnostic/ CLUSTER UUID You can run the gcloud dataproc clusters describe CLUSTER NAME command to list the cluster temp bucket The default cluster temp bucket has a TTL retention period of 90 days.",
+          "The data is written as an archive (tar) file to the Managed Service for Apache Spark staging bucket in Cloud Storage. gcloud dataproc clusters diagnose CLUSTER NAME \\ --region= REGION \\ --tarball-access=GOOGLE DATAPROC DIAGNOSE \\ --tarball-gcs-dir= TARBALL DIR Notes: CLUSTER NAME : The name of the cluster to diagnose.",
+          "Optional: Run the diagnostic script The gcloud dataproc clusters diagnose command can fail or time-out if a cluster is in an error state and cannot accept diagnose tasks from the Managed Service for Apache Spark server."
+        ]
+      },
+      {
+        "title": "\"Run a Spark job on Google Kubernetes Engine \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"projectId\":\" PROJECT \", \"clusterName\":\" DP CLUSTER \", \"status\":{ \"state\":\"RUNNING\", \"stateStartTime\":\"2022-04-01T19:16:39.865716Z\" }, \"clusterUuid\":\"98060b77-...\", \"statusHistory\":[ { \"state\":\"CREATING\", \"stateStartTime\":\"2022-04-01T19:14:27.340544Z\" } ], \"labels\":{ \"goog-dataproc-cluster-name\":\" DP CLUSTER \", \"goog-dataproc-cluster-uuid\":\"98060b77-...\", \"goog-dataproc-location\":\" REGION \", \"goog-dataproc-environment\":\"prod\" }, \"virtualClusterConfig\":{ \"stagingBucket\":\" BUCKET \", \"kubernetesClusterConfig\":{ \"kubernetesNamespace\":\"dp-cluster\", \"gkeClusterConfig\":{ \"gkeClusterTarget\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER \", \"nodePoolTarget\":[ { \"nodePool\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER /nodePools/ NODE POOL \", \"roles\":[ \"DEFAULT\" ] } ] }, \"kubernetesSoftwareConfig\":{ \"componentVersion\":{ \"SPARK\":\"3.1-...\" }, \"properties\":{ \"dpgke:dpgke.unstable.outputOnly.endpoints.sparkHistoryServer\":\"https://...\", \"spark:spark.eventLog.dir\":\"gs:// BUCKET /.../spark-job-history\", \"spark:spark.eventLog.enabled\":\"true\" } } }, \"auxiliaryServicesConfig\":{ \"sparkHistoryServerConfig\":{ \"dataprocCluster\":\"projects/ PROJECT /regions/ REGION /clusters/ PHS CLUSTER \" } } } Submit a Spark job After your Managed Service for Apache Spark on GKE virtual cluster is running, submit a Spark job using the Google Cloud console, gcloud CLI , or the Managed Service for Apache Spark jobs.submit API (by using direct HTTP requests or the Cloud Client Libraries ).",
+          "HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ project-id /regions/ region /clusters Request JSON body: { \"clusterName\":\" DP CLUSTER \", \"projectId\":\" PROJECT \", \"virtualClusterConfig\":{ \"auxiliaryServicesConfig\":{ \"sparkHistoryServerConfig\":{ \"dataprocCluster\":\"projects/ PROJECT /regions/ REGION /clusters/ PHS CLUSTER \" } }, \"kubernetesClusterConfig\":{ \"gkeClusterConfig\":{ \"gkeClusterTarget\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER \", \"nodePoolTarget\":[ { \"nodePool\":\"projects/ PROJECT /locations/ REGION /clusters/ GKE CLUSTER /nodePools/ NODE POOL \", \"roles\":[ \"DEFAULT\" ] } ] }, \"kubernetesSoftwareConfig\":{ \"componentVersion\":{ \"SPARK\":\"latest\" } } }, \"stagingBucket\":\" BUCKET \" } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Run the command: gcloud dataproc clusters gke create ${DP CLUSTER} \\ --region=${REGION} \\ --gke-cluster=${GKE CLUSTER} \\ --spark-engine-version=latest \\ --staging-bucket=${BUCKET} \\ --pools=\"name=${DP POOLNAME},roles=default\" \\ --setup-workload-identity \\ --history-server-cluster=${PHS CLUSTER} Notes: --spark-engine-version : The Spark image version used on the Managed Service for Apache Spark cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "count.py",
+      "dataproc.codelab",
+      "dataproc.codelab.WordCount",
+      "dataproc.googleapis.com",
+      "dpgke.unstable.outputOnly.endpoints.sparkHistoryServer",
+      "java.util.Arrays",
+      "jobs.submit",
+      "org.apache.spark.api.java.JavaPairRDD",
+      "org.apache.spark.api.java.JavaRDD",
+      "org.apache.spark.api.java.JavaSparkContext",
+      "org.apache.spark.SparkConf",
+      "org.apache.spark.SparkContext",
+      "request.json",
+      "scala.Tuple2",
+      "spark.eventLog.dir",
+      "spark.eventLog.enabled"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

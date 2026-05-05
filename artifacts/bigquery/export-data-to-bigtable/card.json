@@ -1,0 +1,117 @@
+{
+  "feature_name": "EXPORT DATA to Bigtable",
+  "feature_slug": "export-data-to-bigtable",
+  "summary": "BigQuery EXPORT DATA statements can directly export data to Bigtable for reverse ETL workflows; EXPORT DATA statements can directly export BigQuery data to Bigtable.",
+  "extended_definition": "BigQuery EXPORT DATA statements can directly export data to Bigtable for reverse ETL workflows; EXPORT DATA statements can directly export BigQuery data to Bigtable.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+      "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Running EXPORT DATA statements to export data from BigQuery to Bigtable tables .",
+          "Continuous queries can process data that has been written to standard BigQuery tables by using one of the following methods: The BigQuery Storage Write API The tabledata.insertAll method Batch load The INSERT DML statement Mutating data manipulation language (DML) statements such as DELETE , UPDATE , and MERGE when exporting data to Pub/Sub .",
+          "When exporting data to Bigtable, Spanner, or Pub/Sub locational endpoints you can only target Bigtable, Spanner, or Pub/Sub resources that fall within the same Google Cloud regional boundary as the BigQuery dataset that contains the table you are querying."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples The following table function takes an INT64 parameter that is used to filter the results of a query: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example specifies the return TABLE type in the RETURNS clause: CREATE OR REPLACE TABLE FUNCTION mydataset . names by year ( y INT64 ) RETURNS TABLE<name STRING , year INT64 , total INT64 > AS SELECT year , name , SUM ( number ) AS total FROM bigquery-public-data.usa names.usa 1910 current WHERE year = y GROUP BY year , name The following example computes total sales for items with the name item name from the orders table: CREATE TABLE FUNCTION mydataset . compute sales ( orders TABLE<item STRING , sales INT64 > , item name STRING ) AS ( SELECT SUM ( sales ) AS total sales , item FROM orders WHERE item = item name GROUP BY item ); CREATE PROCEDURE statement Creates a new procedure , which is a block of statements that can be called from other queries.",
+          "Example: export function finalize ( finalState , initialSum ) Serialization functions for a JavaScript UDAF If you want to work with non-serializable aggregation states, the JavaScript UDAF must provide the serialize and deserialize functions: serialize function: Converts an aggregation state into a BigQuery-serializable object.",
+          "Example: export function deserialize ( stateToDeserialize , initialSum ) Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.routines.create The dataset where you create the function."
+        ]
+      },
+      {
+        "title": "Create continuous queries \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+        "source_id": "site-docs-reference-5",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "CURRENT TIMESTAMP () - INTERVAL 10 MINUTE ) WHERE CHANGE TYPE = 'DELETE' ); Export data to a Bigtable table The following example shows a continuous query that filters data from a BigQuery table that is receiving streaming taxi ride information, and exports the data into a Bigtable table in real time: EXPORT DATA OPTIONS ( format = 'CLOUD BIGTABLE' , truncate = TRUE , overwrite = TRUE , uri = 'https://bigtable.googleapis.com/projects/myproject/instances/mybigtableinstance/tables/taxi-real-time-rides' ) AS ( SELECT CAST ( CONCAT ( ride id , timestamp , latitude , longitude ) AS STRING ) AS rowkey , STRUCT ( timestamp , latitude , longitude , meter reading , ride status , passenger count ) AS features FROM APPENDS ( TABLE myproject.real time taxi streaming.taxirides , -- Configure the APPENDS TVF start timestamp to specify when you want to -- start processing data using your continuous query. -- This example starts processing at 10 minutes before the current time.",
+          "Continuous queries let you analyze incoming data in BigQuery in real time, and then either export the results to Bigtable, Pub/Sub, or Spanner, or write the results to a BigQuery table.",
+          "Export data to a Pub/Sub topic The following example shows a continuous query that filters data from a BigQuery table that is receiving streaming taxi ride information, and publishes the data for cancelled rides to a Pub/Sub topic in real time with message attributes: EXPORT DATA OPTIONS ( format = 'CLOUD PUBSUB' , uri = 'https://pubsub.googleapis.com/projects/myproject/topics/taxi-real-time-rides' ) AS ( SELECT TO JSON STRING ( STRUCT ( ride id , timestamp , latitude , longitude )) AS message , TO JSON ( STRUCT ( CAST ( passenger comment AS STRING ) AS passenger comment )) FROM CHANGES ( TABLE myproject.real time taxi streaming.taxi rides , -- Configure the CHANGES TVF start timestamp to specify when you want to -- start processing data using your continuous query. -- This example starts processing at 10 minutes before the current time."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.routines.create",
+      "bigtable.googleapis.com",
+      "data.usa",
+      "jobs.query",
+      "myproject.real",
+      "names.usa",
+      "pubsub.googleapis.com",
+      "streaming.taxi",
+      "streaming.taxirides",
+      "tabledata.insertAll"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/continuous-queries",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

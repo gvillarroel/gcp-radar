@@ -1,0 +1,106 @@
+{
+  "feature_name": "Call Adapter call details screen",
+  "feature_slug": "call-adapter-call-details-screen",
+  "summary": "The Call Adapter adds a call details screen with in-call access to call information and CRM launch support.",
+  "extended_definition": "The Call Adapter adds a call details screen with in-call access to call information and CRM launch support.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-adapter-agent-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call and Chat Settings \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "User profile flags When reserved data properties are sent to CCAI Platform during a call or chat session, this information is displayed in the agent adapter in the form of user profile flags.",
+          "For information about how these flags are displayed in the agent adapter, see User profile flags for chat and User profile flags for calls .",
+          "Settings recommendations Use a longer ringtone and/or more frequent notification if: Agents are often multitasking and not always waiting to take a call In an open office or louder environment Agents might listen to music from their computer Use a shorter ringtone if: Agents are always alert and waiting for calls Higher call frequency Call whisper: Use this when the queue selection and type of call highly impact the first communication from the agent Increase speed of whisper for decreased wait time impact For very low second count SLAs: Only use whisper and countdown if necessary as the duration of these messages contributes to the wait time for calls Send reserved data properties With reserved data properties, you can send information about an end-user to CCAI Platform when a chat or call session begins, or even after a session has begun."
+        ]
+      },
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "CCAI Platform supports the following emergency and special services phone numbers: US emergency numbers Canada emergency numbers Canada special service numbers 911 - Emergency 911 - Emergency 211 - Public information and referral services 933 - Emergency test 311 - Non-emergency municipal government services 411 - Local directory assistance 511 - Weather and traveler information services 611 - Repair service 711 - Message relay service (MRS) 811 - Non-urgent health care telephone triage service 988 - Suicide and crisis lifeline Turn emergency calling on or off Turn on emergency calling to let authorized agents make and manage emergency and special services calls in the call adapter.",
+          "Requesting new phone numbers Contact Support and include the following information about your preferences: Number type: Toll-free, National, Mobile, Local Location of number Number preference details about number structure or patterns Set up emergency and special services calling (US and Canada only) With CCAI Platform, agents in the US and Canada can make calls to emergency and special services using phone numbers that you dedicate to these types of calls.",
+          "For more information, see the following: Salesforce : Outbound click to call Kustomer : Kustomer click to call ServiceNow : Add Click to Call to the top of the form Show the dial pad screen If you have a CRM configured for click-to-call, you can configure your instance to display the dial pad screen after an agent clicks a phone number in the CRM but before a call starts."
+        ]
+      },
+      {
+        "title": "\"Receive and make calls \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-adapter-agent-guide",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If auto-answer is enabled, an Incoming call screen appears in the call adapter and the target pick-up time a After you answer the call, the following sequence begins in the call adapter: A new screen appears that displays caller information, queue information, and the support phone number that the caller used.",
+          "The Outbound call details screen appears.",
+          "If you have a Salesforce or Zendesk customer relationship management (CRM) app, click the phone number that you want to dial, paste a phone number into the call adapter, or dial the number."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-adapter-agent-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-adapter-agent-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-adapter-agent-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

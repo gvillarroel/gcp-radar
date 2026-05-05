@@ -1,0 +1,166 @@
+{
+  "feature_name": "Config Sync Cloud Source Repositories access with Workload Identity",
+  "feature_slug": "config-sync-cloud-source-repositories-access-with-workload-identity",
+  "summary": "Config Sync can access Cloud Source Repositories through a Google service account when Workload Identity is enabled.",
+  "extended_definition": "Config Sync can access Cloud Source Repositories through a Google service account when Workload Identity is enabled.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 233,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin Create, or make sure you have access to, an unstructured source of truth that can contain the configs that Config Sync syncs to.",
+          "Config Sync supports Git repositories, Helm charts, and OCI images as the source of truth.",
+          "For example, the following ClusterRole or Role grants permissions to manage Deployment and ServiceAccount objects: ROOT REPO/namespaces/ NAMESPACE /sync-role.yaml apiVersion : rbac.authorization.k8s.io/v1 kind : ROLE KIND metadata : namespace : NAMESPACE # only set this field for a 'Role' name : RECONCILER ROLE rules : Update 'apiGroups' and 'resources' to reference actual resources managed by 'RepoSync'. - apiGroups : [ \"apps\" ] resources : [ \"deployments\" ] verbs : [ \" \" ] - apiGroups : [ \"\" ] resources : [ \"serviceaccounts\" ] verbs : [ \" \" ] Save the RoleBinding manifest that references the ClusterRole or Role as FILENAME : ROOT REPO/namespaces/ NAMESPACE / FILENAME .yaml kind : RoleBinding apiVersion : rbac.authorization.k8s.io/v1 metadata : name : syncs-repo namespace : NAMESPACE subjects : - kind : ServiceAccount name : SERVICE ACCOUNT NAME namespace : config-management-system roleRef : kind : ROLE KIND name : RECONCILER ROLE apiGroup : rbac.authorization.k8s.io Replace the following: FILENAME : the name for the RoleBinding manifest."
+        ]
+      },
+      {
+        "title": "\"Grant Config Sync access to your OCI image or Helm repository \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To use a Kubernetes service account to grant Config Sync read-only access to your Helm repository, grant the Artifact Registry Reader ( roles/artifactregistry.reader ) IAM role to the Kubernetes service account that includes the Workload Identity Federation for GKE pool: Grant project-wide permission if the same permissions apply to all repositories in the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/artifactregistry.reader \\ --member = \"serviceAccount: FLEET HOST PROJECT ID .svc.id.goog[config-management-system/ KSA NAME ]\" Grant repository-specific permission when you want service accounts to have different levels of access for each repository in your project. gcloud artifacts repositories add-iam-policy-binding REPOSITORY \\ --location = LOCATION \\ --role = roles/artifactregistry.reader \\ --member = \"serviceAccount: FLEET HOST PROJECT ID .svc.id.goog[config-management-system/ KSA NAME ]\" \\ --project = PROJECT ID Replace the following: PROJECT ID : your project ID.",
+          "Grant the Artifact Registry Reader ( roles/artifactregistry.reader ) IAM role to the Kubernetes service account that includes the Workload Identity Federation for GKE pool: Grant project-wide permission if the same permissions apply to all repositories in the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/artifactregistry.reader \\ --member = \"serviceAccount: FLEET HOST PROJECT ID .svc.id.goog[config-management-system/ KSA NAME ]\" Grant repository-specific permission when you want service accounts to have different levels of access for each repository in your project. gcloud artifacts repositories add-iam-policy-binding REPOSITORY \\ --location = LOCATION \\ --role = roles/artifactregistry.reader \\ --member = \"serviceAccount: FLEET HOST PROJECT ID .svc.id.goog[config-management-system/ KSA NAME ]\" \\ --project = PROJECT ID Replace the following: PROJECT ID : your project ID.",
+          "Before you begin Before you grant Config Sync read-only access to your source of truth, complete the following tasks: Prepare, or have access to, an OCI image or Helm repository where you store your configuration files that you want Config Sync to sync."
+        ]
+      },
+      {
+        "title": "Grant Config Sync access to your Git repository \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "source_id": "site-docs-root",
+        "final_score": 219,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To grant Config Sync read-only access to your repository by using a Compute Engine default service account, grant the default service account the roles/source.reader role: gcloud projects add-iam-policy-binding PROJECT ID \\ --role = roles/source.reader \\ --member = \"serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com\" Replace the following: PROJECT ID : your project ID PROJECT NUMBER : with your project number.",
+          "Config Sync requires read-only access to your source of truth so it can read your configurations, apply them to your clusters, and keep them in sync.",
+          "When you install Config Sync, use Workload Identity ( gcpserviceaccount ) as the authentication type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.reader",
+      "configsync.gke.io",
+      "developer.gserviceaccount.com",
+      "rbac.authorization.k8s.io",
+      "role.yaml",
+      "source.reader",
+      "svc.id.goog",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.reader",
+      "roles/source.reader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-helm-oci"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

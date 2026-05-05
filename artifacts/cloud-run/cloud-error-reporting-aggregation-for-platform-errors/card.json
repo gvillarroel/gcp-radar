@@ -1,0 +1,176 @@
+{
+  "feature_name": "Cloud Error Reporting aggregation for platform errors",
+  "feature_slug": "cloud-error-reporting-aggregation-for-platform-errors",
+  "summary": "Cloud Error Reporting aggregation captures and groups Cloud Run platform errors such as memory limit exceeded and no instances available.",
+  "extended_definition": "Cloud Error Reporting aggregation captures and groups Cloud Run platform errors such as memory limit exceeded and no instances available.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+      "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+      "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tutorial: Local troubleshooting of a Cloud Run service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use available Google Cloud Observability tools to collect more details: Use the Error Reporting console, which provides a dashboard with details and recurrence tracking for errors with a recognized stack trace .",
+          "Verify that no unexpected messages or errors appear in Cloud Logging or Error Reporting.",
+          "Errors are grouped by message across revisions, services, and platforms."
+        ]
+      },
+      {
+        "title": "Configure IAP for Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Out-of-org access errors The following are errors you might encounter when configuring access for users outside of your organization.",
+          "For issues with enabling IAP for Cloud Run, see Troubleshooting errors .",
+          "To save the user configuration, click Save . gcloud To add or remove access to a Cloud Run service for individual users or groups, run one of the following commands: To add access: gcloud iap web add-iam-policy-binding \\ --member = user: USER EMAIL \\ --role = roles/iap.httpsResourceAccessor \\ --region = REGION \\ --resource-type = cloud-run \\ --service = SERVICE NAME To remove access: gcloud iap web remove-iam-policy-binding \\ --member = user: USER EMAIL \\ --role = roles/iap.httpsResourceAccessor \\ --region = REGION \\ --resource-type = cloud-run \\ --service = SERVICE NAME To view access: gcloud iap web get-iam-policy \\ --region = REGION \\ --resource-type = cloud-run \\ --service = SERVICE NAME Replace the following: USER EMAIL : the user's email address."
+        ]
+      },
+      {
+        "title": "End user authentication for Cloud Run tutorial \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/identity-platform",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The server extracts the Identity Platform uid for that user. \"\"\" @wraps ( func ) def decorated function ( args : a , kwargs : a ) - > a : header = request . headers . get ( \"Authorization\" , None ) if header : token = header . split ( \" \" )[ 1 ] try : decoded token = firebase admin . auth . verify id token ( token ) except Exception as e : logger . exception ( e ) return Response ( status = 403 , response = f \"Error with authentication: { e } \" ) else : return Response ( status = 401 ) request . uid = decoded token [ \"uid\" ] return func ( args , kwargs ) return decorated function Java / Extract and verify Id Token from header / private String authenticateJwt ( Map<String , String > headers ) { String authHeader = ( headers . get ( \"authorization\" ) != null ) ? headers . get ( \"authorization\" ) : headers . get ( \"Authorization\" ); if ( authHeader != null ) { String idToken = authHeader . split ( \" \" ) [ 1 ] ; // If the provided ID token has the correct format, is not expired, and is // properly signed, the method returns the decoded ID token try { FirebaseToken decodedToken = FirebaseAuth . getInstance (). verifyIdToken ( idToken ); String uid = decodedToken . getUid (); return uid ; } catch ( FirebaseAuthException e ) { logger . error ( \"Error with authentication: \" + e . toString ()); throw new ResponseStatusException ( HttpStatus .",
+          "For an implementation example, refer to Stackdriver Error Reporting library .",
+          "Node.js const firebase = require ( 'firebase-admin' ); // Initialize Firebase Admin SDK firebase . initializeApp (); // Extract and verify Id Token from header const authenticateJWT = ( req , res , next ) = > { const authHeader = req . headers . authorization ; if ( authHeader ) { const token = authHeader . split ( ' ' )[ 1 ]; // If the provided ID token has the correct format, is not expired, and is // properly signed, the method returns the decoded ID token firebase . auth () . verifyIdToken ( token ) . then ( decodedToken = > { const uid = decodedToken . uid ; req . uid = uid ; next (); }) . catch ( err = > { req . logger . error ( Error with authentication: ${ err } ); return res . sendStatus ( 403 ); }); } else { return res . sendStatus ( 401 ); } }; Python def jwt authenticated ( func : Callable [ ... , int ]) - > Callable [ ... , int ]: \"\"\"Use the Firebase Admin SDK to parse Authorization header to verify the user ID token."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2.Condition",
+      "iam.gserviceaccount.com",
+      "iap.httpsResourceAccessor"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/securing/identity-aware-proxy-cloud-run",
+        "https://docs.cloud.google.com/run/docs/tutorials/identity-platform"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

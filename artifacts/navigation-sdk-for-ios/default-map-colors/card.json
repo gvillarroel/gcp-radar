@@ -1,0 +1,115 @@
+{
+  "feature_name": "Default map colors",
+  "feature_slug": "default-map-colors",
+  "summary": "The SDK's default map colors were updated to match the newer Google Maps app color palette.",
+  "extended_definition": "The SDK's default map colors were updated to match the newer Google Maps app color palette.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Navigation SDK overview \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How to use the Navigation SDK The steps below cover a typical use case scenario for using the Navigation SDK: 1 Get set up Create a Google Cloud project, add the Maps and Navigation SDKs to your API, and set up your Xcode project.",
+          "The Navigation SDK requires the Maps SDK and allows for either the Google Navigation experience or building a custom navigation experience using its two main components: Map Layer and Navigation Experience.",
+          "Page Summary outlined flag The Navigation SDK enables seamless integration of Google Maps turn-by-turn navigation into your mobile applications, offering UI customization and advanced route configuration."
+        ]
+      },
+      {
+        "title": "Modify the navigation UI \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "Swift class MyCustomView : UIView , GMSNavigationAccessoryView { … func heightForAccessoryViewConstrained ( to size : CGSize , on mapView : GMSMapView ) - > CGFloat { // viewHeight gets calculated as the height your view needs. return viewHeight } … } let customView = MyCustomView (...) mapView . setHeaderAccessory ( customView ) // At some later point customView changes size. mapView . invalidateLayout ( forAccessoryView : customView ) // Remove the custom header accessory view. mapView . setHeaderAccessory ( nil ) Objective-C @interface MyCustomView : UIView < GMSNavigationAccessoryView > … @end @implementation MyCustomView … - ( CGFloat ) heightForAccessoryViewConstrainedToSize : ( CGSize ) size onMapView : ( GMSMapView ) mapView { // viewHeight gets calculated as the height your view needs. return viewHeight ; } … @end MyCustomView customView = [[ MyCustomView alloc ] init … ]; [ mapView setHeaderAccessoryView : customView ]; // At some later point customView changes size. [ mapView invalidateLayoutForAccessoryView : customView ]; // Remove the custom header accessory view. [ mapView setHeaderAccessoryView : nil ]; Normal and low-light modes The GMSNavigatorListener.didChangeSuggestedLightingMode listener method is triggered when estimated lighting conditions are updated.",
+          "Swift mapView . settings . scrollGestures = false mapView . settings . zoomGestures = false Objective-C mapView . settings . scrollGestures = NO ; mapView . settings . zoomGestures = NO ; Position controls and UI elements You can position controls and other UI elements relative to the position of the navigation header and footer, by using the following properties: navigationHeaderLayoutGuide navigationFooterLayoutGuide bottomTrailingButtonsLayoutGuide Note: To make sure that custom UI elements don't block any prompts that appear in the Navigation SDK, make sure that custom UI elements are implemented in a subview of the mapView , not in the root view.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[\"The content details UI controls and accessories for map navigation."
+        ]
+      },
+      {
+        "title": "Customize map styles \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you associate styles with maps in the Navigation SDK, the styles apply to both road and navigation maps: Light mode styles in the Cloud Console apply to both light mode road maps and daylight navigation maps.",
+          "Policies and use When customizing map styles in the Navigation SDK, you must adhere to the policies regarding acceptable modifications to the navigation UI.",
+          "Define map styles The first step in customizing map styles for the Navigation SDK is creating a map style and associating it with a map ID."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "source_id": "site-docs-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to enable Metal at https://developers.google.com/maps/documentation/ios-sdk/config#use-metal Declaration Swift func featureLayer ( of featureType : FeatureType ) -> FeatureLayer < PlaceFeature > Objective-C - ( nonnull GMSFeatureLayer < GMSPlaceFeature > ) featureLayerOfFeatureType : ( nonnull GMSFeatureType ) featureType ; -datasetFeatureLayerOfDatasetID: Returns a dataset feature layer of the specified dataset.",
+          "GMSMapView @interface GMSMapView : UIView This is the main class of the Google Maps SDK for iOS and is the entry point for all methods related to the map.",
+          "If guidance is inactive, this call is a NO-OP instruction. @note: If the map view is short, the SDK hides the accessory view due to limited space."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/overview",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/customize-map-styles",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:46.841Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios"
+}

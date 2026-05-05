@@ -1,0 +1,125 @@
+{
+  "feature_name": "plv8 extension",
+  "feature_slug": "plv8-extension",
+  "summary": "The plv8 extension is generally available for using JavaScript as a procedural language in PostgreSQL.",
+  "extended_definition": "The plv8 extension is generally available for using JavaScript as a procedural language in PostgreSQL.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/features"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud SQL for PostgreSQL features \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported PostgreSQL procedural languages for Cloud SQL Cloud SQL supports the PL/pgSQL SQL procedural language .",
+          "Supported languages for Cloud SQL for PostgreSQL You can use Cloud SQL with App Engine applications running in the flexible environment that are written in: C# Go Java Node.js PHP Python Ruby You can also use Cloud SQL with external applications using the standard PostgreSQL client-server protocol.",
+          "Unsupported features for Cloud SQL for PostgreSQL Any feature that requires SUPERUSER privileges with the following exceptions: You can use the CREATE EXTENSION statement only for supported extensions ."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connect to a Cloud SQL instance You can connect to a Cloud SQL instance with Private Service Connect enabled by using an internal IP address, a DNS record, the Cloud SQL Auth Proxy, the Cloud SQL Language Connectors, or other Google Cloud applications.",
+          "Connect using the Cloud SQL Language Connectors The Cloud SQL Language Connectors are libraries that provide secure access to a Cloud SQL instance with Private Service Connect enabled without a need for authorized networks or for configuring SSL.",
+          "However, the endpoint might not be created because of reasons such as the specified network doesn't exist, there's no valid service connection policy, or there aren't any available IP addresses."
+        ]
+      },
+      {
+        "title": "\"Build context sets using Gemini CLI \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli",
+        "source_id": "site-iam-reference",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "Verify that the MCP toolbox and the database enrichment extension are ready to use: /mcp reload Run the /generate targeted templates command: /generate targeted templates Enter the natural language query that you want to add to the query template.",
+          "To update the DB Context Enrichment extension, run the following command: gemini extensions update mcp-db-context-enrichment To update the DB Context Enrichment extension or to replace the GEMINI API KEY , run the following command: gemini extensions config mcp-db-context-enrichment GEMINI API KEY Replace GEMINI API KEY with your Gemini API key.",
+          "To install the DB Context Enrichment extension, follow these steps: Install the DB Context Enrichment Gemini CLI extension: gemini extensions install https://github.com/GoogleCloudPlatform/db-context-enrichment Note: The extension requires a Gemini API key at installation to authenticate with the Gemini API and enable context generation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "github.com",
+      "tools.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/features",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/build-context-gemini-cli"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

@@ -1,0 +1,142 @@
+{
+  "feature_name": "Serverless VPC Access connector updates",
+  "feature_slug": "serverless-vpc-access-connector-updates",
+  "summary": "Serverless VPC Access connector updates let you edit connector machine type and minimum and maximum instance counts; Serverless VPC Access connector updates let you edit connector machine type and minimum and maximum instance counts.",
+  "extended_definition": "Serverless VPC Access connector updates let you edit connector machine type and minimum and maximum instance counts; Serverless VPC Access connector updates let you edit connector machine type and minimum and maximum instance counts.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to Serverless VPC Access Select the connector you want to edit and click Edit .",
+          "Go to Serverless VPC Access Select the connector you want to edit and click Edit .",
+          "Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource \"google project service\" \"vpcaccess-api\" { project = var.project id # Replace this with your project ID in quotes service = \"vpcaccess.googleapis.com\" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-serverless-network\" mtu = 1460 subnets = [ { subnet name = \"serverless-subnet\" subnet ip = \"10.10.10.0/28\" subnet region = \"us-central1\" } ] } module \"serverless-connector\" { source = \"terraform-google-modules/network/google//modules/vpc-serverless-connector-beta\" version = \" > 16.0\" project id = var.project id vpc connectors = [{ name = \"central-serverless\" region = \"us-central1\" subnet name = module.test-vpc-module.subnets[\"us-central1/serverless-subnet\"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = \"central-serverless2\" region = \"us-central1\" network = module.test-vpc-module.network name ip cidr range = \"10.10.11.0/28\" subnet name = null machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Configure your service to use a connector After you have created a Serverless VPC Access connector, you must configure each service in your App Engine app that you want to connect to your VPC network."
+        ]
+      },
+      {
+        "title": "\"Ingress settings \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note that routing all outbound requests to your VPC network increases the amount of egress handled by the Serverless VPC Access connector and can incur charges .",
+          "By default, only requests to internal IP addresses and internal DNS names are routed through a Serverless VPC Access connector.",
+          "Using the urlfetch library ignores egress settings, and requests will not route through a Serverless VPC Access connector."
+        ]
+      },
+      {
+        "title": "\"Communicating between your services \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services",
+        "source_id": "site-docs-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Route the traffic over a Serverless VPC Access connector : For each App Engine version sending private traffic to other app endpoints, attach the version to a Serverless VPC Access connector belonging to one of the Google Cloud project's own networks, not a Shared VPC network.",
+          "Configure the client app to send all-traffic through the Serverless VPC Access connector, instead of configuring requests to use the private.googleapis.com IP range.",
+          "In the standard environment, attach each client version to a Serverless VPC Access connector on the Shared VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.allowlistNetworks",
+      "custom.defaultNetworkConstraint",
+      "module.network",
+      "module.subnets",
+      "module.test",
+      "private.googleapis.com",
+      "resource.network",
+      "service.vpcaccess",
+      "var.host",
+      "var.project",
+      "vpcaccess.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/ingress-settings",
+        "https://docs.cloud.google.com/appengine/docs/standard/communicating-between-services"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.077Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js"
+}

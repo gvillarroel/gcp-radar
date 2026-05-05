@@ -1,0 +1,121 @@
+{
+  "feature_name": "Multi-repository Git sync",
+  "feature_slug": "multi-repository-git-sync",
+  "summary": "Anthos Config Management can sync from multiple Git repositories as a generally available capability; Anthos Config Management can sync from multiple Git repositories as a preview capability.",
+  "extended_definition": "Anthos Config Management can sync from multiple Git repositories as a generally available capability; Anthos Config Management can sync from multiple Git repositories as a preview capability.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/multiple-environments-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Sync configs from a Git repository \\_|\\_ Config Sync \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The package details page provides an overview of all synced resources, including the resource type and which namespace the resource is synced to. (Optional) Explore the sample repository The configurations applied to your cluster are defined in the /config-sync-quickstart/multirepo/ repository.",
+          "In this example, the RepoSync object points to the config-sync-quickstart/multirepo/ namespaces/gamestore directory within the same repository, but in a real-world scenario, you could point to a different Git repository.",
+          "In the Repository URL field, enter https://github.com/GoogleCloudPlatform/anthos-config-management-samples ."
+        ]
+      },
+      {
+        "title": "\"Using Config Sync in multiple environments with automated rendering \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/multiple-environments-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 150,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Verify your configuration In this section you check to make sure that your clusters are syncing to the configs in your repository: To check the state of your Config Sync installation, run the nomos status command : nomos status You should see that both your dev and prod clusters are now synced to their respective repos: gke DEV PROJECT ID us-central1-c dev -------------------- <root> https://github.com/GoogleCloudPlatform/anthos-config-management-samples/multi-environments-kustomize/config-source/overlays/dev@main SYNCED 8f2e196f Managed resources: NAMESPACE NAME STATUS clusterrole.rbac.authorization.k8s.io/pod-creator Current namespace/default Current namespace/foo Current default rolebinding.rbac.authorization.k8s.io/pod-creators Current foo serviceaccount/foo-ksa-dev Current gke PROD PROJECT ID us-central1-c prod -------------------- <root> https://github.com/GoogleCloudPlatform/anthos-config-management-samples/multi-environments-kustomize/config-source/overlays/prod@main SYNCED c91502ee Managed resources: NAMESPACE NAME STATUS clusterrole.rbac.authorization.k8s.io/pod-creator Current namespace/default Current namespace/foo Current default rolebinding.rbac.authorization.k8s.io/pod-creators Current foo serviceaccount/foo-ksa-prod Current ``` Use kubectl to switch to the dev cluster: kubectl config use-context \"gke ${ DEV PROJECT } ${ DEV CLUSTER ZONE } dev\" To verify that the resources are synced, get namespaces.",
+          "Clone the sample repository: git clone https://github.com/GoogleCloudPlatform/anthos-config-management-samples.git Navigate to the folder that contains the resources that you need for this tutorial: cd anthos-config-management-samples/multi-environments-kustomize/ To run the scripts used in this tutorial, set the following variables: export DEV PROJECT = \" DEV PROJECT ID \" export PROD PROJECT = \" PROD PROJECT ID \" export DEV CLUSTER ZONE = \" DEV CLUSTER ZONE \" export PROD CLUSTER ZONE = \" PROD CLUSTER ZONE \" export CM CONFIG DIR = \"config-sync-rendering\" Replace the following: DEV PROJECT ID : the project ID from the Google Cloud project that you want you use as your dev project PROD PROJECT ID : the project ID from the Google Cloud project that you want you use as your prod project DEV CLUSTER ZONE : the Compute Engine zone that you want to create your dev cluster in.",
+          "You should see the foo namespace appear. kubectl get namespace Example output: NAME STATUS AGE config-management-monitoring Active 9m38s config-management-system Active 9m38s default Active 47h foo Active 9m5s kube-node-lease Active 47h kube-public Active 47h kube-system Active 47h resource-group-system Active 9m30s You have now set up automated config rendering for a dev and prod environment, across multiple Google Cloud projects and environments."
+        ]
+      },
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Helm root-sync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : ROOT SYNC NAME namespace : config-management-system spec : sourceType : helm sourceFormat : unstructured helm : repo : ROOT HELM REPOSITORY chart : HELM CHART NAME version : HELM CHART VERSION releaseName : HELM RELEASE NAME namespace : HELM RELEASE NAMESPACE values : foo : bar : VALUE 1 baz : - qux : VALUE 2 xyz : VALUE 3 includeCRDs : HELM INCLUDE CRDS auth : ROOT AUTH TYPE gcpServiceAccountEmail : ROOT EMAIL secretRef : name : ROOT SECRET NAME caCertSecretRef : name : ROOT CA CERT SECRET NAME Replace the following: ROOT SYNC NAME : add the name of your RootSync object.",
+          "Helm root-sync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : ROOT SYNC NAME namespace : config-management-system spec : sourceType : helm sourceFormat : unstructured helm : repo : ROOT HELM REPOSITORY chart : HELM CHART NAME version : HELM CHART VERSION releaseName : HELM RELEASE NAME namespace : HELM RELEASE NAMESPACE values : foo : bar : VALUE 1 baz : - qux : VALUE 2 xyz : VALUE 3 includeCRDs : HELM INCLUDE CRDS auth : ROOT AUTH TYPE gcpServiceAccountEmail : ROOT EMAIL secretRef : name : ROOT SECRET NAME caCertSecretRef : name : ROOT CA CERT SECRET NAME Replace the following: ROOT SYNC NAME : add the name of your RootSync object.",
+          "Git root-sync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : ROOT SYNC NAME namespace : config-management-system spec : sourceType : git sourceFormat : unstructured git : repo : ROOT REPOSITORY revision : ROOT REVISION branch : ROOT BRANCH dir : ROOT DIRECTORY auth : ROOT AUTH TYPE gcpServiceAccountEmail : ROOT EMAIL secretRef : name : ROOT SECRET NAME noSSLVerify : ROOT NO SSL VERIFY caCertSecretRef : name : ROOT CA CERT SECRET NAME Replace the following: ROOT SYNC NAME : add the name of your RootSync object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clusterrole.rbac.authorization.k8s.io",
+      "configsync.gke.io",
+      "github.com",
+      "rolebinding.rbac.authorization.k8s.io",
+      "samples.git",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/multiple-environments-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/multiple-environments-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/multiple-environments-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-multi-repo",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/multiple-environments-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

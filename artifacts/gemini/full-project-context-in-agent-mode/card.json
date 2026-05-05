@@ -1,0 +1,162 @@
+{
+  "feature_name": "Full project context in agent mode",
+  "feature_slug": "full-project-context-in-agent-mode",
+  "summary": "Agent mode can analyze an entire codebase and request files and folders as needed to produce more accurate code suggestions and refactorings.",
+  "extended_definition": "Agent mode can analyze an entire codebase and request files and folders as needed to produce more accurate code suggestions and refactorings.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent mode overview \\_|\\_ Gemini for Google Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "source_id": "site-docs-root",
+        "final_score": 267,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "IntelliJ The following methods of getting context are usually available to Gemini Code Assist in agent mode: Information in your IDE project including your files, indexed symbols and usage of symbols in your project.",
+          "You can see the context available to the agent in the context drawer in the agent mode chat prompt area.",
+          "VS Code The following methods of getting context are usually available to Gemini Code Assist in agent mode: Information in your IDE workspace."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root-2",
+        "final_score": 251,
+        "relevance": "",
+        "evidence_snippets": [
+          "VS Code You can use the following built-in Gemini CLI commands in agent mode: /tools : Displays a list of tools that are available in your agent mode session. /mcp : Lists configured Model Context Protocol (MCP) servers, their connection status, server details, and available tools. /deploy : Deploys a web application to Cloud Run.",
+          "Configure tools for agent mode Tools are a broad category of services that an agent can use for context and actions in its response to your prompt.",
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode."
+        ]
+      },
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default\\nWHERE\\n JSON VALUE(labels, '$.user id') is not NULL\\n AND (\\n JSON VALUE(json payload, '$.chatExposure.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeExposure.originalRequestId') is not NULL\\n )\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\nevent date\\nORDER BY\\nevent date\\n\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"xPos\" : 24 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Acceptance Rate by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"acceptance rate\" } ], \"plotType\" : \"LINE\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\nexposures date,\\nacceptances count / exposures count as acceptance rate\\nFROM\\n(\\nSELECT\\nCOUNT (DISTINCT JSON VALUE(json payload, '$.codeAcceptance.originalRequestId')) as acceptances count, CAST(timestamp AS DATE) AS acceptances date\\nFROM\\n CENTRALIZED PROJECT ID .global.",
+          "Default\\nWHERE\\n JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\n acceptances date\\nORDER BY\\n acceptances date\\n\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"yPos\" : 32 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Lines of Code Accepted by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"line count day\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"line count day\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"lines count\" } ], \"plotType\" : \"STACKED BAR\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\n SUM(lines) as lines count,\\n CAST(max timestamp AS DATE) AS line count day\\nFROM\\n(\\n SELECT\\n JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') as request id,\\n MAX(CAST(JSON VALUE(json payload, '$.codeAcceptance.linesCount') AS INT)) as lines,\\n MAX(timestamp) as max timestamp\\n FROM\\n CENTRALIZED PROJECT ID .global.",
+          "Default\\nWHERE\\nJSON VALUE(json payload, '$.codeExposure.originalRequestId') is not NULL\\nAND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\nAND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\nexposures date\\n) as exposures\\nON\\nexposures.exposures date = acceptances.acceptances date\\nORDER BY\\nexposures date ASC\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"yPos\" : 16 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Code Suggestions by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"exposures count\" } ], \"plotType\" : \"STACKED BAR\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\n COUNT (DISTINCT JSON VALUE(json payload, '$.codeExposure.originalRequestId')) as exposures count, CAST(timestamp AS DATE) AS exposures date\\nFROM\\n CENTRALIZED PROJECT ID .global."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.codeToolsSettings.settingBindings.patch \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch",
+        "source_id": "site-api-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Gemini for Google Cloud API and references Send feedback Method: projects.locations.codeToolsSettings.settingBindings.patch Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request PATCH https://cloudaicompanion.googleapis.com/v1/{settingBinding.name=projects/ /locations/ /codeToolsSettings/ /settingBindings/ } The URL uses gRPC Transcoding syntax.",
+          "If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "acceptances.acceptances",
+      "bindings.mcp.cloudflare.com",
+      "cloudaicompanion.googleapis.com",
+      "com.google.cloud.geminidataanalytics.v1beta",
+      "instance.com",
+      "mcp.json",
+      "nexposures.exposures",
+      "observability.mcp.cloudflare.com",
+      "projects.locations.codeToolsSettings.settingBindings",
+      "projects.locations.codeToolsSettings.settingBindings.patch",
+      "resource.labels",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/agent-mode",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/api/reference/rest/v1/projects.locations.codeToolsSettings.settingBindings/patch"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.293Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

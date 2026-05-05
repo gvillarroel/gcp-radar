@@ -1,0 +1,130 @@
+{
+  "feature_name": "Raw log search filter by parsing status",
+  "feature_slug": "raw-log-search-filter-by-parsing-status",
+  "summary": "Raw log search can filter results by parsing status.",
+  "extended_definition": "Raw log search can filter results by parsing status.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "Refine the search results Use the Search page features to filter and refine results, as an alternative to modifying and rerunning the search.",
+          "You can filter and refine the search results to display the older results, as an alternative to modifying and rerunning the search.",
+          "Note: After results load, you can apply filters to refine the data without rerunning the search."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample response { \"rules\": [ { \"ruleId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f\", \"versionId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f@v 1602631093 146879000\", \"ruleName\": \"SampleRule\", \"metadata\": { \"description\": \"Sample Description of the latest version of the Rule\", \"author\": \"author@example.com\" }, \"ruleText\": \"rule SampleRule { // Multi event rule to detect logins from a single user for // multiple cities within a 5 minute window. meta: description = \\\"Sample Description of the latest version of the Rule\\\" author = \\\"author@example.com\\\" events: $e.metadata.event type = \\\"USER LOGIN\\\" $e.principal.user.userid = $user $e.principal.location.city = $city match: $user over 5m condition: #city > 1 } \", \"liveRuleEnabled\": true, \"versionCreateTime\": \"2020-10-13T23:18:13.146879Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"MULTI EVENT\", \"lastAlertStatusChangeTime\": \"2020-10-13T23:18:13.146879Z\" \"inputsUsed\": { \"usesUdm\": \"true\", }, }, { \"ruleId\": \"ru 1971c2ac-8d5b-41aa-bb30-f95d220e9439\", \"versionId\": \"ru 1971c2ac-8d5b-41aa-bb30-f95d220e9439@v 1598398482 260223000\", \"ruleName\": \"SampleRule2\", \"metadata\": { \"description\": \"Sample Description of the latest version of the Rule\", \"author\": \"author2@example.com\" }, \"ruleText\": \"rule SampleRule2 { meta: description = \\\"Sample Description of the latest version of the Rule\\\" author = \\\"author2@example.com\\\" events: // Single event rule to generate detections for network events involving example.com $event.network.dns.questions.name = \\\"example.com\\\" condition: $event } \", \"versionCreateTime\": \"2020-08-25T23:34:42.260223Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"SINGLE EVENT\", \"lastAlertStatusChangeTime\": \"2020-08-25T23:34:42.260223Z\" \"inputsUsed\": { \"usesUdm\": \"true\", }, } ] } ListRuleVersions List all versions of a specific rule.",
+          "Sample response { \"rules\": [ { \"ruleId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f\", \"versionId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f@v 1602631093 146879000\", \"ruleName\": \"SampleRule\", \"metadata\": { \"description\": \"Sample Description of the latest version of the Rule\", \"author\": \"author@example.com\" }, \"ruleText\": \"rule SampleRule { // Multi event rule to detect logins from a single user for // multiple cities within a 5 minute window. meta: description = \\\"Sample Description of the latest version of the Rule\\\" author = \\\"author@example.com\\\" events: $e.metadata.event type = \\\"USER LOGIN\\\" $e.principal.user.userid = $user $e.principal.location.city = $city match: $user over 5m condition: #city > 1 } \", \"liveRuleEnabled\": true, \"versionCreateTime\": \"2020-10-13T23:18:13.146879Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"MULTI EVENT\", \"lastAlertStatusChangeTime\": \"2020-10-13T23:18:13.146879Z\", \"inputsUsed\": { \"usesUdm\": \"true\", }, }, { \"ruleId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f\", \"versionId\": \"ru e6abfcb5-1b85-41b0-b64c-695b3250436f@v 1602519130 121984000\", \"ruleName\": \"SampleRule\", \"metadata\": { \"description\": \"Sample Description of an older version of the Rule\", \"author\": \"author@example.com\" }, \"ruleText\": \"rule SampleRule { meta: description = \\\"Sample Description of an older version of the Rule\\\" author = \\\"author@example.com\\\" events: // Single event rule that will generate lots of detections related to DNS events $event.metadata.event type = \\\"NETWORK DNS\\\" condition: $event } \", \"versionCreateTime\": \"2020-10-12T16:12:10.121984Z\", \"compilationState\": \"SUCCEEDED\", \"ruleType\": \"SINGLE EVENT\", \"lastAlertStatusChangeTime\": \"2020-10-12T16:12:10.121984Z\", \"inputsUsed\": { \"usesUdm\": \"true\", }, } ] } RunRetrohunt Initiate a retrohunt for the specified rule.",
+          "Request Detections for the latest version of a rule with a given rule identifier: GET https://backstory.googleapis.com/v2/detect/rules/{ruleId}/detections Detections for a specific version of a rule with a given version identifier: GET https://backstory.googleapis.com/v2/detect/rules/{versionId}/detections Detections for the all versions of a rule with a given rule identifier: GET https://backstory.googleapis.com/v2/detect/rules/{ruleId}@-/detections Detections for all versions of all rules: GET https://backstory.googleapis.com/v2/detect/rules/-/detections URL parameters Parameter Name Type Required Description alert state enum Optional Filter detections on if they are \"ALERTING\" or \"NOT ALERTING\" detection start time (deprecated) string Optional Time to begin returning detections, filtering on a detection's \"detectionTime\"."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-api-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Centralized Investigation: The IOC Matches page serves as the central hub for viewing matched IOCs, filtering results (by Type, Priority, Status, Source: Mandiant, etc.), and drilling down into event details, UDM context, threat intelligence rationale, and associations.",
+          "SIEM Log Searching and Investigation : During a CDIR investigation, or on an ad-hoc basis, analysts can use either natural language syntax, Yara-L syntax, or raw log searching to surface information in various logs ingested into Google SecOps related to cloud infrastructure and services.",
+          "Google SecOps provides Cloud Detection Investigation and Response (CDIR), Case Management, SIEM log searching and investigation, Cloud Asset Inventory collection for Entity Graph Enrichment, and the ability to automate common SOC workflows using the SOAR component of Google SecOps."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backstory.googleapis.com",
+      "e.metadata.event",
+      "e.principal.location.city",
+      "e.principal.user.userid",
+      "event.metadata.event",
+      "event.network.dns.questions.name",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

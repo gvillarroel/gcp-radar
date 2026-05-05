@@ -1,0 +1,148 @@
+{
+  "feature_name": "Multiline postgres.log entries in Cloud Logging",
+  "feature_slug": "multiline-postgres-log-entries-in-cloud-logging",
+  "summary": "Cloud SQL for PostgreSQL records multiline postgres.log messages as a single Cloud Logging entry.",
+  "extended_definition": "Cloud SQL for PostgreSQL records multiline postgres.log messages as a single Cloud Logging entry.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+      "https://docs.cloud.google.com/sql/docs/postgres/audit-logging",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "Relevant log files include: cloudsql.googleapis.com/postgres.log If Cloud Audit Logs is enabled and you have the required permissions to view them, cloudaudit.googleapis.com/activity may also be available.",
+          "To download the logs as JSON: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" \\ downloaded-log.json To download the logs as TEXT: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" jq -rnc --stream 'fromstream(1 truncate stream(inputs)) \\ .textPayload' \\ --order = asc downloaded-log.txt Query logs are not found in PostgreSQL logs.",
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances Flags High availability Import and export Integrate with Vertex AI Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status."
+        ]
+      },
+      {
+        "title": "Debugging connection issues \\_|\\_ Cloud SQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "source_id": "site-docs-root",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The limit flag is an optional parameter that indicates the maximum number of entries to return. gcloud logging read \"projects/ PROJECT ID /logs/cloudsql.googleapis.com/mysql-general.log\" \\ --limit = 10 gcloud logging read \"projects/ PROJECT ID /logs/cloudsql.googleapis.com/postgres.log\" \\ --limit = 10 Private IP addresses Connections to a Cloud SQL instance using a private IP address are automatically authorized for RFC 1918 address ranges .",
+          "For example: cloudsql.googlapis.com/mysql-general.log cloudsql.googleapis.com/mysql.err cloudsql.googleapis.com/postgres.log Severity: Select a log level.",
+          "To view logs for your Cloud SQL instance log entries: Console In the Google Cloud console, go to the Cloud Logging page."
+        ]
+      },
+      {
+        "title": "Cloud SQL for PostgreSQL audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/audit-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL PostgreSQL Guides Send feedback Cloud SQL for PostgreSQL audit logging Stay organized with collections Save and categorize content based on your preferences.",
+          "MySQL PostgreSQL SQL Server This document describes audit logging for Cloud SQL.",
+          "For more information about Cloud Audit Logs, see the following: Types of audit logs Audit log entry structure Storing and routing audit logs Cloud Logging pricing summary Enable Data Access audit logs Service name Cloud SQL audit logs use the service name cloudsql.googleapis.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudsql.googlapis.com",
+      "cloudsql.googleapis.com",
+      "general.log",
+      "log.json",
+      "log.txt",
+      "mysql.err",
+      "postgres.log",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/audit-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/audit-logging"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/audit-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/debugging-connectivity",
+        "https://docs.cloud.google.com/sql/docs/postgres/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

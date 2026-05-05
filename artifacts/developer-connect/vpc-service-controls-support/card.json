@@ -1,0 +1,197 @@
+{
+  "feature_name": "VPC Service Controls support",
+  "feature_slug": "vpc-service-controls-support",
+  "summary": "Developer Connect supports VPC Service Controls.",
+  "extended_definition": "Developer Connect supports VPC Service Controls.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+      "https://docs.cloud.google.com/developer-connect/docs/connect-repo",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DeveloperConnectAsyncClient (0.5.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateAccountConnectorRequest ( parent=\"parent value\", account connector id=\"account connector id value\", account connector=account connector, ) Make the request operation = client. create account connector (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.developerconnect v1.types.CreateAccountConnectorRequest , dict]] The request object. parent str Required.",
+          "CreateGitRepositoryLinkRequest ( parent=\"parent value\", git repository link=git repository link, git repository link id=\"git repository link id value\", ) Make the request operation = client. create git repository link (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.developerconnect v1.types.CreateGitRepositoryLinkRequest , dict]] The request object.",
+          "CreateConnectionRequest ( parent=\"parent value\", connection id=\"connection id value\", connection=connection, ) Make the request operation = client. create connection (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.developerconnect v1.types.CreateConnectionRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class DeveloperConnectClient (0.5.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "source_id": "site-python-reference",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "CreateAccountConnectorRequest ( parent=\"parent value\", account connector id=\"account connector id value\", account connector=account connector, ) Make the request operation = client. create account connector (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.developerconnect v1.types.CreateAccountConnectorRequest , dict] The request object. parent str Required.",
+          "CreateGitRepositoryLinkRequest ( parent=\"parent value\", git repository link=git repository link, git repository link id=\"git repository link id value\", ) Make the request operation = client. create git repository link (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.developerconnect v1.types.CreateGitRepositoryLinkRequest , dict] The request object.",
+          "CreateConnectionRequest ( parent=\"parent value\", connection id=\"connection id value\", connection=connection, ) Make the request operation = client. create connection (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.developerconnect v1.types.CreateConnectionRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Connect to GitLab Enterprise repositories in a private network \\_|\\_ Developer\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "source_id": "site-iam-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Grant permissions to use Service Directory Complete the following steps to let Developer Connect use Service Directory, and to let Service Directory access your VPC network resource.",
+          "Note: Developer Connect also supports GitLab Community Edition.",
+          "Run the gcloud developer-connect connections create command to create a connection to GitLab Enterprise: gcloud beta developer-connect connections create CONNECTION NAME \\ --location = REGION \\ --gitlab-config-read-authorizer-credential-user-token-secret-version = projects/ PROJECT ID /secrets/ READ SECRET NAME /versions/ VERSION \\ --gitlab-config-authorizer-credential-user-token-secret-version = projects/ PROJECT ID /secrets/ API SECRET NAME /versions/ VERSION \\ --gitlab-enterprise-config-host-uri = HOST URI --gitlab-enterprise-config-webhook-secret-version = projects/ PROJECT ID /secrets/ WEBHOOK SECRET NAME /versions/ VERSION --git-proxy-config-enabled Replace the following: CONNECTION NAME : the name of your connection."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Connect a source code repository \\_|\\_ Developer Connect \\_\\",
+        "url": "https://docs.cloud.google.com/developer-connect/docs/connect-repo",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a list of all the integrations that Developer Connect supports, see Developer Connect overview .",
+          "Enable the APIs Make sure that you have the following role or roles on the project: Developer Connect Admin Check for the roles In the Google Cloud console, go to the IAM page.",
+          "Enable the APIs Make sure that you have the following role or roles on the project: Developer Connect Admin Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "devconnect.iam.gserviceaccount.com",
+      "googleapis.dev",
+      "operation.result",
+      "options.html",
+      "servicedirectory.viewer",
+      "v1.types.CreateAccountConnectorRequest",
+      "v1.types.CreateConnectionRequest",
+      "v1.types.CreateGitRepositoryLinkRequest",
+      "v1.types.UpdateAccountConnectorRequest"
+    ],
+    "missing_inventory_roles": [
+      "roles/servicedirectory.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/google-cloud-developerconnect/latest/google.cloud.developerconnect_v1.services.developer_connect.DeveloperConnectClient",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-gitlab-enterprise-private",
+        "https://docs.cloud.google.com/developer-connect/docs/connect-repo"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.682Z",
+  "source_step08_card": "data/step-08/current/products/developer-connect/card.json",
+  "product_name": "Developer Connect",
+  "product_slug": "developer-connect"
+}

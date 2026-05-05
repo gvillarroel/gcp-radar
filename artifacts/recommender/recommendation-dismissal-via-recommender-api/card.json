@@ -1,0 +1,211 @@
+{
+  "feature_name": "Recommendation dismissal via Recommender API",
+  "feature_slug": "recommendation-dismissal-via-recommender-api",
+  "summary": "Allows recommendations to be dismissed through the Recommender API.",
+  "extended_definition": "Allows recommendations to be dismissed through the Recommender API.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+      "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+      "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+      "https://docs.cloud.google.com/recommender/docs/using-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Export recommendations to BigQuery \\_|\\_ Recommender \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "source_id": "site-docs-root",
+        "final_score": 300,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This organization corresponds to the one that the export is being set up for. recommender.resources.export - Allows you to export recommendations to BigQuery The following permissions are required to export negotiated prices for cost savings recommendations: billing.resourceCosts.get at project level - Allows exporting negotiated prices for project level recommendations billing.accounts.getSpendingInformation at billing account level - Allows exporting negotiated prices for billing account level recommendations Without these permissions, cost savings recommendations will be exported with standard prices instead of negotiated prices.",
+          "To have both these permissions available, you can grant the following role: Project owner role - roles/owner There are multiple roles that contain the permission billing.resourceCosts.get to export negotiated prices for cost savings project level recommendations - you can grant any one of them: Project Owner role - roles/owner Project Viewer role - roles/viewer Project Editor role - roles/editor There are multiple roles that contain the permission billing.accounts.getSpendingInformation to export negotiated prices for cost savings billing account level recommendations - you can grant any one of them: Billing Account Administrator role - roles/billing.admin Billing Account Costs Manager role - roles/billing.costsManager Billing Account Viewer role - roles/billing.viewer You must grant the following role at the organization level: Recommendations Exporter ( roles/recommender.exporter ) role on the Google Cloud console.",
+          "Pricing Exporting recommendations to BigQuery is available to all Recommender customers based on their Recommender pricing tier ."
+        ]
+      },
+      {
+        "title": "Change risk recommendations \\_|\\_ Recommender \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "source_id": "site-api-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View the full risk assessment at: https://console.cloud.google.com/home/recommendations/view-link/projects/123456/locations/global/recommenders/google.resourcemanager.project.ChangeRiskRecommender/recommendations/reco-id-0000-0000-000000000 Do you want to continue (Y/n)? n Service account deletion The following command deletes a Service Account: gcloud alpha iam service-accounts delete example@ PROJECT ID .iam.gserviceaccount.com --recommend = yes You will see the following supported risky changes with recommendations: You are about to delete service account [example@ PROJECT ID .iam.gserviceaccount.com] Deleting this service account (SA) will delete all associated key IDs, and will prevent the account from authenticating to any Google Cloud service API.",
+          "Resource Action Surfaces Criteria used to determine resource importance Project Deletion Google Cloud console gcloud CLI Recommender API Project usage (API calls, networking traffic, and Google Cloud services usage) Billing Usage within the last 30 days Service account Deletion Google Cloud console gcloud CLI Recommender API Number of authentications Usage within the last 90 days IAM policy Change Google Cloud console gcloud CLI Recommender API Number of exercised permissions Usage within the last 90 days Belong to an important project Caution: Change risk recommendations won't recognize resources as important if they had sudden changes in their activity within less than 24 hours.",
+          "Method not visible to labels: {PUBLIC}' Make sure that the project config is set to a project that is allowlisted for using Alpha Recommender API with the following command: gcloud config set project PROJECT ID Project IAM policy binding deletion The following command deletes a Project IAM Policy Binding: gcloud alpha projects remove-iam-policy-binding PROJECT ID --member = YOUR EMAIL@DOMAIN.COM --role = roles/owner --recommend = yes You will see the following supported risky changes with recommendations: You are about to delete the role [roles/owner]."
+        ]
+      },
+      {
+        "title": "Use the API - Recommendations \\_|\\_ Recommender \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/recommender/docs/using-api",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output is similar to the following: [ { \"content\": { \"operationGroups\": [ { \"operations\": [ { \"action\": \"test\", \"path\": \"/machineType\", \"resource\": \"//compute.googleapis.com/projects/example-project/zones/us-central1-a/instances/instance-1\", \"resourceType\": \"compute.googleapis.com/Instance\", \"valueMatcher\": { \"matchesPattern\": \". zones/us-central1-a/machineTypes/n1-standard-4\" } }, { \"action\": \"replace\", \"path\": \"/machineType\", \"resource\": \"//compute.googleapis.com/projects/example-project/zones/us-central1-a/instances/instance-1\", \"resourceType\": \"compute.googleapis.com/Instance\", \"value\": \"zones/us-central1-a/machineTypes/custom-2-5120\" } ] } ] }, \"description\": \"Save cost by changing machine type from n1-standard-4 to custom-2-5120.\", \"etag\": \"\\\"280b34810bba8a1a\\\"\", \"lastRefreshTime\": \"2019-06-28T06:49:21Z\", \"name\": \"projects/32428390823/locations/us-central1-a/recommenders/google.compute.instance.MachineTypeRecommender/recommendations/a523ff7e-ed03-4143-a3a5-5b396b99cba9\", \"primaryImpact\": { ... }, \"stateInfo\": { \"state\": \"ACTIVE\" }, \"recommenderSubtype\": \"CHANGE MACHINE TYPE\" } ] Note that the returned recommendations include the following fields: A name field in the following format: projects/ PROJECT ID /locations/ LOCATION /recommenders/ RECOMMENDER ID /recommendations/ RECOMMENDATION ID where RECOMMENDATION ID uniquely identifies the recommendation An etag field that is associated with the current recommendation state.",
+          "For example: gcloud recommender recommendations list \\ --project=example-project \\ --location=us-central1-a \\ --recommender=google.compute.instance.MachineTypeRecommender \\ --format=json REST Enter the following: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: ${PROJECT}\" \\ \"https://recommender.googleapis.com/v1/projects/${PROJECT}/locations/${LOCATION}/recommenders/${RECOMMENDER}/recommendations\" For example: curl \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: example-project\" \\ \"https://recommender.googleapis.com/v1/projects/example-project/locations/us-central1-a/recommenders/google.compute.instance.MachineTypeRecommender/recommendations\" This operation outputs the current VM instance sizing recommendations in the target project as a list of Recommendation entities in the specified format.",
+          "For example: gcloud recommender recommendations mark-succeeded \\ a523ff7e-ed03-4143-a3a5-5b396b99cba9 \\ --project=example-project \\ --location=us-central1-a \\ --recommender=google.compute.instance.MachineTypeRecommender \\ --etag='\"5e3a63cccf1e0964\"' \\ --state-metadata=priority=high,tracking number=12345 \\ --format=json REST Enter the following curl -X POST \\ -H \"Content-Type: application/json\" \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"x-goog-user-project: ${PROJECT}\" \\ --data-binary @- \\ https://recommender.googleapis.com/v1/projects/${PROJECT}/locations/${LOCATION}/recommenders/${RECOMMENDER}/recommendations/ RECOMMENDATION ID : STATE CHANGE \\ << EOM { \"etag\": \" ETAG \" \"stateMetadata\": STATE METADATA } EOM where: RECOMMENDATION ID is the ID of a recommendation that you retrieved from a previous call to list recommendations."
+        ]
+      },
+      {
+        "title": "\"Class ListRecommendationsAsyncPager (2.21.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager",
+        "source_id": "site-python-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Parameters Name Description method Callable The method that was originally called, and which instantiated this pager. request google.cloud.recommender v1.types.ListRecommendationsRequest The initial request object. response google.cloud.recommender v1.types.ListRecommendationsResponse The initial response object. retry google.api core.retry.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class ListRecommendationsAsyncPager (2.21.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "If there are more pages, the aiter method will make additional ListRecommendations requests and continue to iterate through the recommendations field on the corresponding responses."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.delete",
+      "billing.accounts.getSpendingInformation",
+      "billing.admin",
+      "billing.costsManager",
+      "billing.resourceCosts.get",
+      "billing.viewer",
+      "compute.googleapis.com",
+      "console.cloud.google.com",
+      "core.retry.AsyncRetry",
+      "gcloud.alpha.iam.service",
+      "iam.gserviceaccount.com",
+      "recommender.exporter",
+      "recommender.googleapis.com",
+      "recommender.resources.export",
+      "type.googleapis.com",
+      "v1.types.ListRecommendationsRequest",
+      "v1.types.ListRecommendationsResponse"
+    ],
+    "missing_inventory_roles": [
+      "roles/billing.admin",
+      "roles/billing.costsManager",
+      "roles/billing.viewer",
+      "roles/editor",
+      "roles/owner",
+      "roles/recommender.exporter",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recommender/docs/bq-export/export-recommendations-to-bq",
+        "https://docs.cloud.google.com/recommender/docs/change-risk-recommendations",
+        "https://docs.cloud.google.com/recommender/docs/using-api",
+        "https://docs.cloud.google.com/python/docs/reference/recommender/latest/google.cloud.recommender_v1.services.recommender.pagers.ListRecommendationsAsyncPager"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.905Z",
+  "source_step08_card": "data/step-08/current/products/recommender/card.json",
+  "product_name": "Recommender",
+  "product_slug": "recommender"
+}

@@ -1,0 +1,131 @@
+{
+  "feature_name": "VPC RDMA over Falcon transport",
+  "feature_slug": "vpc-rdma-over-falcon-transport",
+  "summary": "You can create a VPC network that supports RDMA over Falcon transport for AI and HPC VM workloads using IRDMA-based instances such as H4D.",
+  "extended_definition": "You can create a VPC network that supports RDMA over Falcon transport for AI and HPC VM workloads using IRDMA-based instances such as H4D.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/overview",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can omit both flags if you want to configure only external IPv6 on subnets in this VPC network. gcloud compute networks create NETWORK \\ --subnet-mode=custom \\ [ --enable-ula-internal-ipv6 [ --internal-ipv6-range= ULA IPV6 RANGE ]] \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network.",
+          "You can omit both flags if you want to configure only external IPv6 on subnets in this VPC network. gcloud compute networks create NETWORK \\ --subnet-mode=custom \\ [ --enable-ula-internal-ipv6 [ --internal-ipv6-range= ULA IPV6 RANGE ]] \\ --bgp-routing-mode= DYNAMIC ROUTING MODE \\ --mtu= MTU Replace the following: NETWORK : a name for the VPC network.",
+          "When expanding the IPv4 range of an automatically created subnet in an auto mode VPC network (or in a custom mode VPC network that was previously an auto mode VPC network), the broadest prefix (subnet mask) you can use is /16 ."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "In addition to the automatically created subnets, you can add more subnets manually to auto mode VPC networks in regions that you choose by using IP ranges outside of 10.128.0.0/9 .",
+          "Networks that support subnets with IPv6 address ranges You can create subnets with IPv6 address ranges in a custom mode VPC network.",
+          "Google Cloud provides RDMA network profiles that let you create Virtual Private Cloud (VPC) networks that support RDMA connectivity."
+        ]
+      },
+      {
+        "title": "Virtual Private Cloud (VPC) overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "VPC networks You can think of a VPC network the same way you'd think of a physical network, except that it is virtualized within Google Cloud.",
+          "Network Connectivity Center You can use Network Connectivity Center (NCC) to connect VPC networks by using a hub and spoke connectivity model.",
+          "Shared VPC You can share a VPC network from one project (called a host project) to other projects in your Google Cloud organization."
+        ]
+      },
+      {
+        "title": "\"Change the MTU setting of a VPC network \\_|\\_ Virtual Private Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can create a new VPC network with a different MTU setting, and migrate the VMs to it to it.",
+          "There are two ways to start using a VPC network with a different MTU setting: You can change the MTU setting of an existing VPC network, which requires that you shut down all VMs in the network at the same time.",
+          "If you create new VMs, you can create them from scratch, from an existing image, or by creating a snapshot of the existing VMs and using that to populate the new persistent disks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/vpc/docs/change-mtu-vpc-network"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

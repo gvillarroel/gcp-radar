@@ -1,0 +1,174 @@
+{
+  "feature_name": "Saved query autosave",
+  "feature_slug": "saved-query-autosave",
+  "summary": "BigQuery now automatically saves changes made to saved queries.",
+  "extended_definition": "BigQuery now automatically saves changes made to saved queries.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+      "https://docs.cloud.google.com/bigquery/docs/tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 128,
+        "relevance": "",
+        "evidence_snippets": [
+          "This opens the list of job histories in a new tab: Every time you load, export, query, or copy data, BigQuery automatically creates, schedules, and runs a job that tracks the progress of the task.",
+          "Change data capture to BigQuery : replicates data from a data source to BigQuery by capturing and applying changes.",
+          "Enable the API For new projects, the BigQuery API is automatically enabled."
+        ]
+      },
+      {
+        "title": "\"Monitor health, resource utilization, and jobs \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to view all data in the operational health and resource utilization charts: To view all data in the operational health and resource utilization charts for an organization: bigquery.jobs.listExecutionMetadata or bigquery.jobs.listAll on the organization bigquery.reservationAssignments.list on the administration project used to create the reservations bigquery.capacityCommitments.list on the administration project used to create the reservations As an on-demand user, to view all data in the resource utilization charts for an organization: bigquery.jobs.listExecutionMetadata or bigquery.jobs.listAll on the organization To view operational health summary data for BigQuery table storage: bigquery.tables.get or bigquery.tables.list on the organization To view operational health and resource utilization charts at the reservation level: bigquery.reservations.list on the administration project used to create the reservations bigquery.reservationAssignments.list on the administration project used to create the reservations To view resource utilization charts at the project level: bigquery.jobs.listAll on the project You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Required roles To get the permissions that you need to view all data in the operational health and resource utilization charts, ask your administrator to grant you the following IAM roles on your organization: BigQuery Resource Viewer ( roles/bigquery.resourceViewer ) BigQuery Metadata Viewer ( roles/bigquery.metadataViewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "BigQuery gathers the metrics by querying the following INFORMATION SCHEMA views : INFORMATION SCHEMA.JOBS INFORMATION SCHEMA.JOBS TIMELINE INFORMATION SCHEMA.RESERVATIONS INFORMATION SCHEMA.TABLE STORAGE For an example query that replicates the slot usage timeline chart found in administrative resource charts, see Match slot usage behavior from administrative resource charts ."
+        ]
+      },
+      {
+        "title": "Create and use tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/tables",
+        "source_id": "site-docs-root",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function queryDestinationTable () { // Queries the U.S. given names dataset for the state of Texas // and saves results to permanent table. / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = 'my dataset'; // const tableId = 'my table'; // Create destination table reference const dataset = bigquery . dataset ( datasetId ); const destinationTable = dataset . table ( tableId ); const query = SELECT name FROM \\bigquery-public-data.usa names.usa 1910 2013\\ WHERE state = 'TX' LIMIT 100 ; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { query : query , // Location must match that of the dataset(s) referenced in the query. location : 'US' , destination : destinationTable , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); console . log ( Job ${ job . id } started. ); console . log ( Query results loaded to table ${ destinationTable . id } ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); // Identify the destination table TableId destinationTable = TableId . of ( destinationDataset , destinationTableId ); // Build the query job QueryJobConfiguration queryConfig = QueryJobConfiguration . newBuilder ( query ). setDestinationTable ( destinationTable ). build (); // Execute the query. bigquery . query ( queryConfig ); // The results are now saved in the destination table.",
+          "System . out . println ( \"Saved query ran successfully\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Saved query did not run \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.capacityCommitments.list",
+      "bigquery.jobs.listAll",
+      "bigquery.jobs.listExecutionMetadata",
+      "bigquery.metadataViewer",
+      "bigquery.reservationAssignments.list",
+      "bigquery.reservations.list",
+      "bigquery.resourceViewer",
+      "bigquery.tables.get",
+      "bigquery.tables.list",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "data.google",
+      "data.usa",
+      "dataset.default.dataset",
+      "encryption.iam.gserviceaccount.com",
+      "id.default.hex",
+      "key.crypto",
+      "key.id",
+      "member.service",
+      "names.usa",
+      "project.project.number",
+      "project.project.project",
+      "ring.id",
+      "ring.key"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.metadataViewer",
+      "roles/bigquery.resourceViewer",
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/tables",
+        "https://docs.cloud.google.com/bigquery/docs/admin-resource-charts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

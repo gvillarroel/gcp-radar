@@ -1,0 +1,92 @@
+{
+  "feature_name": "Django Spanner plugin",
+  "feature_slug": "django-spanner-plugin",
+  "summary": "Google Cloud Spanner now provides a Django plugin that enables Spanner to be used as a backend database for the Django web framework.",
+  "extended_definition": "Google Cloud Spanner now provides a Django plugin that enables Spanner to be used as a backend database for the Django web framework.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+      "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "In load tests, this model does an acceptable job of distributing the secondary index read and write load across multiple Spanner splits, as illustrated in the following diagram: Although the synthetic data used in the load test is similar to the eventual steady state of the game where Attribute values are well distributed, the game design dictates that all players start with Attribute=50 .",
+          "This document is intended for game backend engineers working on long-term state storage, and game infrastructure operators and admins who support those systems and are interested in hosting their backend database on Google Cloud.",
+          "For the example attribute used in the preceding table, new players are given a starting value of 50, and this value then changes to a value between 1 and 100 as the player advances."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.spanner (6.111.1) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner",
+        "source_id": "site-java-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "This type of error has its own subclass as it is a condition that should cause the client library to stop trying to send RPCs to the backend until the user has taken action. com. google. cloud. spanner.",
+          "This type of error has its own subclass as it is a condition that should cause the client library to stop trying to send RPCs to the backend until the user has taken action. com. google. cloud. spanner.",
+          "It can be used to re-initialize a BatchReadOnlyTransaction on different machine or process by calling BatchClient#batchReadOnlyTransaction(BatchTransactionId) . com. google. cloud. spanner."
+        ]
+      },
+      {
+        "title": "Autoscaler tool overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom metrics While the default metrics in the Autoscaler tool address most performance and scaling scenarios, there are some instances when you might need to specify your own metrics used for determining when to scale in and out.",
+          "So, when the Autoscaler tool adds or removes nodes or processing units, it needs to allow the Spanner backend sufficient time to reassign and reorganize the splits as new capacity is added or removed from instances.",
+          "The formula to calculate the new number of nodes or processing units is as follows: newSize = currentSize currentUtilization / utilizationThreshold Direct Direct scaling provides an immediate increase in capacity."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.spanner"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/autoscaler-tool-overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

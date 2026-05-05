@@ -1,0 +1,213 @@
+{
+  "feature_name": "Project name filtering during authorization",
+  "feature_slug": "project-name-filtering-during-authorization",
+  "summary": "The Discovery client can filter project names during authorization in Migration Center.",
+  "extended_definition": "The Discovery client can filter project names during authorization in Migration Center.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+      "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+      "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+      "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Method: projects.locations.discoveryClients.create \\_|\\_ Migration Center\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "source_id": "site-api-reference",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP request POST https://migrationcenter.googleapis.com/v1/{parent=projects/ /locations/ }/discoveryClients The URL uses gRPC Transcoding syntax.",
+          "It will become the last component of the discovery client name.",
+          "Home Documentation Migration Migration Center Reference Send feedback Method: projects.locations.discoveryClients.create Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.discoveryClients \\_|\\_ Migration Center\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "source_id": "site-api-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Methods create Creates a new discovery client. delete Deletes a discovery client. get Gets the details of a discovery client. list Lists all the discovery clients in a given project and location. patch Updates a discovery client. send Heartbeat Sends a discovery client heartbeat.",
+          "Full name of the source object associated with this discovery client. service Account string Required.",
+          "Home Documentation Migration Migration Center Reference Send feedback REST Resource: projects.locations.discoveryClients Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Discovery client data collection and security \\_|\\_ Migration Center \\_\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Security considerations Authentication and authorization Communication with target machines The discovery client uses secure channels to authenticate and communicate with target machines.",
+          "Communication with Google Cloud Registered discovery clients communicate with Google Cloud Migration Center during their normal operation.",
+          "Mitigation strategies The discovery client provides a mechanism to prevent collection of specific servers during specific hours."
+        ]
+      },
+      {
+        "title": "\"Class MigrationCenterAsyncClient (0.4.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "For instance: service Foo { rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty); } error frame path error frame path ( project : str , location : str , source : str , error frame : str ) - > str Returns a fully-qualified error frame string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "CreateImportDataFileRequest ( parent=\"parent value\", import data file id=\"import data file id value\", import data file=import data file, ) Make the request operation = client. create import data file (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateImportDataFileRequest , dict]] The request object.",
+          "CreateReportConfigRequest ( parent=\"parent value\", report config id=\"report config id value\", report config=report config, ) Make the request operation = client. create report config (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.migrationcenter v1.types.CreateReportConfigRequest , dict]] The request object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "core.retry",
+      "migrationcenter.googleapis.com",
+      "projects.locations.assets",
+      "projects.locations.assets.patch",
+      "projects.locations.discoveryClients",
+      "projects.locations.discoveryClients.create",
+      "v1.types.CreateImportDataFileRequest",
+      "v1.types.CreateReportConfigRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients/create",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/projects.locations.discoveryClients",
+        "https://docs.cloud.google.com/migration-center/docs/discovery-client-data-and-security",
+        "https://docs.cloud.google.com/python/docs/reference/migrationcenter/latest/google.cloud.migrationcenter_v1.services.migration_center.MigrationCenterAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:46.131Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center"
+}

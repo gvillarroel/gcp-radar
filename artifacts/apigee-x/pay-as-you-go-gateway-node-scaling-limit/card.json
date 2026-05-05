@@ -1,0 +1,130 @@
+{
+  "feature_name": "Pay-as-you-go gateway node scaling limit",
+  "feature_slug": "pay-as-you-go-gateway-node-scaling-limit",
+  "summary": "The Apigee pay-as-you-go pricing model supports up to 1,000 gateway nodes across all environments in a region.",
+  "extended_definition": "The Apigee pay-as-you-go pricing model supports up to 1,000 gateway nodes across all environments in a region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Glossary \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "source_id": "site-api-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "An API proxy is an abstraction layer that fronts for your backend service APIs and provides value-added features such as security, rate limiting, quotas, analytics, and more. proxy endpoint A proxy endpoint defines the way your API proxy interacts with client applications.",
+          "I image repository A group of shared container images. implicit limit A limit (such as a developer prepaid balance limit) set by monetization. individual operator/organization A company whose structure does not include subsidiaries or sub-organizations.",
+          "The hostname is part of the URL used to call API proxies deployed to any environment in the environment group. explicit limit See custom limit . group operator/organization A company whose structure includes subsidiaries or sub-organizations."
+        ]
+      },
+      {
+        "title": "\"Analytics metrics, dimensions, and filters reference \\_|\\_ Apigee \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, policy error metrics, grouped by the developer app dimension, might help you discover that an API key or OAuth token has expired for a given app; or you might find that a specific API proxy is throwing a lot of SpikeArrest policy errors, leading you to discover that the proxy's spike arrest limit doesn't account for an increase in holiday traffic.",
+          "For example, the VerifyApiKey policy throws an error when an invalid API key is passed in the request, and a SpikeArrest policy throws an error if the number of API calls exceeds the limit defined in the policy.",
+          "Gateway Flow ID is useful for distinguishing metrics in high-TPS situations where other dimensions such as organization, environment, and timestamp are identical across calls."
+        ]
+      },
+      {
+        "title": "Endpoint properties reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "source_id": "site-api-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported values are: gzip: always send message using gzip compression deflate: always send message using deflate compression none: always send message without any compression See also: Does Apigee support compression/de-compression with GZIP/deflate compression? api.timeout N/A Configure the timeout for individual API proxies (in milliseconds) You can configure API proxies, even those with streaming enabled, to time out after a specified time with a 504 Gateway Timeout status.",
+          "For example: <HTTPTargetConnection> <Properties> <Property name=\"use.proxy.host.header.with.target.uri\">true</Property> </Properties> <URL>https://mocktarget.apigee.net/my-target</URL> </HTTPTargetConnection> response.payload. parse.limit 10M By default ( 10M ).",
+          "If the value is less than zero, then the maximum amount of time to handle the request has expired and the Message Processor returns a 504 Gateway Timeout ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.timeout",
+      "connect.timeout.millis",
+      "messaging.adaptors.http.flow.GatewayTimeout",
+      "mocktarget.apigee.net",
+      "parse.limit",
+      "response.payload",
+      "use.proxy.host.header.with.target.uri"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/glossary",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/analytics/analytics-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

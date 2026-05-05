@@ -1,0 +1,284 @@
+{
+  "feature_name": "BigQueryTable external data metadata controls",
+  "feature_slug": "bigquerytable-external-data-metadata-controls",
+  "summary": "Config Connector supports metadata cache mode and object metadata settings for BigQueryTable external data configuration.",
+  "extended_definition": "Config Connector supports metadata cache mode and object metadata settings for BigQueryTable external data configuration.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "PubSubSubscription | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "source_id": "feature-recovery-http",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "PubSubSubscription | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Sample YAML(s) Basic PubSub Subscription # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubSubscription metadata : labels : label-one : \"value-one\" name : pubsubsubscription-sample-basic spec : ackDeadlineSeconds : 15 messageRetentionDuration : 86400s retainAckedMessages : false topicRef : name : pubsubsubscription-dep1-basic deadLetterPolicy : deadLetterTopicRef : name : pubsubsubscription-dep2-basic --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : pubsubsubscription-dep1-basic --- apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : pubsubsubscription-dep2-basic BigQuery PubSub Subscription # Copyright 2022 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. # Replace ${PROJECT_ID?} below with your desired project ID. apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubSubscription metadata : name : pubsubsubscription-sample-bigquery annotations : # Replace ${PROJECT_ID?} with your project ID cnrm.cloud.google.com/project-id : ${PROJECT_ID?} spec : bigqueryConfig : tableRef : name : pubsubsubscription-dep-bigquery topicRef : name : pubsubsubscription-dep-bigquery --- # Replace ${PROJECT_ID?} below with your desired project ID. apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : pubsubsubscription-dep-bigquery annotations : # Replace ${PROJECT_ID?} with your project ID cnrm.cloud.google.com/project-id : ${PROJECT_ID?} spec : resourceID : pubsubsubscriptiondepbigquery location : us-central1 --- # Replace ${PROJECT_ID?} below with your desired project ID. apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : pubsubsubscription-dep-bigquery annotations : # Replace ${PROJECT_ID?} with your project ID cnrm.cloud.google.com/project-id : ${PROJECT_ID?} spec : resourceID : pubsubsubscriptiondepbigquery friendlyName : pubsubsubscription-dep-bigquery datasetRef : name : pubsubsubscription-dep-bigquery schema : > [ { \"name\" : \"data\" , \"type\" : \"STRING\" , \"mode\" : \"NULLABLE\" , \"description\" : \"The data\" } ] --- # Replace ${PROJECT_ID?} and ${PROJECT_NUMBER?} below with your desired project # ID and project number. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : pubsubsubscription-dep1-bigquery spec : member : serviceAccount:service-${PROJECT_NUMBER?}@gcp-sa-pubsub.iam.gserviceaccount.com role : roles/bigquery.metadataViewer resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : pubsubsubscription-dep2-bigquery spec : member : serviceAccount:service-${PROJECT_NUMBER?}@gcp-sa-pubsub.iam.gserviceaccount.com role : roles/bigquery.dataEditor resourceRef : apiVersion : resourcemanager.cnrm.cloud.google.com/v1beta1 kind : Project external : projects/${PROJECT_ID?} --- # Replace ${PROJECT_ID?} below with your desired project ID. apiVersion : pubsub.cnrm.cloud.google.com/v1beta1 kind : PubSubTopic metadata : name : pubsubsubscription-dep-bigquery annotations : # Replace ${PROJECT_ID?} with your project ID cnrm.cloud.google.com/project-id : ${PROJECT_ID?} Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Otherwise, the schemas must be kept in sync and any messages with extra fields are not written and remain in the subscription's backlog. bigqueryConfig.tableRef Required* object The name of the table to which to write data. bigqueryConfig.tableRef.external Optional string Allowed value: string of the format `{{project}}.{{dataset_id}}.{{value}}`, where {{value}} is the `name` field of a `BigQueryTable` resource. bigqueryConfig.tableRef.name Optional string Name of the referent."
+        ]
+      },
+      {
+        "title": "BigQueryTable | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "source_id": "feature-recovery-http",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQueryTable Property Value Google Cloud Service Name BigQuery Google Cloud Service Documentation /bigquery/docs/ Google Cloud REST Resource Name bigquery/v2/tables Google Cloud Rest Resource Documentation /bigquery/docs/reference/rest/v2/tables Config Connector Resource Short Names gcpbigquerytable gcpbigquerytables bigquerytable Config Connector Service Name bigquery.googleapis.com Config Connector Resource Fully Qualified Name bigquerytables.bigquery.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions Yes Supports IAM Audit Configs No IAM External Reference Format projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/unmanaged Spec Schema clustering : - string datasetRef : external : string name : string namespace : string description : string encryptionConfiguration : kmsKeyRef : external : string name : string namespace : string kmsKeyVersion : string expirationTime : integer externalDataConfiguration : autodetect : boolean avroOptions : useAvroLogicalTypes : boolean compression : string connectionId : string csvOptions : allowJaggedRows : boolean allowQuotedNewlines : boolean encoding : string fieldDelimiter : string quote : string skipLeadingRows : integer fileSetSpecType : string googleSheetsOptions : range : string skipLeadingRows : integer hivePartitioningOptions : mode : string requirePartitionFilter : boolean sourceUriPrefix : string ignoreUnknownValues : boolean jsonOptions : encoding : string maxBadRecords : integer metadataCacheMode : string objectMetadata : string parquetOptions : enableListInference : boolean enumAsString : boolean referenceFileSchemaUri : string schema : string sourceFormat : string sourceUris : - string friendlyName : string labels : string : string materializedView : allowNonIncrementalDefinition : boolean enableRefresh : boolean query : string refreshIntervalMs : integer maxStaleness : string rangePartitioning : field : string range : end : integer interval : integer start : integer requirePartitionFilter : boolean resourceID : string schema : string tableConstraints : foreignKeys : - columnReferences : referencedColumn : string referencingColumn : string name : string referencedTable : datasetId : string projectId : string tableId : string primaryKey : columns : - string timePartitioning : expirationMs : integer field : string requirePartitionFilter : boolean type : string view : query : string useLegacySql : boolean Fields clustering Optional list (string) Clustering specification for the table.",
+          "BigQueryTable | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Sample YAML(s) Typical Use Case # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : bigquerytablesample labels : data-source : \"external\" schema-type : \"auto-junk\" spec : description : \"BigQuery Sample Table\" datasetRef : name : bigquerytabledep requirePartitionFilter : true friendlyName : bigquerytable-sample externalDataConfiguration : autodetect : true compression : NONE ignoreUnknownValues : false maxBadRecords : 10 sourceFormat : CSV sourceUris : - \"gs://gcp-public-data-landsat/LC08/01/044/034/LC08_L1GT_044034_20130330_20170310_01_T2/LC08_L1GT_044034_20130330_20170310_01_T2_ANG.txt\" - \"gs://gcp-public-data-landsat/LC08/01/044/034/LC08_L1GT_044034_20130330_20180201_01_T2/LC08_L1GT_044034_20130330_20180201_01_T2_ANG.txt\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigquerytabledep spec : friendlyName : bigquerytable-dep location : us-central1 Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      },
+      {
+        "title": "\"AccessContextManagerServicePerimeter \\_|\\_ Config Connector \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter",
+        "source_id": "site-docs-root",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "AccessContextManagerServicePerimeter Property Value Google Cloud Service Name AccessContextManager Google Cloud Service Documentation /vpc-service-controls/docs/ Google Cloud REST Resource Name accesscontextmanager.v1.accessPolicies.servicePerimeters Google Cloud REST Resource Documentation /access-context-manager/docs/reference/rest/v1/accessPolicies.servicePerimeters Config Connector Resource Short Names gcpaccesscontextmanagerserviceperimeter gcpaccesscontextmanagerserviceperimeters accesscontextmanagerserviceperimeter Config Connector Service Name accesscontextmanager.googleapis.com Config Connector Resource Fully Qualified Name accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember No Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Spec Schema accessPolicyRef : external : string name : string namespace : string description : string perimeterType : string resourceID : string spec : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean status : accessLevels : - external : string name : string namespace : string egressPolicies : - egressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string egressTo : externalResources : - string operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string ingressPolicies : - ingressFrom : identities : - serviceAccountRef : external : string name : string namespace : string user : string identityType : string sources : - accessLevelRef : external : string name : string namespace : string projectRef : external : string name : string namespace : string ingressTo : operations : - methodSelectors : - method : string permission : string serviceName : string resources : - projectRef : external : string name : string namespace : string resources : - projectRef : external : string name : string namespace : string restrictedServices : - string vpcAccessibleServices : allowedServices : - string enableRestriction : boolean title : string useExplicitDryRunSpec : boolean Fields accessPolicyRef Required object The AccessContextManagerAccessPolicy this AccessContextManagerServicePerimeter lives in. accessPolicyRef.external Optional string Allowed value: string of the format accessPolicies/{{value}}, where {{value}} is the name field of an AccessContextManagerAccessPolicy resource. accessPolicyRef.name Optional string Name of the referent.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerServicePerimeter metadata : name : serviceperimetersample spec : Config for DRY-RUN To use this 'useExplicitDryRunSpec' must be set to 'true' Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy Replace \"${PROJECT NUMBER}\" with the appropriate project number for the project to be protected by the perimeter spec : List of Access Levels to be applied for this perimeter accessLevels : - name : serviceperimeterdep2 List of projects to be included in this perimeter resources : - projectRef : external : \"projects/${PROJECT NUMBER1}\" - projectRef : external : \"projects/${PROJECT NUMBER2}\" List of restricted services restrictedServices : - \"storage.googleapis.com\" List of services that could be accessed from within the perimeter vpcAccessibleServices : allowedServices : - \"storage.googleapis.com\" - \"pubsub.googleapis.com\" enableRestriction : true egressPolicies : - egressFrom : identities : - name : serviceperimeterengressdep - egressTo : resources : - projectRef : external : \"projects/${PROJECT NUMBER1}\" ingressPolicies : - ingressFrom : identities : - name : serviceperimeteringressdep sources : - accessLevelRef : name : serviceperimeterdep2 ingressTo : resources : - projectRef : external : \"projects/${PROJECT NUMBER2}\" Config to ENFORCE Config items are repeated as above for DRY-RUN Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy Replace \"${PROJECT NUMBERx}\" with the appropriate project number for the project to be protected by the perimeter status : accessLevels : - name : serviceperimeterdep2 resources : - projectRef : external : \"projects/${PROJECT NUMBER3}\" - projectRef : external : \"projects/${PROJECT NUMBER4}\" restrictedServices : - \"bigquery.googleapis.com\" vpcAccessibleServices : allowedServices : - \"bigquery.googleapis.com\" - \"logging.googleapis.com\" enableRestriction : true title : Service Perimeter created by Config Connector useExplicitDryRunSpec : true accessPolicyRef : Using an already existing Access Policy.",
+          "Set the appropriate ACCESS POLICY NUMBER external : accessPolicies/${ACCESS POLICY NUMBER} description : A Service Perimeter Created by Config Connector perimeterType : PERIMETER TYPE REGULAR --- apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerAccessLevel metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeterdep1 spec : accessPolicyRef : Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy external : \"accessPolicies/${ACCESS POLICY NUMBER}\" title : Service Perimeter Dependency ACL1 basic : conditions : - devicePolicy : requireCorpOwned : true --- apiVersion : accesscontextmanager.cnrm.cloud.google.com/v1beta1 kind : AccessContextManagerAccessLevel metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeterdep2 spec : accessPolicyRef : Replace \"${ACCESS POLICY NUMBER}\" with the numeric ID for your Access Policy external : \"accessPolicies/${ACCESS POLICY NUMBER}\" title : Service Perimeter Dependency ACL2 basic : conditions : - devicePolicy : requireCorpOwned : true --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeterengressdep --- apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : Replace \"${ORG ID?}\" with the numeric ID for your organization cnrm.cloud.google.com/organization-id : \"${ORG ID}\" name : serviceperimeteringressdep Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accesscontextmanager.cnrm.cloud.google.com",
+      "accesscontextmanager.googleapis.com",
+      "accesscontextmanager.v1.accessPolicies.servicePerimeters",
+      "accesscontextmanagerserviceperimeters.accesscontextmanager.cnrm.cloud.google.com",
+      "bigquery.cnrm.cloud.google.com",
+      "bigquery.dataEditor",
+      "bigquery.googleapis.com",
+      "bigquery.metadataViewer",
+      "bigquerytables.bigquery.cnrm.cloud.google.com",
+      "cnrm.cloud.google.com",
+      "iam.cnrm.cloud.google.com",
+      "logging.googleapis.com",
+      "projects.subscriptions",
+      "pubsub.cnrm.cloud.google.com",
+      "pubsub.googleapis.com",
+      "pubsub.iam.gserviceaccount.com",
+      "pubsubsubscriptions.pubsub.cnrm.cloud.google.com",
+      "resourcemanager.cnrm.cloud.google.com",
+      "spec.ingressPolicies",
+      "storage.googleapis.com",
+      "v1.projects.subscriptions"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.metadataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/pubsub/pubsubsubscription",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/accesscontextmanager/accesscontextmanagerserviceperimeter"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:20.276Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

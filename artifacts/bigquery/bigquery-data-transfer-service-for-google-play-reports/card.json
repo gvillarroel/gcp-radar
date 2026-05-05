@@ -1,0 +1,85 @@
+{
+  "feature_name": "BigQuery Data Transfer Service for Google Play reports",
+  "feature_slug": "bigquery-data-transfer-service-for-google-play-reports",
+  "summary": "BigQuery Data Transfer Service can ingest Google Play reports.",
+  "extended_definition": "BigQuery Data Transfer Service can ingest Google Play reports.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/display-video-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+      "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Load Display & Video 360 data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/display-video-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Partner Advertiser LineItem LineItemTargeting Campaign CampaignTargeting InsertionOrder InsertionOrderTargeting AdGroup AdGroupTargeting AdGroupAd Creative For more information about each type of configuration data, see the following links: About Partners Create an advertiser Create a line item Create a campaign Create an insertion order About YouTube & partners line items Manage creatives Data ingestion from Display & Video 360 transfers When you transfer data from Display & Video 360 into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.",
+          "Data transfer options Support Supported reports The Display & Video 360 connector supports the transfer of data from the reports in Data Transfer v2 (Display & Video DTv2) files .",
+          "Load Display & Video 360 data into BigQuery You can load data from Display & Video 360 to BigQuery using the BigQuery Data Transfer Service for Display & Video 360 connector."
+        ]
+      },
+      {
+        "title": "Load Google Analytics 4 data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/google-analytics-4-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These custom reports ingest data from the Google Analytics Data API version supported by the BigQuery Data Transfer Service .",
+          "When you specify a CMEK with a transfer, the BigQuery Data Transfer Service applies the CMEK to any intermediate on-disk cache of ingested data so that the entire data transfer workflow is CMEK compliant.",
+          "Custom reports The BigQuery Data Transfer Service for Google Analytics connector supports the use of custom reports by specifying dimensions and metrics in the Google Analytics transfer configuration."
+        ]
+      },
+      {
+        "title": "Load Google Ad Manager data into BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/doubleclick-publisher-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data transfer options Support Supported reports The Google Ad Manager connector supports the transfer of data from the following reports: Data Transfer (Google Ad Manager DT) files Data Transfer fields Match tables provided by the BigQuery Data Transfer Service .",
+          "Data ingestion from Google Ad Manager transfers When you transfer data from Google Ad Manager into BigQuery, the data is loaded into BigQuery tables that are partitioned by date.",
+          "Query your data When your data is transferred to BigQuery, the data is written to ingestion-time partitioned tables."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "java.io.IOException",
+      "java.util.HashMap",
+      "java.util.Map"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

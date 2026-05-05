@@ -1,0 +1,138 @@
+{
+  "feature_name": "Voicemail history",
+  "feature_slug": "voicemail-history",
+  "summary": "Agents can access previous voicemails to support follow-up actions when needed.",
+  "extended_definition": "Agents can access previous voicemails to support follow-up actions when needed.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Voicemail History Allows agents to see a list of voicemails that they have already listened to.",
+          "You can also optionally allow agents to forward voicemails back to the same queue by checking the box that appears when voicemail forwarding is enabled.",
+          "Clear voicemails from queues If your agents listen to voicemails using your CRM instead of the agent adapter, voicemails can accumulate in queues."
+        ]
+      },
+      {
+        "title": "\"Real-time dashboards and monitoring pages \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users Repeating/Returning: Total number of consumers who returned to interact with the same Virtual Agent within 24 hours of a previous session \"Did not Understand\" Rate: The % of Virtual Agent chat messages sent where a Virtual Agent states that they did not understand the consumer (No. of default fallback responses / Total no. of VA responses) 100 Current status Top queues : Top 5 chat queues in order of the highest to lowest total Virtual Agent sessions Top Virtual Agents: Top 5 Virtual Agents in order of the highest success rates Virtual Agent status Online: Enabled and functioning Virtual Agents Offline: Enabled but unreachable.",
+          "Call dashboard For the Agents Logged In tile, agent information will not appear until the following: Agents have to have taken a call or chat to show up in the dashboard as logged in agent Agents have to be assigned the default Agent role even if the Custom role they have assigned contains Agent permissions.",
+          "Filter options Select one or more of the following filter options to see specific Agents: Option Description Team Agents assigned to the team via sub-team or top-level Team Status Shows current Agents in the selected status/es Queue Group Select from available queue groups."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sample UI of multiple CCAI Platform sessions related to a case CCAI Platform session object data hierarchy The session object is organized as follows: Session(s) related list: the list of session(s) related to a case or account object Session Detail : presents the core session object details Core session fields: lists any associated transfers and files File list: any files that have been uploaded or created as part of the session File detail: all details about a file, including access to file itself Actions: a list of actions that occurred during the session Action detail: additional info about a specific action Transfers: complete list of transfers that occurred during the session Transfer detail: displays all fields and data associated with a single transfer events CCAI Platform session overview After opening a session, the following view will be provided, listing all associated CCAI Platform session actions, attached files, and transfers.",
+          "Case owner and assignment After the default administrator is enabled, the default administrator is used as the owner for the following: Ticket/case and contact creation when a new chat is initiated before an agent is assigned to the chat Voicemail tickets/cases before receiving a callback call Call ticket/cases for abandoned calls (if enabled) Note: If the default user is not configured, CCAI Platform uses a random Agent When a call/chat is transferred: CCAI Platform assigns the case to the agent who the call is transferred to.",
+          "You can update the following: Phone number lookup fields : Previously-named phone number lookup fields."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

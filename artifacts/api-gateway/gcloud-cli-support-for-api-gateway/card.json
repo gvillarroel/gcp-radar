@@ -1,0 +1,121 @@
+{
+  "feature_name": "gcloud CLI support for API Gateway",
+  "feature_slug": "gcloud-cli-support-for-api-gateway",
+  "summary": "API Gateway has been added to the gcloud command group so it can be managed through the Google Cloud CLI.",
+  "extended_definition": "API Gateway has been added to the gcloud command group so it can be managed through the Google Cloud CLI.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg",
+      "https://docs.cloud.google.com/api-gateway/docs/quickstart",
+      "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Getting started with load balancing for API Gateway \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg",
+        "source_id": "site-docs-root-required-2",
+        "final_score": 101,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Run the following command, replacing PROJECT ID with your project ID: gcloud projects delete PROJECT ID Delete individual resources Delete each component in the load balancer: Delete the forwarding rules: gcloud compute forwarding-rules delete HTTPS FORWARDING RULE NAME --global Delete the global external IP addresses: gcloud compute addresses delete IP ADDRESSES --global Delete the target proxy: gcloud compute target-https-proxies delete TARGET HTTP PROXY NAME Delete the URL map: gcloud compute url-maps delete URL MAP NAME Delete the backend services: gcloud compute backend-services delete BACKEND SERVICE NAME --global (Optional) Delete the SSL certificate: gcloud compute ssl-certificates delete SSL CERTIFICATE NAME Delete the serverless NEG: gcloud compute network-endpoint-groups delete SERVERLESS NEG NAME --region= REGION Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "REGION ID is the deployment region for the serverless NEG (this should match the gateway region). gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --global \\ --network-endpoint-group= SERVERLESS NEG NAME \\ --network-endpoint-group-region= REGION ID For example: gcloud compute backend-services add-backend api-gateway-backend-service \\ --global \\ --network-endpoint-group= api-gateway-serverless-neg \\ --network-endpoint-group-region= us-central1 Create a URL map to route incoming requests to the backend service, as shown in the figure below: To create the URL map, run the following command, where: URL MAP NAME is the name of the URL map to create.",
+          "REGION ID is the deployment region for the serverless NEG (this should match the gateway region). gcloud beta compute network-endpoint-groups create SERVERLESS NEG NAME \\ --region= REGION ID \\ --network-endpoint-type=serverless \\ --serverless-deployment-platform=apigateway.googleapis.com \\ --serverless-deployment-resource= GATEWAY ID For example: gcloud beta compute network-endpoint-groups create api-gateway-serverless-neg \\ --region= us-central1 \\ --network-endpoint-type=serverless \\ --serverless-deployment-platform=apigateway.googleapis.com \\ --serverless-deployment-resource= my-gateway Create a backend service to define how the global external Application Load Balancer distributes traffic."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a new API config with the modified OpenAPI spec using the following command: gcloud api-gateway api-configs create NEW CONFIG ID \\ --api= API ID --openapi-spec= NEW API DEFINITION \\ --backend-auth-service-account= SERVICE ACCOUNT EMAIL For example: gcloud api-gateway api-configs create my-config-key \\ --api= my-api --openapi-spec= openapi2-functions.yaml \\ --project= my-project --backend-auth-service-account= 0000000000000compute@developer.gserviceaccount.com Run the following command to update your existing gateway with the new API config: gcloud api-gateway gateways update GATEWAY ID \\ --api= API ID --api-config= NEW CONFIG ID \\ --location= GCP REGION For example: gcloud api-gateway gateways update my-gateway \\ --api= my-api --api-config= my-config-key \\ --location= us-central1 Test your API key Once you have created and deployed the modified API, try making a request to it.",
+          "For example: gcloud api-gateway gateways create my-gateway \\ --api= my-api --api-config= my-config \\ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \\ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \\ --location= us-central1 This command returns the following: apiConfig: projects/my-project/locations/global/apis/my-api/configs/my-config createTime: '2020-02-05T13:44:12.997862831Z' defaultHostname: my-gateway-a12bcd345e67f89g0h.uc.gateway.dev displayName: my-gateway name: projects/my-project/locations/us-central1/gateways/my-gateway serviceAccount: email: 0000000000000-compute@developer.gserviceaccount.com state: ACTIVE updateTime: '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.",
+          "After the API config is created, you can view its details by running this command: gcloud api-gateway api-configs describe CONFIG ID \\ --api= API ID For example: gcloud api-gateway api-configs describe my-config \\ --api= my-api The output shows your API config details, including name and state, as shown in the following example: createTime: '2020-02-07T18:17:01.839180746Z' displayName: my-config gatewayConfig: backendConfig: googleServiceAccount: 0000000000000-compute@developer.gserviceaccount.com name: projects/my-project/locations/global/apis/my-api/configs/my-config serviceRollout: rolloutId: 2020-02-07r0 state: ACTIVE updateTime: '2020-02-07T18:17:02.173778118Z' Create a gateway Now deploy the API config on a gateway."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Secure traffic to a service with the gcloud CLI \\_|\\_ API Gateway\\",
+        "url": "https://docs.cloud.google.com/api-gateway/docs/quickstart",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 85,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a new API config with the modified OpenAPI spec using the following command: gcloud api-gateway api-configs create NEW CONFIG ID \\ --api= API ID --openapi-spec= NEW API DEFINITION \\ --backend-auth-service-account= SERVICE ACCOUNT EMAIL For example: gcloud api-gateway api-configs create my-config-key \\ --api= my-api --openapi-spec= openapi2-functions.yaml \\ --project= my-project --backend-auth-service-account= 0000000000000compute@developer.gserviceaccount.com Run the following command to update your existing gateway with the new API config: gcloud api-gateway gateways update GATEWAY ID \\ --api= API ID --api-config= NEW CONFIG ID \\ --location= GCP REGION For example: gcloud api-gateway gateways update my-gateway \\ --api= my-api --api-config= my-config-key \\ --location= us-central1 Test your API key Once you have created and deployed the modified API, try making a request to it.",
+          "For example: gcloud api-gateway gateways create my-gateway \\ --api= my-api --api-config= my-config \\ --location= us-central1 On successful completion, use the following command to view details about the gateway: gcloud api-gateway gateways describe GATEWAY ID \\ --location= GCP REGION For example: gcloud api-gateway gateways describe my-gateway \\ --location= us-central1 This command returns the following: apiConfig: projects/my-project/locations/global/apis/my-api/configs/my-config createTime: '2020-02-05T13:44:12.997862831Z' defaultHostname: my-gateway-a12bcd345e67f89g0h.uc.gateway.dev displayName: my-gateway name: projects/my-project/locations/us-central1/gateways/my-gateway serviceAccount: email: 0000000000000-compute@developer.gserviceaccount.com state: ACTIVE updateTime: '2020-02-05T13:45:00.844705087Z' Note the value of the defaultHostname property.",
+          "After the API config is created, you can view its details by running this command: gcloud api-gateway api-configs describe CONFIG ID \\ --api= API ID For example: gcloud api-gateway api-configs describe my-config \\ --api= my-api The output shows your API config details, including name and state, as shown in the following example: createTime: '2020-02-07T18:17:01.839180746Z' displayName: my-config gatewayConfig: backendConfig: googleServiceAccount: 0000000000000-compute@developer.gserviceaccount.com name: projects/my-project/locations/global/apis/my-api/configs/my-config serviceRollout: rolloutId: 2020-02-07r0 state: ACTIVE updateTime: '2020-02-07T18:17:02.173778118Z' Create a gateway Now deploy the API config on a gateway."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a12bcd345e67f89g0h.uc.gateway.dev",
+      "apigateway.googleapis.com",
+      "apigateway.my",
+      "developer.gserviceaccount.com",
+      "functions.yaml",
+      "project.cloud.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/api-gateway/docs/gateway-serverless-neg",
+        "https://docs.cloud.google.com/api-gateway/docs/secure-traffic-gcloud",
+        "https://docs.cloud.google.com/api-gateway/docs/quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.243Z",
+  "source_step08_card": "data/step-08/current/products/api-gateway/card.json",
+  "product_name": "API Gateway",
+  "product_slug": "api-gateway"
+}

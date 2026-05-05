@@ -1,0 +1,375 @@
+{
+  "feature_name": "BigQuery ObjectRef support for Storage Insights datasets",
+  "feature_slug": "bigquery-objectref-support-for-storage-insights-datasets",
+  "summary": "Storage Insights datasets can be analyzed with BigQuery ObjectRef functions to query object data and metadata together.",
+  "extended_definition": "Storage Insights datasets can be analyzed with BigQuery ObjectRef functions to query object data and metadata together.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+      "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze your stored data with Gemini Cloud Assist \\_|\\_ Cloud Storage \\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "source_id": "site-iam-reference",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can ask prompts such as the following: Prompts related to usage and cost savings: \"5 largest buckets without Object Lifecycle Management\" \"5 largest buckets without Autoclass enabled\" Prompts related to security and compliance: \"5 largest buckets without object versioning enabled\" \"5 largest objects with a retention expiration date within the next 30 days\" Prompts related to data discovery: \"Buckets with a high volume of small files (each under 1 MB)\" \"Objects in Standard storage class smaller than 50 MB\" Before you begin In order to use Gemini Cloud Assist for general prompts related to Cloud Storage, you must first set up Gemini Cloud Assist, including getting required roles.",
+          "To get the permissions that you need to get insights on bucket and object metadata, ask your administrator to grant you the following IAM roles on the project, folder, or organization that contains the datasets you want to analyze: BigQuery Job User ( roles/bigquery.jobUser ) BigQuery Data Viewer ( roles/bigquery.dataViewer ) Storage Insights Viewer ( roles/storageinsights.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "The following data is not available in Storage Insights datasets, meaning that Gemini Cloud Assist lacks the proper context to respond to prompts relating to that data: Specific cost data, for example: \"how much does my bucket cost per month\"."
+        ]
+      },
+      {
+        "title": "IAM permissions for Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "source_id": "site-docs-reference",
+        "final_score": 210,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This permission alone does not allow you to read IAM policies or IP filtering rules. storage.buckets.getIamPolicy Read bucket IAM policies. storage.buckets.getIpFilter Lists or reads the IP filtering rules on a bucket. storage.buckets.getObjectInsights Read object metadata for generating inventory reports and Storage Insights datasets . storage.buckets.list List buckets in a project including read bucket metadata.",
+          "Storage Insights dataset permissions Dataset permission name Description storageinsights.datasetConfigs.create Create dataset configurations. storageinsights.datasetConfigs.delete Delete dataset configurations. storageinsights.datasetConfigs.linkDataset Create linked datasets in BigQuery that contain the output of Storage Insights datasets. storageinsights.datasetConfigs.unlinkDataset Remove linked datasets from BigQuery that contain the output of Storage Insights datasets. storageinsights.datasetConfigs.update Modify dataset configurations. storageinsights.datasetConfigs.get Get dataset configurations. storageinsights.datasetConfigs.list List dataset configurations.",
+          "This also returns any contexts attached to the objects. storage.objects.move Move an object within a bucket with hierarchical namespace enabled. storage.objects.overrideUnlockedRetention Use the x-goog-bypass-governance-retention header or the overrideUnlockedRetention query parameter when working with object retention configurations . storage.objects.restore Restore objects that have been soft-deleted . storage.objects.setIamPolicy Update object ACLs. storage.objects.setRetention Add or update retentions for objects. storage.objects.update Update object metadata, excluding ACLs."
+        ]
+      },
+      {
+        "title": "IAM roles for Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 194,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Bucket cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig firebase.projects.get monitoring.timeSeries.create orgpolicy.policy.get recommender. iamPolicyInsights. recommender. iamPolicyInsights. get recommender. iamPolicyInsights. list recommender. iamPolicyInsights. update recommender. iamPolicyRecommendations. recommender. iamPolicyRecommendations. get recommender. iamPolicyRecommendations. list recommender. iamPolicyRecommendations. update recommender. storageBucketSoftDeleteInsights. recommender. storageBucketSoftDeleteInsights. get recommender. storageBucketSoftDeleteInsights. list recommender. storageBucketSoftDeleteInsights. update recommender. storageBucketSoftDeleteRecommendations. recommender. storageBucketSoftDeleteRecommendations. get recommender. storageBucketSoftDeleteRecommendations. list recommender. storageBucketSoftDeleteRecommendations. update resourcemanager. hierarchyNodes. listEffectiveTags resourcemanager.projects.get resourcemanager.projects.list storage.anywhereCaches. storage.anywhereCaches.create storage.anywhereCaches.disable storage.anywhereCaches.get storage.anywhereCaches.list storage.anywhereCaches.pause storage.anywhereCaches.resume storage.anywhereCaches.update storage.bucketOperations. storage. bucketOperations. cancel storage.bucketOperations.get storage.bucketOperations.list storage.buckets. storage.buckets.create storage. buckets. createTagBinding storage.buckets.delete storage. buckets. deleteTagBinding storage. buckets. enableObjectRetention storage.buckets.get storage.buckets.getIamPolicy storage.buckets.getIpFilter storage. buckets. getObjectInsights storage.buckets.list storage. buckets. listEffectiveTags storage. buckets. listTagBindings storage.buckets.relocate storage.buckets.restore storage.buckets.setIamPolicy storage.buckets.setIpFilter storage.buckets.update storage. buckets. viewIntelligenceDetails storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.intelligenceConfigs. storage. intelligenceConfigs. get storage. intelligenceConfigs. update storage.managedFolders. storage.managedFolders.create storage.managedFolders.delete storage.managedFolders.get storage. managedFolders. getIamPolicy storage.managedFolders.list storage. managedFolders. setIamPolicy storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects. storage.objects.create storage.objects.createContext storage.objects.delete storage.objects.deleteContext storage.objects.get storage.objects.getIamPolicy storage.objects.list storage.objects.move storage. objects. overrideUnlockedRetention storage.objects.restore storage.objects.setIamPolicy storage.objects.setRetention storage.objects.update storage.objects.updateContext storagebatchoperations. storagebatchoperations. bucketOperations. get storagebatchoperations. bucketOperations. list storagebatchoperations. jobs. cancel storagebatchoperations. jobs. create storagebatchoperations. jobs. delete storagebatchoperations. jobs. get storagebatchoperations. jobs. list storagebatchoperations. locations. get storagebatchoperations. locations. list storagebatchoperations. operations. cancel storagebatchoperations. operations. delete storagebatchoperations. operations. get storagebatchoperations. operations. list Storage Bucket Viewer Beta ( roles/ storage.bucketViewer ) Grants permission to view buckets and their metadata, excluding IAM policies. storage.buckets.get storage.buckets.list Storage Editor ( roles/ storage.editor ) Editor role for storage resourcemanager.projects.get resourcemanager.projects.list storage.buckets.create storage.buckets.delete storage.buckets.list storage. buckets. listEffectiveTags storage. buckets. listTagBindings storage. buckets. viewIntelligenceDetails storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.hmacKeys. storage.hmacKeys.create storage.hmacKeys.delete storage.hmacKeys.get storage.hmacKeys.list storage.hmacKeys.update storage. intelligenceConfigs. get Storage Folder Admin ( roles/ storage.folderAdmin ) Grants full control over folders and objects, including listing, creating, viewing, and deleting objects. orgpolicy.policy.get resourcemanager.projects.get resourcemanager.projects.list storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.managedFolders. storage.managedFolders.create storage.managedFolders.delete storage.managedFolders.get storage. managedFolders. getIamPolicy storage.managedFolders.list storage. managedFolders. setIamPolicy storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects. storage.objects.create storage.objects.createContext storage.objects.delete storage.objects.deleteContext storage.objects.get storage.objects.getIamPolicy storage.objects.list storage.objects.move storage. objects. overrideUnlockedRetention storage.objects.restore storage.objects.setIamPolicy storage.objects.setRetention storage.objects.update storage.objects.updateContext Storage Legacy Bucket Owner ( roles/ storage.legacyBucketOwner ) Grants permission to create, overwrite, and delete objects; list objects in a bucket and read object metadata, excluding allow policies, when listing; and read and edit bucket metadata, including allow policies.",
+          "Lowest-level resources where you can grant this role: Bucket resourcemanager.projects.get resourcemanager.projects.list storage.folders.get storage.folders.list storage.managedFolders.get storage.managedFolders.list storage.objects.get storage.objects.list Storage Viewer ( roles/ storage.viewer ) Viewer role for storage resourcemanager.projects.get resourcemanager.projects.list storage.buckets.list storage. buckets. listEffectiveTags storage. buckets. listTagBindings storage. buckets. viewIntelligenceDetails storage.folders.get storage.folders.list storage.hmacKeys.get storage.hmacKeys.list storage. intelligenceConfigs. get Storage Annotation Generator Service Beta ( roles/ storage.annotationGeneratorService ) Grants all permissions needed to generate annotations for objects in a bucket. storage.objects.createContext storage.objects.deleteContext storage.objects.get storage.objects.list storage.objects.update storage.objects.updateContext Storage Express Mode Service Input Beta ( roles/ storage.expressModeServiceInput ) Grants permission to Express Mode service accounts at a managed folder so they can create objects but not read them on input folders. storage.objects.create storage.objects.delete storage.objects.list storage.objects.update Storage Express Mode Service Output Beta ( roles/ storage.expressModeServiceOutput ) Grants permission to EasyGCP service accounts at a managed folder so they can read objects but not write them on output folders. storage.objects.delete storage.objects.get storage.objects.list Storage Express Mode User Access Beta ( roles/ storage.expressModeUserAccess ) Grants permission to Express Mode accounts at the project level so they can read, list, create and delete any object in any of their buckets in Express Mode. orgpolicy.policy.get storage.buckets.get storage.buckets.list storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects.create storage.objects.delete storage.objects.get storage.objects.list storage.objects.restore storage.objects.update Storage HMAC Key Admin ( roles/ storage.hmacKeyAdmin ) Full control of Cloud Storage HMAC keys. firebase.projects.get orgpolicy.policy.get resourcemanager.projects.get resourcemanager.projects.list storage.hmacKeys. storage.hmacKeys.create storage.hmacKeys.delete storage.hmacKeys.get storage.hmacKeys.list storage.hmacKeys.update Storage Insights Collector Service ( roles/ storage.insightsCollectorService ) Read-only access to Cloud Storage Inventory metadata for Storage Insights. resourcemanager.projects.get resourcemanager.projects.list storage.buckets.get storage. buckets. getObjectInsights Note: Consider the following for permissions: The orgpolicy.policy.get permission allows principals to know the organization policy constraints that a project is subject to.",
+          "Role Permissions Storage Insights Admin ( roles/ storageinsights.admin ) Full access to Storage Insights resources. resourcemanager.projects.get resourcemanager.projects.list storageinsights. storageinsights. datasetConfigs. create storageinsights. datasetConfigs. delete storageinsights. datasetConfigs. get storageinsights. datasetConfigs. linkDataset storageinsights. datasetConfigs. list storageinsights. datasetConfigs. unlinkDataset storageinsights. datasetConfigs. update storageinsights.locations.get storageinsights.locations.list storageinsights. operations. cancel storageinsights. operations. delete storageinsights.operations.get storageinsights. operations. list storageinsights. reportConfigs. create storageinsights. reportConfigs. delete storageinsights. reportConfigs. get storageinsights. reportConfigs. list storageinsights. reportConfigs. update storageinsights. reportDetails. get storageinsights. reportDetails. list Storage Insights Viewer ( roles/ storageinsights.viewer ) Read-only access to Storage Insights resources. resourcemanager.projects.get resourcemanager.projects.list storageinsights. datasetConfigs. get storageinsights. datasetConfigs. list storageinsights.locations. storageinsights.locations.get storageinsights.locations.list storageinsights.operations.get storageinsights. operations. list storageinsights. reportConfigs. get storageinsights. reportConfigs. list storageinsights. reportDetails. storageinsights. reportDetails. get storageinsights. reportDetails. list Storage Insights Analyst ( roles/ storageinsights.analyst ) Data access to Storage Insights. resourcemanager.projects.get resourcemanager.projects.list storageinsights. datasetConfigs. get storageinsights. datasetConfigs. linkDataset storageinsights. datasetConfigs. list storageinsights. datasetConfigs. unlinkDataset storageinsights.locations. storageinsights.locations.get storageinsights.locations.list storageinsights.operations.get storageinsights. operations. list storageinsights. reportConfigs. get storageinsights. reportConfigs. list storageinsights. reportDetails. storageinsights. reportDetails. get storageinsights. reportDetails. list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      },
+      {
+        "title": "\"IAM permissions for gcloud storage commands \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Command Flag Required IAM Permissions batch-operations jobs create storagebatchoperations.jobs.create batch-operations jobs cancel storagebatchoperations.jobs.cancel batch-operations jobs delete storagebatchoperations.jobs.delete batch-operations jobs get storagebatchoperations.jobs.get batch-operations jobs list storagebatchoperations.jobs.list buckets add-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets anywhere-caches create storage.anywhereCaches.create buckets anywhere-caches describe storage.anywhereCaches.get buckets anywhere-caches list storage.anywhereCaches.list buckets anywhere-caches update storage.anywhereCaches.update buckets anywhere-caches pause storage.anywhereCaches.pause buckets anywhere-caches resume storage.anywhereCaches.resume buckets anywhere-caches disable storage.anywhereCaches.disable buckets create storage.buckets.create storage.buckets.setIpFilter 15 buckets delete storage.buckets.delete buckets describe storage.buckets.get storage.buckets.getIamPolicy 1 storage.buckets.getIpFilter 16 buckets get-iam-policy storage.buckets.get storage.buckets.getIamPolicy buckets list storage.buckets.list storage.buckets.getIamPolicy 1 buckets notifications create storage.buckets.get storage.buckets.update pubsub.topics.get (for the project containing the Pub/Sub topic) pubsub.topics.create 3 (for the project containing the Pub/Sub topic) pubsub.topics.getIamPolicy (for Pub/Sub topic receiving notifications) pubsub.topics.setIamPolicy 3 (for Pub/Sub topic receiving notifications) buckets notifications create --skip-topic-setup storage.buckets.get storage.buckets.update buckets notifications delete storage.buckets.get storage.buckets.update buckets notifications describe storage.buckets.get buckets notifications list storage.buckets.get buckets relocate storage.buckets.relocate buckets remove-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets set-iam-policy storage.buckets.setIamPolicy storage.buckets.update buckets update storage.buckets.update storage.buckets.setIpFilter 15 buckets update --no-requester-pays storage.buckets.update resourcemanager.projects.createBillingAssignment 2 buckets update --recovery-point-objective --rpo --[no-]uniform-bucket-level-access storage.buckets.get storage.buckets.update buckets update --clear-pap --clear-public-access-prevention --[no-]pap --[no-]public-access-prevention storage.buckets.get storage.buckets.update storage.buckets.setIamPolicy cat storage.objects.get storage.objects.list 13 cp storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) du storage.objects.list folders create storage.folders.create folders delete storage.folders.delete folders describe storage.folders.get folders list storage.folders.list folders rename storage.folders.rename (for the source bucket) storage.folders.create (for the destination bucket) hash storage.objects.get hmac create storage.hmacKeys.create hmac delete storage.hmacKeys.delete hmac describe storage.hmacKeys.get hmac list storage.hmacKeys.list hmac update storage.hmacKeys.update insights dataset-configs create storageinsights.datasetConfigs.create insights dataset-configs create-link storageinsights.datasetConfigs.linkDataset insights dataset-configs delete storageinsights.datasetConfigs.delete insights dataset-configs delete-link storageinsights.datasetConfigs.unlinkDataset insights dataset-configs describe storageinsights.datasetConfigs.get insights dataset-configs list storageinsights.datasetConfigs.list insights dataset-configs update storageinsights.datasetConfigs.update insights inventory-reports create storageinsights.reportConfigs.create insights inventory-reports delete storageinsights.reportConfigs.delete insights inventory-reports details list storageinsights.reportDetails.list insights inventory-reports details describe storageinsights.reportDetails.get insights inventory-reports list storageinsights.reportConfigs.list insights inventory-reports update storageinsights.reportConfigs.get storageinsights.reportConfigs.update ls (for bucket listing) storage.buckets.list storage.buckets.getIamPolicy 6 ls (for object listing) storage.objects.get 7 storage.objects.list storage.objects.getIamPolicy 8 ls --buckets storage.buckets.get storage.buckets.getIamPolicy 6 storage intelligence-config enable storage.intelligenceConfigs.update storage-intelligence disable storage.intelligenceConfigs.update storage-intelligence describe storage.intelligenceConfigs.get storage-intelligence update storage.intelligenceConfigs.update mv storage.objects.get (for the source objects) storage.objects.delete (for the source bucket) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) objects compose storage.objects.get storage.objects.create storage.objects.delete 9 objects describe storage.objects.get storage.objects.getIamPolicy 8 objects list storage.objects.list storage.objects.getIamPolicy 8 objects update storage.objects.get storage.objects.list storage.objects.update objects update --storage-class --encryption-key --clear-encryption-key storage.objects.get storage.objects.list storage.objects.create storage.objects.delete objects update --retention-mode --retain-until --clear-retention storage.objects.get storage.objects.list storage.objects.update storage.objects.setRetention storage.objects.overrideUnlockedRetention 11 operations cancel storage.bucketOperations.cancel operations describe storage.bucketOperations.get operations list storage.bucketOperations.list restore storage.objects.create storage.objects.delete 9 storage.objects.restore restore --async storage.objects.create storage.objects.delete 14 storage.objects.restore storage.buckets.restore rm storage.buckets.delete storage.objects.delete storage.objects.list rsync storage.objects.list (for the source bucket) storage.objects.get (for the source objects) storage.objects.list (for the destination bucket) storage.objects.get (for the destination bucket) storage.objects.create (for the destination bucket) storage.objects.delete 10 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) rsync --dry-run storage.objects.list (for the source and destination buckets) service-agent resourceManager.projects.get sign-url None; however, the service account whose key is used as part of this command must have permission to perform the request being encoded into the signed URL.",
+          "The --billing-project top-level flag If you use the --billing-project global flag to specify a project that should be billed for your request, you must have serviceusage.services.use permission for the project you specify.",
+          "Home Documentation Storage Cloud Storage Reference Send feedback IAM permissions for gcloud storage commands Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "bigquery.jobUser",
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "firebase.projects.get",
+      "monitoring.timeSeries.create",
+      "orgpolicy.policy.get",
+      "projects.get",
+      "pubsub.topics.create",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.setIamPolicy",
+      "resourcemanager.projects.createBillingAssignment",
+      "serviceusage.services.use",
+      "storage.annotationGeneratorService",
+      "storage.anywhereCaches",
+      "storage.anywhereCaches.create",
+      "storage.anywhereCaches.disable",
+      "storage.anywhereCaches.get",
+      "storage.anywhereCaches.list",
+      "storage.anywhereCaches.pause",
+      "storage.anywhereCaches.resume",
+      "storage.anywhereCaches.update",
+      "storage.bucketOperations",
+      "storage.bucketOperations.cancel",
+      "storage.bucketOperations.get",
+      "storage.bucketOperations.list",
+      "storage.buckets",
+      "storage.buckets.create",
+      "storage.buckets.createTagBinding",
+      "storage.buckets.delete",
+      "storage.buckets.deleteTagBinding",
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.getIpFilter",
+      "storage.buckets.getObjectInsights",
+      "storage.buckets.list",
+      "storage.buckets.listEffectiveTags",
+      "storage.buckets.listTagBindings",
+      "storage.buckets.relocate",
+      "storage.buckets.restore",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.setIpFilter",
+      "storage.buckets.update",
+      "storage.bucketViewer",
+      "storage.editor",
+      "storage.expressModeServiceInput",
+      "storage.expressModeServiceOutput",
+      "storage.expressModeUserAccess",
+      "storage.folderAdmin",
+      "storage.folders",
+      "storage.folders.create",
+      "storage.folders.delete",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.folders.rename",
+      "storage.hmacKeyAdmin",
+      "storage.hmacKeys",
+      "storage.hmacKeys.create",
+      "storage.hmacKeys.delete",
+      "storage.hmacKeys.get",
+      "storage.hmacKeys.list",
+      "storage.hmacKeys.update",
+      "storage.insightsCollectorService",
+      "storage.intelligenceConfigs",
+      "storage.intelligenceConfigs.get",
+      "storage.intelligenceConfigs.update",
+      "storage.legacyBucketOwner",
+      "storage.managedFolders",
+      "storage.managedFolders.create",
+      "storage.managedFolders.delete",
+      "storage.managedFolders.get",
+      "storage.managedFolders.list",
+      "storage.multipartUploads",
+      "storage.multipartUploads.abort",
+      "storage.multipartUploads.list",
+      "storage.objects",
+      "storage.objects.create",
+      "storage.objects.createContext",
+      "storage.objects.delete",
+      "storage.objects.deleteContext",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.move",
+      "storage.objects.overrideUnlockedRetention",
+      "storage.objects.restore",
+      "storage.objects.setIamPolicy",
+      "storage.objects.setRetention",
+      "storage.objects.update",
+      "storage.objects.updateContext",
+      "storage.viewer",
+      "storagebatchoperations.jobs.cancel",
+      "storagebatchoperations.jobs.create",
+      "storagebatchoperations.jobs.delete",
+      "storagebatchoperations.jobs.get",
+      "storagebatchoperations.jobs.list",
+      "storagebatchoperations.operations.cancel",
+      "storagebatchoperations.operations.delete",
+      "storagebatchoperations.operations.get",
+      "storagebatchoperations.operations.list",
+      "storageinsights.admin",
+      "storageinsights.analyst",
+      "storageinsights.datasetConfigs.create",
+      "storageinsights.datasetConfigs.delete",
+      "storageinsights.datasetConfigs.get",
+      "storageinsights.datasetConfigs.linkDataset",
+      "storageinsights.datasetConfigs.list",
+      "storageinsights.datasetConfigs.unlinkDataset",
+      "storageinsights.datasetConfigs.update",
+      "storageinsights.iam.gserviceaccount.com",
+      "storageinsights.locations",
+      "storageinsights.locations.get",
+      "storageinsights.locations.list",
+      "storageinsights.operations.get",
+      "storageinsights.reportConfigs.create",
+      "storageinsights.reportConfigs.delete",
+      "storageinsights.reportConfigs.get",
+      "storageinsights.reportConfigs.list",
+      "storageinsights.reportConfigs.update",
+      "storageinsights.reportDetails.get",
+      "storageinsights.reportDetails.list",
+      "storageinsights.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser",
+      "roles/storageinsights.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/analyze-data-gemini-cloud-assist",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:17.220Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

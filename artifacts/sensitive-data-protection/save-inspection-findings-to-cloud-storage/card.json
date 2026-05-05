@@ -1,0 +1,90 @@
+{
+  "feature_name": "Save inspection findings to Cloud Storage",
+  "feature_slug": "save-inspection-findings-to-cloud-storage",
+  "summary": "Inspection job findings can be saved to a Cloud Storage bucket or folder.",
+  "extended_definition": "Inspection job findings can be saved to a Cloud Storage bucket or folder.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Profile Cloud Storage data in a single project \\_|\\_ Sensitive Data Protection\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You opted to save sample discovery findings to BigQuery and you want to make sure that the service agent has write access to the BigQuery table where the sample findings will be saved.",
+          "Example conditions Suppose that you have the following configuration: Minimum conditions Minimum duration: 24 hours Bucket attribute conditions None selected Object attribute conditions Scan objects with the Standard storage class Scan objects with the Nearline storage class Time condition Timestamp: 05/4/22, 11:59 PM In this case, Sensitive Data Protection excludes any bucket that was created on or before May 4, 2022, 11:59 PM.",
+          "SELECT findings table . quote , findings table . infotype . name , findings table . location . container name , profiles table . file store profile . file store path as bucket name , profiles table . file store profile . sensitivity score as bucket sensitivity score FROM FINDINGS TABLE PROJECT ID ."
+        ]
+      },
+      {
+        "title": "\"Profile Cloud Storage data in an organization or folder \\_|\\_ Sensitive\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You opted to save sample discovery findings to BigQuery and you want to make sure that the service agent has write access to the BigQuery table where the sample findings will be saved.",
+          "Example conditions Suppose that you have the following configuration: Minimum conditions Minimum duration: 24 hours Bucket attribute conditions None selected Object attribute conditions Scan objects with the Standard storage class Scan objects with the Nearline storage class Time condition Timestamp: 05/4/22, 11:59 PM In this case, Sensitive Data Protection excludes any bucket that was created on or before May 4, 2022, 11:59 PM.",
+          "SELECT findings table . quote , findings table . infotype . name , findings table . location . container name , profiles table . file store profile . file store path as bucket name , profiles table . file store profile . sensitivity score as bucket sensitivity score FROM FINDINGS TABLE PROJECT ID ."
+        ]
+      },
+      {
+        "title": "\"Profile Azure Blob Storage data \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage",
+        "source_id": "site-docs-reference-3",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You opted to save sample discovery findings to BigQuery and you want to make sure that the service agent has write access to the BigQuery table where the sample findings will be saved.",
+          "SELECT findings table . quote , findings table . infotype . name , findings table . location . container name , profiles table . file store profile . file store path as bucket name , profiles table . file store profile . sensitivity score as bucket sensitivity score FROM FINDINGS TABLE PROJECT ID .",
+          "PROFILES TABLE ID latest v1 AS profiles table ON findings table . data profile resource name = profiles table . file store profile . name To save sample findings to a BigQuery table, follow these steps: Turn on Save sample discovery findings to BigQuery ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-org-folder-cloud-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-project-cloud-storage",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/profile-azure-blob-storage"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:50.160Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection"
+}

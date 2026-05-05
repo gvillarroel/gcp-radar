@@ -1,0 +1,147 @@
+{
+  "feature_name": "Schema name hyphen support",
+  "feature_slug": "schema-name-hyphen-support",
+  "summary": "Custom Document Splitter now allows hyphens in schema names.",
+  "extended_definition": "Custom Document Splitter now allows hyphens in schema names.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+      "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+      "https://docs.cloud.google.com/document-ai/docs/handle-response",
+      "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Custom splitter \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "source_id": "site-docs-root",
+        "final_score": 241,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Create processor menu, enter a name for your processor, such as my-custom-document-splitter .",
+          "Repeat the previous steps with the following paths and document labels: Bucket path Document label cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/1040 form 1040 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w2 form w2 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/w9 form w9 cloud-samples-data/documentai/Custom/Lending-Splitter/PDF-CDS-BatchLabel/paystub paystub The console should look like this when complete: Select Import .",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom splitter, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Create, use, and manage a custom document classifier \\_|\\_ Document AI \\_\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Create processor menu, enter a name for your processor, such as my-custom-document-classifier .",
+          "Enable the APIs Required roles To get the permissions that you need to create a custom classifier, ask your administrator to grant you the following IAM roles on your project: Document AI Administrator ( roles/documentai.admin ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "In the Documents panel, you can find that one document has been assigned to the training set. (Optional) Import prelabeled data to the training and test sets If you're using v1.4, you must upload training and test sets to train the custom processor."
+        ]
+      },
+      {
+        "title": "DocumentSchema \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "source_id": "site-api-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "So the string values in DocumentSchema.EntityType.name and DocumentSchema.EntityType.Property.name won't be checked.",
+          "Otherwise, it can only be applied to the entire document (classification). documentAllowMultipleLabels boolean If true, on a given page, there can be multiple document annotations covering it. prefixedNamingOnProperties boolean If set, all the nested entities must be prefixed with the parents. skipNamingValidation boolean If set, this will skip the naming format validation in the schema.",
+          "JSON representation { \"displayName\" : string , \"description\" : string , \"entityTypes\" : [ { object ( EntityType ) } ] , \"metadata\" : { object ( Metadata ) } } Fields displayName string Display name to show users. description string Description of the schema. entityTypes[] object ( EntityType ) Entity types of the schema. metadata object ( Metadata ) Metadata of the schema."
+        ]
+      },
+      {
+        "title": "Handle processing response \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "source_id": "site-docs-root-2",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Enterprise Knowledge Graph, used for information enrichment, strives for accuracy but cannot be guaranteed to be perfect. { \"entities\" : [ { \"textAnchor\" : { \"textSegments\" : [ ... ], \"content\" : \"Google Singapore\" }, \"type\" : \"supplier name\" , \"confidence\" : 0.39170802 , \"pageAnchor\" : { ... }, \"id\" : \"12\" , \"normalizedValue\" : { \"text\" : \"Google Asia Pacific, Singapore\" } }, { \"type\" : \"supplier address\" , \"id\" : \"17\" , \"normalizedValue\" : { \"text\" : \"70 Pasir Panjang Rd #03-71 Mapletree Business City II Singapore 117371\" , \"addressValue\" : { \"regionCode\" : \"SG\" , \"languageCode\" : \"en-US\" , \"postalCode\" : \"117371\" , \"addressLines\" : [ \"70 Pasir Panjang Rd\" , \"#03-71 Mapletree Business City II\" ] } } } ] } Nested fields : Nested schema (fields) can be created by first declaring an entity as a parent, then creating child entities under the parent.",
+          "ProcessRequest request = ProcessRequest . newBuilder (). setName ( name ). setRawDocument ( document ). build (); // Recognizes text entities in the PDF document ProcessResponse result = client . processDocument ( request ); Document documentResponse = result . getDocument (); System . out . println ( \"Document processing complete.\" ); // Read the splitter output from the document splitter processor: // https://cloud.google.com/document-ai/docs/processors-list#processor doc-splitter // This processor only provides text for the document and information on how // to split the document on logical boundaries.",
+          "EntityType ( name = \"custom extraction document type\" , base types = [ \"document\" ], properties = properties , ) ], ) ) Online processing request to Document AI document = process document ( project id , location , processor id , processor version , file path , mime type , process options = process options , ) for entity in document . entities : print entity ( entity ) Print Nested Entities (if any) for prop in entity . properties : print entity ( prop ) def print entity ( entity : documentai ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.admin",
+      "storage.admin",
+      "v1.4"
+    ],
+    "missing_inventory_roles": [
+      "roles/documentai.admin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/custom-splitter",
+        "https://docs.cloud.google.com/document-ai/docs/custom-classifier",
+        "https://docs.cloud.google.com/document-ai/docs/reference/rest/Shared.Types/DocumentSchema",
+        "https://docs.cloud.google.com/document-ai/docs/handle-response"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:28.926Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

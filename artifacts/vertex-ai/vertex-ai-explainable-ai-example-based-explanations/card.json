@@ -1,0 +1,102 @@
+{
+  "feature_name": "Vertex AI Explainable AI example-based explanations",
+  "feature_slug": "vertex-ai-explainable-ai-example-based-explanations",
+  "summary": "Vertex AI Explainable AI added GA support for example-based explanations; Vertex AI Explainable AI adds preview support for generating example-based explanations.",
+  "extended_definition": "Vertex AI Explainable AI added GA support for example-based explanations; Vertex AI Explainable AI adds preview support for generating example-based explanations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based",
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based",
+      "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure example-based explanations \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based",
+        "source_id": "site-docs-reference-3",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following sample is from the image classification example-based explanations notebook : {\"id\": \"0\", \"bytes inputs\": {\"b64\": \"...\"}} {\"id\": \"1\", \"bytes inputs\": {\"b64\": \"...\"}} {\"id\": \"2\", \"bytes inputs\": {\"b64\": \"...\"}} Update the index or configuration Vertex AI lets you update a model's nearest neighbor index or Example configuration.",
+          "Home Documentation AI and ML Vertex AI Send feedback Configure example-based explanations Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION /models:upload Request JSON body: { \"model\": { \"displayName\": \" my-model \", \"artifactUri\": \" gs://your-model-artifact-folder \", \"containerSpec\": { \"imageUri\": \" us-docker.pkg.dev/vertex-ai/prediction/tf2-cpu.2-11:latest \", }, \"explanationSpec\": { \"parameters\": { \"examples\": { \"gcsSource\": { \"uris\": [\" gs://your-examples-folder \"] }, \"neighborCount\": 10 , \"presets\": { \"modality\": \" image \" } } }, \"metadata\": { \"outputs\": { \"embedding\": { \"output tensor name\": \" embedding \" } }, \"inputs\": { \"my fancy input\": { \"input tensor name\": \" input tensor name \", \"encoding\": \" identity \", \"modality\": \" image \" }, \"id\": { \"input tensor name\": \" id \", \"encoding\": \" identity \" } } } } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Configure feature-based explanations \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based",
+        "source_id": "site-docs-reference-3",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To use Vertex Explainable AI with a custom-trained model, you must configure certain options when you create the Model resource that you plan to request explanations from, when you deploy the model, or when you submit a batch explanation job.",
+          "For example, consider a Model that expects each input instance to have the following format: [ < value > , < value > ] In this case, provide Vertex Explainable AI with a single feature name of your choosing, like dimensions .",
+          "If the value of the scores field is an array, then when you get explanations, Vertex Explainable AI returns feature attributions for the element with the highest value in each prediction."
+        ]
+      },
+      {
+        "title": "\"Introduction to Vertex Explainable AI \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "References For feature attribution, the implementations of sampled Shapley, integrated gradients, and XRAI are based on the following references, respectively: Bounding the Estimation Error of Sampling-based Shapley Value Approximation Axiomatic Attribution for Deep Networks XRAI: Better Attributions Through Regions Notebooks To get started using Vertex Explainable AI, use these notebooks: Notebook Explainability method ML framework Modality Task GitHub link example-based explanations TensorFlow image Train a classification model that predicts the class of the provided input image and get online explanations GitHub link feature-based AutoML tabular Train a binary classification model that predicts whether a bank custom purchased a term deposit and get batch explanations GitHub link feature-based AutoML tabular Train a classification model that predicts the type of Iris flower species and get online explanations GitHub link feature-based (sampled Shapley) scikit-learn tabular Train a linear regression model that predicts taxi fares and get online explanations GitHub link feature-based (integrated gradients) TensorFlow image Train a classification model that predicts the class of the provided input image and get batch explanations GitHub link feature-based (integrated gradients) TensorFlow image Train a classification model that predicts the class of the provided input image and get online explanations GitHub link feature-based (integrated gradients) TensorFlow tabular Train a regression model that predicts the median price of a house and get batch explanations GitHub link feature-based (integrated gradients) TensorFlow tabular Train a regression model that predicts the median price of a house and get online explanations GitHub link feature-based (sampled Shapley) TensorFlow text Train a LSTM model that classifies movie reviews as positive or negative using the text of the review and get online explanations Educational resources The following resources provide further useful educational material: Explainable AI for Practitioners Interpretable Machine Learning: Shapley values Ankur Taly's Integrated Gradients GitHub repository .",
+          "Vertex Explainable AI offers Feature-based and Example-based explanations to provide better understanding of model decision making.",
+          "Example-based explanations With example-based explanations, Vertex AI uses nearest neighbor search to return a list of examples (typically from the training set) that are most similar to the input."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "cpu.2",
+      "docker.pkg.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-feature-based",
+        "https://docs.cloud.google.com/vertex-ai/docs/explainable-ai/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.145Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

@@ -1,0 +1,230 @@
+{
+  "feature_name": "Project-owned Apps",
+  "feature_slug": "project-owned-apps",
+  "summary": "Project-owned Apps lets collaborators work on Earth Engine apps under a project ID namespace.",
+  "extended_definition": "Project-owned Apps lets collaborators work on Earth Engine apps under a project ID namespace.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/access",
+      "https://developers.google.com/earth-engine/guides/access_control",
+      "https://developers.google.com/earth-engine/guides/apps"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Earth Engine Apps \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/apps",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Project-owned Apps are apps that are owned and published under a Cloud Project; anyone with the Earth Engine Apps Publisher IAM role can edit and delete apps published under the Cloud Project.",
+          "Project-owned Apps, published under a Cloud Project, enable collaboration as anyone with the Earth Engine Apps Publisher IAM role can edit and delete them.",
+          "This will take you to the Cloud Console IAM page for the project where you can grant collaborators the Earth Engine Apps Publisher IAM role."
+        ]
+      },
+      {
+        "title": "Control access to resources \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access_control",
+        "source_id": "site-docs-root-2",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permissions needed on the billing account billing.subscriptions.list Apps management Display app info Permissions needed iam.serviceAccounts.get iam.serviceAccounts.getIamPolicy , if app is restricted (less common) Suggested roles Viewer ( roles/viewer ) OR Earth Engine Apps Publisher ( roles/earthengine.appsPublisher ) Publish/Update app Permissions needed iam.serviceAccounts.get iam.serviceAccounts.create iam.serviceAccounts.enable iam.serviceAccounts.getIamPolicy iam.serviceAccounts.setIamPolicy iam.serviceAccounts.disable , if app is moved from one project to another (uncommon) Suggested roles Earth Engine Apps Publisher ( roles/earthengine.appsPublisher ) OR Service Account Admin ( roles/iam.serviceAccountAdmin ) Notes In addition, Earth Engine App service accounts identify themselves to the Earth Engine servers by presenting an OAuth access token.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-04 UTC.\"],[],[\"Earth Engine resources are shared at project or asset levels, requiring specific permissions like serviceusage.services.use and Earth Engine roles (Viewer, Writer, Admin, Apps Publisher).",
+          "Full access to the Earth Engine API To give users full access to the Earth Engine service, either through the REST API directly, through the Code Editor or through a client library, users will need permission to perform operations like: Executing Earth Engine expressions Running batch computations (exports) Getting interactive results (online maps, thumbnails, charts, etc.) Creating/deleting Earth Engine assets Using OAuth Authentication via a Client Library to connect to Earth Engine Permissions needed clientauthconfig.clients.listWithSecrets earthengine.assets.get earthengine.assets.getIamPolicy earthengine.assets.list earthengine.computations.create earthengine.operations.get earthengine.operations.list monitoring.timeSeries.list resourcemanager.projects.get resourcemanager.projects.list serviceusage.operations.get serviceusage.operations.list serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.services.use Suggested roles Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) AND one of: Earth Engine Resource Viewer ( roles/earthengine.viewer ) OR Earth Engine Resource Writer ( roles/earthengine.writer ) OR Earth Engine Resource Admin ( roles/earthengine.admin ) OAuth Config Editor ( roles/oauthconfig.editor ) is additionally required for users who access Earth Engine through a notebook environment and use the Notebook Authenticator."
+        ]
+      },
+      {
+        "title": "Earth Engine access \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access",
+        "source_id": "site-docs-root-2",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For programmatic asset deletion of an asset with ID projects/{project-id}/assets/{asset-id} (e.g., projects/my-project/assets/my-asset ): Python client ee . data . deleteAsset ( 'projects/ my-project /assets/ my-asset ' ) JavaScript client Note that the Code Editor's security sandbox prevents this call from working in that environment. ee . data . deleteAsset ( 'projects/ my-project /assets/ my-asset ' ) Command-line tool Use the rm command: earthengine rm projects/ my-project /assets/ my-asset Note: for legacy user-owned assets, the path structure is users/{user-id}/{asset-id} .",
+          "Cloud projects When a Cloud project is deleted , it triggers the deletion of Earth Engine data associated with that project (including, for example, any assets stored in the project root, any project-level EE Apps, Monitoring data, etc.).",
+          "All Earth Engine calls (whether from the Code Editor, client libraries, Apps, or REST API) are routed through a Cloud project, enabling access control, resource management, and usage monitoring in the Cloud Console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.subscriptions.list",
+      "clientauthconfig.clients.listWithSecrets",
+      "developers.google.com",
+      "e.g",
+      "earthengine.admin",
+      "earthengine.appsPublisher",
+      "earthengine.assets.get",
+      "earthengine.assets.getIamPolicy",
+      "earthengine.assets.list",
+      "earthengine.computations.create",
+      "earthengine.operations.get",
+      "earthengine.operations.list",
+      "earthengine.viewer",
+      "earthengine.writer",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccounts.create",
+      "iam.serviceAccounts.disable",
+      "iam.serviceAccounts.enable",
+      "iam.serviceAccounts.get",
+      "iam.serviceAccounts.getIamPolicy",
+      "iam.serviceAccounts.setIamPolicy",
+      "monitoring.timeSeries.list",
+      "oauthconfig.editor",
+      "projects.earthengine.app",
+      "resourcemanager.projectCreator",
+      "resourcemanager.projectIamAdmin",
+      "resourcemanager.projectMover",
+      "resourcemanager.projects.create",
+      "resourcemanager.projects.update",
+      "serviceusage.operations.get",
+      "serviceusage.operations.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.enable",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.services.use",
+      "serviceusage.serviceUsageAdmin",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/earthengine.admin",
+      "roles/earthengine.appsPublisher",
+      "roles/earthengine.viewer",
+      "roles/earthengine.writer",
+      "roles/editor",
+      "roles/iam.serviceAccountAdmin",
+      "roles/oauthconfig.editor",
+      "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/resourcemanager.projectMover",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/apps",
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/access"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.409Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor"
+}

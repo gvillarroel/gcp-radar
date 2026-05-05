@@ -1,0 +1,133 @@
+{
+  "feature_name": "Pub/Sub labels",
+  "feature_slug": "pub-sub-labels",
+  "summary": "Adds label support for Cloud Pub/Sub resources; Adds label support for Cloud Pub/Sub resources.",
+  "extended_definition": "Adds label support for Cloud Pub/Sub resources; Adds label support for Cloud Pub/Sub resources.",
+  "lifecycle": {
+    "latest_feature_date": "2018-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_snapshot",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "PushConfig JSON representation { \"pushEndpoint\" : string , \"attributes\" : { string : string , ... } , // Union field authentication method can be only one of the following: \"oidcToken\" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: \"pubsubWrapper\" : { object ( PubsubWrapper ) } , \"noWrapper\" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "PushConfig JSON representation { \"pushEndpoint\" : string , \"attributes\" : { string : string , ... } , // Union field authentication method can be only one of the following: \"oidcToken\" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: \"pubsubWrapper\" : { object ( PubsubWrapper ) } , \"noWrapper\" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_snapshot",
+        "source_id": "site-api-reference",
+        "final_score": 231,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format is projects/{project}/subscriptions/{sub} . labels map (key: string, value: string) Optional.",
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"create snapshot\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the CreateSnapshot method.",
+          "CreateSnapshotRequest JSON representation { \"name\" : string , \"subscription\" : string , \"labels\" : { string : string , ... } , \"tags\" : { string : string , ... } } Fields name string Required."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 225,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subscription JSON representation { \"name\" : string , \"topic\" : string , \"pushConfig\" : { object ( PushConfig ) } , \"bigqueryConfig\" : { object ( BigQueryConfig ) } , \"cloudStorageConfig\" : { object ( CloudStorageConfig ) } , \"ackDeadlineSeconds\" : integer , \"retainAckedMessages\" : boolean , \"messageRetentionDuration\" : string , \"labels\" : { string : string , ... } , \"enableMessageOrdering\" : boolean , \"expirationPolicy\" : { object ( ExpirationPolicy ) } , \"filter\" : string , \"deadLetterPolicy\" : { object ( DeadLetterPolicy ) } , \"retryPolicy\" : { object ( RetryPolicy ) } , \"detached\" : boolean , \"enableExactlyOnceDelivery\" : boolean , \"topicMessageRetentionDuration\" : string , \"state\" : enum ( State ) , \"analyticsHubSubscriptionInfo\" : { object ( AnalyticsHubSubscriptionInfo ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required.",
+          "PushConfig JSON representation { \"pushEndpoint\" : string , \"attributes\" : { string : string , ... } , // Union field authentication method can be only one of the following: \"oidcToken\" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: \"pubsubWrapper\" : { object ( PubsubWrapper ) } , \"noWrapper\" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.",
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the GetSubscription method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_snapshot",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_snapshot",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_snapshot",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/create_snapshot",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/get_subscription"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.474Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

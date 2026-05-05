@@ -1,0 +1,124 @@
+{
+  "feature_name": "Hyperdisk ML support",
+  "feature_slug": "hyperdisk-ml-support",
+  "summary": "GKE supports Hyperdisk ML as an attached persistent disk option for Autopilot and Standard clusters.",
+  "extended_definition": "GKE supports Hyperdisk ML as an attached persistent disk option for Autopilot and Standard clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/hyperdisk",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-mysql-to-hyperdisk",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About Hyperdisk for GKE \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/hyperdisk",
+        "source_id": "site-docs-reference-2",
+        "final_score": 189,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If true , GKE ensures Pods are scheduled only on nodes that support the selected disk type. false hyperdisk-type The Hyperdisk type to use on supported nodes (such as hyperdisk-balanced ). hyperdisk-balanced pd-type The Persistent Disk type to use as a fallback on other nodes (such as pd-balanced ). pd-balanced disk-type-preference Overrides the default preference for hyperdisk-type when a node supports both options. hyperdisk-type NOTE: You can still use standard block storage parameters.",
+          "If there are multiple Hyperdisk and Persistent Disk volumes attached to the same VM requesting IOPS at the same time, and the VM limits are reached, then each volume has an IOPS level proportional to their share in the total IOPS provisioned across all attached Hyperdisk Extreme volumes.",
+          "This approach lets you create a single StorageClass that supports clusters with older VM generations as you migrate to newer compute technology, provisioning Hyperdisk on compatible newer instances (like C3 or C4) while falling back to Persistent Disk on older generations."
+        ]
+      },
+      {
+        "title": "\"Migrate your MySQL data from Persistent Disk to Hyperdisk by using Backup\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Autopilot Standard This tutorial demonstrates how to migrate stateful applications in GKE from older generation machine types, such as N2, with attached Persistent Disk volumes, to newer generation machine types, such as N4, with attached Hyperdisk volumes by using Backup for GKE .",
+          "This file defines how resources are modified during restore: transformationRules : - description : Change the StorageClass on PVCs from premium-rwo to balanced-storage resourceFilter : namespaces : [ \"namespace-a\" , \"namespace-b\" ] groupKinds : - resourceGroup : \"\" resourceKind : PersistentVolumeClaim fieldActions : - op : REPLACE path : \"/spec/storageClassName\" value : \"balanced-storage\" - description : Change node type from n2-standard-4 to n4-standard-4 resourceFilter : namespaces : [ \"namespace-a\" , \"namespace-b\" ] jsonPath : \".metadata[?(@.name == 'existing-mysql')]\" groupKinds : - resourceGroup : apps resourceKind : Deployment fieldActions : - op : REPLACE path : \"/spec/template/spec/affinity/nodeAffinity/preferredDuringSchedulingIgnoredDuringExecution/0/preference/matchExpressions/0/values/0\" value : \"n4-standard-4\" PVC transformation: changes the storageClassName to balanced-storage (Hyperdisk).",
+          "Clone the sample code repository and navigate to the directory: git clone https://github.com/GoogleCloudPlatform/kubernetes-engine-samples cd kubernetes-engine-samples/databases/backup-migration Create the source GKE cluster Create a zonal cluster with a node pool that uses N2 machine types and attached Persistent Disk volumes."
+        ]
+      },
+      {
+        "title": "\"Migrate your MySQL data from Persistent Disk to Hyperdisk in GKE \\_|\\_ Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-mysql-to-hyperdisk",
+        "source_id": "site-docs-root-2",
+        "final_score": 157,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This StorageClass will be used later in the tutorial. apiVersion : storage.k8s.io/v1 kind : StorageClass metadata : name : balanced-storage provisioner : pd.csi.storage.gke.io volumeBindingMode : WaitForFirstConsumer allowVolumeExpansion : true parameters : type : hyperdisk-balanced provisioned-throughput-on-create : \"250Mi\" provisioned-iops-on-create : \"7000\" kubectl apply -f manifests/01-storage-class/storage-class-hdb.yaml Create and deploy a MySQL instance that includes node affinity to ensure Pods are scheduled on regular-pool nodes, and provisions a Persistent Disk SSD volume. apiVersion : v1 kind : Service metadata : name : regular-mysql labels : app : mysql spec : ports : - port : 3306 selector : app : mysql clusterIP : None --- apiVersion : v1 kind : PersistentVolumeClaim metadata : name : mysql-pv-claim labels : app : mysql spec : accessModes : - ReadWriteOnce resources : requests : storage : 30Gi storageClassName : premium-rwo --- apiVersion : apps/v1 kind : Deployment metadata : name : existing-mysql labels : app : mysql spec : selector : matchLabels : app : mysql strategy : type : Recreate template : metadata : labels : app : mysql spec : containers : - image : mysql:8.0 name : mysql env : - name : MYSQL ROOT PASSWORD value : migration - name : MYSQL DATABASE value : mysql - name : MYSQL USER value : app - name : MYSQL PASSWORD value : migration ports : - containerPort : 3306 name : mysql volumeMounts : - name : mysql-persistent-storage mountPath : /var/lib/mysql affinity : nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 preference : matchExpressions : - key : \"node.kubernetes.io/instance-type\" operator : In values : - \"n2-standard-4\" volumes : - name : mysql-persistent-storage persistentVolumeClaim : claimName : mysql-pv-claim kubectl apply -f manifests/02-mysql/mysql-deployment.yaml This manifest creates a MySQL deployment and service, with a dynamically provisioned Persistent Disk for data storage.",
+          "Scale down the MySQL deployment to 0 replicas to stop writes: kubectl scale deployment regular-mysql --replicas = 0 Create a snapshot from the existing Persistent Disk: gcloud compute disks snapshot ${ PV NAME } --location = ${ LOCATION } --snapshot-name = original-snapshot --description = \"snapshot taken from pd-ssd\" Create a new Hyperdisk volume named mysql-recovery from the snapshot: gcloud compute disks create mysql-recovery --project = ${ PROJECT ID } \\ --type = hyperdisk-balanced \\ --size = 150GB --location = ${ LOCATION } \\ --source-snapshot = projects/ ${ PROJECT ID } /global/snapshots/original-snapshot Update the manifest file for the restored PV with your project ID: apiVersion : v1 kind : PersistentVolume metadata : name : backup spec : storageClassName : balanced-storage capacity : storage : 150G accessModes : - ReadWriteOnce claimRef : name : hyperdisk-recovery namespace : default csi : driver : pd.csi.storage.gke.io volumeHandle : projects/PRJCTID/zones/us-central1-a/disks/mysql-recovery fsType : ext4 --- apiVersion : v1 kind : PersistentVolumeClaim metadata : namespace : default name : hyperdisk-recovery spec : storageClassName : balanced-storage accessModes : - ReadWriteOnce resources : requests : storage : 150G sed -i \"s/PRJCTID/ $PROJECT ID /g\" manifests/02-mysql/restore pv.yaml Create the PersistentVolume (PVC) and PersistentVolumeClaim from the new Hyperdisk: kubectl apply -f manifests/02-mysql/restore pv.yaml Verify the data migration Deploy a new MySQL instance that uses the newly created Hyperdisk volume.",
+          "Deploy the new MySQL instance: apiVersion : v1 kind : Service metadata : name : recovered-mysql labels : app : new-mysql spec : ports : - port : 3306 selector : app : new-mysql clusterIP : None --- apiVersion : apps/v1 kind : Deployment metadata : name : new-mysql labels : app : new-mysql spec : selector : matchLabels : app : new-mysql strategy : type : Recreate template : metadata : labels : app : new-mysql spec : containers : - image : mysql:8.0 name : mysql env : - name : MYSQL ROOT PASSWORD value : migration - name : MYSQL DATABASE value : mysql - name : MYSQL USER value : app - name : MYSQL PASSWORD value : migration ports : - containerPort : 3306 name : mysql volumeMounts : - name : mysql-persistent-storage mountPath : /var/lib/mysql affinity : nodeAffinity : preferredDuringSchedulingIgnoredDuringExecution : - weight : 1 preference : matchExpressions : - key : \"cloud.google.com/gke-nodepool\" operator : In values : - \"hyperdisk-pool\" volumes : - name : mysql-persistent-storage persistentVolumeClaim : claimName : hyperdisk-recovery kubectl apply -f manifests/02-mysql/recovery mysql deployment.yaml To verify data integrity, connect to the MySQL client Pod again: kubectl exec -it mysql-client -- bash Inside the client Pod, connect to the new MySQL database ( recovered-mysql.default ) and verify the data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "deployment.yaml",
+      "github.com",
+      "hdb.yaml",
+      "mysql.default",
+      "node.kubernetes.io",
+      "pd.csi.storage.gke.io",
+      "pv.yaml",
+      "storage.k8s.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/hyperdisk",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-mysql-to-hyperdisk"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/hyperdisk",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-mysql-to-hyperdisk"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/hyperdisk",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-mysql-to-hyperdisk"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/hyperdisk",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-pd-to-hyperdisk-backup-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/stateful-workloads/migrate-mysql-to-hyperdisk"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

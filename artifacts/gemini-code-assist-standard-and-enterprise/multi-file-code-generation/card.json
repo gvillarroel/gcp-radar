@@ -1,0 +1,116 @@
+{
+  "feature_name": "Multi-file code generation",
+  "feature_slug": "multi-file-code-generation",
+  "summary": "Adds support for generating code across multiple files.",
+  "extended_definition": "Adds support for generating code across multiple files.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sign-in attempts keep timing out If your sign-in attempts keep timing out, try adding the cloudcode.beta.forceOobLogin setting to your settings.json file: \"cloudcode.beta.forceOobLogin\" : true License recitation warnings don't persist across sessions If license recitation warnings don't persist across sessions, refer to the persistent logs: Click View > Output .",
+          "If you previously disabled automatic outline generation , click the Generate outline button to generate an outline for the current file in focus. (Optional): Click on a node in the outline to automatically scroll to that portion of the code file. (Optional): Click the Eye icon in the outline pane to display the outline in-line in the code file itself.",
+          "If you disable automatic outline generation, you can manually generate an outline for the file in focus by right-clicking in the file and selecting Gemini Code Assist > Outline current file , or by going to the Gemini Code Assist outline pane and clicking the Generate outline button."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sign-in attempts keep timing out If your sign-in attempts keep timing out, try adding the cloudcode.beta.forceOobLogin setting to your settings.json file: \"cloudcode.beta.forceOobLogin\" : true License recitation warnings don't persist across sessions If license recitation warnings don't persist across sessions, refer to the persistent logs: Click View > Output .",
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "Prompt Gemini Code Assist in a code file with a comment If you prefer, you can also prompt Gemini Code Assist in your code file with a comment by following these steps: VS Code On a new line, enter the comment Function to create a Cloud Storage bucket , and then press Enter (for Windows and Linux) or Return (for macOS)."
+        ]
+      },
+      {
+        "title": "\"Use Gemini Code Assist code customization \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "source_id": "site-docs-root",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "Try the following prompts: \"Is there something which can be improved?\" \"Give me possible pain points.\" \"How would you test this code if that migration is correct?\" Generating documentation Try the following prompts in Gemini Code Assist chat: \"Summarize the code in package or folder X and provide documentation for the top five important methods.\" \"Generate documentation for FUNCTION OR CLASS NAME .\" \"Shorten the documentation while preserving the key information.\" Unit test generation Try the following prompts in Gemini Code Assist chat: \"Generate unit tests for FILENAME .\" \"Add the most relevant test cases for the FUNCTION NAME function.\" \"Remove test cases that you think don't bring much value.\" Best practices Use relevant variable and function names or code snippets.",
+          "Why?\" \"Can you spot an error in the function FUNCTION NAME ?\" \"How would you fix the function FUNCTION NAME given this error message?\" Learning and onboarding Try the following prompts in Gemini Code Assist chat: \"Split this code in parts and explain each of them using our codebase.\" \"Show how to call function FUNCTION NAME ?\" \"Show how to run the main function in the ENVIRONMENT NAME environment?\" \"What is the key technical improvement we can do to make this code more performant?\" \"Show me the implementation of FUNCTION OR CLASS NAME to achieve better results and add what that specific element is\"—for example, \"Show me the implementation of function foo where foo is the name of the function.\" Migration Try the following prompts in Gemini Code Assist chat: \"Give me a strategy for how I can migrate FILE NAME from LANGUAGE 1 to LANGUAGE 2 \"—for example, from Go to Python. \"Given the function FUNCTION NAME in repository REPOSITORY NAME , find me an equivalent function in language LANGUAGE NAME that I can use.\" Try the following chat-based or code generation transformation workflow using prompts: \"Take FILENAME COMPONENT code already written in LANGUAGE 1 and refactor and migrate it to LANGUAGE 2 \"—for example, from Go to Python.",
+          "Can you give me an overview of this repository's purpose and key modules?\" For code generation and modification: \" @ REPOSITORY NAME Implement an authentication function similar to the one in this repository.\" \" @ REPOSITORY NAME Refactor the following code to follow the conventions in the selected repository.\" \" @ REPOSITORY A NAME How can I use the latest functions from this repository to improve my code in REPOSITORY B NAME ?\" For testing: \" @ UNIT TEST FILE NAME Generate unit tests for MODULE based on the examples in the selected file.\" By using remote repositories as a focused source of context, you can get more accurate and relevant suggestions from Gemini Code Assist, which can help you code faster and more efficiently."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "source_id": "site-docs-root",
+        "final_score": 208,
+        "relevance": "",
+        "evidence_snippets": [
+          "Sign-in attempts keep timing out If your sign-in attempts keep timing out, try adding the cloudcode.beta.forceOobLogin setting to your settings.json file: \"cloudcode.beta.forceOobLogin\" : true License recitation warnings don't persist across sessions If license recitation warnings don't persist across sessions, refer to the persistent logs: Click View > Output .",
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "Prompt Gemini Code Assist in a code file with a comment If you prefer, you can also prompt Gemini Code Assist in your code file with a comment by following these steps: VS Code On a new line, enter the comment Function to create a Cloud Storage bucket , and then press Enter (for Windows and Linux) or Return (for macOS)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudcode.beta.forceOobLogin",
+      "settings.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.757Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise"
+}

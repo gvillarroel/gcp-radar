@@ -1,0 +1,34 @@
+# Navigation component colors
+
+Product: Navigation SDK for iOS
+Feature slug: `navigation-component-colors`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Navigation UI colors were updated to match the current Google Maps app style.
+
+## Lifecycle
+
+- Latest feature date: 2024-11-18
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview), [https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance](https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance), [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls), [https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav](https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav))
+- allow (evidence: [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview), [https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance](https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance), [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls), [https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav](https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav))
+- constraint (evidence: [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview), [https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance](https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance), [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls), [https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav](https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav))
+- key (evidence: [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview), [https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance](https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance), [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls), [https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav](https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav))
+
+## Official Evidence
+
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/controls](https://developers.google.com/maps/documentation/navigation/ios-sdk/controls)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance](https://developers.google.com/maps/documentation/navigation/ios-sdk/create-customized-guidance)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav](https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-custom-nav)
+- [https://developers.google.com/maps/documentation/navigation/ios-sdk/overview](https://developers.google.com/maps/documentation/navigation/ios-sdk/overview)

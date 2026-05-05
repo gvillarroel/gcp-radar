@@ -1,0 +1,106 @@
+{
+  "feature_name": "Cloud Spanner customer-managed encryption keys (CMEK)",
+  "feature_slug": "cloud-spanner-customer-managed-encryption-keys-cmek",
+  "summary": "Cloud Spanner added support for customer-managed encryption keys (CMEK) to protect databases in custom, dual-region, and multi-region instance configurations.",
+  "extended_definition": "Cloud Spanner added support for customer-managed encryption keys (CMEK) to protect databases in custom, dual-region, and multi-region instance configurations.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.types.CopyBackupEncryptionConfig",
+      "https://docs.cloud.google.com/spanner/docs/backup",
+      "https://docs.cloud.google.com/spanner/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) overview \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/cmek",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Databases Spanner Guides Send feedback Customer-managed encryption keys (CMEK) overview Stay organized with collections Save and categorize content based on your preferences.",
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Spanner.",
+          "Geo-partitioning You can use CMEK or Google-owned and Google-managed encryption keys to protect Spanner databases that use geo-partitioning ."
+        ]
+      },
+      {
+        "title": "Backups overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "A copied backup uses the same encryption configuration, either Google-owned and Google-managed encryption keys or customer-managed encryption keys (CMEK) , as its source backup encryption.",
+          "Encryption Spanner backups, like databases, are encrypted by either Google-owned and Google-managed encryption keys or by customer-managed encryption keys (CMEK) .",
+          "If you want the backup schedule to create backups that are encrypted by CMEK keys, you need to specify the key path."
+        ]
+      },
+      {
+        "title": "\"Class CopyBackupEncryptionConfig (3.63.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.types.CopyBackupEncryptionConfig",
+        "source_id": "site-python-reference",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This field should be set only when encryption type][google.spanner.admin.database.v1.CopyBackupEncryptionConfig.encryption type] is CUSTOMER MANAGED ENCRYPTION .",
+          "Some examples: - For single region instance configs, specify a single regional location KMS key. - For multi-regional instance configs of type GOOGLE MANAGED, either specify a multi-regional location KMS key or multiple regional location KMS keys that cover all regions in the instance config. - For an instance config of type USER MANAGED, please specify only regional location KMS keys to cover each region in the instance config.",
+          "Multi-regional location KMS keys are not supported for USER MANAGED instance configs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.types.CopyBackupEncryptionConfig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.types.CopyBackupEncryptionConfig"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/cmek",
+        "https://docs.cloud.google.com/spanner/docs/backup",
+        "https://docs.cloud.google.com/python/docs/reference/spanner/latest/google.cloud.spanner_admin_database_v1.types.CopyBackupEncryptionConfig"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

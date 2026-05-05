@@ -1,0 +1,145 @@
+{
+  "feature_name": "Cloud Storage gRPC support",
+  "feature_slug": "cloud-storage-grpc-support",
+  "summary": "Cloud Storage supports interaction over gRPC.",
+  "extended_definition": "Cloud Storage supports interaction over gRPC.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+      "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+      "https://docs.cloud.google.com/storage/docs/xml-api/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Storage FUSE CLI reference \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Using either the trace or debug severity levels when file caching is enabled can result in performance degradation due to logging overhead and should only be used temporarily such as during troubleshooting. off : disables all logging. error : contains messages about serious issues that prevent Cloud Storage FUSE from completing an operation, or indicate a failure such as mount failures, permission errors, and critical input/output (I/O) errors. warning : contains messages indicating potential issues that aren't critical but can lead to issues if not addressed.",
+          "This severity level also includes the information provided in the info , warning , and error severity levels. trace : contains granular details about each Cloud Storage FUSE operation and function call, outlining the gcsfuse interaction with the kernel FUSE driver and Cloud Storage.",
+          "When this option is not set, Application Default Credentials are used. --limit-bytes-per-sec Specifies the bandwidth limit at which Cloud Storage FUSE can read data from Cloud Storage, measured over a 30-second window."
+        ]
+      },
+      {
+        "title": "XML API overview \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/xml-api/overview",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Storage Cloud Storage Reference Send feedback XML API overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Overview The Cloud Storage XML API is a RESTful interface that lets you manage Cloud Storage data in a programmatic way.",
+          "The Cloud Storage XML API also supports a variety of query string parameters, which you can use to scope your requests."
+        ]
+      },
+      {
+        "title": "Cloud Storage FUSE configuration file \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: Using either the trace or debug severity levels when file caching is enabled can result in performance degradation due to logging overhead and should only be used temporarily such as during troubleshooting. off : disables all logging. error : contains messages about serious issues that prevent Cloud Storage FUSE from completing an operation, or indicate a failure such as mount failures, permission errors, and critical input/output (I/O) errors. warning : contains messages indicating potential issues that aren't critical but can lead to issues if not addressed.",
+          "0s , which specifies no timeout limit-bytes-per-sec Specifies the bandwidth limit at which Cloud Storage FUSE can read data from Cloud Storage, measured over a 30-second window. \"-1\" , which specifies no limit. limit-ops-per-sec Specifies a limit for operations performed per second, measured over a 30-second window.",
+          "This severity level also includes the information provided in the info , warning , and error severity levels. trace : contains granular details about each Cloud Storage FUSE operation and function call, outlining the gcsfuse interaction with the kernel FUSE driver and Cloud Storage."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.storage (2.64.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage",
+        "source_id": "site-java-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "See Also: BlobWriteSessionConfigs#bufferToDiskThenUpload(Path) , Storage#blobWriteSession(BlobInfo, BlobWriteOption...) , BlobWriteSessionConfigs#bufferToDiskThenUpload(Collection) , GrpcStorageOptions.Builder#setBlobWriteSessionConfig(BlobWriteSessionConfig) com. google. cloud. storage.",
+          "An overview of the permissions available to Storage and the capabilities they grant can be found in the Google Cloud Storage IAM documentation. com. google. cloud. storage.",
+          "To override source blob's information supply a BlobInfo to the CopyRequest using either Storage.CopyRequest.Builder#setTarget(BlobInfo, com. google. cloud. storage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.ServiceOptions",
+      "com.google.cloud.storage",
+      "java.io.Serializable",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/xml-api/overview",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/xml-api/overview",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/xml-api/overview",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/xml-api/overview",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/cli-options",
+        "https://docs.cloud.google.com/storage/docs/xml-api/overview",
+        "https://docs.cloud.google.com/storage/docs/cloud-storage-fuse/config-file",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-storage/latest/com.google.cloud.storage"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:17.220Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

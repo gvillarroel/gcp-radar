@@ -1,0 +1,158 @@
+{
+  "feature_name": "Kerberos support in Component Gateway",
+  "feature_slug": "kerberos-support-in-component-gateway",
+  "summary": "Component Gateway supports Dataproc clusters secured with Kerberos.",
+  "extended_definition": "Component Gateway supports Dataproc clusters secured with Kerberos.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation ClusterType ClusterTier GceClusterConfig JSON representation PrivateIpv6GoogleAccess ReservationAffinity JSON representation Type NodeGroupAffinity JSON representation ShieldedInstanceConfig JSON representation ConfidentialInstanceConfig JSON representation SoftwareConfig JSON representation Component NodeInitializationAction JSON representation EncryptionConfig JSON representation AutoscalingConfig JSON representation SecurityConfig JSON representation KerberosConfig JSON representation IdentityConfig JSON representation LifecycleConfig JSON representation EndpointConfig JSON representation DataprocMetricConfig JSON representation Metric JSON representation MetricSource AuxiliaryNodeGroup JSON representation The cluster config.",
+          "SINGLE NODE https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/single-node-clusters ZERO SCALE Clusters that can use only secondary workers and be scaled down to zero secondary worker nodes.",
+          "ANACONDA The Anaconda component is no longer supported or applicable to supported Dataproc on Compute Engine image versions ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dataproc.v1 (4.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "source_id": "site-java-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cluster Controller Grpc The ClusterControllerService provides methods to manage clusters of Compute Engine instances. com. google. cloud. dataproc. v1.",
+          "Async Service The ClusterControllerService provides methods to manage clusters of Compute Engine instances. com. google. cloud. dataproc. v1.",
+          "Builder Builder for projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{node group}. com. google. cloud. dataproc. v1."
+        ]
+      },
+      {
+        "title": "Managed Service for Apache Spark logs \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "source_id": "site-iam-reference",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following command uses cluster labels to filter the returned log entries. gcloud logging read <<'EOF' \"resource.type=cloud dataproc cluster resource.labels.region= cluster-region resource.labels.cluster name= cluster-name resource.labels.cluster uuid= cluster-uuid \" EOF Sample output (partial): jsonPayload: class: org.apache.hadoop.yarn.server.resourcemanager.ResourceTrackerService filename: hadoop-yarn-resourcemanager-cluster-name-m.log ... logName: projects/project-id/logs/hadoop-yarn-resourcemanager --- jsonPayload: class: org.apache.hadoop.yarn.server.resourcemanager.ResourceTrackerService filename: hadoop-yarn-resourcemanager-component-gateway-cluster-m.log ... logName: projects/project-id/logs/hadoop-yarn-resourcemanager Run gcloud dataproc clusters describe cluster-name --region= region to list cluster labels that you can use to filter logging results.",
+          "Log Type Log Name Description Notes Master daemon logs hadoop-hdfs hadoop-hdfs-namenode hadoop-hdfs-secondarynamenode hadoop-hdfs-zkfc hadoop-yarn-resourcemanager hadoop-yarn-timelineserver hive-metastore hive-server2 hadoop-mapred-historyserver zookeeper Journal node HDFS namenode HDFS secondary namenode Zookeeper failover controller YARN resource manager YARN timeline server Hive metastore Hive server2 Mapreduce job history server Zookeeper server Worker daemon logs hadoop-hdfs-datanode hadoop-yarn-nodemanager HDFS datanode YARN nodemanager System logs autoscaler google.dataproc.agent google.dataproc.startup Managed Service for Apache Spark autoscaler log Managed Service for Apache Spark agent log Managed Service for Apache Spark startup script log + initialization action log Extended (additional) logs knox gateway-audit zeppelin ranger-usersync jupyter notebook jupyter kernel gateway spark-history-server All logs inside /var/log/ subdirectories matching: knox (includes gateway-audit.log) zeppelin ranger-usersync jupyter notebook jupyter kernel gateway spark-history-server Setting the dataproc:dataproc.logging.extended.enabled=false property disables the collection of extended logs on the cluster VM syslogs syslog Syslogs from cluster's master and worker nodes Setting the dataproc:dataproc.logging.syslog.enabled=false property disables the collection of VM syslogs on the cluster Access cluster logs in Cloud Logging You can access Managed Service for Apache Spark cluster logs using the Logs Explorer , the gcloud logging command, or the Logging API .",
+          "Example: Managed Service for Apache Spark image version 2.0 with Spark 3.1 to set log4j.logger.org.apache.spark : gcloud dataproc clusters create ... \\ --properties spark-log4j:log4j.logger.org.apache.spark=DEBUG Example: Managed Service for Apache Spark image version 2.1 with Spark 3.3 to set logger.sparkRoot.level : gcloud dataproc clusters create ...\\ --properties spark-log4j:logger.sparkRoot.level=debug Job driver logging levels Managed Service for Apache Spark uses a default logging level of INFO for job driver programs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "audit.log",
+      "com.google.cloud.dataproc.v1",
+      "dataproc.logging.extended.enabled",
+      "dataproc.logging.syslog.enabled",
+      "log4j.logger.org.apache.spark",
+      "logger.sparkRoot.level",
+      "m.log",
+      "org.apache.hadoop.yarn.server.resourcemanager.ResourceTrackerService",
+      "resource.labels.cluster",
+      "resource.labels.region",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc/docs/guides/logging",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

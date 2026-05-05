@@ -1,0 +1,173 @@
+{
+  "feature_name": "Pub/Sub import topics for Amazon Kinesis Data Streams",
+  "feature_slug": "pub-sub-import-topics-for-amazon-kinesis-data-streams",
+  "summary": "Import topics can ingest streaming data from Amazon Kinesis Data Streams into Pub/Sub.",
+  "extended_definition": "Import topics can ingest streaming data from Amazon Kinesis Data Streams into Pub/Sub.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+      "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+      "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create an Amazon Kinesis Data Streams import topic \\_|\\_ Pub/Sub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "source_id": "site-docs-root-2",
+        "final_score": 360,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and manage Amazon Kinesis Data Streams import topics: Create an import topic: pubsub.topics.create Delete an import topic: pubsub.topics.delete Get an import topic: pubsub.topics.get List an import topic: pubsub.topics.list Publish to an import topic: pubsub.topics.publish and pubsub.serviceAgent Update an import topic: pubsub.topics.update Get the IAM policy for an import topic: pubsub.topics.getIamPolicy Configure the IAM policy for an import topic: pubsub.topics.setIamPolicy You might also be able to get these permissions with custom roles or other predefined roles .",
+          "For Amazon Kinesis Data Streams import topics, Pub/Sub uses the service account as the identity to access resources from AWS.",
+          "Ensure that you have completed the following procedures: Set up federated identity to access Kinesis Data Streams Add the Pub/Sub publisher role to the Pub/Sub service account Add the service account user role to the service account To create an Amazon Kinesis Data Streams import topic, follow these steps: Console In the Google Cloud console, go to the Topics page."
+        ]
+      },
+      {
+        "title": "\"Troubleshooting an Amazon Kinesis Data Streams import topic \\_|\\_ Pub/Sub\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "source_id": "site-docs-root-2",
+        "final_score": 348,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Pub/Sub Guides Send feedback Troubleshooting an Amazon Kinesis Data Streams import topic Stay organized with collections Save and categorize content based on your preferences.",
+          "This document provides some common troubleshooting tips for Amazon Kinesis Data Streams import topics.",
+          "You can enable or disable Platform logs for Amazon Kinesis Data Streams import topics."
+        ]
+      },
+      {
+        "title": "\"Create a Amazon Managed Streaming for Apache Kafka import topic \\_|\\_ Pub/Sub\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "source_id": "site-docs-root-2",
+        "final_score": 293,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create and manage Amazon MSK import topics: Create an import topic: pubsub.topics.create Delete an import topic: pubsub.topics.delete Get an import topic: pubsub.topics.get List an import topic: pubsub.topics.list Publish to an import topic: pubsub.topics.publish and pubsub.serviceAgent Update an import topic: pubsub.topics.update Get the IAM policy for an import topic: pubsub.topics.getIamPolicy Configure the IAM policy for an import topic: pubsub.topics.setIamPolicy You might also be able to get these permissions with custom roles or other predefined roles .",
+          "For Amazon MSK import topics, Pub/Sub uses the service account as the identity to access resources from AWS.",
+          "Ensure that you have completed the following procedures: Set up federated identity to access Amazon MSK Add the Pub/Sub publisher role to the Pub/Sub service account Add the service account user role to the service account To create an Amazon MSK import topic, follow these steps: Console In the Google Cloud console, go to the Topics page."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics",
+        "source_id": "site-api-reference",
+        "final_score": 292,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list topics\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the ListTopics method.",
+          "The name of the topic in the Amazon MSK cluster that Pub/Sub will import from. awsRoleArn string Required.",
+          "CloudStorage JSON representation { \"state\" : enum ( State ) , \"bucket\" : string , \"minimumObjectCreateTime\" : string , \"matchGlob\" : string , // Union field input format can be only one of the following: \"textFormat\" : { object ( TextFormat ) } , \"avroFormat\" : { object ( AvroFormat ) } , \"pubsubAvroFormat\" : { object ( PubSubAvroFormat ) } // End of list of possible types for union field input format . } Fields state enum ( State ) Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pubsub.googleapis.com",
+      "pubsub.iam.gserviceaccount.com",
+      "pubsub.publisher",
+      "pubsub.serviceAgent",
+      "pubsub.topics.create",
+      "pubsub.topics.delete",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.list",
+      "pubsub.topics.publish",
+      "pubsub.topics.setIamPolicy",
+      "pubsub.topics.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.publisher"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-aws-kinesis-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/aws-kinesis-import-topic-troubleshooting",
+        "https://docs.cloud.google.com/pubsub/docs/create-amazon-msk-import-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_topics"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.474Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

@@ -1,0 +1,191 @@
+{
+  "feature_name": "Cloud KMS General Availability",
+  "feature_slug": "cloud-kms-general-availability",
+  "summary": "Cloud KMS became generally available as a managed encryption key service.",
+  "extended_definition": "Cloud KMS became generally available as a managed encryption key service.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/autokey-overview",
+      "https://docs.cloud.google.com/kms/docs/cmek",
+      "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+      "https://docs.cloud.google.com/kms/docs/ekm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud External Key Manager \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/ekm",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compatibility Supported key managers You can store external keys in the following external key management partner systems: Supported today: Fortanix Futurex Thales Services that support CMEK with Cloud EKM The following services support integration with Cloud KMS for external (Cloud EKM) keys: Agent Assist AlloyDB for PostgreSQL Apigee API hub Application Integration Artifact Registry Backup and DR Service: Backup Vault Container and Backups at rest Backup for GKE BigQuery Bigtable Cloud Composer Cloud Data Fusion Cloud Healthcare API Cloud Logging: Data in the Log Router and Data in Logging storage Cloud Run Cloud Run functions Cloud SQL Cloud Storage Cloud Tasks Cloud Workstations Compute Engine: Persistent disks , Snapshots , Custom images , and Machine images Customer Experience Insights Database Migration Service: MySQL migrations - data written to databases , PostgreSQL migrations - Data written to databases , PostgreSQL to AlloyDB migrations - Data written to databases , SQL Server migrations - Data written to databases , and Oracle to PostgreSQL data at rest Dataflow Dataform Dataplex Universal Catalog Dataproc Metastore Datastream Dialogflow CX Document AI Eventarc Advanced ( Preview ) Eventarc Standard Filestore Firestore Google Cloud Managed Lustre Google Cloud Managed Service for Apache Kafka Google Cloud NetApp Volumes Google Distributed Cloud Google Kubernetes Engine: Data on VM disks and Application-layer secrets Integration Connectors Looker (Google Cloud core) Managed Service for Apache Spark: Dataproc clusters data on VM disks and Dataproc serverless data on VM disks Memorystore for Redis Memorystore for Redis Cluster Memorystore for Valkey Migrate to Virtual Machines: Data migrated from VMware, AWS, and Azure VM sources and Data migrated from disk and machine image sources Parameter Manager Pub/Sub Secret Manager Secure Source Manager Security Command Center Spanner Speech-to-Text Vertex AI Vertex AI Workbench instances Workflows Workload Manager Important: All other services are not compatible with Cloud External Key Manager for CMEK.",
+          "Considerations When you use a Cloud EKM key, Google has no control over the availability of your externally managed key in the external key management partner system.",
+          "With EKM key management from Cloud KMS enabled, Cloud EKM can request the following changes in your EKM: Create a key: When you create an externally managed key in Cloud KMS using a compatible EKM connection, Cloud EKM sends your key creation request to your EKM."
+        ]
+      },
+      {
+        "title": "\"Best practices for using CMEKs \\_|\\_ Cloud Key Management Service \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "source_id": "site-iam-reference",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "For workloads that require high availability or disaster recovery capabilities across multiple locations, it's your responsibility to assess whether your workload is resilient in the event that Cloud KMS becomes unavailable in a certain region.",
+          "For example, a Compute Engine persistent disk encrypted with a Cloud KMS key from region A can't be recreated in region B in a disaster recovery scenario where region A is unavailable.",
+          "This guide assumes that you're already familiar with Cloud Key Management Service (Cloud KMS) and customer-managed encryption keys and have read the Cloud KMS deep dive ."
+        ]
+      },
+      {
+        "title": "Autokey overview \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud KMS Autokey simplifies creating and using customer-managed encryption keys (CMEKs) by automating provisioning and assignment.",
+          "You can use Autokey with a centralized key management model (Generally Available) or a delegated key management model ( Preview ).",
+          "One key per resource Dataflow dataflow.googleapis.com/Job One key per resource Managed Service for Apache Spark dataproc.googleapis.com/Cluster dataproc.googleapis.com/SessionTemplate dataproc.googleapis.com/WorkflowTemplate dataproc.googleapis.com/Batch dataproc.googleapis.com/Session For Cluster, SessionTemplate, and WorkflowTemplate resources: One key per resource For Batch and Session resources: One key per location within a project Limitations The gcloud CLI is not available for Autokey resources."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Cloud Key Management Service\\",
+        "url": "https://docs.cloud.google.com/kms/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following factors differentiate Google Cloud's default encryption at rest from customer-managed keys: Type of key Cloud KMS Autokey Cloud KMS customer-managed (manual) Google-owned and Google-managed encryption key (Google default encryption) Can view key metadata Yes Yes No Ownership of keys 1 Customer Customer Google Can manage 2 and control 3 keys Key creation and assignment is automated.",
+          "Home Documentation Security Cloud KMS Guides Send feedback Customer-managed encryption keys (CMEK) Stay organized with collections Save and categorize content based on your preferences.",
+          "Customer-managed encryption keys (CMEK) with Cloud KMS Autokey Cloud KMS Autokey simplifies creating and managing CMEKs by automating provisioning and assignment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.admin",
+      "dataflow.googleapis.com",
+      "dataproc.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/ekm",
+        "https://docs.cloud.google.com/kms/docs/cmek-best-practices",
+        "https://docs.cloud.google.com/kms/docs/autokey-overview",
+        "https://docs.cloud.google.com/kms/docs/cmek"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.806Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service"
+}

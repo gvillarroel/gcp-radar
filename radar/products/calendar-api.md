@@ -1,0 +1,35 @@
+# Calendar API
+
+Generated at: `2026-05-05T13:13:05.575Z`
+
+Service card: [card.json](../../artifacts/calendar-api/card.json)
+
+Artifacts index: [calendar-api](../../artifacts/calendar-api/index.md)
+
+## Summary
+
+- Promoted features: 16
+- Skipped features during promotion: 0
+- Latest feature date: 2025-10-27
+- Service IAM status: {"explicit":0,"derived_from_permission_prefix":0,"unknown":16}
+
+## Features
+
+| Feature | IAM | Explicit roles | Explicit permissions | Derived roles | Derived permissions | Coverage | Official sources |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [Add-on conference data](../../artifacts/calendar-api/add-on-conference-data/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/create-events)<br>[source](https://developers.google.com/workspace/calendar/api/guides/event-types)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList) |
+| [Additional OAuth scopes](../../artifacts/calendar-api/additional-oauth-scopes/README.md) | unknown | none | none | none | none | LOW | [source](https://developers.google.com/workspace/calendar/api/auth)<br>[source](https://developers.google.com/workspace/calendar/api/guides/errors)<br>[source](https://developers.google.com/workspace/calendar/api/guides/overview) |
+| [Birthday event type](../../artifacts/calendar-api/birthday-event-type/README.md) | unknown | none | none | none | none | LOW | [source](https://developers.google.com/workspace/calendar/api/guides/calendar-status)<br>[source](https://developers.google.com/workspace/calendar/api/guides/event-types)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference) |
+| [Birthday special events from Google Contacts](../../artifacts/calendar-api/birthday-special-events-from-google-contacts/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/create-events)<br>[source](https://developers.google.com/workspace/calendar/api/guides/event-types)<br>[source](https://developers.google.com/workspace/calendar/api/guides/recurringevents) |
+| [Conference data for Hangouts and Google Meet](../../artifacts/calendar-api/conference-data-for-hangouts-and-google-meet/README.md) | unknown | none | none | none | none | LOW | [source](https://developers.google.com/workspace/calendar/api/guides/create-events)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendars) |
+| [Custom attachments](../../artifacts/calendar-api/custom-attachments/README.md) | unknown | none | none | none | none | LOW | [source](https://developers.google.com/workspace/calendar/api/auth)<br>[source](https://developers.google.com/workspace/calendar/api/guides/create-events)<br>[source](https://developers.google.com/workspace/calendar/api/guides/overview) |
+| [Event type field](../../artifacts/calendar-api/event-type-field/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/calendar-status)<br>[source](https://developers.google.com/workspace/calendar/api/guides/create-events)<br>[source](https://developers.google.com/workspace/calendar/api/guides/event-types) |
+| [Focus time event type](../../artifacts/calendar-api/focus-time-event-type/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/calendar-status)<br>[source](https://developers.google.com/workspace/calendar/api/guides/create-events)<br>[source](https://developers.google.com/workspace/calendar/api/guides/event-types) |
+| [Global HTTP batch endpoints](../../artifacts/calendar-api/global-http-batch-endpoints/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/batch)<br>[source](https://developers.google.com/workspace/calendar/api/guides/calendar-status)<br>[source](https://developers.google.com/workspace/calendar/api/guides/errors) |
+| [JSON-RPC protocol support](../../artifacts/calendar-api/json-rpc-protocol-support/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/performance)<br>[source](https://developers.google.com/workspace/calendar/api/quickstart/go)<br>[source](https://developers.google.com/workspace/calendar/api/quickstart/java) |
+| [Out-of-office event owner identification](../../artifacts/calendar-api/out-of-office-event-owner-identification/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/calendar-status)<br>[source](https://developers.google.com/workspace/calendar/api/guides/event-types)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference) |
+| [Per-minute per-project per-user quota](../../artifacts/calendar-api/per-minute-per-project-per-user-quota/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/errors)<br>[source](https://developers.google.com/workspace/calendar/api/guides/quota)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList) |
+| [Per-minute per-project quota](../../artifacts/calendar-api/per-minute-per-project-quota/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/errors)<br>[source](https://developers.google.com/workspace/calendar/api/guides/quota)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList) |
+| [Secondary calendar data ownership](../../artifacts/calendar-api/secondary-calendar-data-ownership/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/v3/reference)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendars) |
+| [sendUpdates parameter](../../artifacts/calendar-api/sendupdates-parameter/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://developers.google.com/workspace/calendar/api/guides/create-events)<br>[source](https://developers.google.com/workspace/calendar/api/guides/event-types)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference/calendarList) |
+| [Working locations](../../artifacts/calendar-api/working-locations/README.md) | unknown | none | none | none | none | LOW | [source](https://developers.google.com/workspace/calendar/api/auth)<br>[source](https://developers.google.com/workspace/calendar/api/guides/calendar-status)<br>[source](https://developers.google.com/workspace/calendar/api/v3/reference) |

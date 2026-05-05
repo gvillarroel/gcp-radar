@@ -1,0 +1,184 @@
+{
+  "feature_name": "Gemini Code Assist subscription licensing",
+  "feature_slug": "gemini-code-assist-subscription-licensing",
+  "summary": "Administrators can assign, unassign, and manage Gemini Code Assist subscription licenses for users.",
+  "extended_definition": "Administrators can assign, unassign, and manage Gemini Code Assist subscription licenses for users.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Gemini Code Assist code customization \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "",
+        "evidence_snippets": [
+          "Subset of the index You can create multiple repository groups and assign IAM roles to different IAM principals. data \"google iam policy\" \"foo\" { binding { role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } } resource \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" policy data = data.google iam policy.foo.policy data } data \"google gemini repository group iam policy\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" depends on = [ google gemini repository group iam policy.foo ] } You can also create a binding: resource \"google gemini repository group iam binding\" \"foo\" { project = \" PROJECT ID \" location = \" REGION \" code repository index id = \" INDEX NAME \" repository group id = \" GROUP NAME \" role = \"roles/cloudaicompanion.repositoryGroupsUser\" members = [ \"test-user@example.com\" ] } Replace the following: GROUP NAME : the repository group name you created in a preceding step to control access to your index using repository groups.",
+          "Before you begin Set up Gemini Code Assist with an Enterprise subscription .",
+          "You also can create a repository group with repositories defined in a JSON (or YAML) file, formatted as follows: JSON [ { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"main dev\" }, { \"resource\" : \" REPOSITORY RESOURCE NAME \" , \"branchPattern\" : \"dev\" } ] YAML - resource : REPOSITORY RESOURCE NAME branchPattern : main dev - resource : REPOSITORY RESOURCE NAME branchPattern : dev To create a repository group based on a JSON or YAML file, in a shell environment, use the gemini code-repository-indexes repository-groups create command : JSON gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .json YAML gcloud gemini code-repository-indexes repository-groups create REPOSITORY GROUP \\ --project = PROJECT ID \\ --location = REGION \\ --code-repository-index = INDEX NAME \\ --repositories = FILEPATH .yaml If preferred, you can encrypt and control your data with a customer-managed encryption key (CMEK) through Cloud Key Management Service ."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you set up Gemini Code Assist, you can view license assignments by navigating to the Admin for Gemini page, selecting your billing account, clicking Manage Gemini Code Assist Subscription , and then selecting the License management tab.",
+          "A user in your organization is automatically assigned a license when they use Gemini Code Assist within a supported IDE, provided all the following conditions are met: The user has selected a project that is associated with the subscription's billing account.",
+          "A user in your organization is automatically assigned a license when they use Gemini Code Assist within a supported IDE, provided all the following conditions are met: The user has selected a project that is associated with the subscription's billing account."
+        ]
+      },
+      {
+        "title": "\"Manage Gemini Code Assist Standard and Enterprise licenses \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the command succeeds, it returns licensedUsers output in the following format: { \"licensedUsers\": [ { \"username\": \"dana@example.com\", \"assignTime\": \"2024-09-26T16:24:40.559222Z\" }, { \"username\": \"lee@example.com\", \"assignTime\": \"2024-09-26T16:24:40.559222Z\" }, { \"username\": \"taylor@example.com\", \"assignTime\": \"2024-09-26T16:24:40.559222Z\" }, { \"username\": \"bola@example.com\", \"assignTime\": \"2024-09-26T16:24:14.610828Z\" } ] } If there are no Gemini Code Assist Standard or Enterprise license assignments or the ORDER ID is invalid, it returns licensedUsers output in the following format: {} Automatically assign Gemini Code Assist Standard and Enterprise licenses You can enable automatic license assignment for a subscription.",
+          "Note: You can't assign a Gemini Code Assist Standard seat license to a user that has a Google Developer Program Premium subscription , because such a user already has a Gemini Code Assist Standard license as part of their own subscription.",
+          "If the Gemini Code Assist Standard or Enterprise subscription is set to Automatically Assign Licenses , then you cannot manage individual licenses."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you set up Gemini Code Assist, you can view license assignments by navigating to the Admin for Gemini page, selecting your billing account, clicking Manage Gemini Code Assist Subscription , and then selecting the License management tab.",
+          "A user in your organization is automatically assigned a license when they use Gemini Code Assist within a supported IDE, provided all the following conditions are met: The user has selected a project that is associated with the subscription's billing account.",
+          "A user in your organization is automatically assigned a license when they use Gemini Code Assist within a supported IDE, provided all the following conditions are met: The user has selected a project that is associated with the subscription's billing account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.get",
+      "cloudaicompanion.repositoryGroupsUser",
+      "consumerprocurement.licensePools.enumerateLicensedUsers",
+      "consumerprocurement.licensePools.get",
+      "consumerprocurement.orders.get",
+      "data.google",
+      "example.com",
+      "policy.foo",
+      "policy.foo.policy"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudaicompanion.repositoryGroupsUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/manage-licenses",
+        "https://docs.cloud.google.com/gemini/docs/discover/set-up-gemini"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.293Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

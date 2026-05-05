@@ -1,0 +1,84 @@
+{
+  "feature_name": "Task Dependent DAGs",
+  "feature_slug": "task-dependent-dags",
+  "summary": "Task Dependent DAGs provide out-of-the-box and customizable task dependency configurations for SAP ECC and S/4 reporting pipelines.",
+  "extended_definition": "Task Dependent DAGs provide out-of-the-box and customizable task dependency configurations for SAP ECC and S/4 reporting pipelines.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cortex/docs/deployment-step-five",
+      "https://docs.cloud.google.com/cortex/docs/external-dags-migration",
+      "https://docs.cloud.google.com/cortex/docs/looker-block-deployment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Step 5: Configure deployment \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/deployment-step-five",
+        "source_id": "site-docs-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: Test data deployment will only execute if the raw dataset is empty and has no tables . deploySAP Deploy SAP true Execute the deployment for SAP workload (ECC or S/4 HANA). deploySFDC Deploy Salesforce true Execute the deployment for Salesforce workload. deployMarketing Deploy Marketing true Execute the deployment for Marketing sources (Google Ads, CM360, and TikTok). deployOracleEBS Deploy Oracle EBS true Execute the deployment for Oracle EBS workload. enableTaskDependencies Task dependent DAGs false Enable task dependent DAGs so supported SQL tables will be executed based on dependency order, within single DAGs.",
+          "Note: If you enabled Task dependent DAGs by setting the enableTaskDependencies field to True , make sure to create a dedicated reporting settings file with the suffix task dep.yaml for each data source requiring task dependencies.",
+          "For more information, see Task dependent DAGs . turboMode Deploy in Turbo mode . true Execute all views builds as a step in the same Cloud Build process, in parallel for a faster deployment."
+        ]
+      },
+      {
+        "title": "\"External DAGs migration from v4.2 to v5.0 \\_|\\_ Google Cloud Cortex Framework\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/external-dags-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following external data sources are now deployed as a part of K9, into the K9 PROCESSING dataset: date dimension holiday calendar trends weather SAP-dependent DAGs The following SAP-dependent DAGs are still triggered by generate external dags.sh script, but now executes during the reporting build step, and now write into the SAP reporting dataset instead of the CDC (Change Data Capture) stage. currency conversion inventory snapshots prod hierarchy texts Migration Guide This guide outlines the steps to upgrade your Cortex Framework Data Foundation to version 5.0.",
+          "Make sure to remove any DAGs you don't want to migrate from the migrate list section: { \"project id src\" : \"your-source-project\" , \"project id tgt\" : \"your-target-project\" , \"dataset cdc processed\" : \"your-cdc-processed-dataset\" , \"dataset reporting tgt\" : \"your-reporting-target-dataset-OR-SAP REPORTING\" , \"k9 datasets processing\" : \"your-k9-processing-dataset-OR-K9 REPORTING\" , \"migrate list\" : [ \"holiday calendar\" , \"trends\" , \"weather\" , \"currency conversion\" , \"inventory snapshots\" , \"prod hierarchy texts\" ] } EOF For example, if you want to remove weather and trends , the script would look like the following: { \"project id src\" : \"kittycorn-demo\" , \"project id tgt\" : \"kittycorn-demo\" , \"dataset cdc processed\" : \"CDC PROCESSED\" , \"dataset reporting tgt\" : \"SAP REPORTING\" , \"k9 datasets processing\" : \"K9 PROCESSING\" , \"migrate list\" : [ \"holiday calendar\" , \"currency conversion\" , \"inventory snapshots\" , \"prod hierarchy texts\" ] } Create an output folder with the following command: mkdir output Generate the parsed migration script with the following command (this command assumes you are at the root of the repository): jinja -d data.json -o output/migrate external dags.sql docs/external dag migration/scripts/migrate external dags.sql Examine the output SQL file and execute in BigQuery to migrate your tables to the new location.",
+          "Cross-workload reusable DAGs Cortex Framework Data Foundation v5.0 introduces K9, a new component responsible for ingesting, processing, and modeling reusable data elements that are shared across various data sources."
+        ]
+      },
+      {
+        "title": "\"Deploy Looker Blocks \\_|\\_ Google Cloud Cortex Framework \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/cortex/docs/looker-block-deployment",
+        "source_id": "site-docs-reference",
+        "final_score": 40,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dags.sh",
+      "dags.sql",
+      "data.json",
+      "dep.yaml",
+      "v4.2",
+      "v5.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:23.908Z",
+  "source_step08_card": "data/step-08/current/products/cortex/card.json",
+  "product_name": "Cortex",
+  "product_slug": "cortex"
+}

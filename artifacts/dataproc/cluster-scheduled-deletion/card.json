@@ -1,0 +1,111 @@
+{
+  "feature_name": "Cluster Scheduled Deletion",
+  "feature_slug": "cluster-scheduled-deletion",
+  "summary": "Cluster Scheduled Deletion lets users configure clusters to be deleted after a duration, at a specific time, or after inactivity.",
+  "extended_definition": "Cluster Scheduled Deletion lets users configure clusters to be deleted after a duration, at a specific time, or after inactivity.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Examples: https://www.googleapis.com/compute/v1/projects/[projectId]/zones/[zone]/nodeGroups/node-group-1 projects/[projectId]/zones/[zone]/nodeGroups/node-group-1 node-group-1 ShieldedInstanceConfig Shielded Instance Config for clusters using Compute Engine Shielded VMs .",
+          "SINGLE NODE https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/single-node-clusters ZERO SCALE Clusters that can use only secondary workers and be scaled down to zero secondary worker nodes.",
+          "ConfidentialInstanceConfig Confidential Instance Config for clusters using Confidential VMs JSON representation { \"enableConfidentialCompute\" : boolean } Fields enableConfidentialCompute boolean Optional."
+        ]
+      },
+      {
+        "title": "\"Configure Kerberos for Dataproc Metastore gRPC endpoints \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a Dataproc Metastore service with the gRPC endpoint To create a Dataproc Metastore that uses the gRPC endpoint, run the following gcloud metastore services create command: gcloud gcloud metastore services create SERVICE \\ --instance-size=medium \\ --endpoint-protocol=grpc Replace: SERVICE : The name of your Dataproc Metastore service Create a Managed Service for Apache Spark cluster and connect to your service To create a Managed Service for Apache Spark configured with Kerberos, run the following gcloud dataproc clusters create command.",
+          "These values are all created using default names and settings set by the Managed Service for Apache Spark cluster. gcloud gcloud dataproc clusters create CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --image-version 2.0-debian10 \\ --dataproc-metastore DATAPROC METASTORE NAME \\ --enable-kerberos \\ --scopes 'https://www.googleapis.com/auth/cloud-platform' Replace: CLUSTER NAME : the name of your Managed Service for Apache Spark cluster.",
+          "Configure Managed Service for Apache Spark before submitting jobs To run your Managed Service for Apache Spark jobs , you must add the hive user to the allowed.system.users property in the Hadoop container-executor.cfg file."
+        ]
+      },
+      {
+        "title": "\"Configure Kerberos for Dataproc Metastore Thrift endpoints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the SSH session, open the /etc/hive/conf/hive-site.xml file. sudo vim /etc/hive/conf/hive-site.xml Modify /etc/hive/conf/hive-site.xml on the Managed Service for Apache Spark cluster. < property > < name>hive . metastore . uris < / name > < ! -- Update this value . -- > < value> ENDPOINT URI < / value > < / property > < ! -- Add this property entry . -- > < property > < name>hive . metastore . warehouse . dir < / name > < value> WAREHOUSE DIR < / value > < / property > Restart HiveServer2: sudo systemctl restart hive-server2.service Configure Managed Service for Apache Spark before submitting jobs To run your Managed Service for Apache Spark jobs , you must add the hive user to the allowed.system.users property in the Hadoop container-executor.cfg file.",
+          "Create a Managed Service for Apache Spark cluster and enable Kerberos gcloud To set up a Managed Service for Apache Spark cluster with Kerberos, run the following gcloud dataproc clusters create command: gcloud dataproc clusters create CLUSTER NAME \\ --image-version=2.0 \\ --enable-kerberos \\ --scopes 'https://www.googleapis.com/auth/cloud-platform' Replace the following: CLUSTER NAME : the name of your Managed Service for Apache Spark cluster.",
+          "Configure the Managed Service for Apache Spark cluster for Kerberos The following instructions show you how to use SSH to connect to a primary Managed Service for Apache Spark cluster that's associated with your Dataproc Metastore service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "allowed.system.users",
+      "executor.cfg",
+      "server2.service",
+      "site.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

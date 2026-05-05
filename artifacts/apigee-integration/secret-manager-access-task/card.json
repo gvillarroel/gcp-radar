@@ -1,0 +1,131 @@
+{
+  "feature_name": "Secret Manager - Access task",
+  "feature_slug": "secret-manager-access-task",
+  "summary": "Introduces a Secret Manager Access task (preview) to retrieve secret versions from Secret Manager.",
+  "extended_definition": "Introduces a Secret Manager Access task (preview) to retrieve secret versions from Secret Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+      "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+      "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate Salesforce opportunity to BigQuery order \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Grant the following roles to the service account: BigQuery Data Editor ( roles/bigquery.dataEditor ), BigQuery Read Session User ( roles/bigquery.readSessionUser ), Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors BigQuery Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier ."
+        ]
+      },
+      {
+        "title": "\"Enrich API data with custom curation in API hub \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin Before you begin this tutorial, ensure you have completed the following: Grant the following IAM roles to the service account that you want to use to create the connection: roles/secretmanager.viewer, roles/secretmanager.secretAccessor roles/storage.admin For information on granting roles, see Granting, changing, and revoking access .",
+          "JavaScript task (Enrich API metadata with spec contents) Script: / Processes and curates API metadata with spec contents. @param {object} event The event object containing API data and spec content. / function executeScript(event) { let apiMetadata = event.getParameter('apiMetadata'); let specContent = event.getParameter('specContent'); // Initialize curatedAPIMetadata directly from apiMetadata const curatedAPIMetadata = { ...apiMetadata }; // Construct the 'spec' object efficiently const spec = { displayName: \"open-api-spec\", specType: { enumValues: { values: [{ id: \"openapi\" }] } }, contents: { mimeType: \"application/yaml\", contents: specContent, }, }; // Create the specMetadata object const specMetadata = { // Ensure originalUpdateTime exists before assigning // provide a fallback if needed originalModifiedTime: curatedAPIMetadata.originalUpdateTime new Date().toISOString(), spec: spec, }; // Initialize or update the specs array within the first version // This assumes versions[0] always exists.",
+          "Add checks if it might not. if (!curatedAPIMetadata.versions curatedAPIMetadata.versions.length === 0) { curatedAPIMetadata.versions = [{ specs: [] }]; } else if (!curatedAPIMetadata.versions[0].specs) { curatedAPIMetadata.versions[0].specs = []; } curatedAPIMetadata.versions[0].specs.push(specMetadata); // Set the modified apiData parameter event.setParameter('curatedAPIMetadata', curatedAPIMetadata); } The script demonstrates how the API metadata is enriched using the parsed specContent output from the Data Mapping task."
+        ]
+      },
+      {
+        "title": "\"API request fulfilment \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/api-fulfilment",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Grant the following roles to the service account: Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Grant the following roles to the service account: Secret Manager Viewer ( roles/secretmanager.viewer ), Secret Manager Secret Accessor ( roles/secretmanager ) .",
+          "Costs In this tutorial, you use the following billable components of Google Cloud: Application Integration Integration Connectors Secret Manager The instructions in this tutorial are designed to keep your resource usage within the limits of Google Cloud's Always Free tier ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.readSessionUser",
+      "event.getParameter",
+      "event.setParameter",
+      "secretmanager.secretAccessor",
+      "secretmanager.viewer",
+      "specs.push",
+      "storage.admin",
+      "versions.length"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.readSessionUser",
+      "roles/secretmanager",
+      "roles/secretmanager.secretAccessor",
+      "roles/secretmanager.viewer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data",
+        "https://docs.cloud.google.com/application-integration/docs/automate-salesforce-opportunity-to-bigquery-order",
+        "https://docs.cloud.google.com/application-integration/docs/api-fulfilment"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.454Z",
+  "source_step08_card": "data/step-08/current/products/apigee-integration/card.json",
+  "product_name": "Apigee Integration",
+  "product_slug": "apigee-integration"
+}

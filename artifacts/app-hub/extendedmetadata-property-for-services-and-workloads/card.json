@@ -1,0 +1,141 @@
+{
+  "feature_name": "ExtendedMetadata property for services and workloads",
+  "feature_slug": "extendedmetadata-property-for-services-and-workloads",
+  "summary": "Services and workloads now include an output-only ExtendedMetadata property for structured, schema-based resource details.",
+  "extended_definition": "Services and workloads now include an output-only ExtendedMetadata property for structured, schema-based resource details.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
+      "https://docs.cloud.google.com/app-hub/docs/overview",
+      "https://docs.cloud.google.com/app-hub/docs/register-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "App Hub overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key supported properties include: ( Preview ) Registration type : for services, an output-only property that indicates if a service can be registered to one or multiple applications.",
+          "To learn how to visualize this metadata, see View extended metadata schemas . ( Preview ) Identity : an output-only property that contains the service account or managed workload identity name for a service or workload.",
+          "To learn which services are shared or exclusive, see the list of App Hub supported services . ( Preview ) Functional type : an output-only property that identifies the known function of a service or workload."
+        ]
+      },
+      {
+        "title": "\"Register existing resources to an application \\_|\\_ App Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "source_id": "site-docs-root-2",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional: FILTER EXPRESSION : the filter expression for the --filter flag to only display services from a specified project within the application management boundary or with a specific property, for example: service properties.gcp project=projects/ PROJECT ID service properties.gcp project=projects/ PROJECT ID AND service reference.uri \"forwardingRules\" The output is similar to the following example: ID SERVICE REFERENCE SERVICE PROPERTIES SERVICE ID { 'uri' : '//compute.googleapis.com/projects/ PROJECT NUMBER /regions/ REGION /forwardingRules/forwarding-rule' } { 'gcpProject' : 'projects/ PROJECT ID ' , 'location' : ' REGION ' } Copy the service ID, SERVICE ID , from the output.",
+          "Optional: FILTER EXPRESSION : the filter expression for the --filter flag to only display workloads from a specified project within the application management boundary or with a specific property, for example, workload properties.gcp project=projects/ PROJECT ID .",
+          "List the registered services in your application: gcloud apphub applications services list \\ --application = APPLICATION NAME --project = PROJECT ID \\ --location = REGION You must obtain an output similar to the following for each registered service: ID DISPLAY NAME SERVICE REFERENCE CREATE TIME SERVICE NAME SERVICE DISPLAY NAME { 'uri' : '//compute.googleapis.com/projects/ PROJECT NUMBER /regions/ REGION /forwardingRules/forwarding-rule' } 2023 -11-01T21:38:08 Register workloads List the available workloads that you can register to an application: gcloud apphub discovered-workloads list \\ --project = PROJECT ID \\ --location = REGION \\ --filter = FILTER EXPRESSION For required and optional flags, replace the following: Required: PROJECT ID : the ID of the management project."
+        ]
+      },
+      {
+        "title": "Manage services and workloads \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources",
+        "source_id": "site-docs-root-2",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following examples update the criticality and environment attributes of services and workloads of a regional application: Update service attributes: resource \"google apphub service\" \"example\" { ... other arguments attributes { criticality { type = \"HIGH\" # Updated criticality } environment { type = \"PRODUCTION\" } ... other attributes } } Update workload attributes: resource \"google apphub workload\" \"example\" { ... other arguments attributes { criticality { type = \"HIGH\" # Updated criticality } environment { type = \"PRODUCTION\" } ... other attributes } } Unregister services and workloads Unregistering a service or workload removes it from an application.",
+          "The following example lets you view the details of the apphub.googleapis.com/AgentProperties schema for a workload with the AGENT functional type in the my-project-id project at the us-central1 location. data \"google apphub extended metadata schema\" \"agent properties\" { project = \"my-project-id\" location = \"us-central1\" name = \"apphub.googleapis.com/AgentProperties\" } Update service and workload attributes To modify the attributes of services and workloads that are registered in an application, follow these steps: Note: You cannot modify attributes for shared services .",
+          "Update workload attributes: gcloud apphub applications workloads update WORKLOAD NAME \\ --application = APPLICATION NAME \\ --project = PROJECT ID \\ --location = LOCATION \\ --display-name = DISPLAY NAME \\ --criticality-type = CRITICALITY LEVEL \\ --environment-type = ENVIRONMENT \\ --developer-owners = display-name = DEV NAME ,email = DEV EMAIL \\ --operator-owners = display-name = OPERATOR NAME ,email = OPERATOR EMAIL \\ --business-owners = display-name = BUSINESS NAME ,email = BUSINESS EMAIL Replace WORKLOAD NAME with the name of the workload you want to update."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apphub.editor",
+      "apphub.googleapis.com",
+      "apphub.viewer",
+      "com.google.cloud.apphub.v1.AppHubClient",
+      "compute.googleapis.com",
+      "properties.gcp",
+      "reference.uri"
+    ],
+    "missing_inventory_roles": [
+      "roles/apphub.editor",
+      "roles/apphub.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/app-hub/docs/register-resources",
+        "https://docs.cloud.google.com/app-hub/docs/modify-app-hub-resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.337Z",
+  "source_step08_card": "data/step-08/current/products/app-hub/card.json",
+  "product_name": "App Hub",
+  "product_slug": "app-hub"
+}

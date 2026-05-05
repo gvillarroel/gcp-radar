@@ -1,0 +1,90 @@
+{
+  "feature_name": "Simultaneous multithreading control",
+  "feature_slug": "simultaneous-multithreading-control",
+  "summary": "Cloud SQL lets you disable simultaneous multithreading when creating or editing instances and read replicas.",
+  "extended_definition": "Cloud SQL lets you disable simultaneous multithreading when creating or editing instances and read replicas.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 32 vCPUs, 3.75 GB to 208 GB SQL Server 2017 Standard, SQL Server 2019 Standard, SQL Server 2022 Standard, and SQL Server 2025 Standard Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 1 to 48 vCPUs, 3.75 GB to 312 GB SQL Server 2017 Enterprise, SQL Server 2019 Enterprise, SQL Server 2022 Enterprise, and SQL Server 2025 Enterprise Machine type vCPU/Memory Not applicable 1 vCPU, 3.75 GB 2 vCPUs, 8 GB 4 vCPUs, 16 GB 8 vCPUs, 32 GB Custom 2 to 96 vCPUs, 3.75 GB to 624 GB Performance-optimized (Cloud SQL Enterprise Plus only) 2 vCPUs, 16 GB 4 vCPUs, 32 GB 8 vCPUs, 64 GB 16 vCPUs, 128 GB 32 vCPUs, 256 GB 48 vCPUs, 384 GB 64 vCPUs, 512 GB 80 vCPUs, 640 GB 96 vCPUs, 768 GB 128 vCPUs, 864 GB Memory-optimized (Cloud SQL Enterprise Plus only) 4 vCPUs, 128 GB 8 vCPUs, 256 GB 16 vCPUs, 512 GB Simultaneous multithreading Simultaneous multithreading (SMT) on Cloud SQL for SQL Server lets you run two virtual CPUs (vCPUs) as independent, separate threads on one physical core.",
+          "Delete the changes To delete your changes, do the following: To disable deletion protection, in your Terraform configuration file set the deletion protection argument to false . deletion protection = \"false\" Apply the updated Terraform configuration by running the following command and entering yes at the prompt: terraform apply Remove resources previously applied with your Terraform configuration by running the following command and entering yes at the prompt: terraform destroy REST v1 1.",
+          "Using this flag when you create an instance before that project has been fully upgraded to the new network architecture can lead to IP address overconsumption or a failure to create instances if there aren't sufficient IP addresses remaining in the allocated IP range."
+        ]
+      },
+      {
+        "title": "\"Configure VPC Service Controls \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Also review the Cloud SQL limitations when using VPC Service Controls .",
+          "Review limitations when using VPC Service Controls with Cloud SQL.",
+          "Home Documentation Databases Cloud SQL SQL Server Guides Send feedback Configure VPC Service Controls Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Cloud SQL pricing | Google Cloud",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/pricing",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disabling simultaneous multithreading (SMT) reduces the number of virtual CPUs (vCPUs) per core from 2 to 1, which in turn might reduce your SQL Server licensing costs.",
+          "The following examples show how disabling SMT affects your billing: User SMT: enabled or disabled Number of vCPUs on the instance Number of vCPUs the SQL Server licensing fees are calculated for Number of vCPUs the compute charges are calculated for User1 Enabled 8 8 8 User2 Disabled 8 4 8 User3 Disabled 6 4 6 Note that despite disabling SMT, User3's SQL Server license fees are calculated for 4 vCPUs because SQL Server licensing requires a core license to be assigned to each virtual CPU on your instance, with a minimum of four cores for each instance.",
+          "Community forums About Google Privacy Site terms Google Cloud terms Cookies management controls Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe language ‪English‬ ‪English‬ ‪Deutsch‬ ‪Español‬ ‪Español (Latinoamérica)‬ ‪Français‬ ‪Indonesia‬ ‪Italiano‬ ‪Português (Brasil)‬ ‪简体中文‬ ‪繁體中文‬ ‪日本語‬ ‪한국어‬"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/configure-service-controls",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/pricing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:16.697Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

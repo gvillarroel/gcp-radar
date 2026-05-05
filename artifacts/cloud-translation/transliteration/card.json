@@ -1,0 +1,106 @@
+{
+  "feature_name": "Transliteration",
+  "feature_slug": "transliteration",
+  "summary": "Transliteration converts text between writing systems while preserving pronunciation.",
+  "extended_definition": "Transliteration converts text between writing systems while preserving pronunciation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+      "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+      "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic",
+      "https://docs.cloud.google.com/translate/docs/basic/translating-text"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language code\": \" TARGET LANGUAGE \", \"contents\": \" SOURCE TEXT \", \"mime type\": \"text/plain\", \"transliteration config\": { \"enable transliteration\": true} } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "The output retains the (untranslated) HTML tags, with the translated text between the tags to the extent possible due to differences between the source and target languages.",
+          "Considerations Transliteration differs from standard text translations in the following ways: Transliteration supports a limited number of languages."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language code\": \" TARGET LANGUAGE \", \"contents\": \" SOURCE TEXT \", \"mime type\": \"text/plain\", \"transliteration config\": { \"enable transliteration\": true} } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "The output retains the (untranslated) HTML tags, with the translated text between the tags to the extent possible due to differences between the source and target languages.",
+          "Considerations Transliteration differs from standard text translations in the following ways: Transliteration supports a limited number of languages."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language code\": \" TARGET LANGUAGE \", \"contents\": \" SOURCE TEXT \", \"mime type\": \"text/plain\", \"transliteration config\": { \"enable transliteration\": true} } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "The output retains the (untranslated) HTML tags, with the translated text between the tags to the extent possible due to differences between the source and target languages.",
+          "Considerations Transliteration differs from standard text translations in the following ways: Transliteration supports a limited number of languages."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/basic/translating-text",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText Request JSON body: { \"source language code\": \" SOURCE LANGUAGE \", \"target language code\": \" TARGET LANGUAGE \", \"contents\": \" SOURCE TEXT \", \"mime type\": \"text/plain\", \"transliteration config\": { \"enable transliteration\": true} } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "The output retains the (untranslated) HTML tags, with the translated text between the tags to the extent possible due to differences between the source and target languages.",
+          "Considerations Transliteration differs from standard text translations in the following ways: Transliteration supports a limited number of languages."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "translation.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translate-text-basic",
+        "https://docs.cloud.google.com/translate/docs/basic/translating-text"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.137Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation"
+}

@@ -1,0 +1,90 @@
+{
+  "feature_name": "NVIDIA driver 450.80.02",
+  "feature_slug": "nvidia-driver-450-80-02",
+  "summary": "Deep Learning VM Images include NVIDIA driver 450.80.02.",
+  "extended_definition": "Deep Learning VM Images include NVIDIA driver 450.80.02.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/creating-images",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a Deep Learning VM instance from the command line \\_|\\_ Deep Learning\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To provision a Deep Learning VM instance with one or more GPUs: export IMAGE FAMILY = \"tf-ent-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be one of the GPU-specific image types.",
+          "Creating an instance without GPUs To provision a Deep Learning VM instance with a CPU but no GPU: export IMAGE FAMILY = \"tf-ent-latest-cpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release Options: --image-family must be one of the CPU-specific image types.",
+          "Before you begin To use the Google Cloud CLI to create a new Deep Learning VM instance, you must first install and initialize the Google Cloud CLI : Download and install the Google Cloud CLI using the instructions given on Installing Google Cloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Create a new image from an existing Deep Learning VM instance \\_|\\_ Deep\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/creating-images",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Creating a TensorFlow Deep Learning VM Instance Creating a PyTorch Deep Learning VM Instance Creating a Deep Learning VM Instance from the Command Line Creating a Deep Learning VM Instance from the Cloud Marketplace Verify NVIDIA driver install Once the instance has booted, verify that the NVIDIA driver has been installed: SSH to your image: gcloud compute ssh \" DEPLOYMENT NAME \" Run the following command: nvidia-smi If the drivers have been installed, you can continue.",
+          "Run the following at the command line, giving the new image a name and a family name: gcloud compute images create \" NEW IMAGE NAME \" \\ --source-disk DEPLOYMENT NAME \\ --source-disk-zone ZONE \\ --family NEW FAMILY NAME Once the command is finished running, you have a new image with NVIDIA drivers preinstalled that you can use to create new Deep Learning VM instances.",
+          "One way to prevent this is to create your own image that is based on one of the Deep Learning VM images, but that already has the NVIDIA drivers preinstalled."
+        ]
+      },
+      {
+        "title": "\"Create a PyTorch Deep Learning VM instance \\_|\\_ Deep Learning VM Images\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a Deep Learning VM instance with the latest PyTorch image family and one or more attached GPUs, enter the following at the command line: export IMAGE FAMILY = \"pytorch-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be either pytorch-latest-gpu or pytorch- VERSION - CUDA-VERSION (for example, pytorch-1-10-cu110 ). --image-project must be deeplearning-platform-release . --maintenance-policy must be TERMINATE .",
+          "Without GPUs To create a Deep Learning VM instance with the latest PyTorch image family and a CPU, enter the following at the command line: export IMAGE FAMILY = \"pytorch-latest-cpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release Options: --image-family must be either pytorch-latest-cpu or pytorch- VERSION -cpu (for example, pytorch-1-13-cpu ). --image-project must be deeplearning-platform-release .",
+          "Creating a PyTorch Deep Learning VM instance from the command line To use the Google Cloud CLI to create a new a Deep Learning VM instance, you must first install and initialize the Google Cloud CLI : Download and install the Google Cloud CLI using the instructions given on Installing Google Cloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/cli",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/creating-images",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.097Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images"
+}

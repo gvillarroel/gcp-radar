@@ -1,0 +1,90 @@
+{
+  "feature_name": "Streaming bottleneck detection",
+  "feature_slug": "streaming-bottleneck-detection",
+  "summary": "Dataflow automatically detects performance bottlenecks in streaming jobs and surfaces their causes in the Step Info panel.",
+  "extended_definition": "Dataflow automatically detects performance bottlenecks in streaming jobs and surfaces their causes in the Step Info panel.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+      "https://docs.cloud.google.com/dataflow/docs/guides/project-monitoring",
+      "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataflow project monitoring dashboard \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/project-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use this chart to find potential performance bottlenecks in your application logic.",
+          "Shows backlogged streaming jobs by the largest number of backlogged keys in a bottleneck stage.",
+          "This chart can indicate potential bottlenecks at per-stage granularity."
+        ]
+      },
+      {
+        "title": "Troubleshoot Dataflow errors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/common-errors",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can adjust several Dataflow BigQuery connector related configurations to achieve the expected performance when writing to BigQuery using streaming inserts.",
+          "Dataflow is unable to determine backlog When running a streaming pipeline from Pub/Sub, the following warning occurs: Dataflow is unable to determine the backlog for Pub/Sub subscription When a Dataflow pipeline pulls data from Pub/Sub, Dataflow needs to repeatedly request information from Pub/Sub.",
+          "When you run a Dataflow job that doesn't use Dataflow Shuffle or Streaming Engine, workers need to communicate with each other using TCP ports 12345 and 12346 within the VPC network."
+        ]
+      },
+      {
+        "title": "\"Set the pipeline streaming mode \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you set the streaming mode at least once option, Dataflow automatically enables Streaming Engine with resource-based billing .",
+          "Google-provided Dataflow templates automatically enable this option when you use at-least-once streaming.",
+          "Java --dataflowServiceOptions=streaming mode at least once Python --dataflow service options=streaming mode at least once Go --dataflow service options=streaming mode at least once If you don't specify the streaming mode at least once option, then Dataflow uses exactly-once streaming mode."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/project-monitoring",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "https://docs.cloud.google.com/dataflow/docs/guides/common-errors"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:24.520Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

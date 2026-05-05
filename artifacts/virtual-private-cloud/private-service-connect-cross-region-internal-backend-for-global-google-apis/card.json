@@ -1,0 +1,153 @@
+{
+  "feature_name": "Private Service Connect cross-region internal backend for global Google APIs",
+  "feature_slug": "private-service-connect-cross-region-internal-backend-for-global-google-apis",
+  "summary": "Private Service Connect backends now support using a cross-regional internal Application Load Balancer to access global Google API targets in Preview.",
+  "extended_definition": "Private Service Connect backends now support using a cross-regional internal Application Load Balancer to access global Google API targets in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+      "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+      "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About Private Service Connect health for automatic cross-region failover\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "source_id": "site-docs-root-2",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The backend must be based on a load balancer that supports cross-region failover and includes the following configuration: A Private Service Connect NEG in each region that points to that region's service attachment A global backend service that contains the NEG backends The following diagram shows a multi-region deployment: This example shows a consumer global external Application Load Balancer that connects to a service that is published in multiple regions.",
+          "Accessing a multi-region service with a supported global or cross-regional load balancer lets the service consumer take advantage of Private Service Connect health for automatic cross-region failover (click to enlarge).",
+          "Private Service Connect health lets service producers define health states that support automatic cross-region failover for service consumers that use Private Service Connect backends."
+        ]
+      },
+      {
+        "title": "\"Create a Private Service Connect backend \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "source_id": "site-docs-root-2",
+        "final_score": 306,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For complete instructions about creating a cross-region internal Application Load Balancer and a Private Service Connect NEG to access global Google APIs, see Access global Google APIs .",
+          "For instructions that include creating a load balancer with a Private Service Connect backend, see the following: Create an internal Application Load Balancer to access Google APIs Create a global external Application Load Balancer to access a published service Roles The Compute Load Balancer Admin role ( roles/compute.loadBalancerAdmin ) contains the permission required to perform the tasks described in this guide.",
+          "Create a Private Service Connect NEG When you create a NEG, you choose which type of target it connects to: A published service A regional Google API A global Google API Create a NEG to connect to a published service When you create a Private Service Connect NEG that points to a published service, you need the service attachment URI for the service."
+        ]
+      },
+      {
+        "title": "\"Configure Private Service Connect health for automatic cross-region failover\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "source_id": "site-docs-root-2",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HEALTH DESTINATION : the URI of the forwarding rule that receives the composite health state from this composite health check—for example, projects/ PROJECT ID /regions/ REGION /forwardingRules/ FORWARDING RULE The forwarding rule must be associated with a producer load balancer that supports Private Service Connect health and fulfills the following requirements: It must have a load balancing scheme of INTERNAL or INTERNAL MANAGED .",
+          "Configure Private Service Connect health for automatic cross-region failover Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Configure Private Service Connect health to support automatic cross-region failover The following sections describe how to configure Private Service Connect health for automatic cross-region failover."
+        ]
+      },
+      {
+        "title": "\"Access global Google APIs through backends \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends",
+        "source_id": "site-docs-root-2",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access global Google APIs through backends This page describes how to access global Google APIs by using Private Service Connect backends that are based on cross-region internal Application Load Balancers .",
+          "A cross-region internal Application Load Balancer that uses that Private Service Connect NEG as a backend.",
+          "To add a NEG to the corresponding backend service, use the gcloud compute backend-services add-backend command . gcloud compute backend-services add-backend BACKEND SERVICE NAME \\ --network-endpoint-group= NEG NAME \\ --network-endpoint-group-region= REGION \\ --global Replace the following: NEG NAME : the name of the Private Service Connect NEG."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.loadBalancerAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.loadBalancerAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-private-service-connect-health",
+        "https://docs.cloud.google.com/vpc/docs/access-apis-managed-services-private-service-connect-backends",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/access-global-google-apis-backends"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

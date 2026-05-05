@@ -1,0 +1,171 @@
+{
+  "feature_name": "Instant ID",
+  "feature_slug": "instant-id",
+  "summary": "Instant ID is an identity-preserving text-to-image generation model.",
+  "extended_definition": "Instant ID is an identity-preserving text-to-image generation model.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Veo on Vertex AI video generation prompt guide \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following are examples of scene or context that you can use: Location (interior) : a cozy living room with a crackling fireplace, a sterile futuristic laboratory, a cluttered artist's studio, a grand ballroom, a dusty attic Location (exterior) : a sun-drenched tropical beach, a misty ancient forest, a bustling futuristic cityscape at night, a serene mountain peak at dawn, a desolate alien planet Time of day : golden hour, midday sun, twilight, deep night, pre-dawn Weather : clear blue sky, overcast and gloomy, light drizzle, heavy thunderstorm with visible lightning, gentle snowfall, swirling fog Historical or fantastical period : a medieval castle courtyard, a roaring 1920s jazz club, a cyberpunk alleyway, an enchanted forest glade Atmospheric details : floating dust motes in a sunbeam, shimmering heat haze, reflections on wet pavement, leaves scattered by the wind Example The following video demonstrates building an immersive world: \"The scene is a rain-slicked, crumbling street in a forgotten city, shrouded in perpetual twilight.",
+          "The following are examples of ambiance effects that you can use: Color palettes : \"monochromatic black and white\", \"vibrant and saturated tropical colors\", \"muted earthy tones\", \"cool blue and silver futuristic palette\", \"warm autumnal oranges and browns\" Atmospheric effects : \"thick fog rolling across a moor\", \"swirling desert sands\", \"gentle falling snow creating a soft blanket\", \"heat haze shimmering above asphalt\", \"magical glowing particles in the air\", \"subsurface scattering on a translucent object\" Textural qualities : \"rough-hewn stone walls\", \"smooth, polished chrome surfaces\", \"soft, velvety fabric\", \"dewdrops clinging to a spiderweb\" Temporal elements Temporal elements affect the flow of time in a video, which you can use to highlight changes even in short clips.",
+          "They quickly palm the chip, their head snapping up to scan the dimly lit room, their body tense and listening for any other sound\" Scene or context The scene or context describes the \"where\" and the \"when\" of your video."
+        ]
+      },
+      {
+        "title": "\"Update a context cache \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GOOGLE CLOUD LOCATION 'global' ; async function updateContentCache ( projectId = GOOGLE CLOUD PROJECT , location = GOOGLE CLOUD LOCATION , cacheName = 'example-cache' ) { const client = new GoogleGenAI ({ vertexai : true , project : projectId , location : location , httpOptions : { apiVersion : 'v1' , }, }); let contentCache = await client . caches . get ({ name : cacheName , }); console . log ( 'Expire time' , contentCache . expireTime ); contentCache = await client . caches . update ({ name : cacheName , config : { ttl : '36000s' , }, }); const expireTime = DateTime . fromISO ( contentCache . expireTime , { zone : 'utc' }); const now = DateTime . utc (); const timeDiff = expireTime . diff ( now , [ 'seconds' ]); console . log ( 'Expire time (after update):' , expireTime . toISO ()); console . log ( 'Expire time (in seconds):' , Math . floor ( timeDiff . seconds )); const nextWeekUtc = DateTime . utc () . plus ({ days : 7 }); console . log ( 'Next week (UTC):' , nextWeekUtc . toISO ()); contentCache = await client . caches . update ({ name : cacheName , config : { expireTime : nextWeekUtc , }, }); console . log ( 'Expire time (after update):' , contentCache . expireTime ); return contentCache ; } // Example response // Expire time ( after update ): 2025 - 02 - 20 15 : 51 : 42.614968 + 00 : 00 REST You can use REST to create a update the context cache by using the Vertex AI API to send a PATCH request to the publisher model endpoint.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents/ CACHE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-05-30T21:14:39.880235Z\", \"updateTime\": \"2024-05-31T00:21:15.350969Z\", \"expireTime\": \"2024-05-31T01:21:15.348014Z\" } Example curl command PROJECT ID = \" PROJECT ID \" LOCATION = \"us-central1\" CACHE ID = \" CACHE ID \" curl \\ -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents/ ${ CACHE ID } \" -d \\ '{ \"ttl\": {\"seconds\":\"3600\",\"nanos\":\"0\"} }' Update the context cache using its expire time parameter The following is an example of a curl command that uses the expire time parameter to update its expiration time to 9 AM on June 30, 2024.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /cachedContents/ CACHE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT NUMBER /locations/us-central1/cachedContents/ CACHE ID \", \"model\": \"projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-2.0-flash-001\", \"createTime\": \"2024-05-30T21:14:39.880235Z\", \"updateTime\": \"2024-05-31T00:20:24.296585Z\", \"expireTime\": \"2024-06-30T09:00:00Z\" } Example curl command PROJECT ID = \" PROJECT ID \" LOCATION = \"us-central1\" CACHE ID = \" CACHE ID \" curl \\ -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /cachedContents/ ${ CACHE ID } \" -d \\ '{ \"expire time\":\"2024-06-30T09:00:00.000000Z\" }' What's next Learn how to use a context cache ."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . async function gemma2PredictGpu ( predictionServiceClient ) { // Imports the Google Cloud Prediction Service Client library const { // TODO(developer): Uncomment PredictionServiceClient before running the sample. // PredictionServiceClient, helpers , } = require ( ' @google-cloud/aiplatform ' ); / TODO(developer): Update these variables before running the sample. / const projectId = 'your-project-id' ; const endpointRegion = 'your-vertex-endpoint-region' ; const endpointId = 'your-vertex-endpoint-id' ; // Default configuration const config = { maxOutputTokens : 1024 , temperature : 0.9 , topP : 1.0 , topK : 1 }; // Prompt used in the prediction const prompt = 'Why is the sky blue?' ; // Encapsulate the prompt in a correct format for GPUs // Example format: [{inputs: 'Why is the sky blue?', parameters: {temperature: 0.9}}] const input = { inputs : prompt , parameters : config , }; // Convert input message to a list of GAPIC instances for model input const instances = [ helpers . toValue ( input )]; // TODO(developer): Uncomment apiEndpoint and predictionServiceClient before running the sample. // const apiEndpoint = ${endpointRegion}-aiplatform.googleapis.com; // Create a client // predictionServiceClient = new PredictionServiceClient({apiEndpoint}); // Call the Gemma2 endpoint const gemma2Endpoint = projects/ ${ projectId } /locations/ ${ endpointRegion } /endpoints/ ${ endpointId } ; const [ response ] = await predictionServiceClient . predict ({ endpoint : gemma2Endpoint , instances , }); const predictions = response . predictions ; const text = predictions [ 0 ]. stringValue ; console . log ( 'Predictions:' , text ); return text ; } module . exports = gemma2PredictGpu ; // TODO(developer): Uncomment below lines before running the sample. // gemma2PredictGpu(...process.argv.slice(2)).catch(err => { // console.error(err.message); // process.exitCode = 1; // }); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "QUERY PARAMETERS \" Select-Object -Expand Content You receive a JSON response similar to the following. { \"publisherModels\": [ { \"name\": \"publishers/google/models/gemma3\", \"versionId\": \"gemma-3-1b-it\", \"openSourceCategory\": \"GOOGLE OWNED OSS WITH GOOGLE CHECKPOINT\", \"supportedActions\": { \"openNotebook\": { \"references\": { \"us-central1\": { \"uri\": \"https://colab.research.google.com/github/GoogleCloudPlatform/vertex-ai-samples/blob/main/notebooks/community/model garden/model garden gradio streaming chat completions.ipynb\" } }, \"resourceTitle\": \"Notebook\", \"resourceUseCase\": \"Chat Completion Playground\", \"resourceDescription\": \"Chat with deployed Gemma 2 endpoints via Gradio UI.\" }, \"deploy\": { \"modelDisplayName\": \"gemma-3-1b-it\", \"containerSpec\": { \"imageUri\": \"us-docker.pkg.dev/vertex-ai/vertex-vision-model-garden-dockers/pytorch-vllm-serve:20250312 0916 RC01\", \"args\": [ \"python\", \"-m\", \"vllm.entrypoints.api server\", \"--host=0.0.0.0\", \"--port=8080\", \"--model=gs://vertex-model-garden-restricted-us/gemma3/gemma-3-1b-it\", \"--tensor-parallel-size=1\", \"--swap-space=16\", \"--gpu-memory-utilization=0.95\", \"--disable-log-stats\" ], \"env\": [ { \"name\": \"MODEL ID\", \"value\": \"google/gemma-3-1b-it\" }, { \"name\": \"DEPLOY SOURCE\", \"value\": \"UI NATIVE MODEL\" } ], \"ports\": [ { \"containerPort\": 8080 } ], \"predictRoute\": \"/generate\", \"healthRoute\": \"/ping\" }, \"dedicatedResources\": { \"machineSpec\": { \"machineType\": \"g2-standard-12\", \"acceleratorType\": \"NVIDIA L4\", \"acceleratorCount\": 1 } }, \"publicArtifactUri\": \"gs://vertex-model-garden-restricted-us/gemma3/gemma3.tar.gz\", \"deployTaskName\": \"vLLM 128K context\", \"deployMetadata\": { \"sampleRequest\": \"{\\n \\\"instances\\\": [\\n {\\n \\\"@requestFormat\\\": \\\"chatCompletions\\\",\\n \\\"messages\\\": [\\n {\\n \\\"role\\\": \\\"user\\\",\\n \\\"content\\\": \\\"What is machine learning?\\\"\\n }\\n ],\\n \\\"max tokens\\\": 100\\n }\\n ]\\n}\\n\" } }, ...",
+          "Builder instanceValue = Value . newBuilder (); JsonFormat . parser (). merge ( instance , instanceValue ); // Encapsulate the prompt in a correct format for GPUs // Example format: [{'inputs': 'Why is the sky blue?', 'parameters': {'temperature': 0.8}}] List<Value> instances = new ArrayList <> (); instances . add ( instanceValue . build ()); EndpointName endpointName = EndpointName . of ( projectId , region , endpointId ); PredictResponse predictResponse = this . predictionServiceClient . predict ( endpointName , instances , parameters ); String textResponse = predictResponse . getPredictions ( 0 ). getStringValue (); System . out . println ( textResponse ); return textResponse ; } private static Value mapToValue ( Map<String , Object > map ) throws InvalidProtocolBufferException { Gson gson = new Gson (); String json = gson . toJson ( map ); Value ."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . // Imports the Google Cloud Prediction Service Client library const { // TODO(developer): Uncomment PredictionServiceClient before running the sample. // PredictionServiceClient, helpers , } = require ( ' @google-cloud/aiplatform ' ); / TODO(developer): Update these variables before running the sample. / const projectId = 'your-project-id' ; const endpointRegion = 'your-vertex-endpoint-region' ; const endpointId = 'your-vertex-endpoint-id' ; // Prompt used in the prediction const prompt = 'Why is the sky blue?' ; // Encapsulate the prompt in a correct format for TPUs // Example format: [{prompt: 'Why is the sky blue?', temperature: 0.9}] const input = { prompt , // Parameters for default configuration maxOutputTokens : 1024 , temperature : 0.9 , topP : 1.0 , topK : 1 , }; // Convert input message to a list of GAPIC instances for model input const instances = [ helpers . toValue ( input )]; // TODO(developer): Uncomment apiEndpoint and predictionServiceClient before running the sample. // const apiEndpoint = ${endpointRegion}-aiplatform.googleapis.com; // Create a client // predictionServiceClient = new PredictionServiceClient({apiEndpoint}); // Call the Gemma2 endpoint const gemma2Endpoint = projects/ ${ projectId } /locations/ ${ endpointRegion } /endpoints/ ${ endpointId } ; const [ response ] = await predictionServiceClient . predict ({ endpoint : gemma2Endpoint , instances , }); const predictions = response . predictions ; const text = predictions [ 0 ]. stringValue ; console . log ( 'Predictions:' , text ); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "Builder instanceValue = Value . newBuilder (); JsonFormat . parser (). merge ( instance , instanceValue ); // Encapsulate the prompt in a correct format for TPUs // Example format: [{'prompt': 'Why is the sky blue?', 'temperature': 0.9}] List<Value> instances = new ArrayList <> (); instances . add ( instanceValue . build ()); EndpointName endpointName = EndpointName . of ( projectId , region , endpointId ); PredictResponse predictResponse = this . predictionServiceClient . predict ( endpointName , instances , parameters ); String textResponse = predictResponse . getPredictions ( 0 ). getStringValue (); System . out . println ( textResponse ); return textResponse ; } private static Value mapToValue ( Map<String , Object > map ) throws InvalidProtocolBufferException { Gson gson = new Gson (); String json = gson . toJson ( map ); Value .",
+          "String projectId = \"YOUR PROJECT ID\" ; String endpointRegion = \"us-west1\" ; String endpointId = \"YOUR ENDPOINT ID\" ; PredictionServiceSettings predictionServiceSettings = PredictionServiceSettings . newBuilder () . setEndpoint ( String . format ( \"%s-aiplatform.googleapis.com:443\" , endpointRegion )) . build (); PredictionServiceClient predictionServiceClient = PredictionServiceClient . create ( predictionServiceSettings ); Gemma2PredictTpu creator = new Gemma2PredictTpu ( predictionServiceClient ); creator . gemma2PredictTpu ( projectId , endpointRegion , endpointId ); } // Demonstrates how to run inference on a Gemma2 model // deployed to a Vertex AI endpoint with TPU accelerators. public String gemma2PredictTpu ( String projectId , String region , String endpointId ) throws IOException { Map<String , Object > paramsMap = new HashMap <> (); paramsMap . put ( \"temperature\" , 0.9 ); paramsMap . put ( \"maxOutputTokens\" , 1024 ); paramsMap . put ( \"topP\" , 1.0 ); paramsMap . put ( \"topK\" , 1 ); Value parameters = mapToValue ( paramsMap ); // Prompt used in the prediction String instance = \"{ \\\"prompt\\\": \\\"Why is the sky blue?\\\"}\" ; Value ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "colab.research.google.com",
+      "completions.ipynb",
+      "console.error",
+      "docker.pkg.dev",
+      "err.message",
+      "gemma3.tar.gz",
+      "process.argv.slice",
+      "process.exitCode",
+      "request.json",
+      "type.googleapis.com",
+      "vllm.entrypoints.api"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/context-cache/context-cache-update",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.525Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

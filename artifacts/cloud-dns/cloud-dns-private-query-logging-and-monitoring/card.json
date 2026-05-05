@@ -1,0 +1,215 @@
+{
+  "feature_name": "Cloud DNS private query logging and monitoring",
+  "feature_slug": "cloud-dns-private-query-logging-and-monitoring",
+  "summary": "Cloud DNS provides private DNS user-facing query logging and monitoring capabilities.",
+  "extended_definition": "Cloud DNS provides private DNS user-facing query logging and monitoring capabilities.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dns/docs/best-practices",
+      "https://docs.cloud.google.com/dns/docs/policies",
+      "https://docs.cloud.google.com/dns/docs/troubleshooting",
+      "https://docs.cloud.google.com/dns/docs/zones"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Best practices for Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use alternative name servers only if all DNS traffic needs to be monitored or filtered on-premises, and if private DNS logging can't meet your requirements.",
+          "Inbound DNS forwarding allows your system to query all private zones in the project as well as internal DNS IP addresses and peered zones.",
+          "This document provides best practices for private zones, DNS forwarding, and reference architectures for hybrid DNS."
+        ]
+      },
+      {
+        "title": "Troubleshoot Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output of the following command shows the DNS suffix for a given private zone: gcloud dns managed-zones describe PRIVATE ZONE NAME \\ --format=\"csvno-heading\" Query for the DNS name using the metadata server Use dig to submit the DNS name query directly to the Google Cloud metadata server, 169.254.169.254 : dig DNS NAME @169.254.169.254 Use dig to query the VM's default name server: dig DNS NAME If the output of the two dig commands produces different answers, check the ;; SERVER: section of the second command.",
+          "This page provides solutions for common issues that you might encounter when using Cloud DNS to create public zones, private zones, reverse lookup zones, forwarding zones, and resource records.",
+          "Private zones not resolving through Cloud VPN or Cloud Interconnect First make sure that you can successfully query and resolve the DNS name from within an authorized VPC network ."
+        ]
+      },
+      {
+        "title": "Create, modify, and delete zones \\_|\\_ Cloud DNS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/zones",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud Run the dns managed-zones create command: gcloud dns managed-zones create NAME \\ --description= DESCRIPTION \\ --dns-name= DNS SUFFIX \\ --networks= VPC NETWORK LIST \\ --labels= LABELS \\ --visibility=private Replace the following: NAME : a name for your zone DESCRIPTION : a description for your zone DNS SUFFIX : the DNS suffix for your zone, such as example.private VPC NETWORK LIST : a comma-delimited list of VPC networks that are authorized to query the zone LABELS : an optional comma-delimited list of key-value pairs such as dept=marketing or project=project1 ; for more information, see the SDK documentation Terraform resource \"google dns managed zone\" \"private zone\" { name = \"private-zone\" dns name = \"private.example.com.\" description = \"Example private DNS zone\" labels = { foo = \"bar\" } visibility = \"private\" private visibility config { networks { network url = google compute network.network 1.id } networks { network url = google compute network.network 2.id } } } resource \"google compute network\" \"network 1\" { name = \"network-1\" auto create subnetworks = false } resource \"google compute network\" \"network 2\" { name = \"network-2\" auto create subnetworks = false } API Send a POST request using the managedZones.create method: POST https://dns.googleapis.com/dns/v1/projects/ PROJECT ID /managedZones { \"name\": \" NAME \", \"description\": \" DESCRIPTION \", \"dnsName\": \" DNS NAME \", \"visibility\": \"private\", \"privateVisibilityConfig\": { \"kind\": \"dns#managedZonePrivateVisibilityConfig\", \"networks\": [ { \"kind\": \"dns#managedZonePrivateVisibilityConfigNetwork\", \"networkUrl\": \" VPC NETWORK 1 \" }, { \"kind\": \"dns#managedZonePrivateVisibilityConfigNetwork\", \"networkUrl\": \" VPC NETWORK 2 \" }, .... ] } } Replace the following: PROJECT ID : the ID of the project where the managed zone is created NAME : a name for your zone DESCRIPTION : a description for your zone DNS NAME : the DNS suffix for your zone, such as example.private VPC NETWORK 1 and VPC NETWORK 2 : URLs for VPC networks in the same project that can query records in this zone.",
+          "Click Save . gcloud Run the dns managed-zones update command: gcloud dns managed-zones update NAME \\ --description= DESCRIPTION \\ --networks= VPC NETWORK LIST Replace the following: NAME : a name for your zone DESCRIPTION : a description for your zone VPC NETWORK LIST : a comma-delimited list of VPC networks that are authorized to query the zone Update labels To add new, change existing, remove selected, or clear all labels on a managed zone, complete the following steps. gcloud Run the dns managed-zones update command: gcloud dns managed-zones update NAME \\ --update-labels= LABELS gcloud dns managed-zones update NAME \\ --remove-labels= LABELS gcloud dns managed-zones update NAME \\ --clear-labels Replace the following: NAME : a name for your zone LABELS : an optional comma-delimited list of key-value pairs such as dept=marketing or project=project1 ; for more information, see the SDK documentation List and describe managed zones The following sections show how to list or describe a managed zone.",
+          "Permissions dns.managedZones.create to create a managed zone dns.managedZones.list to list managed zones dns.networks.bindPrivateDNSZone dns.networks.targetWithPeeringZone dns.gkeClusters.bindPrivateDNSZone dns.managedZones.update dns.managedZones.list dns.managedZones.patch dns.activePeeringZones.getZoneInfo dns.activePeeringZones.list dns.activePeeringZones.deactivate Roles roles/dns.admin roles/dns.peer Before you begin The Cloud DNS API requires that you create a Cloud DNS project and enable the Cloud DNS API."
+        ]
+      },
+      {
+        "title": "Configure DNS server policies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dns/docs/policies",
+        "source_id": "site-docs-root",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To create an outbound DNS server policy, run the dns policies create command: gcloud dns policies create NAME \\ --description=\" DESCRIPTION \" \\ --networks=\" VPC NETWORK LIST \" \\ --alternative-name-servers=\" ALTERNATIVE NAMESERVER LIST \" \\ --private-alternative-name-servers=\" PRIVATE ALTERNATIVE NAMESERVER LIST \" Replace the following: NAME : a name for the policy DESCRIPTION : a description for the policy VPC NETWORK LIST : a comma-delimited list of VPC networks that query the alternative name servers ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers PRIVATE ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers, accessed by using private routing Terraform resource \"google dns policy\" \"default\" { name = \"example-outbound-policy\" alternative name server config { target name servers { ipv4 address = \"172.16.1.10\" forwarding path = \"private\" } target name servers { ipv4 address = \"172.16.1.20\" } } networks { network url = google compute network.default.id } } resource \"google compute network\" \"default\" { name = \"network\" auto create subnetworks = false } Create a DNS server policy for both inbound and outbound forwarding Console In the Google Cloud console, open the Cloud DNS server policies page.",
+          "Click Create . gcloud To create a DNS server policy for both inbound and outbound forwarding, run the dns policies create command: gcloud dns policies create NAME \\ --description=\" DESCRIPTION \" \\ --networks=\" VPC NETWORK LIST \" \\ --alternative-name-servers=\" ALTERNATIVE NAMESERVER LIST \" \\ --private-alternative-name-servers=\" PRIVATE ALTERNATIVE NAMESERVER LIST \" \\ --enable-inbound-forwarding Replace the following: NAME : a name for the policy DESCRIPTION : a description for the policy VPC NETWORK LIST : a comma-delimited list of VPC networks where inbound forwarding addresses must be created and that must query the alternative name servers ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers PRIVATE ALTERNATIVE NAMESERVER LIST : a comma-delimited list of IP addresses that you can use as alternative name servers, accessed by using private routing.",
+          "Terraform resource \"google dns policy\" \"example policy\" { name = \"example-policy\" enable inbound forwarding = true enable logging = true alternative name server config { target name servers { ipv4 address = \"172.16.1.10\" forwarding path = \"private\" } target name servers { ipv4 address = \"172.16.1.20\" } } networks { network url = google compute network.network 1.id } networks { network url = google compute network.network 2.id } } resource \"google compute network\" \"network 1\" { name = \"network-1\" auto create subnetworks = false } resource \"google compute network\" \"network 2\" { name = \"network-2\" auto create subnetworks = false } List inbound forwarder entry points When an inbound DNS server policy applies to a VPC network, Cloud DNS creates a set of regional internal IP addresses that serve as destinations to which your on-premises systems or name resolvers can send DNS queries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dns.activePeeringZones.deactivate",
+      "dns.activePeeringZones.getZoneInfo",
+      "dns.activePeeringZones.list",
+      "dns.admin",
+      "dns.gkeClusters.bindPrivateDNSZone",
+      "dns.googleapis.com",
+      "dns.managedZones.create",
+      "dns.managedZones.list",
+      "dns.managedZones.patch",
+      "dns.managedZones.update",
+      "dns.networks.bindPrivateDNSZone",
+      "dns.networks.targetWithPeeringZone",
+      "dns.peer",
+      "example.private",
+      "network.default.id",
+      "network.network",
+      "private.example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/dns.admin",
+      "roles/dns.peer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "dnssec",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dns/docs/best-practices",
+        "https://docs.cloud.google.com/dns/docs/troubleshooting",
+        "https://docs.cloud.google.com/dns/docs/zones",
+        "https://docs.cloud.google.com/dns/docs/policies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.153Z",
+  "source_step08_card": "data/step-08/current/products/cloud-dns/card.json",
+  "product_name": "Cloud DNS",
+  "product_slug": "cloud-dns"
+}

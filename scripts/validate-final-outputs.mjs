@@ -1385,6 +1385,18 @@ async function validateFeatureReadmesMatchCards() {
 
       const readme = await readText(readmePath, "");
       const card = await readJson(cardPath, null);
+      const expectedTitle = `# ${card?.feature_name || ""}`;
+      if (!readme.split(/\r?\n/).includes(expectedTitle)) {
+        findings.push({
+          severity: "error",
+          rule: "feature_readme_title_mismatch",
+          path: readmePath,
+          product_slug: productSlug,
+          feature_slug: featureSlug,
+          expected: expectedTitle,
+        });
+      }
+
       const expectedIdentityLines = [
         `Product: ${card?.product_name || ""}`,
         `Feature slug: \`${card?.feature_slug || ""}\``,

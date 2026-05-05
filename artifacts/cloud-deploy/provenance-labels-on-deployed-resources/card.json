@@ -1,0 +1,116 @@
+{
+  "feature_name": "Provenance labels on deployed resources",
+  "feature_slug": "provenance-labels-on-deployed-resources",
+  "summary": "Cloud Deploy automatically applies provenance labels to deployed resources.",
+  "extended_definition": "Cloud Deploy automatically applies provenance labels to deployed resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel",
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-parameters",
+      "https://docs.cloud.google.com/deploy/docs/labels-annotations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using annotations and labels with Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/labels-annotations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example usage One example of using these automatically applied labels would be to create a graph within Google Cloud Observability that aggregates a container metric by Cloud Deploy properties: fetch k8s container metric 'kubernetes.io/container/cpu/core usage time' filter metadata.user.c'app.kubernetes.io/managed-by' = \"google-cloud-deploy\" group by [ pipeline: metadata.user.c'deploy.cloud.google.com/delivery-pipeline-id', target: metadata.user.c'deploy.cloud.google.com/target-id', release: metadata.user.c'deploy.cloud.google.com/release-id',], sum(val()) rate 1m You can also use this with custom metrics.",
+          "Adding annotations and labels to Cloud Deploy resources You can add annotations and labels to the following Cloud Deploy resources: Delivery pipelines For delivery pipelines, you add annotations and labels to the YAML configuration file . apiVersion: deploy.cloud.google.com/v1 kind: DeliveryPipeline metadata: name: annotations: key: \"value\" labels: key: \"value\" description: serialPipeline: stages: - targetId: profiles: [] - targetId: profiles: [] Targets Add annotations and labels to targets in the target configuration YAML .",
+          "To prevent Cloud Deploy from automatically adding labels to rendered manifests, set Organization Policy Service constraint clouddeploy.disableServiceLabelGeneration to be enforced."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Use deploy parameters \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-parameters",
+        "source_id": "site-docs-root-2",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create your delivery pipeline and target definition: GKE In the deploy-params-gke-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion: deploy.cloud.google.com/v1 kind: DeliveryPipeline metadata: name: my-params-demo-app-1 description: main application pipeline serialPipeline: stages: - targetId: params-prod-multi deployParameters: - values: replicaCount: \"2\" Apply the deploy parameter replicaCount: \"2\" to the target with this label matchTargetLabels: label1: label1 - values: replicaCount: \"3\" Apply the deploy parameter replicaCount: \"3\" to the target with this label matchTargetLabels: label2: label2 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: params-prod-multi description: production clusters multiTarget: targetIds: [params-prod-a, params-prod-b] --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: params-prod-a labels: label1: label1 description: production cluster 1 deployParameters: application env1: \"sampleValue1\" gke: cluster: projects/ PROJECT ID /locations/us-central1/clusters/deploy-params-cluster-prod1 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: params-prod-b labels: label2: label2 description: production cluster 2 deployParameters: application env2: \"sampleValue2\" gke: cluster: projects/ PROJECT ID /locations/us-west1/clusters/deploy-params-cluster-prod2 Note: In this file, targets are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.",
+          "Cloud Run In the deploy-params-run-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion: deploy.cloud.google.com/v1 kind: DeliveryPipeline metadata: name: my-params-demo-app-1 description: main application pipeline serialPipeline: stages: - targetId: params-prod-multi deployParameters: - values: minInstances: \"2\" Apply the deploy parameter minInstances: \"2\" to the target with this label matchTargetLabels: label1: label1 - values: minInstances: \"3\" Apply the deploy parameter minInstances: \"3\" to the target with this label matchTargetLabels: label2: label2 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: params-prod-multi description: production clusters multiTarget: targetIds: [params-prod-a, params-prod-b] --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: params-prod-a labels: label1: label1 description: production cluster 1 deployParameters: application env1: \"sampleValue1\" run: location: projects/ PROJECT ID /locations/us-central1 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: params-prod-b labels: label2: label2 description: production cluster 2 deployParameters: application env2: \"sampleValue2\" run: location: projects/ PROJECT ID /locations/us-west1 Note: In this file, targets are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.",
+          "Cloud Run Create a file named service.yaml , with the following contents: apiVersion : serving . knative . dev / v1 kind : Service metadata : name : my - parallel - run - service spec : autoscaling . knative . dev / minScale : 1 # from-param: ${minInstances} selector : matchLabels : app : my - app template : metadata : annotations : commit : defaultShaValue # from-param: ${git-sha} spec : containers : - image : my - app - image env : - name : envvar1 value : defaultValue1 # from-param: ${application env1} - name : envvar2 value : defaultValue2 # from-param: ${application env2} This file is a basic Cloud Run service definition, which is used to deploy the application."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy an app to multiple targets at the same time \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel",
+        "source_id": "site-docs-reference-2",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create your delivery pipeline and target definition: GKE In the deploy-gke-parallel-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion: deploy.cloud.google.com/v1 kind: DeliveryPipeline metadata: name: my-parallel-demo-app-1 description: main application pipeline serialPipeline: stages: - targetId: qsprod-multi profiles: [] deployParameters: - values: replicaCount: \"1\" matchTargetLabels: label1: label1 - values: replicaCount: \"2\" matchTargetLabels: label2: label2 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-multi description: production clusters multiTarget: targetIds: [qsprod-a, qsprod-b] --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-a labels: label1: label1 description: production cluster 2 gke: cluster: projects/ PROJECT ID /locations/us-central1/clusters/quickstart-cluster-qsprod1 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-b labels: label2: label2 description: production cluster 3 gke: cluster: projects/ PROJECT ID /locations/us-west1/clusters/quickstart-cluster-qsprod2 Note: In this file, targets are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.",
+          "Cloud Run In the deploy-run-parallel-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion: deploy.cloud.google.com/v1 kind: DeliveryPipeline metadata: name: my-parallel-demo-app-1 description: main application pipeline serialPipeline: stages: - targetId: qsprod-multi profiles: [] deployParameters: - values: minInstances: \"2\" matchTargetLabels: label1: label1 - values: minInstances: \"3\" matchTargetLabels: label2: label2 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-multi description: production multiTarget: targetIds: [qsprod-a, qsprod-b] --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-a labels: label1: label1 description: production us-central1 run: location: projects/ PROJECT ID /locations/us-central1 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-b labels: label2: label2 description: production us-west1 run: location: projects/ PROJECT ID /locations/us-west1 Note: In this file, targets are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.",
+          "GKE Create a file named k8s-deployment.yaml , with the following contents: apiVersion: apps/v1 kind: Deployment metadata: name: my-deployment labels: app: my-app namespace: default spec: replicas: 1 # from-param: ${ replicaCount } selector: matchLabels: app: my-app template: metadata: labels: app: my-app spec: containers: - name: nginx image: my-app-image This file is a simple Kubernetes manifest , which is applied to the cluster to deploy the application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.kubernetes.io",
+      "clouddeploy.disableServiceLabelGeneration",
+      "clouddeploy.yaml",
+      "deploy.cloud.google.com",
+      "deployment.yaml",
+      "kubernetes.io",
+      "kubernetes.yaml",
+      "metadata.user.c",
+      "service.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/labels-annotations",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parameters",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/labels-annotations",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parameters",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/labels-annotations",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parameters",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.843Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy"
+}

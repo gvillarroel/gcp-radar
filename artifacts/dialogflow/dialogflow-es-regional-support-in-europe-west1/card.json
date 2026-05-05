@@ -1,0 +1,124 @@
+{
+  "feature_name": "Dialogflow ES regional support in europe-west1",
+  "feature_slug": "dialogflow-es-regional-support-in-europe-west1",
+  "summary": "Dialogflow ES supports deployment in the europe-west1 region.",
+  "extended_definition": "Dialogflow ES supports deployment in the europe-west1 region.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+      "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.contexts.ContextsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.contexts.ContextsClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dialogflow API \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "This service has the following service endpoints and all URIs below are relative to these service endpoints: https://dialogflow.googleapis.com https://asia-northeast1-dialogflow.googleapis.com https://asia-south1-dialogflow.googleapis.com https://asia-southeast1-dialogflow.googleapis.com https://asia-southeast2-dialogflow.googleapis.com https://australia-southeast1-dialogflow.googleapis.com https://europe-west1-dialogflow.googleapis.com https://europe-west2-dialogflow.googleapis.com https://europe-west3-dialogflow.googleapis.com https://europe-west4-dialogflow.googleapis.com https://europe-west6-dialogflow.googleapis.com https://northamerica-northeast1-dialogflow.googleapis.com https://us-central1-dialogflow.googleapis.com https://us-east1-dialogflow.googleapis.com https://us-west1-dialogflow.googleapis.com REST Resource: v3.projects.locations Methods get GET /v3/{name=projects/ /locations/ } Gets information about a location. list GET /v3/{name=projects/ }/locations Lists information about the supported locations for this service.",
+          "REST Resource: v3.projects.locations REST Resource: v3.projects.locations.agents REST Resource: v3.projects.locations.agents.changelogs REST Resource: v3.projects.locations.agents.entityTypes REST Resource: v3.projects.locations.agents.environments REST Resource: v3.projects.locations.agents.environments.continuousTestResults REST Resource: v3.projects.locations.agents.environments.deployments REST Resource: v3.projects.locations.agents.environments.experiments REST Resource: v3.projects.locations.agents.environments.sessions REST Resource: v3.projects.locations.agents.environments.sessions.entityTypes REST Resource: v3.projects.locations.agents.flows REST Resource: v3.projects.locations.agents.flows.pages REST Resource: v3.projects.locations.agents.flows.transitionRouteGroups REST Resource: v3.projects.locations.agents.flows.versions REST Resource: v3.projects.locations.agents.generators REST Resource: v3.projects.locations.agents.intents REST Resource: v3.projects.locations.agents.playbooks REST Resource: v3.projects.locations.agents.playbooks.examples REST Resource: v3.projects.locations.agents.playbooks.versions REST Resource: v3.projects.locations.agents.sessions REST Resource: v3.projects.locations.agents.sessions.entityTypes REST Resource: v3.projects.locations.agents.testCases REST Resource: v3.projects.locations.agents.testCases.results REST Resource: v3.projects.locations.agents.tools REST Resource: v3.projects.locations.agents.tools.versions REST Resource: v3.projects.locations.agents.transitionRouteGroups REST Resource: v3.projects.locations.agents.webhooks REST Resource: v3.projects.locations.operations REST Resource: v3.projects.locations.securitySettings REST Resource: v3.projects.operations Service: dialogflow.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v3.projects.locations.agents.environments.deployments Methods get GET /v3/{name=projects/ /locations/ /agents/ /environments/ /deployments/ } Retrieves the specified Deployment . list GET /v3/{parent=projects/ /locations/ /agents/ /environments/ }/deployments Returns the list of all deployments in the specified Environment ."
+        ]
+      },
+      {
+        "title": "\"Class ContextsAsyncClient (2.47.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.contexts.ContextsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 async def sample delete all contexts(): Create a client client = dialogflow v2.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 async def sample create context(): Create a client client = dialogflow v2.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 async def sample delete context(): Create a client client = dialogflow v2."
+        ]
+      },
+      {
+        "title": "\"Class ContextsClient (2.47.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.contexts.ContextsClient",
+        "source_id": "site-python-reference",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 def sample delete all contexts(): Create a client client = dialogflow v2.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 def sample create context(): Create a client client = dialogflow v2.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import dialogflow v2 def sample delete context(): Create a client client = dialogflow v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.googleapis.com",
+      "googleapis.dev",
+      "options.html",
+      "v3.projects.locations",
+      "v3.projects.locations.agents",
+      "v3.projects.locations.agents.changelogs",
+      "v3.projects.locations.agents.entityTypes",
+      "v3.projects.locations.agents.environments",
+      "v3.projects.locations.agents.environments.continuousTestResults",
+      "v3.projects.locations.agents.environments.deployments",
+      "v3.projects.locations.agents.environments.experiments",
+      "v3.projects.locations.agents.environments.sessions",
+      "v3.projects.locations.agents.environments.sessions.entityTypes",
+      "v3.projects.locations.agents.flows",
+      "v3.projects.locations.agents.flows.pages",
+      "v3.projects.locations.agents.flows.transitionRouteGroups",
+      "v3.projects.locations.agents.flows.versions",
+      "v3.projects.locations.agents.generators",
+      "v3.projects.locations.agents.intents",
+      "v3.projects.locations.agents.playbooks",
+      "v3.projects.locations.agents.playbooks.examples",
+      "v3.projects.locations.agents.playbooks.versions",
+      "v3.projects.locations.agents.sessions",
+      "v3.projects.locations.agents.sessions.entityTypes",
+      "v3.projects.locations.agents.testCases",
+      "v3.projects.locations.agents.testCases.results",
+      "v3.projects.locations.agents.tools",
+      "v3.projects.locations.agents.tools.versions",
+      "v3.projects.locations.agents.transitionRouteGroups",
+      "v3.projects.locations.agents.webhooks",
+      "v3.projects.locations.operations",
+      "v3.projects.locations.securitySettings",
+      "v3.projects.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3-overview",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.contexts.ContextsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dialogflow/latest/google.cloud.dialogflow_v2.services.contexts.ContextsClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

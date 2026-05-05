@@ -1,0 +1,136 @@
+{
+  "feature_name": "Remote connector scheduling",
+  "feature_slug": "remote-connector-scheduling",
+  "summary": "A cloud-based scheduler manages remote connectors for improved performance and scalability.",
+  "extended_definition": "A cloud-based scheduler manages remote connectors for improved performance and scalability.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Amazon GuardDuty with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "source_id": "site-api-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a raw alert contains a list of entities (such as multiple email addresses, hostnames, or IP addresses), connectors automatically flatten them into separate, unique events.",
+          "Reason: {0}''.format(error.Stacktrace) General Connectors To learn more about configuring connectors in Google SecOps, see Ingest your data (connectors) .",
+          "Note: To prevent data loss, connectors utilize Event Flattening ."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon Macie with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "source_id": "site-api-reference",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a raw alert contains a list of entities (such as multiple email addresses, hostnames, or IP addresses), connectors automatically flatten them into separate, unique events.",
+          "Error is {0}\".format(exception.stacktrace) General Connectors To learn more about configuring connectors in Google SecOps, see Ingest your data (connectors) .",
+          "Note: To prevent data loss, connectors utilize Event Flattening ."
+        ]
+      },
+      {
+        "title": "\"Integrate Anomali STAXX with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a raw alert contains a list of entities (such as multiple email addresses, hostnames, or IP addresses), connectors automatically flatten them into separate, unique events.",
+          "Error is {0}\".format(exception.stacktrace) General Connectors To learn more about configuring connectors in Google SecOps, see Ingest your data (connectors) .",
+          "Note: To prevent data loss, connectors utilize Event Flattening ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "ec2.internal",
+      "error.Stacktrace",
+      "exception.stacktrace",
+      "t2.micro"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-guard-duty",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-staxx"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

@@ -1,0 +1,92 @@
+{
+  "feature_name": "Default kube state metrics for new GKE Autopilot clusters",
+  "feature_slug": "default-kube-state-metrics-for-new-gke-autopilot-clusters",
+  "summary": "This feature enables kube state metrics by default for new GKE Autopilot clusters starting with version 1.27.4-gke.900.",
+  "extended_definition": "This feature enables kube state metrics by default for new GKE Autopilot clusters starting with version 1.27.4-gke.900.",
+  "lifecycle": {
+    "latest_feature_date": "2023-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/monitoring",
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitoring agent overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/monitoring",
+        "source_id": "site-iam-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Kubernetes Engine node instances: GKE on Google Cloud clusters are configured to collect logs and metrics with Logging and Monitoring by default.",
+          "Linux operating systems The Monitoring agent supports the following Linux operating systems: Rocky Linux 8 RHEL 8: rhel-8-6-sap-ha, rhel-8-8-sap-ha SLES 12: sles-12-sp5-sap SLES 15: sles-15-sp5, sles-15-sp3-sap, sles-15-sp4-sap, sles-15-sp5-sap The Monitoring agent does not presently support the Container-Optimized OS that is the default in Google Kubernetes Engine clusters.",
+          "You can install the Ops Agent on Managed Service for Apache Spark clusters that use image version 2.2 and later to collect syslog logs and host metrics."
+        ]
+      },
+      {
+        "title": "Application Monitoring supported infrastructure \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Golden signals for Kubernetes For Kubernetes DaemonSets, Deployments, and StatefulSets, Google Cloud Observability uses the following metric data to derive values for golden signals, when that metric data is available: Traffic : service/server/request count .",
+          "To learn how to use a StatefulSet or deploy a stateful application, see About StatefulSets in Google Kubernetes Engine .",
+          "Kubernetes StatefulSets (Regional and zonal) See Golden signals for Kubernetes ."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google Kubernetes Engine node instances: GKE on Google Cloud clusters are configured to collect logs and metrics with Logging and Monitoring by default.",
+          "You can install the Ops Agent on Managed Service for Apache Spark clusters that use image version 2.2 and later to collect syslog logs and host metrics.",
+          "Monitoring features Monitoring features include: System metrics collected with no configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gke.900"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/monitoring",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

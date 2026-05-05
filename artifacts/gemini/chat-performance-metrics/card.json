@@ -1,0 +1,119 @@
+{
+  "feature_name": "Chat performance metrics",
+  "feature_slug": "chat-performance-metrics",
+  "summary": "Chat performance metrics track chat acceptance rate and accepted lines for Gemini for Google Cloud; Chat performance metrics track chat acceptance rate and accepted lines for Gemini for Google Cloud.",
+  "extended_definition": "Chat performance metrics track chat acceptance rate and accepted lines for Gemini for Google Cloud; Chat performance metrics track chat acceptance rate and accepted lines for Gemini for Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/access-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default\\nWHERE\\n JSON VALUE(labels, '$.user id') is not NULL\\n AND (\\n JSON VALUE(json payload, '$.chatExposure.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n OR JSON VALUE(json payload, '$.codeExposure.originalRequestId') is not NULL\\n )\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\nevent date\\nORDER BY\\nevent date\\n\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"xPos\" : 24 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Acceptance Rate by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"acceptance rate\" } ], \"plotType\" : \"LINE\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\nexposures date,\\nacceptances count / exposures count as acceptance rate\\nFROM\\n(\\nSELECT\\nCOUNT (DISTINCT JSON VALUE(json payload, '$.codeAcceptance.originalRequestId')) as acceptances count, CAST(timestamp AS DATE) AS acceptances date\\nFROM\\n CENTRALIZED PROJECT ID .global.",
+          "Default\\nWHERE\\n JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\nGROUP BY\\n acceptances date\\nORDER BY\\n acceptances date\\n\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"yPos\" : 32 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Lines of Code Accepted by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"line count day\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"line count day\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"lines count\" } ], \"plotType\" : \"STACKED BAR\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\n SUM(lines) as lines count,\\n CAST(max timestamp AS DATE) AS line count day\\nFROM\\n(\\n SELECT\\n JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') as request id,\\n MAX(CAST(JSON VALUE(json payload, '$.codeAcceptance.linesCount') AS INT)) as lines,\\n MAX(timestamp) as max timestamp\\n FROM\\n CENTRALIZED PROJECT ID .global.",
+          "Default\\n WHERE\\n JSON VALUE(json payload, '$.codeAcceptance.originalRequestId') is not NULL\\n AND resource.type = \\\"cloudaicompanion.googleapis.com/Instance\\\"\\n AND (JSON VALUE(resource.labels, '$.resource container') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 ') or JSON VALUE(resource.labels, '$.project id') in (' SOURCE PROJECT ID 1 ', ' SOURCE PROJECT ID 2 '))\\n GROUP BY\\n request id\\n )\\nGROUP BY\\n line count day\\nORDER BY\\n line count day\" }, \"outputFullDuration\" : false , \"unitOverride\" : \"\" } } ], \"thresholds\" : [], \"yAxis\" : { \"label\" : \"\" , \"scale\" : \"LINEAR\" } } } }, { \"yPos\" : 32 , \"xPos\" : 24 , \"height\" : 16 , \"width\" : 24 , \"widget\" : { \"title\" : \"Chat Exposures by Day\" , \"id\" : \"\" , \"xyChart\" : { \"chartOptions\" : { \"displayHorizontal\" : false , \"mode\" : \"COLOR\" , \"showLegend\" : false }, \"dataSets\" : [ { \"breakdowns\" : [], \"dimensions\" : [ { \"column\" : \"chat exposures date\" , \"columnType\" : \"DATE\" , \"maxBinCount\" : 0 , \"sortColumn\" : \"chat exposures date\" , \"sortOrder\" : \"SORT ORDER ASCENDING\" , \"timeBinSize\" : \"0s\" , \"xMax\" : 0 , \"xMin\" : 0 } ], \"legendTemplate\" : \"\" , \"measures\" : [ { \"aggregationFunction\" : { \"parameters\" : [], \"type\" : \"average\" }, \"column\" : \"chat exposures count\" } ], \"plotType\" : \"STACKED BAR\" , \"targetAxis\" : \"Y1\" , \"timeSeriesQuery\" : { \"opsAnalyticsQuery\" : { \"queryExecutionRules\" : { \"useReservedSlots\" : false }, \"queryHandle\" : \"\" , \"savedQueryId\" : \"\" , \"sql\" : \"SELECT\\n COUNT (DISTINCT JSON VALUE(json payload, '$.chatExposure.originalRequestId')) as chat exposures count, CAST(timestamp AS DATE) AS chat exposures date\\nFROM\\n CENTRALIZED PROJECT ID .global."
+        ]
+      },
+      {
+        "title": "\"Access metrics in Metrics Explorer \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/access-metrics",
+        "source_id": "site-iam-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "These metrics provide insights into the performance and health of your application.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Access metrics in Metrics Explorer Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see Create metric-threshold alerting policies To turn off metrics tracking, see Turn off observability settings ."
+        ]
+      },
+      {
+        "title": "\"Generate Gemini Code Assist metrics \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, you can generate metrics that report the daily active usage or the acceptance of code recommendations for a variety of Google Cloud products, including Cloud Logging, Google Cloud CLI, Cloud Monitoring, and BigQuery.",
+          "Home Documentation AI and ML Gemini for Google Cloud Guides Send feedback Generate Gemini Code Assist metrics Stay organized with collections Save and categorize content based on your preferences.",
+          "Queries You can use the following sample BigQuery queries to generate user- and aggregate-level data for daily active use and suggestions generated."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Stop in-progress chat VS Code You can stop an in-progress chat response by pressing stop Stop : IntelliJ You can stop an in-progress chat response by pressing stop Stop : Select the model If you use Gemini Code Assist Standard or Enterprise , or if you have a Google AI Pro or Ultra subscription, you can select the model that Gemini Code Assist uses when processing your prompts.",
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "If you disable automatic outline generation, you can manually generate an outline for the file in focus by right-clicking in the file and selecting Gemini Code Assist > Outline current file , or by going to the Gemini Code Assist outline pane and clicking the Generate outline button."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "acceptances.acceptances",
+      "cloudaicompanion.googleapis.com",
+      "nexposures.exposures",
+      "resource.labels",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/access-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/generate-metrics",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.293Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

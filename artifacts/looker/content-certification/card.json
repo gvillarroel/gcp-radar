@@ -1,0 +1,122 @@
+{
+  "feature_name": "Content certification",
+  "feature_slug": "content-certification",
+  "summary": "Content certification marks trusted LookML dashboards and Explores and supports automatic certification and certification-aware search; Content certification now includes admin controls, support for LookML dashboards, an ungoverned badge for uncertified content, and certification-aware search sorting.",
+  "extended_definition": "Content certification marks trusted LookML dashboards and Explores and supports automatic certification and certification-aware search; Content certification now includes admin controls, support for LookML dashboards, an ungoverned badge for uncertified content, and certification-aware search sorting.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Certification Process URL When a user who does not have the certify content permission wants to request certification of their content, and they select a dashboard's or LookML dashboard's three-dot dashboard menu , a Look's Explore actions gear menu , or an Explore or self-service Explore's Explore actions gear menu , they will see an option that says Want to get this dashboard/look/Explore certified? that includes a Learn how link.",
+          "This applies both to existing LookML dashboards and LookML Explores and any LookML dashboards or LookML Explores created in the future.",
+          "Auto-certify LookML When this option is enabled, all LookML dashboards and LookML Explores will be automatically certified."
+        ]
+      },
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "This permission is available only if the Access Content Certification preview feature has been enabled for your instance. clear cache refresh access data Model Specific Users can clear cache and refresh internal and embedded dashboards, dashboard tiles, Looks, and Explores.",
+          "LookML dashboard user access data , clear cache refresh , mobile app access , see lookml dashboards User access data , can create forecast , clear cache refresh , create custom fields , create table calculations , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see drill overlay , see lookml , see lookml dashboards , see looks , see sql , see user dashboards , send to integration , schedule without limit User who can't view LookML access data , can create forecast , clear cache refresh , create custom fields , create table calculations , download without limit , explore , manage spaces , mobile app access , save content , save dashboards , save looks , schedule look emails , see lookml dashboards , see looks , see user dashboards , send to integration , schedule without limit Viewer access data , clear cache refresh , download without limit , mobile app access , schedule look emails , see drill overlay , see lookml dashboards , see looks , see user dashboards , schedule without limit You'll see these permission sets appear as options when you create a new role.",
+          "Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled."
+        ]
+      },
+      {
+        "title": "\"Access control and permission management \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control the actions a user can perform Create a permission set with the appropriate permissions, then assign a group or user to a role with that permission set Control what fields a user can access Create a model with the appropriate fields, then assign a group or user to a role with that model Control what data a user can access Create a model with the appropriate data limitations, then assign a group or user to a role with that model - or - Use access filters to limit a user to the appropriate data - or - Use user attributes to provide differing database credentials to a group or user - or - Use user attributes with access grants to restrict access to specific Explores, joins, views, or fields Control what database connections a Looker developer can access Create a project with the appropriate connections, associate the project with a set of models, then assign a group or user to a role with those models Feature access can also affect content access .",
+          "Folders let you set access levels that determine which users may edit folder contents (such as Looks and dashboards), view the contents in a folder, and change settings: A user needs to have at least the View access level to a folder to see that the folder exists, to view the Looks and dashboards inside it, and to copy the Looks and dashboards in the folder.",
+          "A user who can manage a folder can manipulate the contents of a folder (copying, moving, deleting, and renaming dashboards and Looks), organize the folder itself (renaming, moving, or deleting the folder), and give other users and groups access to the folder."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

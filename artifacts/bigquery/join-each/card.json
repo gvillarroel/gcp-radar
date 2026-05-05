@@ -1,0 +1,139 @@
+{
+  "feature_name": "JOIN EACH",
+  "feature_slug": "join-each",
+  "summary": "JOIN EACH lets BigQuery join tables of any size.",
+  "extended_definition": "JOIN EACH lets BigQuery join tables of any size.",
+  "lifecycle": {
+    "latest_feature_date": "2013-03-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery queries can execute directly over tables, over subqueries, over joined tables, and over tables modified by special-purpose operators described below.",
+          "EACH modifier The EACH modifier is a hint that tells BigQuery to execute the JOIN using multiple partitions.",
+          "JOIN operator BigQuery supports multiple JOIN operators in each FROM clause."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required permissions This statement requires the following IAM permissions : Permission Resource bigquery.bireservations.update BI Engine reservation Examples Allocating BI Engine capacity without preferred tables ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 250 ) Deallocating BI capacity ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 0 ) Removing a set of preferred tables from reservation ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( preferred tables = NULL ) Allocating BI Capacity with preferred tables list ALTER BI CAPACITY my-project.region-us.default SET OPTIONS ( size gb = 250 , preferred tables = [ \"data project1.dataset1.table1\" , \"data project2.dataset2.table2\" ] ) Overwriting list of preferred tables without changing the size ALTER BI CAPACITY region-us.default SET OPTIONS ( preferred tables = [ \"dataset1.table1\" , \"data project2.dataset2.table2\" ] ) ALTER CAPACITY SET OPTIONS statement Alters an existing capacity commitment.",
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery project = 'my-project' dataset id = 'my dataset' table id = 'new view' client = bigquery.Client(project=project) sql = \"\"\" CREATE VIEW {} . {} . {} OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name=\"new view\", description=\"a view that expires in 2 days\", labels=[(\"org unit\", \"development\")] ) AS SELECT name, state, year, number FROM bigquery-public-data.usa names.usa 1910 current WHERE state LIKE 'W%' \"\"\" . format ( project , dataset id , table id ) job = client . query ( sql ) # API request. job . result () # Waits for the query to finish. print ( 'Created new view \" {} . {} . {} \".' . format ( job . destination . project , job . destination . dataset id , job . destination . table id , ) ) On-demand query size calculation If you use on-demand billing, BigQuery charges for data definition language (DDL) queries based on the number of bytes processed by the query.",
+          "SelectFromTablesAndAppend ( target date DATE , OUT rows added INT64 ) BEGIN CREATE TEMP TABLE DataForTargetDate AS SELECT t1 . id , t1 . x , t2 . y FROM dataset . partitioned table1 AS t1 JOIN dataset . partitioned table2 AS t2 ON t1 . id = t2 . id WHERE t1 . date = target date AND t2 . date = target date ; SET rows added = ( SELECT COUNT ( ) FROM DataForTargetDate ); SELECT id , x , y , target date -- note that target date is a parameter FROM DataForTargetDate ; DROP TABLE DataForTargetDate ; END ; The following example declares a variable rows added , then passes it as an argument to the SelectFromTablesAndAppend procedure from the previous example, along with the value of CURRENT DATE ; then it returns a message stating how many rows were added."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to run a cross-cloud join: bigquery.jobs.create bigquery.tables.getData You might also be able to get these permissions with custom roles or other predefined roles .",
+          "CREATE OR REPLACE TABLE temp table AS ( SELECT l shipmode , l linenumber , l orderkey FROM aws dataset . lineitem WHERE l shipmode IN ( 'AIR' , 'REG AIR' ) AND l commitdate l receiptdate AND l shipdate l commitdate AND l receiptdate >= DATE '1997-01-01' AND l receiptdate DATE '1997-02-01' ); After the temporary table is created, the JOIN operation completes, and the following query is run: SELECT l shipmode , o orderpriority , count ( l linenumber ) AS num lineitems FROM bigquery dataset . orders JOIN temp table ON orders . o orderkey = lineitem . l orderkey GROUP BY l shipmode , o orderpriority ORDER BY l shipmode , o orderpriority ; As another example, consider the following cross-cloud join: SELECT c mktsegment , c name FROM bigquery dataset . customer WHERE c mktsegment = 'BUILDING' UNION ALL SELECT c mktsegment , c name FROM aws dataset . customer WHERE c mktsegment = 'FURNITURE' LIMIT 10 ; In this query, the LIMIT clause is not pushed down to the BigQuery Omni region.",
+          "Cross-cloud join examples The following query joins an orders table in a BigQuery region with a lineitem table in a BigQuery Omni region: SELECT l shipmode , o orderpriority , count ( l linenumber ) AS num lineitems FROM bigquery dataset . orders JOIN aws dataset . lineitem ON orders . o orderkey = lineitem . l orderkey WHERE l shipmode IN ( 'AIR' , 'REG AIR' ) AND l commitdate l receiptdate AND l shipdate l commitdate AND l receiptdate >= DATE '1997-01-01' AND l receiptdate DATE '1997-02-01' GROUP BY l shipmode , o orderpriority ORDER BY l shipmode , o orderpriority ; This query is broken into local and remote parts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.bireservations.update",
+      "bigquery.Client",
+      "bigquery.jobs.create",
+      "bigquery.tables.create",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.replicateData",
+      "data.usa",
+      "dataset.my",
+      "dataset1.table1",
+      "myproject.s3",
+      "names.usa",
+      "project.region",
+      "project1.dataset1.table1",
+      "project2.dataset2.table2",
+      "us.default"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

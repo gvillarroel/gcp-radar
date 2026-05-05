@@ -1,0 +1,160 @@
+{
+  "feature_name": "Hidden model thinking details",
+  "feature_slug": "hidden-model-thinking-details",
+  "summary": "Gemini Enterprise always hides a model's thinking details when generating answers to protect sensitive information.",
+  "extended_definition": "Gemini Enterprise always hides a model's thinking details when generating answers to protect sensitive information.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Chat with the assistant \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "source_id": "site-docs-root-2",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Chat with files in connectors Gemini Enterprise can analyze content and generate answers from the following connectors: Note: A Gemini Enterprise admin must enable the required actions for the Gemini Enterprise assistant to access the content, allowing you to chat with the files.",
+          "Note: When you upload a file from your Microsoft OneDrive Business account for the first time, you might need to have a Microsoft Entra ID Global Administrator or Application Administrator for your tenant to grant consent for the Gemini Enterprise app.",
+          "For example: \"Summarize the key points in the file 'Q3-Marketing-Budget.xlsx'.\" Best practices When chatting with files in connectors, follow these best practices: Avoid ambiguous or overly broad questions to prevent the model from overthinking."
+        ]
+      },
+      {
+        "title": "Configure autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "DataStoreName ; public class SyncCompleteQuery { public static void main ( String [] args ) throws Exception { syncCompleteQuery (); } public static void syncCompleteQuery () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CompletionServiceClient completionServiceClient = CompletionServiceClient . create ()) { CompleteQueryRequest request = CompleteQueryRequest . newBuilder () . setDataStore ( DataStoreName . ofProjectLocationDataStoreName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" ) . toString ()) . setQuery ( \"query107944136\" ) . setQueryModel ( \"queryModel-184930495\" ) . setUserPseudoId ( \"userPseudoId-1155274652\" ) . setIncludeTailSuggestions ( true ) . build (); CompleteQueryResponse response = completionServiceClient . completeQuery ( request ); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the Gemini Enterprise quickstart using client libraries .",
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: my-project-123\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"numUniqueUsersThreshold\": 6 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"numUniqueUsersThreshold\": 6, \"queryFrequencyThreshold\": 30 } Update completable field annotations in schema To turn on autocomplete for fields in structured data schema, follow these steps: Console In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Even if set to true, if there are suggestions that match the full query, those are returned and no tail suggestions are returned. / // const includeTailSuggestions = true // Imports the Discoveryengine library const { CompletionServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1 ; // Instantiates a client const discoveryengineClient = new CompletionServiceClient (); async function callCompleteQuery () { // Construct request const request = { dataStore , query , }; // Run request const response = await discoveryengineClient . completeQuery ( request ); console . log ( response ); } callCompleteQuery (); Python Before trying this sample, follow the Python setup instructions in the Gemini Enterprise quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Data Center data store \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "These endpoints enable Gemini Enterprise to retrieve space permission details, content restrictions, and email addresses of licensed users.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Set up a Confluence Data Center data store Stay organized with collections Save and categorize content based on your preferences.",
+          "Query execution After you authorize Confluence Data Center and send a search query to Gemini Enterprise: Gemini Enterprise sends your search query directly to the Confluence Data Center API."
+        ]
+      },
+      {
+        "title": "Gemini Enterprise client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/libraries",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can iterate over elements, and API calls will be issued to fetch pages as needed. result . each do item Each element is of type ::Google::Cloud::DiscoveryEngine::V1beta::SearchResponse::SearchResult. p item end end Additional resources C# The following list contains links to more resources related to the client library for C#: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Java The following list contains links to more resources related to the client library for Java: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Node.js The following list contains links to more resources related to the client library for Node.js: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code PHP The following list contains links to more resources related to the client library for PHP: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Python The following list contains links to more resources related to the client library for Python: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Ruby The following list contains links to more resources related to the client library for Ruby: API reference Client libraries best practices Issue tracker Gemini Enterprise on Stack Overflow Source code Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Gemini Enterprise Reference Send feedback Gemini Enterprise client libraries Stay organized with collections Save and categorize content based on your preferences.",
+          "For information about the Business edition, see the Gemini Enterprise - Business edition Help Center ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/libraries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.016Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise"
+}

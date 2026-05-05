@@ -1,0 +1,171 @@
+{
+  "feature_name": "CephFS volume plugin",
+  "feature_slug": "cephfs-volume-plugin",
+  "summary": "The CephFS volume plugin lets Kubernetes mount CephFS volumes and is deprecated in GKE 1.30; The CephFS volume plugin lets Kubernetes mount CephFS volumes and is deprecated in GKE 1.30; deprecated on 2024-05-01.",
+  "extended_definition": "The CephFS volume plugin lets Kubernetes mount CephFS volumes and is deprecated in GKE 1.30; The CephFS volume plugin lets Kubernetes mount CephFS volumes and is deprecated in GKE 1.30; deprecated on 2024-05-01.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-01",
+    "deprecation_date": "2024-05-01",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "We recommend you to upgrade your node pools to one of the following versions or above to take advantage of the latest patches: 1.21.4-gke.301 1.20.10-gke.301 1.19.14-gke.301 1.18.20-gke.4501 The following versions also contain the fix: 1.21.3-gke.2001 1.20.8-gke.2101 1.20.9-gke.701 1.20.9-gke.1001 1.19.12-gke.2101 1.19.13-gke.701 1.18.20-gke.3001 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem.",
+          "It is recommended that you: Upgrade your AWSManagementService , AWSCluster and AWSNodePool objects to the following version: 1.8.2 Update the gke-version of your AWSCluster and AWSNodePool objects to one of the supported Kubernetes versions : 1.17.17-gke.15800 1.18.20-gke.4800 1.19.14-gke.600 1.20.10-gke.600 High GKE clusters on Description Severity A security issue was discovered in Kubernetes , CVE-2021-25741, where a user may be able to create a container with subpath volume mounts to access files & directories outside of the volume, including on the host filesystem.",
+          "Medium GKE on AWS Description Severity Note: This section applies to both the current and previous generation of GKE on AWS A vulnerability in the Google Secret Manager Provider for Secret Store CSI Driver allows an attacker with Pod and Secret creation permissions in a namespace to exfiltrate the CSI driver's Kubernetes service account token by mounting a malicious volume on a Pod."
+        ]
+      },
+      {
+        "title": "\"About dynamic resource allocation in GKE \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Comparison of ResourceClaims and ResourceClaimTemplates Manually-created ResourceClaims Automatically-created ResourceClaims Managed by you Managed by Kubernetes Provides access to the same devices from multiple Pods Provides access to devices from a single Pod Exists in the cluster independently of Pods Bound to the lifecycle of the corresponding Pod Ideal for multiple workloads that need to share a specific device Ideal for multiple workloads that need independent device access Comparison of DRA with manual device allocation DRA makes allocating attached devices a similar experience to dynamically provisioning PersistentVolumes.",
+          "You should already be familiar with the following: GPUs in GKE Common Expression Language (CEL) Introduction to DRA DRA is a built-in Kubernetes feature that lets you flexibly request, allocate, and share hardware in your cluster among Pods and containers.",
+          "How DRA works Using DRA in your clusters and workloads is a similar process to using StorageClasses, PersistentVolumeClaims, and PersistentVolumes to dynamically provision volumes for Pods ."
+        ]
+      },
+      {
+        "title": "\"Migrate nodes to containerd 2 \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2",
+        "source_id": "site-docs-reference-2",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command to check for the DaemonSets: kubectl get daemonsets --all-namespaces -o json \\ jq -r ' [ \"/\", \"/etc\", \"/etc/\", \"/etc/containerd\", \"/etc/containerd/\", \"/etc/containerd/config.toml\" ] as $host paths [ \"kube-system\", \"kube-node-lease\", \"istio-system\", \"asm-system\", \"gatekeeper-system\", \"config-management-system\", \"config-management-monitoring\", \"cnrm-system\", \"hnc-system\", \"gke-managed-system\", \"gke-gmp-system\", \"gmp-system\", \"gke-managed-cim\" ] as $excluded namespaces .items[] select( ([.metadata.namespace] inside($excluded namespaces) not) and ( (any(.spec.template.spec.volumes[]?.hostPath.path; IN($host paths[]))) or ( .spec.template.spec.hostPID == true and any(.spec.template.spec.containers[]; .securityContext?.privileged == true) ) ) ) .metadata.namespace + \"/\" + .metadata.name ' Migrate from the CRI registry auths or configs.auth properties If your workloads use the auths or configs.auth properties in the containerd config to authenticate to a private registry for pulling container images, you must migrate the workloads using those images to the imagePullSecrets field instead.",
+          "Run the following command: kubectl get pods --all-namespaces -o json \\ jq -r ' [ \"/\", \"/var\", \"/var/\",\"/var/run\", \"/var/run/\", \"/var/run/containerd\", \"/var/run/containerd/\", \"/var/run/containerd/containerd.sock\", \"/run\", \"/run/\", \"/run/containerd\", \"/run/containerd/\", \"/run/containerd/containerd.sock\" ] as $socket paths [ \"kube-system\", \"kube-node-lease\", \"istio-system\", \"asm-system\", \"gatekeeper-system\", \"config-management-system\", \"config-management-monitoring\", \"cnrm-system\", \"hnc-system\", \"gke-managed-system\", \"gke-gmp-system\", \"gmp-system\", \"gke-managed-cim\" ] as $excluded namespaces .items[] select( (.spec.volumes[]?.hostPath.path as $p $socket paths index($p)) and ([.metadata.namespace] inside($excluded namespaces) not) ) .metadata.namespace + \"/\" + .metadata.name ' Use eBPF tracing to identify API callers For a more definitive way to identify which workloads running on Linux nodes call the CRI v1alpha2 API, you can deploy two specialized DaemonSets: The containerd-socket-tracer logs any process opening a connection to the containerd socket, along with the Pod and container details.",
+          "For example, replace the following application code: runtimeapi \"k8s.io/cri-api/pkg/apis/runtime/v1alpha2\" Update the code to use v1: runtimeapi \"k8s.io/cri-api/pkg/apis/runtime/v1\" Migrate from deprecated containerd config properties The registry.auths , registry.configs , and registry.mirrors containerd config properties in the CRI plugin are deprecated and will be removed in containerd 2.2, with a GKE version yet to be announced. registry.configs.tls , however, was already removed in containerd 2.0."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.toml",
+      "configs.auth",
+      "containerd.sock",
+      "gke.1001",
+      "gke.15800",
+      "gke.2001",
+      "gke.2101",
+      "gke.3001",
+      "gke.301",
+      "gke.4501",
+      "gke.4800",
+      "gke.600",
+      "gke.701",
+      "k8s.io",
+      "metadata.name",
+      "metadata.namespace",
+      "registry.auths",
+      "registry.configs",
+      "registry.configs.tls",
+      "registry.mirrors",
+      "spec.template.spec.containers",
+      "spec.template.spec.hostPID",
+      "spec.template.spec.volumes",
+      "spec.volumes"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/deprecations/migrate-containerd-2"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

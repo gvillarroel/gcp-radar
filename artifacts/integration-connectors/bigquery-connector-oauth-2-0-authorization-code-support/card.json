@@ -1,0 +1,187 @@
+{
+  "feature_name": "BigQuery connector OAuth 2.0 authorization code support",
+  "feature_slug": "bigquery-connector-oauth-2-0-authorization-code-support",
+  "summary": "The BigQuery connector supports OAuth 2.0 authorization code authentication.",
+  "extended_definition": "The BigQuery connector supports OAuth 2.0 authorization code authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure",
+      "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee API hub \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following authentication types are supported by the Apigee API hub connection: OAuth 2.0 - Authorization code Service account authentication To understand how to configure these authentication types, see Configure authentication .",
+          "Verify the OAuth 2.0 - Authorization code details in the Authentication section.",
+          "Re-authorization for authorization code If you are using Authorization code authentication type and have made any configuration changes in the Apigee API hub, you must re-authorize your Apigee API hub connection."
+        ]
+      },
+      {
+        "title": "Asana \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.",
+          "The following authentication types are supported by the Asana connection: Personal Access Token OAuth 2.0 Authorization code To understand how to configure these authentication types, see Configure authentication .",
+          "Verify the OAuth 2.0 - Authorization code details in the Authentication section."
+        ]
+      },
+      {
+        "title": "Box \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following authentication types are supported by the Box connection: JWT authentication OAuth 2.0 - Authorization code Box JSON OAuth 2.0 - Client credentials To understand how to configure these authentication types, see Configure authentication .",
+          "Additional steps after connection creation If you selected OAuth 2.0 - Authorization code for authentication, you must do the following additional steps after creating the connection: In the Connections page , locate the newly created connection.",
+          "Verify the OAuth 2.0 - Authorization code details in the Authentication section."
+        ]
+      },
+      {
+        "title": "Bigtable \\_|\\_ Integration Connectors \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service account authentication connection type Field name Details Location asia-east1 Version 1 Connector bigtable Connector version 1 Connection Name googlecloud-bigtable-service-authontication Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Project Id PROJECT ID Instance ID gcloud-bigtable-instance Connection Pool Size 1 Minimum number of nodes 2 Maximum number of nodes 50 Client Secret bigtable-client-secret Secret Version 1 OAuth 2.0 - Authorization code connection type Field name Details Location asia-east1 Version 1 Connector bigtable Connector version 1 Connection Name bigtable-oauth Service Account SERVICE ACCOUNT NAME@PROJECT ID.iam.gserviceaccount.com Project Id PROJECT ID Instance ID googlecloud-bigtable-instance Connection Pool Size 1 Minimum number of nodes 2 Maximum number of nodes 50 Client Secret bigtable-client-secret Secret Version 1 System limitations The Bigtable connector can process a maximum of 16 transactions per second, per node , and throttles any transactions beyond this limit.",
+          "The following authentication types are supported by the Bigtable connection: Service Account Authentication OAuth 2.0 - Authorization code To understand how to configure these authentication types, see Configure authentication .",
+          "OAuth 2.0 - Authorization code Client ID : The client ID provided by the application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/apigee_api_hub/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/asana/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/box/configure",
+        "https://docs.cloud.google.com/integration-connectors/docs/connectors/bigtable/configure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.597Z",
+  "source_step08_card": "data/step-08/current/products/integration-connectors/card.json",
+  "product_name": "Integration Connectors",
+  "product_slug": "integration-connectors"
+}

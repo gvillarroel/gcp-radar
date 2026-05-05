@@ -1,0 +1,124 @@
+{
+  "feature_name": "Cloud KMS Enumeration",
+  "feature_slug": "cloud-kms-enumeration",
+  "summary": "This Cloud Hacktool rule detects enumeration of Google Cloud KMS resources.",
+  "extended_definition": "This Cloud Hacktool rule detects enumeration of Google Cloud KMS resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+      "https://docs.cloud.google.com/chronicle/docs/resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Threats category overview \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "source_id": "site-api-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following export filter exports Google Cloud Cloud Run ( GCP RUN ) logs, in addition to the default logs both through the direct ingestion mechanism as well as through Cloud Storage and Sinks : log id(\"run.googleapis.com/stdout\") OR log id(\"run.googleapis.com/stderr\") OR log id(\"run.googleapis.com/requests\") OR log id(\"run.googleapis.com/varlog/system) Curated detections for AWS rule sets AWS rule sets in this category help identify threats in AWS environments using event and context data, and includes the following rule sets: AWS - Compute : Detects anomalous activity surrounding AWS compute resources, including EC2 and Lambda.",
+          "Curated detections for Office 365 data Office 365 rule sets in this category help identify threats in Office 365 environments using event and context data, and includes the following rule sets: Office 365 - Administrative : Detects malicious, suspicious and high-risk activities in Office 365, including backup policy changes, Microsoft Purview, and ATP detections.",
+          "Cloud Hacktool : Activity detected from known offensive security platforms or from offensive tools or software used in the wild by threat actors that specifically target cloud resources."
+        ]
+      },
+      {
+        "title": "\"Overview of composite rules category \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Broad: detects potentially malicious or anomalous behavior, but may produce more false positives due to the general nature of the rule.",
+          "The following categories outline the most important log sources required for the curated composite content to function effectively: Endpoint composite rule log sources Linux threats MacOS threats Windows threats Google Cloud composite rule log sources Google Cloud AWS Azure Office365 Okta Google Cloud and endpoint rule log sources Applied Threat Intelligence (ATI) Chrome Enterprise Threats Risk Analytics for UEBA For a complete list of the available curated detections, see Use curated detections .",
+          "Describe rule sets The Composite Rules category includes the following rule sets: Endpoint composite rules Cloud composite rules ATI composite rules Understand endpoint composite rules These rules correlate findings from multiple detection rules that relate to the same endpoint over a defined time period."
+        ]
+      },
+      {
+        "title": "Resources \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/resources",
+        "source_id": "site-api-reference",
+        "final_score": 66,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Google Security Operations Resources Send feedback Resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Google Security Operations SIEM samples on GitHub Sample SIEM Detection Engine rules Sample Detection Engine rules on GitHub that you can use in Google Security Operations.",
+          "Google Security Operations resources What's New in Google Security Operations Google Security Operations release notes Read about what's new in Google Security Operations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "run.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/resources"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/resources"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/resources"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/cloud-threats-category",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-rules-category",
+        "https://docs.cloud.google.com/chronicle/docs/resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

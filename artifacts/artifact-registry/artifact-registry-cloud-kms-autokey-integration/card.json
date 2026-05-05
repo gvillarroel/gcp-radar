@@ -1,0 +1,138 @@
+{
+  "feature_name": "Artifact Registry Cloud KMS Autokey integration",
+  "feature_slug": "artifact-registry-cloud-kms-autokey-integration",
+  "summary": "Artifact Registry can now be used with Cloud KMS Autokey for customer-managed encryption key operations.",
+  "extended_definition": "Artifact Registry can now be used with Cloud KMS Autokey for customer-managed encryption key operations.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+      "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enabling customer-managed encryption keys \\_|\\_ Artifact Registry \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "source_id": "site-docs-root-2",
+        "final_score": 46,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to use Autokey to create protected repositories, ask your administrator to grant you the following IAM roles on the folder or project: Cloud KMS Autokey User ( roles/cloudkms.autokeyUser ) Artifact Registry Admin ( roles/artifactregistry.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "To set up CMEK manually, see Creating a key and granting permissions To set up CMEK using Autokey, see Use Autokey to create keys on this page.",
+          "CMEK with Cloud KMS Autokey You can either create CMEKs manually to protect your Artifact Registry resources or use Cloud KMS Autokey."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.operations.get \\_|\\_ Artifact Registry \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Transition from Container Registry \\_|\\_ Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr",
+        "source_id": "site-docs-root",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.admin",
+      "cloudkms.autokeyUser",
+      "projects.locations.operations",
+      "projects.locations.operations.get"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.admin",
+      "roles/cloudkms.autokeyUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/cmek",
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.operations/get",
+        "https://docs.cloud.google.com/artifact-registry/docs/transition/transition-from-gcr"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.090Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry"
+}

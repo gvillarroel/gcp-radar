@@ -1,0 +1,93 @@
+{
+  "feature_name": "Configurable incident autoclose duration",
+  "feature_slug": "configurable-incident-autoclose-duration",
+  "summary": "Cloud Monitoring lets users configure how long to wait before closing an incident when observations stop arriving.",
+  "extended_definition": "Cloud Monitoring lets users configure how long to wait before closing an incident when observations stop arriving.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+      "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+      "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View application telemetry \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "List applications To list the applications you have registered with App Hub, along with information like the number of incidents and the application's location, criticality, and environment, do the following: In the Google Cloud console, go to the Application monitoring page: Go to Application monitoring If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "Before you begin Before you can use Application Monitoring, make sure that you configure your App Hub host project or management project.",
+          "Use dashboard options to explore telemetry The Application Monitoring dashboards display log, metric, trace, and incident information."
+        ]
+      },
+      {
+        "title": "Cloud Monitoring overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "Incidents and notifications in Cloud Monitoring To be notified when the value of a performance metric meets criteria that you define, create an alerting policy .",
+          "Typically, a record lists the status of the incident, links to logs, a chart of the recorded metric data, labels, and duration.",
+          "Query languages for Cloud Monitoring When you create an alerting policy or a chart, you must provide a query that describes the data that you want to monitor or chart: Google Cloud console: You can build your query by making selections from menus, or you can write a query."
+        ]
+      },
+      {
+        "title": "Troubleshoot Application Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Unexpected incidents are being opened With the release of Application Monitoring, the metadata.system labels.apphub host project id label was renamed as metadata.system labels.apphub application container .",
+          "Incidents close automatically when data stops arriving, after the auto-close duration expires.",
+          "To associate an alerting policy with a workload or service by using the Google Cloud console, do the following: In the Google Cloud console, go to the notifications Alerting page: Go to Alerting If you use the search bar to find this page, then select the result whose subheading is Monitoring ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "labels.apphub",
+      "metadata.system"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring",
+        "https://docs.cloud.google.com/monitoring/docs/monitoring-overview",
+        "https://docs.cloud.google.com/monitoring/docs/troubleshoot-application-monitoring"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

@@ -1,0 +1,137 @@
+{
+  "feature_name": "Advanced API Security abuse detection",
+  "feature_slug": "advanced-api-security-abuse-detection",
+  "summary": "Advanced API Security abuse detection uses machine learning to identify malicious API traffic patterns and security incidents.",
+  "extended_definition": "Advanced API Security abuse detection uses machine learning to identify malicious API traffic patterns and security incidents.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+      "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+      "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Advanced API Security for multiple Apigee organizations and gateways \\_\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "IAM roles and permissions To use Advanced API Security, you must have the following IAM roles and permissions: IAM roles Permissions Description API Security Admin ( roles/apigee.securityAdmin ) apigee.securityProfilesV2.create apigee.securityProfilesV2.delete apigee.securityProfilesV2.update apigee.securityProfilesV2.get apigee.securityProfilesV2.list Provides permissions to create, update, delete, get, and list security profiles. apigee.securityAssessmentResult.compute Provides permissions to compute security assessment results. apigee.securityMonitoringConditions.create apigee.securityMonitoringConditions.delete apigee.securityMonitoringConditions.get apigee.securityMonitoringConditions.list apigee.securityMonitoringConditions.update Provides permissions to create, delete, get, list, and update security monitoring conditions.",
+          "Key capabilities Advanced API Security offers the following capabilities when you enable it for your API hub instance: Risk assessment across multiple Apigee organizations, environments, and gateways: assess the security scores for a specific API or for all APIs across all of its deployments in multiple Apigee organizations, environments, and gateways to get a comprehensive understanding of its risk profile.",
+          "Leveraging API hub's plugins and curation capabilities, Advanced API Security offers an unified view that lets you monitor risks, compare configurations, and ensure consistent security standards across your entire API ecosystem."
+        ]
+      },
+      {
+        "title": "Client IP resolution \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Accurately identifying the client IP address on API requests is important for some functionality within Apigee, including Analytics and Advanced API Security features such as abuse detection and security actions.",
+          "When to set the client IP resolution for an environment Although it's not required to set client IP resolution, you might want to if the default client IP address resolution does not meet your needs and you want to override it to provide a specified client IP address resolution for Analytics, Advanced API Security, or performing any other function that requires consistent and reliable information on client IP addresses.",
+          "Using this setting provides visibility, consistency, and control over how client IP addresses are determined for all requests in the environment and results in consistent client IP address identification across Advanced API Security, flow variables, and analytics variables in the environment."
+        ]
+      },
+      {
+        "title": "API observations in API hub \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 84,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Advanced API Security add-on is available for Google Cloud projects with or without Apigee provisioning: For subscription customers, the Advanced API Security add-on is available with the Apigee organization.",
+          "However, since API observations in API hub leverages Shadow API discovery, which is part of the Apigee Advanced API Security add-on, you can incur charges related to your Apigee usage.",
+          "Note: API observations in API hub relies on the Apigee Shadow API Discovery feature, which is included as part of the paid Apigee Advanced API Security add-on ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.securityAdmin",
+      "apigee.securityAssessmentResult.compute",
+      "apigee.securityMonitoringConditions.create",
+      "apigee.securityMonitoringConditions.delete",
+      "apigee.securityMonitoringConditions.get",
+      "apigee.securityMonitoringConditions.list",
+      "apigee.securityMonitoringConditions.update",
+      "apigee.securityProfilesV2.create",
+      "apigee.securityProfilesV2.delete",
+      "apigee.securityProfilesV2.get",
+      "apigee.securityProfilesV2.list",
+      "apigee.securityProfilesV2.update"
+    ],
+    "missing_inventory_roles": [
+      "roles/apigee.securityAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/advanced-api-security-multi-gateway",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution",
+        "https://docs.cloud.google.com/apigee/docs/apihub/api-observation-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

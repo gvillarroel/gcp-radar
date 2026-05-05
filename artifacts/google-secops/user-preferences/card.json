@@ -1,0 +1,119 @@
+{
+  "feature_name": "User Preferences",
+  "feature_slug": "user-preferences",
+  "summary": "The User Preferences dialog centralizes time zone, date and time, notification, and accessibility settings.",
+  "extended_definition": "The User Preferences dialog centralizes time zone, date and time, notification, and accessibility settings.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 150,
+        "relevance": "",
+        "evidence_snippets": [
+          "The User Preferences dialog appears.",
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "Supported fields You can download the following fields to a CSV file from the platform: user hostname process name event type timestamp raw log (valid only when raw logs are enabled for the customer) All fields starting with udm.additional Valid field types You can download the following field types to a CSV file: double float int32 uint32 int64 uint64 bool string enum bytes google.protobuf.Timestamp google.protobuf.Duration Unsupported fields Fields that start with \"udm\" (not udm.additional) and meet either of the following conditions cannot be downloaded to CSV: The nesting of the field is more than 10 deep in udm proto."
+        ]
+      },
+      {
+        "title": "\"Role-Based Access Control (RBAC) User Guide \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/rbac",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Update the time zone You can update the time zone as follows: Locate the Time Settings section on your profile and click Edit .",
+          "Note: Some user interface elements display only UTC time, such as the time values on the prevalence graph in Domain view, which are labeled as UTC .",
+          "Similarly, downloaded results are always displayed in UTC, regardless of the configured time zone."
+        ]
+      },
+      {
+        "title": "\"SOAR migration overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "source_id": "site-api-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migration stage 1 for Google SecOps unified customers Check your in-product notification for your Stage 1 migration date and the included Google Form to confirm the time slot.",
+          "Provide the Google Cloud project ID in the Google form in the in-product notification and confirm the migration date and time slot before you submit the form.",
+          "Landing page The landing page will move from the Permissions page to the User Preferences menu, accessible from your avatar."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.metadata.event",
+      "e.principal.ip",
+      "susupicious.ip",
+      "udm.additional"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "https://docs.cloud.google.com/chronicle/docs/administration/rbac"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

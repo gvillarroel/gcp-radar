@@ -1,0 +1,90 @@
+{
+  "feature_name": "Phrase support for SEARCH function",
+  "feature_slug": "phrase-support-for-search-function",
+  "summary": "The BigQuery SEARCH function supports phrase queries; The SEARCH function supports phrase-based search queries.",
+  "extended_definition": "The BigQuery SEARCH function supports phrase queries; The SEARCH function supports phrase-based search queries.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+      "https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide",
+      "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Search Ads 360 migration guide \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide",
+        "source_id": "site-api-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Old Search Ads Report New Search Ads Resource New BigQuery Table Name adGroup ad group p sa AdGroupStats customer id p sa AdGroup customer id p sa AdGroupDeviceStats customer id p sa AdGroupConversionActionAndDeviceStats customer id ad ad group ad p sa AdConversionActionAndDeviceStats customer id p sa AdDeviceStats customer id p sa Ad customer id N/A ad group asset p sa AdGroupAssetStats customer id p sa AdGroupConversionActionAndAssetStats customer id N/A ad group asset set p sa AdGroupAssetSet customer id adGroupTarget ad group audience view p sa AdGroupAudienceDeviceStats customer id p sa AdGroupAudienceConversionActionAndDeviceStats customer id adGroupTarget ad group criterion p sa NegativeAdGroupCriterion customer id p sa NegativeAdGroupKeyword customer id p sa AdGroupCriterion customer id adGroupTarget age range view p sa AgeRangeDeviceStats customer id p sa AgeRangeConversionActionAndDeviceStats customer id N/A asset p sa Asset customer id bidStrategy bidding strategy p sa BidStrategy customer id p sa BidStrategyStats customer id campaign campaign p sa CampaignConversionActionAndDeviceStats customer id p sa Campaign customer id p sa CampaignDeviceStats customer id p sa CampaignStats customer id N/A campaign asset p sa CampaignAssetStats customer id p sa CampaignConversionActionAndAssetStats customer id N/A campaign asset set p sa CampaignAssetSet customer id campaignTarget campaign audience view p sa CampaignAudienceConversionActionAndDeviceStats customer id p sa CampaignAudienceDeviceStats customer id campaignTarget campaign criterion p sa CampaignCriterion customer id p sa NegativeCampaignKeyword customer id p sa NegativeCampaignCriterion customer id productLeadAndCrossSell cart data sales view p sa CartDataSalesStats customer id conversion conversion p sa Conversion customer id floodlightActivity conversion action p sa ConversionAction customer id account customer p sa Account customer id p sa AccountDeviceStats customer id p sa AccountConversionActionAndDeviceStats customer id p sa AccountStats customer id N/A customer asset p sa CustomerAssetStats customer id p sa CustomerConversionActionAndAssetStats customer id N/A customer asset set p sa CustomerAssetSet customer id adGroupTarget gender view p sa GenderDeviceStats customer id p sa GenderConversionActionAndDeviceStats customer id keyword keyword view p sa Keyword customer id p sa KeywordDeviceStats customer id p sa KeywordStats customer id p sa KeywordConversionActionAndDeviceStats customer id adGroupTarget location view p sa LocationDeviceStats customer id p sa LocationConversionActionAndDeviceStats customer id productAdvertised shopping performance view p sa ProductAdvertised customer id p sa ProductAdvertisedConversionActionAndDeviceStats customer id p sa ProductAdvertisedDeviceStats customer id productGroup product group view p sa ProductGroupStats customer id p sa ProductGroup customer id visit visit p sa Visit customer id adGroupTarget webpage view p sa WebpageDeviceStats customer id p sa WebpageConversionActionAndDeviceStats customer id Field mapping The BigQuery Data Transfer Service supports a subset of Search Ads 360 report fields as listed in Search Ads 360 report transformation .",
+          "Examples of migrated queries The following examples demonstrate how a BigQuery query might look before and after it is mapped to the new Search Ads 360 reporting API.",
+          "The old Search Ads 360 reporting API is no longer supported, so you should migrate your BigQuery Data Transfer Service workflows to be compatible with the new Search Ads 360 reporting API."
+        ]
+      },
+      {
+        "title": "\"Legacy SQL Syntax, Functions and Operators \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: legacySQL SELECT page title , / Populate these columns as True or False, / / depending on the condition / IF ( page title CONTAINS 'search' , INTEGER ( total ), 0 ) AS search , IF ( page title CONTAINS 'Earth' OR page title CONTAINS 'Maps' , INTEGER ( total ), 0 ) AS geo , FROM / Subselect to return top revised Wikipedia articles / / containing 'Google', followed by additional text. / ( SELECT TOP ( title , 5 ) as page title , COUNT ( ) as total FROM [ bigquery - public - data : samples . wikipedia ] WHERE REGEXP MATCH ( title , r '^Google.+' ) AND wp namespace = 0 ); Returns: +---------------+--------+------+ page title search geo +---------------+--------+------+ Google search 4261 0 Google Earth 0 3874 Google Chrome 0 0 Google Maps 0 2617 Google bomb 0 0 +---------------+--------+------+ Using HASH to select a random sample of your data Some queries can provide a useful result using random subsampling of the result set.",
+          "If the row doesn't exist, <default value> returns. legacySQL SELECT word , word count , LEAD ( word , 1 ) OVER ( PARTITION BY corpus ORDER BY word count DESC ) lead , FROM [ bigquery - public - data : samples . shakespeare ] WHERE corpus = 'othello' and length ( word ) > 10 LIMIT 5 Returns: word word count lead handkerchief 29 satisfaction satisfaction 5 displeasure displeasure 4 instruments instruments 4 circumstance circumstance 3 null NTH VALUE( <expr> , <n> ) Returns the value of <expr> at position <n> of the window frame, where <n> is a one-based index.",
+          "This method will only work if the dataset is in your current default project. legacySQL SELECT samples . shakespeare . word FROM samples . shakespeare ; This example prefixes the column name with a table alias. legacySQL SELECT t . word FROM [ bigquery - public - data : samples . shakespeare ] AS t ; Integer-range partitioned tables Legacy SQL supports using table decorators to address a specific partition in an integer-range partitioned table."
+        ]
+      },
+      {
+        "title": "\"Introduction to embeddings and vector search \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/vector-search-intro",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Limitations Queries that contain the VECTOR SEARCH or AI.SEARCH function aren't accelerated by BigQuery BI Engine .",
+          "Some possible use cases are as follows: Retrieval-augmented generation (RAG) : Parse documents, perform vector search on content, and generate summarized answers to natural language questions using Gemini models, all within BigQuery.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/search-ads-migration-guide",
+        "https://docs.cloud.google.com/bigquery/docs/reference/legacy-sql",
+        "https://docs.cloud.google.com/bigquery/docs/vector-search-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

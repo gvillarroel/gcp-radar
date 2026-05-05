@@ -1,0 +1,137 @@
+{
+  "feature_name": "Gemini CLI extension for Firestore",
+  "feature_slug": "gemini-cli-extension-for-firestore",
+  "summary": "The dedicated Gemini CLI extension for Firestore can query databases and update data from the command line.",
+  "extended_definition": "The dedicated Gemini CLI extension for Firestore can query databases and update data from the command line.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/store-query-data",
+      "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+      "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use Firestore with MCP, Gemini CLI, and other agents \\_|\\_ Firestore in\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how to use the MCP Toolbox for Databases to expose your developer assistance tools to a Firestore instance using the following IDEs: Gemini CLI Gemini Code Assist Cursor Windsurf (Codium) Visual Studio Code (Copilot) Cline (VS Code extension) Claude desktop Claude code About Gemini CLI and extensions Gemini CLI is an open-source AI agent designed to assist with development workflows by assisting with coding, debugging, data exploration, and content creation.",
+          "Use the Gemini CLI extension for Firestore Note: The Firestore Gemini CLI extension is based on MCP Toolbox for Databases.",
+          "For an integrated experience, we recommend using the dedicated Firestore extension for Gemini CLI ."
+        ]
+      },
+      {
+        "title": "\"Analyze query execution with Query Explain \\_|\\_ Firestore in Native mode\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 100,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Analyze query execution with Query Explain Preview — Firestore in Native mode (with Pipeline Operations) for Enterprise Edition This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Home Documentation Databases Firestore in Native mode Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Console Execute a query in the Query Editor and open the Explanation tab: In the Google Cloud console, go to the Databases page."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Store and query data in Firestore in Datastore mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Store and query data in Firestore in Datastore mode This page shows you how to store and query data in Firestore in Datastore mode using the Google Cloud console.",
+          "Run a query Datastore mode databases support querying data by kind or by Google Query Language (GQL).",
+          "Go to project selector If you are not the project owner, your account requires the following permissions to complete this quickstart: Your account requires the Datastore Owner role which contains the datastore.databases.create permission needed to create a Datastore mode instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datastore.databases.create",
+      "datastore.user",
+      "firebaserules.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.user",
+      "roles/firebaserules.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/firestore/native/docs/enterprise-query-explain",
+        "https://docs.cloud.google.com/datastore/docs/store-query-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:32.054Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore"
+}

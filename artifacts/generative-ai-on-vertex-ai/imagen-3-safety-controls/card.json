@@ -1,0 +1,168 @@
+{
+  "feature_name": "Imagen 3 safety controls",
+  "feature_slug": "imagen-3-safety-controls",
+  "summary": "Imagen 3 provides user-configurable safety settings, including person and face settings.",
+  "extended_definition": "Imagen 3 provides user-configurable safety settings, including person and face settings.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generative AI glossary \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if a nearest neighbor query for 20 nearest neighbors returned 19 of the \"ground truth\" nearest neighbors, the recall is 19/20x100 = 95%. recipe In the context of Managed Training, a recipe is a comprehensive and reusable package that contains everything needed to execute a specific large-scale training workload. recommendation system A recommendation system is a machine learning-based system that helps users find compelling content in a large corpus.",
+          "The digital content should be tracked to the movement of the camera or glasses (depending on how the scene is rendered) so that it appears as if it is part of the real world. authentication The process of verifying the identity of a client (which might be a user or another process) for the purposes of gaining access to a secured system.",
+          "For instance, it is the required method for connecting your cluster's VPC to a Filestore instance, which provides the necessary shared /home directory for all the nodes in your cluster. word embedding Word embeddings are a way to represent words as dense vectors of floating-point values."
+        ]
+      },
+      {
+        "title": "\"Vertex AI quickstart \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Once created , it can be reused for multiple requests . try ( Client client = Client . builder () . location ( \"global\" ) . vertexAI ( true ) . build ()) { GenerateContentConfig contentConfig = GenerateContentConfig . builder () . responseModalities ( \"TEXT\" , \"IMAGE\" ) . candidateCount ( 1 ) . safetySettings ( SafetySetting . builder () . method ( \"PROBABILITY\" ) . category ( \"HARM CATEGORY DANGEROUS CONTENT\" ) . threshold ( \"BLOCK MEDIUM AND ABOVE\" ) . build ()) . build (); GenerateContentResponse response = client . models . generateContent ( modelId , \"Generate an image of the Eiffel tower with fireworks in the background.\" , contentConfig ); // Get parts of the response List<Part> parts = response . candidates () . flatMap ( candidates - > candidates . stream () . findFirst ()) . flatMap ( Candidate :: content ) . flatMap ( Content :: parts ) . orElse ( new ArrayList <> ()); // For each part print text if present , otherwise read image data if present and // write it to the output file for ( Part part : parts ) { if ( part . text () . isPresent ()) { System . out . println ( part . text () . get ()); } else if ( part . inlineData () . flatMap ( Blob :: data ) . isPresent ()) { BufferedImage image = ImageIO . read ( new ByteArrayInputStream ( part . inlineData () . flatMap ( Blob :: data ) . get ())); ImageIO . write ( image , \"png\" , new File ( outputFile )); } } System . out . println ( \"Content written to: \" + outputFile ); // Example response : // Here is the Eiffel Tower with fireworks in the background ... // // Content written to : resources / output / example - image - eiffel - tower . png } } } Image understanding Gemini can understand images as well.",
+          "Overview Explore Google models Explore the latest Google models supported in Vertex AI, including Gemini, Imagen, Veo, and Gemma.",
+          "ModalityImage ), }, CandidateCount : int32 ( 1 ), SafetySettings : [] genai ."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "String project = \"YOUR PROJECT ID\" ; String textPrompt = \"YOUR TEXT PROMPT\" ; String baseImagePath = \"YOUR BASE IMAGE PATH\" ; // Learn how to use text prompts to update an image: // https://cloud.google.com/vertex-ai/docs/generative-ai/image/edit-images Map<String , Object > parameters = new HashMap<String , Object > (); parameters . put ( \"sampleCount\" , 1 ); String location = \"us-central1\" ; String publisher = \"google\" ; String model = \"multimodalembedding@001\" ; predictImageFromImageAndText ( project , location , publisher , model , textPrompt , baseImagePath , parameters ); } // Update images using text prompts public static void predictImageFromImageAndText ( String project , String location , String publisher , String model , String textPrompt , String baseImagePath , Map<String , Object > parameters ) throws IOException { final String endpoint = String . format ( \"%s-aiplatform.googleapis.com:443\" , location ); final PredictionServiceSettings predictionServiceSettings = PredictionServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Initialize client that will be used to send requests.",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/multimodalembedding@001:predict Request JSON body: { \"instances\": [ { \"text\": \" TEXT \", \"image\": { \"gcsUri\": \" IMAGE URI \" }, \"video\": { \"gcsUri\": \" VIDEO URI \", \"videoSegmentConfig\": { \"startOffsetSec\": START SECOND , \"endOffsetSec\": END SECOND , \"intervalSec\": INTERVAL SECONDS } } } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/multimodalembedding@001:predict Request JSON body: { \"instances\": [ { \"video\": { \"gcsUri\": \" VIDEO URI \", \"videoSegmentConfig\": { \"startOffsetSec\": START SECOND , \"endOffsetSec\": END SECOND , \"intervalSec\": INTERVAL SECONDS } } } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Web Grounding for Enterprise \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "source_id": "site-docs-root",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "PROMPT : Your prompt. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" -H \"Content-Type: application/json\" -H \"x-server-timeout: 60\" https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /publishers/google/models/gemini-2.0-flash:generateContent -d ' { \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": PROMPT }] }], \"tools\": [{ \"enterpriseWebSearch\": { } }] } ' Use Google Search suggestions When you use Web Grounding for Enterprise, and you receive Search suggestions in your response, you must display the Search suggestions in production and in your applications.",
+          "Code to implement a Search suggestion When you use the API to ground a response to search, the model response provides compliant HTML and CSS styling in the renderedContent field, which you implement to display Search suggestions in your application.",
+          "To use the API, you must set the following fields: Contents.parts.text : The text query users want to send to the API. tools.enterpriseWebSearch : When this tool is provided, Web Grounding for Enterprise can be used by Gemini."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "com.google.genai.Client",
+      "com.google.genai.types.Blob",
+      "com.google.genai.types.Candidate",
+      "com.google.genai.types.Content",
+      "com.google.genai.types.GenerateContentConfig",
+      "com.google.genai.types.GenerateContentResponse",
+      "com.google.genai.types.Part",
+      "com.google.genai.types.SafetySetting",
+      "java.awt.image.BufferedImage",
+      "java.io.ByteArrayInputStream",
+      "java.io.File",
+      "java.io.IOException",
+      "java.util.ArrayList",
+      "java.util.List",
+      "javax.imageio.ImageIO",
+      "parts.text",
+      "tools.enterpriseWebSearch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/glossary-genai",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.525Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

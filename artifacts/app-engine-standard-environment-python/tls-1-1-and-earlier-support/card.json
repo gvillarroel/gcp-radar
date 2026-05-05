@@ -1,0 +1,94 @@
+{
+  "feature_name": "TLS 1.1 and earlier support",
+  "feature_slug": "tls-1-1-and-earlier-support",
+  "summary": "App Engine standard environment previously supported TLS 1.1 and earlier for application connections; deprecated on March 2025.",
+  "extended_definition": "App Engine standard environment previously supported TLS 1.1 and earlier for application connections; deprecated on March 2025.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-07",
+    "deprecation_date": "March 2025",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "One of the benefits App Engine standard environment's \"pay for only what you need\" platform as described earlier in Scaling Down is that the system autoscales the number of instances down to zero when there is no traffic.",
+          "Setting an appropriate number of idle instances for your application based on request volume allows your application to serve every request with little latency, unless you are experiencing abnormally high request volume.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference-3",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "One of the benefits App Engine standard environment's \"pay for only what you need\" platform as described earlier in Scaling Down is that the system autoscales the number of instances down to zero when there is no traffic.",
+          "Setting an appropriate number of idle instances for your application based on request volume allows your application to serve every request with little latency, unless you are experiencing abnormally high request volume.",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback How instances are managed Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Scheduling jobs with cron.yaml \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml",
+        "source_id": "site-docs-reference-required-9",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Reference Send feedback Scheduling jobs with cron.yaml Stay organized with collections Save and categorize content based on your preferences.",
+          "About the cron configuration file For all runtimes except for Java, a cron.yaml file in the root directory of your application (alongside app.yaml ) configures scheduled tasks for your app.",
+          "For the Java, a cron.yaml file in the WEB-INF directory of your application (alongside apppengine-web.xml ) configures scheduled tasks for your app."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "cron.yaml",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/standard/scheduling-jobs-with-cron-yaml"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.208Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python"
+}

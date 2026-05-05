@@ -1,0 +1,115 @@
+{
+  "feature_name": "Read replicas",
+  "feature_slug": "read-replicas",
+  "summary": "Read replicas provide read-only replica instances for Memorystore for Redis; Read replicas provide read-only replica instances for Memorystore for Redis.",
+  "extended_definition": "Read replicas provide read-only replica instances for Memorystore for Redis; Read replicas provide read-only replica instances for Memorystore for Redis.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+      "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+      "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "About read replicas \\_|\\_ Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "source_id": "site-docs-root-2",
+        "final_score": 380,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Primary endpoint returns READONLY Your writes to the primary endpoint of a Memorystore for Redis instance with read replicas may unexpectedly receive -READONLY You can't write against a read only replica. errors.",
+          "Failovers for instances with read replicas When a primary fails, the Memorystore health monitoring service initiates the failover and the new primary is made available for both reads and writes.",
+          "The read endpoint IP address is located in the original range allocated for your Memorystore instance, not the additional range you provide when enabling read replicas."
+        ]
+      },
+      {
+        "title": "High availability for Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "source_id": "site-docs-root",
+        "final_score": 302,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: If you have primary instances that have read replicas enabled, then Memorystore for Redis doesn't support the manual failover API.",
+          "If you configure an instance to have only one non-read replica, then Memorystore for Redis directs all application connections to the primary endpoint.",
+          "The read replicas in this configuration perform reads as well as provide failover support for HA functionality."
+        ]
+      },
+      {
+        "title": "Memorystore for Redis overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "source_id": "site-docs-root",
+        "final_score": 296,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tier capabilities The following table describes the differences between the available Memorystore for Redis service tiers: Specifications Basic Tier Standard Tier (read replicas disabled) Standard Tier (read replicas enabled) Description Provides a cache with no replication Provides redundancy and availability using replication Provides redundancy and availability using replication to backup data, and multiple Read replicas to increase read throughput Max Redis primary size 300 GB 300 GB 300 GB Max network bandwidth 16 Gbps 16 Gbps 16 Gbps total for writes.",
+          "In general, the Redis functionality that Memorystore for Redis instances provide is the same as the functionality that locally-hosted Redis instances provide.",
+          "High availability: Memorystore for Redis instances in the Standard Tier are replicated across zones, monitored for health and have fast automatic failover."
+        ]
+      },
+      {
+        "title": "\"Create and manage Redis instances \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "source_id": "site-docs-root",
+        "final_score": 286,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: gcloud redis instances create myinstance --region=us-central1 --size=1 --connect-mode=PRIVATE SERVICE ACCESS --network=default --reserved-ip-range=my-reserved-range-1,my-reserved-range-2 Create a Redis instance with read replicas For instructions on how to create a Redis instance with read replicas, see Creating a Redis instance with read replicas .",
+          "The minimum required block size is /29 for instances without read replicas and /28 for instances with read replicas.",
+          "For example: gcloud redis instances create myinstance --region=us-central1 --size=1 --connect-mode=DIRECT PEERING --network=default --reserved-ip-range=10.0.0.0/24 Custom ranges with private services access If you only have one IP address range allocated for your private services access connection , that range is used by default for Memorystore instance creation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-read-replicas",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/memorystore-for-redis-overview",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.027Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis"
+}

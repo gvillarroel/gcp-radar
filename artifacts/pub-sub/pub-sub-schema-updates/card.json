@@ -1,0 +1,279 @@
+{
+  "feature_name": "Pub/Sub schema updates",
+  "feature_slug": "pub-sub-schema-updates",
+  "summary": "Pub/Sub schemas can be updated after creation.",
+  "extended_definition": "Pub/Sub schemas can be updated after creation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/access-control",
+      "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Associate a schema with a topic \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "source_id": "site-docs-root-2",
+        "final_score": 284,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Pub/Sub Python API reference documentation . from google . api core . exceptions import InvalidArgument , NotFound from google . cloud . pubsub import PublisherClient TODO ( developer ): Replace these variables before running the sample . project id = \"your-project-id\" topic id = \"your-topic-id\" first revision id = \"your-revision-id\" last revision id = \"your-revision-id\" publisher client = PublisherClient () topic path = publisher client . topic path ( project id , topic id ) try : response = publisher client . update topic ( request = { \"topic\" : { \"name\" : topic path , \"schema settings\" : { \"first revision id\" : first revision id , \"last revision id\" : last revision id , }, }, \"update mask\" : \"schemaSettings.firstRevisionId,schemaSettings.lastRevisionId\" , } ) print ( f \"Updated a topic schema:\\n{response}\" ) except NotFound : print ( f \"{topic id} not found.\" ) except InvalidArgument : print ( \"Schema settings are not valid.\" ) What's next Commit a schema revision Publish messages to a topic with a schema Validate a schema definition Validate a message for a schema Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For more information, see the Pub/Sub PHP API reference documentation . use Google\\Cloud\\PubSub\\PubSubClient; use Google\\Cloud\\PubSub\\Schema; / Create a topic with a schema. @param string $projectId @param string $topicId @param string $schemaId @param string $encoding / function create topic with schema($projectId, $topicId, $schemaId, $encoding) { $pubsub = new PubSubClient([ 'projectId' => $projectId, ]); $schema = $pubsub->schema($schemaId); $topic = $pubsub->createTopic($topicId, [ 'schemaSettings' => [ // The schema may be provided as an instance of the schema type, // or by using the schema ID directly. 'schema' => $schema, // Encoding may be either BINARY or JSON`. // Provide a string or a constant from Google\\Cloud\\PubSub\\V1\\Encoding. 'encoding' => $encoding, ] ]); printf('Topic %s created', $topic->name()); } Python Before trying this sample, follow the Python setup instructions in Quickstart: Using Client Libraries .",
+          "For more information, see the Pub/Sub Python API reference documentation . from google.api core.exceptions import AlreadyExists , InvalidArgument from google.cloud.pubsub import PublisherClient , SchemaServiceClient from google.pubsub v1.types import Encoding TODO(developer): Replace these variables before running the sample. project id = \"your-project-id\" topic id = \"your-topic-id\" schema id = \"your-schema-id\" first revision id = \"your-revision-id\" last revision id = \"your-revision-id\" Choose either BINARY or JSON as valid message encoding in this topic. message encoding = \"BINARY\" publisher client = PublisherClient () topic path = publisher client . topic path ( project id , topic id ) schema client = SchemaServiceClient () schema path = schema client . schema path ( project id , schema id ) if message encoding == \"BINARY\" : encoding = Encoding ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "source_id": "site-api-reference",
+        "final_score": 280,
+        "relevance": "",
+        "evidence_snippets": [
+          "PushConfig JSON representation { \"pushEndpoint\" : string , \"attributes\" : { string : string , ... } , // Union field authentication method can be only one of the following: \"oidcToken\" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: \"pubsubWrapper\" : { object ( PubsubWrapper ) } , \"noWrapper\" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.",
+          "PushConfig JSON representation { \"pushEndpoint\" : string , \"attributes\" : { string : string , ... } , // Union field authentication method can be only one of the following: \"oidcToken\" : { object ( OidcToken ) } // End of list of possible types for union field authentication method . // Union field wrapper can be only one of the following: \"pubsubWrapper\" : { object ( PubsubWrapper ) } , \"noWrapper\" : { object ( NoWrapper ) } // End of list of possible types for union field wrapper . } Fields pushEndpoint string Optional.",
+          "Curl Request curl --location 'https://pubsub.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"update subscription\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Request for the UpdateSubscription method."
+        ]
+      },
+      {
+        "title": "\"Access control with Identity and Access Management \\_|\\_ Pub/Sub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Schema Snapshot Subscription Topic cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig pubsub. pubsub. messageTransforms. validate pubsub.schemas.attach pubsub.schemas.commit pubsub.schemas.create pubsub.schemas.delete pubsub.schemas.get pubsub.schemas.getIamPolicy pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.rollback pubsub.schemas.setIamPolicy pubsub.schemas.validate pubsub.snapshots.create pubsub. snapshots. createTagBinding pubsub.snapshots.delete pubsub. snapshots. deleteTagBinding pubsub.snapshots.get pubsub.snapshots.getIamPolicy pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.snapshots.seek pubsub.snapshots.setIamPolicy pubsub.snapshots.update pubsub.subscriptions.consume pubsub.subscriptions.create pubsub. subscriptions. createTagBinding pubsub.subscriptions.delete pubsub. subscriptions. deleteTagBinding pubsub.subscriptions.get pubsub. subscriptions. getIamPolicy pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub. subscriptions. setIamPolicy pubsub.subscriptions.update pubsub. topics. attachSubscription pubsub.topics.create pubsub.topics.createTagBinding pubsub.topics.delete pubsub.topics.deleteTagBinding pubsub. topics. detachSubscription pubsub.topics.get pubsub.topics.getIamPolicy pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings pubsub.topics.publish pubsub.topics.setIamPolicy pubsub.topics.update pubsub.topics.updateTag resourcemanager.projects.get serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Pub/Sub Editor ( roles/ pubsub.editor ) Provides access to modify topics and subscriptions, and access to publish and consume messages.",
+          "Lowest-level resources where you can grant this role: Schema Snapshot Subscription Topic cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig pubsub. messageTransforms. validate pubsub.schemas.attach pubsub.schemas.commit pubsub.schemas.create pubsub.schemas.delete pubsub.schemas.get pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.rollback pubsub.schemas.validate pubsub.snapshots.create pubsub. snapshots. createTagBinding pubsub.snapshots.delete pubsub. snapshots. deleteTagBinding pubsub.snapshots.get pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.snapshots.seek pubsub.snapshots.update pubsub.subscriptions.consume pubsub.subscriptions.create pubsub. subscriptions. createTagBinding pubsub.subscriptions.delete pubsub. subscriptions. deleteTagBinding pubsub.subscriptions.get pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub.subscriptions.update pubsub. topics. attachSubscription pubsub.topics.create pubsub.topics.createTagBinding pubsub.topics.delete pubsub.topics.deleteTagBinding pubsub. topics. detachSubscription pubsub.topics.get pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings pubsub.topics.publish pubsub.topics.update pubsub.topics.updateTag resourcemanager.projects.get serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Pub/Sub Subscriber ( roles/ pubsub.subscriber ) Provides access to consume messages from a subscription and to attach subscriptions to a topic.",
+          "Lowest-level resources where you can grant this role: Schema Snapshot Subscription Topic pubsub. messageTransforms. validate pubsub.schemas.get pubsub.schemas.list pubsub.schemas.listRevisions pubsub.schemas.validate pubsub.snapshots.get pubsub.snapshots.list pubsub. snapshots. listEffectiveTags pubsub. snapshots. listTagBindings pubsub.subscriptions.get pubsub.subscriptions.list pubsub. subscriptions. listEffectiveTags pubsub. subscriptions. listTagBindings pubsub.topics.get pubsub.topics.list pubsub. topics. listEffectiveTags pubsub.topics.listTagBindings resourcemanager.projects.get serviceusage. consumerpolicy. analyze serviceusage. consumerpolicy. get serviceusage. effectivepolicy. get serviceusage.groups. serviceusage.groups.list serviceusage. groups. listExpandedMembers serviceusage. groups. listMembers serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.values.test Pub/Sub Publisher ( roles/ pubsub.publisher ) Provides access to publish messages to a topic."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic",
+        "source_id": "site-api-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CloudStorage JSON representation { \"state\" : enum ( State ) , \"bucket\" : string , \"minimumObjectCreateTime\" : string , \"matchGlob\" : string , // Union field input format can be only one of the following: \"textFormat\" : { object ( TextFormat ) } , \"avroFormat\" : { object ( AvroFormat ) } , \"pubsubAvroFormat\" : { object ( PubSubAvroFormat ) } // End of list of possible types for union field input format . } Fields state enum ( State ) Output only.",
+          "CloudStorage JSON representation { \"state\" : enum ( State ) , \"bucket\" : string , \"minimumObjectCreateTime\" : string , \"matchGlob\" : string , // Union field input format can be only one of the following: \"textFormat\" : { object ( TextFormat ) } , \"avroFormat\" : { object ( AvroFormat ) } , \"pubsubAvroFormat\" : { object ( PubSubAvroFormat ) } // End of list of possible types for union field input format . } Fields state enum ( State ) Output only.",
+          "Topic JSON representation { \"name\" : string , \"labels\" : { string : string , ... } , \"messageStoragePolicy\" : { object ( MessageStoragePolicy ) } , \"kmsKeyName\" : string , \"schemaSettings\" : { object ( SchemaSettings ) } , \"satisfiesPzs\" : boolean , \"messageRetentionDuration\" : string , \"state\" : enum ( State ) , \"ingestionDataSourceSettings\" : { object ( IngestionDataSourceSettings ) } , \"messageTransforms\" : [ { object ( MessageTransform ) } ] , \"tags\" : { string : string , ... } } Fields name string Required."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "com.google.cloud.pubsub.v1.SchemaServiceClient",
+      "core.exceptions",
+      "projects.subscriptions.delete",
+      "projects.subscriptions.detach",
+      "projects.subscriptions.get",
+      "projects.subscriptions.getIamPolicy",
+      "projects.subscriptions.list",
+      "projects.subscriptions.modifyAckDeadline",
+      "projects.subscriptions.modifyPushConfig",
+      "projects.subscriptions.patch",
+      "projects.subscriptions.pull",
+      "projects.subscriptions.seek",
+      "projects.subscriptions.setIamPolicy",
+      "projects.subscriptions.testIamPermissions",
+      "pubsub.editor",
+      "pubsub.googleapis.com",
+      "pubsub.publisher",
+      "pubsub.schemas.attach",
+      "pubsub.schemas.commit",
+      "pubsub.schemas.create",
+      "pubsub.schemas.delete",
+      "pubsub.schemas.get",
+      "pubsub.schemas.getIamPolicy",
+      "pubsub.schemas.list",
+      "pubsub.schemas.listRevisions",
+      "pubsub.schemas.rollback",
+      "pubsub.schemas.setIamPolicy",
+      "pubsub.schemas.validate",
+      "pubsub.snapshots.create",
+      "pubsub.snapshots.delete",
+      "pubsub.snapshots.get",
+      "pubsub.snapshots.getIamPolicy",
+      "pubsub.snapshots.list",
+      "pubsub.snapshots.seek",
+      "pubsub.snapshots.setIamPolicy",
+      "pubsub.snapshots.update",
+      "pubsub.subscriber",
+      "pubsub.subscriptions.consume",
+      "pubsub.subscriptions.create",
+      "pubsub.subscriptions.delete",
+      "pubsub.subscriptions.get",
+      "pubsub.subscriptions.getIamPolicy",
+      "pubsub.subscriptions.list",
+      "pubsub.subscriptions.setIamPolicy",
+      "pubsub.subscriptions.update",
+      "pubsub.topics.create",
+      "pubsub.topics.createTagBinding",
+      "pubsub.topics.delete",
+      "pubsub.topics.deleteTagBinding",
+      "pubsub.topics.detachSubscription",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.list",
+      "pubsub.topics.listTagBindings",
+      "pubsub.topics.publish",
+      "pubsub.topics.setIamPolicy",
+      "pubsub.topics.update",
+      "pubsub.topics.updateTag",
+      "serviceusage.groups",
+      "serviceusage.groups.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.values.test",
+      "v1.types"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/associate-schema-topic",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_subscription",
+        "https://docs.cloud.google.com/pubsub/docs/access-control",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/update_topic"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.474Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

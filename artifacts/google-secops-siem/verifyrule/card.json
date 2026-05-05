@@ -1,0 +1,117 @@
+{
+  "feature_name": "VerifyRule",
+  "feature_slug": "verifyrule",
+  "summary": "Adds a Detection Engine API method that validates YARA-L 2.0 rules without creating or evaluating them.",
+  "extended_definition": "Adds a Detection Engine API method that validates YARA-L 2.0 rules without creating or evaluating them.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+      "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Detection Engine This document explains how to use the Detection Engine API Methods to create, run, and manage security rules that search data stored in your Google Security Operations account.",
+          "Detections have the same format as those returned by the ListDetections and GetDetection methods, except that the following fields are not returned since the rule is not persisted by the test: detection.ruleId detection.ruleVersion detection.alertState detection.urlBackToProduct createdTime Errors have the same format as those returned by the ListErrors and GetError methods, except that the following fields are not returned since the rule is not persisted by the test: errorId errorTime ruleExecution.ruleId ruleExecution.ruleVersion Sample response [{ \"error\": { \"category\": \"RULES EXECUTION ERROR\", \"ruleExecution\": { \"windowStartTime\": \"2021-01-01T18:00:00Z\", \"windowEndTime\": \"2021-01-01T20:00:00Z\" } } } , { \"detection\": { \"type\": \"RULE DETECTION\", \"detection\": [ { \"ruleName\": \"singleEventRule2\", \"ruleType\": \"SINGLE EVENT\" } ], \"id\": \"de 13503ebe-b96b-7b63-bb89-0e6d218628c9\", \"timeWindow\": { \"startTime\": \"2021-01-03T03:17:49.781746Z\", \"endTime\": \"2021-01-03T03:17:49.781746Z\" }, \"collectionElements\": [ { \"references\": [ { \"event\": { \"metadata\": { \"eventTimestamp\": \"2021-01-03T03:17:49.781746Z\", \"collectedTimestamp\": \"2021-01-03T03:17:49.791689822Z\", \"eventType\": \"NETWORK DNS\", \"productName\": \"DNS pcap\", \"ingestedTimestamp\": \"2021-01-03T03:17:52.016198Z\" }, \"principal\": { \"ip\": [ \"127.0.0.1\" ] }, \"target\": { \"ip\": [ \"127.0.0.1\" ] }, \"securityResult\": [ { \"action\": [ \"UNKNOWN ACTION\" ] } ], \"network\": { \"applicationProtocol\": \"DNS\", \"dns\": { \"questions\": [ { \"name\": \"altostrat.com\", \"type\": 1, \"class\": 1 } ], \"id\": 12345, \"recursionDesired\": true, } } } } ], \"label\": \"e\" } ], \"detectionTime\": \"2021-01-01T03:17:49.781746Z\" } } ] UnarchiveRule Unarchive the specified rule.",
+          "São Paulo — https://southamerica-east1-backstory.googleapis.com Canada — https://northamerica-northeast2-backstory.googleapis.com Dammam — https://me-central2-backstory.googleapis.com Doha — https://me-central1-backstory.googleapis.com Europe Multi-Region — https://europe-backstory.googleapis.com Frankfurt — https://europe-west3-backstory.googleapis.com Jakarta — https://asia-southeast2-backstory.googleapis.com Johannesburg — https://africa-south1-backstory.googleapis.com London — https://europe-west2-backstory.googleapis.com Mumbai — https://asia-south1-backstory.googleapis.com Paris — https://europe-west9-backstory.googleapis.com Warsaw — https://europe-central2-backstory.googleapis.com Singapore — https://asia-southeast1-backstory.googleapis.com Sydney — https://australia-southeast1-backstory.googleapis.com Tel Aviv — https://me-west1-backstory.googleapis.com Tokyo — https://asia-northeast1-backstory.googleapis.com Turin — https://europe-west12-backstory.googleapis.com United States Multi-Region — https://backstory.googleapis.com Zurich — https://europe-west6-backstory.googleapis.com Detection Engine API reference This section describes the Backstory Detection Engine API methods."
+        ]
+      },
+      {
+        "title": "\"Default detection rules \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When using time periods, the Google SecOps Detection Engine only examines the discrete blocks of time you specify. rule OutcomeRuleMultiEvent { meta: author = \"noone@google.com\" events: $u.udm.principal.hostname = $hostname $asset context.graph.entity.hostname = $hostname $severity = $asset context.graph.entity.asset.vulnerabilities.severity match: $hostname over 5m outcome: $risk score = max( 100 + if($hostname = \"my-hostname\", 100, 50) + if($severity = \"HIGH\", 10) + if($severity = \"MEDIUM\", 5) + if($severity = \"LOW\", 1) ) $asset id list = array( if($u.principal.asset id = \"\", \"Empty asset id\", $u.principal.asset id ) ) $asset id distinct list = array distinct($u.principal.asset id) $asset id count = count($u.principal.asset id) $asset id distinct count = count distinct($u.principal.asset id) condition: $u and $asset context and $risk score > 50 and not arrays.contains($asset id list, \"id 1234\") } Conclusion YARA-L is a flexible detection language which enables you to examine security events and not simply just return a data query.",
+          "Google Security Operations sample detection rules To help accelerate your adoption of the Google SecOps Detection Engine, there is a GitHub repository with sample rules .",
+          "Default detection rules Supported in: Google secops SIEM YARA-L rules language YARA-L is a detection rules language developed by Google."
+        ]
+      },
+      {
+        "title": "\"Understand rule detection delays \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Familiarize yourself with the following topics to understand how these factors influence rule detection delays: Detection generation methods Known limitations Factors contributing to rule detection delays Detection generation methods Learn how the system creates rule detections to understand how the detection generation method affects detection delays.",
+          "Complex single-event rules These rules are more susceptible to detection delays because they include match windows or reference lists: Windowed single-event rules These are single-event rules that include a match window and typically have a slightly longer delay than other single-event rules.",
+          "Follow this suggested approach to investigate and troubleshoot rule detection delays: Check for obvious delays: Determine if any ingestion delay exists: In the Google SecOps console, go to Detection > Rules and detections ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "altostrat.com",
+      "arrays.contains",
+      "backstory.googleapis.com",
+      "context.graph.entity.asset.vulnerabilities.severity",
+      "context.graph.entity.hostname",
+      "detection.alertState",
+      "detection.ruleId",
+      "detection.ruleVersion",
+      "detection.urlBackToProduct",
+      "e.metadata.event",
+      "e1.metadata.event",
+      "e1.principal.hostname",
+      "e1.principal.user.userid",
+      "e2.metadata.event",
+      "e2.principal.hostname",
+      "e2.target.asset",
+      "u.principal.asset",
+      "u.udm.principal.hostname"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

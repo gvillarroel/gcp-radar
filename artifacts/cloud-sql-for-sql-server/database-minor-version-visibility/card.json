@@ -1,0 +1,151 @@
+{
+  "feature_name": "Database minor version visibility",
+  "feature_slug": "database-minor-version-visibility",
+  "summary": "Cloud SQL displays the database minor version in instance information.",
+  "extended_definition": "Cloud SQL displays the database minor version in instance information.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/flags"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the gcloud sql instances create command to create the instance: For Cloud SQL Enterprise Plus edition instances: gcloud sql instances create INSTANCE NAME \\ --database-version = DATABASE VERSION \\ --region = REGION \\ --tier = TIER \\ --root-password = ROOT PASSWORD \\ --edition = ENTERPRISE PLUS For Cloud SQL Enterprise edition instances: gcloud sql instances create INSTANCE NAME \\ --database-version = DATABASE VERSION \\ --region = REGION \\ --cpu = NUMBER OF vCPUs \\ --memory = MEMORY SIZE \\ --root-password = ROOT PASSWORD \\ --edition = ENTERPRISE Don't include sensitive or personally identifiable information in your instance name.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } To see how the underlying REST API request is constructed for this task, see the APIs Explorer on the instances:insert page .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" MACHINE TYPE \", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" ZONE \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"19:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true }, \"settingsVersion\": \"1\", \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \" ipAddress \": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" PROJECT ID \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \" BACKEND TYPE \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"connectionName\": \" PROJECT ID:REGION:INSTANCE ID \", \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"gceZone\": \" ZONE \" } REST v1beta4 1."
+        ]
+      },
+      {
+        "title": "SqlDatabaseVersion \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion",
+        "source_id": "site-api-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL SQL Server Reference Send feedback SqlDatabaseVersion Stay organized with collections Save and categorize content based on your preferences.",
+          "SQLSERVER 2017 ENTERPRISE The database version is SQL Server 2017 Enterprise.",
+          "SQLSERVER 2019 ENTERPRISE The database version is SQL Server 2019 Enterprise."
+        ]
+      },
+      {
+        "title": "\"Configure database flags \\_|\\_ Cloud SQL for SQL Server \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [], \"ipv4Enabled\": false }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"databaseFlags\": [ { \"name\": \"general log\", \"value\": \"on\" } ], \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } In the output, look for the databaseFlags field.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [], \"ipv4Enabled\": false }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"databaseFlags\": [ { \"name\": \"general log\", \"value\": \"on\" } ], \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } In the output, look for the databaseFlags field.",
+          "For example, to set the 1204 , remote access , and remote query timeout (s) flags, you can use the following command: gcloud sql instances patch INSTANCE NAME \\ --database-flags = \"1204\" = on, \"remote access\" = on, \"remote query timeout (s)\" = 300 Terraform To add database flags, use a Terraform resource . resource \"google sql database instance\" \"instance\" { name = \"sqlserver-instance-flags\" region = \"us-central1\" database version = \"SQLSERVER 2019 STANDARD\" root password = \"INSERT-PASSWORD-HERE\" settings { database flags { name = \"1204\" value = \"on\" } database flags { name = \"remote access\" value = \"on\" } database flags { name = \"remote query timeout (s)\" value = \"300\" } tier = \"db-custom-2-7680\" } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/sqlserver/create-instance",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/flags",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/admin-api/rest/v1/SqlDatabaseVersion"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:16.697Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

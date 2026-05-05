@@ -1,0 +1,64 @@
+# US_STATE
+
+Product: Sensitive Data Protection
+Feature slug: `us-state`
+Coverage: `MEDIUM`
+IAM mapping: `explicit`
+
+## Technical Summary
+
+Adds an infoType detector for U.S. state names and abbreviations.
+
+## Lifecycle
+
+- Latest feature date: 2018-08-17
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+Explicit IAM evidence was found in the supporting documentation.
+
+Roles:
+
+- `roles/accessapproval.admin`
+- `roles/accessapproval.approver`
+- `roles/accessapproval.configEditor`
+
+Permissions:
+
+- `accessapproval.settings.get`
+- `resourcemanager.projects.get`
+- `resourcemanager.projects.list`
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- armor (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- audit (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- auth (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- authorization (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- certificate (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- constraint (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- credential (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- encrypt (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- firewall (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- iam (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- identity (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- key (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- kms (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- logging (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- permission (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- policy (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- private (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- role (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- secret (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- security (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- threat (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+- token (evidence: [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference), [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org), [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/security-command-center/docs/access-control-org](https://docs.cloud.google.com/security-command-center/docs/access-control-org)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes](https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-infotypes)
+- [https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference)

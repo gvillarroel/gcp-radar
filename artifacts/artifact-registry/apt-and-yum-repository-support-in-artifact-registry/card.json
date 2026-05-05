@@ -1,0 +1,165 @@
+{
+  "feature_name": "Apt and Yum repository support in Artifact Registry",
+  "feature_slug": "apt-and-yum-repository-support-in-artifact-registry",
+  "summary": "Apt and Yum repositories are now generally available in Artifact Registry.",
+  "extended_definition": "Apt and Yum repositories are now generally available in Artifact Registry.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+      "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+      "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.repositories \\_|\\_ Artifact Registry \\_\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "source_id": "site-api-reference",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"name\" : string , \"format\" : enum ( Format ) , \"description\" : string , \"labels\" : { string : string , ... } , \"createTime\" : string , \"updateTime\" : string , \"kmsKeyName\" : string , \"mode\" : enum ( Mode ) , \"cleanupPolicies\" : { string : { object ( CleanupPolicy ) } , ... } , \"sizeBytes\" : string , \"satisfiesPzs\" : boolean , \"cleanupPolicyDryRun\" : boolean , \"vulnerabilityScanningConfig\" : { object ( VulnerabilityScanningConfig ) } , \"disallowUnspecifiedMode\" : boolean , \"satisfiesPzi\" : boolean , \"registryUri\" : string , // Union field format config can be only one of the following: \"mavenConfig\" : { object ( MavenRepositoryConfig ) } , \"dockerConfig\" : { object ( DockerRepositoryConfig ) } // End of list of possible types for union field format config . // Union field mode config can be only one of the following: \"virtualRepositoryConfig\" : { object ( VirtualRepositoryConfig ) } , \"remoteRepositoryConfig\" : { object ( RemoteRepositoryConfig ) } // End of list of possible types for union field mode config . } Fields name string The name of the repository, for example: projects/p1/locations/us-central1/repositories/repo1 .",
+          "Methods create Creates a repository. delete Deletes a repository and all of its contents. exportArtifact Exports an artifact to a Cloud Storage bucket. get Gets a repository. getIamPolicy Gets the IAM policy for a given resource. list Lists repositories. patch Updates a repository. setIamPolicy Updates the IAM policy for a given resource. testIamPermissions Tests if the caller has a list of permissions on a resource.",
+          "Repository-specific configurations. format config can be only one of the following: mavenConfig object ( MavenRepositoryConfig ) Maven repository config contains repository level configuration for the repositories of maven type. dockerConfig object ( DockerRepositoryConfig ) Docker repository config contains repository level configuration for the repositories of docker type."
+        ]
+      },
+      {
+        "title": "Repository overview \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "source_id": "site-docs-root",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can reduce latency and network egress costs by creating repositories in the same region where you run GKE, Cloud Run, Cloud Build, and other Google Cloud services that interact with the repository.",
+          "Artifact Registry enables you to store different artifact types, create multiple repositories in a single project, and associate a specific regional or multi-regional location with each repository.",
+          "If you have existing repositories in non-compliant locations, you must move your artifacts to a repository in a compliant location yourself and then delete the non-compliant repository."
+        ]
+      },
+      {
+        "title": "\"Class ArtifactRegistryAsyncClient (1.20.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON example: :literal: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [ \"user:eve@example.com\" ], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ],=\"\" \"etag\":=\"\" \"bwwwja0yfja=\", \" version\":=\"\" 3=\"\"> \\ \\ YAML example: :literal: bindings: - members: - user:mike@example.com - group:admins@example.com - domain:google.com - serviceAccount:my-project-id@appspot.gserviceaccount.com role: roles/resourcemanager.organizationAdmin - members: - user:eve@example.com role: roles/resourcemanager.organizationViewer condition: title: expirable access description: Does not grant access after Sep 2020 expression: request.time < timestamp('2020-10-01t00:00:00.000z')=\"\" etag:=\"\" bwwwja0yfja=\"version:\"> \\ \\ For a description of IAM and its features, see the IAM documentation. tag path tag path ( project : str , location : str , repository : str , package : str , tag : str ) - > str Returns a fully-qualified tag string. test iam permissions test iam permissions ( request : typing .",
+          "Dict [ str , str ] Parses a yum artifact path into its component segments. project settings path project settings path ( project : str ) - > str Returns a fully-qualified project settings string. python package path python package path ( project : str , location : str , repository : str , python package : str ) - > str Returns a fully-qualified python package string. repository path repository path ( project : str , location : str , repository : str ) - > str Returns a fully-qualified repository string. rule path rule path ( project : str , location : str , repository : str , rule : str ) - > str Returns a fully-qualified rule string. secret version path secret version path ( project : str , secret : str , secret version : str ) - > str Returns a fully-qualified secret version string. set iam policy set iam policy ( request : typing .",
+          "Iterating over this object will yield results and resolve additional pages automatically. maven artifact path maven artifact path ( project : str , location : str , repository : str , maven artifact : str ) - > str Returns a fully-qualified maven artifact string. npm package path npm package path ( project : str , location : str , repository : str , npm package : str ) - > str Returns a fully-qualified npm package string. package path package path ( project : str , location : str , repository : str , package : str ) - > str Returns a fully-qualified package string. parse apt artifact path parse apt artifact path ( path : str ) - > typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "example.com",
+      "projects.locations.repositories",
+      "request.time",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "v1.types.VPCSCConfig"
+    ],
+    "missing_inventory_roles": [
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories",
+        "https://docs.cloud.google.com/artifact-registry/docs/repositories",
+        "https://docs.cloud.google.com/python/docs/reference/artifactregistry/latest/google.cloud.artifactregistry_v1.services.artifact_registry.ArtifactRegistryAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.090Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry"
+}

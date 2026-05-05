@@ -1,0 +1,246 @@
+{
+  "feature_name": "Vertex AI resource-level IAM for Featurestore and EntityType",
+  "feature_slug": "vertex-ai-resource-level-iam-for-featurestore-and-entitytype",
+  "summary": "Vertex AI now supports applying IAM policies directly at the Featurestore and EntityType resource level.",
+  "extended_definition": "Vertex AI now supports applying IAM policies directly at the Featurestore and EntityType resource level.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+      "https://docs.cloud.google.com/vertex-ai/docs/general/access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Control access to Vertex AI Feature Store (Legacy) resources \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "source_id": "site-docs-reference-3",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can set resource-level Identity and Access Management (IAM) policies on the following Vertex AI Feature Store (Legacy) resources: Featurestore : When you set an Identity and Access Management policy on a featurestore, the policy applies to the featurestore and all entity types created in that featurestore.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featurestores/ FEATURESTORE ID /entityTypes/ ENTITY TYPE ID :setIamPolicy\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"version\": 1, \"etag\": \"BwXTmICm7mI\", \"bindings\": [ { \"role\": \"roles/aiplatform.entityTypeOwner\", \"members\": [ \"user:user1@example.com\" ] }, { \"role\": \"roles/aiplatform.featurestoreDataViewer\", \"members\": [ \"user:user2@example.com\", \"user:user3@example.com\" ] }, { \"role\": \"roles/aiplatform.featurestoreDataWriter\", \"members\": [ \"user:user4@example.com\", ] } ] } Verify IAM permissions for a resource You can verify whether the authenticated user has specific IAM permissions for a featurestore or entity type.",
+          "Then, when a data engineer requests a new entity type, the administrator creates a new entity type and then assigns the aiplatform.entityTypeOwner role to the data engineer at the entity type level (as a resource-level policy)."
+        ]
+      },
+      {
+        "title": "Vertex AI access control with IAM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Entity type aiplatform.entityTypes.delete aiplatform. entityTypes. deleteFeatureValues aiplatform. entityTypes. exportFeatureValues aiplatform.entityTypes.get aiplatform. entityTypes. getIamPolicy aiplatform. entityTypes. importFeatureValues aiplatform. entityTypes. readFeatureValues aiplatform. entityTypes. setIamPolicy aiplatform. entityTypes. streamingReadFeatureValues aiplatform.entityTypes.update aiplatform. entityTypes. writeFeatureValues aiplatform.featureGroups.get aiplatform.featureGroups.list aiplatform. featureMonitorJobs. get aiplatform. featureMonitorJobs. list aiplatform.featureMonitors.get aiplatform. featureMonitors. list aiplatform. featureOnlineStores. get aiplatform. featureOnlineStores. list aiplatform.featureViewSyncs. aiplatform. featureViewSyncs. get aiplatform. featureViewSyncs. list aiplatform. featureViews. fetchFeatureValues aiplatform.featureViews.get aiplatform.featureViews.list aiplatform. featureViews. searchNearestEntities aiplatform.features. aiplatform.features.create aiplatform.features.delete aiplatform.features.get aiplatform.features.list aiplatform.features.update aiplatform. featurestores. batchReadFeatureValues resourcemanager.projects.get resourcemanager.projects.list Vertex AI Platform Express Admin Beta ( roles/ aiplatform.expressAdmin ) Grants admin access to Vertex AI Express aiplatform. batchPredictionJobs. aiplatform. batchPredictionJobs. cancel aiplatform. batchPredictionJobs. create aiplatform. batchPredictionJobs. delete aiplatform. batchPredictionJobs. get aiplatform. batchPredictionJobs. list aiplatform.datasetVersions. aiplatform. datasetVersions. create aiplatform. datasetVersions. delete aiplatform.datasetVersions.get aiplatform. datasetVersions. list aiplatform. datasetVersions. restore aiplatform.datasets.create aiplatform.datasets.delete aiplatform.datasets.get aiplatform.datasets.list aiplatform.datasets.update aiplatform.endpoints.predict aiplatform. locations. evaluateInstances aiplatform.memories. aiplatform.memories.create aiplatform.memories.delete aiplatform.memories.generate aiplatform.memories.get aiplatform.memories.list aiplatform.memories.retrieve aiplatform.memories.update aiplatform.operations.list aiplatform.reasoningEngines. aiplatform. reasoningEngines. create aiplatform. reasoningEngines. delete aiplatform. reasoningEngines. get aiplatform. reasoningEngines. list aiplatform. reasoningEngines. query aiplatform. reasoningEngines. update aiplatform. sandboxEnvironments. aiplatform. sandboxEnvironments. create aiplatform. sandboxEnvironments. delete aiplatform. sandboxEnvironments. execute aiplatform. sandboxEnvironments. get aiplatform. sandboxEnvironments. list aiplatform.sessionEvents. aiplatform. sessionEvents. append aiplatform.sessionEvents.list aiplatform.sessions.create aiplatform.sessions.delete aiplatform.sessions.get aiplatform.sessions.list aiplatform.sessions.update Vertex AI Platform Express User Beta ( roles/ aiplatform.expressUser ) Grants user access to Vertex AI Express aiplatform.datasetVersions. aiplatform. datasetVersions. create aiplatform. datasetVersions. delete aiplatform.datasetVersions.get aiplatform. datasetVersions. list aiplatform. datasetVersions. restore aiplatform.datasets.create aiplatform.datasets.delete aiplatform.datasets.get aiplatform.datasets.list aiplatform.datasets.update aiplatform.endpoints.predict aiplatform. locations. evaluateInstances aiplatform.memories. aiplatform.memories.create aiplatform.memories.delete aiplatform.memories.generate aiplatform.memories.get aiplatform.memories.list aiplatform.memories.retrieve aiplatform.memories.update aiplatform.operations.list aiplatform.reasoningEngines. aiplatform. reasoningEngines. create aiplatform. reasoningEngines. delete aiplatform. reasoningEngines. get aiplatform. reasoningEngines. list aiplatform. reasoningEngines. query aiplatform. reasoningEngines. update aiplatform. sandboxEnvironments. aiplatform. sandboxEnvironments. create aiplatform. sandboxEnvironments. delete aiplatform. sandboxEnvironments. execute aiplatform. sandboxEnvironments. get aiplatform. sandboxEnvironments. list aiplatform.sessionEvents. aiplatform. sessionEvents. append aiplatform.sessionEvents.list aiplatform.sessions.create aiplatform.sessions.delete aiplatform.sessions.get aiplatform.sessions.list aiplatform.sessions.update Vertex AI Feature Store Admin ( roles/ aiplatform.featurestoreAdmin ) Grants full access to all resources in Vertex AI Feature Store Lowest-level resources where you can grant this role: Entity type aiplatform.entityTypes. aiplatform.entityTypes.create aiplatform.entityTypes.delete aiplatform. entityTypes. deleteFeatureValues aiplatform. entityTypes. exportFeatureValues aiplatform.entityTypes.get aiplatform. entityTypes. getIamPolicy aiplatform. entityTypes. importFeatureValues aiplatform.entityTypes.list aiplatform. entityTypes. readFeatureValues aiplatform. entityTypes. setIamPolicy aiplatform. entityTypes. streamingReadFeatureValues aiplatform.entityTypes.update aiplatform. entityTypes. writeFeatureValues aiplatform.featureGroups. aiplatform. featureGroups. create aiplatform. featureGroups. delete aiplatform.featureGroups.get aiplatform. featureGroups. getIamPolicy aiplatform.featureGroups.list aiplatform. featureGroups. setIamPolicy aiplatform. featureGroups. update aiplatform. featureMonitorJobs. aiplatform. featureMonitorJobs. create aiplatform. featureMonitorJobs. get aiplatform. featureMonitorJobs. list aiplatform.featureMonitors. aiplatform. featureMonitors. create aiplatform. featureMonitors. delete aiplatform.featureMonitors.get aiplatform. featureMonitors. list aiplatform. featureMonitors. update aiplatform. featureOnlineStores. aiplatform. featureOnlineStores. create aiplatform. featureOnlineStores. delete aiplatform. featureOnlineStores. get aiplatform. featureOnlineStores. getIamPolicy aiplatform. featureOnlineStores. list aiplatform. featureOnlineStores. setIamPolicy aiplatform. featureOnlineStores. update aiplatform.featureViewSyncs. aiplatform. featureViewSyncs. get aiplatform. featureViewSyncs. list aiplatform.featureViews. aiplatform.featureViews.create aiplatform.featureViews.delete aiplatform. featureViews. directWrite aiplatform. featureViews. fetchFeatureValues aiplatform.featureViews.get aiplatform. featureViews. getIamPolicy aiplatform.featureViews.list aiplatform. featureViews. searchNearestEntities aiplatform. featureViews. setIamPolicy aiplatform.featureViews.sync aiplatform.featureViews.update aiplatform.features. aiplatform.features.create aiplatform.features.delete aiplatform.features.get aiplatform.features.list aiplatform.features.update aiplatform.featurestores. aiplatform. featurestores. batchReadFeatureValues aiplatform. featurestores. create aiplatform. featurestores. delete aiplatform. featurestores. exportFeatures aiplatform.featurestores.get aiplatform. featurestores. getIamPolicy aiplatform. featurestores. importFeatures aiplatform.featurestores.list aiplatform. featurestores. readFeatures aiplatform. featurestores. setIamPolicy aiplatform. featurestores. update aiplatform. featurestores. writeFeatures aiplatform.operations.list resourcemanager.projects.get resourcemanager.projects.list Vertex AI Feature Store Data Viewer ( roles/ aiplatform.featurestoreDataViewer ) This role provides permissions to read Feature data.",
+          "Lowest-level resources where you can grant this role: Entity type aiplatform. entityTypes. deleteFeatureValues aiplatform. entityTypes. exportFeatureValues aiplatform.entityTypes.get aiplatform. entityTypes. importFeatureValues aiplatform. entityTypes. readFeatureValues aiplatform. entityTypes. streamingReadFeatureValues aiplatform. entityTypes. writeFeatureValues aiplatform.featureGroups.get aiplatform.featureGroups.list aiplatform. featureMonitorJobs. get aiplatform. featureMonitorJobs. list aiplatform.featureMonitors.get aiplatform. featureMonitors. list aiplatform. featureOnlineStores. get aiplatform. featureOnlineStores. list aiplatform.featureViewSyncs. aiplatform. featureViewSyncs. get aiplatform. featureViewSyncs. list aiplatform. featureViews. fetchFeatureValues aiplatform.featureViews.get aiplatform.featureViews.list aiplatform. featureViews. searchNearestEntities aiplatform.features.get aiplatform.features.list aiplatform. featurestores. batchReadFeatureValues resourcemanager.projects.get resourcemanager.projects.list Vertex AI Feature Store Instance Creator ( roles/ aiplatform.featurestoreInstanceCreator ) Administrator of Featurestore resources, but not the child resources under Featurestores.",
+          "Lowest-level resources where you can grant this role: Entity type aiplatform. entityTypes. exportFeatureValues aiplatform.entityTypes.get aiplatform. entityTypes. readFeatureValues aiplatform. entityTypes. streamingReadFeatureValues aiplatform.featureGroups.get aiplatform.featureGroups.list aiplatform. featureMonitorJobs. get aiplatform. featureMonitorJobs. list aiplatform.featureMonitors.get aiplatform. featureMonitors. list aiplatform. featureOnlineStores. get aiplatform. featureOnlineStores. list aiplatform.featureViewSyncs. aiplatform. featureViewSyncs. get aiplatform. featureViewSyncs. list aiplatform. featureViews. fetchFeatureValues aiplatform.featureViews.get aiplatform.featureViews.list aiplatform. featureViews. searchNearestEntities aiplatform.features.get aiplatform.features.list aiplatform. featurestores. batchReadFeatureValues resourcemanager.projects.get resourcemanager.projects.list Vertex AI Feature Store Data Writer ( roles/ aiplatform.featurestoreDataWriter ) This role provides permissions to read and write Feature data."
+        ]
+      },
+      {
+        "title": "Manage featurestores \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores",
+        "source_id": "site-docs-reference-3",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const minNodeCount = <MINIMUM NO OF NODES>; // const maxNodeCount = <MAXIMUM NO OF NODES>; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1beta1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function updateFeaturestore () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const featurestore = { name : parent , onlineServingConfig : { scaling : { minNodeCount : minNodeCount , maxNodeCount : maxNodeCount , }, }, }; const request = { featurestore : featurestore , }; // Update Featurestore request const [ operation ] = await featurestoreServiceClient . updateFeaturestore ( request , { timeout : Number ( timeout )} ); const [ response ] = await operation . promise (); console . log ( 'Update featurestore response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } updateFeaturestore (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const featurestoreId = 'YOUR FEATURESTORE ID'; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function getFeaturestore () { // Configure the parent resource const name = projects/ ${ project } /locations/ ${ location } /featurestores/ ${ featurestoreId } ; const request = { name : name , }; // Get Featurestore request const [ response ] = await featurestoreServiceClient . getFeaturestore ( request , { timeout : Number ( timeout )} ); console . log ( 'Get featurestore response' ); console . log ( Name : ${ response . name } ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } getFeaturestore (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const apiEndpoint = 'YOUR API ENDPOINT'; // const timeout = <TIMEOUT IN MILLI SECONDS>; // Imports the Google Cloud Featurestore Service Client library const { FeaturestoreServiceClient } = require ( ' @google-cloud/aiplatform ' ). v1 ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : apiEndpoint , }; // Instantiates a client const featurestoreServiceClient = new FeaturestoreServiceClient ( clientOptions ); async function listFeaturestores () { // Configure the parent resource const parent = projects/ ${ project } /locations/ ${ location } ; const request = { parent : parent , }; // List featurestores request const [ response ] = await featurestoreServiceClient . listFeaturestores ( request , { timeout : Number ( timeout )} ); console . log ( 'List featurestores response' ); console . log ( 'Raw response:' ); console . log ( JSON . stringify ( response , null , 2 )); } listFeaturestores (); Additional languages To learn how to install and use the Vertex AI SDK for Python, see Use the Vertex AI SDK for Python ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.datasets.create",
+      "aiplatform.datasets.delete",
+      "aiplatform.datasets.get",
+      "aiplatform.datasets.list",
+      "aiplatform.datasets.update",
+      "aiplatform.datasetVersions",
+      "aiplatform.datasetVersions.get",
+      "aiplatform.endpoints.predict",
+      "aiplatform.entityTypeOwner",
+      "aiplatform.entityTypes",
+      "aiplatform.entityTypes.create",
+      "aiplatform.entityTypes.delete",
+      "aiplatform.entityTypes.get",
+      "aiplatform.entityTypes.list",
+      "aiplatform.entityTypes.update",
+      "aiplatform.expressAdmin",
+      "aiplatform.expressUser",
+      "aiplatform.featureGroups",
+      "aiplatform.featureGroups.get",
+      "aiplatform.featureGroups.list",
+      "aiplatform.featureMonitors",
+      "aiplatform.featureMonitors.get",
+      "aiplatform.features",
+      "aiplatform.features.create",
+      "aiplatform.features.delete",
+      "aiplatform.features.get",
+      "aiplatform.features.list",
+      "aiplatform.features.update",
+      "aiplatform.featurestoreAdmin",
+      "aiplatform.featurestoreDataViewer",
+      "aiplatform.featurestoreDataWriter",
+      "aiplatform.featurestoreInstanceCreator",
+      "aiplatform.featurestores",
+      "aiplatform.featurestores.get",
+      "aiplatform.featurestores.list",
+      "aiplatform.featurestoreUser",
+      "aiplatform.featureViews",
+      "aiplatform.featureViews.create",
+      "aiplatform.featureViews.delete",
+      "aiplatform.featureViews.get",
+      "aiplatform.featureViews.list",
+      "aiplatform.featureViews.sync",
+      "aiplatform.featureViews.update",
+      "aiplatform.featureViewSyncs",
+      "aiplatform.googleapis.com",
+      "aiplatform.memories",
+      "aiplatform.memories.create",
+      "aiplatform.memories.delete",
+      "aiplatform.memories.generate",
+      "aiplatform.memories.get",
+      "aiplatform.memories.list",
+      "aiplatform.memories.retrieve",
+      "aiplatform.memories.update",
+      "aiplatform.operations.list",
+      "aiplatform.reasoningEngines",
+      "aiplatform.sessionEvents",
+      "aiplatform.sessionEvents.list",
+      "aiplatform.sessions.create",
+      "aiplatform.sessions.delete",
+      "aiplatform.sessions.get",
+      "aiplatform.sessions.list",
+      "aiplatform.sessions.update",
+      "example.com",
+      "request.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.entityTypeOwner",
+      "roles/aiplatform.featurestoreDataViewer",
+      "roles/aiplatform.featurestoreDataWriter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/resource-policy",
+        "https://docs.cloud.google.com/vertex-ai/docs/general/access-control",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/managing-featurestores"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.145Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

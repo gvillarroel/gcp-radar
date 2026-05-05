@@ -1,0 +1,196 @@
+{
+  "feature_name": "Vector embedding ETL pipeline with Dataflow",
+  "feature_slug": "vector-embedding-etl-pipeline-with-dataflow",
+  "summary": "AlloyDB supports building vector embedding ETL pipelines with Dataflow to generate and ingest embeddings from files or real-time sources.",
+  "extended_definition": "AlloyDB supports building vector embedding ETL pipelines with Dataflow to generate and ingest embeddings from files or real-time sources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-2",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add the following configuration, replace the environment variables with your values, and save. { \"mcpServers\": { \"alloydb\": { \"command\": \"./PATH/TO/toolbox\", \"args\": [\"--prebuilt\",\"alloydb-postgres\",\"--stdio\"], \"env\": { \"ALLOYDB POSTGRES PROJECT\": \" PROJECT ID \", \"ALLOYDB POSTGRES REGION\": \" REGION \", \"ALLOYDB POSTGRES CLUSTER\": \" CLUSTER NAME \", \"ALLOYDB POSTGRES INSTANCE\": \" INSTANCE NAME \", \"ALLOYDB POSTGRES DATABASE\": \" DATABASE NAME \", \"ALLOYDB POSTGRES USER\": \" USERNAME \", \"ALLOYDB POSTGRES PASSWORD\": \" PASSWORD \" } } } } Note: To connect using a private IP address, add the following line to the env object: \"ALLOYDB POSTGRES IP TYPE\": \"private\" Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Before you begin To connect to your AlloyDB instance and use the available tools, you must have one of the following Identity and Access Management (IAM) roles, or a custom role with equivalent permissions: Task Role name Required Identity and Access Management (IAM) role Use read-only tools to list and get AlloyDB resources AlloyDB Viewer roles/alloydb.viewer Connect to an instance and run queries Cloud AlloyDB Client roles/alloydb.client Service Usage Consumer roles/serviceusage.serviceUsageConsumer Perform administrative tasks (such as creating or managing clusters, instances, and users) AlloyDB Admin roles/alloydb.admin Use the observability extension Monitoring Viewer roles/monitoring.viewer Before you can connect to your AlloyDB instance, complete the following steps to set up your project and database.",
+          "Add the following configuration, replace the environment variables with your values, and save. { \"mcpServers\": { \"alloydb\": { \"command\": \"./PATH/TO/toolbox\", \"args\": [\"--prebuilt\",\"alloydb-postgres\",\"--stdio\"], \"env\": { \"ALLOYDB POSTGRES PROJECT\": \" PROJECT ID \", \"ALLOYDB POSTGRES REGION\": \" REGION \", \"ALLOYDB POSTGRES CLUSTER\": \" CLUSTER NAME \", \"ALLOYDB POSTGRES INSTANCE\": \" INSTANCE NAME \", \"ALLOYDB POSTGRES DATABASE\": \" DATABASE NAME \", \"ALLOYDB POSTGRES USER\": \" USERNAME \", \"ALLOYDB POSTGRES PASSWORD\": \" PASSWORD \" } } } } Note: To connect using a private IP address, add the following line to the env object: \"ALLOYDB POSTGRES IP TYPE\": \"private\" Open Cursor and navigate to Settings > Cursor Settings > MCP ."
+        ]
+      },
+      {
+        "title": "\"AlloyDB query tuning and optimization \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization",
+        "source_id": "site-api-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "All documented hints in the following tables are available in AlloyDB: pg hint plan hint Purpose ColumnarScan(table) , NoColumnarScan(table) Influences the planner to use columnar engine for the specified table.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback AlloyDB query tuning and optimization Stay organized with collections Save and categorize content based on your preferences.",
+          "This document describes different ways to optimize queries and manage indexes in AlloyDB for PostgreSQL."
+        ]
+      },
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the editor of your choice, for example, nano, complete the following steps: Open proxy sidecar deployment.yaml using the editor of your choice, for example, nano: nano proxy sidecar deployment.yaml In the editor, paste the following content: apiVersion : apps/v1 kind : Deployment metadata : name : gke-alloydb spec : selector : matchLabels : app : SAMPLE APPLICATION template : metadata : labels : app : SAMPLE APPLICATION spec : serviceAccountName : KSA NAME containers : - name : SAMPLE APPLICATION Replace <PROJECT ID> and <REGION> with your project ID and region. image : REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY ID / SAMPLE APPLICATION :latest imagePullPolicy : Always This app listens on port 8080 for web traffic by default. ports : - containerPort : 8080 env : - name : PORT value : \"8080\" This project uses environment variables to determine how you would like to run your application To use the Go connector (recommended) - use INSTANCE NAME To use TCP - Setting INSTANCE HOST will use TCP (e.g., 127.0.0.1) - name : INSTANCE HOST value : \"127.0.0.1\" - name : DB PORT value : \"5432\" To use Automatic IAM Authentication (recommended) use DB IAM USER instead of DB USER you may also remove the DB PASS environment variable - name : DB USER valueFrom : secretKeyRef : name : SECRET key : username - name : DB PASS valueFrom : secretKeyRef : name : SECRET key : password - name : DB NAME valueFrom : secretKeyRef : name : SECRET key : database If you are using the Go connector (recommended), you can remove alloydb-proxy (everything below this line) - name : alloydb-proxy This uses the latest version of the AlloyDB Auth proxy It is recommended to use a specific version for production environments.",
+          "In your open Cloud Shell, complete the following steps: Open proxy sidecar deployment.yaml using the editor of your choice, for example, nano: nano proxy sidecar deployment.yaml In the editor, paste the following content: apiVersion : apps/v1 kind : Deployment metadata : name : gke-alloydb spec : selector : matchLabels : app : SAMPLE APPLICATION template : metadata : labels : app : SAMPLE APPLICATION spec : serviceAccountName : KSA NAME containers : - name : SAMPLE APPLICATION Replace <PROJECT ID> and <REGION> with your project ID and region. image : REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY ID / SAMPLE APPLICATION :latest imagePullPolicy : Always This app listens on port 8080 for web traffic by default. ports : - containerPort : 8080 env : - name : PORT value : \"8080\" - name : INSTANCE HOST value : \"127.0.0.1\" - name : DB PORT value : \"5432\" - name : DB USER valueFrom : secretKeyRef : name : SECRET key : username - name : DB PASS valueFrom : secretKeyRef : name : SECRET key : password - name : DB NAME valueFrom : secretKeyRef : name : SECRET key : database - name : alloydb-proxy This uses the latest version of the AlloyDB Auth proxy image : gcr.io/alloydb-connectors/alloydb-auth-proxy:1.10.1 command : - \"/alloydb-auth-proxy\" #AlloyDB instance name as parameter for the AlloyDB proxy - \" INSTANCE URI \" securityContext : runAsNonRoot : true resources : requests : memory : \"2Gi\" cpu : \"1\" Replace INSTANCE URI with the path you copied in step 1.",
+          "This can take several minutes. gcloud In the Cloud Shell, check if the unused IP addresses (IPv4) range is already assigned to service peering: gcloud services vpc-peerings list --network = default Skip the next step if your output looks similar to the following: network: projects/493573376485/global/networks/default peering: servicenetworking-googleapis-com reservedPeeringRanges: - default-ip-range service: services/servicenetworking.googleapis.com In this output, the value of reservedPeeringRanges is default-ip-range , which you can use as IP RANGE NAME to create a private connection in step 3. (Skip when using the default value of reservedPeeringRanges ) To allocate unused IP addresses in the VPC, use the following command: gcloud compute addresses create IP RANGE NAME \\ --global \\ --purpose = VPC PEERING \\ --prefix-length = 16 \\ --description = \"VPC private service access\" \\ --network = default Replace IP RANGE NAME with your name for available internal IP addresses within an AlloyDB subnet, such as alloydb-gke-psa-01 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "alloydb.viewer",
+      "deployment.yaml",
+      "docker.pkg.dev",
+      "e.g",
+      "gcr.io",
+      "monitoring.viewer",
+      "servicenetworking.googleapis.com",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/alloydb.viewer",
+      "roles/monitoring.viewer",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/query-tuning-and-optimization"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

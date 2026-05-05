@@ -1,0 +1,174 @@
+{
+  "feature_name": "Application resource",
+  "feature_slug": "application-resource",
+  "summary": "The API now includes the Application resource.",
+  "extended_definition": "The API now includes the Application resource.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/ad-manager/api/authentication",
+      "https://developers.google.com/ad-manager/api/beta/authentication",
+      "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+      "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: networks.applications \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google\\",
+        "url": "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "source_id": "site-api-reference",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Products Ad Manager API (Beta) Reference Send feedback REST Resource: networks.applications Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource: Application JSON representation Methods Resource: Application An application that has been added to or \"claimed\" by the network to be used for targeting purposes.",
+          "The API provides get and list methods to retrieve individual Application objects or a list of Application objects, respectively."
+        ]
+      },
+      {
+        "title": "Authentication \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-05 UTC.\"],[],[\"To access the Ad Manager API, you need an access token, generated using Application Default Credentials (ADC) or custom credentials.",
+          "Install the Google Cloud CLI, then initialize it by running the following command: gcloud init Create local authentication credentials for your Google Account and set the project ID to a project where the Ad Manager API is enabled: gcloud auth application-default login --scopes = \"https://www.googleapis.com/auth/admanager\" gcloud auth application-default set-quota-project PROJECT ID Alternatively, authenticate as a Service Account setting the environment variable GOOGLE APPLICATION CREDENTIALS to the path of your key file.",
+          "Linux or macOS export GOOGLE APPLICATION CREDENTIALS = KEY FILE PATH Windows set GOOGLE APPLICATION CREDENTIALS = KEY FILE PATH Web application Open the Google API Console Credentials page ."
+        ]
+      },
+      {
+        "title": "Authentication \\_|\\_ Ad Manager SOAP API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/authentication",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Determine your authentication type Check the table below to see which authentication type is most appropriate for your Ad Manager API application: Choose your OAuth2 authentication type Service account Choose this if you only need access to your own Ad Manager data.",
+          "All Google Ad Manager API calls must be authorized through OAuth2 an open standard that allows users to grant permissions to third-party applications, so the application can interact with web services on the user's behalf.",
+          "Generating OAuth2 credentials involves creating a new project in the Google API Console and following specific steps for either service account or web application types."
+        ]
+      },
+      {
+        "title": "\"Method: networks.applications.list \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google\\",
+        "url": "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag The API allows retrieval of a list of Application objects using an HTTP GET request to a specified endpoint.",
+          "If successful, the response body contains data with the following structure: JSON representation { \"applications\" : [ { object ( Application ) } ] , \"nextPageToken\" : string , \"totalSize\" : integer } Fields applications[] object ( Application ) The Application objects from the specified network. nextPageToken string A token, which can be sent as pageToken to retrieve the next page.",
+          "For more information, see https://developers.google.com/ad-manager/api/beta/field-masks Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/admanager https://www.googleapis.com/auth/admanager.readonly For more information, see the OAuth 2.0 Overview ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admanager.readonly",
+      "developers.google.com",
+      "networks.adUnits",
+      "networks.applications",
+      "networks.applications.get",
+      "networks.applications.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications/list"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.532Z",
+  "source_step08_card": "data/step-08/current/products/google-ad-manager-api/card.json",
+  "product_name": "Google Ad Manager API",
+  "product_slug": "google-ad-manager-api"
+}

@@ -1,0 +1,200 @@
+{
+  "feature_name": "Group chats in import mode",
+  "feature_slug": "group-chats-in-import-mode",
+  "summary": "The Chat API can create group chats in import mode for migrations from other messaging platforms; The Chat API can create group chats in import mode for migrations from other messaging platforms.",
+  "extended_definition": "The Chat API can create group chats in import mode for migrations from other messaging platforms; The Chat API can create group chats in import mode for migrations from other messaging platforms.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+      "https://developers.google.com/workspace/chat/create-members",
+      "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Invite or add a user, Google Group, or Google Chat app to a space \\_|\\_\\",
+        "url": "https://developers.google.com/workspace/chat/create-members",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CreateMembershipRequest ( Replace SPACE NAME here parent = \"spaces/SPACE NAME\" , membership = { \"groupMember\" : { Replace GROUP NAME here \"name\" : \"groups/GROUP NAME\" } } ) Make the request response = client . create membership ( request ) Handle the response print ( response ) create membership with user cred for group () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateMembershipUserCredForGroup.java View on GitHub import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateMembershipRequest ; import com.google.chat.v1.Membership ; import com.google.chat.v1.SpaceName ; import com.google.chat.v1.Group ; // This sample shows how to create membership with user credential for a group. public class CreateMembershipUserCredForGroup { private static final String SCOPE = \"https://www.googleapis.com/auth/chat.memberships\" ; public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithUserCredentials ( ImmutableList . of ( SCOPE ))) { CreateMembershipRequest .",
+          "The following example adds a group to a named space with user authentication: Node.js chat/client-libraries/cloud/create-membership-user-cred-for-group.js View on GitHub import { createClientWithUserCredentials } from './authentication-utils.js' ; const USER AUTH OAUTH SCOPES = [ 'https://www.googleapis.com/auth/chat.memberships' , ]; // This sample shows how to create membership with user credential for a group async function main () { // Create a client const chatClient = await createClientWithUserCredentials ( USER AUTH OAUTH SCOPES , ); // Initialize request argument(s) const request = { // Replace SPACE NAME here. parent : 'spaces/SPACE NAME' , membership : { groupMember : { // Replace GROUP NAME here name : 'groups/GROUP NAME' , }, }, }; // Make the request const response = await chatClient . createMembership ( request ); // Handle the response console . log ( response ); } await main (); Python chat/client-libraries/cloud/create membership user cred for group.py View on GitHub from authentication utils import create client with user credentials from google.apps import chat v1 as google chat SCOPES = [ \"https://www.googleapis.com/auth/chat.memberships\" ] This sample shows how to create membership with user credential for a group def create membership with user cred for group (): Create a client client = create client with user credentials ( SCOPES ) Initialize request argument(s) request = google chat .",
+          "CreateMembershipRequest ( Replace SPACE NAME here parent = \"spaces/SPACE NAME\" , membership = { \"member\" : { member name for app membership, do not change this. \"name\" : \"users/app\" , user type for the membership \"type \" : \"BOT\" } } ) Make the request response = client . create membership ( request ) Handle the response print ( response ) create membership with user cred for app () Java chat/client-libraries/cloud/src/main/java/com/google/workspace/api/chat/samples/CreateMembershipUserCredForApp.java View on GitHub import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.CreateMembershipRequest ; import com.google.chat.v1.Membership ; import com.google.chat.v1.SpaceName ; import com.google.chat.v1.User ; // This sample shows how to create membership with user credential for the // calling app. public class CreateMembershipUserCredForApp { private static final String SCOPE = \"https://www.googleapis.com/auth/chat.memberships.app\" ; public static void main ( String [] args ) throws Exception { try ( ChatServiceClient chatServiceClient = AuthenticationUtils . createClientWithUserCredentials ( ImmutableList . of ( SCOPE ))) { CreateMembershipRequest ."
+        ]
+      },
+      {
+        "title": "Package google.chat.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "Index ChatService (interface) AccessoryWidget (message) ActionResponse (message) ActionResponse.ResponseType (enum) ActionResponse.SelectionItems (message) ActionResponse.UpdatedWidget (message) ActionStatus (message) Annotation (message) AnnotationType (enum) AppCommandMetadata (message) AppCommandMetadata.AppCommandType (enum) AttachedGif (message) Attachment (message) Attachment.Source (enum) AttachmentDataRef (message) CalendarEventLinkData (message) CardWithId (message) ChatSpaceLinkData (message) CompleteImportSpaceRequest (message) CompleteImportSpaceResponse (message) ContextualAddOnMarkup (message) ContextualAddOnMarkup.Card (message) ContextualAddOnMarkup.Card.CardAction (message) ContextualAddOnMarkup.Card.CardHeader (message) ContextualAddOnMarkup.Card.CardHeader.ImageStyle (enum) ContextualAddOnMarkup.Card.Section (message) CreateCustomEmojiRequest (message) CreateMembershipRequest (message) CreateMessageRequest (message) CreateMessageRequest.MessageReplyOption (enum) CreateReactionRequest (message) CreateSectionRequest (message) CreateSpaceRequest (message) CustomEmoji (message) CustomEmoji.CustomEmojiPayload (message) CustomEmojiMetadata (message) DeleteCustomEmojiRequest (message) DeleteMembershipRequest (message) DeleteMessageRequest (message) DeleteReactionRequest (message) DeleteSectionRequest (message) DeleteSpaceRequest (message) DeletionMetadata (message) DeletionMetadata.DeletionType (enum) Dialog (message) DialogAction (message) DriveDataRef (message) DriveLinkData (message) Emoji (message) EmojiReactionSummary (message) FindDirectMessageRequest (message) FindGroupChatsRequest (message) FindGroupChatsResponse (message) ForwardedMetadata (message) GetAttachmentRequest (message) GetCustomEmojiRequest (message) GetMembershipRequest (message) GetMessageRequest (message) GetSpaceEventRequest (message) GetSpaceNotificationSettingRequest (message) GetSpaceReadStateRequest (message) GetSpaceRequest (message) GetThreadReadStateRequest (message) Group (message) HistoryState (enum) ListCustomEmojisRequest (message) ListCustomEmojisResponse (message) ListMembershipsRequest (message) ListMembershipsResponse (message) ListMessagesRequest (message) ListMessagesResponse (message) ListReactionsRequest (message) ListReactionsResponse (message) ListSectionItemsRequest (message) ListSectionItemsResponse (message) ListSectionsRequest (message) ListSectionsResponse (message) ListSpaceEventsRequest (message) ListSpaceEventsResponse (message) ListSpacesRequest (message) ListSpacesResponse (message) MatchedUrl (message) MeetSpaceLinkData (message) MeetSpaceLinkData.HuddleStatus (enum) MeetSpaceLinkData.Type (enum) Membership (message) Membership.MembershipRole (enum) Membership.MembershipState (enum) MembershipBatchCreatedEventData (message) MembershipBatchDeletedEventData (message) MembershipBatchUpdatedEventData (message) MembershipCreatedEventData (message) MembershipDeletedEventData (message) MembershipUpdatedEventData (message) Message (message) MessageBatchCreatedEventData (message) MessageBatchDeletedEventData (message) MessageBatchUpdatedEventData (message) MessageCreatedEventData (message) MessageDeletedEventData (message) MessageUpdatedEventData (message) MoveSectionItemRequest (message) MoveSectionItemResponse (message) PositionSectionRequest (message) PositionSectionRequest.Position (enum) PositionSectionResponse (message) QuotedMessageMetadata (message) QuotedMessageMetadata.QuoteType (enum) QuotedMessageSnapshot (message) Reaction (message) ReactionBatchCreatedEventData (message) ReactionBatchDeletedEventData (message) ReactionCreatedEventData (message) ReactionDeletedEventData (message) ReplaceMessageCardsRequest (message) ReplaceMessageCardsResponse (message) RichLinkMetadata (message) RichLinkMetadata.RichLinkType (enum) SearchSpacesRequest (message) SearchSpacesResponse (message) Section (message) Section.SectionType (enum) SectionItem (message) SetUpSpaceRequest (message) SlashCommand (message) SlashCommandMetadata (message) SlashCommandMetadata.Type (enum) Space (message) Space.AccessSettings (message) Space.AccessSettings.AccessState (enum) Space.MembershipCount (message) Space.PermissionSetting (message) Space.PermissionSettings (message) Space.PredefinedPermissionSettings (enum) Space.SpaceDetails (message) Space.SpaceThreadingState (enum) Space.SpaceType (enum) Space.Type (enum) SpaceBatchUpdatedEventData (message) SpaceEvent (message) SpaceNotificationSetting (message) SpaceNotificationSetting.MuteSetting (enum) SpaceNotificationSetting.NotificationSetting (enum) SpaceReadState (message) SpaceUpdatedEventData (message) SpaceView (enum) Thread (message) ThreadReadState (message) UpdateMembershipRequest (message) UpdateMessageRequest (message) UpdateSectionRequest (message) UpdateSpaceNotificationSettingRequest (message) UpdateSpaceReadStateRequest (message) UpdateSpaceRequest (message) User (message) User.Type (enum) UserMentionMetadata (message) UserMentionMetadata.Type (enum) WidgetMarkup (message) WidgetMarkup.Button (message) WidgetMarkup.FormAction (message) WidgetMarkup.FormAction.ActionParameter (message) WidgetMarkup.Icon (enum) WidgetMarkup.Image (message) WidgetMarkup.ImageButton (message) WidgetMarkup.KeyValue (message) WidgetMarkup.OnClick (message) WidgetMarkup.OpenLink (message) WidgetMarkup.TextButton (message) WidgetMarkup.TextParagraph (message) ChatService Enables developers to build Chat apps and integrations on Google Chat Platform.",
+          "Can be used to create a named space, or a group chat in Import mode .",
+          "Supports the following types of authentication : App authentication with administrator approval and the authorization scope: https://www.googleapis.com/auth/chat.app.memberships (only in spaces the app created) User authentication with one of the following authorization scopes: https://www.googleapis.com/auth/chat.memberships https://www.googleapis.com/auth/chat.import (import mode spaces only) User authentication grants administrator privileges when an administrator account authenticates, use admin access is true , and the following authorization scope is used: https://www.googleapis.com/auth/chat.admin.memberships Authorization scopes Requires one of the following OAuth scopes: https://www.googleapis.com/auth/chat.app.memberships https://www.googleapis.com/auth/chat.admin.memberships https://www.googleapis.com/auth/chat.import https://www.googleapis.com/auth/chat.memberships For more information, see the Authorization guide ."
+        ]
+      },
+      {
+        "title": "\"Build a Google Chat app behind a firewall with Pub/Sub \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/chat/quickstart/pub-sub",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the pom.xml file, paste the following code: java/pub-sub-app/pom.xml View on GitHub <project xmlns=\"http://maven.apache.org/POM/4.0.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\"> <modelVersion>4.0.0</modelVersion> <groupId>com.google.chat</groupId> <artifactId>pub-sub-app</artifactId> <version>0.1.0</version> <name>pub-sub-app-java</name> <properties> <maven.compiler.release>21</maven.compiler.release> <maven.compiler.source>1.8</maven.compiler.source> <maven.compiler.target>1.8</maven.compiler.target> </properties> <dependencies> <!-- Google Chat GAPIC library --> <dependency> <groupId>com.google.api.grpc</groupId> <artifactId>proto-google-cloud-chat-v1</artifactId> <version>0.8.0</version> </dependency> <dependency> <groupId>com.google.api</groupId> <artifactId>gax</artifactId> <version>2.48.1</version> </dependency> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-chat</artifactId> <version>0.1.0</version> </dependency> <!-- Google Cloud Pub/Sub library --> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-pubsub</artifactId> <version>1.125.8</version> </dependency> <!-- JSON utilities --> <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-databind</artifactId> <version>2.14.2</version> </dependency> </dependencies> </project> In your working directory, create the directory structure src/main/java .",
+          "In Main.java , paste the following code: java/pub-sub-app/src/main/java/Main.java View on GitHub import com.fasterxml.jackson.databind.JsonNode ; import com.fasterxml.jackson.databind.ObjectMapper ; import com.google.api.gax.core.FixedCredentialsProvider ; import com.google.auth.oauth2.GoogleCredentials ; import com.google.chat.v1.ChatServiceClient ; import com.google.chat.v1.ChatServiceSettings ; import com.google.chat.v1.CreateMessageRequest ; import com.google.chat.v1.CreateMessageRequest.MessageReplyOption ; import com.google.chat.v1.Message ; import com.google.chat.v1.Thread ; import com.google.cloud.pubsub.v1.AckReplyConsumer ; import com.google.cloud.pubsub.v1.MessageReceiver ; import com.google.cloud.pubsub.v1.Subscriber ; import com.google.pubsub.v1.ProjectSubscriptionName ; import com.google.pubsub.v1.PubsubMessage ; import java.io.FileInputStream ; import java.util.Collections ; public class Main { public static final String PROJECT ID ENV PROPERTY = \"PROJECT ID\" ; public static final String SUBSCRIPTION ID ENV PROPERTY = \"SUBSCRIPTION ID\" ; public static final String CREDENTIALS PATH ENV PROPERTY = \"GOOGLE APPLICATION CREDENTIALS\" ; public static void main ( String [] args ) throws Exception { ProjectSubscriptionName subscriptionName = ProjectSubscriptionName . of ( System . getenv ( Main .",
+          "CREDENTIALS PATH ENV PROPERTY ); // Developer code for Google Chat API scope. private static final String GOOGLE CHAT API SCOPE = \"https://www.googleapis.com/auth/chat.bot\" ; private static final String ADDED RESPONSE = \"Thank you for adding me!\" ; ChatServiceClient chatServiceClient ; EchoApp () throws Exception { GoogleCredentials credential = GoogleCredentials . fromStream ( new FileInputStream ( SERVICE ACCOUNT KEY PATH )) . createScoped ( Collections . singleton ( GOOGLE CHAT API SCOPE )); // Create the ChatServiceSettings with the app credentials ChatServiceSettings chatServiceSettings = ChatServiceSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( credential )). build (); // Set the Chat service client chatServiceClient = ChatServiceClient . create ( chatServiceSettings ); } // Called when a message is received by the subscriber. @Override public void receiveMessage ( PubsubMessage pubsubMessage , AckReplyConsumer consumer ) { System . out . println ( \"Id : \" + pubsubMessage . getMessageId ()); // Handle incoming message, then ack/nack the received message try { ObjectMapper mapper = new ObjectMapper (); JsonNode dataJson = mapper . readTree ( pubsubMessage . getData (). toStringUtf8 ()); System . out . println ( \"Data : \" + dataJson . toString ()); handle ( dataJson ); consumer . ack (); } catch ( Exception e ) { System . out . println ( e ); consumer . nack (); } } // Send message to Google Chat based on the type of event. public void handle ( JsonNode eventJson ) throws Exception { CreateMessageRequest createMessageRequest ; switch ( eventJson . get ( \"type\" ). asText ()) { case \"ADDED TO SPACE\" : // An app can also be added to a space by @mentioning it in a message."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chat.admin.delete",
+      "chat.admin.memberships",
+      "chat.app.delete",
+      "chat.app.memberships",
+      "chat.bot",
+      "chat.delete",
+      "chat.import",
+      "chat.memberships",
+      "chat.memberships.app",
+      "com.fasterxml.jackson.core",
+      "com.fasterxml.jackson.databind.JsonNode",
+      "com.fasterxml.jackson.databind.ObjectMapper",
+      "com.google.api",
+      "com.google.api.gax.core.FixedCredentialsProvider",
+      "com.google.api.grpc",
+      "com.google.auth.oauth2.GoogleCredentials",
+      "com.google.chat",
+      "com.google.chat.v1.ChatServiceClient",
+      "com.google.chat.v1.ChatServiceSettings",
+      "com.google.chat.v1.CreateMembershipRequest",
+      "com.google.chat.v1.CreateMessageRequest",
+      "com.google.chat.v1.CreateMessageRequest.MessageReplyOption",
+      "com.google.chat.v1.Group",
+      "com.google.chat.v1.Membership",
+      "com.google.chat.v1.Message",
+      "com.google.chat.v1.SpaceName",
+      "com.google.chat.v1.Thread",
+      "com.google.chat.v1.User",
+      "com.google.cloud",
+      "com.google.cloud.pubsub.v1.AckReplyConsumer",
+      "com.google.cloud.pubsub.v1.MessageReceiver",
+      "com.google.cloud.pubsub.v1.Subscriber",
+      "com.google.pubsub.v1.ProjectSubscriptionName",
+      "com.google.pubsub.v1.PubsubMessage",
+      "developers.google.com",
+      "group.js",
+      "group.py",
+      "java.io.FileInputStream",
+      "java.util.Collections",
+      "maven.apache.org",
+      "maven.compiler.release",
+      "maven.compiler.source",
+      "maven.compiler.target",
+      "pom.xml",
+      "utils.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/create-members",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.chat.v1",
+        "https://developers.google.com/workspace/chat/quickstart/pub-sub"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.385Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

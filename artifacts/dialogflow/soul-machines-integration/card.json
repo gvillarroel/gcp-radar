@@ -1,0 +1,100 @@
+{
+  "feature_name": "Soul Machines integration",
+  "feature_slug": "soul-machines-integration",
+  "summary": "Dialogflow CX can integrate with Soul Machines to create 3-D avatars.",
+  "extended_definition": "Dialogflow CX can integrate with Soul Machines to create 3-D avatars.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+      "https://docs.cloud.google.com/dialogflow/docs/basics",
+      "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create fulfillment using webhook \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook",
+        "source_id": "site-iam-reference",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://cloud.google.com/dialogflow/es/docs/reference/common-types#webhookrequest @param response: Express JS response object @param ssml: SSML string. @example: sendSSML(request, response, 'hello') Will call response.json() with SSML payload '<speak>hello</speak>' / function sendSSML ( request , response , ssml ) { ssml = <speak> ${ ssml } < /speak> ; if ( request . originalDetectIntentRequest . source == 'GOOGLE TELEPHONY' ) { // Dialogflow Phone Gateway Response // see https://cloud.google.com/dialogflow/es/docs/reference/rpc/google.cloud.dialogflow.v2beta1#google.cloud.dialogflow.v2beta1.Intent.Message.TelephonySynthesizeSpeech response . json ({ fulfillmentMessages : [{ platform : 'TELEPHONY' , telephonySynthesizeSpeech : { ssml : ssml } }] }); } else { // Some CCAI telephony partners accept SSML in a plain text response. // Check your specific integration and customize the payload here. response . json ({ fulfillmentText : ssml }); } } / Extract an output context from the incoming WebhookRequest. @param request: Dialogflow WebhookRequest JSON with camelCase keys.",
+          "Create a webhook with the inline editor Dialogflow has an inline editor in the console that allows you to directly write NodeJS code, which then can be deployed to run as a webhook on Cloud Functions .",
+          "If you haven't already, now would be a good time to set up one of the one-click telephony integrations from our partners, or set up the Dialogflow Phone Gateway to test your agent over the phone."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Integrations and connecting your services There are multiple ways to integrate with Dialogflow CX agents.",
+          "Dialogflow CX API If none of the ready-to-use integrations are suitable, or you would like to customize the interface for your system, you can use the Dialogflow CX API directly .",
+          "If you use an integration, you do not need to directly call the Dialogflow CX API, as integrations handle this for you."
+        ]
+      },
+      {
+        "title": "Dialogflow ES basics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/docs/basics",
+        "source_id": "site-docs-root-2",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "User interactions with integrations Dialogflow integrates with many popular conversation platforms like Google Assistant, Slack, and Facebook Messenger.",
+          "The Dialogflow Console is used to manage Dialogflow agents, while the GCP Console is used to manage GCP-specific Dialogflow settings (for example, billing) and other GCP resources.",
+          "Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback Dialogflow ES basics Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "response.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/docs/basics"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/tutorials/sequences/create-fulfillment-using-webhook",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-design",
+        "https://docs.cloud.google.com/dialogflow/docs/basics"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

@@ -1,0 +1,198 @@
+{
+  "feature_name": "Customer-managed encryption keys",
+  "feature_slug": "customer-managed-encryption-keys",
+  "summary": "Customer-managed encryption keys let Dataproc Metastore services use user-managed encryption keys; Customer-managed encryption keys let Dataproc Metastore services use user-managed encryption keys.",
+  "extended_definition": "Customer-managed encryption keys let Dataproc Metastore services use user-managed encryption keys; Customer-managed encryption keys let Dataproc Metastore services use user-managed encryption keys.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+      "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Encrypt data with customer-managed encryption keys \\_|\\_ Dataproc Metastore\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 378,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you want to control your encryption keys, then you can use customer-managed encryption keys (CMEKs) in Cloud KMS with CMEK-integrated services including Dataproc Metastore.",
+          "Home Documentation Data analytics Dataproc Metastore Guides Send feedback Encrypt data with customer-managed encryption keys Stay organized with collections Save and categorize content based on your preferences.",
+          "Grant Cloud KMS key permissions Use the following commands to grant Cloud KMS key permissions for Dataproc Metastore: Grant permissions to the Dataproc Metastore Service Agent service account: gcloud kms keys add-iam-policy-binding KEY NAME \\ --location LOCATION \\ --keyring KEY RING \\ --member=serviceAccount:$(gcloud beta services identity create \\ --service=metastore.googleapis.com 2>&1 awk '{print $4}') \\ --role=roles/cloudkms.cryptoKeyEncrypterDecrypter Grant permissions to the Cloud Storage service account: gcloud storage service-agent --authorize-cmek projects/ KEY PROJECT /locations/ LOCATION /keyRings/ KEY RING /cryptoKeys/ KEY NAME Create a single-region service with a CMEK key Use the following steps to configure CMEK encryption for a single-region Dataproc Metastore service."
+        ]
+      },
+      {
+        "title": "Create a Dataproc Metastore service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "source_id": "site-docs-root",
+        "final_score": 280,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Provisioning the service might take a few minutes. gcloud CLI To create a metastore, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \\ --location= LOCATION \\ --instance-size= INSTANCE SIZE \\ --scaling-factor= SCALING FACTOR \\ --port= PORT \\ --tier= TIER \\ --endpoint-protocol= ENDPOINT PROTOCOL \\ --database-type= DATABASE TYPE \\ --hive-metastore-version= HIVE METASTORE VERSION \\ --data-catalog-sync= DATA CATALOG SYNC \\ --release-channel= RELEASE CHANNEL \\ --hive-metastore-configs= METADATA OVERRIDE \\ --labels= LABELS \\ --auxiliary-versions= AUXILIARY VERSION \\ --network= NETWORK \\ --consumer-subnetworks=\"projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET1 , projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET2 \" \\ --kerberos-principal= KERBEROS PRINCIPAL \\ --krb5-config= KRB5 CONFIG \\ --keytab= CLOUD SECRET \\ --encryption-kms-key= KMS KEY Replace the following: Service settings : SERVICE : The name of your new Dataproc Metastore service.",
+          "Return to the Dataproc Metastore page, and verify that your service was successfully created. gcloud CLI To create a Dataproc Metastore service with a Hive override, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \\ --location= LOCATION \\ --hive-metastore-configs=\"hive.metastore.warehouse.dir= CUSTOMER DIR \" Replace the following: SERVICE : The name of your new Dataproc Metastore service.",
+          "For Dataproc Metastore services configured with the Thrift endpoint protocol, make sure your Dataproc Metastore service and the Managed Service for Apache Spark cluster it's attached to are using the same Shared VPC network."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreAsyncClient (1.22.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dataproc Metastore API defines the following resource model: The service works with a collection of Google Cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ (a location must refer to a Google Cloud region ) Each location has a collection of services, named: /services/ Dataproc Metastore services are resources with names of the form: /projects/{project number}/locations/{location id}/services/{service id} .",
+          "Request message for DataprocMetastore.MoveTableToDatabase . retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "The result type for the operation will be MoveTableToDatabaseResponse Response message for DataprocMetastore.MoveTableToDatabase . network path network path ( project : str , network : str ) - > str Returns a fully-qualified network string. parse backup path parse backup path ( path : str ) - > typing ."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreClient (1.22.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "source_id": "site-python-reference",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dataproc Metastore API defines the following resource model: The service works with a collection of Google Cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ (a location must refer to a Google Cloud region ) Each location has a collection of services, named: /services/ Dataproc Metastore services are resources with names of the form: /projects/{project number}/locations/{location id}/services/{service id} .",
+          "Request message for DataprocMetastore.MoveTableToDatabase . retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "The result type for the operation will be MoveTableToDatabaseResponse Response message for DataprocMetastore.MoveTableToDatabase . network path network path ( project : str , network : str ) - > str Returns a fully-qualified network string. parse backup path parse backup path ( path : str ) - > typing ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "com.google.cloud.metastore.v1",
+      "core.retry",
+      "core.retry.Retry",
+      "hive.metastore.warehouse.dir",
+      "metastore.googleapis.com",
+      "metastore.pagers.ListMetadataImportsAsyncPager",
+      "metastore.pagers.ListMetadataImportsPager",
+      "v1.services.dataproc"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/cmek",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.183Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore"
+}

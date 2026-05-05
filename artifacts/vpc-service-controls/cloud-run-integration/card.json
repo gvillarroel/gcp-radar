@@ -1,0 +1,183 @@
+{
+  "feature_name": "Cloud Run integration",
+  "feature_slug": "cloud-run-integration",
+  "summary": "VPC Service Controls supports Cloud Run resources within service perimeter protections.",
+  "extended_definition": "VPC Service Controls supports Cloud Run resources within service perimeter protections.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 263,
+        "relevance": "",
+        "evidence_snippets": [
+          "Limitations VPC Service Controls only supports Cloud Tasks requests to the following targets: Cloud Run functions functions.net endpoints Cloud Run run.app endpoints For more information, see Set up a service perimeter using VPC Service Controls .",
+          "Limitations Because VPC Service Controls enforces boundaries at the project level, Cloud Quotas requests that originate from clients within the perimeter can only access organization resources if the organization sets up an egress rule .",
+          "When a project is added to a VPC Service Controls perimeter, all tag keys and corresponding tag values under the project are considered to be resources within the perimeter."
+        ]
+      },
+      {
+        "title": "\"Create a service perimeter \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "source_id": "site-docs-reference",
+        "final_score": 244,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click Create . gcloud To create a new perimeter in enforced mode , use the gcloud access-context-manager perimeters create command. gcloud access-context-manager perimeters create NAME \\ --title = TITLE \\ --resources = RESOURCES \\ --restricted-services = RESTRICTED-SERVICES \\ --ingress-policies = INGRESS-FILENAME .yaml \\ --egress-policies = EGRESS-FILENAME .yaml \\ [ --access-levels = LEVELS ] \\ [ --enable-vpc-accessible-services ] \\ [ --vpc-allowed-services = ACCESSIBLE-SERVICES ] \\ --policy = POLICY NAME To create a new perimeter in dry run mode , use the gcloud access-context-manager perimeters dry-run create command. gcloud access-context-manager perimeters dry-run create NAME \\ --perimeter-title = TITLE \\ --perimeter-type = TYPE \\ --perimeter-resources = RESOURCES \\ --perimeter-restricted-services = RESTRICTED-SERVICES \\ --perimeter-ingress-policies = INGRESS-FILENAME .yaml \\ --perimeter-egress-policies = EGRESS-FILENAME .yaml \\ [ --perimeter-access-levels = LEVELS ] \\ [ --perimeter-enable-vpc-accessible-services ] \\ [ --perimeter-vpc-allowed-services = ACCESSIBLE-SERVICES ] \\ --policy = POLICY NAME Replace the following: NAME is the name of the perimeter.",
+          "For example, the following command creates a new dry run mode perimeter named ProdPerimeter that includes projects example-project and example-project2 , and restricts the Cloud Storage and BigQuery APIs. gcloud access-context-manager perimeters \\ dry-run create ProdPerimeter --perimeter-title = \"Production Perimeter\" \\ --perimeter-type = \"regular\" \\ --perimeter-resources = projects/12345,projects/67890 \\ --perimeter-restricted-services = storage.googleapis.com,bigquery.googleapis.com \\ --perimeter-ingress-policies = ingress.yaml \\ --perimeter-egress-policies = egress.yaml \\ --policy = 330193482019 API To create a service perimeter, call accessPolicies.servicePerimeters.create .",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Create a service perimeter Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Dry run mode for service perimeters \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "source_id": "site-docs-reference",
+        "final_score": 234,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Dry run mode for service perimeters Stay organized with collections Save and categorize content based on your preferences.",
+          "With dry run mode, you can better understand the effect of enabling VPC Service Controls and changes to perimeters in existing environments.",
+          "Because the private VIP allows services that aren't supported by VPC Service Controls, it is possible for compromised code, malware, or a malicious user within your network to exfiltrate data using those unsecured services."
+        ]
+      },
+      {
+        "title": "Design access levels \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design",
+        "source_id": "site-docs-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "We recommend using Cloud Workstations to access resources within perimeters because VPC Service Controls doesn't support Cloud Shell .",
+          "Then, run the following query: SELECT receiveTimestamp , # time of violation Resource . labels . service , # protected Google Cloud service being blocked protopayload auditlog . methodName , # method name being called resource . labels . project id as PROJECT , # protected project blocking the call protopayload auditlog . authenticationInfo . principalEmail , # caller identity protopayload auditlog . requestMetadata . callerIp , # caller IP JSON EXTRACT ( protopayload auditlog . metadataJson , '$.dryRun' ) as DRYRUN , # dry - run indicator JSON EXTRACT ( protopayload auditlog . metadataJson , '$.violationReason' ) as REASON , # reason for violation protopayload auditlog . metadataJson , # raw violation entry FROM BQ DATASOURCE NAME . cloudaudit googleapis com policy WHERE JSON EXTRACT ( protopayload auditlog . metadataJson , '$.dryRun' ) is null # exclude logs from a dry - run perimeter What's next Learn how to allow access to protected resources from outside the perimeter .",
+          "Resources within the perimeter can be accessed through VMs within the perimeter, from trusted on-premises networks, or from trusted devices."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "egress.yaml",
+      "functions.net",
+      "ingress.yaml",
+      "run.app",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/create-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/dry-run-mode",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/access-level-design"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:57.535Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls"
+}

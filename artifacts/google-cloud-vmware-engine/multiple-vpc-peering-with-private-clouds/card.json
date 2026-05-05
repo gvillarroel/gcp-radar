@@ -1,0 +1,170 @@
+{
+  "feature_name": "Multiple VPC peering with private clouds",
+  "feature_slug": "multiple-vpc-peering-with-private-clouds",
+  "summary": "Multiple VPCs can peer with private clouds in a region, enabling many-to-many connectivity across VPCs and regions.",
+  "extended_definition": "Multiple VPCs can peer with private clouds in a region, enabling many-to-many connectivity across VPCs and regions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+      "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+      "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Peer a VPC network \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Peer a VPC network Virtual Private Cloud network peerings define network connectivity between Google Cloud VMware Engine networks, Google VPCs, and other services.",
+          "If you are peering to a network in a different project, you must complete creation of the VPC network peering in both projects by completing the peering in the project where the VMware Engine network and private cloud are located.",
+          "For example, those routes can come from on-premises networks, peered VPC networks, and other private clouds in the same VPC network."
+        ]
+      },
+      {
+        "title": "\"Module pagers (1.11.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers",
+        "source_id": "site-python-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If there are more pages, the aiter method will make additional ListPrivateConnectionPeeringRoutes requests and continue to iterate through the peering routes field on the corresponding responses.",
+          "If there are more pages, the iter method will make additional ListPrivateConnectionPeeringRoutes requests and continue to iterate through the peering routes field on the corresponding responses.",
+          "This class thinly wraps an initial ListPrivateConnectionPeeringRoutesResponse object, and provides an aiter method to iterate through its peering routes field."
+        ]
+      },
+      {
+        "title": "VMware Engine API \\_|\\_ Google Cloud VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1.projects.locations REST Resource: v1.projects.locations.announcements REST Resource: v1.projects.locations.datastores REST Resource: v1.projects.locations.dnsBindPermission REST Resource: v1.projects.locations.networkPeerings REST Resource: v1.projects.locations.networkPeerings.peeringRoutes REST Resource: v1.projects.locations.networkPolicies REST Resource: v1.projects.locations.networkPolicies.externalAccessRules REST Resource: v1.projects.locations.nodeTypes REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.privateClouds REST Resource: v1.projects.locations.privateClouds.clusters REST Resource: v1.projects.locations.privateClouds.clusters.nodes REST Resource: v1.projects.locations.privateClouds.externalAddresses REST Resource: v1.projects.locations.privateClouds.hcxActivationKeys REST Resource: v1.projects.locations.privateClouds.loggingServers REST Resource: v1.projects.locations.privateClouds.managementDnsZoneBindings REST Resource: v1.projects.locations.privateClouds.subnets REST Resource: v1.projects.locations.privateClouds.upgrades REST Resource: v1.projects.locations.privateConnections REST Resource: v1.projects.locations.privateConnections.peeringRoutes REST Resource: v1.projects.locations.vmwareEngineNetworks Service: vmwareengine.googleapis.com Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v1.projects.locations.privateClouds.managementDnsZoneBindings Methods create POST /v1/{parent=projects/ /locations/ /privateClouds/ }/managementDnsZoneBindings Creates a new ManagementDnsZoneBinding resource in a private cloud. delete DELETE /v1/{name=projects/ /locations/ /privateClouds/ /managementDnsZoneBindings/ } Deletes a ManagementDnsZoneBinding resource. get GET /v1/{name=projects/ /locations/ /privateClouds/ /managementDnsZoneBindings/ } Retrieves a 'ManagementDnsZoneBinding' resource by its resource name. list GET /v1/{parent=projects/ /locations/ /privateClouds/ }/managementDnsZoneBindings Lists Consumer VPCs bound to Management DNS Zone of a given private cloud. patch PATCH /v1/{managementDnsZoneBinding.name=projects/ /locations/ /privateClouds/ /managementDnsZoneBindings/ } Updates a ManagementDnsZoneBinding resource. repair POST /v1/{name=projects/ /locations/ /privateClouds/ /managementDnsZoneBindings/ }:repair Retries to create a ManagementDnsZoneBinding resource that is in failed state.",
+          "REST Resource: v1.projects.locations.privateConnections.peeringRoutes Methods list GET /v1/{parent=projects/ /locations/ /privateConnections/ }/peeringRoutes Lists the private connection routes exchanged over a peering connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v1.projects.locations",
+      "v1.projects.locations.announcements",
+      "v1.projects.locations.datastores",
+      "v1.projects.locations.dnsBindPermission",
+      "v1.projects.locations.networkPeerings",
+      "v1.projects.locations.networkPeerings.peeringRoutes",
+      "v1.projects.locations.networkPolicies",
+      "v1.projects.locations.networkPolicies.externalAccessRules",
+      "v1.projects.locations.nodeTypes",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.privateClouds",
+      "v1.projects.locations.privateClouds.clusters",
+      "v1.projects.locations.privateClouds.clusters.nodes",
+      "v1.projects.locations.privateClouds.externalAddresses",
+      "v1.projects.locations.privateClouds.hcxActivationKeys",
+      "v1.projects.locations.privateClouds.loggingServers",
+      "v1.projects.locations.privateClouds.managementDnsZoneBindings",
+      "v1.projects.locations.privateClouds.subnets",
+      "v1.projects.locations.privateClouds.upgrades",
+      "v1.projects.locations.privateConnections",
+      "v1.projects.locations.privateConnections.peeringRoutes",
+      "v1.projects.locations.vmwareEngineNetworks",
+      "vmwareengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vmware-engine/docs/networking/peer-vpc-network",
+        "https://docs.cloud.google.com/vmware-engine/docs/public/reference/rest",
+        "https://docs.cloud.google.com/python/docs/reference/vmwareengine/latest/google.cloud.vmwareengine_v1.services.vmware_engine.pagers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:36.976Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-vmware-engine/card.json",
+  "product_name": "Google Cloud VMware Engine",
+  "product_slug": "google-cloud-vmware-engine"
+}

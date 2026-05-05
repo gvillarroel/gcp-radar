@@ -1,0 +1,130 @@
+{
+  "feature_name": "GKE logging and monitoring configuration",
+  "feature_slug": "gke-logging-and-monitoring-configuration",
+  "summary": "Lets you configure which logs and metrics GKE sends to Cloud Logging and Cloud Monitoring.",
+  "extended_definition": "Lets you configure which logs and metrics GKE sends to Cloud Logging and Cloud Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"GKE Autopilot overview \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot clusters collect the following types of logs and metrics automatically, adhering to Google's best practices for telemetry collection: Logs for Cloud Logging System logs Workload logs Admin Activity audit logs Data Access audit logs Metrics for Cloud Monitoring System metrics Workload metrics (from Google Cloud Managed Service for Prometheus) No additional configuration is required to enable logging and monitoring.",
+          "Consider the following factors during planning: Estimated cluster size and scale Workload type Cluster layout and usage Networking layout and configuration Security configuration Cluster management and maintenance Workload deployment and management Logging and monitoring The following sections provide information and useful resources for these considerations.",
+          "GKE Autopilot is a mode of operation in GKE in which Google manages your infrastructure configuration, including your nodes, scaling, security, and other preconfigured settings."
+        ]
+      },
+      {
+        "title": "Harden your cluster's security \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "source_id": "site-docs-reference-2",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to Policy details Configure log collection Recommended : to reduce operational overhead and to maintain a consolidated view of your logs, implement a consistent logging strategy across your clusters.",
+          "Default security configurations The following sections describe options that are configured by default in new clusters to mitigate specific security concerns, like vulnerabilities or risks.",
+          "The service account that's attached to your nodes should be used only by system workloads that perform tasks like logging and monitoring."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy GPU-accelerated Ray for AI workloads on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the terminal, run the following gcloud container clusters create command: gcloud container clusters create my-ray-enabled-cluster \\ --addons = RayOperator \\ --enable-ray-cluster-monitoring \\ --enable-ray-cluster-logging \\ --location = us-central1 \\ --enable-autoprovisioning \\ --max-cpu = 10 \\ --max-memory = 64 This Google Cloud CLI command creates an Standard cluster named my-ray-enabled-cluster , with these settings: --addons=RayOperator : installs the Ray Operator on the cluster, which simplifies managing Ray clusters within Kubernetes. --enable-ray-cluster-monitoring : sets up integration with Cloud Monitoring for Ray cluster metrics. --enable-ray-cluster-logging : configures integration with Cloud Logging to collect logs from your Ray cluster. --location=us-central1 : specifies the geographical region where the GKE cluster will be created.",
+          "In the terminal, run the following gcloud container clusters create-auto command: gcloud container clusters create-auto my-ray-enabled-cluster \\ --enable-ray-operator \\ --enable-ray-cluster-monitoring \\ --enable-ray-cluster-logging \\ --location = us-central1 This Google Cloud CLI command creates an Autopilot cluster named my-ray-enabled-cluster , with these settings: --enable-ray-operator : installs the Ray Operator on the cluster, which simplifies managing Ray clusters within Kubernetes. --enable-ray-cluster-monitoring : sets up integration with Cloud Monitoring for Ray cluster metrics. --enable-ray-cluster-logging : configures integration with Cloud Logging to collect logs from your Ray cluster. --location=us-central1 : specifies the geographical region where the GKE cluster will be created.",
+          "Autopilot In Autopilot mode , Google manages your cluster configuration, including scaling, security, and other preconfigured settings."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/hardening-your-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/add-on/ray-on-gke/quickstarts/ray-gpu-cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

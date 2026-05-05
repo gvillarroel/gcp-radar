@@ -1,0 +1,126 @@
+{
+  "feature_name": "SMTP OAuth 2.0 authentication",
+  "feature_slug": "smtp-oauth-2-0-authentication",
+  "summary": "Adds OAuth 2.0 authentication for SMTP-based custom mail settings.",
+  "extended_definition": "Adds OAuth 2.0 authentication for SMTP-based custom mail settings.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-smtp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - SMTP \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-smtp",
+        "source_id": "site-docs-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom mail settings can be configured for SMTP servers that support the PLAIN and LOGIN authentication protocols or OAuth 2.0.",
+          "Note: If you are using custom mail settings for SMTP, add Looker's IP addresses to your SMTP server's IP allowlist so that your SMTP server will allow inbound traffic from Looker.",
+          "Mail settings Deprecated: For customer-hosted Looker instances, the default Looker email service is not available and the SMTP Options won't be visible."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following section is from an example of a discovery document: { \"issuer\": \"https://accounts.google.com\", \"authorization endpoint\": \"https://accounts.google.com/o/oauth2/v2/auth\", \"token endpoint\": \"https://www.googleapis.com/oauth2/v4/token\", \"userinfo endpoint\": \"https://www.googleapis.com/oauth2/v3/userinfo\", \"revocation endpoint\": \"https://accounts.google.com/o/oauth2/revoke\", \"jwks uri\": \"https://www.googleapis.com/oauth2/v3/certs\", \"response types supported\": [ \"code\", \"token\", \"id token\", \"code token\" \"code id token\", \"token id token\", \"code token id token\", \"none\" ], \"subject types supported\": [ \"public\" ], \"id token signing alg values supported\": [ \"RS256\" ], \"scopes supported\": [ \"openid\", \"email\", \"profile\" ], \"token endpoint auth methods supported\": [ \"client secret post\", \"client secret basic\" ], \"claims supported\": [ \"aud\", \"email\", \"email verified\", \"exp\", \"family name\", \"given name\", \"iat\", \"iss\", \"locale\", \"name\", \"picture\", \"sub\" ], Configuring OpenID Connect auth settings To configure OpenID Connect authentication for your Looker instance, select OpenID Connect from the Authentication section of the Admin panel.",
+          "Home Documentation Data analytics Looker Guides Send feedback Admin settings - OpenID Connect authentication Stay organized with collections Save and categorize content based on your preferences.",
+          "You can merge users from the following systems: Looker Email/Password (not available for Looker (Google Cloud core)) Google LDAP (not available for Looker (Google Cloud core)) SAML If you have multiple authentication systems in place, you can specify more than one system to merge by in this field."
+        ]
+      },
+      {
+        "title": "Admin settings - Google authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google",
+        "source_id": "site-docs-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Looker Guides Send feedback Admin settings - Google authentication Stay organized with collections Save and categorize content based on your preferences.",
+          "Click Enabled to display and edit Google OAuth settings. (This does not immediately enable Google authentication; you must confirm your choice later).",
+          "For example: If Looker hosts your instance: https://mycompany.looker.com If you have a customer-hosted Looker instance: https://looker.mycompany.com If your Looker instance requires a port number: https://looker.mycompany.com:9999 In the Authorized redirect URIs field, enter the URL to your Looker instance, followed by /oauth2callback ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "looker.mycompany.com",
+      "mycompany.looker.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-smtp",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-smtp",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-smtp",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-smtp",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-smtp",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-google"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

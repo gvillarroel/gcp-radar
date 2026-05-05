@@ -1,0 +1,101 @@
+{
+  "feature_name": "kubernetes.io/node_pool/status",
+  "feature_slug": "kubernetes-io-node-pool-status",
+  "summary": "This metric reports the current status of a node pool instance.",
+  "extended_definition": "This metric reports the current status of a node pool instance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 277,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ sandboxConfig object ( SandboxConfig ) Sandbox configuration for this node. nodeGroup string Setting this field will assign instances of this pool to run on the specified node group.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionMinimumReclaim JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionGracePeriod JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "source_id": "site-api-reference",
+        "final_score": 277,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ sandboxConfig object ( SandboxConfig ) Sandbox configuration for this node. nodeGroup string Setting this field will assign instances of this pool to run on the specified node group.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionMinimumReclaim JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionGracePeriod JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 277,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/ sandboxConfig object ( SandboxConfig ) Sandbox configuration for this node. nodeGroup string Setting this field will assign instances of this pool to run on the specified node group.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionMinimumReclaim JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional.",
+          "See https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/#eviction-signals EvictionGracePeriod JSON representation { \"memoryAvailable\" : string , \"nodefsAvailable\" : string , \"nodefsInodesFree\" : string , \"imagefsAvailable\" : string , \"imagefsInodesFree\" : string , \"pidAvailable\" : string } Fields memoryAvailable string Optional."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "kubernetes.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

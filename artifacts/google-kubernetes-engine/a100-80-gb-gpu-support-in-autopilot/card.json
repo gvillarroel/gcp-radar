@@ -1,0 +1,117 @@
+{
+  "feature_name": "A100 80 GB GPU support in Autopilot",
+  "feature_slug": "a100-80-gb-gpu-support-in-autopilot",
+  "summary": "Allows workloads to run on A100 80 GB GPUs in GKE Autopilot clusters.",
+  "extended_definition": "Allows workloads to run on A100 80 GB GPUs in GKE Autopilot clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy GPU workloads in Autopilot \\_|\\_ GKE AI/ML \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "source_id": "site-docs-reference-2",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "GPU use cases in Autopilot You can allocate GPUs to containers in Autopilot Pods to facilitate workloads such as the following: Machine learning (ML) inference ML training Rendering Supported GPU quantities When you request GPUs in your Pod specification, you must use the following quantities based on the GPU type: GPU quantities NVIDIA B200 (180GB) nvidia-b200 8 NVIDIA H200 (141GB) nvidia-h200-141gb 8 NVIDIA H100 Mega (80GB) nvidia-h100-mega-80gb 8 NVIDIA H100 (80GB) nvidia-h100-80gb 1, 2, 4, 8 NVIDIA A100 (80GB) nvidia-a100-80gb 1, 2, 4, 8 NVIDIA A100 (40GB) nvidia-tesla-a100 1, 2, 4, 8, 16 NVIDIA RTX PRO 6000 nvidia-rtx-pro-6000 1, 2, 4, 8 NVIDIA L4 nvidia-l4 1, 2, 4, 8 NVIDIA T4 nvidia-tesla-t4 1, 2, 4 Note: Autopilot supports the smaller machine shapes of 1, 2, and 4 GPUs for NVIDIA H100 (80GB) GPUs on version 1.31.4-gke.1072000 or later.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE AI/ML Guides Send feedback Deploy GPU workloads in Autopilot Stay organized with collections Save and categorize content based on your preferences.",
+          "This page also describes how Autopilot runs GPUs, how your pricing model changes depending on your GKE version, how to set Pod resource requests and limits, and how to monitor GPU workloads."
+        ]
+      },
+      {
+        "title": "\"About privileged workload admission in Autopilot mode \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads",
+        "source_id": "site-docs-reference-2",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "At a high level, running privileged workloads in Autopilot nodes involves these steps: The organization administrator verifies that the container.managed.autopilotPrivilegedAdmission managed Organization Policy constraint allows the installation of allowlists from a specific source.",
+          "For more information about the allowlist paths for these workloads, see the following pages: Autopilot partner workloads Privileged open source workloads with Autopilot support SELECTOR : the name of a specific file or the character, which selects every file in that directory.",
+          "Sources of privileged Autopilot workloads The following table describes the types of privileged workloads that you can run in Autopilot: Privileged workload types Autopilot partner workloads A subset of Google Cloud partners provide privileged workloads for Autopilot mode."
+        ]
+      },
+      {
+        "title": "GKE Autopilot security measures \\_|\\_ GKE security \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "source_id": "site-iam-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Industry surveys show that 76% of containers run as root, so Autopilot allows running as root to enable most workloads Built-in security configurations In addition to the Pod Security Standards, Google applies many security settings in Autopilot based on industry best practices and our expertise.",
+          "Run as non-root Industry surveys show that 76% of containers run as root, so Autopilot allows running as root to enable most workloads.",
+          "Industry surveys show that 76% of containers run as root, so Autopilot allows running as root to enable most workloads."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.managed.autopilotPrivilegedAdmission",
+      "gke.1072000"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-gpus",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-security",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-autopilot-privileged-workloads"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

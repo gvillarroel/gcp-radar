@@ -1,0 +1,114 @@
+{
+  "feature_name": "External connectors API endpoints",
+  "feature_slug": "external-connectors-api-endpoints",
+  "summary": "Several external connectors API endpoints are deprecated and replacement endpoints are provided for connector management; deprecated on 2024-02-22.",
+  "extended_definition": "Several external connectors API endpoints are deprecated and replacement endpoints are provided for connector management; deprecated on 2024-02-22.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-22",
+    "deprecation_date": "2024-02-22",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Impact of changing your linked Cloud Project on data feeds If you are updating the Google Cloud project associated with your Google SecOps instance, all feeds ingesting data using the following connectors will stop, and must be re-created manually: AMAZON S3 V2 AMAZON SQS V2 GOOGLE CLOUD STORAGE V2 AZURE BLOBSTORE V2 GOOGLE CLOUD STORAGE EVENT DRIVEN For all other feeds that are not utilizing these connectors, ingestion continues without any interruption.",
+          "Record and delete existing feeds (before migration) : Before you begin the BYOP migration, record the configuration settings for all existing feeds that use the impacted connectors (for example, Amazon S3 V2), and then delete the feeds.",
+          "Add a feed Caution: As of April 15, 2026 , the v1 connector framework for Google Cloud Storage, Amazon S3, Amazon SQS, and Azure Blob Storage is deprecated."
+        ]
+      },
+      {
+        "title": "\"Integrate Armis with Google SecOps \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis",
+        "source_id": "site-iam-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If a raw alert contains a list of entities (such as multiple email addresses, hostnames, or IP addresses), connectors automatically flatten them into separate, unique events.",
+          "Reason: alert \"{alert id}\" wasn't found in Armis.' General Connector To learn more about configuring connectors in Google SecOps, see Ingest your data (connectors) .",
+          "Note: To prevent data loss, connectors utilize Event Flattening ."
+        ]
+      },
+      {
+        "title": "\"Migrate from CrowdStrike Detects API to Alerts API \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api",
+        "source_id": "site-api-reference",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CrowdStrike's deprecation of this API affects the following actions and connectors: Add Comment to Detection Close Detection Update Detection CrowdStrike - Detections Connector The SOAR CrowdStrike integration already supports the Alerts API, which replaces the Detections API.",
+          "CrowdStrike Detections API deprecation in SOAR integration The CrowdStrike Falcon SOAR integration used the Detections API within its actions and connectors.",
+          "CrowdStrike provides a dashboard to help you identify API clients that use deprecated endpoints."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis",
+        "https://docs.cloud.google.com/chronicle/docs/detection/migrate-detects-api-to-alerts-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

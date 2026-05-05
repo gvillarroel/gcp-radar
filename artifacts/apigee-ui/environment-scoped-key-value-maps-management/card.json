@@ -1,0 +1,166 @@
+{
+  "feature_name": "Environment-scoped Key Value Maps management",
+  "feature_slug": "environment-scoped-key-value-maps-management",
+  "summary": "The Apigee UI supports viewing, adding, editing, and deleting environment-scoped Key Value Map entries.",
+  "extended_definition": "The Apigee UI supports viewing, adding, editing, and deleting environment-scoped Key Value Map entries.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for API proxy design and development with Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Consider the following recommended strategies for handling large message sizes in Apigee: We highly recommend isolating API proxies that frequently handle large payloads in a dedicated environment to avoid a potential \"noisy neighbor\" scenario.",
+          "For optimal performance, Apigee recommends using no more than 3,000 API proxy basepaths per Apigee environment or environment group.",
+          "Consider performance when using key/value maps as this information is stored in the Cassandra database."
+        ]
+      },
+      {
+        "title": "Building a simple API proxy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note that the URL map http1 backend is default. defaultService : projects /$ PROJECT ID / global / backendServices / YOUR BACKEND 1 name : matcher1 routeRules : - matchRules : - headerMatches : - headerName : Content - Type prefixMatch : application / grpc prefixMatch : / priority : 100 routeAction : weightedBackendServices : - backendService : projects /$ PROJECT ID / global / backendServices / YOUR BACKEND 2 weight : 100 Validate the URL map: gcloud compute url-maps validate --source /tmp/apigee-map.yaml --project $PROJECT ID Create the url map with header-based routing: gcloud compute url - maps import apigee - http1 - http2 \\ -- source / tmp / apigee - map . yaml \\ -- global -- project $ PROJECT ID Create a load balancing target HTTPS proxy gcloud compute target-https-proxies create apigee-envoy-https-proxy \\ --project $PROJECT ID --url-map apigee-envoy-proxy-map \\ --ssl-certificates $CERTIFICATE NAME Reserve an IPV4 External IP and create firewall rules for the load balancer gcloud compute addresses create lb - ipv4 - vip - 1 \\ -- project $ PROJECT ID \\ -- network - tier = PREMIUM \\ -- ip - version = IPV4 \\ -- global gcloud compute addresses describe lb - ipv4 - vip - 1 \\ -- project $ PROJECT ID -- format = \"get(address)\" -- global gcloud compute forwarding - rules create apigee - envoy - https - lb - rule \\ -- project $ PROJECT ID -- address lb - ipv4 - vip - 1 -- global \\ -- target - https - proxy apigee - envoy - https - proxy -- ports 443 Create a firewall rule gcloud compute firewall-rules create k8s-allow-lb-to-apigee-envoy \\ --description \"Allow incoming from GLB on TCP port 443 to Apigee Proxy\" \\ --project $PROJECT ID --network $VPC NAME --allow=tcp:443 \\ --source-ranges=130.211.0.0/22,35.191.0.0/16 --target-tags=gke-apigee-proxy Example gcloud CLI commands for creating routing for gRPC proxies for existing load balancers This section shows example commands for creating gRPC proxies using the gcloud CLI and an existing load balancer.",
+          "Create another backend service for http2 Create backend service for http2 gcloud compute backend - services create YOUR BACKEND 2 \\ -- project $ PROJECT ID \\ -- protocol HTTP2 \\ -- health - checks hc - apigee - envoy - 443 \\ -- port - name https \\ -- timeout 302 s \\ -- connection - draining - timeout 300 s \\ -- global Attach the second backend service to the MIG gcloud compute backend - services add - backend YOUR BACKEND 2 \\ -- project $PROJECT ID -- instance - group $MIG NAME \\ -- instance - group - region $REGION \\ -- balancing - mode UTILIZATION -- max - utilization 0.8 -- global List the URL map for the existing Apigee GCLB gcloud compute url-maps list -project $PROJECT ID Pick up the correct URL map name used for Apigee load balancing gcloud compute url - maps export APIGEE URL MAP NAME - project $ PROJECT ID Create a load balancing URL map YAML file If you already have an existing URL map, merge this configuration into that.",
+          "Otherwise, create a YAML file at /tmp/apigee-map.yaml with this configuration. defaultService : projects / dg - runtime - test1 / global / backendServices / YOUR BACKEND 1 name : matcher1 routeRules : - matchRules : - headerMatches : - headerName : Content - Type prefixMatch : application / grpc prefixMatch : / priority : 100 routeAction : weightedBackendServices : - backendService : projects / dg - runtime - test1 / global / backendServices / YOUR BACKEND 2 weight : 100 Apply the new YAML for gRPC routing gcloud compute url - maps import APIGEE URL MAP NAME \\ -- source / tmp / apigee - map . yaml \\ -- global - project $ PROJECT ID Adding security Proxy security is achieved by adding a policy to your proxy."
+        ]
+      },
+      {
+        "title": "Get started with the Apigee Extension Processor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create an Apigee environment using the following command: curl -i -X POST -H \"Authorization: Bearer $TOKEN \" \\ \"https://apigee.googleapis.com/v1/organizations/ $ORG NAME /environments\" -H \"Content-Type:application/json\" -d \\ '{ \"name\": \" ENV NAME \", \"displayName\": \" ENV NAME \", \"state\": \"ACTIVE\", \"deploymentType\": \"PROXY\", \"apiProxyType\": \"PROGRAMMABLE\", \"type\": \"COMPREHENSIVE\", \"properties\": {\"property\": [ { \"name\": \"apigee-service-extension-enabled\", \"value\": \"true\" } ] } }' Where ENV NAME is the name of the environment you are creating.",
+          "Set environment variables In the Google Cloud project that contains your Apigee instance, use the following command to set environment variables: export PROJECT ID = PROJECT ID export ORG NAME = $PROJECT ID export REGION = REGION export INSTANCE = INSTANCE export VPC NETWORK NAME = VPC NETWORK NAME export SUBNET = SUBNET Where: PROJECT ID is the ID of the project with your Apigee instance.",
+          "Attach the new environment to the new environment group: curl -H \"Authorization: Bearer $TOKEN \" -X POST \\ \"https://apigee.googleapis.com/v1/organizations/ $ORG NAME /envgroups/ ENV GROUP NAME /attachments\" -H \"content-type:application/json\" -d \\ '{ \"name\": \" ENV GROUP NAME \", \"environment\": \" ENV NAME \" }' Where: ENV GROUP NAME is the name of the environment group you are creating."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "map.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/build-simple-api-proxy",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/best-practices-api-proxy-design-and-development",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.504Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui"
+}

@@ -1,0 +1,106 @@
+{
+  "feature_name": "Add data demo guide",
+  "feature_slug": "add-data-demo-guide",
+  "summary": "The add data demo guide walks users through adding data to BigQuery from common sources.",
+  "extended_definition": "The add data demo guide walks users through adding data to BigQuery from common sources.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Google BigQuery Integration View data in BigQuery Product & Behavioral Analytics on Google BigQuery Optimizely's partnership with Google Cloud Partner Advantage page Direct link Numberstation Solution Numbersstation.ai Category BI, ML, & Advanced Analytics Description Numbers Station leverages a multi-agent architecture built with specialized agents to reason through complex questions, building end-to-end analytics solutions and democratizing data by delivering insights where and when you need them.",
+          "Partner references Creating a dataset using BigQuery Adding a new QuickSight dataset for BigQuery Unlock the power of unified business intelligence with BigQuery and Amazon QuickSight Amplitude Solution Amplitude Analytics Category BI, ML, & Advanced Analytics Description Amplitude is an event-based analytics tool that tracks the behaviors of users based on in-product interactions and analyzes user behavior in real-time.",
+          "Partner references Numbers station BigQuery Quickstart BigQuery integration OWOX Solution Owox BI Category BI, ML, & Advanced Analytics Description OWOX BI is a leading data democratization platform, designed for collaboration between data teams and business users, giving the right tools to empower everyone to explore and act upon business data."
+        ]
+      },
+      {
+        "title": "Add labels to resources \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // addTableLabel demonstrates adding Label metadata to a BigQuery table. func addTableLabel ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydataset\" // tableID := \"mytable\" ctx := context .",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // addDatasetLabel demonstrates adding label metadata to an existing dataset. func addDatasetLabel ( projectID , datasetID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydataset\" ctx := context .",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Mask column data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "source_id": "site-docs-reference-5",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "In case of custom masking, grant users the BigQuery Admin or BigQuery Data Owner roles to ensure they have the necessary permissions for both routines and data policies.",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "If you use custom masking, grant users the BigQuery Data Owner role to ensure they have the necessary permissions for both routines and data policies."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/adding-labels",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

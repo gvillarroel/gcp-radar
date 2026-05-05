@@ -1,0 +1,175 @@
+{
+  "feature_name": "Data canvas",
+  "feature_slug": "data-canvas",
+  "summary": "Data canvas provides a visual interface to discover, transform, query, and visualize data using natural language in Gemini in BigQuery.",
+  "extended_definition": "Data canvas provides a visual interface to discover, transform, query, and visualize data using natural language in Gemini in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/overview",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Set up a Box data store \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "source_id": "site-iam-reference",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next To provide a user interface for querying your data, create an app and connect it to the Box federated data store .",
+          "Data handling When using third-party federated search, the following data handling rules apply: Your query string is sent to the third-party search backend (Box API).",
+          "Before you begin Before you set up your Box connection, ensure you perform the following: Grant the Discovery Engine Editor role ( roles/discoveryengine.editor )."
+        ]
+      },
+      {
+        "title": "Gemini for Google Cloud overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Discover, transform, query, and visualize data with data canvas.",
+          "Export report visualizations to Google Slides.",
+          "Create custom Looker visualizations."
+        ]
+      },
+      {
+        "title": "\"Configure advanced autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "source_id": "site-iam-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example command and result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/1234/locations/global/collections/default collection/engines/my app/completionConfig:completeQuery\" \\ - d { \"query\": \"C\", \"suggestionTypes\": [\"CONTENT\"] }' { \"contentSuggestions\": [{ \"suggestion\": \"critical crash in payment module\", \"document\": { \"name\": \"projects/1234/locations/global/collections/default collection/dataStores/my data store/branches/0/documents/10000\", \"derivedStructData\": { \"title\": \"Critical Crash in Payment Module\", \"uri\": \"https://cymballabs.atlassian.net/browse/CPT-1\", \"source type\": \"jira\", \"entity type\": \"issue\" } }, \"dataStore\": \"projects/1234/locations/global/collections/default collection/dataStores/my data store\" }] } Note: If you specify suggestionTypes as CONTENT , then any boostSpec , queryModel , or includeTailSuggestions parameters in your curl command are ignored.",
+          "Example command and result curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/engines/my-app/completionConfig:completeQuery\" \\ -d '{ \"query\": \"hol\", \"suggestionTypes\": [\"RECENT SEARCH\"], \"userPseudoId\": \"test user\" }' { \"recentSearchSuggestions\": [ { \"suggestion\": \"holiday readiness\", \"recentSearchTime\": \"2025-05-19T18:27:07.261698Z\" }, { \"suggestion\": \"holiday freeze\", \"recentSearchTime\": \"2025-05-19T18:25:45.744021Z\" }, { \"suggestion\": \"holiday\", \"recentSearchTime\": \"2025-05-19T18:20:08.916884Z\" } ] } Note: If you specify suggestionTypes as RECENT SEARCH , then any boostSpec , queryModel , or includeTailSuggestions parameters in your curl command are ignored.",
+          "Example command curl -X POST -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/collections/default collection/engines/my-app/completionConfig:completeQuery\" \\ -d '{ \"query\": \"hol\", \"boostSpec\": { \"conditionBoostSpecs\": [{ \"condition\": \"(langCode: ANY(\\\"es\\\", \\\"fr\\\"))\", \"boost\": 0.75 }, { \"condition\": \"(langCode: ANY(\\\"en\\\"))\", \"boost\": -1 }] } }' In this example, the autocomplete suggestions for the query Co are boosted (placed higher in the autosuggestion list) if they are in French or Spanish and buried (placed lower in the autosuggestion list) if they are in English."
+        ]
+      },
+      {
+        "title": "Configure autocomplete \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete",
+        "source_id": "site-iam-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\$ curl -X PATCH \\ -H \"X-Goog-User-Project: my-project-123\" \\t-access-token)\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=queryFrequencyThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"queryFrequencyThreshold\": 30 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"queryFrequencyThreshold\": 30 } Update the CompletionConfig.numUniqueUsersThreshold field: curl -X PATCH \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ https://discoveryengine.googleapis.com/v1alpha/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig?updateMask = numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /completionConfig\", \"numUniqueUsersThreshold\": UNIQUE USERS }' Replace UNIQUE USERS with an integer value that represents the minimum number of unique users who must enter a given search query before it can be returned as an autocomplete suggestion.",
+          "DATASET ID : the dataset ID for the suggestion list that you want to import TABLE ID : the table ID for the suggestion list that you want to import Example command and result curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -H \"X-Goog-User-Project: my-project-123\" \\ \"https://discoveryengine.googleapis.com/v1/projects/my-project-123/locations/global/dataStores/my-data-store/completionSuggestions:import\" \\ -d '{ \"bigquery source\": {\"project id\": \"my-project-123\", \"dataset id\": \"autocomplete\", \"table id\": \"import suggestion2\"} }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/operations/import-completion-suggestion-7659310803143180509\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.discoveryengine.v1.ImportCompletionSuggestionsMetadata\" } } Optional: Make note of the name value returned, and follow the instructions in Get details about a long-running operation to see when the import operation is complete.",
+          "Example command and result curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ -H \"X-Goog-User-Project: my-project-123\" \\ https://discoveryengine.googleapis.com/v1alpha/projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig?updateMask=numUniqueUsersThreshold \\ -d '{ \"name\": \"projects/my-project-123/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"numUniqueUsersThreshold\": 6 }' { \"name\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/completionConfig\", \"matchingOrder\": \"exact-prefix\", \"maxSuggestions\": 20, \"minPrefixLength\": 1, \"queryModel\": \"automatic\", \"enableMode\": \"AUTOMATIC\", \"numUniqueUsersThreshold\": 6, \"queryFrequencyThreshold\": 30 } Update completable field annotations in schema To turn on autocomplete for fields in structured data schema, follow these steps: Console In the Google Cloud console, go to the Gemini Enterprise page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.geminidataanalytics.v1beta.BigQueryJobOrBuilder",
+      "cymballabs.atlassian.net",
+      "discoveryengine.editor",
+      "discoveryengine.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/discoveryengine.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/docs/overview",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-advanced-autocomplete",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-autocomplete"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.293Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

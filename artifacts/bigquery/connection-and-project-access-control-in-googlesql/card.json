@@ -1,0 +1,153 @@
+{
+  "feature_name": "Connection and project access control in GoogleSQL",
+  "feature_slug": "connection-and-project-access-control-in-googlesql",
+  "summary": "GoogleSQL supports connection user and PROJECT resource types in GRANT and REVOKE statements for managing connection and project access.",
+  "extended_definition": "GoogleSQL supports connection user and PROJECT resource types in GRANT and REVOKE statements for managing connection and project access.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use DDL commands to create, alter, and delete resources, such as the following: Datasets Tables Table schemas Table clones Table snapshots Views Connections User-defined functions (UDFs) Indexes Capacity commitments and reservations Row-level access policies Default configuration settings Required permissions To create a job that runs a DDL statement, you must have the bigquery.jobs.create permission for the project where you are running the job.",
+          "Syntax To create a GoogleSQL stored procedure , use the following syntax: CREATE [ OR REPLACE ] PROCEDURE [ IF NOT EXISTS ] [[ project name . ] dataset name . ] procedure name ( procedure argument [ , ... ] ) [ OPTIONS ( procedure option list ) ] BEGIN multi statement query END ; procedure argument : [ procedure argument mode ] argument name argument type procedure argument mode : IN OUT INOUT To create a stored procedure for Apache Spark , use the following syntax: CREATE [ OR REPLACE ] PROCEDURE [ IF NOT EXISTS ] [[ project name . ] dataset name . ] procedure name ( procedure argument [ , ... ] ) [ EXTERNAL SECURITY external security ] WITH CONNECTION connection project id . connection region . connection id [ OPTIONS ( procedure option list ) ] LANGUAGE language [ AS pyspark code ] procedure argument : [ procedure argument mode ] argument name argument type procedure argument mode : IN OUT INOUT external security : INVOKER Arguments OR REPLACE : Replaces any procedure with the same name if it exists.",
+          "NAME and VALUE must be one of the following combinations: NAME VALUE Details enable refresh BOOLEAN Example: enable refresh=false Default: true refresh interval minutes FLOAT64 Example: refresh interval minutes=20 Default: refresh interval minutes=30 expiration timestamp TIMESTAMP Example: expiration timestamp=TIMESTAMP \"2025-01-01 00:00:00 UTC\" This property is equivalent to the expirationTime table resource property. expiration timestamp is optional and not used by default. max staleness INTERVAL Example: max staleness=INTERVAL \"4:0:0\" HOUR TO SECOND The max staleness property provides consistently high performance with controlled costs when processing large, frequently changing datasets. max staleness is disabled by default. allow non incremental definition BOOLEAN Example: allow non incremental definition=true The allow non incremental definition property supports an expanded range of SQL queries to create materialized views. allow non incremental definition=true is disabled by default."
+        ]
+      },
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Then call the Dataset#setMetadata() function to update the property. / TODO(developer): Update and un-comment below lines. / // const datasetId = \"my project id.my dataset name\"; // ID of the user or group from whom you are adding access. // const entityId = \"user-or-group-to-add@example.com\"; // One of the \"Basic roles for datasets\" described here: // https://cloud.google.com/bigquery/docs/access-control-basic-roles#dataset-basic-roles // const role = \"READER\"; const { BigQuery } = require ( ' @google-cloud/bigquery ' ); // Instantiate a client. const client = new BigQuery (); // Type of entity you are granting access to. // Find allowed allowed entity type names here: // https://cloud.google.com/bigquery/docs/reference/rest/v2/datasets#resource:-dataset const entityType = 'groupByEmail' ; async function grantAccessToDataset () { const [ dataset ] = await client . dataset ( datasetId ). get (); // The 'access entries' array is immutable.",
+          "See the BigQuery client library documentation for more details on update dataset: https://cloud.google.com/python/docs/reference/bigquery/latest/google.cloud.bigquery.client.Client#google cloud bigquery client Client update dataset try : Update just the access entries property of the dataset. dataset = client . update dataset ( dataset , [ \"access entries\" ], ) Notify user that the API call was successful. full dataset id = f \" { dataset . project } . { dataset . dataset id } \" print ( f \"Revoked dataset access for ' { entity id } ' to ' dataset ' { full dataset id } .'\" ) except PreconditionFailed : # A read-modify-write error. print ( f \"Dataset ' { dataset . dataset id } ' was modified remotely before this update. \" \"Fetch the latest version and retry.\" ) Work with table and view access controls Views are treated as table resources in BigQuery.",
+          "OBJECT PRIVILEGES WHERE object name = \"mydataset\" ; The output should look like the following: +------------------+-----------------------------+-------------------------+ object name privilege type grantee +------------------+-----------------------------+-------------------------+ mydataset roles/bigquery.dataOwner projectOwner:myproject mydataset roles/bigquery.dataViwer user:user@example.com +------------------+-----------------------------+-------------------------+ API To view the access controls for a dataset, call the datasets.get method with a defined dataset resource ."
+        ]
+      },
+      {
+        "title": "\"Introduction to security and access controls in BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can grant access to the following BigQuery resources: Datasets and these resources within datasets: Tables and views Routines Connections Saved queries Data canvases Data preparations Pipelines Repositories Grant access to Resource Manager resources You can configure access to BigQuery resources through Resource Manager by granting a BigQuery role to a principal and then by granting that role on an organization, a folder, or a project.",
+          "You can use the following types of roles in IAM to grant access to BigQuery resources: Predefined roles are managed by Google Cloud and support common use cases and access control patterns.",
+          "Grant access to datasets You can assign roles at the dataset level to provide access to a specific dataset, without providing complete access to the project's other resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataOwner",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.dataViwer",
+      "bigquery.jobs.create",
+      "datasets.get",
+      "example.com",
+      "id.my",
+      "projects.testIamPermissions"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViwer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "https://docs.cloud.google.com/bigquery/docs/access-control-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

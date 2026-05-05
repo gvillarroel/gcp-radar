@@ -1,0 +1,146 @@
+{
+  "feature_name": "Abuse detection",
+  "feature_slug": "abuse-detection",
+  "summary": "Abuse detection entered public preview to surface security incidents using machine learning, including Advanced Anomaly Detection and Advanced API Scraper detection rules.",
+  "extended_definition": "Abuse detection entered public preview to surface security incidents using machine learning, including Advanced Anomaly Detection and Advanced API Scraper detection rules.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 222,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can access abuse detection either through the Apigee UI, as described below, or through the Incidents API or the Security stats API See Required roles and permissions for abuse detection for the roles and permissions needed to use abuse detection.",
+          "This could result in Apigee attributing an artificially large amount of traffic to that public IP address, which could then be flagged as an anomalous traffic pattern in Advanced API Security's Abuse Detection feature.",
+          "Main Abuse detection page At the top of the page, you can select one of the following recent time periods in which to view incidents: the past 1 day , 1 week , or 2 weeks ."
+        ]
+      },
+      {
+        "title": "Detection rules \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 142,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: The Advanced API Security Abuse detection page uses detection rules to detect security incidents.",
+          "Detection rule Description Preview: Advanced API Scraper A machine learning model that detects API scraping, which is the process of extracting targeted information from APIs for malicious purposes.",
+          "Note that one incident might be triggered by multiple detection rules, in which case all of the rules that triggered the incident are listed in the Abuse detection Environment details view."
+        ]
+      },
+      {
+        "title": "Security actions overview and UI | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "API MONITORING API Monitoring overview Compare API Monitoring with Apigee Analytics Using the Timeline view Using the Investigate view Using the Recent view Setting up alerts and notifications Examples of alerts Fault codes ADVANCED API SECURITY Overview of Advanced API Security Apigee and Apigee hybrid Overview Getting started Detection rules Best practices Security reports Overview Manage security reports in the UI Manage security reports using the API Risk assessment Risk assessment overview and UI Security scores and profiles API Abuse detection Abuse detection UI Security stats API Incidents API Security feedback API Security alerts Security actions Security actions overview and UI Security actions API Multi-gateway risk assessment Overview API OBSERVATION Overview of API Observation Shadow APIs Shadow API Discovery overview Shadow API Discovery management APIs Shadow API Discovery audit logging Application Integration Use Application Integration Application Integration and Apigee proxy Integration target Subscription entitlements Application Integration policies IntegrationCallout policy SetIntegrationRequest policy Connectors Overview Get started with connectors Release notes API HUB What is Apigee API hub?",
+          "One way to identify which requests to take action on is to use the Abuse detection Detected traffic or Incident views, which show IP addresses and API keys that are sources of abuse.",
+          "For example, you can create a security action to deny requests from an IP address that has been identified by Abuse Detection as abuse and block them from accessing your APIs."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.267Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security"
+}

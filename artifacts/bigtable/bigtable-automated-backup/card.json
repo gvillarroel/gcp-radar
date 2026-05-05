@@ -1,0 +1,108 @@
+{
+  "feature_name": "Bigtable automated backup",
+  "feature_slug": "bigtable-automated-backup",
+  "summary": "The Bigtable automated backup preview now allows enabling and disabling automated backup from the Google Cloud console; Bigtable now supports creating daily backups by enabling automated backup in preview.",
+  "extended_definition": "The Bigtable automated backup preview now allows enabling and disabling automated backup from the Google Cloud console; Bigtable now supports creating daily backups by enabling automated backup in preview.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/backups",
+      "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+      "https://docs.cloud.google.com/bigtable/docs/managing-tables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage tables \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/managing-tables",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Examples: 48h or 6d To let Bigtable create a daily backup of your table and retain each backup for the default retention period of seven days, use the --enable-automated-backup flag when you create your table. gcloud bigtable instances tables create TABLE ID \\ --instance = INSTANCE ID \\ --project = PROJECT ID \\ --column-families = COLUMN-FAMILIES \\ --enable-automated-backup To configure a different retention period, use the --automated-backup-retention-period flag instead of the --enable-automated-backup flag and provide a value up to 90 days, expressed as a number with a unit of m , h , or d (minutes, hours, or days), such as 15d for 15 days.",
+          "If you have enabled automated backup while creating a table, then you can modify automated backup configuration for a table to enable or disable automated backup, or change the retention period to up to 90 days from the backup creation time.",
+          "Enabling a change stream on an existing table Disabling a change stream Update the retention period for a change stream Delete a table Deleting a table also deletes all authorized views of the table."
+        ]
+      },
+      {
+        "title": "Manage backups \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For more information about enabling automated backup when creating a table, see Create a table .",
+          "Optional: To enable automated backup for a table and set a retention period that is different from the default of seven days, use the --automated-backup-retention-period flag instead of the --enable-automated-backup flag: gcloud bigtable tables update TABLE ID \\ --instance= INSTANCE ID \\ --automated-backup-retention-period= RETENTION PERIOD Replace RETENTION PERIOD with a value of at least 3 days and up to 90 days, expressed as a number with a unit of m , h , or d (minutes, hours, or days), such as 15d for 15 days.",
+          "The output looks similar to the following: automatedBackupPolicy : retentionPeriod : 3 d frequency : 24 h columnFamilies : my - family : {} createTime : '2023-02-07T20:10:55.613546Z' granularity : MILLIS name : projects /my-project/instances/my-instance/tables/ my - table updateTime : '2023-02-07T20:10:55.613546Z' Note the following: The automatedBackupPolicy field is absent when automated backup is not enabled for a table."
+        ]
+      },
+      {
+        "title": "Bigtable backups overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/backups",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable replication and automated backup to create daily backups in multiple regions, so that if a table becomes corrupted on one cluster, you have one or more backups that don't share storage on the corrupted cluster.",
+          "Backups of replicated tables that are created as part of automated backup are not exact copies of each other, because backup times can vary from cluster to cluster.",
+          "You can set a custom retention period by passing in the --automated-backup-retention-period flag, which accepts a value from 3 days to 90 days."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigtableadmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables",
+        "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+        "https://docs.cloud.google.com/bigtable/docs/backups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables",
+        "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+        "https://docs.cloud.google.com/bigtable/docs/backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/managing-tables",
+        "https://docs.cloud.google.com/bigtable/docs/managing-backups",
+        "https://docs.cloud.google.com/bigtable/docs/backups"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:06.484Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

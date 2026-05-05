@@ -1,0 +1,141 @@
+{
+  "feature_name": "Centralized Backup and DR management in Google Cloud Console",
+  "feature_slug": "centralized-backup-and-dr-management-in-google-cloud-console",
+  "summary": "Added centralized Backup and DR management in Google Cloud Console with support for Compute Engine VM backups to backup vaults.",
+  "extended_definition": "Added centralized Backup and DR management in Google Cloud Console with support for Compute Engine VM backups to backup vaults.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Back up Compute Engine instances \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "source_id": "site-docs-reference",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use the management console to back up Compute Engine instances : if you have any of the following backup requirements, you can use the management console to back up Compute Engine instances: Cross-region backups Backups of specific disks attached to a virtual machine (VM) Automated protection of Compute Engine VMs based on tags If the Google Cloud console-based backup plans and backup vaults are not in a location that is compatible with the region where your source VMs are running.",
+          "If you must use the appliance management console, see Discover and protect Compute Engine instances from the appliance management console .",
+          "There are two main methods for backing up Compute Engine instances: Use the Google Cloud console to back up Compute Engine instances : in the Google Cloud console, you can back up Compute Engine instances to a backup vault by applying backup plans."
+        ]
+      },
+      {
+        "title": "\"Mount backup images of Compute Engine instances in the appliance management\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Storage Backup and DR Guides Send feedback Mount backup images of Compute Engine instances in the appliance management console Stay organized with collections Save and categorize content based on your preferences.",
+          "Use these instructions to mount a Compute Engine instance backup image to an existing instance: From the Backup and DR Service appliance management console, click App Manager and select Applications from the drop-down menu.",
+          "Use these instructions to mount a Compute Engine instance backup to a new instance: From the Backup and DR Service appliance management console, click App Manager and select Applications from the drop-down menu."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run an on-demand backup job from the appliance management console To run an on-demand capture of a managed application from the Manage Backup Plan page: Click the App Manager tab and select the Applications option from the drop-down list.",
+          "Home Documentation Storage Backup and DR Guides Send feedback Monitor jobs in the appliance management console Stay organized with collections Save and categorize content based on your preferences.",
+          "From the Monitor tab, you can view and manage jobs (cancel active jobs or change the job priority of a queued job) from backup/recovery appliances managed by the appliance management console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.backupPlanAssociations.createForComputeInstance",
+      "backupdr.backupPlanAssociations.deleteForComputeInstance",
+      "backupdr.backupPlanAssociations.fetchForComputeInstance",
+      "backupdr.backupPlanAssociations.getForComputeInstance",
+      "backupdr.backupPlanAssociations.list",
+      "backupdr.backupPlanAssociations.triggerBackupForComputeInstance",
+      "backupdr.backupPlans.create",
+      "backupdr.backupPlans.delete",
+      "backupdr.backupPlans.get",
+      "backupdr.backupPlans.list",
+      "backupdr.backupPlans.useForComputeInstance",
+      "backupdr.backupVaults.create",
+      "backupdr.backupVaults.delete",
+      "backupdr.backupVaults.get",
+      "backupdr.backupVaults.list",
+      "backupdr.backupVaults.update",
+      "backupdr.bvbackups.delete",
+      "backupdr.bvbackups.get",
+      "backupdr.bvbackups.list",
+      "backupdr.bvbackups.restore",
+      "backupdr.bvdataSources.get",
+      "backupdr.computeEngineOperator",
+      "backupdr.operations.get",
+      "backupdr.operations.list"
+    ],
+    "missing_inventory_roles": [
+      "roles/backupdr.computeEngineOperator"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/cloud-console/compute/compute-instance-backup",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/access-data/mount-snapshot-images-of-cloud-instances",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

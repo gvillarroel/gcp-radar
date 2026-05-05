@@ -1,0 +1,118 @@
+{
+  "feature_name": "Context sources in chat",
+  "feature_slug": "context-sources-in-chat",
+  "summary": "Displays which file was included in the user's chat request.",
+  "extended_definition": "Displays which file was included in the user's chat request.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "",
+        "evidence_snippets": [
+          "Revert to a checkpoint in chat After applying the changes that Gemini Code Assist generates based on your prompt, you can choose to revert the modified code file(s) to a certain checkpoint, which reverts all of the applied changes to the code file(s).",
+          "To manage the files and folders in your Context Drawer, perform the following tasks: VS Code Note: Chats created with Gemini Code Assist for VS Code, prior to version 2.34.0 , won't retain and display the saved context in the Context Drawer.",
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "Once Gemini Code Assist finishes generating suggested code, you can click Accept , which applies the suggested code to your file, or you can click Decline , which leaves your original code unchanged."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "Exclude files from local context If files are specified in a .aiexclude or .gitignore file, Gemini Code Assist by default excludes them from local use in the context for code completion, code generation, code transformation, and chat.",
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "Once Gemini Code Assist finishes generating suggested code, you can click Accept , which applies the suggested code to your file, or you can click Decline , which leaves your original code unchanged."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root",
+        "final_score": 200,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode.",
+          "The following example Gemini settings JSON file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in VS Code. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Open the command palette and select Developer: Reload Window .",
+          "VS Code You can use the following built-in Gemini CLI commands in agent mode: /tools : Displays a list of tools that are available in your agent mode session. /mcp : Lists configured Model Context Protocol (MCP) servers, their connection status, server details, and available tools. /deploy : Deploys a web application to Cloud Run."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bindings.mcp.cloudflare.com",
+      "instance.com",
+      "mcp.json",
+      "observability.mcp.cloudflare.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.757Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise"
+}

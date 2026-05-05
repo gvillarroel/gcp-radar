@@ -1,0 +1,98 @@
+{
+  "feature_name": "Easytrieve file detection",
+  "feature_slug": "easytrieve-file-detection",
+  "summary": "Improves detection of Easytrieve files.",
+  "extended_definition": "Improves detection of Easytrieve files.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+      "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and update assessments \\_|\\_ Mainframe Assessment Tool \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "source_id": "site-docs-reference",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "If available, provide the source code of the following types: COBOL programs ( cob and cbl ) COBOL copybooks ( inc and cpy ) Easytrieve programs ( ezt ) HLASM programs ( asm ) JCL jobs ( jcl ) JCL procedures ( proc ) JCL includes JCL card data ( ctl ) PL/I programs ( pli and pl1 ) RPG/RPGLE programs ( rpg and rpgle ) RPG/RPGLE include files ( rpginc and rpgleinc ) Scheduler configurations for BMC Control-M Don't include binaries and other non-source files in the zip file.",
+          "Before you begin To prepare for your assessment, make sure that you have completed the following prerequisites: Configure your Google Cloud project for Mainframe Assessment Tool Set up and access Mainframe Assessment Tool Upload your mainframe application files to Mainframe Assessment Tool To upload the application files to Mainframe Assessment Tool, follow these steps: Create a zip file containing all the applications that you want to migrate.",
+          "If your application zip file is larger than 400 MB, then consider splitting the file into smaller zip files based on business domains and upload a zip file for each domain."
+        ]
+      },
+      {
+        "title": "\"View and understand assessment results \\_|\\_ Mainframe Assessment Tool \\_\\",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "source_id": "site-docs-reference",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table lists different report types and their description: Report type Description Details Inventory Provides details about the number of files, code lines, and program types, including scheduler configuration files (BMC Control-M).",
+          "Missing from file: the specific source file that contains a reference to a module or component that couldn't be found within the uploaded assessment files.",
+          "This page describes how to review the assessment of the discovered assets, and analyze the application source files using generative AI."
+        ]
+      },
+      {
+        "title": "Mainframe Assessment Tool overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 45,
+        "relevance": "",
+        "evidence_snippets": [
+          "Languages Mainframe Assessment Tool supports the analysis of the following languages: COBOL programs and copybooks JCL jobs, procedures, includes, and card data HLASM programs PL/I programs ( Preview ) RPG/RPGLE programs and include files Easytrieve programs Natural for z/OS ( Preview ) Fortran ( Preview ) Database schemas Mainframe Assessment Tool supports the following database schemas: DB2: through Embedded SQL IMS DB: through EXEC DLI and CBLTDLI calls Transaction monitors Mainframe Assessment Tool supports the following transaction monitors: CICS: through EXEC CICS statements IMS DC: through CBLTDLI calls Scheduler configurations Mainframe Assessment Tool supports the following scheduler configurations: BMC Control-M Mainframe migration journey The following diagram illustrates the overall migration journey of mainframe applications: The migration journey has the following phases: Discover and assess your existing codebase: Mainframe Assessment Tool helps you perform an assessment of the mainframe application footprint, technology stack, and dependencies.",
+          "After you upload a zip file that contains code for one or more mainframe applications, Mainframe Assessment Tool scans the application code and provides you with an assessment.",
+          "Data collection security and privacy Mainframe Assessment Tool only collects information extracted from the zip file that you provide."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/perform-assessment",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/review-results",
+        "https://docs.cloud.google.com/mainframe-assessment-tool/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.011Z",
+  "source_step08_card": "data/step-08/current/products/mainframe-assessment-tool/card.json",
+  "product_name": "Mainframe Assessment Tool",
+  "product_slug": "mainframe-assessment-tool"
+}

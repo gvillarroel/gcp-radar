@@ -1,0 +1,49 @@
+# Zonal image family reference
+
+Product: Compute Engine
+Feature slug: `zonal-image-family-reference`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Compute Engine can reference the latest public image in an image family for a specific zone to improve zonal fault tolerance.
+
+## Lifecycle
+
+- Latest feature date: 2021-08-31
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- allow (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- audit (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- auth (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- certificate (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- confidential (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- constraint (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- credential (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- encrypt (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- firewall (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- iam (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- identity (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- key (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- kms (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- logging (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- permission (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- policy (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- private (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- role (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+- security (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1), [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1))
+
+## Official Evidence
+
+- [https://developers.google.com/compute/docs/reference/rest/v1](https://developers.google.com/compute/docs/reference/rest/v1)
+- [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines)
+- [https://docs.cloud.google.com/compute/docs/reference/rest/v1](https://docs.cloud.google.com/compute/docs/reference/rest/v1)

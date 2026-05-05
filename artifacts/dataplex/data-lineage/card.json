@@ -1,0 +1,155 @@
+{
+  "feature_name": "Data lineage",
+  "feature_slug": "data-lineage",
+  "summary": "Data lineage tracks how data moves through systems, including its sources, destinations, and transformations; Data lineage tracks how data moves through systems, including its sources, destinations, and transformations.",
+  "extended_definition": "Data lineage tracks how data moves through systems, including its sources, destinations, and transformations; Data lineage tracks how data moves through systems, including its sources, destinations, and transformations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+      "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+      "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+      "https://docs.cloud.google.com/dataplex/docs/use-lineage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use data lineage with Google Cloud systems \\_|\\_ Knowledge Catalog \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about controlling lineage ingestion including how the configuration is applied hierarchically, see Control lineage ingestion .",
+          "The default Graph view opens, showing table-level lineage across systems and regions.",
+          "The default Graph view opens, showing table-level lineage across systems and regions."
+        ]
+      },
+      {
+        "title": "About data lineage \\_|\\_ Knowledge Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, if you delete a BigQuery table, you can still view its lineage through the API and the console for up to 30 days.",
+          "Learn how to use data lineage with Google Cloud systems .",
+          "Other services Data lineage supports integration with the following Google Cloud services: Cloud Composer Cloud Data Fusion Dataflow Managed Service for Apache Spark for Apache Spark Managed Service for Apache Spark for Apache Hive Managed Service for Apache Spark Managed Service for Apache Spark Looker (Google Cloud core) ( Preview ) Vertex AI Vertex AI Feature Store Data lineage for custom data sources You can use the Data Lineage API to manually record lineage information for any data source that integrated systems don't support."
+        ]
+      },
+      {
+        "title": "\"Track data lineage for a BigQuery table \\_|\\_ Knowledge Catalog \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Data lineage is the process of tracking where data comes from, how it's transformed, and where it moves over time.",
+          "This quickstart shows you how to get started with data lineage for BigQuery tables: Copy two tables from a publicly available new york taxi trips dataset.",
+          "The details pane shows Dataset info , including information such as Dataset ID , Data location , and Last modified date."
+        ]
+      },
+      {
+        "title": "\"Manage data lineage resources using custom constraints \\_|\\_ Knowledge Catalog\\",
+        "url": "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test the custom organization policy This section describes how to test an organization policy constraint that restricts users from creating a data lineage process with a name that contains the text invalid name .",
+          "A custom constraint can only contain letters (including upper and lowercase) or numbers, for example, custom.denyLineageProcess .",
+          "A custom constraint can only contain letters (including upper and lowercase) or numbers, for example custom.denyLineageProcess ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "custom.denyLineageProcess",
+      "resource.displayName",
+      "resource.name",
+      "resource.origin.name",
+      "resource.origin.sourceType"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataplex/docs/use-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/about-data-lineage",
+        "https://docs.cloud.google.com/dataplex/docs/track-lineage-quickstart",
+        "https://docs.cloud.google.com/dataplex/docs/lineage-custom-constraints"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.306Z",
+  "source_step08_card": "data/step-08/current/products/dataplex/card.json",
+  "product_name": "Dataplex",
+  "product_slug": "dataplex"
+}

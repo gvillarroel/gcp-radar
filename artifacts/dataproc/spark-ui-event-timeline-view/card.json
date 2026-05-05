@@ -1,0 +1,175 @@
+{
+  "feature_name": "Spark UI Event Timeline view",
+  "feature_slug": "spark-ui-event-timeline-view",
+  "summary": "The Spark UI for Dataproc Serverless batches and interactive sessions includes an Event Timeline view for troubleshooting.",
+  "extended_definition": "The Spark UI for Dataproc Serverless batches and interactive sessions includes an Event Timeline view for troubleshooting.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+      "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+      "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using Spark data lineage \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "source_id": "site-iam-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Disable Spark data lineage on a job If Spark data lineage is enabled on a cluster, you can disable Spark data lineage on a job by passing the spark.extraListeners property with an empty value (\"\") when you submit the job. gcloud dataproc jobs submit spark \\ --cluster = CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --class CLASS \\ --jars = gs:// APPLICATION BUCKET /spark-application.jar \\ --properties = spark.extraListeners = '' Submit a Spark job When you submit a supported Spark job on a Managed Service for Apache Spark cluster that was created with Spark data lineage enabled, Managed Service for Apache Spark captures and reports the data lineage information to the Data Lineage API. gcloud dataproc jobs submit spark \\ --cluster = CLUSTER NAME \\ --project PROJECT ID \\ --region REGION \\ --class CLASS \\ --jars = gs:// APPLICATION BUCKET /spark-application.jar \\ --properties = spark.openlineage.namespace = CUSTOM NAMESPACE ,spark.openlineage.appName = CUSTOM APPNAME Notes: Adding the spark.openlineage.namespace and spark.openlineage.appName properties, which are used to uniquely identify the job, is optional.",
+          "It uses a Cloud Storage bucket for temporary storage. #!/usr/bin/env python from pyspark.sql import SparkSession import sys spark = SparkSession \\ . builder \\ . appName ( 'LINEAGE BQ TO BQ' ) \\ . getOrCreate () bucket = 'gs:// BUCKET ` spark . conf . set ( 'temporaryCloudStorageBucket' , bucket ) source = 'bigquery-public-data:samples.shakespeare' words = spark . read . format ( 'bigquery' ) \\ . option ( 'table' , source ) \\ . load () words . createOrReplaceTempView ( 'words' ) word count = spark . sql ( 'SELECT word, SUM(word count) AS word count FROM words GROUP BY word' ) destination table = ' PROJECT ID : DATASET ."
+        ]
+      },
+      {
+        "title": "\"View cluster diagnostic data \\_|\\_ Managed Service for Apache Spark \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Daemons and services information Command executed Location in archive yarn node -list -all /system/yarn-nodes.log hdfs dfsadmin -report -live -decommissioning /system/hdfs-nodes.log hdfs dfs -du -h /system/hdfs-du.log service --status-all /system/service.log systemctl --type service /system/systemd-services.log curl \"http://${HOSTNAME}:8088/jmx\" /metrics/resource manager jmx curl \"http://${HOSTNAME}:8088/ws/v1/cluster/apps\" /metrics/yarn app info curl \"http://${HOSTNAME}:8088/ws/v1/cluster/nodes\" /metrics/yarn node info curl \"http://${HOSTNAME}:9870/jmx\" /metrics/namenode jmx JVM information Command executed Location in archive jstack -l \"${DATAPROC AGENT PID}\" jstack/agent ${DATAPROC AGENT PID}.jstack jstack -l \"${PRESTO PID}\" jstack/agent ${PRESTO PID}.jstack jstack -l \"${JOB DRIVER PID}\" jstack/driver ${JOB DRIVER PID}.jstack jinfo \"${DATAPROC AGENT PID}\" jinfo/agent ${DATAPROC AGENT PID}.jstack jinfo \"${PRESTO PID}\" jinfo/agent ${PRESTO PID}.jstack jinfo \"${JOB DRIVER PID}\" jinfo/agent ${JOB DRIVER PID}.jstack Linux system information Command executed Location in archive df -h /system/df.log ps aux /system/ps.log free -m /system/free.log netstat -anp /system/netstat.log sysctl -a /system/sysctl.log uptime /system/uptime.log cat /proc/sys/fs/file-nr /system/fs-file-nr.log ping -c 1 /system/cluster-ping.log Log files Item included Location in archive All logs in /var/log with the following prefixes in their filename: cloud-sql-proxy dataproc druid gcdp google hadoop hdfs hive knox presto spark syslog yarn zookeeper Files are placed in the archive logs folder, and keep their original filenames.",
+          "Item(s) included Location in diagnostics folder Managed Service for Apache Spark properties .../configs/dataproc/dataproc.properties All files in /etc/google-dataproc/ .../configs/dataproc/ All files in /etc/hadoop/conf/ .../configs/hadoop/ All files in /etc/hive/conf/ .../configs/hive/ All files in /etc/hive-hcatalog/conf/ .../configs/hive-hcatalog/ All files in /etc/knox/conf/ .../configs/knox/ All files in /etc/pig/conf/ .../configs/pig/ All files in /etc/presto/conf/ .../configs/presto/ All files in /etc/spark/conf/ .../configs/spark/ All files in /etc/tez/conf/ .../configs/tez/ All files in /etc/zookeeper/conf/ .../configs/zookeeper/ Share checkpoint diagnostic data with support You can enable sharing checkpoint diagnostic data with Google Cloud support in the following ways: Enable sharing at cluster creation : Add the following optional cluster property when you create a cluster : dataproc:diagnostic.capture.access=GOOGLE DATAPROC DIAGNOSE This property automatically shares collected checkpoint diagnostic data with Google Cloud support so that you don't have to manually share after cluster creation each time."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud Storage connector with Apache Spark \\_|\\_ Managed Service\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "Java gcloud dataproc jobs submit spark \\ --cluster=${CLUSTER} \\ --class=dataproc.codelab.WordCount \\ --jars=gs://${BUCKET NAME}/java/word-count-1.0.jar \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Scala gcloud dataproc jobs submit spark \\ --cluster=${CLUSTER} \\ --class=dataproc.codelab.WordCount \\ --jars=gs://${BUCKET NAME}/scala/word-count 2.11-1.0.jar \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ Python gcloud dataproc jobs submit pyspark word-count.py \\ --cluster=${CLUSTER} \\ --region=${REGION} \\ -- gs://${BUCKET NAME}/input/ gs://${BUCKET NAME}/output/ View the output After the job finishes, run the following gcloud CLI command to view the wordcount output. gcloud storage cat gs://${BUCKET NAME}/output/ The wordcount output should be similar to the following: (a,2) (call,1) (What's,1) (sweet.,1) (we,1) (as,1) (name?,1) (any,1) (other,1) (rose,1) (smell,1) (name,1) (would,1) (in,1) (which,1) (That,1) (By,1) Clean up After you finish the tutorial, you can clean up the resources that you created so that they stop using quota and incurring charges.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment).",
+          "Create a set of directories with the path src/main/java/dataproc/codelab : mkdir -p src/main/java/dataproc/codelab Copy WordCount.java to your local machine into src/main/java/dataproc/codelab : cp WordCount.java src/main/java/dataproc/codelab WordCount.java is a Spark job in Java that reads text files from Cloud Storage, performs a word count, then writes the text file results to Cloud Storage. package dataproc.codelab ; import java.util.Arrays ; import org.apache.spark.SparkConf ; import org.apache.spark.api.java.JavaPairRDD ; import org.apache.spark.api.java.JavaRDD ; import org.apache.spark.api.java.JavaSparkContext ; import scala.Tuple2 ; public class WordCount { public static void main ( String [] args ) { if ( args . length != 2 ) { throw new IllegalArgumentException ( \"Exactly 2 arguments are required: <inputUri> <outputUri>\" ); } String inputPath = args [ 0 ] ; String outputPath = args [ 1 ] ; JavaSparkContext sparkContext = new JavaSparkContext ( new SparkConf (). setAppName ( \"Word Count\" )); JavaRDD<String> lines = sparkContext . textFile ( inputPath ); JavaRDD<String> words = lines . flatMap ( ( String line ) - > Arrays . asList ( line . split ( \" \" )). iterator () ); JavaPairRDD<String , Integer > wordCounts = words . mapToPair ( ( String word ) - > new Tuple2 <> ( word , 1 ) ). reduceByKey ( ( Integer count1 , Integer count2 ) - > count1 + count2 ); wordCounts . saveAsTextFile ( outputPath ); } } Build the package. mvn clean package If the build is successful, a target/word-count-1.0.jar is created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.jar",
+      "count.py",
+      "datalineage.admin",
+      "datalineage.editor",
+      "datalineage.producer",
+      "dataproc.codelab",
+      "dataproc.codelab.WordCount",
+      "dataproc.iam.gserviceaccount.com",
+      "dataproc.properties",
+      "dataproc.worker",
+      "df.log",
+      "diagnostic.capture.access",
+      "diagnostic.capture.enabled",
+      "du.log",
+      "free.log",
+      "java.util.Arrays",
+      "major.minor",
+      "maven.apache.org",
+      "netstat.log",
+      "nodes.log",
+      "nr.log",
+      "org.apache.spark.api.java.JavaPairRDD",
+      "org.apache.spark.api.java.JavaRDD",
+      "org.apache.spark.api.java.JavaSparkContext",
+      "org.apache.spark.SparkConf",
+      "ping.log",
+      "ps.log",
+      "pyspark.sql",
+      "samples.shakespeare",
+      "scala.Tuple2",
+      "service.log",
+      "services.log",
+      "spark.extraListeners",
+      "spark.openlineage.appName",
+      "spark.openlineage.namespace",
+      "storage.objectViewer",
+      "sysctl.log",
+      "uptime.log"
+    ],
+    "missing_inventory_roles": [
+      "roles/datalineage.admin",
+      "roles/datalineage.editor",
+      "roles/datalineage.producer",
+      "roles/dataproc.worker",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/spark-lineage",
+        "https://docs.cloud.google.com/dataproc/docs/support/diagnose-command",
+        "https://docs.cloud.google.com/dataproc/docs/tutorials/gcs-connector-spark-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

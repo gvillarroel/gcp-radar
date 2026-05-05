@@ -1,0 +1,181 @@
+{
+  "feature_name": "Siemplify Create Gemini Case",
+  "feature_slug": "siemplify-create-gemini-case",
+  "summary": "Adds an action to create a Gemini case in Siemplify.",
+  "extended_definition": "Adds an action to create a Gemini case in Siemplify.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Anomali ThreatStream with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"campaign\" : [ { \"name\" : \"Example 1\" , \"id\" : 1 }, { \"name\" : \"Example 2\" , \"id\" : 2 } ], \"actor\" : [ { \"name\" : \"Actor 1\" , \"id\" : 1 }, { \"name\" : \"Actor 2\" , \"id\" : 2 } ], \"attackpattern\" : [ { \"name\" : \"Pattern 1\" , \"id\" : 1 }, { \"name\" : \"Pattern 2\" , \"id\" : 2 } ], \"courseofaction\" : [ { \"name\" : \"Course of Action 1\" , \"id\" : 1 }, { \"name\" : \"Course Of Action 2\" , \"id\" : 2 } ], \"identity\" : [ { \"name\" : \"Identity 1\" , \"id\" : 1 }, { \"name\" : \"Identity 2\" , \"id\" : 2 } ], \"incident\" : [ { \"name\" : \"Incident 1\" , \"id\" : 1 }, { \"name\" : \"Incident 2\" , \"id\" : 2 } ], \"infrastructure\" : [ { \"name\" : \"Infrustructure 1\" , \"id\" : 1 }, { \"name\" : \"Infrustructure 2\" , \"id\" : 2 } ], \"intrusionset\" : [ { \"name\" : \"Intrusion set 1\" , \"id\" : 1 }, { \"name\" : \"Intrusion set 2\" , \"id\" : 2 } ], \"malware\" : [ { \"name\" : \"Malware 1\" , \"id\" : 1 }, { \"name\" : \"Malware 2\" , \"id\" : 2 } ], \"signature\" : [ { \"name\" : \"Signature 1\" , \"id\" : 1 }, { \"name\" : \"Signature 2\" , \"id\" : 2 } ], \"tool\" : [ { \"name\" : \"Tool 1\" , \"id\" : 1 }, { \"name\" : \"Tool 2\" , \"id\" : 2 } ], \"ttp\" : [ { \"name\" : \"TTP 1\" , \"id\" : 1 }, { \"name\" : \"TTP 2\" , \"id\" : 2 } ], \"vulnerability\" : [ { \"name\" : \"Vulnerability 1\" , \"id\" : 1 }, { \"name\" : \"Vulnerability 2\" , \"id\" : 2 } ], } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one association across entities is found (is success=true): \"Successfully retrieved related associations from Anomali ThreatStream\" If no associations are found (is success=false) : \"No related associations were found.\" Async Message: \"Waiting for all of the association details to be retrieved\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Get Related Association\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Entity enrichment Enrichment field name Logic - When to apply id When available in JSON status When available in JSON itype When available in JSON expiration time When available in JSON ip When available in JSON feed id When available in JSON confidence When available in JSON uuid When available in JSON retina confidence When available in JSON trusted circle ids When available in JSON source When available in JSON latitude When available in JSON type When available in JSON description When available in JSON tags When available in JSON threat score When available in JSON source confidence When available in JSON modification time When available in JSON org name When available in JSON asn When available in JSON creation time When available in JSON tlp When available in JSON country When available in JSON longitude When available in JSON severity When available in JSON subtype When available in JSON report When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one of the provided entities is enriched (is success=true): \"Successfully enriched the following entities using Anomali ThreatStream: \\n {0}\".format(entity.identifier list) If failed to enrich specific entities (is success=true): \"Action was not able to enrich the following entities using Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If failed to enrich all entities (is success=false): \"No entities were enriched.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Enrich Entities\".",
+          "Run on This action runs on the following entities: Hash IP Address URL Email Action results Script result Script result name Value options Example is success True or False is success:False Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one tag is removed from one entity (is success=true): \"Successfully removed the following tags from the \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If one tag is not found for one entity (is success=true): \"The following tags were already not a part of \"{entity.identifier}\" entity in Anomali ThreatStream:\\n{0}\".format(tags) If all tags are not found for one entity (is success=true): \"None of the provided tags were part of \"{entity.identifier}\" entity in Anomali ThreatStream.\" If one entity is not found (is success=true): \"The following entities were not found in Anomali ThreatStream\\n: {0}\".format([entity.identifier]) If all entities are not found (is success=false): \"None of the provided entities were found.\" The action should fail and stop a playbook execution: If a fatal error, like wrong credentials, no connection to server, other is reported: \"Error executing action \"Remove Tags From Entities\"."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { \"PolicyName\" : \"S3-read-only-bucket\" , \"PolicyId\" : \"ANPAYPE7MW7AFKUDK3HD7\" , \"Arn\" : \"arn:aws:iam::582302349248:policy/S3-read-only-bucket\" , \"Path\" : \"/\" , \"DefaultVersionId\" : \"v1\" , \"AttachmentCount\" : 0 , \"PermissionsBoundaryUsageCount\" : 0 , \"IsAttachable\" : true , \"CreateDate\" : \"2020-12-6T17:16:45\" , \"UpdateDate\" : \"2020-12-6T17:16:45\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"<Policy name> policy was successfully created\" The action should fail and stop a playbook execution: If error - Policy already exists: Print \"Could not create <policy name> policy.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:group/ZivGroup\" , \"CreateDate\" : \"2020-12-05 16:18:36+00:00\" , \"Path\" : \"/\" , \"GroupId\" : \"AGPAYPE7MW7AMKCWMJPMX\" , \"GroupName\" : \"ZivGroup\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available groups in AWS IAM\" If no data available: Print \"No Groups found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, If 'Max Groups'> 1000): print \"Error executing action 'List Groups'.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:user/ziv\" , \"CreateDate\" : \"2020-12-03T12:12:20\" , \"Path\" : \"/\" , \"UserId\" : \"AIDAYPE7MW7AFMHK4WCHS\" , \"UserName\" : \"ziv\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available users in AWS IAM\" If no data available: Print \"No users found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, if max>10000): print \"Error executing action 'List Users'."
+        ]
+      },
+      {
+        "title": "\"Integrate AlgoSec with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"id\" : 10 , \"fields\" : [ { \"name\" : \"Owner\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Creator\" , \"values\" : [ \"admin<user@siemplify.co>\" ] }, { \"name\" : \"Due\" , \"values\" : [ \"2021-08-31 00:00:00\" ] }, { \"name\" : \"LastUpdated\" , \"values\" : [ \"2021-08-13 12:31:23\" ] }, { \"name\" : \"Requestor\" , \"values\" : [ \"admin@example.com>\" ] } ], \"originalTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"all\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"ALL\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ], \"plannedTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"0.0.0.0-255.255.255.255\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/ \" }, { \"value\" : \"udp/ \" }, { \"value\" : \"ospf\" }, { \"value\" : \"icmp/ \" }, { \"value\" : \"gre\" }, { \"value\" : \"ipsec 50\" }, { \"value\" : \"ipsec 51\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ] } } Option 2 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"changeRequestId\" : 37 , \"redirectUrl\" : \"https://192.0.2.120/FireFlow/Ticket/Display.html?id=37\" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported and if for second request the 404 status code is reported (is success=true): \"Successfully created a traffic change request to allow traffic to the provided entities in AlgoSec.\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"id\" : 10 , \"fields\" : [ { \"name\" : \"Owner\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Creator\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Due\" , \"values\" : [ \"2021-08-31 00:00:00\" ] }, { \"name\" : \"LastUpdated\" , \"values\" : [ \"2021-08-13 12:31:23\" ] }, { \"name\" : \"Requestor\" , \"values\" : [ \"admin@example.com>\" ] } ], \"originalTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"all\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"ALL\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ], \"plannedTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"0.0.0.0-255.255.255.255\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/ \" }, { \"value\" : \"udp/ \" }, { \"value\" : \"ospf\" }, { \"value\" : \"icmp/ \" }, { \"value\" : \"gre\" }, { \"value\" : \"ipsec 50\" }, { \"value\" : \"ipsec 51\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Block\" } ] } } Option 2 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"changeRequestId\" : 37 , \"redirectUrl\" : \"https://192.0.2.120/FireFlow/Ticket/Display.html?id=37\" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported even if for second request the 404 status code is reported (is success=true): \"Successfully created a traffic change request to block traffic to the provided entities in AlgoSec.\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result [ { \"id\" : 142 , \"name\" : \"110: Multi-Approval Request\" , \"description\" : \"Create a traffic change request which requires multiple approvals\" , \"type\" : \"Traffic Change\" , \"enabled\" : true }, { \"id\" : 597 , \"name\" : \"190: Verbatim Rule Addition\" , \"description\" : \"Create a traffic change request for bulk rules addition exactly as specified\" , \"type\" : \"Traffic Change\" , \"enabled\" : true }, { \"id\" : 550 , \"name\" : \"Basic Change Traffic Request\" , \"description\" : \"Create a basic change traffic request\" , \"type\" : \"Traffic Change\" , \"enabled\" : true } ] Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If found results (is success=true): \"Successfully found templates for the provided criteria in AlgoSec."
+        ]
+      },
+      {
+        "title": "\"Integrate AWS WAF with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf",
+        "source_id": "site-docs-root",
+        "final_score": 167,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options Example is success True/False is success:False JSON Result { \"Regional\" : \"Web Acl name\" \"Cloudfront\" : \"Web Acl name\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed available IP Sets(is success = true) and \"Scope\" == \"Both\": \"Successfully created Web ACL {0} in Regional and CloudFront scopes.\".format(name) If successfully listed available IP Sets(is success = true) and \"Scope\" == \"Regional\": \"Successfully created Web ACL {0} in Regional.\".format(name) If successfully listed available IP Sets(is success = true) and \"Scope\" == \"Cloudfront\": \"Successfully created Web ACL {0} in Cloudfront scope.\".format(name) If the Web ACL exists: Print \"The Web ACL {} already exists in {} scope.\".format(web ACL name, scope).",
+          "Run On This action runs on the following entities: IP Address URL Action Results Script Result Script Result Name Value Options Example is success True/False is success:False JSON Result { \"Regional\" : \"Regex set\" \"Cloudfront\" : \"Regex set\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful and at least one of the provided entities were used to create an regular expression set (is success = true): \"Successfully created {0} Regex Pattern Set '{1}' in AWS WAF with the following entities: \\n {2}\".format(\"Regional\"/\"Cloudfront\", name, entity.identifier list) If more than 10 entities are going to be used to create a regular expression pattern set: \"Action wasn't able to create regular expression pattern sets with all of the provided entities, because the limit is exceeded.",
+          "Action Results Script Result Script Result Name Value Options Example is success True/False is success:False JSON Result { \"Regional\" : [ \"IPv4 set\" , \"IPv6 set\" ] \"Cloudfront\" : [ \"IPv4 set\" , \"IPv6 set\" ] } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successful and at least one of the provided entities were used to create an IP set (is success = true): \"Successfully created {0} {1} IP Set '{2}' in AWS WAF with the following IPs: \\n {3}\".format(\"Regional\"/\"Cloudfront\", \"IPv4\"/\"IPv6\", full name, entity.identifier list) If fail to use specific entities(is success = true): \"Action was not able to use the following IPs in order to create AWS WAF IP Set\\n: {0}\".format([entity.identifier]) If fail to use all entities (is success = false): \"No IP Sets were created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "entity.identifier",
+      "example.com",
+      "siemplify.co",
+      "y.ide"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/anomali-threatstream",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-waf"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.044Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace"
+}

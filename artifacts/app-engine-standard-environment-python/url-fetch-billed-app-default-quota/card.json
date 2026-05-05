@@ -1,0 +1,110 @@
+{
+  "feature_name": "URL Fetch billed app default quota",
+  "feature_slug": "url-fetch-billed-app-default-quota",
+  "summary": "App Engine increases the default URL Fetch quota for billed applications.",
+  "extended_definition": "App Engine increases the default URL Fetch quota for billed applications.",
+  "lifecycle": {
+    "latest_feature_date": "2016-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following example illustrates how to catch the OverQuotaError , which may be raised by the SendMessage() method if an email-related quota has been exceeded: try: mail.SendMessage ( to = 'test@example.com' , from = 'admin@example.com' , subject = 'Test Email' , body = 'Testing' ) except apiproxy errors.OverQuotaError, message: Log the error. logging.error(message) Display an informative message to the user. self.response.out.write ( 'The email could not be sent. ' 'Please try again later.' ) Is your app exceeding the default limits?",
+          "Resource Default limit Default Cloud Storage Bucket Stored Data First 5 GB free; no maximum Default Cloud Storage Bucket Class A Operations First 20,000 ops/day free; no maximum Default Cloud Storage Bucket Class B Operations First 50,000 ops/day free; no maximum Default Cloud Storage Bucket Network Egress First 1 GB free; no maximum Blobstore The following quotas apply specifically to use of the blobstore.",
+          "Task Queue When a task executes, its associated requests count toward the application request quotas These limits apply to all task queues: Resource Daily limit Maximum rate Task Queue management calls (using the Google Cloud console) 10,000 n/a Resource Default limit Maximum number of queues (includes both push and pull queues but not the default queue) 100 queues."
+        ]
+      },
+      {
+        "title": "\"Access legacy bundled services for Python 3 \\_|\\_ App Engine standard environment\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/python3/services/access",
+        "source_id": "site-docs-reference-3",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "DateTimeProperty ( auto now add = True ) def store visit ( remote addr , user agent ): 'create new Visit entity in Datastore' Visit ( visitor = ' {} : {} ' . format ( remote addr , user agent )) . put () def fetch visits ( limit ): 'get most recent visits' return Visit . query () . order ( - Visit . timestamp ) . fetch ( limit ) @app . route ( '/' ) def root (): 'main application (GET) handler' store visit ( request . remote addr , request . user agent ) visits = fetch visits ( 10 ) return render template ( 'index.html' , visits = visits ) Both of these apps can be found in the open source repo for the Python App Engine migration content (code samples, videos , codelabs ), specifically in the mod0 and mod1b folders, respectively.",
+          "DateTimeProperty ( auto now add = True ) def store visit ( remote addr , user agent ): 'create new Visit entity in Datastore' Visit ( visitor = ' {} : {} ' . format ( remote addr , user agent )) . put () def fetch visits ( limit ): 'get most recent visits' return Visit . query () . order ( - Visit . timestamp ) . fetch ( limit ) class MainHandler ( webapp2 .",
+          "RequestHandler ): 'main application (GET) handler' def get ( self ): store visit ( self . request . remote addr , self . request . user agent ) visits = fetch visits ( 10 ) tmpl = os . path . join ( os . path . dirname ( file ), 'index.html' ) self . response . out . write ( template . render ( tmpl , { 'visits' : visits })) app = webapp2 ."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example error handlers : - file : default error.html - error code : over quota file : over quota.html handlers Optional.",
+          "Python example handlers : - url : /youraccount/. secure : always script : auto To target a specific version of your app using the REGION ID .r.appspot.com domain, you replace the periods that would usually separate the subdomain components of the URL with the string \" -dot- \", for example: https:// VERSION ID -dot-default-dot- PROJECT ID .",
+          "The following values are available depending on your service's scaling : Automatic scaling F1 , F2 , F4 , F4 1G Default: F1 Optionally use the automatic scaling element to change default settings for automatic scaling, such as minimum and maximum number of instances, latency, and concurrent connections."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "error.html",
+      "errors.OverQuotaError",
+      "example.com",
+      "index.html",
+      "logging.error",
+      "mail.SendMessage",
+      "quota.html",
+      "r.appspot.com",
+      "self.response.out.write",
+      "six.moves.cPickle"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+        "https://cloud.google.com/appengine/docs/standard/python3/services/access"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://docs.cloud.google.com/appengine/docs/standard/python3/config/appref",
+        "https://cloud.google.com/appengine/docs/standard/python3/services/access"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.208Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python"
+}

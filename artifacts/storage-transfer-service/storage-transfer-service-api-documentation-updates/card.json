@@ -1,0 +1,154 @@
+{
+  "feature_name": "Storage Transfer Service API documentation updates",
+  "feature_slug": "storage-transfer-service-api-documentation-updates",
+  "summary": "The Storage Transfer Service API documentation was updated with additional documentation content.",
+  "extended_definition": "The Storage Transfer Service API documentation was updated with additional documentation content.",
+  "lifecycle": {
+    "latest_feature_date": "2015-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+      "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+      "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage transfer agents \\_|\\_ Storage Transfer Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Both flags delete all agents on the machine; the --uninstall flag additionally uninstalls the agent Docker image. gcloud transfer agents delete --all gcloud transfer agents delete --uninstall File system transfer details Incremental transfers Storage Transfer Service begins all transfers by computing the data present at the source and destination to determine which source files are new, updated, or deleted since the last transfer.",
+          "Home Documentation Storage Storage Transfer Service Send feedback Manage transfer agents Stay organized with collections Save and categorize content based on your preferences.",
+          "If your transfer is from AWS S3 or S3-compatible storage, pass your access key ID and secret key using environment variables: sudo docker run --ulimit memlock=64000000 -d --rm \\ -v HOST DIRECTORY : CONTAINER DIRECTORY \\ -v PATH/TO/KEY.JSON :/etc/gcloud/key.json:ro \\ -e AWS ACCESS KEY ID= AWS ACCESS KEY ID \\ -e AWS SECRET ACCESS KEY= AWS SECRET ACCESS KEY \\ gcr.io/cloud-ingest/tsop-agent:latest \\ --project-id= PROJECT ID \\ --creds-file=/etc/gcloud/key.json \\ --hostname=$(hostname) \\ --agent-pool= POOL NAME --gcs-api-endpoint=storage."
+        ]
+      },
+      {
+        "title": "\"Transfer between Cloud Storage buckets \\_|\\_ Storage Transfer Service \\_\\",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "source_id": "site-docs-root",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Storage Storage Transfer Service Send feedback Transfer between Cloud Storage buckets Stay organized with collections Save and categorize content based on your preferences.",
+          "To do so, use gcloud storage buckets add-iam-policy-binding : gcloud storage buckets add-iam-policy-binding gs:// bucket name \\ --member=serviceAccount: project-12345678 @storage-transfer-service.iam.gserviceaccount.com \\ --role=roles/storage.admin For instructions using the Google Cloud console or API, refer to Use IAM permissions in the Cloud Storage documentation.",
+          "The object's updated time is reset upon transfer, so the object's time spent in its storage class is also reset."
+        ]
+      },
+      {
+        "title": "Storage Transfer Service client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage-transfer/docs/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 98,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . def quickstart project id :, gcs source bucket :, gcs sink bucket : Your Google Cloud Project ID project id = \"your-project id\" The name of the source GCS bucket to transfer objects from gcs source bucket = \"your-source-gcs-source-bucket\" The name of the GCS bucket to transfer objects to gcs sink bucket = \"your-sink-gcs-bucket\" require \"google/cloud/storage transfer\" transfer job = { project id : project id , transfer spec : { gcs data source : { bucket name : gcs source bucket }, gcs data sink : { bucket name : gcs sink bucket } }, status : :ENABLED } client = Google :: Cloud :: StorageTransfer . storage transfer service transfer job response = client . create transfer job transfer job : transfer job run request = { project id : project id , job name : transfer job response . name } client . run transfer job run request puts \"Created and ran transfer job between #{ gcs source bucket } and #{ gcs sink bucket } with name #{ transfer job response . name } \" end Using the client library with Cloud Shell Editor Java To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Node.js To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Python To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Additional resources C++ API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow C# API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow Go API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow Java API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow Node.js API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow PHP API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow Python API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow Ruby API Reference Documentation Source Code GitHub Issue Tracker Stack Overflow Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Storage Storage Transfer Service Reference Send feedback Storage Transfer Service client libraries Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see the Storage Transfer Service Node.js API reference documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "key.json",
+      "service.iam.gserviceaccount.com",
+      "storage.admin",
+      "storagetransfer.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage-transfer/docs/managing-on-prem-agents",
+        "https://docs.cloud.google.com/storage-transfer/docs/cloud-storage-to-cloud-storage",
+        "https://docs.cloud.google.com/storage-transfer/docs/libraries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:53.219Z",
+  "source_step08_card": "data/step-08/current/products/storage-transfer-service/card.json",
+  "product_name": "Storage Transfer Service",
+  "product_slug": "storage-transfer-service"
+}

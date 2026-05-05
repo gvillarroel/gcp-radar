@@ -1,0 +1,176 @@
+{
+  "feature_name": "Transfer Appliance Capture Utility metadata preservation by default",
+  "feature_slug": "transfer-appliance-capture-utility-metadata-preservation-by-default",
+  "summary": "The Transfer Appliance Capture Utility now preserves file metadata by default during capture operations.",
+  "extended_definition": "The Transfer Appliance Capture Utility now preserves file metadata by default during capture operations.",
+  "lifecycle": {
+    "latest_feature_date": "2018-06-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+      "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable or disable online transfer \\_|\\_ Transfer Appliance \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Port number : 22 Username : The appliance username provided by the Transfer Appliance Team.",
+          "When prompted, enter the appliance password provided by the Transfer Appliance Team.",
+          "When prompted, enter the appliance password provided by the Transfer Appliance Team."
+        ]
+      },
+      {
+        "title": "Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, with Transfer Appliance, you can receive the appliance and capture 300 terabytes of data in under 25 days.",
+          "Minimal software : For Linux and Apple macOS systems, copy directly to Transfer Appliance by mounting the exposed NFS share on the appliance to your workstation, using common software already installed on the system.",
+          "Transfer Appliance helps ensure that you're connecting a trusted device to your equipment and network, and secures your data from end to end so that it is read by people you trust."
+        ]
+      },
+      {
+        "title": "High-level overview \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before connecting the appliance to your network, validate that it hasn't been tampered with during shipping and submit the Transfer Appliance Attestation Passcode returned by the appliance in the appliance detail page of the Google Cloud console.",
+          "Enter the passcode returned by the ta finalize command in the form included in the email titled Google Transfer Appliance Return Instructions sent by the Transfer Appliance Team.",
+          "The maximum path length is 1024 bytes, which includes the optional object prefix specified when you provide Transfer Appliance Team with bucket configuration details."
+        ]
+      },
+      {
+        "title": "Security and encryption \\_|\\_ Transfer Appliance \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following are details of how we encrypt your data: During transit to Cloud Storage : Your data is encrypted on Transfer Appliance with dm-encrypt and partition-level encryption, with the AES-256 encryption algorithm.",
+          "Appliance media sanitization After uploading your data or receiving the appliance for data export, we sanitize the drive media in the appliance you returned by applying NIST 800-88 standards for purging information.",
+          "If the appliance validation indicates that the appliance was tampered with at any point, we invalidate the entire transfer session and work with you to ship you a replacement appliance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/online-transfer",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/overview",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/procedure-guide",
+        "https://docs.cloud.google.com/transfer-appliance/docs/4.0/security-and-encryption"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:53.904Z",
+  "source_step08_card": "data/step-08/current/products/transfer-appliance/card.json",
+  "product_name": "Transfer Appliance",
+  "product_slug": "transfer-appliance"
+}

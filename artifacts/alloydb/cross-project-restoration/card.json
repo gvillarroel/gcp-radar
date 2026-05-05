@@ -1,0 +1,150 @@
+{
+  "feature_name": "Cross-project restoration",
+  "feature_slug": "cross-project-restoration",
+  "summary": "AlloyDB can restore a cluster to a new cluster in a different Google Cloud project.",
+  "extended_definition": "AlloyDB can restore a cluster to a new cluster in a different Google Cloud project.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Methods create Creates a new Cluster in a given project and location. createsecondary Creates a cluster of type SECONDARY in the given location using the primary cluster as the source. delete Deletes a single Cluster. export Exports data from the cluster. get Gets details of a single Cluster. import Imports data to the cluster. list Lists Clusters in a given project and location. patch Updates the parameters of a single Cluster. promote Promotes a SECONDARY cluster. restore Creates a new Cluster in a given project and location, with a volume restored from the provided source, either a backup ID or a point-in-time and a source cluster. restoreFromCloudSQL Restores an AlloyDB cluster from a CloudSQL resource. switchover Switches the roles of PRIMARY and SECONDARY clusters without any data loss. upgrade Upgrades a single Cluster.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Reference Send feedback REST Resource: projects.locations.clusters Stay organized with collections Save and categorize content based on your preferences.",
+          "This should be the same as the AlloyDB cluster's project. instanceId string Required."
+        ]
+      },
+      {
+        "title": "\"Integrate QueryData with an application \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "source_id": "site-docs-root-2",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Gemini Data Analytics Source and Gemini Data Analytics QueryData Tool. kind : source name : gda-api-source type : cloud-gemini-data-analytics projectId : \" PROJECT ID \" --- kind : tool name : cloud gda query tool type : cloud-gemini-data-analytics-query source : gda-api-source description : Use this tool to send natural language queries to the Gemini Data Analytics API and receive SQL, natural language answers, and explanations. location : \" REGION ID \" context : datasourceReferences : alloydb : databaseReference : projectId : \" PROJECT ID \" region : \" REGION ID \" clusterId : \" CLUSTER ID \" instanceId : \" INSTANCE ID \" databaseId : \" DATABASE ID \" agentContextReference : contextSetId : \" CONTEXT SET ID \" generationOptions : generateQueryResult : true generateNaturalLanguageAnswer : true generateExplanation : true generateDisambiguationQuestion : true Replace the following: PROJECT ID : Your Google Cloud project ID.",
+          "Grant executesql permission to AlloyDB for PostgreSQL instance To grant the executesql permission to the AlloyDB for PostgreSQL instance and set the data api access instance setting to the value ALLOW DATA API , use the following curl command : curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ https://alloydb.googleapis.com/v1alpha/projects/ PROJECT ID /locations/ LOCATION /clusters/ CLUSTER ID /instances/ INSTANCE ID ?updateMask=dataApiAccess \\ -d '{ \"dataApiAccess\": \"ENABLED\", }' Replace the following: PROJECT ID : The ID of your Google Cloud project.",
+          "Enable required services Enable the following services for your project: Data Analytics API with Gemini Gemini for Google Cloud API Knowledge Catalog API Prepare an AlloyDB for PostgreSQL cluster, instance, and database Make sure that you have access to an existing AlloyDB cluster and instance or create a new one ."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "This should be the same as the AlloyDB cluster's project. instanceId string Required.",
+          "Curl Request curl --location 'https://alloydb.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get cluster\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema Message for getting a Cluster GetClusterRequest JSON representation { \"name\" : string , \"view\" : enum ( ClusterView ) } Fields name string Required.",
+          "SecondaryConfig JSON representation { \"primaryClusterName\" : string } Fields primaryClusterName string The name of the primary cluster name with the format: projects/{project}/locations/{region}/clusters/{cluster id} PrimaryConfig JSON representation { \"secondaryClusterNames\" : [ string ] } Fields secondaryClusterNames[] string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.googleapis.com",
+      "projects.locations.clusters",
+      "projects.locations.clusters.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

@@ -1,0 +1,275 @@
+{
+  "feature_name": "Activity Analyzer",
+  "feature_slug": "activity-analyzer",
+  "summary": "Activity Analyzer shows when service accounts and keys were last used to call a Google API.",
+  "extended_definition": "Activity Analyzer shows when service accounts and keys were last used to call a Google API.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+      "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+      "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+      "https://docs.cloud.google.com/iam/docs/service-account-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using service accounts securely \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "source_id": "site-docs-root-2",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Protect against non-repudiation threats Whenever you notice suspicious activity affecting one of your resources on Google Cloud, Cloud Audit Logs are an important source of information to find out when the activity happened and which users were involved.",
+          "Permissions that enable a user to impersonate a service account or attach a service account to a resource include the following: iam.serviceAccounts.getAccessToken iam.serviceAccounts.getOpenIdToken iam.serviceAccounts.actAs iam.serviceAccounts.implicitDelegation iam.serviceAccounts.signBlob iam.serviceAccounts.signJwt iam.serviceAccountKeys.create deploymentmanager.deployments.create cloudbuild.builds.create Roles that contain some of these permissions include (but aren't limited to): Owner ( roles/owner ) Editor ( roles/editor ) Service Account User ( roles/iam.serviceAccountUser ) Service Account Token Creator ( roles/iam.serviceAccountTokenCreator ) Service Account Key Admin ( roles/iam.serviceAccountKeyAdmin ) Service Account Admin ( roles/iam.serviceAccountAdmin ) Workload Identity User ( roles/iam.workloadIdentityUser ) Deployment Manager Editor ( roles/deploymentmanager.editor ) Cloud Build Editor ( roles/cloudbuild.builds.editor ) Before you assign any of these roles to a user, ask yourself: Which resources inside and outside the current Google Cloud project could the user gain access to by impersonating the service account?",
+          "To record all impersonation events, you must also enable data access logs for the following APIs: Identity and Access Management (IAM) API in all Google Cloud projects that contain service accounts Security Token Service API in all Google Cloud projects that contain workload identity pools By enabling these logs, you make sure that an entry is added to the Cloud Audit Logs whenever a user requests an access token or an ID token for a service account."
+        ]
+      },
+      {
+        "title": "\"Example logs for service accounts \\_|\\_ Identity and Access Management (IAM)\\",
+        "url": "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "source_id": "site-docs-root-2",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "In this example, the service account is named my-service-account@my-project.iam.gserviceaccount.com , and the service account key ID is c71e040fb4b71d798ce4baca14e15ab62115aaef : { \"logName\" : \"projects/my-project/logs/cloudaudit.googleapis.com%2Factivity\" , \"protoPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.audit.AuditLog\" , \"authenticationInfo\" : { \"principalEmail\" : \"my-service-account@my-project.iam.gserviceaccount.com\" , \"serviceAccountKeyName\" : \"//iam.googleapis.com/projects/my-project/serviceAccounts/my-service-account@my-project.iam.gserviceaccount.com/keys/c71e040fb4b71d798ce4baca14e15ab62115aaef\" }, \"methodName\" : \"google.cloud.redis.v1.CloudRedis.CreateInstance\" , \"request\" : { \"@type\" : \"type.googleapis.com/google.cloud.redis.v1.CreateInstanceRequest\" } } } Logs for impersonating a service account to access Google Cloud This section shows the log entries you receive when you create short-lived credentials for a service account, then use the credentials to impersonate the service account and access Google Cloud.",
+          "As a result, the protoPayload.authenticationInfo.principalEmail field is set to example-user@example.com , and the protoPayload.request.serviceAccounts[0].email field is set to my-service-account@my-project.iam.gserviceaccount.com : { \"logName\" : \"projects/my-project/logs/cloudaudit.googleapis.com%2Factivity\" , \"protoPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.audit.AuditLog\" , \"authenticationInfo\" : { \"principalEmail\" : \"example-user@example.com\" }, \"methodName\" : \"v1.compute.instances.insert\" , \"request\" : { \"@type\" : \"type.googleapis.com/compute.instances.insert\" , \"serviceAccounts\" : [ { \"email\" : \"my-service-account@my-project.iam.gserviceaccount.com\" } ] }, \"resourceName\" : \"projects/my-project/zones/us-central1-a/instances/my-instance\" }, \"resource\" : { \"type\" : \"gce instance\" } } Logs for accessing Google Cloud with a service account key This section shows the log entries you receive when you create a service account key, then use the key to access Google Cloud.",
+          "The following example shows a log entry for granting the Service Account User role to a principal: { \"logName\" : \"projects/my-project/logs/cloudaudit.googleapis.com%2Factivity\" , \"protoPayload\" : { \"@type\" : \"type.googleapis.com/google.cloud.audit.AuditLog\" , \"methodName\" : \"google.iam.admin.v1.SetIAMPolicy\" , \"request\" : { \"@type\" : \"type.googleapis.com/google.iam.v1.SetIamPolicyRequest\" , \"resource\" : \"projects/-/serviceAccounts/my-service-account@my-project.iam.gserviceaccount.com\" }, \"resourceName\" : \"projects/-/serviceAccounts/123456789012345678901\" , \"response\" : { \"@type\" : \"type.googleapis.com/google.iam.v1.Policy\" , \"bindings\" : [ { \"members\" : [ \"user:my-user@example.com\" ], \"role\" : \"roles/iam.serviceAccountUser\" } ] } }, \"resource\" : { \"type\" : \"service account\" } } When you grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ), which allows a principal to create short-lived credentials, IAM generates a similar log entry."
+        ]
+      },
+      {
+        "title": "\"Service accounts overview \\_|\\_ Identity and Access Management (IAM) \\_\\",
+        "url": "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Note: The default Compute Engine and App Engine service accounts are granted the Editor role ( roles/editor ) on the project when they are created.",
+          "Use caution when letting users impersonate highly privileged service accounts, such as the Compute Engine and App Engine default service accounts .",
+          "Activity Analyzer lets you check when a service account or key was last used."
+        ]
+      },
+      {
+        "title": "\"Best practices for managing service account keys \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys",
+        "source_id": "site-docs-root-2",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "The best way to mitigate these threats is to avoid user-managed service account keys and to use other methods to authenticate service accounts whenever possible.",
+          "Because the Editor roles grant permission to create or upload service account keys, a bad actor can create new keys for existing service accounts and use these keys to either escalate their own access, or to hand the keys to other users to obtain access to project resources.",
+          "You can reduce the risk of accidentally leaving copies of service account keys in temporary locations by using the Google Cloud CLI : The gcloud iam service-accounts keys create command lets you write the service account key file straight to the location where you need it."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudbuild.builds.create",
+      "cloudbuild.builds.editor",
+      "cloudresourcemanager.googleapis.com",
+      "compute.instances.insert",
+      "deploymentmanager.deployments.create",
+      "deploymentmanager.editor",
+      "example.com",
+      "iam.googleapis.com",
+      "iam.serviceAccountAdmin",
+      "iam.serviceAccountKeyAdmin",
+      "iam.serviceAccountKeys.create",
+      "iam.serviceAccounts.actAs",
+      "iam.serviceAccounts.getAccessToken",
+      "iam.serviceAccounts.getOpenIdToken",
+      "iam.serviceAccounts.implicitDelegation",
+      "iam.serviceAccounts.signBlob",
+      "iam.serviceAccounts.signJwt",
+      "iam.serviceAccountTokenCreator",
+      "iam.serviceAccountUser",
+      "iam.workloadIdentityUser",
+      "project.iam.gserviceaccount.com",
+      "request.serviceAccounts",
+      "type.googleapis.com",
+      "v1.compute.instances.insert"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.builds.editor",
+      "roles/deploymentmanager.editor",
+      "roles/editor",
+      "roles/iam.serviceAccountAdmin",
+      "roles/iam.serviceAccountKeyAdmin",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/iam.serviceAccountUser",
+      "roles/iam.workloadIdentityUser",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/best-practices-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/audit-logging/examples-service-accounts",
+        "https://docs.cloud.google.com/iam/docs/service-account-overview",
+        "https://docs.cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:41.867Z",
+  "source_step08_card": "data/step-08/current/products/identity-and-access-management/card.json",
+  "product_name": "Identity and Access Management",
+  "product_slug": "identity-and-access-management"
+}

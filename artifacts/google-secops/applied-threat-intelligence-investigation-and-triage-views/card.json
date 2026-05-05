@@ -1,0 +1,159 @@
+{
+  "feature_name": "Applied Threat Intelligence investigation and triage views",
+  "feature_slug": "applied-threat-intelligence-investigation-and-triage-views",
+  "summary": "Curated views show indicator associations, threat context, and environment statistics for investigation and triage.",
+  "extended_definition": "Curated views show indicator associations, threat context, and environment statistics for investigation and triage.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+      "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Applied Threat Intelligence priority overview \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "source_id": "site-docs-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Applied Threat Intelligence priority overview Supported in: Google secops SIEM Applied Threat Intelligence (ATI) alerts in Google Security Operations are IoC matches that have been contextualized by YARA-L rules using curated detection.",
+          "ATI priorities are provided in the Applied Threat Intelligence - Curated Prioritization rule pack, which is available in Google SecOps Managed Content with the Google SecOps Enterprise Plus license.",
+          "Priority models are used in the curated detection rules provided in the Applied Threat Intelligence - Curated prioritization rule pack."
+        ]
+      },
+      {
+        "title": "\"Use Triage and Investigation Agent to investigate alerts \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "source_id": "site-docs-reference-2",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Default Supported Log Types The agent supports automatic investigation for alerts that contain events with the following metadata.log type values: Source metadata.log type values Amazon AWS CLOUDTRAIL , AWS IAM , AWS NETWORK FIREWALL , AWS VPC FLOW Cisco CISCO ASA FIREWALL, CISCO FIREPOWER FIREWALL, CISCO ISE, CISCO MERAKI CrowdStrike CROWDSTRIKE IOC , CS ALERTS , CS CEF EDR , CS DETECTS , CS EDR , CS IDP Fortinet FORTINET FIREWALL , FORTINET FORTIEDR , FORTINET WEBPROXY Google GCP CLOUDAUDIT , GCP CLOUDIDENTITY DEVICES , GCP CLOUDIDENTITY DEVICEUSERS , GCP DNS , GCP NGFW ENTERPRISE , GCP VPC FLOW , WORKSPACE ACTIVITY , WORKSPACE ALERTS , WORKSPACE USERS Microsoft ADFS , AZURE AD , AZURE AD AUDIT , AZURE AD CONTEXT , AZURE AD SIGNIN , AZURE FIREWALL , AZURE NSG FLOW , GITHUB , MICROSOFT DEFENDER ATP , MICROSOFT DEFENDER ENDPOINT , MICROSOFT DEFENDER ENDPOINT IOS , MICROSOFT DEFENDER IDENTITY , MICROSOFT GRAPH ALERT , OFFICE 365 , SENTINELONE ACTIVITY , SENTINELONE ALERT , SENTINELONE CF , SENTINEL DV , SENTINEL EDR , WINDOWS AD , WINDOWS DEFENDER ATP , WINDOWS DEFENDER AV , WINDOWS DHCP , WINDOWS DNS , WINDOWS FIREWALL , WINDOWS SYSMON , WINEVTLOG Okta OKTA , OKTA ACCESS GATEWAY , OKTA USER CONTEXT Other BARRACUDA FIREWALL , BOX , BRO DNS , CB APP CONTROL , CB DEFENSE , CB EDR , CHECKPOINT EDR , CHECKPOINT FIREWALL , CLOUDFLARE WAF , CYBERARK EPM , CYBEREASON EDR , DUO AUTH , DUO USER CONTEXT , ELASTIC EDR , F5 AFM , F5 ASM , F5 BIGIP LTM , FIREEYE HX , FIREEYE NX , FORCEPOINT FIREWALL , INFOBLOX DNS , JUNIPER FIREWALL , KEYCLOAK , LIMACHARLIE EDR , MALWAREBYTES EDR , MCAFEE EDR , NETFILTER IPTABLES , ONELOGIN SSO , ONE IDENTITY IDENTITY MANAGER , OPENSSH , PAN FIREWALL , PING , SALESFORCE , SEP , SOPHOS EDR , SOPHOS FIREWALL , SQUID WEBPROXY , SURICATA EVE , SURICATA IDS , SYMANTEC EDR , TANIUM EDR , TANIUM THREAT RESPONSE , TRENDMICRO EDR , UMBRELLA DNS , UMBRELLA FIREWALL , UMBRELLA WEBPROXY , ZEEK , ZSCALER FIREWALL , ZSCALER WEBPROXY .",
+          "Contextual enrichment and evidence gathering The agent executes several parallel analysis steps to build a comprehensive picture of the suspicious activity by leveraging internal and external intelligence: Google Threat Intelligence (GTI) enrichment : Identifies and evaluates indicators of compromise (IoCs), such as file hashes, IP addresses, and domains against Google Threat Intelligence and VirusTotal to identify known malicious entities.",
+          "Use Triage and Investigation Agent to investigate alerts Supported in: Google secops The Triage and Investigation Agent (TIN) is an AI-powered investigation assistant embedded in Google Security Operations."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence curated detections overview \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "source_id": "site-docs-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "Curated detection rule sets The Curated Prioritization category includes the following rule sets that support the Applied Threat Intelligence feature in Google SecOps: Active Breach Priority Network Indicators : Detects network-related Indicators of Compromise (IoCs) in event data using Mandiant Threat Intelligence and prioritizes IoCs with the 'Active breach' label.",
+          "Applied Threat Intelligence curated detections overview Supported in: Google secops SIEM This document provides an overview of the Curated Detection rule sets within the Applied Threat Intelligence Curated Prioritization category, available in Google Security Operations Enterprise Plus.",
+          "If the network.direction field is not populated in the UDM event, then Applied Threat Intelligence checks the principal.ip and target.ip fields against RFC 1918 internal IP address ranges to determine the network direction."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metadata.log",
+      "network.direction",
+      "principal.ip",
+      "target.ip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/secops/triage-investigation-agent",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

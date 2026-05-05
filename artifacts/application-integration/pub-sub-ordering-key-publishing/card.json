@@ -1,0 +1,90 @@
+{
+  "feature_name": "Pub/Sub ordering key publishing",
+  "feature_slug": "pub-sub-ordering-key-publishing",
+  "summary": "Application Integration can publish to Google Cloud Pub/Sub topics using ordering keys to preserve FIFO message order for message processing.",
+  "extended_definition": "Application Integration can publish to Google Cloud Pub/Sub topics using ordering keys to preserve FIFO message order for message processing.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+      "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Invoke a sub-integration using a For Each Loop task \\_|\\_ Application Integration\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "Cloud Pub/Sub trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 53,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Service perimeters enforce security boundaries around your Google Cloud resources, and these policies can prevent Application Integration from creating the necessary Pub/Sub subscription during integration publishing.",
+          "When you set an ordering key in the Publish Pub/Sub Message task, messages are received in the correct order.",
+          "To learn more about how to use ordering keys when you publish messages, see Using ordering keys ."
+        ]
+      },
+      {
+        "title": "\"Insert data into BigQuery using a For Each Parallel task \\_|\\_ Application\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task",
+        "source_id": "site-docs-root",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop",
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-pubsub-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/invoke-sub-int-for-each-loop",
+        "https://docs.cloud.google.com/application-integration/docs/insert-data-bigquery-for-each-parallel-task"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.484Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration"
+}

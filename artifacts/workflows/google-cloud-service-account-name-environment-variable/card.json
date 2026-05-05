@@ -1,0 +1,112 @@
+{
+  "feature_name": "GOOGLE_CLOUD_SERVICE_ACCOUNT_NAME environment variable",
+  "feature_slug": "google-cloud-service-account-name-environment-variable",
+  "summary": "The GOOGLE_CLOUD_SERVICE_ACCOUNT_NAME built-in environment variable exposes the service account name for a workflow execution.",
+  "extended_definition": "The GOOGLE_CLOUD_SERVICE_ACCOUNT_NAME built-in environment variable exposes the service account name for a workflow execution.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient",
+      "https://docs.cloud.google.com/workflows/docs/reference/environment-variables"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Built-in environment variables \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/environment-variables",
+        "source_id": "site-api-reference",
+        "final_score": 263,
+        "relevance": "",
+        "evidence_snippets": [
+          "Built-in environment variables require no declaration and are available in every workflow execution.",
+          "Home Documentation Application development Workflows Reference Send feedback Built-in environment variables Stay organized with collections Save and categorize content based on your preferences.",
+          "Access built-in environment variables To access an environment variable, make a call to the sys.get env() function in an expression, passing the name of the environment variable as a parameter."
+        ]
+      },
+      {
+        "title": "\"Class ExecutionsAsyncClient (1.21.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 225,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.workflows.executions v1.types.Execution A running instance of a Workflow. execution path execution path ( project : str , location : str , workflow : str , execution : str ) - > str Returns a fully-qualified execution string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "Returns Type Description google.cloud.workflows.executions v1.types.Execution A running instance of a Workflow. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create execution create execution ( request : typing .",
+          "Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      },
+      {
+        "title": "\"Class ExecutionsClient (1.21.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient",
+        "source_id": "site-python-reference",
+        "final_score": 225,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.workflows.executions v1.types.Execution A running instance of a Workflow. execution path execution path ( project : str , location : str , workflow : str , execution : str ) - > str Returns a fully-qualified execution string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "Returns Type Description google.cloud.workflows.executions v1.types.Execution A running instance of a Workflow. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create execution create execution ( request : typing .",
+          "Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution} This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "core.retry",
+      "core.retry.Retry",
+      "sys.get",
+      "v1.types.Execution"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/environment-variables",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/environment-variables",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/environment-variables",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/workflows/latest/google.cloud.workflows.executions_v1.services.executions.ExecutionsClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

@@ -1,0 +1,202 @@
+{
+  "feature_name": "Resume Case SLA",
+  "feature_slug": "resume-case-sla",
+  "summary": "Adds an action that resumes a case SLA.",
+  "extended_definition": "Adds an action that resumes a case SLA.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Integrate Atlassian Confluence Server with Google SecOps \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON result { \"id\" : \" PAGE ID \" , \"type\" : \"page\" , \"status\" : \"current\" , \"title\" : \"title\" , \"body\" : { \"storage\" : { \"value\" : \"<p>test page</p><p>11</p><p>aa</p><p>aa</p><p>aa</p><p><br /></p><p><br /></p>\" , \"representation\" : \"storage\" , \" expandable\" : { \"content\" : \"/rest/api/content/ PAGE ID \" } }, \" expandable\" : { \"editor\" : \"\" , \"view\" : \"\" , \"export view\" : \"\" , \"styled view\" : \"\" , \"anonymous export view\" : \"\" } }, \"extensions\" : { \"position\" : \"none\" }, \" links\" : { \"webui\" : \"/display/SIEM/111\" , \"edit\" : \"/pages/resumedraft.action?draftId= PAGE ID &draftShareId=cf8b3a21-8e36-4a83-a696-51fcb4428d1c\" , \"tinyui\" : \"/x/TIAB\" , \"collection\" : \"/rest/api/content\" , \"base\" : \"http://192.0.2.45:8090\" , \"context\" : \"\" , \"self\" : \"http://192.0.2.45:8090/rest/api/content/ PAGE ID \" }, \" expandable\" : { \"container\" : \"/rest/api/space/SIEM\" , \"metadata\" : \"\" , \"operations\" : \"\" , \"children\" : \"/rest/api/content/ PAGE ID /child\" , \"restrictions\" : \"/rest/api/content/ PAGE ID /restriction/byOperation\" , \"history\" : \"/rest/api/content/ PAGE ID /history\" , \"ancestors\" : \"\" , \"version\" : \"\" , \"descendants\" : \"/rest/api/content/ PAGE ID /descendant\" , \"space\" : \"/rest/api/space/SIEM\" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If page is found (is success = true): print \"Successfully fetched page information with id: <id>\" If data is not available (is success=false): print \"The following page id was not found in the Atlassian Confluence Server: <page id>\" The action should fail and stop a playbook execution: If fatal error, like wrong credentials, no connection to server, other: \"Error executing action \"<Action name>\".",
+          "JSON result { \"results\" : [ { \"id\" : \" PAGE ID \" , \"type\" : \"page\" , \"status\" : \"current\" , \"title\" : \"Tell people what you think in a comment (step 8 of 9)\" , \"space\" : { \"id\" : 131073 , \"key\" : \"ds\" , \"name\" : \"Demonstration Space\" , \"type\" : \"global\" , \" links\" : { \"webui\" : \"/display/ds\" , \"self\" : \"http://192.0.2.45:8090/rest/api/space/ds\" }, \" expandable\" : { \"metadata\" : \"\" , \"icon\" : \"\" , \"description\" : \"\" , \"retentionPolicy\" : \"\" , \"homepage\" : \"/rest/api/content/ PAGE ID \" } }, \"extensions\" : { \"position\" : 7 }, \" links\" : { \"webui\" : \"/pages/viewpage.action?pageId= PAGE ID \" , \"edit\" : \"/pages/resumedraft.action?draftId= DRAFT ID \" , \"tinyui\" : \"/x/AYAB\" , \"self\" : \"http://192.0.2.45:8090/rest/api/content/ PAGE ID \" }, \" expandable\" : { \"container\" : \"/rest/api/space/ds\" , \"metadata\" : \"\" , \"operations\" : \"\" , \"children\" : \"/rest/api/content/ PAGE ID /child\" , \"restrictions\" : \"/rest/api/content/ PAGE ID /restriction/byOperation\" , \"history\" : \"/rest/api/content/ PAGE ID /history\" , \"ancestors\" : \"\" , \"body\" : \"\" , \"version\" : \"\" , \"descendants\" : \"/rest/api/content/ PAGE ID /descendant\" } }, ... ], \"start\" : 0 , \"limit\" : 5 , \"size\" : 5 , \" links\" : { \"self\" : \"http://192.0.2.45:8090/rest/api/content?expand=space\" , \"next\" : \"/rest/api/content?expand=space&limit=5&start=5\" , \"base\" : \"http://192.0.2.45:8090\" , \"context\" : \"\" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: If data is available(is success = true): print \"Successfully found pages for the provided criteria in Atlassian Confluence Server\".",
+          "JSON result { \"results\" : [ { \"id\" : \" PAGE ID \" , \"type\" : \"page\" , \"status\" : \"current\" , \"title\" : \"test child page!\" , \"extensions\" : { \"position\" : \"none\" }, \" links\" : { \"webui\" : \"/pages/viewpage.action?pageId= PAGE ID \" , \"edit\" : \"/pages/resumedraft.action?draftId= PAGE ID &draftShareId=799fd068-5053-4889-9120-c1a3c970fdbd\" , \"tinyui\" : \"/x/T4AB\" , \"self\" : \"http://192.0.2.45:8090/rest/api/content/ PAGE ID \" }, \" expandable\" : { \"container\" : \"/rest/api/space/SIEM\" , \"metadata\" : \"\" , \"operations\" : \"\" , \"children\" : \"/rest/api/content/ PAGE ID /child\" , \"restrictions\" : \"/rest/api/content/ PAGE ID /restriction/byOperation\" , \"history\" : \"/rest/api/content/ PAGE ID /history\" , \"ancestors\" : \"\" , \"body\" : \"\" , \"version\" : \"\" , \"descendants\" : \"/rest/api/content/ PAGE ID /descendant\" , \"space\" : \"/rest/api/space/SIEM\" } } ], \"start\" : 0 , \"limit\" : 1 , \"size\" : 1 , \" links\" : { \"self\" : \"http://192.0.2.45:8090/rest/api/content/ PAGE ID /child/page\" , \"base\" : \"http://192.0.2.45:8090\" , \"context\" : \"\" } } Case wall Result type Value/Description Type (Entity/General) Output message The action should not fail nor stop a playbook execution: if data is available (is success = true): print \"Successfully found child pages for the provided Atlassian Confluence Server page id: <page id>\"."
+        ]
+      },
+      {
+        "title": "\"AWS Identity and Access Management (IAM) \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "source_id": "site-docs-root",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { \"PolicyName\" : \"S3-read-only-bucket\" , \"PolicyId\" : \"ANPAYPE7MW7AFKUDK3HD7\" , \"Arn\" : \"arn:aws:iam::582302349248:policy/S3-read-only-bucket\" , \"Path\" : \"/\" , \"DefaultVersionId\" : \"v1\" , \"AttachmentCount\" : 0 , \"PermissionsBoundaryUsageCount\" : 0 , \"IsAttachable\" : true , \"CreateDate\" : \"2020-12-6T17:16:45\" , \"UpdateDate\" : \"2020-12-6T17:16:45\" } Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"<Policy name> policy was successfully created\" The action should fail and stop a playbook execution: If error - Policy already exists: Print \"Could not create <policy name> policy.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:group/ZivGroup\" , \"CreateDate\" : \"2020-12-05 16:18:36+00:00\" , \"Path\" : \"/\" , \"GroupId\" : \"AGPAYPE7MW7AMKCWMJPMX\" , \"GroupName\" : \"ZivGroup\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available groups in AWS IAM\" If no data available: Print \"No Groups found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, If 'Max Groups'> 1000): print \"Error executing action 'List Groups'.",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result [{ \"Arn\" : \"arn:aws:iam::582302349248:user/ziv\" , \"CreateDate\" : \"2020-12-03T12:12:20\" , \"Path\" : \"/\" , \"UserId\" : \"AIDAYPE7MW7AFMHK4WCHS\" , \"UserName\" : \"ziv\" }] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully listed available users in AWS IAM\" If no data available: Print \"No users found in AWS IAM\" The action should fail and stop a playbook execution: if not successful (wrong credentials, no connection to server, other server error, if max>10000): print \"Error executing action 'List Users'."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon EC2 with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Instances\" : [ { \"AmiLaunchIndex\" : 0 , \"ImageId\" : \"ami-047a51fa27710816e\" , \"InstanceId\" : \"i-044c08c5bfe1a7f98\" , \"InstanceType\" : \"t2.micro\" , \"KeyName\" : \"\\\"Key\\\": \\\"Test\\\", \\\"Value\\\":\\\"Test\\\"\" , \"LaunchTime\" : \"2021-1-30\" , \"Monitoring\" :{ \"State\" : \"disabled\" }, \"Placement\" :{ \"AvailabilityZone\" : \"us-east-1d\" , \"GroupName\" : \"\" , \"Tenancy\" : \"default\" }, \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" , \"ProductCodes\" :[ ], \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIpAddress\" : \"192.0.2.218\" , \"State\" :{ \"Code\" : 16 , \"Name\" : \"running\" }, \"StateTransitionReason\" : \"\" , \"SubnetId\" : \"subnet-1b1fda3a\" , \"VpcId\" : \"vpc- ID \" , \"Architecture\" : \"x86 64\" , \"BlockDeviceMappings\" :[ { \"DeviceName\" : \"/dev/xvda\" , \"Ebs\" :{ \"AttachTime\" : \"2021-1-30\" , \"DeleteOnTermination\" : true , \"Status\" : \"attached\" , \"VolumeId\" : \"vol-00f70681a43e5d86e\" } } ], \"ClientToken\" : \"\" , \"EbsOptimized\" : false , \"EnaSupport\" : true , \"Hypervisor\" : \"xen\" , \"NetworkInterfaces\" :[ { \"Association\" :{ \"IpOwnerId\" : \"amazon\" , \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIp\" : \"192.0.2.218\" }, \"Attachment\" :{ \"AttachTime\" : \"\" , \"AttachmentId\" : \"eni-attach-06bc5e5901ce99ef2\" , \"DeleteOnTermination\" : true , \"DeviceIndex\" : 0 , \"Status\" : \"attached\" , \"NetworkCardIndex\" : 0 }, \"Description\" : \"\" , \"Groups\" :[ { \"GroupName\" : \"launch-wizard-2\" , \"GroupId\" : \"sg-001700ccddac4189a\" } ], \"Ipv6Addresses\" :[ ], \"MacAddress\" : \"12:34:56:ab:cd:ef\" , \"NetworkInterfaceId\" : \"eni-020fa83efd417e32d\" , \"OwnerId\" : \" ID \" , \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" , \"PrivateIpAddresses\" :[ { \"Association\" :{ \"IpOwnerId\" : \"amazon\" , \"PublicDnsName\" : \"ec2-192-0-2-218.compute-1.amazonaws.com\" , \"PublicIp\" : \"192.0.2.218\" }, \"Primary\" : true , \"PrivateDnsName\" : \"ip-192-0-2-220.ec2.internal\" , \"PrivateIpAddress\" : \"192.0.2.220\" } ], \"SourceDestCheck\" : true , \"Status\" : \"in-use\" , \"SubnetId\" : \"subnet-1b1fda3a\" , \"VpcId\" : \"vpc- ID \" , \"InterfaceType\" : \"interface\" } ], \"RootDeviceName\" : \"/dev/xvda\" , \"RootDeviceType\" : \"ebs\" , \"SecurityGroups\" :[ { \"GroupName\" : \"launch-wizard-2\" , \"GroupId\" : \"sg-001700ccddac4189a\" } ], \"SourceDestCheck\" : true , \"Tags\" :[ { \"Key\" : \"Owner\" , \"Value\" : \"Example\" }, { \"Key\" : \"Name\" , \"Value\" : \"Example test\" } ], \"VirtualizationType\" : \"hvm\" , \"CpuOptions\" :{ \"CoreCount\" : 1 , \"ThreadsPerCore\" : 1 }, \"CapacityReservationSpecification\" :{ \"CapacityReservationPreference\" : \"open\" }, \"HibernationOptions\" :{ \"Configured\" : false }, \"MetadataOptions\" :{ \"State\" : \"applied\" , \"HttpTokens\" : \"optional\" , \"HttpPutResponseHopLimit\" : 1 , \"HttpEndpoint\" : \"enabled\" }, \"EnclaveOptions\" :{ \"Enabled\" : false } } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed instances(is success = true): \"Successfully described Amazon EC2 instances.\" If no available values(is success = false): \"No instances were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid instance ID, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Instances\".",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"EC2 Security Groups\" : [ { \"Description\" : \"launch-wizard-2 created 2021-01-30T19:37:11.523+02:00\" , \"GroupName\" : \"launch-wizard-2\" , \"IpPermissions\" :[ { \"FromPort\" : 22 , \"IpProtocol\" : \"tcp\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"ToPort\" : 22 , \"UserIdGroupPairs\" :[ ] } ], \"OwnerId\" : \"582302349248\" , \"GroupId\" : \"sg-001700ccddac4189a\" , \"IpPermissionsEgress\" :[ { \"IpProtocol\" : \"-1\" , \"IpRanges\" :[ { \"CidrIp\" : \"192.0.2.0/0\" } ], \"Ipv6Ranges\" :[ ], \"PrefixListIds\" :[ ], \"UserIdGroupPairs\" :[ ] } ], \"Tags\" :[ { \"Key\" : \"Team\" , \"Value\" : \"A-Team\" }, { \"Key\" : \"Owner\" , \"Value\" : \"Example\" } ], \"VpcId\" : \"vpc- ID \" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully listed groups(is success = true): \"Successfully described Amazon EC2 security groups.\" If no available values(is success = false): \"No security groups were found in Amazon EC2\" The action should fail and stop a playbook execution: if fatal error, invalid group ID/Name, SDK error, like wrong credentials, no connection to server, other: \"Error executing action \"List Security Groups\".",
+          "Action Results Script Result Script result name Value options Example is success True/False is success:False JSON Result \"StoppingInstances\" : [ { \"CurrentState\" : \"shutting-down\" , \"InstanceId\" : \"string\" , \"PreviousState\" : \"running\" } ] Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If current state of all/few instances is different from: shutting-down, terminated: ( Is success = false): Cannot terminate the following instances from their current state: <failed instance ids> If current state is shutting-down: (is success=true) → action still in progress: Continuing….the requested instances are still shutting-down If current state is terminated:(is success=true): The following instances were terminated successfully : <stopped instance ids> If one of the instances is not valid (is success =false): The following instances are not valid: <not valid ids>."
+        ]
+      },
+      {
+        "title": "\"AWS IAM Access Analyzer \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True JSON Result { \"ResponseMetadata\" : { \"HTTPHeaders\" : { \"connection\" : \"keep-alive\" , \"content-length\" : \"178\" , \"content-type\" : \"application/json\" , \"date\" : \"Sun, 22 Nov 2020 09:22:03 GMT\" , \"x-amz-apigw-id\" : \"WZwVQFICIAMFjnQ=\" , \"x-amzn-requestid\" : \"c15d8ab2-afc7-4cb0-bea2-a47ebc649cb8\" , \"x-amzn-trace-id\" : \"Root=1-5fba2dbb-042d89bb2964e4f635bd7843\" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \"c15d8ab2-afc7-4cb0-bea2-a47ebc649cb8\" , \"RetryAttempts\" : 0 }, \"resource\" : { \"analyzedAt\" : da tet ime.da tet ime( 2020 , 11 , 22 , 9 , 21 , 50 , 919000 , t zi nf o= t zu t c()) , \"isPublic\" : False , \"resourceArn\" : \"arn:aws:s3:::asddsa\" , \"resourceOwnerAccount\" : \"582302349248\" , \"resourceType\" : \"AWS::S3::Bucket\" }} Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If successfully returned scans for at least one (is success = true) : print\"Successfully scanned the following resources using AWS IAM Access Analyzer: \\n\".format(Resource IDs) If fail for at least one (is success = true): print\"Action wasn't able to scan the following resources using AWS IAM Access Analyzer: \\n\".format(Resource IDs) If fail for all (is success = false): print\"No resources were scanned.\" Async Message: \"Waiting for the following resources to be scanned using AWS IAM Access Analyzer: {0}\".format(unprocessed resources) The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: print \"Error executing action \"Scan Resources\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: If no raised errors from SDK (is success = true) : print\"Successfully archived finding with ID '{0}' in AWS IAM Access Analyzer\".format(Finding ID) The action should fail and stop a playbook execution: if fatal error, SDK error, like wrong credentials, no connection to server, other: print \"Error executing action \"Archive Finding\".",
+          "Action Results Script Result Script Result Name Value Options is success is success=False is success is success=True Case Wall Result Type Value / Description Type Output message The action should not fail nor stop a playbook execution: if successful: print \"Successfully connected to the AWS IAM Access Analyzer server with the provided connection parameters!\" The action should fail and stop a playbook execution: if not successful: print \"Failed to connect to the AWS IAM Access Analyzer server!"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "amazonaws.com",
+      "body.storage",
+      "ec2.internal",
+      "ime.da",
+      "resumedraft.action",
+      "t2.micro",
+      "viewpage.action"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/atlassian-confluence-server",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-elastic-compute-cloud-ec2",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/aws-iam-access-analyzer"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.044Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-marketplace/card.json",
+  "product_name": "Google SecOps Marketplace",
+  "product_slug": "google-secops-marketplace"
+}

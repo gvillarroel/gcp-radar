@@ -1,0 +1,118 @@
+{
+  "feature_name": "DML on recently streamed rows",
+  "feature_slug": "dml-on-recently-streamed-rows",
+  "summary": "BigQuery lets you use DML to modify rows that were recently written through the Storage Write API.",
+  "extended_definition": "BigQuery lets you use DML to modify rows that were recently written through the Storage Write API.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+      "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+      "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Stream table updates with change data capture ingestion \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "source_id": "site-docs-reference-5",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "CDC-enabled tables don't support the following: Mutating data manipulation language (DML) statements such as DELETE , UPDATE , and MERGE Querying wildcard tables Search indexes CDC-enabled tables that perform runtime merge jobs because the table's max staleness value is too low cannot support the following: Table copy operations Table clone operations Table snapshot operations The BigQuery Storage Read API The requirePartitionFilter table option BigQuery export operations on CDC-enabled tables don't export recently streamed row modifications that have yet to be applied by a background job.",
+          "Example with UPSERT and DELETE values Consider the following table in BigQuery: ID Name Salary 100 Charlie 2000 101 Tal 3000 102 Lee 5000 The following row modifications are streamed by the Storage Write API: ID Name Salary CHANGE TYPE 100 DELETE 101 Tal 8000 UPSERT 105 Izumi 6000 UPSERT The updated table is now the following: ID Name Salary 101 Tal 8000 102 Lee 5000 105 Izumi 6000 Manage table staleness By default, every time you run a query, BigQuery returns the most up-to-date results.",
+          "Background apply jobs and runtime merge jobs can't use partitioning because, when applying recently streamed row modifications, there is no guarantee to which table partition the recently streamed upserts are applied to."
+        ]
+      },
+      {
+        "title": "\"Transform data with data manipulation language (DML) \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Rows that were recently written using the tabledata.insertall streaming method can't be modified with data manipulation language (DML), such as UPDATE , DELETE , MERGE , or TRUNCATE statements.",
+          "Transform data with data manipulation language (DML) The BigQuery data manipulation language (DML) lets you update, insert, and delete data from your BigQuery tables.",
+          "Alternatively, rows that were recently written using the Storage Write API can be modified using UPDATE , DELETE , MERGE , or TRUNCATE statements."
+        ]
+      },
+      {
+        "title": "\"Prevent read-write MCP tool use \\_|\\_ Google Cloud MCP servers \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Control MCP use with IAM attributes The following attributes can be used in your Identity and Access Management deny policies: tool.isReadOnly : a resource attribute that indicates whether the invoked tool only reads data. request.auth.oauth.client id : the OAuth client ID. resource.service : the name of service—for example, bigquery.googleapis.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "request.auth.oauth.client",
+      "resource.service",
+      "tabledata.insertall",
+      "tool.isReadOnly"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "https://docs.cloud.google.com/mcp/prevent-read-write-tool-use"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

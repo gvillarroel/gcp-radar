@@ -1,0 +1,120 @@
+{
+  "feature_name": "Config Sync metric resource tags",
+  "feature_slug": "config-sync-metric-resource-tags",
+  "summary": "Config Sync metrics can include resource tags that identify the source component.",
+  "extended_definition": "Config Sync metrics can include resource tags that identify the source component.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitoring-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Config Sync metrics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitoring-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 214,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Config Sync metrics Name Type Tags Description api duration seconds Distribution operation, status The latency distribution of API server calls. apply duration seconds Distribution status The latency distribution of applying resources declared from source of truth to a cluster. apply operations total Count operation, status, controller The total number of operations that have been performed to sync resources from source of truth to a cluster. declared resources Last Value The number of declared resources parsed from Git. internal errors total Count source The total number of internal errors encountered by Config Sync.",
+          "Note: The Tags from Config Sync metrics and Resource Group Controller metrics are conceptually equivalent to Labels in this section.",
+          "Resource labels Config Sync metrics sent to Prometheus and Cloud Monitoring have the following metric labels set to identify the source Pod: Name Description k8s.node.name The name of the Node hosting a Kubernetes Pod k8s.pod.namespace The namespace of the Pod k8s.pod.uid The UID of the Pod k8s.pod.ip The IP of the Pod k8s.deployment.name The name of the Deployment that owns the Pod Config Sync metrics sent to Prometheus and Cloud Monitoring from reconciler Pods also have the following metric labels set to identify the RootSync or RepoSync used to configure the reconciler: Name Description configsync.sync.kind The kind of resource that configures this reconciler: RootSync or RepoSync configsync.sync.name The name of the RootSync or RepoSync that configures this reconciler configsync.sync.namespace The namespace of the RootSync or RepoSync that configures this reconciler Cloud Monitoring resource labels Cloud Monitoring Resource labels are used for indexing metrics in storage, which means they have negligible effect on cardinality, unlike metric labels, where cardinality is a significant performance concern."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can configure them later. sourceType : SOURCE TYPE sourceFormat : FORMAT syncRepo : REPO syncRev : REVISION secretType : SECRET TYPE gcpServiceAccountEmail : EMAIL metricsGcpServiceAccountEmail : METRICS EMAIL policyDir : DIRECTORY preventDrift : false Replace the following: SOURCE TYPE : add git to sync from a Git repository, oci to sync from an OCI image, or helm to sync from a Helm chart.",
+          "METRICS EMAIL : the email of the Google Cloud Service Account (GSA) used for exporting Config Sync metrics to Cloud Monitoring.",
+          "Terraform For each cluster that you want to configure Config Sync, apply a google gkehub feature membership resource block that contains a configmanagement and config sync block, such as in the following example: git data \"google project\" \"default\" {} resource \"google container cluster\" \"default\" { name = \"gke-autopilot-basic\" location = \"us-central1\" fleet { project = data.google project.default.project id } enable autopilot = true } resource \"google gke hub feature\" \"configmanagement feature\" { name = \"configmanagement\" location = \"global\" } resource \"google gke hub feature membership\" \"configmanagement feature member\" { location = \"global\" feature = google gke hub feature.configmanagement feature.name membership = google container cluster.default.fleet[0].membership id membership location = google container cluster.default.fleet[0].membership location configmanagement { config sync { The field enabled was introduced in Terraform version 5.41.0, and needs to be set to true explicitly to install Config Sync. enabled = true git { sync repo = \" REPO \" sync branch = \" BRANCH \" policy dir = \" DIRECTORY \" secret type = \" SECRET \" } } } } Replace the following: REPO : the URL to the Git repository that contains your configuration files."
+        ]
+      },
+      {
+        "title": "Safe rollouts with Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 154,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "After you have the Config Sync metrics in your monitoring system, create an alert to notify you when the gkeconfig monitor errors metric is greater than 0.",
+          "Config Sync exposes metrics in the Prometheus format .",
+          "First, you commit changes to the Config Sync repository, and then you update the RootSync definitions on all the clusters: We recommend the following actions: Use Git commit IDs rather than tags."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.default.fleet",
+      "configsync.sync.kind",
+      "configsync.sync.name",
+      "configsync.sync.namespace",
+      "data.google",
+      "feature.configmanagement",
+      "feature.name",
+      "k8s.deployment.name",
+      "k8s.node.name",
+      "k8s.pod.ip",
+      "k8s.pod.namespace",
+      "k8s.pod.uid",
+      "project.default.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitoring-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitoring-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitoring-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

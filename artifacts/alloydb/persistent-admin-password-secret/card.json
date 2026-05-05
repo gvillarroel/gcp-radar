@@ -1,0 +1,211 @@
+{
+  "feature_name": "Persistent admin password secret",
+  "feature_slug": "persistent-admin-password-secret",
+  "summary": "AlloyDB Omni no longer deletes the admin password secret after cluster creation when you specify it.",
+  "extended_definition": "AlloyDB Omni no longer deletes the admin password secret after cluster creation when you specify it.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+      "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the editor of your choice, for example, nano, complete the following steps: Open proxy sidecar deployment.yaml using the editor of your choice, for example, nano: nano proxy sidecar deployment.yaml In the editor, paste the following content: apiVersion : apps/v1 kind : Deployment metadata : name : gke-alloydb spec : selector : matchLabels : app : SAMPLE APPLICATION template : metadata : labels : app : SAMPLE APPLICATION spec : serviceAccountName : KSA NAME containers : - name : SAMPLE APPLICATION Replace <PROJECT ID> and <REGION> with your project ID and region. image : REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY ID / SAMPLE APPLICATION :latest imagePullPolicy : Always This app listens on port 8080 for web traffic by default. ports : - containerPort : 8080 env : - name : PORT value : \"8080\" This project uses environment variables to determine how you would like to run your application To use the Go connector (recommended) - use INSTANCE NAME To use TCP - Setting INSTANCE HOST will use TCP (e.g., 127.0.0.1) - name : INSTANCE HOST value : \"127.0.0.1\" - name : DB PORT value : \"5432\" To use Automatic IAM Authentication (recommended) use DB IAM USER instead of DB USER you may also remove the DB PASS environment variable - name : DB USER valueFrom : secretKeyRef : name : SECRET key : username - name : DB PASS valueFrom : secretKeyRef : name : SECRET key : password - name : DB NAME valueFrom : secretKeyRef : name : SECRET key : database If you are using the Go connector (recommended), you can remove alloydb-proxy (everything below this line) - name : alloydb-proxy This uses the latest version of the AlloyDB Auth proxy It is recommended to use a specific version for production environments.",
+          "In your open Cloud Shell, complete the following steps: Open proxy sidecar deployment.yaml using the editor of your choice, for example, nano: nano proxy sidecar deployment.yaml In the editor, paste the following content: apiVersion : apps/v1 kind : Deployment metadata : name : gke-alloydb spec : selector : matchLabels : app : SAMPLE APPLICATION template : metadata : labels : app : SAMPLE APPLICATION spec : serviceAccountName : KSA NAME containers : - name : SAMPLE APPLICATION Replace <PROJECT ID> and <REGION> with your project ID and region. image : REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY ID / SAMPLE APPLICATION :latest imagePullPolicy : Always This app listens on port 8080 for web traffic by default. ports : - containerPort : 8080 env : - name : PORT value : \"8080\" - name : INSTANCE HOST value : \"127.0.0.1\" - name : DB PORT value : \"5432\" - name : DB USER valueFrom : secretKeyRef : name : SECRET key : username - name : DB PASS valueFrom : secretKeyRef : name : SECRET key : password - name : DB NAME valueFrom : secretKeyRef : name : SECRET key : database - name : alloydb-proxy This uses the latest version of the AlloyDB Auth proxy image : gcr.io/alloydb-connectors/alloydb-auth-proxy:1.10.1 command : - \"/alloydb-auth-proxy\" #AlloyDB instance name as parameter for the AlloyDB proxy - \" INSTANCE URI \" securityContext : runAsNonRoot : true resources : requests : memory : \"2Gi\" cpu : \"1\" Replace INSTANCE URI with the path you copied in step 1.",
+          "See the License for the specific language governing permissions and limitations under the License. apiVersion : apps/v1 kind : Deployment metadata : name : < YOUR-DEPLOYMENT-NAME > spec : selector : matchLabels : app : < YOUR-APPLICATION-NAME > template : metadata : labels : app : < YOUR-APPLICATION-NAME > spec : serviceAccountName : < YOUR-KSA-NAME > containers : Your application container goes here. - name : < YOUR-APPLICATION-NAME > image : < YOUR-APPLICATION-IMAGE-URL > env : - name : DB HOST The port value here (5432) should match the --port flag below. value : \"localhost:5342\" - name : DB USER valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : username - name : DB PASS valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : password - name : DB NAME valueFrom : secretKeyRef : name : < YOUR-DB-SECRET > key : database The Auth Proxy sidecar goes here. - name : alloydb-auth-proxy Make sure you have automation that upgrades this version regularly."
+        ]
+      },
+      {
+        "title": "\"Migrate data from a vector database to AlloyDB \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "source_id": "site-docs-root-2",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Enable APIs step, click Enable to enable the following: AlloyDB API Compute Engine API Service Networking API Required roles To get the permissions that you need to complete the tasks in this tutorial, have the following Identity and Access Management (IAM) roles which allow for table creation and data insertion: Owner ( roles/owner ) or Editor ( roles/editor ) If the user is not an owner or editor, the following IAM roles and PostgreSQL privileges are required: AlloyDB Instance Client ( roles/alloydb.client ) Cloud AlloyDB Admin ( roles/alloydb.admin ) Compute Network User ( roles/compute.networkUser ) If you want to authenticate to your database using IAM authentication instead of using the built-in authentication in this tutorial, use the notebook that shows how to use AlloyDB for PostgreSQL to store vector embeddings with the AlloyDBVectorStore class .",
+          "PUBLIC , # Optionally use IPTypes.PRIVATE ) Weaviate from langchain google alloydb pg import AlloyDBEngine alloydb engine = await AlloyDBEngine . afrom instance ( project id = project id , region = region , cluster = cluster , instance = instance , database = db name , user = db user , password = db pwd , ip type = IPTypes .",
+          "PUBLIC , ) Chroma from langchain google alloydb pg import AlloyDBEngine alloydb engine = await AlloyDBEngine . afrom instance ( project id = project id , region = region , cluster = cluster , instance = instance , database = db name , user = db user , password = db pwd , ip type = IPTypes ."
+        ]
+      },
+      {
+        "title": "\"Use the AlloyDB remote MCP server \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "source_id": "site-docs-reference-2",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "To initialize the gcloud CLI, run the following command: gcloud init Required roles To get the permissions that you need to use the AlloyDB for PostgreSQL MCP server, ask your administrator to grant you the following IAM roles on the project where you want to use the AlloyDB for PostgreSQL MCP server: Make MCP tool calls: MCP Tool User ( roles/mcp.toolUser ) Create an AlloyDB instance: AlloyDB Admin ( roles/alloydb.admin ) Create an AlloyDB user: AlloyDB Admin ( roles/alloydb.admin ) Execute SQL queries in AlloyDB: AlloyDB Admin ( roles/alloydb.admin ) Studio Query User ( roles/databasesconsole.studioQueryUser ) Get a AlloyDB instance or list all AlloyDB instances in a project: AlloyDB Viewer ( roles/alloydb.viewer ) List AlloyDB users: AlloyDB Viewer ( roles/alloydb.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Limitations The AlloyDB remote MCP server has the following limitations: The create user tool doesn't support creating a built-in authentication user with a password .",
+          "To view a list of scopes required for AlloyDB, see AlloyDB Admin API ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "alloydb.cluster.create",
+      "alloydb.clusters.get",
+      "alloydb.clusters.import",
+      "alloydb.clusters.list",
+      "alloydb.clusters.update",
+      "alloydb.instances.create",
+      "alloydb.instances.executeSql",
+      "alloydb.instances.get",
+      "alloydb.instances.login",
+      "alloydb.users.create",
+      "alloydb.users.list",
+      "alloydb.users.update",
+      "alloydb.viewer",
+      "compute.networkUser",
+      "databasesconsole.studioQueryUser",
+      "deployment.yaml",
+      "docker.pkg.dev",
+      "e.g",
+      "gcr.io",
+      "mcp.tools.call",
+      "mcp.toolUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/alloydb.viewer",
+      "roles/compute.networkUser",
+      "roles/databasesconsole.studioQueryUser",
+      "roles/editor",
+      "roles/mcp.toolUser",
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/ai/migrate-data-from-langchain-vector-stores-to-alloydb",
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

@@ -1,0 +1,106 @@
+{
+  "feature_name": "Security Command Center threat detection for Backup and DR actions",
+  "feature_slug": "security-command-center-threat-detection-for-backup-and-dr-actions",
+  "summary": "Security Command Center Premium added real-time Event Threat Detection coverage for Backup and DR actions, including detection of data-destruction and recovery-inhibiting activities.",
+  "extended_definition": "Security Command Center Premium added real-time Event Threat Detection coverage for Backup and DR actions, including detection of data-destruction and recovery-inhibiting activities.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr",
+      "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate protection of Google Cloud VMware Engine \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Run manual auto protection Although the protection engine runs daily at 4:15 AM and 4:15 PM local time, you can also make an on-demand run of the Dynamic Protection engine using the following command steps: Set the appliance management console endpoint by entering a value that starts with 'https://bmc-' and ends with '.com'.",
+          "Known issues If a vCenter has more than one VM with the same name, protection is applied to only the first VM in alphabetical order.",
+          "To remove tags from VMs in vSphere, you should have vSphere tagging privileges on the root vCenter Server instance."
+        ]
+      },
+      {
+        "title": "Support matrix \\_|\\_ Backup and DR \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "SQL Server Version Windows Server Version SQL Server 2022 Standalone Windows Server 2025 Windows Server 2022 Windows Server 2019 Windows Server 2016 SQL Server 2022 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2022 Standard Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2022 Enterprise Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2019 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter SQL Server 2019 Standalone Windows Server 2025 SQL Server 2019 Standard Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2019 Enterprise Windows Server 2025 Datacenter Windows Server 2022 Datacenter Windows Server 2019 Datacenter SQL Server 2017 Standalone Windows Server 2025 SQL Server 2017 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter SQL Server 2016 Web Windows Server 2025 Datacenter Windows Server 2022 Datacenter Note: No support for app-aware mounts into a SQL Server instance running on a Microsoft Failover Cluster if any of its nodes have been discovered as a Google Cloud VMware Engine VM.",
+          "Note: Protection of VMware View virtual machines not supported. vCenter 1, 6 7.0, 7.0 U1, 7.0 U2, 7.0 U3, 8.0, 8.0 U3 7 ESX Server 6 7.0, 7.0 U1, 7.0 U2, 7.0 U3, 8.0.3 starting with Backup and DR Service V11.0.17 Virtual Hardware 2 7 to 15 and 17 to 19 Guest OS All Google Cloud VMware Engine supported OSs Quiesce applications 3 Yes, based on VMware Tools vSAN Support 4 vSAN 7.0 U1, vSAN 7.0 U2, vSAN 7.0 U3 Change Block Tracking 5 Leverages VMware vSphere Storage APIs - Data Protection (formerly known as vStorage APIs for Data Protection or VADP) 1 This leverages VMware VDDK version 7.0.",
+          "Application Discovery : Backup and DR agent enables deep discovery of databases and file systems configured on a production host API integration : Where possible, Backup and DR agents integrate with the application specific APIs/commands for efficient capture of application data Change Block Tracking : In situations where the production applications don't have a built-in change block tracking, Backup and DR introduces change block tracking on select platforms Application aware recovery/mount : Backup and DR agents have built in application awareness."
+        ]
+      },
+      {
+        "title": "\"Accelerator-optimized machine family \\_|\\_ Compute Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines",
+        "source_id": "site-docs-reference-2",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "To configure NCCL, before you run your workloads, set the NCCL P2P LEVEL environment variable on your G4 instance based on the machine type: For G4 instances with 2 or 4 GPUs ( g4-standard-96 , g4-standard-192 ): set NCCL P2P LEVEL=PHB For G4 instances with 8 GPUs ( g4-standard-384 ): set NCCL P2P LEVEL=SYS Set the environment variable using one of the following options: On the command line, run the appropriate export command (for example, export NCCL P2P LEVEL=SYS ) in the shell session where you plan to run your application.",
+          "The following GPU sharing options are available for G4 instances: Fractional GPU (vGPU) support ( Preview ): this feature allows a single physical GPU to be shared by multiple virtual machine (VM) instances. vGPUs provide multi-tenant security isolation because each vGPU is a separate VM instance.",
+          "Enhanced networking For this machine type, RDMA over Converged Ethernet (RoCE) increases the network performance by combining NVIDIA ConnectX-7 network interface cards (NICs) with our datacenter-wide four-way rail-aligned network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr",
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr",
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/dynamic-protection-gcve",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/supportmatrix-backupdr",
+        "https://docs.cloud.google.com/compute/docs/accelerator-optimized-machines"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

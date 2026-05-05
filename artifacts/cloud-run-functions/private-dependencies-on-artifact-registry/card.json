@@ -1,0 +1,163 @@
+{
+  "feature_name": "Private dependencies on Artifact Registry",
+  "feature_slug": "private-dependencies-on-artifact-registry",
+  "summary": "Cloud Run functions supports low-configuration access to private dependencies on Artifact Registry for Node.js and Python.",
+  "extended_definition": "Cloud Run functions supports low-configuration access to private dependencies on Artifact Registry for Node.js and Python.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy",
+      "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Authorize access with IAM \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "source_id": "site-iam-reference",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Removing roles from principals Use the gcloud functions remove-iam-policy-binding command: gcloud functions remove-iam-policy-binding FUNCTION NAME \\ --member = PRINCIPAL ID \\ --role = ROLE where FUNCTION NAME is the function name, PRINCIPAL ID is the email address that identifies the service account, prefaced with serviceAccount: , and ROLE is the role.",
+          "Bulk addition of principals Create an IAM policy named, for example, policy.json : { \"bindings\" : [ { \"role\" : ROLE , \"members\" : [ PRINCIPAL ID ] } ] } Use the gcloud functions set-iam-policy command: gcloud functions set-iam-policy FUNCTION NAME policy.json For a list of acceptable sources for PRINCIPAL ID , see Principal identifiers .",
+          "Adding principals and granting roles Use the gcloud functions add-iam-policy-binding command: gcloud functions add-iam-policy-binding FUNCTION NAME \\ --member = PRINCIPAL ID \\ --role = ROLE where FUNCTION NAME is the function name, PRINCIPAL ID is the principal's identifier, usually an email, and ROLE is the role."
+        ]
+      },
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "To specify a self-managed Artifact Registry repository, run the following command: gcloud functions deploy FUNCTION NAME \\ --docker-repository = REPOSITORY \\ [ FLAGS... ] Replace the following: FUNCTION NAME : The name of the function.",
+          "Secure your build with private pools To allow your functions to use dependencies (for example, npm packages), Cloud Build has by default unlimited internet access during the build process.",
+          "This can be accomplished by adding an IAM condition to the role grant such as (resource.type == \"storage.googleapis.com/Object\" && (resource.name.startsWith(\"projects/ /buckets/gcf-v2-sources-\") resource.name.startsWith(\"projects/ /buckets/gcf-v2-uploads-\") resource.name.startsWith(\"projects/ /buckets/run-sources-\"))) Grant the following roles using the Google Cloud CLI , or use Google Cloud console . gcloud projects add - iam - policy - binding PROJECT ID \\ -- member = serviceAccount: SA EMAIL \\ -- role = roles / logging . logWriter gcloud projects add - iam - policy - binding PROJECT ID \\ -- member = serviceAccount: SA EMAIL \\ -- role = roles / artifactregistry . writer gcloud projects add - iam - policy - binding PROJECT ID \\ -- member = serviceAccount: SA EMAIL \\ -- role = roles / storage . objectViewer Replace the following: PROJECT ID : Your Google Cloud project ID ."
+        ]
+      },
+      {
+        "title": "Policy \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy",
+        "source_id": "site-docs-reference-2",
+        "final_score": 36,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Cloud Run Cloud Run functions Reference Send feedback Policy Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.workerPoolUser",
+      "policy.json",
+      "projects.locations.functions",
+      "resource.name.startsWith",
+      "resource.type",
+      "robot.iam.gserviceaccount.com",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.workerPoolUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/managing-access-iam",
+        "https://docs.cloud.google.com/functions/docs/building",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/Policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:13.254Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions"
+}

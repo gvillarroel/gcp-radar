@@ -1,0 +1,112 @@
+{
+  "feature_name": "YARA-L 2.0 functions in Rules and Search",
+  "feature_slug": "yara-l-2-0-functions-in-rules-and-search",
+  "summary": "Google SecOps added new YARA-L 2.0 functions for use in Rules and Search.",
+  "extended_definition": "Google SecOps added new YARA-L 2.0 functions for use in Rules and Search.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Functions Supported in: Google secops SIEM This section describes the YARA-L 2.0 functions that you can use in Rules, Search, and Dashboard queries.",
+          "You can use these functions in the following parts of a YARA-L query: events section BOOL CLAUSE of a conditional in the outcome section arrays.concat Supported in: Rules Search arrays.concat(string array, string array) Description Returns a new string array by copying elements from original string arrays.",
+          "Here are examples of valid time zone specifiers, which you can pass as the second argument to time extraction functions: \"America/Los Angeles\", or \"-08:00\". (\"PST\" is not supported) \"America/New York\", or \"-05:00\". (\"EST\" is not supported) \"Europe/London\" \"UTC\" \"GMT\" Param data types INT , STRING , STRING Return type STRING Code samples Example 1 In this example, the time zone argument is omitted, so it defaults to GMT . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts) = \"2024-02-22 10:43:51\" Example 2 This example uses a string literal to define the time zone . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts, \"%F %T\", \"America/Los Angeles\") = \"2024-02-22 10:43:51\" Example 3 This example uses a string literal to define the timestamp format . $ts = $e.metadata.collected timestamp.seconds timestamp.get timestamp($ts, \"%Y-%m\", \"GMT\") = \"2024-02\" Example 4 This example formats a unix timestamp as a string at second granularity. timestamp.get timestamp(1708598631, \"SECOND\", \"GMT\") = \"2024-02-22 10:43:51\" Example 5 This example formats a unix timestamp as a string at minute granularity. timestamp.get timestamp(1708598631, \"MINUTE\", \"GMT\") = \"2024-02-22 10:43\" Example 6 This example formats a unix timestamp as a string at hour granularity. timestamp.get timestamp(1708598631, \"HOUR\", \"GMT\") = \"2024-02-22 10\" Example 7 This example formats a unix timestamp as a string at day granularity. timestamp.get timestamp(1708598631, \"DATE\", \"GMT\") = \"2024-02-22\" Example 8 This example formats a unix timestamp as a string at week granularity. timestamp.get timestamp(1708598631, \"WEEK\", \"GMT\") = \"2024-02-18\" Example 9 This example formats a unix timestamp as a string at month granularity. timestamp.get timestamp(1708598631, \"MONTH\", \"GMT\") = \"2024-02\" Example 10 This example formats a unix timestamp as a string at year granularity. timestamp.get timestamp(1708598631, \"YEAR\", \"GMT\") = \"2024\" timestamp.get week Supported in: Rules Search timestamp.get week(unix seconds [, time zone]) Description This function returns an integer in the range [0, 53] representing the week of the year."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Search for events and alerts Supported in: Google secops SIEM The search function lets you find Unified Data Model (UDM) events and alerts in your Google Security Operations instance using YARA-L 2.0 syntax .",
+          "These alerts don't surface within search unless they are processed by the Google SecOps Detection Engine as a YARA-L rule.",
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search."
+        ]
+      },
+      {
+        "title": "\"Default detection rules \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "Default detection rules Supported in: Google secops SIEM YARA-L rules language YARA-L is a detection rules language developed by Google.",
+          "When using time periods, the Google SecOps Detection Engine only examines the discrete blocks of time you specify. rule OutcomeRuleMultiEvent { meta: author = \"noone@google.com\" events: $u.udm.principal.hostname = $hostname $asset context.graph.entity.hostname = $hostname $severity = $asset context.graph.entity.asset.vulnerabilities.severity match: $hostname over 5m outcome: $risk score = max( 100 + if($hostname = \"my-hostname\", 100, 50) + if($severity = \"HIGH\", 10) + if($severity = \"MEDIUM\", 5) + if($severity = \"LOW\", 1) ) $asset id list = array( if($u.principal.asset id = \"\", \"Empty asset id\", $u.principal.asset id ) ) $asset id distinct list = array distinct($u.principal.asset id) $asset id count = count($u.principal.asset id) $asset id distinct count = count distinct($u.principal.asset id) condition: $u and $asset context and $risk score > 50 and not arrays.contains($asset id list, \"id 1234\") } Conclusion YARA-L is a flexible detection language which enables you to examine security events and not simply just return a data query.",
+          "Further not conditions could be added to this rule if you identify frequent false positives coming from other known file paths. rule suspicious unusual location svchost execution { meta: author = \"Google Cloud Security\" description = \"Windows 'svchost' executed from an unusual location\" yara version = \"YL2.0\" rule version = \"1.0\" events: $e1.metadata.event type = \"PROCESS LAUNCH\" re.regex($e1.principal.process.command line, \\bsvchost(\\.exe)?\\b) nocase not re.regex($e1.principal.process.command line, \\\\Windows\\\\System32\\\\) nocase condition: $e1 } Specify more than one event variable YARA-L enables you to have more than one event variable in a rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.concat",
+      "arrays.contains",
+      "context.graph.entity.asset.vulnerabilities.severity",
+      "context.graph.entity.hostname",
+      "e.metadata.collected",
+      "e.metadata.event",
+      "e1.metadata.event",
+      "e1.principal.process.command",
+      "re.regex",
+      "timestamp.get",
+      "timestamp.seconds",
+      "u.principal.asset",
+      "u.udm.principal.hostname"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

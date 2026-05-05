@@ -144,6 +144,8 @@ The validator must check:
   `card.json` and `README.md`
 - every promoted feature README includes at least one official Google evidence
   link from its promoted feature card
+- every promoted feature README title matches its promoted feature card's
+  feature name
 - every promoted feature README keeps its IAM mapping status and rendered IAM
   detail aligned with its promoted feature card, including explicit roles,
   explicit permissions, derived IAM qualifier text, derived permissions shown

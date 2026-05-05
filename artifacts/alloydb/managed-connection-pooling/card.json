@@ -1,0 +1,142 @@
+{
+  "feature_name": "Managed connection pooling",
+  "feature_slug": "managed-connection-pooling",
+  "summary": "Managed connection pooling optimizes resource usage to improve AlloyDB workload scalability and reliability; Managed connection pooling improves workload reliability, scalability, and performance by optimizing connection resource usage on AlloyDB instances.",
+  "extended_definition": "Managed connection pooling optimizes resource usage to improve AlloyDB workload scalability and reliability; Managed connection pooling improves workload reliability, scalability, and performance by optimizing connection resource usage on AlloyDB instances.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+      "https://docs.cloud.google.com/alloydb/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a read pool instance in a cluster \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "To enable managed connection pooling in your read pool instance, add the --enable-connection-pooling flag to the gcloud alloydb instances create command: gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --enable-connection-pooling To create a read pool instance for a public IP-enabled cluster, add the --assign-inbound-public-ip= ASSIGN IPV4 parameter. gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --assign-inbound-public-ip = ASSIGN IPV4 Optionally, you can pass the comma separated list of CIDR blocks, such as 64.233.160.0/16 to the --authorized-external-networks parameter to set authorized external networks on your instance.",
+          "Optional: To enable managed connection pooling, select Enable managed connection pool under Managed connection pool .",
+          "For more information, see Configure managed connection pooling ."
+        ]
+      },
+      {
+        "title": "AlloyDB overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Automatic and adaptive database features The fully PostgreSQL-compatible database engine that powers every AlloyDB node has several features that continuously analyze the structure and frequency of the queries that your instances handle, using this information to suggest schema improvements or automatically apply optimizations: An index advisor helps you find opportunities to optimize your database schema using new indexes based on your usage patterns.",
+          "The following diagram illustrates the AlloyDB resource hierarchy, featuring a cluster scaled with a primary instance and multiple load-balanced read pool instances: Cluster: a top-level resource that acts as a logical container for your databases, logs, and other metadata within a region.",
+          "Automatic memory and storage management systems take advantage of the Google-built, cloud-based environment that AlloyDB runs on, continuously allocating and releasing memory and storage as needed to keep your cluster running with optimal performance and resource efficiency."
+        ]
+      },
+      {
+        "title": "\"Use AlloyDB for PostgreSQL with MCP, Gemini CLI, and other agents \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-2",
+        "final_score": 103,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Before you begin To connect to your AlloyDB instance and use the available tools, you must have one of the following Identity and Access Management (IAM) roles, or a custom role with equivalent permissions: Task Role name Required Identity and Access Management (IAM) role Use read-only tools to list and get AlloyDB resources AlloyDB Viewer roles/alloydb.viewer Connect to an instance and run queries Cloud AlloyDB Client roles/alloydb.client Service Usage Consumer roles/serviceusage.serviceUsageConsumer Perform administrative tasks (such as creating or managing clusters, instances, and users) AlloyDB Admin roles/alloydb.admin Use the observability extension Monitoring Viewer roles/monitoring.viewer Before you can connect to your AlloyDB instance, complete the following steps to set up your project and database.",
+          "Resource management clusters, instances, users create cluster Create an AlloyDB cluster named sales-quarterly-db in the us-east1 region. get cluster Get the details for the cluster sales-quarterly-db . list clusters List all of my AlloyDB clusters. create instance Create a new read instance in the sales-quarterly-db cluster. get instance Show me the information for the instance sales-quarterly-db-rp . list instances List all instances in the sales-quarterly-db cluster. create user Note: The create user tool can create two types of database users: Database users with built-in authentication : these users are managed within the database and authenticate with a password.",
+          "In the Enable APIs step, click Enable to enable the following: AlloyDB API Compute Engine API Cloud Resource Manager API Service Networking API The Service Networking API is required if you plan to configure network connectivity to AlloyDB using a VPC network that resides in the same Google Cloud project as AlloyDB."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.client",
+      "alloydb.viewer",
+      "monitoring.viewer",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.client",
+      "roles/alloydb.viewer",
+      "roles/monitoring.viewer",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "https://docs.cloud.google.com/alloydb/docs/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-ide-using-mcp-toolbox"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

@@ -1,0 +1,95 @@
+{
+  "feature_name": "Carousel card layout",
+  "feature_slug": "carousel-card-layout",
+  "summary": "Chat apps can present cards in a carousel layout that rotates through multiple cards with previous and next navigation; Chat apps can present cards in a carousel layout that rotates through multiple cards with previous and next navigation.",
+  "extended_definition": "Chat apps can present cards in a carousel layout that rotates through multiple cards with previous and next navigation; Chat apps can present cards in a carousel layout that rotates through multiple cards with previous and next navigation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+      "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1",
+      "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cards v2 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "source_id": "site-api-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, this is a JSON representation of a carousel that contains three text paragraph widgets. { \"carouselCards\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"First text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Second text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Third text paragraph in carousel\", } } ] } ] } Available for Google Chat apps and unavailable for Google Workspace add-ons.",
+          "Example: Card message for a Google Chat app To create the sample card message in Google Chat, use the following JSON: { \"cardsV2\": [ { \"cardId\": \"unique-card-id\", \"card\": { \"header\": { \"title\": \"Sasha\", \"subtitle\": \"Software Engineer\", \"imageUrl\": \"https://developers.google.com/workspace/chat/images/quickstart-app-avatar.png\", \"imageType\": \"CIRCLE\", \"imageAltText\": \"Avatar for Sasha\" }, \"sections\": [ { \"header\": \"Contact Info\", \"collapsible\": true, \"uncollapsibleWidgetsCount\": 1, \"widgets\": [ { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"EMAIL\" }, \"text\": \"sasha@example.com\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PERSON\" }, \"text\": \"<font color=\\\"#80e27e\\\">Online</font>\" } }, { \"decoratedText\": { \"startIcon\": { \"knownIcon\": \"PHONE\" }, \"text\": \"+1 (555) 555-1234\" } }, { \"buttonList\": { \"buttons\": [ { \"text\": \"Share\", \"onClick\": { \"openLink\": { \"url\": \"https://example.com/share\" } } }, { \"text\": \"Edit\", \"onClick\": { \"action\": { \"function\": \"goToView\", \"parameters\": [ { \"key\": \"viewType\", \"value\": \"EDIT\" } ] } } } ] } } ] } ] } } ] } JSON representation { \"header\" : { object ( CardHeader ) } , \"sections\" : [ { object ( Section ) } ] , \"sectionDividerStyle\" : enum ( DividerStyle ) , \"cardActions\" : [ { object ( CardAction ) } ] , \"name\" : string , \"fixedFooter\" : { object ( CardFixedFooter ) } , \"displayStyle\" : enum ( DisplayStyle ) , \"peekCardHeader\" : { object ( CardHeader ) } , \"expressionData\" : [ { object ( ExpressionData ) } ] } Fields header object ( CardHeader ) The header of the card.",
+          "Google Workspace add-ons and Chat apps JSON representation { \"horizontalSizeStyle\" : enum ( HorizontalSizeStyle ) , \"horizontalAlignment\" : enum ( HorizontalAlignment ) , \"verticalAlignment\" : enum ( VerticalAlignment ) , \"widgets\" : [ { object ( Widgets ) } ] } Fields horizontalSizeStyle enum ( HorizontalSizeStyle ) Specifies how a column fills the width of the card. horizontalAlignment enum ( HorizontalAlignment ) Specifies whether widgets align to the left, right, or center of a column. verticalAlignment enum ( VerticalAlignment ) Specifies whether widgets align to the top, bottom, or center of a column. widgets[] object ( Widgets ) An array of widgets included in a column."
+        ]
+      },
+      {
+        "title": "Package google.apps.card.v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "source_id": "site-docs-reference",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, this is a JSON representation of a carousel that contains three text paragraph widgets. { \"carouselCards\": [ { \"widgets\": [ { \"textParagraph\": { \"text\": \"First text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Second text paragraph in carousel\", } } ] }, { \"widgets\": [ { \"textParagraph\": { \"text\": \"Third text paragraph in carousel\", } } ] } ] } Available for Google Chat apps and unavailable for Google Workspace add-ons.",
+          "Available for Google Workspace add-ons and unavailable for Google Chat apps. peek card header CardHeader When displaying contextual content, the peek card header acts as a placeholder so that the user can navigate forward between the homepage cards and the contextual cards.",
+          "Widgets are fundamental building blocks of Google Chat cards, encompassing elements like text, images, buttons, and interactive controls for creating dynamic layouts."
+        ]
+      },
+      {
+        "title": "Cards v1 \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1",
+        "source_id": "site-api-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Google Chat Reference Send feedback Cards v1 Stay organized with collections Save and categorize content based on your preferences.",
+          "Cards support interactive elements like buttons that can trigger actions such as opening links or invoking Apps Script functions.",
+          "Page Summary outlined flag Cards v1 is deprecated; use Cards v2 instead for creating interactive UI elements within Google Chat."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "avatar.png",
+      "developers.google.com",
+      "example.com",
+      "spaces.messages"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards",
+        "https://developers.google.com/workspace/chat/api/reference/rpc/google.apps.card.v1",
+        "https://developers.google.com/workspace/chat/api/reference/rest/v1/cards-v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.385Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

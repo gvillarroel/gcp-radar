@@ -1,0 +1,147 @@
+{
+  "feature_name": "Cloud Build Bitbucket Server and Bitbucket Data Center integration",
+  "feature_slug": "cloud-build-bitbucket-server-and-bitbucket-data-center-integration",
+  "summary": "Cloud Build supports building repositories hosted on Bitbucket Server and Bitbucket Data Center, including on-premises deployments.",
+  "extended_definition": "Cloud Build supports building repositories hosted on Bitbucket Server and Bitbucket Data Center, including on-premises deployments.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/apis",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to a Bitbucket Data Center repository \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "source_id": "site-docs-root-2",
+        "final_score": 49,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following curl command in your terminal from the same directory as the JSON file: curl -X POST -H \"Authorization: Bearer \" $( gcloud auth print-access-token ) -H \"Content-Type: application/json; charset=utf-8\" -H \"x-goog-user-project: PROJECT NUMBER \" https://cloudbuild.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /bitbucketServerConfigs/ BITBUCKET DATA CENTER CONFIG NAME /connectedRepositories:batchCreate -d @requests.json Where: PROJECT NUMBER is your Google Cloud project number.",
+          "Enter the following command to retrieve the webhook ID: gcloud alpha builds enterprise-config bitbucketserver describe CONFIG NAME --region = REGION Where: CONFIG NAME is the name of the Bitbucket Data Center config REGION is the region of the Bitbucket Data Center host connection What's next Learn how to build repositories from Bitbucket Data Center .",
+          "If the Bitbucket Data Center repository is connected successfully, you can see the connected repository in the response.bitbucketServerConnectedRepositories field."
+        ]
+      },
+      {
+        "title": "\"Build repositories from Bitbucket Data Center in a private network \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "source_id": "site-docs-root-2",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Build repositories from Bitbucket Data Center in a private network If your Bitbucket Data Center instance is hosted in a private network and not reachable over a public internet connection, you must create a private connection between your VPC network and the service producer network .",
+          "1st gen 2nd gen Cloud Build enables you to create triggers to build from repositories hosted on Bitbucket Data Center , allowing you to execute builds in response to events such as commit pushes or pull requests associated with your Bitbucket Data Center repository.",
+          "Home Documentation Application development Cloud Build Guides Send feedback Build repositories from Bitbucket Data Center in a private network Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"APIs & Reference \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/apis",
+        "source_id": "site-docs-reference-2",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.googleapis.com",
+      "requests.json",
+      "response.bitbucketServerConnectedRepositories"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-repo-bitbucket-data-center",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/build-repos-from-bitbucket-data-center-private-network",
+        "https://docs.cloud.google.com/appengine/docs/standard/apis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

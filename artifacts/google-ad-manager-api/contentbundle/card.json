@@ -1,0 +1,211 @@
+{
+  "feature_name": "ContentBundle",
+  "feature_slug": "contentbundle",
+  "summary": "A resource for content bundles in the Google Ad Manager API.",
+  "extended_definition": "A resource for content bundles in the Google Ad Manager API.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/ad-manager/api/beta/reference/rest",
+      "https://developers.google.com/ad-manager/api/forecasting",
+      "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem",
+      "https://developers.google.com/ad-manager/api/rel_notes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Ad Manager API \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 231,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.networks REST Resource: v1.networks.adUnitSizes REST Resource: v1.networks.adUnits REST Resource: v1.networks.applications REST Resource: v1.networks.audienceSegments REST Resource: v1.networks.bandwidthGroups REST Resource: v1.networks.browserLanguages REST Resource: v1.networks.browsers REST Resource: v1.networks.cmsMetadataKeys REST Resource: v1.networks.cmsMetadataValues REST Resource: v1.networks.companies REST Resource: v1.networks.contacts REST Resource: v1.networks.content REST Resource: v1.networks.contentBundles REST Resource: v1.networks.contentLabels REST Resource: v1.networks.creativeTemplates REST Resource: v1.networks.customFields REST Resource: v1.networks.customTargetingKeys REST Resource: v1.networks.customTargetingKeys.customTargetingValues REST Resource: v1.networks.customTargetingValues REST Resource: v1.networks.deviceCapabilities REST Resource: v1.networks.deviceCategories REST Resource: v1.networks.deviceManufacturers REST Resource: v1.networks.entitySignalsMappings REST Resource: v1.networks.geoTargets REST Resource: v1.networks.labels REST Resource: v1.networks.lineItems REST Resource: v1.networks.linkedDevices REST Resource: v1.networks.mobileCarriers REST Resource: v1.networks.mobileDeviceSubmodels REST Resource: v1.networks.mobileDevices REST Resource: v1.networks.operatingSystemVersions REST Resource: v1.networks.operatingSystems REST Resource: v1.networks.operations.reports.runs REST Resource: v1.networks.orders REST Resource: v1.networks.placements REST Resource: v1.networks.privateAuctionDeals REST Resource: v1.networks.privateAuctions REST Resource: v1.networks.programmaticBuyers REST Resource: v1.networks.reports REST Resource: v1.networks.reports.results REST Resource: v1.networks.roles REST Resource: v1.networks.sites REST Resource: v1.networks.taxonomyCategories REST Resource: v1.networks.teams REST Resource: v1.networks.users REST Resource: v1.networks.webProperties.adReviewCenterAds REST Resource: v1.operations Service: admanager.googleapis.com Discovery document A Discovery Document is a machine-readable specification for describing and consuming REST APIs.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-01 UTC.\"],[],[\"This API allows managing Ad Manager data through various REST resources.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://admanager.googleapis.com REST Resource: v1.networks Methods get GET /v1/{name} API to retrieve a Network object. list GET /v1/networks API to retrieve all the networks the current user has access to."
+        ]
+      },
+      {
+        "title": "Release Notes \\_|\\_ Ad Manager SOAP API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/rel_notes",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Changes ≠ AdRuleService (1 new, 1 changed, 0 removed) + type PublisherProvidedSignalsTargeting ≠ type Targeting + field publisherProvidedSignalsTargeting ≠ AdjustmentService (1 new, 1 changed, 0 removed) + type PublisherProvidedSignalsTargeting ≠ type Targeting + field publisherProvidedSignalsTargeting = AdsTxtService (no changes) = AudienceSegmentService (no changes) = CdnConfigurationService (no changes) = CmsMetadataService (no changes) ≠ CompanyService (0 new, 1 changed, 0 removed) ≠ type Company + field verifiedExchangeAdvertiserId + field verifiedExchangeBrandId = ContactService (no changes) = ContentBundleService (no changes) = ContentService (no changes) ≠ CreativeService (1 new, 3 changed, 0 removed) + enum ThirdPartyDataDeclarationStatus ≠ type Creative + field thirdPartyDataDeclarationStatus ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS ≠ enum LineItemCreativeAssociationError.Reason + value CREATIVE BUYER PLACEMENT ID REQUIRED ≠ CreativeSetService (0 new, 1 changed, 0 removed) ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS = CreativeTemplateService (no changes) = CreativeWrapperService (no changes) = CustomFieldService (no changes) = CustomTargetingService (no changes) = DaiAuthenticationKeyService (no changes) = DaiEncodingProfileService (no changes) ≠ ForecastService (2 new, 5 changed, 0 removed) + type PublisherProvidedSignalsTargeting + type PublisherProvidedSignalsTargetingError ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS ≠ enum LineItemCreativeAssociationError.Reason + value CREATIVE BUYER PLACEMENT ID REQUIRED ≠ type ProposalLineItem + field supplyPath ≠ type Targeting + field publisherProvidedSignalsTargeting ≠ enum TargetingDimension + value PUBLISHER PROVIDED SIGNALS = InventoryService (no changes) = LabelService (no changes) ≠ LineItemCreativeAssociationService (0 new, 2 changed, 0 removed) ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS ≠ enum LineItemCreativeAssociationError.Reason + value CREATIVE BUYER PLACEMENT ID REQUIRED ≠ LineItemService (2 new, 3 changed, 0 removed) + type PublisherProvidedSignalsTargeting + type PublisherProvidedSignalsTargetingError ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS ≠ enum LineItemCreativeAssociationError.Reason + value CREATIVE BUYER PLACEMENT ID REQUIRED ≠ type Targeting + field publisherProvidedSignalsTargeting ≠ LineItemTemplateService (1 new, 2 changed, 0 removed) + type PublisherProvidedSignalsTargetingError ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS ≠ enum LineItemCreativeAssociationError.Reason + value CREATIVE BUYER PLACEMENT ID REQUIRED = LiveStreamEventService (no changes) = MobileApplicationService (no changes) ≠ NativeStyleService (1 new, 1 changed, 0 removed) + type PublisherProvidedSignalsTargeting ≠ type Targeting + field publisherProvidedSignalsTargeting = NetworkService (no changes) ≠ OrderService (1 new, 2 changed, 0 removed) + type PublisherProvidedSignalsTargetingError ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS ≠ enum LineItemCreativeAssociationError.Reason + value CREATIVE BUYER PLACEMENT ID REQUIRED = PlacementService (no changes) ≠ ProposalLineItemService (2 new, 3 changed, 0 removed) + type PublisherProvidedSignalsTargeting + type PublisherProvidedSignalsTargetingError ≠ enum ProposalError.Reason + value UPDATE SUPPLY PATH NOT ALLOWED + value BUYER DISABLED FOR AGENCY DIRECT ≠ type ProposalLineItem + field supplyPath ≠ type Targeting + field publisherProvidedSignalsTargeting ≠ ProposalService (1 new, 3 changed, 0 removed) + type PublisherProvidedSignalsTargeting ≠ type Proposal + field supplyPath ≠ enum ProposalError.Reason + value UPDATE SUPPLY PATH NOT ALLOWED + value BUYER DISABLED FOR AGENCY DIRECT ≠ type Targeting + field publisherProvidedSignalsTargeting ≠ PublisherQueryLanguageService (1 new, 2 changed, 0 removed) + type PublisherProvidedSignalsTargeting ≠ enum CreativeError.Reason + value CANNOT REMOVE PLACEMENT IDS ≠ type Targeting + field publisherProvidedSignalsTargeting = ReportService (no changes) = SegmentPopulationService (no changes) = SiteService (no changes) = StreamActivityMonitorService (no changes) = SuggestedAdUnitService (no changes) ≠ TargetingPresetService (2 new, 1 changed, 0 removed) + type PublisherProvidedSignalsTargeting + type PublisherProvidedSignalsTargetingError ≠ type Targeting + field publisherProvidedSignalsTargeting = TeamService (no changes) = UserService (no changes) = UserTeamAssociationService (no changes) ≠ YieldGroupService (2 new, 1 changed, 0 removed) + type PublisherProvidedSignalsTargeting + type PublisherProvidedSignalsTargetingError ≠ type Targeting + field publisherProvidedSignalsTargeting v202508 What's New Video Added MimeType.VIDEO MP2T .",
+          "API Changes = AdRuleService (no changes) ≠ AdjustmentService (0 new, 1 changed, 0 removed) ≠ enum ForecastAdjustmentError.Reason + value AD REQUEST ADJUSTMENT MUST USE PARENT SEGMENT TARGETING = AdsTxtService (no changes) = AudienceSegmentService (no changes) = CdnConfigurationService (no changes) = CmsMetadataService (no changes) ≠ CompanyService (1 new, 2 changed, 0 removed) + enum InvitationStatus ≠ type ChildPublisher + field invitationStatus − field status ≠ enum McmError.Reason + value OPERATION UNSUPPORTED INITIAL STATUS = ContactService (no changes) = ContentBundleService (no changes) ≠ ContentService (0 new, 1 changed, 0 removed) ≠ enum VodIngestError + value DISCONTINUITY COUNT DOES NOT MATCH PTS COUNT ≠ CreativeService (0 new, 1 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE ≠ CreativeSetService (0 new, 1 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE = CreativeTemplateService (no changes) = CreativeWrapperService (no changes) = CustomFieldService (no changes) = CustomTargetingService (no changes) = DaiAuthenticationKeyService (no changes) = DaiEncodingProfileService (no changes) ≠ ForecastService (0 new, 6 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE ≠ enum LineItemError.Reason + value REPEATED CREATIVE SERVING NOT ALLOWED ≠ type LineItemSummary + field repeatedCreativeServingEnabled ≠ enum ProgrammaticError.Reason + value INVALID BUYER ≠ type ProposalLineItem + field buyerPermissionType ≠ enum TargetingDimension − value VIDEO POSITION = InventoryService (no changes) = LabelService (no changes) ≠ LineItemCreativeAssociationService (0 new, 2 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE ≠ enum LineItemError.Reason + value REPEATED CREATIVE SERVING NOT ALLOWED ≠ LineItemService (0 new, 4 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE ≠ enum LineItemError.Reason + value REPEATED CREATIVE SERVING NOT ALLOWED ≠ type LineItemSummary + field repeatedCreativeServingEnabled ≠ enum ProgrammaticError.Reason + value INVALID BUYER ≠ LineItemTemplateService (0 new, 3 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE ≠ enum LineItemError.Reason + value REPEATED CREATIVE SERVING NOT ALLOWED ≠ enum ProgrammaticError.Reason + value INVALID BUYER = LiveStreamEventService (no changes) = MobileApplicationService (no changes) = NativeStyleService (no changes) ≠ NetworkService (0 new, 1 changed, 0 removed) ≠ enum McmError.Reason + value OPERATION UNSUPPORTED INITIAL STATUS ≠ OrderService (0 new, 3 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE ≠ enum LineItemError.Reason + value REPEATED CREATIVE SERVING NOT ALLOWED ≠ enum ProgrammaticError.Reason + value INVALID BUYER = PlacementService (no changes) ≠ ProposalLineItemService (0 new, 3 changed, 0 removed) ≠ enum LineItemError.Reason + value REPEATED CREATIVE SERVING NOT ALLOWED ≠ enum ProgrammaticError.Reason + value INVALID BUYER ≠ type ProposalLineItem + field buyerPermissionType ≠ ProposalService (0 new, 1 changed, 0 removed) ≠ enum ProgrammaticError.Reason + value INVALID BUYER ≠ PublisherQueryLanguageService (0 new, 1 changed, 0 removed) ≠ enum CreativeError.Reason − value INVALID ADSENSE CREATIVE SIZE − value INVALID AD EXCHANGE CREATIVE SIZE = ReportService (no changes) = SegmentPopulationService (no changes) = SiteService (no changes) = StreamActivityMonitorService (no changes) = SuggestedAdUnitService (no changes) = TargetingPresetService (no changes) = TeamService (no changes) = UserService (no changes) = UserTeamAssociationService (no changes) = YieldGroupService (no changes) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "API Changes = AdRuleService (no changes) ≠ AdjustmentService (0 new, 2 changed, 0 removed) ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT ≠ enum ForecastAdjustmentError.Reason − value PARENT SEGMENT TARGETING INCOMPATIBLE WITH HISTORICAL BASIS AD REQUEST SOURCE SETTINGS = AdsTxtService (no changes) = AudienceSegmentService (no changes) = CdnConfigurationService (no changes) = CmsMetadataService (no changes) = CompanyService (no changes) = ContactService (no changes) = ContentBundleService (no changes) ≠ ContentService (0 new, 2 changed, 0 removed) ≠ enum MimeType + value VIDEO MP2T ≠ enum VodIngestError + value CHAPTER PTS MISMATCH + value CHAPTER RENDITION ERROR ≠ CreativeService (0 new, 2 changed, 0 removed) ≠ type Creative + field selfDeclaredEuropeanUnionPoliticalContent ≠ enum MimeType + value VIDEO MP2T = CreativeSetService (no changes) = CreativeTemplateService (no changes) = CreativeWrapperService (no changes) = CustomFieldService (no changes) = CustomTargetingService (no changes) = DaiAuthenticationKeyService (no changes) = DaiEncodingProfileService (no changes) ≠ ForecastService (0 new, 4 changed, 0 removed) ≠ enum CostType + value CPCV ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT ≠ enum LineItemError.Reason + value PLACEHOLDER COUNT NOT SUPPORTED ≠ enum UnitType + value COMPLETED VIEWS = InventoryService (no changes) = LabelService (no changes) ≠ LineItemCreativeAssociationService (0 new, 1 changed, 0 removed) ≠ enum LineItemError.Reason + value PLACEHOLDER COUNT NOT SUPPORTED ≠ LineItemService (0 new, 4 changed, 0 removed) ≠ enum CostType + value CPCV ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT ≠ enum LineItemError.Reason + value PLACEHOLDER COUNT NOT SUPPORTED ≠ enum UnitType + value COMPLETED VIEWS ≠ LineItemTemplateService (0 new, 2 changed, 0 removed) ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT ≠ enum LineItemError.Reason + value PLACEHOLDER COUNT NOT SUPPORTED ≠ LiveStreamEventService (0 new, 1 changed, 0 removed) ≠ enum VideoAdTagError.Reason + value DUPLICATE AD TAG PARAMETER = MobileApplicationService (no changes) ≠ NativeStyleService (0 new, 1 changed, 0 removed) ≠ enum NativeStyleError.Reason + value INVALID FLUID SIZE FOR NEWSLETTER FORMAT = NetworkService (no changes) ≠ OrderService (0 new, 2 changed, 0 removed) ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT ≠ enum LineItemError.Reason + value PLACEHOLDER COUNT NOT SUPPORTED = PlacementService (no changes) ≠ ProposalLineItemService (0 new, 3 changed, 0 removed) ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT ≠ enum LineItemError.Reason + value PLACEHOLDER COUNT NOT SUPPORTED ≠ enum UnitType + value COMPLETED VIEWS = ProposalService (no changes) = PublisherQueryLanguageService (no changes) = ReportService (no changes) = SegmentPopulationService (no changes) = SiteService (no changes) ≠ StreamActivityMonitorService (0 new, 1 changed, 0 removed) ≠ type VodStreamCreateRequest + field podServingSessionTitle = SuggestedAdUnitService (no changes) ≠ TargetingPresetService (0 new, 1 changed, 0 removed) ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT = TeamService (no changes) = UserService (no changes) = UserTeamAssociationService (no changes) ≠ YieldGroupService (0 new, 1 changed, 0 removed) ≠ enum DateTimeRangeTargetingError.Reason + value BLACKOUT DURATION TOO SHORT v202505 What's New Multiple Customer Management Added InvitationStatus for ChildPublisher companies."
+        ]
+      },
+      {
+        "title": "Forecasting \\_|\\_ Ad Manager SOAP API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/forecasting",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AddDays ( 4 ), \"America/New York\" ), lineItem . endDateTime }, targets = new ForecastBreakdownTarget [] { new ForecastBreakdownTarget () { // Optional name field to identify this breakdown // in the response. name = \"United States\" , targeting = new Targeting () { inventoryTargeting = new InventoryTargeting () { targetedAdUnits = new AdUnitTargeting [] { new AdUnitTargeting () { adUnitId = rootAdUnitId , includeDescendants = true } } }, geoTargeting = new GeoTargeting () { targetedLocations = new Location [] { new Location () { id = 2840L } } } } }, new ForecastBreakdownTarget () { // Optional name field to identify this breakdown // in the response. name = \"Geneva\" , targeting = new Targeting () { inventoryTargeting = new InventoryTargeting () { targetedAdUnits = new AdUnitTargeting [] { new AdUnitTargeting () { adUnitId = rootAdUnitId , includeDescendants = true } } }, geoTargeting = new GeoTargeting () { targetedLocations = new Location [] { new Location () { id = 20133L } } } } } } } }; ProspectiveLineItem prospectiveLineItem = new ProspectiveLineItem () { advertiserId = advertiserId , lineItem = lineItem }; AvailabilityForecast forecast = forecastService . getAvailabilityForecast ( prospectiveLineItem , options ); View on GitHub Ruby prospective line item = { :advertiser id = > advertiser id , :line item = > line item } Set forecasting options. forecast options = { :include contending line items = > true , The field includeTargetingCriteriaBreakdown can only be set if breakdowns are not mannually specified. :include targeting criteria breakdown => true, :breakdown = > { Break down forecast by day from start time to end time :time windows = > time windows , Break down forecast by any targeting configuration :targets = > [ { Optional, the name field is only used to identify this breakdown in the response. :name = > 'United States' , :targeting = > { :inventory targeting = > targeting [ :inventory targeting ] , :geo targeting = > { :targeted locations = > [ { :id = > '2840' , :display name = > 'US' } ] } } }, { Optional, the name field is only used to identify this breakdown in the response. :name = > 'Geneva' , :targeting = > { :inventory targeting = > targeting [ :inventory targeting ] , :geo targeting = > { :targeted locations = > [ { :id = > '20133' , :display name = > 'Geneva' } ] } } } ] } } Get forecast for the line item. forecast = forecast service . get availability forecast ( prospective line item , forecast options ) View on GitHub Delivery forecasts If you want to simulate the delivery of multiple competing line items, you can do so with a DeliveryForecast .",
+          "ProspectiveLineItem prospectiveLineItem = new ProspectiveLineItem (); prospectiveLineItem . setAdvertiserId ( advertiserId ); prospectiveLineItem . setLineItem ( lineItem ); AvailabilityForecastOptions options = new AvailabilityForecastOptions (); options . setIncludeContendingLineItems ( true ); options . setIncludeTargetingCriteriaBreakdown ( true ); AvailabilityForecast forecast = forecastService . getAvailabilityForecast ( prospectiveLineItem , options ); View on GitHub Python prospective line item = { 'lineItem' : line item , 'advertiserId' : advertiser id } Set forecasting options. forecast options = { 'includeContendingLineItems' : True , The field includeTargetingCriteriaBreakdown can only be set if breakdowns are not manually specified. 'includeTargetingCriteriaBreakdown': True, 'breakdown' : { 'timeWindows' : [ now datetime , now datetime + datetime . timedelta ( days = 1 ), now datetime + datetime . timedelta ( days = 2 ), now datetime + datetime . timedelta ( days = 3 ), now datetime + datetime . timedelta ( days = 4 ), end datetime ], 'targets' : [ { Optional, the name field is only used to identify this breakdown in the response. 'name' : 'United States' , 'targeting' : { 'inventoryTargeting' : { 'targetedAdUnits' : [ { 'includeDescendants' : True , 'adUnitId' : root ad unit id , } ] }, 'geoTargeting' : { 'targetedLocations' : [ { 'id' : '2840' , 'displayName' : 'US' } ] } } }, { Optional, the name field is only used to identify this breakdown in the response. 'name' : 'Geneva' , 'targeting' : { 'inventoryTargeting' : { 'targetedAdUnits' : [ { 'includeDescendants' : True , 'adUnitId' : root ad unit id , } ] }, 'geoTargeting' : { 'targetedLocations' : [ { 'id' : '20133' , 'displayName' : 'Geneva' } ] } } } ] } } Get forecast. forecast = forecast service . getAvailabilityForecast ( prospective line item , forecast options ) View on GitHub PHP // Get forecast for prospective line item. $prospectiveLineItem = new ProspectiveLineItem(); $prospectiveLineItem->setAdvertiserId($advertiserId); $prospectiveLineItem->setLineItem($lineItem); $options = new AvailabilityForecastOptions(); $options->setIncludeContendingLineItems(true); $options->setIncludeTargetingCriteriaBreakdown(true); $forecast = $forecastService->getAvailabilityForecast( $prospectiveLineItem, $options ); View on GitHub C# // Get availability forecast.",
+          "WriteLine ( \"\\t{0} {1} predicted\" , lineItemForecast . predictedDeliveryUnits , unitType ); } View on GitHub Ruby Get the ForecastService. forecast service = ad manager . service ( :ForecastService , API VERSION ) Get forecast for the line item. forecast = forecast service . get delivery forecast by ids ( [ line item id1 , line item id2 ] , nil ) unless forecast . nil? forecast [ :line item delivery forecasts ]. nil? forecast [ :line item delivery forecasts ]. each do single forecast Display results. unit type = single forecast [ :unit type ] puts ( 'Forecast for line item %d: \\n\\t %d %s matched \\n\\t %d %s ' + 'delivered \\n\\t %d %s predicted \\n ' ) % [ single forecast [ :line item id ] , single forecast [ :matched units ] , unit type , single forecast [ :delivered units ] , unit type , single forecast [ :predicted delivery units ] , unit type ] end end View on GitHub This example will have an output similar to the following: Forecast for line item 14678: 100 clicks matched 0 clicks delivered 98 clicks predicted If you want to exclude any line items from the delivery simulation, you can do so by setting their IDs in the DeliveryForecastOptions ."
+        ]
+      },
+      {
+        "title": "type LineItem (v202602) \\_|\\_ Ad Manager SOAP API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table shows the default, minimum, and maximum priority values are for each line item type: LineItemType - default priority (minimum priority, maximum priority) LineItemType.SPONSORSHIP 4 (2, 5) LineItemType.STANDARD 8 (6, 10) LineItemType.NETWORK 12 (11, 14) LineItemType.BULK 12 (11, 14) LineItemType.PRICE PRIORITY 12 (11, 14) LineItemType.HOUSE 16 (15, 16) LineItemType.CLICK TRACKING 16 (1, 16) LineItemType.AD EXCHANGE 12 (1, 16) LineItemType.ADSENSE 12 (1, 16) LineItemType.BUMPER 16 (15, 16) This field can only be edited by certain networks, otherwise a PermissionError will occur. costPerUnit Money The amount of money to spend per impression or click.",
+          "It is required and meaningful only if the LineItem.costType is CostType.CPA or if the LineItem.lineItemType is LineItemType.SPONSORSHIP and LineItem.costType is CostType.CPM . grpSettings GrpSettings Contains the information for a line item which has a target GRP demographic. dealInfo LineItemDealInfoDto The deal information associated with this line item, if it is programmatic. viewabilityProviderCompanyIds xsd: long[] Optional IDs of the Company that provide ad verification for this line item.",
+          "This attribute is read only. creationDateTime DateTime This attribute may be null for line items created before this feature was introduced. customFieldValues BaseCustomFieldValue [] CustomFieldValue DropDownCustomFieldValue The values of the custom fields associated with this line item. isMissingCreatives xsd: boolean Indicates if a LineItem is missing any creatives for the creativePlaceholders specified."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admanager.googleapis.com",
+      "developers.google.com",
+      "networks.adUnits",
+      "networks.adUnitSizes",
+      "v1.networks",
+      "v1.networks.adUnits",
+      "v1.networks.adUnitSizes",
+      "v1.networks.applications",
+      "v1.networks.audienceSegments",
+      "v1.networks.bandwidthGroups",
+      "v1.networks.browserLanguages",
+      "v1.networks.browsers",
+      "v1.networks.cmsMetadataKeys",
+      "v1.networks.cmsMetadataValues",
+      "v1.networks.companies",
+      "v1.networks.contacts",
+      "v1.networks.content",
+      "v1.networks.contentBundles",
+      "v1.networks.contentLabels",
+      "v1.networks.creativeTemplates",
+      "v1.networks.customFields",
+      "v1.networks.customTargetingKeys",
+      "v1.networks.customTargetingKeys.customTargetingValues",
+      "v1.networks.customTargetingValues",
+      "v1.networks.deviceCapabilities",
+      "v1.networks.deviceCategories",
+      "v1.networks.deviceManufacturers",
+      "v1.networks.entitySignalsMappings",
+      "v1.networks.geoTargets",
+      "v1.networks.labels",
+      "v1.networks.lineItems",
+      "v1.networks.linkedDevices",
+      "v1.networks.mobileCarriers",
+      "v1.networks.mobileDevices",
+      "v1.networks.mobileDeviceSubmodels",
+      "v1.networks.operatingSystems",
+      "v1.networks.operatingSystemVersions",
+      "v1.networks.operations.reports.runs",
+      "v1.networks.orders",
+      "v1.networks.placements",
+      "v1.networks.privateAuctionDeals",
+      "v1.networks.privateAuctions",
+      "v1.networks.programmaticBuyers",
+      "v1.networks.reports",
+      "v1.networks.reports.results",
+      "v1.networks.roles",
+      "v1.networks.sites",
+      "v1.networks.taxonomyCategories",
+      "v1.networks.teams",
+      "v1.networks.users",
+      "v1.networks.webProperties.adReviewCenterAds",
+      "v1.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/rel_notes",
+        "https://developers.google.com/ad-manager/api/forecasting",
+        "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/rel_notes",
+        "https://developers.google.com/ad-manager/api/forecasting",
+        "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/rel_notes",
+        "https://developers.google.com/ad-manager/api/forecasting",
+        "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/rel_notes",
+        "https://developers.google.com/ad-manager/api/forecasting",
+        "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/rel_notes",
+        "https://developers.google.com/ad-manager/api/forecasting",
+        "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/rel_notes",
+        "https://developers.google.com/ad-manager/api/forecasting",
+        "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/rel_notes",
+        "https://developers.google.com/ad-manager/api/forecasting",
+        "https://developers.google.com/ad-manager/api/reference/latest/LineItemService.LineItem"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.532Z",
+  "source_step08_card": "data/step-08/current/products/google-ad-manager-api/card.json",
+  "product_name": "Google Ad Manager API",
+  "product_slug": "google-ad-manager-api"
+}

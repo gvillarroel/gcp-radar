@@ -1,0 +1,159 @@
+{
+  "feature_name": "Online prediction security controls",
+  "feature_slug": "online-prediction-security-controls",
+  "summary": "Security controls are available for the online prediction feature for Gemini 1.0 Pro and Gemini 1.0 Pro Vision.",
+  "extended_definition": "Security controls are available for the online prediction feature for Gemini 1.0 Pro and Gemini 1.0 Pro Vision.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Web Grounding for Enterprise \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "The indexed content is a subset of what's available on Google Search and suitable for customers in highly-regulated industries, such as finance, healthcare, and the public sector.",
+          "This page describes Web Grounding for Enterprise compliance controls and how to use the Web Grounding for Enterprise API to generate responses that are grounded on the web.",
+          "PROMPT : Your prompt. curl -X POST -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" -H \"Content-Type: application/json\" -H \"x-server-timeout: 60\" https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /publishers/google/models/gemini-2.0-flash:generateContent -d ' { \"contents\": [{ \"role\": \"user\", \"parts\": [{ \"text\": PROMPT }] }], \"tools\": [{ \"enterpriseWebSearch\": { } }] } ' Use Google Search suggestions When you use Web Grounding for Enterprise, and you receive Search suggestions in your response, you must display the Search suggestions in production and in your applications."
+        ]
+      },
+      {
+        "title": "\"Deploy generative AI models \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "For models without managed APIs, you are billed for the machine hours that are used by your endpoint at the same rate as Vertex AI online predictions.",
+          "For more information, see the following resources: Request body for online prediction Format your input for online prediction Make sure you have enough machine quota to deploy your model.",
+          "In the Model Garden, these are models that aren't labeled as API available or Vertex AI Studio —for example, Llama 2."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const baseImagePath = 'YOUR BASE IMAGE PATH'; // const textPrompt = 'YOUR TEXT PROMPT'; const aiplatform = require ( ' @google-cloud/aiplatform ' ); // Imports the Google Cloud Prediction service client const { PredictionServiceClient } = aiplatform . v1 ; // Import the helper module for converting arbitrary protobuf.Value objects. const { helpers } = aiplatform ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : 'us-central1-aiplatform.googleapis.com' , }; const publisher = 'google' ; const model = 'multimodalembedding@001' ; // Instantiates a client const predictionServiceClient = new PredictionServiceClient ( clientOptions ); async function predictImageFromImageAndText () { // Configure the parent resource const endpoint = projects/ ${ project } /locations/ ${ location } /publishers/ ${ publisher } /models/ ${ model } ; const fs = require ( 'fs' ); const imageFile = fs . readFileSync ( baseImagePath ); // Convert the image data to a Buffer and base64 encode it. const encodedImage = Buffer . from ( imageFile ). toString ( 'base64' ); const prompt = { text : textPrompt , image : { bytesBase64Encoded : encodedImage , }, }; const instanceValue = helpers . toValue ( prompt ); const instances = [ instanceValue ]; const parameter = { sampleCount : 1 , }; const parameters = helpers . toValue ( parameter ); const request = { endpoint , instances , parameters , }; // Predict request const [ response ] = await predictionServiceClient . predict ( request ); console . log ( 'Get image embedding response' ); const predictions = response . predictions ; console . log ( '\\tPredictions :' ); for ( const prediction of predictions ) { console . log ( \\t\\tPrediction : ${ JSON . stringify ( prediction ) } ); } } await predictImageFromImageAndText (); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "Use the following filters before requesting your adjustment: Service ID: aiplatform.googleapis.com metric: aiplatform.googleapis.com/online prediction requests per base model base model:multimodalembedding Go to Quotas If you have already sent a quota adjustment request, wait before sending another request.",
+          "For more information, see the Python API reference documentation . import vertexai from vertexai.vision models import Image , MultiModalEmbeddingModel , Video from vertexai.vision models import VideoSegmentConfig TODO(developer): Update & uncomment line below PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) model = MultiModalEmbeddingModel . from pretrained ( \"multimodalembedding@001\" ) image = Image . load from file ( \"gs://cloud-samples-data/vertex-ai/llm/prompts/landmark1.png\" ) video = Video . load from file ( \"gs://cloud-samples-data/vertex-ai-vision/highway vehicles.mp4\" ) embeddings = model . get embeddings ( image = image , video = video , video segment config = VideoSegmentConfig ( end offset sec = 1 ), contextual text = \"Cars on Highway\" , ) print ( f \"Image Embedding: { embeddings . image embedding } \" ) Video Embeddings are segmented based on the video segment config. print ( \"Video Embeddings:\" ) for video embedding in embeddings . video embeddings : print ( f \"Video Segment: { video embedding . start offset sec } - { video embedding . end offset sec } \" ) print ( f \"Embedding: { video embedding . embedding } \" ) print ( f \"Text Embedding: { embeddings . text embedding } \" ) Example response: Image Embedding: [-0.0123144267, 0.0727186054, 0.000201397663, ...] Video Embeddings: Video Segment: 0.0 - 1.0 Embedding: [-0.0206376351, 0.0345234685, ...] Text Embedding: [-0.0207006838, -0.00251058186, ...] Go Before trying this sample, follow the Go setup instructions in the Vertex AI quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "To check the deployment status, you can try one of the following methods: 1) Look for endpoint ENDPOINT DISPLAY NAME at the [Vertex AI] -> [Online prediction] tab in Cloud Console 2) Use gcloud ai operations describe OPERATION ID --region= LOCATION to find the status of the deployment long-running operation To see details about your deployment, run the gcloud ai endpoints list --list-model-garden-endpoints-only command: gcloud ai endpoints list --list-model-garden-endpoints-only \\ --region = LOCATION ID Replace LOCATION ID with the region where you deployed the model.",
+          "Objectives This tutorial shows you how to perform the following tasks: Deploy the Gemma 3 1B open model to a GPU backed endpoint by using Model Garden Use the PredictionServiceClient to get online predictions Costs In this document, you use the following billable components of Google Cloud: A g2-standard-12 machine type with one NVIDIA L4 accelerator Vertex AI prediction and explanation To generate a cost estimate based on your projected usage, use the pricing calculator .",
+          "Clean Up To delete the endpoint and model deployment, run the following command: terraform destroy Inference Gemma 3 1B with the PredictionServiceClient After you deploy Gemma 3 1B, you use the PredictionServiceClient to get online predictions for the prompt: \"Why is the sky blue?\" Code parameters The PredictionServiceClient code samples require you to update the following."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "console.error",
+      "err.message",
+      "landmark1.png",
+      "process.argv.slice",
+      "process.exitCode",
+      "protobuf.Value",
+      "vehicles.mp4",
+      "vertexai.vision"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/grounding/web-grounding-enterprise",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/deploy/overview",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.525Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

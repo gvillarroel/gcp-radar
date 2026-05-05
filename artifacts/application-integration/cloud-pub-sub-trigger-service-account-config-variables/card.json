@@ -1,0 +1,98 @@
+{
+  "feature_name": "Cloud Pub/Sub trigger service account config variables",
+  "feature_slug": "cloud-pub-sub-trigger-service-account-config-variables",
+  "summary": "Cloud Pub/Sub trigger configuration now supports a config variable for the service account.",
+  "extended_definition": "Cloud Pub/Sub trigger configuration now supports a config variable for the service account.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/configure-api-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger",
+      "https://docs.cloud.google.com/application-integration/docs/configure-servicenow-trigger"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Salesforce trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 173,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a new Salesforce instance To configure a new Salesforce instance, perform the following steps: In the editable properties of the trigger, click Select a Salesforce instance configuration > + Add new Salesforce instance configuration .",
+          "Create a new Salesforce channel To configure a new Salesforce channel, perform the following steps: In the editable properties of the trigger, click Select a Salesforce channel configuration > + Add new Salesforce channel configuration .",
+          "Configure the Salesforce trigger To configure the Salesforce trigger, perform the following steps: Click Salesforce trigger in the integration editor to view the trigger configuration pane."
+        ]
+      },
+      {
+        "title": "API trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-api-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 158,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Application Integration automatically adds variables created from the API trigger configuration pane to that specific trigger as input or output variables.",
+          "Note : You can create input and output variables from both the Variables pane and the API trigger configuration pane.",
+          "Configuring an API trigger in your integration enables you to do the following: Set request and response payload using trigger specific input and output variables."
+        ]
+      },
+      {
+        "title": "ServiceNow trigger \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/configure-servicenow-trigger",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For information about how to configure a ServiceNow trigger using a new ServiceNow connection, See Configure ServiceNow trigger using a new connection To configure a ServiceNow trigger using an existing ServiceNow connection, perform the following steps: Click the ServiceNow trigger element in the integration editor to open the trigger configuration pane.",
+          "Configure ServiceNow trigger using a new connection To configure the ServiceNow trigger using a new ServiceNow connection, perform the following steps: Click the ServiceNow trigger element in the integration editor to open the trigger configuration pane.",
+          "The following image shows a sample layout of the ServiceNow trigger configuration pane: Trigger output variable For each event, the ServiceNow trigger generates a ConnectorEventPayload output variable which you can use in your downstream tasks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-servicenow-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-api-trigger"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/configure-salesforce-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-servicenow-trigger",
+        "https://docs.cloud.google.com/application-integration/docs/configure-api-trigger"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.484Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration"
+}

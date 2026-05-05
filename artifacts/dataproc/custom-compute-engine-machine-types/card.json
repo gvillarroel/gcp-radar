@@ -1,0 +1,161 @@
+{
+  "feature_name": "Custom Compute Engine machine types",
+  "feature_slug": "custom-compute-engine-machine-types",
+  "summary": "Custom Compute Engine machine types let Dataproc clusters use customized vCPU and memory configurations for master and worker nodes.",
+  "extended_definition": "Custom Compute Engine machine types let Dataproc clusters use customized vCPU and memory configurations for master and worker nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dataproc.v1 (4.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "source_id": "site-java-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cluster Controller Grpc The ClusterControllerService provides methods to manage clusters of Compute Engine instances. com. google. cloud. dataproc. v1.",
+          "Async Service The ClusterControllerService provides methods to manage clusters of Compute Engine instances. com. google. cloud. dataproc. v1.",
+          "Shielded Instance Config Shielded Instance Config for clusters using Compute Engine Shielded VMs . com. google. cloud. dataproc. v1."
+        ]
+      },
+      {
+        "title": "\"Create a cluster \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a cluster with an ARM machine type . gcloud To create a Managed Service for Apache Spark cluster on the command line, run the gcloud dataproc clusters create command locally in a terminal window or in Cloud Shell . gcloud dataproc clusters create CLUSTER NAME \\ --region= REGION The command creates a cluster with default Managed Service for Apache Spark service settings for your master and worker virtual machine instances, disk sizes and types, network type, region and zone where your cluster is deployed, and other cluster settings.",
+          "HTTP method and URL: POST https://dataproc.googleapis.com/v1/projects/ PROJECT /regions/ REGION /clusters Request JSON body: { \"project id\":\" PROJECT \", \"cluster name\":\" CLUSTER NAME \", \"config\":{ \"master config\":{ \"num instances\":1, \"machine type uri\":\"n1-standard-2\", \"image uri\":\"\" }, \"softwareConfig\": { \"imageVersion\": \"\", \"properties\": {}, \"optionalComponents\": [] }, \"worker config\":{ \"num instances\":2, \"machine type uri\":\"n1-standard-2\", \"image uri\":\"\" }, \"gce cluster config\":{ \"zone uri\":\" ZONE \" } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Console Open the Managed Service for Apache Spark Create a cluster page in the Google Cloud console in your browser, then click Create in the cluster on Compute engine row in the Create a Dataproc cluster on Compute Engine page."
+        ]
+      },
+      {
+        "title": "\"Run a Spark job on Google Kubernetes Engine \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "User roles To get the permissions that you need to create a Managed Service for Apache Spark cluster, ask your administrator to grant you the following IAM roles: Dataproc Editor ( roles/dataproc.editor ) on the project Service Account User ( roles/iam.serviceAccountUser ) on the Compute Engine default service account Service account role To ensure that the Compute Engine default service account has the necessary permissions to create a Managed Service for Apache Spark cluster, ask your administrator to grant the Dataproc Worker ( roles/dataproc.worker ) IAM role to the Compute Engine default service account on the project.",
+          "Run the command: gcloud dataproc clusters gke create ${DP CLUSTER} \\ --region=${REGION} \\ --gke-cluster=${GKE CLUSTER} \\ --spark-engine-version=latest \\ --staging-bucket=${BUCKET} \\ --pools=\"name=${DP POOLNAME},roles=default\" \\ --setup-workload-identity \\ --history-server-cluster=${PHS CLUSTER} Notes: --spark-engine-version : The Spark image version used on the Managed Service for Apache Spark cluster.",
+          "\"Managed Service for Apache Spark\" is the new name for the product formerly known as \"Dataproc on Compute Engine\" (cluster deployment) and \"Google Cloud Serverless for Apache Spark\" (serverless deployment)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dataproc.v1",
+      "dataproc.editor",
+      "dataproc.googleapis.com",
+      "dataproc.worker",
+      "dpgke.unstable.outputOnly.endpoints.sparkHistoryServer",
+      "iam.serviceAccountUser",
+      "jobs.submit",
+      "request.json",
+      "spark.eventLog.dir",
+      "spark.eventLog.enabled"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataproc.editor",
+      "roles/dataproc.worker",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/dataproc/docs/guides/create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

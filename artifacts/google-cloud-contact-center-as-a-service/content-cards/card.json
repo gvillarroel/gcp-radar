@@ -1,0 +1,125 @@
+{
+  "feature_name": "Content cards",
+  "feature_slug": "content-cards",
+  "summary": "Content cards let you deliver rich messages in virtual agent chats with customizable layouts and deep links.",
+  "extended_definition": "Content cards let you deliver rich messages in virtual agent chats with customizable layouts and deep links.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Android SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can customize the chat header title text by using the following options: <item name = \"ujet chatCustomHeaderTextColor\" >@color/chatHeaderTextLightMode</item> <item name = \"ujet chatCustomHeaderTextColowDark\" >@color/chatHeaderTextDarkMode</item> <item name = \"ujet chatCustomHeaderTextSize\" >16sp</item> <item name = \"ujet chatCustomHeaderTextStyle\" >bold</item> You can customize Virtual Agent quick replies in the chat UI by using the following options: <item name = \"ujet colorChatQuickReplyButtonBackground\" >@color/chatQuickReplyButtonBackgroundLightMode</item> <item name = \"ujet colorChatQuickReplyButtonBackgroundDark\" >@color/chatQuickReplyButtonBackgroundDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedBackground\" >@color/chatQuickReplyButtonPressedBackgroundLightMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedBackgroundDark\" >@color/chatQuickReplyButtonPressedBackgroundDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonText\" >@color/chatQuickReplyButtonTextLightMode</item> <item name = \"ujet colorChatQuickReplyButtonTextDark\" >@color/chatQuickReplyButtonTextDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedText\" >@color/chatQuickReplyButtonPressedTextLightMode</item> <item name = \"ujet colorChatQuickReplyButtonPressedTextDark\" >@color/chatQuickReplyButtonPressedTextDarkMode</item> <item name = \"ujet colorChatQuickReplyButtonStroke\" >@color/chatQuickReplyButtonStrokeLightMode</item> <item name = \"ujet colorChatQuickReplyButtonStrokeDark\" >@color/chatQuickReplyButtonStrokeDarkMode</item> <item name = \"ujet chatQuickReplyButtonTypeFace\" >Kreon-Regular.ttf</item> <item name = \"ujet chatQuickReplyButtonStrokeWidth\" >3dp</item> <item name = \"ujet chatQuickReplyButtonCornerRadius\" >3dp</item> <item name = \"ujet chatQuickReplyButtonVerticalMargin\" >0dp</item> <item name = \"ujet chatQuickReplyButtonHorizontalPadding\" >10dp</item> <item name = \"ujet chatQuickReplyButtonVerticalPadding\" >1dp</item> <item name = \"ujet chatQuickReplyButtonAlignment\" >right</item> Content cards You can add customization for content cards along with chat customization.",
+          "Use UjetCustomData.putObject(\"external chat transfer\", hashMapObject) to set the transcript data in JSON format as follows: HashMap<String, Object> jsonData = new HashMap<> () ; // Convert json string into hashmap object and store it in jsonData UjetCustomData customData = new UjetCustomData () ; customData.putObject ( \"external chat transfer\" , jsonData ) ; // Use external chat transfer key to send chat transcript data UjetStartOptions ujetStartOptions = new UjetStartOptions.Builder () .setUnsignedCustomData ( customData ) .build () ; Ujet.start ( ujetStartOptions ) ; JSON format: greeting override : string agent : dictionary name : string avatar : string [url of agent avatar, optional] transcript : array sender : string [\"end user\" or \"agent\"] timestamp : string [ie \"2021-03-15 12:00:00Z\"] content : array type : string [one of text, media] text : string [required for text type] media : dictionary [required for media type] type : string [one of image, video] url : string [public URL pointing at media file] JSON example: { \"greeting override\" : \"Please hold while we connect you with a human agent.\" , \"agent\" : { \"name\" : \"Name\" , \"avatar\" : \"avatar url\" }, \"transcript\" : [ { \"sender\" : \"agent\" , \"timestamp\" : \"2021-03-15 12:00:15Z\" , \"content\" : [ { \"type\" : \"text\" , \"text\" : \" Suggestions shown: \\n\\n Help with batch or delivery\\n Help with metrics or order feedback\\n Help with Instant Cashout\" } ] }, { \"sender\" : \"end user\" , \"timestamp\" : \"2021-03-15 12:00:16Z\" , \"content\" : [ { \"type\" : \"text\" , \"text\" : \"Help with batch or delivery\" } ] } ] } You can use Markdown on the text type.",
+          "Boolean true UjetOption ujetOption = new UjetOption.Builder () .setLogLevel ( Log.INFO ) .setDefaultLanguage ( \"en\" ) .setFallbackPhoneNumber ( \"+18001112222\" ) .setUncaughtExceptionHandlerEnabled ( false ) .setNetworkSensitivity ( 0 ) .setDarkModeEnabled ( true ) .setShowSingleChannelEnabled ( true ) .setAutoMinimizeCallView ( true ) .setShowAgentIconBorderEnabled ( true ) .setStaticFontSizeInPickerView ( true ) .setHideMediaAttachmentInChat ( true ) .setIgnoreReadPhoneStatePermission ( true ) .setCobrowseLicenseKey ( \"COBROWSE IO LICENSE KEY HERE\" ) .setCobrowseURL ( \"COBROWSE IO API URL HERE\" ) .setCustomChatHeaderTitle ( \"CHAT HEADER TITLE TEXT\" ) .setUjetStylesOptions ( new UjetStylesOptions.Builder () .setChatQuickReplyButtonsStyle ( QuickReplyButtonsStyle.INDIVIDUAL ) .setChatStyles ( new ChatStyles ( ... )) // See Content Cards Theme item .build () ) .setBlockChatTerminationByEndUser ( true ) .setHideStatusBar ( true ) .setLoadingSpinnerDrawableRes ( R.drawable.RESOURCE NAME ) .setLandscapeOrientationDisabled ( true ) .setShowCsatSkipButton ( false ) .setHideDownloadChatTranscript ( 0 ) // 0 to 3 ."
+        ]
+      },
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Global Chat Settings pane, for Rich Messaging , select the required options from the following: Allow agents to attach files Allow agents to format messages (e.g. bold, italicize, create lists) Allow agents to use emojis .",
+          "Rich formatting and emojis are available in chat shortcuts and in web SDK and mobile SDKs messages without any special configuration.",
+          "If After Hour Deflection is disabled, mark the checkbox Allow transfers to queues outside of operation for the following behavior: Agents will be able to see the following queues as options to transfer to in the Agent Adapter All queues within operating hours All queues that are outside of hours of operation with no deflection enabled and active, logged-in agents All queues that are after hours with an assigned virtual agent in 24-hour availability mode Agents will not be able to see the following types of queues: All queues that are after hours with after hour deflection enabled All queues that are outside of operating hours with an assigned virtual agent limited to queue hours of operation Enable over capacity deflection : Specify the estimated wait time threshold for the consumer to be deflected to the options set below."
+        ]
+      },
+      {
+        "title": "\"iOS SDK guide \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can do this either using the json file (see content card property) or by using the UJETChatContentCardTheme class. func customizeChatTheme () throws { guard let file = Bundle . main . path ( forResource : \"chat-theme-custom\" , ofType : \"json\" ) else { return } let json = try String . init ( contentsOfFile : file , encoding : . utf8 ) let chatTheme = UJETChatTheme . init ( jsonString : json ) let contentCardTheme = UJETChatContentCardTheme () contentCardTheme . backgroundColor = UJETColorRef ( assetName : \"agent message background color\" ) contentCardTheme . cornerRadius = 16 let contentCardFontTheme = UJETFontTheme () contentCardFontTheme . family = \"Arial Rounded MT Bold\" contentCardFontTheme . size = 18 contentCardTheme . font = contentCardFontTheme let contentCardBorder = UJETBorderTheme () contentCardBorder . width = 1 contentCardBorder . color = UJETColorRef ( assetName : \"agent message border color\" ) contentCardTheme . border = contentCardBorder let contentCardFontTheme = UJETFontTheme () contentCardFontTheme . family = \"Arial Rounded MT Bold\" contentCardFontTheme . size = 18 contentCardTheme . font = contentCardFontTheme // The font family is inherited from the contentCardFontTheme let subtitle = UJETFontTheme () subtitle . size = 12 contentCardTheme . subtitle = subtitle // The font family is inherited from the contentCardFontTheme let bodyFont = UJETFontTheme () bodyFont . size = 10 contentCardTheme . body = bodyFont theme . chatTheme ? . contentCard = contentCardTheme let globalTheme = UJETGlobalTheme () globalTheme . chatTheme = chatTheme globalTheme . defaultAgentImage = UIImage ( named : \"agent avatar image\" ) globalTheme . font = UIFont ( name : \"Arial Rounded MT Bold\" , size : 14 ) UJET . setGlobalTheme ( globalTheme ) } Form card theme You can add customization for form cards together with chat customization.",
+          "For reference, see the example app and uncomment the customizeChatTheme method. func customizeChatTheme () throws { guard let file = Bundle . main . path ( forResource : \"chat-theme-custom\" , ofType : \"json\" ) else { return } let json = try String . init ( contentsOfFile : file , encoding : . utf8 ) let chatTheme = UJETChatTheme . init ( jsonString : json ) let quickReplyTheme = UJETChatQuickReplyButtonTheme () quickReplyTheme . style = . individual quickReplyTheme . alignment = . right quickReplyTheme . backgroundColor = UJETColorRef ( assetName : \"white color\" ) quickReplyTheme . backgroundColorForHighlightedState = UJETColorRef ( assetName : \"quick reply color\" ) quickReplyTheme . textColor = UJETColorRef ( assetName : \"quick reply color\" ) quickReplyTheme . textColorForHighlightedState = UJETColorRef ( assetName : \"white color\" ) let fontTheme = UJETFontTheme () fontTheme . family = \"Arial Rounded MT Bold\" fontTheme . size = 14 quickReplyTheme . font = fontTheme chatTheme ? . quickReplyButtonTheme = quickReplyTheme let globalTheme = UJETGlobalTheme () globalTheme . chatTheme = chatTheme globalTheme . defaultAgentImage = UIImage ( named : \"agent avatar image\" ) globalTheme . font = UIFont ( name : \"Arial Rounded MT Bold\" , size : 14 ) UJET . setGlobalTheme ( globalTheme ) } Content cards theme You can add customization for content cards together with chat customization.",
+          "UJETCustomData customData = [ UJETCustomData new ] ; [ customData setExternalChatTransfer : jsonString ] ; UJETStartOptions options = [ UJETStartOptions new ] ; options . unsignedCustomData = customData ; [ UJET startWithOptions : options ] ; JSON format: greeting override: string agent: dictionary name: string avatar: string [url of agent avatar, optional] transcript: array sender: string [\"end user\" or \"agent\"] timestamp: string [ie \"2021-03-15 12:00:00Z\"] content: array type: string [one of text, media] text: string [required for text type] media: dictionary [required for media type] type: string [one of image, video] url: string [public url pointing at media file] JSON example: { \"greeting override\" : \"Please hold while we connect you with a human agent.\" , \"agent\" : { \"name\" : \"Name\" , \"avatar\" : \"avatar url\" }, \"transcript\" : [ { \"sender\" : \"agent\" , \"timestamp\" : \"2021-03-15 12:00:15Z\" , \"content\" : [ { \"type\" : \"text\" , \"text\" : \" Suggestions shown: \\n\\n Help with batch or delivery\\n Help with metrics or order feedback\\n Help with Instant Cashout\" } ] }, { \"sender\" : \"end user\" , \"timestamp\" : \"2021-03-15 12:00:16Z\" , \"content\" : [ { \"type\" : \"text\" , \"text\" : \"Help with batch or delivery\" } ] } ] } You can use Markdown on the text type."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "drawable.RESOURCE",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/android-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/ios-sdk-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

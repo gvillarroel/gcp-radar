@@ -1,0 +1,130 @@
+{
+  "feature_name": "Percentage-based request mirroring for external Application Load Balancers",
+  "feature_slug": "percentage-based-request-mirroring-for-external-application-load-balancers",
+  "summary": "Global and regional external Application Load Balancers can mirror only a configured percentage of requests to a mirrored backend service; Global and regional external Application Load Balancers can mirror only a configured percentage of requests to a mirrored backend service.",
+  "extended_definition": "Global and regional external Application Load Balancers can mirror only a configured percentage of requests to a mirrored backend service; Global and regional external Application Load Balancers can mirror only a configured percentage of requests to a mirrored backend service.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backend service scope The following table indicates which backend service resource and scope is used by external Application Load Balancers: Load balancer mode Backend service resource Global external Application Load Balancer backendServices (global) Classic Application Load Balancer backendServices (global) Regional external Application Load Balancer regionBackendServices (regional) Protocol to the backends Backend services for Application Load Balancers must use one of the following protocols to send requests to backends: HTTP, which uses HTTP/1.1 and no TLS HTTPS, which uses HTTP/1.1 and TLS HTTP/2, which uses HTTP/2 and TLS (HTTP/2 without encryption isn't supported.) H2C, which uses HTTP/2 over TCP.",
+          "Cross-project service referencing support differs based on the type of load balancer: For global external Application Load Balancers : your load balancer's frontend and URL map can reference backend services or backend buckets from any project within the same organization.",
+          "What's next To learn how external Application Load Balancers handle connections, route traffic, and maintain session affinity, see Request distribution for external Application Load Balancers ."
+        ]
+      },
+      {
+        "title": "\"Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "External Application Load Balancers support the following capabilities: Advanced traffic management such as traffic mirroring, weight-based traffic splitting, and request/response-based header transformations.",
+          "To learn more about how failover works, see the following topics: Global external Application Load Balancers: How requests are distributed Cross-region internal Application Load Balancers: High availability and cross-region failover Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Related documentation: Serverless NEGs overview Set up a global external Application Load Balancer with a Cloud Run, Cloud Run functions, or App Engine backend Set up a regional external Application Load Balancer with a Cloud Run backend Set up a regional internal Application Load Balancer with a Cloud Run backend Set up a cross-region internal Application Load Balancer with Cloud Run Load balancing to backends outside Google Cloud Application Load Balancers support load-balancing traffic to endpoints that extend beyond Google Cloud, such as on-premises data centers and other cloud environments."
+        ]
+      },
+      {
+        "title": "\"Custom metrics for Application Load Balancers \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported load balancers and backends Custom metrics are supported for the following Application Load Balancers: Global external Application Load Balancer Regional external Application Load Balancer Cross-region internal Application Load Balancer Regional internal Application Load Balancer Custom metrics are supported with the following backend types: Managed instance groups Zonal NEGs (with GCE VM IP PORT endpoints) Hybrid connectivity NEGs How custom metrics work To enable your load balancer to make traffic distribution decisions based on custom metrics, you must first determine what the most relevant metrics are for your specific application.",
+          "What's next Troubleshoot issues with external Application Load Balancers Troubleshoot issues with internal Application Load Balancers Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "In case your applications often have backend processing latencies in the order of seconds, you can use your global compute capacity more efficiently by load balancing requests based on custom metrics rather than network latency."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https",
+        "https://docs.cloud.google.com/load-balancing/docs/application-load-balancer",
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

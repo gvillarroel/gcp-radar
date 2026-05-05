@@ -1,0 +1,146 @@
+{
+  "feature_name": "Salesforce source support",
+  "feature_slug": "salesforce-source-support",
+  "summary": "Datastream can use Salesforce as a source for streaming data; Datastream can use Salesforce as a source for streaming data.",
+  "extended_definition": "Datastream can use Salesforce as a source for streaming data; Datastream can use Salesforce as a source for streaming data.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/configure-salesforce-org",
+      "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DatastreamAsyncClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 336,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.Route The route resource is the child of the private connection resource, used for defining a route for a private connection. get stream get stream ( request : typing .",
+          "The result type for the operation will be PrivateConnection The PrivateConnection resource is used to establish private connectivity between Datastream and a customer's network. create route create route ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.ConnectionProfile A set of reusable connection configurations to be used as a source or destination for a stream. get location get location ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class DatastreamClient (1.18.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "source_id": "site-python-reference",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.datastream v1.types.Route The route resource is the child of the private connection resource, used for defining a route for a private connection. get stream get stream ( request : typing .",
+          "The result type for the operation will be PrivateConnection The PrivateConnection resource is used to establish private connectivity between Datastream and a customer's network. create route create route ( request : typing .",
+          "Returns Type Description google.cloud.datastream v1.types.ConnectionProfile A set of reusable connection configurations to be used as a source or destination for a stream. get location get location ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Configure a Salesforce organization for CDC \\_|\\_ Datastream \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastream/docs/configure-salesforce-org",
+        "source_id": "site-docs-root-2",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Before you start configuring Salesforce for use with Datastream, you need to: Have access to an active Salesforce organization Have knowledge of how to navigate and change settings in Salesforce Have knowledge of how to create users and profiles in Salesforce Configure a Salesforce organization for use with Datastream To establish a connection between your Salesforce org and Datastream, you need to authenticate either by using a username and a password, or by using the OAuth 2.0 client credentials flow.",
+          "If you prefer to use a connected app to authenticate your Salesforce instance in Datastream, perform the following steps: Create a connected app.",
+          "Make sure that the user profile has the API Enabled permission so that the user can use both the Salesforce REST API and Bulk API 2.0 ."
+        ]
+      },
+      {
+        "title": "Implement Datastream and Dataflow for analytics \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics",
+        "source_id": "site-docs-root",
+        "final_score": 276,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Datastream uses the information defined in the connection profiles to connect to both the source and the destination so that it can stream data from the source database into your destination bucket in Cloud Storage.",
+          "Configure information about the source database for the stream In this section, you configure information about the source database for the stream by specifying the tables and schemas in the source database that Datastream: Can transfer into the destination.",
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, use the Google Cloud console to do the following: Delete your project, Datastream stream, and Datastream connection profiles."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1",
+      "projects.locations.connectionProfiles",
+      "v1.types.ConnectionProfile",
+      "v1.types.PrivateConnection",
+      "v1.types.Route"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-salesforce-org",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-salesforce-org",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-salesforce-org",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-salesforce-org",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/datastream/latest/google.cloud.datastream_v1.services.datastream.DatastreamClient",
+        "https://docs.cloud.google.com/datastream/docs/configure-salesforce-org",
+        "https://docs.cloud.google.com/datastream/docs/implementing-datastream-dataflow-analytics"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.597Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream"
+}

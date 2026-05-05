@@ -1,0 +1,192 @@
+{
+  "feature_name": "Hadoop Secure Mode via Kerberos",
+  "feature_slug": "hadoop-secure-mode-via-kerberos",
+  "summary": "Hadoop Secure Mode via Kerberos provides user authentication, isolation, and encryption inside a Dataproc cluster.",
+  "extended_definition": "Hadoop Secure Mode via Kerberos provides user authentication, isolation, and encryption inside a Dataproc cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2019-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Package com.google.cloud.dataproc.v1 (4.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "source_id": "site-java-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Identity Config Identity related configuration, including service account based secure multi-tenancy user mappings. com. google. cloud. dataproc. v1.",
+          "Builder Identity related configuration, including service account based secure multi-tenancy user mappings. com. google. cloud. dataproc. v1.",
+          "Node Group Controller Grpc The NodeGroupControllerService provides methods to manage node groups of Compute Engine managed instances. com. google. cloud. dataproc. v1."
+        ]
+      },
+      {
+        "title": "\"Enum AuthenticationConfig.AuthenticationType (4.85.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "source_id": "site-java-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Protobuf enum google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType Implements ProtocolMessageEnum Inherited Members Enum.<T>valueOf(Class<T>,String) Enum.clone() Enum.compareTo(E) Enum.equals(Object) Enum.finalize() Enum.getDeclaringClass() Enum.hashCode() Enum.name() Enum.ordinal() Enum.toString() Object.getClass() Object.notify() Object.notifyAll() Object.wait() Object.wait(long) Object.wait(long,int) Static Fields Name Description AUTHENTICATION TYPE UNSPECIFIED If AuthenticationType is unspecified then END USER CREDENTIALS is used for 3.0 and newer runtimes, and SERVICE ACCOUNT is used for older runtimes.",
+          "AUTHENTICATION TYPE UNSPECIFIED = 0; AUTHENTICATION TYPE UNSPECIFIED VALUE If AuthenticationType is unspecified then END USER CREDENTIALS is used for 3.0 and newer runtimes, and SERVICE ACCOUNT is used for older runtimes.",
+          "AUTHENTICATION TYPE UNSPECIFIED = 0; END USER CREDENTIALS Use OAuth credentials associated with the workload creator/user for authenticating to other services."
+        ]
+      },
+      {
+        "title": "\"Configure Kerberos for Dataproc Metastore gRPC endpoints \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc",
+        "source_id": "site-docs-root-2",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the SSH session, open the Hadoop container-executor.cfg file. sudo vim /etc/hadoop/conf/container-executor.cfg Add the following line on every Managed Service for Apache Spark node. allowed.system.users=hive Get a Kerberos ticket The following instructions show you how to generate a Kerberos ticket.",
+          "Configure Managed Service for Apache Spark before submitting jobs To run your Managed Service for Apache Spark jobs , you must add the hive user to the allowed.system.users property in the Hadoop container-executor.cfg file.",
+          "It contains the primary node's hostname in it. (Optional) Add a new principal To add a new principal, run the following command. sudo kadmin.local -q \"addprinc -randkey PRINCIPAL\" sudo kadmin.local -q \"ktadd -k /etc/security/keytab/hive.service.keytab PRINCIPAL\" Get the Kerberos ticket. sudo klist -kte /etc/security/keytab/hive.service.keytab sudo kinit -kt /etc/security/keytab/hive.service.keytab PRINCIPAL sudo klist sudo hive What's next Access a service Update and delete a service Import metadata into a service Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "allowed.system.users",
+      "com.google.cloud.dataproc.v1",
+      "com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+      "executor.cfg",
+      "hive.service.keytab",
+      "kadmin.local",
+      "metastore.admin",
+      "metastore.editor",
+      "metastore.metadataEditor"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.admin",
+      "roles/metastore.editor",
+      "roles/metastore.metadataEditor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc/latest/com.google.cloud.dataproc.v1.AuthenticationConfig.AuthenticationType",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/configure-kerberos-grpc"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

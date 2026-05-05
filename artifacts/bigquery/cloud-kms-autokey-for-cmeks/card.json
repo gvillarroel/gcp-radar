@@ -1,0 +1,192 @@
+{
+  "feature_name": "Cloud KMS Autokey for CMEKs",
+  "feature_slug": "cloud-kms-autokey-for-cmeks",
+  "summary": "BigQuery supports Cloud KMS Autokey to automate creation and use of customer-managed encryption keys, including with Cloud HSM.",
+  "extended_definition": "BigQuery supports Cloud KMS Autokey to automate creation and use of customer-managed encryption keys, including with Cloud HSM.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+      "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Copy a table with customer-managed encryption keys (CMEK) \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId sourceTable = TableId . of ( sourceDatasetName , sourceTableId ); TableId destinationTable = TableId . of ( destinationDatasetName , destinationTableId ); // For more information on CopyJobConfiguration see: // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/JobConfiguration.html CopyJobConfiguration configuration = CopyJobConfiguration . newBuilder ( destinationTable , sourceTable ) . setDestinationEncryptionConfiguration ( encryption ) . build (); // For more information on Job see: // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html Job job = bigquery . create ( JobInfo . of ( configuration )); // Blocks until this job completes its execution, either failing or succeeding.",
+          "Job completedJob = job . waitFor (); if ( completedJob == null ) { System . out . println ( \"Job not executed since it no longer exists.\" ); return ; } else if ( completedJob . getStatus (). getError () != null ) { System . out . println ( \"BigQuery was unable to copy table due to an error: \\n\" + job . getStatus (). getError ()); return ; } System . out . println ( \"Table cmek copied successfully.\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Table cmek copying job was interrupted. \\n\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // copyTableWithCMEK demonstrates creating a copy of a table and ensuring the copied data is // protected with a customer managed encryption key. func copyTableWithCMEK ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydataset\" // tableID := \"mytable\" ctx := context ."
+        ]
+      },
+      {
+        "title": "\"Create a dataset with a customer-managed encryption key \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days default encryption configuration { kms key name = google kms crypto key.crypto key.id } labels = { billing group = \"accounting\" , pii = \"sensitive\" } depends on = [ google project iam member.service account access ] } resource \"google kms crypto key\" \"crypto key\" { name = \"example-key\" key ring = google kms key ring.key ring.id } resource \"random id\" \"default\" { byte length = 8 } resource \"google kms key ring\" \"key ring\" { name = \"${random id.default.hex}-example-keyring\" location = \"us\" } Enable the BigQuery service account to encrypt/decrypt Cloud KMS keys data \"google project\" \"project\" { } resource \"google project iam member\" \"service account access\" { project = data.google project.project.project id role = \"roles/cloudkms.cryptoKeyEncrypterDecrypter\" member = \"serviceAccount:bq-${data.google project.project.number}@bigquery-encryption.iam.gserviceaccount.com\" } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Create a dataset with a customer-managed encryption key Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-organization",
+        "source_id": "site-docs-reference-required-13",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deny MCP use by service The following IAM deny policy prevents use of MCP tools from a specific service for all users. { \"rules\" : [ { \"denyRule\" : { \"deniedPrincipals\" : [ \"principalSet://goog/public:all\" ], \"deniedPermissions\" : [ \"mcp.googleapis.com/tools.call\" ], \"denialCondition\" : { \"title\" : \"Deny all MCP tool use from this service\" , \"expression\" : \"resource.service == ' SERVICE NAME '\" } } } ] } Replace SERVICE NAME with the service name—for example, bigquery.googleapis.com .",
+          "Deny policy attributes The following attributes can be used in your Identity and Access Management deny policies: tool.isReadOnly : a resource attribute that indicates whether the invoked tool only reads data. request.auth.oauth.client id : the OAuth client ID. resource.service : the name of service—for example, bigquery.googleapis.com ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "data.google",
+      "encryption.iam.gserviceaccount.com",
+      "googleapis.dev",
+      "id.default.hex",
+      "index.html",
+      "key.crypto",
+      "key.id",
+      "mcp.googleapis.com",
+      "member.service",
+      "project.project.number",
+      "project.project.project",
+      "request.auth.oauth.client",
+      "resource.service",
+      "ring.id",
+      "ring.key",
+      "summary.html",
+      "tool.isReadOnly",
+      "tools.call"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-organization"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

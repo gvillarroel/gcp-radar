@@ -1,0 +1,199 @@
+{
+  "feature_name": "Endpoint-Independent Mapping control",
+  "feature_slug": "endpoint-independent-mapping-control",
+  "summary": "Cloud NAT gateways can enable or disable Endpoint-Independent Mapping; Cloud NAT gateways can enable or disable Endpoint-Independent Mapping.",
+  "extended_definition": "Cloud NAT gateways can enable or disable Endpoint-Independent Mapping; Cloud NAT gateways can enable or disable Endpoint-Independent Mapping.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/nat/docs/gke-example",
+      "https://docs.cloud.google.com/nat/docs/monitoring",
+      "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+      "https://docs.cloud.google.com/nat/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot configuration \\_|\\_ Cloud NAT \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you see packet loss from VMs that use Public NAT, and you have Endpoint-Independent Mapping turned on, the packet loss might be caused by an endpoint independent conflict .",
+          "You can reduce the chances of endpoint independent conflicts by using the following techniques: Turn off Endpoint-Independent Mapping .",
+          "Important: If you need Endpoint-Independent Mapping, the recommendations in this section don't apply."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up and manage network address translation with Public NAT\\",
+        "url": "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform You can use a Terraform module to create a Cloud Router with a NAT gateway for IPv4 traffic. module \"cloud router\" { source = \"../..\" name = \"my-cloud-router\" project id = var.project id network = module.vpc.network name region = \"us-central1\" nats = [{ name = \"my-nat-gateway\" source subnetwork ip ranges to nat = \"LIST OF SUBNETWORKS\" subnetworks = [ { name = module.vpc.subnets[\"us-central1/test-subnet-01-1\"].id source ip ranges to nat = [\"PRIMARY IP RANGE\", \"LIST OF SECONDARY IP RANGES\"] secondary ip range names = module.vpc.subnets[\"us-central1/test-subnet-01-1\"].secondary ip range[ ].range name } ] }] } The resulting NAT gateway uses the following default values: enable endpoint independent mapping = true icmp idle timeout sec = 30 min ports per vm = 0 nat ip allocate option = \"AUTO ONLY\" source subnetwork ip ranges to nat = \"ALL SUBNETWORKS ALL IP RANGES\" tcp established idle timeout sec = 1200 tcp transitory idle timeout sec = 30 udp idle timeout sec = 30 log config { enable = true filter = \"ALL\" } View a Public NAT configuration Console In the Google Cloud console, go to the Cloud NAT page.",
+          "You can't enable Endpoint-Independent Mapping if your Cloud NAT gateway uses NAT rules or dynamic port allocation.",
+          "You can't enable Endpoint-Independent Mapping if your Cloud NAT gateway uses NAT rules or dynamic port allocation."
+        ]
+      },
+      {
+        "title": "Logs and metrics \\_|\\_ Cloud NAT \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/monitoring",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "In each command, replace the following: NAT GATEWAY : the name of the NAT gateway ROUTER NAME : the name of the Cloud Router that hosts the NAT gateway REGION : the region of the Cloud Router To log network address translation events and errors: gcloud compute routers nats update NAT GATEWAY \\ --router= ROUTER NAME \\ --region= REGION \\ --enable-logging To log only network address translation events: gcloud compute routers nats update NAT GATEWAY \\ --router= ROUTER NAME \\ --region= REGION \\ --enable-logging \\ --log-filter=TRANSLATIONS ONLY To log only errors: gcloud compute routers nats update NAT GATEWAY \\ --router= ROUTER NAME \\ --region= REGION \\ --enable-logging \\ --log-filter=ERRORS ONLY Clear log filters If you have a filter set, you can clear it.",
+          "Alternatively, enter the following expression into the query editor: resource.type=\"nat gateway\" logName=\"projects/{#project id}/logs/compute.googleapis.com%2Fnat flows\" gcloud gcloud logging read 'resource.type=nat gateway' \\ --limit=10 \\ --format=json Where: resource.type=nat gateway : limits the output to your NAT gateways --limit=10 : limits the output to 10 entries; you can input a different value to see more or fewer entries, or omit it entirely to see a continuous scroll of logs --format=json : displays the output in JSON format For more options, see Reading log entries .",
+          "Can be TCP, UDP or ICMP. nat/port usage GA Port usage GAUGE , INT64 , {port} gce instance Maximum number of connections from a VM to a single destination endpoint (IP:port)."
+        ]
+      },
+      {
+        "title": "Use Public NAT with GKE \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/gke-example",
+        "source_id": "site-docs-root",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create and start the cluster, click Create . gcloud gcloud container clusters create \"nat-test-cluster\" \\ --zone \"us-east4-c\" \\ --cluster-version \"latest\" \\ --machine-type \"e2-medium\" \\ --disk-type \"pd-standard\" \\ --disk-size \"100\" \\ --scopes \"https://www.googleapis.com/auth/compute\",\"https://www.googleapis.com/auth/devstorage.read only\",\"https://www.googleapis.com/auth/logging.write\",\"https://www.googleapis.com/auth/monitoring\",\"https://www.googleapis.com/auth/servicecontrol\",\"https://www.googleapis.com/auth/service.management.readonly\",\"https://www.googleapis.com/auth/trace.append\" \\ --num-nodes \"3\" \\ --enable-private-nodes \\ --enable-private-endpoint \\ --master-ipv4-cidr \"172.16.0.0/28\" \\ --enable-ip-alias \\ --network \"projects/ PROJECT ID /global/networks/custom-network1\" \\ --subnetwork \"projects/ PROJECT ID /regions/us-east4/subnetworks/subnet-us-east-192\" \\ --max-nodes-per-pool \"110\" \\ --enable-master-authorized-networks \\ --addons HorizontalPodAutoscaling,HttpLoadBalancing \\ --enable-autoupgrade \\ --enable-autorepair Terraform You can use a Terraform resource to create a private cluster. resource \"google container cluster\" \"primary\" { project = var.project id name = \"nat-test-cluster\" location = \"us-east4-c\" initial node count = 3 network = var.network # Replace with a reference or self link to your network, in quotes subnetwork = var.subnet # Replace with a reference or self link to your subnet, in quotes private cluster config { master ipv4 cidr block = \"172.16.0.0/28\" enable private endpoint = true enable private nodes = true } ip allocation policy { } master authorized networks config { } } Step 3: Create a firewall rule that allows SSH connections Console In the Google Cloud console, go to the Firewall policies page.",
+          "Click Create . gcloud Create a Cloud Router: gcloud compute routers create nat-router \\ --network custom-network1 \\ --region us-east4 Add a configuration to the router: gcloud compute routers nats create nat-config \\ --router-region us-east4 \\ --router nat-router \\ --nat-all-subnet-ip-ranges \\ --auto-allocate-nat-external-ips Terraform You can use a Terraform resource to create a Cloud Router. resource \"google compute router\" \"router\" { project = var.project id name = \"nat-router\" network = var.network region = \"us-east4\" } You can use a Terraform module to create a NAT configuration. module \"cloud-nat\" { source = \"terraform-google-modules/cloud-nat/google\" version = \" > 5.0\" project id = var.project id region = \"us-east4\" router = google compute router.router.name name = \"nat-config\" source subnetwork ip ranges to nat = \"ALL SUBNETWORKS ALL IP RANGES\" } Step 7: Attempt to connect to the internet again It might take up to three minutes for the NAT configuration to propagate, so wait at least a minute before trying to access the internet again.",
+          "You can set a project ID with the following command: gcloud config set project PROJECT ID You can also view a project ID that is already set: gcloud config list --format='text(core.project)' Setting up the GKE example Use this example if you want to see a simple Public NAT configuration working with GKE."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "core.project",
+      "devstorage.read",
+      "logging.write",
+      "module.vpc.network",
+      "module.vpc.subnets",
+      "resource.type",
+      "router.router.name",
+      "service.management.readonly",
+      "trace.append",
+      "var.network",
+      "var.project",
+      "var.subnet"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/monitoring",
+        "https://docs.cloud.google.com/nat/docs/gke-example"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.414Z",
+  "source_step08_card": "data/step-08/current/products/cloud-nat/card.json",
+  "product_name": "Cloud NAT",
+  "product_slug": "cloud-nat"
+}

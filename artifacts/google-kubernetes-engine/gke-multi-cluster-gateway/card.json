@@ -1,0 +1,137 @@
+{
+  "feature_name": "GKE multi-cluster Gateway",
+  "feature_slug": "gke-multi-cluster-gateway",
+  "summary": "GKE can use the Gateway API to manage Application Load Balancers for inbound traffic across a fleet of clusters.",
+  "extended_definition": "GKE can use the Gateway API to manage Application Load Balancers for inbound traffic across a fleet of clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "None GKE on AWS Description Severity Note: This section applies to both the current and previous generation of GKE on AWS A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "None GDC (bare metal) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters."
+        ]
+      },
+      {
+        "title": "About GKE Inference Gateway \\_|\\_ GKE networking \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "source_id": "site-docs-reference-2",
+        "final_score": 166,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Figure: Serving multiple generative AI models on a GKE cluster using GKE Inference Gateway This diagram illustrates how a request to a GenAI service on example.com/completions is handled by GKE Inference Gateway.",
+          "Features and benefits GKE Inference Gateway provides the following key capabilities to efficiently serve generative AI models for generative AI applications on GKE: Supported metrics : KV cache hits : the number of successful lookups in the key-value (KV) cache.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) GKE networking Guides Send feedback About GKE Inference Gateway Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Migrate x86 application on GKE to multi-arch with Arm \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm",
+        "source_id": "site-docs-root",
+        "final_score": 153,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deploy the multi-arch container image with 6 replicas: $( cd k8s/overlays/multiarch && kustomize edit set image hello = us-central1-docker.pkg.dev/ $PROJECT ID /docker-repo/multiarch-hello:v0.0.1 ) kubectl apply -k k8s/overlays/multiarch Wait 10 seconds, then confirm that all of the replicas of the application are running: kubectl get pods -l=\"app=hello\" -o wide The output is similar to the following: NAME READY STATUS RESTARTS AGE IP NODE NOMINATED NODE READINESS GATES multiarch-hello-deployment-65bfd784d-5xrrr 1/1 Running 0 95s 10.100.1.5 gke-my-cluster-arm-pool-e172cff7-shwc <none> <none> multiarch-hello-deployment-65bfd784d-7h94b 1/1 Running 0 95s 10.100.1.4 gke-my-cluster-arm-pool-e172cff7-shwc <none> <none> multiarch-hello-deployment-65bfd784d-7qbkz 1/1 Running 0 95s 10.100.1.7 gke-my-cluster-arm-pool-e172cff7-shwc <none> <none> multiarch-hello-deployment-65bfd784d-7wqb6 1/1 Running 0 95s 10.100.1.6 gke-my-cluster-arm-pool-e172cff7-shwc <none> <none> multiarch-hello-deployment-65bfd784d-h2g2k 1/1 Running 0 95s 10.100.0.19 gke-my-cluster-default-pool-32019863-b41t <none> <none> multiarch-hello-deployment-65bfd784d-lc9dc 1/1 Running 0 95s 10.100.0.18 gke-my-cluster-default-pool-32019863-b41t <none> <none> This output includes a NODE column that indicates the Pods are running on both nodes in the Arm node pool and others in the default (x86) node pool.",
+          "Delete your cluster by running gcloud container clusters delete : gcloud container clusters delete $CLUSTER NAME --location $CONTROL PLANE LOCATION Delete the repository: gcloud artifacts repositories delete docker-repo —location = us-central1 --async What's next Arm workloads on GKE Create clusters and node pools with Arm nodes Build multi-architecture images for Arm workloads Prepare an Arm workload for deployment Prepare Autopilot workloads on Arm architecture Best practices for running cost-optimized Kubernetes applications on GKE Explore reference architectures, diagrams, and best practices about Google Cloud.",
+          "Deploy the multi-arch version of your application Before you deploy the multi-arch image, delete the original workloads: kubectl delete deploy x86-hello-deployment arm-hello-deployment Inspect the add multiarch support.yaml kustomize overlay by running cat k8s/overlays/multiarch/add multiarch support.yaml : The output includes the following toleration set: tolerations: - key: kubernetes.io/arch operator: Equal value: arm64 effect: NoSchedule This toleration allows the workload to run on the Arm nodes in your cluster, since the toleration matches the taint set on all Arm nodes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "docker.pkg.dev",
+      "example.com",
+      "kubernetes.io",
+      "support.yaml",
+      "v0.0.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-gke-inference-gateway",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/migrate-x86-to-multi-arch-arm"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

@@ -1,0 +1,118 @@
+{
+  "feature_name": "Cloud SQL for PostgreSQL general availability",
+  "feature_slug": "cloud-sql-for-postgresql-general-availability",
+  "summary": "Cloud SQL for PostgreSQL became generally available.",
+  "extended_definition": "Cloud SQL for PostgreSQL became generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/availability",
+      "https://docs.cloud.google.com/sql/docs/postgres/availability",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-ha"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Enable and disable high availability \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-ha",
+        "source_id": "site-docs-root",
+        "final_score": 72,
+        "relevance": "",
+        "evidence_snippets": [
+          "You are returned to the instance page for the primary instance while the instance is updated. gcloud Create the regional instance: gcloud sql instances create REGIONAL INSTANCE NAME \\ --availability-type = REGIONAL \\ --database-version = DATABASE VERSION \\ --cpu = NUMBER CPUS \\ --memory = MEMORY SIZE For a complete list of available parameters, see the gcloud sql instances create reference page.",
+          "Confirm the following high availability settings are displayed in the Configuration section: Highly available (regional) Located in shows the current primary zone of the instance. gcloud gcloud sql instances describe INSTANCE NAME The output indicates availabilityType is REGIONAL .",
+          "In the Choose region and zonal availability section, select Multiple zones (Highly available) ."
+        ]
+      },
+      {
+        "title": "\"Availability in Cloud SQL \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/availability",
+        "source_id": "site-iam-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Learn about high availability (HA) Enable or disable high availability (HA) Read about disaster recovery (DR) View all the Google Cloud services available in locations worldwide .",
+          "Cloud SQL high availability is available for both Cloud SQL Enterprise Plus edition and Cloud SQL Enterprise edition.",
+          "For instances configured with regional availability, if the instance encounters a failure, then Cloud SQL automatically brings up the instance in the secondary zone with the same IP address and no data loss so that applications can resume operations on the database."
+        ]
+      },
+      {
+        "title": "Availability in Cloud SQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/availability",
+        "source_id": "site-docs-root",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Learn about high availability (HA) Enable or disable high availability (HA) Read about disaster recovery (DR) View all the Google Cloud services available in locations worldwide .",
+          "Cloud SQL high availability is available for both Cloud SQL Enterprise Plus edition and Cloud SQL Enterprise edition.",
+          "For instances configured with regional availability, if the instance encounters a failure, then Cloud SQL automatically brings up the instance in the secondary zone with the same IP address and no data loss so that applications can resume operations on the database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/postgres/availability",
+        "https://docs.cloud.google.com/sql/docs/availability"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/postgres/availability",
+        "https://docs.cloud.google.com/sql/docs/availability"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/postgres/availability",
+        "https://docs.cloud.google.com/sql/docs/availability"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha",
+        "https://docs.cloud.google.com/sql/docs/postgres/availability",
+        "https://docs.cloud.google.com/sql/docs/availability"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

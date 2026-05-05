@@ -1,0 +1,109 @@
+{
+  "feature_name": "Safe Search racy category",
+  "feature_slug": "safe-search-racy-category",
+  "summary": "Safe Search detection includes a racy category for improved adult content moderation; Safe Search detection includes a racy category for improved adult content moderation.",
+  "extended_definition": "Safe Search detection includes a racy category for improved adult content moderation; Safe Search detection includes a racy category for improved adult content moderation.",
+  "lifecycle": {
+    "latest_feature_date": "2018-04-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchClient",
+      "https://docs.cloud.google.com/vision/docs/python-client-migration",
+      "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AnnotateImageResponse \\_|\\_ Cloud Vision API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vision/docs/reference/rest/v1/AnnotateImageResponse",
+        "source_id": "site-api-reference",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This annotation provides the structural hierarchy for the OCR detected text. safeSearchAnnotation object ( SafeSearchAnnotation ) If present, safe-search annotation has completed successfully. imagePropertiesAnnotation object ( ImageProperties ) If present, image properties were extracted successfully. cropHintsAnnotation object ( CropHintsAnnotation ) If present, crop hints have completed successfully. webDetection object ( WebDetection ) If present, web detection has completed successfully. productSearchResults object ( ProductSearchResults ) If present, product search has completed successfully. error object ( Status ) If set, represents the error message for the operation.",
+          "JSON representation { \"faceAnnotations\" : [ { object ( FaceAnnotation ) } ] , \"landmarkAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"logoAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"labelAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"localizedObjectAnnotations\" : [ { object ( LocalizedObjectAnnotation ) } ] , \"textAnnotations\" : [ { object ( EntityAnnotation ) } ] , \"fullTextAnnotation\" : { object ( TextAnnotation ) } , \"safeSearchAnnotation\" : { object ( SafeSearchAnnotation ) } , \"imagePropertiesAnnotation\" : { object ( ImageProperties ) } , \"cropHintsAnnotation\" : { object ( CropHintsAnnotation ) } , \"webDetection\" : { object ( WebDetection ) } , \"productSearchResults\" : { object ( ProductSearchResults ) } , \"error\" : { object ( Status ) } , \"context\" : { object ( ImageAnnotationContext ) } } Fields faceAnnotations[] object ( FaceAnnotation ) If present, face detection has completed successfully. landmarkAnnotations[] object ( EntityAnnotation ) If present, landmark detection has completed successfully. logoAnnotations[] object ( EntityAnnotation ) If present, logo detection has completed successfully. labelAnnotations[] object ( EntityAnnotation ) If present, label detection has completed successfully. localizedObjectAnnotations[] object ( LocalizedObjectAnnotation ) If present, localized object detection has completed successfully.",
+          "JSON representation FaceAnnotation JSON representation Landmark JSON representation Type Position JSON representation Likelihood EntityAnnotation JSON representation LocationInfo JSON representation Property JSON representation LocalizedObjectAnnotation JSON representation TextAnnotation JSON representation Page JSON representation TextProperty JSON representation DetectedLanguage JSON representation DetectedBreak JSON representation BreakType Block JSON representation Paragraph JSON representation Word JSON representation Symbol JSON representation BlockType SafeSearchAnnotation JSON representation ImageProperties JSON representation DominantColorsAnnotation JSON representation ColorInfo JSON representation Color JSON representation CropHintsAnnotation JSON representation CropHint JSON representation WebDetection JSON representation WebEntity JSON representation WebImage JSON representation WebPage JSON representation WebLabel JSON representation ProductSearchResults JSON representation Result JSON representation GroupedResult JSON representation ObjectAnnotation JSON representation ImageAnnotationContext JSON representation Response to an image annotation request."
+        ]
+      },
+      {
+        "title": "\"Class ProductSearchAsyncClient (3.13.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductsInProductSetAsyncPager Response message for the ListProductsInProductSet method.",
+          "Returns Type Description google.cloud.vision v1.services.product search.pagers.ListReferenceImagesAsyncPager Response message for the ListReferenceImages method.",
+          "Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductSetsAsyncPager Response message for the ListProductSets method."
+        ]
+      },
+      {
+        "title": "\"Class ProductSearchClient (3.13.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/vision/latest/google.cloud.vision_v1.services.product_search.ProductSearchClient",
+        "source_id": "site-python-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductsInProductSetPager Response message for the ListProductsInProductSet method.",
+          "Returns Type Description google.cloud.vision v1.services.product search.pagers.ListReferenceImagesPager Response message for the ListReferenceImages method.",
+          "Returns Type Description google.cloud.vision v1.services.product search.pagers.ListProductSetsPager Response message for the ListProductSets method."
+        ]
+      },
+      {
+        "title": "\"Migrating to Python Client Library v0.25.1 \\_|\\_ Cloud Vision API \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vision/docs/python-client-migration",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Image ( content = content ) response = client . safe search detection ( image = image ) safe = response . safe search annotation Names of likelihood from google.cloud.vision.enums likelihood name = ( \"UNKNOWN\" , \"VERY UNLIKELY\" , \"UNLIKELY\" , \"POSSIBLE\" , \"LIKELY\" , \"VERY LIKELY\" , ) print ( \"Safe search:\" ) print ( f \"adult: { likelihood name [ safe . adult ] } \" ) print ( f \"medical: { likelihood name [ safe . medical ] } \" ) print ( f \"spoofed: { likelihood name [ safe . spoof ] } \" ) print ( f \"violence: { likelihood name [ safe . violence ] } \" ) print ( f \"racy: { likelihood name [ safe . racy ] } \" ) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) Making a text detection request and processing the response Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) texts = image . detect text () for text in texts : print ( ' \\n \" {} \"' . format ( text . description )) vertices = ([ '( {} , {} )' . format ( bound . x coordinate , bound . y coordinate ) for bound in text . bounds . vertices ]) print ( 'bounds: {} ' . format ( ',' . join ( vertices ))) Python Client Library v0.25.1: with open ( path , \"rb\" ) as image file : content = image file . read () image = vision .",
+          "LOGO DETECTION }], } response = client . annotate image ( request = request ) logos = response . logo annotations print ( \"Logos:\" ) for logo in logos : print ( logo . description ) if response . error . message : raise Exception ( \" {} \\n For more info on error messages, check: \" \"https://cloud.google.com/apis/design/errors\" . format ( response . error . message ) ) Making a SafeSearch detection request and processing the response SafeSearch likelihoods are now returned as enumerations.",
+          "Previous versions of the client libraries: : with io . open ( file name , 'rb' ) as image file : content = image file . read () image = old client . image ( content = content ) safe = image . detect safe search () print ( 'Safe search:' ) print ( 'adult: {} ' . format ( safe . adult )) print ( 'medical: {} ' . format ( safe . medical )) print ( 'spoofed: {} ' . format ( safe . spoof )) print ( 'violence: {} ' . format ( safe . violence )) Python Client Library v0.25.1: with open ( path , \"rb\" ) as image file : content = image file . read () image = vision ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.vision.v1",
+      "com.google.cloud.vision.v1.AnnotateImageResponse",
+      "com.google.cloud.vision.v1.AnnotateImageResponse.Builder",
+      "com.google.cloud.vision.v1.AnnotateImageResponseOrBuilder",
+      "search.pagers.ListProductsAsyncPager",
+      "search.pagers.ListProductSetsAsyncPager",
+      "search.pagers.ListProductSetsPager",
+      "search.pagers.ListProductsInProductSetAsyncPager",
+      "search.pagers.ListProductsInProductSetPager",
+      "search.pagers.ListProductsPager",
+      "search.pagers.ListReferenceImagesAsyncPager",
+      "search.pagers.ListReferenceImagesPager",
+      "v0.25.1",
+      "v1.services.product"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.240Z",
+  "source_step08_card": "data/step-08/current/products/cloud-vision/card.json",
+  "product_name": "Cloud Vision",
+  "product_slug": "cloud-vision"
+}

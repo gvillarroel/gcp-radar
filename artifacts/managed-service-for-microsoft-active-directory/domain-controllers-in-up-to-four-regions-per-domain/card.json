@@ -1,0 +1,112 @@
+{
+  "feature_name": "Domain controllers in up to four regions per domain",
+  "feature_slug": "domain-controllers-in-up-to-four-regions-per-domain",
+  "summary": "Domain controllers for the same AD domain can be deployed across up to four regions.",
+  "extended_definition": "Domain controllers for the same AD domain can be deployed across up to four regions.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+      "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy domain controllers in additional regions \\_|\\_ Managed Service for\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin Before you add or remove domain controllers to additional regions, make sure that you have any one of the following IAM user roles: Google Cloud Managed Identities Domain Admin ( roles/managedidentities.domainAdmin ) Google Cloud Managed Identities Admin ( roles/managedidentities.admin ) For more information, see Cloud Managed Identities roles .",
+          "Home Documentation Access and resource management Managed Microsoft AD Guides Send feedback Deploy domain controllers in additional regions Stay organized with collections Save and categorize content based on your preferences.",
+          "However, to increase availability and be resilient to regional outages , we recommend that you deploy domain controllers in additional regions."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a domain \\_|\\_ Managed Service for Microsoft Active Directory\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "What's next Join a Windows VM to a domain Join a Linux VM to a domain Connect to a Managed Microsoft AD domain Configure domain peering Deploy domain controllers in additional regions Deploy Managed Microsoft AD with cross-project access using domain peering Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "After you create the domain, you can add domain controllers to additional regions to increase availability and be resilient to regional outages .",
+          "If you want to increase the number of independent domains that you can create in the same project, you can contact Google Cloud support ."
+        ]
+      },
+      {
+        "title": "\"Managed Microsoft AD overview \\_|\\_ Managed Service for Microsoft Active\\",
+        "url": "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can extend the domain to up to four supported regions to be resilient to regional outages and easily horizontally scale, by deploying domain controllers in additional regions as needed.",
+          "How Managed Microsoft AD works Managed Microsoft AD runs actual Microsoft Active Directory domain controllers on Windows virtual machines to ensure application compatibility.",
+          "To maintain high availability and improve fault tolerance , Managed Microsoft AD deploys two domain controllers to each region in non-overlapping Google Cloud zones."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "managedidentities.admin",
+      "managedidentities.domainAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/managedidentities.admin",
+      "roles/managedidentities.domainAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/add-remove-regions",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/create-domain",
+        "https://docs.cloud.google.com/managed-microsoft-ad/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.679Z",
+  "source_step08_card": "data/step-08/current/products/managed-service-for-microsoft-active-directory/card.json",
+  "product_name": "Managed Service for Microsoft Active Directory",
+  "product_slug": "managed-service-for-microsoft-active-directory"
+}

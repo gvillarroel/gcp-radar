@@ -1,0 +1,212 @@
+{
+  "feature_name": "Resource Manager v3 API",
+  "feature_slug": "resource-manager-v3-api",
+  "summary": "The API provides a version 3 interface for managing Google Cloud resources; The API provides a version 3 interface for managing Google Cloud resources.",
+  "extended_definition": "The API provides a version 3 interface for managing Google Cloud resources; The API provides a version 3 interface for managing Google Cloud resources.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+      "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+      "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Managing applications in a folder \\_|\\_ Resource Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "source_id": "site-iam-reference",
+        "final_score": 107,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Overview Google Cloud provides an application-centric approach for deploying and managing your resources.",
+          "Make sure that the most recent version of Google Cloud CLI is installed: gcloud components update To enable application management on a specific folder, use the gcloud resource-manager capabilities update command with the --enable flag. gcloud resource-manager capabilities update folders/ FOLDER ID /capabilities/app-management \\ --enable Replace FOLDER ID with the ID of the folder.",
+          "Home Documentation Security Resource Manager Guides Send feedback Managing applications in a folder Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Access control for organization resources with IAM \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "source_id": "site-iam-reference",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Project essentialcontacts. essentialcontacts. contacts. create essentialcontacts. contacts. delete essentialcontacts.contacts.get essentialcontacts. contacts. list essentialcontacts. contacts. send essentialcontacts. contacts. update iam.policybindings. iam.policybindings.get iam.policybindings.list orgpolicy.constraints.list orgpolicy.policies.list orgpolicy.policy.get resourcemanager.capabilities. resourcemanager. capabilities. get resourcemanager. capabilities. update resourcemanager. folders. createPolicyBinding resourcemanager. folders. deletePolicyBinding resourcemanager.folders.get resourcemanager. folders. getIamPolicy resourcemanager.folders.list resourcemanager. folders. searchPolicyBindings resourcemanager. folders. setIamPolicy resourcemanager. folders. updatePolicyBinding resourcemanager. organizations. resourcemanager. organizations. createPolicyBinding resourcemanager. organizations. deletePolicyBinding resourcemanager. organizations. get resourcemanager. organizations. getIamPolicy resourcemanager. organizations. searchPolicyBindings resourcemanager. organizations. setIamPolicy resourcemanager. organizations. updatePolicyBinding resourcemanager. projects. createPolicyBinding resourcemanager. projects. deletePolicyBinding resourcemanager.projects.get resourcemanager. projects. getIamPolicy resourcemanager.projects.list resourcemanager. projects. searchPolicyBindings resourcemanager. projects. setIamPolicy resourcemanager. projects. updatePolicyBinding Organization Viewer ( roles/ resourcemanager.organizationViewer ) Provides access to view an organization.",
+          "Lowest-level resources where you can grant this role: Organization resourcemanager. organizations. get Organization Policy Administrator ( roles/ orgpolicy.policyAdmin ) Provides access to define what restrictions an organization wants to place on the configuration of cloud resources by setting Organization Policies.",
+          "For example, to make anotheradmin@gcp-test.com an Organization Administrator, change the previous example as follows: { \"bindings\" : [ { \"members\" : [ \"user:testuser1@gcp-test.com\" ], \"role\" : \"roles/editor\" }, { \"members\" : [ \"user:admin@gcp-test.com\" , \"user:anotheradmin@gcp-test.com\" ], \"role\" : \"roles/resourcemanager.organizationAdmin\" }, { \"members\" : [ \"user:testuser20@gcp-test.com\" ], \"role\" : \"roles/resourcemanager.projectCreator\" }, ], \"etag\" : \"BwU1aRxWk30=\" } Update the organization resource's allow policy by running the following command: gcloud alpha organizations set-iam-policy <var>ORGANIZATION ID</var> policy.json API Request: POST h tt ps : //cloudresourcemanager.googleapis.com/v3/organizations/12345:setIamPolicy { \"policy\" : { \"version\" : \"0\" , \"bindings\" : [ { \"role\" : \"roles/resourcemanager.organizationAdmin\" , \"members\" : [ \"user:email1@gmail.com\" ] }, { \"role\" : \"roles/resourcemanager.projectCreator\" , \"members\" : [ \"user:email2@gmail.com\" , \"user:email3@gmail.com\" , \"serviceAccount:my-other-app@appspot.gserviceaccount.com\" ] } ] \"etag\" : \"BwUjHYKHHiQ=\" } } Response: { \"bindings\" : [ { \"role\" : \"roles/resourcemanager.organizationAdmin\" , \"members\" : [ \"user:email1@gmail.com\" ] }, { \"role\" : \"roles/resourcemanager.projectCreator\" , \"members\" : [ \"user:email2@gmail.com\" , \"user:email3@gmail.com\" , \"serviceAccount:my-other-app@appspot.gserviceaccount.com\" ] } ] \"etag\" : \"BwUjHYKJUiQ=\" } The setIamPolicy() method lets you grant roles to users by attaching an allow policy to the organization resource."
+        ]
+      },
+      {
+        "title": "Create and manage tags \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "You should get a response similar to the following: For predefined tags: tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2FPROJECT NUMBER%2Flocations%2FLOCATION%2Fresources%2FRESOURCE ID/tagValues/TAG VALUE ID parent: //cloudresourcemanager.googleapis.com/projects/123456789012/locations/us-central1/example-resource/res-01 tagValue: tagValues/987654321098 tagValueNamespacedName: 961309089256/environment/production For tags with dynamic values: tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2FPROJECT NUMBER%2Flocations%2FLOCATION%2Fresources%2FRESOURCE ID/tagKeys/TAG KEY ID parent: //cloudresourcemanager.googleapis.com/projects/123456789012/locations/us-central1/example-resource/res-01 tagValueNamespacedName: your-org-id/environment/staging For tags with dynamic values, the tagValue field is not present in the response; only the tagValueNamespacedName is populated.",
+          "Required roles To get the permissions that you need to manage tags, ask your administrator to grant you the following IAM roles: Tag Viewer ( roles/resourcemanager.tagViewer ) on the resources the tags are attached to View and manage tags at the organization level: Organization Viewer ( roles/resourcemanager.organizationViewer ) on the organization Attach and remove tags from resources: Tag User ( roles/resourcemanager.tagUser ) on the tag value and the resources that you are attaching or removing the tag value to Create, update, and delete tag definitions: Tag Administrator ( roles/resourcemanager.tagAdmin ) on the resource you're creating, updating, or deleting tags for For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "The new tags appear under the Tags column on the Manage resources page. gcloud To attach a tag to a resource, you must create a tag binding resource by using the gcloud resource-manager tags bindings create command: gcloud resource-manager tags bindings create \\ --tag-value= TAGVALUE NAME \\ --parent= RESOURCE ID \\ --location= LOCATION Where: TAGVALUE NAME is the permanent ID or namespaced name of the tag value to be attached; for example: tagValues/4567890123 or 12345678/environment/production ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "cloudresourcemanager.googleapis.com",
+      "essentialcontacts.contacts.get",
+      "gmail.com",
+      "googleapis.com",
+      "iam.policybindings",
+      "iam.policybindings.get",
+      "iam.policybindings.list",
+      "orgpolicy.constraints.list",
+      "orgpolicy.policies.list",
+      "orgpolicy.policy.get",
+      "orgpolicy.policyAdmin",
+      "policy.json",
+      "resource.matchTag",
+      "resourcemanager.capabilities",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationViewer",
+      "resourcemanager.projectCreator",
+      "resourcemanager.tagAdmin",
+      "resourcemanager.tagUser",
+      "resourcemanager.tagViewer",
+      "test.com",
+      "variables.examples.principal"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/orgpolicy.policyAdmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationViewer",
+      "roles/resourcemanager.projectCreator",
+      "roles/resourcemanager.tagAdmin",
+      "roles/resourcemanager.tagUser",
+      "roles/resourcemanager.tagViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/manage-applications",
+        "https://docs.cloud.google.com/resource-manager/docs/access-control-org",
+        "https://docs.cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.065Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

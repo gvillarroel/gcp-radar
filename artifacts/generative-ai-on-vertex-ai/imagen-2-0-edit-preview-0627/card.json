@@ -1,0 +1,145 @@
+{
+  "feature_name": "imagen-2.0-edit-preview-0627",
+  "feature_slug": "imagen-2-0-edit-preview-0627",
+  "summary": "A deprecated Imagen 2.0 edit preview endpoint scheduled for shutdown on 2026-03-19; deprecated on 2026-03-19.",
+  "extended_definition": "A deprecated Imagen 2.0 edit preview endpoint scheduled for shutdown on 2026-03-19; deprecated on 2026-03-19.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-17",
+    "deprecation_date": "2026-03-19",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate and edit images on Vertex AI \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Client () TODO(developer): Update and un-comment below line output file = \"output-image.png\" image = client . models . generate images ( model = \"imagen-4.0-generate-001\" , prompt = \"A dog reading a newspaper\" , config = GenerateImagesConfig ( image size = \"2K\" , ), ) image . generated images [ 0 ] . image . save ( output file ) print ( f \"Created output image using { len ( image . generated images [ 0 ] . image . image bytes ) } bytes\" ) Example response: Created output image using 1234567 bytes REST Set environment variables: export GOOGLE CLOUD PROJECT = GOOGLE CLOUD PROJECT # Replace with your Google Cloud project export GOOGLE CLOUD LOCATION = us-central1 # Replace with the appropriate location for your project Run the following: curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https:// ${ GOOGLE CLOUD LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ GOOGLE CLOUD PROJECT } /locations/ ${ GOOGLE CLOUD LOCATION } /publishers/google/models/imagen-4.0-generate-preview-05-20:predict\" -d \\ $'{ \"instances\": [ { \"prompt\": \"a cat reading a book\" } ], \"parameters\": { \"sampleCount\": 1 } }' The model returns a base64 image bytes object.",
+          "Try more examples To learn more, run the following notebooks in the environment of your choice: \"Gemini 3 Pro Image Generation in Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Gemini 2.5 Flash Image Generation in Vertex AI\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Imagen 4 Image Generation\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub \"Imagen 3 Image Editing\": Open in Colab Open in Colab Enterprise Open in Vertex AI Workbench View on GitHub For a full list of Jupyter notebook tutorials using Imagen, see the Generative AI on Vertex AI cookbook .",
+          "With Gemini and Imagen on Vertex AI on Vertex AI, application developers can build next-generation AI products that transform their user's imagination into high-quality visual assets using AI generation, in seconds."
+        ]
+      },
+      {
+        "title": "\"Content Credentials \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "All images or videos created or modified using the listed models are automatically digitally signed by Google LLC. \"Google Media Processing Services\" is specified as the app or device used in the Content Credential. gemini-3.1-flash-image-preview gemini-3-pro-image-preview gemini-2.5-flash-image imagen-3.0-generate-002 imagen-3.0-generate-001 imagen-3.0-fast-generate-001 imagen-3.0-capability-001 imagen-4.0-generate-001 imagen-4.0-fast-generate-001 imagen-4.0-ultra-generate-001 virtual-try-on-001 veo-2.0-generate-001 veo-2.0-generate-exp veo-2.0-generate-preview veo-3.0-generate-preview veo-3.0-fast-generate-preview veo-3.0-generate-001 veo-3.0-fast-generate-001 veo-3.1-generate-preview veo-3.1-fast-generate-preview veo-3.1-generate-001 veo-3.1-fast-generate-001 veo-3.1-lite-generate-001 lyria-3-clip-preview lyria-3-pro-preview What's next Guide Generate and edit images with Gemini Use Gemini's image generation models (Nano Banana and Nano Banana Pro) to create and edit images.",
+          "Content Credentials include information about the creation process, the tools used, and edits that were made to a media file.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "String project = \"YOUR PROJECT ID\" ; String textPrompt = \"YOUR TEXT PROMPT\" ; String baseImagePath = \"YOUR BASE IMAGE PATH\" ; // Learn how to use text prompts to update an image: // https://cloud.google.com/vertex-ai/docs/generative-ai/image/edit-images Map<String , Object > parameters = new HashMap<String , Object > (); parameters . put ( \"sampleCount\" , 1 ); String location = \"us-central1\" ; String publisher = \"google\" ; String model = \"multimodalembedding@001\" ; predictImageFromImageAndText ( project , location , publisher , model , textPrompt , baseImagePath , parameters ); } // Update images using text prompts public static void predictImageFromImageAndText ( String project , String location , String publisher , String model , String textPrompt , String baseImagePath , Map<String , Object > parameters ) throws IOException { final String endpoint = String . format ( \"%s-aiplatform.googleapis.com:443\" , location ); final PredictionServiceSettings predictionServiceSettings = PredictionServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Initialize client that will be used to send requests.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample.\\ (Not necessary if passing values as arguments) / // const project = 'YOUR PROJECT ID'; // const location = 'YOUR PROJECT LOCATION'; // const baseImagePath = 'YOUR BASE IMAGE PATH'; // const textPrompt = 'YOUR TEXT PROMPT'; const aiplatform = require ( ' @google-cloud/aiplatform ' ); // Imports the Google Cloud Prediction service client const { PredictionServiceClient } = aiplatform . v1 ; // Import the helper module for converting arbitrary protobuf.Value objects. const { helpers } = aiplatform ; // Specifies the location of the api endpoint const clientOptions = { apiEndpoint : 'us-central1-aiplatform.googleapis.com' , }; const publisher = 'google' ; const model = 'multimodalembedding@001' ; // Instantiates a client const predictionServiceClient = new PredictionServiceClient ( clientOptions ); async function predictImageFromImageAndText () { // Configure the parent resource const endpoint = projects/ ${ project } /locations/ ${ location } /publishers/ ${ publisher } /models/ ${ model } ; const fs = require ( 'fs' ); const imageFile = fs . readFileSync ( baseImagePath ); // Convert the image data to a Buffer and base64 encode it. const encodedImage = Buffer . from ( imageFile ). toString ( 'base64' ); const prompt = { text : textPrompt , image : { bytesBase64Encoded : encodedImage , }, }; const instanceValue = helpers . toValue ( prompt ); const instances = [ instanceValue ]; const parameter = { sampleCount : 1 , }; const parameters = helpers . toValue ( parameter ); const request = { endpoint , instances , parameters , }; // Predict request const [ response ] = await predictionServiceClient . predict ( request ); console . log ( 'Get image embedding response' ); const predictions = response . predictions ; console . log ( '\\tPredictions :' ); for ( const prediction of predictions ) { console . log ( \\t\\tPrediction : ${ JSON . stringify ( prediction ) } ); } } await predictImageFromImageAndText (); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "EmbedContentConfig ( output dimensionality = 128 ), ) Normalize the output embedding. embedding values np = np . array ( response . embeddings [ 0 ] . values ) normed embedding = embedding values np / np . linalg . norm ( embedding values np ) print ( f \"Normed embedding length: { len ( normed embedding ) } \" ) print ( f \"Norm of normed embedding: { np . linalg . norm ( normed embedding ) : .6f } \" ) # Should be very close to 1 Get multimodal embeddings REST PROJECT ID = \"YOUR PROJECT ID\" LOCATION = \"us-central1\" curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https:// ${ LOCATION } -aiplatform.googleapis.com/v1/projects/ ${ PROJECT ID } /locations/ ${ LOCATION } /publishers/google/models/gemini-embedding-2-preview:embedContent\" \\ -d '{ \"content\": { \"parts\": [ { \"text\": \"Whats this\" }, { \"file data\": { \"mime type\": \"video/mp4\", \"file uri\": \"gs://cloud-samples-data/generative-ai/video/pixel8.mp4\" } } ] } }' Python from google import genai from google.genai import types Initialize the client. client = genai ."
+        ]
+      },
+      {
+        "title": "EditConfig \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig",
+        "source_id": "site-api-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"bufferZones\" : [ { object ( BufferZone ) } ] , \"baseGuidanceScale\" : [ integer ] , \"enableClamping\" : boolean , \"baseSteps\" : integer , \"baseGamma\" : number , \"sr1Steps\" : integer , \"sr2Steps\" : integer , \"semanticFilterConfig\" : { object ( SemanticFilterConfig ) } , \"experimentUseServoBackend\" : boolean , \"editMode\" : string , \"alternateInitConfig\" : { object ( AlternateInitConfig ) } , \"experimentalSrVersion\" : string , \"experimentalBaseVersion\" : string , \"embeddingScale\" : number , \"enableBorderReplicatePadding\" : boolean , \"enablePostProcessingBlend\" : boolean , \"outpaintingConfig\" : { object ( OutpaintingProcessingConfig ) } , \"bgswapConfig\" : { object ( BackgroundSwapProcessingConfig ) } } BufferZone Fields pixels integer The number of pixels for the mask to dilate. diffusionT number When during diffusion this pixel dilation takes effect, 1=start, 0=end.",
+          "The values can be one of: inpainting-remove inpainting-insert outpainting alternateInitConfig object ( AlternateInitConfig ) Parameters for AlternateInitConfig experimentalSrVersion string Experimental flag for sr version. experimentalBaseVersion string Experimental flag for base version. embeddingScale number Parameter to control embedding scale, range: [0, 1], default: 0.6. enableBorderReplicatePadding (deprecated) boolean This item is deprecated!",
+          "Parameter to enable post-processing blending for masked editing. outpaintingConfig object ( OutpaintingProcessingConfig ) Outpainting processing config. bgswapConfig object ( BackgroundSwapProcessingConfig ) Background swap processing config."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "image.png",
+      "pixel8.mp4",
+      "protobuf.Value"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/image/quickstart-image-generate-console",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/reference/rest/Shared.Types/EditConfig"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.525Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

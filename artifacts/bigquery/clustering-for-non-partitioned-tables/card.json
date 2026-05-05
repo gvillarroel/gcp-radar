@@ -1,0 +1,145 @@
+{
+  "feature_name": "Clustering for non-partitioned tables",
+  "feature_slug": "clustering-for-non-partitioned-tables",
+  "summary": "BigQuery supports clustering on tables that are not partitioned.",
+  "extended_definition": "BigQuery supports clustering on tables that are not partitioned.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitment-changes"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ASSIGNMENT_CHANGES view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "source_id": "site-api-reference",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the required permission: roles/bigquery.resourceAdmin roles/bigquery.resourceEditor roles/bigquery.resourceViewer roles/bigquery.user roles/bigquery.admin For more information about BigQuery permissions, see Access control with IAM .",
+          "Required permission To query the INFORMATION SCHEMA.ASSIGNMENT CHANGES view, you need the bigquery.reservationAssignments.list Identity and Access Management (IAM) permission for the project.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "ASSIGNMENTS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "source_id": "site-api-reference",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the required permission: roles/bigquery.resourceAdmin roles/bigquery.resourceEditor roles/bigquery.resourceViewer roles/bigquery.user roles/bigquery.admin For more information about BigQuery permissions, see Access control with IAM .",
+          "Required permission To query the INFORMATION SCHEMA.ASSIGNMENTS view, you need the bigquery.reservationAssignments.list Identity and Access Management (IAM) permission for the project.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "CAPACITY_COMMITMENT_CHANGES view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitment-changes",
+        "source_id": "site-api-reference",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the required permission: roles/bigquery.resourceAdmin roles/bigquery.resourceEditor roles/bigquery.resourceViewer roles/bigquery.user roles/bigquery.admin For more information about BigQuery permissions, see Access control with IAM .",
+          "Required permission To query the INFORMATION SCHEMA.CAPACITY COMMITMENT CHANGES view, you need the bigquery.capacityCommitments.list Identity and Access Management (IAM) permission for the project.",
+          "For more information about editions, see Introduction to BigQuery editions . is flat rate BOOL Whether the commitment is associated with the legacy flat-rate capacity model or an edition."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.capacityCommitments.list",
+      "bigquery.reservationAssignments.list",
+      "bigquery.resourceAdmin",
+      "bigquery.resourceEditor",
+      "bigquery.resourceViewer",
+      "bigquery.user"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.resourceAdmin",
+      "roles/bigquery.resourceEditor",
+      "roles/bigquery.resourceViewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitment-changes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitment-changes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitment-changes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitment-changes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-assignments-changes",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-capacity-commitment-changes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

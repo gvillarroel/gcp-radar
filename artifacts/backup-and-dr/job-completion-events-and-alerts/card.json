@@ -1,0 +1,101 @@
+{
+  "feature_name": "Job completion events and alerts",
+  "feature_slug": "job-completion-events-and-alerts",
+  "summary": "Backup and DR added support for viewing successful job events and configuring alerts when jobs complete successfully.",
+  "extended_definition": "Backup and DR added support for viewing successful job events and configuring alerts when jobs complete successfully.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure log-based alerts for a backup/recovery appliance \\_|\\_ Backup\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If your alert policy includes or excludes specific event IDs then you need to modify the event ID as well: \"entries\" : [ { \"jsonPayload\" : { \"eventId\" : 10046 , \"errorMessage\" : \"this is a manually generated error message created for testing\" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , }, \"severity\" : \"ERROR\" , \"logName\" : \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" , } ] Copy the log entry you configured previously.",
+          "Policyname = 'Backup/DR event has occurred' Notification rate limit = 6 hr logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND NOT jsonPayload . eventId = ( 10085 OR 10229 OR 42356 OR 43901 ) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Policyname = 'Snapshot job has failed' Notification rate limit = 30 min logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND jsonPayload . eventId = 43901 Events that are less urgent and hence require less frequent notifications."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "View job details From the Job Details window, you can review the following: Details about the job Volume information Number of job retries Job statistics When you are done reviewing job details, click Return to Jobs to return to the Jobs page.",
+          "If the constraints continue to be present until it is time to run the next instance of the same policy, the job is given notrun status, and a new job instance with the same job ID and a letter appended to it is added in the queued state.",
+          "Once completed, select the job and click View Details to review: Details about the job Volume information Number of job retries Job statistics See Viewing Job Details for specifics on each of these areas."
+        ]
+      },
+      {
+        "title": "\"Backup/recovery appliance event logs \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "Make sure you use uppercase AND . logName = \"projects/ PROJECT ID /logs/backupdr.googleapis.com %2F backup recovery appliance events\" AND jsonPayload . app name = appname What's next To configure log-based alerts for Backup and DR Service, create a log query, using the filter event logs , and then Configure log-based alerts .",
+          "The following sample is an example log entry logged on a backup/recovery appliance ba-1-52973 for a failed snapshot job. { \"insertId\" : \"aop2oko38hsami1c\" , \"jsonPayload\" : { \"appName\" : \"instance-2\" , \"srcid\" : \"111428\" , \"jobName\" : \"Job 0110906c\" , \"appType\" : \"GCPInstance\" , \"eventId\" : 43901 , \"component\" : \"udp\" , \"eventTime\" : \"2023-02-06T20:24:52.450Z\" , \"errorMessage\" : \"Failed snapshot Job 0110906c for application instance-2 on host instance-2, Error: 1249: Failed to get VM details , sltname: pd snaps, slpname: ba-1-52973 Profile. \" }, \"resource\" : { \"type\" : \"backupdr.googleapis.com/BackupRecoveryAppliance\" , \"labels\" : { \"backup recovery appliance id\" : \"test-backup-recovery-appliances\" , \"resource container\" : \"projects/1234567\" , \"management server id\" : \"abcd-efgh-1234-5678-6789\" , \"location\" : \"\" } }, \"timestamp\" : \"2023-02-06T20:24:55.275029393Z\" , \"severity\" : \"ERROR\" , \"logName\" : \"projects/project1/logs/backupdr.googleapis.com %2F backup recovery appliance events\" , \"receiveTimestamp\" : \"2023-02-06T20:24:56.388937247Z\" } Note: Event logs are not generated for successfully completed backup jobs.",
+          "Use the following query to view all the event logs associated with backup/recovery appliances for a given PROJECT ID : logName=\"projects/ PROJECT ID /logs/backupdr.googleapis.com%2Fbackup recovery appliance events\" If you are looking for event logs for a specific backup/recovery appliance, add the following backup/recovery appliance name: logName=\"projects/ PROJECT ID /logs/backupdr.googleapis.com%2Fbackup recovery appliance events\" resource.labels.backup recovery appliance id= \" backup/recovery appliance name \" If you are looking for event logs for a specific event ID, then use the following log query."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backupdr.googleapis.com",
+      "resource.labels.backup"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configure-alerts",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/appliance-events"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

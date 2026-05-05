@@ -1,0 +1,38 @@
+# Google Analytics usage collection
+
+Product: Mainframe Connector
+Feature slug: `google-analytics-usage-collection`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Mainframe Connector collects usage data with Google Analytics by default, and it can be disabled.
+
+## Lifecycle
+
+- Latest feature date: 2025-02-13
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+- allow (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+- firewall (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+- key (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+- logging (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+- permission (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+- role (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+- security (evidence: [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector), [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation), [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference), [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference](https://docs.cloud.google.com/mainframe-connector/docs/copybook-reference)
+- [https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector](https://docs.cloud.google.com/mainframe-connector/docs/deploy-mainframe-connector)
+- [https://docs.cloud.google.com/mainframe-connector/docs/get-started](https://docs.cloud.google.com/mainframe-connector/docs/get-started)
+- [https://docs.cloud.google.com/mainframe-connector/docs/installation](https://docs.cloud.google.com/mainframe-connector/docs/installation)

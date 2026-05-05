@@ -1,0 +1,126 @@
+{
+  "feature_name": "Raw log search CSV export",
+  "feature_slug": "raw-log-search-csv-export",
+  "summary": "Raw log search results can be downloaded as a CSV file.",
+  "extended_definition": "Raw log search results can be downloaded as a CSV file.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.",
+          "Use a block comment: additional.fields[\"pod name\"] = \"kube-scheduler\" / Block comments can span multiple lines. / AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Use a single-line comment: additional.fields[\"pod name\"] != \"\" // my single-line comment Search settings You can set the maximum number of search results in UDM search settings ."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-api-reference",
+        "final_score": 70,
+        "relevance": "",
+        "evidence_snippets": [
+          "SIEM Log Searching and Investigation : During a CDIR investigation, or on an ad-hoc basis, analysts can use either natural language syntax, Yara-L syntax, or raw log searching to surface information in various logs ingested into Google SecOps related to cloud infrastructure and services.",
+          "Google SecOps provides Cloud Detection Investigation and Response (CDIR), Case Management, SIEM log searching and investigation, Cloud Asset Inventory collection for Entity Graph Enrichment, and the ability to automate common SOC workflows using the SOAR component of Google SecOps.",
+          "Centralized Investigation: The IOC Matches page serves as the central hub for viewing matched IOCs, filtering results (by Type, Priority, Status, Source: Mandiant, etc.), and drilling down into event details, UDM context, threat intelligence rationale, and associations."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example : rule CheckCuratedDetection with EDR and EG { meta: author = \"noone@cymbal.com\" events: $d.detection.detection.rule name = /SCC: Custom Modules: Configurable Bad Domain/ $d.detection.collection elements.references.event.network.dns.questions.name = $domain $d.detection.collection elements.references.event.principal.asset.hostname = $hostname $e.metadata.log type = \"LIMACHARLIE EDR\" $e.metadata.product event type = \"NETWORK CONNECTIONS\" $domain = re.capture($e.principal.process.command line, \"\\\\s([a-zA-Z0-9.-]+\\\\.[a-zA-Z0-9.-]+)$\") $hostname = re.capture($e.principal.hostname, \"([^.] )\") $prevalence.graph.metadata.entity type = \"DOMAIN NAME\" $prevalence.graph.metadata.source type = \"DERIVED CONTEXT\" $prevalence.graph.entity.hostname = $domain $prevalence.graph.entity.domain.prevalence.day count = 10 $prevalence.graph.entity.domain.prevalence.rolling max <= 5 $prevalence.graph.entity.domain.prevalence.rolling max > 0 match: $hostname over 1h outcome: $risk score = 80 $CL target = array($domain) condition: $e and $d and $prevalence } View composite detection findings You can view composite detection results in the Detections page.",
+          "When to use composite detections Composite detections can be useful for achieving the following goals: Correlate outcomes of two or more rules (for example, linking a Malware Downloaded detection with a subsequent C2 Beaconing alert from the same host).",
+          "The rule then searches raw Endpoint Detection and Response (EDR) logs (the events ) from the same workload within a one-minute window, looking for command-line operations that contained the same malicious domain."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "additional.fields",
+      "cymbal.com",
+      "d.detection.collection",
+      "d.detection.detection.rule",
+      "e.metadata.event",
+      "e.metadata.log",
+      "e.metadata.product",
+      "e.principal.hostname",
+      "e.principal.ip",
+      "e.principal.process.command",
+      "elements.references.event.network.dns.questions.name",
+      "elements.references.event.principal.asset.hostname",
+      "prevalence.graph.entity.domain.prevalence.day",
+      "prevalence.graph.entity.domain.prevalence.rolling",
+      "prevalence.graph.entity.hostname",
+      "prevalence.graph.metadata.entity",
+      "prevalence.graph.metadata.source",
+      "re.capture",
+      "susupicious.ip"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

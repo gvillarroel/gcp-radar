@@ -1,0 +1,186 @@
+{
+  "feature_name": "GKE automatic application monitoring",
+  "feature_slug": "gke-automatic-application-monitoring",
+  "summary": "Automatic application monitoring deploys PodMonitoring configurations for supported workloads and surfaces their metrics in Cloud Monitoring.",
+  "extended_definition": "Automatic application monitoring deploys PodMonitoring configurations for supported workloads and surfaces their metrics in Cloud Monitoring.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze model serving performance and costs with GKE Inference Quickstart\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "source_id": "site-docs-reference-2",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This feature scans the cluster for workloads that run on supported model servers and deploys the PodMonitoring resources that enable these workload metrics to be visible in Cloud Monitoring.",
+          "For more information about enabling and configuring auto-monitoring, see Configure automatic application monitoring for workloads .",
+          "Important: If PodMonitoring resources have already been deployed to collect metrics from supported workloads , remove them before enabling the auto-monitoring feature to avoid double collection."
+        ]
+      },
+      {
+        "title": "\"Best practices for running batch workloads on GKE \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot Standard This page introduces the best practices for building and optimizing batch processing platforms with Google Kubernetes Engine (GKE), including best practices for: Architecture Job management Multi-tenancy Security Queueing Storage Performance Cost efficiency Monitoring GKE provides a powerful framework for orchestrating batch workloads such as data processing, training machine learning models , running scientific simulations , and other high performance computing workloads .",
+          "The following table lists the key recommendations when managing queueing and fair sharing among batch workloads: Recommendation Resources Use Kueue Kueue is a kubernetes-native Job queueing system for batch, high performance computing, machine learning, and similar applications in a Kubernetes cluster.",
+          "With Autopilot clusters, you don't need to worry about provisioning nodes or managing node pools because node pools are automatically provisioned through node auto-provisioning, and are automatically scaled to meet the requirements of your workloads."
+        ]
+      },
+      {
+        "title": "\"Automatically bootstrap GKE nodes with DaemonSets \\_|\\_ Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "In Cloud Shell, create and launch a regional GKE cluster: gcloud container clusters create ds-init-tutorial \\ --enable-ip-alias \\ --machine-type = n1-standard-2 \\ --metadata disable-legacy-endpoints = true \\ --node-labels = app = default-init \\ --node-locations us-central1-a,us-central1-b,us-central1-c \\ --no-enable-basic-auth \\ --no-issue-client-certificate \\ --num-nodes = 1 \\ --location us-central1 \\ --service-account = \" $GKE SERVICE ACCOUNT EMAIL \" Apply node configurations using a DaemonSet In this section, you prevent workloads from running on nodes before configuration is complete by applying a taint to the node pool.",
+          "Before reading this page, ensure that you're familiar with: Kubernetes GKE Docker chroot In this tutorial, you learn to use Kubernetes taints and tolerations to help ensure that nodes are configured by a DaemonSet before application workloads can be scheduled on them.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Documentation Guides Send feedback Automatically bootstrap GKE nodes with DaemonSets Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "logging.logWriter",
+      "monitoring.metricWriter",
+      "monitoring.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.logWriter",
+      "roles/monitoring.metricWriter",
+      "roles/monitoring.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/machine-learning/inference/inference-quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/batch-platform-on-gke",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/automatically-bootstrapping-gke-nodes-with-daemonsets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

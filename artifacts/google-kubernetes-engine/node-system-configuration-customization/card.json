@@ -1,0 +1,141 @@
+{
+  "feature_name": "Node system configuration customization",
+  "feature_slug": "node-system-configuration-customization",
+  "summary": "GKE now supports additional kubelet, sysctl, and Linux configuration options for customizing node system settings; GKE now supports additional kubelet, sysctl, and Linux configuration options for customizing node system settings.",
+  "extended_definition": "GKE now supports additional kubelet, sysctl, and Linux configuration options for customizing node system settings; GKE now supports additional kubelet, sysctl, and Linux configuration options for customizing node system settings.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additional information about the current status of this node pool instance, if available. autoscaling object ( NodePoolAutoscaling ) Autoscaler configuration for this NodePool.",
+          "NodePool JSON representation { \"name\" : string , \"config\" : { object ( NodeConfig ) } , \"initialNodeCount\" : integer , \"locations\" : [ string ] , \"networkConfig\" : { object ( NodeNetworkConfig ) } , \"selfLink\" : string , \"version\" : string , \"instanceGroupUrls\" : [ string ] , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"autoscaling\" : { object ( NodePoolAutoscaling ) } , \"management\" : { object ( NodeManagement ) } , \"maxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"conditions\" : [ { object ( StatusCondition ) } ] , \"podIpv4CidrSize\" : integer , \"upgradeSettings\" : { object ( UpgradeSettings ) } , \"placementPolicy\" : { object ( PlacementPolicy ) } , \"updateInfo\" : { object ( UpdateInfo ) } , \"etag\" : string , \"queuedProvisioning\" : { object ( QueuedProvisioning ) } , \"bestEffortProvisioning\" : { object ( BestEffortProvisioning ) } , \"nodeDrainConfig\" : { object ( NodeDrainConfig ) } } Fields name string The name of the node pool. config object ( NodeConfig ) The node configuration of the pool. initialNodeCount integer The initial node count for the pool.",
+          "NodeNetworkConfig JSON representation { \"createPodRange\" : boolean , \"podRange\" : string , \"podIpv4CidrBlock\" : string , \"podCidrOverprovisionConfig\" : { object ( PodCIDROverprovisionConfig ) } , \"additionalNodeNetworkConfigs\" : [ { object ( AdditionalNodeNetworkConfig ) } ] , \"additionalPodNetworkConfigs\" : [ { object ( AdditionalPodNetworkConfig ) } ] , \"podIpv4RangeUtilization\" : number , \"subnetwork\" : string , \"networkTierConfig\" : { object ( NetworkTierConfig ) } , // Union field enable private nodes can be only one of the following: \"enablePrivateNodes\" : boolean // End of list of possible types for union field enable private nodes . // Union field network performance config can be only one of the following: \"networkPerformanceConfig\" : { object ( NetworkPerformanceConfig ) } // End of list of possible types for union field network performance config . } Fields createPodRange boolean Input only."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "source_id": "site-api-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additional information about the current status of this node pool instance, if available. autoscaling object ( NodePoolAutoscaling ) Autoscaler configuration for this NodePool.",
+          "NodePool JSON representation { \"name\" : string , \"config\" : { object ( NodeConfig ) } , \"initialNodeCount\" : integer , \"locations\" : [ string ] , \"networkConfig\" : { object ( NodeNetworkConfig ) } , \"selfLink\" : string , \"version\" : string , \"instanceGroupUrls\" : [ string ] , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"autoscaling\" : { object ( NodePoolAutoscaling ) } , \"management\" : { object ( NodeManagement ) } , \"maxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"conditions\" : [ { object ( StatusCondition ) } ] , \"podIpv4CidrSize\" : integer , \"upgradeSettings\" : { object ( UpgradeSettings ) } , \"placementPolicy\" : { object ( PlacementPolicy ) } , \"updateInfo\" : { object ( UpdateInfo ) } , \"etag\" : string , \"queuedProvisioning\" : { object ( QueuedProvisioning ) } , \"bestEffortProvisioning\" : { object ( BestEffortProvisioning ) } , \"nodeDrainConfig\" : { object ( NodeDrainConfig ) } } Fields name string The name of the node pool. config object ( NodeConfig ) The node configuration of the pool. initialNodeCount integer The initial node count for the pool.",
+          "NodeNetworkConfig JSON representation { \"createPodRange\" : boolean , \"podRange\" : string , \"podIpv4CidrBlock\" : string , \"podCidrOverprovisionConfig\" : { object ( PodCIDROverprovisionConfig ) } , \"additionalNodeNetworkConfigs\" : [ { object ( AdditionalNodeNetworkConfig ) } ] , \"additionalPodNetworkConfigs\" : [ { object ( AdditionalPodNetworkConfig ) } ] , \"podIpv4RangeUtilization\" : number , \"subnetwork\" : string , \"networkTierConfig\" : { object ( NetworkTierConfig ) } , // Union field enable private nodes can be only one of the following: \"enablePrivateNodes\" : boolean // End of list of possible types for union field enable private nodes . // Union field network performance config can be only one of the following: \"networkPerformanceConfig\" : { object ( NetworkPerformanceConfig ) } // End of list of possible types for union field network performance config . } Fields createPodRange boolean Input only."
+        ]
+      },
+      {
+        "title": "\"Encrypt workload data in-use with Confidential GKE Nodes \\_|\\_ GKE security\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes",
+        "source_id": "site-iam-reference",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following additional considerations apply: When you create the cluster, choose a Confidential Computing technology that node auto-provisioning supports.",
+          "This additional manual configuration might result in you noticing fewer benefits from using a ComputeClass to create Confidential GKE Nodes.",
+          "This field supports the following values, which you must specify in uppercase: SEV : AMD SEV SEV SNP : AMD SEV-SNP TDX : Intel TDX To let a workload run on any confidential nodes, regardless of the Confidential Computing technology, use a node affinity rule , like in the following example: apiVersion : v1 kind : Pod spec : containers : - name : confidential-app image : us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 affinity : nodeAffinity : requiredDuringSchedulingIgnoredDuringExecution : nodeSelectorTerms : - matchExpressions : - key : cloud.google.com/gke-confidential-nodes-instance-type operator : Exists To let a workload run on nodes that use only a subset of the available Confidential Computing technologies, use a node affinity rule that's similar to the following example: apiVersion : v1 kind : Pod spec : containers : - name : confidential-app image : us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 affinity : nodeAffinity : requiredDuringSchedulingIgnoredDuringExecution : nodeSelectorTerms : - matchExpressions : - key : cloud.google.com/gke-confidential-nodes-instance-type operator : In values : - SEV - SEV SNP - TDX In the values field, specify only the Confidential Computing technologies that you want to run the workload on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "docker.pkg.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/confidential-gke-nodes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

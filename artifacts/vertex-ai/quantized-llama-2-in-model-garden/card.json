@@ -1,0 +1,129 @@
+{
+  "feature_name": "Quantized LLaMA 2 in Model Garden",
+  "feature_slug": "quantized-llama-2-in-model-garden",
+  "summary": "Quantized versions of Meta's Llama 2 models were added to Model Garden.",
+  "extended_definition": "Quantized versions of Meta's Llama 2 models were added to Model Garden.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.locations.models Methods copy POST /v1beta1/{parent}/models:copy Copies an already existing Vertex AI Model into the specified Location. delete DELETE /v1beta1/{name} Deletes a Model. deleteVersion DELETE /v1beta1/{name}:deleteVersion Deletes a Model version. export POST /v1beta1/{name}:export Exports a trained, exportable Model to a location specified by the user. get GET /v1beta1/{name} Gets a Model. getIamPolicy POST /v1beta1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1beta1/{parent}/models Lists Models in a Location. listCheckpoints GET /v1beta1/{name}:listCheckpoints Lists checkpoints of the specified model version. listVersions GET /v1beta1/{name}:listVersions Lists versions of the specified model. mergeVersionAliases POST /v1beta1/{name}:mergeVersionAliases Merges a set of aliases for a Model version. patch PATCH /v1beta1/{model.name} Updates a Model. setIamPolicy POST /v1beta1/{resource}:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1beta1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. updateExplanationDataset POST /v1beta1/{model}:updateExplanationDataset Incrementally update the dataset used for an examples model. upload POST /v1beta1/{parent}/models:upload Uploads a Model artifact into Vertex AI.",
+          "REST Resource: v1.projects.locations.models Methods copy POST /v1/{parent}/models:copy Copies an already existing Vertex AI Model into the specified Location. delete DELETE /v1/{name} Deletes a Model. deleteVersion DELETE /v1/{name}:deleteVersion Deletes a Model version. export POST /v1/{name}:export Exports a trained, exportable Model to a location specified by the user. get GET /v1/{name} Gets a Model. getIamPolicy POST /v1/{resource}:getIamPolicy Gets the access control policy for a resource. list GET /v1/{parent}/models Lists Models in a Location. listCheckpoints GET /v1/{name}:listCheckpoints Lists checkpoints of the specified model version. listVersions GET /v1/{name}:listVersions Lists versions of the specified model. mergeVersionAliases POST /v1/{name}:mergeVersionAliases Merges a set of aliases for a Model version. patch PATCH /v1/{model.name} Updates a Model. setIamPolicy POST /v1/{resource}:setIamPolicy Sets the access control policy on the specified resource. testIamPermissions POST /v1/{resource}:testIamPermissions Returns permissions that a caller has on the specified resource. updateExplanationDataset POST /v1/{model}:updateExplanationDataset Incrementally update the dataset used for an examples model. upload POST /v1/{parent}/models:upload Uploads a Model artifact into Vertex AI.",
+          "REST Resource: v1beta1.publishers.models Methods get GET /v1beta1/{name} Gets a Model Garden publisher model. list GET /v1beta1/{parent}/models Lists publisher models in Model Garden."
+        ]
+      },
+      {
+        "title": "\"Vertex ML Metadata notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex ML Metadata Track parameters and metrics for locally trained models .",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction ."
+        ]
+      },
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex ML Metadata Track parameters and metrics for locally trained models .",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .",
+          "List of notebooks Select a service AutoML BigQuery BigQuery ML Custom training Image Ray on Vertex AI Tabular Text Vector Search Vertex AI Experiments Vertex AI Feature Store Vertex AI Inference Vertex AI model evaluation Vertex AI Model Monitoring Vertex AI Model Registry Vertex AI Pipelines Vertex AI TensorBoard Vertex AI Vizier Vertex AI Workbench Vertex Explainable AI Vertex ML Metadata Services Description Open in Classification for tabular data AutoML tabular training and prediction ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "model.name",
+      "v1.projects.locations.models",
+      "v1.publishers.models",
+      "v1beta1.projects.locations.models",
+      "v1beta1.publishers.models"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/ml-metadata/ml-metadata-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.145Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

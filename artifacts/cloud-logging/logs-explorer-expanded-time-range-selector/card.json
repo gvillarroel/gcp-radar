@@ -1,0 +1,90 @@
+{
+  "feature_name": "Logs Explorer expanded time-range selector",
+  "feature_slug": "logs-explorer-expanded-time-range-selector",
+  "summary": "The Logs Explorer time-range selector supports preset, custom, and relative time range options.",
+  "extended_definition": "The Logs Explorer time-range selector supports preset, custom, and relative time range options.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+      "https://docs.cloud.google.com/logging/docs/view/building-queries",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "",
+        "evidence_snippets": [
+          "The copied URL has the corresponding absolute time range represented by the time range of your query; for example, 7:49:37 PM - 8:49:37 PM . settings Preferences : Adjust the view of the Logs Explorer page, and customize the format of your query results.",
+          "The following occurs when you click manage search Analyze results : The time range in the Logs Explorer might be automatically adjusted so that there is meaningful log data in the Observability Analytics page.",
+          "View logs by time range To specify a time range for the log entries that you want to view, use the time-range selector ."
+        ]
+      },
+      {
+        "title": "\"Build and save queries by using the Logging query language \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use the time-range selector The options in the time-range selector let you select from preset time options, specify a custom start and end time, or center the time range around a specific timestamp.",
+          "View logs by time range There are two ways to display logs that were written in a specific time range: Use the time-range selector.",
+          "If the query-editor field contains an expression with a timestamp, then the time-range selector is disabled, and the query uses the timestamp expression as its time-range restriction."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Collect logs from Apache with the Ops Agent \\_|\\_ Cloud Logging\\",
+        "url": "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Restart the Ops Agent: To restart the agent, run the following command on your instance: sudo systemctl restart google-cloud-ops-agent To confirm that the agent restarted, run the following command and verify that the components \"Metrics Agent\" and \"Logging Agent\" started: sudo systemctl status \"google-cloud-ops-agent \" View Apache web server logs To view your logs in the Google Cloud console, use the Logs Explorer: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "The email notification you receive looks similar to the following: To view the new log entries, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "To view your Apache web server logs, create and run a query: Expand the list of Google Cloud projects from the Google Cloud project selector, and then copy the Google Cloud project ID into your clipboard."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/view/building-queries",
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

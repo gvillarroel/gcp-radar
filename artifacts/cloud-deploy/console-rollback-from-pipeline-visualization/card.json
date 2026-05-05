@@ -1,0 +1,116 @@
+{
+  "feature_name": "Console rollback from pipeline visualization",
+  "feature_slug": "console-rollback-from-pipeline-visualization",
+  "summary": "The delivery pipeline visualization in Google Cloud console supports rolling back targets.",
+  "extended_definition": "The delivery pipeline visualization in Google Cloud console supports rolling back targets.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+      "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets",
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-in-console"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create a pipeline and release in the Google Cloud console \\_\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-in-console",
+        "source_id": "site-docs-reference-2",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Delete the GKE clusters or Cloud Run services: GKE gcloud container clusters delete quickstart - cluster - for - console - staging -- region = us - central1 -- project = PROJECT ID \\ && gcloud container clusters delete quickstart - cluster - for - console - prod -- region = us - central1 -- project = PROJECT ID Cloud Run gcloud run services delete in - console - quickstart - pipeline - target - 1 -- region = us - central1 -- project = PROJECT ID \\ && gcloud run services delete in - console - quickstart - pipeline - target - 2 -- region = us - central1 -- project = PROJECT ID From the delivery pipeline page, click Delete to delete the delivery pipeline, the release, and rollouts.",
+          "GKE clusters are externally accessible by default. gcloud container clusters create - auto quickstart - cluster - for - console - staging \\ -- project = PROJECT ID \\ -- region = us - central1 && \\ gcloud container clusters create - auto quickstart - cluster - for - console - prod \\ -- project = PROJECT ID \\ -- region = us - central1 Create a delivery pipeline and two targets You can use Cloud Deploy to create a delivery pipeline and targets based on configuration specified in one or more YAML files.",
+          "Create a pipeline and release in the Google Cloud console This page shows you how to use the Google Cloud console to create a Cloud Deploy delivery pipeline, and then create a release for that pipeline."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.deliveryPipelines \\_|\\_ Cloud Deploy \\_\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods create Creates a new DeliveryPipeline in a given project and location. delete Deletes a single DeliveryPipeline. get Gets details of a single DeliveryPipeline. getIamPolicy Gets the access control policy for a resource. list Lists DeliveryPipelines in a given project and location. patch Updates the parameters of a single DeliveryPipeline. rollbackTarget Creates a Rollout to roll back the specified target. setIamPolicy Sets the access control policy on the specified resource. testIamPermissions Returns permissions that a caller has on the specified resource.",
+          "Home Documentation Application development Cloud Deploy Reference Send feedback REST Resource: projects.locations.deliveryPipelines Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource: DeliveryPipeline JSON representation SerialPipeline JSON representation Stage JSON representation Strategy JSON representation Standard JSON representation Predeploy JSON representation Postdeploy JSON representation Canary JSON representation RuntimeConfig JSON representation KubernetesConfig JSON representation GatewayServiceMesh JSON representation RouteDestinations JSON representation ServiceNetworking JSON representation CloudRunConfig JSON representation CanaryDeployment JSON representation CustomCanaryDeployment JSON representation PhaseConfig JSON representation DeployParameters JSON representation PipelineCondition JSON representation PipelineReadyCondition JSON representation TargetsTypeCondition JSON representation Methods Resource: DeliveryPipeline A DeliveryPipeline resource in the Cloud Deploy API."
+        ]
+      },
+      {
+        "title": "\"Create your delivery pipeline and targets \\_|\\_ Cloud Deploy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is useful for trying out Cloud Deploy, but is not suitable for production workloads. (You can also use the Google Cloud console to create a release .) To create the delivery pipeline: From the Delivery pipelines page, click Create .",
+          "Home Documentation Application development Cloud Deploy Guides Send feedback Create your delivery pipeline and targets Stay organized with collections Save and categorize content based on your preferences.",
+          "Create a delivery pipeline and targets using the Google Cloud console You can use the Google Cloud console to create a new delivery pipeline and target or targets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.deliveryPipelines"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-in-console",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+        "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-in-console",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+        "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-in-console",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+        "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-in-console",
+        "https://docs.cloud.google.com/deploy/docs/api/reference/rest/v1/projects.locations.deliveryPipelines",
+        "https://docs.cloud.google.com/deploy/docs/create-pipeline-targets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.843Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy"
+}

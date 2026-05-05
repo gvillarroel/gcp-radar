@@ -1,0 +1,237 @@
+{
+  "feature_name": "erf()",
+  "feature_slug": "erf",
+  "summary": "Computes the error function on ee.Image, ee.Number, and ee.Array values.",
+  "extended_definition": "Computes the error function on ee.Image, ee.Number, and ee.Array values.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+      "https://developers.google.com/earth-engine/guides/arrays_array_images",
+      "https://developers.google.com/earth-engine/guides/debugging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Arrays and Array Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ) . select ( [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ] ) Make an Array Image, with a 1-D Array per pixel. array image 1d = image . toArray () Make an Array Image with a 2-D Array per pixel, 6x1. array image 2d = array image 1d . toArray ( 1 ) In this example, note that toArray() converts image to an array image in which each pixel is a 1-D vector, the entries of which correspond to the 6 values at the corresponding positions in the bands of image .",
+          "To do that, first convert the multi-band Landsat image into an “Array Image”, where each pixel is an Array of band values.",
+          "Array images can be created from multi-band images, where each pixel is an array of band values."
+        ]
+      },
+      {
+        "title": "ee.Array.erf | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "source_id": "feature-recovery-http",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "ee.Array.erf | Google Earth Engine | Google for Developers 跳至主要内容 Earth Engine / English Deutsch Español Español – América Latina Français Indonesia Italiano Polski Português – Brasil Tiếng Việt Türkçe Русский עברית العربيّة فارسی हिंदी বাংলা ภาษาไทย 中文 – 简体 中文 – 繁體 日本語 한국어 登录 首页 指南 参考文档 支持 社区 Data Catalog Earth Engine 首页 指南 参考文档 支持 社区 Data Catalog API 参考文档 概览 客户端库 JavaScript/Python ee.Algorithms CannyEdgeDetector 集合 CrossCorrelation 日期 描述 字典 FMask.fillMinima FMask.matchClouds 功能 GeometryConstructors.BBox GeometryConstructors.LineString GeometryConstructors.LinearRing GeometryConstructors.MultiGeometry GeometryConstructors.MultiLineString GeometryConstructors.MultiPoint GeometryConstructors.MultiPolygon GeometryConstructors.Point GeometryConstructors.Polygon GeometryConstructors.Rectangle HillShadow HoughTransform 如果 Image.Segmentation.GMeans Image.Segmentation.KMeans Image.Segmentation.SNIC Image.Segmentation.seedGrid 等于 Landsat.TOA Landsat.calibratedRadiance Landsat.pathRowLimit Landsat.simpleCloudScore Landsat.simpleComposite 对象类型 ProjectionTransform Sentinel2.CDI 字符串 TemporalSegmentation.C2c TemporalSegmentation.Ccdc TemporalSegmentation.Ewmacd TemporalSegmentation.LandTrendr TemporalSegmentation.LandTrendrFit TemporalSegmentation.StructuralChangeBreakpoints TemporalSegmentation.VCT TemporalSegmentation.Verdet 地形 ee.Array ee.Array abs accum acos 添加 和 argmax asin atan atan2 bitCount bitsToArray bitwiseAnd bitwiseNot bitwiseOr bitwiseXor 字节 猫 cbrt ceil cos Cosh CUT digamma divide dotProduct 双线 eigen eq ERF erfInv Erfc erfcInv exp 第一页 firstNonZero float 向下取整 灰度系数 gammainc get gt gte Hypot identity int int16 int32 int64 int8 lanczos leftShift length log log10 长 lt LTE 掩盖 matrixCholeskyDecomposition matrixDeterminant matrixDiagonal matrixFnorm matrixInverse matrixLUDecomposition matrixMultiply matrixPseudoInverse matrixQRDecomposition matrixSingularValueDecomposition matrixSolve matrixToDiag matrixTrace matrixTranspose max 分钟 mod 相乘 neq 非 或 垫子 嘭 项目 reduce 重复 reshape rightShift 轮数 短片 signum sin 信安省 slice sort sqrt subtract tan 双色 toByte toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toList toLong toShort toUint16 toUint32 toUint8 transpose 三角函数 uint16 uint32 uint8 ee.Blob ee.Blob 字符串 网址 ee.Classifier amnhMaxent confusionMatrix decisionTree decisionTreeEnsemble explain libsvm load minimumDistance 模式 架构 setOutputMode smileCart smileGradientTreeBoost smileKNN smileNaiveBayes smileRandomForest spectralRegion 火车 ee.Clusterer 架构 火车 wekaCascadeKMeans wekaCobweb wekaKMeans wekaLVQ wekaXMeans ee.ConfusionMatrix ee.ConfusionMatrix 准确性 数组 consumersAccuracy fscore kappa 顺序 producersAccuracy ee.Date ee.Date Advance aside 差异 evaluate 格式 fromYMD get getFraction getInfo getRange getRelative Millis parse serialize unitRatio update ee.DateRange ee.DateRange 包含 end 交集 intersects isEmpty isUnbounded start 无界限 并集 ee.Dictionary ee.Dictionary aside combine 包含 evaluate fromLists get getArray getGeometry getInfo getNumber getString 密钥 地图 remove 重命名 选择 serialize set 大小 toArray toImage values ee.ErrorMargin ee.ErrorMargin ee.Feature ee.Feature 区域 aside 范围 buffer 形心 closestPoint closestPoints containedIn 包含 convexHull copyProperties cutLines 差异 不相交 解散 距离 evaluate 几何图形 get getArray getInfo getMapId getNumber getString hersDescriptor ID 交集 intersects length 边界 propertyNames 选择 serialize set setGeometry 简化 symmetricDifference toArray toDictionary transform 并集 withinDistance ee.FeatureCollection ee.FeatureCollection aggregate_array aggregate_count aggregate_count_distinct aggregate_first aggregate_histogram aggregate_max aggregate_mean aggregate_min aggregate_product aggregate_sample_sd aggregate_sample_var aggregate_stats aggregate_sum aggregate_total_sd aggregate_total_var aside 范围 分类 集群 copyProperties 距离 distinct draw errorMatrix evaluate 过滤条件 filterBounds filterDate 第一页 flatten 几何图形 get getArray getDownloadURL getInfo getMapId getNumber getString inverseDistance 迭代 克里格插值 限制 loadBigQueryTable makeArray 地图 合并 propertyNames randomColumn randomPoints reduceColumns reduceToImage 重新映射 runBigQuery 选择 serialize set 大小 sort style toDictionary toList 并集 ee.Filter ee.Filter 和 区域 aside 范围 calendarRange 包含 日期 dateRangeContains 一年中的第几天 不相交 eq 等号 evaluate 表达式 getInfo greaterThan greaterThanOrEquals gt gte hasType inList intersects isContained lessThan lessThanOrEquals listContains lt LTE maxDifference neq 非 notEquals notNull 或 rangeContains serialize stringContains stringEndsWith stringStartsWith withinDistance ee.Geometry ee.Geometry 黑边盒子 BBox.area BBox.aside BBox.bounds BBox.buffer BBox.centroid BBox.closestPoint BBox.closestPoints BBox.containedIn BBox.contains BBox.convexHull BBox.coordinates BBox.coveringGrid BBox.cutLines BBox.difference BBox.disjoint BBox.dissolve BBox.distance BBox.edgesAreGeodesics BBox.evaluate BBox.geodesic BBox.geometries BBox.getInfo BBox.intersection BBox.intersects BBox.isUnbounded BBox.length BBox.perimeter BBox.projection BBox.serialize BBox.simplify BBox.symmetricDifference BBox.toGeoJSON BBox.toGeoJSONString BBox.transform BBox.type BBox.union BBox.withinDistance LineString LineString.area LineString.aside LineString.bounds LineString.buffer LineString.centroid LineString.closestPoint LineString.closestPoints LineString.containedIn LineString.contains LineString.convexHull LineString.coordinates LineString.coveringGrid LineString.cutLines LineString.difference LineString.disjoint LineString.dissolve LineString.distance LineString.edgesAreGeodesics LineString.evaluate LineString.geodesic LineString.geometries LineString.getInfo LineString.intersection LineString.intersects LineString.isUnbounded LineString.length LineString.perimeter LineString.projection LineString.serialize LineString.simplify LineString.symmetricDifference LineString.toGeoJSON LineString.toGeoJSONString LineString.transform LineString.type LineString.union LineString.withinDistance LinearRing LinearRing.area LinearRing.aside LinearRing.bounds LinearRing.buffer LinearRing.centroid LinearRing.closestPoint LinearRing.closestPoints LinearRing.containedIn LinearRing.contains LinearRing.convexHull LinearRing.coordinates LinearRing.coveringGrid LinearRing.cutLines LinearRing.difference LinearRing.disjoint LinearRing.dissolve LinearRing.distance LinearRing.edgesAreGeodesics LinearRing.evaluate LinearRing.geodesic LinearRing.geometries LinearRing.getInfo LinearRing.intersection LinearRing.intersects LinearRing.isUnbounded LinearRing.length LinearRing.perimeter LinearRing.projection LinearRing.serialize LinearRing.simplify LinearRing.symmetricDifference LinearRing.toGeoJSON LinearRing.toGeoJSONString LinearRing.transform LinearRing.type LinearRing.union LinearRing.withinDistance MultiLineString MultiLineString.area MultiLineString.aside MultiLineString.bounds MultiLineString.buffer MultiLineString.centroid MultiLineString.closestPoint MultiLineString.closestPoints MultiLineString.containedIn MultiLineString.contains MultiLineString.convexHull MultiLineString.coordinates MultiLineString.coveringGrid MultiLineString.cutLines MultiLineString.difference MultiLineString.disjoint MultiLineString.dissolve MultiLineString.distance MultiLineString.edgesAreGeodesics MultiLineString.evaluate MultiLineString.geodesic MultiLineString.geometries MultiLineString.getInfo MultiLineString.intersection MultiLineString.intersects MultiLineString.isUnbounded MultiLineString.length MultiLineString.perimeter MultiLineString.projection MultiLineString.serialize MultiLineString.simplify MultiLineString.symmetricDifference MultiLineString.toGeoJSON MultiLineString.toGeoJSONString MultiLineString.transform MultiLineString.type MultiLineString.union MultiLineString.withinDistance MultiPoint MultiPoint.area MultiPoint.aside MultiPoint.bounds MultiPoint.buffer MultiPoint.centroid MultiPoint.closestPoint MultiPoint.closestPoints MultiPoint.containedIn MultiPoint.contains MultiPoint.convexHull MultiPoint.coordinates MultiPoint.coveringGrid MultiPoint.cutLines MultiPoint.difference MultiPoint.disjoint MultiPoint.dissolve MultiPoint.distance MultiPoint.edgesAreGeodesics MultiPoint.evaluate MultiPoint.geodesic MultiPoint.geometries MultiPoint.getInfo MultiPoint.intersection MultiPoint.intersects MultiPoint.isUnbounded MultiPoint.length MultiPoint.perimeter MultiPoint.projection MultiPoint.serialize MultiPoint.simplify MultiPoint.symmetricDifference MultiPoint.toGeoJSON MultiPoint.toGeoJSONString MultiPoint.transform MultiPoint.type MultiPoint.union MultiPoint.withinDistance 多重多边形 MultiPolygon.area MultiPolygon.aside MultiPolygon.bounds MultiPolygon.buffer MultiPolygon.centroid MultiPolygon.closestPoint MultiPolygon.closestPoints MultiPolygon.containedIn MultiPolygon.contains MultiPolygon.convexHull MultiPolygon.coordinates MultiPolygon.coveringGrid MultiPolygon.cutLines MultiPolygon.difference MultiPolygon.disjoint MultiPolygon.dissolve MultiPolygon.distance MultiPolygon.edgesAreGeodesics MultiPolygon.evaluate MultiPolygon.geodesic MultiPolygon.geometries MultiPolygon.getInfo MultiPolygon.intersection MultiPolygon.intersects MultiPolygon.isUnbounded MultiPolygon.length MultiPolygon.perimeter MultiPolygon.projection MultiPolygon.serialize MultiPolygon.simplify MultiPolygon.symmetricDifference MultiPolygon.toGeoJSON MultiPolygon.toGeoJSONString MultiPolygon.transform MultiPolygon.type MultiPolygon.union MultiPolygon.withinDistance 点 Point.area Point.aside Point.bounds Point.buffer Point.centroid Point.closestPoint Point.closestPoints Point.containedIn Point.contains Point.convexHull Point.coordinates Point.coveringGrid Point.cutLines Point.difference Point.disjoint Point.dissolve Point.distance Point.edgesAreGeodesics Point.evaluate Point.geodesic Point.geometries Point.getInfo Point.intersection Point.intersects Point.isUnbounded Point.length Point.perimeter Point.projection Point.serialize Point.simplify Point.symmetricDifference Point.toGeoJSON Point.toGeoJSONString Point.transform Point.type Point.union Point.withinDistance Polygon Polygon.area Polygon.aside Polygon.bounds Polygon.buffer Polygon.centroid Polygon.closestPoint Polygon.closestPoints Polygon.containedIn Polygon.contains Polygon.convexHull Polygon.coordinates Polygon.coveringGrid Polygon.cutLines Polygon.difference Polygon.disjoint Polygon.dissolve Polygon.distance Polygon.edgesAreGeodesics Polygon.evaluate Polygon.geodesic Polygon.geometries Polygon.getInfo Polygon.intersection Polygon.intersects Polygon.isUnbounded Polygon.length Polygon.perimeter Polygon.projection Polygon.serialize Polygon.simplify Polygon.symmetricDifference Polygon.toGeoJSON Polygon.toGeoJSONString Polygon.transform Polygon.type Polygon.union Polygon.withinDistance Rectangle Rectangle.area Rectangle.aside Rectangle.bounds Rectangle.buffer Rectangle.centroid Rectangle.closestPoint Rectangle.closestPoints Rectangle.containedIn Rectangle.contains Rectangle.convexHull Rectangle.coordinates Rectangle.coveringGrid Rectangle.cutLines Rectangle.difference Rectangle.disjoint Rectangle.dissolve Rectangle.distance Rectangle.edgesAreGeodesics Rectangle.evaluate Rectangle.geodesic Rectangle.geometries Rectangle.getInfo Rectangle.intersection Rectangle.intersects Rectangle.isUnbounded Rectangle.length Rectangle.perimeter Rectangle.projection Rectangle.serialize Rectangle.simplify Rectangle.symmetricDifference Rectangle.toGeoJSON Rectangle.toGeoJSONString Rectangle.transform Rectangle.type Rectangle.union Rectangle.withinDistance 区域 aside 范围 buffer 形心 closestPoint closestPoints containedIn 包含 convexHull 坐标 coveringGrid cutLines 差异 不相交 解散 距离 edgesAreGeodesics evaluate fromS2CellId fromS2CellToken geodesic 几何图形 getInfo 交集 intersects isUnbounded length 边界 投影 s2Cell serialize 简化 symmetricDifference toGeoJSON toGeoJSONString transform 类型 并集 withinDistance ee.Image ee.Image abs acos 添加 addBands 和 arrayAccum arrayArgmax arrayCat arrayDimensions arrayDotProduct arrayFlatten arrayGet arrayLength arrayLengths arrayMask arrayPad arrayProject arrayReduce arrayRepeat arrayReshape arraySlice arraySort arrayTranspose aside asin atan atan2 bandNames bandTypes bitCount bitsToArrayImage bitwiseAnd bitwiseNot bitwiseOr bitwiseXor 混合 字节 cast 猫 cbrt ceil changeProj 限制取值范围 分类 剪辑 clipToBoundsAndScale clipToCollection 集群 connectedComponents connectedPixelCount 常量 卷积 copyProperties cos Cosh cumulativeCost 日期 衍生词 digamma directionalDistanceTransform 移位 排气量 距离 divide 双线 熵 eq ERF erfInv Erfc erfcInv evaluate exp 表达式 fastDistanceTransform 第一页 firstNonZero float 向下取整 focalMax focalMean focalMedian focalMin focalMode 灰度系数 gammainc 几何图形 get getArray getDownloadURL getInfo getMapId getNumber getString getThumbId getThumbURL glcmTexture gradient gt gte hersDescriptor hersFeature hersImage hsvToRgb Hypot ID int int16 int32 int64 int8 插值 lanczos leftShift linkCollection load loadGeoTIFF loadZarrV2Array log log10 长 lt LTE 掩盖 matrixCholeskyDecomposition matrixDeterminant matrixDiagonal matrixFnorm matrixIdentity matrixInverse matrixLUDecomposition matrixMultiply matrixPseudoInverse matrixQRDecomposition matrixSingularValueDecomposition matrixSolve matrixToDiag matrixTrace matrixTranspose max medialAxis metadata 分钟 mod 相乘 neighborhoodToArray neighborhoodToBands neq normalizedDifference 非 或 颜料 pixelArea pixelCoordinates pixelLonLat 多项式 嘭 投影 propertyNames 随机 randomVisualizer reduce reduceConnectedComponents reduceNeighborhood reduceRegion reduceRegions reduceResolution reduceToVectors regexpRename register 重新映射 重命名 reproject 重新采样 rgb rgbToHsv rightShift 轮数 rsedTransform sample sampleRectangle sampleRegions 选择 selfMask serialize set setDefaultProjection 短片 signum sin 信安省 sldStyle slice spectralDilation spectralDistance spectralErosion spectralGradient sqrt stratifiedSample subtract tan 双色 toArray toByte toDictionary toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toLong toShort toUint16 toUint32 toUint8 translate 三角函数 uint16 uint32 uint8 unitScale 取消蒙版 unmix updateMask 可视化 条件 zeroCrossing ee.ImageCollection ee.ImageCollection aggregate_array aggregate_count aggregate_count_distinct aggregate_first aggregate_histogram aggregate_max aggregate_mean aggregate_min aggregate_product aggregate_sample_sd aggregate_sample_var aggregate_stats aggregate_sum aggregate_total_sd aggregate_total_var 和 aside 范围 cast combine copyProperties 计数 距离 distinct draw errorMatrix evaluate 过滤条件 filterBounds filterDate 第一页 flatten formaTrend fromImages 几何图形 get getArray getFilmstripThumbURL getInfo getMapId getNumber getRegion getString getVideoThumbURL 迭代 限制 linkCollection load loadZarrV2Array 地图 max 平均值 中位数 合并 分钟 模式 拼接图 或 product propertyNames qualityMosaic randomColumn reduce reduceColumns reduceToImage 重新映射 选择 serialize set 大小 sort style 总和 toArray toArrayPerBand toBands toDictionary toList 并集 ee.Join 应用 内部 反色 saveAll saveBest saveFirst 简单 ee.Kernel 添加 chebyshev Circle 罗盘 十字 Diamond euclidean 固定 高斯 反向 kirsch laplacian4 laplacian8 曼哈顿 八边形 加号 prewitt 矩形 roberts rotate Sobel 正方形 ee.List ee.List 添加 aside 猫 包含 containsAll distinct 等号 evaluate 过滤条件 flatten 频率 get getArray getGeometry getInfo getNumber getString indexOf indexOfSublist insert 迭代 联接 lastIndexOfSubList length 地图 reduce remove 全部移除 重复 替换 replaceAll reverse rotate sequence serialize set 重排 大小 slice sort splice 交换空间 unzip zip ee.Model fromVertexAi predictImage predictProperties ee.Number ee.Number abs acos 添加 和 aside asin atan atan2 bitCount bitwiseAnd bitwiseNot bitwiseOr bitwiseXor 字节 cbrt ceil 限制取值范围 cos Cosh digamma divide 双线 eq ERF erfInv Erfc erfcInv evaluate exp 表达式 第一页 firstNonZero float 向下取整 格式 灰度系数 gammainc getInfo gt gte Hypot int int16 int32 int64 int8 lanczos leftShift log log10 长 lt LTE max 分钟 mod 相乘 neq 非 或 parse 嘭 rightShift 轮数 serialize 短片 signum sin 信安省 sqrt subtract tan 双色 toByte toDouble toFloat toInt toInt16 toInt32 toInt64 toInt8 toLong toShort toUint16 toUint32 toUint8 三角函数 uint16 uint32 uint8 unitScale ee.PixelType ee.PixelType 维度 双线 float int16 int32 int64 int8 maxValue minValue 精确率 uint16 uint32 uint8 ee.Projection ee.Projection atScale crs nominalScale 和 WAF transform translate wkt ee.Reducer allNonZero anyNonZero autoHistogram bitwiseAnd bitwiseOr centeredCovariance circularMean circularStddev circularVariance combine 计数 countDistinct countDistinctNonNull countEvery countRuns 协方差 细分 第一页 firstNonNull fixed2DHistogram fixedHistogram forEach forEachBand forEachElement frequencyHistogram geometricMedian getOutputs group histogram intervalMean kendallsCorrelation 峰度 最后一 lastNonNull linearFit linearRegression max 平均值 中位数 分钟 minMax 模式 pearsonsCorrelation 百分位 product 重复 ridgeRegression robustLinearRegression sampleStdDev sampleVariance sensSlope setOutputs 偏向 spearmansCorrelation splitWeights stdDev 总和 toCollection toList 未加权 方差 ee.String ee.String aside 猫 compareTo decodeJSON encodeJSON 等号 evaluate getInfo 索引 length 匹配 替换 rindex serialize slice split toLowerCase toUpperCase 剪辑 ee.Terrain 切面 fillMinima hillShadow 山体阴影 产品 坡 ee.apply ee.apply ee.call ee.call ee.data authenticateViaOauth authenticateViaPopup authenticateViaPrivateKey cancelOperation computeValue copyAsset createAsset createAssetHome createFolder deleteAsset getAsset getAssetAcl getAssetRootQuota getDownloadId getFeatureViewTilesKey getFilmstripThumbId getMapId getOperation getTableDownloadId getThumbId getTileUrl getVideoThumbId getWorkloadTag listAssets listBuckets listFeatures listImages listOperations makeDownloadUrl makeTableDownloadUrl makeThumbUrl newTaskId renameAsset resetWorkloadTag setAssetAcl setDefaultWorkloadTag setWorkloadTag startIngestion startProcessing startTableIngestion updateAsset updateTask ee.initialize ee.initialize ee.reset ee.reset Export.classifier toAsset Export.image toAsset toCloudStorage toDrive Export.map toCloudStorage Export.table toAsset toBigQuery toCloudStorage toDrive toFeatureView Export.video toCloudStorage toDrive 代码编辑器 JavaScript 代码编辑器 地图 添加 addLayer centerObject 清除 drawingTools getBounds getCenter getScale getZoom 图层 onChangeBounds onChangeCenter onChangeZoom _trackEvent() onIdle onTileLoaded remove setCenter setControlVisibility setGestureHandling setLocked setOptions setZoom style unlisten 微件 导出 导出 平面 平面 require require ui.Button ui.Button getDisabled getImageUrl getLabel _trackEvent() setDisabled setImageUrl setLabel style unlisten ui.Chart ui.Chart array.values feature.byFeature feature.byProperty feature.groups feature.histogram getChartType getDataTable getDownloadable getOptions getView image.byClass image.byRegion image.doySeries image.doySeriesByRegion image.doySeriesByYear image.histogram image.regions image.series image.seriesByRegion _trackEvent() setChartType setDataTable setDownloadable setOptions setSeriesNames setView style unlisten ui.Checkbox ui.Checkbox getDisabled getLabel getValue onChange setDisabled setLabel setValue style unlisten ui.DateSlider ui.DateSlider getDisabled getEnd getPeriod getStart getValue onChange setDisabled setEnd setPeriod setStart setValue style unlisten ui.Label ui.Label getImageUrl getUrl getValue setImageUrl setUrl setValue style ui.Map ui.Map CloudStorageLayer CloudStorageLayer.getBucket CloudStorageLayer.getMaxZoom CloudStorageLayer.getName CloudStorageLayer.getOpacity CloudStorageLayer.getPath CloudStorageLayer.getShown CloudStorageLayer.getSuffix CloudStorageLayer.setBucket CloudStorageLayer.setMaxZoom CloudStorageLayer.setName CloudStorageLayer.setOpacity CloudStorageLayer.setPath CloudStorageLayer.setShown CloudStorageLayer.setSuffix DrawingTools DrawingTools.addLayer DrawingTools.clear DrawingTools.draw DrawingTools.edit DrawingTools.get DrawingTools.getDrawModes DrawingTools.getLinked DrawingTools.getMap DrawingTools.getSelected DrawingTools.getShape DrawingTools.getShown DrawingTools.layers DrawingTools.onDraw DrawingTools.onEdit DrawingTools.onErase DrawingTools.onLayerAdd DrawingTools.onLayerConfig DrawingTools.onLayerRemove DrawingTools.onLayerSelect DrawingTools.onSelect DrawingTools.onShapeChange DrawingTools.set DrawingTools.setDrawModes DrawingTools.setLinked DrawingTools.setSelected DrawingTools.setShape DrawingTools.setShown DrawingTools.stop DrawingTools.toFeatureCollection DrawingTools.unlisten FeatureViewLayer FeatureViewLayer.getAssetId FeatureViewLayer.getName FeatureViewLayer.getOpacity FeatureViewLayer.getShown FeatureViewLayer.getVisParams FeatureViewLayer.setAssetId FeatureViewLayer.setName FeatureViewLayer.setOpacity FeatureViewLayer.setShown FeatureViewLayer.setVisParams GeometryLayer GeometryLayer.fromGeometry GeometryLayer.geometries GeometryLayer.get GeometryLayer.getColor GeometryLayer.getEeObject GeometryLayer.getLocked GeometryLayer.getName GeometryLayer.getShown GeometryLayer.openConfigurationDialog GeometryLayer.set GeometryLayer.setColor GeometryLayer.setLocked GeometryLayer.setName GeometryLayer.setShown GeometryLayer.toGeometry 图层 Layer.getEeObject Layer.getName Layer.getOpacity Layer.getShown Layer.getVisParams Layer.setEeObject Layer.setName Layer.setOpacity Layer.setShown Layer.setVisParams 链接器 Linker.add Linker.forEach Linker.get Linker.getJsArray Linker.insert Linker.length Linker.remove Linker.reset Linker.set 添加 addLayer centerObject 清除 drawingTools getBounds getCenter getScale getZoom insert 图层 onChangeBounds onChangeCenter onChangeZoom _trackEvent() onIdle onTileLoaded remove setCenter setControlVisibility setGestureHandling setLocked setOptions setZoom style unlisten 微件 ui.Panel ui.Panel Layout.absolute Layout.flow 添加 清除 getLayout insert remove setLayout style 微件 ui.Select ui.Select getDisabled getPlaceholder getValue items onChange setDisabled setPlaceholder setValue style unlisten ui.Slider ui.Slider getDisabled getMax getMin getStep getValue onChange onSlide setDisabled setMax setMin setStep setValue style unlisten ui.SplitPanel ui.SplitPanel getFirstPanel getOrientation getPanel getSecondPanel getWipe setFirstPanel setOrientation setPanel setSecondPanel setWipe style unlisten ui.Textbox ui.Textbox getDisabled getPlaceholder getValue onChange setDisabled setPlaceholder setValue style unlisten ui.Thumbnail ui.Thumbnail getImage getParams _trackEvent() setImage setParams style unlisten ui.data ActiveDictionary ActiveDictionary.get ActiveDictionary.set ActiveList ActiveList.add ActiveList.forEach ActiveList.get ActiveList.getJsArray ActiveList.insert ActiveList.length ActiveList.remove ActiveList.reset ActiveList.set ui.root 添加 清除 getLayout insert onResize remove setKeyHandler setLayout 微件 ui.url get set ui.util 清除 clearTimeout 去抖动 getCurrentPosition rateLimit setInterval setTimeout 节流 REST API 概览 快速入门 示例 计算图片 计算表 创建基于 Cloud GeoTIFF 的资产 API 参考文档 概览 v1 REST 资源 projects 概览 getConfig listAssets updateConfig projects.algorithms 概览 list projects.assets 概览 复制 create delete get getIamPolicy getPixels listAssets listFeatures move patch setIamPolicy testIamPermissions projects.classifier 概览 export projects.featureView 概览 create projects.featureViews 概览 create projects.featureViews.tiles 概览 get projects.filmstripThumbnails 概览 create getPixels projects.image 概览 computePixels export import projects.imageCollection 概览 computeImages projects.locations.assets 概览 create projects.locations.filmstripThumbnails 概览 create projects.locations.maps 概览 create projects.locations.tables 概览 create projects.locations.thumbnails 概览 create projects.locations.videoThumbnails 概览 create projects.map 概览 export projects.maps 概览 create projects.maps.tiles 概览 get projects.operations 概览 cancel delete get list wait projects.table 概览 computeFeatures export import projects.tables 概览 create getFeatures projects.thumbnails 概览 create getPixels projects.value 概览 计算 projects.video 概览 export projects.videoThumbnails 概览 create getPixels 类型 仿真转换 CloudStorageDestination DoubleRange 云端硬盘目标 EarthEngineAssetView EarthEngineDestination 表达式 功能 GridDimensions ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions v1beta REST 资源 projects 概览 getConfig listAssets updateConfig projects.algorithms 概览 list projects.assets 概览 复制 create delete get getIamPolicy getPixels listAssets listFeatures move patch setIamPolicy testIamPermissions projects.classifier 概览 export projects.featureView 概览 create projects.featureViews 概览 create projects.featureViews.tiles 概览 get projects.filmstripThumbnails 概览 create getPixels projects.image 概览 computePixels export import projects.imageCollection 概览 computeImages projects.locations.assets 概览 create projects.locations.filmstripThumbnails 概览 create projects.locations.maps 概览 create projects.locations.tables 概览 create projects.locations.thumbnails 概览 create projects.locations.videoThumbnails 概览 create projects.map 概览 export projects.maps 概览 create projects.maps.tiles 概览 get projects.operations 概览 cancel delete get list wait projects.table 概览 computeFeatures export import projects.tables 概览 create getFeatures projects.thumbnails 概览 create getPixels projects.value 概览 计算 projects.video 概览 export projects.videoThumbnails 概览 create getPixels 类型 仿真转换 CloudStorageDestination DoubleRange 云端硬盘目标 EarthEngineAssetView EarthEngineDestination 表达式 功能 GridDimensions ImageFileExportOptions ImageFileFormat ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions v1alpha REST 资源 projects 概览 getConfig listAssets updateConfig projects.algorithms 概览 list projects.assets 概览 复制 create delete get getIamPolicy getPixels listAssets listFeatures listImages move patch setIamPolicy testIamPermissions projects.classifier 概览 export projects.featureView 概览 create projects.featureViews 概览 create projects.featureViews.tiles 概览 get projects.filmstripThumbnails 概览 create getPixels projects.image 概览 computePixels export import importExternal projects.imageCollection 概览 computeImages projects.locations.assets 概览 create projects.locations.filmstripThumbnails 概览 create projects.locations.maps 概览 create projects.locations.tables 概览 create projects.locations.thumbnails 概览 create projects.locations.videoThumbnails 概览 create projects.map 概览 export projects.maps 概览 create projects.maps.tiles 概览 get projects.operations 概览 cancel delete get list wait projects.table 概览 computeFeatures export import projects.tables 概览 create getFeatures projects.thumbnails 概览 create getPixels projects.value 概览 计算 projects.video 概览 export projects.videoThumbnails 概览 create getPixels 类型 仿真转换 CloudStorageDestination DoubleRange 云端硬盘目标 EarthEngineAssetView EarthEngineDestination 表达式 功能 GcsDestination GridDimensions ImageFileExportOptions ImageFileFormat ImageManifest ListAssetsResponse PixelGrid ProjectConfig VisualizationOptions 概念 其他 API 条款 命令行工具 Data Catalog 发布商数据目录 Landsat 算法 Sentinel-1 算法 Landsat C1 向 C2 迁移指南 已移除的数据集 其他 版本说明 术语库 服务条款 Earth Engine 将推出 非商业配额层级 ，以保护共享计算资源并确保为所有人提供可靠的性能。所有非商业项目都需要在 2026 年 4 月 27 日 之前选择配额层级，否则系统会默认使用 Community 层级。层级配额将于 2026 年 4 月 27 日 对所有项目生效（无论层级选择日期如何）。 了解详情。 首页 产品 Google Earth Engine 参考文档 发送反馈 ee.Array.erf 使用集合让一切井井有条 根据您的偏好保存内容并对其进行分类。 按元素计算输入的误差函数。 用法 返回 Array. erf () 数组 参数 类型 详细信息 此： input 数组 输入数组。 示例 代码编辑器 (JavaScript) print ( ee .",
+          "Axis ( values = [ - 1 , 0 , 1 ])) ) 发送反馈 如未另行说明，那么本页面中的内容已根据 知识共享署名 4.0 许可 获得了许可，并且代码示例已根据 Apache 2.0 许可 获得了许可。有关详情，请参阅 Google 开发者网站政策 。Java 是 Oracle 和/或其关联公司的注册商标。 最后更新时间 (UTC)：2025-07-26。 需要向我们提供更多信息？ [[[\"易于理解\",\"easyToUnderstand\",\"thumb-up\"],[\"解决了我的问题\",\"solvedMyProblem\",\"thumb-up\"],[\"其他\",\"otherUp\",\"thumb-up\"]],[[\"没有我需要的信息\",\"missingTheInformationINeed\",\"thumb-down\"],[\"太复杂/步骤太多\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"内容需要更新\",\"outOfDate\",\"thumb-down\"],[\"翻译问题\",\"translationIssue\",\"thumb-down\"],[\"示例/代码问题\",\"samplesCodeIssue\",\"thumb-down\"],[\"其他\",\"otherDown\",\"thumb-down\"]],[\"最后更新时间 (UTC)：2025-07-26。\"],[],[\"The `erf()` method computes the error function of each element within an input array.",
+          "Chart . array . values ( values , 0 , points ) . setOptions ({ viewWindow : { min : start , max : end }, hAxis : { title : 'x' , viewWindowMode : 'maximized' , ticks : [ { v : start }, { v : 0 }, { v : end }] }, vAxis : { title : 'erf(x)' , ticks : [ { v : - 1 }, { v : 0 }, { v : 1 }] }, lineWidth : 1 , pointSize : 0 , }); print ( chart ); Python 设置 如需了解 Python API 和如何使用 geemap 进行交互式开发，请参阅 Python 环境 页面。 import ee import geemap.core as geemap Colab (Python) import altair as alt import pandas as pd display ( ee ."
+        ]
+      },
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 133,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ImageCollection ( 'MODIS/006/MOD44B' ) ok map 2 = collection . map ( lambda image : image . set ( 'date' , image . date ())) print ( ok map 2 . getInfo ()) Get a list of the dates. dates list = ok map 2 . aggregate array ( 'date' ) print ( dates list . getInfo ()) Procedural errors Pattern was applied to an Image with no bands The \"Pattern 'my band' was applied to an Image with no bands\" error means there is an ee.Image.select() call for an Image with an empty band list.",
+          "Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' )) }); }); // Error in map(ID=2): // Number.divide: Parameter 'left' is required. print ( problem ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) image = ee .",
+          "Point ([ - 123 , 43 ])); var terribleAggregations = collection . map ( function ( image ) { return image . set ( image . reduceRegion ({ reducer : 'mean' , geometry : image . geometry (), scale : 30 , maxPixels : 1e9 })); }); // Error: Quota exceeded: Too many concurrent aggregations. print ( terribleAggregations ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) collection = ee ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "array.values",
+      "developers.google.com",
+      "ee.Algorithms",
+      "ee.apply",
+      "ee.Array",
+      "ee.Array.erf",
+      "ee.Blob",
+      "ee.call",
+      "ee.Classifier",
+      "ee.Clusterer",
+      "ee.ConfusionMatrix",
+      "ee.data",
+      "ee.Date",
+      "ee.DateRange",
+      "ee.Dictionary",
+      "ee.ErrorMargin",
+      "ee.Feature",
+      "ee.FeatureCollection",
+      "ee.Filter",
+      "ee.Geometry",
+      "ee.Image",
+      "ee.Image.select",
+      "ee.ImageCollection",
+      "ee.initialize",
+      "ee.Join",
+      "ee.Kernel",
+      "ee.List",
+      "ee.Model",
+      "ee.Number",
+      "ee.PixelType",
+      "ee.Projection",
+      "ee.Reducer",
+      "ee.reset",
+      "ee.String",
+      "ee.Terrain",
+      "feature.byFeature",
+      "feature.byProperty",
+      "feature.groups",
+      "feature.histogram",
+      "geemap.core",
+      "image.byClass",
+      "image.byRegion",
+      "image.doySeries",
+      "image.doySeriesByRegion",
+      "image.doySeriesByYear",
+      "image.histogram",
+      "image.regions",
+      "image.series",
+      "image.seriesByRegion",
+      "projects.algorithms",
+      "projects.assets",
+      "projects.classifier",
+      "projects.featureView",
+      "projects.featureViews",
+      "projects.featureViews.tiles",
+      "projects.filmstripThumbnails",
+      "projects.image",
+      "projects.imageCollection",
+      "projects.locations.assets",
+      "projects.locations.filmstripThumbnails",
+      "projects.locations.maps",
+      "projects.locations.tables",
+      "projects.locations.thumbnails",
+      "projects.locations.videoThumbnails",
+      "projects.map",
+      "projects.maps",
+      "projects.maps.tiles",
+      "projects.operations",
+      "projects.table",
+      "projects.tables",
+      "projects.thumbnails",
+      "projects.value",
+      "projects.video",
+      "projects.videoThumbnails",
+      "ui.Button",
+      "ui.Chart",
+      "ui.Checkbox",
+      "ui.data",
+      "ui.DateSlider",
+      "ui.Label",
+      "ui.Map",
+      "ui.Panel",
+      "ui.root",
+      "ui.Select",
+      "ui.Slider",
+      "ui.SplitPanel",
+      "ui.Textbox",
+      "ui.Thumbnail",
+      "ui.url",
+      "ui.util"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/apidocs/ee-array-erf",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

@@ -1,0 +1,237 @@
+{
+  "feature_name": "Private Google Access image provisioning",
+  "feature_slug": "private-google-access-image-provisioning",
+  "summary": "Anthos clusters on AWS supports using Private Google Access to provision images for GKE on AWS environments.",
+  "extended_definition": "Anthos clusters on AWS supports using Private Google Access to provision images for GKE on AWS environments.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "CIS benchmarks \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "source_id": "site-iam-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Status of GKE on AWS clusters: Recommendation Level Status 1 Control Plane Security Configuration 1.1 Control Plane Node Configuration Files 1.1.1 Ensure that the API server pod specification file permissions are set to 644 or more restrictive (Automated) L1 Pass 1.1.2 Ensure that the API server pod specification file ownership is set to root:root (Automated) L1 Pass 1.1.3 Ensure that the controller manager pod specification file permissions are set to 644 or more restrictive (Automated) L1 Pass 1.1.4 Ensure that the controller manager pod specification file ownership is set to root:root (Automated) L1 Pass 1.1.5 Ensure that the scheduler pod specification file permissions are set to 644 or more restrictive (Automated) L1 Pass 1.1.6 Ensure that the scheduler pod specification file ownership is set to root:root (Automated) L1 Pass 1.1.7 Ensure that the etcd pod specification file permissions are set to 644 or more restrictive (Automated) L1 Pass 1.1.8 Ensure that the etcd pod specification file ownership is set to root:root (Automated) L1 Pass 1.1.9 Ensure that the Container Network Interface file permissions are set to 644 or more restrictive (Manual) L1 Equivalent Control 1.1.10 Ensure that the Container Network Interface file ownership is set to root:root (Manual) L1 Equivalent Control 1.1.11 Ensure that the etcd data directory permissions are set to 700 or more restrictive (Automated) L1 Equivalent Control 1.1.12 Ensure that the etcd data directory ownership is set to etcd:etcd (Automated) L1 Equivalent Control 1.1.13 Ensure that the admin . conf file permissions are set to 600 or more restrictive (Automated) L1 Equivalent Control 1.1.14 Ensure that the admin . conf file ownership is set to root:root (Automated) L1 Equivalent Control 1.1.15 Ensure that the scheduler . conf file permissions are set to 644 or more restrictive (Automated) L1 Pass 1.1.16 Ensure that the scheduler . conf file ownership is set to root:root (Automated) L1 Pass 1.1.17 Ensure that the controller-manager . conf file permissions are set to 644 or more restrictive (Automated) L1 Pass 1.1.18 Ensure that the controller-manager . conf file ownership is set to root:root (Automated) L1 Pass 1.1.19 Ensure that the Kubernetes PKI directory and file ownership is set to root:root (Automated) L1 Pass 1.1.20 Ensure that the Kubernetes PKI certificate file permissions are set to 644 or more restrictive (Manual) L1 Pass 1.1.21 Ensure that the Kubernetes PKI key file permissions are set to 600 (Manual) L1 Pass 1.2 API Server 1.2.1 Ensure that the --anonymous-auth argument is set to false (Manual) L1 Pass 1.2.2 Ensure that the --token-auth-file parameter is not set (Automated) L1 Pass 1.2.3 Ensure that the -- DenyServiceExternalIPs is not set (Automated) L1 Pass 1.2.4 Ensure that the --kubelet-https argument is set to true (Automated) L1 Pass 1.2.5 Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments are set as appropriate (Automated) L1 Pass 1.2.6 Ensure that the --kubelet-certificate-authority argument is set as appropriate (Automated) L1 Pass 1.2.7 Ensure that the --authorization-mode argument is not set to AlwaysAllow (Automated) L1 Pass 1.2.8 Ensure that the --authorization-mode argument includes Node (Automated) L1 Pass 1.2.9 Ensure that the --authorization-mode argument includes RBAC (Automated) L1 Pass 1.2.10 Ensure that the admission control plugin EventRateLimit is set (Manual) L1 Warn 1.2.11 Ensure that the admission control plugin AlwaysAdmit is not set (Automated) L1 Pass 1.2.12 Ensure that the admission control plugin AlwaysPullImages is set (Manual) L1 Warn 1.2.13 Ensure that the admission control plugin SecurityContextDeny is set if PodSecurityPolicy is not used (Manual) L1 Equivalent Control 1.2.14 Ensure that the admission control plugin ServiceAccount is set (Automated) L1 Pass 1.2.15 Ensure that the admission control plugin NamespaceLifecycle is set (Automated) L1 Pass 1.2.16 Ensure that the admission control plugin NodeRestriction is set (Automated) L1 Pass 1.2.17 Ensure that the --secure-port argument is not set to 0 (Automated) L1 Pass 1.2.18 Ensure that the --profiling argument is set to false (Automated) L1 Pass 1.2.19 Ensure that the --audit-log-path argument is set (Automated) L1 Equivalent Control 1.2.20 Ensure that the --audit-log-maxage argument is set to 30 or as appropriate (Automated) L1 Equivalent Control 1.2.21 Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate (Automated) L1 Equivalent Control 1.2.22 Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate (Automated) L1 Equivalent Control 1.2.23 Ensure that the --request-timeout argument is set as appropriate (Manual) L1 Pass 1.2.24 Ensure that the --service-account-lookup argument is set to true (Automated) L1 Pass 1.2.25 Ensure that the --service-account-key-file argument is set as appropriate (Automated) L1 Pass 1.2.26 Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as appropriate (Automated) L1 Pass 1.2.27 Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate (Automated) L1 Pass 1.2.28 Ensure that the --client-ca-file argument is set as appropriate (Automated) L1 Pass 1.2.29 Ensure that the --etcd-cafile argument is set as appropriate (Automated) L1 Pass 1.2.30 Ensure that the --encryption-provider-config argument is set as appropriate (Manual) L1 Pass 1.2.31 Ensure that encryption providers are appropriately configured (Manual) L1 Pass 1.2.32 Ensure that the API Server only makes use of Strong Cryptographic Ciphers (Manual) L1 Pass 1.3 Controller Manager 1.3.1 Ensure that the --terminated-pod-gc-threshold argument is set as appropriate (Manual) L1 Pass 1.3.2 Ensure that the --profiling argument is set to false (Automated) L1 Pass 1.3.3 Ensure that the --use-service-account-credentials argument is set to true (Automated) L1 Pass 1.3.4 Ensure that the --service-account-private-key-file argument is set as appropriate (Automated) L1 Pass 1.3.5 Ensure that the --root-ca-file argument is set as appropriate (Automated) L1 Pass 1.3.6 Ensure that the RotateKubeletServerCertificate argument is set to true (Automated) L2 Pass 1.3.7 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated) L1 Pass 1.4 Scheduler 1.4.1 Ensure that the --profiling argument is set to false (Automated) L1 Pass 1.4.2 Ensure that the --bind-address argument is set to 127.0.0.1 (Automated) L1 Pass 2 Etcd Node Configuration 2 Etcd Node Configuration 2.1 Ensure that the --cert-file and --key-file arguments are set as appropriate (Automated) L1 Pass 2.2 Ensure that the --client-cert-auth argument is set to true (Automated) L1 Pass 2.3 Ensure that the --auto-tls argument is not set to true (Automated) L1 Pass 2.4 Ensure that the --peer-cert-file and --peer-key-file arguments are set as appropriate (Automated) L1 Pass 2.5 Ensure that the --peer-client-cert-auth argument is set to true (Automated) L1 Pass 2.6 Ensure that the --peer-auto-tls argument is not set to true (Automated) L1 Pass 2.7 Ensure that a unique Certificate Authority is used for etcd (Manual) L2 Pass 3 Control Plane Configuration 3.1 Authentication and Authorization 3.1.1 Client certificate authentication should not be used for users (Manual) L2 Equivalent Control 3.2 Logging 3.2.1 Ensure that a minimal audit policy is created (Manual) L1 Pass 3.2.2 Ensure that the audit policy covers key security concerns (Manual) L2 Equivalent Control 4 Worker Node Security Configuration 4.1 Worker Node Configuration Files 4.1.1 Ensure that the kubelet service file permissions are set to 644 or more restrictive (Automated) L1 Pass 4.1.2 Ensure that the kubelet service file ownership is set to root:root (Automated) L1 Pass 4.1.3 If proxy kubeconfig file exists ensure permissions are set to 644 or more restrictive (Manual) L1 Pass 4.1.4 If proxy kubeconfig file exists ensure ownership is set to root:root (Manual) L1 Pass 4.1.5 Ensure that the --kubeconfig kubelet . conf file permissions are set to 644 or more restrictive (Automated) L1 Pass 4.1.6 Ensure that the --kubeconfig kubelet . conf file ownership is set to root:root (Automated) L1 Pass 4.1.7 Ensure that the certificate authorities file permissions are set to 644 or more restrictive (Manual) L1 Pass 4.1.8 Ensure that the client certificate authorities file ownership is set to root:root (Manual) L1 Pass 4.1.9 Ensure that the kubelet --config configuration file has permissions set to 644 or more restrictive (Automated) L1 Pass 4.1.10 Ensure that the kubelet --config configuration file ownership is set to root:root (Automated) L1 Pass 4.2 Kubelet 4.2.1 Ensure that the --anonymous-auth argument is set to false (Automated) L1 Pass 4.2.2 Ensure that the --authorization-mode argument is not set to AlwaysAllow (Automated) L1 Pass 4.2.3 Ensure that the --client-ca-file argument is set as appropriate (Automated) L1 Pass 4.2.4 Ensure that the --read-only-port argument is set to 0 (Manual) L1 Fail 4.2.5 Ensure that the --streaming-connection-idle-timeout argument is not set to 0 (Manual) L1 Pass 4.2.6 Ensure that the --protect-kernel-defaults argument is set to true (Automated) L1 Fail 4.2.7 Ensure that the --make-iptables-util-chains argument is set to true (Automated) L1 Pass 4.2.8 Ensure that the --hostname-override argument is not set (Manual) L1 Pass 4.2.9 Ensure that the --event-qps argument is set to 0 or a level which ensures appropriate event capture (Manual) L2 Warn 4.2.10 Ensure that the --tls-cert-file and --tls-private-key-file arguments are set as appropriate (Manual) L1 Equivalent Control 4.2.11 Ensure that the --rotate-certificates argument is not set to false (Automated) L1 Pass 4.2.12 Verify that the RotateKubeletServerCertificate argument is set to true (Manual) L1 Pass 4.2.13 Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers (Manual) L1 Pass Descriptions of Failures and Equivalent Controls for GKE on AWS admin cluster: Recommendation Level Status Value Justification 1.1.9 Ensure that the Container Network Interface file permissions are set to 644 or more restrictive (Manual) L1 Equivalent Control 755 Anthos clusters on AWS Container Network Interface path is /opt/cni/bin , and its permission is set to 755 for the normal cluster operation.",
+          "1.2.12 Ensure that the admission control plugin AlwaysPullImages is set (Manual) L1 Warn not set The AlwaysPullImages admission controller provides some protection for private registry images in noncooperative multitenant clusters, at the cost of making container registries a single-point-of-failure for creating new Pods across the entire cluster.",
+          "3.1.1 Client certificate authentication should not be used for users (Manual) L2 Equivalent Control Anthos clusters on AWS supports OIDC as one of the authentication mechanisms for connecting to cluster, more on Connect and authenticate to your cluster ."
+        ]
+      },
+      {
+        "title": "Deploy an application on GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "source_id": "site-docs-root-2",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a node pool Use the following command to create a node pool: gcloud container aws node-pools create pool-0 \\ --cluster aws-cluster-0 \\ --node-version 1.34.1-gke.4700 \\ --min-nodes 1 \\ --max-nodes 5 \\ --max-pods-per-node 110 \\ --root-volume-size 50 \\ --subnet-id NODEPOOL SUBNET ID \\ --iam-instance-profile NODEPOOL PROFILE \\ --config-encryption-kms-key-arn CONFIG KMS KEY ARN \\ --ssh-ec2-key-pair EC2 KEY PAIR \\ --tags \"google:gkemulticloud:cluster=aws-cluster-0\" Replace the following: NODEPOOL SUBNET ID : the ID of one of the private subnets that you created in the Create private subnets prerequisite step NODEPOOL PROFILE : the IAM instance profile name for the EC2 instances in the node pool that you chose in the Create a node pool IAM role prerequisite step CONFIG KMS KEY ARN : the Amazon Resource Name (ARN) of the AWS KMS key to encrypt user data EC2 KEY PAIR (optional): the name of the EC2 key pair created for SSH access (optional) that you created in the Create SSH key pair prerequisite step Note: if your nodepool's subnet is outside of your VPC's primary CIDR block, you must take additional steps to configure security groups .",
+          "FLEET PROJECT ID : the Fleet host project where the cluster will be registered VPC ID : the ID of the AWS VPC for this cluster that you set up in the Create your VPC prerequisite step CONTROL PLANE SUBNET 1 , CONTROL PLANE SUBNET 2 , CONTROL PLANE SUBNET 3 : the subnet IDs for your cluster's three control plane instances that you created in the Create private subnets prerequisite step POD CIDR BLOCK : the CIDR address range for your cluster's pods SERVICE CIDR BLOCK : the CIDR address range for your cluster's services API ROLE ARN : the ARN of the IAM role for the GKE Multi-Cloud service that you created in the Create GKE Multi-Cloud API role prerequisite step CONTROL PLANE PROFILE : the profile name of the IAM instance associated with the cluster that you chose in the Create control plane role prerequisite step DB KMS KEY ARN : the Amazon Resource Name (ARN) of one of the AWS KMS keys that you created in the Create an AWS KMS key prerequisite step CONFIG KMS KEY ARN : the Amazon Resource Name (ARN) of the other of the AWS KMS keys that you created in the Create an AWS KMS key prerequisite step If present, the --tags parameter applies the given AWS tag to all the underlying AWS resources managed by GKE on AWS.",
+          "Create the Deployment To run hello-app in your cluster, you need to deploy the application by running the following command: kubectl create deployment hello-server --image=us-docker.pkg.dev/google-samples/containers/gke/hello-app:1.0 This Kubernetes command, kubectl create deployment creates a Deployment named hello-server ."
+        ]
+      },
+      {
+        "title": "Security overview \\_|\\_ GKE on AWS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security",
+        "source_id": "site-iam-reference",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GKE clusters offer features to help secure your workloads, including the contents of your container image, the container runtime, the cluster network, and access to the cluster API server.",
+          "The private key, which is kept secret, is used to generate a digital signature (that is, a unique set of characters) for an image.",
+          "If the digital signature can't be successfully verified using the public key and the image data, or if the image doesn't meet other criteria defined in the policy, the Binary Authorization system denies the container deployment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.pkg.dev",
+      "gke.4700"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/cis-benchmarks",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/quickstart",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/concepts/security"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.966Z",
+  "source_step08_card": "data/step-08/current/products/anthos-clusters-on-aws-previous-generation/card.json",
+  "product_name": "Anthos clusters on AWS (previous generation)",
+  "product_slug": "anthos-clusters-on-aws-previous-generation"
+}

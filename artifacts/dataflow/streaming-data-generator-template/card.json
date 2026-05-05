@@ -1,0 +1,98 @@
+{
+  "feature_name": "Streaming Data Generator template",
+  "feature_slug": "streaming-data-generator-template",
+  "summary": "This Google-provided template generates streaming data for Pub/Sub, BigQuery, and Cloud Storage.",
+  "extended_definition": "This Google-provided template generates streaming data for Pub/Sub, BigQuery, and Cloud Storage.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-streaming",
+      "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-pubsub",
+      "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google-provided templates \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-streaming",
+        "source_id": "site-docs-reference-2",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Streaming templates Templates for processing data continuously: Apache Kafka to Apache Kafka Apache Kafka to BigQuery Apache Kafka to Cloud Storage Change Data Capture from MySQL to BigQuery (Stream) Bigtable change streams to BigQuery Bigtable change streams to Pub/Sub Spanner change streams to BigQuery Spanner change streams to Cloud Storage Spanner change streams to any source database Spanner change streams to Pub/Sub Datastream to BigQuery (Stream) Datastream to Spanner Datastream to MySQL or PostgreSQL (Stream) Data Masking/Tokenization from Cloud Storage to BigQuery (using Cloud DLP) JMS to Pub/Sub MongoDB to BigQuery (Stream) MQTT to Pub/Sub Pub/Sub to BigQuery Pub/Sub to BigQuery with Python UDF Pub/Sub Avro to BigQuery Pub/Sub Proto to BigQuery Pub/Sub Proto to BigQuery with Python UDF Pub/Sub Subscription to BigQuery Pub/Sub to Avro Files on Cloud Storage Pub/Sub to Datadog Pub/Sub to Elasticsearch Pub/Sub to Java Database Connectivity (JDBC) Pub/Sub to MongoDB Pub/Sub to MongoDB with Python UDF Pub/Sub to Pub/Sub Pub/Sub to Redis Pub/Sub to Splunk Pub/Sub Topic or Subscription to Text Files on Cloud Storage Pub/Sub Topic to Text Files on Cloud Storage Text Files on Cloud Storage to BigQuery (Stream) Cloud Storage text files to BigQuery with Python UDF Text files on Cloud Storage to Pub/Sub (Stream) Batch templates Templates for processing data in bulk: Any Source DB to Spanner Apache Cassandra to Bigtable AstraDB to BigQuery BigQuery to Bigtable BigQuery to Clickhouse BigQuery export to Parquet (via Storage API) BigQuery to Cloud Storage TFRecords BigQuery to Elasticsearch BigQuery to MongoDB Bigtable to Cloud Storage Avro Bigtable to Cloud Storage JSON Bigtable to Cloud Storage Parquet Bigtable to Cloud Storage SequenceFile Bigtable change streams to Vertex AI Vector Search Bigtable to Vertex AI Vector Search files on Cloud Storage Spanner to BigQuery Spanner to Cloud Storage Avro Spanner to Cloud Storage Text Spanner to Vertex AI Vector Search files on Cloud Storage Cloud Storage Avro to Bigtable Cloud Storage Parquet to Bigtable Cloud Storage SequenceFile to Bigtable Cloud Storage Avro to Spanner Cloud Storage CSV files to BigQuery Cloud Storage Text to BigQuery Cloud Storage text files to BigQuery with Python UDF Cloud Storage Text to Spanner Cloud Storage Text to Datastore [Deprecated] Cloud Storage Text to Firestore (Datastore mode) Cloud Storage Text to Pub/Sub (Batch) Cloud Storage to Elasticsearch Datastore to Cloud Storage Text [Deprecated] Firestore (Datastore mode) to Cloud Storage Text Google Ads to BigQuery Google Cloud to Neo4j JDBC to BigQuery JDBC to Pub/Sub MongoDB to BigQuery MySQL to BigQuery Oracle to BigQuery PostgreSQL to BigQuery SQL Server to BigQuery Utility templates Bulk Compress Cloud Storage Files Bulk Decompress Cloud Storage Files Datastore Bulk Delete [Deprecated] File Format Conversion Firestore (Datastore mode) Bulk Delete Streaming Data Generator to Pub/Sub, BigQuery, and Cloud Storage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Google-provided templates Stay organized with collections Save and categorize content based on your preferences.",
+          "To disable Dataflow Prime for Google-managed template jobs, set the enable prime Dataflow service option to false ( enable prime=false ) when you run the template."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create a streaming pipeline using a Dataflow template \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the pipeline Run a streaming pipeline using the Google-provided Pub/Sub to BigQuery template.",
+          "Create a streaming pipeline using a Dataflow template This quickstart shows you how to create a streaming pipeline using a Google-provided Dataflow template.",
+          "The Pub/Sub to BigQuery template is a streaming pipeline that can read JSON-formatted messages from a Pub/Sub topic and write them to a BigQuery table."
+        ]
+      },
+      {
+        "title": "\"Spanner change streams to Pub/Sub template \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-pubsub",
+        "source_id": "site-api-reference",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After creation, Pub/Sub automatically generates and attaches a subscription to the new topic. \" + \"If you try to output data to a Pub/Sub topic that doesn't exist, the dataflow pipeline throws an exception, and the pipeline gets stuck as it continuously tries to make a connection.\\n\" , \"If the necessary Pub/Sub topic already exists, you can output data to that topic.\" , \"Learn more about <a href=\\\"https://cloud.google.com/spanner/docs/change-streams\\\">change streams</a>, <a href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow\\\">how to build change streams Dataflow pipelines</a>, and <a href=\\\"https://cloud.google.com/spanner/docs/change-streams/use-dataflow#best practices\\\">best practices</a>.\" }, optionsClass = SpannerChangeStreamsToPubSubOptions . class , flexContainerName = \"googlecloud-to-googlecloud\" , documentation = \"https://cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-pubsub\" , contactInformation = \"https://cloud.google.com/support\" , requirements = { \"The Cloud Spanner instance must exist before running the pipeline.\" , \"The Cloud Spanner database must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata instance must exist prior to running the pipeline.\" , \"The Cloud Spanner metadata database must exist prior to running the pipeline.\" , \"The Cloud Spanner change stream must exist prior to running the pipeline.\" , \"The Pub/Sub topic must exist prior to running the pipeline.\" }, streaming = true , supportsAtLeastOnce = true ) public class SpannerChangeStreamsToPubSub { private static final Logger LOG = LoggerFactory . getLogger ( SpannerChangeStreamsToPubSub . class ); private static final String USE RUNNER V2 EXPERIMENT = \"use runner v2\" ; public static void main ( String [] args ) { UncaughtExceptionLogger . register (); LOG . info ( \"Starting Input Messages to Pub/Sub\" ); SpannerChangeStreamsToPubSubOptions options = PipelineOptionsFactory . fromArgs ( args ). as ( SpannerChangeStreamsToPubSubOptions . class ); run ( options ); } private static String getSpannerProjectId ( SpannerChangeStreamsToPubSubOptions options ) { return options . getSpannerProjectId (). isEmpty () ? options . getProject () : options . getSpannerProjectId (); } private static String getPubsubProjectId ( SpannerChangeStreamsToPubSubOptions options ) { return options . getPubsubProjectId (). isEmpty () ? options . getProject () : options . getPubsubProjectId (); } public static boolean isValidAsciiString ( String outputMessageMetadata ) { if ( outputMessageMetadata != null && !",
+          "STREAMING , displayName = \"Cloud Spanner change streams to Pub/Sub\" , description = { \"The Cloud Spanner change streams to the Pub/Sub template is a streaming pipeline that streams Cloud Spanner data change records and writes them into Pub/Sub topics using Dataflow Runner V2.\\n\" , \"To output your data to a new Pub/Sub topic, you need to first create the topic.",
+          "The Spanner change streams to the Pub/Sub template is a streaming pipeline that streams Spanner data change records and writes them into Pub/Sub topics using Dataflow Runner V2 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-streaming",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided-streaming",
+        "https://docs.cloud.google.com/dataflow/docs/guides/templates/provided/cloud-spanner-change-streams-to-pubsub",
+        "https://docs.cloud.google.com/dataflow/docs/quickstarts/create-streaming-pipeline-template"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:24.520Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

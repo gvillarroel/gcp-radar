@@ -1,0 +1,121 @@
+{
+  "feature_name": "Hierarchy Controller v1alpha1 API",
+  "feature_slug": "hierarchy-controller-v1alpha1-api",
+  "summary": "Hierarchy Controller v1alpha1 API support was removed in this release; deprecated on 2021-01-28.",
+  "extended_definition": "Hierarchy Controller v1alpha1 API support was removed in this release; deprecated on 2021-01-28.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-28",
+    "deprecation_date": "2021-01-28",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Disable Hierarchy Controller \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "source_id": "site-docs-root",
+        "final_score": 276,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To determine how to disable Hierarchy Controller, inspect the kubectl ConfigManagement object or gcloud apply spec file and take an action that corresponds to the value in the following fields: hierarchyController.enablePodTreeLabels : if true , and you previously enabled hierarchical observability, don't proceed with the steps on this page.",
+          "Removing the fields doesn't disable Hierarchy Controller and causes the fields to become externally-managed instead of managed by Config Connector. kubectl Remove the hierarchyController block from the ConfigManagement object .",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Disable Hierarchy Controller Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Error reference \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "KNV1040: Unknown Resource In Hierarchy Config Error Deprecated in Config Sync 1.3.",
+          "If you were previously syncing to a hierarchical repository and had to declare the controller namespace alongside any resources, consider switching to an unstructured repository for more flexibility in your source structure.",
+          "If you declared the resource-group-system or config-management-monitoring namespaces, unmanage the controller namespace: Update Config Sync to stop managing the namespace and any resource declared underneath."
+        ]
+      },
+      {
+        "title": "Install Config Sync manually using kubectl \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command to update the cluster in your current kubectl context: nomos migrate --remove-configmanagement shell script Copy the following shell script to a file and then run it to update the cluster in your current kubectl context. #!/bin/bash set -euox pipefail hnc enabled = \" $( kubectl get configmanagements.configmanagement.gke.io config-management -o = jsonpath = \"{.spec.hierarchyController.enabled}\" --ignore-not-found ) \" if [[ \" ${ hnc enabled } \" == \"true\" ]] ; then echo \"Hierarchy Controller is enabled on the ConfigManagement object.",
+          "Caution: Ensure Hierarchy Controller is disabled before proceeding. nomos (recommended) Make sure the nomos CLI is on the latest version.",
+          "It must be disabled before migrating.\" echo \"This can be done by unsetting the spec.hierarchyController field on ConfigManagement.\" exit 1 fi kubectl delete deployment -n config-management-system config-management-operator --ignore-not-found --cascade = foreground if kubectl get configmanagement config-management &> /dev/null ; then kubectl patch configmanagement config-management --type = \"merge\" -p '{\"metadata\":{\"finalizers\":[]}}' kubectl delete configmanagement config-management --cascade = orphan --ignore-not-found fi kubectl delete clusterrolebinding config-management-operator --ignore-not-found kubectl delete clusterrole config-management-operator --ignore-not-found kubectl delete serviceaccount -n config-management-system config-management-operator --ignore-not-found kubectl delete customresourcedefinition configmanagements.configmanagement.gke.io --ignore-not-found Install the new Config Sync version To upgrade Config Sync, complete the following steps for each enrolled cluster: Download the Config Sync manifest and nomos commands for the new version."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configmanagements.configmanagement.gke.io",
+      "configsync.gke.io",
+      "projects.locations.resourceBundles.releases",
+      "spec.hierarchyController",
+      "spec.hierarchyController.enabled",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/migrate-hierarchy-controller",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-kubectl",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/reference/errors"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

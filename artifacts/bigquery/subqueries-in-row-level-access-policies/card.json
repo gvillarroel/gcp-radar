@@ -1,0 +1,190 @@
+{
+  "feature_name": "Subqueries in row-level access policies",
+  "feature_slug": "subqueries-in-row-level-access-policies",
+  "summary": "BigQuery row-level access policies now support subqueries; BigQuery supports using subqueries in row-level access policies.",
+  "extended_definition": "BigQuery row-level access policies now support subqueries; BigQuery supports using subqueries in row-level access policies.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/conditions",
+      "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control access to resources with IAM \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam",
+        "source_id": "site-docs-reference-5",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "This permission is required for creating replica materialized views. bigquery.tables.restoreSnapshot Table Restore a table snapshot. bigquery.tables.setCategory Table Set policy tags in the table's schema. bigquery.tables.setColumnDataPolicy Table Set column-level access policies on a table. bigquery.tables.setIamPolicy Table Set access controls on a table. bigquery.tables.update Table Update table. metadata. bigquery.tables.get is also required to update table metadata in the console. bigquery.tables.updateData Table Update table data. bigquery.tables.updateIndex Table Update a search index on the table.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to modify IAM policies for resources: To get a dataset's access policy: bigquery.datasets.get To set a dataset's access policy: bigquery.datasets.update To get a dataset's access policy (Google Cloud console only): bigquery.datasets.getIamPolicy To set a dataset's access policy (console only): bigquery.datasets.setIamPolicy To get a table or view's policy: bigquery.tables.getIamPolicy To set a table or view's policy: bigquery.tables.setIamPolicy To get a routine's access policy: bigquery.routines.getIamPolicy To set a routine's access policy: bigquery.routines.setIamPolicy To create bq tool or SQL BigQuery jobs (optional): bigquery.jobs.create You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Then call the IAM().SetPolicy() function to save changes to the access policy for a table or view. import ( \"context\" \"fmt\" \"io\" \"cloud.google.com/go/bigquery\" \"cloud.google.com/go/iam\" ) // revokeTableOrViewAccessPolicies creates a new ACL removing the VIEWER role to group \"example-analyst-group@google.com\" // For more information on the types of ACLs available see: // https://cloud.google.com/storage/docs/access-control/lists func revokeTableOrViewAccessPolicies ( w io ."
+        ]
+      },
+      {
+        "title": "Control access with IAM Conditions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "source_id": "site-docs-reference-5",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to apply IAM Conditions to BigQuery resources: Set conditional IAM access at the project level: resourcemanager.projects.setIamPolicy Set conditional IAM access on datasets: bigquery.datasets.setIamPolicy bigquery.datasets.update You might also be able to get these permissions with custom roles or other predefined roles .",
+          "However, a user with conditional access can grant themselves the BigQuery Admin role ( roles/bigquery.admin ) on the table, and then modify row and column access policies.",
+          "Add conditions to an organization, folder, or project To add conditional access to an organization, folder, or project in BigQuery, see Allow policies with conditions ."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "The BigQuery Storage API enforces row- and column-level governance policies on all data access to BigLake tables, including through connectors.",
+          "Consider the following query as an example: SELECT FROM bigquery dataset . bigquery table AS clients WHERE clients . sales rep IN ( SELECT id FROM aws dataset . aws table1 AS employees INNER JOIN aws dataset . aws table2 AS active employees ON employees . id = active employees . id WHERE employees . level > 3 ); This example has two transfers: one from an employees table (with a level filter) and one from an active employees table.",
+          "Cross-cloud join required permissions To get the permissions that you need to run a cross-cloud join, ask your administrator to grant you the following IAM roles on the project where the join is executed: BigQuery Data Viewer ( roles/bigquery.dataViewer ) BigQuery Job User ( roles/bigquery.jobUser ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.dataViewer",
+      "bigquery.googleapis.com",
+      "bigquery.jobs.create",
+      "bigquery.jobUser",
+      "bigquery.routines.getIamPolicy",
+      "bigquery.routines.setIamPolicy",
+      "bigquery.tables.get",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.tables.restoreSnapshot",
+      "bigquery.tables.setCategory",
+      "bigquery.tables.setColumnDataPolicy",
+      "bigquery.tables.setIamPolicy",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.tables.updateIndex",
+      "resource.type",
+      "resourcemanager.projects.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.jobUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/conditions",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "https://docs.cloud.google.com/bigquery/docs/control-access-to-resources-iam"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

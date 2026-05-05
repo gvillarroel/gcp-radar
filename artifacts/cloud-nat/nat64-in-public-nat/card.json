@@ -1,0 +1,169 @@
+{
+  "feature_name": "NAT64 in Public NAT",
+  "feature_slug": "nat64-in-public-nat",
+  "summary": "Public NAT gateways support IPv6-to-IPv4 network address translation; Public NAT gateways support IPv6-to-IPv4 network address translation.",
+  "extended_definition": "Public NAT gateways support IPv6-to-IPv4 network address translation; Public NAT gateways support IPv6-to-IPv4 network address translation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/nat/docs/gce-example",
+      "https://docs.cloud.google.com/nat/docs/overview",
+      "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+      "https://docs.cloud.google.com/nat/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Set up and manage network address translation with Public NAT\\",
+        "url": "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "source_id": "site-docs-root",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a Cloud NAT gateway that restricts which subnets and subnet ranges can use NAT, run one of the following commands: Restrict which IPv4 subnet ranges can use NAT: gcloud compute routers nats create NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat-custom-subnet-ip-ranges= IPV4 SUBNET RANGES \\ --auto-allocate-nat-external-ips Restrict which IPv6 subnet ranges can use NAT: gcloud compute routers nats create NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat64-custom-v6-subnet-ip-ranges= IPV6 SUBNET RANGES \\ --auto-allocate-nat-external-ips Restrict both IPv4 and IPv6 subnet ranges: gcloud compute routers nats create NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat-custom-subnet-ip-ranges= IPV4 SUBNET RANGES \\ --nat64-custom-v6-subnet-ip-ranges= IPV6 SUBNET RANGES \\ --auto-allocate-nat-external-ips Replace the following: NAT CONFIG : a name for your NAT configuration NAT ROUTER : the name of the Cloud Router that you created in the previous step REGION : the region where you want to use the Cloud NAT gateway IPV4 SUBNET RANGES : a comma-separated list of subnet names—for example: SUBNET NAME 1:ALL,SUBNET NAME 2:ALL : includes both the primary and all secondary ranges of subnets SUBNET NAME 1 and SUBNET NAME 2 .",
+          "To update the source subnet ranges for an existing Cloud NAT gateway, run one of the following commands, depending on the IP version of the subnet ranges that you want to update: Update IPv4 subnet ranges: gcloud compute routers nats update NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat-custom-subnet-ip-ranges= IPV4 SUBNET RANGES Update IPv6 subnet ranges: gcloud compute routers nats update NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat64-custom-v6-subnet-ip-ranges= IPV6 SUBNET RANGES Update both IPv4 and IPv6 subnet ranges: gcloud compute routers nats update NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat-custom-subnet-ip-ranges= IPV4 SUBNET RANGES \\ --nat64-custom-v6-subnet-ip-ranges= IPV6 SUBNET RANGES Replace the following: NAT CONFIG : the name of your NAT configuration NAT ROUTER : the name of your Cloud Router REGION : the region of the NAT gateway IPV4 SUBNET RANGES : a comma-separated list of subnet names—for example: SUBNET NAME 1:ALL,SUBNET NAME 2:ALL : includes both the primary and all secondary ranges of subnets SUBNET NAME 1 and SUBNET NAME 2 .",
+          "To create a Cloud NAT gateway with dynamic port allocation, run one the following commands: For IPv4 subnet ranges: gcloud compute routers nats create NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat-all-subnet-ip-ranges \\ --auto-allocate-nat-external-ips \\ --enable-dynamic-port-allocation \\ [--min-ports-per-vm= MIN PORTS ] \\ [--max-ports-per-vm= MAX PORTS ] For IPv6 subnet ranges: gcloud compute routers nats create NAT CONFIG \\ --router= NAT ROUTER \\ --region= REGION \\ --nat64-all-v6-subnet-ip-ranges \\ --auto-allocate-nat-external-ips \\ --enable-dynamic-port-allocation \\ [--min-ports-per-vm= MIN PORTS ] \\ [--max-ports-per-vm= MAX PORTS ] If you are creating the gateway for IPv4 and IPv6 subnet ranges, specify both the --nat-all-subnet-ip-ranges and --nat64-all-v6-subnet-ip-ranges flags in this command."
+        ]
+      },
+      {
+        "title": "Troubleshoot configuration \\_|\\_ Cloud NAT \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Does Public NAT let a source VM whose network interface lacks an external IP address send traffic to a destination VM or load balancer that has an external IP address, even when the source and destination are in the same VPC network?",
+          "When the source VM sends a packet to the destination, Public NAT performs source NAT (SNAT) before delivering the packet to the second instance.",
+          "Public NAT performs destination NAT (DNAT) for responses from the second instance to the first."
+        ]
+      },
+      {
+        "title": "Cloud NAT overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Public NAT also provides translation from IPv6 to IPv4.",
+          "If you use manual NAT IP address assignment to configure a Cloud NAT gateway for Public NAT, you can confidently share a set of common external source IP addresses with a destination party.",
+          "Benefits Cloud NAT provides the following benefits: Security When using a Cloud NAT gateway for Public NAT, you can reduce the need for individual VMs to each have external IP addresses."
+        ]
+      },
+      {
+        "title": "Use Public NAT with Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/nat/docs/gce-example",
+        "source_id": "site-docs-root",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can set a project ID with the following command: gcloud config set project PROJECT ID You can also view a project ID that is already set: gcloud config list --format='text(core.project)' Example The following is an end-to-end example that demonstrates a sample Public NAT gateway and a sample Compute Engine VM that uses the Public NAT gateway.",
+          "This configuration allows all instances in the region to use Public NAT for all primary and alias IP ranges .",
+          "Note: Public NAT uses Cloud Router only to group NAT configuration information (control plane)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/nat/docs/set-up-network-address-translation",
+        "https://docs.cloud.google.com/nat/docs/troubleshooting",
+        "https://docs.cloud.google.com/nat/docs/overview",
+        "https://docs.cloud.google.com/nat/docs/gce-example"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.414Z",
+  "source_step08_card": "data/step-08/current/products/cloud-nat/card.json",
+  "product_name": "Cloud NAT",
+  "product_slug": "cloud-nat"
+}

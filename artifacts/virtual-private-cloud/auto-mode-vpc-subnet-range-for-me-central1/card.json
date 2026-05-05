@@ -1,0 +1,146 @@
+{
+  "feature_name": "Auto mode VPC subnet range for me-central1",
+  "feature_slug": "auto-mode-vpc-subnet-range-for-me-central1",
+  "summary": "A new auto mode VPC subnet was added for the Doha (me-central1) region with CIDR block 10.212.0.0/20.",
+  "extended_definition": "A new auto mode VPC subnet was added for the Doha (me-central1) region with CIDR block 10.212.0.0/20.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/alias-ip",
+      "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+      "https://docs.cloud.google.com/vpc/docs/subnets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Subnets \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/subnets",
+        "source_id": "site-docs-root",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Auto mode IPv4 ranges This table lists the IPv4 ranges for the automatically created subnets in an auto mode VPC network.",
+          "For example, auto mode VPC networks do create subnets that fit within a predefined auto mode IP range.",
+          "Internal subnet /64 IPv6 ranges can be used by the following, regardless of the type of addresses: Internal /96 IPv6 address ranges of VM network interfaces Internal /96 IPv6 address ranges of forwarding rules for the following: Internal protocol forwarding Internal passthrough Network Load Balancers Private Service Connect endpoints Internal /96 IPv6 address ranges can be assigned in the following ways: If not specified, Google Cloud automatically assigns an ephemeral internal IPv6 /96 address range."
+        ]
+      },
+      {
+        "title": "\"Configure alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "source_id": "site-docs-root-2",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Terraform arguments have example values that you can change. resource \"google compute subnetwork\" \"network-with-private-secondary-ip-ranges\" { project = var.project id # Replace this with your project ID in quotes name = \"test-subnetwork\" ip cidr range = \"10.2.0.0/16\" region = \"us-central1\" network = \"test-vpc-network\" secondary ip range { range name = \"tf-test-secondary-range-update1\" ip cidr range = \"192.168.10.0/24\" } } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "The first network interface listed, the one in my-subnet1 , is the primary interface: gcloud compute instances create multi-nic-alias-vm \\ --machine-type f1-micro \\ --network-interface \"subnet=my-subnet1,aliases=/32;range1:/24\" \\ --network-interface \"subnet=my-subnet2,aliases=/32;range2:/24\" Use the display command to see the interfaces and their addresses: gcloud compute instances describe multi-nic-alias-vm ... networkInterfaces: - ... aliasIpRanges: - ipCidrRange: 172.16.1.2/32 - ipCidrRange: 10.1.0.0/24 subnetworkRangeName: range1 name: nic0 network: .../networks/my-network1 networkIP: 172.16.1.3 subnetwork: .../subnetworks/my-subnet1 ... - ... aliasIpRanges: - ipCidrRange: 172.16.2.2/32 - ipCidrRange: 10.2.0.0/24 subnetworkRangeName: range2 name: nic1 network: .../networks/my-network2 networkIP: 172.16.2.3 subnetwork: .../subnetworks/my-subnet2 API Create two custom mode VPC networks named my-network1 and my-network2 .",
+          "The command fails because the secondary range is in a different subnet from the instance. gcloud compute instances network-interfaces update instance-1 \\ --zone us-central1-a \\ --aliases secondaryrange1:172.16.0.10/32 The output is similar to the following: ERROR: (gcloud.compute.instances.network-interfaces.update) HTTPError 400: Invalid value for field 'resource.aliasIpRanges[0].subnetworkRangeName': 'secondaryrange'."
+        ]
+      },
+      {
+        "title": "Alias IP ranges \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In order to configure this example, use the following gcloud commands: gcloud compute networks create vpc1 --subnet-mode custom gcloud compute networks subnets create subnet1 --region us-central1 --network vpc1 --range 10.128.0.0/16 --secondary-range secondaryrange1=172.16.0.0/20 gcloud compute instances create vm1 --zone us-central1-a --network-interface \"subnet=subnet1,aliases=secondaryrange1:172.16.0.0/27;secondaryrange1:172.16.1.0/32\" gcloud compute instances create vm2 --zone us-central1-a --network-interface \"subnet=subnet1,aliases=secondaryrange1:172.16.0.32/27;secondaryrange1:172.16.1.1/32\" Alias IP addresses in auto mode VPC networks and subnets The automatically-created subnets in auto mode VPC networks each have a primary CIDR range, but no secondary range.",
+          "To use alias IP with an auto mode VPC network, you can allocate alias IP ranges from the automatically created subnet's primary CIDR range or add a secondary range to the automatically created subnet and allocate alias IP ranges from the new secondary range.",
+          "Key benefits of alias IP ranges When alias IP ranges are configured, Google Cloud automatically installs Virtual Private Cloud (VPC) network routes for primary and alias IP ranges for the subnet of the primary network interface."
+        ]
+      },
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service Project Admins When defining each Service Project Admin, a Shared VPC Admin can grant permission to use the whole host project or just some subnets: Project-level permissions : A Service Project Admin can be defined to have permission to use all subnets in the host project if the Shared VPC Admin grants the role of compute.networkUser for the whole host project to the Service Project Admin.",
+          "Subnet-level permissions : Alternatively, a Service Project Admin can be granted a more restrictive set of permissions to use only some subnets if the Shared VPC Admin grants the role of compute.networkUser for those selected subnets to the Service Project Admin.",
+          "They perform various tasks necessary to set up Shared VPC , such as enabling host projects, attaching service projects to host projects, and delegating access to some or all of the subnets in Shared VPC networks to Service Project Admins."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkUser",
+      "gcloud.compute.instances.network",
+      "interfaces.update",
+      "resource.aliasIpRanges",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/subnets",
+        "https://docs.cloud.google.com/vpc/docs/configure-alias-ip-ranges",
+        "https://docs.cloud.google.com/vpc/docs/alias-ip",
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

@@ -1,0 +1,76 @@
+# Network Intelligence Center
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-08/current/products/network-intelligence-center/card.json`
+
+## Summary
+
+- Promoted features: 60
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2026-03-05
+- Official source links: 24
+
+## Features
+
+- [Automatic VPC network detection in Connectivity Tests](./automatic-vpc-network-detection-in-connectivity-tests/README.md)
+- [Cloud Network Insights](./cloud-network-insights/README.md)
+- [Connectivity Tests](./connectivity-tests/README.md)
+- [Connectivity Tests dual-stack instance support](./connectivity-tests-dual-stack-instance-support/README.md)
+- [Connectivity Tests for App Engine standard environment versions](./connectivity-tests-for-app-engine-standard-environment-versions/README.md)
+- [Connectivity Tests for Cloud Run revisions](./connectivity-tests-for-cloud-run-revisions/README.md)
+- [Connectivity Tests from Cloud Functions (1st gen)](./connectivity-tests-from-cloud-functions-1st-gen/README.md)
+- [Connectivity Tests Google-managed services reachability](./connectivity-tests-google-managed-services-reachability/README.md)
+- [Connectivity Tests hierarchical firewall policy analysis](./connectivity-tests-hierarchical-firewall-policy-analysis/README.md)
+- [Connectivity Tests live data plane analysis](./connectivity-tests-live-data-plane-analysis/README.md)
+- [Connectivity Tests load balancer connectivity test](./connectivity-tests-load-balancer-connectivity-test/README.md)
+- [Connectivity Tests private IP support](./connectivity-tests-private-ip-support/README.md)
+- [Connectivity Tests Private Service Connect endpoint connectivity test](./connectivity-tests-private-service-connect-endpoint-connectivity-test/README.md)
+- [Connectivity Tests probing](./connectivity-tests-probing/README.md)
+- [Connectivity Tests to Private Service Connect endpoints](./connectivity-tests-to-private-service-connect-endpoints/README.md)
+- [Direct VPC egress for Cloud Run connectivity tests](./direct-vpc-egress-for-cloud-run-connectivity-tests/README.md)
+- [Firewall Insights](./firewall-insights/README.md)
+- [Firewall Insights custom refresh cycle for shadowed rule insights](./firewall-insights-custom-refresh-cycle-for-shadowed-rule-insights/README.md)
+- [Firewall Insights inactive allow rules insight](./firewall-insights-inactive-allow-rules-insight/README.md)
+- [Firewall Insights IPv6 misconfiguration detection](./firewall-insights-ipv6-misconfiguration-detection/README.md)
+- [Firewall Insights obsolete allow rules insight](./firewall-insights-obsolete-allow-rules-insight/README.md)
+- [Firewall Insights overly permissive rule insights](./firewall-insights-overly-permissive-rule-insights/README.md)
+- [Firewall Insights shadowed rule insights](./firewall-insights-shadowed-rule-insights/README.md)
+- [Flow Analyzer](./flow-analyzer/README.md)
+- [Gemini Cloud Assist for Flow Analyzer](./gemini-cloud-assist-for-flow-analyzer/README.md)
+- [Geolocation object firewall policy analysis in Connectivity Tests](./geolocation-object-firewall-policy-analysis-in-connectivity-tests/README.md)
+- [GKE IP masquerade configuration insights](./gke-ip-masquerade-configuration-insights/README.md)
+- [GKE network policy evaluation in Connectivity Tests](./gke-network-policy-evaluation-in-connectivity-tests/README.md)
+- [GKE Pod endpoints in Connectivity Tests](./gke-pod-endpoints-in-connectivity-tests/README.md)
+- [Hybrid subnet routing evaluation in Connectivity Tests](./hybrid-subnet-routing-evaluation-in-connectivity-tests/README.md)
+- [Infrastructure segments](./infrastructure-segments/README.md)
+- [INTERNET network type in Network Management API](./internet-network-type-in-network-management-api/README.md)
+- [Invalid route detection in Connectivity Tests](./invalid-route-detection-in-connectivity-tests/README.md)
+- [IP masquerading evaluation in Connectivity Tests](./ip-masquerading-evaluation-in-connectivity-tests/README.md)
+- [IPv6 and Private NAT support for serverless configurations](./ipv6-and-private-nat-support-for-serverless-configurations/README.md)
+- [Latency mode in Flow Analyzer](./latency-mode-in-flow-analyzer/README.md)
+- [Managed Envoy proxy firewall policy analysis in Connectivity Tests](./managed-envoy-proxy-firewall-policy-analysis-in-connectivity-tests/README.md)
+- [Network Analyzer](./network-analyzer/README.md)
+- [Network Analyzer Cloud Logging insights](./network-analyzer-cloud-logging-insights/README.md)
+- [Network Analyzer data-processing opt-out](./network-analyzer-data-processing-opt-out/README.md)
+- [Network Analyzer recommender insights](./network-analyzer-recommender-insights/README.md)
+- [Network Management API](./network-management-api/README.md)
+- [Network Topology](./network-topology/README.md)
+- [Network Topology BigQuery flow details](./network-topology-bigquery-flow-details/README.md)
+- [Network Topology child-node focus filter](./network-topology-child-node-focus-filter/README.md)
+- [Network Topology Cloud VPN and Cloud Interconnect connectivity](./network-topology-cloud-vpn-and-cloud-interconnect-connectivity/README.md)
+- [Network Topology connectivity to router appliances](./network-topology-connectivity-to-router-appliances/README.md)
+- [Network Topology cross-project metrics](./network-topology-cross-project-metrics/README.md)
+- [Network Topology GKE deployment infrastructure view](./network-topology-gke-deployment-infrastructure-view/README.md)
+- [Network Topology Google-managed services connectivity](./network-topology-google-managed-services-connectivity/README.md)
+- [Network Topology higher-egress views](./network-topology-higher-egress-views/README.md)
+- [Network Topology higher-egress views and insights](./network-topology-higher-egress-views-and-insights/README.md)
+- [Organization-level secure tags for firewall rules](./organization-level-secure-tags-for-firewall-rules/README.md)
+- [Performance Dashboard](./performance-dashboard/README.md)
+- [Performance Dashboard latency metrics between VMs and Internet endpoints](./performance-dashboard-latency-metrics-between-vms-and-internet-endpoints/README.md)
+- [Private Service Access IP address utilization summary insight](./private-service-access-ip-address-utilization-summary-insight/README.md)
+- [Public destination resolution for serverless connectivity tests](./public-destination-resolution-for-serverless-connectivity-tests/README.md)
+- [Secure tags for firewall rules on multi-NIC VMs](./secure-tags-for-firewall-rules-on-multi-nic-vms/README.md)
+- [Source IP type selection in Connectivity Tests](./source-ip-type-selection-in-connectivity-tests/README.md)
+- [User IP address source selection in Connectivity Tests](./user-ip-address-source-selection-in-connectivity-tests/README.md)

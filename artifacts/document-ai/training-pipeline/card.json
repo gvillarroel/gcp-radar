@@ -1,0 +1,182 @@
+{
+  "feature_name": "Training pipeline",
+  "feature_slug": "training-pipeline",
+  "summary": "The training pipeline has been upgraded.",
+  "extended_definition": "The training pipeline has been upgraded.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/error-messages",
+      "https://docs.cloud.google.com/document-ai/docs/fields",
+      "https://docs.cloud.google.com/document-ai/docs/languages",
+      "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Managing processor versions \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "source_id": "site-docs-root-2",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "SetDefaultProcessorVersionResponse ; public class SyncSetDefaultProcessorVersion { public static void main ( String [] args ) throws Exception { syncSetDefaultProcessorVersion (); } public static void syncSetDefaultProcessorVersion () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { SetDefaultProcessorVersionRequest request = SetDefaultProcessorVersionRequest . newBuilder () . setProcessor ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . setDefaultProcessorVersion ( ProcessorVersionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" , \"[PROCESSOR VERSION]\" ) . toString ()) . build (); SetDefaultProcessorVersionResponse response = documentProcessorServiceClient . setDefaultProcessorVersionAsync ( request ). get (); } } } Python For more information, see the Document AI Python API reference documentation .",
+          "ProcessorVersion ; public class SyncListProcessorVersions { public static void main ( String [] args ) throws Exception { syncListProcessorVersions (); } public static void syncListProcessorVersions () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { ListProcessorVersionsRequest request = ListProcessorVersionsRequest . newBuilder () . setParent ( ProcessorName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); for ( ProcessorVersion element : documentProcessorServiceClient . listProcessorVersions ( request ). iterateAll ()) { // doThingsWith(element); } } } } Python For more information, see the Document AI Python API reference documentation .",
+          "UndeployProcessorVersionResponse ; public class SyncUndeployProcessorVersion { public static void main ( String [] args ) throws Exception { syncUndeployProcessorVersion (); } public static void syncUndeployProcessorVersion () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentProcessorServiceClient documentProcessorServiceClient = DocumentProcessorServiceClient . create ()) { UndeployProcessorVersionRequest request = UndeployProcessorVersionRequest . newBuilder () . setName ( ProcessorVersionName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[PROCESSOR]\" , \"[PROCESSOR VERSION]\" ) . toString ()) . build (); UndeployProcessorVersionResponse response = documentProcessorServiceClient . undeployProcessorVersionAsync ( request ). get (); } } } Python For more information, see the Document AI Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "Error messages \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Try again after the operation finishes.\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"HAS BLOCKING OPERATION ERROR\" domain : \"documentai.googleapis.com\" } } Page range unsupported error When the page range field isn't supported in some operation, such as in a batch process. message : \"Page range is not supported.\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"PAGE RANGE UNSUPPORTED\" domain : \"documentai.googleapis.com\" } } Cloud Storage folder contains dataset error When a Cloud Storage folder already contains a dataset. message : \"The folder 'folder uri' already has dataset 'dataset-id' under it.\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"GCS FOLDER CONTAINS DATASET ERROR\" domain : \"documentai.googleapis.com\" } } Thumbnail Missing Error When a dataset document thumbnail is failed to be fetched. message : \"Failed to get dataset document thumbnail, consider running re-sync on the dataset.\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"THUMBNAIL MISSING\" domain : \"documentai.googleapis.com\" } } Dataset page limit exceeded When the total page limit of a dataset has been exceeded. message : \"Dataset page count exceeds the limit of 5.",
+          "This error message is applicable to legacy processors. message : \"Unable to find a document of type: 'foo'\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"DOCUMENT OF TYPE NOT FOUND\" domain : \"documentai.googleapis.com\" } } Document size limit exceeded When the upper limit for the file size of a document has been exceeded while importing dataset or while running prediction. message : \"Document size (2) exceeds limit: 1 (bytes).\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"DOCUMENT SIZE LIMIT EXCEEDED\" domain : \"documentai.googleapis.com\" metadata { key : \"limit\" value : \"1\" } metadata { key : \"size\" value : \"2\" } } } Document limit exceeded When the upper limit for the count of documents has been exceeded. message : \"Document count exceed the limit: 5 got 6\" details { [ type.googleapis.com / google.rpc.ErrorInfo ] { reason : \"DOCUMENT LIMIT EXCEEDED\" domain : \"documentai.googleapis.com\" metadata { key : \"document limit\" value : \"5\" } metadata { key : \"documents\" value : \"6\" } } } Unsupported MIME type When an unsupported MIME type was provided.",
+          "To diagnose this error, try opening the service account key file from the folder from which you're attempting to call the Document AI API. cat $GOOGLE APPLICATION CREDENTIALS Forbidden: 403 POST API has not been used or is disabled If you receive the message: Forbidden: 403 POST Document AI API has not been used in project # before or it is disabled."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/fields",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Full list of fields adjusted amount amount due balance transfer amount carrier currency currency exchange rate delivery date deposit credited amount due date freight amount invoice date invoice id late fee amount line item line item/amount line item/description line item/frequency line item/product code line item/purchase order line item/quantity line item/service address line item/service end date line item/service id 1 line item/service id 2 line item/service start date line item/supplier account number line item/tax amount line item/unit number line item/unit of measure line item/unit price line item/usage net amount payment terms prior amount due prior paid amount purchase order receiver address receiver email receiver name receiver phone receiver tax id receiver website reclaimed water remit to address remit to name service service/service end date service/service id service/service start date service/unit of measure service/usage service address service end date service id service start date ship from address ship from name ship to address ship to name supplier account number supplier address supplier email supplier iban supplier name supplier payment ref supplier phone supplier registration supplier tax id supplier website tampering total amount total tax amount usage vat vat/amount vat/category code vat/tax amount vat/tax rate Normalized fields You can find more information in the Enrichment & normalization page.",
+          "Full list of fields amount paid since last invoice carrier currency currency exchange rate delivery date due date freight amount invoice date invoice id line item line item/amount line item/description line item/product code line item/purchase order line item/quantity line item/unit line item/unit price net amount payment terms purchase order receiver address receiver email receiver name receiver phone receiver tax id receiver website remit to address remit to name ship from address ship from name ship to address ship to name supplier address supplier email supplier iban supplier name supplier payment ref supplier phone supplier registration supplier tax id supplier website total amount total tax amount vat vat/amount vat/category code vat/tax amount vat/tax rate Enriched fields You can find more information in the Enrichment & normalization page.",
+          "Full list of fields credit card last four digits currency end date net amount payment type purchase time receipt date start date supplier address supplier city supplier name tip amount total amount total tax amount line item line item/amount line item/description line item/product code Enriched fields You can find more information in the Enrichment & normalization page."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/languages",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Full list of fields adjusted amount amount due balance transfer amount carrier currency currency exchange rate delivery date deposit credited amount due date freight amount invoice date invoice id late fee amount line item line item/amount line item/description line item/frequency line item/product code line item/purchase order line item/quantity line item/service address line item/service end date line item/service id 1 line item/service id 2 line item/service start date line item/supplier account number line item/tax amount line item/unit number line item/unit of measure line item/unit price line item/usage net amount payment terms prior amount due prior paid amount purchase order receiver address receiver email receiver name receiver phone receiver tax id receiver website reclaimed water remit to address remit to name service service/service end date service/service id service/service start date service/unit of measure service/usage service address service end date service id service start date ship from address ship from name ship to address ship to name supplier account number supplier address supplier email supplier iban supplier name supplier payment ref supplier phone supplier registration supplier tax id supplier website tampering total amount total tax amount usage vat vat/amount vat/category code vat/tax amount vat/tax rate Normalized fields You can find more information in the Enrichment & normalization page.",
+          "Full list of fields amount paid since last invoice carrier currency currency exchange rate delivery date due date freight amount invoice date invoice id line item line item/amount line item/description line item/product code line item/purchase order line item/quantity line item/unit line item/unit price net amount payment terms purchase order receiver address receiver email receiver name receiver phone receiver tax id receiver website remit to address remit to name ship from address ship from name ship to address ship to name supplier address supplier email supplier iban supplier name supplier payment ref supplier phone supplier registration supplier tax id supplier website total amount total tax amount vat vat/amount vat/category code vat/tax amount vat/tax rate Enriched fields You can find more information in the Enrichment & normalization page.",
+          "Full list of fields credit card last four digits currency end date net amount payment type purchase time receipt date start date supplier address supplier city supplier name tip amount total amount total tax amount line item line item/amount line item/description line item/product code Enriched fields You can find more information in the Enrichment & normalization page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "documentai.googleapis.com",
+      "e.g",
+      "type.googleapis.com",
+      "v1.0",
+      "v1.5"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/manage-processor-versions",
+        "https://docs.cloud.google.com/document-ai/docs/error-messages",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:28.926Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

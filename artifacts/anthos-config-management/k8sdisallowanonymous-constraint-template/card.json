@@ -1,0 +1,171 @@
+{
+  "feature_name": "K8sDisallowAnonymous constraint template",
+  "feature_slug": "k8sdisallowanonymous-constraint-template",
+  "summary": "This constraint template disallows anonymous access configurations in Kubernetes resources.",
+  "extended_definition": "This constraint template disallows anonymous access configurations in Kubernetes resources.",
+  "lifecycle": {
+    "latest_feature_date": "2022-02-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create, or make sure you have access to, a cluster that is on a Google Kubernetes Engine supported platform and version and meets the requirements for Config Sync .",
+          "NAMESPACE AUTH TYPE : add one of the following authentication types: none : Use no authentication ssh : Use a SSH key pair cookiefile : Use a cookiefile token : Use a token gcpserviceaccount : Use a Google service account to access a repository in Cloud Source Repositories. gcenode : Use a Google service account to access a repository in Cloud Source Repositories.",
+          "NAMESPACE AUTH TYPE : add one of the following authentication types: none : Use no authentication ssh : Use a SSH key pair cookiefile : Use a cookiefile token : Use a token gcpserviceaccount : Use a Google service account to access a repository in Cloud Source Repositories. gcenode : Use a Google service account to access a repository in Cloud Source Repositories."
+        ]
+      },
+      {
+        "title": "Grant Config Sync access to your Git repository \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "source_id": "site-docs-root",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Grant Config Sync access to your Git repository Stay organized with collections Save and categorize content based on your preferences.",
+          "Config Sync requires read-only access to your source of truth so it can read your configurations, apply them to your clusters, and keep them in sync.",
+          "Kubernetes service account OCI, Helm Uses IAM to grant Artifact Registry access directly to a Kubernetes service account."
+        ]
+      },
+      {
+        "title": "\"Configure Kubernetes with Kustomize \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Kustomize is a Kubernetes configuration transformation tool that lets you customize untemplated YAML files, leaving the original files untouched.",
+          "Ensure that your Kustomization configuration file ( kustomization.yaml , kustomization.yml , or Kustomization ) is located in the root of your directory and that all your configurations are stored in that file, not in separate files in your source of truth.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Configure Kubernetes with Kustomize Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.gserviceaccount.com",
+      "kustomization.yaml",
+      "kustomization.yml",
+      "securesourcemanager.instanceAccessor",
+      "securesourcemanager.repoReader"
+    ],
+    "missing_inventory_roles": [
+      "roles/securesourcemanager.instanceAccessor",
+      "roles/securesourcemanager.repoReader"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/grant-access-git",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

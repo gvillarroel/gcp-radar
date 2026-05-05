@@ -1,0 +1,142 @@
+{
+  "feature_name": "Apache Spark demo notebook in BigQuery console",
+  "feature_slug": "apache-spark-demo-notebook-in-bigquery-console",
+  "summary": "The BigQuery console Welcome tab includes an Apache Spark demo notebook for learning Spark notebooks and serverless Spark in BigQuery.",
+  "extended_definition": "The BigQuery console Welcome tab includes an Apache Spark demo notebook for learning Spark notebooks and serverless Spark in BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+      "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+      "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure BigLake metastore for Managed Service for Apache Spark and Spark\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+        "source_id": "site-docs-reference-5",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure the Iceberg custom catalog plugin for BigLake metastore: FLINK VERSION = 1 .19 ICEBERG VERSION = 1 .6.1 cd /usr/lib/flink sudo wget -c https://repo.maven.apache.org/maven2/org/apache/iceberg/iceberg-flink-runtime- ${ FLINK VERSION } / ${ ICEBERG VERSION } /iceberg-flink-runtime- ${ FLINK VERSION } - ${ ICEBERG VERSION } .jar -P lib sudo gcloud storage cp gs://spark-lib/bigquery/iceberg-bigquery-catalog- ${ ICEBERG VERSION } -1.0.2.jar lib/ Start the Flink session on YARN: HADOOP CLASSPATH = hadoop classpath sudo bin/yarn-session.sh -nm flink-dataproc -d sudo bin/sql-client.sh embedded \\ -s yarn-session Create a catalog in Flink: CREATE CATALOG CATALOG NAME WITH ( 'type' = 'iceberg' , 'warehouse' = ' WAREHOUSE DIRECTORY ' , 'catalog-impl' = 'org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog' , 'gcp project' = ' PROJECT ID ' , 'gcp location' = ' LOCATION ' ); Replace the following: CATALOG NAME : the Flink catalog identifier, which is linked to a BigLake metastore catalog.",
+          "Required roles To get the permissions that you need to configure BigLake metastore, ask your administrator to grant you the following IAM roles: Create a Managed Service for Apache Spark cluster: Dataproc Worker ( roles/dataproc.worker ) on the Compute Engine default service account in the project Create BigLake metastore tables: Dataproc Worker ( roles/dataproc.worker ) on the Dataproc VM service account in the project BigQuery Data Editor ( roles/bigquery.dataEditor ) on the Dataproc VM service account in the project Storage Object User ( roles/storage.objectUser ) on the Dataproc VM service account in the project Query BigLake metastore tables: BigQuery Data Viewer ( roles/bigquery.dataViewer ) on the project BigQuery User ( roles/bigquery.user ) on the project Storage Object Viewer ( roles/storage.objectViewer ) on the project For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "This document explains how to configure the custom Iceberg catalog for BigQuery in BigLake metastore with either Managed Service for Apache Spark or Managed Service for Apache Spark ."
+        ]
+      },
+      {
+        "title": "\"Use the Colab Enterprise Data Science Agent with BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "source_id": "site-docs-reference-5",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the DSA for: Large-scale data processing : Use BigQuery ML, BigQuery DataFrames, or Managed Service for Apache Spark to perform distributed data processing on large datasets.",
+          "Generating a plan : Generate and modify a plan to complete a particular task using common tools such as Python, SQL, Managed Service for Apache Spark, and BigQuery DataFrames.",
+          "Go to BigQuery On the BigQuery Studio welcome page, under Create new , click Notebook ."
+        ]
+      },
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Create new section that has options to create a new SQL query, notebook, Apache Spark notebook, data canvas, data preparation file, pipeline, or table.",
+          "Go to Overview You can also open the BigQuery Overview page by entering the following URL in your browser: https://console.cloud.google.com/bigquery/overview Review the following sections of the Overview page: The Introduction section: gives you a quick video overview of BigQuery's capabilities.",
+          "Note: To see how to use keyboard shortcuts in Studio, click keyboard BigQuery Studio shortcuts in the BigQuery Studio toolbar: To explore the Studio page, follow these steps: In the Google Cloud console, go to the BigQuery Studio page."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.dataViewer",
+      "bigquery.user",
+      "client.sh",
+      "console.cloud.google.com",
+      "dataproc.worker",
+      "org.apache.iceberg.gcp.bigquery.BigQueryMetastoreCatalog",
+      "repo.maven.apache.org",
+      "session.sh",
+      "spark.sql.catalog",
+      "storage.objectUser",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataViewer",
+      "roles/bigquery.user",
+      "roles/dataproc.worker",
+      "roles/storage.objectUser",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bqms-use-dataproc",
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

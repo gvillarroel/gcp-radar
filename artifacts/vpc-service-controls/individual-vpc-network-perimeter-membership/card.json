@@ -1,0 +1,186 @@
+{
+  "feature_name": "Individual VPC network perimeter membership",
+  "feature_slug": "individual-vpc-network-perimeter-membership",
+  "summary": "VPC Service Controls lets you add individual VPC networks to a service perimeter and authorize them with ingress rules.",
+  "extended_definition": "VPC Service Controls lets you add individual VPC networks to a service perimeter and authorize them with ingress rules.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set up a VPC Service Controls perimeter for a Virtual Private Cloud network\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Set up a VPC Service Controls perimeter for a Virtual Private Cloud network Stay organized with collections Save and categorize content based on your preferences.",
+          "In the following steps, you verify this concept by using Cloud Shell to attempt to create a VM inside your VPC network, which fails due to the configuration of the VPC Service Controls perimeter.",
+          "Set up your VPC Service Controls perimeter To implement a VPC Service Controls perimeter for a VPC network, you must implement networking controls that deny traffic to external services."
+        ]
+      },
+      {
+        "title": "\"VPC networks management in service perimeters \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "source_id": "site-docs-reference-2",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback VPC networks management in service perimeters Stay organized with collections Save and categorize content based on your preferences.",
+          "Limitations The following are the limitations when you manage VPC networks in service perimeters: You can add VPC networks from another organization to your service perimeter or specify them as an ingress source only if you have the roles/compute.networkViewer role for those networks.",
+          "Manage VPC networks in a service perimeter You can perform the following tasks to manage VPC networks in a perimeter: Add a single VPC network to a perimeter instead of adding an entire host project to the perimeter."
+        ]
+      },
+      {
+        "title": "\"Manage service perimeters \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "source_id": "site-docs-reference",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Manage service perimeters Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, to ensure that the VPC networks in your perimeter have access only to the Logging and Cloud Storage services, use the following command: gcloud access-context-manager perimeters update example perimeter \\ --enable-vpc-accessible-services \\ --add-vpc-allowed-services = RESTRICTED-SERVICES,logging.googleapis.com,storage.googleapis.com \\ --policy = 11271009391 Add a service to the VPC accessible services To add additional services to the VPC accessible services for your perimeter, use the update command : gcloud access-context-manager perimeters update PERIMETER ID \\ --add-vpc-allowed-services = SERVICES Replace the following: PERIMETER ID is the ID of your service perimeter.",
+          "For example, if you enable VPC accessible services and require that the VPC networks in your perimeter have access to the Pub/Sub service, use the following command: gcloud access-context-manager perimeters update example perimeter \\ --add-vpc-allowed-services = RESTRICTED-SERVICES,pubsub.googleapis.com \\ --policy = 11271009391 Remove a service from the VPC accessible services To remove services from the VPC accessible services for your service perimeter, use the update command : gcloud access-context-manager perimeters update PERIMETER ID \\ --remove-vpc-allowed-services = SERVICES Replace the following: PERIMETER ID is the ID of your service perimeter."
+        ]
+      },
+      {
+        "title": "\"Example migration of VPC networks into separate perimeters \\_|\\_ VPC Service\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters",
+        "source_id": "site-docs-reference",
+        "final_score": 233,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Example migration of VPC networks into separate perimeters Stay organized with collections Save and categorize content based on your preferences.",
+          "To enforce the dry-run configurations, run the following command: gcloud access-context-manager perimeters dry-run enforce-all --policy=<access policy number> After you enforce the dry-run configurations, run the following command to describe perimeter-1 : gcloud access-context-manager perimeters describe perimeter-1 --policy=<access policy number> This example produces the following output in which network-host-project and service-project-2 are removed, and VPC1 is added to perimeter-1 . name: accessPolicies/<access policy number>/servicePerimeters/perimeter-1 status: … resources: - projects/<service-project-1 number> - //compute.googleapis.com/projects/<network-host-project>/global/networks/VPC1 Run the following command to describe perimeter-2 : gcloud access-context-manager perimeters describe perimeter-2 --policy=<access policy number> This example produces the following output in which service-project-2 and VPC2 are added to perimeter-2 . name: accessPolicies/<access policy number>/servicePerimeters/perimeter-2 status: … resources: - projects/<service-project-2 number> - //compute.googleapis.com/projects/<network-host-project>/global/networks/VPC2 title: perimeter-2 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "However, the following dry-run error appears in the audit logs for network-host-project for accessing service-project-2 from VM1 : egressViolations: [ 0: { servicePerimeter: \"accessPolicies/<access policy number>/servicePerimeters/perimeter-1\" source: \"//compute.googleapis.com/projects/network-host-project/global/networks/VPC1\" sourceType: \"Network\" targetResource: \"projects/<service-project-2 number>\" } ] Similarly, Cloud Storage requests from VM2 to service-project-2 don't have dry-run errors, and requests from VM2 to service-project-1 have the following dry-run error in the audit logs for the network-host-project : egressViolations: [ 0: { servicePerimeter: \"accessPolicies/<access policy number>/servicePerimeters/perimeter-2\" source: \"//compute.googleapis.com/projects/network-host-project/global/networks/VPC2\" sourceType: \"Network\" targetResource: \"projects/<service-project-1 number>\" } ] Enforce the dry-run configuration You must enforce all dry-run configurations at once in one atomic transaction."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "compute.networkViewer",
+      "gcloud.storage.buckets.create",
+      "logging.googleapis.com",
+      "pubsub.googleapis.com",
+      "spec.yaml",
+      "storage.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/set-up-service-perimeter-verify-access",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/vpc-perimeters-management",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/manage-service-perimeters",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/migrate-vpc-perimeters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:57.535Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls"
+}

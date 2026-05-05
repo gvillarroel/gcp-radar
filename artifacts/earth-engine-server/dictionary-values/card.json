@@ -1,0 +1,241 @@
+{
+  "feature_name": "Dictionary.values",
+  "feature_slug": "dictionary-values",
+  "summary": "Returns the values in a dictionary.",
+  "extended_definition": "Returns the values in a dictionary.",
+  "lifecycle": {
+    "latest_feature_date": "2014-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+      "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+      "https://developers.google.com/earth-engine/guides/debugging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ee.Dictionary.values | Google Earth Engine | Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "source_id": "feature-recovery-http",
+        "final_score": 226,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-07-13 UTC.\"],[],[\"The function `dictionary.values()` extracts values from a dictionary and returns them as a list.",
+          "Usage Returns Dictionary. values ( keys ) List Argument Type Details this: dictionary Dictionary keys List, default: null Examples Code Editor (JavaScript) // A dictionary (e.g. results of ee.Image.reduceRegion of an S2 image). var dict = ee .",
+          "Returns the values of a dictionary as a list."
+        ]
+      },
+      {
+        "title": "ee.Algorithms.Dictionary \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Usage Returns ee.Algorithms.Dictionary( input ) Dictionary Argument Type Details input Object, default: null An object to convert to a dictionary.",
+          "This function returns a dictionary data structure based on the provided input.\\n\"]]",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-07-13 UTC.\"],[],[\"The function ee.Algorithms.Dictionary creates a dictionary object."
+        ]
+      },
+      {
+        "title": "Debugging guide \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/debugging",
+        "source_id": "site-docs-root",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": [
+          "Map . centerObject ( badFeature , 11 ); Map . addLayer ( badFeature , {}, 'bad feature' ); Map . addLayer ( image , { bands : [ 'B4' , 'B3' , 'B2' ], max : 3000 }, 'image' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Define a function to be mapped over the collection. def function to map ( feature ): dictionary = image . reduceRegion ( reducer = ee .",
+          "Number ( dictionary . get ( 'B5' )) . divide ( dictionary . get ( 'B4' )) }); }; var noProblem = someFeatures . filterBounds ( image . geometry ()) . map ( functionToMap ); print ( noProblem ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) def function to map ( feature ): dictionary = image . reduceRegion ( reducer = ee .",
+          "Image ( 'COPERNICUS/S2 HARMONIZED/20160625T100617 20160625T170310 T33UVR' ) s2image . set ( 'my property' , 'This image is not assigned to a variable' ) This will not result in an error, but will not find 'my property'. display ( s2image . get ( 'my property' )) # None In this example, s2image.set() returns a copy of the image with the new property, but the image stored in the s2image variable is unchanged."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "array.values",
+      "developers.google.com",
+      "dictionary.values",
+      "e.g",
+      "ee.Algorithms",
+      "ee.Algorithms.Dictionary",
+      "ee.apply",
+      "ee.Array",
+      "ee.Blob",
+      "ee.call",
+      "ee.Classifier",
+      "ee.Clusterer",
+      "ee.ConfusionMatrix",
+      "ee.data",
+      "ee.Date",
+      "ee.DateRange",
+      "ee.Dictionary",
+      "ee.Dictionary.values",
+      "ee.ErrorMargin",
+      "ee.Feature",
+      "ee.FeatureCollection",
+      "ee.Filter",
+      "ee.Geometry",
+      "ee.Image",
+      "ee.Image.reduceRegion",
+      "ee.ImageCollection",
+      "ee.initialize",
+      "ee.Join",
+      "ee.Kernel",
+      "ee.List",
+      "ee.Model",
+      "ee.Number",
+      "ee.PixelType",
+      "ee.Projection",
+      "ee.Reducer",
+      "ee.reset",
+      "ee.String",
+      "ee.Terrain",
+      "feature.byFeature",
+      "feature.byProperty",
+      "feature.groups",
+      "feature.histogram",
+      "geemap.core",
+      "image.byClass",
+      "image.byRegion",
+      "image.doySeries",
+      "image.doySeriesByRegion",
+      "image.doySeriesByYear",
+      "image.histogram",
+      "image.regions",
+      "image.series",
+      "image.seriesByRegion",
+      "projects.algorithms",
+      "projects.assets",
+      "projects.classifier",
+      "projects.featureView",
+      "projects.featureViews",
+      "projects.featureViews.tiles",
+      "projects.filmstripThumbnails",
+      "projects.image",
+      "projects.imageCollection",
+      "projects.locations.assets",
+      "projects.locations.filmstripThumbnails",
+      "projects.locations.maps",
+      "projects.locations.tables",
+      "projects.locations.thumbnails",
+      "projects.locations.videoThumbnails",
+      "projects.map",
+      "projects.maps",
+      "projects.maps.tiles",
+      "projects.operations",
+      "projects.table",
+      "projects.tables",
+      "projects.thumbnails",
+      "projects.value",
+      "projects.video",
+      "projects.videoThumbnails",
+      "s2image.set",
+      "ui.Button",
+      "ui.Chart",
+      "ui.Checkbox",
+      "ui.data",
+      "ui.DateSlider",
+      "ui.Label",
+      "ui.Map",
+      "ui.Panel",
+      "ui.root",
+      "ui.Select",
+      "ui.Slider",
+      "ui.SplitPanel",
+      "ui.Textbox",
+      "ui.Thumbnail",
+      "ui.url",
+      "ui.util"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/apidocs/ee-dictionary-values",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-dictionary",
+        "https://developers.google.com/earth-engine/guides/debugging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

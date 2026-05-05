@@ -1,0 +1,140 @@
+{
+  "feature_name": "Firestore C++ support",
+  "feature_slug": "firestore-c-support",
+  "summary": "Firestore provides beta support for C++ through the Firebase C++ SDK.",
+  "extended_definition": "Firestore provides beta support for C++ through the Firebase C++ SDK.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+      "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+      "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Monitor usage \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "source_id": "site-docs-reference",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to Google Cloud project project usage The project usage dashboard shows document operations over time as follows: Firebase console Go to the Firestore usage page (Firebase console) Usage dashboard and billing reports The Firestore usage dashboards in the Firebase and Cloud consoles provide an estimate of usage.",
+          "Aggregated usage dashboard If your project has multiple Firestore databases, you can view aggregated usage metrics in the Google Cloud console or Firebase console.",
+          "Security rule usage Additionally, the Firebase console provides a Firebase Security Rules evaluation dashboard, a useful, at-a-glance view of rules invocations."
+        ]
+      },
+      {
+        "title": "\"Extend Firestore with event triggers using Cloud Run functions \\_|\\_ Firestore\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "source_id": "site-docs-reference",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "InvalidProtocolBufferException ; import io.cloudevents.CloudEvent ; import java.util.Map ; import java.util.concurrent.ExecutionException ; import java.util.logging.Logger ; public class FirebaseFirestoreReactive implements CloudEventsFunction { private static final Logger logger = Logger . getLogger ( FirebaseFirestoreReactive . class . getName ()); private final Firestore firestore ; private static final String FIELD KEY = \"original\" ; private static final String APPLICATION PROTOBUF = \"application/protobuf\" ; public FirebaseFirestoreReactive () { this ( FirestoreOptions . getDefaultInstance (). getService ()); } public FirebaseFirestoreReactive ( Firestore firestore ) { this . firestore = firestore ; } @Override public void accept ( CloudEvent event ) throws InvalidProtocolBufferException , InterruptedException , ExecutionException { if ( event . getData () == null ) { logger . warning ( \"No data found in event!\" ); return ; } if ( ! event . getDataContentType (). equals ( APPLICATION PROTOBUF )) { logger . warning ( String . format ( \"Found unexpected content type %s, expected %s\" , event . getDataContentType (), APPLICATION PROTOBUF )); return ; } DocumentEventData firestoreEventData = DocumentEventData . parseFrom ( event . getData (). toBytes ()); // Get the fields from the post-operation document snapshot // https://firebase.google.com/docs/firestore/reference/rest/v1/projects.databases.documents#Document Map<String , Value > fields = firestoreEventData . getValue (). getFieldsMap (); if ( ! fields . containsKey ( FIELD KEY )) { logger . warning ( \"Document does not contain original field\" ); return ; } String currValue = fields . get ( FIELD KEY ). getStringValue (); String newValue = currValue . toUpperCase (); if ( currValue . equals ( newValue )) { logger . info ( \"Value is already upper-case\" ); return ; } // Retrieve the document name from the resource path: // projects/{project id}/databases/{database id}/documents/{document path} String affectedDoc = firestoreEventData . getValue () . getName () . split ( \"/documents/\" ) [ 1 ] . replace ( \"\\\"\" , \"\" ); logger . info ( String . format ( \"Replacing values: %s --> %s\" , currValue , newValue )); // Wait for the async call to complete this . firestore . document ( affectedDoc ) . set ( Map . of ( FIELD KEY , newValue ), SetOptions . merge ()) . get (); } } C# using CloudNative.CloudEvents ; using Google.Cloud.Firestore ; using Google.Cloud.Functions.Framework ; using Google.Cloud.Functions.Hosting ; using Google.Events.Protobuf.Cloud.Firestore.V1 ; using Microsoft.AspNetCore.Hosting ; using Microsoft.Extensions.DependencyInjection ; using Microsoft.Extensions.Logging ; using System.Collections.Generic ; using System.Threading ; using System.Threading.Tasks ; namespace FirestoreReactive ; public class Startup : FunctionsStartup { public override void ConfigureServices ( WebHostBuilderContext context , IServiceCollection services ) = > services .",
+          "InvalidProtocolBufferException ; import io.cloudevents.CloudEvent ; import java.util.logging.Logger ; public class FirebaseFirestore implements CloudEventsFunction { private static final Logger logger = Logger . getLogger ( FirebaseFirestore . class . getName ()); @Override public void accept ( CloudEvent event ) throws InvalidProtocolBufferException { DocumentEventData firestoreEventData = DocumentEventData . parseFrom ( event . getData (). toBytes ()); logger . info ( \"Function triggered by event on: \" + event . getSource ()); logger . info ( \"Event type: \" + event . getType ()); logger . info ( \"Old value:\" ); logger . info ( firestoreEventData . getOldValue (). toString ()); logger . info ( \"New value:\" ); logger . info ( firestoreEventData . getValue (). toString ()); } } C# using CloudNative.CloudEvents ; using Google.Cloud.Functions.Framework ; using Google.Events.Protobuf.Cloud.Firestore.V1 ; using Microsoft.Extensions.Logging ; using System.Collections.Generic ; using System.Linq ; using System.Threading ; using System.Threading.Tasks ; namespace FirebaseFirestore ; public class Function : ICloudEventFunction<DocumentEventData> { private readonly ILogger logger ; public Function ( ILogger<Function> logger ) = > logger = logger ; public Task HandleAsync ( CloudEvent cloudEvent , DocumentEventData data , CancellationToken cancellationToken ) { logger .",
+          "ParseFromString ( cloud event . data ) path parts = firestore payload . value . name . split ( \"/\" ) separator idx = path parts . index ( \"documents\" ) collection path = path parts [ separator idx + 1 ] document path = \"/\" . join ( path parts [( separator idx + 2 ) :]) print ( f \"Collection path: { collection path } \" ) print ( f \"Document path: { document path } \" ) affected doc = client . collection ( collection path ) . document ( document path ) cur value = firestore payload . value . fields [ \"original\" ] . string value new value = cur value . upper () if cur value != new value : print ( f \"Replacing value: { cur value } --> { new value } \" ) affected doc . set ({ \"original\" : new value }) else : Value is already upper-case Don't perform a second write (which can trigger an infinite loop) print ( \"Value is already upper-case.\" ) Go // Package upper contains a Firestore Cloud Function. package upper import ( \"context\" \"errors\" \"fmt\" \"log\" \"os\" \"strings\" \"cloud.google.com/go/firestore\" firebase \"firebase.google.com/go/v4\" \"github.com/GoogleCloudPlatform/functions-framework-go/functions\" \"github.com/cloudevents/sdk-go/v2/event\" \"github.com/googleapis/google-cloudevents-go/cloud/firestoredata\" \"google.golang.org/protobuf/proto\" ) // set the GOOGLE CLOUD PROJECT environment variable when deploying. var projectID = os ."
+        ]
+      },
+      {
+        "title": "\"Query and filter data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "source_id": "site-docs-root-2",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "These limitations apply only to Standard edition: Firestore provides support for logical OR queries through the or , in , and array-contains-any operators.",
+          "These limitations apply only to Standard edition: Firestore provides support for logical OR queries through the or , in , and array-contains-any operators.",
+          "For example, you can create a landmarks collection group by adding a landmarks subcollection to each city: Web version 9 import { collection , addDoc } from \"firebase/firestore\" ; const citiesRef = collection ( db , 'cities' ); await Promise . all ([ addDoc ( collection ( citiesRef , 'SF' , 'landmarks' ), { name : 'Golden Gate Bridge' , type : 'bridge' }), addDoc ( collection ( citiesRef , 'SF' , 'landmarks' ), { name : 'Legion of Honor' , type : 'museum' }), addDoc ( collection ( citiesRef , 'LA' , 'landmarks' ), { name : 'Griffith Park' , type : 'park' }), addDoc ( collection ( citiesRef , 'LA' , 'landmarks' ), { name : 'The Getty' , type : 'museum' }), addDoc ( collection ( citiesRef , 'DC' , 'landmarks' ), { name : 'Lincoln Memorial' , type : 'memorial' }), addDoc ( collection ( citiesRef , 'DC' , 'landmarks' ), { name : 'National Air and Space Museum' , type : 'museum' }), addDoc ( collection ( citiesRef , 'TOK' , 'landmarks' ), { name : 'Ueno Park' , type : 'park' }), addDoc ( collection ( citiesRef , 'TOK' , 'landmarks' ), { name : 'National Museum of Nature and Science' , type : 'museum' }), addDoc ( collection ( citiesRef , 'BJ' , 'landmarks' ), { name : 'Jingshan Park' , type : 'park' }), addDoc ( collection ( citiesRef , 'BJ' , 'landmarks' ), { name : 'Beijing Ancient Observatory' , type : 'museum' }) ]); fs collection group query data setup . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. var citiesRef = db . collection ( 'cities' ); var landmarks = Promise . all ([ citiesRef . doc ( 'SF' ). collection ( 'landmarks' ). doc (). set ({ name : 'Golden Gate Bridge' , type : 'bridge' }), citiesRef . doc ( 'SF' ). collection ( 'landmarks' ). doc (). set ({ name : 'Legion of Honor' , type : 'museum' }), citiesRef . doc ( 'LA' ). collection ( 'landmarks' ). doc (). set ({ name : 'Griffith Park' , type : 'park' }), citiesRef . doc ( 'LA' ). collection ( 'landmarks' ). doc (). set ({ name : 'The Getty' , type : 'museum' }), citiesRef . doc ( 'DC' ). collection ( 'landmarks' ). doc (). set ({ name : 'Lincoln Memorial' , type : 'memorial' }), citiesRef . doc ( 'DC' ). collection ( 'landmarks' ). doc (). set ({ name : 'National Air and Space Museum' , type : 'museum' }), citiesRef . doc ( 'TOK' ). collection ( 'landmarks' ). doc (). set ({ name : 'Ueno Park' , type : 'park' }), citiesRef . doc ( 'TOK' ). collection ( 'landmarks' ). doc (). set ({ name : 'National Museum of Nature and Science' , type : 'museum' }), citiesRef . doc ( 'BJ' ). collection ( 'landmarks' ). doc (). set ({ name : 'Jingshan Park' , type : 'park' }), citiesRef . doc ( 'BJ' ). collection ( 'landmarks' ). doc (). set ({ name : 'Beijing Ancient Observatory' , type : 'museum' }) ]); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. let citiesRef = db . collection ( \"cities\" ) var data = [ \"name\" : \"Golden Gate Bridge\" , \"type\" : \"bridge\" ] citiesRef . document ( \"SF\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"Legion of Honor\" , \"type\" : \"museum\" ] citiesRef . document ( \"SF\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"Griffith Park\" , \"type\" : \"park\" ] citiesRef . document ( \"LA\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"The Getty\" , \"type\" : \"museum\" ] citiesRef . document ( \"LA\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"Lincoln Memorial\" , \"type\" : \"memorial\" ] citiesRef . document ( \"DC\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"National Air and Space Museum\" , \"type\" : \"museum\" ] citiesRef . document ( \"DC\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"Ueno Park\" , \"type\" : \"park\" ] citiesRef . document ( \"TOK\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"National Museum of Nature and Science\" , \"type\" : \"museum\" ] citiesRef . document ( \"TOK\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"Jingshan Park\" , \"type\" : \"park\" ] citiesRef . document ( \"BJ\" ). collection ( \"landmarks\" ). addDocument ( data : data ) data = [ \"name\" : \"Beijing Ancient Observatory\" , \"type\" : \"museum\" ] citiesRef . document ( \"BJ\" ). collection ( \"landmarks\" ). addDocument ( data : data ) ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "doc.data",
+      "firebase.google.com",
+      "future.get",
+      "github.com",
+      "io.cloudevents.CloudEvent",
+      "java.util.concurrent.ExecutionException",
+      "java.util.logging.Logger",
+      "java.util.Map",
+      "projects.databases.documents"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/monitor-usage",
+        "https://docs.cloud.google.com/firestore/docs/extend-with-functions-2nd-gen",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:32.054Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore"
+}

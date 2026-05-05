@@ -1,0 +1,136 @@
+{
+  "feature_name": "Automatic Private Service Connect endpoint creation",
+  "feature_slug": "automatic-private-service-connect-endpoint-creation",
+  "summary": "Automatic Private Service Connect endpoint creation automatically creates a PSC endpoint for accessing Cloud SQL through a VPC network; Cloud SQL can automatically create a Private Service Connect endpoint during instance creation instead of requiring manual endpoint setup.",
+  "extended_definition": "Automatic Private Service Connect endpoint creation automatically creates a PSC endpoint for accessing Cloud SQL through a VPC network; Cloud SQL can automatically create a Private Service Connect endpoint during instance creation instead of requiring manual endpoint setup.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Check the endpoint's status. gcloud To check the status, use the gcloud compute forwarding-rules describe command. gcloud compute forwarding-rules describe ENDPOINT NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ grep pscConnectionStatus Make the following replacements: ENDPOINT NAME : the name of the endpoint PROJECT ID : the ID or project number of the Google Cloud project that contains the endpoint REGION NAME : the region name for the endpoint REST Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the Private Service Connect endpoint REGION NAME : the name of the region ENDPOINT NAME : the name of the endpoint HTTP method and URL: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION NAME /forwardingRules/ ENDPOINT NAME To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://networkconnectivity.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies?serviceConnectionPolicyId= POLICY NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ REGION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.networkconnectivity.v1.OperationMetadata\", \"createTime\": \"2023-08-15T16:59:29.236110917Z\", \"target\": \"projects/ PROJECT ID /locations/ REGION /serviceConnectionPolicies/ POLICY NAME \", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } Create a Cloud SQL instance You can create an instance with Private Service Connect enabled for the instance and configure the instance to create endpoints automatically by using gcloud CLI or the API.",
+          "Make the following replacements: INSTANCE NAME : the name of the Cloud SQL instance to which Private Service Connect endpoints in VPC networks can connect PROJECT ID : the ID or project number of the Google Cloud project that contains the instance The following example shows a sample output for this command: gcloud sql instances describe myinstance \\ --project = 12345 ... pscServiceAttachmentLink: projects/45678/regions/myregion/serviceAttachments/myserviceattachment REST Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the instance INSTANCE NAME : the name of the instance HTTP method and URL: GET https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE NAME To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service attachment When you create a Cloud SQL instance and configure the instance to use Private Service Connect, Cloud SQL creates a service attachment for the instance automatically.",
+          "Create a Cloud SQL instance with Private Service Connect enabled for the instance and configure the instance to create an endpoint automatically.",
+          "As a result, you can provision Private Service Connect endpoints automatically."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service attachment When you create a Cloud SQL instance and configure the instance to use Private Service Connect, Cloud SQL creates a service attachment for the instance automatically.",
+          "Create a Cloud SQL instance with Private Service Connect enabled for the instance and configure the instance to create an endpoint automatically.",
+          "As a result, you can provision Private Service Connect endpoints automatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "networkconnectivity.googleapis.com",
+      "request.json",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

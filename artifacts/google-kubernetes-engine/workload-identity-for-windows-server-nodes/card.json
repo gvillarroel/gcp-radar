@@ -1,0 +1,223 @@
+{
+  "feature_name": "Workload Identity for Windows Server nodes",
+  "feature_slug": "workload-identity-for-windows-server-nodes",
+  "summary": "Workload Identity is now available for Windows Server nodes in specified GKE versions.",
+  "extended_definition": "Workload Identity is now available for Windows Server nodes in specified GKE versions.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About Workload Identity Federation for GKE \\_|\\_ GKE security \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "source_id": "site-iam-reference",
+        "final_score": 208,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This identifier has the following syntax: PREFIX ://iam.googleapis.com/projects/1234567890/locations/global/workloadIdentityPools/example-project.svc.id.goog/ SELECTOR In this example, consider the following fields: PREFIX : must be principal or principalSet depending on the resource that you select. principal is for a specific resource, like a single ServiceAccount. principalSet is for multiple resources that belong to the specified resource, like all Pods in a specific cluster.",
+          "If you link Kubernetes ServiceAccounts to IAM service accounts to configure Workload Identity Federation for GKE, the GKE metadata server returns a value of SERVICEACCOUNT NAME .svc.id.goog as the service account identifier.",
+          "Workload Identity Federation for GKE is available through IAM Workload Identity Federation, which provides identities for workloads that run in environments inside and outside Google Cloud."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "NodeConfig JSON representation { \"machineType\" : string , \"diskSizeGb\" : integer , \"oauthScopes\" : [ string ] , \"serviceAccount\" : string , \"metadata\" : { string : string , ... } , \"imageType\" : string , \"labels\" : { string : string , ... } , \"localSsdCount\" : integer , \"tags\" : [ string ] , \"preemptible\" : boolean , \"accelerators\" : [ { object ( AcceleratorConfig ) } ] , \"diskType\" : string , \"minCpuPlatform\" : string , \"workloadMetadataConfig\" : { object ( WorkloadMetadataConfig ) } , \"taints\" : [ { object ( NodeTaint ) } ] , \"sandboxConfig\" : { object ( SandboxConfig ) } , \"nodeGroup\" : string , \"reservationAffinity\" : { object ( ReservationAffinity ) } , \"shieldedInstanceConfig\" : { object ( ShieldedInstanceConfig ) } , \"linuxNodeConfig\" : { object ( LinuxNodeConfig ) } , \"kubeletConfig\" : { object ( NodeKubeletConfig ) } , \"bootDiskKmsKey\" : string , \"gcfsConfig\" : { object ( GcfsConfig ) } , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"gvnic\" : { object ( VirtualNIC ) } , \"spot\" : boolean , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"resourceLabels\" : { string : string , ... } , \"loggingConfig\" : { object ( NodePoolLoggingConfig ) } , \"windowsNodeConfig\" : { object ( WindowsNodeConfig ) } , \"localNvmeSsdBlockConfig\" : { object ( LocalNvmeSsdBlockConfig ) } , \"ephemeralStorageLocalSsdConfig\" : { object ( EphemeralStorageLocalSsdConfig ) } , \"soleTenantConfig\" : { object ( SoleTenantConfig ) } , \"containerdConfig\" : { object ( ContainerdConfig ) } , \"resourceManagerTags\" : { object ( ResourceManagerTags ) } , \"enableConfidentialStorage\" : boolean , \"secondaryBootDisks\" : [ { object ( SecondaryBootDisk ) } ] , \"storagePools\" : [ string ] , \"maxRunDuration\" : string , \"effectiveCgroupMode\" : enum ( EffectiveCgroupMode ) , \"bootDisk\" : { object ( BootDisk ) } , \"consolidationDelay\" : string , // Union field fast socket can be only one of the following: \"fastSocket\" : { object ( FastSocket ) } // End of list of possible types for union field fast socket . // Union field secondary boot disk update strategy can be only one of the // following: \"secondaryBootDiskUpdateStrategy\" : { object ( SecondaryBootDiskUpdateStrategy ) } // End of list of possible types for union field // secondary boot disk update strategy . // Union field gpu direct config can be only one of the following: \"gpuDirectConfig\" : { object ( GPUDirectConfig ) } // End of list of possible types for union field gpu direct config . // Union field local ssd encryption mode can be only one of the following: \"localSsdEncryptionMode\" : enum ( LocalSsdEncryptionMode ) // End of list of possible types for union field local ssd encryption mode . // Union field flex start can be only one of the following: \"flexStart\" : boolean // End of list of possible types for union field flex start . // Union field taint config can be only one of the following: \"taintConfig\" : { object ( TaintConfig ) } // End of list of possible types for union field taint config . } Fields machineType string The name of a Google Compute Engine machine type If unspecified, the default machine type is e2-medium . diskSizeGb integer Size of the disk attached to each node, specified in GB.",
+          "Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version. workloadIdentityConfig object ( WorkloadIdentityConfig ) Configuration for the use of Kubernetes Service Accounts in IAM policies. meshCertificates object ( MeshCertificates ) Configuration for issuance of mTLS keys and certificates to Kubernetes pods. costManagementConfig object ( CostManagementConfig ) Configuration for the fine-grained cost management feature. notificationConfig object ( NotificationConfig ) Notification configuration of the cluster. confidentialNodes object ( ConfidentialNodes ) Configuration of Confidential Nodes.",
+          "Cluster JSON representation { \"name\" : string , \"description\" : string , \"initialNodeCount\" : integer , \"nodeConfig\" : { object ( NodeConfig ) } , \"masterAuth\" : { object ( MasterAuth ) } , \"loggingService\" : string , \"monitoringService\" : string , \"network\" : string , \"clusterIpv4Cidr\" : string , \"addonsConfig\" : { object ( AddonsConfig ) } , \"subnetwork\" : string , \"nodePools\" : [ { object ( NodePool ) } ] , \"locations\" : [ string ] , \"enableKubernetesAlpha\" : boolean , \"alphaClusterFeatureGates\" : [ string ] , \"resourceLabels\" : { string : string , ... } , \"labelFingerprint\" : string , \"legacyAbac\" : { object ( LegacyAbac ) } , \"networkPolicy\" : { object ( NetworkPolicy ) } , \"ipAllocationPolicy\" : { object ( IPAllocationPolicy ) } , \"masterAuthorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"autoscaling\" : { object ( ClusterAutoscaling ) } , \"networkConfig\" : { object ( NetworkConfig ) } , \"defaultMaxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"resourceUsageExportConfig\" : { object ( ResourceUsageExportConfig ) } , \"authenticatorGroupsConfig\" : { object ( AuthenticatorGroupsConfig ) } , \"privateClusterConfig\" : { object ( PrivateClusterConfig ) } , \"databaseEncryption\" : { object ( DatabaseEncryption ) } , \"verticalPodAutoscaling\" : { object ( VerticalPodAutoscaling ) } , \"shieldedNodes\" : { object ( ShieldedNodes ) } , \"releaseChannel\" : { object ( ReleaseChannel ) } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"meshCertificates\" : { object ( MeshCertificates ) } , \"costManagementConfig\" : { object ( CostManagementConfig ) } , \"notificationConfig\" : { object ( NotificationConfig ) } , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"identityServiceConfig\" : { object ( IdentityServiceConfig ) } , \"selfLink\" : string , \"zone\" : string , \"endpoint\" : string , \"initialClusterVersion\" : string , \"currentMasterVersion\" : string , \"currentNodeVersion\" : string , \"createTime\" : string , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"nodeIpv4CidrSize\" : integer , \"servicesIpv4Cidr\" : string , \"instanceGroupUrls\" : [ string ] , \"currentNodeCount\" : integer , \"expireTime\" : string , \"location\" : string , \"enableTpu\" : boolean , \"tpuIpv4CidrBlock\" : string , \"conditions\" : [ { object ( StatusCondition ) } ] , \"autopilot\" : { object ( Autopilot ) } , \"id\" : string , \"loggingConfig\" : { object ( LoggingConfig ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"nodePoolAutoConfig\" : { object ( NodePoolAutoConfig ) } , \"podAutoscaling\" : { object ( PodAutoscaling ) } , \"etag\" : string , \"fleet\" : { object ( Fleet ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"controlPlaneEndpointsConfig\" : { object ( ControlPlaneEndpointsConfig ) } , \"enableK8sBetaApis\" : { object ( K8sBetaAPIConfig ) } , \"enterpriseConfig\" : { object ( EnterpriseConfig ) } , \"secretManagerConfig\" : { object ( SecretManagerConfig ) } , \"compliancePostureConfig\" : { object ( CompliancePostureConfig ) } , \"gkeAutoUpgradeConfig\" : { object ( GkeAutoUpgradeConfig ) } , \"anonymousAuthenticationConfig\" : { object ( AnonymousAuthenticationConfig ) } , \"scheduleUpgradeConfig\" : { object ( ScheduleUpgradeConfig ) } , \"managedOpentelemetryConfig\" : { object ( ManagedOpenTelemetryConfig ) } , \"managedMachineLearningDiagnosticsConfig\" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: \"nodePoolDefaults\" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: \"userManagedKeysConfig\" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: \"rbacBindingConfig\" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 192,
+        "relevance": "",
+        "evidence_snippets": [
+          "NodeConfig JSON representation { \"machineType\" : string , \"diskSizeGb\" : integer , \"oauthScopes\" : [ string ] , \"serviceAccount\" : string , \"metadata\" : { string : string , ... } , \"imageType\" : string , \"labels\" : { string : string , ... } , \"localSsdCount\" : integer , \"tags\" : [ string ] , \"preemptible\" : boolean , \"accelerators\" : [ { object ( AcceleratorConfig ) } ] , \"diskType\" : string , \"minCpuPlatform\" : string , \"workloadMetadataConfig\" : { object ( WorkloadMetadataConfig ) } , \"taints\" : [ { object ( NodeTaint ) } ] , \"sandboxConfig\" : { object ( SandboxConfig ) } , \"nodeGroup\" : string , \"reservationAffinity\" : { object ( ReservationAffinity ) } , \"shieldedInstanceConfig\" : { object ( ShieldedInstanceConfig ) } , \"linuxNodeConfig\" : { object ( LinuxNodeConfig ) } , \"kubeletConfig\" : { object ( NodeKubeletConfig ) } , \"bootDiskKmsKey\" : string , \"gcfsConfig\" : { object ( GcfsConfig ) } , \"advancedMachineFeatures\" : { object ( AdvancedMachineFeatures ) } , \"gvnic\" : { object ( VirtualNIC ) } , \"spot\" : boolean , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"resourceLabels\" : { string : string , ... } , \"loggingConfig\" : { object ( NodePoolLoggingConfig ) } , \"windowsNodeConfig\" : { object ( WindowsNodeConfig ) } , \"localNvmeSsdBlockConfig\" : { object ( LocalNvmeSsdBlockConfig ) } , \"ephemeralStorageLocalSsdConfig\" : { object ( EphemeralStorageLocalSsdConfig ) } , \"soleTenantConfig\" : { object ( SoleTenantConfig ) } , \"containerdConfig\" : { object ( ContainerdConfig ) } , \"resourceManagerTags\" : { object ( ResourceManagerTags ) } , \"enableConfidentialStorage\" : boolean , \"secondaryBootDisks\" : [ { object ( SecondaryBootDisk ) } ] , \"storagePools\" : [ string ] , \"maxRunDuration\" : string , \"effectiveCgroupMode\" : enum ( EffectiveCgroupMode ) , \"bootDisk\" : { object ( BootDisk ) } , \"consolidationDelay\" : string , // Union field fast socket can be only one of the following: \"fastSocket\" : { object ( FastSocket ) } // End of list of possible types for union field fast socket . // Union field secondary boot disk update strategy can be only one of the // following: \"secondaryBootDiskUpdateStrategy\" : { object ( SecondaryBootDiskUpdateStrategy ) } // End of list of possible types for union field // secondary boot disk update strategy . // Union field gpu direct config can be only one of the following: \"gpuDirectConfig\" : { object ( GPUDirectConfig ) } // End of list of possible types for union field gpu direct config . // Union field local ssd encryption mode can be only one of the following: \"localSsdEncryptionMode\" : enum ( LocalSsdEncryptionMode ) // End of list of possible types for union field local ssd encryption mode . // Union field flex start can be only one of the following: \"flexStart\" : boolean // End of list of possible types for union field flex start . // Union field taint config can be only one of the following: \"taintConfig\" : { object ( TaintConfig ) } // End of list of possible types for union field taint config . } Fields machineType string The name of a Google Compute Engine machine type If unspecified, the default machine type is e2-medium . diskSizeGb integer Size of the disk attached to each node, specified in GB.",
+          "Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version. workloadIdentityConfig object ( WorkloadIdentityConfig ) Configuration for the use of Kubernetes Service Accounts in IAM policies. meshCertificates object ( MeshCertificates ) Configuration for issuance of mTLS keys and certificates to Kubernetes pods. costManagementConfig object ( CostManagementConfig ) Configuration for the fine-grained cost management feature. notificationConfig object ( NotificationConfig ) Notification configuration of the cluster. confidentialNodes object ( ConfidentialNodes ) Configuration of Confidential Nodes.",
+          "Cluster JSON representation { \"name\" : string , \"description\" : string , \"initialNodeCount\" : integer , \"nodeConfig\" : { object ( NodeConfig ) } , \"masterAuth\" : { object ( MasterAuth ) } , \"loggingService\" : string , \"monitoringService\" : string , \"network\" : string , \"clusterIpv4Cidr\" : string , \"addonsConfig\" : { object ( AddonsConfig ) } , \"subnetwork\" : string , \"nodePools\" : [ { object ( NodePool ) } ] , \"locations\" : [ string ] , \"enableKubernetesAlpha\" : boolean , \"alphaClusterFeatureGates\" : [ string ] , \"resourceLabels\" : { string : string , ... } , \"labelFingerprint\" : string , \"legacyAbac\" : { object ( LegacyAbac ) } , \"networkPolicy\" : { object ( NetworkPolicy ) } , \"ipAllocationPolicy\" : { object ( IPAllocationPolicy ) } , \"masterAuthorizedNetworksConfig\" : { object ( MasterAuthorizedNetworksConfig ) } , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"binaryAuthorization\" : { object ( BinaryAuthorization ) } , \"autoscaling\" : { object ( ClusterAutoscaling ) } , \"networkConfig\" : { object ( NetworkConfig ) } , \"defaultMaxPodsConstraint\" : { object ( MaxPodsConstraint ) } , \"resourceUsageExportConfig\" : { object ( ResourceUsageExportConfig ) } , \"authenticatorGroupsConfig\" : { object ( AuthenticatorGroupsConfig ) } , \"privateClusterConfig\" : { object ( PrivateClusterConfig ) } , \"databaseEncryption\" : { object ( DatabaseEncryption ) } , \"verticalPodAutoscaling\" : { object ( VerticalPodAutoscaling ) } , \"shieldedNodes\" : { object ( ShieldedNodes ) } , \"releaseChannel\" : { object ( ReleaseChannel ) } , \"workloadIdentityConfig\" : { object ( WorkloadIdentityConfig ) } , \"meshCertificates\" : { object ( MeshCertificates ) } , \"costManagementConfig\" : { object ( CostManagementConfig ) } , \"notificationConfig\" : { object ( NotificationConfig ) } , \"confidentialNodes\" : { object ( ConfidentialNodes ) } , \"identityServiceConfig\" : { object ( IdentityServiceConfig ) } , \"selfLink\" : string , \"zone\" : string , \"endpoint\" : string , \"initialClusterVersion\" : string , \"currentMasterVersion\" : string , \"currentNodeVersion\" : string , \"createTime\" : string , \"status\" : enum ( Status ) , \"statusMessage\" : string , \"nodeIpv4CidrSize\" : integer , \"servicesIpv4Cidr\" : string , \"instanceGroupUrls\" : [ string ] , \"currentNodeCount\" : integer , \"expireTime\" : string , \"location\" : string , \"enableTpu\" : boolean , \"tpuIpv4CidrBlock\" : string , \"conditions\" : [ { object ( StatusCondition ) } ] , \"autopilot\" : { object ( Autopilot ) } , \"id\" : string , \"loggingConfig\" : { object ( LoggingConfig ) } , \"monitoringConfig\" : { object ( MonitoringConfig ) } , \"nodePoolAutoConfig\" : { object ( NodePoolAutoConfig ) } , \"podAutoscaling\" : { object ( PodAutoscaling ) } , \"etag\" : string , \"fleet\" : { object ( Fleet ) } , \"securityPostureConfig\" : { object ( SecurityPostureConfig ) } , \"controlPlaneEndpointsConfig\" : { object ( ControlPlaneEndpointsConfig ) } , \"enableK8sBetaApis\" : { object ( K8sBetaAPIConfig ) } , \"enterpriseConfig\" : { object ( EnterpriseConfig ) } , \"secretManagerConfig\" : { object ( SecretManagerConfig ) } , \"compliancePostureConfig\" : { object ( CompliancePostureConfig ) } , \"gkeAutoUpgradeConfig\" : { object ( GkeAutoUpgradeConfig ) } , \"anonymousAuthenticationConfig\" : { object ( AnonymousAuthenticationConfig ) } , \"scheduleUpgradeConfig\" : { object ( ScheduleUpgradeConfig ) } , \"managedOpentelemetryConfig\" : { object ( ManagedOpenTelemetryConfig ) } , \"managedMachineLearningDiagnosticsConfig\" : { object ( ManagedMachineLearningDiagnosticsConfig ) } , // Union field node pool defaults can be only one of the following: \"nodePoolDefaults\" : { object ( NodePoolDefaults ) } // End of list of possible types for union field node pool defaults . // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . // Union field user managed keys config can be only one of the following: \"userManagedKeysConfig\" : { object ( UserManagedKeysConfig ) } // End of list of possible types for union field user managed keys config . // Union field rbac binding config can be only one of the following: \"rbacBindingConfig\" : { object ( RBACBindingConfig ) } // End of list of possible types for union field rbac binding config . } Fields name string The name of this cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "iam.googleapis.com",
+      "project.svc.id.goog",
+      "svc.id.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/workload-identity",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

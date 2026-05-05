@@ -1,0 +1,135 @@
+{
+  "feature_name": "High Scale SSD tier",
+  "feature_slug": "high-scale-ssd-tier",
+  "summary": "Filestore High Scale SSD tier is generally available.",
+  "extended_definition": "Filestore High Scale SSD tier is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/deleting-instances",
+      "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+      "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table summarizes capabilities available by service tier: Capabilities of Filestore service tiers Capability Basic HDD and Basic SSD Zonal Regional Enterprise Capacity 1 TiB to 63.9 TiB 1 TiB to 100 TiB 100 GiB or 1 TiB to 100 TiB 1 TiB to 10 TiB Scalability Basic HDD (1 TiB to 63.9 TiB) : Scales up in increments of 1 GiB Basic SSD (2.5 TiB to 63.9 TiB) : Scales up only in increments of 1 GiB Zonal (1 TiB to 9.75 TiB) : Scales up or down in increments of 256 GiB Zonal (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Regional Depending on the access to the small instances feature , you can use one of the following options: Users with access to small instances feature: 100 GiB to 10,239 GiB .",
+          "If you need to create an instance using an enterprise or high scale SSD tier, you must run your operations directly through the Filestore API or by using gcloud .",
+          "The following table shows the instance sizes available for each tier: Tier Minimum size Maximum size Incremental step size Zonal 1 TiB 9.75 TiB 256 GiB Zonal 10 TiB 100 TiB 2.5 TiB Regional 100 GiB or 1 TiB 10,239 GiB or 9.75 TiB 1 GiB or 256 GiB Regional 10 TiB 100 TiB 2.5 TiB Basic HDD 1 TiB 63.9 TiB 1 GiB Basic SSD 2.5 TiB 63.9 TiB 1 GiB Enterprise 1 TiB 10 TiB 256 GiB Depending on the access to the small capacity instances feature, the lower capacity range for Filestore regional instances can be either 100 GiB to 10,239 GiB or 1 TiB to 9.75 TiB."
+        ]
+      },
+      {
+        "title": "Tier \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "source_id": "site-api-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HIGH SCALE SSD HIGH SCALE instances offer expanded capacity and performance scaling capabilities.",
+          "BASIC SSD is an alias for PREMIUM Tier, and offers improved performance backed by SSD.",
+          "BASIC SSD is the preferred term for this tier."
+        ]
+      },
+      {
+        "title": "\"Mounting file shares on Compute Engine clients \\_|\\_ Filestore \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect . ip-address is the IP address for the Filestore instance. file-share is the name of the file share on the instance.",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect .",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect ."
+        ]
+      },
+      {
+        "title": "Delete instances \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/deleting-instances",
+        "source_id": "site-docs-root-2",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Zonal with a higher capacity range (previously high scale SSD) tier instances can take up to 10 minutes to delete, depending on the instance size.",
+          "Click Delete . gcloud Before you begin To use the gcloud CLI, you must either install the gcloud CLI or use the Cloud Shell that's built into the Google Cloud console: Go to the Google Cloud console You can delete a Filestore instance by running the instances delete command: gcloud filestore instances delete instance-id \\ --project=\" project-id \" \\ --zone= zone --force where: instance-id is the instance ID of the Filestore instance you want to delete. project-id is the project ID of the Google Cloud project that contains the Filestore instance.",
+          "Use cURL to call the Filestore API : curl -s \\ --header \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ --header \"Content-Type: application/json\" \\ --request DELETE \"https://file.googleapis.com/v1/projects/ PROJECT /locations/ LOCATION /instances/ INSTANCE NAME \" Where: PROJECT is the name of the project where your instance is located."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+      "file.googleapis.com",
+      "projects.locations.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/deleting-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/deleting-instances"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/deleting-instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/reference/rest/v1/Tier",
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/deleting-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:31.904Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore"
+}

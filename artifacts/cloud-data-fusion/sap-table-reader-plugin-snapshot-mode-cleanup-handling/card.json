@@ -1,0 +1,122 @@
+{
+  "feature_name": "SAP Table Reader plugin snapshot mode cleanup handling",
+  "feature_slug": "sap-table-reader-plugin-snapshot-mode-cleanup-handling",
+  "summary": "SAP Table Reader plugin version 0.11.5 fixes the Snapshot mode cleanup process to avoid an unnecessary Job abort failed log error.",
+  "extended_definition": "SAP Table Reader plugin version 0.11.5 fixes the Snapshot mode cleanup process to avoid an unnecessary Job abort failed log error.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+      "https://docs.cloud.google.com/data-fusion/docs/tutorials/connect-salesforce-to-bq",
+      "https://docs.cloud.google.com/data-fusion/docs/tutorials/redacting-confidential-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use Salesforce batch source plugin to analyze leads data in BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/tutorials/connect-salesforce-to-bq",
+        "source_id": "site-iam-reference",
+        "final_score": 89,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Extract data from the Salesforce batch source plugin On the Salesforce plugin properties page, in the SOQL query section, enter the following query: Select LastName , FirstName , Company , Email , Phone , LeadSource , Industry , OwnerId , CreatedDate , LastModifiedDate , LastActivityDate from Lead where Status like '%Open%' This query fetches the details of a potential lead required to run a campaign from the sObject Lead .",
+          "To filter the records for a specific date or time for running the campaign, use the following fields: Last modified after Last modified before Duration Offset Transform data using Wrangler plugin Use the Wrangler plugin in Cloud Data Fusion to clean and enrich your data: Go back to the Studio page.",
+          "Verify the data extraction and ingestion In the Google Cloud console, go to the BigQuery page: Go to BigQuery Search for the dataset Salesforce Leads and the table name Incoming Open Leads to view the extracted records."
+        ]
+      },
+      {
+        "title": "Replication API reference \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "source_id": "site-api-reference",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your pipeline belongs to an Enterprise edition instance, you can create a namespace . replicator-name Replicator name Example Config The following (partial) config of the app is sent in the API request body: { \"name\": \"my-sample-pipeline\", \"artifact\": { \"name\": \"delta-app\", \"version\": \"0.6.2\", \"scope\": \"SYSTEM\" }, \"config\": { \"connections\": [ { \"from\": \"Oracle (by Datastream)\", \"to\": \"BigQuery\" } ], \"stages\": [ { \"name\": \"Oracle (by Datastream)\", \"plugin\": { \"name\": \"OracleDatastream\", \"type\": \"cdcSource\", \"artifact\": { \"name\": \"datastream-delta-plugins\", \"version\": \"0.4.2\", \"scope\": \"SYSTEM\" }, \"properties\": { \"usingExistingStream\": \"false\", \"region\": \"us-central1\", \"connectivityMethod\": \"ip-allowlisting\", \"port\": \"1521\", \"sid\": \"ORCL\", \"replicateExistingData\": \"true\", \"project\": \"auto-detect\", \"dsServiceAccountKey\": \"auto-detect\", \"gcsServiceAccountKey\": \"auto-detect\", \"host\": \" \", \"user\": \" \", \"password\": \" \" } } }, { \"name\": \"BigQuery\", \"plugin\": { \"name\": \"bigquery\", \"type\": \"cdcTarget\", \"artifact\": { \"name\": \"bigquery-delta-plugins\", \"version\": \"0.6.3\", \"scope\": \"SYSTEM\" }, \"properties\": { \"project\": \"auto-detect\", \"serviceAccountKey\": \"auto-detect\", \"stagingBucketLocation\": \"us\", \"loadInterval\": \"90\", \"stagingTablePrefix\": \" staging \", \"requireManualDrops\": \"false\", \"softDeletes\": \"false\", \"datasetName\": \"mysampledataset\" } } } ], \"tables\": [ { \"database\": \"ORCL\", \"table\": \"MYTABLE1\", \"schema\": \"HR\" }, { \"database\": \"ORCL\", \"table\": \"MYTABLE2\", \"schema\": \"HR\" } ], \"parallelism\": { \"numInstances\": 1 }, \"tableTransformations\": [] } } Contents of the replication job config depend on the Cloud Data Fusion instance and plugin versions."
+        ]
+      },
+      {
+        "title": "Redact confidential data \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/tutorials/redacting-confidential-data",
+        "source_id": "site-iam-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "Open the IAM page In the permissions table, in the Principal column, find the service account that matches the format service- project-number @gcp-sa-datafusion.iam.gserviceaccount.com .",
+          "Redact sensitive data The Cloud DLP Redact plugin identifies sensitive records in your input stream of data and applies transformations that you define to those records.",
+          "Go to Cloud Storage In the Storage browser , navigate to the sink Cloud Storage bucket you specified in the sink Cloud Storage plugin properties ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datafusion.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/connect-salesforce-to-bq",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/redacting-confidential-data"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/connect-salesforce-to-bq",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/redacting-confidential-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/connect-salesforce-to-bq",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/redacting-confidential-data"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/connect-salesforce-to-bq",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/redacting-confidential-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/connect-salesforce-to-bq",
+        "https://docs.cloud.google.com/data-fusion/docs/reference/replication-ref",
+        "https://docs.cloud.google.com/data-fusion/docs/tutorials/redacting-confidential-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion"
+}

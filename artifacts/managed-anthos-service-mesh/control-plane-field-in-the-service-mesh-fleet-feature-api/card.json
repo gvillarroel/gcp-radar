@@ -1,0 +1,169 @@
+{
+  "feature_name": "control_plane field in the service mesh fleet feature API",
+  "feature_slug": "control-plane-field-in-the-service-mesh-fleet-feature-api",
+  "summary": "The control_plane field in the service mesh fleet feature API is deprecated in favor of the management field; The control_plane field in the service mesh fleet feature API is deprecated in favor of the management field; deprecated on 2023-03-28.",
+  "extended_definition": "The control_plane field in the service mesh fleet feature API is deprecated in favor of the management field; The control_plane field in the service mesh fleet feature API is deprecated in favor of the management field; deprecated on 2023-03-28.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-28",
+    "deprecation_date": "2023-03-28",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility",
+      "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+      "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 302,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed control plane supported features Install, upgrade, and rollback Feature Managed (TD) Managed (istiod) Installation on GKE clusters using fleet feature API Upgrades from ASM 1.9 versions that use Mesh CA Direct (skip-level) upgrades from Cloud Service Mesh versions prior to 1.9 (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio OSS (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio-on-GKE add-on (see notes for indirect upgrades) Enabling optional features Note: Indirect migrations and upgrades are supported, meaning that you can follow the standard Cloud Service Mesh upgrade paths through each version until you reach Cloud Service Mesh 1.28 with an in-cluster control plane, then you can migrate to the managed control plane.",
+          "Service entry Feature Managed (TD) Managed (istiod) ServiceEntry v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields and values in fields: workloadSelector field endpoints[].network field endpoints[].locality field endpoints[].weight field endpoints[].serviceAccount field DNS ROUND ROBIN value in resolution field MESH INTERNAL value in location field Unix domain socket address in endpoints[].address field subjectAltNames field Two or more endpoints[] entries if resolution field has DNS value Destination rule Feature Managed (TD) Managed (istiod) DestinationRule v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields. trafficPolicy.loadBalancer.localityLbSetting field trafficPolicy.tunnel field trafficPolicy.tls.credentialName field trafficPolicy.portLevelSettings[].tls.credentialName field Additionally, the TRAFFIC DIRECTOR control plane implementation requires that the destination rule defining subsets is in the same namespace and cluster with the Kubernetes service or ServiceEntry.",
+          "Telemetry Metrics Feature Managed (TD) Managed (istiod) Cloud Monitoring (HTTP in-proxy metrics) Cloud Monitoring (TCP in-proxy metrics) Prometheus metrics export to Grafana (Envoy metrics only) Prometheus metrics export to Kiali Google Cloud Managed Service for Prometheus, not including the Cloud Service Mesh dashboard Istio Telemetry API † Custom adapters/backends, in or out of process Arbitrary telemetry and logging backends † The TRAFFIC DIRECTOR control plane supports a subset of Istio telemetry API used to configure access logs and trace ."
+        ]
+      },
+      {
+        "title": "\"Migrate in-cluster to managed control plane on a new cluster \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "source_id": "site-docs-reference",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The output is similar to: createTime: '2022-07-06T01:05:39.110120474Z' membershipSpecs: projects/123456789123/locations/global/memberships/cluster-with-csm-membership: mesh: management: MANAGEMENT AUTOMATIC membershipStates: projects/123456789123/locations/global/memberships/cluster-with-csm-membership: servicemesh: controlPlaneManagement: details: - code: REVISION READY details: 'Ready: asm-managed' state: ACTIVE dataPlaneManagement: details: - code: OK details: Service is running. state: ACTIVE state: code: OK description: 'Revision(s) ready for use: asm-managed.' updateTime: '2022-07-06T01:19:24.243993678Z' name: projects/your-project-id/locations/global/features/servicemesh resourceState: state: ACTIVE spec: {} state: state: {} updateTime: '2022-07-06T01:19:27.475885687Z' Deploy Cloud Service Mesh's ingress gateway You will deploy the Cloud Service Mesh's ingress gateway into a separate namespace called asm-ingress .",
+          "Canary control plane versus canary cluster There are two commonly used strategies for migrations from in-cluster Cloud Service Mesh to managed Cloud Service Mesh: Canary cluster migration : In this strategy, you create a new cluster and then provision managed Cloud Service Mesh on it.",
+          "Canary control plane migration : In this strategy, you provision managed Cloud Service Mesh on the same cluster in which in-cluster Cloud Service Mesh is installed."
+        ]
+      },
+      {
+        "title": "\"Enable optional features on managed control plane \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "source_id": "site-docs-root",
+        "final_score": 260,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An image type change requires each pod to restart and get re-injected to take effect. apiVersion : v1 kind : ConfigMap metadata : name : istio- release-channel namespace : istio-system data : mesh : - defaultConfig: image: imageType: distroless You may override the imageType by using the following pod annotation. sidecar.istio.io/proxyImageType : debug After changing the image type of a deployment using the annotation, the deployment should be restarted. kubectl rollout restart deployment -n NAMESPACE DEPLOYMENT NAME Because it does not require a debug base image, most types of proxy debugging should use gcloud beta container fleet mesh debug proxy-status / proxy-config ( details ).",
+          "If you are using an IstioOperator based configuration today, the Distroless proxy image If you directly onboarded to Cloud Service Mesh with a managed TRAFFIC DIRECTOR control plane implementation , then only the distroless image type is supported.",
+          "If your fleet originally used the ISTIOD control plane implementation and was migrated to the TRAFFIC DIRECTOR implementation, your image type was left unchanged during migration, and you can change the image type to distroless yourself."
+        ]
+      },
+      {
+        "title": "\"Data plane extensibility with EnvoyFilter \\_|\\_ Cloud Service Mesh \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility",
+        "source_id": "site-docs-reference",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported API Fields The EnvoyFilter API is supported with the TRAFFIC DIRECTOR control plane implementation only with limited support as follows: targetRefs : Not supported configPatches[].applyTo : only HTTP FILTER is supported configPatches[].patch.operation : only INSERT FIRST and INSERT BEFORE when used with the route filter are supported. configPatches[].patch.value.type url : refer to Supported Extensions configPatches[].patch.filterClass : Not supported configPatches[].match.proxy : Not supported configPatches[].match.routeConfiguration : Not supported configPatches[].match.cluster : Not supported The following fields are supported for the INSERT BEFORE operation only: configPatches[].match.listener : only filter is supported. configPatches[].match.listener.filter.name : only envoy.filters.network.http connection manager is supported. configPatches[].match.listener.filter.subFilter.name : only envoy.filters.http.router is supported.",
+          "Data plane extensibility with EnvoyFilter You can use the EnvoyFilter API to extend data plane capabilities in Cloud Service Mesh that are otherwise not achievable by using other Istio APIs.",
+          "For an exhaustive list of supported features in the EnvoyFilter API, refer to Supported features using Istio APIs (managed control plane) ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "envoy.extensions.filters.http.grpc",
+      "envoy.extensions.filters.http.local",
+      "envoy.filters.http.router",
+      "envoy.filters.network.http",
+      "match.cluster",
+      "match.listener",
+      "match.listener.filter.name",
+      "match.listener.filter.subFilter.name",
+      "match.proxy",
+      "match.routeConfiguration",
+      "patch.filterClass",
+      "patch.operation",
+      "patch.value.type",
+      "ratelimit.v3.LocalRateLimit",
+      "sidecar.istio.io",
+      "storage.googleapis.com",
+      "tls.credentialName",
+      "type.googleapis.com",
+      "web.v3.GrpcWeb"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/tutorials/migrate-in-cluster-to-managed-on-new-cluster",
+        "https://docs.cloud.google.com/service-mesh/docs/enable-optional-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/data-plane-extensibility"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.566Z",
+  "source_step08_card": "data/step-08/current/products/managed-anthos-service-mesh/card.json",
+  "product_name": "Managed Anthos Service Mesh",
+  "product_slug": "managed-anthos-service-mesh"
+}

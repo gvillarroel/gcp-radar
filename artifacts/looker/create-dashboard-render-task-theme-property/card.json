@@ -1,0 +1,124 @@
+{
+  "feature_name": "create_dashboard_render_task theme property",
+  "feature_slug": "create-dashboard-render-task-theme-property",
+  "summary": "The create_dashboard_render_task API method now accepts an optional theme property for rendered dashboards.",
+  "extended_definition": "The create_dashboard_render_task API method now accepts an optional theme property for rendered dashboards.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_embed_url_as_me",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create Signed Embed Url \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "source_id": "site-api-reference",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The best way to obtain this target url is to navigate to the desired Looker page in your web browser and use the \"Get embed URL\" menu option to copy it to your clipboard and paste it into the target url property as a quoted string value in this API request.",
+          "For example, to display the dashboard with id 34, target url would look like: https://mycompany.looker.com:9999/dashboards/34. target uri MUST contain a scheme (HTTPS), domain name, and URL path.",
+          "Permissions for the embed user are defined by the groups in which the embed user is a member ( group ids property) and the lists of models and permissions assigned to the embed user."
+        ]
+      },
+      {
+        "title": "\"Downloading or delivering dashboards in rendered formats \\_|\\_ Looker \\_\\",
+        "url": "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "For the most part, PNG files render the same as PDF files, with a few differences: When the Arrange dashboard tiles in a single column setting is selected, each tile renders as an individual PNG file rather than all tiles rendering together as a single file.",
+          "Home Documentation Data analytics Looker Best Practices Send feedback Downloading or delivering dashboards in rendered formats Stay organized with collections Save and categorize content based on your preferences.",
+          "Here is the example dashboard rendered as a single column PDF: Note: Single column PDFs with the Expand tables to show all rows option applied often render with page breaks in the middle of expanded tables."
+        ]
+      },
+      {
+        "title": "Create Embed URL \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_embed_url_as_me",
+        "source_id": "site-api-reference",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The best way to obtain this target url is to navigate to the desired Looker page in your web browser, copy the URL shown in the browser address bar, insert \"/embed\" after the host/port, and paste it into the target url property as a quoted string value in this API request.",
+          "Version 4.0.26.6 (latest) Create an Embed URL Creates an embed URL that runs as the Looker user making this API call. (\"Embed as me\") This embed URL can then be used to instantiate a Looker embed session in a \"Powered by Looker\" (PBL) web application.",
+          "However, unlike Private Embed where the user has access to any other part of the Looker UI, the embed web session created by requesting the EmbedUrlResponse.url in a browser only has access to content visible under the /embed context."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "mycompany.looker.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_embed_url_as_me"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_embed_url_as_me"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_embed_url_as_me"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_embed_url_as_me"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/best-practices/rendered-format-options-downloading-delivering-dashboards",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_embed_url_as_me"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

@@ -1,0 +1,102 @@
+{
+  "feature_name": "Straggler detection for AI/ML workloads",
+  "feature_slug": "straggler-detection-for-ai-ml-workloads",
+  "summary": "Provides straggler detection metrics and logs to troubleshoot slow performance caused by non-crashing workload slowdowns.",
+  "extended_definition": "Provides straggler detection metrics and logs to troubleshoot slow performance caused by non-crashing workload slowdowns.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/overview",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials",
+      "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/use-ray-fine-tune-gemma-vision-task-gke"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "AI Hypercomputer overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Use cases AI Hypercomputer was designed to meet the needs of the following use cases: Use case Example workloads Large-scale AI and ML workloads Generative AI distributed training Generative AI inference Fraud detection Recommendation models High performance computing (HPC) Complex simulations Drug discovery, protein folding, and genomic analysis Risk analysis and quantitative trading What's next?",
+          "Get up and running quickly : AI Hypercomputer provides tools, such as Cluster Director and blueprints , that let you reliably and repeatedly deploy large numbers of accelerator-optimized resources that are configured to support your most demanding AI and ML workloads.",
+          "System architecture AI Hypercomputer is comprised of the following layers: Performance-optimized infrastructure : contains accelerators, networking, and storage resources that provide the computing capabilities to support your workloads."
+        ]
+      },
+      {
+        "title": "\"AI workloads tutorials overview \\_|\\_ AI Hypercomputer \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "To help you run proof-of-concept (POC) AI/ML workloads, this page provides an overview of AI Hypercomputer tutorials that describe the complete process of deploying common AI models on Google Cloud products.",
+          "Home Documentation Compute AI Hypercomputer Guides Send feedback AI workloads tutorials overview Stay organized with collections Save and categorize content based on your preferences.",
+          "You learn to use GKE's container orchestration capabilities for efficient inference workloads."
+        ]
+      },
+      {
+        "title": "\"Use Ray to fine-tune Gemma 3 for vision tasks on GKE \\_|\\_ AI Hypercomputer\\",
+        "url": "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/use-ray-fine-tune-gemma-vision-task-gke",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Image ]: image inputs = [] Iterate through each conversation for msg in messages : Get content (ensure it's a list) content = msg . get ( \"content\" , []) if not isinstance ( content , list ): content = [ content ] Check each content element for images for element in content : if isinstance ( element , dict ) and ( \"image\" in element or element . get ( \"type\" ) == \"image\" ): Get the image and convert to RGB if \"image\" in element : image = element [ \"image\" ] else : image = element image inputs . append ( image . convert ( \"RGB\" )) return image inputs def train ( args ): Load dataset from the hub dataset = load dataset ( args . dataset name , split = \"train\" , streaming = True ) Convert dataset to OAI messages need to use list comprehension to keep Pil.Image type, .mape convert image to bytes dataset = [ format data ( sample ) for sample in dataset ] Hugging Face model id model id = args . model id Check if GPU benefits from bfloat16 if torch . cuda . get device capability ()[ 0 ] < 8 : raise ValueError ( \"GPU does not support bfloat16, please use a GPU that supports bfloat16.\" ) Define model init arguments model kwargs = dict ( attn implementation = \"eager\" , # Use \"flash attention 2\" when running on Ampere or newer GPU torch dtype = torch . bfloat16 , # What torch dtype to use, defaults to auto device map=\"auto\", # Let torch decide how to load the model ) BitsAndBytesConfig int-4 config model kwargs [ \"quantization config\" ] = BitsAndBytesConfig ( load in 4bit = True , bnb 4bit use double quant = True , bnb 4bit quant type = \"nf4\" , bnb 4bit compute dtype = model kwargs [ \"torch dtype\" ], bnb 4bit quant storage = model kwargs [ \"torch dtype\" ], ) Load model and tokenizer model = AutoModelForImageTextToText . from pretrained ( model id , model kwargs ) processor = AutoProcessor . from pretrained ( model id , use fast = True ) peft config = LoraConfig ( lora alpha = args . lora alpha , lora dropout = args . lora dropout , r = args . lora r , bias = \"none\" , target modules = \"all-linear\" , task type = \"CAUSAL LM\" , modules to save = [ \"lm head\" , \"embed tokens\" , ], ) args = SFTConfig ( output dir = args . output dir , # directory to save and repository id num train epochs = args . num train epochs , # number of training epochs per device train batch size = args . per device train batch size , # batch size per device during training gradient accumulation steps = args . gradient accumulation steps , # number of steps before performing a backward/update pass gradient checkpointing = True , # use gradient checkpointing to save memory optim = \"adamw torch fused\" , # use fused adamw optimizer logging steps = args . logging steps , # log every N steps save strategy = args . save strategy , # save checkpoint every epoch learning rate = args . learning rate , # learning rate, based on QLoRA paper bf16 = True , # use bfloat16 precision max grad norm = 0.3 , # max gradient norm based on QLoRA paper warmup ratio = 0.03 , # warmup ratio based on QLoRA paper lr scheduler type = \"constant\" , # use constant learning rate scheduler push to hub = args . push to hub , # push model to hub report to = \"tensorboard\" , # report metrics to tensorboard gradient checkpointing kwargs = { \"use reentrant\" : False }, # use reentrant checkpointing dataset text field = \"\" , # need a dummy field for collator dataset kwargs = { \"skip prepare dataset\" : True }, # important for collator ) args . remove unused columns = False # important for collator Create a data collator to encode text and image pairs def collate fn ( examples ): texts = [] images = [] for example in examples : image inputs = process vision info ( example [ \"messages\" ]) text = processor . apply chat template ( example [ \"messages\" ], add generation prompt = False , tokenize = False ) texts . append ( text . strip ()) images . append ( image inputs ) Tokenize the texts and process the images batch = processor ( text = texts , images = images , return tensors = \"pt\" , padding = True ) The labels are the input ids, and we mask the padding tokens and image tokens in the loss computation labels = batch [ \"input ids\" ] . clone () Mask image tokens image token id = [ processor . tokenizer . convert tokens to ids ( processor . tokenizer . special tokens map [ \"boi token\" ] ) ] Mask tokens for not being used in the loss computation labels [ labels == processor . tokenizer . pad token id ] = - 100 labels [ labels == image token id ] = - 100 labels [ labels == 262144 ] = - 100 batch [ \"labels\" ] = labels return batch trainer = SFTTrainer ( model = model , args = args , train dataset = dataset , peft config = peft config , processing class = processor , data collator = collate fn , ) callback = ray . train . huggingface . transformers .",
+          "Replace gemma-training-ray-job-UNIQUE ID with the unique Pod name that you noted in the previous step. kubectl logs -f <gemma-training-ray-job-UNIQUE ID> The output that you see is similar to the following: 2025-08-20 08:29:34,966 INFO cli.py:41 -- Job submission server address: http://gemma3-tuning-head-svc.default.svc.cluster.local:8265 2025-08-20 08:29:34,991 SUCC cli.py:65 -- ----------------------------------------------- 2025-08-20 08:29:34,991 SUCC cli.py:66 -- Job 'test-ray-job-82mm7' submitted successfully 2025-08-20 08:29:34,991 SUCC cli.py:67 -- ----------------------------------------------- 2025-08-20 08:29:34,992 INFO cli.py:291 -- Next steps 2025-08-20 08:29:34,992 INFO cli.py:292 -- Query the logs of the job: 2025-08-20 08:29:34,992 INFO cli.py:294 -- ray job logs test-ray-job-82mm7 2025-08-20 08:29:34,992 INFO cli.py:296 -- Query the status of the job: 2025-08-20 08:29:34,992 INFO cli.py:298 -- ray job status test-ray-job-82mm7 2025-08-20 08:29:34,992 INFO cli.py:300 -- Request the job to be stopped: 2025-08-20 08:29:34,992 INFO cli.py:302 -- ray job stop test-ray-job-82mm7 2025-08-20 08:29:35,003 INFO cli.py:312 -- Tailing logs until the job exits (disable with --no-wait): 2025-08-20 08:29:34,982 INFO job manager.py:531 -- Runtime env is setting up.",
+          "2025-08-20 08:40:58,304 SUCC cli.py:65 -- ---------------------------------- 2025-08-20 08:40:58,305 SUCC cli.py:66 -- Job 'test-ray-job-82mm7' succeeded 2025-08-20 08:40:58,305 SUCC cli.py:67 -- ---------------------------------- Monitor your workload You can use the dashboard in Ray to monitor the workloads that are scheduled in your cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cli.py",
+      "manager.py",
+      "svc.default.svc.cluster.local"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/overview",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/use-ray-fine-tune-gemma-vision-task-gke"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/overview",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials",
+        "https://docs.cloud.google.com/ai-hypercomputer/docs/tutorials/gpu/use-ray-fine-tune-gemma-vision-task-gke"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.780Z",
+  "source_step08_card": "data/step-08/current/products/ai-hypercomputer/card.json",
+  "product_name": "AI Hypercomputer",
+  "product_slug": "ai-hypercomputer"
+}

@@ -1,0 +1,93 @@
+{
+  "feature_name": "Row-affinity routing",
+  "feature_slug": "row-affinity-routing",
+  "summary": "Bigtable now supports row-affinity routing to automatically route all single-row requests for a given row to the same cluster.",
+  "extended_definition": "Bigtable now supports row-affinity routing to automatically route all single-row requests for a given row to the same cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and configure app profiles \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Update your application's code for connecting to Bigtable so that it uses the new app profile. gcloud If you don't know the instance ID, use the bigtable instances list command to view a list of your project's instances: gcloud bigtable instances list Use the bigtable app-profiles create command to create an app profile: gcloud bigtable app-profiles create APP PROFILE ID \\ --instance= INSTANCE ID \\ [--description= DESCRIPTION ] \\ [--force] \\ [--route-any] \\ [--restrict-to= CLUSTER ID 1 , CLUSTER ID 2 ...] \\ [--route-to= CLUSTER ID ] \\ [--transactional-writes] \\ [--priority=PRIORITY] \\ [--row-affinity] Provide the following: APP PROFILE ID : The permanent identifier for the app profile.",
+          "Use the bigtable app-profiles update command to update the app profile's settings: gcloud bigtable app-profiles update APP PROFILE ID \\ --instance= INSTANCE ID \\ [--description= DESCRIPTION ] \\ [--force] \\ [--route-any] \\ [--restrict-to= CLUSTER ID 1 , CLUSTER ID 2 ...] [--route-to= CLUSTER ID ] \\ [--transactional-writes] \\ [--row-affinity] Provide the following: APP PROFILE ID : The permanent identifier for the app profile.",
+          "The command accepts the following optional flags: --description= DESCRIPTION : A detailed description of the app profile. --force : Ignore warnings about potential issues and conflicts with other app profiles. --route-any : Enable multi-cluster routing to route requests to any available cluster."
+        ]
+      },
+      {
+        "title": "\"Class AppProfile.MultiClusterRoutingPolicy (2.74.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy",
+        "source_id": "site-java-reference",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "MultiClusterRoutingPolicy withRowAffinity ( String [] clusterIds ) Creates a new instance of MultiClusterRoutingPolicy with row affinity enabled and specified cluster ids to route to.",
+          "MultiClusterRoutingPolicy withRowAffinity ( Set<String> clusterIds ) Creates a new instance of MultiClusterRoutingPolicy with specified cluster ids to route to.",
+          "Parameter Name Description clusterIds String [] Returns Type Description AppProfile.MultiClusterRoutingPolicy withRowAffinity(Set<String> clusterIds) public static AppProfile ."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Nodes are given temporary responsibility for serving various ranges of data based on the operation load and the health of other nodes in the cluster. data center : similar to a Bigtable cluster, except some aspects of topology and replication strategy are configurable in Cassandra. rack : a grouping of nodes in a data center that influences replica placement. cluster : a group of nodes in the same geographic Google Cloud zone, colocated for latency and replication concerns. cluster : a Cassandra deployment consisting of a collection of data centers. instance : a group of Bigtable clusters in different Google Cloud zones or regions between which replication and connection routing occur. vnode : a fixed range of hash values assigned to a specific physical node.",
+          "The drawback of a single-cluster approach is that in a failover, either the application must be able to retry by using an alternative application profile identifier, or you must manually perform the failover of impacted, single-cluster routing profiles.",
+          "The following diagram shows how Bigtable physically separates the processing nodes from the storage layer: Figure 1 : Clients communicate through a routing layer to processing nodes, and then these nodes communicate with the storage layer."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy",
+      "com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/configuring-app-profiles",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-bigtable/latest/com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:06.484Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

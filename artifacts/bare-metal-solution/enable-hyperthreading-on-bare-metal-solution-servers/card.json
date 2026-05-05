@@ -1,0 +1,140 @@
+{
+  "feature_name": "Enable hyperthreading on Bare Metal Solution servers",
+  "feature_slug": "enable-hyperthreading-on-bare-metal-solution-servers",
+  "summary": "Adds the ability to enable hyperthreading for Bare Metal Solution server instances.",
+  "extended_definition": "Adds the ability to enable hyperthreading for Bare Metal Solution server instances.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/bms-setup"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "",
+        "evidence_snippets": [
+          "ProjectsClient () bms client = BareMetalSolutionClient () output = [] errors = [] try : for project in get projects ( parent , folders client , projects client ): volumes list request = ListVolumesRequest ( parent = \"projects/\" + project + \"/locations/global\" , filter = filter , ) try : for volume in bms client . list volumes ( request = volumes list request ): output . append ( f \" - { volume . name } \" ) This could happen because BMS API is not enabled in a certain project. except PermissionDenied as e : errors . append ( f \"Unable to list bms resources for project { project } : { e } \" ) except PermissionDenied as e : errors . append ( f \"Unable to access folder or project: { e } \" ) return \" \\n \" . join ( output ), \" \\n \" . join ( errors ) def main ( : Sequence [ str ]): if ORGANIZATION ID . value is not None and FOLDER ID . value is not None : raise Exception ( \"Only one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is None and FOLDER ID . value is None : raise Exception ( \"Either one of organization ID or folder ID must be provided\" ) elif ORGANIZATION ID . value is not None : parent = f \"organizations/ { ORGANIZATION ID . value } \" else : parent = f \"folders/ { FOLDER ID . value } \" volumes , errors = get volumes list ( parent , filter = FILTER . value ) print ( \"=================== Flat list of volumes in the folder or organization\" \" ===================\" ) print ( volumes ) print ( \"=================== List of folders or projects with errors\" \" ===================\" ) print ( errors ) if name == \" main \" : app . run ( main ) Manage servers You can manage the servers in your Bare Metal Solution environment in the following ways: View servers Organize servers by using labels Rename a server Retrieve the initial password for a server View OS details Change the OS for a server Enable hyperthreading on a server View servers To view the details of your Bare Metal Solution servers, follow these steps: Console Go to the Servers page.",
+          "Enable hyperthreading on a server You can enable or disable hyperthreading on your Bare Metal Solution servers.",
+          "Add true for the hyperthreading value if you want to enable it or false to disable it. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"X-Goog-User-Project: PROJECT ID \" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME ?updateMask=hyperthreading enabled\" -d \"{ 'hyperthreadingEnabled' : ' HYPERTHREADING VALUE ' }\" Because this change takes awhile to complete, you can check the status by following the steps in View the status of a long-running operation ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Set up Google Cloud to work with your Bare Metal Solution environment\\",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Also, add the --admin-enabled flag to pre-activate the attachments and send traffic immediately after Google Cloud completes the Bare Metal Solution configuration. gcloud compute interconnects attachments partner create first-attachment-name \\ --region region \\ --router first-router-name \\ --edge-availability-domain availability-domain-1 \\ --admin-enabled gcloud compute interconnects attachments partner create second-attachment-name \\ --region region \\ --router second-router-name \\ --edge-availability-domain availability-domain-2 \\ --admin-enabled Google Cloud automatically adds an interface and a BGP peer on the Cloud Router.",
+          "They are both in the us-central1 region. gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-1 \\ --edge-availability-domain availability-domain-1 \\ --admin-enabled gcloud compute interconnects attachments partner create my-attachment \\ --region us-central1 \\ --router my-router-2 \\ --edge-availability-domain availability-domain-2 \\ --admin-enabled Run the gcloud compute interconnects attachments describe command to view the details of the VLAN attachment. gcloud compute interconnects attachments describe my-attachment \\ --region us-central1 adminEnabled: false edgeAvailabilityDomain: AVAILABILITY DOMAIN 1 creationTimestamp: '2017-12-01T08:29:09.886-08:00' id: '7976913826166357434' kind: compute#interconnectAttachment labelFingerprint: 42WmSpB8rSM= name: my-attachment region: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1 router: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/routers/my-router selfLink: https://www.googleapis.com/compute/v1/projects/customer-project/regions/us-central1/interconnectAttachments/my-attachment state: PENDING PARTNER type: PARTNER The state of the VLAN attachment is PENDING PARTNER until Google Cloud completes your VLAN attachment configuration.",
+          "The following example, adds the 0.0.0.0/0 custom IP to the Cloud Router's advertisements: gcloud compute routers update-bgp-peer router-name \\ --peer-name bgp-session-name \\ --add-advertisement-ranges 0.0.0.0/0 Optionally, set the VPC Network Dynamic Routing Mode to global If you have Bare Metal Solution servers in two different regions, consider enabling global routing mode on the VPC network to have your Bare Metal Solution regions talk to each other directly over the VPC network."
+        ]
+      },
+      {
+        "title": "Deploy your Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-deploy",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Field Description Example Name Create a name for your server. server-1 Type Type of server found in Server configurations that specifies CPU cores, sockets, and RAM o2-standard-32-metal Enable hyperthreading (checkbox) Hyperthreading uses virtualization to provide additional threading capacity above the normal processing capabilities of a physical server.",
+          "Checkbox selected to enable snapshots Protocol Select the storage protocol Fibre Channel NFS Fibre Channel LUNs Specify how you want to allocate your Logical Unit Numbers (LUNS) in the storage volume: Number of LUNs Size of each LUN Note: We recommend that you configure 1 LUN for each volume with 4 TiB or less, and 8 LUNs for volumes with more than 4 TiB.",
+          "Leave the checkbox empty to disable hyperthreading OS image Operating system for the server Red Hat Enterprise Linux 7.7 Encryption key for the server's password (Optional) Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetalsolution.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-setup",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-deploy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.420Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution"
+}

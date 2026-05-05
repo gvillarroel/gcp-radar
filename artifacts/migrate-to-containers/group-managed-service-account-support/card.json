@@ -1,0 +1,173 @@
+{
+  "feature_name": "Group Managed Service Account support",
+  "feature_slug": "group-managed-service-account-support",
+  "summary": "Migrated Windows containers can run under a specific service account identity by using a Group Managed Service Account.",
+  "extended_definition": "Migrated Windows containers can run under a specific service account identity by using a Group Managed Service Account.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customize migration plan for Windows IIS services \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "The next sections discuss this structure, explain what each part is, and how to modify it. globalSettings : globalIis : enablegmsa : string apppools : - enable32bitapponwin64 : bool identitytype : string managedruntimeversion : string name : string connectionStrings : add : - connectionstring : string name : string providername : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string image : extraFeatures : - string target : baseVersion : string requirements : - string warnings : - string msvcRuntimes : - string pathEnvVarAdditionalEntries : - string images : - name : string probes : enabled : bool livenessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] readinessProbe : probehandler : exec : command : - string - string initialdelayseconds : int timeoutseconds : int periodseconds : int successthreshold : int failurethreshold : int terminationgraceperiodseconds : optional [ int ] useractions : files : - source : string target : string registry : currentcontrolset : - path : string software : - path : string workloads : sites : site : - applications : - applicationpool : string path : string virtualdirectories : - path : string physicalpath : string bindings : - port : int protocol : string sslflags : int connectionstrings : - connectionstring : string name : string providername : string name : string security : authentication : windowsAuthentication : enabled : bool providers : - value : string authorization : add : - access type : string roles : string users : string verbs : string remove : - roles : string users : string verbs : string serverautostart : bool version : string The globalSettings section The globalSettings section describes basic requirements for pods running IIS sites from this VM.",
+          "The probes are disabled by default, to enable the probes, set the enabled flag to true . images : name : IMAGE NAME probes : enabled : false livenessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null readinessProbe : probehandler : exec : command : - powershell.exe - C:\\m4a\\probe.ps1 initialdelayseconds : 0 timeoutseconds : 1 periodseconds : 10 successthreshold : 1 failurethreshold : 3 terminationgraceperiodseconds : null The windowsServices section Windows containers created during a migration run and monitor a single Windows IIS service.",
+          "To run additional services in the migrated container, add entries to the windowsServices section, and copy the necessary binaries in the useractions section . version: v1 globalSettings: target: … globalIIS: … images: - name: migrated-image-zgwb2 workloads: sites: site: - applications: ... bindings: - port: 80 protocol: http name: Default Web Site … windowsServices: - MyService useractions: files: - source: C:\\Program Files\\MyService target: C:\\Program Files\\MyService registry: currentcontrolset: - key: services\\MyService The useractions section The useractions section specifies additional files and registry keys that you might want to migrate."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Tomcat servers \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set Tomcat health probes You can monitor the downtime and ready status of your managed containers by specifying probes in your Tomcat web server migration plan.",
+          "Memory allocation During the migration process, you can specify the memory limits of applications migrated to individual containers.",
+          "Health probe monitoring can help reduce the downtime of migrated containers and provide better monitoring."
+        ]
+      },
+      {
+        "title": "Migrate a Linux VM using Migrate to Containers CLI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Install Docker and allow the non-root user to run containers: Download the convenience script curl -fsSL https://get.docker.com -o install-docker.sh Install Docker sudo sh install-docker.sh Allow the non-root user to access Docker sudo usermod -aG docker $USER Activate the group changes newgrp docker Install Skaffold: curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64 && \\ sudo install skaffold /usr/local/bin/ Download the Migrate to Containers CLI: curl -O \"https://m2c-cli-release.storage.googleapis.com/ $( curl -s https://m2c-cli-release.storage.googleapis.com/latest ) /linux/amd64/m2c\" chmod +x ./m2c Migrate the source VM A migration typically involves three steps: copying the source VM file system, analyzing the file system to create a migration plan, and generating the migration artifacts.",
+          "On the quickstart-local-vm command tab, install the Google Cloud CLI: Import the Google Cloud public key. curl https://packages.cloud.google.com/apt/doc/apt-key.gpg sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg Add the gcloud CLI distribution URI as a package source echo \"deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main\" sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list Update and install gcloud sudo apt-get update && sudo apt-get install google-cloud-cli Get started gcloud init To complete the gcloud CLI setup, follow the instructions that appear on the quickstart-local-vm command tab: To select the account to use to perform various operations, enter 1 .",
+          "On the quickstart-local-vm command tab, get a list of the default Migrate to Containers filters in a file called filters.txt : ./m2c copy default-filters > filters.txt To edit the default filters, do the following: Open the filters.txt file in a text editor: vi filters.txt To make changes in the file, press i ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "docker.sh",
+      "eu.gcr.io",
+      "filters.txt",
+      "get.docker.com",
+      "key.gpg",
+      "org.apache.catalina.ha.tcp.SimpleTcpCluster",
+      "org.apache.catalina.tribes.group.GroupChannel",
+      "org.apache.catalina.tribes.membership.cloud.CloudMembershipService",
+      "org.apache.catalina.tribes.membership.cloud.DNSMembershipProvider",
+      "packages.cloud.google.com",
+      "powershell.exe",
+      "probe.ps1",
+      "release.storage.googleapis.com",
+      "sdk.list",
+      "sources.list.d",
+      "storage.googleapis.com",
+      "v4.0",
+      "v4.5"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/windows/windows-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/migrate-vm"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.501Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

@@ -1,0 +1,118 @@
+{
+  "feature_name": "Search query string shuffling",
+  "feature_slug": "search-query-string-shuffling",
+  "summary": "Search queries against text properties now support shuffled ordering of query strings.",
+  "extended_definition": "Search queries against text properties now support shuffled ordering of query strings.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-warehouse/docs/libraries",
+      "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+      "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Search documents \\_|\\_ Document AI Warehouse \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "source_id": "site-iam-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. const projectNumber = 'YOUR PROJECT NUMBER'; const location = 'YOUR PROJECT LOCATION'; // Format is 'us' or 'eu' const userId = 'user:xxx@example.com'; // Format is \"user:xxx@example.com\" const documentQueryText = 'YOUR DOCUMENT QUERY' / // Import from google cloud const { DocumentServiceClient } = require ( ' @google-cloud/contentwarehouse ' ). v1 ; const apiEndpoint = location === 'us' ? 'contentwarehouse.googleapis.com' : ${ location } -contentwarehouse.googleapis.com ; // Create service client const serviceClient = new DocumentServiceClient ({ apiEndpoint : apiEndpoint }); // Get Document Schema async function searchDocuments () { // Initialize request argument(s) const searchRequest = { // The full resource name of the location, e.g.: // projects/{project number}/locations/{location} parent : projects/ ${ projectNumber } /locations/ ${ location } , // Document Text Query documentQuery : { query : documentQueryText , // File Type Filter fileTypeFilter : { fileType : ' DOCUMENT ' , }, }, // Histogram Query histogramQueries : [ { histogramQuery : 'count(\"DocumentSchemaId\")' , }, ], requestMetadata : { userInfo : { id : userId }}, }; // Make Request const response = serviceClient . searchDocuments ( searchRequest ); // Print out response response . then ( result = > console . log ( Document Found: ${ JSON . stringify ( result ) } ), error = > console . log ( ${ error } ) ); } Python For more information, see the Document AI Warehouse Python API reference documentation .",
+          "Please note the offset in this request is to only return the specified number of results to avoid hitting the API quota. / SearchDocumentsRequest searchDocumentsRequest = SearchDocumentsRequest . newBuilder () . setParent ( parent ) . setRequestMetadata ( requestMetadata ) . setOffset ( 5 ) . setDocumentQuery ( query ) . build (); // Make the call to search documents with document service client and store the response SearchDocumentsPagedResponse searchDocumentsPagedResponse = documentServiceClient . searchDocuments ( searchDocumentsRequest ); // Iterate through response and print search results for documents matching the search query for ( MatchingDocument matchingDocument : searchDocumentsPagedResponse . iterateAll ()) { System . out . println ( \"Display Name: \" + matchingDocument . getDocument (). getDisplayName () + \"Document Name: \" + matchingDocument . getDocument (). getName () + \"Document Creation Time: \" + matchingDocument . getDocument (). getCreateTime (). toString () + \"Search Text Snippet: \" + matchingDocument . getSearchTextSnippet ()); } } } private static String getProjectNumber ( String projectId ) throws IOException { / Initialize client that will be used to send requests.",
+          "String documentQuery = \"your-document-query\" ; String userId = \"your-user-id\" ; // Format is user:<user-id> searchDocuments ( projectId , location , documentQuery , userId ); } // Searches all documents for a given Document Query public static void searchDocuments ( String projectId , String location , String documentQuery , String userId ) throws IOException , InterruptedException , ExecutionException , TimeoutException { String projectNumber = getProjectNumber ( projectId ); String endpoint = \"contentwarehouse.googleapis.com:443\" ; if ( ! \"us\" . equals ( location )) { endpoint = String . format ( \"%s-%s\" , location , endpoint ); } DocumentServiceSettings documentServiceSettings = DocumentServiceSettings . newBuilder (). setEndpoint ( endpoint ) . build (); / Create the Document Service Client Initialize client that will be used to send requests."
+        ]
+      },
+      {
+        "title": "Quickstart \\_|\\_ Document AI Warehouse \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+        "source_id": "site-iam-reference",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "String userId = \"your-user-id\" ; // Format is user:<user-id> quickStart ( projectId , location , userId ); } public static void quickStart ( String projectId , String location , String userId ) throws IOException , InterruptedException , ExecutionException , TimeoutException { String projectNumber = getProjectNumber ( projectId ); String endpoint = \"contentwarehouse.googleapis.com:443\" ; if ( ! \"us\" . equals ( location )) { endpoint = String . format ( \"%s-%s\" , location , endpoint ); } DocumentSchemaServiceSettings documentSchemaServiceSettings = DocumentSchemaServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Create a Schema Service client try ( DocumentSchemaServiceClient documentSchemaServiceClient = DocumentSchemaServiceClient . create ( documentSchemaServiceSettings )) { / The full resource name of the location, e.g.: projects/{project number}/locations/{location} / String parent = LocationName . format ( projectNumber , location ); / Create Document Schema with Text Type Property Definition More detail on managing Document Schemas: https://cloud.google.com/document-warehouse/docs/manage-document-schemas / DocumentSchema documentSchema = DocumentSchema . newBuilder () . setDisplayName ( \"My Test Schema\" ) . setDescription ( \"My Test Schema's Description\" ) . addPropertyDefinitions ( PropertyDefinition . newBuilder () . setName ( \"test symbol\" ) . setDisplayName ( \"Searchable text\" ) . setIsSearchable ( true ) . setTextTypeOptions ( TextTypeOptions . newBuilder (). build ()) . build ()). build (); // Define Document Schema request CreateDocumentSchemaRequest createDocumentSchemaRequest = CreateDocumentSchemaRequest . newBuilder () . setParent ( parent ) . setDocumentSchema ( documentSchema ). build (); // Create Document Schema DocumentSchema documentSchemaResponse = documentSchemaServiceClient . createDocumentSchema ( createDocumentSchemaRequest ); // Create Document Service Client Settings DocumentServiceSettings documentServiceSettings = DocumentServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Create Document Service Client and Document with relevant properties try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ( documentServiceSettings )) { TextArray textArray = TextArray . newBuilder (). addValues ( \"Test\" ). build (); Document document = Document . newBuilder () . setDisplayName ( \"My Test Document\" ) . setDocumentSchemaName ( documentSchemaResponse . getName ()) . setPlainText ( \"This is a sample of a document's text.\" ) . addProperties ( Property . newBuilder () . setName ( documentSchema . getPropertyDefinitions ( 0 ). getName ()) . setTextValues ( textArray )). build (); // Define Request Metadata for enforcing access control RequestMetadata requestMetadata = RequestMetadata . newBuilder () . setUserInfo ( UserInfo . newBuilder () . setId ( userId ). build ()). build (); // Define Create Document Request CreateDocumentRequest createDocumentRequest = CreateDocumentRequest . newBuilder () . setParent ( parent ) . setDocument ( document ) . setRequestMetadata ( requestMetadata ) . build (); // Create Document CreateDocumentResponse createDocumentResponse = documentServiceClient . createDocument ( createDocumentRequest ); System . out . println ( createDocumentResponse . getDocument (). getName ()); System . out . println ( documentSchemaResponse . getName ()); } } } private static String getProjectNumber ( String projectId ) throws IOException { try ( ProjectsClient projectsClient = ProjectsClient . create ()) { ProjectName projectName = ProjectName . of ( projectId ); Project project = projectsClient . getProject ( projectName ); String projectNumber = project . getName (); // Format returned is projects/xxxxxx return projectNumber . substring ( projectNumber . lastIndexOf ( \"/\" ) + 1 ); } } } Node.js For more information, see the Document AI Warehouse Node.js API reference documentation .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. const projectNumber = 'YOUR PROJECT NUMBER'; const location = 'YOUR PROJECT LOCATION'; // Format is 'us' or 'eu' const userId = 'user:xxx@example.com'; // Format is \"user:xxx@example.com\" / // Import from google cloud const { DocumentSchemaServiceClient , DocumentServiceClient } = require ( ' @google-cloud/contentwarehouse ' ). v1 ; const apiEndpoint = location === 'us' ? 'contentwarehouse.googleapis.com' : ${ location } -contentwarehouse.googleapis.com ; // Create service client const schemaClient = new DocumentSchemaServiceClient ({ apiEndpoint : apiEndpoint , }); const serviceClient = new DocumentServiceClient ({ apiEndpoint : apiEndpoint }); // Get Document Schema async function quickstart () { // The full resource name of the location, e.g.: // projects/{project number}/locations/{location} const parent = projects/ ${ projectNumber } /locations/ ${ location } ; // Initialize request argument(s) const schemaRequest = { parent : parent , documentSchema : { displayName : 'My Test Schema' , propertyDefinitions : [ { name : 'testPropertyDefinitionName' , // Must be unique within a document schema (case insensitive) displayName : 'searchable text' , isSearchable : true , textTypeOptions : {}, }, ], }, }; // Create Document Schema const documentSchema = await schemaClient . createDocumentSchema ( schemaRequest ); const documentRequest = { parent : parent , document : { displayName : 'My Test Document' , documentSchemaName : documentSchema [ 0 ]. name , plainText : \"This is a sample of a document's text.\" , properties : [ { name : 'testPropertyDefinitionName' , textValues : { values : [ 'GOOG' ]}, }, ], }, requestMetadata : { userInfo : { id : userId }}, }; // Make Request const response = serviceClient . createDocument ( documentRequest ); // Print out response response . then ( result = > console . log ( Document Created: ${ JSON . stringify ( result ) } ), error = > console . log ( error: ${ error } ) ); } Python For more information, see the Document AI Warehouse Python API reference documentation .",
+          "Document ( display name = \"My Test Document\" , document schema name = document schema . name , plain text = \"This is a sample of a document's text.\" , properties = [ document property ], ) Define Request create document request = contentwarehouse ."
+        ]
+      },
+      {
+        "title": "Document AI Warehouse client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-warehouse/docs/libraries",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "String userId = \"your-user-id\" ; // Format is user:<user-id> quickStart ( projectId , location , userId ); } public static void quickStart ( String projectId , String location , String userId ) throws IOException , InterruptedException , ExecutionException , TimeoutException { String projectNumber = getProjectNumber ( projectId ); String endpoint = \"contentwarehouse.googleapis.com:443\" ; if ( ! \"us\" . equals ( location )) { endpoint = String . format ( \"%s-%s\" , location , endpoint ); } DocumentSchemaServiceSettings documentSchemaServiceSettings = DocumentSchemaServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Create a Schema Service client try ( DocumentSchemaServiceClient documentSchemaServiceClient = DocumentSchemaServiceClient . create ( documentSchemaServiceSettings )) { / The full resource name of the location, e.g.: projects/{project number}/locations/{location} / String parent = LocationName . format ( projectNumber , location ); / Create Document Schema with Text Type Property Definition More detail on managing Document Schemas: https://cloud.google.com/document-warehouse/docs/manage-document-schemas / DocumentSchema documentSchema = DocumentSchema . newBuilder () . setDisplayName ( \"My Test Schema\" ) . setDescription ( \"My Test Schema's Description\" ) . addPropertyDefinitions ( PropertyDefinition . newBuilder () . setName ( \"test symbol\" ) . setDisplayName ( \"Searchable text\" ) . setIsSearchable ( true ) . setTextTypeOptions ( TextTypeOptions . newBuilder (). build ()) . build ()). build (); // Define Document Schema request CreateDocumentSchemaRequest createDocumentSchemaRequest = CreateDocumentSchemaRequest . newBuilder () . setParent ( parent ) . setDocumentSchema ( documentSchema ). build (); // Create Document Schema DocumentSchema documentSchemaResponse = documentSchemaServiceClient . createDocumentSchema ( createDocumentSchemaRequest ); // Create Document Service Client Settings DocumentServiceSettings documentServiceSettings = DocumentServiceSettings . newBuilder (). setEndpoint ( endpoint ). build (); // Create Document Service Client and Document with relevant properties try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ( documentServiceSettings )) { TextArray textArray = TextArray . newBuilder (). addValues ( \"Test\" ). build (); Document document = Document . newBuilder () . setDisplayName ( \"My Test Document\" ) . setDocumentSchemaName ( documentSchemaResponse . getName ()) . setPlainText ( \"This is a sample of a document's text.\" ) . addProperties ( Property . newBuilder () . setName ( documentSchema . getPropertyDefinitions ( 0 ). getName ()) . setTextValues ( textArray )). build (); // Define Request Metadata for enforcing access control RequestMetadata requestMetadata = RequestMetadata . newBuilder () . setUserInfo ( UserInfo . newBuilder () . setId ( userId ). build ()). build (); // Define Create Document Request CreateDocumentRequest createDocumentRequest = CreateDocumentRequest . newBuilder () . setParent ( parent ) . setDocument ( document ) . setRequestMetadata ( requestMetadata ) . build (); // Create Document CreateDocumentResponse createDocumentResponse = documentServiceClient . createDocument ( createDocumentRequest ); System . out . println ( createDocumentResponse . getDocument (). getName ()); System . out . println ( documentSchemaResponse . getName ()); } } } private static String getProjectNumber ( String projectId ) throws IOException { try ( ProjectsClient projectsClient = ProjectsClient . create ()) { ProjectName projectName = ProjectName . of ( projectId ); Project project = projectsClient . getProject ( projectName ); String projectNumber = project . getName (); // Format returned is projects/xxxxxx return projectNumber . substring ( projectNumber . lastIndexOf ( \"/\" ) + 1 ); } } } Node.js / This snippet has been automatically generated and should be regarded as a code template only.",
+          "Document ( display name = \"My Test Document\" , document schema name = document schema . name , plain text = \"This is a sample of a document's text.\" , properties = [ document property ], ) Define Request create document request = contentwarehouse .",
+          "PropertyDefinition ( name = \"stock symbol\" , # Must be unique within a document schema (case insensitive) display name = \"Searchable text\" , is searchable = True , text type options = contentwarehouse ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "contentwarehouse.googleapis.com",
+      "e.g",
+      "example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+        "https://docs.cloud.google.com/document-warehouse/docs/libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+        "https://docs.cloud.google.com/document-warehouse/docs/libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+        "https://docs.cloud.google.com/document-warehouse/docs/libraries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-search-documents",
+        "https://docs.cloud.google.com/document-warehouse/docs/samples/contentwarehouse-quickstart",
+        "https://docs.cloud.google.com/document-warehouse/docs/libraries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.063Z",
+  "source_step08_card": "data/step-08/current/products/document-ai-warehouse/card.json",
+  "product_name": "Document AI Warehouse",
+  "product_slug": "document-ai-warehouse"
+}

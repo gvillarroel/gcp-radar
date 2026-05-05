@@ -1,0 +1,141 @@
+{
+  "feature_name": "BigQuery support",
+  "feature_slug": "bigquery-support",
+  "summary": "The Access Approval API supports BigQuery as an integrated supported service.",
+  "extended_definition": "The Access Approval API supports BigQuery as an integrated supported service.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/apis",
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "APIs and reference \\_|\\_ App Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/apis",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Review and approve access requests using the Google-managed signing key\\",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+        "source_id": "site-docs-root",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to set up Access Approval and approve access requests, ask your administrator to grant you the following IAM roles on your project: View and update Access Approval configuration and approve access requests: Access Approval Config Editor ( roles/accessapproval.configEditor ) View Access Approval configuration and approve access requests: Access Approval Approver ( roles/accessapproval.approver ) View Access Approval configuration and access requests and download log reports: Access Approval Viewer ( roles/accessapproval.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Add yourself as an approver for Access Approval requests and configure notifications To add yourself as an approver so you can review and approve access requests, do the following: Go to the Access Approval page in the Google Cloud console.",
+          "After you approve the request, Google personnel with characteristics matching the approval, such as the same justification, location, or desk location, can access the specified resource and its child resources within the approved timeframe."
+        ]
+      },
+      {
+        "title": "Overview of Access Approval \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Selecting this option also automatically enrolls all the GA services that Access Approval supports in the future.",
+          "Selecting this option also automatically enrolls all the services that Access Approval supports in the future.",
+          "See Supported services for a complete list of services that Access Approval supports."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [
+      "accessapproval"
+    ],
+    "missing_inventory_permissions": [
+      "accessapproval.approver",
+      "accessapproval.configEditor",
+      "accessapproval.viewer",
+      "product.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/accessapproval.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+        "https://docs.cloud.google.com/app-hub/docs/apis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+        "https://docs.cloud.google.com/app-hub/docs/apis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+        "https://docs.cloud.google.com/app-hub/docs/apis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+        "https://docs.cloud.google.com/app-hub/docs/apis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/review-approve-access-requests-google-keys",
+        "https://docs.cloud.google.com/app-hub/docs/apis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.605Z",
+  "source_step08_card": "data/step-08/current/products/access-approval/card.json",
+  "product_name": "Access Approval",
+  "product_slug": "access-approval"
+}

@@ -1,0 +1,83 @@
+{
+  "feature_name": "Task queue retry_limit zero handling",
+  "feature_slug": "task-queue-retry-limit-zero-handling",
+  "summary": "Failed tasks in queues configured with retry_limit set to zero are no longer retried.",
+  "extended_definition": "Failed tasks in queues configured with retry_limit set to zero are no longer retried.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This table compares the performance features of the three scaling types: Feature Automatic scaling Basic scaling Manual scaling Request timeout 10 minutes for HTTP requests and task queue tasks.",
+          "24 hours for HTTP requests and task queue tasks.",
+          "Some instance shutdown log messages you might see include: [ start ] Quitting on terminated signal [ INFO ] Handling signal : term [ INFO ] Worker exiting ( pid : 21 ) [ INFO ] Worker exiting ( pid : 24 ) [ INFO ] Shutting down : Master [ start ] Start program failed : termination triggered by nginx exit These log messages do not indicate any error condition but are indications of the normal instance shut down process."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When a service receives standard HTTP traffic at high volume while also serving Task queue or Cloud Tasks traffic at much lower volume, there is a disproportionate impact on the latency of the Task queue or the Cloud Tasks traffic.",
+          "Requests from App Engine Cloud Tasks also share this pending queue priority behavior for compatibility reasons.",
+          "Within the pending queue, App Engine treats requests from HTTP target Cloud Tasks as regular HTTP traffic."
+        ]
+      },
+      {
+        "title": "\"Run asynchronous tasks \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/create-appengine-tasks",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create App Engine tasks in the form of an HTTP request and then place them in Cloud Tasks queues, see Create App Engine tasks .",
+          "To run asynchronous tasks, you can: Create Cloud Tasks queues, see Create Cloud Tasks queues .",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Run asynchronous tasks Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.277Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby"
+}

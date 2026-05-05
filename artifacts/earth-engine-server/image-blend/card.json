@@ -1,0 +1,85 @@
+{
+  "feature_name": "Image.blend()",
+  "feature_slug": "image-blend",
+  "summary": "Performs simple alpha blending between two images.",
+  "extended_definition": "Performs simple alpha blending between two images.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/arrays_array_images",
+      "https://developers.google.com/earth-engine/guides/best_practices",
+      "https://developers.google.com/earth-engine/guides/landsat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Coding Best Practices \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/best_practices",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Image ( 'JAXA/ALOS/AW3D30 V1 1' ); // Make a simple binary layer from a threshold on elevation. var mask = aw3d30 . select ( 'AVE' ). gt ( 300 ); Map . setCenter ( - 122.0703 , 37.3872 , 11 ); Map . addLayer ( mask , {}, 'mask' ); // Distance in pixel units. var distance = mask . fastDistanceTransform (). sqrt (); // Threshold on distance (three pixels) for a dilation. var dilation = distance . lt ( 3 ); Map . addLayer ( dilation , {}, 'dilation' ); // Do the reverse for an erosion. var notDistance = mask . not (). fastDistanceTransform (). sqrt (); var erosion = notDistance . gt ( 3 ); Map . addLayer ( erosion , {}, 'erosion' ); Use the optimizations in reduceNeighborhood() If you need to perform a convolution and can't use fastDistanceTransform() , use the optimizations in reduceNeighborhood() . var l8raw = ee .",
+          "Filter . lt ( 'CLOUDY PIXEL PERCENTAGE' , 1 )) . aside ( print ) // Useful for debugging. . map ( reduceFunction ) . reduce ( 'mean' ) . rename ( bands ); var viz = { bands : bands , min : 0 , max : 10000 }; Map . addLayer ( reasonableComputation , viz , 'reasonableComputation' ); Use updateMask() instead of mask() The difference between updateMask() and mask() is that the former does a logical and() of the argument (the new mask) and the existing image mask whereas mask() simply replaces the image mask with the argument.",
+          "FeatureCollection ( \"USDOS/LSIB SIMPLE/2017\" ); // Time series of images. var mod13a1 = ee ."
+        ]
+      },
+      {
+        "title": "Landsat Algorithms \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/landsat",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Landsat . simpleCloudScore ( cloudy scene ) Create a mask from the cloud score and combine it with the image mask. mask = scored . select ([ 'cloud' ]) . lte ( 20 ) Apply the mask to the image and display the result. masked = cloudy scene . updateMask ( mask ) m . add layer ( masked , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 0.4 }, 'masked' ) m If you run this example in the Code Editor, try toggling the visibility of the TOA layers to compare the difference between the masked and unmasked imagery. (See the Layer Manager section of the Code Editor docs for instructions on how to do that).",
+          "Landsat . simpleCloudScore ( cloudy scene ); // Create a mask from the cloud score and combine it with the image mask. var mask = scored . select ([ 'cloud' ]). lte ( 20 ); // Apply the mask to the image and display the result. var masked = cloudy scene . updateMask ( mask ); Map . addLayer ( masked , { bands : [ 'B4' , 'B3' , 'B2' ], max : 0.4 }, 'masked' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a cloudy Landsat scene and display it. cloudy scene = ee .",
+          "Map () m . set center ( - 122.3578 , 37.7726 , 10 ) m . add layer ( composite , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 128 }, 'TOA composite' ) m . add layer ( custom composite , { 'bands' : [ 'B4' , 'B3' , 'B2' ], 'max' : 128 }, 'Custom TOA composite' , ) m Note that the input to the simple composite is a collection of raw imagery."
+        ]
+      },
+      {
+        "title": "Arrays and Array Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "source_id": "site-docs-root",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "Image ( coefficients ) . matrixMultiply ( arrayImage2D ) // Get rid of the extra dimensions. . arrayProject ([ 0 ]) . arrayFlatten ( [[ 'brightness' , 'greenness' , 'wetness' , 'fourth' , 'fifth' , 'sixth' ]]); // Display the first three bands of the result and the input imagery. var vizParams = { bands : [ 'brightness' , 'greenness' , 'wetness' ], min : - 0.1 , max : [ 0.5 , 0.1 , 0.1 ] }; Map . setCenter ( - 122.3 , 37.562 , 10 ); Map . addLayer ( image , { bands : [ 'B5' , 'B4' , 'B3' ], min : 0 , max : 0.5 }, 'image' ); Map . addLayer ( componentsImage , vizParams , 'components' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Define an Array of Tasseled Cap coefficients. coefficients = ee .",
+          "Map . setCenter ( - 122.3 , 37.562 , 10 ); Map . addLayer ( image , { bands : [ 'B5' , 'B4' , 'B3' ], min : 0 , max : 0.5 }, 'image' ); Map . addLayer ( greennessImage , { min : - 0.1 , max : 0.13 }, 'greenness' ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Get the result from the 1x1 array in each pixel of the 2-D array image. greenness image = greenness array image . arrayGet ([ 0 , 0 ]) Display the input imagery with the greenness result. m = geemap .",
+          "Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ) . select ([ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ]); // Make an Array Image, with a 1-D Array per pixel. var arrayImage1D = image . toArray (); // Make an Array Image with a 2-D Array per pixel, 6x1. var arrayImage2D = arrayImage1D . toArray ( 1 ); Python setup See the Python Environment page for information on the Python API and using geemap for interactive development. import ee import geemap.core as geemap Colab (Python) Load a Landsat 8 image, select the bands of interest. image = ee ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.Landsat.simpleCloudScore",
+      "geemap.core"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

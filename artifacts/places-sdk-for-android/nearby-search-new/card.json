@@ -1,0 +1,115 @@
+{
+  "feature_name": "Nearby Search (New)",
+  "feature_slug": "nearby-search-new",
+  "summary": "Nearby Search (New) lets you search for places within a circular region defined by a center point and radius.",
+  "extended_definition": "Nearby Search (New) lets you search for places within a circular region defined by a center point and radius.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/nearby-search",
+      "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+      "https://developers.google.com/maps/documentation/places/android-sdk/text-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Nearby Search (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/nearby-search",
+        "source_id": "site-docs-root",
+        "final_score": 349,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag Nearby Search lets you search for places within a specified radius of a central point, returning a list of matching places.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-09 UTC.\"],[],[\"Nearby Search (New) allows searching for places within a defined circular region using latitude, longitude, and radius.",
+          "Home Products Google Maps Platform Documentation Android Places SDK for Android Guides Send feedback Nearby Search (New) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Text Search (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "source_id": "site-docs-root",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "LatLng southWest = new LatLng ( 37.38816277477739 , - 122.08813770258874 ); LatLng northEast = new LatLng ( 37.39580487866437 , - 122.07702325966572 ); // Use the builder to create a SearchByTextRequest object. final SearchByTextRequest searchByTextRequest = SearchByTextRequest . builder ( \"Spicy Vegetarian Food\" , placeFields ) . setMaxResultCount ( 10 ) . setLocationRestriction ( RectangularBounds . newInstance ( southWest , northEast )). build (); // Call PlacesClient.searchByText() to perform the search. // Define a response handler to process the returned List of Place objects. placesClient . searchByText ( searchByTextRequest ) . addOnSuccessListener ( response -> { List<Place> places = response . getPlaces (); }); In this example, you: Set the field list to include only Place.Field.ID and Place.Field.DISPLAY NAME .",
+          "Home Products Google Maps Platform Documentation Android Places SDK for Android Guides Send feedback Text Search (New) Stay organized with collections Save and categorize content based on your preferences.",
+          "The main difference between the two is that Text Search (New) lets you specify an arbitrary search string while Nearby Search (New) requires a specific area in which to search."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "source_id": "site-docs-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.",
+          "New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example \"pizza in New York\" or \"shoe stores near Ottawa\" or \"123 Main Street\".",
+          "The Places SDK lets you search for and retrieve information for a variety of place types using a text string or by proximity."
+        ]
+      },
+      {
+        "title": "\"Places SDK (Legacy) overview \\_|\\_ Places SDK for Android \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy",
+        "source_id": "site-docs-root-2",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SDK features available in each version The following table shows which SDK and API versions are required for each SDK feature: Feature Places API enabled on API key Initialization method Minimum SDK version Autocomplete (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Details (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Nearby Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.5.0 Place Photos (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.4.0 Text Search (New) Places API (New) initializeWithNewPlacesApiEnabled() 3.3.0 Place Autocomplete Places API initialize() (Deprecated) Current Place Places API initialize() (Deprecated) Place Details Places API initialize() (Deprecated) Place Photos Places API initialize() (Deprecated) Deprecated: The Places.initialize method is deprecated.",
+          "New features The Places SDK for Android (New) includes the latest versions of all of the SDK features: Autocomplete (New) Place Details (New) Nearby Search (New) Place Photos (New) Text Search (New) New Text Search service Text Search (New) returns information about a set of places based on a string — for example \"pizza in New York\" or \"shoe stores near Ottawa\" or \"123 Main Street\".",
+          "The Places SDK lets you search for and retrieve information for a variety of place types using a text string or by proximity."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/nearby-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/nearby-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/text-search",
+        "https://developers.google.com/maps/documentation/places/android-sdk/legacy/overview-legacy",
+        "https://developers.google.com/maps/documentation/places/android-sdk/overview-legacy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.086Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android"
+}

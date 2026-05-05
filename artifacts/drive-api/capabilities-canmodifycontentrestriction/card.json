@@ -1,0 +1,153 @@
+{
+  "feature_name": "capabilities.canModifyContentRestriction",
+  "feature_slug": "capabilities-canmodifycontentrestriction",
+  "summary": "This capability parameter was deprecated; deprecated on 2023-07-24.",
+  "extended_definition": "This capability parameter was deprecated; deprecated on 2023-07-24.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-24",
+    "deprecation_date": "2023-07-24",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+      "https://developers.google.com/workspace/drive/api/guides/delete",
+      "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+      "https://developers.google.com/workspace/drive/api/guides/long-running-operations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage long-running operations \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you use a client library for the Drive API, you don't need to explicitly set this parameter.",
+          "This indicates that an unexpected error was encountered in processing on the underlying system.",
+          "Tip: Save the name field value as you'll need that to poll the LRO. { \"done\" : true , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.apps.drive.v3.DownloadFileMetadata\" , \"resourceKey\" : \" RESOURCE KEY \" }, \"name\" : \" NAME \" , \"response\" : { \"@type\" : \"type.googleapis.com/google.apps.drive.v3.DownloadFileResponse\" , \"downloadUri\" : \" DOWNLOAD URI \" , \"partialDownloadAllowed\" : false } } This output includes the following values: RESOURCE KEY : A resource key helps protect your file from unintended access."
+        ]
+      },
+      {
+        "title": "Protect file content \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "Fields that control download, print, and copy features The following table lists files resource fields that affect download, print, and copy functionality: Field Description Version capabilities.canCopy Whether the current user can copy a file. v2 & v3 capabilities.canDownload Whether the current user can download a file. v2 & v3 capabilities.canChangeCopyRequiresWriterPermission Whether the current user can change the copyRequiresWriterPermission restriction of a file. v2 & v3 capabilities.canChangeItemDownloadRestriction Whether the current user can change the download restriction of a file. v3 only copyRequiresWriterPermission Whether the options to copy, print, or download this file, should be disabled for readers and commenters. v2 & v3 downloadRestrictions The download restrictions applied on a file. v3 only Note: Within the files resource several download and copy fields are marked as deprecated.",
+          "Content restrictions contain the following capabilities : capabilities.canModifyEditorContentRestriction : Whether the current user can add or modify a content restriction . capabilities.canModifyOwnerContentRestriction : Whether the current user can add or modify an owner content restriction . capabilities.canRemoveContentRestriction : Whether the current user can remove the applied content restriction (if present).",
+          "Related topics Roles and permissions Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Configure a Drive UI integration \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This parameter contains a JSON-encoded string with template variables and data about the request to your app.",
+          "This field is no longer used. (Optional) If you want your app to open Google Workspace-supported files, check the Importing box. (Optional) If your app must manage files on shared drives, check the Shared drives support box.",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Trash or delete files and folders \\_|\\_ Google Drive \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/drive/api/guides/delete",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To check the capabilities, call the get method on the files resource with the fileId path parameter and use one of the following capabilities fields in the fields parameter.",
+          "The following fields are only populated for files located within a shared drive: capabilities.canTrashChildren : Whether the current user can trash children of this folder.",
+          "If you're using the previous Drive API v2 version, this field is called trashedDate . trashingUser : If the file was explicitly trashed, the user who trashed it."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "capabilities.canChangeCopyRequiresWriterPermission",
+      "capabilities.canChangeItemDownloadRestriction",
+      "capabilities.canCopy",
+      "capabilities.canDownload",
+      "capabilities.canModifyContentRestriction",
+      "capabilities.canModifyEditorContentRestriction",
+      "capabilities.canModifyOwnerContentRestriction",
+      "capabilities.canRemoveContentRestriction",
+      "capabilities.canTrashChildren",
+      "changes.list",
+      "developers.google.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/delete"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/delete"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/delete"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/delete"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/drive/api/guides/long-running-operations",
+        "https://developers.google.com/workspace/drive/api/guides/content-restrictions",
+        "https://developers.google.com/workspace/drive/api/guides/enable-sdk",
+        "https://developers.google.com/workspace/drive/api/guides/delete"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.156Z",
+  "source_step08_card": "data/step-08/current/products/drive-api/card.json",
+  "product_name": "Drive API",
+  "product_slug": "drive-api"
+}

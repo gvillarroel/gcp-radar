@@ -1,0 +1,204 @@
+{
+  "feature_name": "Cloud Build repositories 2nd gen Terraform repository connections management",
+  "feature_slug": "cloud-build-repositories-2nd-gen-terraform-repository-connections-management",
+  "summary": "Cloud Build repositories (2nd gen) now support creating and managing repository connections through Terraform.",
+  "extended_definition": "Cloud Build repositories (2nd gen) now support creating and managing repository connections through Terraform.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+      "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+      "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to a GitHub Enterprise host \\_|\\_ Cloud Build \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "source_id": "site-docs-root-2",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the following example, the code snippet does the following: Configures the Terraform Google provider Creates a secret to store the GitHub App's private key and webhook secret Grants necessary permissions to the Cloud Build Service Agent to access secrets Creates a GitHub Enterprise connection // Configure the terraform google provider terraform { required providers { google = {} } } // create Secrets and grant permissions to the Service Agent resource \"google secret manager secret\" \"private-key-secret\" { project = \" PROJECT ID \" secret id = \" PRIVATE KEY SECRET \" replication { auto {} } } resource \"google secret manager secret version\" \"private-key-secret-version\" { secret = google secret manager secret.private-key-secret.id secret data = file ( \"private-key.pem\" ) } resource \"google secret manager secret\" \"webhook-secret-secret\" { project = \" PROJECT ID \" secret id = \" WEBHOOK SECRET \" replication { auto {} } } resource \"google secret manager secret version\" \"webhook-secret-secret-version\" { secret = google secret manager secret.webhook-secret-secret.id secret data = \" WEBHOOK SECRET VALUE \" } data \"google iam policy\" \"serviceagent-secretAccessor\" { binding { role = \"roles/secretmanager.secretAccessor\" members = [ \"serviceAccount:service- PROJECT NUMBER @gcp-sa-cloudbuild.iam.gserviceaccount.com\" ] } } resource \"google secret manager secret iam policy\" \"policy-pk\" { project = google secret manager secret.private-key-secret.project secret id = google secret manager secret.private-key-secret.secret id policy data = data.google iam policy.serviceagent-secretAccessor.policy data } resource \"google secret manager secret iam policy\" \"policy-whs\" { project = google secret manager secret.webhook-secret-secret.project secret id = google secret manager secret.webhook-secret-secret.secret id policy data = data.google iam policy.serviceagent-secretAccessor.policy data } // create the connection and add the repository resource --- resource \"google cloudbuildv2 connection\" \"my-connection\" { project = \" PROJECT ID \" location = \" REGION \" name = \" CONNECTION NAME \" github enterprise config { host uri = \" URI \" private key secret version = google secret manager secret version.private-key-secret-version.id webhook secret secret version = google secret manager secret version.webhook-secret-secret-version.id app id = \" APP ID \" app slug = \" APP SLUG \" app installation id = INSTALLATION ID } depends on = [ google secret manager secret iam policy.policy-pk , google secret manager secret iam policy.policy-whs ] } Where: PROJECT ID is your Google Cloud project ID.",
+          "After authorizing the Cloud Build GitHub App, you will be redirected to the Cloud Build Repositories page. gcloud To connect your GitHub Enterprise host to Cloud Build using gcloud commands, complete the following steps: Enter the following command to create a GitHub Enterprise connection: gcloud builds connections create github - enterprise CONNECTION NAME \\ -- host - uri = HOST URI -- region = REGION Where: CONNECTION NAME is a name for your GitHub Enterprise host connection in Cloud Build.",
+          "Optional: If you want to manage the encryption keys used to encrypt the access tokens for your GitHub Enterprise repositories, then go to the Encryption section and choose a Cloud Key Management Service key."
+        ]
+      },
+      {
+        "title": "\"Connect to a GitLab Enterprise Edition host \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the following example, the code snippet does the following: Configures Terraform provider for Google Cloud resources Creates a secret to store your GitLab Enterprise Edition personal access token Grants necessary permissions to the Cloud Build service agent to access secrets Creates a GitLab Enterprise Edition connection // Configure the Terraform Google provider terraform { required providers { google = {} } } // Create secrets and grant permissions to the Cloud Build service agent resource \"google secret manager secret\" \"api-pat-secret\" { project = \" PROJECT ID \" secret id = \" GITLAB PAT API \" replication { auto {} } } resource \"google secret manager secret version\" \"api-pat-secret-version\" { secret = google secret manager secret.api-pat-secret.id secret data = \" GITLAB API TOKEN \" } resource \"google secret manager secret\" \"read-pat-secret\" { project = \" PROJECT ID \" secret id = \" GITLAB PAT READ \" replication { auto {} } } resource \"google secret manager secret version\" \"read-pat-secret-version\" { secret = google secret manager secret.read-pat-secret.id secret data = \" GITLAB API TOKEN \" } resource \"google secret manager secret\" \"webhook-secret-secret\" { project = \" PROJECT ID \" secret id = \" WEBHOOK SECRET \" replication { auto {} } } resource \"google secret manager secret version\" \"webhook-secret-secret-version\" { secret = google secret manager secret.webhook-secret-secret.id secret data = \" WEBHOOK SECRET VALUE \" } data \"google iam policy\" \"serviceagent-secretAccessor\" { binding { role = \"roles/secretmanager.secretAccessor\" members = [ \"serviceAccount:service- PROJECT NUMBER @gcp-sa-cloudbuild.iam.gserviceaccount.com\" ] } } resource \"google secret manager secret iam policy\" \"policy-pak\" { project = google secret manager secret.api-pat-secret.project secret id = google secret manager secret.api-pat-secret.secret id policy data = data.google iam policy.serviceagent-secretAccessor.policy data } resource \"google secret manager secret iam policy\" \"policy-rpak\" { project = google secret manager secret.read-pat-secret.project secret id = google secret manager secret.read-pat-secret.secret id policy data = data.google iam policy.serviceagent-secretAccessor.policy data } resource \"google secret manager secret iam policy\" \"policy-whs\" { project = google secret manager secret.webhook-secret-secret.project secret id = google secret manager secret.webhook-secret-secret.secret id policy data = data.google iam policy.serviceagent-secretAccessor.policy data } // Create the connection and add the repository resource resource \"google cloudbuildv2 connection\" \"my-connection\" { project = \" PROJECT ID \" location = \" REGION \" name = \" CONNECTION NAME \" gitlab config { host uri = \" URI \" authorizer credential { user token secret version = google secret manager secret version.api-pat-secret-version.id } read authorizer credential { user token secret version = google secret manager secret version.read-pat-secret-version.id } webhook secret secret version = google secret manager secret version.webhook-secret-secret-version.id } depends on = [ google secret manager secret iam policy.policy-pak , google secret manager secret iam policy.policy-rpak , google secret manager secret iam policy.policy-whs ] } Replace the following: PROJECT ID : your Google Cloud project ID.",
+          "Optional: If you want to manage the encryption keys used to encrypt the access tokens for your GitLab Enterprise Edition repositories, then go to the Encryption section and choose a Cloud Key Management Service key.",
+          "As a result, you will see errors in the following circumstances: When you try to link a GitLab Enterprise Edition repository Cloud Build connection, a Failed to fetch repositories to link."
+        ]
+      },
+      {
+        "title": "Connect to a Bitbucket Cloud host \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "source_id": "site-docs-root-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Creates a Bitbucket Cloud connection. // Configure the Terraform Google provider terraform { required providers { google = {} } } provider \"google\" { project = \" PROJECT ID \" region = \" REGION \" } // Create secrets and grant permissions to the Cloud Build service agent resource \"google secret manager secret\" \"admin-token-secret\" { project = \" PROJECT ID \" secret id = \" ADMIN TOKEN NAME \" replication { auto {} } } resource \"google secret manager secret version\" \"admin-token-secret-version\" { secret = google secret manager secret.admin-token-secret.id secret data = \" ADMIN TOKEN VALUE \" } resource \"google secret manager secret\" \"read-token-secret\" { project = \" PROJECT ID \" secret id = \" READ TOKEN NAME \" replication { auto {} } } resource \"google secret manager secret version\" \"read-token-secret-version\" { secret = google secret manager secret.read-token-secret.id secret data = \" READ TOKEN VALUE \" } resource \"google secret manager secret\" \"webhook-secret-secret\" { project = \" PROJECT ID \" secret id = \" WEBHOOK SECRET NAME \" replication { auto {} } } resource \"google secret manager secret version\" \"webhook-secret-secret-version\" { secret = google secret manager secret.webhook-secret-secret.id secret data = \" WEBHOOK SECRET VALUE \" } data \"google iam policy\" \"p4sa-secretAccessor\" { binding { role = \"roles/secretmanager.secretAccessor\" members = [ \"serviceAccount:service- PROJECT NUMBER @gcp-sa-cloudbuild.iam.gserviceaccount.com\" ] } } resource \"google secret manager secret iam policy\" \"policy-pak\" { project = google secret manager secret.admin-token-secret.project secret id = google secret manager secret.admin-token-secret.secret id policy data = data.google iam policy.p4sa-secretAccessor.policy data } resource \"google secret manager secret iam policy\" \"policy-rpak\" { project = google secret manager secret.read-token-secret.project secret id = google secret manager secret.read-token-secret.secret id policy data = data.google iam policy.p4sa-secretAccessor.policy data } resource \"google secret manager secret iam policy\" \"policy-whs\" { project = google secret manager secret.webhook-secret-secret.project secret id = google secret manager secret.webhook-secret-secret.secret id policy data = data.google iam policy.p4sa-secretAccessor.policy data } // Create the connection and add the repository resource resource \"google cloudbuildv2 connection\" \"my-connection\" { project = \" PROJECT ID \" location = \" REGION \" name = \" CONNECTION NAME \" bitbucket cloud config { workspace = \" WORKSPACE ID \" authorizer credential { user token secret version = google secret manager secret version.admin-token-secret-version.id } read authorizer credential { user token secret version = google secret manager secret version.read-token-secret-version.id } webhook secret secret version = google secret manager secret version.webhook-secret-secret-version.id } depends on = [ google secret manager secret iam policy.policy-pak , google secret manager secret iam policy.policy-rpak , google secret manager secret iam policy.policy-whs ] } Where: PROJECT ID is your Google Cloud project ID .",
+          "Optional: If you want to manage the encryption keys used to encrypt the access tokens for your Bitbucket Cloud repositories, then go to the Encryption section and choose a Cloud Key Management Service key.",
+          "As a result, you will see errors in the following circumstances: When you try to link a Bitbucket Cloud repository Cloud Build connection, a Failed to fetch repositories to link."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.iam.gserviceaccount.com",
+      "data.google",
+      "key.pem",
+      "policy.p4sa",
+      "policy.policy",
+      "policy.serviceagent",
+      "secret.admin",
+      "secret.api",
+      "secret.id",
+      "secret.private",
+      "secret.project",
+      "secret.read",
+      "secret.secret",
+      "secret.webhook",
+      "secretmanager.admin",
+      "secretmanager.secretAccessor",
+      "version.admin",
+      "version.api",
+      "version.id",
+      "version.private",
+      "version.read",
+      "version.webhook"
+    ],
+    "missing_inventory_roles": [
+      "roles/secretmanager.admin",
+      "roles/secretmanager.secretAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/connect-host-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/bitbucket/connect-host-bitbucket-cloud",
+        "https://docs.cloud.google.com/build/docs/automating-builds/gitlab/connect-host-gitlab-enterprise-edition"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

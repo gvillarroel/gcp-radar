@@ -1,0 +1,186 @@
+{
+  "feature_name": "Soft-deleted bucket restore",
+  "feature_slug": "soft-deleted-bucket-restore",
+  "summary": "Cloud Storage can restore buckets deleted under an active soft delete policy during the retention period.",
+  "extended_definition": "Cloud Storage can restore buckets deleted under an active soft delete policy during the retention period.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+      "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+      "https://docs.cloud.google.com/storage/docs/autoclass",
+      "https://docs.cloud.google.com/storage/docs/creating-buckets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Class Bucket (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "source_id": "site-python-reference",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note this property is only set for soft-deleted buckets. storage class Retrieve or set the storage class for the bucket.",
+          "Note this property is only set for soft-deleted buckets. hierarchical namespace enabled Whether hierarchical namespace is enabled for this bucket. :setter: Update whether hierarchical namespace is enabled for this bucket. :getter: Query whether hierarchical namespace is enabled for this bucket.",
+          "See https://cloud.google.com/storage/docs/json api/v1/buckets Returns Type Description str or NoneType The self link for the bucket or None if the bucket's resource has not been loaded from the server. soft delete policy Retrieve the soft delete policy for this bucket."
+        ]
+      },
+      {
+        "title": "Create a bucket \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "source_id": "site-docs-root",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: gcloud storage buckets create gs:// BUCKET NAME --project= PROJECT ID --default-storage-class= STORAGE CLASS --location= BUCKET LOCATION --uniform-bucket-level-access --soft-delete-duration= RETENTION DURATION --encryption-enforcement-file= ENCRYPTION ENFORCEMENT FILE For a complete list of options for bucket creation using the gcloud CLI, see buckets create options .",
+          "If not otherwise specified in your request, buckets are created in the US multi-region with a default storage class of Standard storage and have a seven-day soft delete retention duration.",
+          "For more information, see Set up authentication for client libraries . def create bucket class location bucket name : The ID to give your GCS bucket bucket name = \"your-unique-bucket-name\" require \"google/cloud/storage\" storage = Google :: Cloud :: Storage . new bucket = storage . create bucket bucket name , location : \"ASIA\" , storage class : \"COLDLINE\" puts \"Created bucket #{ bucket . name } in #{ bucket . location } with #{ bucket . storage class } class\" end Terraform You can use a Terraform resource to create a storage bucket ."
+        ]
+      },
+      {
+        "title": "Class Client (3.10.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "source_id": "site-python-reference",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See: https://cloud.google.com/storage/docs/soft-delete list buckets list buckets ( max results = None , page token = None , prefix = None , projection = \"noAcl\" , fields = None , project = None , page size = None , timeout = 60 , retry = google . api core . retry . retry unary .",
+          "See: https://cloud.google.com/storage/docs/soft-delete return partial success bool (Optional) If True, the response will also contain a list of unreachable buckets if the buckets are unavailable.",
+          "See: configuring retries soft deleted bool (Optional) If true, only soft-deleted buckets will be listed as distinct results in order of increasing generation number."
+        ]
+      },
+      {
+        "title": "Autoclass \\_|\\_ Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/autoclass",
+        "source_id": "site-iam-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additionally, you can monitor the number of bytes stored in each storage class over time for your Autoclass-enabled buckets by going to the bucket's Configuration tab in the Google Cloud console and clicking See Performance .",
+          "When you enable Autoclass on an existing bucket, the following occurs: All objects in the bucket, except soft-deleted objects , transition to Standard storage.",
+          "When a soft-deleted object is restored , the resulting object begins in Standard storage, regardless of the storage class of the soft-deleted object."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.storage",
+      "storage.buckets.create",
+      "storage.buckets.enableObjectRetention",
+      "storage.buckets.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.bucket.Bucket",
+        "https://docs.cloud.google.com/storage/docs/creating-buckets",
+        "https://docs.cloud.google.com/python/docs/reference/storage/latest/google.cloud.storage.client.Client",
+        "https://docs.cloud.google.com/storage/docs/autoclass"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:17.220Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

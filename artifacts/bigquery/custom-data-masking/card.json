@@ -1,0 +1,194 @@
+{
+  "feature_name": "Custom data masking",
+  "feature_slug": "custom-data-masking",
+  "summary": "BigQuery supports custom data masking routines such as salt-based hashing.",
+  "extended_definition": "BigQuery supports custom data masking routines such as salt-based hashing.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+      "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Introduction to data masking \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 39,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom masking routines Custom masking routines are subject to the following limitations: Custom data masking supports all BigQuery data types except STRUCT , because data masking can only apply to leaf fields of the STRUCT data type.",
+          "When this happens, BigQuery chooses which data masking rule to apply based on the following hierarchy: Custom masking routine Random Hash Hash (SHA-256) Email mask Last four characters First four characters Date year mask Default masking value Nullify For example, user A is a member of both the employees and the accounting groups.",
+          "Workarounds are possible, such as using custom masking routines that normalize data before applying the masking function."
+        ]
+      },
+      {
+        "title": "Mask column data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "source_id": "site-docs-reference-5",
+        "final_score": 33,
+        "relevance": "",
+        "evidence_snippets": [
+          "In case of custom masking, grant users the BigQuery Admin or BigQuery Data Owner roles to ensure they have the necessary permissions for both routines and data policies.",
+          "If you are selecting a custom masking routine, ensure that you have both the bigquery.routines.get and the bigquery.routines.list permissions at the project level.",
+          "If you use custom masking, grant users the BigQuery Data Owner role to ensure they have the necessary permissions for both routines and data policies."
+        ]
+      },
+      {
+        "title": "\"Create a dataset with a customer-managed encryption key \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 32,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Data analytics BigQuery Samples Create a dataset with a customer-managed encryption key Stay organized with collections Save and categorize content based on your preferences.",
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days default encryption configuration { kms key name = google kms crypto key.crypto key.id } labels = { billing group = \"accounting\" , pii = \"sensitive\" } depends on = [ google project iam member.service account access ] } resource \"google kms crypto key\" \"crypto key\" { name = \"example-key\" key ring = google kms key ring.key ring.id } resource \"random id\" \"default\" { byte length = 8 } resource \"google kms key ring\" \"key ring\" { name = \"${random id.default.hex}-example-keyring\" location = \"us\" } Enable the BigQuery service account to encrypt/decrypt Cloud KMS keys data \"google project\" \"project\" { } resource \"google project iam member\" \"service account access\" { project = data.google project.project.project id role = \"roles/cloudkms.cryptoKeyEncrypterDecrypter\" member = \"serviceAccount:bq-${data.google project.project.number}@bigquery-encryption.iam.gserviceaccount.com\" } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.routines.get",
+      "bigquery.routines.list",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "data.google",
+      "encryption.iam.gserviceaccount.com",
+      "id.default.hex",
+      "key.crypto",
+      "key.id",
+      "member.service",
+      "project.project.number",
+      "project.project.project",
+      "ring.id",
+      "ring.key"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking-intro",
+        "https://docs.cloud.google.com/bigquery/docs/column-data-masking",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-dataset-cmek"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

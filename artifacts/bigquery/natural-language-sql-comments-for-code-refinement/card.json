@@ -1,0 +1,87 @@
+{
+  "feature_name": "Natural-language SQL comments for code refinement",
+  "feature_slug": "natural-language-sql-comments-for-code-refinement",
+  "summary": "BigQuery can use natural-language comments embedded in SQL to refine and transform existing code.",
+  "extended_definition": "BigQuery can use natural-language comments embedded in SQL to refine and transform existing code.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+      "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Gemini in BigQuery overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/gemini-overview",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "To use natural language to generate SQL queries or Python code , use comments in code or the SQL generation tool .",
+          "To learn how to generate, complete, and summarize code, see the following documentation: SQL code assist Use the SQL generation tool Prompt to generate SQL queries Generate SQL queries with Gemini Cloud Assist ( Preview ) Convert comments to SQL ( Preview ) Complete a SQL query ( Preview ) Explain a SQL query Python code assist Generate Python code with the code generation tool Generate Python code with Gemini Cloud Assist ( Preview ) Python code completion Generate BigQuery DataFrames Python code ( Preview ) Prepare data for analysis .",
+          "Enhanced features in Gemini in BigQuery are the following: SQL generation tool Prompt to generate SQL queries Convert comments to SQL Complete a SQL query Explain a SQL query Generate python code Python code completion Data canvas Data preparation Data insights Locations For information about where Gemini in BigQuery processes your data, see Where Gemini in BigQuery processes your data ."
+        ]
+      },
+      {
+        "title": "\"Data manipulation language (DML) statements in GoogleSQL \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/dml-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "DetailedInventory ( product STRING , quantity INT64 , supply constrained BOOLEAN , comments ARRAY<STRUCT<created DATE , comment STRING >> , specifications STRUCT<color STRING , warranty STRING , dimensions STRUCT<depth FLOAT64 , height FLOAT64 , width FLOAT64 >> ); Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "On-demand query size calculation If you use on-demand billing, BigQuery charges for data manipulation language (DML) statements based on the number of bytes processed by the statement.",
+          "Data manipulation language (DML) statements in GoogleSQL The BigQuery data manipulation language (DML) enables you to update, insert, and delete data from your BigQuery tables."
+        ]
+      },
+      {
+        "title": "\"Transform SQL translations using configuration YAML files \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/config-yaml-translation",
+        "source_id": "site-docs-reference-5",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Remove the upper function in the default translation output query translation rules : - instruction : \"Remove upper() function\" examples : - input : \"upper(X)\" output : \"X\" Create multiple translation rules to customize the translation output translation rules : - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Insert a comment at the head that explains each statement in detail. suggestion type: QUERY CUSTOMIZATION rewrite target: TARGET SQL Remove SQL comments from the translation input query translation rules : - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Generate translation explanations using default LLM prompt This example uses the default LLM prompts provided by the translation service to generate text explanations: translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" Generates translation explanations using your own natural language prompts translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" Multiple suggestion types in a single configuration YAML file translation rules : - suggestion type : \"TRANSLATION EXPLANATION\" instruction : \"Explain the syntax differences between the source Teradata query and the translated GoogleSQL query.\" - instruction : \"Remove upper() function\" suggestion type : QUERY CUSTOMIZATION rewrite target : TARGET SQL examples : - input : \"upper(X)\" output : \"X\" - instruction : \"Remove all the sql comments in the input sql query.\" suggestion type : QUERY CUSTOMIZATION rewrite target : SOURCE SQL Applying multiple YAML configurations When specifying a configuration YAML file in a batch or interactive SQL translation, you can select multiple configuration YAML files in a single translation job to reflect multiple transformations.",
+          "TRANSLATION EXPLANATION : Generates text that includes a summary of the translated GoogleSQL query and the differences and inconsistencies between the source SQL query and the translated GoogleSQL query. rewrite target (optional): Specify SOURCE SQL if you want to apply the translation rule to your input SQL, or TARGET SQL (default) if you want to apply the translation rule to your output SQL. instruction (optional): In natural language, describe a change to the target SQL.",
+          "Transform SQL translations using configuration YAML files This document shows you how to use configuration YAML files to transform SQL code while migrating it to BigQuery."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.config.yaml",
+      "input.sql",
+      "output.sql",
+      "testdb.testschema.x",
+      "testdb.testschema.x.a"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,134 @@
+{
+  "feature_name": "K8sRequireDaemonsets constraint template",
+  "feature_slug": "k8srequiredaemonsets-constraint-template",
+  "summary": "This constraint template enforces requirements related to DaemonSets in Kubernetes clusters.",
+  "extended_definition": "This constraint template enforces requirements related to DaemonSets in Kubernetes clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy fleet packages \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "source_id": "site-docs-root",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create or update the fleet package: Create a fleet package gcloud container fleet packages create FLEET PACKAGE NAME \\ --source = fleetpackage-spec.yaml Update a fleet package gcloud container fleet packages update FLEET PACKAGE NAME \\ --source = fleetpackage-spec.yaml Delete a fleet package Deleting a fleet package also deletes the following resources: The Kubernetes resources deployed on your clusters The fleet package rollout history To delete a fleet package, run the following command: gcloud container fleet packages delete FLEET PACKAGE NAME --force Troubleshoot To find methods for diagnosing and resolving errors related to Cloud Build, see Troubleshooting build errors .",
+          "To deploy a fleet package with variants, complete the following steps: Create or update your FleetPackage spec to include the variantsPattern and variantNameTemplate fields: resourceBundleSelector : cloudBuildRepository : name : projects/ PROJECT ID /locations/us-central1/connections/ CONNECTION NAME /repositories/ REPOSITORY NAME tag : TAG serviceAccount : projects/ PROJECT ID /serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com path : CONFIG FILE PATH variantsPattern : VARIANT PATTERN target : fleet : project : projects/ PROJECT ID rolloutStrategy : rolling : maxConcurrent : MAX CLUSTERS target : fleet : project : projects/ PROJECT ID variantSelector : variantNameTemplate : VARIANT NAME TEMPLATE Replace the following: VARIANT PATTERN : a glob pattern to generate variants from your repository, such as (matches all files and directories) or .yaml (matches only files).",
+          "Create a file named fleetpackage-spec.yaml with the following content: resourceBundleSelector : cloudBuildRepository : name : projects/ PROJECT ID /locations/us-central1/connections/ CONNECTION NAME /repositories/ REPOSITORY NAME tag : TAG serviceAccount : projects/ PROJECT ID /serviceAccounts/ SERVICE ACCOUNT NAME @ PROJECT ID . iam.gserviceaccount.com path : CONFIG FILE PATH Match all files and directories to generate variants variantsPattern : \" \" target : fleet : project : projects/ PROJECT ID rolloutStrategy : rolling : maxConcurrent : MAX CLUSTERS variantSelector : variantNameTemplate : \" VARIANT NAME \" set the state to SUSPENDED to pause new rollouts set the state back to ACTIVE to resume rollouts state: SUSPENDED Replace the following: CONNECTION NAME : the name that you chose when you connected your Git host to Cloud Build."
+        ]
+      },
+      {
+        "title": "\"Configure Kubernetes with Kustomize \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "source_id": "site-docs-root",
+        "final_score": 85,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Kustomize is a Kubernetes configuration transformation tool that lets you customize untemplated YAML files, leaving the original files untouched.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Configure Kubernetes with Kustomize Stay organized with collections Save and categorize content based on your preferences.",
+          "Sets the target namespace for a release (.Release.Namespace in the template) helmCharts.valuesInline Values to use instead of default values that accompany the chart helmCharts.valuesFile Accepts a string."
+        ]
+      },
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 85,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create, or make sure you have access to, a cluster that is on a Google Kubernetes Engine supported platform and version and meets the requirements for Config Sync .",
+          "Kubernetes API method If you used the Control namespace-scoped sources of truth with the Kubernetes API method, application operators can use the following steps to remove a namespace-scoped source of truth: Decide if you'd like to delete or keep the resources that are managed through your RootSync and RepoSync objects.",
+          "Home Documentation Application hosting Google Kubernetes Engine (GKE) Config Sync Guides Send feedback Configure syncing from more than one source of truth Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.gserviceaccount.com",
+      "projects.locations.fleetPackages",
+      "spec.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-packages",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/kustomize",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

@@ -1,0 +1,126 @@
+{
+  "feature_name": "Playbook Simulator",
+  "feature_slug": "playbook-simulator",
+  "summary": "Playbook Simulator can visualize and debug playbooks that contain loops, with updated step ordering and auto-scrolling to recent activity.",
+  "extended_definition": "Playbook Simulator can visualize and debug playbooks that contain loops, with updated step ordering and auto-scrolling to recent activity.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Explore the Playbooks page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "source_id": "site-docs-reference-2",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about the Playbooks page and how to collaborate with it, see the following: Define custom alert views from Playbook Designer Work with the Playbook Simulator Understand playbook monitoring Use the Playbook Navigator Playbook icons legend The following icons appear on the Cases > Playbooks tab when a playbook is attached.",
+          "Filter : Click filter alt Filter and filter the display based on the following criteria: Playbook simulator is on toggle Show Active Playbooks toggle Priority : Set the attachment order of playbooks for the alert.",
+          "Menu : Click edit Edit and select the required playbooks or blocks before using Menu to perform bulk actions: New Folder : Add a new playbooks folder; the playbook automatically inherits any changes made to its associated environment groups."
+        ]
+      },
+      {
+        "title": "\"Integrate AlgoSec with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "source_id": "site-api-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After you configure an integration instance, you can use it in playbooks.",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"id\" : 10 , \"fields\" : [ { \"name\" : \"Owner\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Creator\" , \"values\" : [ \"admin<user@siemplify.co>\" ] }, { \"name\" : \"Due\" , \"values\" : [ \"2021-08-31 00:00:00\" ] }, { \"name\" : \"LastUpdated\" , \"values\" : [ \"2021-08-13 12:31:23\" ] }, { \"name\" : \"Requestor\" , \"values\" : [ \"admin@example.com>\" ] } ], \"originalTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"all\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"ALL\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ], \"plannedTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"0.0.0.0-255.255.255.255\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/ \" }, { \"value\" : \"udp/ \" }, { \"value\" : \"ospf\" }, { \"value\" : \"icmp/ \" }, { \"value\" : \"gre\" }, { \"value\" : \"ipsec 50\" }, { \"value\" : \"ipsec 51\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ] } } Option 2 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"changeRequestId\" : 37 , \"redirectUrl\" : \"https://192.0.2.120/FireFlow/Ticket/Display.html?id=37\" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported and if for second request the 404 status code is reported (is success=true): \"Successfully created a traffic change request to allow traffic to the provided entities in AlgoSec.\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"id\" : 10 , \"fields\" : [ { \"name\" : \"Owner\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Creator\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Due\" , \"values\" : [ \"2021-08-31 00:00:00\" ] }, { \"name\" : \"LastUpdated\" , \"values\" : [ \"2021-08-13 12:31:23\" ] }, { \"name\" : \"Requestor\" , \"values\" : [ \"admin@example.com>\" ] } ], \"originalTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"all\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"ALL\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ], \"plannedTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"0.0.0.0-255.255.255.255\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/ \" }, { \"value\" : \"udp/ \" }, { \"value\" : \"ospf\" }, { \"value\" : \"icmp/ \" }, { \"value\" : \"gre\" }, { \"value\" : \"ipsec 50\" }, { \"value\" : \"ipsec 51\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Block\" } ] } } Option 2 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"changeRequestId\" : 37 , \"redirectUrl\" : \"https://192.0.2.120/FireFlow/Ticket/Display.html?id=37\" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported even if for second request the 404 status code is reported (is success=true): \"Successfully created a traffic change request to block traffic to the provided entities in AlgoSec.\"."
+        ]
+      },
+      {
+        "title": "\"Integrate Armis with Google SecOps \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis",
+        "source_id": "site-iam-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This process ensures that every entity is correctly indexed as a unique asset, making it fully searchable and actionable in playbooks.",
+          "After you configure an integration instance, you can use it in playbooks.",
+          "Run on This action runs on the following entities: IP Address Mac Address Action results Script result Script result name Value options Example is success True/False is success:False JSON result { \"accessSwitch\" : null , \"category\" : \"Computers\" , \"dataSources\" : [ { \"firstSeen\" : \"2021-03-07T04:04:22.562873+00:00\" , \"lastSeen\" : \"2021-03-07T04:04:22.562873+00:00\" , \"name\" : \"Example\" , \"types\" : [ \"Asset & System Management\" , \"Virtualization\" ] }, { \"firstSeen\" : \"2021-03-07T04:04:22.562873+00:00\" , \"lastSeen\" : \"2021-03-07T04:04:22.562873+00:00\" , \"name\" : \"Armis Smart Scanner\" , \"types\" : [ \"Vulnerability Management\" ] } ], \"firstSeen\" : \"2021-03-07T04:04:22.562873+00:00\" , \"id\" : 1616 , \"ipAddress\" : \"192.0.2.120\" , \"ipv6\" : null , \"lastSeen\" : \"2021-03-21T08:05:40.244960+00:00\" , \"macAddress\" : \"01:23:45:ab:cd:ef\" , \"manufacturer\" : \"VMware\" , \"model\" : \"VMware Virtual Platform\" , \"name\" : \"Example\" , \"operatingSystem\" : \"CentOS\" , \"operatingSystemVersion\" : \"6.6\" , \"purdueLevel\" : 4.0 , \"riskLevel\" : 5 , \"sensor\" : { \"name\" : \"North conference room\" , \"type\" : \"Physical Sensor\" }, \"site\" : { \"location\" : \"Palo Alto\" , \"name\" : \"Palo Alto Offices\" }, \"tags\" : [ \"Discover\" , \"Example\" ], \"type\" : \"Virtual Machines\" , \"user\" : \"\" , \"visibility\" : \"Full\" } Entity enrichment Enrichment field name Logic - When to apply category When available in JSON id When available in JSON ipAddress When available in JSON macAddress When available in JSON name When available in JSON os When available in JSON purdue level When available in JSON risk level When available in JSON tags When available in JSON type When available in JSON user When available in JSON visibility When available in JSON site When available in JSON link When available in JSON Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: if enriched some(is success = true): \"Successfully enriched the following entities using Armis:\\n\".format(entity.identifier) If didn't enrich some (is success = true): \"Action wasn't able to enriche the following entities using Armis:\\n\".format(entity.identifier) If didn't enrich all (is success = false): \"No entities were enriched\"."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "entity.identifier",
+      "example.com",
+      "siemplify.co"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/working-with-playbooks/whats-on-the-playbooks-screen",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/armis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

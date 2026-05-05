@@ -1,0 +1,112 @@
+{
+  "feature_name": "HTTP and gRPC readiness probes",
+  "feature_slug": "http-and-grpc-readiness-probes",
+  "summary": "Cloud Run services support configurable HTTP and gRPC readiness probes.",
+  "extended_definition": "Cloud Run services support configurable HTTP and gRPC readiness probes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+      "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+      "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Container \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "source_id": "site-api-reference",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation EnvVar JSON representation EnvVarSource JSON representation ConfigMapKeySelector JSON representation SecretKeySelector JSON representation ResourceRequirements JSON representation ContainerPort JSON representation EnvFromSource JSON representation ConfigMapEnvSource JSON representation SecretEnvSource JSON representation VolumeMount JSON representation Probe JSON representation ExecAction JSON representation HTTPGetAction JSON representation HTTPHeader JSON representation TCPSocketAction JSON representation GRPCAction JSON representation SecurityContext JSON representation A single application container.",
+          "JSON representation { \"initialDelaySeconds\" : integer , \"timeoutSeconds\" : integer , \"periodSeconds\" : integer , \"successThreshold\" : integer , \"failureThreshold\" : integer , \"exec\" : { object ( ExecAction ) } , \"httpGet\" : { object ( HTTPGetAction ) } , \"tcpSocket\" : { object ( TCPSocketAction ) } , \"grpc\" : { object ( GRPCAction ) } } Fields initialDelaySeconds integer Number of seconds after the container has started before the probe is initiated.",
+          "Minimum value is 1. exec object ( ExecAction ) Not supported by Cloud Run. httpGet object ( HTTPGetAction ) HTTPGet specifies the http request to perform. tcpSocket object ( TCPSocketAction ) TCPSocket specifies an action involving a TCP port. grpc object ( GRPCAction ) GRPCAction specifies an action involving a GRPC port."
+        ]
+      },
+      {
+        "title": "\"Automate cross-regional failover with service health \\_|\\_ Cloud Run \\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "source_id": "site-docs-root-2",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You need at least one minimum instance to configure service health with readiness probes: gcloud beta run deploy $SERVICE \\ --source = . \\ --regions = $REGION A , $REGION B \\ --min = 10 \\ --readiness-probe httpGet.path = \"/are you ready\" Respond to any prompts to install required APIs by responding y when prompted.",
+          "Objectives In this tutorial, you will: Prepare the sample application Deploy Cloud Run services in two regions with readiness probes Set up a global external Application Load Balancer Add your services through the serverless NEG Test failover Before you begin Sign in to your Google Cloud account.",
+          "To deploy your services from source in two different regions with readiness probes, run the following commands: Deploy your service health-example in us-west1 and europe-west1 from the source directory."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.run.v2 (0.88.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+        "source_id": "site-java-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Builder HTTPGetAction describes an action based on HTTP Get requests. com. google. cloud. run. v2.HTTP Header HTTPHeader describes a custom header to be used in HTTP probes com. google. cloud. run. v2.HTTP Header.",
+          "Builder HTTPHeader describes a custom header to be used in HTTP probes com. google. cloud. run. v2.",
+          "Builder Represents a volume backed by a Cloud Storage bucket using Cloud Storage FUSE. com. google. cloud. run. v2.GRPC Action GRPCAction describes an action involving a GRPC port. com. google. cloud. run. v2.GRPC Action."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2",
+      "com.google.cloud.run.v2.BuildsGrpc",
+      "com.google.cloud.run.v2.BuildsSettings",
+      "v2.GRPC",
+      "v2.HTTP"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/reference/rest/v1/Container",
+        "https://docs.cloud.google.com/run/docs/tutorials/configure-service-health",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

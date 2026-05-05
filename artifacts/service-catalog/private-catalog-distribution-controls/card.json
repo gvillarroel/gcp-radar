@@ -1,0 +1,212 @@
+{
+  "feature_name": "Private Catalog distribution controls",
+  "feature_slug": "private-catalog-distribution-controls",
+  "summary": "Private Catalog allows cloud admins to control distribution of solutions within an enterprise.",
+  "extended_definition": "Private Catalog allows cloud admins to control distribution of solutions within an enterprise.",
+  "lifecycle": {
+    "latest_feature_date": "2019-02-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-catalog/docs/access-control",
+      "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+      "https://docs.cloud.google.com/service-catalog/docs/overview",
+      "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access control with IAM \\_|\\_ Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Operates under a target Google Cloud resource, such as an organization, project, or folder. cloudprivatecatalog.targets.get resourcemanager.projects.get resourcemanager.projects.list Adding users to Service Catalog IAM roles Users, Google Groups, or domains must have the resourcemanager.organizations.setIamPolicy permission on the organization to add users to the Service Catalog IAM roles.",
+          "For example, if your organization would like users granted the Catalog Admin role to also be able to add and remove users and groups from the other Service Catalog IAM roles, then an Organization Administrator can do the following: Create a Google Group for the users ( MyCompanyCatalogAdmins ).",
+          "In the example, members of the Google Group ( MyCompanyCatalogAdmins ) can assign users and groups to IAM roles in the organization because the group has been granted the setIamPolicy permission when granted the Organization Administrator role."
+        ]
+      },
+      {
+        "title": "Overview of Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Features Service Catalog includes the following features: A Service Catalog experience for users and cloud admins Ability to create multiple catalogs and share them at different folder and project levels Ability to add additional Service Catalog cloud admins to create and curate content Support for reference links and Cloud Deployment Manager (Deployment Manager) templates Single point of entry for cloud admins and users Respect for organizational policies and Deployment Manager constraints to complement Service Catalog and provide controls A cloud admin can create a catalog under a Google Cloud organization.",
+          "Overview of Service Catalog Service Catalog enables developers and cloud admins to make their solutions discoverable to their own organization's internal enterprise users.",
+          "While making solutions discoverable, cloud admins can also control the distribution of solutions and ensure compliance and governance."
+        ]
+      },
+      {
+        "title": "\"Assigning solutions to a catalog \\_|\\_ Service Catalog \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By curating solutions into catalogs, you control which users can view and launch approved solutions in your organization.",
+          "You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud project where Service Catalog is enabled.",
+          "If you've already shared the catalog to a Google Cloud resource, users who have access to the resource can now view and launch the solution."
+        ]
+      },
+      {
+        "title": "Sharing a catalog \\_|\\_ Service Catalog \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-catalog/docs/share-catalog",
+        "source_id": "site-docs-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the following Identity and Access Management (IAM) roles to users who will use the shared catalog: Catalog Consumer ( roles/cloudprivatecatalog.consumer ) OR the IAM Viewer ( roles/viewer ) role for the relevant organization, project, or folder.",
+          "Before you begin You must have the Catalog Admin ( roles/cloudprivatecatalogproducer.admin ) OR Catalog Manager ( roles/cloudprivatecatalogproducer.manager ) role for the Google Cloud project where Service Catalog is enabled, and the folder, project, or organization where you're sharing the catalog.",
+          "If your catalog contains DM-based solutions, the Deployment Manager Editor ( roles/deploymentmanager.editor ) role for the project where your users deploy the solution."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudprivatecatalog.consumer",
+      "cloudprivatecatalog.targets.get",
+      "cloudprivatecatalogproducer.admin",
+      "cloudprivatecatalogproducer.manager",
+      "deploymentmanager.editor",
+      "resourcemanager.organizations.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudprivatecatalog.consumer",
+      "roles/cloudprivatecatalogproducer.admin",
+      "roles/cloudprivatecatalogproducer.manager",
+      "roles/deploymentmanager.editor",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-catalog/docs/access-control",
+        "https://docs.cloud.google.com/service-catalog/docs/overview",
+        "https://docs.cloud.google.com/service-catalog/docs/assign-solutions",
+        "https://docs.cloud.google.com/service-catalog/docs/share-catalog"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.198Z",
+  "source_step08_card": "data/step-08/current/products/service-catalog/card.json",
+  "product_name": "Service Catalog",
+  "product_slug": "service-catalog"
+}

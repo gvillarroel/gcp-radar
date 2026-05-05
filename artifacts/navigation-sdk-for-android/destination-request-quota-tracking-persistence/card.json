@@ -1,0 +1,164 @@
+{
+  "feature_name": "Destination request quota tracking persistence",
+  "feature_slug": "destination-request-quota-tracking-persistence",
+  "summary": "Quota tracking for destination requests persists when an app is restarted; Quota tracking for destination requests persists when an app is restarted.",
+  "extended_definition": "Quota tracking for destination requests persists when an app is restarted; Quota tracking for destination requests persists when an app is restarted.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Navigate a multi-destination route \\_|\\_ Navigation SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "LOCATION PERMISSION MISSING : displayMessage ( \"Error loading Navigation SDK: Location permission \" + \"is missing.\" , DISPLAY BOTH ); break ; default : displayMessage ( \"Error loading Navigation SDK: \" + errorCode , DISPLAY BOTH ); } } }); } / Requests directions from the user 's current location to a list of waypoints. / private void navigateToPlaces () { // Set up a waypoint for each place that we want to go to . createWaypoint ( \"ChIJq6qq6jauEmsRJAf7FjrKnXI\" , \"Sydney Star\" ); createWaypoint ( \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" , \"Sydney Opera House\" ); createWaypoint ( \"ChIJLwgLFGmuEmsRzpDhHQuyyoU\" , \"Sydney Conservatorium of Music\" ); // If this journey is already in progress , no need to restart navigation . // This can happen when the user rotates the device , or sends the app to the background . if ( mSavedInstanceState != null && mSavedInstanceState . containsKey ( KEY JOURNEY IN PROGRESS ) && mSavedInstanceState . getInt ( KEY JOURNEY IN PROGRESS ) == 1 ) { return ; } // Create a future to await the result of the asynchronous navigator task .",
+          "LocationListener mLocationListener ; private Bundle mSavedInstanceState ; private static final String KEY JOURNEY IN PROGRESS = \"journey in progress\" ; private boolean mJourneyInProgress = false ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; / Sets up the navigator when the activity is created . @param savedInstanceState The activity state bundle . / @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); // Save the navigator state , used to determine whether a journey is in progress . mSavedInstanceState = savedInstanceState ; if ( mSavedInstanceState != null && mSavedInstanceState . containsKey ( KEY JOURNEY IN PROGRESS )) { mJourneyInProgress = ( mSavedInstanceState . getInt ( KEY JOURNEY IN PROGRESS ) != 0 ); } setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Releases navigation listeners when the activity is destroyed . / @Override protected void onDestroy () { super . onDestroy (); if (( mJourneyInProgress ) && ( this . isFinishing ())) { mNavigator . removeArrivalListener ( mArrivalListener ); mNavigator . removeRouteChangedListener ( mRouteChangedListener ); mNavigator . removeRemainingTimeOrDistanceChangedListener ( mRemainingTimeOrDistanceChangedListener ); if ( mRoadSnappedLocationProvider != null ) { mRoadSnappedLocationProvider . removeLocationListener ( mLocationListener ); } displayMessage ( \"OnDestroy: Released navigation listeners.\" , DISPLAY LOG ); } } / Saves the state of the app when the activity is paused . / @Override protected void onSaveInstanceState ( Bundle outState ) { super . onSaveInstanceState ( outState ); if ( mJourneyInProgress ) { outState . putInt ( KEY JOURNEY IN PROGRESS , 1 ); } else { outState . putInt ( KEY JOURNEY IN PROGRESS , 0 ); } } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "See the code Show/Hide the Java code for the navigation activity. package com . example . navsdkmultidestination ; import android.content.pm.PackageManager ; import android.location.Location ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.libraries.navigation.ArrivalEvent ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.RoadSnappedLocationProvider ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.TimeAndDistance ; import com.google.android.libraries.navigation.Waypoint ; import java.util.ArrayList ; import java.util.List ; / An activity that displays a map and a navigation UI , guiding the user from their current location to multiple destinations , also known as waypoints . / public class NavigationActivityMultiDestination extends AppCompatActivity { private static final String TAG = NavigationActivityMultiDestination . class . getSimpleName (); private static final String DISPLAY BOTH = \"both\" ; private static final String DISPLAY TOAST = \"toast\" ; private static final String DISPLAY LOG = \"log\" ; private Navigator mNavigator ; private RoadSnappedLocationProvider mRoadSnappedLocationProvider ; private SupportNavigationFragment mNavFragment ; private final List<Waypoint> mWaypoints = new ArrayList <> (); private Navigator ."
+        ]
+      },
+      {
+        "title": "\"Navigate a single-destination route \\_|\\_ Navigation SDK for Android \\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "source_id": "site-docs-reference",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the code Show or hide Java code for a single-destination navigation activity. package com . example . navsdksingledestination ; import android.content.pm.PackageManager ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.RoutingOptions ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.Waypoint ; / An activity that displays a map and a navigation UI , guiding the user from their current location to a single , given destination . / public class NavigationActivitySingleDestination extends AppCompatActivity { private static final String TAG = NavigationActivitySingleDestination . class . getSimpleName (); private Navigator mNavigator ; private SupportNavigationFragment mNavFragment ; private RoutingOptions mRoutingOptions ; // Define the Sydney Opera House by specifying its place ID . private static final String SYDNEY OPERA HOUSE = \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "LOCATION PERMISSION MISSING : displayMessage ( \"Error loading Navigation SDK: Location permission \" + \"is missing.\" ); break ; default : displayMessage ( \"Error loading Navigation SDK: \" + errorCode ); } } }); } / Requests directions from the user 's current location to a specific place (provided by the Google Places API ) . / private void navigateToPlace ( String placeId , RoutingOptions travelMode ) { Waypoint destination ; try { destination = Waypoint . builder () . setPlaceIdString ( placeId ) . build (); } catch ( Waypoint .",
+          "It covers key steps such as adding a UI element for the map, requesting necessary location permissions, initializing the Navigation SDK, and setting destinations for navigation."
+        ]
+      },
+      {
+        "title": "Support Options for Navigation SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/support",
+        "source_id": "site-docs-reference",
+        "final_score": 113,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Page Summary outlined flag Get help with the Navigation SDK for Android through community support on Stack Overflow, reporting issues and feature requests on the Google Issue Tracker, or by contacting Google Maps Platform Support.",
+          "Ask a new question Report an issue or feature request If you think you may have found a bug, or if you have a feature request that you would like to share with the Google Maps Platform team, please file a bug or feature request in our issue tracker .",
+          "If you have experienced an incident that breached the Google Maps Platform Service Level Agreement (SLA) , you can open a Technical support case to request an incident report."
+        ]
+      },
+      {
+        "title": "\"Listen for navigation events \\_|\\_ Navigation SDK for Android \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/events",
+        "source_id": "site-docs-root",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "LOCATION PERMISSION MISSING : displayMessage ( \"Error loading Navigation SDK: Location permission \" + \"is missing.\" , DISPLAY BOTH ); break ; default : displayMessage ( \"Error loading Navigation SDK: \" + errorCode , DISPLAY BOTH ); } } }); } / Requests directions from the user 's current location to a list of waypoints. / private void navigateToPlaces () { // Set up a waypoint for each place that we want to go to . createWaypoint ( \"ChIJq6qq6jauEmsRJAf7FjrKnXI\" , \"Sydney Star\" ); createWaypoint ( \"ChIJ3S-JXmauEmsRUcIaWtf4MzE\" , \"Sydney Opera House\" ); createWaypoint ( \"ChIJLwgLFGmuEmsRzpDhHQuyyoU\" , \"Sydney Conservatorium of Music\" ); // If this journey is already in progress , no need to restart navigation . // This can happen when the user rotates the device , or sends the app to the background . if ( mSavedInstanceState != null && mSavedInstanceState . containsKey ( KEY JOURNEY IN PROGRESS ) && mSavedInstanceState . getInt ( KEY JOURNEY IN PROGRESS ) == 1 ) { return ; } // Create a future to await the result of the asynchronous navigator task .",
+          "LocationListener mLocationListener ; private Bundle mSavedInstanceState ; private static final String KEY JOURNEY IN PROGRESS = \"journey in progress\" ; private boolean mJourneyInProgress = false ; // Set fields for requesting location permission . private static final int PERMISSIONS REQUEST ACCESS FINE LOCATION = 1 ; private boolean mLocationPermissionGranted ; / Sets up the navigator when the activity is created . @param savedInstanceState The activity state bundle . / @Override protected void onCreate ( Bundle savedInstanceState ) { super . onCreate ( savedInstanceState ); // Save the navigator state , used to determine whether a journey is in progress . mSavedInstanceState = savedInstanceState ; if ( mSavedInstanceState != null && mSavedInstanceState . containsKey ( KEY JOURNEY IN PROGRESS )) { mJourneyInProgress = ( mSavedInstanceState . getInt ( KEY JOURNEY IN PROGRESS ) != 0 ); } setContentView ( R . layout . activity main ); // Initialize the Navigation SDK . initializeNavigationSdk (); } / Releases navigation listeners when the activity is destroyed . / @Override protected void onDestroy () { super . onDestroy (); if (( mJourneyInProgress ) && ( this . isFinishing ())) { mNavigator . removeArrivalListener ( mArrivalListener ); mNavigator . removeRouteChangedListener ( mRouteChangedListener ); mNavigator . removeRemainingTimeOrDistanceChangedListener ( mRemainingTimeOrDistanceChangedListener ); if ( mRoadSnappedLocationProvider != null ) { mRoadSnappedLocationProvider . removeLocationListener ( mLocationListener ); } displayMessage ( \"OnDestroy: Released navigation listeners.\" , DISPLAY LOG ); } } / Saves the state of the app when the activity is paused . / @Override protected void onSaveInstanceState ( Bundle outState ) { super . onSaveInstanceState ( outState ); if ( mJourneyInProgress ) { outState . putInt ( KEY JOURNEY IN PROGRESS , 1 ); } else { outState . putInt ( KEY JOURNEY IN PROGRESS , 0 ); } } / Starts the Navigation SDK and sets the camera to follow the device 's location.",
+          "See the code Show/Hide the Java code for the navigation activity. package com . example . navsdkmultidestination ; import android.content.pm.PackageManager ; import android.location.Location ; import android.os.Bundle ; import android.util.Log ; import android.widget.Toast ; import androidx.annotation.NonNull ; import androidx.appcompat.app.AppCompatActivity ; import androidx.core.app.ActivityCompat ; import androidx.core.content.ContextCompat ; import com.google.android.gms.maps.GoogleMap.CameraPerspective ; import com.google.android.libraries.navigation.ArrivalEvent ; import com.google.android.libraries.navigation.ListenableResultFuture ; import com.google.android.libraries.navigation.NavigationApi ; import com.google.android.libraries.navigation.Navigator ; import com.google.android.libraries.navigation.RoadSnappedLocationProvider ; import com.google.android.libraries.navigation.SimulationOptions ; import com.google.android.libraries.navigation.SupportNavigationFragment ; import com.google.android.libraries.navigation.TimeAndDistance ; import com.google.android.libraries.navigation.Waypoint ; import java.util.ArrayList ; import java.util.List ; / An activity that displays a map and a navigation UI , guiding the user from their current location to multiple destinations , also known as waypoints . / public class NavigationActivityMultiDestination extends AppCompatActivity { private static final String TAG = NavigationActivityMultiDestination . class . getSimpleName (); private static final String DISPLAY BOTH = \"both\" ; private static final String DISPLAY TOAST = \"toast\" ; private static final String DISPLAY LOG = \"log\" ; private Navigator mNavigator ; private RoadSnappedLocationProvider mRoadSnappedLocationProvider ; private SupportNavigationFragment mNavFragment ; private final List<Waypoint> mWaypoints = new ArrayList <> (); private Navigator ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "android.content.pm.PackageManager",
+      "android.location.Location",
+      "android.os.Bundle",
+      "android.util.Log",
+      "android.widget.Toast",
+      "androidx.annotation.NonNull",
+      "androidx.appcompat.app.AppCompatActivity",
+      "androidx.core.app.ActivityCompat",
+      "androidx.core.content.ContextCompat",
+      "com.google.android.gms.maps.GoogleMap.CameraPerspective",
+      "com.google.android.libraries.navigation.ArrivalEvent",
+      "com.google.android.libraries.navigation.ListenableResultFuture",
+      "com.google.android.libraries.navigation.NavigationApi",
+      "com.google.android.libraries.navigation.Navigator",
+      "com.google.android.libraries.navigation.RoadSnappedLocationProvider",
+      "com.google.android.libraries.navigation.RoutingOptions",
+      "com.google.android.libraries.navigation.SimulationOptions",
+      "com.google.android.libraries.navigation.SupportNavigationFragment",
+      "com.google.android.libraries.navigation.TimeAndDistance",
+      "com.google.android.libraries.navigation.Waypoint",
+      "developers.google.com",
+      "java.util.ArrayList",
+      "java.util.List"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/support",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/support",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/support",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/support",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/multi-destination",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/route",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/support",
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/events"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:46.689Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-android/card.json",
+  "product_name": "Navigation SDK for Android",
+  "product_slug": "navigation-sdk-for-android"
+}

@@ -1,0 +1,109 @@
+{
+  "feature_name": "DocumentApp.openByUrl",
+  "feature_slug": "documentapp-openbyurl",
+  "summary": "Documents can now be opened directly by URL with DocumentApp.openByUrl().",
+  "extended_definition": "Documents can now be opened directly by URL with DocumentApp.openByUrl().",
+  "lifecycle": {
+    "latest_feature_date": "2013-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/document/document-app",
+      "https://developers.google.com/apps-script/reference/document/text",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Class Text | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/document/text",
+        "source_id": "feature-recovery-http",
+        "final_score": 222,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you created your script from within a // Google Docs file, you can use DocumentApp.getActiveDocument() instead. // TODO(developer): Replace the URL with your own. const doc = DocumentApp . openByUrl ( 'https://docs.google.com/document/d/DOCUMENT_ID/edit' , ); // Gets the body contents of the tab by its ID. // TODO(developer): Replace the ID with your own. const body = doc . getTab ( '123abc' ). asDocumentTab (). getBody (); // Sets the first 13 characters of the tab body to underline. const text = body . editAsText (). setUnderline ( 0 , 12 , false ); // Gets whether the first character in the tab body is set to // underline and logs it to the console const underline = text . editAsText (). isUnderline ( 0 ); console . log ( underline ); 參數 名稱 類型 說明 offset Integer 字元偏移。 回攻員 Boolean|null ：底線設定。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents merge() 將元素與相同類型的前一個同層級元素合併。 只有相同 ElementType 的元素才能合併。目前元素中包含的所有子項元素都會移至前一個同層級元素。 目前元素會從文件中移除。 const doc = DocumentApp . getActiveDocument (); const documentTab = doc . getActiveTab (). asDocumentTab (); const body = documentTab . getBody (); // Example 1: Merge paragraphs // Append two paragraphs to the document's active tab. const par1 = body . appendParagraph ( 'Paragraph 1.' ); const par2 = body . appendParagraph ( 'Paragraph 2.' ); // Merge the newly added paragraphs into a single paragraph. par2 . merge (); // Example 2: Merge table cells // Create a two-dimensional array containing the table's cell contents. const cells = [ [ 'Row 1, Cell 1' , 'Row 1, Cell 2' ], [ 'Row 2, Cell 1' , 'Row 2, Cell 2' ], ]; // Build a table from the array. const table = body . appendTable ( cells ); // Get the first row in the table. const row = table . getRow ( 0 ); // Get the two cells in this row. const cell1 = row . getCell ( 0 ); const cell2 = row . getCell ( 1 ); // Merge the current cell into its preceding sibling element. const merged = cell2 . merge (); 回攻員 Text |null ：合併的元素。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents removeFromParent() 從父項移除元素。 const doc = DocumentApp . getActiveDocument (); const documentTab = doc . getActiveTab (). asDocumentTab (); const body = documentTab . getBody (); // Remove all images in the active tab's body. const imgs = body . getImages (); for ( let i = 0 ; i < imgs . length ; i ++ ) { imgs [ i ]. removeFromParent (); } 回攻員 Text |null ：已移除的元素。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents replaceText(searchPattern, replacement) 使用規則運算式，將指定文字模式的所有出現項目替換為指定替代字串。 搜尋模式會以字串形式傳遞，而非 JavaScript 規則運算式物件。因此，您需要逸出模式中的任何反斜線。 這個方法使用 Google 的 RE2 規則運算式程式庫，因此 支援的語法 有限。 系統會針對目前元素中包含的每個文字區塊，獨立比對所提供的規則運算式模式。 const body = DocumentApp . getActiveDocument (). getActiveTab (). asDocumentTab (). getBody (); // Clear the text surrounding \"Apps Script\", with or without text. body . replaceText ( '^.*Apps ?Script.*$' , 'Apps Script' ); 參數 名稱 類型 說明 search Pattern String 要搜尋的規則運算式模式 replacement String 用來取代的文字 回攻員 Element ：目前元素 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents setAttributes(startOffset, endOffsetInclusive, attributes) 將指定屬性套用至指定字元範圍。 指定的屬性參數必須是物件，其中每個屬性名稱都是 DocumentApp.Attribute 列舉中的項目，每個屬性值都是要套用的新值。 // Opens the Docs file by its URL.",
+          "If you created your script from within a // Google Docs file, you can use DocumentApp.getActiveDocument() instead. // TODO(developer): Replace the URL with your own. const doc = DocumentApp . openByUrl ( 'https://docs.google.com/document/d/DOCUMENT_ID/edit' , ); // Gets the body contents of the tab by its ID. // TODO(developer): Replace the ID with your own. const body = doc . getTab ( '123abc' ). asDocumentTab (). getBody (); // Deletes the first 10 characters in the body. const text = body . editAsText (). deleteText ( 0 , 9 ); 參數 名稱 類型 說明 start Offset Integer 要刪除的第一個字元的字元偏移量。 end Offset Inclusive Integer 要刪除的最後一個字元的字元偏移。 回攻員 Text ：目前的元素。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents editAsText() 取得目前元素的 Text 版本，以供編輯。 使用 editAsText 以 RTF 格式操控元素內容。 editAsText 模式會忽略非文字元素 (例如 InlineImage 和 HorizontalRule )。 如果子項元素完全位於已刪除的文字範圍內，系統會從元素中移除這些子項元素。 const body = DocumentApp . getActiveDocument (). getActiveTab (). asDocumentTab (). getBody (); // Insert two paragraphs separated by a paragraph containing an // horizontal rule. body . insertParagraph ( 0 , 'An editAsText sample.' ); body . insertHorizontalRule ( 0 ); body . insertParagraph ( 0 , 'An example.' ); // Delete \" sample.\\n\\n An\" removing the horizontal rule in the process. body . editAsText (). deleteText ( 14 , 25 ); 回攻員 Text ：目前元素的文字版本 findText(searchPattern) 使用規則運算式在元素內容中搜尋特定文字模式。 系統不完全支援部分 JavaScript 規則運算式功能，例如擷取群組和模式修飾符。 系統會針對目前元素中包含的每個文字區塊，分別比對所提供的規則運算式模式。 參數 名稱 類型 說明 search Pattern String 要搜尋的模式 回攻員 RangeElement |null ：搜尋結果，指出搜尋文字的位置；如果沒有相符項目，則為空值 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents findText(searchPattern, from) 從指定的搜尋結果開始，在元素內容中搜尋特定文字模式。 系統不完全支援部分 JavaScript 規則運算式功能，例如擷取群組和模式修飾符。 系統會針對目前元素中包含的每個文字區塊，分別比對所提供的規則運算式模式。 參數 名稱 類型 說明 search Pattern String 要搜尋的模式 from Range Element 要從哪個搜尋結果開始搜尋 回攻員 RangeElement |null ：搜尋結果，指出搜尋文字的下一個位置；如果沒有相符項目，則為空值 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getAttributes() 擷取元素的屬性。 結果會是物件，其中包含每個有效元素屬性的屬性，且每個屬性名稱都對應至 DocumentApp.Attribute 列舉中的項目。 const doc = DocumentApp . getActiveDocument (); const documentTab = doc . getActiveTab (). asDocumentTab (); const body = documentTab . getBody (); // Append a styled paragraph. const par = body . appendParagraph ( 'A bold, italicized paragraph.' ); par . setBold ( true ); par . setItalic ( true ); // Retrieve the paragraph's attributes. const atts = par . getAttributes (); // Log the paragraph attributes. for ( const att in atts ) { Logger . log ( ` ${ att } : ${ atts [ att ] } ` ); } 回攻員 Object ：元素的屬性。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getAttributes(offset) 擷取指定字元偏移的屬性。 結果會是物件，其中包含每個有效文字屬性的屬性，且每個屬性名稱都對應至 DocumentApp.Attribute 列舉中的項目。 // Opens the Docs file by its URL.",
+          "If you created your script from within a // Google Docs file, you can use DocumentApp.getActiveDocument() instead. // TODO(developer): Replace the URL with your own. const doc = DocumentApp . openByUrl ( 'https://docs.google.com/document/d/DOCUMENT_ID/edit' , ); // Gets the body contents of the tab by its ID. // TODO(developer): Replace the ID with your own. const body = doc . getTab ( '123abc' ). asDocumentTab (). getBody (); // Applies a link to the first 10 characters in the body. const text = body . editAsText (). setLinkUrl ( 0 , 9 , 'https://www.example.com/' ); // Gets the URL of the link from the first character. const link = text . getLinkUrl ( 0 ); // Logs the link URL to the console. console . log ( link ); 參數 名稱 類型 說明 offset Integer 字元偏移。 回攻員 String|null ：連結網址。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getNextSibling() 擷取元素的下一個同層級元素。 下一個同層級元素與目前元素具有相同的父項，且位於目前元素之後。 回攻員 Element |null ：下一個同層級元素。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getParent() 擷取元素的父項元素。 父項元素包含目前的元素。 回攻員 ContainerElement |null ：父項元素。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getPreviousSibling() 擷取元素的前一個同層級元素。 前一個同層級元素與目前元素具有相同的父項，且位於目前元素之前。 回攻員 Element |null ：上一個同層級元素。 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getText() 以文字字串形式擷取元素內容。 回攻員 String ：元素內容 (文字字串) 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getTextAlignment() 取得文字對齊方式。可用的對齊類型包括 DocumentApp.TextAlignment.NORMAL 、 DocumentApp.TextAlignment.SUBSCRIPT 和 DocumentApp.TextAlignment.SUPERSCRIPT 。 回攻員 TextAlignment |null ：文字對齊類型，或 null (如果文字包含多種文字對齊類型，或從未設定文字對齊方式) 授權 使用這個方法的指令碼需要下列一或多個 範圍 的授權： https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getTextAlignment(offset) 取得單一字元的文字對齊方式。可用的對齊類型為 DocumentApp.TextAlignment.NORMAL 、 DocumentApp.TextAlignment.SUBSCRIPT 和 DocumentApp.TextAlignment.SUPERSCRIPT 。 // Opens the Docs file by its URL."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "February 14, 2013 Feature Added the method DocumentApp.openByUrl() , which allows documents to be opened by their URL directly.",
+          "Feature Added the method SpreadsheetApp.openByUrl() , which allows spreadsheets to be opened by their URL directly.",
+          "The following new data source type has been added: LOOKER The following new classes have been added: LookerDataSourceSpec LookerDataSourceSpecBuilder The following new methods have been added to existing classes: DataSourceSpec.asLooker() DataSourceSpecBuilder.asLooker() August 15, 2024 Feature Generally Available : You can now create and organize tabs in Google Docs documents using Apps Script's Document service."
+        ]
+      },
+      {
+        "title": "Class DocumentApp | Apps Script | Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/document/document-app",
+        "source_id": "feature-recovery-http",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the script is container-bound to the document, use getActiveDocument() instead. // Open a document by URL. const doc = DocumentApp . openByUrl ( 'https://docs.google.com/document/d/1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3/edit' , ); Parameters Name Type Description url String the URL of the document to open Return Document &mdash; the document instance Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/documents Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "To interact with document to which the script is not container-bound, use openById(id) or openByUrl(url) instead. // Get the document to which this script is bound. const doc = DocumentApp . getActiveDocument (); Return Document &mdash; the document instance Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/documents.currentonly https://www.googleapis.com/auth/documents getUi() Returns an instance of the document's user-interface environment that allows the script to add features like menus, dialogs, and sidebars.",
+          "DocumentApp The document service creates and opens Documents that can be edited. // Open a document by ID. // TODO(developer): Replace the ID with your own. let doc = DocumentApp . openById ( 'DOCUMENT_ID' ); // Create and open a document. doc = DocumentApp . create ( 'Document Name' ); Properties Property Type Description Attribute Attribute The Attribute enumeration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "documents.currentonly"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/document/text",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/document/document-app"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/document/text",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/document/document-app"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/document/text",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/document/document-app"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

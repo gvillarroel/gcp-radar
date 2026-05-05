@@ -1,0 +1,121 @@
+{
+  "feature_name": "Reduced VPC peering IP range requirement",
+  "feature_slug": "reduced-vpc-peering-ip-range-requirement",
+  "summary": "Apigee provisioning reduces the required non-overlapping CIDR range for VPC peering to /22.",
+  "extended_definition": "Apigee provisioning reduces the required non-overlapping CIDR range for VPC peering to /22.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy",
+      "https://docs.cloud.google.com/apigee/docs/locations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Apigee locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following resources outline the steps required to select a control plane hosting jurisdiction, based on your organization type: Organization type Provisioning method Documentation Subscription organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering science Pay-as-you-go organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering science Available Apigee API control plane hosting jurisdictions The Apigee control plane directly binds to the API host name. apigee.googleapis.com has a global control plane; if you want to use a regionalized control plane, the API host name is CONTROL PLANE LOCATION -apigee.googleapis.com .",
+          "The following resources outline the steps required to select a runtime hosting region, based on your organization type: Organization type Provisioning method Documentation Evaluation organization Apigee UI in Cloud console Command line interface Provisioning an eval org Provision an eval org with VPC peering Provision an eval org without VPC peering Subscription organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Pay-as-you-go organization Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Available Apigee runtime regions The following table lists available regions for the Apigee runtime.",
+          "The following resources outline the steps required to select an Apigee API Analytics region, based on your organization type: Organization type Provisioning method Documentation Evaluation Apigee UI in Cloud console Command line interface Provisioning an eval org Provision an eval org with VPC peering Provision an eval org without VPC peering Subscription Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Pay-as-you-go Apigee UI in Cloud console Command line interface Step 3: Configure hosting and encryption Provision a paid org with VPC peering Provision a paid org without VPC peering Available Apigee API Analytics regions The following table lists available regions for Apigee API Analytics."
+        ]
+      },
+      {
+        "title": "Introduction to data residency \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "source_id": "site-docs-root-2",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you have a Google Cloud organization policy that uses a resource location constraint ( constraints/gcp.resourceLocations ), the constraint will apply to the following Apigee resources that are created when Apigee is provisioned: Control plane Consumer data Runtime Endpoints attachment Analytics If you are provisioning a new Apigee organization within a Google Cloud project with a resource location constraint applied, you must ensure that the location constraint is compatible with the control plane location specified for your Apigee organization: If you provision an Apigee organization without data residency, the resource location constraint in your Google Cloud organization policy must be set to global .",
+          "If you choose to enable data residency when provisioning an Apigee Subscription or Pay-as-you-go organization, the following services are in scope under Apigee's FedRAMP Authority To Operate (ATO): The regionalized Apigee organization's control plane, runtime plane, and analytics .",
+          "Data residency for Apigee meets compliance and regulatory requirements by allowing you to specify the geographic locations (regions) where Apigee data is stored."
+        ]
+      },
+      {
+        "title": "BasicAuthentication policy \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "gcp.resourceLocations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/locations",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/drz-concepts",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/policies/basic-authentication-policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

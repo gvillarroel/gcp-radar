@@ -1,0 +1,144 @@
+{
+  "feature_name": "IAM group authentication",
+  "feature_slug": "iam-group-authentication",
+  "summary": "IAM group authentication lets you add IAM groups to Cloud SQL instances and manage database access at the group level; IAM group authentication lets Cloud SQL for MySQL instances use IAM groups for database authentication and access management.",
+  "extended_definition": "IAM group authentication lets you add IAM groups to Cloud SQL instances and manage database access at the group level; IAM group authentication lets Cloud SQL for MySQL instances use IAM groups for database authentication and access management.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+      "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/mysql/authentication"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IAM authentication \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "source_id": "site-docs-reference-3",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Built-in database authentication IAM database authentication (individual) IAM group authentication Authentication method Password Temporary authentication token Temporary authentication token Network traffic encryption SSL not required SSL required SSL required User management Manual Centralized through IAM Centralized through IAM and Cloud Identity groups IAM group authentication IAM group authentication lets you manage Cloud SQL users at a group level.",
+          "By group : IAM group authentication lets you control access to Cloud SQL instances at a group level.",
+          "IAM group authentication restrictions You can add a maximum of 200 IAM groups to an instance."
+        ]
+      },
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "source_id": "site-docs-reference-3",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TABLE NAME to \" USERNAME \" ; Grant database privileges to an IAM group When you use IAM group authentication, you grant database privileges to IAM groups instead of granting privileges to individual users or service accounts.",
+          "MySQL PostgreSQL SQL Server This page describes how to add and manage users, service accounts, and groups to a Cloud SQL instance that uses IAM database authentication.",
+          "Inactive IAM groups can't be used for IAM group authentication."
+        ]
+      },
+      {
+        "title": "\"Control MCP use with Identity and Access Management \\_|\\_ Google Cloud MCP\\",
+        "url": "https://docs.cloud.google.com/mcp/control-mcp-use-iam",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/authentication",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "https://docs.cloud.google.com/mcp/control-mcp-use-iam"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

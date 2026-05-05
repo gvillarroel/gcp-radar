@@ -1,0 +1,116 @@
+{
+  "feature_name": "GoogleSQL ARRAY_MIN function",
+  "feature_slug": "googlesql-array-min-function",
+  "summary": "GoogleSQL added the ARRAY_MIN function to return the minimum value from an array.",
+  "extended_definition": "GoogleSQL added the ARRAY_MIN function to return the minimum value from an array.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/information-schema",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+      "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns empty if the default leader is not set: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . option name = 'default leader' Return information about each index in the user's schema: SELECT t . table schema , t . table name , t . index name , t . parent table name FROM information schema . indexes AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . index type != 'PRIMARY KEY' ORDER BY t . table catalog , t . table schema , t . table name , t . index name Returns all the columns that use options other than the default: SELECT t . table schema , t . table name , t . column name , t . option type , t . option value , t . option name FROM information schema . column options AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) Returns the current optimizer related database options: SELECT s . option name , s . option value FROM information schema . database options s WHERE s . schema name = '' AND s . option name IN ( 'optimizer version' , 'optimizer statistics package' ) Returns all available statistics packages: SELECT FROM information schema . spanner statistics ; Return all sequences: SELECT FROM information schema . sequences ; Return all sequence options for the sequence named \"MySequence\" SELECT FROM information schema . sequence options WHERE name = \"MySequence\" ; Return the names of all property graphs and their definitions: SELECT property graph name , property graph metadata json FROM information schema . property graphs Return the names of all property graphs together with their labels and properties: SELECT property graph name , property graph metadata json . labels , property graph metadata json . propertyDeclarations FROM information schema . property graphs What's next Learn about available Introspection tools to help you investigate database issues.",
+          "IDENTITY SKIP RANGE MIN STRING The minimum value of a skipped range after transforming.",
+          "Examples Return information about each table in the user's schema: SELECT t . table schema , t . table name , t . parent table name FROM information schema . tables AS t WHERE t . table catalog = '' AND t . table schema NOT IN ( 'information schema' , 'SPANNER SYS' ) AND t . table type = 'BASE TABLE' ORDER BY t . table catalog , t . table schema , t . table name Return the name of all tables in the INFORMATION SCHEMA: SELECT t . table name FROM information schema . tables AS t WHERE t . table schema = \"SPANNER SYS\" Return information about the columns in the user table MyTable in default schema: SELECT t . column name , t . spanner type , t . is nullable FROM information schema . columns AS t WHERE t . table catalog = '' AND t . table schema = '' AND t . table name = 'MyTable' ORDER BY t . table catalog , t . table schema , t . table name , t . ordinal position Return information on what the default leader region for the database is."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "The value is always NULL. cycle option character varying The only option that sequence accepts is no . sequence kind character varying The kind of sequence. bit reversed positive is the only acceptable value. counter start value bigint Starting value of the sequence counter. skip range min bigint The minimum value in the skipped range.",
+          "For arrays, the value ARRAY . option value character varying The value of the option. routine privileges This row-filtered view lists all fine-grained access control privileges granted on all change stream read functions to any database role, including public .",
+          "Includes the subtype if an ARRAY is returned. spanner determinism character varying The user specified determinism of the function ( DETERMINISTIC , NOT DETERMINISTIC STABLE , or NOT DETERMINISTIC VOLATILE )."
+        ]
+      },
+      {
+        "title": "\"Dialect parity between GoogleSQL and PostgreSQL \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer id BIGINT PRIMARY KEY, first name VARCHAR(1024), last name VARCHAR(1024), singer info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed rows AS ( SELECT , ABS(MOD(spanner.farm fingerprint( CONCAT( singer id::text, first name, last name, singer info::text ) ), 100)) AS hash value FROM singers ) -- Sample data SELECT FROM hashed rows WHERE hash value < 10 -- sample roughly 10% LIMIT 10; / Optional: LIMIT to a max of 10 rows to be returned / VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x x - 1)); APPROX COSINE DISTANCE No recommendation available.",
+          "ARRAY INCLUDES Use the equality operator with the ANY function, as shown in the following example: SELECT search value = ANY(array to search); ARRAY INCLUDES ALL Use the array contains operator, as shown in the following example: SELECT array to search @> search values; ARRAY INCLUDES ANY Use the array overlap operator, as shown in the following example: SELECT array to search && search values; ARRAY IS DISTINCT Use a subquery to count distinct values and compare them to the original array length, as shown in the following example: SELECT ARRAY LENGTH(value, 1) = ( SELECT COUNT(DISTINCT e) FROM UNNEST(value) AS e); ARRAY LAST Use the array subscript operator, as shown in the following example SELECT (value)[ARRAY LENGTH(value, 1)]; This returns NULL for empty arrays.",
+          "Use a subquery with the ORDER BY or LIMIT clauses, as shown in the following example: SELECT FROM ( (expression) UNION ALL SELECT NULL, … -- as many columns as you have ) AS rows ORDER BY 1 NULLS LAST LIMIT 1; ARRAY CONCAT AGG You can use ARRAY AGG and UNNEST as shown in the following example: WITH albums AS ( SELECT ARRAY['Song A', NULL, 'Song B'] AS songs UNION ALL SELECT NULL UNION ALL SELECT ARRAY[]::TEXT[] ) SELECT ARRAY AGG(song) FROM albums, UNNEST(songs) song; ARRAY FIRST Use the array subscript operator, as shown in the following example: SELECT array expression[1]; Note that this will return NULL for empty arrays."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spanner.farm"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

@@ -1,0 +1,365 @@
+{
+  "feature_name": "BigQuery ML components for Vertex AI Managed Pipelines",
+  "feature_slug": "bigquery-ml-components-for-vertex-ai-managed-pipelines",
+  "summary": "BigQuery ML provides managed pipeline components for Vertex AI to build, run, and track ML workflows.",
+  "extended_definition": "BigQuery ML provides managed pipeline components for Vertex AI to build, run, and track ML workflows.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control",
+      "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Chronicle Service Agent ( roles/ chronicle.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Datapipelines Service Agent ( roles/ datapipelines.serviceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Dialogflow Service Agent ( roles/ dialogflow.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.tables.getData BigQuery Admin ( roles/ bigquery.admin ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Authorized Routine Admin ( roles/ bigquery.routineAdmin ) BigQuery Authorized Routine Data Editor ( roles/ bigquery.routineDataEditor ) BigQuery Authorized Routine Data Viewer ( roles/ bigquery.routineDataViewer ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) Dataplex Storage Data Owner ( roles/ dataplex.storageDataOwner ) Dataplex Storage Data Reader ( roles/ dataplex.storageDataReader ) Datastream Bigquery Writer ( roles/ datastream.bigqueryWriter ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Permission Included in roles managedflink. deployments. create Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) managedflink. deployments. delete Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) managedflink.deployments.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.deployments.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink. deployments. update Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) managedflink.jobs.create Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.jobs.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.jobs.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.jobs.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.jobs.update Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.locations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.locations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.operations.cancel Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) managedflink.operations.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) managedflink.operations.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.operations.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.sessions.create Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.sessions.delete Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.sessions.get Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.sessions.list Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Viewer ( roles/ managedflink.viewer ) Security Auditor ( roles/ iam.securityAuditor ) Support User ( roles/ iam.supportUser ) Managed Flink Developer ( roles/ managedflink.developer ) managedflink.sessions.update Owner ( roles/ owner ) Editor ( roles/ editor ) Managed Flink Admin ( roles/ managedflink.admin ) Managed Flink Developer ( roles/ managedflink.developer ) BigQuery Migration Service permissions This table lists the IAM permissions for BigQuery Migration Service and the roles that include them.",
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) Audit Manager Auditing Service Agent ( roles/ auditmanager.serviceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Connected Sheets Service Agent ( roles/ bigquery.connectedSheetsServiceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Dataplex Discovery Publishing Service Agent ( roles/ dataplex.discoveryPublishingServiceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Service Management Service Agent ( roles/ firebase.managementServiceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) FleetEngine Service Agent ( roles/ fleetengine.serviceAgent ) Cloud Logging Service Agent ( roles/ logging.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Observability Service Agent ( roles/ observability.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent ) Security Health Analytics Service Agent ( roles/ securitycenter.securityHealthAnalyticsServiceAgent ) Security Center Service Agent ( roles/ securitycenter.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.datasets.getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) BigQuery Admin ( roles/ bigquery.admin ) Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Metadata Viewer ( roles/ bigquery.metadataViewer ) BigQuery Security Admin ( roles/ bigquery.securityAdmin ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery User ( roles/ bigquery.user ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) SLZ BQDW Blueprint Project Level Remediator ( roles/ securedlandingzone.bqdwProjectRemediator ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "The CREATE MODEL statement \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Remote models over open models ENDPOINT IDLE TTL Specifies the duration of inactivity after which a BigQuery-managed Vertex AI model is automatically undeployed from a Vertex AI endpoint.",
+          "You can view specific CREATE MODEL statements by clicking the MODEL TYPE name in the following list, in the table of contents in the left panel, or in the create model link in the End-to-end user journey for each model . { CREATE MODEL CREATE MODEL IF NOT EXISTS CREATE OR REPLACE MODEL } model name [TRANSFORM ( select list )] [INPUT ( field name field type ) OUTPUT ( field name field type )] [REMOTE WITH CONNECTION { connection name DEFAULT}] [OPTIONS( model option list )] [ AS { query statement ( training data AS ( query statement ), custom holiday AS ( holiday statement ) )}] model option list: MODEL TYPE = { 'LINEAR REG' 'LOGISTIC REG' 'KMEANS' 'MATRIX FACTORIZATION' 'PCA' 'AUTOENCODER' 'AUTOML CLASSIFIER' 'AUTOML REGRESSOR' 'BOOSTED TREE CLASSIFIER' 'BOOSTED TREE REGRESSOR' 'RANDOM FOREST CLASSIFIER' 'RANDOM FOREST REGRESSOR' 'DNN CLASSIFIER' 'DNN REGRESSOR' 'DNN LINEAR COMBINED CLASSIFIER' 'DNN LINEAR COMBINED REGRESSOR' 'ARIMA PLUS' 'ARIMA PLUS XREG' 'TENSORFLOW' 'TENSORFLOW LITE' 'ONNX' 'XGBOOST' 'CONTRIBUTION ANALYSIS' } [, MODEL REGISTRY = { 'VERTEX AI' } ] [, VERTEX AI MODEL ID = string value ] [, VERTEX AI MODEL VERSION ALIASES = string array ] [, INPUT LABEL COLS = string array ] [, MAX ITERATIONS = int64 value ] [, EARLY STOP = { TRUE FALSE } ] [, MIN REL PROGRESS = float64 value ] [, DATA SPLIT METHOD = { 'AUTO SPLIT' 'RANDOM' 'CUSTOM' 'SEQ' 'NO SPLIT' } ] [, DATA SPLIT EVAL FRACTION = float64 value ] [, DATA SPLIT TEST FRACTION = float64 value ] [, DATA SPLIT COL = string value ] [, OPTIMIZE STRATEGY = { 'AUTO STRATEGY' 'BATCH GRADIENT DESCENT' 'NORMAL EQUATION' } ] [, L1 REG = float64 value ] [, L2 REG = float64 value ] [, LEARN RATE STRATEGY = { 'LINE SEARCH' 'CONSTANT' } ] [, LEARN RATE = float64 value ] [, LS INIT LEARN RATE = float64 value ] [, WARM START = { TRUE FALSE } ] [, AUTO CLASS WEIGHTS = { TRUE FALSE } ] [, CLASS WEIGHTS = struct array ] [, INSTANCE WEIGHT COL = string value ] [, NUM CLUSTERS = int64 value ] [, KMEANS INIT METHOD = { 'RANDOM' 'KMEANS++' 'CUSTOM' } ] [, KMEANS INIT COL = string value ] [, DISTANCE TYPE = { 'EUCLIDEAN' 'COSINE' } ] [, STANDARDIZE FEATURES = { TRUE FALSE } ] [, MODEL PATH = string value ] [, BUDGET HOURS = float64 value ] [, OPTIMIZATION OBJECTIVE = { string value struct value } ] [, FEEDBACK TYPE = {'EXPLICIT' 'IMPLICIT'} ] [, NUM FACTORS = int64 value ] [, USER COL = string value ] [, ITEM COL = string value ] [, RATING COL = string value ] [, WALS ALPHA = float64 value ] [, BOOSTER TYPE = { 'gbtree' 'dart'} ] [, NUM PARALLEL TREE = int64 value ] [, DART NORMALIZE TYPE = { 'tree' 'forest'} ] [, TREE METHOD = { 'auto' 'exact' 'approx' 'hist'} ] [, MIN TREE CHILD WEIGHT = float64 value ] [, COLSAMPLE BYTREE = float64 value ] [, COLSAMPLE BYLEVEL = float64 value ] [, COLSAMPLE BYNODE = float64 value ] [, MIN SPLIT LOSS = float64 value ] [, MAX TREE DEPTH = int64 value ] [, SUBSAMPLE = float64 value ] [, ACTIVATION FN = { 'RELU' 'RELU6' 'CRELU' 'ELU' 'SELU' 'SIGMOID' 'TANH' } ] [, BATCH SIZE = int64 value ] [, DROPOUT = float64 value ] [, HIDDEN UNITS = int array ] [, OPTIMIZER = { 'ADAGRAD' 'ADAM' 'FTRL' 'RMSPROP' 'SGD' } ] [, TIME SERIES TIMESTAMP COL = string value ] [, TIME SERIES DATA COL = string value ] [, TIME SERIES ID COL = { string value string array } ] [, HORIZON = int64 value ] [, AUTO ARIMA = { TRUE FALSE } ] [, AUTO ARIMA MAX ORDER = int64 value ] [, AUTO ARIMA MIN ORDER = int64 value ] [, NON SEASONAL ORDER = (int64 value, int64 value, int64 value) ] [, DATA FREQUENCY = { 'AUTO FREQUENCY' 'PER MINUTE' 'HOURLY' 'DAILY' 'WEEKLY' ... } ] [, FORECAST LIMIT LOWER BOUND = float64 value ] [, FORECAST LIMIT UPPER BOUND = float64 value ] [, INCLUDE DRIFT = { TRUE FALSE } ] [, HOLIDAY REGION = { 'GLOBAL' 'NA' 'JAPAC' 'EMEA' 'LAC' 'AE' ... } ] [, CLEAN SPIKES AND DIPS = { TRUE FALSE } ] [, ADJUST STEP CHANGES = { TRUE FALSE } ] [, DECOMPOSE TIME SERIES = { TRUE FALSE } ] [, HIERARCHICAL TIME SERIES COLS = { string array } ] [, ENABLE GLOBAL EXPLAIN = { TRUE FALSE } ] [, APPROX GLOBAL FEATURE CONTRIB = { TRUE FALSE }] [, INTEGRATED GRADIENTS NUM STEPS = int64 value ] [, CALCULATE P VALUES = { TRUE FALSE } ] [, FIT INTERCEPT = { TRUE FALSE } ] [, CATEGORY ENCODING METHOD = { 'ONE HOT ENCODING' 'DUMMY ENCODING' 'LABEL ENCODING' 'TARGET ENCODING' } ] [, { ENDPOINT = string value HUGGING FACE MODEL ID = string value MODEL GARDEN MODEL NAME = string value } ] [, HUGGING FACE TOKEN = string value ] [, MACHINE TYPE = string value ] [, MIN REPLICA COUNT = int64 value ] [, MAX REPLICA COUNT = int64 value ] [, RESERVATION AFFINITY TYPE = { 'NO RESERVATION' 'ANY RESERVATION' 'SPECIFIC RESERVATION' } ] [, RESERVATION AFFINITY KEY = string value ] [, RESERVATION AFFINITY VALUES = string array ] [, ENDPOINT IDLE TTL = interval value ] [, REMOTE SERVICE TYPE = { 'CLOUD AI VISION V1' 'CLOUD AI NATURAL LANGUAGE V1' 'CLOUD AI TRANSLATE V3' } ] [, XGBOOST VERSION = { '0.9' '1.1' } ] [, TF VERSION = { '1.15' '2.8.0' '2.17.0' } ] [, NUM TRIALS = int64 value , ] [, MAX PARALLEL TRIALS = int64 value ] [, HPARAM TUNING ALGORITHM = { 'VIZIER DEFAULT' 'RANDOM SEARCH' 'GRID SEARCH' } ] [, HPARAM TUNING OBJECTIVES = { 'R2 SCORE' 'ROC AUC' ... } ] [, NUM PRINCIPAL COMPONENTS = int64 value ] [, PCA EXPLAINED VARIANCE RATIO = float64 value ] [, SCALE FEATURES = { TRUE FALSE } ] [, PCA SOLVER = { 'FULL' 'RANDOMIZED' 'AUTO' } ] [, TIME SERIES LENGTH FRACTION = float64 value ] [, MIN TIME SERIES LENGTH = int64 value ] [, MAX TIME SERIES LENGTH = int64 value ] [, TREND SMOOTHING WINDOW SIZE = int64 value ] [, SEASONALITIES = string array ] [, PROMPT COL = string value ] [, LEARNING RATE MULTIPLIER = float64 value ] [, ACCELERATOR TYPE = { 'GPU' 'TPU' } ] [, EVALUATION TASK = { 'TEXT GENERATION' 'CLASSIFICATION' 'SUMMARIZATION' 'QUESTION ANSWERING' 'UNSPECIFIED' } ] [, DOCUMENT PROCESSOR = string value ] [, SPEECH RECOGNIZER = string value ] [, KMS KEY NAME = string value ] [, CONTRIBUTION METRIC = string value ] [, DIMENSION ID COLS = string array ] [, IS TEST COL = string value ] [, MIN APRIORI SUPPORT = float64 value ] [, PRUNING METHOD = {'NO PRUNING', 'PRUNE REDUNDANT INSIGHTS'} ] [, TOP K INSIGHTS BY APRIORI SUPPORT = int64 value ] CREATE MODEL Creates and trains a new model in the specified dataset.",
+          "See XGBoost INPUT OUTPUT clause for more details. field type Remote models support the following BigQuery data types for INPUT and OUTPUT clauses: Simple type: BOOL , INT64 , FLOAT64 , NUMERIC , BIGNUMERIC , STRING ARRAY <Simple type> XGBoost models only support numeric types for the INPUT field type and FLOAT64 for the OUTPUT field type. connection name BigQuery uses a CLOUD RESOURCE connection to interact with your Vertex AI endpoint."
+        ]
+      },
+      {
+        "title": "\"Best practices for multi-tenant workloads on BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "The project configuration in figure 2 includes the following projects: Data pipelines project : the core infrastructure components that receive, process, and distribute tenant data are all packaged into a single project.",
+          "Sensitive Data Protection Sensitive Data Protection provides APIs and scanning utilities that help you identify and mitigate sensitive content that is stored inside BigQuery or Cloud Storage datasets.",
+          "Best practices for multi-tenant workloads on BigQuery This document provides techniques and best practices for common patterns that are used in multi-tenant data platforms and enterprise data marts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.batchPredictionServiceAgent",
+      "aiplatform.customCodeServiceAgent",
+      "aiplatform.locations.get",
+      "aiplatform.modelMonitoringServiceAgent",
+      "aiplatform.operations.list",
+      "aiplatform.ragServiceAgent",
+      "aiplatform.serviceAgent",
+      "aiplatform.tuningServiceAgent",
+      "auditmanager.serviceAgent",
+      "automl.serviceAgent",
+      "automlrecommendations.serviceAgent",
+      "bigquery.admin",
+      "bigquery.config.get",
+      "bigquery.connectedSheetsServiceAgent",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.create",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.dataViewer",
+      "bigquery.jobs.create",
+      "bigquery.metadataViewer",
+      "bigquery.readsessions",
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData",
+      "bigquery.readsessions.update",
+      "bigquery.routineAdmin",
+      "bigquery.routineDataEditor",
+      "bigquery.routineDataViewer",
+      "bigquery.securityAdmin",
+      "bigquery.studioAdmin",
+      "bigquery.tables.getData",
+      "bigquery.user",
+      "bigquerydatapolicy.editor",
+      "ces.serviceAgent",
+      "chronicle.serviceAgent",
+      "cloudaicompanion.companions",
+      "cloudaicompanion.instances",
+      "cloudaicompanion.topics.create",
+      "cloudasset.serviceAgent",
+      "clouddeploymentmanager.serviceAgent",
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "cloudsecuritycompliance.serviceAgent",
+      "compute.projects.get",
+      "compute.regions",
+      "compute.regions.get",
+      "compute.regions.list",
+      "compute.zones",
+      "compute.zones.get",
+      "compute.zones.list",
+      "contactcenterinsights.serviceAgent",
+      "container.serviceAgent",
+      "dataflow.serviceAgent",
+      "dataform.comments.get",
+      "dataform.comments.list",
+      "dataform.commentThreads.get",
+      "dataform.commentThreads.list",
+      "dataform.folders.create",
+      "dataform.locations",
+      "dataform.locations.get",
+      "dataform.locations.list",
+      "dataform.repositories.create",
+      "dataform.repositories.list",
+      "datafusion.serviceAgent",
+      "datalabeling.serviceAgent",
+      "datapipelines.serviceAgent",
+      "dataplex.discoveryPublishingServiceAgent",
+      "dataplex.projects.search",
+      "dataplex.serviceAgent",
+      "dataplex.storageDataOwner",
+      "dataplex.storageDataReader",
+      "dataprep.serviceAgent",
+      "dataproc.batches",
+      "dataproc.batches.analyze",
+      "dataproc.batches.cancel",
+      "dataproc.batches.create",
+      "dataproc.batches.delete",
+      "dataproc.batches.get",
+      "dataproc.batches.list",
+      "dataproc.operations.cancel",
+      "dataproc.operations.delete",
+      "dataproc.operations.get",
+      "dataproc.operations.list",
+      "dataproc.sessions",
+      "dataproc.sessions.create",
+      "dataproc.sessions.delete",
+      "dataproc.sessions.get",
+      "dataproc.sessions.list",
+      "dataproc.sessions.terminate",
+      "dataproc.sessionTemplates",
+      "dataproc.sessionTemplates.get",
+      "dataproc.sessionTemplates.list",
+      "dataprocrm.nodePools",
+      "dataprocrm.nodePools.create",
+      "dataprocrm.nodePools.delete",
+      "dataprocrm.nodePools.get",
+      "dataprocrm.nodePools.list",
+      "dataprocrm.nodePools.resize",
+      "dataprocrm.nodes.get",
+      "dataprocrm.nodes.heartbeat",
+      "dataprocrm.nodes.list",
+      "dataprocrm.nodes.update",
+      "dataprocrm.operations.get",
+      "dataprocrm.operations.list",
+      "dataprocrm.workloads",
+      "dataprocrm.workloads.cancel",
+      "dataprocrm.workloads.create",
+      "dataprocrm.workloads.delete",
+      "dataprocrm.workloads.get",
+      "dataprocrm.workloads.list",
+      "datastream.bigqueryWriter",
+      "datastream.serviceAgent",
+      "dialogflow.serviceAgent",
+      "discoveryengine.serviceAgent",
+      "dlp.orgdriver",
+      "dlp.projectdriver",
+      "dlp.serviceAgent",
+      "enterpriseknowledgegraph.serviceAgent",
+      "firebase.managementServiceAgent",
+      "firebasecrashlytics.serviceAgent",
+      "fleetengine.serviceAgent",
+      "iam.databasesAdmin",
+      "iam.dataScientist",
+      "iam.mlEngineer",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.siteReliabilityEngineer",
+      "iam.supportUser",
+      "logging.serviceAgent",
+      "looker.serviceAgent",
+      "managedflink.admin",
+      "managedflink.deployments.get",
+      "managedflink.deployments.list",
+      "managedflink.developer",
+      "managedflink.jobs.create",
+      "managedflink.jobs.delete",
+      "managedflink.jobs.get",
+      "managedflink.jobs.list",
+      "managedflink.jobs.update",
+      "managedflink.locations.get",
+      "managedflink.locations.list",
+      "managedflink.operations.cancel",
+      "managedflink.operations.delete",
+      "managedflink.operations.get",
+      "managedflink.operations.list",
+      "managedflink.sessions.create",
+      "managedflink.sessions.delete",
+      "managedflink.sessions.get",
+      "managedflink.sessions.list",
+      "managedflink.sessions.update",
+      "managedflink.viewer",
+      "ml.serviceAgent",
+      "observability.serviceAgent",
+      "retail.serviceAgent",
+      "securedlandingzone.bqdwProjectRemediator",
+      "securitycenter.controlServiceAgent",
+      "securitycenter.securityHealthAnalyticsServiceAgent",
+      "securitycenter.serviceAgent",
+      "visionai.serviceAgent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/bigqueryml-syntax-create",
+        "https://docs.cloud.google.com/bigquery/docs/best-practices-for-multi-tenant-workloads-on-bigquery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,108 @@
+{
+  "feature_name": "Lama Large Mask Inpainting in Model Garden",
+  "feature_slug": "lama-large-mask-inpainting-in-model-garden",
+  "summary": "Lama with large-mask inpainting was added to Model Garden for high-receptive-field image inpainting with resolution robustness.",
+  "extended_definition": "Lama with large-mask inpainting was added to Model Garden for high-receptive-field image inpainting with resolution robustness.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to provide text input to Large Language Models available on Vertex AI to test, tune, and deploy generative AI language models.",
+          "Tutorial steps Colab GitHub Vertex AI Workbench PaLM API Using the Vertex AI SDK with Large Language Models .",
+          "In this tutorial, you use Vertex AI to get predictions from an RLHF-tuned large-language model."
+        ]
+      },
+      {
+        "title": "Overview of Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Models : Vertex AI Model Garden is a centralized hub containing over 200 enterprise-ready models from Google, leading third-party partners (such as Anthropic's Claude), and popular open-source options (such as Llama).",
+          "It provides access to the Model Garden, featuring a curated catalog of over 200 models—including Google's foundation models (such as Gemini) and a comprehensive selection of partner and open models—along with the underlying TPU/GPU infrastructure.",
+          "Partner and open source models : Access a curated selection of leading models such as Anthropic's Claude, Mistral AI models, and Llama with superior price-performance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 87,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required except for Large Model Deploy use cases. prediction resources can be only one of the following: dedicatedResources object ( DedicatedResources ) A description of resources that are dedicated to the DeployedModel, and that need a higher degree of manual configuration. automaticResources object ( AutomaticResources ) A description of resources that to large degree are decided by Vertex AI, and require only a modest additional configuration. sharedResources string The resource name of the shared DeploymentResourcePool to deploy on.",
+          "Runtime status of the deployed model. systemLabels map (key: string, value: string) System labels to apply to Model Garden deployments.",
+          "If true, in addition to the original large model logs, logs will be converted in OTel schema format, and saved in otel log column."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/introduction-unified-platform",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.145Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

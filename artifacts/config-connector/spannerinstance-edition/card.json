@@ -1,0 +1,234 @@
+{
+  "feature_name": "SpannerInstance edition",
+  "feature_slug": "spannerinstance-edition",
+  "summary": "Config Connector added a SpannerInstance field for edition behind the direct reconciler opt-in annotation.",
+  "extended_definition": "Config Connector added a SpannerInstance field for edition behind the direct reconciler opt-in annotation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+      "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "SpannerInstance | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "source_id": "feature-recovery-http",
+        "final_score": 224,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SpannerInstance Property Value Google Cloud Service Name Cloud Spanner Google Cloud Service Documentation /spanner/docs/ Google Cloud REST Resource Name v1.projects.instances Google Cloud REST Resource Documentation /spanner/docs/reference/rest/v1/projects.instances Config Connector Resource Short Names gcpspannerinstance gcpspannerinstances spannerinstance Config Connector Service Name spanner.googleapis.com Config Connector Resource Fully Qualified Name spannerinstances.spanner.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions No Supports IAM Audit Configs No IAM External Reference Format projects/{{project}}/instances/{{name}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/force-destroy cnrm.cloud.google.com/project-id Spec Schema autoscalingConfig : autoscalingLimits : maxNodes : integer maxProcessingUnits : integer minNodes : integer minProcessingUnits : integer autoscalingTargets : highPriorityCpuUtilizationPercent : integer storageUtilizationPercent : integer config : string defaultBackupScheduleType : string displayName : string edition : string labels : string : string numNodes : integer processingUnits : integer resourceID : string Fields autoscalingConfig Optional object Optional.",
+          "SpannerInstance | Config Connector | Google Cloud Documentation Skip to main content Area teknologi close AI dan ML Pengembangan aplikasi Hosting aplikasi Compute Pipeline dan analisis data Database Terdistribusi, hybrid, dan multicloud Solusi industri Migrasi Jaringan Kemampuan observasi dan pemantauan Keamanan Storage Alat cross product close Pengelolaan akses dan resource Pengelolaan biaya dan penggunaan Infrastruktur sebagai kode SDK, bahasa, framework, dan alat / Console English Deutsch Español – América Latina Français Indonesia Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Mulai gratis Ringkasan Panduan API dan referensi Referensi Area teknologi More Ringkasan Panduan API dan referensi Referensi Alat cross product More Console Config Connector Ringkasan resource API AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser Gateway API APIGatewayAPI Hub Aplikasi AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Cadangan dan DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig Reservasi BigQuery BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Inventaris Aset Cloud AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Kuota Cloud APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Pengontrol Konfigurasi ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Kebijakan Organisasi OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Penampung Terpasang ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Kontak Penting EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Kafka Terkelola ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Konektivitas Jaringan NetworkConnectivityHub NetworkConnectivitySpoke Keamanan Jaringan NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Layanan Jaringan NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebook NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Direktori Layanan ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Layanan ServiceIdentity Storage Transfer Service StorageTransferJob Tag TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress Akses VPC VPCAccessConnector Workstation WorkstationCluster WorkstationConfig Workstation Anotasi AI dan ML Pengembangan aplikasi Hosting aplikasi Compute Pipeline dan analisis data Database Terdistribusi, hybrid, dan multicloud Solusi industri Migrasi Jaringan Kemampuan observasi dan pemantauan Keamanan Storage Pengelolaan akses dan resource Pengelolaan biaya dan penggunaan Infrastruktur sebagai kode SDK, bahasa, framework, dan alat Home Documentation Access and resource management Config Connector API dan referensi Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string externalRef : string observedGeneration : integer observedState : numNodes : integer processingUnits : integer state : string Fields conditions list (object) Conditions represent the latest available observations of the SpannerInstance's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition."
+        ]
+      },
+      {
+        "title": "Ignore unspecified fields \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "source_id": "site-docs-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "Kinds with Merge support The following are all the Config Connector kinds that support Merge populating behavior: AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AlloyDBBackup AlloyDBCluster AlloyDBUser ApigeeEnvironment ApigeeOrganization ArtifactRegistryRepository BigQueryDataset BigQueryJob BigQueryTable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable BillingBudgetsBudget BinaryAuthorizationAttestor BinaryAuthorizationPolicy CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CloudBuildTrigger CloudFunctionsFunction CloudIdentityGroup CloudIdentityMembership CloudSchedulerJob ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeForwardingRule ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSSLCertificate ComputeSSLPolicy ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel ConfigControllerInstance ContainerAnalysisNote ContainerAttachedCluster ContainerCluster ContainerNodePool DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType DNSManagedZone DNSPolicy DNSRecordSet DataFusionInstance DataflowFlexTemplateJob DataflowJob DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate EdgeContainerCluster EdgeContainerNodePool EdgeContainerVpnConnection EdgeNetworkNetwork EdgeNetworkSubnet EventarcTrigger FilestoreBackup FilestoreInstance FirestoreIndex Folder GKEHubFeature GKEHubMembership IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider IAPBrand IAPIdentityAwareProxyClient IdentityPlatformConfig IdentityPlatformOAuthIDPConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig KMSCryptoKey KMSKeyRing LoggingLogBucket LoggingLogExclusion LoggingLogSink LoggingLogView MemcacheInstance MonitoringAlertPolicy MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig NetworkConnectivityHub NetworkConnectivitySpoke NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy NetworkServicesEndpointPolicy NetworkServicesGRPCRoute NetworkServicesGateway NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute OSConfigGuestPolicy OSConfigOSPolicyAssignment PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Project PubSubLiteReservation PubSubSchema PubSubSubscription PubSubTopic RecaptchaEnterpriseKey RedisInstance ResourceManagerLien ResourceManagerPolicy RunJob RunService SQLDatabase SQLSSLCert SQLUser SecretManagerSecret SecretManagerSecretVersion Service ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService ServiceIdentity ServiceNetworkingConnection SourceRepoRepository SpannerDatabase SpannerInstance StorageBucket StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification StorageTransferJob VPCAccessConnector The following kinds don't support the Merge populating behavior starting from the corresponding version: Kind Name Version LoggingLogMetric 1.118.1 Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Config Connector will determine the spec fields populating behavior based on the value of the cnrm.cloud.google.com/state-into-spec annotation, and it follows the logic below to determine the value of the annotation: Use the value of the cnrm.cloud.google.com/state-into-spec annotation directly if it is specified and valid.",
+          "Note that the only populating behavior CRDs added in version 1.114.0 and later follow is Absent regardless of the cnrm.cloud.google.com/state-into-spec annotation or the stateIntoSpec fields in the ConfigConnector CR or ConfigConnectorContext CR."
+        ]
+      },
+      {
+        "title": "Manage fields externally \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "As an example: if the user applies a resource configuration without setting a value for bar in the spec: spec : foo : \"foo\" If the value of the bar field is baz in the Google Cloud API, the resource in the api-server is populated to that value: object in the api-server spec : foo : \"foo\" bar : \"baz\" # populated by first reconciliation If the Google Cloud resource is modified directly such that bar is now baz-2 , the Google Cloud API is corrected to the value that was initially populated in the resource spec: baz : object in the api-server spec : foo : \"foo\" bar : \"baz\" # still the originally populated value, and overrides the Google Cloud value Behavior for list fields in resource spec Due to technical limitation in Config Connector, list fields in your resource configuration cannot be managed externally by default.",
+          "Manage fields externally Caution: For CRDs added in version 1.114.0 and later , externally managed fields are not populated by default.",
+          "To see if your resource supports the annotation, check the corresponding resource reference page . metadata : annotations : cnrm.cloud.google.com/state-into-spec : absent By setting value of state-into-spec as absent , Config Connector ignores list fields if they are not specified in your resource configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "projects.instances",
+      "spanner.cnrm.cloud.google.com",
+      "spanner.googleapis.com",
+      "spannerinstances.spanner.cnrm.cloud.google.com",
+      "spec.bars",
+      "v1.projects.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/spanner/spannerinstance",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/ignore-unspecified-fields",
+        "https://docs.cloud.google.com/config-connector/docs/concepts/managing-fields-externally"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:20.276Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

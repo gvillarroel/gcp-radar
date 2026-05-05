@@ -1,0 +1,161 @@
+{
+  "feature_name": "pg_bigm extension",
+  "feature_slug": "pg-bigm-extension",
+  "summary": "The pg_bigm extension adds bigram indexing to support faster full-text search.",
+  "extended_definition": "The pg_bigm extension adds bigram indexing to support faster full-text search.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "source_id": "site-iam-reference",
+        "final_score": 55,
+        "relevance": "",
+        "evidence_snippets": [
+          "When you add a new member (user or service account) to the IAM group in Cloud Identity and they log in to the instance successfully for the first time, then they inherit the database privileges granted to the group automatically.",
+          "After a group member logs in and authenticates successfully to the primary instance for the first time, Cloud SQL creates a group user account or group service account for that group member.",
+          "Add an IAM policy binding to a user, service account, or group This procedure adds a policy binding to the IAM policy of a specific project, given a project ID and the binding."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 49,
+        "relevance": "",
+        "evidence_snippets": [
+          "From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \\ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now.",
+          "If you are using Node.js with verify-full or its equivalent, please use the DNS name for the servername parameter.",
+          "Unable to create a replica instance after successfully creating a primary instance with the final backup setting."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you use Private Service Connect to connect to a Cloud SQL instance from multiple VPC networks, then each network has its own administrator. dns.admin Grants full control over Cloud DNS resources, including DNS zones and records. cloudsql.admin Provides full control of a Cloud SQL instance and controls the instance over its lifecycle. cloudsql.instanceUser Provides access to the Cloud SQL instance.",
+          "User roles The following table provides information about the roles required to use Private Service Connect with a Cloud SQL instance: Role Description compute.networkAdmin Grants full control over the VPC network that initiates a connection to a Cloud SQL instance.",
+          "You can confirm that Private Service Connect outbound connectivity was enabled successfully by running gcloud sql instances describe ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.admin",
+      "cloudsql.enable",
+      "cloudsql.instanceUser",
+      "compute.networkAdmin",
+      "dns.admin",
+      "pgaudit.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

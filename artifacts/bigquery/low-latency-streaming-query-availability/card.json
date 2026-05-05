@@ -1,0 +1,108 @@
+{
+  "feature_name": "Low-latency streaming query availability",
+  "feature_slug": "low-latency-streaming-query-availability",
+  "summary": "Low-latency streaming query availability lets recently streamed data be queried within seconds of first insertion.",
+  "extended_definition": "Low-latency streaming query availability lets recently streamed data be queried within seconds of first insertion.",
+  "lifecycle": {
+    "latest_feature_date": "2015-12-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+      "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Stream table updates with change data capture ingestion \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "source_id": "site-docs-reference-5",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CDC-enabled tables don't support the following: Mutating data manipulation language (DML) statements such as DELETE , UPDATE , and MERGE Querying wildcard tables Search indexes CDC-enabled tables that perform runtime merge jobs because the table's max staleness value is too low cannot support the following: Table copy operations Table clone operations Table snapshot operations The BigQuery Storage Read API The requirePartitionFilter table option BigQuery export operations on CDC-enabled tables don't export recently streamed row modifications that have yet to be applied by a background job.",
+          "These jobs must perform an on-the-fly merge of the CDC baseline table and the recently streamed row modifications at query runtime.",
+          "Example with UPSERT and DELETE values Consider the following table in BigQuery: ID Name Salary 100 Charlie 2000 101 Tal 3000 102 Lee 5000 The following row modifications are streamed by the Storage Write API: ID Name Salary CHANGE TYPE 100 DELETE 101 Tal 8000 UPSERT 105 Izumi 6000 UPSERT The updated table is now the following: ID Name Salary 101 Tal 8000 102 Lee 5000 105 Izumi 6000 Manage table staleness By default, every time you run a query, BigQuery returns the most up-to-date results."
+        ]
+      },
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 176,
+        "relevance": "",
+        "evidence_snippets": [
+          "It lets users ingest, join, and analyze streaming data with the same ease as a traditional database, offering seamless integration to sink processed data into BigQuery for long-term storage and analysis.",
+          "Partner references Move your data to BigQuery with millisecond latency BigQuery materialization connector BigQuery Batch Query Connector Partner Advantage page Direct link Fivetran Fivetran Data Pipelines Solution Fivetran Data Pipelines Category ETL & Data Integration Description Fivetran is a leader in automated data integration and delivers ready-to-use connectors that automatically adapt as schemas and APIs change, ensuring consistent, reliable access to data.",
+          "Partner references Connect Google BigQuery to Privacera Privacera Enhances Data Access Governance Add Google BigQuery (GBQ) data source on Privacera Platform Partner Advantage page Direct link Reltio Solution Reltio Connected Data Platform Category Data Governance, Security, & MDM Description The Reltio Connected Data Platform is a cloud-based data management platform that lets organizations create a unified, trusted real-time source for their core data."
+        ]
+      },
+      {
+        "title": "\"Transform data with data manipulation language (DML) \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language",
+        "source_id": "site-docs-reference",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Rows that were recently written using the tabledata.insertall streaming method can't be modified with data manipulation language (DML), such as UPDATE , DELETE , MERGE , or TRUNCATE statements.",
+          "Transform data with data manipulation language (DML) The BigQuery data manipulation language (DML) lets you update, insert, and delete data from your BigQuery tables.",
+          "These tables may experience added memory pressure for subsequent queries, which can lead to additional read latency or query errors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tabledata.insertall"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/change-data-capture",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/data-manipulation-language"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,146 @@
+{
+  "feature_name": "Optional Components",
+  "feature_slug": "optional-components",
+  "summary": "Optional Components let users specify additional software components to install when creating Dataproc clusters; Optional Components let users specify additional software components to install when creating Dataproc clusters.",
+  "extended_definition": "Optional Components let users specify additional software components to install when creating Dataproc clusters; Optional Components let users specify additional software components to install when creating Dataproc clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+      "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a Managed Service for Apache Spark custom image \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If your project is part of a shared VPC , you must specify the full subnetwork URL in the following format: projects/ HOST PROJECT ID /regions/ REGION /subnetworks/ SUBNET . --optional-components : This flag is available only when using base image versions 2.3 and later.",
+          "A list of optional components , such as SOLR, RANGER, TRINO, DOCKER, FLINK, HIVE WEBHCAT, ZEPPELIN, HUDI, ICEBERG, and PIG (PIG is available as an optional component in image versions 2.3 and later), to install in the image.",
+          "Using optional components: 2.2 and earlier base images: By default, all of the Managed Service for Apache Spark optional components (OS packages and configs) are installed on the custom image."
+        ]
+      },
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"clusterType\" : enum ( ClusterType ) , \"clusterTier\" : enum ( ClusterTier ) , \"configBucket\" : string , \"tempBucket\" : string , \"gceClusterConfig\" : { object ( GceClusterConfig ) } , \"masterConfig\" : { object ( InstanceGroupConfig ) } , \"workerConfig\" : { object ( InstanceGroupConfig ) } , \"secondaryWorkerConfig\" : { object ( InstanceGroupConfig ) } , \"softwareConfig\" : { object ( SoftwareConfig ) } , \"initializationActions\" : [ { object ( NodeInitializationAction ) } ] , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"autoscalingConfig\" : { object ( AutoscalingConfig ) } , \"securityConfig\" : { object ( SecurityConfig ) } , \"lifecycleConfig\" : { object ( LifecycleConfig ) } , \"endpointConfig\" : { object ( EndpointConfig ) } , \"metastoreConfig\" : { object ( MetastoreConfig ) } , \"dataprocMetricConfig\" : { object ( DataprocMetricConfig ) } , \"auxiliaryNodeGroups\" : [ { object ( AuxiliaryNodeGroup ) } ] } Fields clusterType enum ( ClusterType ) Optional.",
+          "JSON representation { \"imageVersion\" : string , \"properties\" : { string : string , ... } , \"optionalComponents\" : [ enum ( Component ) ] } Fields imageVersion string Optional.",
+          "The Compute Engine config settings for a cluster's secondary worker instances softwareConfig object ( SoftwareConfig ) Optional."
+        ]
+      },
+      {
+        "title": "\"Run a Spark job on Google Kubernetes Engine \\_|\\_ Managed Service for Apache\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "BUCKET : (Optional) You can specify the name of a Cloud Storage bucket , which Managed Service for Apache Spark will use to stage artifacts.",
+          "Note: If you installed the gcloud CLI previously, make sure you have the latest version by running gcloud components update .",
+          "Note: If you installed the gcloud CLI previously, make sure you have the latest version by running gcloud components update ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataproc.googleapis.com",
+      "dpgke.unstable.outputOnly.endpoints.sparkHistoryServer",
+      "image.py",
+      "jobs.submit",
+      "request.json",
+      "spark.eventLog.dir",
+      "spark.eventLog.enabled"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/guides/dataproc-images",
+        "https://docs.cloud.google.com/dataproc/docs/guides/dpgke/quickstarts/dataproc-gke-quickstart-create-cluster",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

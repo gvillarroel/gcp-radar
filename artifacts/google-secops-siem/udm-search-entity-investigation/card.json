@@ -1,0 +1,114 @@
+{
+  "feature_name": "UDM Search entity investigation",
+  "feature_slug": "udm-search-entity-investigation",
+  "summary": "UDM Search can investigate entities such as IP addresses, users, and assets in addition to matching events and alerts.",
+  "extended_definition": "UDM Search can investigate entities such as IP addresses, users, and assets in addition to matching events and alerts.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.",
+          "Access search You can access Google SecOps search using the following options: On the navigation bar, click Investigation > Search .",
+          "For ${vendor name} , you need to add a prompt for future users, such as Enter the name of the vendor for your search ."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-api-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Google SecOps provides Cloud Detection Investigation and Response (CDIR), Case Management, SIEM log searching and investigation, Cloud Asset Inventory collection for Entity Graph Enrichment, and the ability to automate common SOC workflows using the SOAR component of Google SecOps.",
+          "SIEM Log Searching and Investigation : During a CDIR investigation, or on an ad-hoc basis, analysts can use either natural language syntax, Yara-L syntax, or raw log searching to surface information in various logs ingested into Google SecOps related to cloud infrastructure and services.",
+          "See activate enterprise tier Validate Security Command Center Detection Services are enabled: See How to configure Security Command Center Connect Security Command Center to AWS to get configuration and resource data that flows through to the Entity Graph: See Connect Security Command Center to AWS Preview - Connect Security Command Center to Azure to get configuration and resource data that flows through to the Entity Graph. (Optional) Integrate Security Command Center with ticketing systems."
+        ]
+      },
+      {
+        "title": "\"Emerging Threats Center detail view \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "For general information about reviewing entity attributes, alerts, and taking quick actions, see Use UDM Search to investigate an entity .",
+          "The following table describes the columns in the Recent Associated Entities panel: Column name Description Entity name Displays the asset or entity associated with a campaign.",
+          "Associations Displays related GTI entities for the indicator, such as threat actors or campaigns."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/detection/emerging-threats-detailed-view"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

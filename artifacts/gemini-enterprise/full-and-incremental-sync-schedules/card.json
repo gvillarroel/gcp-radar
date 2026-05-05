@@ -1,0 +1,170 @@
+{
+  "feature_name": "Full and incremental sync schedules",
+  "feature_slug": "full-and-incremental-sync-schedules",
+  "summary": "Data connectors can use separate full and incremental sync intervals and pause or resume each independently.",
+  "extended_definition": "Data connectors can use separate full and incremental sync intervals and pause or resume each independently.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View data store sync activity and set up alerts \\_|\\_ Gemini Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "On the data store details page, ensure that you have enabled the Full sync frequency and the Incremental sync frequency .",
+          "Initialization failed The data store failed to be created. [Action required] User actions that must be completed before the data store can start syncing data.",
+          "Field Description Status Succeeded: The entity sync completed, and at least 99% of the documents are successfully indexed."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Cloud data store \\_|\\_ Gemini Enterprise \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "The user can subscribe to the following events: space created space updated page created page updated attachment created attachment updated comment created comment updated blog created blog updated Note: Whiteboard and trashed events are not supported.",
+          "To schedule separate full syncs of entity and identity data, expand the menu in the Full sync section and then select Custom options .",
+          "Example command and result curl -X POST \\ https://cymbalgroup.atlassian.net/wiki/rest/webhooks/1.0/webhook \\ -H \"Content-Type: application/json\" \\ -u \"admin1:######\" \\ -d '{ \"name\": \"Cymbal DCT\", \"events\": [ \"attachment created\", \"attachment updated\" ], \"url\": \"https://rt-server-a-jx3m2-uw.a.run.app/webhook\", \"active\": true }' { \"name\": \"Cymbal DCT\", \"url\": \"https://cymbalgroup.atlassian.net/wiki/rest/webhooks/1.0/webhook\", \"description\": \" Webhook for Cymbal DCT group to fetch attachments.\", \"excludeBody\": false, \"filters\": {}, \"events\": [ \"attachment created\", \"attachment updated\", ], \"enabled\": true, \"self\": https://rt-server-a-jx3m2-uw.a.run.app/webhook, \"lastUpdatedUser\": \"Cymb 389\", \"lastUpdatedDisplayName\": \"Ariel\", \"lastUpdated\": 1752095647212 } API error codes This table lists common API error codes users encounter when creating webhooks."
+        ]
+      },
+      {
+        "title": "Set up a Box data store \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "To schedule separate full syncs of entity and identity data, expand the menu in the Full sync section and then select Custom options .",
+          "In the Advanced options section: If you selected Federated search , select the Impersonate user mode as Admin or User , and click Continue .",
+          "What's next To provide a user interface for querying your data, create an app and connect it to the Box federated data store ."
+        ]
+      },
+      {
+        "title": "\"Set up a Confluence Data Center data store \\_|\\_ Gemini Enterprise \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "To schedule separate full syncs of entity and identity data, expand the menu in the Full sync section and then select Custom options .",
+          "For Data ingestion , choose between Username and Password credentials, Personal access token , or API token , and enter the authentication details accordingly.",
+          "What's next To provide a user interface for querying your Confluence Data Center data, create an app and connect it to the Confluence Data Center data store ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cymbalgroup.atlassian.net",
+      "uw.a.run.app"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/configure-periodic-data-alerts",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-cloud/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/box/set-up-data-store",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/connectors/confluence-dc/set-up-data-store"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.016Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise"
+}

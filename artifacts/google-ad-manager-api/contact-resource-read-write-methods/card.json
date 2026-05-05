@@ -1,0 +1,244 @@
+{
+  "feature_name": "Contact resource read/write methods",
+  "feature_slug": "contact-resource-read-write-methods",
+  "summary": "The API now supports reading and writing Contact resources.",
+  "extended_definition": "The API now supports reading and writing Contact resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/ad-manager/api/beta/authentication",
+      "https://developers.google.com/ad-manager/api/beta/migration",
+      "https://developers.google.com/ad-manager/api/beta/reference/rest",
+      "https://developers.google.com/ad-manager/api/beta/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate from the Ad Manager SOAP API \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google\\",
+        "url": "https://developers.google.com/ad-manager/api/beta/migration",
+        "source_id": "site-docs-root-2",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Conversely, the REST API can only read, write, and run Interactive Reports.",
+          "The Ad Manager API also has methods for reading single entities.",
+          "When multithreading, use the pagination token from the first page to ensure you are reading from the same result set: First thread GET networks/ ${ NETWORK CODE } /orders?pageSize = 50&pageToken = ${ TOKEN FROM INITIAL REQUEST } Second thread GET networks/ ${ NETWORK CODE } /orders?pageSize = 50&pageToken = ${ TOKEN FROM INITIAL REQUEST } & skip = 50 Migrate reports The SOAP API can only read and run reports in the deprecated Reports tool."
+        ]
+      },
+      {
+        "title": "Google Ad Manager API \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1.networks REST Resource: v1.networks.adUnitSizes REST Resource: v1.networks.adUnits REST Resource: v1.networks.applications REST Resource: v1.networks.audienceSegments REST Resource: v1.networks.bandwidthGroups REST Resource: v1.networks.browserLanguages REST Resource: v1.networks.browsers REST Resource: v1.networks.cmsMetadataKeys REST Resource: v1.networks.cmsMetadataValues REST Resource: v1.networks.companies REST Resource: v1.networks.contacts REST Resource: v1.networks.content REST Resource: v1.networks.contentBundles REST Resource: v1.networks.contentLabels REST Resource: v1.networks.creativeTemplates REST Resource: v1.networks.customFields REST Resource: v1.networks.customTargetingKeys REST Resource: v1.networks.customTargetingKeys.customTargetingValues REST Resource: v1.networks.customTargetingValues REST Resource: v1.networks.deviceCapabilities REST Resource: v1.networks.deviceCategories REST Resource: v1.networks.deviceManufacturers REST Resource: v1.networks.entitySignalsMappings REST Resource: v1.networks.geoTargets REST Resource: v1.networks.labels REST Resource: v1.networks.lineItems REST Resource: v1.networks.linkedDevices REST Resource: v1.networks.mobileCarriers REST Resource: v1.networks.mobileDeviceSubmodels REST Resource: v1.networks.mobileDevices REST Resource: v1.networks.operatingSystemVersions REST Resource: v1.networks.operatingSystems REST Resource: v1.networks.operations.reports.runs REST Resource: v1.networks.orders REST Resource: v1.networks.placements REST Resource: v1.networks.privateAuctionDeals REST Resource: v1.networks.privateAuctions REST Resource: v1.networks.programmaticBuyers REST Resource: v1.networks.reports REST Resource: v1.networks.reports.results REST Resource: v1.networks.roles REST Resource: v1.networks.sites REST Resource: v1.networks.taxonomyCategories REST Resource: v1.networks.teams REST Resource: v1.networks.users REST Resource: v1.networks.webProperties.adReviewCenterAds REST Resource: v1.operations Service: admanager.googleapis.com Discovery document A Discovery Document is a machine-readable specification for describing and consuming REST APIs.",
+          "REST Resource: v1.networks.contacts Methods batchCreate POST /v1/{parent}/contacts:batchCreate API to batch create Contact objects. batchUpdate POST /v1/{parent}/contacts:batchUpdate API to batch update Contact objects. create POST /v1/{parent}/contacts API to create a Contact object. get GET /v1/{name} API to retrieve a Contact object. list GET /v1/{parent}/contacts API to retrieve a list of Contact objects. patch PATCH /v1/{contact.name} API to update a Contact object.",
+          "REST Resource: v1.networks.reports Methods create POST /v1/{parent}/reports API to create a Report object. get GET /v1/{name} API to retrieve a Report object. list GET /v1/{parent}/reports API to retrieve a list of Report objects. patch PATCH /v1/{report.name} API to update a Report object. run POST /v1/{name}:run Initiates the execution of an existing report asynchronously."
+        ]
+      },
+      {
+        "title": "Authentication \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/authentication",
+        "source_id": "site-docs-root-2",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In other words, the full admanager read and write scope only grants write access to entities the user can edit in the Ad Manager UI.",
+          "We recommend using the narrower admanager.readonly scope if your application does not need to write data.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-05 UTC.\"],[],[\"To access the Ad Manager API, you need an access token, generated using Application Default Credentials (ADC) or custom credentials."
+        ]
+      },
+      {
+        "title": "Create and run reports \\_|\\_ Ad Manager API (Beta) \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/ad-manager/api/beta/reports",
+        "source_id": "site-docs-root-2",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Result name in the format networks/[NETWORK CODE]/reports/[REPORT ID]/results/[RESULT ID] p result . response . report result else puts \"No response received.\" end Node.js // Run request const [ operation ] = await admanagerClient . runReport ( request ); const [ response ] = await operation . promise (); // Result name in the format networks/[NETWORK CODE]/reports/[REPORT ID]/results/[RESULT ID] console . log ( response . reportResult ); cURL Request curl -H \"Authorization: Bearer ${ ACCESS TOKEN } \" \\ \"https://admanager.googleapis.com/v1/networks/ ${ NETWORK CODE } /operations/reports/runs/ ${ OPERATION ID } \" Response { \"name\" : \"networks/234093456/operations/reports/runs/6485392645\" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.ads.admanager.v1.RunReportMetadata\" , \"percentComplete\" : 100 , \"report\" : \"networks/234093456/reports/4555265029\" }, \"done\" : true , \"response\" : { \"@type\" : \"type.googleapis.com/google.ads.admanager.v1.RunReportResponse\" , \"reportResult\" : \"networks/234093456/reports/4555265029/results/7031632628\" } } Read result rows The Result resource has a single method, networks.reports.results.fetchRows , to read a paginated list of rows.",
+          "0 , # Max poll delay of 30 seconds timeout : 60 60 # Total timeout of 1 hour in seconds } result = client . run report request result . wait until done! ( retry policy : options ) if result . response? p result . response else puts \"No response received.\" end Node.js const options = { initialRetryDelayMillis : 500 , // Initial delay of 500ms retryDelayMultiplier : 1.5 , maxRetryDelayMillis : 30 , // Max poll delay of 30 seconds totalTimeoutMillis : 60 60 1000 // Total timeout of 1 hour } const [ operation ] = await admanagerClient . runReport ( request ); operation . backoffSettings = options ; const [ response ] = await operation . promise (); console . log ( response ); cURL Request curl -H \"Authorization: Bearer ${ ACCESS TOKEN } \" \\ \"https://admanager.googleapis.com/v1/networks/ ${ NETWORK CODE } /operations/reports/runs/ ${ OPERATION ID } \" Response { \"name\" : \"networks/234093456/operations/reports/runs/6485392645\" , \"metadata\" : { \"@type\" : \"type.googleapis.com/google.ads.admanager.v1.RunReportMetadata\" , \"percentComplete\" : 50 , \"report\" : \"networks/234093456/reports/4555265029\" }, \"done\" : false , } Get the result resource name After the report run Operation is complete, it contains the resource name of the Result .",
+          "RunReportResourceNamesSnippet . g . cs PHP use Google\\Ads\\AdManager\\V1\\Client\\ReportServiceClient ; use Google\\Ads\\AdManager\\V1\\RunReportRequest ; use Google\\Ads\\AdManager\\V1\\RunReportResponse ; use Google\\ApiCore\\ApiException ; use Google\\ApiCore\\OperationResponse ; use Google\\Rpc\\Status ; function run report sample ( string $formattedName ) : void { // Create a client. $reportServiceClient = new ReportServiceClient (); // Prepare the request message. $request = ( new RunReportRequest ()) - > setName ( $formattedName ); // Call the API and handle any network failures. try { $response = $reportServiceClient - > runReport ( $request ); $response - > pollUntilComplete (); if ( $response - > operationSucceeded ()) { $result = $response - > getResult (); printf ( 'Operation successful with response data: %s' ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "admanager.googleapis.com",
+      "admanager.readonly",
+      "contact.name",
+      "developers.google.com",
+      "networks.adUnits",
+      "networks.orders.get",
+      "networks.orders.list",
+      "networks.reports.results.fetchRows",
+      "report.name",
+      "type.googleapis.com",
+      "v1.networks",
+      "v1.networks.adUnits",
+      "v1.networks.adUnitSizes",
+      "v1.networks.applications",
+      "v1.networks.audienceSegments",
+      "v1.networks.bandwidthGroups",
+      "v1.networks.browserLanguages",
+      "v1.networks.browsers",
+      "v1.networks.cmsMetadataKeys",
+      "v1.networks.cmsMetadataValues",
+      "v1.networks.companies",
+      "v1.networks.contacts",
+      "v1.networks.content",
+      "v1.networks.contentBundles",
+      "v1.networks.contentLabels",
+      "v1.networks.creativeTemplates",
+      "v1.networks.customFields",
+      "v1.networks.customTargetingKeys",
+      "v1.networks.customTargetingKeys.customTargetingValues",
+      "v1.networks.customTargetingValues",
+      "v1.networks.deviceCapabilities",
+      "v1.networks.deviceCategories",
+      "v1.networks.deviceManufacturers",
+      "v1.networks.entitySignalsMappings",
+      "v1.networks.geoTargets",
+      "v1.networks.labels",
+      "v1.networks.lineItems",
+      "v1.networks.linkedDevices",
+      "v1.networks.mobileCarriers",
+      "v1.networks.mobileDevices",
+      "v1.networks.mobileDeviceSubmodels",
+      "v1.networks.operatingSystems",
+      "v1.networks.operatingSystemVersions",
+      "v1.networks.operations.reports.runs",
+      "v1.networks.orders",
+      "v1.networks.placements",
+      "v1.networks.privateAuctionDeals",
+      "v1.networks.privateAuctions",
+      "v1.networks.programmaticBuyers",
+      "v1.networks.reports",
+      "v1.networks.reports.results",
+      "v1.networks.roles",
+      "v1.networks.sites",
+      "v1.networks.taxonomyCategories",
+      "v1.networks.teams",
+      "v1.networks.users",
+      "v1.networks.webProperties.adReviewCenterAds",
+      "v1.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/ad-manager/api/beta/migration",
+        "https://developers.google.com/ad-manager/api/beta/reference/rest",
+        "https://developers.google.com/ad-manager/api/beta/authentication",
+        "https://developers.google.com/ad-manager/api/beta/reports"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.532Z",
+  "source_step08_card": "data/step-08/current/products/google-ad-manager-api/card.json",
+  "product_name": "Google Ad Manager API",
+  "product_slug": "google-ad-manager-api"
+}

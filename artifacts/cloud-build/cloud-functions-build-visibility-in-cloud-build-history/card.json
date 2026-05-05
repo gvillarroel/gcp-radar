@@ -1,0 +1,125 @@
+{
+  "feature_name": "Cloud Functions build visibility in Cloud Build History",
+  "feature_slug": "cloud-functions-build-visibility-in-cloud-build-history",
+  "summary": "Regionalized Cloud Functions builds are now visible in the Cloud Build History UI.",
+  "extended_definition": "Regionalized Cloud Functions builds are now visible in the Cloud Build History UI.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automate-builds",
+      "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+      "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quickstart: Automate builds by using Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to automate builds by using Cloud Build, ask your administrator to grant you the following IAM roles on the Cloud Build service account: Cloud Build Editor ( roles/cloudbuild.builds.editor ) Storage Object User ( roles/storage.objectUser ) Storage Bucket Viewer ( roles/storage.bucketViewer ) Cloud Build Connection Admin ( roles/cloudbuild.connectionAdmin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Automate builds by using Cloud Build This page explains how to use Cloud Build to automate builds.",
+          "You will see the Build history page: In the Build column, click the name of a build."
+        ]
+      },
+      {
+        "title": "\"Configure Cloud Run and Cloud Run functions services \\_|\\_ Buildpacks \\_\\",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For configuration details about a specific language, see: Go Java Node.js Python Ruby PHP Cloud Run and Cloud Run functions environment variables The following configurations support building services for both applications and functions.",
+          "Supported values: true , True , or 1 Additional Cloud Run functions environment variables The following configurations are only available for source code built as functions that use Functions Framework and Cloud Run functions.",
+          "Home Documentation Application hosting Buildpacks Guides Send feedback Configure Cloud Run and Cloud Run functions services Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Create and manage build triggers \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "source_id": "site-docs-root-2",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is done for efficiency, so that builds don't have to wait to fetch the whole repository and history just to build a single commit.",
+          "To create a trigger if your source code is in GitHub : gcloud builds triggers create github \\ -- name = TRIGGER NAME \\ -- region = REGION \\ -- repo - name = REPO NAME \\ -- repo - owner = REPO OWNER \\ -- branch - pattern = BRANCH PATTERN \\ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \\ -- service - account = SERVICE ACCOUNT \\ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.",
+          "Click Create to save your build trigger. gcloud To create a trigger if your source code is in Cloud Source Repositories : gcloud builds triggers create cloud-source-repositories \\ --repo= REPO NAME \\ --branch-pattern= BRANCH PATTERN \\ # or --tag-pattern= TAG PATTERN --build-config= BUILD CONFIG FILE \\ --service-account= SERVICE ACCOUNT \\ --require-approval Where: REPO NAME is the name of your repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.builds.editor",
+      "cloudbuild.connectionAdmin",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildsFixedSizeCollection",
+      "storage.bucketViewer",
+      "storage.objectUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.builds.editor",
+      "roles/cloudbuild.connectionAdmin",
+      "roles/storage.bucketViewer",
+      "roles/storage.objectUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds",
+        "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds",
+        "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds",
+        "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds",
+        "https://docs.cloud.google.com/docs/buildpacks/service-specific-configs",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

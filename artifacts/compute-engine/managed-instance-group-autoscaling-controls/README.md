@@ -1,0 +1,48 @@
+# Managed instance group autoscaling controls
+
+Product: Compute Engine
+Feature slug: `managed-instance-group-autoscaling-controls`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Managed instance group autoscaling controls let you temporarily disable or restrict autoscaling without losing configuration; Managed instance groups can have autoscaling temporarily turned off or restricted without losing the autoscaler configuration.
+
+## Lifecycle
+
+- Latest feature date: 2020-01-21
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- allow (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- audit (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- auth (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- certificate (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- confidential (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- constraint (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- credential (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- encrypt (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- iam (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- identity (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- key (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- kms (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- logging (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- permission (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- policy (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- private (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- role (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+- security (evidence: [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances), [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler), [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/compute/docs/autoscaler](https://docs.cloud.google.com/compute/docs/autoscaler)
+- [https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances](https://docs.cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances)
+- [https://docs.cloud.google.com/compute/docs/quickstart-mig](https://docs.cloud.google.com/compute/docs/quickstart-mig)

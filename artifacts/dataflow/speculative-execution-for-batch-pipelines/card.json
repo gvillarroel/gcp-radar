@@ -1,0 +1,110 @@
+{
+  "feature_name": "Speculative execution for batch pipelines",
+  "feature_slug": "speculative-execution-for-batch-pipelines",
+  "summary": "Dataflow can mitigate stragglers in batch pipelines by launching redundant executions of slow-running tasks.",
+  "extended_definition": "Dataflow can mitigate stragglers in batch pipelines by launching redundant executions of slow-running tasks.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines",
+      "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+      "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for large batch pipelines \\_|\\_ Cloud Dataflow \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices",
+        "source_id": "site-docs-reference-2",
+        "final_score": 199,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use speculative execution to avoid stragglers For batch pipelines, you can enable speculative execution , a feature to mitigate the impact of slow-running or stuck tasks.",
+          "Speculative execution can help pipelines complete faster by providing an alternative execution path for work items that are experiencing delays due to slow worker machines or other transient issues such as nondeterministic bugs, resource throttling, or connectivity issues.",
+          "Home Documentation Data analytics Cloud Dataflow Guides Send feedback Best practices for large batch pipelines Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Develop and test Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you run the pipeline asynchronously, you can use the returned PipelineResult instance to cancel execution of the pipeline, as shown in the following code example: public interface StreamingIntegrationTestOptions extends DirectOptions , StreamingOptions , MyOtherPipelineOptions { ... } @Rule public final transient TestPipeline p = TestPipeline . create (); @Test @Category ( NeedsRunner . class ) public void testNonBlockingPipeline () { StreamingIntegrationTestOptions options = p . getOptions (). as ( StreamingIntegrationOptions . class ); options . setBlockOnRun ( false ); // Set non - blocking pipeline execution options . setStreaming ( true ); // Set streaming mode p . apply (...); // Apply pipeline transformations PipelineResult result = p . run (); // Run the pipeline // Generate input , verify output , etc ... // Later on , cancel the pipeline using the previously returned result . cancel (); } End-to-end tests End-to-end tests verify the correct operation of your end-to-end pipeline by running it on the Dataflow Runner under conditions that closely resemble production.",
+          "Differences in end-to-end tests for batch and streaming pipelines Before you run a full end-to-end test against a large test dataset, you might want to run a test with a smaller percentage of the test data (such as one percent) and verify expected behavior in a shorter amount of time.",
+          "For streaming pipelines, you can also run end-to-end tests using generated data, for example, using the Dataflow Streaming Data Generator to emulate production-like data characteristics and volumes."
+        ]
+      },
+      {
+        "title": "Work with Dataflow data pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also run a batch pipeline on demand using the Run button in the Dataflow Pipelines console.",
+          "Types of data pipelines Dataflow has two data pipeline types, streaming and batch.",
+          "Data pipeline roles For Dataflow data pipeline operations to succeed, you need the necessary IAM roles, as follows: You need the appropriate role to perform operations: Datapipelines.admin : Can perform all data pipeline operations Datapipelines.viewer : Can view data pipelines and jobs Datapipelines.invoker : Can invoke a data pipeline job run (this role can be enabled using the API) The service account used by Cloud Scheduler needs to have the roles/iam.serviceAccountUser role, whether the service account is user-specified or the default Compute Engine service account."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.serviceAccountUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices",
+        "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices",
+        "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/large-pipeline-best-practices",
+        "https://docs.cloud.google.com/dataflow/docs/guides/develop-and-test-pipelines",
+        "https://docs.cloud.google.com/dataflow/docs/guides/data-pipelines"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:24.520Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

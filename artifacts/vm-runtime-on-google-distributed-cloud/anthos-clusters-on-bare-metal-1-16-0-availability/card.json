@@ -1,0 +1,189 @@
+{
+  "feature_name": "Anthos clusters on bare metal 1.16.0 availability",
+  "feature_slug": "anthos-clusters-on-bare-metal-1-16-0-availability",
+  "summary": "Made Anthos clusters on bare metal version 1.16.0 available for download.",
+  "extended_definition": "Made Anthos clusters on bare metal version 1.16.0 available for download.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Edit VM configuration in VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document is intended for application owners that use VM Runtime on GDC to run virtual machines (VMs) in clusters created with Google Distributed Cloud (software only) on bare metal.",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Edit VM configuration in VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "This document shows you how to edit VMs running in bare metal clusters."
+        ]
+      },
+      {
+        "title": "\"Configure NUMA-aware VMs \\_|\\_ Google Distributed Cloud (software only)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To enable the CPU Manager with a static policy, add the --cpu-manager-policy=static flag to the KUBELET EXTRA ARGS=\"\" section of the file: KUBELET EXTRA ARGS=\" --cpu-manager-policy=static \" To enable the Memory Manager with a Static policy, add the --memory-manager-policy=Static flag to the KUBELET EXTRA ARGS=\"\" section of the file: KUBELET EXTRA ARGS=\"--cpu-manager-policy=static --memory-manager-policy=Static \" To enable the Topology Manager with a restricted policy, add the --topology-manager-policy=restricted flag to the KUBELET EXTRA ARGS=\"\" section of the file: KUBELET EXTRA ARGS=\"--cpu-manager-policy=static --memory-manager-policy=Static --topology-manager-policy=restricted \" Check the current amount of memory reserved by Google Distributed Cloud: cat /var/lib/kubelet/kubeadm-flags.env The output should look like the following: KUBELET KUBEADM ARGS=\"--anonymous-auth=false --authentication-token-webhook=true --authorization-mode=Webhook --container-runtime=remote --container-runtime-endpoint=unix:///run/containerd/containerd.sock --feature-gates=SeccompDefault=true --kube-reserved=cpu=100m,memory=3470Mi --max-pods=110 --node-ip=192.168.1.190 --node-labels=baremetal.cluster.gke.io/k8s-ip=192.168.1.190,baremetal.cluster.gke.io/namespace=cluster-user001,baremetal.cluster.gke.io/node-pool=node-pool-1,cloud.google.com/gke-nodepool=node-pool-1 --pod-infra-container-image=gcr.io/anthos-baremetal-release/pause-amd64:3.1-gke.5 --provider-id=baremetal://192.168.1.190 --read-only-port=10255 --rotate-server-certificates=true --seccomp-default=true\" The --kube-reserved=cpu=100m,memory=3470Mi setting indicates that Google Distributed Cloud has reserved 3,470 mebibytes of memory on the node.",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Configure NUMA-aware VMs Stay organized with collections Save and categorize content based on your preferences.",
+          "This document describes how to configure clusters and VMs to support high performance and low latency workloads with the computing efficiencies of non-uniform memory access (NUMA)."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Deploy an existing VM in a cluster using VM Runtime on GDC \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Enable VM Runtime on GDC and install the virtctl plugin The VM Runtime on GDC custom resource definition is part of all bare metal clusters since version 1.10.",
+          "Objectives Enable VM Runtime on GDC and install the virtctl plugin Deploy the VM-based workload Log in to the VM and check the application status Access the VM-based workload Before you begin To complete this document you need the following resources: Access to a version 1.12.0 or higher bare metal cluster that was created by following the Install with Manual Loadbalancer guide.",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Tutorial: Deploy an existing VM in a cluster using VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Role-based access control (RBAC) for VM Runtime on GDC \\_|\\_ Google Distributed\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here are examples of the command output for each of the four predefined ClusterRoles: kubevm.admin apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.admin rbac.authorization.k8s.io/aggregate-to-admin : \"true\" name : kubevm.admin resourceVersion : \"16654950\" uid : 3296c279-6e85-4ea6-b250-548bf0c3e935 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - deletecollection - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch - deletecollection kubevm.edit apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.edit rbac.authorization.k8s.io/aggregate-to-edit : \"true\" name : kubevm.edit resourceVersion : \"16654951\" uid : 237bf9ae-b2c8-4303-94dc-e6425a2df331 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - delete - create - update - patch - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - delete - create - update - patch - list - watch kubevm.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.view rbac.authorization.k8s.io/aggregate-to-view : \"true\" name : kubevm.view resourceVersion : \"16654953\" uid : b5b54e2d-0097-4698-abbd-aeac212d0a34 rules : - apiGroups : - vm.cluster.gke.io resources : - virtualmachineaccessrequests - virtualmachinedisks - virtualmachines - gpuallocations - guestenvironmentdata - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networkinterfaces - networks verbs : - get - list - watch kubevm.cluster.view apiVersion : rbac.authorization.k8s.io/v1 kind : ClusterRole metadata : creationTimestamp : \"2022-10-11T21:10:31Z\" labels : kubevm : kubevm.cluster.view name : kubevm.cluster.view resourceVersion : \"16654956\" uid : b25dde64-67da-488b-81d2-1a08f9a4a7c1 rules : - apiGroups : - vm.cluster.gke.io resources : - vmruntimes - virtualmachinetypes - vmhighavailabilitypolicies verbs : - get - list - watch - apiGroups : - networking.gke.io resources : - networks verbs : - get - list - watch Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Technology areas Google Distributed Cloud GDC for bare metal Guides Send feedback Role-based access control (RBAC) for VM Runtime on GDC Stay organized with collections Save and categorize content based on your preferences.",
+          "Resource Generated Cluster-wise kubevm.admin kubevm.view kubevm.edit kubevm.cluster.view virtualmachineaccessrequests – – Full Read Read/Write – virtualmachinedisks – – Full Read Read/Write – virtualmachines – – Full Read Read/Write – gpuallocations – – Full Read Read/Write – guestenvironmentdata Yes – Full Read Read/Write – vmruntimes – Yes Full Read Read/Write Read virtualmachinetypes – Yes Full Read Read/Write Read vmhighavailabilitypolicies – Yes Full Read Read/Write Read networkinterfaces Yes – Full Read Read/Write – networks – Yes Full Read Read/Write Read KubeVirt resources VM Runtime on GDC is based on the KubeVirt open source project ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "baremetal.cluster.gke.io",
+      "containerd.sock",
+      "flags.env",
+      "gcr.io",
+      "gke.5",
+      "kubevm.admin",
+      "kubevm.cluster.view",
+      "kubevm.edit",
+      "kubevm.view",
+      "networking.gke.io",
+      "rbac.authorization.k8s.io",
+      "vm.cluster.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/numa",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/vm-rbac"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:57.427Z",
+  "source_step08_card": "data/step-08/current/products/vm-runtime-on-google-distributed-cloud/card.json",
+  "product_name": "VM Runtime on Google Distributed Cloud",
+  "product_slug": "vm-runtime-on-google-distributed-cloud"
+}

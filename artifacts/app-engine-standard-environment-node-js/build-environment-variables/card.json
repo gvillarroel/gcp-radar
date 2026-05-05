@@ -1,0 +1,126 @@
+{
+  "feature_name": "Build environment variables",
+  "feature_slug": "build-environment-variables",
+  "summary": "Build environment variables support lets applications define environment variables for the build process; Build environment variables support lets applications define environment variables for the build process.",
+  "extended_definition": "Build environment variables support lets applications define environment variables for the build process; Build environment variables support lets applications define environment variables for the build process.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Node.js Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Add the GOOGLE NODE RUN SCRIPTS build environment variable with an empty value in your app.yaml file. build env variables : GOOGLE NODE RUN SCRIPTS : '' For details about specifying build environment variables see build env variables section in the app.yaml file.",
+          "You can define additional environment variables in your app.yaml file , but the above values cannot be overridden, except for NODE ENV .",
+          "For example: \"scripts\" : { \"start\" : \"node app.js\" } For your app to receive HTTP requests, your start script should start a web server that listens on host 0.0.0.0 and the port specified by the PORT environment variable , which is accessible in Node.js as process.env.PORT ."
+        ]
+      },
+      {
+        "title": "\"Build a Node.js app on App Engine \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+        "source_id": "site-docs-reference-2",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Build a Node.js app on App Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "Getting started Learn how to build a simple web app and deploy it on App Engine: Create a Google Cloud project Learn how to create a Google Cloud project to hold your App Engine app's resources.",
+          "After you build your app, you can use the other tutorials to learn how to integrate with other Google Cloud services and add more features to your app."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "A user account can be used to authenticate from the following tools: Google Cloud console Google Cloud CLI IDEs and build tools that use the gcloud CLI to test and deploy App Engine apps A service account , which is intended to represent an application or a process instead of a person.",
+          "Next steps If you're using the service account in your automated build and deployment processes, authorize the gcloud CLI with a service account .",
+          "Use service accounts in your automated build, test, and deployment processes, especially if multiple developers can run these processes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.js",
+      "app.yaml",
+      "process.env.PORT"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/building-app",
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.077Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js"
+}

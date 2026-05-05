@@ -1,0 +1,126 @@
+{
+  "feature_name": "synonyms parameter",
+  "feature_slug": "synonyms-parameter",
+  "summary": "LookML developers can use the synonyms parameter to provide additional context for Conversational Analytics and other features.",
+  "extended_definition": "LookML developers can use the synonyms parameter to provide additional context for Conversational Analytics and other features.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/action-hub",
+      "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Common LookML patterns \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filtering result sets LookML provides a set of filter operations that can be applied to fields and Explores to filter result sets before they are returned to the user. always filter on the Explore Use always filter to always apply a set of filters to any query that is run within an Explore.",
+          "LookML provides a way to address this in the form of conditionally filter .",
+          "If you wanted a field that counted users from the EU, you could use something like this: measure: eu count { type: count # COUNT(CASE WHEN users.countrycode IN 'UK','FR','ES' THEN 1 ELSE NULL END) drill fields: [detail] filters: [users.countrycode: \"UK,FR,ES\"] } If you want to filter with a mathematical expression , be sure to enclose it in double quotes: measure: total orders above 100 dollars { type: sum # SUM(CASE WHEN order.value > 100 THEN order.value ELSE NULL END) sql: ${order.value} ;; drill fields: [detail] filters: [order.value: \">100\"] } Percentages Many key performance indicators are expressed in the form of percentages, such as \"the percent of items returned,\" \"the percent of emails that resulted in a sale,\" or other instances of \"the percent of X that Y.\" In LookML, the design pattern is to create counts for the two conditions and create a third field that computes the percentage between the two. dimension: returned { type: yesno } measure: count { # total count of items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] } measure: returned count { # count of returned items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] filters: [returned: \"Yes\"] } measure: percent returned { type: number sql: 100.0 ${returned count} / NULLIF(${count}, 0) ;; value format: \"0.00\" } Use the following format to compute percentages."
+        ]
+      },
+      {
+        "title": "Sharing data through an action hub \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/action-hub",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "On the action settings/enablement page, a Looker admin must configure the action's form fields to pull information from the user attribute by clicking the user attribute icon to the right of the appropriate field and selecting the desired user attribute. requiredField parameters in cell-level actions For cell-level actions, you can configure your model's LookML fields to deliver data to that action destination by specifying which tags your action supports in the requiredFields parameter of your action file.",
+          "Parameter Required Description Data Type tag No If present, matches a field that has this tag. string any tag No If present, supersedes tag and matches a field that has any of the provided tags. string all tags No If present, supersedes tag and matches a field that has all the provided tags. string Supported data formats The DataActionRequest class defines what data delivery format is available for the action to work with.",
+          "You can create a custom action by: Setting up a development repo Writing your action Testing your action Publishing and enabling your action, either in the Looker Action Hub or on your own private action hub server As with any action, you may need to configure your LookML models with specific parameters before you can use the action to deliver your data."
+        ]
+      },
+      {
+        "title": "\"Admin settings - Persistent Derived Tables \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "PDT Name The PDT Name column displays the name of the persisted table as defined in the view parameter of the persisted table's LookML view file.",
+          "For failed builds, provides a SQL error message and a link to the model's LookML if the user has the appropriate permissions to see LookML .",
+          "These are the persisted tables that have been deployed to production on your instance; these persisted tables provide the data for your users' Explore queries. (If you are in Production Mode or if you don't have develop permissions, the Persistent Derived Tables page will not display any tabs, and the page will show information for production persisted tables only.) The Development tab shows the development persisted tables ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "customers.detail",
+      "order.value",
+      "users.countrycode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/action-hub",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-database-pdts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

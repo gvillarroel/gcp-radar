@@ -1,0 +1,136 @@
+{
+  "feature_name": "BeyondCorp Enterprise Tanium integration",
+  "feature_slug": "beyondcorp-enterprise-tanium-integration",
+  "summary": "The Tanium integration allows BeyondCorp Enterprise to collect real-time device data from Tanium for policy-based device management and access control.",
+  "extended_definition": "The Tanium integration allows BeyondCorp Enterprise to collect real-time device data from Tanium for policy-based device management and access control.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+      "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of Chrome Enterprise Premium and Falcon ZTA integration \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When to use Chrome Enterprise Premium and Falcon ZTA integration Use this integration when you want to collect the real-time information about the devices in your organization using Falcon ZTA, and use this information to manage your devices and control access to your organizational resources using Chrome Enterprise Premium.",
+          "In this integration, Falcon ZTA collects the real-time device information using its built-in solution, CrowdStrike's Falcon sensor, and provides this information to Chrome Enterprise Premium.",
+          "Home Documentation Security Chrome Enterprise Premium Guides Send feedback Overview of Chrome Enterprise Premium and Falcon ZTA integration Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Overview of Chrome Enterprise Premium integration with Microsoft Intune\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 95,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When to use Chrome Enterprise Premium integration with Intune Use this integration when you want to collect the real-time information about the devices in your organization using Intune, and use this information to manage your devices and control access to your organizational resources using Chrome Enterprise Premium.",
+          "In this integration, Intune collects the real-time device information and provides this information to Chrome Enterprise Premium.",
+          "Home Documentation Security Chrome Enterprise Premium Guides Send feedback Overview of Chrome Enterprise Premium integration with Microsoft Intune Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Secure non-Google Cloud applications using the app connector \\_|\\_ Chrome\\",
+        "url": "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector",
+        "source_id": "site-iam-reference",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Run the following command on the remote agent VM to install the remote agent: curl https://raw.githubusercontent.com/GoogleCloudPlatform/beyondcorp-applink/main/bash-scripts/install-beyondcorp-runtime -o ./install-beyondcorp-runtime && chmod +x ./install-beyondcorp-runtime && ./install-beyondcorp-runtime To add the bce-connctl alias to your shell, run the following command: source /.bce alias Set the required environment variables by running the following commands: PROJECT ID= my-project REGION= us-central1 CONNECTOR NAME= my-connector Replace the following: my-project : the Google Cloud project ID. us-central1 : the region in which to deploy the connection and gateways. my-connector : the name of the connector.",
+          "Grant the Google Cloud service account the BeyondCorp Connection Agent role by running the following command: gcloud projects add-iam-policy-binding $PROJECT ID \\ --member=\"serviceAccount:$SERVICE ACCOUNT\" \\ --role=\"roles/beyondcorp.connectionAgent\" Run the following command to create the Google Cloud app connector resource. gcloud alpha beyondcorp app connectors create $CONNECTOR NAME \\ --project=$PROJECT ID \\ --location=$REGION \\ --member=\"serviceAccount:$SERVICE ACCOUNT\" \\ --display-name=$CONNECTOR NAME After the app connector resource is created, the remote agent runtime syncs the connector configuration automatically.",
+          "Verify the remote agent installation: Run the following command to ensure the service is running: sudo systemctl status beyondcorp The remote agent consists of three Docker containers: bce-control-runtime , bce-logagent , and bce-connector ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beyondcorp.connectionAgent",
+      "beyondcorp.googleapis.com",
+      "raw.githubusercontent.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/beyondcorp.connectionAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/cs-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/intune-overview",
+        "https://docs.cloud.google.com/chrome-enterprise-premium/docs/enable-app-connector"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.636Z",
+  "source_step08_card": "data/step-08/current/products/chrome-enterprise-premium/card.json",
+  "product_name": "Chrome Enterprise Premium",
+  "product_slug": "chrome-enterprise-premium"
+}

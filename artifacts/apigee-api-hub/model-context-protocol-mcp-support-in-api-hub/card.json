@@ -1,0 +1,233 @@
+{
+  "feature_name": "Model Context Protocol (MCP) support in API hub",
+  "feature_slug": "model-context-protocol-mcp-support-in-api-hub",
+  "summary": "Adds MCP as a first-class API style in API hub, including registration, management, and tool extraction for MCP APIs.",
+  "extended_definition": "Adds MCP as a first-class API style in API hub, including registration, management, and tool extraction for MCP APIs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+      "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+      "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Register MCP APIs | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 248,
+        "relevance": "",
+        "evidence_snippets": [
+          "Provision API hub Provision using Cloud console Provision using Command line Provision using Terraform Get started with API hub Quickstarts Overview Auto-register Apigee proxies Register an API Create an API version Create and edit attributes Create an Eventarc trigger API resources Overview Register an API Register MCP APIs Manage API resources Auto-register APIs View API resource insights View security scores for APIs Manage API resources Versions Overview Manage versions Operations and MCP tools Overview Manage operations Manage MCP tools Specifications Overview Manage specifications Deployments Overview Manage deployments API supply chain Overview Create a dependency Manage dependencies API observations in API hub Overview Configure API observations in API hub Manage API observations in API hub Advanced API security for multiple Apigee organizations and gateways Advanced API security for multi-gateway projects Configure Advanced API security for multi-gateway projects View security scores across all projects and gateways Manage security profiles for multi-gateway assessments Manage monitoring conditions for multi-gateway assessments Advanced API security advisor tool API insights Overview Configure API insights in API hub API insights dashboards Add-on management Manage add-ons Validate OpenAPI specification Search APIs using semantic search Specification boost Settings Overview Manage attributes Manage project associations Plugins Overview Manage Google Cloud plugins and plugin instances Manage third-party plugins and plugin instances Manage custom plugins and plugin instances Create plugin instances Manage plugins instances Curations Overview Create curations Manage curations Actions Overview Manage Agent Registry integration Deprovision API hub Audit logging for API hub Access Control Predefined IAM roles Add IAM conditions Attach and manage tags VPC Service Controls for API hub gcloud CLI for API hub API hub locations Tutorials Enrich API data with custom curation in API hub Ingest Azure API data into API hub Reference Limits REST Reference v1 Overview Resources REST Resources projects.locations Overview collectApiData get list lookupRuntimeProjectAttachment retrieveApiViews searchResources projects.locations.addons Overview get list manageConfig projects.locations.apiHubInstances Overview create delete get lookup projects.locations.apis Overview create delete get list patch projects.locations.apis.versions Overview create delete get list patch projects.locations.apis.versions.definitions Overview get projects.locations.apis.versions.operations Overview create delete get list patch projects.locations.apis.versions.specs Overview create delete fetchAdditionalSpecContent get getContents lint list patch projects.locations.attributes Overview create delete get list patch projects.locations.curations Overview create delete get list patch projects.locations.dependencies Overview create delete get list patch projects.locations.deployments Overview create delete get list patch projects.locations.discoveredApiObservations Overview get list projects.locations.discoveredApiObservations.discoveredApiOperations Overview get list projects.locations.externalApis Overview create delete get list patch projects.locations.hostProjectRegistrations Overview create get list projects.locations.operations Overview cancel delete get list projects.locations.plugins Overview create delete disable enable get getStyleGuide list updateStyleGuide projects.locations.plugins.instances Overview create delete disableAction enableAction executeAction get list manageSourceData patch projects.locations.plugins.styleGuide Overview getContents projects.locations.runtimeProjectAttachments Overview create delete get list Types AggregationFunction AllowedValue AttributeValues AuthType CollectApiDataResponse ConfigValueOption DisablePluginInstanceActionResponse Documentation EnablePluginInstanceActionResponse EnumerateExtendedApisRequest EnumerateExtendedApisResponse ExecutePluginInstanceActionResponse GoogleServiceAccountConfig HttpOperation InitializeSystemOwnedPluginRequest InitializeSystemOwnedPluginResponse InsightsMetric OperationMetadata Owner QueryApiMetricsRequest QueryApiMetricsResponse QueryDependencyMetricsRequest QueryDependencyMetricsResponse RemoveSystemOwnedPluginRequest RemoveSystemOwnedPluginResponse SourceMetadata StyleGuide StyleGuideContents WaitOperationRequest RPC Reference Overview google.cloud.apihub.v1 google.cloud.apihub.v1main google.cloud.common google.cloud.location google.longrunning google.rpc Client libraries Overview C# Go Java Node.js PHP Python Release notes Envoy Adapter v2.0.x Concepts Getting started Native Envoy example for Apigee and hybrid Apigee hybrid example with Kubernetes Operation Reference Troubleshooting v1.4.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.3.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.2.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.1.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.0.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting Release notes HYBRID RUNTIME Supported platforms and versions Kubernetes and custom resources used by Apigee v1.16 What is Apigee hybrid?",
+          "API hub supports the Model Context Protocol (MCP) as a first-class API style, alongside REST, gRPC, and others.",
+          "Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collection overview Configure metrics collection View metrics Other data collection Runtime Services Runtime service configuration overview Manage runtime plane components Cassandra Configure Cassandra for production StorageClass configuration Backup and recovery TLS configuration Scale down Environments About environments Managing environments Create environments Delete environments Base path routing Generate self-signed TLS certificates MART MART configuration Add the MART IP to an org Synchronizer Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster Management Cluster requirements Overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configure ports and set up firewalls Secure the runtime installation Data encryption Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configure static IP addresses Scale and autoscale services Configure dedicated node pools Download signed runtime images Apigee deployment services Rolling updates Upgrading Apigee hybrid Configuration property reference Release notes LOGGING Audit logging Audit logging for Apigee Connect Logging Apigee access logs TEST Customer security testing requests Performance testing TROUBLESHOOT Troubleshooting the Apigee installation Logging Apigee access logs AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Guides Send feedback Register MCP APIs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Manage MCP tools | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "Provision API hub Provision using Cloud console Provision using Command line Provision using Terraform Get started with API hub Quickstarts Overview Auto-register Apigee proxies Register an API Create an API version Create and edit attributes Create an Eventarc trigger API resources Overview Register an API Register MCP APIs Manage API resources Auto-register APIs View API resource insights View security scores for APIs Manage API resources Versions Overview Manage versions Operations and MCP tools Overview Manage operations Manage MCP tools Specifications Overview Manage specifications Deployments Overview Manage deployments API supply chain Overview Create a dependency Manage dependencies API observations in API hub Overview Configure API observations in API hub Manage API observations in API hub Advanced API security for multiple Apigee organizations and gateways Advanced API security for multi-gateway projects Configure Advanced API security for multi-gateway projects View security scores across all projects and gateways Manage security profiles for multi-gateway assessments Manage monitoring conditions for multi-gateway assessments Advanced API security advisor tool API insights Overview Configure API insights in API hub API insights dashboards Add-on management Manage add-ons Validate OpenAPI specification Search APIs using semantic search Specification boost Settings Overview Manage attributes Manage project associations Plugins Overview Manage Google Cloud plugins and plugin instances Manage third-party plugins and plugin instances Manage custom plugins and plugin instances Create plugin instances Manage plugins instances Curations Overview Create curations Manage curations Actions Overview Manage Agent Registry integration Deprovision API hub Audit logging for API hub Access Control Predefined IAM roles Add IAM conditions Attach and manage tags VPC Service Controls for API hub gcloud CLI for API hub API hub locations Tutorials Enrich API data with custom curation in API hub Ingest Azure API data into API hub Reference Limits REST Reference v1 Overview Resources REST Resources projects.locations Overview collectApiData get list lookupRuntimeProjectAttachment retrieveApiViews searchResources projects.locations.addons Overview get list manageConfig projects.locations.apiHubInstances Overview create delete get lookup projects.locations.apis Overview create delete get list patch projects.locations.apis.versions Overview create delete get list patch projects.locations.apis.versions.definitions Overview get projects.locations.apis.versions.operations Overview create delete get list patch projects.locations.apis.versions.specs Overview create delete fetchAdditionalSpecContent get getContents lint list patch projects.locations.attributes Overview create delete get list patch projects.locations.curations Overview create delete get list patch projects.locations.dependencies Overview create delete get list patch projects.locations.deployments Overview create delete get list patch projects.locations.discoveredApiObservations Overview get list projects.locations.discoveredApiObservations.discoveredApiOperations Overview get list projects.locations.externalApis Overview create delete get list patch projects.locations.hostProjectRegistrations Overview create get list projects.locations.operations Overview cancel delete get list projects.locations.plugins Overview create delete disable enable get getStyleGuide list updateStyleGuide projects.locations.plugins.instances Overview create delete disableAction enableAction executeAction get list manageSourceData patch projects.locations.plugins.styleGuide Overview getContents projects.locations.runtimeProjectAttachments Overview create delete get list Types AggregationFunction AllowedValue AttributeValues AuthType CollectApiDataResponse ConfigValueOption DisablePluginInstanceActionResponse Documentation EnablePluginInstanceActionResponse EnumerateExtendedApisRequest EnumerateExtendedApisResponse ExecutePluginInstanceActionResponse GoogleServiceAccountConfig HttpOperation InitializeSystemOwnedPluginRequest InitializeSystemOwnedPluginResponse InsightsMetric OperationMetadata Owner QueryApiMetricsRequest QueryApiMetricsResponse QueryDependencyMetricsRequest QueryDependencyMetricsResponse RemoveSystemOwnedPluginRequest RemoveSystemOwnedPluginResponse SourceMetadata StyleGuide StyleGuideContents WaitOperationRequest RPC Reference Overview google.cloud.apihub.v1 google.cloud.apihub.v1main google.cloud.common google.cloud.location google.longrunning google.rpc Client libraries Overview C# Go Java Node.js PHP Python Release notes Envoy Adapter v2.0.x Concepts Getting started Native Envoy example for Apigee and hybrid Apigee hybrid example with Kubernetes Operation Reference Troubleshooting v1.4.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.3.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.2.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.1.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting v1.0.x Concepts Getting started Apigee hybrid example Operation Reference Troubleshooting Release notes HYBRID RUNTIME Supported platforms and versions Kubernetes and custom resources used by Apigee v1.16 What is Apigee hybrid?",
+          "Logging Logging overview View logs Access logs Cassandra logs MART logs Runtime logs Synchronizer logs UDCA logs Metrics collection Metrics collection overview Configure metrics collection View metrics Other data collection Runtime Services Runtime service configuration overview Manage runtime plane components Cassandra Configure Cassandra for production StorageClass configuration Backup and recovery TLS configuration Scale down Environments About environments Managing environments Create environments Delete environments Base path routing Generate self-signed TLS certificates MART MART configuration Add the MART IP to an org Synchronizer Service accounts About service accounts Service account validation Obtain TLS credentials: An example Cluster Management Cluster requirements Overview GKE non-production GKE production Anthos GKE non-production Anthos GKE production Configure ports and set up firewalls Secure the runtime installation Data encryption Multi-region deployments on GKE and GKE on-prem Multi-region deployments on AKS Configure static IP addresses Scale and autoscale services Configure dedicated node pools Download signed runtime images Apigee deployment services Rolling updates Upgrading Apigee hybrid Configuration property reference Release notes LOGGING Audit logging Audit logging for Apigee Connect Logging Apigee access logs TEST Customer security testing requests Performance testing TROUBLESHOOT Troubleshooting the Apigee installation Logging Apigee access logs AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Guides Send feedback Manage MCP tools Stay organized with collections Save and categorize content based on your preferences.",
+          "Example curl --location 'https://apihub.googleapis.com/v1/projects/apihub-test-api/locations/us-central1/apis/apihub-test-api/versions/1/operations?api_operation_id=get-weather' \\ --header \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ --header 'Content-Type: application/json; charset=utf-8' \\ --data '{ \"details\": { \"description\": \"Fetches the current weather for a given location.\", \"documentation\": { \"externalUri\": \"https://www.example.com/weather\" }, \"deprecated\": false, \"mcpTool\": { \"name\": \"get-weather\", \"title\": \"Get Weather\", \"description\": \"Fetches the current weather for a given location.\", \"annotations\": { \"title\": \"Weather Tool\", \"readOnlyHint\": true, \"destructiveHint\": false, \"idempotentHint\": true, \"openWorldHint\": true, \"additionalHints\": { \"apiProvider\": \"Some Weather API\" } }, \"inputSchema\": { \"jsonSchema\": { \"type\": \"object\", \"properties\": { \"location\": { \"type\": \"string\", \"description\": \"The city and state, e.g., San Francisco, CA\" } }, \"required\": [ \"location\" ] } }, \"outputSchema\": { \"jsonSchema\": { \"type\": \"object\", \"properties\": { \"temperature\": { \"type\": \"number\" }, \"unit\": { \"type\": \"string\" }, \"description\": { \"type\": \"string\" } } } } } } }' Extract MCP tools from Apigee MCP proxies Private Preview &mdash; MCP in Apigee This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms ."
+        ]
+      },
+      {
+        "title": "Manage attributes \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 144,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The predefined values include: REST gRPC AyncAPI SOAP GraphQL Model Context Protocol (MCP) This is an immutable attribute.",
+          "If a new value is available in the payload, API hub adds the new value to the attribute.",
+          "If a new value is available in the payload, API hub adds the new value to the attribute."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apihub.googleapis.com",
+      "e.g",
+      "projects.locations",
+      "projects.locations.addons",
+      "projects.locations.apiHubInstances",
+      "projects.locations.apis",
+      "projects.locations.apis.versions",
+      "projects.locations.apis.versions.definitions",
+      "projects.locations.apis.versions.operations",
+      "projects.locations.apis.versions.specs",
+      "projects.locations.attributes",
+      "projects.locations.curations",
+      "projects.locations.dependencies",
+      "projects.locations.deployments",
+      "projects.locations.discoveredApiObservations",
+      "projects.locations.discoveredApiObservations.discoveredApiOperations",
+      "projects.locations.externalApis",
+      "projects.locations.hostProjectRegistrations",
+      "projects.locations.operations",
+      "projects.locations.plugins",
+      "projects.locations.plugins.instances",
+      "projects.locations.plugins.styleGuide",
+      "projects.locations.runtimeProjectAttachments",
+      "v1.0.x",
+      "v1.1.x",
+      "v1.16",
+      "v1.2.x",
+      "v1.3.x",
+      "v1.4.x",
+      "v2.0.x"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/apihub/register-mcp-apis",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-mcp-tools",
+        "https://docs.cloud.google.com/apigee/docs/apihub/manage-attributes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.329Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

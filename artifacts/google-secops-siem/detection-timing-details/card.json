@@ -1,0 +1,141 @@
+{
+  "feature_name": "Detection timing details",
+  "feature_slug": "detection-timing-details",
+  "summary": "Detection records now distinguish primary rule runs from rule replays in dashboards and the Alerts lister.",
+  "extended_definition": "Detection records now distinguish primary rule runs from rule replays in dashboards and the Alerts lister.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+      "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Understand rule detection delays \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Rules dashboard , click a rule name to view the detection history and other details for a specific rule.",
+          "Familiarize yourself with the following topics to understand how these factors influence rule detection delays: Detection generation methods Known limitations Factors contributing to rule detection delays Detection generation methods Learn how the system creates rule detections to understand how the detection generation method affects detection delays.",
+          "Complex single-event rules These rules are more susceptible to detection delays because they include match windows or reference lists: Windowed single-event rules These are single-event rules that include a match window and typically have a slightly longer delay than other single-event rules."
+        ]
+      },
+      {
+        "title": "\"Default detection rules \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/default-rules",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When using time periods, the Google SecOps Detection Engine only examines the discrete blocks of time you specify. rule OutcomeRuleMultiEvent { meta: author = \"noone@google.com\" events: $u.udm.principal.hostname = $hostname $asset context.graph.entity.hostname = $hostname $severity = $asset context.graph.entity.asset.vulnerabilities.severity match: $hostname over 5m outcome: $risk score = max( 100 + if($hostname = \"my-hostname\", 100, 50) + if($severity = \"HIGH\", 10) + if($severity = \"MEDIUM\", 5) + if($severity = \"LOW\", 1) ) $asset id list = array( if($u.principal.asset id = \"\", \"Empty asset id\", $u.principal.asset id ) ) $asset id distinct list = array distinct($u.principal.asset id) $asset id count = count($u.principal.asset id) $asset id distinct count = count distinct($u.principal.asset id) condition: $u and $asset context and $risk score > 50 and not arrays.contains($asset id list, \"id 1234\") } Conclusion YARA-L is a flexible detection language which enables you to examine security events and not simply just return a data query.",
+          "The condition states the logical condition that triggers the detection. rule ExcludeZeroValues { meta: author = \"noone@google.com\" events: $e1.metadata.event type = \"NETWORK DNS\" $e1.principal.hostname = $hostname // $e1.principal.user.userid may be empty string. $e1.principal.user.userid != \"Guest\" $e2.metadata.event type = \"NETWORK HTTP\" $e2.principal.hostname = $hostname // $e2.target.asset id cannot be empty string as explicitly specified. $e2.target.asset id != \"\" match: // $hostname cannot be empty string. $hostname over 1h condition: $e1 and $e2 } Rules outcome section Use the outcome section to set holding variables within the rule detection to provide enrichment for downstream consumption.",
+          "This repository contains several different categories of detection rules, including the following: Google Cloud CloudAudit Google Workspace Informational warnings Malware MITRE ATT&CK SOC prime rules Suspicious events Each category takes a specific approach in how it views data sources and specifies what events and matching statements to use."
+        ]
+      },
+      {
+        "title": "\"Composite detections \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Understand the difference between risk and context When designing detection logic, distinguish between rules that assess risk and rules that provide context.",
+          "Example : rule CheckCuratedDetection with EDR and EG { meta: author = \"noone@cymbal.com\" events: $d.detection.detection.rule name = /SCC: Custom Modules: Configurable Bad Domain/ $d.detection.collection elements.references.event.network.dns.questions.name = $domain $d.detection.collection elements.references.event.principal.asset.hostname = $hostname $e.metadata.log type = \"LIMACHARLIE EDR\" $e.metadata.product event type = \"NETWORK CONNECTIONS\" $domain = re.capture($e.principal.process.command line, \"\\\\s([a-zA-Z0-9.-]+\\\\.[a-zA-Z0-9.-]+)$\") $hostname = re.capture($e.principal.hostname, \"([^.] )\") $prevalence.graph.metadata.entity type = \"DOMAIN NAME\" $prevalence.graph.metadata.source type = \"DERIVED CONTEXT\" $prevalence.graph.entity.hostname = $domain $prevalence.graph.entity.domain.prevalence.day count = 10 $prevalence.graph.entity.domain.prevalence.rolling max <= 5 $prevalence.graph.entity.domain.prevalence.rolling max > 0 match: $hostname over 1h outcome: $risk score = 80 $CL target = array($domain) condition: $e and $d and $prevalence } View composite detection findings You can view composite detection results in the Detections page.",
+          "When to use composite detections Composite detections can be useful for achieving the following goals: Correlate outcomes of two or more rules (for example, linking a Malware Downloaded detection with a subsequent C2 Beaconing alert from the same host)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.contains",
+      "context.graph.entity.asset.vulnerabilities.severity",
+      "context.graph.entity.hostname",
+      "cymbal.com",
+      "d.detection.collection",
+      "d.detection.detection.rule",
+      "e.metadata.log",
+      "e.metadata.product",
+      "e.principal.hostname",
+      "e.principal.process.command",
+      "e1.metadata.event",
+      "e1.principal.hostname",
+      "e1.principal.user.userid",
+      "e2.metadata.event",
+      "e2.principal.hostname",
+      "e2.target.asset",
+      "elements.references.event.network.dns.questions.name",
+      "elements.references.event.principal.asset.hostname",
+      "prevalence.graph.entity.domain.prevalence.day",
+      "prevalence.graph.entity.domain.prevalence.rolling",
+      "prevalence.graph.entity.hostname",
+      "prevalence.graph.metadata.entity",
+      "prevalence.graph.metadata.source",
+      "re.capture",
+      "u.principal.asset",
+      "u.udm.principal.hostname"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/detection-delays",
+        "https://docs.cloud.google.com/chronicle/docs/detection/composite-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/default-rules"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

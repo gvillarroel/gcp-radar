@@ -1,0 +1,115 @@
+{
+  "feature_name": "Translation Hub post-editing workflow",
+  "feature_slug": "translation-hub-post-editing-workflow",
+  "summary": "Translation Hub's post-editing workflow enables administrators to organize translators and post-editing groups, while portal users can request post-edits that translators review and edit.",
+  "extended_definition": "Translation Hub's post-editing workflow enables administrators to organize translators and post-editing groups, while portal users can request post-edits that translators review and edit.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+      "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+      "https://docs.cloud.google.com/translation-hub/docs/translator-edit",
+      "https://docs.cloud.google.com/translation-hub/docs/user-post-edit"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Post-editing \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/user-post-edit",
+        "source_id": "site-iam-reference",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Post-editing in progress section, Translation Hub shows if your request is in one of the following states: Assigned : You have submitted a request but a translator has not yet accepted the editing task.",
+          "Translation Hub shows you post-editing groups that contain a translator who is fluent in your source and translated content language pairs.",
+          "The status of your document changes to Post-editing completed Segment details During a post-edit, you can select a segment to view its translation details, such as its machine translation quality prediction (MTQP) score, in the Segment detail pane."
+        ]
+      },
+      {
+        "title": "Enable post-editing requests \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "source_id": "site-iam-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Translation Hub shows relevant post-editing groups that contain translators who have fluency with the source and target language of their translated documents.",
+          "Translation Hub post-editing lets you bring in your own translators to review machine translated content.",
+          "In the Translation Hub section of the Google Cloud console, go to the Post-editing page."
+        ]
+      },
+      {
+        "title": "\"Save and reuse human-reviewed translations \\_|\\_ Translation Hub \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "source_id": "site-iam-reference",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A default translation memory is helpful to consistently apply a set of human-reviewed translations, to capture edits during post-editing, or both.",
+          "As part of the post-editing process, Translation Hub populates your translation memory with post-edited translations.",
+          "Set a default translation memory You can set a default translation memory that Translation Hub automatically selects when portal users request a translation."
+        ]
+      },
+      {
+        "title": "Review and edit translations \\_|\\_ Translation Hub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translation-hub/docs/translator-edit",
+        "source_id": "site-iam-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Go to https://translationhub.cloud.google.com/ to sign in to the post-editing portal.",
+          "In the translator portal, Translation Hub lists the available post-editing tasks.",
+          "Edit a translation After receiving an email notification that a new document is ready for review, click the included link to go to the post-editing portal."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "translationhub.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/user-post-edit",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "https://docs.cloud.google.com/translation-hub/docs/translator-edit"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translation-hub/docs/user-post-edit",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-enable-post-edits",
+        "https://docs.cloud.google.com/translation-hub/docs/admin-translation-memory",
+        "https://docs.cloud.google.com/translation-hub/docs/translator-edit"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.020Z",
+  "source_step08_card": "data/step-08/current/products/translation-hub/card.json",
+  "product_name": "Translation Hub",
+  "product_slug": "translation-hub"
+}

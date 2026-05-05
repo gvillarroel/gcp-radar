@@ -1,0 +1,94 @@
+{
+  "feature_name": "Cloud Bigtable change streams",
+  "feature_slug": "cloud-bigtable-change-streams",
+  "summary": "Cloud Bigtable change streams are now generally available for capturing and streaming row-level data changes.",
+  "extended_definition": "Cloud Bigtable change streams are now generally available for capturing and streaming row-level data changes.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/change-streams-configure",
+      "https://docs.cloud.google.com/bigtable/docs/change-streams-overview",
+      "https://docs.cloud.google.com/bigtable/docs/change-streams-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a change stream-enabled table and capture changes \\_|\\_ Bigtable\\",
+        "url": "https://docs.cloud.google.com/bigtable/docs/change-streams-quickstart",
+        "source_id": "site-docs-root-2",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Initialize a data pipeline to capture the change stream In the Cloud Shell, run the following commands to download the code and run it. git clone https://github.com/GoogleCloudPlatform/java-docs-samples.git cd java-docs-samples/bigtable/beam/change-streams mvn compile exec:java -Dexec.mainClass = ChangeStreamsHelloWorld \\ \"-Dexec.args=--project= PROJECT ID --bigtableProjectId= PROJECT ID \\ --bigtableInstanceId= BIGTABLE INSTANCE ID --bigtableTableId=change-streams-quickstart \\ --runner=dataflow --region= BIGTABLE REGION --experiments=use runner v2\" Replace the following: PROJECT ID : the ID of the project that you are using BIGTABLE INSTANCE ID : the ID of the instance to contain the new table BIGTABLE REGION : the region that your Bigtable instance is in, such as us-east5 In the Google Cloud console, go to the Dataflow page.",
+          "Disable the change stream on the table gcloud bigtable instances tables update change-streams-quickstart --instance = BIGTABLE INSTANCE ID \\ --clear-change-stream-retention-period Delete the table change-streams-quickstart : cbt -instance = BIGTABLE INSTANCE ID -project = PROJECT ID deletetable change-streams-quickstart Stop the change stream pipeline: In the Google Cloud console, go to the Dataflow Jobs page.",
+          "In the Cloud Shell, write some data to Bigtable to see the change stream process. cbt -instance = BIGTABLE INSTANCE ID -project = PROJECT ID \\ import change-streams-quickstart quickstart-data.csv column-family = cf In the Google Cloud console, make sure that Severity is set to at least Info ."
+        ]
+      },
+      {
+        "title": "Change streams overview \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/change-streams-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 118,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Dataflow templates You can use one of the following Dataflow templates provided by Google: Bigtable change streams to BigQuery Bigtable change streams to Pub/Sub Bigtable Beam connector You can use the Bigtable Beam connector to build a pipeline: Bigtable Beam connector If you don't want to build your own pipeline, you can use the code samples from the Bigtable tutorial or quickstart as a starting point for your code: Create a change stream-enabled table and capture changes Process a Bigtable change stream Java client library Cloud Bigtable client for Java Partitions To maintain a high read throughput that matches a high write or change rate, Bigtable divides a change stream into multiple partitions that can be used to read the change stream in parallel.",
+          "Change streams are valuable for CDC use cases including the following: Triggering downstream application logic when specified changes occur Integrating with a data analytics pipeline Supporting audit and archival requirements What a change stream is A change stream tracks changes at the table level that are made by a user or application, usually using one of the Cloud Bigtable client libraries.",
+          "Bytes used by the change stream records ( change stream log used bytes ) CPU utilization by change streams ( uses cpu load by app profile by method by table ) For details on these metrics, see Monitoring ."
+        ]
+      },
+      {
+        "title": "Configure change streams \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/change-streams-configure",
+        "source_id": "site-docs-root-2",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configure change streams If you want to track data changes made to a Bigtable table, you can enable a change stream for the table and then read it using an application such as Dataflow.",
+          "If you increase the retention time, it's not retroactive — change streams are kept for the increased number of days starting when you modify the configuration.",
+          "In particular, make sure that you are aware of the costs incurred when streaming changes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.csv",
+      "github.com",
+      "samples.git"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-quickstart",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-overview",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-configure"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:06.484Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

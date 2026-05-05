@@ -1,0 +1,175 @@
+{
+  "feature_name": "Bitbucket Cloud repository connectivity",
+  "feature_slug": "bitbucket-cloud-repository-connectivity",
+  "summary": "Bitbucket Cloud repository connectivity lets Dataform connect repositories to Bitbucket Cloud repositories.",
+  "extended_definition": "Bitbucket Cloud repository connectivity lets Dataform connect repositories to Bitbucket Cloud repositories.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/best-practices-repositories",
+      "https://docs.cloud.google.com/dataform/docs/connect-repository",
+      "https://docs.cloud.google.com/dataform/docs/create-repository",
+      "https://docs.cloud.google.com/dataform/docs/repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to a third-party Git repository \\_|\\_ Dataform \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "source_id": "site-docs-root-2",
+        "final_score": 285,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table lists supported Git providers and connection methods that are available for their repositories: Git provider Connection method Azure DevOps Services SSH Bitbucket SSH GitHub SSH or HTTPS GitLab SSH or HTTPS Important: To connect your remote Git repository to Dataform, verify that your Git host has a public IP address .",
+          "Before you begin If your organization or project restricts remote Git repositories with the dataform.restrictGitRemotes Organization Policy, ensure that the remote Git repository is added to the allowlist in the policy before you create the Dataform repository that you want to connect to a remote repository.",
+          "Required roles To get the permissions that you need to connect a Dataform repository to a remote Git repository, ask your administrator to grant you the Dataform Admin ( roles/dataform.admin ) IAM role on repositories."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "source_id": "site-docs-root",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: Before you create a Dataform repository that you want to connect to a remote Git repository , check if your organization or project restricts remote Git repositories with the dataform.restrictGitRemotes Organization Policy.",
+          "After you create a Dataform repository, you can connect it to a remote GitHub, GitLab, or Bitbucket repository.",
+          "For more information, see Restrict remote repositories Required roles To get the permissions that you need to create and delete a repository, ask your administrator to grant you the following IAM roles on repositories: Dataform Admin ( roles/dataform.admin ) - the project Service Account User ( roles/iam.serviceAccountUser ) - the custom service account For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "Create a repository \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/repositories",
+        "source_id": "site-docs-root-2",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Important: Before you create a Dataform repository that you want to connect to a remote Git repository , check if your organization or project restricts remote Git repositories with the dataform.restrictGitRemotes Organization Policy.",
+          "After you create a Dataform repository, you can connect it to a remote GitHub, GitLab, or Bitbucket repository.",
+          "For more information, see Restrict remote repositories Required roles To get the permissions that you need to create and delete a repository, ask your administrator to grant you the following IAM roles on repositories: Dataform Admin ( roles/dataform.admin ) - the project Service Account User ( roles/iam.serviceAccountUser ) - the custom service account For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "Best practices for repositories \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/best-practices-repositories",
+        "source_id": "site-docs-root-2",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document presents the following information about Dataform repositories: Overview of repository best practices in Dataform Overview of repository size Splitting repositories Structuring code in a repository Overview of repository best practices in Dataform This section presents an overview of best practices for managing repository size, repository structure, and code lifecycle in Dataform.",
+          "To write the output of the compiled graph of your workflow to a JSON file, inside your repository, run the following Dataform CLI command: dataform compile --json > graph.json Splitting repositories This section discusses strategies for splitting a Dataform repository and managing cross-repository dependencies.",
+          "To house the parent workflow in a third-party Git hosting platform, you need to individually connect each of the separate repositories containing child workflows to a dedicated third-party Git repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dataform.admin",
+      "dataform.restrictGitRemotes",
+      "graph.json",
+      "iam.serviceAccountUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/dataform.admin",
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/connect-repository",
+        "https://docs.cloud.google.com/dataform/docs/create-repository",
+        "https://docs.cloud.google.com/dataform/docs/repositories",
+        "https://docs.cloud.google.com/dataform/docs/best-practices-repositories"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.138Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform"
+}

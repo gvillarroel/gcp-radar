@@ -1,0 +1,348 @@
+{
+  "feature_name": "Healthcare Natural Language API PHI entity mention support",
+  "feature_slug": "healthcare-natural-language-api-phi-entity-mention-support",
+  "summary": "The Healthcare Natural Language API adds support for recognizing Protected Health Information (PHI) entity mentions in text.",
+  "extended_definition": "The Healthcare Natural Language API adds support for recognizing Protected Health Information (PHI) entity mentions in text.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+      "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Healthcare Natural Language API \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Healthcare Natural Language API supports the following relationships between entity mentions: Subject Object ANATOMICAL STRUCTURE MEDICAL DEVICE BODY FUNCTION BF RESULT BODY MEASUREMENT BM RESULT BODY MEASUREMENT BM UNIT BODY MEASUREMENT BM VALUE LABORATORY DATA LAB RESULT LABORATORY DATA LAB UNIT LABORATORY DATA LAB VALUE MEDICINE MED DOSE MEDICINE MED DURATION MEDICINE MED FORM MEDICINE MED FREQUENCY MEDICINE MED ROUTE MEDICINE MED STATUS MEDICINE MED STRENGTH MEDICINE MED TOTALDOSE MEDICINE MED UNIT PROBLEM ANATOMICAL STRUCTURE PROBLEM MEDICINE PROBLEM PROCEDURE PROBLEM SEVERITY PROCEDURE ANATOMICAL STRUCTURE PROCEDURE PROC METHOD PROCEDURE PROCEDURE RESULT SUBSTANCE ABUSE SEVERITY Healthcare Natural Language API output as a FHIR bundle When you request the analyzeEntities method with the alternativeOutputFormat field set to FHIR BUNDLE , the response includes the following JSON objects: The entity mentions, the entities, and the relationships A FHIR R4 bundle represented as a string, that includes all the entities, the entity mentions, and the relationships in JSON format To create the FHIR R4 bundle, the Healthcare Natural Language API maps the entity mentions, entities, and relationships to FHIR resources and their elements.",
+          "Healthcare Natural Language API entity mentions Medical Knowledge Category FHIR R4 resources and elements PROBLEM Condition PROBLEM Condition.category PROBLEM Condition.status PROBLEM ANATOMICAL STRUCTURE Condition.bodySite PROBLEM ANATOMICAL STRUCTURE Condition.evidence PROBLEM SEVERITY Condition.severity PROCEDURE Procedure PROCEDURE Procedure.status PROCEDURE Procedure.code PROCEDURE ANATOMICAL STRUCTURE Procedure.bodySite PROCEDURE MEDICAL DEVICE Procedure.usedCode PROCEDURE PROBLEM Procedure.reasonReference MEDICINE MedicationStatement MEDICINE MedicationStatement.status MEDICINE MedicationStatement.medication MEDICINE PROBLEM MedicationStatement.reasonReference MEDICINE MED DOSE MedicationStatement.dosage.doseAndRate.doseQuantity MEDICINE MED FREQUENCY MedicationStatement.dosage.text MEDICINE MED ROUTE MedicationStatement.dosage.route MEDICINE MED STRENGTH MedicationStatement.dosage.doseAndRate.doseQuantity MEDICINE MED UNIT MedicationStatement.dosage.doseAndRate.doseQuantity To extract entities from text as a FHIR R4 bundle, see Extract output as a FHIR R4 bundle .",
+          "Supported medical vocabularies The Healthcare Natural Language API supports the following medical vocabularies: Foundational Model of Anatomy Gene Ontology HUGO Gene Nomenclature Committee Human Phenotype Ontology ICD-10 Procedure Coding System ICD-10-CM ICD-9-CM LOINC MeSH MedlinePlus Health Topics Metathesaurus Names NCBI Taxonomy NCI Thesaurus National Drug File Online Mendelian Inheritance in Man RXNORM SNOMED CT (available for US users only) Supported medical knowledge categories The Healthcare Natural Language API assigns a medical knowledge category to the entityMentions.type field."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Consent store roles Consent store role Permissions Healthcare Consent Store Viewer ( roles/ healthcare.consentStoreViewer ) List Consent Stores in a dataset. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Store Administrator ( roles/ healthcare.consentStoreAdmin ) Administer Consent stores. healthcare.consentStores. healthcare. consentStores. checkDataAccess healthcare. consentStores. create healthcare. consentStores. delete healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare. consentStores. getIamPolicy healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare. consentStores. setIamPolicy healthcare. consentStores. update healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Consents roles Consents role Permissions Healthcare Attribute Definition Reader ( roles/ healthcare.attributeDefinitionReader ) Read AttributeDefinition objects in a consent store. healthcare. attributeDefinitions. get healthcare. attributeDefinitions. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Attribute Definition Editor ( roles/ healthcare.attributeDefinitionEditor ) Edit AttributeDefinition objects. healthcare. attributeDefinitions. healthcare. attributeDefinitions. create healthcare. attributeDefinitions. delete healthcare. attributeDefinitions. get healthcare. attributeDefinitions. list healthcare. attributeDefinitions. update healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Artifact Reader ( roles/ healthcare.consentArtifactReader ) Read ConsentArtifact objects in a consent store. healthcare. consentArtifacts. get healthcare. consentArtifacts. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Artifact Editor ( roles/ healthcare.consentArtifactEditor ) Edit ConsentArtifact objects. healthcare. consentArtifacts. create healthcare. consentArtifacts. get healthcare. consentArtifacts. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Artifact Administrator ( roles/ healthcare.consentArtifactAdmin ) Administer ConsentArtifact objects. healthcare.consentArtifacts. healthcare. consentArtifacts. create healthcare. consentArtifacts. delete healthcare. consentArtifacts. get healthcare. consentArtifacts. list healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Reader ( roles/ healthcare.consentReader ) Read Consent objects in a consent store. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.consents.get healthcare.consents.list healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Consent Editor ( roles/ healthcare.consentEditor ) Edit Consent objects. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.consents. healthcare.consents.activate healthcare.consents.create healthcare.consents.delete healthcare.consents.get healthcare.consents.list healthcare.consents.reject healthcare.consents.revoke healthcare.consents.update healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare User Data Mapping Reader ( roles/ healthcare.userDataMappingReader ) Read UserDataMapping objects in a consent store. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get healthcare. userDataMappings. get healthcare. userDataMappings. list resourcemanager.projects.get resourcemanager.projects.list Healthcare User Data Mapping Editor ( roles/ healthcare.userDataMappingEditor ) Edit UserDataMapping objects. healthcare. consentStores. checkDataAccess healthcare. consentStores. evaluateUserConsents healthcare.consentStores.get healthcare.consentStores.list healthcare. consentStores. queryAccessibleData healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get healthcare.userDataMappings. healthcare. userDataMappings. archive healthcare. userDataMappings. create healthcare. userDataMappings. delete healthcare. userDataMappings. get healthcare. userDataMappings. list healthcare. userDataMappings. update resourcemanager.projects.get resourcemanager.projects.list Datasets roles Datasets role Permissions Healthcare Dataset Viewer ( roles/ healthcare.datasetViewer ) List the Healthcare Datasets in a project. healthcare.datasets.get healthcare.datasets.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Dataset Administrator ( roles/ healthcare.datasetAdmin ) Administer Healthcare Datasets. healthcare.datasets. healthcare.datasets.create healthcare.datasets.deidentify healthcare.datasets.delete healthcare.datasets.get healthcare. datasets. getIamPolicy healthcare.datasets.list healthcare. datasets. setIamPolicy healthcare.datasets.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations. healthcare.operations.cancel healthcare.operations.get healthcare.operations.list resourcemanager.projects.get resourcemanager.projects.list DICOM store roles DICOM store role Permissions Healthcare DICOM Store Viewer ( roles/ healthcare.dicomStoreViewer ) List DICOM Stores in a dataset. healthcare.datasets.get healthcare.datasets.list healthcare.dicomStores.get healthcare.dicomStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare DICOM Store Administrator ( roles/ healthcare.dicomStoreAdmin ) Administer DICOM stores. healthcare.datasets.get healthcare.datasets.list healthcare.dicomStores.create healthcare. dicomStores. deidentify healthcare.dicomStores.delete healthcare. dicomStores. dicomWebDelete healthcare.dicomStores.get healthcare. dicomStores. getIamPolicy healthcare.dicomStores.list healthcare. dicomStores. setIamPolicy healthcare.dicomStores.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare DICOM Viewer ( roles/ healthcare.dicomViewer ) Retrieve DICOM images from a DICOM store. healthcare.datasets.get healthcare.datasets.list healthcare. dicomStores. dicomWebRead healthcare.dicomStores.export healthcare.dicomStores.get healthcare.dicomStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare DICOM Editor ( roles/ healthcare.dicomEditor ) Edit DICOM images individually and in bulk. healthcare.datasets.get healthcare.datasets.list healthcare. dicomStores. dicomWebDelete healthcare. dicomStores. dicomWebRead healthcare. dicomStores. dicomWebUpdate healthcare. dicomStores. dicomWebWrite healthcare.dicomStores.export healthcare.dicomStores.get healthcare.dicomStores.import healthcare.dicomStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list FHIR store roles FHIR store role Permissions Healthcare FHIR Store Viewer ( roles/ healthcare.fhirStoreViewer ) List FHIR Stores in a dataset. healthcare.datasets.get healthcare.datasets.list healthcare.fhirStores.get healthcare.fhirStores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare FHIR Store Administrator ( roles/ healthcare.fhirStoreAdmin ) Administer FHIR resource stores. healthcare.datasets.get healthcare.datasets.list healthcare.fhirResources.purge healthcare. fhirStores. applyConsents healthcare. fhirStores. bulkDelete healthcare. fhirStores. configureSearch healthcare.fhirStores.create healthcare. fhirStores. deidentify healthcare.fhirStores.delete healthcare. fhirStores. deleteFhirOperation healthcare. fhirStores. explainDataAccess healthcare.fhirStores.export healthcare.fhirStores.get healthcare. fhirStores. getFhirOperation healthcare. fhirStores. getIamPolicy healthcare.fhirStores.import healthcare.fhirStores.list healthcare.fhirStores.rollback healthcare. fhirStores. setIamPolicy healthcare.fhirStores.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare FHIR Resource Reader ( roles/ healthcare.fhirResourceReader ) Read and search FHIR resources. healthcare.datasets.get healthcare.datasets.list healthcare.fhirResources.get healthcare. fhirResources. translateConceptMap healthcare. fhirStores. executeBundle healthcare.fhirStores.get healthcare.fhirStores.list healthcare. fhirStores. searchResources healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare FHIR Resource Editor ( roles/ healthcare.fhirResourceEditor ) Create, delete, update, read and search FHIR resources. healthcare.datasets.get healthcare.datasets.list healthcare. fhirResources. create healthcare. fhirResources. delete healthcare.fhirResources.get healthcare.fhirResources.patch healthcare. fhirResources. translateConceptMap healthcare. fhirResources. update healthcare. fhirStores. executeBundle healthcare.fhirStores.get healthcare.fhirStores.list healthcare. fhirStores. searchResources healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list HL7v2 store roles HL7v2 store role Permissions Healthcare HL7v2 Store Viewer ( roles/ healthcare.hl7V2StoreViewer ) View HL7v2 Stores in a dataset. healthcare.datasets.get healthcare.datasets.list healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Store Administrator ( roles/ healthcare.hl7V2StoreAdmin ) Administer HL7v2 Stores. healthcare.datasets.get healthcare.datasets.list healthcare.hl7V2Stores. healthcare.hl7V2Stores.create healthcare.hl7V2Stores.delete healthcare.hl7V2Stores.export healthcare.hl7V2Stores.get healthcare. hl7V2Stores. getIamPolicy healthcare.hl7V2Stores.import healthcare.hl7V2Stores.list healthcare. hl7V2Stores. rollback healthcare. hl7V2Stores. setIamPolicy healthcare.hl7V2Stores.update healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Message Ingest ( roles/ healthcare.hl7V2Ingest ) Ingest HL7v2 messages received from a source network. healthcare.datasets.get healthcare.datasets.list healthcare. hl7V2Messages. ingest healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Message Consumer ( roles/ healthcare.hl7V2Consumer ) List and read HL7v2 messages, update message labels, and publish new messages. healthcare.datasets.get healthcare.datasets.list healthcare. hl7V2Messages. create healthcare.hl7V2Messages.get healthcare.hl7V2Messages.list healthcare. hl7V2Messages. update healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare HL7v2 Message Editor ( roles/ healthcare.hl7V2Editor ) Read, write, and delete access to HL7v2 messages. healthcare.datasets.get healthcare.datasets.list healthcare.hl7V2Messages. healthcare. hl7V2Messages. create healthcare. hl7V2Messages. delete healthcare.hl7V2Messages.get healthcare. hl7V2Messages. ingest healthcare.hl7V2Messages.list healthcare. hl7V2Messages. update healthcare.hl7V2Stores.get healthcare.hl7V2Stores.list healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare.operations.cancel healthcare.operations.get resourcemanager.projects.get resourcemanager.projects.list Healthcare Natural Language API roles Healthcare Natural Language API role Permissions Healthcare NLP Service Viewer Beta ( roles/ healthcare.nlpServiceViewer ) Extract and analyze medical entities from a given text. healthcare.locations. healthcare.locations.get healthcare.locations.list healthcare. nlpservice. analyzeEntities resourcemanager.projects.get resourcemanager.projects.list Cloud Healthcare Service Agent The Cloud Healthcare Service Agent is a shared service account in your project that Cloud Healthcare API uses to interact with other resources in Google Cloud.",
+          "Healthcare Natural Language API methods Healthcare Natural Language API method Required permissions nlp.analyzeEntities healthcare.nlpservice.analyzeEntities Operation methods Operation method Required permission datasets.operations.get healthcare.operations.get on the requested dataset. datasets.operations.list healthcare.operations.list on the requested dataset. datasets.operations.cancel healthcare.operations.cancel on the requested dataset.",
+          "Overview The Cloud Healthcare API uses Identity and Access Management (IAM) for access control."
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR resources \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "Response { \"resourceType\": \"Bundle\", \"type\": \"searchset\", \"entry\": [ { \"fullUrl\": \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Encounter/c427ce3e-7677-400e-bc06-33a8cecfdd77\", \"resource\": { \"class\": { \"code\": \"AMB\", \"system\": \"http://terminology.hl7.org/CodeSystem/v3-ActCode\" }, \"extension\": [ { \"extension\": [ { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-action-Status-extension\", \"valueCode\": \"finished\" } ], \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-action-PerformedContext-extension\" } ], \"id\": \"c427ce3e-7677-400e-bc06-33a8cecfdd77\", \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"profile\": [ \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-encounter-EncounterPerformed\" ], \"versionId\": \"MTcxOTUyMzQ1MzA0MjMwMDAwMA\" }, \"participant\": [ { \"individual\": { \"reference\": \"Practitioner/d22d7490-0710-4190-bd23-43bc6bca2649\" } } ], \"period\": { \"end\": \"2015-03-02T17:06:14-08:00\", \"start\": \"2015-03-02T16:51:14-08:00\" }, \"resourceType\": \"Encounter\", \"serviceProvider\": { \"reference\": \"Organization/69176529-fd1f-3b3f-abce-a0a3626769eb\" }, \"status\": \"finished\", \"subject\": { \"reference\": \"Patient/b0027145-32af-4030-bcb1-1f5b63d3f2e2\" }, \"type\": [ { \"coding\": [ { \"code\": \"185349003\", \"display\": \"Encounter for check up (procedure)\", \"system\": \"http://snomed.info/sct\" } ], \"text\": \"Encounter for check up (procedure)\" } ] } }, { \"fullUrl\": \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Organization/69176529-fd1f-3b3f-abce-a0a3626769eb\", \"resource\": { \"active\": true, \"address\": [ { \"city\": \"CAMBRIDGE\", \"country\": \"US\", \"line\": [ \"330 MOUNT AUBURN STREET\" ], \"postalCode\": \"02138\", \"state\": \"MA\" } ], \"contact\": [ { \"name\": { \"text\": \"Synthetic Provider\" } } ], \"id\": \"69176529-fd1f-3b3f-abce-a0a3626769eb\", \"identifier\": [ { \"system\": \"urn:ietf:rfc:3986\", \"value\": \"69176529-fd1f-3b3f-abce-a0a3626769eb\" }, { \"system\": \"https://github.com/synthetichealth/synthea\", \"value\": \"69176529-fd1f-3b3f-abce-a0a3626769eb\" } ], \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"profile\": [ \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-entity-Organization\" ], \"versionId\": \"MTcxOTUyMzQ2Mjg2MzQ3NDAwMA\" }, \"name\": \"MOUNT AUBURN HOSPITAL\", \"resourceType\": \"Organization\", \"telecom\": [ { \"system\": \"phone\", \"value\": \"6174923500\" } ], \"type\": [ { \"coding\": [ { \"code\": \"prov\", \"display\": \"Healthcare Provider\", \"system\": \"http://terminology.hl7.org/CodeSystem/organization-type\" } ], \"text\": \"Healthcare Provider\" } ] } }, { \"fullUrl\": \"https://healthcare.googleapis.com/v1beta1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID /fhir/Patient/b0027145-32af-4030-bcb1-1f5b63d3f2e2\", \"resource\": { \"address\": [ { \"city\": \"Somerville\", \"country\": \"US\", \"extension\": [ { \"extension\": [ { \"url\": \"latitude\", \"valueDecimal\": 42.390566 }, { \"url\": \"longitude\", \"valueDecimal\": -71.101324 } ], \"url\": \"http://hl7.org/fhir/StructureDefinition/geolocation\" } ], \"line\": [ \"883 Howell Lane\" ], \"postalCode\": \"02138\", \"state\": \"Massachusetts\" } ], \"birthDate\": \"2008-03-10\", \"communication\": [ { \"language\": { \"coding\": [ { \"code\": \"es\", \"display\": \"Spanish\", \"system\": \"urn:ietf:bcp:47\" } ], \"text\": \"Spanish\" } } ], \"extension\": [ { \"extension\": [ { \"url\": \"ombCategory\", \"valueCoding\": { \"code\": \"2054-5\", \"display\": \"Black or African American\", \"system\": \"urn:oid:2.16.840.1.113883.6.238\" } }, { \"url\": \"text\", \"valueString\": \"Black or African American\" } ], \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-race\" }, { \"extension\": [ { \"url\": \"ombCategory\", \"valueCoding\": { \"code\": \"2186-5\", \"display\": \"Not Hispanic or Latino\", \"system\": \"urn:oid:2.16.840.1.113883.6.238\" } }, { \"url\": \"text\", \"valueString\": \"Not Hispanic or Latino\" } ], \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity\" }, { \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-mothersMaidenName\", \"valueString\": \"Ariadna374 Lovato727\" }, { \"url\": \"http://hl7.org/fhir/us/core/StructureDefinition/us-core-birthsex\", \"valueCode\": \"F\" }, { \"url\": \"http://hl7.org/fhir/StructureDefinition/patient-birthPlace\", \"valueAddress\": { \"city\": \"Portsmouth\", \"country\": \"DM\", \"state\": \"Saint John Parish\" } }, { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-actor-FictionalPerson-extension\", \"valueBoolean\": true }, { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-entity-FathersName-extension\", \"valueHumanName\": { \"text\": \"Joaquín233 Montemayor547\" } }, { \"url\": \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-demographics-SocialSecurityNumber-extension\", \"valueString\": \"999-10-3430\" }, { \"url\": \"http://synthetichealth.github.io/synthea/disability-adjusted-life-years\", \"valueDecimal\": 0 }, { \"url\": \"http://synthetichealth.github.io/synthea/quality-adjusted-life-years\", \"valueDecimal\": 10 } ], \"gender\": \"female\", \"id\": \"b0027145-32af-4030-bcb1-1f5b63d3f2e2\", \"identifier\": [ { \"system\": \"https://github.com/synthetichealth/synthea\", \"value\": \"c04dc343-a9f2-445c-ab4b-42b403a9cdba\" }, { \"system\": \"http://hospital.smarthealthit.org\", \"type\": { \"coding\": [ { \"code\": \"MR\", \"display\": \"Medical Record Number\", \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\" } ], \"text\": \"Medical Record Number\" }, \"value\": \"c04dc343-a9f2-445c-ab4b-42b403a9cdba\" }, { \"system\": \"http://hl7.org/fhir/sid/us-ssn\", \"type\": { \"coding\": [ { \"code\": \"SS\", \"display\": \"Social Security Number\", \"system\": \"http://terminology.hl7.org/CodeSystem/v2-0203\" } ], \"text\": \"Social Security Number\" }, \"value\": \"999-10-3430\" } ], \"maritalStatus\": { \"coding\": [ { \"code\": \"S\", \"display\": \"Never Married\", \"system\": \"http://terminology.hl7.org/CodeSystem/v3-MaritalStatus\" } ], \"text\": \"Never Married\" }, \"meta\": { \"lastUpdated\": \" YYYY-MM-DDTHH:MM:SS+ZZ:ZZ \", \"profile\": [ \"http://standardhealthrecord.org/fhir/StructureDefinition/shr-entity-Patient\" ], \"versionId\": \"MTcxOTUyMzQ2MzIwNzY1MDAwMA\" }, \"multipleBirthBoolean\": false, \"name\": [ { \"family\": \"Montemayor547\", \"given\": [ \"Sonia106\" ], \"use\": \"official\" } ], \"resourceType\": \"Patient\", \"telecom\": [ { \"system\": \"phone\", \"use\": \"home\", \"value\": \"555-302-8948\" } ], \"text\": { \"div\": \"div xmlns=http://www.w3.org/1999/xhtml Generated by https://github.com/synthetichealth/synthea Synthea.",
+          "CloudHealthcare client = createClient (); HttpClient httpClient = HttpClients . createDefault (); String uri = String . format ( \"%sv1/%s/fhir/%s\" , client . getRootUrl (), fhirStoreName , resourceType ); URIBuilder uriBuilder = new URIBuilder ( uri ). setParameter ( \"access token\" , getAccessToken ()); StringEntity requestEntity = new StringEntity ( \"{\\\"resourceType\\\": \\\"\" + resourceType + \"\\\", \\\"language\\\": \\\"en\\\"}\" ); HttpUriRequest request = RequestBuilder . post () . setUri ( uriBuilder . build ()) . setEntity ( requestEntity ) . addHeader ( \"Content-Type\" , \"application/fhir+json\" ) . addHeader ( \"Accept-Charset\" , \"utf-8\" ) . addHeader ( \"Accept\" , \"application/fhir+json; charset=utf-8\" ) . build (); // Execute the request and process the results.",
+          "SC OK ) { String errorMessage = String . format ( \"Exception purging FHIR resource: %s\\n\" , response . getStatusLine (). toString ()); System . err . print ( errorMessage ); responseEntity . writeTo ( System . err ); throw new RuntimeException ( errorMessage ); } System . out . println ( \"FHIR resource history purged (excluding current version).\" ); responseEntity . writeTo ( System . out ); } private static CloudHealthcare createClient () throws IOException { // Use Application Default Credentials (ADC) to authenticate the requests // For more information see https://cloud.google.com/docs/authentication/production GoogleCredentials credential = GoogleCredentials . getApplicationDefault () . createScoped ( Collections . singleton ( CloudHealthcareScopes ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "datasets.consentStores.attributeDefinitions.create",
+      "datasets.consentStores.attributeDefinitions.delete",
+      "datasets.consentStores.attributeDefinitions.get",
+      "datasets.consentStores.attributeDefinitions.list",
+      "datasets.consentStores.attributeDefinitions.patch",
+      "datasets.consentStores.checkDataAccess",
+      "datasets.consentStores.consentArtifacts.create",
+      "datasets.consentStores.consentArtifacts.delete",
+      "datasets.consentStores.consentArtifacts.get",
+      "datasets.consentStores.consentArtifacts.list",
+      "datasets.consentStores.consents.create",
+      "datasets.consentStores.consents.delete",
+      "datasets.consentStores.consents.get",
+      "datasets.consentStores.consents.list",
+      "datasets.consentStores.consents.patch",
+      "datasets.consentStores.consents.revoke",
+      "datasets.consentStores.create",
+      "datasets.consentStores.delete",
+      "datasets.consentStores.evaluateUserConsents",
+      "datasets.consentStores.get",
+      "datasets.consentStores.getIamPolicy",
+      "datasets.consentStores.list",
+      "datasets.consentStores.patch",
+      "datasets.consentStores.queryAccessibleData",
+      "datasets.consentStores.setIamPolicy",
+      "datasets.consentStores.userDataMappings.archive",
+      "datasets.consentStores.userDataMappings.create",
+      "datasets.consentStores.userDataMappings.delete",
+      "datasets.consentStores.userDataMappings.get",
+      "datasets.consentStores.userDataMappings.list",
+      "datasets.consentStores.userDataMappings.patch",
+      "datasets.operations.cancel",
+      "datasets.operations.get",
+      "datasets.operations.list",
+      "dosage.doseAndRate.doseQuantity",
+      "dosage.route",
+      "dosage.text",
+      "github.com",
+      "healthcare.attributeDefinitionEditor",
+      "healthcare.attributeDefinitionReader",
+      "healthcare.attributeDefinitions.create",
+      "healthcare.attributeDefinitions.delete",
+      "healthcare.attributeDefinitions.get",
+      "healthcare.attributeDefinitions.list",
+      "healthcare.attributeDefinitions.update",
+      "healthcare.consentArtifactAdmin",
+      "healthcare.consentArtifactEditor",
+      "healthcare.consentArtifactReader",
+      "healthcare.consentArtifacts",
+      "healthcare.consentArtifacts.create",
+      "healthcare.consentArtifacts.delete",
+      "healthcare.consentArtifacts.get",
+      "healthcare.consentArtifacts.list",
+      "healthcare.consentEditor",
+      "healthcare.consentReader",
+      "healthcare.consents",
+      "healthcare.consents.activate",
+      "healthcare.consents.create",
+      "healthcare.consents.delete",
+      "healthcare.consents.get",
+      "healthcare.consents.list",
+      "healthcare.consents.reject",
+      "healthcare.consents.revoke",
+      "healthcare.consents.update",
+      "healthcare.consentStoreAdmin",
+      "healthcare.consentStores",
+      "healthcare.consentStores.checkDataAccess",
+      "healthcare.consentStores.create",
+      "healthcare.consentStores.delete",
+      "healthcare.consentStores.evaluateUserConsents",
+      "healthcare.consentStores.get",
+      "healthcare.consentStores.getIamPolicy",
+      "healthcare.consentStores.list",
+      "healthcare.consentStores.queryAccessibleData",
+      "healthcare.consentStores.setIamPolicy",
+      "healthcare.consentStores.update",
+      "healthcare.consentStoreViewer",
+      "healthcare.datasetAdmin",
+      "healthcare.datasets",
+      "healthcare.datasets.create",
+      "healthcare.datasets.deidentify",
+      "healthcare.datasets.delete",
+      "healthcare.datasets.get",
+      "healthcare.datasets.list",
+      "healthcare.datasets.update",
+      "healthcare.datasetViewer",
+      "healthcare.dicomEditor",
+      "healthcare.dicomStoreAdmin",
+      "healthcare.dicomStores.create",
+      "healthcare.dicomStores.delete",
+      "healthcare.dicomStores.export",
+      "healthcare.dicomStores.get",
+      "healthcare.dicomStores.import",
+      "healthcare.dicomStores.list",
+      "healthcare.dicomStores.update",
+      "healthcare.dicomStoreViewer",
+      "healthcare.dicomViewer",
+      "healthcare.fhirResourceEditor",
+      "healthcare.fhirResourceReader",
+      "healthcare.fhirResources.get",
+      "healthcare.fhirResources.patch",
+      "healthcare.fhirResources.purge",
+      "healthcare.fhirStoreAdmin",
+      "healthcare.fhirStores.create",
+      "healthcare.fhirStores.delete",
+      "healthcare.fhirStores.export",
+      "healthcare.fhirStores.get",
+      "healthcare.fhirStores.import",
+      "healthcare.fhirStores.list",
+      "healthcare.fhirStores.rollback",
+      "healthcare.fhirStores.update",
+      "healthcare.fhirStoreViewer",
+      "healthcare.googleapis.com",
+      "healthcare.hl7V2Consumer",
+      "healthcare.hl7V2Editor",
+      "healthcare.hl7V2Ingest",
+      "healthcare.hl7V2Messages",
+      "healthcare.hl7V2Messages.get",
+      "healthcare.hl7V2Messages.list",
+      "healthcare.hl7V2StoreAdmin",
+      "healthcare.hl7V2Stores",
+      "healthcare.hl7V2Stores.create",
+      "healthcare.hl7V2Stores.delete",
+      "healthcare.hl7V2Stores.export",
+      "healthcare.hl7V2Stores.get",
+      "healthcare.hl7V2Stores.import",
+      "healthcare.hl7V2Stores.list",
+      "healthcare.hl7V2Stores.update",
+      "healthcare.hl7V2StoreViewer",
+      "healthcare.locations",
+      "healthcare.locations.get",
+      "healthcare.locations.list",
+      "healthcare.nlpservice.analyzeEntities",
+      "healthcare.nlpServiceViewer",
+      "healthcare.operations",
+      "healthcare.operations.cancel",
+      "healthcare.operations.get",
+      "healthcare.operations.list",
+      "healthcare.userDataMappingEditor",
+      "healthcare.userDataMappingReader",
+      "healthcare.userDataMappings",
+      "healthcare.userDataMappings.archive",
+      "healthcare.userDataMappings.create",
+      "healthcare.userDataMappings.delete",
+      "healthcare.userDataMappings.get",
+      "healthcare.userDataMappings.list",
+      "healthcare.userDataMappings.update",
+      "hl7.org",
+      "hospital.smarthealthit.org",
+      "nlp.analyzeEntities",
+      "snomed.info",
+      "standardhealthrecord.org",
+      "synthetichealth.github.io",
+      "terminology.hl7.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/concepts/nlp",
+        "https://docs.cloud.google.com/healthcare-api/docs/access-control",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir-resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.317Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

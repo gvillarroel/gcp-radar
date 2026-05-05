@@ -1,0 +1,142 @@
+{
+  "feature_name": "IPv6 firewall rules",
+  "feature_slug": "ipv6-firewall-rules",
+  "summary": "Firewall rules now support references to IPv6 address ranges.",
+  "extended_definition": "Firewall rules now support references to IPv6 address ranges.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "To list all subnets in a region and include their IP address utilization, make the following GET request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks?views=WITH UTILIZATION Describe a subnet You can view the details of an existing subnet—such as its primary IPv4 ranges, secondary IP ranges, IPv6 ranges, IP address utilization, and region—by following the steps in this section.",
+          "A dual-stack subnet can have one of the following configurations for its primary IP address ranges: Internal IPv4 range and internal IPv6 range Internal IPv4 range and external IPv6 range Each subnet in a VPC network can have a different configuration; you don't need to configure them all as dual-stack, for example.",
+          "In both the IPv4 firewall rules tab and the IPv6 firewall rules tab, there is an editable predefined ingress firewall rule; the IPv4 rule is named NETWORK -allow-custom and the IPv6 rule is named NETWORK -allow-ipv6-custom ."
+        ]
+      },
+      {
+        "title": "\"Firewall Insights overview \\_|\\_ Network Intelligence Center - Firewall\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "With these insights, you can perform the following tasks: Identify firewall misconfigurations for firewall rules containing IPv4 or IPv6 address ranges.",
+          "Note: For firewall rules containing IPv6 address ranges, insights are generated based on firewall logging data gathered only after June 17, 2022.",
+          "Insights help you identify firewall rules that overlap existing rules, rules with no hits, and unused firewall rule attributes such as IP address and port ranges."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "Resources within a VPC network can communicate with one another by using internal IPv4 addresses, internal IPv6 addresses, or external IPv6 addresses, subject to applicable network firewall rules.",
+          "Subnets with IPv6 address ranges aren't supported in the following: Auto mode VPC networks, including the default network Legacy networks If you have an auto mode VPC network that you would like to add subnets with IPv6 address ranges to, you can do the following: Convert the auto mode network to custom mode .",
+          "Networks that support subnets with IPv6 address ranges You can create subnets with IPv6 address ranges in a custom mode VPC network."
+        ]
+      },
+      {
+        "title": "\"Identify and fix ICMP issues \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow",
+        "source_id": "site-iam-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Console UI snapshot of the trace failing to reach vm2 Create the firewall rule allow-ping-from-known-ranges To allow ingress to the external IP address of vm2 , configure a new VPC firewall rule called allow-ping-from-known-ranges .",
+          "This time, Connectivity Tests tells you that the packet has been delivered to vm2 and that the matched firewall rule, allow-ping-from-known-ranges , allows an inbound ICMP packet to the external IP address of vm2 .",
+          "For the purposes of this tutorial, this source range includes only the external IP address of vm1 , but check any existing firewall rules or rule priorities to make sure that they don't override this new rule."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/firewall-insights/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/tutorials/tutorial-troubleshooting-workflow"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

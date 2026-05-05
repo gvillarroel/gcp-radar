@@ -1,0 +1,94 @@
+{
+  "feature_name": "gcp-build custom build step",
+  "feature_slug": "gcp-build-custom-build-step",
+  "summary": "A gcp-build script in package.json can run custom build logic during deployment.",
+  "extended_definition": "A gcp-build script in package.json can run custom build logic during deployment.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+      "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Running a custom build step | App Engine standard environment | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step",
+        "source_id": "feature-recovery-http",
+        "final_score": 340,
+        "relevance": "",
+        "evidence_snippets": [
+          "After executing your custom build step, App Engine removes and regenerates the node_modules folder by only installing the production dependencies declared in the dependencies field of your package.json file.",
+          "Custom build steps can be executed by adding gcp-build in your package.json file.",
+          "To prevent your build from running the npm run build script, you must either: Add a gcp-build script with an empty value in your package.json file: \"gcp-build\":\"\" ."
+        ]
+      },
+      {
+        "title": "Node.js Runtime Environment | App Engine standard environment | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "source_id": "feature-recovery-http",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you require additional control over your build steps before starting your application, you can provide a custom build step by adding a gcp-build script to your package.json file.",
+          "To prevent your build from running the npm run build script, you must either: Add a gcp-build script with an empty value in your package.json file: \"gcp-build\":\"\" .",
+          "NPM build script By default, when you deploy the app in App Engine, the Node.js runtime executes npm run build if a build script is detected in package.json ."
+        ]
+      },
+      {
+        "title": "\"Specifying dependencies \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies",
+        "source_id": "site-docs-reference-3",
+        "final_score": 208,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can use any Node.js web framework including the following: Express.js Hapi.js Loopback.js Koa.js Kraken.js Restify.js Sails.js To use a particular web framework, such as Express.js , add the framework to your package.json file: Using npm : npm install express Using yarn : yarn add express Using pnpm : pnpm add express For example, the resulting package.json file might look as follows: { \"dependencies\" : { \"lodash\" : \"^4.0.1\" , \"express\" : \"^4.16.2\" } } Installing the Cloud Client Libraries The Cloud Client Libraries for Node.js is the idiomatic way for Node.js developers to integrate with Google Cloud services, such as Firestore in Datastore mode (Datastore) and Cloud Storage .",
+          "To install an uncached version of the dependency, use the command: gcloud app deploy -- no - cache Support and limitations for the package.json file in the standard environment: You can use any Linux-compatible Node.js package with App Engine, including packages that require native (C) extensions.",
+          "For example, if you want to specify Lodash as a dependency, your package.json file might look as follows: { \"dependencies\" : { \"lodash\" : \"^4.0.1\" } } During deployment, the Node.js runtime automatically installs all dependencies declared in your package.json file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "node.js",
+      "npm.pkg.dev",
+      "package.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/running-custom-build-step",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/nodejs/specifying-dependencies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.077Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-node-js/card.json",
+  "product_name": "App Engine standard environment Node.js",
+  "product_slug": "app-engine-standard-environment-node-js"
+}

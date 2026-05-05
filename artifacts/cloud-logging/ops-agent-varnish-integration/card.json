@@ -1,0 +1,106 @@
+{
+  "feature_name": "Ops Agent Varnish integration",
+  "feature_slug": "ops-agent-varnish-integration",
+  "summary": "Ops Agent can collect Varnish logs and metrics.",
+  "extended_definition": "Ops Agent can collect Varnish logs and metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+      "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Collect logs from Apache with the Ops Agent \\_|\\_ Cloud Logging\\",
+        "url": "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must restart the agent for the configuration to take effect . set - e Check if the file exists if [ ! - f / etc / google - cloud - ops - agent / config . yaml ]; then Create the file if it doesn ' t exist . sudo mkdir - p / etc / google - cloud - ops - agent sudo touch / etc / google - cloud - ops - agent / config . yaml fi Create a back up of the existing file so existing configurations are not lost . sudo cp / etc / google - cloud - ops - agent / config . yaml / etc / google - cloud - ops - agent / config . yaml . bak Configure the Ops Agent . sudo tee / etc / google - cloud - ops - agent / config . yaml > / dev / null << EOF metrics : receivers : apache : type : apache service : pipelines : apache : receivers : - apache logging : receivers : apache access : type : apache access apache error : type : apache error service : pipelines : apache : receivers : - apache access - apache error EOF The previous command creates the configuration to collect and ingest logs and metrics from the Apache web server.",
+          "Collect Apache web server logs and metrics In these steps, you configure the Ops Agent to collect logs and metrics from your Apache web server: Go to the SSH terminal for your VM instance.",
+          "You've configured the Ops Agent to collect logs and metrics from your Apache web server, and you've viewed those logs."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.",
+          "Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.",
+          "You can install the Ops Agent on Managed Service for Apache Spark clusters that use image version 2.2 and later to collect syslog logs and host metrics."
+        ]
+      },
+      {
+        "title": "Configure the Ops Agent \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration",
+        "source_id": "site-docs-root-2",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about the metrics collected, see Metrics ingested by the receivers . logging : receivers : syslog : type : files include paths : - /var/log/messages - /var/log/syslog service : pipelines : default pipeline : receivers : [ syslog ] metrics : receivers : hostmetrics : type : hostmetrics collection interval : 60s processors : metrics filter : type : exclude metrics metrics pattern : [] service : pipelines : default pipeline : receivers : [ hostmetrics ] processors : [ metrics filter ] Windows By default, the Ops Agent collects Windows event logs from System , Application , and Security channels, as well as host metrics, IIS metrics, and SQL Server metrics.",
+          "The entire metrics configuration looks like the following: metrics : service : pipelines : default pipeline : receivers : [] The following example shows the built-in service configuration for Windows: metrics : service : pipelines : default pipeline : receivers : - hostmetrics - iis - mssql processors : - metrics filter The following service configuration customizes log verbosity for the metrics submodule to be debug instead: metrics : service : log level : debug Collection of self logs By default, the Ops Agent's Fluent Bit self logs are sent to Cloud Logging.",
+          "The following shows the built-in configuration for Linux and for Windows: Linux By default, the Ops Agent collects file-based syslog logs and host metrics."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/logging-gce-quickstart",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/configuration"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

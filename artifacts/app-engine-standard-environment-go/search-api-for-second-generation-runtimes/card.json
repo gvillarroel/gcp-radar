@@ -1,0 +1,83 @@
+{
+  "feature_name": "Search API for second-generation runtimes",
+  "feature_slug": "search-api-for-second-generation-runtimes",
+  "summary": "The App Engine Search API is available as a legacy bundled service for second-generation runtimes through the Go services SDK.",
+  "extended_definition": "The App Engine Search API is available as a legacy bundled service for second-generation runtimes through the Go services SDK.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/bundled-services-overview",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/bundled-services-overview",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Overview of legacy bundled services \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/bundled-services-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For the legacy bundled services that are not available as separate products in Google Cloud, such as image processing, search, and messaging, you can use third-party providers or other workarounds as suggested in the Runtimes guide.",
+          "To reduce runtime migration complexity, Google Cloud now supports a set of App Engine legacy bundled services and their associated APIs on second-generation runtimes, which include Python 3 , Java 11+ , Go 1.12+ , and PHP 7+ .",
+          "Your app can call legacy bundled services APIs for second-generation runtimes through language-idiomatic libraries."
+        ]
+      },
+      {
+        "title": "\"Overview of legacy bundled services \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/bundled-services-overview",
+        "source_id": "site-docs-reference-4",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For the legacy bundled services that are not available as separate products in Google Cloud, such as image processing, search, and messaging, you can use third-party providers or other workarounds as suggested in the Runtimes guide.",
+          "To reduce runtime migration complexity, Google Cloud now supports a set of App Engine legacy bundled services and their associated APIs on second-generation runtimes, which include Python 3 , Java 11+ , Go 1.12+ , and PHP 7+ .",
+          "Your app can call legacy bundled services APIs for second-generation runtimes through language-idiomatic libraries."
+        ]
+      },
+      {
+        "title": "\"How requests are handled \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-requests-are-handled",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following limits apply specifically to the use of request handlers: Limit Amount Request size 32 megabytes Response size 32 megabytes Request timeout Depends on the type of scaling your app uses Maximum total number of files (app files and static files) 10,000 total 1,000 per directory Maximum size of an application file 32 megabytes Maximum size of a static file 32 megabytes Maximum total size of all application and static files First 1 gigabyte is free $ 0.026 per gigabyte per month after first 1 gigabyte Pending request timeout 10 seconds Maximum size of a single request header field 8 kilobytes for second-generation runtimes in the standard environment.",
+          "The response header limit is 8 KB for second-generation runtimes .",
+          "This limitation doesn't apply to responses that serve data from Cloud Storage or the legacy Blobstore API if it is available in your runtime."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.872Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go"
+}

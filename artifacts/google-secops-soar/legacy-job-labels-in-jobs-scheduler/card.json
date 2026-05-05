@@ -1,0 +1,194 @@
+{
+  "feature_name": "Legacy job labels in Jobs Scheduler",
+  "feature_slug": "legacy-job-labels-in-jobs-scheduler",
+  "summary": "Marks legacy jobs in the Jobs Scheduler page.",
+  "extended_definition": "Marks legacy jobs in the Jobs Scheduler page.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+      "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "For changes that affect all integration items: Integration - {Update} For changes that affect all actions: Integration's Actions - {Update} For changes that affect all connectors: Integration's Connectors - {Update} For changes that affect all jobs: Integration's Jobs - {Update} If the release contained a regressive change, then in the release note you need to specify REGRESSIVE! .",
+          "Beyond authentication parameters, all jobs should have the following parameters: Max {Hours/Days} Backwards : dictates the start time on the first iteration of the job.",
+          "Jobs Name The Name of the job should explain to the user what this job is performing."
+        ]
+      },
+      {
+        "title": "\"Migrate legacy SIEM Infra to Google Cloud \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "source_id": "site-docs-root-2",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Scope of migration Infra Legacy stack Modern stack Project hosting Google owned project Customer-owned Google Cloud project Authentication Legacy SIEM Authentication Google Cloud Auth: Workforce Identity Federation (WIF) or Cloud Identity Authorization Legacy SIEM RBAC Feature RBAC: Google Cloud IAM Audit Logging Limited internal logging Cloud Audit Logs: Comprehensive Google Cloud logging Before you begin Prepare your Google Cloud environment before you start the migration: Identify or create a Google Cloud organization and a Google Cloud project .",
+          "Migrate your SIEM instance if it is any of the following types: Not deployed in your Google Cloud project OR Not using Google Cloud Authentication (Workforce Identity Federation / Cloud Identity) OR Not using Google Cloud Identity and Access Management (IAM) for Role-Based Access Control (RBAC) You don't need to migrate if your instance meets all of the following conditions: Deployed in a Google Cloud project AND Uses Workforce Identity Federation or Cloud Identity for authentication AND Uses Google Cloud IAM to manage granular access permissions Why migrate now?",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Migrate from legacy authentication to Google Cloud authentication \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "source_id": "site-docs-root-2",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate from legacy authentication to Google Cloud authentication Supported in: Google secops SIEM This document explains how to migrate an existing Google SecOps instance from legacy SIEM authentication to Google Cloud authentication.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "Under Configure single sign-on , select one of the following options based on which identity provider you use to manage user and group access to Google SecOps: If you are using Cloud Identity or Google Workspace, select Google Cloud Identity ."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-root-2",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Ingestion labels : the label to be applied to the events from this feed.",
+          "Ingestion labels : the label to be applied to the events from this feed.",
+          "Ingestion labels : the label to be applied to the events from this feed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-legacy-siem-infra",
+        "https://docs.cloud.google.com/chronicle/docs/administration/migrate-from-legacy-auth-to-gcp-auth",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:41.039Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar"
+}

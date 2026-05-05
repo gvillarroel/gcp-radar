@@ -1,0 +1,223 @@
+{
+  "feature_name": "Case custom fields in Advanced Reports",
+  "feature_slug": "case-custom-fields-in-advanced-reports",
+  "summary": "Advanced Reports in Looker now support custom fields created for cases.",
+  "extended_definition": "Advanced Reports in Looker now support custom fields created for cases.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-root-2",
+        "final_score": 169,
+        "relevance": "",
+        "evidence_snippets": [
+          "In general, the structure of the name should be like this: {integration display name} - {process} Job For example: ServiceNow - Sync Incidents Job Description The Description of the job should highlight to the user what the job is doing during the iterations; for example, This job will synchronize Security Command Center based cases created by the Urgent Posture Findings connector.",
+          "You should validate the logo on the following pages: Response > Integration Setup Response > Playbooks > Playbook Designer Cases > Alert > Alert Playbook View The following is an example of an SVG logo, designed to match our style guide: <?xml version=\"1.0\" encoding=\"UTF-8\"?><svg id=\"Layer 1\" data-name=\"Layer 1\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 21 23\"> <defs> <style> .cls-1 { stroke-width: 0px; } </style> </defs> <path class=\"cls-1\" d=\"M15.51,4.79H5.49c-.4,0-.72.32-.72.72v5.75c0,2.3,1.71,4.15,3.69,5.38.54.34,1.1.62,1.66.86l.09.04c.06.02.12.05.18.06.03,0,.07,0,.1,0,.1,0,.19-.03.28-.07l.09-.04c.76-.33,2.22-1.03,3.46-2.24,1.24-1.22,1.89-2.6,1.89-4v-5.75c0-.4-.32-.72-.72-.72ZM14.32,11.26c0,.88-.44,1.77-1.32,2.63-.65.64-1.55,1.22-2.5,1.68-.95-.46-1.84-1.04-2.5-1.68-.88-.86-1.32-1.75-1.32-2.63v-4.55h7.64v4.55ZM20.28,0H.72c-.4,0-.72.32-.72.72v10.77c0,2.56,1.18,4.99,3.51,7.21,2.29,2.18,5.12,3.56,6.61,4.2l.09.04s.1.04.15.05c.04,0,.09.01.13.01.1,0,.19-.02.28-.06l.09-.04c.53-.23,1.23-.55,2.02-.97,1.42-.75,3.11-1.82,4.59-3.23,2.33-2.22,3.51-4.64,3.51-7.21V.72c0-.4-.32-.72-.72-.72ZM16.17,17.31c-1.9,1.81-4.24,3.04-5.67,3.69-1.43-.65-3.77-1.88-5.67-3.69-1.94-1.84-2.92-3.8-2.92-5.82V1.92h17.18v9.57c0,2.02-.98,3.98-2.92,5.82Z\"/></svg> Be sure to encode the SVG before adding it to the integration definition file, as can be found in other integrations in the Content Hub.",
+          "Release notes The general structure for the release note should follow the following format: {integration item} - {update} For example: Get Case Details - Added ability to fetch information about affected IOCs Depending on the situation, there are unique release notes for specific scenarios: If it's a new integration: New Integration Added - {integration name} If a new action is added: New Action Added - {action name} If a new connector is added: New Connector Added - {connector name} If a new job is added: New Job Added - {job name} If a predefined widget is added to an action: {action name} - Added Predefined Widget."
+        ]
+      },
+      {
+        "title": "\"Map users in the Google SecOps platform \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "source_id": "site-iam-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enter the following details in the dialog: IdP Group: Security analysts Permission Group: Analyst SOC Role: Tier 1 Environment: leave blank Enter the following details in the next dialog: IdP Group: SOC engineers Permission Group: Analyst SOC Role: Tier 1 Environment: leave blank Enter the following details in the next dialog: IdP Group: NOC engineers Permission Group: Basic SOC Role: Tier 2 Environment: leave blank Enter the following details in the next dialog: IdP Group: London Permission Group: leave blank SOC Role: leave blank Environment: London Enter the following details in the next dialog: IdP Group: Manchester Permission Group: leave blank SOC Role: leave blank Environment: Manchester For customers using the Case Federation feature, see Set up federated case access for Google SecOps .",
+          "Use Case: Assign unique permission fields to each IdP group The following example illustrates how to use this feature to help onboard and provision users according to your company's needs.",
+          "Here is how you would set up the IdP groups in the SAML provider and in the Google SecOps platform: In your SAML provider, create the following user groups: Security analysts (containing Sasha and Tal) SOC engineers (containing Quinn and Noam) NOC engineers (containing Kim and Kai) London (containing Sasha, Tal, Kim and Kai) Manchester (containing Quinn and Noam) Go to Settings > SOAR Settings > Advanced > IdP Group Mapping ."
+        ]
+      },
+      {
+        "title": "TIPCommon 2.1.0 \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TIPCommon 2.1.0 The TIPCommon 2.1.0 library contains the following modules: TIPCommon.adapters PubSubAdapter TIPCommon.base parse case attachment() parse case comment() Action soar action api client name action start time logger params global context entity types entities to update json results attachments contents data tables html reports links entity insights case insights result value output message error output message action start time api client attachments case insights contents data tables entities to update entity insights entity types error output message execution state html reports is first run links logger name output message params result value run() soar action EnrichAction enrichment data entity results global context ActionParamType BOOLEAN CASE PRIORITIES CLOSE CASE REASONS CLOSE ROOT CAUSE CODE CONTENT DDL EMAIL CONTENT ENTITY TYPE MULTI VALUES NULL PASSWORD PLAYBOOK NAME STAGE STRING USER Attachment title filename file contents additional data CaseAttachment attachment id attachment type description is favorite CaseComment comment comment for client modification time unix time in ms for client last editor last editor full name is deleted creator user id creator full name comment id comment type case id is favorite modification time unix time in ms creation time unix time in ms alert identifier CaseInsight title triggered by content severity insight type entity identifier additional data additional data type additional data title CasePriority CRITICAL HIGH INFORMATIONAL LOW MEDIUM CaseStage ASSESSMENT IMPROVEMENT INCIDENT INVESTIGATION RESEARCH TRIAGE CloseCaseOrAlertInconclusiveRootCauses NO CLEAR CONCLUSION CloseCaseOrAlertMaintenanceRootCauses LAB TEST OTHER RULE UNDER CONSTRUCTION CloseCaseOrAlertMaliciousRootCauses EXTERNAL ATTACK INFRASTRUCTURE ISSUE IRRELEVANT TCP UDP PORT MISCONFIGURED SYSTEM OTHER SIMILAR CASE IS ALREADY UNDER INVESTIGATION SYSTEM APPLICATION MALFUNCTION SYSTEM CLOCKED THE ATTACK UNFORESEEN EFFECTS OF CHANGE UNKNOWN CloseCaseOrAlertNotMaliciousRootCauses EMPLOYEE ERROR HUMAN ERROR LAB TEST LEGIT ACTION MISCONFIGURED SYSTEM NONE NORMAL BEHAVIOR OTHER PENETRATION TEST RULE UNDER CONSTRUCTION SIMILAR CASE IS ALREADY UNDER INVESTIGATION UNKNOWN USER MISTAKE CloseCaseOrAlertReasons INCONCLUSIVE MAINTENANCE MALICIOUS NOT MALICIOUS Content title content DataTable title data table EntityInsight entity message triggered by original requesting user EntityTypesEnum ADDRESS ALERT APPLICATION CHILD HASH CHILD PROCESS CLUSTER CONTAINER CREDIT CARD CVE CVE ID DATABASE DEPLOYMENT DESTINATION DOMAIN DOMAIN EMAIL MESSAGE EVENT FILE HASH FILE NAME GENERIC HOST NAME IP SET MAC ADDRESS PARENT HASH PARENT PROCESS PHONE NUMBER POD PROCESS SERVICE SOURCE DOMAIN THREAT ACTOR THREAT CAMPAIGN THREAT SIGNATURE URL USB USER ExecutionState COMPLETED FAILED IN PROGRESS TIMED OUT FullDetailsConfigurationParameter full dict id integration identifier creation time modification time is mandatory description name display name value type optional values HTMLReport title report name report contents IntegrationParamType BOOLEAN EMAIL INTEGER IP NULL PASSWORD STRING Link title link ScriptParameter full dict id creation time modification time custom action id is mandatory default value description name value type optional values Apiable Authable authenticat session() Logger debug() error() exception() info() warn() Session headers verify delete() get() patch() post() put() request() Job api client error msg job start time logger name params soar job start() RefreshTokenRenewalJob api client SuccessFailureTuple failure list success list validate param csv to multi value() JobParameter full dict id is mandatory name type value ActionJsonOutput ActionOutput ConnectorJsonOutput ConnectorOutput alert info from json() TIPCommon.rest build credentials from sa() build credentials from sa attr() generate jwt from credentials() generate jwt from sa() get adc() get auth request() get impersonated credentials() get secops siem tenant credentials() GcpErrorReason IAM PERMISSION DENIED GcpPermissions IAM SA GET ACCESS TOKEN extract project id from sa email() extract project id from sa key() get http client() get workload sa email() retrieve project id() validate impersonation() get auth session() SoarApiErrorServer batch set custom field values() get alert events() get case attachments() get case overview details() get connector cards() get entity data() get env action def files() get federation cases() get full case details() get installed integrations of environment() get installed jobs() get integration full details() get user profile cards() get workflow instance card() list custom field values() list custom fields() remove case tag() save attachment to case wall() set alert priority() set case score bulk() set custom field values() validate response() data models Module AlertCard from json() AlertEvent from json() AlertPriority CRITICAL HIGH INFORMATIVE LOW MEDIUM UNCHANGED BaseAlert raw data alert id to json() BaseDataModel raw data to json() CaseDataStatus ALL CLOSED CREATION PENDING MERGED NEW OPENED CaseDetails from json() is closed is open CasePriority CRITICAL HIGH INFORMATIVE LOW MEDIUM UNCHANGED CaseWallAttachment base64 blob case id file type is important name ConnectorCard from json() ConnectorConnectivityStatusEnum LIVE NO CONNECTIVITY ConnectorParamTypes BOOLEAN DOMAIN EMAIL HOST INTEGER IP NULL PASSWORD SCRIPT STRING URL ConnectorParameter name value type mode is mandatory Container CustomField description display name id scopes type from json() CustomFieldScope ALERTS CASE build parent path() CustomFieldValue custom field id identifier scope values from json() DatabaseContextType ALERT CASE CONNECTOR GLOBAL JOB EventPropertyField from json() FieldGroupItem from json() FieldItem from json() FieldsGroup from json() GoogleServiceAccount to dict() InstalledIntegrationInstance to dict() JobParamType BOOLEAN DOMAIN HOST INTEGER IP NULL PASSWORD STRING URL Parameter raw data SLA from json() ScriptContext action definition name alert id async polling interval in sec async total duration deadline case id connector context default result value environment environment api key execution deadline unix time ms integration identifier integration instance job api key max json result size original requesting user parameters script timeout deadline target entities unique identifier use proxy settings vault settings workflow id workflow instance id to json() update() SmimeEmailConfig ca certificate b64 certificate b64 email private key b64 SmimeType ENCRYPTED SIGNED TypedContainer UserProfileCard from json() encryption Module decrypt() decrypt email() encrypt() get private key() exceptions Module ActionSetupError AlreadyExistsError BadGatewayError CaseResultError ConnectorContextError ConnectorProcessingError ConnectorSetupError ConnectorValidationError DeadlineExceededError EmptyMandatoryValues EnrichActionError FailedPreconditionError GeneralActionException GeneralConnectorException GeneralJobException GoogleCloudException ImpersonationUnauthorizedError InternalJSONDecoderError InvalidArgumentError InvalidTimeException JobSetupError NotFoundError OauthError ParameterExtractionError ParameterValidationError PermissionDeniedError RefreshTokenRenewalJobException ResourceExhaustedError SDKWrapperError SMIMEMailError UnauthenticatedError UnavailableError extraction Module extract action param() extract configuration param() extract connector param() extract job param() extract script param() get connector detailed params() filters Module filter list by type() filter none kwargs() filter old alerts() filter old ids() filter old ids by timestamp() pass whitelist filter() OAuth Module AuthenticationError AuthorizedOauthClient close() request() CredStorage get instance identifier() get token() set token() EncryptionError OAuthAdapter abstractcheck signer() abstractprepare authorized client() abstractrefresh token() abstract static validate bad credentials() OauthManager prepare authorized client() refresh if bad credentials() refresh if expired() save token() OauthToken access token additional data expiration time refresh token signer from cache() to cache() smp io Module read and repair existing content() read content() read ids() read ids by timestamp() write content() write ids() write ids with timestamp() smp time Module change timezone() convert string to timestamp() datetime to rfc3339() get last success time() get timestamps() get timestamps from range() is approaching action timeout() is approaching timeout() save timestamp() siemplify fetch timestamp() siemplify save timestamp() validate timestamp() soar ops Module create slo message() get clean comment body() get file() get secops mode() get soar case comments() get user by id() get user profile cards with pagination() is slo comment() remove prefix from comments() save file() transformation Module add prefix to dict() add prefix to dict keys() adjust to csv() construct csv() convert comma separated to list() convert dict to json result dict() convert list to comma string() dict to flat() flat dict to csv() get unicode() removeprefix() removesuffix() rename dict key() string to multi value() utils Module camel to snake case() cast keys to int() clean result() create and write to tempfiles() get entity original identifier() get function arg names() get unique items by difference() is empty string or none() is first run() is overflowed() is python 37() is test run() none to default value() platform supports 1p api() platform supports db() safe cast bool value from str() safe cast int value from str() validation Module ParameterValidator validate csv() validate ddl() validate email() validate float() validate integer() validate json() lower limit() validate non negative() validate non zero() validate percentage() validate positive() validate range() validate severity() validate upper limit() Need more help?",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Integrate AlgoSec with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec",
+        "source_id": "site-api-reference",
+        "final_score": 146,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"id\" : 10 , \"fields\" : [ { \"name\" : \"Owner\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Creator\" , \"values\" : [ \"admin<user@siemplify.co>\" ] }, { \"name\" : \"Due\" , \"values\" : [ \"2021-08-31 00:00:00\" ] }, { \"name\" : \"LastUpdated\" , \"values\" : [ \"2021-08-13 12:31:23\" ] }, { \"name\" : \"Requestor\" , \"values\" : [ \"admin@example.com>\" ] } ], \"originalTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"all\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"ALL\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ], \"plannedTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"0.0.0.0-255.255.255.255\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/ \" }, { \"value\" : \"udp/ \" }, { \"value\" : \"ospf\" }, { \"value\" : \"icmp/ \" }, { \"value\" : \"gre\" }, { \"value\" : \"ipsec 50\" }, { \"value\" : \"ipsec 51\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ] } } Option 2 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"changeRequestId\" : 37 , \"redirectUrl\" : \"https://192.0.2.120/FireFlow/Ticket/Display.html?id=37\" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported and if for second request the 404 status code is reported (is success=true): \"Successfully created a traffic change request to allow traffic to the provided entities in AlgoSec.\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result Option 1 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"id\" : 10 , \"fields\" : [ { \"name\" : \"Owner\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Creator\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Due\" , \"values\" : [ \"2021-08-31 00:00:00\" ] }, { \"name\" : \"LastUpdated\" , \"values\" : [ \"2021-08-13 12:31:23\" ] }, { \"name\" : \"Requestor\" , \"values\" : [ \"admin@example.com>\" ] } ], \"originalTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"all\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"ALL\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ], \"plannedTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"0.0.0.0-255.255.255.255\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.3\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/ \" }, { \"value\" : \"udp/ \" }, { \"value\" : \"ospf\" }, { \"value\" : \"icmp/ \" }, { \"value\" : \"gre\" }, { \"value\" : \"ipsec 50\" }, { \"value\" : \"ipsec 51\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Block\" } ] } } Option 2 { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"changeRequestId\" : 37 , \"redirectUrl\" : \"https://192.0.2.120/FireFlow/Ticket/Display.html?id=37\" } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If the 200 status code is reported even if for second request the 404 status code is reported (is success=true): \"Successfully created a traffic change request to block traffic to the provided entities in AlgoSec.\".",
+          "Action results Script result Script result name Value options Example is success True or False is success=False JSON result { \"status\" : \"Success\" , \"messages\" : [], \"data\" : { \"id\" : 6 , \"subChangeRequests\" : [ 12 ], \"fields\" : [ { \"name\" : \"Risk Level\" , \"values\" : [ \"No Risk\" ] }, { \"name\" : \"Owner\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Creator\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"LastUpdated\" , \"values\" : [ \"2021-08-13 13:50:58\" ] }, { \"name\" : \"Requestor\" , \"values\" : [ \"admin@example.com>\" ] }, { \"name\" : \"Form Type\" , \"values\" : [ \"Traffic Change\" ] }, { \"name\" : \"Risks Number\" , \"values\" : [ \"0\" ] }, { \"name\" : \"Initial Plan status\" , \"values\" : [ \"Result OK\" ] }, { \"name\" : \"Workflow\" , \"values\" : [ \"Basic\" ] }, { \"name\" : \"Subject\" , \"values\" : [ \"1\" ] }, { \"name\" : \"status\" , \"values\" : [ \"open\" ] } ], \"originalTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"all\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.2\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/80\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ], \"plannedTraffic\" : [ { \"source\" : { \"items\" : [ { \"value\" : \"0.0.0.0-255.255.255.255\" } ] }, \"destination\" : { \"items\" : [ { \"value\" : \"192.0.2.2\" } ] }, \"service\" : { \"items\" : [ { \"value\" : \"tcp/80\" } ] }, \"application\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"user\" : { \"items\" : [ { \"value\" : \"any\" } ] }, \"action\" : \"Allow\" } ] } } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If found results (is success=true): \"Status of the change request with ID {id} was updated to status: {status}."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "siemplify.co"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/user-secops/map-users-in-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/tipcommon",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/algosec"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:41.039Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar"
+}

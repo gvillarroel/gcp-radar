@@ -1,0 +1,235 @@
+{
+  "feature_name": "Redshift 2.1.0.30 driver",
+  "feature_slug": "redshift-2-1-0-30-driver",
+  "summary": "Looker (original) deployments can use the Redshift 2.1.0.30 driver.",
+  "extended_definition": "Looker (original) deployments can use the Redshift 2.1.0.30 driver.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQuery IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) Audit Manager Auditing Service Agent ( roles/ auditmanager.serviceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Connected Sheets Service Agent ( roles/ bigquery.connectedSheetsServiceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Cloud Security Compliance Service Agent ( roles/ cloudsecuritycompliance.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Dataplex Discovery Publishing Service Agent ( roles/ dataplex.discoveryPublishingServiceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Service Management Service Agent ( roles/ firebase.managementServiceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) FleetEngine Service Agent ( roles/ fleetengine.serviceAgent ) Cloud Logging Service Agent ( roles/ logging.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Observability Service Agent ( roles/ observability.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Security Center Control Service Agent ( roles/ securitycenter.controlServiceAgent ) Security Health Analytics Service Agent ( roles/ securitycenter.securityHealthAnalyticsServiceAgent ) Security Center Service Agent ( roles/ securitycenter.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.datasets.getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) BigQuery Admin ( roles/ bigquery.admin ) Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Metadata Viewer ( roles/ bigquery.metadataViewer ) BigQuery Security Admin ( roles/ bigquery.securityAdmin ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) BigQuery User ( roles/ bigquery.user ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) SLZ BQDW Blueprint Project Level Remediator ( roles/ securedlandingzone.bqdwProjectRemediator ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Chronicle Service Agent ( roles/ chronicle.serviceAgent ) Cloud Asset Service Agent ( roles/ cloudasset.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Contact Center AI Insights Service Agent ( roles/ contactcenterinsights.serviceAgent ) Kubernetes Engine Service Agent ( roles/ container.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Datapipelines Service Agent ( roles/ datapipelines.serviceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Dialogflow Service Agent ( roles/ dialogflow.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.tables.getData BigQuery Admin ( roles/ bigquery.admin ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Authorized Routine Admin ( roles/ bigquery.routineAdmin ) BigQuery Authorized Routine Data Editor ( roles/ bigquery.routineDataEditor ) BigQuery Authorized Routine Data Viewer ( roles/ bigquery.routineDataViewer ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) Dataplex Storage Data Owner ( roles/ dataplex.storageDataOwner ) Dataplex Storage Data Reader ( roles/ dataplex.storageDataReader ) Datastream Bigquery Writer ( roles/ datastream.bigqueryWriter ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents .",
+          "Vertex AI Batch Prediction Service Agent ( roles/ aiplatform.batchPredictionServiceAgent ) Vertex AI Custom Code Service Agent ( roles/ aiplatform.customCodeServiceAgent ) Vertex AI Model Monitoring Service Agent ( roles/ aiplatform.modelMonitoringServiceAgent ) Vertex AI RAG Data Service Agent ( roles/ aiplatform.ragServiceAgent ) Vertex AI Service Agent ( roles/ aiplatform.serviceAgent ) Vertex AI Tuning Service Agent ( roles/ aiplatform.tuningServiceAgent ) AutoML Service Agent ( roles/ automl.serviceAgent ) Recommendations AI Service Agent ( roles/ automlrecommendations.serviceAgent ) Customer Engagement Suite Service Agent ( roles/ ces.serviceAgent ) Cloud Deployment Manager Service Agent ( roles/ clouddeploymentmanager.serviceAgent ) Cloud Dataflow Service Agent ( roles/ dataflow.serviceAgent ) Cloud Data Fusion API Service Agent ( roles/ datafusion.serviceAgent ) Data Labeling Service Agent ( roles/ datalabeling.serviceAgent ) Cloud Dataplex Service Agent ( roles/ dataplex.serviceAgent ) Dataprep Service Agent ( roles/ dataprep.serviceAgent ) Datastream Service Agent ( roles/ datastream.serviceAgent ) Dialogflow Service Agent ( roles/ dialogflow.serviceAgent ) Discovery Engine Service Agent ( roles/ discoveryengine.serviceAgent ) DLP API Service Agent ( roles/ dlp.serviceAgent ) DSPM Service Agent ( roles/ dspm.serviceAgent ) Enterprise Knowledge Graph Service Agent ( roles/ enterpriseknowledgegraph.serviceAgent ) Firebase Crashlytics Service Agent ( roles/ firebasecrashlytics.serviceAgent ) FleetEngine Service Agent ( roles/ fleetengine.serviceAgent ) Looker Service Agent ( roles/ looker.serviceAgent ) AI Platform Service Agent ( roles/ ml.serviceAgent ) Retail Service Agent ( roles/ retail.serviceAgent ) Cloud Vision AI Service Agent ( roles/ visionai.serviceAgent ) bigquery.tables.getIamPolicy Owner ( roles/ owner ) Editor ( roles/ editor ) Viewer ( roles/ viewer ) BigQuery Admin ( roles/ bigquery.admin ) Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Security Admin ( roles/ iam.securityAdmin ) Security Reviewer ( roles/ iam.securityReviewer ) BigQuery Data Editor ( roles/ bigquery.dataEditor ) BigQuery Data Owner ( roles/ bigquery.dataOwner ) BigQuery Data Viewer ( roles/ bigquery.dataViewer ) BigQuery Metadata Viewer ( roles/ bigquery.metadataViewer ) BigQuery Security Admin ( roles/ bigquery.securityAdmin ) BigQuery Studio Admin ( roles/ bigquery.studioAdmin ) DLP Organization Data Profiles Driver ( roles/ dlp.orgdriver ) DLP Project Data Profiles Driver ( roles/ dlp.projectdriver ) Data Scientist ( roles/ iam.dataScientist ) Databases Admin ( roles/ iam.databasesAdmin ) ML Engineer ( roles/ iam.mlEngineer ) Security Auditor ( roles/ iam.securityAuditor ) Site Reliability Engineer ( roles/ iam.siteReliabilityEngineer ) Support User ( roles/ iam.supportUser ) Service agent roles Warning: Don't grant service agent roles to any principals except service agents ."
+        ]
+      },
+      {
+        "title": "Deactivate OAuth App User \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user",
+        "source_id": "site-api-reference",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Data analytics Looker API Reference Send feedback Deactivate OAuth App User Stay organized with collections Save and categorize content based on your preferences.",
+          "Before the user can use the app with their Looker account, the user will have to read and accept an account use disclosure statement for the app."
+        ]
+      },
+      {
+        "title": "Get All User Login Lockouts \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "source_id": "site-api-reference",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Request GET /user login lockouts Datatype Description Request HTTP Request query HTTP Query Expand HTTP Query definition... fields string Include only these fields in the response Response 200: User Login Lockout Datatype Description (array) UserLoginLockout [] can lock object Operations the current user is able to perform on this object key lock string Hash of user's client id auth type lock string Authentication method for login failures ip lock string IP address of most recent failed attempt user id lock string User ID remote id lock string Remote ID of user if using LDAP full name lock string User's name email lock string Email address associated with the user's account fail count lock integer Number of failures that triggered the lockout lockout at lock string Time when lockout was triggered 400: Bad Request Datatype Description (object) Error message lock string Error details documentation url lock string Documentation link 404: Not Found Datatype Description (object) Error message lock string Error details documentation url lock string Documentation link 429: Too Many Requests Datatype Description (object) Error message lock string Error details documentation url lock string Documentation link Examples Kotlin https://github.com/looker-open-source/sdk-codegen/blob/main/kotlin/src/test/TestMethods.kt Swift https://github.com/looker-open-source/sdk-codegen/blob/main/swift/looker/Tests/lookerTests/smokeTests.swift Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Data analytics Looker API Reference Send feedback Get All User Login Lockouts Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.batchPredictionServiceAgent",
+      "aiplatform.customCodeServiceAgent",
+      "aiplatform.modelMonitoringServiceAgent",
+      "aiplatform.ragServiceAgent",
+      "aiplatform.serviceAgent",
+      "aiplatform.tuningServiceAgent",
+      "auditmanager.serviceAgent",
+      "automl.serviceAgent",
+      "automlrecommendations.serviceAgent",
+      "bigquery.admin",
+      "bigquery.connectedSheetsServiceAgent",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.dataViewer",
+      "bigquery.metadataViewer",
+      "bigquery.routineAdmin",
+      "bigquery.routineDataEditor",
+      "bigquery.routineDataViewer",
+      "bigquery.securityAdmin",
+      "bigquery.studioAdmin",
+      "bigquery.tables.createIndex",
+      "bigquery.tables.getData",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.user",
+      "bigquerydatapolicy.editor",
+      "ces.serviceAgent",
+      "chronicle.serviceAgent",
+      "cloudasset.serviceAgent",
+      "clouddeploymentmanager.serviceAgent",
+      "cloudsecuritycompliance.serviceAgent",
+      "contactcenterinsights.serviceAgent",
+      "container.serviceAgent",
+      "dataflow.serviceAgent",
+      "datafusion.serviceAgent",
+      "datalabeling.serviceAgent",
+      "datapipelines.serviceAgent",
+      "dataplex.discoveryPublishingServiceAgent",
+      "dataplex.serviceAgent",
+      "dataplex.storageDataOwner",
+      "dataplex.storageDataReader",
+      "dataprep.serviceAgent",
+      "datastream.bigqueryWriter",
+      "datastream.serviceAgent",
+      "dialogflow.serviceAgent",
+      "discoveryengine.serviceAgent",
+      "dlp.orgdriver",
+      "dlp.projectdriver",
+      "dlp.serviceAgent",
+      "dspm.serviceAgent",
+      "enterpriseknowledgegraph.serviceAgent",
+      "firebase.managementServiceAgent",
+      "firebasecrashlytics.serviceAgent",
+      "fleetengine.serviceAgent",
+      "github.com",
+      "iam.databasesAdmin",
+      "iam.dataScientist",
+      "iam.mlEngineer",
+      "iam.securityAdmin",
+      "iam.securityAuditor",
+      "iam.securityReviewer",
+      "iam.siteReliabilityEngineer",
+      "iam.supportUser",
+      "logging.serviceAgent",
+      "looker.serviceAgent",
+      "ml.serviceAgent",
+      "observability.serviceAgent",
+      "retail.serviceAgent",
+      "securedlandingzone.bqdwProjectRemediator",
+      "securitycenter.controlServiceAgent",
+      "securitycenter.securityHealthAnalyticsServiceAgent",
+      "securitycenter.serviceAgent",
+      "spectrumsas.serviceAgent",
+      "visionai.serviceAgent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/all_user_login_lockouts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/deactivate_app_user"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

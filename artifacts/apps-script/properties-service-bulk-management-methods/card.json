@@ -1,0 +1,116 @@
+{
+  "feature_name": "Properties service bulk management methods",
+  "feature_slug": "properties-service-bulk-management-methods",
+  "summary": "ScriptProperties and UserProperties now support deletion, bulk set, and full retrieval operations.",
+  "extended_definition": "ScriptProperties and UserProperties now support deletion, bulk set, and full retrieval operations.",
+  "lifecycle": {
+    "latest_feature_date": "2012-08-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/libraries",
+      "https://developers.google.com/apps-script/guides/properties",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Properties Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/properties",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each key-value pair of the object in the parameter is stored as a separate property: service/propertyService.gs View on GitHub try { // Set multiple script properties in one call. const scriptProperties = PropertiesService . getScriptProperties (); scriptProperties . setProperties ({ cow : \"moo\" , sheep : \"baa\" , chicken : \"cluck\" , }); } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with error %s\" , err . message ); } Read data To retrieve a single value that you have previously saved, call Properties.getProperty : service/propertyService.gs View on GitHub try { // Get the value for the user property 'DISPLAY UNITS'. const userProperties = PropertiesService . getUserProperties (); const units = userProperties . getProperty ( \"DISPLAY UNITS\" ); console . log ( \"values of units %s\" , units ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with error %s\" , err . message ); } To retrieve all values in the current property store, call Properties.getProperties : service/propertyService.gs View on GitHub try { // Get multiple script properties in one call, then log them all. const scriptProperties = PropertiesService . getScriptProperties (); const data = scriptProperties . getProperties (); for ( const key in data ) { console . log ( \"Key: %s, Value: %s\" , key , data [ key ]); } } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with error %s\" , err . message ); } Modify data The methods getProperty and getProperties return a copy of the stored data, not a live view, so changing the returned object doesn't update the value in the property store.",
+          "Save data To save a single value, call the method Properties.setProperty(key, value) of the appropriate store, as shown in the following example: service/propertyService.gs View on GitHub try { // Set a property in each of the three property stores. const scriptProperties = PropertiesService . getScriptProperties (); const userProperties = PropertiesService . getUserProperties (); const documentProperties = PropertiesService . getDocumentProperties (); scriptProperties . setProperty ( \"SERVER URL\" , \"http://www.example.com/\" ); userProperties . setProperty ( \"DISPLAY UNITS\" , \"metric\" ); documentProperties . setProperty ( \"SOURCE DATA ID\" , \"1j3GgabZvXUF177W0Zs 2v--H6SPCQb4pmZ6HsTZYT5k\" , ); } catch ( err ) { // TODO (developer) - Handle exception console . log ( \"Failed with error %s\" , err . message ); } To save data in bulk, pass a map of key-value pairs to Properties.setProperties(properties) .",
+          "Comparison of property stores The PropertiesService global object offers three methods, each of which returns a similar Properties object but with different access rights, as shown in the following table: Script Properties User Properties Document Properties Method to access getScriptProperties() getUserProperties() getDocumentProperties() Data shared among All users of a script, add-on, or web app The current user of a script, add-on, or web app All users of an add-on in the open document Typically used for App-wide configuration data, like the username and password for the developer's external database User-specific settings, like metric or imperial units Document-specific data, like the source URL for an embedded chart Data format The Properties service stores all data as strings in key-value pairs."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "August 30, 2012 Feature Added methods to delete ScriptProperties and UserProperties .",
+          "February 25, 2014 Change Replaced ScriptProperties and UserProperties with a unified PropertiesService .",
+          "Added support for persistent storage in scripts via UserProperties and ScriptProperties ."
+        ]
+      },
+      {
+        "title": "Libraries \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/libraries",
+        "source_id": "site-docs-root",
+        "final_score": 73,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here is an example of a function that you would include in your library to expose its Script Properties: function getLibraryProperty ( key ) { const scriptProperties = PropertiesService . getScriptProperties (); return scriptProperties . getProperty ( key ); } The following diagram illustrates a not-shared resource using the example of Script Properties: This table lists the shared and not-shared resources for your reference: Resource Shared Not-Shared Notes Lock The same instance is visible to all including scripts when created in the library.",
+          "The following diagram illustrates a shared resource using the example of User Properties: A not-shared resource means that both library and the including script have built-in access only to their instance of the resource.",
+          "ScriptApp UiApp User Properties Logger and execution transcript Sites, Sheets and other containers A call to getActive returns the container of the including script."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/properties",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/libraries"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/properties",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/libraries"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/properties",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/libraries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/properties",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/guides/libraries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

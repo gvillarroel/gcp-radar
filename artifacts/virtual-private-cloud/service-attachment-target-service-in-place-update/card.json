@@ -1,0 +1,137 @@
+{
+  "feature_name": "Service attachment target service in-place update",
+  "feature_slug": "service-attachment-target-service-in-place-update",
+  "summary": "Enables updating a service attachment's target service without recreating the attachment, preserving consumer connections while temporarily disrupting traffic.",
+  "extended_definition": "Enables updating a service attachment's target service without recreating the attachment, preserving consumer connections while temporarily disrupting traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+      "https://docs.cloud.google.com/vpc/docs/vpc-peering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "VPC Network Peering \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "source_id": "site-docs-root",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "Local VPC network and peer VPC network with on-premises connectivity In this example, the following network peering is set up: network-a is peered to network-b , and network-b is peered to network-a . network-a contains two subnets where each subnet is in a separate region. network-b contains a single subnet. network-b is connected to an on-premises network with Cloud VPN tunnels by using dynamic routing. (The same principles hold if the tunnels are replaced with Cloud Interconnect VLAN attachments.) The peering connection for network-b is configured with the --export-custom-routes flag, and the peering connection for network-a is configured with the --import-custom-routes flag.",
+          "The same principles hold if the tunnels were replaced with Cloud Interconnect VLAN attachments.",
+          "Route type Route export conditions Route import conditions Static routes with network tags (all next hop types ) Can't be exported Can't be imported Static routes that use the default internet gateway next hop Can't be exported Can't be imported IPv4 static routes—without network tags—that use a next hop different from default internet gateway Not exported by default Export is controlled by using the --export-custom-routes flag Not imported by default Import is controlled by using the --import-custom-routes flag IPv6 static routes—without network tags—that use a VM instance as the next hop Not exported by default Export is controlled by using the --export-custom-routes flag when the stack type of the peering is set to --stack-type=IPV4 IPV6 Not imported by default Import is controlled by using the --import-custom-routes flag when the stack type of the peering is set to --stack-type=IPV4 IPV6 Options for exchanging dynamic routes The following table describes the route exchange options for dynamic routes ."
+        ]
+      },
+      {
+        "title": "\"Access Google APIs through endpoints \\_|\\_ Virtual Private Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "To list the subnets for a particular network, use the following command: gcloud compute networks subnets list --filter= NETWORK NAME Run the following command to enable Private Google Access: gcloud compute networks subnets update SUBNET NAME \\ --region= REGION \\ --enable-private-ip-google-access Verify that Private Google Access is enabled by running this command: gcloud compute networks subnets describe SUBNET NAME \\ --region= REGION \\ --format=\"get(privateIpGoogleAccess)\" Replace the following: SUBNET NAME : the name of the subnet REGION : the region for the subnet NETWORK NAME : the name of the VPC network that contains the subnet Terraform You can use the Terraform resource to enable Private Google Access on a subnet. resource \"google compute network\" \"network\" { project = var.project # Replace this with your project ID in quotes name = \"tf-test\" auto create subnetworks = false } resource \"google compute subnetwork\" \"vpc subnetwork\" { project = google compute network.network.project name = \"test-subnetwork\" ip cidr range = \"10.2.0.0/16\" region = \"us-central1\" network = google compute network.network.id private ip google access = true } To learn how to apply or remove a Terraform configuration, see Basic Terraform commands .",
+          "Create a forwarding rule to connect the endpoint to Google APIs and services. gcloud compute forwarding-rules create ENDPOINT NAME \\ --global \\ --network= NETWORK NAME \\ --address= ADDRESS NAME \\ --target-google-apis-bundle= API BUNDLE \\ [ --service-directory-registration= REGION NAMESPACE URI ] Replace the following: ENDPOINT NAME : the name to assign to the endpoint.",
+          "POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/forwardingRules { \"IPAddress\": ADDRESS URL , \"network\": NETWORK URL , \"name\": ENDPOINT NAME , \"target\": API BUNDLE , \"serviceDirectoryRegistrations : [ { \"service directory region\": REGION , \"namespace\": \" NAMESPACE \" } ], } Replace the following: PROJECT ID : your project ID."
+        ]
+      },
+      {
+        "title": "\"Access published services through endpoints \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create an endpoint that can be accessed only from its own region. gcloud compute forwarding-rules create ENDPOINT NAME \\ --region= REGION \\ --network= NETWORK NAME \\ --address= ADDRESS NAME \\ --target-service-attachment= SERVICE ATTACHMENT \\ [ --service-directory-registration=projects/ PROJECT ID /locations/ REGION /namespaces/ NAMESPACE ] Create an endpoint that can be accessed from any region. gcloud compute forwarding-rules create ENDPOINT NAME \\ --region= REGION \\ --network= NETWORK NAME \\ --address= ADDRESS NAME \\ --target-service-attachment= SERVICE ATTACHMENT \\ --allow-psc-global-access \\ [ --service-directory-registration=projects/ PROJECT ID /locations/ REGION /namespaces/ NAMESPACE ] Replace the following: ENDPOINT NAME : the name to assign to the endpoint.",
+          "For example: projects/ SERVICE PROJECT /regions/ REGION /serviceAttachments/ SERVICE NAME If you have permission to use only some subnets in the host project, specify a shared subnet by using the following command: gcloud compute forwarding-rules create ENDPOINT NAME \\ --region= REGION \\ --subnet=projects/ HOST PROJECT /regions/ REGION /subnetworks/ HOST SUBNET \\ --address=projects/ ADDRESS PROJECT /regions/ REGION /addresses/ ADDRESS NAME \\ --target-service-attachment= SERVICE ATTACHMENT Replace HOST SUBNET with the name of the subnet that contains the endpoint's IP address.",
+          "If you have permission to use only some subnets in the host project, specify a shared subnet by making the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT /regions/ REGION /forwardingRules { \"name\": \" ENDPOINT NAME \", \"IPAddress\": \"projects/ ADDRESS PROJECT /regions/ REGION /addresses/ ADDRESS NAME \", \"target\": \" SERVICE ATTACHMENT \", \"subnetwork\": \"projects/ HOST PROJECT /regions/ REGION /subnetworks/ HOST SUBNET \" } Replace HOST SUBNET with the name of the subnet that contains the endpoint's IP address."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "To publish a service and explicitly approve consumers based on VPC network, send the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ ATTACHMENT REGION /serviceAttachments { \"name\": \" ATTACHMENT NAME \", \"region\": \" ATTACHMENT REGION \", \"connectionPreference\": \"ACCEPT MANUAL\", \"targetService\": \" TARGET SERVICE \", \"enableProxyProtocol\": false, \"natSubnets\": [ \" PSC SUBNET 1 URI \", \" PSC SUBNET 2 URI \" ], \"consumerRejectLists\": [ \"projects/ REJECTED PROJECT ID 1 /global/networks/ REJECTED NETWORK 1 \", \"projects/ REJECTED PROJECT ID 2 /global/networks/ REJECTED NETWORK 2 \" ], \"consumerAcceptLists\": [ { \"networkUrl\": \"projects/ ACCEPTED PROJECT ID 1 /global/networks/ ACCEPTED NETWORK 1 \", \"connectionLimit\": \" LIMIT 1 \" }, { \"networkUrl\": \"projects/ ACCEPTED PROJECT ID 2 /global/networks/ ACCEPTED NETWORK 2 \", \"connectionLimit\": \" LIMIT 2 \" } ], \"propagatedConnectionLimit\": PROPAGATED CONNECTION LIMIT , \"domainNames\": [ \" DOMAIN NAME \" ] } Replace the following: REJECTED PROJECT ID 1 and REJECTED PROJECT ID 2 : the IDs of the parent projects of the networks that you want to reject. consumerRejectLists is optional and can contain one or more networks.",
+          "To publish a service and explicitly approve consumers based on project, send the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ ATTACHMENT REGION /serviceAttachments { \"name\": \" ATTACHMENT NAME \", \"region\": \" ATTACHMENT REGION \", \"connectionPreference\": \"ACCEPT MANUAL\", \"targetService\": \" TARGET SERVICE \", \"enableProxyProtocol\": false, \"natSubnets\": [ \" PSC SUBNET 1 URI \", \" PSC SUBNET 2 URI \" ], \"consumerRejectLists\": [ \" REJECTED PROJECT 1 \", \" REJECTED PROJECT 2 \" ], \"consumerAcceptLists\": [ { \"projectIdOrNum\": \" ACCEPTED PROJECT 1 \", \"connectionLimit\": \" LIMIT 1 \" }, { \"projectIdOrNum\": \" ACCEPTED PROJECT 2 \", \"connectionLimit\": \" LIMIT 2 \" } ], \"propagatedConnectionLimit\": \" PROPAGATED CONNECTION LIMIT \", \"domainNames\": [ \" DOMAIN NAME \" ] } Replace the following: PROJECT ID : the project for the service attachment.",
+          "Click Add service . gcloud Use the gcloud compute service-attachments create command . gcloud compute service-attachments create ATTACHMENT NAME \\ --region= ATTACHMENT REGION \\ --target-service= TARGET SERVICE \\ --connection-preference=ACCEPT MANUAL \\ --consumer-accept-list= ACCEPTED PROJECT OR NETWORK 1 = LIMIT 1 , ACCEPTED PROJECT OR NETWORK 2 = LIMIT 2 \\ --consumer-reject-list= REJECTED PROJECT OR NETWORK 1 , REJECTED PROJECT OR NETWORK 2 \\ --nat-subnets= PSC SUBNET LIST \\ [ --propagated-connection-limit= PROPAGATED CONNECTION LIMIT ] \\ [ --enable-proxy-protocol ] \\ [ --domain-names= DOMAIN NAME ] \\ [ --reconcile-connections ] Replace the following: ATTACHMENT NAME : the name to assign to the service attachment."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.default.id",
+      "compute.googleapis.com",
+      "network.network.id",
+      "network.network.project",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/vpc-peering",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-apis",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-services",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

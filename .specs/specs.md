@@ -595,9 +595,9 @@ Step 10 must also fail before rewriting reports when promoted product indexes
 or feature READMEs contain external HTTP(S) links outside official Google
 hosts.
 Step 10 must also fail before rewriting reports when promoted feature READMEs
-have drifted from their promoted feature cards, including identity, lifecycle,
-official evidence links, IAM status and details, security capability names,
-and official security evidence links.
+have drifted from their promoted feature cards, including feature title,
+identity, lifecycle, official evidence links, IAM status and details, security
+capability names, and official security evidence links.
 Step 10 must also fail before rewriting reports when a promoted product index
 is missing the promoted service-card link, is missing any promoted feature
 README link from the product promotion manifest, or still links stale
@@ -727,6 +727,9 @@ Every feature listed in a promotion manifest must have both a promoted
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact-level review can verify the
 feature without opening JSON.
+Each promoted feature README title must match the promoted feature card's
+feature name so human-readable artifacts cannot retain stale labels after card
+regeneration.
 Each promoted feature README must also keep its IAM mapping status and rendered
 IAM detail aligned with its promoted feature card, including explicit roles and
 permissions, derived IAM qualifiers, and unknown-IAM qualifiers.

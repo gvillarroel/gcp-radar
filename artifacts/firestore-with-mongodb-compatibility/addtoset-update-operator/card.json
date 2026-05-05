@@ -1,0 +1,142 @@
+{
+  "feature_name": "$addToSet update operator",
+  "feature_slug": "addtoset-update-operator",
+  "summary": "Supports the $addToSet update operator for array updates.",
+  "extended_definition": "Supports the $addToSet update operator for array updates.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+      "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+      "https://docs.cloud.google.com/firestore/native/docs/query-data/queries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Add and update data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "source_id": "site-docs-root-2",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "FIRDocumentReference washingtonRef = [[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"DC\" ]; // Atomically add a new region to the \"regions\" array field. [ washingtonRef updateData : @{ @\"regions\" : [ FIRFieldValue fieldValueForArrayUnion : @[ @\"greater virginia\" ] ] } ]; // Atomically remove a new region to the \"regions\" array field. [ washingtonRef updateData : @{ @\"regions\" : [ FIRFieldValue fieldValueForArrayRemove : @[ @\"east coast\" ] ] } ]; ViewController . m Kotlin Android val washingtonRef = db . collection ( \"cities\" ). document ( \"DC\" ) // Atomically add a new region to the \"regions\" array field. washingtonRef . update ( \"regions\" , FieldValue . arrayUnion ( \"greater virginia\" )) // Atomically remove a region from the \"regions\" array field. washingtonRef . update ( \"regions\" , FieldValue . arrayRemove ( \"east coast\" )) DocSnippets . kt Java Android DocumentReference washingtonRef = db . collection ( \"cities\" ). document ( \"DC\" ); // Atomically add a new region to the \"regions\" array field. washingtonRef . update ( \"regions\" , FieldValue . arrayUnion ( \"greater virginia\" )); // Atomically remove a region from the \"regions\" array field. washingtonRef . update ( \"regions\" , FieldValue . arrayRemove ( \"east coast\" )); DocSnippets . java Dart final washingtonRef = db . collection ( \"cities\" ). doc ( \"DC\" ); // Atomically add a new region to the \"regions\" array field. washingtonRef . update ({ \"regions\" : FieldValue . arrayUnion ([ \"greater virginia\" ]), }); // Atomically remove a region from the \"regions\" array field. washingtonRef . update ({ \"regions\" : FieldValue . arrayRemove ([ \"east coast\" ]), }); firestore . dart Java DocumentReference washingtonRef = db . collection ( \"cities\" ). document ( \"DC\" ); // Atomically add a new region to the \"regions\" array field.",
+          "If you update a nested field without dot notation, you will overwrite the entire map field, as shown in the following example: Web // Create our initial doc db . collection ( \"users\" ). doc ( \"frank\" ). set ({ name : \"Frank\" , favorites : { food : \"Pizza\" , color : \"Blue\" , subject : \"Recess\" }, age : 12 }). then ( function () { console . log ( \"Frank created\" ); }); // Update the doc without using dot notation. // Notice the map value for favorites. db . collection ( \"users\" ). doc ( \"frank\" ). update ({ favorites : { food : \"Ice Cream\" } }). then ( function () { console . log ( \"Frank food updated\" ); }); / Ending State , favorite . color and favorite . subject are no longer present : / users / frank { name : \"Frank\" , favorites : { food : \"Ice Cream\" , }, age : 12 } / Update elements in an array If your document contains an array field, you can use arrayUnion() and arrayRemove() to add and remove elements. arrayUnion() adds elements to an array but only elements not already present. arrayRemove() removes all instances of each given element.",
+          "Node.js // ... const washingtonRef = db . collection ( 'cities' ). doc ( 'DC' ); // Atomically add a new region to the \"regions\" array field. const unionRes = await washingtonRef . update ({ regions : FieldValue . arrayUnion ( 'greater virginia' ) }); // Atomically remove a region from the \"regions\" array field. const removeRes = await washingtonRef . update ({ regions : FieldValue . arrayRemove ( 'east coast' ) }); // To add or remove multiple items, pass multiple arguments to arrayUnion/arrayRemove const multipleUnionRes = await washingtonRef . update ({ regions : FieldValue . arrayUnion ( 'south carolina' , 'texas' ) // Alternatively, you can use spread operator in ES6 syntax // const newRegions = ['south carolina', 'texas'] // regions: FieldValue.arrayUnion(...newRegions) }); index . js Go // Not supported yet PHP PHP To authenticate to Firestore, set up Application Default Credentials."
+        ]
+      },
+      {
+        "title": "\"Supported features: 8.0 \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "",
+        "evidence_snippets": [
+          "Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators.",
+          "Query and projection operators Firestore with MongoDB compatibility supports the following query and projection operators: Array operators Operator Supported $all Yes $elemMatch Yes $size Yes Bitwise operators Operator Supported $bitsAllClear No $bitsAllSet No $bitsAnyClear No $bitsAnySet No Comment operator Operator Supported $comment No Comparison operators Operator Supported $eq Yes $gt Yes $gte Yes $in Yes $lt Yes $lte Yes $ne Yes $nin Yes Element operators Operator Supported $exists Yes $type Yes Evaluation query operators Operator Supported $expr Yes $jsonSchema No $mod Yes $regex Yes $text No $where No Logical operators Operator Supported $and Yes $nor Yes $not Yes $or Yes Projection operators Operator Supported $ Yes $elemMatch Yes $meta Partial (supports textScore) $slice Yes Update operators Firestore with MongoDB compatibility supports the following update operators.",
+          "Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators."
+        ]
+      },
+      {
+        "title": "\"Query and filter data \\_|\\_ Firestore in Native mode \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "source_id": "site-docs-root-2",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Disjunctive normal form Firestore converts queries to disjunctive normal form by applying two rules: Flatten Given conditions A , B , and C : A and (B and C) => A and B and C Distributive Law Given conditions A , B , C , and D : A and (B or C) => (A and B) or (A and C) (A or B) and (C or D) => (A and C) or (A and D) or (B and C) or (B and D) When applying these rules to in and array-contains-any queries, remember that these operators are shorthands for OR .",
+          "Core operations support the following comparison operators: < less than <= less than or equal to == equal to greater than = greater than or equal to != not equal to array-contains array-contains-any in not-in Note: For Apple, Android, and Java, the comparison operator is explicitly named in the method.",
+          "These limitations apply only to Standard edition: Firestore provides support for logical OR queries through the or , in , and array-contains-any operators."
+        ]
+      },
+      {
+        "title": "\"Transactions and batched writes \\_|\\_ Firestore in Native mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions",
+        "source_id": "site-docs-root-2",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example shows how to build and commit a write batch: Web version 9 import { writeBatch , doc } from \"firebase/firestore\" ; // Get a new write batch const batch = writeBatch ( db ); // Set the value of 'NYC' const nycRef = doc ( db , \"cities\" , \"NYC\" ); batch . set ( nycRef , { name : \"New York City\" }); // Update the population of 'SF' const sfRef = doc ( db , \"cities\" , \"SF\" ); batch . update ( sfRef , { \"population\" : 1000000 }); // Delete the city 'LA' const laRef = doc ( db , \"cities\" , \"LA\" ); batch . delete ( laRef ); // Commit the batch await batch . commit (); write batch . js Web version 8 Learn more about the tree-shakeable modular Web API and its advantages over the namespaced API. // Get a new write batch var batch = db . batch (); // Set the value of 'NYC' var nycRef = db . collection ( \"cities\" ). doc ( \"NYC\" ); batch . set ( nycRef , { name : \"New York City\" }); // Update the population of 'SF' var sfRef = db . collection ( \"cities\" ). doc ( \"SF\" ); batch . update ( sfRef , { \"population\" : 1000000 }); // Delete the city 'LA' var laRef = db . collection ( \"cities\" ). doc ( \"LA\" ); batch . delete ( laRef ); // Commit the batch batch . commit (). then (() = > { // ... }); test . firestore . js Swift Note: This product is not available on watchOS and App Clip targets. // Get new write batch let batch = db . batch () // Set the value of 'NYC' let nycRef = db . collection ( \"cities\" ). document ( \"NYC\" ) batch . setData ([:], forDocument : nycRef ) // Update the population of 'SF' let sfRef = db . collection ( \"cities\" ). document ( \"SF\" ) batch . updateData ([ \"population\" : 1000000 ], forDocument : sfRef ) // Delete the city 'LA' let laRef = db . collection ( \"cities\" ). document ( \"LA\" ) batch . deleteDocument ( laRef ) // Commit the batch do { try await batch . commit () print ( \"Batch write succeeded.\" ) } catch { print ( \"Error writing batch: \\( error ) \" ) } ViewController . swift Objective-C Note: This product is not available on watchOS and App Clip targets. // Get new write batch FIRWriteBatch batch = [ self . db batch ]; // Set the value of 'NYC' FIRDocumentReference nycRef = [[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"NYC\" ]; [ batch setData : @{} forDocument : nycRef ]; // Update the population of 'SF' FIRDocumentReference sfRef = [[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"SF\" ]; [ batch updateData : @{ @\"population\" : @1000000 } forDocument : sfRef ]; // Delete the city 'LA' FIRDocumentReference laRef = [[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"LA\" ]; [ batch deleteDocument : laRef ]; // Commit the batch [ batch commitWithCompletion :^ ( NSError Nullable error ) { if ( error != nil ) { NSLog ( @\"Error writing batch %@\" , error ); } else { NSLog ( @\"Batch write succeeded.\" ); } }]; ViewController . m Kotlin Android val nycRef = db . collection ( \"cities\" ). document ( \"NYC\" ) val sfRef = db . collection ( \"cities\" ). document ( \"SF\" ) val laRef = db . collection ( \"cities\" ). document ( \"LA\" ) // Get a new write batch and commit all write operations db . runBatch { batch - > // Set the value of 'NYC' batch . set ( nycRef , City ()) // Update the population of 'SF' batch . update ( sfRef , \"population\" , 1000000L ) // Delete the city 'LA' batch . delete ( laRef ) }. addOnCompleteListener { // ... } DocSnippets . kt Java Android // Get a new write batch WriteBatch batch = db . batch (); // Set the value of 'NYC' DocumentReference nycRef = db . collection ( \"cities\" ). document ( \"NYC\" ); batch . set ( nycRef , new City ()); // Update the population of 'SF' DocumentReference sfRef = db . collection ( \"cities\" ). document ( \"SF\" ); batch . update ( sfRef , \"population\" , 1000000L ); // Delete the city 'LA' DocumentReference laRef = db . collection ( \"cities\" ). document ( \"LA\" ); batch . delete ( laRef ); // Commit the batch batch . commit (). addOnCompleteListener ( new OnCompleteListener<Void> () { @Override public void onComplete ( @NonNull Task<Void> task ) { // ... } }); DocSnippets . java Dart // Get a new write batch final batch = db . batch (); // Set the value of 'NYC' var nycRef = db . collection ( \"cities\" ). doc ( \"NYC\" ); batch . set ( nycRef , { \"name\" : \"New York City\" }); // Update the population of 'SF' var sfRef = db . collection ( \"cities\" ). doc ( \"SF\" ); batch . update ( sfRef , { \"population\" : 1000000 }); // Delete the city 'LA' var laRef = db . collection ( \"cities\" ). doc ( \"LA\" ); batch . delete ( laRef ); // Commit the batch batch . commit (). then (( ) { // ... }); firestore . dart Java // Get a new write batch WriteBatch batch = db . batch (); // Set the value of 'NYC' DocumentReference nycRef = db . collection ( \"cities\" ). document ( \"NYC\" ); batch . set ( nycRef , new City ()); // Update the population of 'SF' DocumentReference sfRef = db . collection ( \"cities\" ). document ( \"SF\" ); batch . update ( sfRef , \"population\" , 1000000L ); // Delete the city 'LA' DocumentReference laRef = db . collection ( \"cities\" ). document ( \"LA\" ); batch . delete ( laRef ); // asynchronously commit the batch ApiFuture<List<WriteResult> > future = batch . commit (); // ... // future.get() blocks on batch commit operation for ( WriteResult result : future . get ()) { System . out . println ( \"Update time : \" + result . getUpdateTime ()); } ManageDataSnippets . java Python batch = db . batch () Set the data for NYC nyc ref = db . collection ( \"cities\" ) . document ( \"NYC\" ) batch . set ( nyc ref , { \"name\" : \"New York City\" }) Update the population for SF sf ref = db . collection ( \"cities\" ) . document ( \"SF\" ) batch . update ( sf ref , { \"population\" : 1000000 }) Delete DEN den ref = db . collection ( \"cities\" ) . document ( \"DEN\" ) batch . delete ( den ref ) Commit the batch batch . commit () snippets . py Python (Async) batch = db . batch () Set the data for NYC nyc ref = db . collection ( \"cities\" ) . document ( \"NYC\" ) batch . set ( nyc ref , { \"name\" : \"New York City\" }) Update the population for SF sf ref = db . collection ( \"cities\" ) . document ( \"SF\" ) batch . update ( sf ref , { \"population\" : 1000000 }) Delete DEN den ref = db . collection ( \"cities\" ) . document ( \"DEN\" ) batch . delete ( den ref ) Commit the batch await batch . commit () snippets . py C++ // Get a new write batch WriteBatch batch = db - > batch (); // Set the value of 'NYC' DocumentReference nyc ref = db - > Collection ( \"cities\" ).",
+          "FIRDocumentReference sfReference = [[ self . db collectionWithPath : @\"cities\" ] documentWithPath : @\"SF\" ]; [ self . db runTransactionWithBlock :^ id ( FIRTransaction transaction , NSError errorPointer ) { FIRDocumentSnapshot sfDocument = [ transaction getDocument : sfReference error : errorPointer ]; if ( errorPointer != nil ) { return nil ; } if ( ! [ sfDocument . data [ @\"population\" ] isKindOfClass : [ NSNumber class ]]) { errorPointer = [ NSError errorWithDomain : @\"AppErrorDomain\" code : -1 userInfo : @{ NSLocalizedDescriptionKey : @\"Unable to retreive population from snapshot\" } ]; return nil ; } NSInteger oldPopulation = [ sfDocument . data [ @\"population\" ] integerValue ]; // Note: this could be done without a transaction // by updating the population using FieldValue.increment() [ transaction updateData : @{ @\"population\" : @( oldPopulation + 1 ) } forDocument : sfReference ]; return nil ; } completion :^ ( id result , NSError error ) { if ( error != nil ) { NSLog ( @\"Transaction failed: %@\" , error ); } else { NSLog ( @\"Transaction successfully committed!\" ); } }]; ViewController . m Kotlin Android val sfDocRef = db . collection ( \"cities\" ). document ( \"SF\" ) db . runTransaction { transaction - > val snapshot = transaction . get ( sfDocRef ) // Note: this could be done without a transaction // by updating the population using FieldValue.increment() val newPopulation = snapshot . getDouble ( \"population\" ) !! + 1 transaction . update ( sfDocRef , \"population\" , newPopulation ) // Success null }. addOnSuccessListener { Log . d ( TAG , \"Transaction success!\" ) } . addOnFailureListener { e - > Log . w ( TAG , \"Transaction failure.\" , e ) } DocSnippets . kt Java Android final DocumentReference sfDocRef = db . collection ( \"cities\" ). document ( \"SF\" ); db . runTransaction ( new Transaction .",
+          "The maximum total allowed for this call // is 10 , because it is a single document request . db . collection ( 'chatroom' ) . doc ( 'mygroup' ) . get ( ... ); // Initializing a write batch ... var batch = db . batch (); // 2 document access calls used , 10 allowed . var group1Ref = db . collection ( \"chatroom\" ) . doc ( \"group1\" ); batch . set ( group1Ref , { msg : \"Hello, from Admin!\" }); // 1 document access call used , 10 allowed . var newUserRef = db . collection ( \"users\" ) . doc ( \"newuser\" ); batch . update ( newUserRef , { \"lastSignedIn\" : new Date ()}); // 1 document access call used , 10 allowed . var removedAdminRef = db . collection ( \"admin\" ) . doc ( \"otheruser\" ); batch . delete ( removedAdminRef ); // The batch used a total of 2 + 1 + 1 = 4 document access calls , out of a total // 20 allowed . batch . commit (); For more information on how to resolve latency issues caused by large writes and batched writes, errors due to contention from overlapping transactions, and other issues consider checking out the troubleshooting page ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "future.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/add-data",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/native/docs/query-data/queries",
+        "https://docs.cloud.google.com/firestore/native/docs/manage-data/transactions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:32.983Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility"
+}

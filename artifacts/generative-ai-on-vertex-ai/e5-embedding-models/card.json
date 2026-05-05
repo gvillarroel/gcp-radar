@@ -1,0 +1,143 @@
+{
+  "feature_name": "E5 embedding models",
+  "feature_slug": "e5-embedding-models",
+  "summary": "E5 is a text embedding model series that can be served with a GPU or CPU.",
+  "extended_definition": "E5 is a text embedding model series that can be served with a GPU or CPU.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get text embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 259,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-embedding-001:predict Request JSON body: { \"instances\": [ { \"content\": \" TEXT \"} ], \"parameters\": { \"autoTruncate\": AUTO TRUNCATE } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Response { \"predictions\": [ { \"embeddings\": { \"statistics\": { \"truncated\": false, \"token count\": 6 }, \"values\": [ ... ] } } ] } Example curl command MODEL ID= \"gemini-embedding-001\" PROJECT ID= PROJECT ID curl \\ - X POST \\ - H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ - H \"Content-Type: application/json\" \\ h tt ps : //us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/publishers/google/models/${MODEL ID}:predict -d \\ $' { \"instances\" : [ { \"content\" : \"What is life?\" } ], } ' Supported models The following tables show the available Google and open text embedding models.",
+          "Save the request body in a file named request.json , and execute the following command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/publishers/google/models/gemini-embedding-001:predict\" PowerShell Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login ."
+        ]
+      },
+      {
+        "title": "\"Get batch text embeddings inferences \\_|\\_ Generative AI on Vertex AI \\_\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/batchPredictionJobs Request JSON body: { \"name\": \" BP JOB NAME \", \"displayName\": \" BP JOB NAME \", \"model\": \" publishers/google/models/textembedding-gecko \", \"inputConfig\": { \"instancesFormat\":\"bigquery\", \"bigquerySource\":{ \"inputUri\" : \" INPUT URI \" } }, \"outputConfig\": { \"predictionsFormat\":\"bigquery\", \"bigqueryDestination\":{ \"outputUri\": \" OUTPUT URI \" } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://us-central1-aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/batchPredictionJobs\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/123456789012/locations/us-central1/batchPredictionJobs/1234567890123456789\", \"displayName\": \"BP sample publisher BQ 20230712 134650\", \"model\": \"projects/{PROJECT ID}/locations/us-central1/models/textembedding-gecko\", \"inputConfig\": { \"instancesFormat\": \"bigquery\", \"bigquerySource\": { \"inputUri\": \"bq://project name.dataset name.text input\" } }, \"modelParameters\": {}, \"outputConfig\": { \"predictionsFormat\": \"bigquery\", \"bigqueryDestination\": { \"outputUri\": \"bq://project name.llm dataset.embedding out BP sample publisher BQ 20230712 134650\" } }, \"state\": \"JOB STATE PENDING\", \"createTime\": \"2023-07-12T20:46:52.148717Z\", \"updateTime\": \"2023-07-12T20:46:52.148717Z\", \"labels\": { \"owner\": \"sample owner\", \"product\": \"llm\" }, \"modelVersionId\": \"1\", \"modelMonitoringStatus\": {} } The response includes a unique identifier for the batch job.",
+          "Text embeddings models that support batch inferences All stable versions of text embedding models support batch inferences with the exception of Gemini embeddings (gemini-embedding-001)."
+        ]
+      },
+      {
+        "title": "\"Embeddings APIs overview \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Vertex AI supports two types of embeddings models, text and multimodal.",
+          "The embeddings in this example could be comprised of thousands of book titles with summaries and their genre, and it might have representations for books like Wuthering Heights by Emily Brontë and Persuasion by Jane Austen that are similar to each other (small distance between numerical representation).",
+          "To learn how to get embeddings, see the following documents: Get text embeddings Get multimodal embeddings Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Get multimodal embeddings \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/multimodalembedding@001:predict Request JSON body: { \"instances\": [ { \"text\": \" TEXT \", \"image\": { \"gcsUri\": \" IMAGE URI \" }, \"video\": { \"gcsUri\": \" VIDEO URI \", \"videoSegmentConfig\": { \"startOffsetSec\": START SECOND , \"endOffsetSec\": END SECOND , \"intervalSec\": INTERVAL SECONDS } } } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/multimodalembedding@001:predict Request JSON body: { \"instances\": [ { \"image\": { \"gcsUri\": \" IMAGE URI \" }, \"text\": \" TEXT \" } ], \"parameters\": { \"dimension\": EMBEDDING DIMENSION } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https:// LOCATION -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /publishers/google/models/multimodalembedding@001:predict Request JSON body: { \"instances\": [ { \"text\": \" TEXT \", \"image\": { \"bytesBase64Encoded\": \" B64 ENCODED IMG \" } } ] } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "dataset.embedding",
+      "input.jsonl",
+      "name.dataset",
+      "name.llm",
+      "name.text",
+      "protobuf.Value",
+      "publishers.models",
+      "publishers.models.countTokens",
+      "publishers.models.generateContent",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/batch-prediction-genai-embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-multimodal-embeddings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.525Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

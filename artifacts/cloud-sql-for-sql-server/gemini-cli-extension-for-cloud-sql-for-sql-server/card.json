@@ -1,0 +1,108 @@
+{
+  "feature_name": "Gemini CLI extension for Cloud SQL for SQL Server",
+  "feature_slug": "gemini-cli-extension-for-cloud-sql-for-sql-server",
+  "summary": "The Gemini CLI extension lets you provision, manage, and query Cloud SQL for SQL Server databases from the command line.",
+  "extended_definition": "The Gemini CLI extension lets you provision, manage, and query Cloud SQL for SQL Server databases from the command line.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+      "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+      "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Cloud SQL remote MCP server \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini CLI To add a Cloud SQL remote MCP server to your Gemini CLI, configure it as an extension.",
+          "Save the following content in your extension file: { \"name\" : \" EXT NAME \" , \"version\" : \"1.0.0\" , \"mcpServers\" : { \"Cloud SQL MCP Server\" : { \"httpUrl\" : \"https://sqladmin.googleapis.com/mcp\" , \"authProviderType\" : \"google credentials\" , \"oauth\" : { \"scopes\" : [ \"https://www.googleapis.com/auth/cloud-platform\" ] }, \"timeout\" : 30000 , \"headers\" : { \"x-goog-user-project\" : \" PROJECT ID \" } } } } Save the extensions file.",
+          "The response is similar to the following: Configured MCP servers: 🟢 Cloud SQL MCP Server (from sqladmin ) - list instances - get instance - clone instance - create instance - update instance - execute sql - import data - create user - update user - list users - get operation The remote MCP server is ready to use in Gemini CLI."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL remote MCP server \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini CLI To add a Cloud SQL remote MCP server to your Gemini CLI, configure it as an extension.",
+          "Save the following content in your extension file: { \"name\" : \" EXT NAME \" , \"version\" : \"1.0.0\" , \"mcpServers\" : { \"Cloud SQL MCP Server\" : { \"httpUrl\" : \"https://sqladmin.googleapis.com/mcp\" , \"authProviderType\" : \"google credentials\" , \"oauth\" : { \"scopes\" : [ \"https://www.googleapis.com/auth/cloud-platform\" ] }, \"timeout\" : 30000 , \"headers\" : { \"x-goog-user-project\" : \" PROJECT ID \" } } } } Save the extensions file.",
+          "The response is similar to the following: Configured MCP servers: 🟢 Cloud SQL MCP Server (from sqladmin ) - list instances - get instance - clone instance - create instance - update instance - execute sql - import data - create user - update user - list users - get operation The remote MCP server is ready to use in Gemini CLI."
+        ]
+      },
+      {
+        "title": "\"Use the Cloud SQL remote MCP server \\_|\\_ Cloud SQL for SQL Server \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Gemini CLI To add a Cloud SQL remote MCP server to your Gemini CLI, configure it as an extension.",
+          "Save the following content in your extension file: { \"name\" : \" EXT NAME \" , \"version\" : \"1.0.0\" , \"mcpServers\" : { \"Cloud SQL MCP Server\" : { \"httpUrl\" : \"https://sqladmin.googleapis.com/mcp\" , \"authProviderType\" : \"google credentials\" , \"oauth\" : { \"scopes\" : [ \"https://www.googleapis.com/auth/cloud-platform\" ] }, \"timeout\" : 30000 , \"headers\" : { \"x-goog-user-project\" : \" PROJECT ID \" } } } } Save the extensions file.",
+          "The response is similar to the following: Configured MCP servers: 🟢 Cloud SQL MCP Server (from sqladmin ) - list instances - get instance - clone instance - create instance - update instance - execute sql - import data - create user - update user - list users - get operation The remote MCP server is ready to use in Gemini CLI."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/postgres/use-cloudsql-mcp",
+        "https://docs.cloud.google.com/sql/docs/sqlserver/use-cloudsql-mcp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:16.697Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-sql-server/card.json",
+  "product_name": "Cloud SQL for SQL Server",
+  "product_slug": "cloud-sql-for-sql-server"
+}

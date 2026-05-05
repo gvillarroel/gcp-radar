@@ -1,0 +1,114 @@
+{
+  "feature_name": "Completed Chats transcript viewing",
+  "feature_slug": "completed-chats-transcript-viewing",
+  "summary": "Lets users view saved chat transcripts from the Completed Chats dashboard.",
+  "extended_definition": "Lets users view saved chat transcripts from the Completed Chats dashboard.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/user-roles-permissions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Real-time dashboards and monitoring pages \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "View transcripts for completed chats Chat transcripts are available directly within the Contact Center AI Platform portal on the Chats > Completed monitoring dashboard.",
+          "Users with access to this page can also perform important actions like viewing Agent's assignment details, daily stats, changing the agent's status, and logging agents out.",
+          "The 3 views are Queued, Connected, and Completed, separating the chats based on waiting in-queue, connected to an agent, or finished."
+        ]
+      },
+      {
+        "title": "\"User roles and permissions \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/user-roles-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "CCAI Platform portal access Settings Queue configuration Add and edit queues with full access Settings configuration All settings access including Developer Settings Agent & team: Full access Agent Desktop ( Preview ) Global, queue, and team settings Data Monitoring Call and chat dashboard: Full access Agents: Full access Calls and chats (connected, queued, completed): Full access External storage: access to call recordings, chat transcripts, or both, when they are stored in external storage.",
+          "Queue: Full access Reporting Report builder: Full access to all user data No access Agent adapter in the CCAI Platform portal and CRM Actions available Responsible for viewing or managing users on multiple teams, even when not assigned as the team manager Are responsible for monitoring call and chat queues for all queues Are responsible for downloading reports with data concerning agent performance, queue performance, call and chat volume for all users Configuring queues, redirects, and per-queue routing options Responsible for assigning agents to queues Shuffling team and agent assignments between queues based on volume Adding new users and assigning to teams or deactivating users Assigning existing users to teams Creating or editing queue structures for any language or channel Modifying environment wide settings to disable or enable channels, update how Agents are notified of new sessions, hours of operation, messages played to consumers or routing features like enabling Auto Answer or Priority routing Setting up technical integrations Don't see a role you want?",
+          "CCAI Platform portal access Settings Queue Configuration Assign any agents or teams to queues Queue priorities Settings Configuration Agent & team: Full access Target Metrics (within Settings > Operation Management ) Data Monitoring Dashboard access (data for all teams) Calls Chats Agents: Full access Calls and chats (connected, queued, completed): Full access External Storage: Access to call recordings or chat transcripts when they are stored in external storage."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Outbound click to call When viewing a Contact in Salesforce you can click on the Contact's Phone Number to start an Outbound Call.",
+          "This option lets an agent dial out to a number not saved to the contact while still associating the case with the contact.",
+          "Sample UI of multiple CCAI Platform sessions related to a case CCAI Platform session object data hierarchy The session object is organized as follows: Session(s) related list: the list of session(s) related to a case or account object Session Detail : presents the core session object details Core session fields: lists any associated transfers and files File list: any files that have been uploaded or created as part of the session File detail: all details about a file, including access to file itself Actions: a list of actions that occurred during the session Action detail: additional info about a specific action Transfers: complete list of transfers that occurred during the session Transfer detail: displays all fields and data associated with a single transfer events CCAI Platform session overview After opening a session, the following view will be provided, listing all associated CCAI Platform session actions, attached files, and transfers."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/user-roles-permissions",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/user-roles-permissions",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/user-roles-permissions",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Real-time_Dashboards_and_Monitoring_Pages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/user-roles-permissions",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

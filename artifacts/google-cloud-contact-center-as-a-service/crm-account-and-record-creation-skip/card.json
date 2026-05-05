@@ -1,0 +1,108 @@
+{
+  "feature_name": "CRM account and record creation skip",
+  "feature_slug": "crm-account-and-record-creation-skip",
+  "summary": "Zendesk and ServiceNow integrations can be configured to skip CRM account and record creation.",
+  "extended_definition": "Zendesk and ServiceNow integrations can be configured to skip CRM account and record creation.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Call settings \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "When data is sent: The CRM record creation will be delayed until the Account or Record assignment is made by the Agent or by the system.",
+          "Salesforce-specific configuration options that impact available options If Attach CCAI Platform Sessions directly to the account lookup object option is enabled in Settings > Developer, then the record drop-down is hidden.",
+          "Default selection and available options If Append call or chat session to the latest open case in the same leaf queue option in Case Creation Details is enabled, the latest open record in the same leaf queue is preloaded."
+        ]
+      },
+      {
+        "title": "\"Salesforce integration guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Account and case behavior Account ID Account ID can be selected by: Clicking on the phone number from Account or Contact record Clicking the sync icon to sync when on the page of an Account or Contact record Entering an outbound phone number that is associated to an Account Clicking on a phone number in a Case that is associated with an Account ID and Case Case ID Case ID can be selected by: Once the Account ID is selected by one of the options above, CCAI Platform checks for one or more open cases for the selected Account ID and selects the most recent, or allows the agent to select based on your settings.",
+          "Many new updates to the Agent call adapter Review and select from multiple matching account records Select from open cases associated with the selected account Create a new case Configurable option to not create a ticket and/or create a new ticket Handling multiple matching account records Flexible ticket to session association Feature details The object/term Account is referenced below as well as in the Agent Adapter UI, however, the object being referenced as \"Account\" may be different based on your configuration in Developer Settings .",
+          "Select the Use the admin user for all record creations/updates that can't be attributed to a specific agent checkbox to make the instance administrator the default author of new or updated tickets created in CCAI Platform when a specific agent hasn't been assigned."
+        ]
+      },
+      {
+        "title": "\"Zendesk app installation guide \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set Zendesk Subdomain to the subdomain of your Zendesk account. https://your zendesk subdomain.zendesk.com Set OAuth Client ID to the Unique Identifier of your Zendesk OAuth client.",
+          "Generate an API Token The following steps enable you to generate an API token in Zendesk: In Zendesk Support Admin Center, click Apps and Integrations > Zendesk API .",
+          "Registering your Application In the Zendesk Support Admin Center, click Apps and Integrations > Zendesk API ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "subdomain.zendesk.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/call-settings",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/salesforce-integration-guide",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/zendesk-app-installation-guide"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

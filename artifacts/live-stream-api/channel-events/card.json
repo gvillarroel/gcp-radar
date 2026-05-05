@@ -1,0 +1,176 @@
+{
+  "feature_name": "Channel events",
+  "feature_slug": "channel-events",
+  "summary": "The API adds channel events for mute, unmute, return to program, and switch input actions.",
+  "extended_definition": "The API adds channel events for mute, unmute, return to program, and switch input actions.",
+  "lifecycle": {
+    "latest_feature_date": "2023-02-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+      "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+      "https://docs.cloud.google.com/livestream/docs/overview",
+      "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage channel events \\_|\\_ Live Stream API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "source_id": "site-iam-reference",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"unmute\": {}, \"executeNow\": true } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events?eventId= EVENT ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events/ EVENT ID \", \"createTime\": CREATE TIME , \"updateTime\": UPDATE TIME , \"unmute\": {}, \"executeNow\": true, \"state\": \"PENDING\" } Update encryptions event Use the updateEncryptions object to update the encryption settings for the channel.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"mute\": { \"duration\": \"30s\" }, \"executeNow\": true } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events?eventId= EVENT ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events/ EVENT ID \", \"createTime\": CREATE TIME , \"updateTime\": UPDATE TIME , \"mute\": { \"duration\": \"30s\" }, \"executeNow\": true, \"state\": \"PENDING\" } Unmute event Use the unmute object to unmute (that is, restore sound to) the live stream.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"adBreak\": { \"duration\": \"100s\" }, \"executeNow\": true } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events?eventId= EVENT ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events/ EVENT ID \", \"createTime\": CREATE TIME , \"updateTime\": UPDATE TIME , \"adBreak\": { \"duration\": \"100s\" }, \"executeNow\": true, \"state\": \"PENDING\" } C# To learn how to install and use the client library for Live Stream API, see Live Stream API client libraries ."
+        ]
+      },
+      {
+        "title": "Overview of the Live Stream API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/livestream/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following channel events are supported: Create ad break markers Mute/unmute the live stream Insert a slate into the live stream Return to program (live stream) Switch the channel input Encoder An encoder is a program used to send input streams, such as ffmpeg .",
+          "Features The Live Stream API includes support for the following features: Automatic infrastructure provisioning Integration with Cloud Storage, Cloud Audit Logs, and Google Cloud infrastructure Configuration of a backup input stream for redundancy Live to video on demand (VOD) Content encryption Slates (image and video) Supported inputs and outputs The following tables show the supported input and output formats for the Live Stream API.",
+          "The Live Stream API transcodes mezzanine live signals into direct-to-consumer streaming formats, including Dynamic Adaptive Streaming over HTTP (DASH/MPEG-DASH), and HTTP Live Streaming (HLS), for multiple device platforms."
+        ]
+      },
+      {
+        "title": "Create and manage channels \\_|\\_ Live Stream API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "source_id": "site-iam-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for a local development environment . use Google\\Cloud\\Video\\LiveStream\\V1\\AudioStream; use Google\\Cloud\\Video\\LiveStream\\V1\\Channel; use Google\\Cloud\\Video\\LiveStream\\V1\\ElementaryStream; use Google\\Cloud\\Video\\LiveStream\\V1\\InputAttachment; use Google\\Cloud\\Video\\LiveStream\\V1\\Client\\LivestreamServiceClient; use Google\\Cloud\\Video\\LiveStream\\V1\\CreateChannelRequest; use Google\\Cloud\\Video\\LiveStream\\V1\\Manifest; use Google\\Cloud\\Video\\LiveStream\\V1\\MuxStream; use Google\\Cloud\\Video\\LiveStream\\V1\\SegmentSettings; use Google\\Cloud\\Video\\LiveStream\\V1\\VideoStream; use Google\\Protobuf\\Duration; / Creates a channel. @param string $callingProjectId The project ID to run the API call under @param string $location The location of the channel @param string $channelId The ID of the channel to be created @param string $inputId The ID of the input for the channel @param string $outputUri Uri of the channel output folder in a Cloud Storage bucket. (e.g. \"gs://my-bucket/my-output-folder/\") / function create channel( string $callingProjectId, string $location, string $channelId, string $inputId, string $outputUri ): void { // Instantiate a client. $livestreamClient = new LivestreamServiceClient(); $parent = $livestreamClient->locationName($callingProjectId, $location); $channelName = $livestreamClient->channelName($callingProjectId, $location, $channelId); $inputName = $livestreamClient->inputName($callingProjectId, $location, $inputId); $channel = (new Channel()) ->setName($channelName) ->setInputAttachments([ new InputAttachment([ 'key' => 'my-input', 'input' => $inputName ]) ]) ->setElementaryStreams([ new ElementaryStream([ 'key' => 'es video', 'video stream' => new VideoStream([ 'h264' => new VideoStream\\H264CodecSettings([ 'profile' => 'high', 'width pixels' => 1280, 'height pixels' => 720, 'bitrate bps' => 3000000, 'frame rate' => 30 ]) ]), ]), new ElementaryStream([ 'key' => 'es audio', 'audio stream' => new AudioStream([ 'codec' => 'aac', 'channel count' => 2, 'bitrate bps' => 160000 ]) ]) ]) ->setOutput(new Channel\\Output(['uri' => $outputUri])) ->setMuxStreams([ new MuxStream([ 'key' => 'mux video', 'elementary streams' => ['es video'], 'segment settings' => new SegmentSettings([ 'segment duration' => new Duration(['seconds' => 2]) ]) ]), new MuxStream([ 'key' => 'mux audio', 'elementary streams' => ['es audio'], 'segment settings' => new SegmentSettings([ 'segment duration' => new Duration(['seconds' => 2]) ]) ]), ]) ->setManifests([ new Manifest([ 'file name' => 'manifest.m3u8', 'type' => Manifest\\ManifestType::HLS, 'mux streams' => ['mux video', 'mux audio'], 'max segment count' => 5 ]) ]); // Run the channel creation request.",
+          "For more information, see Set up authentication for a local development environment . require \"google/cloud/video/live stream\" Create a channel @param project id [String] Your Google Cloud project (e.g. \"my-project\") @param location [String] The location (e.g. \"us-central1\") @param channel id [String] Your channel name (e.g. \"my-channel\") @param input id [String] Your input name (e.g. \"my-input\") @param output uri [String] Uri of the channel output folder in a Cloud Storage bucket. (e.g. \"gs://my-bucket/my-output-folder/\";) def create channel project id :, location :, channel id :, input id :, output uri : Create a Live Stream client. client = Google :: Cloud :: Video :: LiveStream . livestream service Build the resource name of the parent. parent = client . location path project : project id , location : location Build the resource name of the input. input path = client . input path project : project id , location : location , input : input id Set the channel fields. new channel = { input attachments : [ { key : \"my-input\" , input : input path } ] , output : { uri : output uri }, elementary streams : [ { key : \"es video\" , video stream : { h264 : { profile : \"high\" , bitrate bps : 3 000 000 , frame rate : 30 , height pixels : 720 , width pixels : 1280 } } }, { key : \"es audio\" , audio stream : { codec : \"aac\" , channel count : 2 , bitrate bps : 160 000 } } ] , mux streams : [ { key : \"mux video\" , elementary streams : [ \"es video\" ] , segment settings : { segment duration : { seconds : 2 } } }, { key : \"mux audio\" , elementary streams : [ \"es audio\" ] , segment settings : { segment duration : { seconds : 2 } } } ] , manifests : [ { file name : \"main.m3u8\" , type : Google :: Cloud :: Video :: LiveStream :: V1 :: Manifest :: ManifestType :: HLS , mux streams : [ \"mux video\" , \"mux audio\" ] , max segment count : 5 } ] } operation = client . create channel parent : parent , channel : new channel , channel id : channel id The returned object is of type Gapic::Operation.",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // projectId = 'my-project-id'; // location = 'us-central1'; // channelId = 'my-channel'; // inputId = 'my-input'; // outputUri = 'gs://my-bucket/my-output-folder/'; // Imports the Livestream library const { LivestreamServiceClient } = require ( ' @google-cloud/livestream ' ). v1 ; // Instantiates a client const livestreamServiceClient = new LivestreamServiceClient (); async function createChannel () { // Construct request const request = { parent : livestreamServiceClient . locationPath ( projectId , location ), channelId : channelId , channel : { inputAttachments : [ { key : 'my-input' , input : livestreamServiceClient . inputPath ( projectId , location , inputId ), }, ], output : { uri : outputUri , }, elementaryStreams : [ { key : 'es video' , videoStream : { h264 : { profile : 'high' , heightPixels : 720 , widthPixels : 1280 , bitrateBps : 3000000 , frameRate : 30 , }, }, }, { key : 'es audio' , audioStream : { codec : 'aac' , channelCount : 2 , bitrateBps : 160000 , }, }, ], muxStreams : [ { key : 'mux video' , elementaryStreams : [ 'es video' ], segmentSettings : { seconds : 2 , }, }, { key : 'mux audio' , elementaryStreams : [ 'es audio' ], segmentSettings : { seconds : 2 , }, }, ], manifests : [ { fileName : 'manifest.m3u8' , type : ' HLS ' , muxStreams : [ 'mux video' , 'mux audio' ], maxSegmentCount : 5 , }, ], }, }; // Run request const [ operation ] = await livestreamServiceClient . createChannel ( request ); const response = await operation . promise (); const [ channel ] = response ; console . log ( Channel: ${ channel . name } ); } createChannel (); PHP To learn how to install and use the client library for Live Stream API, see Live Stream API client libraries ."
+        ]
+      },
+      {
+        "title": "\"Quickstart for an HLS live stream \\_|\\_ Live Stream API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"adBreak\": { \"duration\": \"100s\" }, \"executeNow\": true } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events?eventId= EVENT ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events/ EVENT ID \", \"createTime\": CREATE TIME , \"updateTime\": UPDATE TIME , \"adBreak\": { \"duration\": \"100s\" }, \"executeNow\": true, \"state\": \"PENDING\" } C# To learn how to install and use the client library for Live Stream API, see Live Stream API client libraries .",
+          "Args: project id: The GCP project ID. location: The location of the channel. channel id: The user-defined channel ID. event id: The user-defined event ID.\"\"\" client = LivestreamServiceClient () name = f \"projects/ { project id } /locations/ { location } /channels/ { channel id } /events/ { event id } \" response = client . delete event ( name = name ) print ( \"Deleted channel event\" ) return response Ruby To learn how to install and use the client library for Live Stream API, see Live Stream API client libraries .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method DELETE -Headers $headers -Uri \"https://livestream.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /channels/ CHANNEL ID /events/ EVENT ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: {} C# To learn how to install and use the client library for Live Stream API, see Live Stream API client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "livestream.googleapis.com",
+      "main.m3u8",
+      "manifest.m3u8",
+      "projects.locations.channels.clips",
+      "projects.locations.channels.clips.create",
+      "projects.locations.channels.clips.delete",
+      "request.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channel-events",
+        "https://docs.cloud.google.com/livestream/docs/overview",
+        "https://docs.cloud.google.com/livestream/docs/how-to/create-channels",
+        "https://docs.cloud.google.com/livestream/docs/quickstarts/quickstart-hls"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.961Z",
+  "source_step08_card": "data/step-08/current/products/live-stream-api/card.json",
+  "product_name": "Live Stream API",
+  "product_slug": "live-stream-api"
+}

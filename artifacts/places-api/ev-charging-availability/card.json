@@ -1,0 +1,152 @@
+{
+  "feature_name": "EV charging availability",
+  "feature_slug": "ev-charging-availability",
+  "summary": "This field indicates whether a place offers EV charging.",
+  "extended_definition": "This field indicates whether a place offers EV charging.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/web-service/place-types",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+      "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Package google.maps.places.v1 \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "X hours and 15 minutes. user rating count int32 The total number of reviews (with or without text) for this place. takeout bool Specifies if the business supports takeout. delivery bool Specifies if the business supports delivery. dine in bool Specifies if the business supports indoor or outdoor seating options. curbside pickup bool Specifies if the business supports curbside pickup. reservable bool Specifies if the place supports reservations. serves breakfast bool Specifies if the place serves breakfast. serves lunch bool Specifies if the place serves lunch. serves dinner bool Specifies if the place serves dinner. serves beer bool Specifies if the place serves beer. serves wine bool Specifies if the place serves wine. serves brunch bool Specifies if the place serves brunch. serves vegetarian food bool Specifies if the place serves vegetarian food. outdoor seating bool Place provides outdoor seating. live music bool Place provides live music. menu for children bool Place has a children's menu. serves cocktails bool Place serves cocktails. serves dessert bool Place serves dessert. serves coffee bool Place serves coffee. good for children bool Place is good for children. allows dogs bool Place allows dogs. restroom bool Place has restroom. good for groups bool Place accommodates groups. good for watching sports bool Place is suitable for watching sports. accessibility options AccessibilityOptions Information about the accessibility options a place offers. pure service area business bool Indicates whether the place is a pure service area business.",
+          "See address descriptor regional coverage in https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage . google maps links GoogleMapsLinks Links to trigger different Google Maps actions. price range PriceRange The price range associated with a Place. review summary ReviewSummary AI-generated summary of the place using user reviews. ev charge amenity summary EvChargeAmenitySummary The summary of amenities near the EV charging station. neighborhood summary NeighborhoodSummary A summary of points of interest near the place. consumer alert ConsumerAlert The consumer alert message for the place when we detect suspicious review activity on a business or a business violates our policies. moved place string If this Place is permanently closed and has moved to a new Place, this field contains the new Place's resource name, in places/{place id} format.",
+          "Fields type EVConnectorType The connector type of this aggregation. max charge rate kw double The static max charging rate in kw of each connector in the aggregation. count int32 Number of connectors in this aggregation. availability last update time Timestamp The timestamp when the connector availability information in this aggregation was last updated. available count int32 Number of connectors in this aggregation that are currently available. out of service count int32 Number of connectors in this aggregation that are currently out of service."
+        ]
+      },
+      {
+        "title": "REST Resource: places \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "source_id": "site-api-reference",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "X hours and 15 minutes. userRatingCount integer The total number of reviews (with or without text) for this place. takeout boolean Specifies if the business supports takeout. delivery boolean Specifies if the business supports delivery. dineIn boolean Specifies if the business supports indoor or outdoor seating options. curbsidePickup boolean Specifies if the business supports curbside pickup. reservable boolean Specifies if the place supports reservations. servesBreakfast boolean Specifies if the place serves breakfast. servesLunch boolean Specifies if the place serves lunch. servesDinner boolean Specifies if the place serves dinner. servesBeer boolean Specifies if the place serves beer. servesWine boolean Specifies if the place serves wine. servesBrunch boolean Specifies if the place serves brunch. servesVegetarianFood boolean Specifies if the place serves vegetarian food. outdoorSeating boolean Place provides outdoor seating. liveMusic boolean Place provides live music. menuForChildren boolean Place has a children's menu. servesCocktails boolean Place serves cocktails. servesDessert boolean Place serves dessert. servesCoffee boolean Place serves coffee. goodForChildren boolean Place is good for children. allowsDogs boolean Place allows dogs. restroom boolean Place has restroom. goodForGroups boolean Place accommodates groups. goodForWatchingSports boolean Place is suitable for watching sports. accessibilityOptions object ( AccessibilityOptions ) Information about the accessibility options a place offers. pureServiceAreaBusiness boolean Indicates whether the place is a pure service area business.",
+          "See address descriptor regional coverage in https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage . googleMapsLinks object ( GoogleMapsLinks ) Links to trigger different Google Maps actions. priceRange object ( PriceRange ) The price range associated with a Place. reviewSummary object ( ReviewSummary ) AI-generated summary of the place using user reviews. evChargeAmenitySummary object ( EvChargeAmenitySummary ) The summary of amenities near the EV charging station. neighborhoodSummary object ( NeighborhoodSummary ) A summary of points of interest near the place. consumerAlert object ( ConsumerAlert ) The consumer alert message for the place when we detect suspicious review activity on a business or a business violates our policies. movedPlace string If this Place is permanently closed and has moved to a new Place, this field contains the new Place's resource name, in places/{placeId} format.",
+          "JSON representation { \"type\" : enum ( EVConnectorType ) , \"maxChargeRateKw\" : number , \"count\" : integer , \"availabilityLastUpdateTime\" : string , \"availableCount\" : integer , \"outOfServiceCount\" : integer } Fields type enum ( EVConnectorType ) The connector type of this aggregation. maxChargeRateKw number The static max charging rate in kw of each connector in the aggregation. count integer Number of connectors in this aggregation. availabilityLastUpdateTime string ( Timestamp format) The timestamp when the connector availability information in this aggregation was last updated."
+        ]
+      },
+      {
+        "title": "Method: places.searchText \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+        "source_id": "site-api-reference",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { // Union field justification can be only one of the following: \"reviewJustification\" : { object ( ReviewJustification ) } , \"businessAvailabilityAttributesJustification\" : { object ( BusinessAvailabilityAttributesJustification ) } // End of list of possible types for union field justification . } Fields Union field justification . justification can be only one of the following: reviewJustification object ( ReviewJustification ) Experimental: See https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative for more details. businessAvailabilityAttributesJustification object ( BusinessAvailabilityAttributesJustification ) Experimental: See https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative for more details.",
+          "JSON representation { \"reviews\" : [ { object ( Review ) } ] , \"photos\" : [ { object ( Photo ) } ] , \"justifications\" : [ { object ( Justification ) } ] } Fields reviews[] object ( Review ) List of reviews about this place, contextual to the place query. photos[] object ( Photo ) Information (including references) about photos of this place, contextual to the place query. justifications[] object ( Justification ) Experimental: See https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative for more details.",
+          "JSON representation { \"startIndex\" : integer , \"endIndex\" : integer } Fields startIndex integer endIndex integer BusinessAvailabilityAttributesJustification Experimental: See https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative for more details."
+        ]
+      },
+      {
+        "title": "Place Types (New) \\_|\\_ Places API \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/web-service/place-types",
+        "source_id": "site-docs-root",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Automotive Business Culture Education Entertainment and Recreation Facilities Finance Food and Drink Geographical Areas Government Health and Wellness Housing Lodging Natural Features Places of Worship Services Shopping Sports Transportation Automotive car dealer car rental car repair car wash ebike charging station electric vehicle charging station gas station parking parking garage parking lot rest stop tire shop truck dealer Business business center corporate office coworking space farm manufacturer ranch supplier television studio Culture art gallery art museum art studio auditorium castle cultural landmark fountain historical place history museum monument museum performing arts theater sculpture Education academic department educational institution library preschool primary school research institute school secondary school university Entertainment and Recreation adventure sports center amphitheatre amusement center amusement park aquarium banquet hall barbecue area botanical garden bowling alley casino childrens camp city park comedy club community center concert hall convention center cultural center cycling park dance hall dog park event venue ferris wheel garden go karting venue hiking area historical landmark indoor playground internet cafe karaoke live music venue marina miniature golf course movie rental movie theater national park night club observation deck off roading area opera house paintball center park philharmonic hall picnic ground planetarium plaza roller coaster skateboard park state park tourist attraction video arcade vineyard visitor center water park wedding venue wildlife park wildlife refuge zoo Facilities public bath public bathroom stable Finance accounting atm bank Food and Drink acai shop afghani restaurant african restaurant american restaurant argentinian restaurant asian fusion restaurant asian restaurant australian restaurant austrian restaurant bagel shop bakery bangladeshi restaurant bar bar and grill barbecue restaurant basque restaurant bavarian restaurant beer garden belgian restaurant bistro brazilian restaurant breakfast restaurant brewery brewpub british restaurant brunch restaurant buffet restaurant burmese restaurant burrito restaurant cafe cafeteria cajun restaurant cake shop californian restaurant cambodian restaurant candy store cantonese restaurant caribbean restaurant cat cafe chicken restaurant chicken wings restaurant chilean restaurant chinese noodle restaurant chinese restaurant chocolate factory chocolate shop cocktail bar coffee roastery coffee shop coffee stand colombian restaurant confectionery croatian restaurant cuban restaurant czech restaurant danish restaurant deli dessert restaurant dessert shop dim sum restaurant diner dog cafe donut shop dumpling restaurant dutch restaurant eastern european restaurant ethiopian restaurant european restaurant falafel restaurant family restaurant fast food restaurant filipino restaurant fine dining restaurant fish and chips restaurant fondue restaurant food court french restaurant fusion restaurant gastropub german restaurant greek restaurant gyro restaurant halal restaurant hamburger restaurant hawaiian restaurant hookah bar hot dog restaurant hot dog stand hot pot restaurant hungarian restaurant ice cream shop indian restaurant indonesian restaurant irish pub irish restaurant israeli restaurant italian restaurant japanese curry restaurant japanese izakaya restaurant japanese restaurant juice shop kebab shop korean barbecue restaurant korean restaurant latin american restaurant lebanese restaurant lounge bar malaysian restaurant meal delivery meal takeaway mediterranean restaurant mexican restaurant middle eastern restaurant mongolian barbecue restaurant moroccan restaurant noodle shop north indian restaurant oyster bar restaurant pakistani restaurant pastry shop persian restaurant peruvian restaurant pizza delivery pizza restaurant polish restaurant portuguese restaurant pub ramen restaurant restaurant romanian restaurant russian restaurant salad shop sandwich shop scandinavian restaurant seafood restaurant shawarma restaurant snack bar soul food restaurant soup restaurant south american restaurant south indian restaurant southwestern us restaurant spanish restaurant sports bar sri lankan restaurant steak house sushi restaurant swiss restaurant taco restaurant taiwanese restaurant tapas restaurant tea house tex mex restaurant thai restaurant tibetan restaurant tonkatsu restaurant turkish restaurant ukrainian restaurant vegan restaurant vegetarian restaurant vietnamese restaurant western restaurant wine bar winery yakiniku restaurant yakitori restaurant Geographical Areas administrative area level 1 administrative area level 2 country locality postal code school district Government city hall courthouse embassy fire station government office local government office neighborhood police station (Japan only) police post office Health and Wellness chiropractor dental clinic dentist doctor drugstore general hospital hospital massage massage spa medical center medical clinic medical lab pharmacy physiotherapist sauna skin care clinic spa tanning studio wellness center yoga studio Housing apartment building apartment complex condominium complex housing complex Lodging bed and breakfast budget japanese inn campground camping cabin cottage extended stay hotel farmstay guest house hostel hotel inn japanese inn lodging mobile home park motel private guest room resort hotel rv park Natural Features beach island lake mountain peak nature preserve river scenic spot woods Places of Worship buddhist temple church hindu temple mosque shinto shrine synagogue Services aircraft rental service association or organization astrologer barber shop beautician beauty salon body art service catering service cemetery chauffeur service child care agency consultant courier service electrician employment agency florist food delivery foot care funeral home hair care hair salon insurance agency laundry lawyer locksmith makeup artist marketing consultant moving company nail salon non profit organization painter pet boarding service pet care plumber psychic real estate agency roofing contractor service shipping service storage summer camp organizer tailor telecommunications service provider tour agency tourist information center travel agency veterinary care Shopping asian grocery store auto parts store bicycle store book store building materials store butcher shop cell phone store clothing store convenience store cosmetics store department store discount store discount supermarket electronics store farmers market flea market food store furniture store garden center general store gift shop grocery store hardware store health food store home goods store home improvement store hypermarket jewelry store liquor store market pet store shoe store shopping mall sporting goods store sportswear store store supermarket tea store thrift store toy store warehouse store wholesaler womens clothing store Sports arena athletic field fishing charter fishing pier fishing pond fitness center golf course gym ice skating rink indoor golf course playground race course ski resort sports activity location sports club sports coaching sports complex sports school stadium swimming pool tennis court Transportation airport airstrip bike sharing station bridge bus station bus stop ferry service ferry terminal heliport international airport light rail station park and ride subway station taxi service taxi stand toll station train station train ticket office tram stop transit depot transit station transit stop transportation service truck stop Table B The Place type values in Table B may be returned as part of a Place Details (New), Nearby Search (New), Text Search (New), or Autocomplete (New) response.",
+          "Usually, this type indicates a polygon of some civil administration. country The national political entity, and is typically the highest order type returned by the Geocoder. administrative area level 1 A first-order civil entity below the country level.",
+          "Additional Place type values administrative area level 3 administrative area level 4 administrative area level 5 administrative area level 6 administrative area level 7 archipelago colloquial area continent establishment finance food general contractor geocode health intersection landmark natural feature neighborhood place of worship plus code point of interest political postal code prefix postal code suffix postal town premise route street address sublocality sublocality level 1 sublocality level 2 sublocality level 3 sublocality level 4 sublocality level 5 subpremise town square Table C Type collections can be used as the includedPrimaryTypes value in Autocomplete (New) requests."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "places.searchText"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+        "https://developers.google.com/maps/documentation/places/web-service/place-types"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+        "https://developers.google.com/maps/documentation/places/web-service/place-types"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+        "https://developers.google.com/maps/documentation/places/web-service/place-types"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+        "https://developers.google.com/maps/documentation/places/web-service/place-types"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+        "https://developers.google.com/maps/documentation/places/web-service/place-types"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rpc/google.maps.places.v1",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places",
+        "https://developers.google.com/maps/documentation/places/web-service/reference/rest/v1/places/searchText",
+        "https://developers.google.com/maps/documentation/places/web-service/place-types"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:47.928Z",
+  "source_step08_card": "data/step-08/current/products/places-api/card.json",
+  "product_name": "Places API",
+  "product_slug": "places-api"
+}

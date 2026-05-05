@@ -1,0 +1,106 @@
+{
+  "feature_name": "Cloud Bigtable HBase replication library",
+  "feature_slug": "cloud-bigtable-hbase-replication-library",
+  "summary": "Introduces the Cloud Bigtable HBase replication library, enabling replication of data from HBase to Cloud Bigtable for migration without pausing writes or taking applications offline.",
+  "extended_definition": "Introduces the Cloud Bigtable HBase replication library, enabling replication of data from HBase to Cloud Bigtable for migration without pausing writes or taking applications offline.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/change-streams-overview",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/hbase-replication"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Replicate from HBase to Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/hbase-replication",
+        "source_id": "site-docs-reference-2",
+        "final_score": 193,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use cases Online migration to Bigtable - You can use the Bigtable HBase replication library, in conjunction with an offline migration of your existing HBase data, to migrate from HBase to Bigtable with almost no downtime.",
+          "The replication library lets you asynchronously replicate data from an HBase cluster to a Bigtable instance using the HBase replication service, so you can perform an online migration from HBase to Bigtable.",
+          "Migrate to Bigtable The Bigtable HBase replication library lets you migrate to Bigtable without pausing your application."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "Applications that are written for Hadoop and rely on the open source Apache HBase library for Java can connect without significant change to Bigtable.",
+          "In addition to gRPC and client libraries for various programming languages, Bigtable maintains compatibility with the open source Apache HBase Java client library , an alternative open source database engine implementation of the Bigtable paper.",
+          "This gives your applications the flexibility to enforce structure where it matters while remaining agile, which lets you evolve your data model without extensive migrations or downtime."
+        ]
+      },
+      {
+        "title": "Change streams overview \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/change-streams-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "We recommend that you use one of the following options instead of calling the API without using a client library or connector: Dataflow templates Bigtable Beam connector Java client library All the options let you avoid the need to track and handle partition changes due to splits and merges.",
+          "Dataflow templates You can use one of the following Dataflow templates provided by Google: Bigtable change streams to BigQuery Bigtable change streams to Pub/Sub Bigtable Beam connector You can use the Bigtable Beam connector to build a pipeline: Bigtable Beam connector If you don't want to build your own pipeline, you can use the code samples from the Bigtable tutorial or quickstart as a starting point for your code: Create a change stream-enabled table and capture changes Process a Bigtable change stream Java client library Cloud Bigtable client for Java Partitions To maintain a high read throughput that matches a high write or change rate, Bigtable divides a change stream into multiple partitions that can be used to read the change stream in parallel.",
+          "Row key - the identifier for the changed row Change type - either user-initiated or garbage collection ID of the cluster that received the change Commit timestamp - server-side time when the change was committed to the table Tie breaker - a value that lets the application that is reading the stream use Bigtable's built-in conflict resolution policy Token - used by the consuming application to resume the stream if it's interrupted Estimated low watermark - the estimated time since the record's partition caught up with replication across all clusters."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/hbase-replication",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/hbase-replication",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-overview"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/hbase-replication",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/change-streams-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:06.484Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

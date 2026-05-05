@@ -1,0 +1,90 @@
+{
+  "feature_name": "nomos vet threshold flag",
+  "feature_slug": "nomos-vet-threshold-flag",
+  "summary": "The nomos vet command supports a --threshold flag to validate repository object counts before sync.",
+  "extended_definition": "The nomos vet command supports a --threshold flag to validate repository object counts before sync.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use the nomos command-line tool \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table includes the most common causes of large log files and how you can resolve them: Cause Recommended action Increased log verbosity Reduce log verbosity with log level overrides Very large objects Unmanage the large object or reduce their size Many objects Split your repository into multiple repositories Controller fights Resolve the fighting Migrate from a ConfigManagement object to a RootSync object You can run the nomos migrate command to migrate from your ConfigManagement object to a RootSync object to enable the RootSync and RepoSync APIs. nomos migrate supports dry-run for previewing the migration process. nomos migrate modifies your ConfigManagement object on the cluster directly.",
+          "Applying an object larger than this limit causes one of the following errors, depending on object size: etcdserver: request is too large rpc error: code = ResourceExhausted desc = trying to send message larger than max Request entity too large: limit is 3145728 To protect against ResourceGroup objects exceeding the Kubernetes size limit, you can use the nomos vet --threshold to validate the number of objects in your source repository.",
+          "Passing the --threshold flag will cause the vet command to error if the number of objects in your source repository exceeds the threshold."
+        ]
+      },
+      {
+        "title": "Use Config Sync with Kustomize and Helm \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Check the syntax and validity of your configs by running nomos vet with the following flags: nomos vet \\ --source-format = unstructured \\ --keep-output = true \\ --output = OUTPUT DIRECTORY In this command: --source-format=unstructured lets nomos vet work on an unstructured repository. --keep-output=true saves the rendered configs. --output= OUTPUT DIRECTORY is the path to the rendered configs.",
+          "Run the following nomos hydrate with the following flags: nomos hydrate \\ --source-format = unstructured \\ --output = OUTPUT DIRECTORY In this command: --source-format=unstructured lets nomos hydrate work on an unstructured repository.",
+          "Preview and validate rendered configs Before Config Sync renders the configs and syncs them to the cluster, ensure that the configs are accurate by running nomos hydrate to preview the rendered configuration and running nomos vet to validate that the format is correct."
+        ]
+      },
+      {
+        "title": "Safe rollouts with Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Running a nomos vet command on all suggested changes confirms that the repository is a valid Config Sync configuration.",
+          "This command validates that your Config Sync repository's syntax is valid.",
+          "The simplest way to automate error detection is to run the nomos status command , which tells you if there's an error in a cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/nomos-command",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/config-sync-helm",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

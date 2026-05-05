@@ -1,0 +1,108 @@
+{
+  "feature_name": "Automatic agent training control",
+  "feature_slug": "automatic-agent-training-control",
+  "summary": "Dialogflow allows automatic agent training to be disabled.",
+  "extended_definition": "Dialogflow allows automatic agent training to be disabled.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 160,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: After restore or import , the agent is retrained, even if the automatic training is disabled.",
+          "An agent learns from training phrases that you provide and the language models built into Dialogflow.",
+          "Automatic Training : Enable or disable automatic agent training each time the agent is modified."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with \"AutoML Predictor\" in your custom voice project.",
+          "If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with \"AutoML Predictor\" in your custom voice project.",
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Agent settings Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+        "source_id": "site-iam-reference",
+        "final_score": 150,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Training phrases for intents with ML disabled are not used when training your agent.",
+          "A user query that is very similar to a training phrase in an intent with ML disabled may be matched to the wrong intent if other intents with ML enabled have a slight resemblance to the user query.",
+          "Home Documentation AI and ML Dialogflow Dialogflow ES Send feedback General agent design best practices Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-design"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-design"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-design"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

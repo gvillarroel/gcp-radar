@@ -1,0 +1,132 @@
+{
+  "feature_name": "MySQL 5.6.42 support",
+  "feature_slug": "mysql-5-6-42-support",
+  "summary": "Cloud SQL for MySQL 5.6.42 is generally available.",
+  "extended_definition": "Cloud SQL for MySQL 5.6.42 is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "Relevant log files include: cloudsql.googlapis.com/mysql-general.log cloudsql.googleapis.com/mysql.err If Cloud Audit Logs is enabled and you have the required permissions to view them, cloudaudit.googleapis.com/activity may also be available.",
+          "To download the logs as JSON: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" \\ downloaded-log.json To download the logs as TEXT: gcloud logging read \\ \"resource.type=cloudsql database \\ AND logName=projects/ PROJECT ID \\ /logs/cloudsql.googleapis.com%2F LOG NAME \" \\ --format json \\ --project = PROJECT ID \\ --freshness = \"1d\" jq -rnc --stream 'fromstream(1 truncate stream(inputs)) \\ .textPayload' \\ --order = asc downloaded-log.txt Manage instances Issue Troubleshooting Slow performance after restarting MySQL.",
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Orphan tables Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances External primary External replica Flags High availability Import and export Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL Admin API error messages \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "source_id": "site-api-reference",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Cloud SQL MySQL Reference Send feedback Cloud SQL Admin API error messages Stay organized with collections Save and categorize content based on your preferences.",
+          "Error class Error code Error message 500 - BACKEND ERROR SERVER EXCEPTION The service is temporarily unavailable.",
+          "ERROR GCE QUOTA EXCEEDED The requested resource is unavailable at the moment."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "source_id": "site-docs-reference-3",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "Relevant log files include: cloudsql.googlapis.com/mysql-general.log cloudsql.googleapis.com/mysql.err If Cloud Audit Logs is enabled and you have the required permissions to view them, cloudaudit.googleapis.com/activity may also be available.",
+          "Recovery backups Cloud SQL attempts to retain at least one last daily backup of every active instance, if there are no good backups available as part of the automated backup policy.",
+          "Home Documentation Databases Cloud SQL MySQL Guides Send feedback Cloud SQL backups overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "cloudsql.googlapis.com",
+      "cloudsql.googleapis.com",
+      "general.log",
+      "log.json",
+      "log.txt",
+      "mysql.err",
+      "mysql.general",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/admin-api-error-messages",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

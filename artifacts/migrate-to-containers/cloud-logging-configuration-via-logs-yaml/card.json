@@ -1,0 +1,108 @@
+{
+  "feature_name": "Cloud Logging configuration via logs.yaml",
+  "feature_slug": "cloud-logging-configuration-via-logs-yaml",
+  "summary": "Migration artifacts generation now creates a logs.yaml file that lists detected log files and can be edited to configure Cloud Logging output.",
+  "extended_definition": "Migration artifacts generation now creates a logs.yaml file that lists detected log files and can be edited to configure Cloud Logging output.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Customize migration plan for Linux VMs | Migrate to Containers | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "source_id": "feature-recovery-http",
+        "final_score": 308,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate to Containers then writes information about those detected files to the logPaths area of the migration plan: deployment : ... logPaths : - appName : APP_NAME globs : - LOG_PATH For example: deployment : ... logPaths : - appName : tomcat globs : - /var/log/tomcat*/catalina.out When you generate the migration artifacts, Migrate to Containers generates the logs.yaml file from the migration plan.",
+          "The advantage to editing the migration plan is that your edits are reflected in logs.yaml every time you generate the artifacts.",
+          "Edit logs.yaml after you generate the migration artifacts to add, remove, or edit logs entries."
+        ]
+      },
+      {
+        "title": "\"Upgrade container workloads for enhanced runtime \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ADD blocklist.yaml /.m4a/blocklist.yaml Insert the ADD commands to copy the logs.yaml file to the container image : ADD logs.yaml /code/config/logs/logsArtifact.yaml ADD logs.yaml /code/config/logs/logs.yaml Insert the RUN command for servicemanager generate config: RUN /servicemanager generate config build-all -o /.m4a/ Migrate to Containers image includes entrypoint ENTRYPOINT [ \"/.v2k.go\" ] Open the deployment spec.yaml file in an editor.",
+          "ADD blocklist.yaml /.m4a/blocklist.yaml Insert the ADD commands to copy the logs.yaml file to the container image : ADD logs.yaml /code/config/logs/logsArtifact.yaml ADD logs.yaml /code/config/logs/logs.yaml Insert the RUN command for servicemanager generate config: RUN /servicemanager generate config build-all -o /.m4a/ Migrate to Containers image includes entrypoint ENTRYPOINT [ \"/.v2k.go\" ] Open the deployment spec.yaml file in an editor.",
+          "Edit the Dockerfile to set the product version, to copy the logs.yaml file, and to run the servicemanager generate config utility: ..."
+        ]
+      },
+      {
+        "title": "\"Post-migration image updates \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here's a sample of a generated Dockerfile: FROM us-docker.pkg.dev/migrate-modernize-public/modernize-plugins-prod/service-manager-runtime:1.0.3 as service-manager-runtime FROM scratch Tar containing data captured from the source VM ADD vmFiles.tar.gz / COPY --from = service-manager-runtime / / ADD blocklist.yaml /.m4a/blocklist.yaml ADD logs.yaml /code/config/logs/logsArtifact.yaml ADD services-config.yaml /.m4a/ ADD tempfiles.yaml /.m4a/ If you want to update parts of the image, add your commands here.",
+          "Updated Dockerfile: FROM us-docker.pkg.dev/migrate-modernize-public/modernize-plugins-prod/service-manager-runtime:1.0.3 as service-manager-runtime FROM scratch Tar containing data captured from the source VM ADD vmFiles.tar.gz / COPY --from = service-manager-runtime / / ADD blocklist.yaml /.m4a/blocklist.yaml ADD logs.yaml /code/config/logs/logsArtifact.yaml ADD services-config.yaml /.m4a/ ADD tempfiles.yaml /.m4a/ If you want to update parts of the image, add your commands here.",
+          "The generated container artifacts are created with CI/CD pipeline build phase integration in mind, as described in the following diagram: The Dockerfile is structured as a multi-stage build , for easier maintenance and manipulation, while keeping the image from inflating."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "blocklist.yaml",
+      "catalina.out",
+      "config.yaml",
+      "docker.pkg.dev",
+      "logs.yaml",
+      "spec.yaml",
+      "tar.gz",
+      "tempfiles.yaml",
+      "v2k.go"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/linux/customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/post-migration-image-updates"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.501Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

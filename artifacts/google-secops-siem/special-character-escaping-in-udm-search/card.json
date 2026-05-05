@@ -1,0 +1,100 @@
+{
+  "feature_name": "Special-character escaping in UDM Search",
+  "feature_slug": "special-character-escaping-in-udm-search",
+  "summary": "UDM Search supports escaping special characters with backslashes and double quotes.",
+  "extended_definition": "UDM Search supports escaping special characters with backslashes and double quotes.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: principal.hostname != \"http-server\" nocase principal.hostname = \"JDoe\" nocase principal.hostname = /dns-server-[0-9]+/ nocase Escape characters in strings : Escape special characters with a backslash, as follows: Use \\\\ to escape a backslash (\\).",
+          "For example: metadata.product name = \"Google Cloud VPC Flow Logs\" Case-insensitive strings : Use the nocase operator to match any combination of uppercase and lowercase characters in a string.",
+          "View aggregated results For statistics-based searches, Google SecOps supports large aggregated result sets."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Param data types STRING Return type STRING Code samples Example 1 This example returns an empty string. strings.extract hostname(\"\") = \"\" Example 2 random string, not a URL strings.extract hostname(\"1234\") = \"1234\" Example 3 multiple backslashes strings.extract hostname(\"\\\\\\\\\") = \"\" Example 4 non-English characters handled gracefully strings.extract hostname(\"http://例子.卷筒纸.中国\") = \"例子.卷筒纸.中国\" Example 5 handling URIs strings.extract hostname(\"mailto:?to=&subject=&body=\") = \"mailto\" Example 6 multiple characters before actual URL strings.extract hostname(\" \\t !$5 ^)&dahgsdfs;http://www.google.com\") = \"www.google.com\" Example 7 special characters in URI # strings.extract hostname(\"test#@google.com\") = \"test\" Example 8 special characters in URL # strings.extract hostname(\"https://test#@google.com\") = \"test\" strings.from base64 Supported in: Rules Search strings.from base64(base64 encoded string) Description Function converts a base64 encoded STRING value to a raw binary BYTES value.",
+          "Param data types STRING Return type STRING Code samples Example 1 This example shows an empty string strings.extract domain(\"\") = \"\" Example 2 random string, not a URL strings.extract domain(\"1234\") = \"\" Example 3 multiple backslaches strings.extract domain(\"\\\\\\\\\") = \"\" Example 4 non-alphabet characters handled gracefully strings.extract domain(\"http://例子.卷筒纸.中国\") = \"卷筒纸.中国\" Example 5 handling URIs strings.extract domain(\"mailto:?to=&subject=&body=\") = \"\" Example 6 multiple characters before actual URL strings.extract domain(\" \\t !$5 ^)&dahgsdfs;http://www.google.com\") = \"google.com\" Example 7 special characters in URI # strings.extract domain(\"test#@google.com\") = \"\" Example 8 special characters in URL # strings.extract domain(\"https://test#@google.com\") = \"\" Example 9 positive test case strings.extract domain(\"https://google.co.in\") = \"google.co.in\" strings.extract hostname Supported in: Rules Search strings.extract hostname(string) Description Extracts the hostname from a string.",
+          "Example: split string with default The following example splits the string using the default delimiter, which is a comma. strings.split(\"a,b,c,d\") = [\"a\", \"b\", \"c\", \"d\"] Example: split string with colon The following example splits the string at each colon ( : ). strings.split(\"a:b:c:d\", \":\") = [\"a\", \"b\", \"c\", \"d\"] Example: missing delimiter The following example is missing the delimiter in the string value. strings.split(\"a,b,c,d\", \":\") = [\"a,b,c,d\"] Example: empty delimiter The following example has an empty delimiter string. strings.split(\"abc\", \"\") = [\"a\", \"b\", \"c\"] strings.to lower Supported in: Rules Search strings.to lower(stringText) Description This function takes an input string and returns a string after changing all characters to lowercase Param data types STRING Return type STRING Code samples Example 1 The following example returns true . \"test@google.com\" = strings.to lower($e.network.email.to) strings.to upper Supported in: Rules Search strings.to upper(string val) Description Returns the original string with all alphabetic characters in uppercase."
+        ]
+      },
+      {
+        "title": "\"Response integrations community contribution guidelines \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 117,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Response integration metadata Name The Name should correspond to the product name with which the integration is going to be integrated and shouldn't contain any special characters.",
+          "Avoid using special characters and try to limit the action parameter name to 2-4 words.",
+          "Avoid using special characters and try to limit the action parameter name to 2-4 words."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.network.email.to",
+      "metadata.product",
+      "principal.hostname",
+      "strings.extract",
+      "strings.from",
+      "strings.split",
+      "strings.to",
+      "strings.trim",
+      "strings.url"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "https://docs.cloud.google.com/chronicle/docs/soar/respond/integrations-setup/integrations-guidelines"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

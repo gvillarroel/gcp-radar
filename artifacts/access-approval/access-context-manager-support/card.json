@@ -1,0 +1,201 @@
+{
+  "feature_name": "Access Context Manager support",
+  "feature_slug": "access-context-manager-support",
+  "summary": "Access Approval supports Access Context Manager.",
+  "extended_definition": "Access Approval supports Access Context Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "support_matrix_only_evidence",
+        "message": "The feature is backed only by broad support-matrix style evidence, not a dedicated page for the supported target.",
+        "suggested_steps": [
+          "step-02",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services",
+      "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Supported services \\_|\\_ Access Approval \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services",
+        "source_id": "site-docs-reference",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported Google Cloud services Access Approval supports the following Google Cloud services: Supported service Launch stage Notes Access Context Manager GA None Access Transparency GA None AlloyDB for PostgreSQL GA None Apigee GA The following Apigee features are not supported by Access Approval: Apigee portal Features in the Preview launch stage Additionally, Apigee Hybrid customers must upgrade to the latest version to get full Access Approval support.",
+          "Identity-Aware Proxy GA None Image streaming GA None Infrastructure Manager GA None Integration Connectors GA None Internal passthrough Network Load Balancer GA None Google Kubernetes Engine GA None Looker (Google Cloud core) GA None Looker Studio GA None Memorystore for Redis GA None Memorystore for Redis Cluster GA None Memorystore for Valkey GA None Model Armor GA None Cloud Monitoring GA None NCC Gateway GA None Network Connectivity Center GA None Org Lifecycle API GA None Organization Policy Service GA None Parameter Manager GA None Persistent Disk GA None Pub/Sub GA None regional external Application Load Balancer GA None regional external proxy Network Load Balancer GA None regional internal Application Load Balancer GA None regional internal proxy Network Load Balancer GA None Resource Manager GA None Secret Manager GA None Secure Source Manager GA None Secure Web Proxy GA None Security Command Center GA Access Approval supports the Security Command Center Premium tier.",
+          "Bigtable GA None Certificate Authority Service GA None Certificate Manager GA None Chrome Enterprise Premium GA Access Approval supports Chrome Enterprise Premium secure gateway ."
+        ]
+      },
+      {
+        "title": "Overview of Access Approval \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 24,
+        "relevance": "",
+        "evidence_snippets": [
+          "Selecting this option also automatically enrolls all the GA services that Access Approval supports in the future.",
+          "Selecting this option also automatically enrolls all the services that Access Approval supports in the future.",
+          "See Supported services for a complete list of services that Access Approval supports."
+        ]
+      },
+      {
+        "title": "\"Class AccessApprovalClient (1.19.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "source_id": "site-python-reference",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Returns Type Description google.cloud.accessapproval v1.types.ApprovalRequest A request for the customer to approve access to a resource. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. delete access approval settings delete access approval settings ( request : typing .",
+          "Exiting the with block will CLOSE the transport and may cause errors in other clients! access approval service account path access approval service account path ( project : str ) - > str Returns a fully-qualified access approval service account string. access approval settings path access approval settings path ( project : str ) - > str Returns a fully-qualified access approval settings string. approval request path approval request path ( project : str , approval request : str ) - > str Returns a fully-qualified approval request string. approve approval request approve approval request ( request : typing .",
+          "Format: \"{projects folders organizations}/{id}/accessApprovalSettings\" This corresponds to the name field on the request instance; if request is provided, this should not be set. retry google.api core.retry.Retry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [
+      "accessapproval"
+    ],
+    "missing_inventory_permissions": [
+      "core.retry.Retry",
+      "v1.types.ApprovalRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/overview",
+        "https://docs.cloud.google.com/python/docs/reference/accessapproval/latest/google.cloud.accessapproval_v1.services.access_approval.AccessApprovalClient",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/supported-services"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.605Z",
+  "source_step08_card": "data/step-08/current/products/access-approval/card.json",
+  "product_name": "Access Approval",
+  "product_slug": "access-approval"
+}

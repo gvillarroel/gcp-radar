@@ -1,0 +1,104 @@
+{
+  "feature_name": "ee.Image.date()",
+  "feature_slug": "ee-image-date",
+  "summary": "Returns an image's acquisition time as an ee.Date.",
+  "extended_definition": "Returns an image's acquisition time as an ee.Date.",
+  "lifecycle": {
+    "latest_feature_date": "2015-10-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/arrays_array_images",
+      "https://developers.google.com/earth-engine/guides/charts_image_collection",
+      "https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "ImageCollection Charts \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/charts_image_collection",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reducer . mean (), scale : 500 , xProperty : 'system:time start' }) . setSeriesNames ([ 'EVI' , 'NDVI' ]) . setOptions ({ title : 'Average Vegetation Index Value by Date for Forest' , hAxis : { title : 'Date' , titleTextStyle : { italic : false , bold : true }}, vAxis : { title : 'Vegetation index (x1e4)' , titleTextStyle : { italic : false , bold : true } }, lineWidth : 5 , colors : [ 'e37d05' , '1d6b99' ], curveType : 'function' }); print ( chart ); ui.Chart.image.seriesByRegion Use ui.Chart.image.seriesByRegion to display a single image band time series for multiple regions; each region is presented as a unique series.",
+          "Reducer . mean (), scale : 500 , seriesProperty : 'label' , xProperty : 'system:time start' }) . setOptions ({ title : 'Average NDVI Value by Date' , hAxis : { title : 'Date' , titleTextStyle : { italic : false , bold : true }}, vAxis : { title : 'NDVI (x1e4)' , titleTextStyle : { italic : false , bold : true } }, lineWidth : 5 , colors : [ 'f0af07' , '0f8755' , '76b349' ], }); print ( chart ); ui.Chart.image.doySeries Use ui.Chart.image.doySeries to display a day-of-year time series for a given region; each image band is presented as a unique series.",
+          "Examples in the following sections use ee.Reducer.mean() as the argument for both of these parameters. ui.Chart.image.series Image date is plotted along the x-axis according to the system:time start property."
+        ]
+      },
+      {
+        "title": "Arrays and Array Images \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ) . select ([ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ]); // Make an Array Image, with a 1-D Array per pixel. var arrayImage1D = image . toArray (); // Make an Array Image with a 2-D Array per pixel, 6x1. var arrayImage2D = arrayImage1D . toArray ( 1 ); // Do a matrix multiplication: 6x6 times 6x1. var componentsImage = ee .",
+          "Image ( 'LANDSAT/LC08/C02/T1 TOA/LC08 044034 20140318' ) . select ( [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ] ) Make an Array Image, with a 1-D Array per pixel. array image 1d = image . toArray () Make an Array Image with a 2-D Array per pixel, 6x1. array image 2d = array image 1d . toArray ( 1 ) Do a matrix multiplication: 6x6 times 6x1. components image = ( ee .",
+          "Using the 2-D array image, left multiply by an image where each pixel contains a 2-D matrix of greenness coefficients: Code Editor (JavaScript) // Do a matrix multiplication: 1x6 times 6x1. // Cast the greenness Array to an Image prior to multiplication. var greennessArrayImage = ee ."
+        ]
+      },
+      {
+        "title": "Image Predictions \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions",
+        "source_id": "site-docs-root-2",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-10-14 UTC.\"],[],[]]",
+          "For example, to encode three bands, (1) \"ndvi series\" as a 1D time series with 12 values, (2) \"temp\" as a scalar, and (3) \"patch\" as a 2D pixel array, use the following: inputShapes = { \"ndvi series\" : [ 12 ], # 12 ndvi samples \"temp\" : [], # scalar \"patch\" : [ 2 , 2 ], # 2px 2px patch } outputBands outputBands is a dictionary of output band names to an object containing the ee.PixelType and dimensions of the band.",
+          "Page Summary outlined flag Earth Engine's ee.Model connects to Vertex AI to send image or table data for online predictions, returning results as Earth Engine images or tables. model.predictImage() is used to perform inference on an ee.Image by sending image patches to a hosted model, with the output being an ee.Image ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.Date",
+      "ee.Date",
+      "ee.Image",
+      "ee.Image.date",
+      "ee.Model",
+      "ee.PixelType",
+      "ee.Reducer.mean",
+      "geemap.core",
+      "model.predictImage",
+      "ui.Chart.image.doySeries",
+      "ui.Chart.image.series",
+      "ui.Chart.image.seriesByRegion"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/charts_image_collection",
+        "https://developers.google.com/earth-engine/guides/arrays_array_images",
+        "https://developers.google.com/earth-engine/guides/ee-vertex-image-predictions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

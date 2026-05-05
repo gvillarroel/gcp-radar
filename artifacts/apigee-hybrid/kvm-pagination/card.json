@@ -1,0 +1,413 @@
+{
+  "feature_name": "KVM pagination",
+  "feature_slug": "kvm-pagination",
+  "summary": "KVM CRUD APIs in Apigee hybrid gained pagination support for key value map operations.",
+  "extended_definition": "KVM CRUD APIs in Apigee hybrid gained pagination support for key value map operations.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+      "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: organizations.environments.keyvaluemaps.entries | Apigee | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 276,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: organizations.environments.keyvaluemaps.entries | Apigee | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Apigee Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console APIGEE API Overview v1 REST Resources organizations Overview create delete get getControlPlaneAccess getProjectMapping getSecuritySettings getSyncAuthorization list setAddons setSyncAuthorization update updateControlPlaneAccess updateSecuritySettings organizations.analytics.datastores Overview create delete get list test update organizations.apimServiceExtensions Overview create delete get list patch organizations.apiproducts Overview attributes create delete get list move update organizations.apiproducts.attributes Overview delete get list updateApiProductAttribute organizations.apiproducts.rateplans Overview create delete get list update organizations.apis Overview create delete get list move patch organizations.apis.debugsessions Overview list organizations.apis.deployments Overview list organizations.apis.keyvaluemaps Overview create delete get list update organizations.apis.keyvaluemaps.entries Overview create delete get list update organizations.apis.revisions Overview delete get list updateApiProxyRevision organizations.apis.revisions.deployments Overview list organizations.appgroups Overview create delete get getBalance getMonetizationConfig list update updateMonetizationConfig organizations.appgroups.apps Overview create delete get list update organizations.appgroups.apps.keys Overview create delete get updateAppGroupAppKey organizations.appgroups.apps.keys.apiproducts Overview delete updateAppGroupAppKeyApiProduct organizations.appgroups.balance Overview adjust credit organizations.appgroups.subscriptions Overview create expire get list organizations.apps Overview get list organizations.datacollectors Overview create delete get list patch organizations.deployments Overview list organizations.developers Overview attributes create delete get getBalance getMonetizationConfig list setDeveloperStatus update updateMonetizationConfig organizations.developers.apps Overview attributes create delete generateKeyPairOrUpdateDeveloperAppStatus get list update organizations.developers.apps.attributes Overview delete get list updateDeveloperAppAttribute organizations.developers.apps.keys Overview create delete get replaceDeveloperAppKey updateDeveloperAppKey organizations.developers.apps.keys.apiproducts Overview delete updateDeveloperAppKeyApiProduct organizations.developers.apps.keys.create Overview create organizations.developers.attributes Overview delete get list updateDeveloperAttribute organizations.developers.balance Overview adjust credit organizations.developers.subscriptions Overview create expire get list organizations.dnsZones Overview create delete get list organizations.endpointAttachments Overview create delete get list organizations.envgroups Overview create delete get list patch organizations.envgroups.attachments Overview create delete get list organizations.environments Overview create delete get getAddonsConfig getApiSecurityRuntimeConfig getDebugmask getIamPolicy getSecurityActionsConfig getTraceConfig list modifyEnvironment setIamPolicy testIamPermissions update updateDebugmask updateEnvironment updateSecurityActionsConfig updateTraceConfig organizations.environments.addonsConfig Overview setAddonEnablement organizations.environments.analytics.admin Overview getSchemav2 organizations.environments.analytics.exports Overview create get list organizations.environments.apis.deployments Overview list organizations.environments.apis.revisions.debugsessions Overview create deleteData get list organizations.environments.apis.revisions.debugsessions.data Overview get list organizations.environments.apis.revisions.deployments Overview deploy generateDeployChangeReport generateUndeployChangeReport get undeploy organizations.environments.archiveDeployments Overview create delete generateDownloadUrl generateUploadUrl get list patch organizations.environments.caches Overview delete list organizations.environments.deployments Overview get getIamPolicy list setIamPolicy testIamPermissions organizations.environments.flowhooks Overview attachSharedFlowToFlowHook detachSharedFlowFromFlowHook get list organizations.environments.keystores Overview create delete get list organizations.environments.keystores.aliases Overview create csr delete get getCertificate list update organizations.environments.keyvaluemaps Overview create delete get list update organizations.environments.keyvaluemaps.entries Overview create delete get list update organizations.environments.optimizedStats Overview get organizations.environments.queries Overview create get getResult getResulturl list organizations.environments.references Overview create delete get list update organizations.environments.resourcefiles Overview create delete get list listEnvironmentResources update organizations.environments.securityActions Overview create delete disable enable get list patch organizations.environments.securityIncidents Overview batchUpdate get list patch organizations.environments.securityReports Overview create get getResult getResultView list organizations.environments.securityStats Overview queryTabularStats queryTimeSeriesStats organizations.environments.sharedflows.deployments Overview list organizations.environments.sharedflows.revisions.deployments Overview deploy get undeploy organizations.environments.stats Overview get organizations.environments.targetservers Overview create delete get list update organizations.environments.traceConfig.overrides Overview create delete get list patch organizations.hostQueries Overview create get getResult getResultView list organizations.hostSecurityReports Overview create get getResult getResultView list organizations.hostStats Overview get organizations.instances Overview create delete get list patch organizations.instances.attachments Overview create delete get list organizations.instances.natAddresses Overview activate create delete get list organizations.keyvaluemaps Overview create delete get list update organizations.keyvaluemaps.entries Overview create delete get list update organizations.operations Overview get list organizations.optimizedHostStats Overview get organizations.reports Overview create delete get list update organizations.securityAssessmentResults Overview batchCompute organizations.securityFeedback Overview create delete get list patch organizations.securityMonitoringConditions Overview create delete get list patch organizations.securityProfiles Overview create delete get list listRevisions patch organizations.securityProfiles.environments Overview computeEnvironmentScores create delete organizations.securityProfilesV2 Overview create delete get list patch organizations.sharedflows Overview create delete get list move organizations.sharedflows.deployments Overview list organizations.sharedflows.revisions Overview delete get list updateSharedFlowRevision organizations.sharedflows.revisions.deployments Overview list organizations.sites.apicategories Overview create delete get list patch organizations.sites.apidocs Overview create delete get getDocumentation list update updateDocumentation organizations.spaces Overview create delete get getIamPolicy list patch setIamPolicy testIamPermissions projects Overview provisionOrganization Types Alias ApiCategoryResponse ApiDocDocumentation ApiDocDocumentationResponse ApiDocResponse ApiProductRef ApiProxyType AppGroupBalance AppGroupMonetizationConfig AsyncQuery Attributes BadBundle ConfigVersion ControlPlaneAccess Credential DebugMask DeleteResponse DeploymentChangeReport DeveloperBalance DeveloperMonetizationConfig EntityMetadata Export GetPolicyOptions Interval InvalidResourceStatusErrorDetails ListAsyncQueriesResponse ListDeploymentsResponse ListEnvironmentResourcesResponse ListKeyValueEntriesResponse ListSecurityReportsResponse Metadata MetricAggregation MissingSpecErrorDetails OperationMetadata OperationType Order OrganizationProjectMapping Policy Properties Property Query QueryMetadata ResourceFiles RiskAssessmentType SecurityActionsConfig SecurityReport SecurityReportMetadata SecurityReportQuery SecurityReportResultView SecuritySettings State Status SyncAuthorization TestIamPermissionsResponse TraceConfig WaitOperationRequest API OBSERVATION REST Reference v1alpha Overview Resources REST Resources projects.locations Overview get list listApiObservationTags projects.locations.observationJobs Overview create delete disable enable get list projects.locations.observationJobs.apiObservations Overview batchEditTags get list projects.locations.observationJobs.apiObservations.apiOperations Overview get list projects.locations.observationSources Overview create delete get list projects.locations.operations Overview cancel delete get list Types ApiDiscoveryOperationMetadata OperationMetadata WaitOperationRequest RPC Reference Overview google.cloud.apim.v1alpha google.cloud.apim.v1main google.cloud.common google.cloud.location google.longrunning google.rpc APPLICATION INTEGRATIONS API All APIs and references CONNECTORS API Overview APIGEE API HUB REST Reference v1 Overview Resources REST Resources projects.locations Overview collectApiData get list lookupRuntimeProjectAttachment retrieveApiViews searchResources projects.locations.addons Overview get list manageConfig projects.locations.apiHubInstances Overview create delete get lookup projects.locations.apis Overview create delete get list patch projects.locations.apis.versions Overview create delete get list patch projects.locations.apis.versions.definitions Overview get projects.locations.apis.versions.operations Overview create delete get list patch projects.locations.apis.versions.specs Overview create delete fetchAdditionalSpecContent get getContents lint list patch projects.locations.attributes Overview create delete get list patch projects.locations.curations Overview create delete get list patch projects.locations.dependencies Overview create delete get list patch projects.locations.deployments Overview create delete get list patch projects.locations.discoveredApiObservations Overview get list projects.locations.discoveredApiObservations.discoveredApiOperations Overview get list projects.locations.externalApis Overview create delete get list patch projects.locations.hostProjectRegistrations Overview create get list projects.locations.operations Overview cancel delete get list projects.locations.plugins Overview create delete disable enable get getStyleGuide list updateStyleGuide projects.locations.plugins.instances Overview create delete disableAction enableAction executeAction get list manageSourceData patch projects.locations.plugins.styleGuide Overview getContents projects.locations.runtimeProjectAttachments Overview create delete get list Types AggregationFunction AllowedValue AttributeValues AuthType CollectApiDataResponse ConfigValueOption DisablePluginInstanceActionResponse Documentation EnablePluginInstanceActionResponse EnumerateExtendedApisRequest EnumerateExtendedApisResponse ExecutePluginInstanceActionResponse GoogleServiceAccountConfig HttpOperation InitializeSystemOwnedPluginRequest InitializeSystemOwnedPluginResponse InsightsMetric OperationMetadata Owner QueryApiMetricsRequest QueryApiMetricsResponse QueryDependencyMetricsRequest QueryDependencyMetricsResponse RemoveSystemOwnedPluginRequest RemoveSystemOwnedPluginResponse SourceMetadata StyleGuide StyleGuideContents WaitOperationRequest RPC Reference Overview google.cloud.apihub.v1 google.cloud.apihub.v1main google.cloud.common google.cloud.location google.longrunning google.rpc API PROXIES API proxy configuration reference Endpoint properties reference Shared flow bundle configuration reference FLOWS Flow configuration Flow variables Conditions POLICIES Policies overview Policies Standard policies AccessControl AssertCondition CORS DecodeJWT ExternalCallout GraphQL HMAC HTTPModifier JSONtoXML OASValidation PublishMessage RaiseFault ReadPropertySet SOAPMessageValidation SpikeArrest VerifyIAM VerifyJWT XMLtoJSON Extensible policies AccessEntity AI Policies LLMTokenQuota PromptTokenLimit SanitizeUserPrompt SanitizeModelResponse SemanticCacheLookup SemanticCachePopulate Application Integration policies IntegrationCallout policy SetIntegrationRequest policy AssignMessage BasicAuthentication Cache Policies InvalidateCache LookupCache PopulateCache ResponseCache Working with cache keys DataCapture ExtractVariables FlowCallout JavaCallout JavaScript JSONThreatProtection JWS and JWT policies JWS and JWT policies overview JWS policies DecodeJWS GenerateJWS VerifyJWS JWT policies GenerateJWT KeyValueMapOperations MessageLogging MonetizationLimitsCheck OAuth v2 Policies OAuthV2 SetOAuthV2Info GetOAuthV2Info DeleteOAuthV2Info RevokeOAuthV2 OAuth HTTP error responses ParseDialogflowRequest PythonScript Quota RegularExpressionProtection ResetQuota SAML assertion policies SAML assertion policies overview GenerateSAMLAssertion ValidateSAMLAssertion ServiceCallout SetDialogflowResponse TraceCapture VerifyAPIKey XMLThreatProtection XSLTransform Policy errors JavaScript object model Java permission reference OTHER REFERENCES Message template functions reference Glossary AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Reference Send feedback REST Resource: organizations.environments.keyvaluemaps.entries Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Apigee API | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "Apigee API | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Apigee Start free Overview Guides Reference Support Resources Technology areas More Overview Guides Reference Support Resources Cross-product tools More Console APIGEE API Overview v1 REST Resources organizations Overview create delete get getControlPlaneAccess getProjectMapping getSecuritySettings getSyncAuthorization list setAddons setSyncAuthorization update updateControlPlaneAccess updateSecuritySettings organizations.analytics.datastores Overview create delete get list test update organizations.apimServiceExtensions Overview create delete get list patch organizations.apiproducts Overview attributes create delete get list move update organizations.apiproducts.attributes Overview delete get list updateApiProductAttribute organizations.apiproducts.rateplans Overview create delete get list update organizations.apis Overview create delete get list move patch organizations.apis.debugsessions Overview list organizations.apis.deployments Overview list organizations.apis.keyvaluemaps Overview create delete get list update organizations.apis.keyvaluemaps.entries Overview create delete get list update organizations.apis.revisions Overview delete get list updateApiProxyRevision organizations.apis.revisions.deployments Overview list organizations.appgroups Overview create delete get getBalance getMonetizationConfig list update updateMonetizationConfig organizations.appgroups.apps Overview create delete get list update organizations.appgroups.apps.keys Overview create delete get updateAppGroupAppKey organizations.appgroups.apps.keys.apiproducts Overview delete updateAppGroupAppKeyApiProduct organizations.appgroups.balance Overview adjust credit organizations.appgroups.subscriptions Overview create expire get list organizations.apps Overview get list organizations.datacollectors Overview create delete get list patch organizations.deployments Overview list organizations.developers Overview attributes create delete get getBalance getMonetizationConfig list setDeveloperStatus update updateMonetizationConfig organizations.developers.apps Overview attributes create delete generateKeyPairOrUpdateDeveloperAppStatus get list update organizations.developers.apps.attributes Overview delete get list updateDeveloperAppAttribute organizations.developers.apps.keys Overview create delete get replaceDeveloperAppKey updateDeveloperAppKey organizations.developers.apps.keys.apiproducts Overview delete updateDeveloperAppKeyApiProduct organizations.developers.apps.keys.create Overview create organizations.developers.attributes Overview delete get list updateDeveloperAttribute organizations.developers.balance Overview adjust credit organizations.developers.subscriptions Overview create expire get list organizations.dnsZones Overview create delete get list organizations.endpointAttachments Overview create delete get list organizations.envgroups Overview create delete get list patch organizations.envgroups.attachments Overview create delete get list organizations.environments Overview create delete get getAddonsConfig getApiSecurityRuntimeConfig getDebugmask getIamPolicy getSecurityActionsConfig getTraceConfig list modifyEnvironment setIamPolicy testIamPermissions update updateDebugmask updateEnvironment updateSecurityActionsConfig updateTraceConfig organizations.environments.addonsConfig Overview setAddonEnablement organizations.environments.analytics.admin Overview getSchemav2 organizations.environments.analytics.exports Overview create get list organizations.environments.apis.deployments Overview list organizations.environments.apis.revisions.debugsessions Overview create deleteData get list organizations.environments.apis.revisions.debugsessions.data Overview get list organizations.environments.apis.revisions.deployments Overview deploy generateDeployChangeReport generateUndeployChangeReport get undeploy organizations.environments.archiveDeployments Overview create delete generateDownloadUrl generateUploadUrl get list patch organizations.environments.caches Overview delete list organizations.environments.deployments Overview get getIamPolicy list setIamPolicy testIamPermissions organizations.environments.flowhooks Overview attachSharedFlowToFlowHook detachSharedFlowFromFlowHook get list organizations.environments.keystores Overview create delete get list organizations.environments.keystores.aliases Overview create csr delete get getCertificate list update organizations.environments.keyvaluemaps Overview create delete get list update organizations.environments.keyvaluemaps.entries Overview create delete get list update organizations.environments.optimizedStats Overview get organizations.environments.queries Overview create get getResult getResulturl list organizations.environments.references Overview create delete get list update organizations.environments.resourcefiles Overview create delete get list listEnvironmentResources update organizations.environments.securityActions Overview create delete disable enable get list patch organizations.environments.securityIncidents Overview batchUpdate get list patch organizations.environments.securityReports Overview create get getResult getResultView list organizations.environments.securityStats Overview queryTabularStats queryTimeSeriesStats organizations.environments.sharedflows.deployments Overview list organizations.environments.sharedflows.revisions.deployments Overview deploy get undeploy organizations.environments.stats Overview get organizations.environments.targetservers Overview create delete get list update organizations.environments.traceConfig.overrides Overview create delete get list patch organizations.hostQueries Overview create get getResult getResultView list organizations.hostSecurityReports Overview create get getResult getResultView list organizations.hostStats Overview get organizations.instances Overview create delete get list patch organizations.instances.attachments Overview create delete get list organizations.instances.natAddresses Overview activate create delete get list organizations.keyvaluemaps Overview create delete get list update organizations.keyvaluemaps.entries Overview create delete get list update organizations.operations Overview get list organizations.optimizedHostStats Overview get organizations.reports Overview create delete get list update organizations.securityAssessmentResults Overview batchCompute organizations.securityFeedback Overview create delete get list patch organizations.securityMonitoringConditions Overview create delete get list patch organizations.securityProfiles Overview create delete get list listRevisions patch organizations.securityProfiles.environments Overview computeEnvironmentScores create delete organizations.securityProfilesV2 Overview create delete get list patch organizations.sharedflows Overview create delete get list move organizations.sharedflows.deployments Overview list organizations.sharedflows.revisions Overview delete get list updateSharedFlowRevision organizations.sharedflows.revisions.deployments Overview list organizations.sites.apicategories Overview create delete get list patch organizations.sites.apidocs Overview create delete get getDocumentation list update updateDocumentation organizations.spaces Overview create delete get getIamPolicy list patch setIamPolicy testIamPermissions projects Overview provisionOrganization Types Alias ApiCategoryResponse ApiDocDocumentation ApiDocDocumentationResponse ApiDocResponse ApiProductRef ApiProxyType AppGroupBalance AppGroupMonetizationConfig AsyncQuery Attributes BadBundle ConfigVersion ControlPlaneAccess Credential DebugMask DeleteResponse DeploymentChangeReport DeveloperBalance DeveloperMonetizationConfig EntityMetadata Export GetPolicyOptions Interval InvalidResourceStatusErrorDetails ListAsyncQueriesResponse ListDeploymentsResponse ListEnvironmentResourcesResponse ListKeyValueEntriesResponse ListSecurityReportsResponse Metadata MetricAggregation MissingSpecErrorDetails OperationMetadata OperationType Order OrganizationProjectMapping Policy Properties Property Query QueryMetadata ResourceFiles RiskAssessmentType SecurityActionsConfig SecurityReport SecurityReportMetadata SecurityReportQuery SecurityReportResultView SecuritySettings State Status SyncAuthorization TestIamPermissionsResponse TraceConfig WaitOperationRequest API OBSERVATION REST Reference v1alpha Overview Resources REST Resources projects.locations Overview get list listApiObservationTags projects.locations.observationJobs Overview create delete disable enable get list projects.locations.observationJobs.apiObservations Overview batchEditTags get list projects.locations.observationJobs.apiObservations.apiOperations Overview get list projects.locations.observationSources Overview create delete get list projects.locations.operations Overview cancel delete get list Types ApiDiscoveryOperationMetadata OperationMetadata WaitOperationRequest RPC Reference Overview google.cloud.apim.v1alpha google.cloud.apim.v1main google.cloud.common google.cloud.location google.longrunning google.rpc APPLICATION INTEGRATIONS API All APIs and references CONNECTORS API Overview APIGEE API HUB REST Reference v1 Overview Resources REST Resources projects.locations Overview collectApiData get list lookupRuntimeProjectAttachment retrieveApiViews searchResources projects.locations.addons Overview get list manageConfig projects.locations.apiHubInstances Overview create delete get lookup projects.locations.apis Overview create delete get list patch projects.locations.apis.versions Overview create delete get list patch projects.locations.apis.versions.definitions Overview get projects.locations.apis.versions.operations Overview create delete get list patch projects.locations.apis.versions.specs Overview create delete fetchAdditionalSpecContent get getContents lint list patch projects.locations.attributes Overview create delete get list patch projects.locations.curations Overview create delete get list patch projects.locations.dependencies Overview create delete get list patch projects.locations.deployments Overview create delete get list patch projects.locations.discoveredApiObservations Overview get list projects.locations.discoveredApiObservations.discoveredApiOperations Overview get list projects.locations.externalApis Overview create delete get list patch projects.locations.hostProjectRegistrations Overview create get list projects.locations.operations Overview cancel delete get list projects.locations.plugins Overview create delete disable enable get getStyleGuide list updateStyleGuide projects.locations.plugins.instances Overview create delete disableAction enableAction executeAction get list manageSourceData patch projects.locations.plugins.styleGuide Overview getContents projects.locations.runtimeProjectAttachments Overview create delete get list Types AggregationFunction AllowedValue AttributeValues AuthType CollectApiDataResponse ConfigValueOption DisablePluginInstanceActionResponse Documentation EnablePluginInstanceActionResponse EnumerateExtendedApisRequest EnumerateExtendedApisResponse ExecutePluginInstanceActionResponse GoogleServiceAccountConfig HttpOperation InitializeSystemOwnedPluginRequest InitializeSystemOwnedPluginResponse InsightsMetric OperationMetadata Owner QueryApiMetricsRequest QueryApiMetricsResponse QueryDependencyMetricsRequest QueryDependencyMetricsResponse RemoveSystemOwnedPluginRequest RemoveSystemOwnedPluginResponse SourceMetadata StyleGuide StyleGuideContents WaitOperationRequest RPC Reference Overview google.cloud.apihub.v1 google.cloud.apihub.v1main google.cloud.common google.cloud.location google.longrunning google.rpc API PROXIES API proxy configuration reference Endpoint properties reference Shared flow bundle configuration reference FLOWS Flow configuration Flow variables Conditions POLICIES Policies overview Policies Standard policies AccessControl AssertCondition CORS DecodeJWT ExternalCallout GraphQL HMAC HTTPModifier JSONtoXML OASValidation PublishMessage RaiseFault ReadPropertySet SOAPMessageValidation SpikeArrest VerifyIAM VerifyJWT XMLtoJSON Extensible policies AccessEntity AI Policies LLMTokenQuota PromptTokenLimit SanitizeUserPrompt SanitizeModelResponse SemanticCacheLookup SemanticCachePopulate Application Integration policies IntegrationCallout policy SetIntegrationRequest policy AssignMessage BasicAuthentication Cache Policies InvalidateCache LookupCache PopulateCache ResponseCache Working with cache keys DataCapture ExtractVariables FlowCallout JavaCallout JavaScript JSONThreatProtection JWS and JWT policies JWS and JWT policies overview JWS policies DecodeJWS GenerateJWS VerifyJWS JWT policies GenerateJWT KeyValueMapOperations MessageLogging MonetizationLimitsCheck OAuth v2 Policies OAuthV2 SetOAuthV2Info GetOAuthV2Info DeleteOAuthV2Info RevokeOAuthV2 OAuth HTTP error responses ParseDialogflowRequest PythonScript Quota RegularExpressionProtection ResetQuota SAML assertion policies SAML assertion policies overview GenerateSAMLAssertion ValidateSAMLAssertion ServiceCallout SetDialogflowResponse TraceCapture VerifyAPIKey XMLThreatProtection XSLTransform Policy errors JavaScript object model Java permission reference OTHER REFERENCES Message template functions reference Glossary AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Application development Apigee Reference Send feedback Apigee API Stay organized with collections Save and categorize content based on your preferences.",
+          "REST Resource: v1.organizations REST Resource: v1.organizations.analytics.datastores REST Resource: v1.organizations.apimServiceExtensions REST Resource: v1.organizations.apiproducts REST Resource: v1.organizations.apiproducts.attributes REST Resource: v1.organizations.apiproducts.rateplans REST Resource: v1.organizations.apis REST Resource: v1.organizations.apis.debugsessions REST Resource: v1.organizations.apis.deployments REST Resource: v1.organizations.apis.keyvaluemaps REST Resource: v1.organizations.apis.keyvaluemaps.entries REST Resource: v1.organizations.apis.revisions REST Resource: v1.organizations.apis.revisions.deployments REST Resource: v1.organizations.appgroups REST Resource: v1.organizations.appgroups.apps REST Resource: v1.organizations.appgroups.apps.keys REST Resource: v1.organizations.appgroups.apps.keys.apiproducts REST Resource: v1.organizations.appgroups.balance REST Resource: v1.organizations.appgroups.subscriptions REST Resource: v1.organizations.apps REST Resource: v1.organizations.datacollectors REST Resource: v1.organizations.deployments REST Resource: v1.organizations.developers REST Resource: v1.organizations.developers.apps REST Resource: v1.organizations.developers.apps.attributes REST Resource: v1.organizations.developers.apps.keys REST Resource: v1.organizations.developers.apps.keys.apiproducts REST Resource: v1.organizations.developers.apps.keys.create REST Resource: v1.organizations.developers.attributes REST Resource: v1.organizations.developers.balance REST Resource: v1.organizations.developers.subscriptions REST Resource: v1.organizations.dnsZones REST Resource: v1.organizations.endpointAttachments REST Resource: v1.organizations.envgroups REST Resource: v1.organizations.envgroups.attachments REST Resource: v1.organizations.environments REST Resource: v1.organizations.environments.addonsConfig REST Resource: v1.organizations.environments.analytics.admin REST Resource: v1.organizations.environments.analytics.exports REST Resource: v1.organizations.environments.apis.deployments REST Resource: v1.organizations.environments.apis.revisions REST Resource: v1.organizations.environments.apis.revisions.debugsessions REST Resource: v1.organizations.environments.apis.revisions.debugsessions.data REST Resource: v1.organizations.environments.apis.revisions.deployments REST Resource: v1.organizations.environments.archiveDeployments REST Resource: v1.organizations.environments.caches REST Resource: v1.organizations.environments.deployments REST Resource: v1.organizations.environments.flowhooks REST Resource: v1.organizations.environments.keystores REST Resource: v1.organizations.environments.keystores.aliases REST Resource: v1.organizations.environments.keyvaluemaps REST Resource: v1.organizations.environments.keyvaluemaps.entries REST Resource: v1.organizations.environments.optimizedStats REST Resource: v1.organizations.environments.queries REST Resource: v1.organizations.environments.references REST Resource: v1.organizations.environments.resourcefiles REST Resource: v1.organizations.environments.securityActions REST Resource: v1.organizations.environments.securityIncidents REST Resource: v1.organizations.environments.securityReports REST Resource: v1.organizations.environments.securityStats REST Resource: v1.organizations.environments.sharedflows.deployments REST Resource: v1.organizations.environments.sharedflows.revisions REST Resource: v1.organizations.environments.stats REST Resource: v1.organizations.environments.targetservers REST Resource: v1.organizations.environments.traceConfig.overrides REST Resource: v1.organizations.hostQueries REST Resource: v1.organizations.hostSecurityReports REST Resource: v1.organizations.hostStats REST Resource: v1.organizations.instances REST Resource: v1.organizations.instances.attachments REST Resource: v1.organizations.instances.natAddresses REST Resource: v1.organizations.keyvaluemaps REST Resource: v1.organizations.keyvaluemaps.entries REST Resource: v1.organizations.operations REST Resource: v1.organizations.optimizedHostStats REST Resource: v1.organizations.reports REST Resource: v1.organizations.securityAssessmentResults REST Resource: v1.organizations.securityFeedback REST Resource: v1.organizations.securityMonitoringConditions REST Resource: v1.organizations.securityProfiles REST Resource: v1.organizations.securityProfiles.environments REST Resource: v1.organizations.securityProfilesV2 REST Resource: v1.organizations.sharedflows REST Resource: v1.organizations.sharedflows.deployments REST Resource: v1.organizations.sharedflows.revisions REST Resource: v1.organizations.sharedflows.revisions.deployments REST Resource: v1.organizations.sites.apicategories REST Resource: v1.organizations.sites.apidocs REST Resource: v1.organizations.spaces REST Resource: v1.projects Service: apigee.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "REST Resource: v1.organizations.apis.keyvaluemaps.entries Methods create POST /v1/{parent=organizations/*/apis/*/keyvaluemaps/*}/entries Creates key value entries in a key value map scoped to an organization, environment, or API proxy. delete DELETE /v1/{name=organizations/*/apis/*/keyvaluemaps/*/entries/*} Deletes a key value entry from a key value map scoped to an organization, environment, or API proxy. get GET /v1/{name=organizations/*/apis/*/keyvaluemaps/*/entries/*} Get the key value entry value for a key value map scoped to an organization, environment, or API proxy. list GET /v1/{parent=organizations/*/apis/*/keyvaluemaps/*}/entries Lists key value entries for key values maps scoped to an organization, environment, or API proxy. update PUT /v1/{name=organizations/*/apis/*/keyvaluemaps/*/entries/*} Update key value entry scoped to an organization, environment, or API proxy for an existing key."
+        ]
+      },
+      {
+        "title": "What is Apigee hybrid? \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "This data includes: Application configurations Key Management System (KMS) data Cache Key Value Maps (KVMs) API products Developer apps To access and update that data—for example, to add a new KVM or to remove an environment—you can use the Apigee hybrid UI or the Apigee APIs .",
+          "Types of users Apigee has identified the following primary types of hybrid users: Role Typical responsibilities/tasks Areas of interest System administrators/operators Install and configure services on hybrid's runtime plane Set up Google Cloud, Apigee, and service accounts Create Google Cloud services and projects Manage the Kubernetes cluster Maintain all of the above Troubleshoot the API proxies Download and install apigeectl Configure Google Cloud services and Apigee hybrid UI Install hybrid overview Administer hybrid Data collection on hybrid Hybrid service configuration Kubernetes Developers Build API proxies using the Apigee hybrid UI or Apigee APIs Deploy API proxies to the runtime plane Troubleshoot the API proxies Test the API proxies Create and deploy API proxies Data collection on hybrid Apigee Policies Advantages Apigee hybrid has the following advantages: advantages over what? : --> Increased agility Because hybrid is delivered and runs in containers, you can achieve staged rollouts, auto-scaling, and other operational benefits of a containerized system.",
+          "Increased API adoption Although it is possible to process internal APIs using Apigee, the reduced latency and efficiency you can achieve with hybrid makes processing internal APIs with hybrid an attractive option."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "organizations.analytics.datastores",
+      "organizations.apimServiceExtensions",
+      "organizations.apiproducts",
+      "organizations.apiproducts.attributes",
+      "organizations.apiproducts.rateplans",
+      "organizations.apis",
+      "organizations.apis.debugsessions",
+      "organizations.apis.deployments",
+      "organizations.apis.keyvaluemaps",
+      "organizations.apis.keyvaluemaps.entries",
+      "organizations.apis.revisions",
+      "organizations.apis.revisions.deployments",
+      "organizations.appgroups",
+      "organizations.appgroups.apps",
+      "organizations.appgroups.apps.keys",
+      "organizations.appgroups.apps.keys.apiproducts",
+      "organizations.appgroups.balance",
+      "organizations.appgroups.subscriptions",
+      "organizations.apps",
+      "organizations.datacollectors",
+      "organizations.deployments",
+      "organizations.developers",
+      "organizations.developers.apps",
+      "organizations.developers.apps.attributes",
+      "organizations.developers.apps.keys",
+      "organizations.developers.apps.keys.apiproducts",
+      "organizations.developers.apps.keys.create",
+      "organizations.developers.attributes",
+      "organizations.developers.balance",
+      "organizations.developers.subscriptions",
+      "organizations.dnsZones",
+      "organizations.endpointAttachments",
+      "organizations.envgroups",
+      "organizations.envgroups.attachments",
+      "organizations.environments",
+      "organizations.environments.addonsConfig",
+      "organizations.environments.analytics.admin",
+      "organizations.environments.analytics.exports",
+      "organizations.environments.apis.deployments",
+      "organizations.environments.apis.revisions.debugsessions",
+      "organizations.environments.apis.revisions.debugsessions.data",
+      "organizations.environments.apis.revisions.deployments",
+      "organizations.environments.archiveDeployments",
+      "organizations.environments.caches",
+      "organizations.environments.deployments",
+      "organizations.environments.flowhooks",
+      "organizations.environments.keystores",
+      "organizations.environments.keystores.aliases",
+      "organizations.environments.keyvaluemaps",
+      "organizations.environments.keyvaluemaps.entries",
+      "organizations.environments.optimizedStats",
+      "organizations.environments.queries",
+      "organizations.environments.references",
+      "organizations.environments.resourcefiles",
+      "organizations.environments.securityActions",
+      "organizations.environments.securityIncidents",
+      "organizations.environments.securityReports",
+      "organizations.environments.securityStats",
+      "organizations.environments.sharedflows.deployments",
+      "organizations.environments.sharedflows.revisions.deployments",
+      "organizations.environments.stats",
+      "organizations.environments.targetservers",
+      "organizations.environments.traceConfig.overrides",
+      "organizations.hostQueries",
+      "organizations.hostSecurityReports",
+      "organizations.hostStats",
+      "organizations.instances",
+      "organizations.instances.attachments",
+      "organizations.instances.natAddresses",
+      "organizations.keyvaluemaps",
+      "organizations.keyvaluemaps.entries",
+      "organizations.operations",
+      "organizations.optimizedHostStats",
+      "organizations.reports",
+      "organizations.securityAssessmentResults",
+      "organizations.securityFeedback",
+      "organizations.securityMonitoringConditions",
+      "organizations.securityProfiles",
+      "organizations.securityProfiles.environments",
+      "organizations.securityProfilesV2",
+      "organizations.sharedflows",
+      "organizations.sharedflows.deployments",
+      "organizations.sharedflows.revisions",
+      "organizations.sharedflows.revisions.deployments",
+      "organizations.sites.apicategories",
+      "organizations.sites.apidocs",
+      "organizations.spaces",
+      "projects.locations",
+      "projects.locations.addons",
+      "projects.locations.apiHubInstances",
+      "projects.locations.apis",
+      "projects.locations.apis.versions",
+      "projects.locations.apis.versions.definitions",
+      "projects.locations.apis.versions.operations",
+      "projects.locations.apis.versions.specs",
+      "projects.locations.attributes",
+      "projects.locations.curations",
+      "projects.locations.dependencies",
+      "projects.locations.deployments",
+      "projects.locations.discoveredApiObservations",
+      "projects.locations.discoveredApiObservations.discoveredApiOperations",
+      "projects.locations.externalApis",
+      "projects.locations.hostProjectRegistrations",
+      "projects.locations.observationJobs",
+      "projects.locations.observationJobs.apiObservations",
+      "projects.locations.observationJobs.apiObservations.apiOperations",
+      "projects.locations.observationSources",
+      "projects.locations.operations",
+      "projects.locations.plugins",
+      "projects.locations.plugins.instances",
+      "projects.locations.plugins.styleGuide",
+      "projects.locations.runtimeProjectAttachments",
+      "v1.9",
+      "v1.organizations",
+      "v1.organizations.analytics.datastores",
+      "v1.organizations.apimServiceExtensions",
+      "v1.organizations.apiproducts",
+      "v1.organizations.apiproducts.attributes",
+      "v1.organizations.apiproducts.rateplans",
+      "v1.organizations.apis",
+      "v1.organizations.apis.debugsessions",
+      "v1.organizations.apis.deployments",
+      "v1.organizations.apis.keyvaluemaps",
+      "v1.organizations.apis.keyvaluemaps.entries",
+      "v1.organizations.apis.revisions",
+      "v1.organizations.apis.revisions.deployments",
+      "v1.organizations.appgroups",
+      "v1.organizations.appgroups.apps",
+      "v1.organizations.appgroups.apps.keys",
+      "v1.organizations.appgroups.apps.keys.apiproducts",
+      "v1.organizations.appgroups.balance",
+      "v1.organizations.appgroups.subscriptions",
+      "v1.organizations.apps",
+      "v1.organizations.datacollectors",
+      "v1.organizations.deployments",
+      "v1.organizations.developers",
+      "v1.organizations.developers.apps",
+      "v1.organizations.developers.apps.attributes",
+      "v1.organizations.developers.apps.keys",
+      "v1.organizations.developers.apps.keys.apiproducts",
+      "v1.organizations.developers.apps.keys.create",
+      "v1.organizations.developers.attributes",
+      "v1.organizations.developers.balance",
+      "v1.organizations.developers.subscriptions",
+      "v1.organizations.dnsZones",
+      "v1.organizations.endpointAttachments",
+      "v1.organizations.envgroups",
+      "v1.organizations.envgroups.attachments",
+      "v1.organizations.environments",
+      "v1.organizations.environments.addonsConfig",
+      "v1.organizations.environments.analytics.admin",
+      "v1.organizations.environments.analytics.exports",
+      "v1.organizations.environments.apis.deployments",
+      "v1.organizations.environments.apis.revisions",
+      "v1.organizations.environments.apis.revisions.debugsessions",
+      "v1.organizations.environments.apis.revisions.debugsessions.data",
+      "v1.organizations.environments.apis.revisions.deployments",
+      "v1.organizations.environments.archiveDeployments",
+      "v1.organizations.environments.caches",
+      "v1.organizations.environments.deployments",
+      "v1.organizations.environments.flowhooks",
+      "v1.organizations.environments.keystores",
+      "v1.organizations.environments.keystores.aliases",
+      "v1.organizations.environments.keyvaluemaps",
+      "v1.organizations.environments.keyvaluemaps.entries",
+      "v1.organizations.environments.optimizedStats",
+      "v1.organizations.environments.queries",
+      "v1.organizations.environments.references",
+      "v1.organizations.environments.resourcefiles",
+      "v1.organizations.environments.securityActions",
+      "v1.organizations.environments.securityIncidents",
+      "v1.organizations.environments.securityReports",
+      "v1.organizations.environments.securityStats",
+      "v1.organizations.environments.sharedflows.deployments",
+      "v1.organizations.environments.sharedflows.revisions",
+      "v1.organizations.environments.stats",
+      "v1.organizations.environments.targetservers",
+      "v1.organizations.environments.traceConfig.overrides",
+      "v1.organizations.hostQueries",
+      "v1.organizations.hostSecurityReports",
+      "v1.organizations.hostStats",
+      "v1.organizations.instances",
+      "v1.organizations.instances.attachments",
+      "v1.organizations.instances.natAddresses",
+      "v1.organizations.keyvaluemaps",
+      "v1.organizations.keyvaluemaps.entries",
+      "v1.organizations.operations",
+      "v1.organizations.optimizedHostStats",
+      "v1.organizations.reports",
+      "v1.organizations.securityAssessmentResults",
+      "v1.organizations.securityFeedback",
+      "v1.organizations.securityMonitoringConditions",
+      "v1.organizations.securityProfiles",
+      "v1.organizations.securityProfiles.environments",
+      "v1.organizations.securityProfilesV2",
+      "v1.organizations.sharedflows",
+      "v1.organizations.sharedflows.deployments",
+      "v1.organizations.sharedflows.revisions",
+      "v1.organizations.sharedflows.revisions.deployments",
+      "v1.organizations.sites.apicategories",
+      "v1.organizations.sites.apidocs",
+      "v1.organizations.spaces",
+      "v1.projects"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.keyvaluemaps.entries",
+        "https://docs.cloud.google.com/apigee/docs/reference/apis/apigee/rest",
+        "https://docs.cloud.google.com/apigee/docs/hybrid/v1.9/what-is-hybrid"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.392Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid"
+}

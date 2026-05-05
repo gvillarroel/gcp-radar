@@ -1,0 +1,115 @@
+{
+  "feature_name": "dblink extension",
+  "feature_slug": "dblink-extension",
+  "summary": "Cloud SQL for PostgreSQL supports the dblink extension for connecting to other PostgreSQL databases.",
+  "extended_definition": "Cloud SQL for PostgreSQL supports the dblink extension for connecting to other PostgreSQL databases.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/postgres/connect-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Private Service Connect overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "You can use outbound connectivity to migrate data from an external server within your network, use PostgreSQL extensions that require an outbound connection to your Cloud SQL instance, or do a homogeneous migration using Database Migration Service.",
+          "By adding a single common services VPC network to the NCC hub, all Private Service Connect endpoints in the VPC network become accessible transitively to other spoke VPC networks through the hub."
+        ]
+      },
+      {
+        "title": "\"Choose how to connect to Cloud SQL \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/connect-overview",
+        "source_id": "site-docs-root",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Another more secure alternative for connecting to a Cloud SQL instance that uses public IP is to use a Cloud SQL connector (such as the Cloud SQL Auth Proxy or one of the Cloud SQL Language Connectors).",
+          "Supported by using the Private Service Connect endpoint. pglogical , PL/Proxy , dblink , and postgres fdw extensions Supported.",
+          "Remove networking options from an instance Cloud SQL supports the removal of the following networking options from an instance: Public IP from an instance with both private services access and public IP Public IP from an instance with public IP, private services access, and Private Service Connect Private Service Connect from an instance with both Private Service Connect and private services access Private Service Connect from an instance with Private Service Connect, private services access, and public IP Enable networking options for an instance You can enable Cloud SQL supports enabling the following connection options for instances: Private services access on an instance with public IP only Private Service Connect on an instance with private services access only Private Service Connect on an instance with both private services access and public IP Public IP on an instance with private services access only Limitations You can't create an instance with both a public IP address and Private Service Connect."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "source_id": "site-docs-root",
+        "final_score": 22,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "Restore from a backup Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Databases Cloud SQL PostgreSQL Guides Send feedback Cloud SQL backups overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/about-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

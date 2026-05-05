@@ -1,0 +1,135 @@
+{
+  "feature_name": "Time-to-live (TTL) policies",
+  "feature_slug": "time-to-live-ttl-policies",
+  "summary": "Time-to-live policies automatically expire and delete data based on configured retention rules; Time-to-live policies automatically expire and delete data based on configured retention rules.",
+  "extended_definition": "Time-to-live policies automatically expire and delete data based on configured retention rules; Time-to-live policies automatically expire and delete data based on configured retention rules.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+      "https://docs.cloud.google.com/datastore/docs/backups",
+      "https://docs.cloud.google.com/datastore/docs/cmek",
+      "https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Back up and restore data \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/backups",
+        "source_id": "site-iam-reference",
+        "final_score": 235,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "TTL policies are not included in backups and are not automatically reapplied to restored databases.",
+          "A backup does not contain database time to live policies.",
+          "The output will include metadata , name , and response components: metadata: '@type': type.googleapis.com/google.firestore.admin.v1.RestoreDatabaseMetadata backup: projects/ PROJECT ID /locations/ LOCATION /backups/ BACKUP ID database: projects/ PROJECT ID /databases/ DATABASE ID operationState: PROCESSING progressPercentage: completedWork: '20' estimatedWork: '100' startTime: '2023-12-06T14:20:17.398325Z' name: projects/ PROJECT ID /databases/ DATABASE ID /operations/operation uuid response: '@type': type.googleapis.com/google.firestore.admin.v1.Database createTime: '2023-12-06T14:20:17.398325Z' name: projects/ PROJECT ID /databases/ DATABASE ID ..."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the database has time-to-live (TTL) policies , and if any expiration times get exceeded while the key is unavailable, data deletion by TTL will be delayed until the key gets reinstated.",
+          "Index build operations, and operations enabling new TTL policies will stop making progress.",
+          "CMEK and key availability When keys are unavailable or disabled, be aware of the following behaviors that can occur in CMEK-enabled databases: You can change Datastore mode point-in-time recovery (PITR) settings on a CMEK-enabled database even if the key is unavailable because PITR settings are database metadata, which isn't encrypted by CMEK."
+        ]
+      },
+      {
+        "title": "Running the Datastore Emulator \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
+        "source_id": "site-docs-root",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Automatically removing the variables If your application and the emulator run on the same machine, you can remove the environment variables automatically: Linux / macOS Run env-unset using command substitution: $(gcloud beta emulators datastore env-unset) Windows Create and run a batch file using output from env-unset : gcloud beta emulators datastore env - unset > remove vars . cmd && remove vars . cmd Your application will now connect to your production Datastore mode database.",
+          "Automatically setting the variables If your application and the emulator run on the same machine, you can set the environment variables automatically: Linux / macOS Run env-init using command substitution: $(gcloud beta emulators datastore env-init) Windows Create and run a batch file using output from env-init : gcloud beta emulators datastore env - init > set vars . cmd && set vars . cmd Your application will now connect to the Datastore emulator.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      },
+      {
+        "title": "\"Balancing Strong and Eventual Consistency with Datastore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore",
+        "source_id": "site-iam-reference",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "This is demonstrated with the Python code below. class Organization(db.Model): name = db.StringProperty() class Person(db.Model): given name = db.StringProperty() surname = db.StringProperty() class MainPage(webapp2.RequestHandler): def post(self): org = Organization.get or insert('ateam', name='ATeam') person = Person(parent=org) person.given name='GI' person.surname='Joe' person.put() q = db.GqlQuery(\"SELECT FROM Person WHERE ANCESTOR IS :1 \", org) people = [] for p in q.run(): people.append({'given name': p.given name, 'surname': p.surname}) This time, with the ancestor org specified in the GqlQuery, the query returns the entity just inserted.",
+          "If you are currently using the older DB Client Library, read the DB to NDB Migration Guide Contents NoSQL and Eventual Consistency Eventual Consistency in Datastore Ancestor Query and Entity Group Limitations of Entity Group and Ancestor Query Alternatives to Ancestor Queries Minimizing Time to Achieve Full Consistency Conclusion Additional Resources NoSQL and Eventual Consistency Non-relational databases, also known as NoSQL databases, have emerged in recent years as an alternative to relational databases.",
+          "So, by combining Memcache lookups and Datastore queries, it is possible to build a system that will minimize consistency issues most of the time."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "db.GqlQuery",
+      "db.Model",
+      "db.StringProperty",
+      "p.given",
+      "p.surname",
+      "people.append",
+      "person.given",
+      "person.put",
+      "person.surname",
+      "q.run",
+      "type.googleapis.com",
+      "webapp2.RequestHandler"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/backups",
+        "https://docs.cloud.google.com/datastore/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/tools/datastore-emulator",
+        "https://docs.cloud.google.com/datastore/docs/articles/balancing-strong-and-eventual-consistency-with-google-cloud-datastore"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.286Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

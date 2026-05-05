@@ -1,0 +1,106 @@
+{
+  "feature_name": "integrity-fs dm-crypt provisioning",
+  "feature_slug": "integrity-fs-dm-crypt-provisioning",
+  "summary": "Supports creating dm-crypt devices for integrity-fs; integrity-fs supports reliable dm-crypt device creation during provisioning.",
+  "extended_definition": "Supports creating dm-crypt devices for integrity-fs; integrity-fs supports reliable dm-crypt device creation during provisioning.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Security Just like other kernel modules on Container-Optimized OS, GPU drivers are cryptographically signed and verified by keys that are built into the Container-Optimized OS kernel.",
+          "For more information about how to use cloud-init on Container-Optimized OS VM instances, see the creating and configuring instances page.",
+          "The output from the command shows the GPU devices information, such as devices state and driver version."
+        ]
+      },
+      {
+        "title": "\"Creating and configuring instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Creating and configuring instances Stay organized with collections Save and categorize content based on your preferences.",
+          "Creating an instance for advanced scenarios Use this method to select a specific Container-Optimized OS image, to deploy multiple containers, and to use cloud-init for advanced configuration.",
+          "Creating a simple instance Use this method to deploy a single container on a VM using the latest version of Container-Optimized OS."
+        ]
+      },
+      {
+        "title": "\"Disks and file system overview \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "source_id": "site-docs-reference",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Working with the Container-Optimized OS file system The following is a list of paths in the Container-Optimized OS node image file system, along with their properties and recommended usage: Path Properties Purpose / read-only executable The root filesystem is mounted as read-only to maintain integrity.",
+          "The kernel verifies integrity root filesystem during boot up, and refuses to boot in case of errors. /home /var writable non-executable stateful These paths are meant for storing data that persists for the lifetime of the boot disk.",
+          "The disks can be mounted by creating a subdirectory under /mnt/disks directory."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:23.337Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

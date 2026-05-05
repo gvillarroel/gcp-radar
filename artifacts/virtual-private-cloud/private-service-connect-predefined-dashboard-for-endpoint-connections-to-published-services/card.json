@@ -1,0 +1,174 @@
+{
+  "feature_name": "Private Service Connect predefined dashboard for endpoint connections to published services",
+  "feature_slug": "private-service-connect-predefined-dashboard-for-endpoint-connections-to-published-services",
+  "summary": "A new predefined dashboard is now available for monitoring endpoints that connect to Private Service Connect published services.",
+  "extended_definition": "A new predefined dashboard is now available for monitoring endpoints that connect to Private Service Connect published services.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+      "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+      "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About service connectivity automation \\_|\\_ Virtual Private Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "source_id": "site-docs-root-2",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Service connection maps A service connection map is a producer-managed resource that stores details for authorizing and establishing Private Service Connect connections between consumer VPC networks and producer managed service instances.",
+          "This check helps to ensure that a consumer network administrator with IAM permissions on the VPC network explicitly delegates the ability to create Private Service Connect endpoints for the specified service type.",
+          "Automatic retries for endpoint failures Service connectivity automation fully manages the creation and deletion of your Private Service Connect endpoints."
+        ]
+      },
+      {
+        "title": "\"About propagated connections \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "source_id": "site-docs-root-2",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Triggering connection propagation Propagated connections are automatically established when the following actions occur: When a hub administrator enables connection propagation for a hub , NCC creates propagated connections for existing endpoints in the VPC spokes that are connected to the hub.",
+          "With propagated connections, services that are accessible in one consumer VPC spoke through Private Service Connect endpoints can be privately accessed by other consumer VPC spokes that are connected to the same Network Connectivity Center hub.",
+          "When a hub administrator adds a VPC spoke to a hub that has connection propagation enabled, NCC creates propagated connections in the new spoke for existing endpoints in other VPC spokes that are connected to the same NCC hub."
+        ]
+      },
+      {
+        "title": "\"Configure Private Service Connect health for automatic cross-region failover\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "source_id": "site-docs-root-2",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to configure Private Service Connect health: compute.regionHealthAggregationPolicies.list compute.regionHealthAggregationPolicies.get compute.regionHealthAggregationPolicies.create compute.regionHealthAggregationPolicies.update compute.regionHealthAggregationPolicies.delete compute.regionHealthSources.list compute.regionHealthSources.get compute.regionHealthSources.create compute.regionHealthSources.update compute.regionHealthSources.delete compute.regionCompositeHealthChecks.list compute.regionCompositeHealthChecks.get compute.regionCompositeHealthChecks.create compute.regionCompositeHealthChecks.update compute.regionCompositeHealthChecks.delete You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Configure Private Service Connect health for automatic cross-region failover Preview This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Configure Private Service Connect health to support automatic cross-region failover The following sections describe how to configure Private Service Connect health for automatic cross-region failover."
+        ]
+      },
+      {
+        "title": "\"Publish services by using Private Service Connect \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer",
+        "source_id": "site-docs-root-2",
+        "final_score": 242,
+        "relevance": "",
+        "evidence_snippets": [
+          "For each endpoint in the list of connected endpoints, the endpointWithId field contains the endpoint's ID-based URI that you can use to accept or reject connections from individual Private Service Connect endpoints. gcloud compute service-attachments describe \\ ATTACHMENT NAME --region= REGION Replace the following: ATTACHMENT NAME : the name of the service attachment.",
+          "Details are displayed for each endpoint, including the Endpoint ID that you can use to accept or reject connections from individual Private Service Connect endpoints. gcloud To view details for a published service, use the gcloud compute service-attachments describe command .",
+          "For each endpoint in the list of connected endpoints, the endpointWithId field contains the endpoint's ID-based URI that you can use to accept or reject connections from individual Private Service Connect endpoints."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.regionCompositeHealthChecks.create",
+      "compute.regionCompositeHealthChecks.delete",
+      "compute.regionCompositeHealthChecks.get",
+      "compute.regionCompositeHealthChecks.list",
+      "compute.regionCompositeHealthChecks.update",
+      "compute.regionHealthAggregationPolicies.create",
+      "compute.regionHealthAggregationPolicies.delete",
+      "compute.regionHealthAggregationPolicies.get",
+      "compute.regionHealthAggregationPolicies.list",
+      "compute.regionHealthAggregationPolicies.update",
+      "compute.regionHealthSources.create",
+      "compute.regionHealthSources.delete",
+      "compute.regionHealthSources.get",
+      "compute.regionHealthSources.list",
+      "compute.regionHealthSources.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/about-service-connectivity-automation",
+        "https://docs.cloud.google.com/vpc/docs/about-propagated-connections",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-health-failover",
+        "https://docs.cloud.google.com/vpc/docs/configure-private-service-connect-producer"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

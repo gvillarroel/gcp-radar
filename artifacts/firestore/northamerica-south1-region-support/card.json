@@ -1,0 +1,148 @@
+{
+  "feature_name": "northamerica-south1 region support",
+  "feature_slug": "northamerica-south1-region-support",
+  "summary": "Firestore supports the northamerica-south1 Queretaro region.",
+  "extended_definition": "Firestore supports the northamerica-south1 Queretaro region.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+      "https://docs.cloud.google.com/firestore/docs/reference/rest",
+      "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Managing Firestore in Datastore mode from the Console \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "source_id": "site-docs-root",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Managing Firestore in Datastore mode from the Console Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Use Firestore with MCP, Gemini CLI, and other agents \\_|\\_ Firestore in\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 30,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin To use the tools in the Gemini CLI extension for Firestore, you must have one of the following Identity and Access Management (IAM) roles, or a custom role with equivalent permissions: Task Role name Required Identity and Access Management (IAM) role Read and write data in Firestore database Cloud Datastore User roles/datastore.user View and test security rules Firebase Rules Viewer roles/firebaserules.viewer Set up Firestore Create a new Google Cloud project or select an existing one .",
+          "This page describes how to use the MCP Toolbox for Databases to expose your developer assistance tools to a Firestore instance using the following IDEs: Gemini CLI Gemini Code Assist Cursor Windsurf (Codium) Visual Studio Code (Copilot) Cline (VS Code extension) Claude desktop Claude code About Gemini CLI and extensions Gemini CLI is an open-source AI agent designed to assist with development workflows by assisting with coding, debugging, data exploration, and content creation.",
+          "The FIRESTORE DATABASE variable is optional and defaults to (default) . { \"mcpServers\": { \"firestore\": { \"command\": \"./PATH/TO/toolbox\", \"args\": [\"--prebuilt\",\"firestore\",\"--stdio\"], \"env\": { \"FIRESTORE PROJECT\": \" PROJECT ID \", \"FIRESTORE DATABASE\": \" DATABASE NAME \" } } } } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Cloud Firestore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "Select a location to see its regional service endpoint for this service. global africa-south1 asia-east1 asia-east2 asia-northeast1 asia-northeast2 asia-northeast3 asia-south1 asia-south2 asia-southeast1 asia-southeast2 asia-southeast3 australia-southeast1 australia-southeast2 europe-central2 europe-north1 europe-north2 europe-southwest1 europe-west1 europe-west10 europe-west12 europe-west2 europe-west3 europe-west4 europe-west6 europe-west8 europe-west9 me-central1 me-central2 me-west1 northamerica-northeast1 northamerica-northeast2 northamerica-south1 southamerica-east1 southamerica-west1 us-central1 us-east1 us-east4 us-east5 us-south1 us-west1 us-west2 us-west3 us-west4 eu us https://firestore.googleapis.com REST Resource: v1beta2.projects.databases Methods exportDocuments POST /v1beta2/{name=projects/ /databases/ }:exportDocuments Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. importDocuments POST /v1beta2/{name=projects/ /databases/ }:importDocuments Imports documents into Google Cloud Firestore.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://firestore.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region.",
+          "REST Resource: v1.projects.databases Methods bulkDeleteDocuments POST /v1/{name=projects/ /databases/ }:bulkDeleteDocuments Bulk deletes a subset of documents from Google Cloud Firestore. clone POST /v1/{parent=projects/ }/databases:clone Creates a new database by cloning an existing one. create POST /v1/{parent=projects/ }/databases Create a database. delete DELETE /v1/{name=projects/ /databases/ } Deletes a database. exportDocuments POST /v1/{name=projects/ /databases/ }:exportDocuments Exports a copy of all or a subset of documents from Google Cloud Firestore to another storage system, such as Google Cloud Storage. get GET /v1/{name=projects/ /databases/ } Gets information about a database. importDocuments POST /v1/{name=projects/ /databases/ }:importDocuments Imports documents into Google Cloud Firestore. list GET /v1/{parent=projects/ }/databases List all the databases in the project. patch PATCH /v1/{database.name=projects/ /databases/ } Updates a database. restore POST /v1/{parent=projects/ }/databases:restore Creates a new database by restoring from an existing backup."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "database.name",
+      "datastore.user",
+      "firebaserules.viewer",
+      "firestore.googleapis.com",
+      "v1.projects.databases",
+      "v1beta1.projects.databases",
+      "v1beta2.projects.databases"
+    ],
+    "missing_inventory_roles": [
+      "roles/datastore.user",
+      "roles/firebaserules.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/reference/rest",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "https://docs.cloud.google.com/firestore/native/docs/connect-ide-using-mcp-toolbox"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:32.054Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore"
+}

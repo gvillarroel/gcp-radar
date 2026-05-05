@@ -1,0 +1,123 @@
+{
+  "feature_name": "App Engine automatic scaling max instances setting",
+  "feature_slug": "app-engine-automatic-scaling-max-instances-setting",
+  "summary": "A new max instances setting was introduced to cap the total number of App Engine automatic-scaling instances that can be scheduled.",
+  "extended_definition": "A new max instances setting was introduced to cap the total number of App Engine automatic-scaling instances that can be scheduled.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 143,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Scaling types App Engine supports the following scaling types , which controls how and when instances are created: Automatic (default) Basic Manual You specify the scaling type in your app's app.yaml .",
+          "Automatic scaling settings Description Target CPU utilization Sets the CPU utilization ratio threshold to specify the CPU usage threshold at which more instances will be started to handle traffic.",
+          "Scaling dynamic instances App Engine applications that use basic or automatic scaling are powered by any number of dynamic instances at a given time, depending on the volume of incoming requests."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 115,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following values are available depending on your service's scaling : Automatic scaling F1 , F2 , F4 , F4 1G Default: F1 Optionally use the automatic scaling element to change default settings for automatic scaling, such as minimum and maximum number of instances, latency, and concurrent connections.",
+          "App Engine calculates the number of instances necessary to serve your current application traffic based on scaling settings such as target cpu utilization and target throughput utilization .",
+          "Specify this element to change default settings for automatic scaling, such as setting minimum and maximum levels for number of instances, latency, and concurrent connections for a service."
+        ]
+      },
+      {
+        "title": "\"Method: apps.services.versions.patch \\_|\\_ App Engine Admin API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic",
+        "source_id": "site-docs-reference-4",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can specify the following fields depending on the App Engine environment and type of scaling that the version resource uses: Standard environment instanceClass automatic scaling in the standard environment: automaticScaling.min idle instances automaticScaling.max idle instances automaticScaling.standard scheduler settings.max instances automaticScaling.standard scheduler settings.min instances automaticScaling.standard scheduler settings.target cpu utilization automaticScaling.standard scheduler settings.target throughput utilization basic scaling or manual scaling in the standard environment: servingStatus manualScaling.instances Flexible environment servingStatus automatic scaling in the flexible environment: automaticScaling.min total instances automaticScaling.max total instances automaticScaling.cool down period sec automaticScaling.cpu utilization.target utilization manual scaling in the flexible environment: manualScaling.instances HTTP request PATCH https://appengine.googleapis.com/v1/{name=apps/ /services/ /versions/ } The URL uses gRPC Transcoding syntax.",
+          "Authorization requires the following IAM permission on the specified resource name : appengine.versions.update Query parameters Parameters updateMask string ( FieldMask format) Standard field mask for the set of fields to be updated.",
+          "Home Technology areas App Engine Admin API Reference Send feedback Method: apps.services.versions.patch Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.googleapis.com",
+      "appengine.versions.update",
+      "apps.services.versions.patch",
+      "settings.max",
+      "settings.min",
+      "settings.target",
+      "utilization.target"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/admin-api/migrating-splitting-traffic"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.136Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php"
+}

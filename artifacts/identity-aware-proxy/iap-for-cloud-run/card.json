@@ -1,0 +1,206 @@
+{
+  "feature_name": "IAP for Cloud Run",
+  "feature_slug": "iap-for-cloud-run",
+  "summary": "Identity-Aware Proxy can be enabled directly on Cloud Run services without configuring a load balancer; Identity-Aware Proxy supports Cloud Run applications to help guard access using identity and context.",
+  "extended_definition": "Identity-Aware Proxy can be enabled directly on Cloud Run services without configuring a load balancer; Identity-Aware Proxy supports Cloud Run applications to help guard access using identity and context.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+      "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+      "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+      "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enable IAP for Cloud Run \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 370,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Can't set up IAP through the gcloud CLI The IAP service account is not provisioned If you are seeing this error, run the following command: gcloud beta services identity create --service=iap.googleapis.com --project=[PROJECT ID] IAP service account doesn't need run.routes.invoke permission During the IAP with Cloud Run Preview, Cloud Run didn't perform the run.routes.invoke permission check for calls from IAP that use the Cloud Run Invoker role.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enable IAP for Cloud Run Stay organized with collections Save and categorize content based on your preferences.",
+          "If the IAP service account is not in the list of principals, you can create it by running the following gcloud command: gcloud beta services identity create --service=iap.googleapis.com --project= PROJECT ID gcloud If you have not previously done so in the project, create the IAP service agent by running the following command."
+        ]
+      },
+      {
+        "title": "\"Enable IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "source_id": "site-docs-root",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enable IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "API Run the following command to prepare a policy.json file. cat << EOF > policy.json { \"name\": \" AUTHZ POLICY NAME \", \"target\": { \"loadBalancingScheme\": \"INTERNAL MANAGED\", \"resources\": [ \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ LOCATION /forwardingRules/ FORWARDING RULE ID \" ], }, \"action\": \"CUSTOM\", \"httpRules\": [ { \"from\": { \"sources\": { \"ipBlocks\": [ { \"prefix\": \"10.0.0.0\", \"length\": 24 } ] } } } ], \"customProvider\": { \"cloudIap\": {} } } EOF Run the following command to enable IAP on a forwarding rule. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @policy.json \\ \"https://networksecurity.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /authzPolicies\" Replace the following: PROJECT ID : The Google Cloud project ID.",
+          "API Run the following command to prepare a settings.json file. cat << EOF > settings.json { \"iap\": { \"enabled\":true } } EOF Run the following command to enable IAP. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @settings.json \\ \"https://compute.googleapis.com/compute/v1/projects/ PROJECT ID / REGION /backendServices/ BACKEND SERVICE NAME \" After you enable IAP, you can use the Google Cloud CLI to modify the IAP access policy using the IAM role roles/iap.httpsResourceAccessor ."
+        ]
+      },
+      {
+        "title": "\"Enabling IAP for App Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "source_id": "site-docs-root",
+        "final_score": 310,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Enabling IAP for App Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "API Run the following command to prepare a settings.json file. cat << EOF > settings.json { \"iap\": { \"enabled\":true } } EOF Run the following command to enable IAP. curl -X PATCH \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Accept: application/json\" \\ -H \"Content-Type: application/json\" \\ -d @settings.json \\ \"https://appengine.googleapis.com/v1/apps/ PROJECT ID ?updateMask=iap\" After you enable IAP, you can use the Google Cloud CLI to modify the IAP access policy using the IAM role roles/iap.httpsResourceAccessor .",
+          "Turning on IAP On the Identity-Aware Proxy page, under Applications , find the application you want to restrict access to."
+        ]
+      },
+      {
+        "title": "\"Setting up IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "source_id": "site-docs-root",
+        "final_score": 304,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up IAP To set up IAP for your project, follow these steps: In the Google Cloud console, go to the Security > Identity-Aware Proxy page and select the project that you want to enable IAP for.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Setting up IAP for Compute Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "This guide describes how to set up a Compute Engine instance with Identity-Aware Proxy (IAP)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.googleapis.com",
+      "compute.googleapis.com",
+      "iap.googleapis.com",
+      "iap.httpsResourceAccessor",
+      "networksecurity.googleapis.com",
+      "policy.json",
+      "policy.yaml",
+      "run.routes.invoke",
+      "settings.json"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/enabling-cloud-run",
+        "https://docs.cloud.google.com/iap/docs/enabling-compute-howto",
+        "https://docs.cloud.google.com/iap/docs/enabling-app-engine",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.405Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy"
+}

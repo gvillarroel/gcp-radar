@@ -1,0 +1,113 @@
+{
+  "feature_name": "Dependency vendoring support",
+  "feature_slug": "dependency-vendoring-support",
+  "summary": "The App Engine Go SDK supports vendoring external dependencies for Go applications.",
+  "extended_definition": "The App Engine Go SDK supports vendoring external dependencies for Go applications.",
+  "lifecycle": {
+    "latest_feature_date": "2016-03-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Specify dependencies \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies",
+        "source_id": "site-docs-reference",
+        "final_score": 40,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "One approach is by creating a symlink: mkdir private / private . example . com ln - s / path / to / private . example . com / foo private / private . example . com / foo Update your go.mod file to use the replace directive to use the private directory for your dependency: go mod edit - replace = private . example . com / foo =. / private / private . example . com / foo Your go.mod file should now look like: Final go.mod file module private . example . com / myapp require private . example . com / foo v1 .2.3 replace private . example . com / foo = > . / private / private . example . com / foo Original go.mod file module private . example . com / myapp require private . example . com / foo v1 .2.3 Don't modify how you import and use your private package.",
+          "Your import statement should look like this: import \"private.example.com/foo\" Include your private dependency in your deployment by deploying your app: gcloud app deploy Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following example assumes your app is in the /myapp/ directory: Change to your app directory: cd / myapp Create a directory containing your private dependencies: mkdir private Make sure your private dependency is in the private directory."
+        ]
+      },
+      {
+        "title": "\"Authenticating users \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Go Java Node.js PHP Python Ruby To authenticate users in Google Cloud applications, Google offers the following user authentication methods: Authentication Service Summary Identity Platform (recommended) Authenticate users using passwords, phone numbers, popular federated identity providers like Google, Facebook, Twitter, and any provider that supports SAML or OpenID Connect protocol.",
+          "Similar to Identity Platform, Firebase Authentication supports multiple authentication methods (SAML, OIDC, email/password, social, mobile, and custom auth) to provide flexible integration options for any identity solution.",
+          "Identity Platform supports multiple authentication methods (SAML, OIDC, email/password, social, phone, and custom auth) to provide flexible integration options for any identity solution."
+        ]
+      },
+      {
+        "title": "\"Using the local development server \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app",
+        "source_id": "site-docs-reference-4",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "go.mod",
+      "private.example.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/specifying-dependencies",
+        "https://docs.cloud.google.com/appengine/docs/standard/authenticating-users",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/testing-and-deploying-your-app"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.872Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go"
+}

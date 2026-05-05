@@ -1,0 +1,151 @@
+{
+  "feature_name": "Cloud Build user-specified build service accounts",
+  "feature_slug": "cloud-build-user-specified-build-service-accounts",
+  "summary": "Users can configure custom service accounts for Cloud Build to use when running builds.",
+  "extended_definition": "Users can configure custom service accounts for Cloud Build to use when running builds.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "source_id": "site-docs-reference-2",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A high maximum means users might wait longer for their requests to be served (if there are pending requests and no idle instances to serve them), but your application will cost less to run. min pending latency An optional element you can set to specify the minimum amount of time that App Engine should allow a request to wait in the pending queue before starting a new instance to handle it.",
+          "Google Accounts sign-in and sign-out are always performed using a secure connection, unrelated to how the application's URLs are configured. static dir Optional.",
+          "REGION ID .r.appspot.com To use custom domains with HTTPS, you must first activate and configure SSL certificates for that domain ."
+        ]
+      },
+      {
+        "title": "\"Configure App Engine service accounts \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There are two types of service accounts in App Engine and any service account in your Cloud project can be assigned to act as either the app-level default or per-version service account: App-level default service account - This service account is used for all of your deployed services when you don't configure a \"per-version service account\".",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Configure App Engine service accounts Stay organized with collections Save and categorize content based on your preferences.",
+          "View your configured service accounts To view the current app-level default service account, run the gcloud app describe command."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference-2",
+        "final_score": 127,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Benefits Serverless VPC Access lets you write any number of custom constraints using most user-configured fields in the Serverless VPC Access API.",
+          "For Shared VPC users who set up connectors in the Shared VPC host project, you can use the command gcloud compute networks vpc-access connectors describe to list the projects in which there are serverless resources that use a given connector.",
+          "For example, /home/user/customconstraint.yaml ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "customconstraint.yaml",
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "module.network",
+      "module.subnets",
+      "module.test",
+      "r.appspot.com",
+      "service.vpcaccess",
+      "var.host",
+      "var.project",
+      "vpcaccess.googleapis.com",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "https://docs.cloud.google.com/appengine/docs/standard/configure-service-accounts",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

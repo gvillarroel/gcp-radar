@@ -1,0 +1,81 @@
+{
+  "feature_name": "Agent Assist for unassociated calls and chats",
+  "feature_slug": "agent-assist-for-unassociated-calls-and-chats",
+  "summary": "Agent Assist can now be enabled at the team level for calls and chats that are not associated with a queue.",
+  "extended_definition": "Agent Assist can now be enabled at the team level for calls and chats that are not associated with a queue.",
+  "lifecycle": {
+    "latest_feature_date": "2026-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Agent Assist \\_|\\_ Google Cloud Contact Center as a Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-assist",
+        "source_id": "site-docs-reference",
+        "final_score": 172,
+        "relevance": "",
+        "evidence_snippets": [
+          "This lets you use Agent Assist with the following session types: Calls to direct phone numbers Calls to agent extension numbers Outbound calls where no queue is selected Chats transferred directly to another agent Note: When a chat is transferred, the originating agent sees Agent Assist as it's configured for the originating team or queue, and the receiving agent sees Agent Assist as it's configured for the receiving team or queue.",
+          "Configure Agent Assist for calls globally To configure Agent Assist for calls globally, follow these steps: In the CCAI Platform portal, click Settings > Call .",
+          "Configure Agent Assist for chats globally To configure Agent Assist for chats globally, follow these steps: In the CCAI Platform portal, click Settings > Chat ."
+        ]
+      },
+      {
+        "title": "\"Call and Chat Settings \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Call_and_Chat_Settings",
+        "source_id": "site-docs-reference",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "Viewing live chat UI Agent : Name of Agent as entered on the Users and Teams page End User : Consumer name or unique ID if available Issue : Queue menu path View Case / Ticket : If your CRM is integrated with Contact Center AI Platform (CCAI Platform), click the link to view the CRM record associated with the chat session After Hour Deflection for Calls and Chats Overview Customize your consumer's experience by configuring specific deflection paths for when consumers try to contact you outside of your Hours of Operation are first configured, then deflection is enabled and configured at the global level in the Call Settings and Chat Settings pages.",
+          "Monitoring Live Calls and Chats Overview Supervisors and Agents in training benefit from listening in on live calls and viewing live chats, without joining the session or interrupting the consumer and Agent on the call or chat.",
+          "Details When After Hour deflection is enabled, calls and chats will be deflected based on the specific operation hours for the queue, language, or channel the consumer has selected or has been routed to."
+        ]
+      },
+      {
+        "title": "\"Standard Reports Agent and Teams Data Sets \\_|\\_ Google Cloud Contact Center\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Standard_Reports_Agents_and_Teams_Data_Set",
+        "source_id": "site-docs-reference",
+        "final_score": 145,
+        "relevance": "",
+        "evidence_snippets": [
+          "Occupancy : [Total time Agent status = In-Call or In-Chat or Wrap-up] / [Total time agent status = Available] Volume per Hour : Average volume of interactions per hour (per hour referenced as 24 hours in a day, regardless of hours of operation) Handle Time: Calls: average (call duration + hold time + default wrap-up status associated with a Call ID) Chats: average chat duration only (no wrap-up status applied) Longest Handle Time : Longest call/chat duration Calls: max(call duration + average default wrap-up status associated with an interaction ID) Chats: max chat duration only (no wrap-up status applied) Hold Time : Average duration (in seconds) that a consumer was placed on hold by an Agent.",
+          "Date and Timestamp Agent Status Summary and Timeline Report Agent statuses, also known as Aux codes, are used to track time spent on different tasks, make agents available for calls or chats, and are used extensively for workforce management.",
+          "For example, the Agent & Teams option has different available metrics when Calls are selected than you will see for Chats."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

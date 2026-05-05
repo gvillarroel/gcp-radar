@@ -1,0 +1,130 @@
+{
+  "feature_name": "Cloud Bigtable hot tablets observability",
+  "feature_slug": "cloud-bigtable-hot-tablets-observability",
+  "summary": "Cloud Bigtable now provides visibility into hot tablets to help identify and monitor heavily loaded tablets in a cluster.",
+  "extended_definition": "Cloud Bigtable now provides visibility into hot tablets to help identify and monitor heavily loaded tablets in a cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+      "https://docs.cloud.google.com/bigtable/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Aerospike users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "source_id": "site-docs-root-2",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "A Bigtable table is sharded into blocks of contiguous rows, called tablets, which are stored on Colossus, a distributed file system that provides high durability.",
+          "This happens because the split into tablets and their distribution between nodes might not be optimal and because the caches are cold.",
+          "Advanced types might be increasingly supported in the future, but at the time of writing this document there is no way to put such types into Bigtable, everything is serialized client side."
+        ]
+      },
+      {
+        "title": "Bigtable overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "A Bigtable table is sharded into blocks of contiguous rows, called tablets , to help balance the workload of queries. (Tablets are similar to HBase regions.) Tablets are stored on Colossus, a Google-developed file system, in SSTable format.",
+          "Bigtable architecture The following diagram shows a simplified version of Bigtable's overall architecture: As the diagram illustrates, all client requests go through a frontend server before they are sent to a Bigtable node. (In the original Bigtable paper , these nodes are called \"tablet servers.\") The nodes are organized into a Bigtable cluster, which belongs to a Bigtable instance, a container for the cluster.",
+          "For other locations, the row would start with a different identifier; with many locations collecting data at the same rate, writes would still be spread evenly across tablets."
+        ]
+      },
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "SSD The SSD node's capacity of 5 TB, which is preferred for most workloads, provides higher storage density in comparison with the recommended configuration for Cassandra machines, which have a practical maximum storage density of less than 2 TB for each node.",
+          "Tablets are not stored on nodes in Bigtable, but are stored in a series of SSTables on Colossus. replication factor : the number of replicas of a vnode that are maintained across all nodes in the data center.",
+          "This architecture provides consistent reads and writes within a cluster, scales up and down without any storage redistribution cost, and can rebalance workloads without modifying the cluster or schema."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "https://docs.cloud.google.com/bigtable/docs/overview",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:06.484Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

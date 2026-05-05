@@ -1,0 +1,215 @@
+{
+  "feature_name": "Redis version upgrade in Cloud Console",
+  "feature_slug": "redis-version-upgrade-in-cloud-console",
+  "summary": "Users can upgrade a Memorystore for Redis instance's Redis version in the Google Cloud Console.",
+  "extended_definition": "Users can upgrade a Memorystore for Redis instance's Redis version in the Google Cloud Console.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+      "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+      "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+      "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About upgrading the Redis version of an instance \\_|\\_ Memorystore for Redis\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "source_id": "site-docs-root-2",
+        "final_score": 294,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how your Memorystore instance behaves during a version upgrade operation, how an upgrade operation can affect your application, and when you should run an upgrade operation.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback About upgrading the Redis version of an instance Stay organized with collections Save and categorize content based on your preferences.",
+          "Best practices for upgrading an instance's Redis version We recommend that you upgrade to version 7.0 and later because Certificate Authority rotation no longer drops connections."
+        ]
+      },
+      {
+        "title": "\"Connect to a Redis instance from a Compute Engine VM \\_|\\_ Memorystore for\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "source_id": "site-docs-root-2",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This is a sample package.json file: { \"name\" : \"memorystore-redis\" , \"description\" : \"An example of using Memorystore(Redis) with Node.js\" , \"version\" : \"0.0.1\" , \"private\" : true , \"license\" : \"Apache Version 2.0\" , \"author\" : \"Google Inc.\" , \"engines\" : { \"node\" : \">=16.0.0\" }, \"dependencies\" : { \"redis\" : \"^4.0.0\" } } Sample application code: 'use strict' ; const http = require ( 'http' ); const redis = require ( 'redis' ); const REDISHOST = process . env .",
+          "It uses the Jedis library: <dependency> <groupId>redis.clients</groupId> <artifactId>jedis</artifactId> <version>5.1.0</version> </dependency> The AppServletContextListener class is used to create a long-lived Redis connection pool: package com.example.redis ; import java.io.IOException ; import java.util.Properties ; import javax.servlet.ServletContextEvent ; import javax.servlet.ServletContextListener ; import javax.servlet.annotation.WebListener ; import redis.clients.jedis.JedisPool ; import redis.clients.jedis.JedisPoolConfig ; @WebListener public class AppServletContextListener implements ServletContextListener { private Properties config = new Properties (); private JedisPool createJedisPool () throws IOException { String host ; Integer port ; config . load ( Thread . currentThread () . getContextClassLoader () . getResourceAsStream ( \"application.properties\" )); host = config . getProperty ( \"redis.host\" ); port = Integer . valueOf ( config . getProperty ( \"redis.port\" , \"6379\" )); JedisPoolConfig poolConfig = new JedisPoolConfig (); // Default : 8, consider how many concurrent connections into Redis you will need under load poolConfig . setMaxTotal ( 128 ); return new JedisPool ( poolConfig , host , port ); } @Override public void contextDestroyed ( ServletContextEvent event ) { JedisPool jedisPool = ( JedisPool ) event . getServletContext (). getAttribute ( \"jedisPool\" ); if ( jedisPool != null ) { jedisPool . destroy (); event . getServletContext (). setAttribute ( \"jedisPool\" , null ); } } // Run this before web application is started @Override public void contextInitialized ( ServletContextEvent event ) { JedisPool jedisPool = ( JedisPool ) event . getServletContext (). getAttribute ( \"jedisPool\" ); if ( jedisPool == null ) { try { jedisPool = createJedisPool (); event . getServletContext (). setAttribute ( \"jedisPool\" , jedisPool ); } catch ( IOException e ) { // handle exception } } } } The VisitCounterServlet class is a web servlet that increments a Redis counter: package com.example.redis ; import java.io.IOException ; import java.net.SocketException ; import javax.servlet.annotation.WebServlet ; import javax.servlet.http.HttpServlet ; import javax.servlet.http.HttpServletRequest ; import javax.servlet.http.HttpServletResponse ; import redis.clients.jedis.Jedis ; import redis.clients.jedis.JedisPool ; @WebServlet ( name = \"Track visits\" , value = \"\" ) public class VisitCounterServlet extends HttpServlet { @Override public void doGet ( HttpServletRequest req , HttpServletResponse resp ) throws IOException { try { JedisPool jedisPool = ( JedisPool ) req . getServletContext (). getAttribute ( \"jedisPool\" ); if ( jedisPool == null ) { throw new SocketException ( \"Error connecting to Jedis pool\" ); } Long visits ; try ( Jedis jedis = jedisPool . getResource ()) { visits = jedis . incr ( \"visits\" ); } resp . setStatus ( HttpServletResponse .",
+          "REDISPORT 6379 ; const client = redis . createClient ({ url : redis:// ${ REDISHOST } : ${ REDISPORT } , }); client . on ( 'error' , err = > console . error ( 'ERR:REDIS:' , err )); client . connect () . then (() = > { console . log ( 'Connected to Redis' ); http . createServer ( async ( req , res ) = > { try { const reply = await client . incr ( 'visits' ); res . writeHead ( 200 , { 'Content-Type' : 'text/plain' }); res . end ( Visitor number: ${ reply } \\n ); } catch ( err ) { console . error ( err ); res . statusCode = 500 ; res . end ( err . message ); } }) . listen ( 8080 , () = > { console . log ( 'Server listening on port 8080' ); }); }) . catch ( err = > { console . error ( 'Failed to connect to Redis:' , err ); throw err ; }); Python This application uses Flask for web serving and the redis-py package to communicate with the Redis instance."
+        ]
+      },
+      {
+        "title": "\"Manage Memorystore for Redis resources with custom constraints \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "source_id": "site-docs-root-2",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Memorystore for Redis Instance resource.alternativeLocationId resource.authEnabled resource.authorizedNetwork resource.availableMaintenanceVersions resource.connectMode resource.customerManagedKey resource.displayName resource.locationId resource.maintenancePolicy.description resource.maintenancePolicy.weeklyMaintenanceWindow.day resource.maintenanceVersion resource.memorySizeGb resource.name resource.persistenceConfig.persistenceMode resource.persistenceConfig.rdbSnapshotPeriod resource.persistenceConfig.rdbSnapshotStartTime resource.readReplicasMode resource.redisConfigs resource.redisVersion resource.replicaCount resource.reservedIpRange resource.secondaryIpRange resource.suspensionReasons resource.tier resource.transitEncryptionMode Example custom constraints The following table provides an example custom constraint that restricts Redis instance to one replica: Description Constraint syntax Restrict Redis instances with one replicas name : organizations/ ORGANIZATION ID /customConstraints/custom.restrictInstanceToOnereplica resourceTypes : - redis.googleapis.com/Instance methodTypes : - CREATE - UPDATE condition : \"resource.replicaCount >= 2\" actionType : DENY displayName : Restrict Redis instances to one replica description : Prevent users from creating Redis instances with more than one replica What's next See Introduction to the Organization Policy Service to learn more about organization policies.",
+          "You could test this constraint by running the gcloud redis instances create command with replica-count set to 2 as demonstrated in the following snippet: gcloud redis instances create redis-test-instance \\ --project=my-project \\ --tier=standard \\ --size=16 \\ --region=us-central1 \\ --redis-version=redis 7 0 \\ --network=projects/my-project/global/networks/default \\ --connect-mode=PRIVATE SERVICE ACCESS \\ --read-replicas-mode=READ REPLICAS ENABLED \\ --replica-count=2 The output is similar to the following: Operation denied by custom org policies: [\"customConstraints/custom.restrictInstanceToOnereplica\": \"Prevent users from creating Redis instances with more than one replica\"] Memorystore for Redis supported resources and operations The following Memorystore for Redis custom constraint fields are available to use when you create or update a Memorystore for Redis resource .",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Manage Memorystore for Redis resources with custom constraints Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Create and manage Redis instances \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances",
+        "source_id": "site-docs-root",
+        "final_score": 268,
+        "relevance": "",
+        "evidence_snippets": [
+          "To choose one of the available OSS Redis versions for Memorystore for Redis, use the --redis-version flag with one of the following values: redis 7 2 redis 7 0 (Default) redis 6 X redis 5 0 redis 4 0 redis 3 2 For example: gcloud redis instances create myinstance --size=5 --region=us-central1 \\ --zone=us-central1-a --redis-version=redis 6 X Networking You can create Redis instances using one of two connection modes : --connect-mode=PRIVATE SERVICE ACCESS or --connect-mode=DIRECT PEERING .",
+          "You can view summary information about a Memorystore for Redis instance by using either the Google Cloud console or the gcloud CLI .",
+          "Optional flags Redis version Important: You can also upgrade an existing Redis instance to a more recent OSS Redis version."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "application.properties",
+      "com.example.redis",
+      "custom.restrictInstanceToOnereplica",
+      "github.com",
+      "java.io.IOException",
+      "java.net.SocketException",
+      "java.util.Properties",
+      "javax.servlet.annotation.WebListener",
+      "javax.servlet.annotation.WebServlet",
+      "javax.servlet.http.HttpServlet",
+      "javax.servlet.http.HttpServletRequest",
+      "javax.servlet.http.HttpServletResponse",
+      "javax.servlet.ServletContextEvent",
+      "javax.servlet.ServletContextListener",
+      "package.json",
+      "redis.clients",
+      "redis.clients.jedis.Jedis",
+      "redis.clients.jedis.JedisPool",
+      "redis.clients.jedis.JedisPoolConfig",
+      "redis.googleapis.com",
+      "redis.host",
+      "redis.port",
+      "resource.alternativeLocationId",
+      "resource.authEnabled",
+      "resource.authorizedNetwork",
+      "resource.availableMaintenanceVersions",
+      "resource.connectMode",
+      "resource.customerManagedKey",
+      "resource.displayName",
+      "resource.locationId",
+      "resource.maintenancePolicy.description",
+      "resource.maintenancePolicy.weeklyMaintenanceWindow.day",
+      "resource.maintenanceVersion",
+      "resource.memorySizeGb",
+      "resource.name",
+      "resource.persistenceConfig.persistenceMode",
+      "resource.persistenceConfig.rdbSnapshotPeriod",
+      "resource.persistenceConfig.rdbSnapshotStartTime",
+      "resource.readReplicasMode",
+      "resource.redisConfigs",
+      "resource.redisVersion",
+      "resource.replicaCount",
+      "resource.reservedIpRange",
+      "resource.secondaryIpRange",
+      "resource.suspensionReasons",
+      "resource.tier",
+      "resource.transitEncryptionMode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/about-upgrading-version",
+        "https://docs.cloud.google.com/memorystore/docs/redis/connect-redis-instance-gce",
+        "https://docs.cloud.google.com/memorystore/docs/redis/custom-constraints",
+        "https://docs.cloud.google.com/memorystore/docs/redis/create-manage-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.027Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis"
+}

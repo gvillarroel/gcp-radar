@@ -1,0 +1,98 @@
+{
+  "feature_name": "Content de-identification",
+  "feature_slug": "content-de-identification",
+  "summary": "Provides the ability to de-identify content through the content.deidentify API.",
+  "extended_definition": "Provides the ability to de-identify content through the content.deidentify API.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-bucketing",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-templates-deid",
+      "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "De-identifying sensitive data | Sensitive Data Protection | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Field transformations example The following example sends a projects.content.deidentify request with two field transformations: The first field transformation applies to the first two columns ( column1 and column2 ).",
+          "Note: If you want to use a RecordTransformations configuration in a content.deidentify call, make sure that the value of the item field is of type Table .",
+          "API overview To de-identify sensitive data, use Sensitive Data Protection's content.deidentify method."
+        ]
+      },
+      {
+        "title": "\"Creating Sensitive Data Protection de-identification templates \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-templates-deid",
+        "source_id": "site-docs-root-2",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using de-identification templates Once you've created a new template, you can use its name identifier anywhere deidentifyTemplateName is accepted, such as: projects.content.deidentify : De-identifies potentially sensitive data in content using the template as its configuration.",
+          "DlpServiceClient () Convert the project id into a full resource id. parent = f \"projects/ { project } \" Call the API. response = dlp . list inspect templates ( request = { \"parent\" : parent }) for template in response : print ( f \"Template { template . name } :\" ) if template . display name : print ( f \" Display Name: { template . display name } \" ) print ( f \" Created: { template . create time } \" ) print ( f \" Updated: { template . update time } \" ) config = template . inspect config print ( \" InfoTypes: {} \" . format ( \", \" . join ([ it . name for it in config . info types ])) ) print ( f \" Minimum likelihood: { config . min likelihood } \" ) print ( f \" Include quotes: { config . include quote } \" ) print ( \" Max findings per request: {} \" . format ( config . limits . max findings per request ) ) Deleting de-identification templates To delete a specific de-identification template, use one of the . .delete methods: projects.deidentifyTemplates.delete With each . .delete method, you include the resource name of the template to be deleted.",
+          "Listing de-identification templates To list all de-identification templates that have been created, use one of the . .list methods: projects.deidentifyTemplates.list This section demonstrates how to use Sensitive Data Protection to list inspection templates."
+        ]
+      },
+      {
+        "title": "\"Generalization and bucketing \\_|\\_ Sensitive Data Protection \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-bucketing",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This JSON could be included in a request to the content.deidentify method: C# To learn how to install and use the client library for Sensitive Data Protection, see Sensitive Data Protection client libraries .",
+          "For API documentation, see: projects.content.deidentify method BucketingConfig transformation: Buckets values based on custom ranges.",
+          "For more details on the table schema, please see https://cloud.google.com/dlp/docs/reference/rest/v2/ContentItem#Table headers = [{ \"name\" : val } for val in table to deid [ \"header\" ]] rows = [] for row in table to deid [ \"rows\" ]: rows . append ({ \"values\" : [{ \"string value\" : cell val } for cell val in row ]}) table = { \"headers\" : headers , \"rows\" : rows } Construct the item for table to de-identify. item = { \"table\" : table } Construct generalised bucket configuration. buckets config = [ { \"min \" : { \"integer value\" : 0 }, \"max \" : { \"integer value\" : 25 }, \"replacement value\" : { \"string value\" : \"Low\" }, }, { \"min \" : { \"integer value\" : 25 }, \"max \" : { \"integer value\" : 75 }, \"replacement value\" : { \"string value\" : \"Medium\" }, }, { \"min \" : { \"integer value\" : 75 }, \"max \" : { \"integer value\" : 100 }, \"replacement value\" : { \"string value\" : \"High\" }, }, ] Construct de-identify configuration that groups values in a table field and replace those with bucket labels. deidentify config = { \"record transformations\" : { \"field transformations\" : [ { \"fields\" : [{ \"name\" : \"happiness score\" }], \"primitive transformation\" : { \"bucketing config\" : { \"buckets\" : buckets config } }, } ] } } Call the API to deidentify table data through primitive bucketing. response = dlp . deidentify content ( request = { \"parent\" : parent , \"deidentify config\" : deidentify config , \"item\" : item , } ) Print the results. print ( f \"Table after de-identification: { response . item . table } \" ) REST ... { \"primitiveTransformation\": { \"bucketingConfig\": { \"buckets\": [ { \"min\": { \"integerValue\": \"0\" }, \"max\": { \"integerValue\": \"25\" }, \"replacementValue\": { \"stringValue\": \"Low\" } }, { \"min\": { \"integerValue\": \"26\" }, \"max\": { \"integerValue\": \"75\" }, \"replacementValue\": { \"stringValue\": \"Medium\" } }, { \"min\": { \"integerValue\": \"76\" }, \"max\": { \"integerValue\": \"100\" }, \"replacementValue\": { \"stringValue\": \"High\" } } ] } } } ..."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "content.deidentify",
+      "example.com",
+      "output.csv",
+      "projects.content.deidentify",
+      "projects.deidentifyTemplates.delete",
+      "projects.deidentifyTemplates.list",
+      "table4.csv"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/deidentify-sensitive-data",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/creating-templates-deid",
+        "https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-bucketing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:50.160Z",
+  "source_step08_card": "data/step-08/current/products/sensitive-data-protection/card.json",
+  "product_name": "Sensitive Data Protection",
+  "product_slug": "sensitive-data-protection"
+}

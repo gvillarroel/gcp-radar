@@ -1,0 +1,151 @@
+{
+  "feature_name": "Shared VPC",
+  "feature_slug": "shared-vpc",
+  "summary": "Shared VPC provides cross-project network sharing, succeeding the earlier Cross-Project Networking (XPN) model, and is now generally available; Shared VPC enables one host project to share a VPC network with other Google Cloud projects.",
+  "extended_definition": "Shared VPC provides cross-project network sharing, succeeding the earlier Cross-Project Networking (XPN) model, and is now generally available; Shared VPC enables one host project to share a VPC network with other Google Cloud projects.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+      "https://docs.cloud.google.com/vpc/docs/overview",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shared VPC lets you map each tier of the web service to different projects so that they can be managed by different teams while sharing a common VPC network: Resources, such as instances and load balancer components, for each tier are placed in individual service projects managed by different teams.",
+          "You can create your private zone in the host project and authorize access to the zone for the Shared VPC network or set up the zone in a service project using cross-project binding .",
+          "A host project with a Shared VPC network provides internal connectivity for two service projects, while a standalone project doesn't use Shared VPC (click to enlarge)."
+        ]
+      },
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can view cross-project metrics for network traffic sent across Shared VPC or VPC Network Peering boundaries within the same organization.",
+          "Cloud Monitoring is especially useful for Shared VPC and VPC Network Peering scenarios, where resources or networks can be in different projects.",
+          "In the Infrastructure view, the insights for metrics for the selected hour on the timeline include the following: High egress instances: aggregated hourly values for various types of egress High egress instance groups: aggregated hourly values for various types of egress In the GKE Enterprise view available for GKE Enterprise projects, the insights for metrics for the selected hour on the timeline include the following: High egress GKE workloads: aggregated hourly values for various types of egress for GKE workloads, in the GKE Enterprise view Filter the traffic based on the traffic types You can further filter the traffic based on the following traffic types: All egress traffic for an entity Cross-zonal egress traffic: useful for analyzing billable traffic Egress to internet: used for analyzing billable traffic and for analyzing the traffic that reaches external endpoints Hybrid egress: used to analyze the volume of traffic to on-premises, including Cloud Interconnect, Cloud VPN, and Router appliance connections In the GKE Enterprise view, you can further filter the traffic based on the following traffic types: All measured egress traffic from the selected entity Cross-zonal egress traffic: useful for analyzing billable traffic between Google Cloud zones Multiple projects Network Topology visualizes resources in your project, or you can use Cloud Monitoring, which can visualize metrics for multiple Google Cloud projects."
+        ]
+      },
+      {
+        "title": "Virtual Private Cloud (VPC) overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "VPC sharing and peering Google Cloud provides the following configurations for sharing VPC networks across projects and connecting VPC networks to each other.",
+          "VPC Network Peering VPC Network Peering lets you build software as a service (SaaS) ecosystems in Google Cloud, making services available privately across different VPC networks, whether the networks are in the same project, different projects, or projects in different organizations.",
+          "Shared VPC You can share a VPC network from one project (called a host project) to other projects in your Google Cloud organization."
+        ]
+      },
+      {
+        "title": "\"Network Analyzer overview \\_|\\_ Network Intelligence Center - Network Analyzer\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview",
+        "source_id": "site-iam-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Shared VPC insights For Shared VPC cases, there are two scenarios: Host project: Network Analyzer provides relevant information for VPC networks in the host project, such as IP address utilization insights that display the IP address allocation percentage of subnets.",
+          "If these services use the host project VPC network, the analysis automatically includes the host VPC network information such as firewall rules and routes.",
+          "Insights are grouped into the following categories: VPC network Network services Kubernetes engine Hybrid connectivity Managed services For more information about these groups and their related insight types, see Insight groups and types ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkUser"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/vpc/docs/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-analyzer/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

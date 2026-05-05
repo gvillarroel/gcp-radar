@@ -1,0 +1,33 @@
+# T5Gemma model in Vertex AI Model Garden
+
+Product: Vertex AI
+Feature slug: `t5gemma-model-in-vertex-ai-model-garden`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The T5Gemma model is now available through Vertex AI Model Garden.
+
+## Lifecycle
+
+- Latest feature date: 2025-07-14
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials), [https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint](https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint), [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction))
+- iam (evidence: [https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials), [https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint](https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint), [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction))
+- key (evidence: [https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials), [https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint](https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint), [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction))
+- logging (evidence: [https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials), [https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint](https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint), [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials](https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials)
+- [https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint](https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint)
+- [https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction](https://docs.cloud.google.com/vertex-ai/docs/tutorials/tabular-bq-prediction)

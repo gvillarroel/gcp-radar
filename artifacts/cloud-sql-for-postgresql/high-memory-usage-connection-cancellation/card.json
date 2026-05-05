@@ -1,0 +1,134 @@
+{
+  "feature_name": "High memory usage connection cancellation",
+  "feature_slug": "high-memory-usage-connection-cancellation",
+  "summary": "High memory usage connection cancellation proactively detects and cancels connections that could trigger out-of-memory failures.",
+  "extended_definition": "High memory usage connection cancellation proactively detects and cancels connections that could trigger out-of-memory failures.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-ha",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "There are other factors beside your workload that can impact memory usage, such as the number of active connections and internal overhead processes.",
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances Flags High availability Import and export Integrate with Vertex AI Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.",
+          "Cloud SQL instance resources (CPU and RAM) are near 100% usage, causing the high availability instance to go down."
+        ]
+      },
+      {
+        "title": "\"General best practices \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can also use the total usage metric to observe the percentage of available memory that your Cloud SQL instance is using, including memory used by the database container and memory allocated by the operating system cache.",
+          "Note that when autovacuum runs, up to autovacuum max workers times this memory may be allocated, so be careful not to set the default value too high.",
+          "When looking for signs of memory exhaustion, you should primarily use the usage metric."
+        ]
+      },
+      {
+        "title": "\"Enable and disable high availability \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-ha",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud SQL instance resources (CPU and RAM) are near 100% usage, causing the high availability instance to go down.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE NAME \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE NAME \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } Configure the instance to be a regional, high availability instance: Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the instance INSTANCE NAME : the name of the instance that you're configuring for high availability HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE NAME Request JSON body: { \"settings\": {\"availabilityType\": \"REGIONAL\" } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE NAME \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } Configure the instance to be a regional, high availability instance: Before using any of the request data, make the following replacements: PROJECT ID : the ID or project number of the Google Cloud project that contains the instance INSTANCE NAME : the name of the instance that you're configuring for high availability HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME Request JSON body: { \"settings\": {\"availabilityType\": \"REGIONAL\" } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/postgres/best-practices",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-ha"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

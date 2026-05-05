@@ -1,0 +1,178 @@
+{
+  "feature_name": "Egress rules for VPC Service Controls",
+  "feature_slug": "egress-rules-for-vpc-service-controls",
+  "summary": "VPC Service Controls now support egress rules for controlling outbound service access.",
+  "extended_definition": "VPC Service Controls now support egress rules for controlling outbound service access.",
+  "lifecycle": {
+    "latest_feature_date": "2021-04-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+      "https://docs.cloud.google.com/access-context-manager/docs/overview",
+      "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access Context Manager Overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can configure and enforce Access Context Manager policies across the following Chrome Enterprise Premium solution components: VPC Service Controls Identity-Aware Proxy Context-Aware Access for Google Workspace Identity and Access Management (IAM) conditions Benefits Many companies rely on a perimeter security model such as a firewall to secure internal resources.",
+          "For example, you can use this scenario to enable a Cloud Function to access data protected by VPC Service Controls.",
+          "Policy is configured and enforced across various points, such as VPC Service Controls ."
+        ]
+      },
+      {
+        "title": "\"Apply policies to user groups using access bindings \\_|\\_ Access Context\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups",
+        "source_id": "site-iam-reference",
+        "final_score": 48,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Preview — Session controls feature only This feature is subject to the \"Pre-GA Offerings Terms\" in the General Service Terms section of the Service Specific Terms .",
+          "Define configurations for specific applications This method lets you apply different access levels and session controls to different applications.",
+          "If you also define session controls in the YAML file, those session controls override the default settings for those specific applications."
+        ]
+      },
+      {
+        "title": "LaunchStage | Access Context Manager | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "source_id": "feature-recovery-direct-http",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "LaunchStage | Access Context Manager | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Access Context Manager Start free Overview Guides Reference Resources Technology areas More Overview Guides Reference Resources Cross-product tools More Console Access Context Manager All APIs & references Context-Aware Access audit logging gcloud reference REST reference Overview v1 Overview REST Resources accessPolicies Overview create delete get getIamPolicy list patch setIamPolicy testIamPermissions accessPolicies.accessLevels Overview create delete get list patch replaceAll testIamPermissions accessPolicies.authorizedOrgsDescs Overview create delete get list patch accessPolicies.servicePerimeters Overview commit create delete get list patch replaceAll testIamPermissions operations Overview cancel delete get list organizations.gcpUserAccessBindings Overview create delete get list patch services Overview get list Types LevelFormat MethodSelector v1alpha Overview REST Resources accessPolicies Overview create delete get getIamPolicy list patch setIamPolicy testIamPermissions accessPolicies.accessLevels Overview create delete get list patch replaceAll testIamPermissions accessPolicies.authorizedOrgsDescs Overview create delete get list patch accessPolicies.servicePerimeters Overview commit create delete get list patch replaceAll testIamPermissions operations Overview get organizations.gcpUserAccessBindings Overview create delete get list patch services Overview get list Types LevelFormat MethodSelector Shared types Overview Types AuditConfig Binding DeviceEncryptionStatus DeviceManagementLevel GetIamPolicyRequest GetOperationRequest LaunchStage LogType Operation OsType Policy SetIamPolicyRequest TestIamPermissionsRequest TestIamPermissionsResponse RPC reference Overview google.api google.iam.v1 google.identity.accesscontextmanager.type google.identity.accesscontextmanager.v1 google.identity.accesscontextmanager.v1alpha google.longrunning google.rpc google.type Access level attributes Example access level YAML Custom access level specification AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Security Access Context Manager Reference Send feedback LaunchStage Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "organizations.gcpUserAccessBindings"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/reference/rest/Shared.Types/LaunchStage",
+        "https://docs.cloud.google.com/access-context-manager/docs/overview",
+        "https://docs.cloud.google.com/access-context-manager/docs/apply-policies-to-user-groups"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.714Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager"
+}

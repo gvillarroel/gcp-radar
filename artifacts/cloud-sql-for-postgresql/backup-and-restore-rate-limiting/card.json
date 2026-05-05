@@ -1,0 +1,90 @@
+{
+  "feature_name": "Backup and restore rate limiting",
+  "feature_slug": "backup-and-restore-rate-limiting",
+  "summary": "Cloud SQL limits backup and restore throughput on the data disk.",
+  "extended_definition": "Cloud SQL limits backup and restore throughput on the data disk.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore",
+      "https://docs.cloud.google.com/sql/docs/postgres/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Fixed limits IOPS IOPS are the number of input/output operations (or read/write) operations that your disk can process per second.",
+          "Rate quotas Cloud SQL supports rate quotas, which are also known as rate limits or API quotas.",
+          "RestoreBackup SqlInstancesService."
+        ]
+      },
+      {
+        "title": "\"Restore an instance overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore",
+        "source_id": "site-iam-reference",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "For PITR write-ahead logs that are stored on disk , that are being switched to Cloud Storage, or that are already switched to Cloud Storage, Cloud SQL retains the logs for the minimum value set for one of the following configurations: The transactionLogRetentionDays backup configuration setting The expire logs days or the binlog expire logs seconds flag Cloud SQL doesn't set any values for these flags if the write-ahead logs are stored on disk, are being switched to Cloud Storage, or have already been switched to Cloud Storage.",
+          "When you restore an instance using a backup, you can do the following: Restore to a new instance Restore to an existing instance Restore to an instance in another project or region In the event of an outage, you can still retrieve a list of backups in a particular project to restore from.",
+          "What's next Perform a restore from a backup Use point-in-time recovery (PITR) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Choose your backup option \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "source_id": "site-iam-reference",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backup rate limitations Cloud SQL limits the rate for backup operations on the data disk.",
+          "The following table provides an overview of the key features available with each backup option: Features Standard backups Enhanced backups Centralized backup management across projects - ✔ Backup vault - ✔ Automated backup schedule Daily Hourly, daily, weekly, monthly, yearly On-demand backups ✔ ✔ Multi-region backups ✔ ✔ Final backup in instance deletion ✔ ✔ Backup retention period 1 year 10 years Retain all backups on instance deletion ✔ ✔ Retain backups on project deletion - ✔ Enforced retention with retention lock - ✔ Point-in-time recovery using logs ✔ ✔ Point-in-time recovery after instance deletion ✔ ✔ Cross-region backup and restore ✔ - CMEK support ✔ - For detailed information about these backup options, see Standard backups and Enhanced backups .",
+          "What's next Cloud SQL backups overview Restore from a backup Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/restore"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

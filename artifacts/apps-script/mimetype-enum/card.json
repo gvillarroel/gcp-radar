@@ -1,0 +1,108 @@
+{
+  "feature_name": "MimeType enum",
+  "feature_slug": "mimetype-enum",
+  "summary": "The MimeType enum was added to provide named MIME type declarations.",
+  "extended_definition": "The MimeType enum was added to provide named MIME type declarations.",
+  "lifecycle": {
+    "latest_feature_date": "2013-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type",
+      "https://developers.google.com/apps-script/reference/content",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added a MimeType enum , which provides access to MIME -type declarations without typing the strings explicitly.",
+          "The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.",
+          "Feature Added the following class, enum, and methods to the Spreadsheet service, to give precise control over protected sheets and ranges: Protection ProtectionType Range.canEdit() Range.isEndColumnBounded() Range.isEndRowBounded() Range.isStartColumnBounded() Range.isStartRowBounded() Range.protect() Sheet.getProtections(type) Sheet.protect() Spreadsheet.getProtections(type) Fixed Issue 4617 : HTML service pages that use the new IFRAME sandbox mode now render correctly in Firefox."
+        ]
+      },
+      {
+        "title": "Content Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/content",
+        "source_id": "site-docs-reference-3",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MimeType Properties Property Type Description CSV Enum CSV Mime Type ICAL Enum ICAL Mime Type JAVASCRIPT Enum JAVASCRIPT Mime Type JSON Enum JSON Mime Type TEXT Enum TEXT Mime Type VCARD Enum VCARD Mime Type TextOutput Methods Method Return type Brief description append(addedContent) Text Output Appends new content to the content that will be served. clear() Text Output Clears the current content. download As File(filename) Text Output Tells browsers to download rather than display this content. get Content() String Gets the content that will be served. get File Name() String Returns the file name to download this file as, or null if it should be displayed rather than downloaded. get Mime Type() Mime Type Get the mime type this content will be served with. set Content(content) Text Output Sets the content that will be served. set Mime Type(mimeType) Text Output Sets the mime type for content that will be served.",
+          "The MimeType enum defines the various mime types that can be served from a script.",
+          "Mime Type An enum for mime types that can be served from a script."
+        ]
+      },
+      {
+        "title": "Enum BasicDataType \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type",
+        "source_id": "site-docs-reference-3",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Enum BasicDataType Stay organized with collections Save and categorize content based on your preferences.",
+          "GOOGLE USER Enum A user of the Google services, in the format of “users/encoded GAIA ID” FILE Enum A file type.",
+          "Properties Property Type Description BASIC TYPE UNSPECIFIED Enum Default value."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/content",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/content",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/content",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/basic-data-type"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

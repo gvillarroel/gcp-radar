@@ -1,0 +1,191 @@
+{
+  "feature_name": "IAMAuditConfig failure dependency event support",
+  "feature_slug": "iamauditconfig-failure-dependency-event-support",
+  "summary": "IAMAuditConfig supports UpdateFailed, DeleteFailed, DependencyNotFound, and DependencyNotReady events.",
+  "extended_definition": "IAMAuditConfig supports UpdateFailed, DeleteFailed, DependencyNotFound, and DependencyNotReady events.",
+  "lifecycle": {
+    "latest_feature_date": "2021-01-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+      "https://docs.cloud.google.com/config-connector/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IAMAuditConfig \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "source_id": "site-docs-root-2",
+        "final_score": 153,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace ${PROJECT ID?} and ${ORG ID?} below with your desired project and organization IDs respectively. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMAuditConfig metadata : name : iamauditconfig-sample-orglevel spec : service : allServices auditLogConfigs : - logType : DATA WRITE - logType : DATA READ exemptedMembers : - serviceAccount:iamauditconfig-dep-orglevel@${PROJECT ID?}.iam.gserviceaccount.com resourceRef : kind : Organization external : \"${ORG ID?}\" --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iamauditconfig-dep-orglevel Project Level Audit Config Copyright 2020 Google LLC Licensed under the Apache License, Version 2.0 (the \"License\"); you may not use this file except in compliance with the License.",
+          "Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMAuditConfig metadata : name : iamauditconfig-sample-projlevel spec : service : allServices auditLogConfigs : - logType : DATA WRITE - logType : DATA READ exemptedMembers : - serviceAccount:iamauditconfig-dep-projlevel@${PROJECT ID?}.iam.gserviceaccount.com resourceRef : kind : Project external : projects/${PROJECT ID?} --- Replace ${PROJECT ID?} below with your desired project ID. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMServiceAccount metadata : annotations : cnrm.cloud.google.com/project-id : ${PROJECT ID?} name : iamauditconfig-dep-projlevel Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "Field is required when parent field is specified Status Schema conditions : - lastTransitionTime : string message : string reason : string status : string type : string observedGeneration : integer Fields conditions list (object) Conditions represent the latest available observations of the IAMAuditConfig's current state. conditions[] object conditions[].lastTransitionTime string Last time the condition transitioned from one status to another. conditions[].message string Human-readable message indicating details about last transition. conditions[].reason string Unique, one-word, CamelCase reason for the condition's last transition. conditions[].status string Status is the status of the condition."
+        ]
+      },
+      {
+        "title": "Troubleshoot Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "source_id": "site-docs-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Type of issue Common issues Reconciliation Resource keeps updating every 5-15 mins Resource has no status KNV2005: syncer excessively updating resource Resource deleted by Config Connector Controller Pod OOMKilled Deletion Deletions of namespaces stuck at Terminating Deletions of resources stuck at DeleteFailed after project was deleted Permissions Compute Engine Metadata not defined Error 403: Request had insufficient authentication scopes 403 Forbidden: The caller does not have permission Error 403: Caller is missing IAM permission Update error with IAMPolicy, IAMPartialPolicy and IAMPolicyMember Installation and upgrades Version not supported in Config Connector add-on installations failed calling webhook PodSecurityPolicy prevents upgrades Configuration Cannot make changes to immutable fields No matches for kind \"Foo\" Labels are not propagated to the Google Cloud resource Error due to special characters in resource name Unable to remove fields from resource spec Reconciliation The following section lists common issues related to reconciliation of resources by Config Connector.",
+          "Check Config Connector status and conditions Check the version of Config Connector Run the following command to get the installed Config Connector version, and cross-reference the release notes to verify that the running version supports the features and resources that you want to use: kubectl get ns cnrm-system -o jsonpath = '{.metadata.annotations.cnrm\\.cloud\\.google\\.com/version}' Check the resource's status and events Usually, you can determine the issue with your Config Connector resources by inspecting the state of your resources in Kubernetes .",
+          "Compute Engine metadata not defined Symptom Your Config Connector resource has an UpdateFailed status with a message stating that the Compute Engine metadata is not defined, similar to the following error: Update call failed: error fetching live state: error reading underlying resource: summary: Error when reading or editing SpannerInstance \"my-project/my-spanner- instance\": Get \"https://spanner.googleapis.com/v1/projects/my-project/instances/my-spanner-instance?alt=json\": metadata: Compute Engine metadata \"instance/service-accounts/default/token? scopes=https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)compute%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSIN G)auth%!F(MISSING)cloud-platform%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)cloud-identity%!C(MISSING)https%!A(MISSING)%!F(MISS ING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)ndev.clouddns.readwrite%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSIN G)devstorage.full control%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F(MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)userinfo.email%!C(MISSING)https%!A(MISSING)%!F(MISSING)%!F (MISSING)www.googleapis.com%!F(MISSING)auth%!F(MISSING)drive.readonly\" not defined, detail: Cause It is likely that the IAM service account used by Config Connector does not exist."
+        ]
+      },
+      {
+        "title": "Monitoring your resources \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events",
+        "source_id": "site-docs-root",
+        "final_score": 88,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DependencyNotFound Occurs when a referenced Config Connector resource or Kubernetes Secret is not found.",
+          "Viewing events for a single resource You can view the events for a single resource by examining the Events field in the output of the following command: kubectl describe KIND NAME Replace the following: KIND : your resource's kind NAME : your resource's name For example, if you had a Config Connector SQLInstance resource named sqlinstance-sample , use the following command to view its events: kubectl describe sqlinstance sqlinstance-sample Viewing events for a namespace To see the events for all Kubernetes resources in a given namespace, including your Config Connector resources, run the following command: kubectl --namespace CC NAMESPACE get events Replace CC NAMESPACE with the namespace Config Connector manages resources from.",
+          "Config Connector-specific events Config Connector can create the following event types: Updating Occurs when a Config Connector resource's underlying Google Cloud resource is being updated."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cnrm.cloud.google.com",
+      "devstorage.full",
+      "drive.readonly",
+      "iam.cnrm.cloud.google.com",
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iamauditconfigs.iam.cnrm.cloud.google.com",
+      "metadata.annotations.cnrm",
+      "ndev.clouddns.readwrite",
+      "spanner.googleapis.com",
+      "userinfo.email",
+      "v1.iamPolicies"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/iam/iamauditconfig",
+        "https://docs.cloud.google.com/config-connector/docs/troubleshooting",
+        "https://docs.cloud.google.com/config-connector/docs/how-to/viewing-events"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:20.276Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

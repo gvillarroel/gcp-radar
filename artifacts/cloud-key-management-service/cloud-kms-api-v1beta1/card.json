@@ -1,0 +1,199 @@
+{
+  "feature_name": "Cloud KMS API v1beta1",
+  "feature_slug": "cloud-kms-api-v1beta1",
+  "summary": "The v1beta1 Cloud KMS API endpoint has been turned off in favor of the v1 API; deprecated on 2017-06-07.",
+  "extended_definition": "The v1beta1 Cloud KMS API endpoint has been turned off in favor of the v1 API; deprecated on 2017-06-07.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-07",
+    "deprecation_date": "2017-06-07",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+      "https://docs.cloud.google.com/kms/docs/reference/rest",
+      "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Key Management Service (KMS) API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://cloudkms.googleapis.com Regional service endpoint A regional service endpoint is a base URL that specifies the network address of an API service in a single region.",
+          "Select a location to see its regional service endpoint for this service. global europe-west3 europe-west8 europe-west9 me-central2 us-east1 us-east4 us-west2 us-west1 us-east7 us-central1 us-west3 us-central2 us-west4 us-west8 us-east5 us-south1 us in ca https://cloudkms.googleapis.com REST Resource: v1.folders Methods getAutokeyConfig GET /v1/{name=folders/ /autokeyConfig} Returns the AutokeyConfig for a folder or project. getKajPolicyConfig GET /v1/{name=folders/ /kajPolicyConfig} Gets the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project. updateAutokeyConfig PATCH /v1/{autokeyConfig.name=folders/ /autokeyConfig} Updates the AutokeyConfig for a folder or a project. updateKajPolicyConfig PATCH /v1/{keyAccessJustificationsPolicyConfig.name=folders/ /kajPolicyConfig} Updates the KeyAccessJustificationsPolicyConfig for a given organization, folder, or project.",
+          "This service provides the following discovery document: https://cloudkms.googleapis.com/$discovery/rest?version=v1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service."
+        ]
+      },
+      {
+        "title": "\"Create protected resources using Cloud KMS Autokey \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform The following Terraform sample creates a key handle and uses the returned key to protect a new dataset: resource \"google kms key handle\" \"my key handle\" { provider = google-beta project = \" RESOURCE PROJECT ID \" name = \"test-key-handle\" location = \" LOCATION \" resource type selector = \"bigquery.googleapis.com/Dataset\" } resource \"google bigquery dataset\" \"dataset\" { project = \" RESOURCE PROJECT ID \" dataset id = \" DATASET ID \" friendly name = \" DATASET NAME \" description = \" DATASET DESCRIPTION \" location = \" LOCATION \" default table expiration ms = 3600000 default encryption configuration { kms key name = google kms key handle.my key handle.kms key } } Replace the following: RESOURCE PROJECT ID : the project ID of the resource project where Autokey is enabled and where you want to create a protected resource.",
+          "Create a protected Secret Manager resource Terraform The following Terraform sample creates a key handle and uses the returned key to protect a new secret with automatic replication: resource \"google kms key handle\" \"my key handle\" { provider = google-beta project = \" RESOURCE PROJECT ID \" name = \"test-key-handle\" location = \"global\" resource type selector = \"secretmanager.googleapis.com/Secret\" } resource \"google secret manager secret\" \"my secret\" { project = \" RESOURCE PROJECT ID \" secret id = \" SECRET ID \" replication { auto { customer managed encryption { kms key name = google kms key handle.my key handle.kms key } } } } Replace the following: RESOURCE PROJECT ID : the project ID of the resource project where Autokey is enabled and where you want to create a protected resource.",
+          "Terraform The following Terraform sample creates a key handle and uses the returned key to protect a new persistent disk resource: resource \"google kms key handle\" \"my key handle\" { provider = google-beta project = \" RESOURCE PROJECT ID \" name = \" KEY HANDLE \" location = \" LOCATION \" resource type selector = \"compute.googleapis.com/Disk\" } resource \"google compute disk\" \"persistent disk\" { project = \" RESOURCE PROJECT ID \" name = \" DISK NAME \" type = \"pd-ssd\" zone = \" ZONE \" size = 30 physical block size bytes = 4096 disk encryption key { kms key self link = google kms key handle.my key handle.kms key } } Replace the following: RESOURCE PROJECT ID : the project ID of the resource project where Autokey is enabled and where you want to create a protected resource."
+        ]
+      },
+      {
+        "title": "\"KMS Inventory API \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "source_id": "site-api-reference",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://kmsinventory.googleapis.com REST Resource: v1.organizations.protectedResources Methods search GET /v1/{scope=organizations/ }/protectedResources:search Returns metadata about the resources protected by the given Cloud KMS CryptoKey in the given Cloud organization.",
+          "This service provides the following discovery document: https://kmsinventory.googleapis.com/$discovery/rest?version=v1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v1.organizations.protectedResources REST Resource: v1.projects.cryptoKeys REST Resource: v1.projects.locations.keyRings.cryptoKeys Service: kmsinventory.googleapis.com Discovery document A Discovery Document is a machine-readable specification for describing and consuming REST APIs."
+        ]
+      },
+      {
+        "title": "\"Service APIs Overview \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The locational REST/HTTP endpoints are https:// <region> -cloudkms.googleapis.com and the locational gRPC endpoints are <region> -cloudkms.googleapis.com , substituting <region> for any of the supported regional, dual-regional, or multi-regional Cloud KMS locations .",
+          "The global REST/HTTP endpoint is https://cloudkms.googleapis.com and the global gRPC endpoint is cloudkms.googleapis.com .",
+          "We recommend this approach only if your programming language or other needs are not met by the provided client libraries. gRPC API You can generate your own gRPC client libraries in any gRPC-supported language for the Cloud Key Management Service API from its .proto service definition using these resources: Using gRPC with Cloud KMS Cloud KMS service definition gRPC documentation : Everything you need to generate and use your own gRPC client code."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "cloudkms.googleapis.com",
+      "compute.googleapis.com",
+      "handle.kms",
+      "handle.my",
+      "kmsinventory.googleapis.com",
+      "secretmanager.googleapis.com",
+      "storage.googleapis.com",
+      "v1.folders",
+      "v1.organizations.protectedResources",
+      "v1.projects.cryptoKeys",
+      "v1.projects.locations.ekmConnections",
+      "v1.projects.locations.keyRings.cryptoKeys"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/reference/rest",
+        "https://docs.cloud.google.com/kms/docs/create-resource-with-autokey",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest",
+        "https://docs.cloud.google.com/kms/docs/reference/service-apis-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.806Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service"
+}

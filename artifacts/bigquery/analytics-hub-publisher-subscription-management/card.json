@@ -1,0 +1,140 @@
+{
+  "feature_name": "Analytics Hub publisher subscription management",
+  "feature_slug": "analytics-hub-publisher-subscription-management",
+  "summary": "Analytics Hub publishers can view subscriptions to a listing and remove subscriptions from that listing.",
+  "extended_definition": "Analytics Hub publishers can view subscriptions to a listing and remove subscriptions from that listing.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage subscriptions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "source_id": "site-docs-root-2",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Manage subscriptions This document describes how to manage subscriptions in BigQuery sharing (formerly Analytics Hub), covering tasks for both subscribers and publishers.",
+          "BigQuery sharing publishers can do the following: View all subscriptions to your listing.",
+          "If a publisher revokes a subscription from a multi-region listing ( Preview ), subscribers can no longer query any primary or secondary linked dataset replicas."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Publishers can manage subscriptions both in Pub/Sub directly or through BigQuery sharing subscription management.",
+          "Analytics Hub Identity and Access Management (IAM) roles let you perform the following sharing tasks: As an Analytics Hub Publisher, you can share data with your partner network or within your own organization in real time.",
+          "As an Analytics Hub Viewer, you can browse through the shared resources that you have access to in BigQuery sharing and make a request to the publisher to access the shared data."
+        ]
+      },
+      {
+        "title": "Configure BigQuery sharing roles \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Select a role menu, select Analytics Hub , and then select one of the following Identity and Access Management (IAM) roles: Analytics Hub Admin Analytics Hub Listing Admin Analytics Hub Publisher Analytics Hub Subscriber Analytics Hub Subscription Owner Analytics Hub Viewer Click Save .",
+          "In the Select a role menu, select Analytics Hub , and then select one of the following Identity and Access Management (IAM) roles: Analytics Hub Admin Analytics Hub Listing Admin Analytics Hub Publisher Analytics Hub Subscriber Analytics Hub Subscription Owner Analytics Hub Viewer Click Save .",
+          "For example: Google Account email: test-user@gmail.com Google group: admins@googlegroups.com Service account: server@example.gserviceaccount.com Google Workspace domain: example.com In the Select a role list, hold the pointer over Analytics Hub and select one of the following roles: Analytics Hub Admin Analytics Hub Listing Admin Analytics Hub Publisher Analytics Hub Subscriber Analytics Hub Subscription Owner Analytics Hub Viewer Optional: To further control access to Google Cloud resources, add a conditional role binding ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.publisher",
+      "example.com",
+      "example.domain.com",
+      "example.gserviceaccount.com",
+      "gmail.com",
+      "googlegroups.com",
+      "projects.locations.dataExchanges.listings.setIamPolicy"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.publisher"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-grant-roles"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,140 @@
+{
+  "feature_name": "License cost reduction calculations for disabling simultaneous multithreading",
+  "feature_slug": "license-cost-reduction-calculations-for-disabling-simultaneous-multithreading",
+  "summary": "Migration Center can calculate license cost reductions by disabling simultaneous multithreading for Windows Server and Microsoft SQL Server virtual machines.",
+  "extended_definition": "Migration Center can calculate license cost reductions by disabling simultaneous multithreading for Windows Server and Microsoft SQL Server virtual machines.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation",
+      "https://docs.cloud.google.com/migration-center/docs/generate-estimate",
+      "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+      "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/MachineDetails"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Generate a rapid cost estimate \\_|\\_ Migration Center \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/generate-estimate",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the additional Oracle vCPUs and SAP vCPUs fields that appear, enter the following values: % of total vCPUs running Oracle Database : 32 % of total vCPUs running Oracle Exadata : 0 % of total total vCPUs running Oracle Data Warehouse Database : 0 Storage for Oracle database (GB) : 50 % of total SAP Application vCPUs : 38 % of total SAP Database vCPUs : 12 In the Licenses for all other workloads section, select Windows Server .",
+          "In this example, you will estimate the cost of migrating an on-premises environment that has the following specifications: Contains x86 vCPUs only Includes SAP and Oracle vCPUs Includes both Linux and Windows vCPUs Has a migration timeline of 5 years To follow step-by-step guidance for this task directly in the Google Cloud console, click Guide me : Guide me Before you begin Sign in to your Google Cloud account.",
+          "In this example, to view the breakdown of the annual cost for migrating your on-premises infrastructure to Google Cloud and the breakdown of the annual cost for each product, click View details in the On-premises results card."
+        ]
+      },
+      {
+        "title": "Start a cost estimation \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation",
+        "source_id": "site-docs-root",
+        "final_score": 105,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Select one or more types of environments to be migrated to Google Cloud section, click Add to estimate for workload types that you want to migrate to Google Cloud: On-premise: select this calculator card to estimate the cost of migrating your on-premises infrastructure to Google Cloud.",
+          "Data warehousing: select this calculator card to estimate the cost of running your data analytics and warehousing setup from other cloud platforms to BigQuery on Google Cloud.",
+          "Google Cloud VMware Engine: select this calculator card to estimate the costs of running the VMware platform as a fully managed service in Google Cloud."
+        ]
+      },
+      {
+        "title": "\"Rapid Migration and Modernization Program (RaMP) overview \\_|\\_ Migration\\",
+        "url": "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using our advanced tools, we help you identify the highest-value opportunities and workloads, perform total cost of ownership calculations, and establish performance benchmarks to start to maximize immediate business value.",
+          "Using our advanced tools, we help you identify the highest-value opportunities and workloads, perform total cost of ownership calculations, and establish performance benchmarks to start to maximize immediate business value.",
+          "Using our advanced tools, we help you identify the highest-value opportunities and workloads, perform total cost of ownership calculations, and establish performance benchmarks to start to maximize immediate business value."
+        ]
+      },
+      {
+        "title": "MachineDetails \\_|\\_ Migration Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/MachineDetails",
+        "source_id": "site-api-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"applicationName\" : string , \"vendor\" : string , \"installTime\" : string , \"path\" : string , \"version\" : string , \"licenses\" : [ string ] } Fields application Name string Installed application name. vendor string Installed application vendor. install Time string ( Timestamp format) The time when the application was installed.",
+          "HyperthreadingStatus The Simultaneous Multithreading (Hyperthreading) Status of the machine.",
+          "HYPERTHREADING STATUS DISABLED Simultaneous Multithreading is disabled or unavailable."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-estimate",
+        "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/MachineDetails"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-estimate",
+        "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/MachineDetails"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-estimate",
+        "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/MachineDetails"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-estimate",
+        "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/MachineDetails"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migration-center/docs/generate-estimate",
+        "https://docs.cloud.google.com/migration-center/docs/estimate/start-estimation",
+        "https://docs.cloud.google.com/migration-center/docs/ramp-overview",
+        "https://docs.cloud.google.com/migration-center/docs/reference/rest/v1/MachineDetails"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:46.131Z",
+  "source_step08_card": "data/step-08/current/products/migration-center/card.json",
+  "product_name": "Migration Center",
+  "product_slug": "migration-center"
+}

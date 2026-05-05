@@ -1,0 +1,101 @@
+{
+  "feature_name": "Cloud Spanner Data Manipulation Language (DML)",
+  "feature_slug": "cloud-spanner-data-manipulation-language-dml",
+  "summary": "Cloud Spanner supports executing Data Manipulation Language (DML) statements.",
+  "extended_definition": "Cloud Spanner supports executing Data Manipulation Language (DML) statements.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/adding-spring",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/use-golang-database-sql"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "JDBC drivers are also available, which support data manipulation language (DML) and data definition language (DDL) statements.",
+          "Although typical game engine integrations don't have much flexibility in language selection, for platform services accessing Spanner, there are cases of gaming customers using Java or Go.",
+          "Spanner offers built-in client libraries for many popular languages, which are typically feature-rich and performant."
+        ]
+      },
+      {
+        "title": "Integrate Spanner with Spring Data \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/adding-spring",
+        "source_id": "site-docs-root",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "SpannerTemplate provides methods for performing SQL queries and modifying data with Data Manipulation Language (DML) statements .",
+          "It demonstrates how to use a SpannerRepository to execute read-write queries generated from interface definitions. / @Component public class SpannerRepositorySample { @Autowired SingerRepository singerRepository ; public void runRepositoryExample () { List<Singer> lastNameSingers = this . singerRepository . findByLastName ( \"a last name\" ); int fistNameCount = this . singerRepository . countByFirstName ( \"a first name\" ); int deletedLastNameCount = this . singerRepository . deleteByLastName ( \"a last name\" ); } } Manage Spanner To get information about your Spanner databases, update a schema with a Data Definition Language (DDL) statement, or complete other administrative tasks, you can acquire a SpannerDatabaseAdminTemplate bean.",
+          "Example: @Table(name = \"Singers\") If you need to model more complex relationships, see the Spring Data Spanner reference for details about other annotations that the module supports."
+        ]
+      },
+      {
+        "title": "Use the Spanner database/sql driver \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/use-golang-database-sql",
+        "source_id": "site-docs-reference",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Data Manipulation Language (DML): Group multiple DML statements into one batch instead of executing them one by one.",
+          "Database Definition Language (DDL): Group multiple DDL statements into one batch instead of executing them one by one.",
+          "Printf ( \"Connected to %s\\n\" , dsn ) // The Spanner database/sql driver supports both PostgreSQL-style query // parameters ($1, $2, ...) and positional query parameters (?, ?, ...). // This example uses PostgreSQL-style parameters. row := db ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.executor.spanner.CloudExecutor.Metadata"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/use-golang-database-sql",
+        "https://docs.cloud.google.com/spanner/docs/adding-spring",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

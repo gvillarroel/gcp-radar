@@ -1,0 +1,171 @@
+{
+  "feature_name": "Exact-match search for additional and labels fields",
+  "feature_slug": "exact-match-search-for-additional-and-labels-fields",
+  "summary": "UDM Search supports exact-match queries on the additional and labels fields using field[key] syntax.",
+  "extended_definition": "UDM Search supports exact-match queries on the additional and labels fields using field[key] syntax.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 202,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: additional.fields[\"key\"]=\"value\" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields[\"pod name\"] = \"kube-scheduler\" metadata.ingestion labels[\"MetadataKeyDeletion\"] = \"startup-script\" Use the AND operator with key-value pair searches: additional.fields[\"pod name\"] = \"kube-scheduler\" AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Search for all events that contain the specified key, regardless of the value: additional.fields[\"pod name\"] != \"\" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = \"mystring\" Note: You can also use value.bool value or value.number value for boolean and numeric matches.",
+          "The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = \"USER LOGIN\" and target.hostname = \"finance-svr\" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = \"NETWORK CONNECTION\" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = \"PROCESS LAUNCH\" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.",
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url ."
+        ]
+      },
+      {
+        "title": "\"View alerts and IOC matches \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "source_id": "site-api-reference",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table details which specific UDM fields are used for automatic IOC matching based on your package: Enterprise package Enterprise Plus package about.file network.dns.answers network.dns.questions network.dns.questions principal.administrative domain principal.asset principal.ip principal.process.file principal.process.file principal.process.parent process.file principal.process.parent process.file security result.about.file security result.about.file src.file src.file src.ip target.asset.ip target.domain.name target.file target.file target.hostname target.hostname target.ip target.ip target.process.file target.process.file target.process.parent process.file Understanding which UDM fields are used helps ensure your data parsers correctly map raw log fields to the appropriate UDM fields for effective IOC matching.",
+          "To specify the date and time range based on events, click the Event Time tab, select the date on the calendar, and then select one of the following options: Exact Time : click the Event Time field and select the specific time the events occurred. +/- 1 Minute +/- 3 Minutes +/- 5 Minutes +/- 10 Minutes +/- 15 Minutes +/- 1 Hour +/- 2 Hours +/- 6 Hours +/- 12 Hours +/- 1 Day +/- 3 Days +/- 1 Week Sort alerts and IOC matches You can sort the alerts and IOC matches that are displayed in ascending or descending order.",
+          "UDM Search and Search API UDM Search : Supports using data tables (previously called reference lists ) for single-dimension searches (for example, a list of hashes)."
+        ]
+      },
+      {
+        "title": "Detection Engine \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "CuratedRuleDetection fields type string Type of detection (type is always \"GCTI FINDING\"). detection.ruleName string Name of the Google SecOps rule generating the detection. detection.ruleId string Identifier for the Google SecOps rule generating the detection. detection.alertState string Indicates whether the Google SecOps rule generating this detection currently has alerting enabled or disabled. detection.ruleType string Whether the Google SecOps rule generating this detection is a single event or multi-event rule (\"SINGLE EVENT\" or \"MULTI EVENT\"). detection.urlBackToProduct string URL pointing to the Google SecOps application page for this detection. detection.detectionFields list List of fields matching the Google SecOps rule's requested match variables, for \"MULTI EVENT\" rules. detection.detectionFields.key string Key for a field specified in the Google SecOps rule, for \"MULTI EVENT\" rules. detection.detectionFields.value string Value for a field specified in the Google SecOps rule, for \"MULTI EVENT\" rules. detection.ruleLabels list List of fields specified in Google SecOps rule metadata. detection.ruleLabels.key string Key for a field specified in the Google SecOps rule metadata. detection.ruleLabels.value string Value for a field specified in the Google SecOps rule metadata. detection.summary string Summary for the generated detection. detection.ruleSet string Identifier of the Google SecOps rule set that generated this detection. detection.ruleSetDisplayName string Display name of the Google SecOps rule set that generated this detection. detection.description string Description of the Google SecOps rule that generated the detection. detection.severity string Severity of the detection (\"INFORMATIONAL\" or \"LOW\" or \"HIGH\"). createdTime string Time the detection was created. detectionTime string String representing the time period the detection was found in. id string Identifier for the detection. timeWindow.startTime string String representing the start of the time window in which the detection was found, in RFC 3339 format. timeWindow.endTime string String representing the end of the time window in which the detection was found, in RFC 3339 format. collectionElements list A list of references to sample UDM events causing this detection, grouped by variable. collectionElements.label string The variable a given set of UDM events belongs to. collectionElements.references list A list of references to sample UDM events, grouped by the given label. collectionElements.references.event UDM A UDM event. lastUpdatedTime string Time the detection was last updated. tags list A list of MITRE tactic and technique IDs covered by the Google SecOps rule.",
+          "Only populated for RULE DETECTION type detections. detection.alertState string Indicates whether the rule generating this detection currently has alerting enabled or disabled. detection.ruleType string Whether the rule generating this detection is a single event or multi-event rule (\"SINGLE EVENT\" or \"MULTI EVENT\"). detection.urlBackToProduct string URL pointing to the Google SecOps application page for this detection. detection.detectionFields list List of fields matching the rules requested match variables, for \"MULTI EVENT\" rules. detection.detectionFields.key string Key for a field specified in the rule, for \"MULTI EVENT\" rules. detection.detectionFields.value string Value for a field specified in the rule, for \"MULTI EVENT\" rules. detection.ruleLabels list List of fields specified in rule metadata. detection.ruleLabels.key string Key for a field specified in the rule metadata. detection.ruleLabels.value string Value for a field specified in the rule metadata. detection.summary string Summary for the generated detection.",
+          "This description is copied from the rule metadata's description key, if it is set. detection.detectionFields list List of fields matching the rules requested match variables, for \"MULTI EVENT\" rules. detection.detectionFields.key string Key for a field specified in the rule, for \"MULTI EVENT\" rules. detection.detectionFields.value string Value for a field specified in the rule, for \"MULTI EVENT\" rules. detection.ruleLabels list List of fields specified in rule metadata. detection.ruleLabels.key string Key for a field specified in the rule metadata. detection.ruleLabels.value string Value for a field specified in the rule metadata. createdTime string Time the detection was created. detectionTime string String representing the time period the detection was found in. id string Identifier for the detection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.file",
+      "additional.fields",
+      "additional.fields.value.string",
+      "calc.dll",
+      "cmd.exe",
+      "customername.backstory.chronicle.security",
+      "detection.alertState",
+      "detection.description",
+      "detection.detectionFields",
+      "detection.detectionFields.key",
+      "detection.detectionFields.value",
+      "detection.ruleId",
+      "detection.ruleLabels",
+      "detection.ruleLabels.key",
+      "detection.ruleLabels.value",
+      "detection.ruleName",
+      "detection.ruleSet",
+      "detection.ruleSetDisplayName",
+      "detection.ruleType",
+      "detection.severity",
+      "detection.summary",
+      "detection.urlBackToProduct",
+      "fields.value",
+      "file.full",
+      "labels.value",
+      "metadata.description",
+      "metadata.event",
+      "metadata.ingestion",
+      "network.dns.answers",
+      "network.dns.questions",
+      "network.http.user",
+      "network.sent",
+      "powershell.exe",
+      "principal.administrative",
+      "principal.asset",
+      "principal.ip",
+      "principal.process.command",
+      "principal.process.file",
+      "principal.process.file.full",
+      "principal.process.parent",
+      "principal.registry.registry",
+      "principal.url",
+      "process.file",
+      "references.event",
+      "registry.registry",
+      "result.about.file",
+      "result.description",
+      "result.detection",
+      "result.summary",
+      "rundll32.exe",
+      "src.file",
+      "src.ip",
+      "src.labels.value",
+      "target.asset.ip",
+      "target.domain.name",
+      "target.file",
+      "target.hostname",
+      "target.ip",
+      "target.process.file",
+      "target.process.file.full",
+      "target.process.parent",
+      "value.bool",
+      "value.number",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "https://docs.cloud.google.com/chronicle/docs/reference/detection-engine-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

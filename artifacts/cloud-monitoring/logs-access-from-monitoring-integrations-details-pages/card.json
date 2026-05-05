@@ -1,0 +1,226 @@
+{
+  "feature_name": "Logs access from Monitoring Integrations details pages",
+  "feature_slug": "logs-access-from-monitoring-integrations-details-pages",
+  "summary": "The Cloud Monitoring Integrations page exposes logs collected by logs-enabled integrations from each integration's details page.",
+  "extended_definition": "The Cloud Monitoring Integrations page exposes logs collected by logs-enabled integrations from each integration's details page.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/access-control",
+      "https://docs.cloud.google.com/monitoring/agent/integrations",
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage integrations \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "source_id": "site-iam-reference",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following screenshot shows an example of a Logs tab: Configure third-party integrations If you open the details pane for a third-party integration you haven't installed, then the panel indicates that you have no dashboards or configured resources for the integration.",
+          "The following screenshot shows an example of the Monitoring Integrations page: The Integrations page displays the following: A listing of how many Compute Engine VMs have the Ops Agent installed and how many GKE clusters have Managed Service for Prometheus enabled.",
+          "This document describes the Cloud Monitoring Integrations page, a central location from which you can manage and review the status of Monitoring integrations with Google services and with your third-party applications."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "To get more details about a specific metric, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "To view audit logs for a specific metric, do the following: In the Google Cloud console, go to the query stats Metrics management page: Go to Metrics management If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "What's next Use the Ops Agent to collect metrics: Configure the Ops Agent Monitor third-party applications Collect Prometheus metrics Collect OTLP telemetry Use the Google Cloud Managed Service for Prometheus to collect metrics: Use managed collection Use self-deployed collection Use the OpenTelemetry Collector Use custom metrics in Cloud Run Collect on-premises and hybrid-cloud metrics by using BindPlane Create user-defined metrics by using the Monitoring API Google Cloud Observability pricing Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Control access with IAM \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "To grant principals access to Monitoring, Cloud Logging, or Cloud Trace, or to grant a project-level role, do the following: Console In the Google Cloud console, go to the person Permissions page: Go to Permissions If you use the search bar to find this page, then select the result whose subheading is Monitoring .",
+          "Grant access to Cloud Monitoring To manage IAM roles for principals you can use the Identity and Access Management page in the Google Cloud console or the Google Cloud CLI.",
+          "The previous steps describe how to grant a principal certain roles by using Monitoring pages in the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "monitoring.alertPolicies",
+      "monitoring.alertPolicies.get",
+      "monitoring.alertPolicies.list",
+      "monitoring.alertPolicyEditor",
+      "monitoring.alertPolicyViewer",
+      "monitoring.alerts",
+      "monitoring.alerts.get",
+      "monitoring.alerts.list",
+      "monitoring.alertViewer",
+      "monitoring.cloudConsoleIncidentEditor",
+      "monitoring.cloudConsoleIncidentViewer",
+      "monitoring.dashboardEditor",
+      "monitoring.dashboards",
+      "monitoring.dashboards.create",
+      "monitoring.dashboards.delete",
+      "monitoring.dashboards.get",
+      "monitoring.dashboards.list",
+      "monitoring.dashboards.update",
+      "monitoring.dashboardViewer",
+      "monitoring.groups.get",
+      "monitoring.groups.list",
+      "monitoring.metricsScopes.link",
+      "monitoring.metricsScopesAdmin",
+      "monitoring.metricsScopesViewer",
+      "monitoring.notificationChannelEditor",
+      "monitoring.notificationChannelViewer",
+      "monitoring.services",
+      "monitoring.services.create",
+      "monitoring.services.delete",
+      "monitoring.services.get",
+      "monitoring.services.list",
+      "monitoring.services.update",
+      "monitoring.servicesEditor",
+      "monitoring.servicesViewer",
+      "monitoring.slos",
+      "monitoring.slos.create",
+      "monitoring.slos.delete",
+      "monitoring.slos.get",
+      "monitoring.slos.list",
+      "monitoring.slos.update",
+      "monitoring.snoozeEditor",
+      "monitoring.snoozes",
+      "monitoring.snoozes.create",
+      "monitoring.snoozes.get",
+      "monitoring.snoozes.list",
+      "monitoring.snoozes.update",
+      "monitoring.snoozeViewer",
+      "monitoring.timeSeries.list",
+      "monitoring.uptimeCheckConfigEditor",
+      "monitoring.uptimeCheckConfigViewer",
+      "opsconfigmonitoring.resourceMetadata.viewer",
+      "opsconfigmonitoring.resourceMetadata.writer",
+      "stackdriver.admin",
+      "stackdriver.projects.edit",
+      "stackdriver.projects.get",
+      "stackdriver.viewer"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/agent/integrations",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "https://docs.cloud.google.com/monitoring/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

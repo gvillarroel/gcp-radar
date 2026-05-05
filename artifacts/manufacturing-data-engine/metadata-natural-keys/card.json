@@ -1,0 +1,122 @@
+{
+  "feature_name": "Metadata natural keys",
+  "feature_slug": "metadata-natural-keys",
+  "summary": "Adds a natural key to metadata instances for business-friendly retrieval and centralized shared-instance management.",
+  "extended_definition": "Adds a natural key to metadata instances for business-friendly retrieval and centralized shared-instance management.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+      "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create metadata instances \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 220,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a cloud metadata instance with the following instructions for REST API calls or the console: REST POST metadata/v1/buckets/ BUCKET NAME / BUCKET VERSION /instances { \"naturalKey\" : \" NATURAL KEY \" , \"instance\" : METADATA INSTANCE OBJECT } Replace the following: BUCKET NAME with the name of the bucket in which to create a metadata instance.",
+          "When you use the lookup by value method, and the latest metadata instance value for the provided natural key does not exist, MDE automatically creates a new metadata instance for the natural key from the instance object defined the in the proto record.",
+          "If BUCKET NAME corresponds to a record bucket and the natural key is omitted, the natural key is automatically set to the hash of the value."
+        ]
+      },
+      {
+        "title": "\"Create a metadata bucket \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The natural key of a metadata instance in a LOOKUP bucket can be any key, but records can't reference instances in a lookup bucket, and the instances are not written to any data sink.",
+          "Determines whether new instances are created by merging the provided instance with the latest instance for a given natural key or if new instances are created as provided.",
+          "To create a new Bucket click Add new metadata bucket : Fill out the form displayed from the side panel with the necessary Bucket parameters: Bucket Name : A unique, user defined name for the bucket."
+        ]
+      },
+      {
+        "title": "\"Create a metadata bucket version \\_|\\_ Manufacturing Data Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The natural key of a metadata instance in a LOOKUP bucket can be any key, but records can't reference instances in a lookup bucket, and the instances are not written to any data sink.",
+          "Determines whether new instances are created by merging the provided instance with the latest instance for a given natural key or if new instances are created as provided.",
+          "Console To create a new metadata bucket version click Create New Version from the METADATA section of the Cloud Management MC web interface: A configuration panel is displayed with a form to update the parameters of the new metadata bucket version : Only backward compatible changes are allowed for new versions."
+        ]
+      },
+      {
+        "title": "Key concepts \\_|\\_ Manufacturing Data Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts",
+        "source_id": "site-docs-reference",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud metadata reference A field in a record that stores metadata instance identifiers per bucket (foreign keys).",
+          "Materialized metadata A field in a record that stores materialized metadata instances listed in cloud metadata reference .",
+          "Manufacturing data and metadata are stored in and sent to different data sinks that are optimized for specific use-cases."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/contextualize/how-to-create-a-metadata-instance",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/guides/model/how-to-create-a-metadata-bucket-version",
+        "https://docs.cloud.google.com/manufacturing-data-engine/docs/concepts/key-concepts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.810Z",
+  "source_step08_card": "data/step-08/current/products/manufacturing-data-engine/card.json",
+  "product_name": "Manufacturing Data Engine",
+  "product_slug": "manufacturing-data-engine"
+}

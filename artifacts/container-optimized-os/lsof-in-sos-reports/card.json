@@ -1,0 +1,134 @@
+{
+  "feature_name": "lsof in SOS reports",
+  "feature_slug": "lsof-in-sos-reports",
+  "summary": "Container-Optimized OS includes lsof in SOS reports; Container-Optimized OS includes lsof in SOS reports.",
+  "extended_definition": "Container-Optimized OS includes lsof in SOS reports; Container-Optimized OS includes lsof in SOS reports.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitoring system health with Node Problem Detector \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Using user-defined guest policies Container-Optimized OS includes OS Config agent , that uses OS system utilities to maintain the state for the VM that is specified in the guest policy.",
+          "Starting with Milestone 77, Container-Optimized OS includes the Node Problem Detector agent.",
+          "You can use cloud-init to enable health monitoring with the following cloud-config example: #cloud-config runcmd: - systemctl start node-problem-detector Using metadata In Container-Optimized OS Milestone 88 and later, the Node Problem Detector can also be enabled by setting the value of google-monitoring-enabled to true in the custom metadata section."
+        ]
+      },
+      {
+        "title": "\"Configuring and Checking CIS Compliance \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "source_id": "site-docs-reference",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "This level includes recommendations such as the following: Firewall rules exist for all open ports ICMP redirects and router advertisements are not accepted Default user shell timeout is 900 seconds or less How Container-Optimized OS complies with the CIS Benchmarks Starting with Milestone 97 , Container-Optimized OS images comply with to CIS Level 1 by default and provide an option to comply with CIS Level 2.",
+          "Periodic checking of CIS compliance status Container-Optimized OS images include the following services to periodically check CIS compliance: cis-compliance-scanner.service : checks the compliance status based on environment variables defined at /etc/cis-scanner/env vars .",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Configuring and Checking CIS Compliance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Creating and configuring instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 23,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following entries in the /etc/chrony/chrony.conf configuration file show commented out default configuration values to help the administrator make any desired changes: cat /etc/chrony/chrony.conf Use custom NTP servers server metadata.google.internal prefer iburst Record the rate at which the system clock gains/losses time. driftfile /var/lib/chrony/drift Allow the system clock to be stepped in the first three updates if its offset is larger than 1 second. makestep 1.0 3 Enable kernel synchronization of the real-time clock (RTC). rtcsync The NTP server is set from eth0 's DHCP response, which is usually the Compute Engine's metadata server: networkctl status eth0 grep NTP NTP: 169.254.169.254 Changing the time zone The default time zone of Container-Optimized OS from Google is UTC0.",
+          "You can also see all currently available releases on command line by running the following command: gcloud compute images list --project cos-cloud --no-standard-images The output is similar to the following: NAME PROJECT FAMILY DEPRECATED STATUS cos-69-10895-385-0 cos-cloud cos-69-lts READY cos-73-11647-534-0 cos-cloud cos-73-lts READY cos-77-12371-251-0 cos-cloud cos-77-lts READY cos-81-12871-103-0 cos-cloud cos-81-lts READY cos-beta-81-12871-44-0 cos-cloud cos-beta READY cos-dev-84-13078-0-0 cos-cloud cos-dev READY cos-stable-81-12871-103-0 cos-cloud cos-stable READY Note: The most current Container-Optimized OS images are now available under the project cos-cloud , and use the name prefix of cos .",
+          "Assuming the cloud-init file is called filename in the current directory, the following command creates a Container-Optimized OS instance and trigger cloud-init by assigning the contents of the file to the user-data key in the Instance Metadata: gcloud compute instances create instance-name \\ --image image-name \\ --image-project cos-cloud \\ --metadata-from-file user-data= filename Replace the following: instance-name : the name of your VM instance. image-name : the name of the Container-Optimized OS image for the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chrony.conf",
+      "metadata.google.internal",
+      "scanner.service"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/monitoring",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/cis-compliance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:23.337Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

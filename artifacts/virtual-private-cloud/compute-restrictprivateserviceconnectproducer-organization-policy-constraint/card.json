@@ -1,0 +1,197 @@
+{
+  "feature_name": "compute.restrictPrivateServiceConnectProducer organization policy constraint",
+  "feature_slug": "compute-restrictprivateserviceconnectproducer-organization-policy-constraint",
+  "summary": "Introduces the Private Service Connect organization policy constraint compute.restrictPrivateServiceConnectProducer for service consumers to block endpoints and backends from connecting to service attachments in other organizations.",
+  "extended_definition": "Introduces the Private Service Connect organization policy constraint compute.restrictPrivateServiceConnectProducer for service consumers to block endpoints and backends from connecting to service attachments in other organizations.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+      "https://docs.cloud.google.com/vpc/docs/vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Shared VPC \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you are an organization policy administrator , you can specify the following Shared VPC constraints in an organization policy: You can limit the set of host projects to which a non-host project or non-host projects in a folder or organization can be attached.",
+          "Organization policy constraints Organization policies and IAM permissions work together to provide different levels of access control.",
+          "Service Project Admin ( compute.networkUser ) • IAM principal in the organization, or • IAM principal in a host project, or • IAM principal in some subnets in the host project A Shared VPC Admin defines a Service Project Admin by granting an IAM principal the Network User ( compute.networkUser ) role to either the whole host project or select subnets of its Shared VPC networks ."
+        ]
+      },
+      {
+        "title": "VPC networks \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/vpc",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can disable the creation of default networks by creating an organization policy with the compute.skipDefaultNetworkCreation constraint.",
+          "You can control the following IPv6 configurations using organization policies : Disable VPC External IPv6 usage : If set to true, the constraints/compute.disableVpcExternalIpv6 constraint prevents you from configuring subnets with external IPv6 ranges.",
+          "Disable All IPv6 usage : If set to true, the constraints/compute.disableAllIpv6 constraint disables the creation of, or update to, any subnets or other networking resources involved in IPv6 usage."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "Error: Constraint constraints/compute.requireVpcFlowLogs violated This error occurs if both of these conditions apply: An organization policy constraint has been set that requires that VPC Flow Logs is configured.",
+          "For more information about this constraint and its effects on subnet creation and updates, see Organization policy constraints for VPC Flow Logs .",
+          "Before setting the MTU to a value higher than 1460 , review Maximum transmission unit . module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-custom-mode-network\" mtu = 1460 subnets = [ { subnet name = \"subnet-01\" subnet ip = \"10.10.10.0/24\" subnet region = \"us-west1\" }, { subnet name = \"subnet-02\" subnet ip = \"10.10.20.0/24\" subnet region = \"us-west1\" subnet private access = \"true\" subnet flow logs = \"true\" }, { subnet name = \"subnet-03\" subnet ip = \"10.10.30.0/24\" subnet region = \"us-west1\" subnet flow logs = \"true\" subnet flow logs interval = \"INTERVAL 10 MIN\" subnet flow logs sampling = 0.7 subnet flow logs metadata = \"INCLUDE ALL METADATA\" subnet flow logs filter = \"false\" } ] } Next, create firewall rules ."
+        ]
+      },
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 162,
+        "relevance": "",
+        "evidence_snippets": [
+          "Organization policy constraints An Organization Policy Administrator can use the constraints/compute.disablePrivateServiceConnectCreationForConsumers constraint to define the set of endpoint types for which users cannot create forwarding rules.",
+          "For information about creating an organization policy that uses this constraint, see Block consumers from deploying endpoints by connection type .",
+          "A connection might have this status for the following reasons: A producer organization policy rejected the connection."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.disableAllIpv6",
+      "compute.disablePrivateServiceConnectCreationForConsumers",
+      "compute.disableVpcExternalIpv6",
+      "compute.disableVpcInternalIpv6",
+      "compute.networkAdmin",
+      "compute.networkUser",
+      "compute.requireVpcFlowLogs",
+      "compute.restrictPrivateServiceConnectProducer",
+      "compute.skipDefaultNetworkCreation",
+      "subnetworks.list",
+      "var.project"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/shared-vpc",
+        "https://docs.cloud.google.com/vpc/docs/vpc",
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

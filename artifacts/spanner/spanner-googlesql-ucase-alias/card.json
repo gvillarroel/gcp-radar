@@ -1,0 +1,100 @@
+{
+  "feature_name": "Spanner GoogleSQL UCASE() alias",
+  "feature_slug": "spanner-googlesql-ucase-alias",
+  "summary": "Spanner now supports UCASE() as an alias for the UPPER() function in GoogleSQL.",
+  "extended_definition": "Spanner now supports UCASE() as an alias for the UPPER() function in GoogleSQL.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 59,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example: Savepoint support (Click to expand) The following example shows how to enable and disable savepoints support in the Spanner JDBC driver. try ( Connection connection = DriverManager . getConnection ( String . format ( \"jdbc:cloudspanner:/projects/%s/instances/%s/databases/%s\" , \"my-project\" , \"my-instance\" , \"my-database\" ))) { // Savepoints can only be used when AutoCommit=false. connection . setAutoCommit ( false ); // Disables setting a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='DISABLED'\" ); // The following statement fails because savepoints have been disabled. connection . setSavepoint ( \"my savepoint1\" ); // Enables setting a savepoint and releasing a savepoint. // Rolling back to a savepoint is disabled. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='FAIL AFTER ROLLBACK'\" ); Savepoint mySavepoint2 = connection . setSavepoint ( \"my savepoint2\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (1, 'One')\" ); connection . releaseSavepoint ( mySavepoint2 ); connection . commit (); // Enables setting, releasing and rolling back to a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='ENABLED'\" ); Savepoint mySavepoint3 = connection . setSavepoint ( \"my savepoint3\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (2, 'Two')\" ); connection . rollback ( mySavepoint3 ); } What's next Learn how to connect JDBC to a GoogleSQL-dialect database .",
+          "The Spanner JDBC driver supports three alternatives for executing partitioned queries: SET AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "The Spanner JDBC driver (Java Database Connectivity) supports session management statements, which let you modify the state of your connection, execute transactions, and efficiently execute batches of statements."
+        ]
+      },
+      {
+        "title": "Spanner Graph and ISO standards \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "source_id": "site-docs-reference",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "Spanner Graph is based on two ISO standards: ISO/IEC 9075-16:2023 - Information technology — Database languages SQL Property Graph Queries (SQL/PGQ) , Edition 1, 2023 ISO/IEC 39075:2024 - Information technology — Database languages — GQL , Edition 1, 2024 The following tables describe the high-level relationship between SQL/PGQ, GQL, and how Spanner Graph supports these standards.",
+          "The claimed version of The Unicode® Standard shall not be less than 13.0.0.\" Spanner Graph GQL shares the exact lexical structure with GoogleSQL.",
+          "The page describes how Spanner Graph supports the ISO international standard query language for graph databases."
+        ]
+      },
+      {
+        "title": "\"Dialect parity between GoogleSQL and PostgreSQL \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "site-docs-reference",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the following example, we use CONCAT as our function F : -- Given the following schema CREATE TABLE singers ( singer id BIGINT PRIMARY KEY, first name VARCHAR(1024), last name VARCHAR(1024), singer info BYTEA ); -- Create a hash for each row (using all columns) WITH hashed rows AS ( SELECT , ABS(MOD(spanner.farm fingerprint( CONCAT( singer id::text, first name, last name, singer info::text ) ), 100)) AS hash value FROM singers ) -- Sample data SELECT FROM hashed rows WHERE hash value < 10 -- sample roughly 10% LIMIT 10; / Optional: LIMIT to a max of 10 rows to be returned / VALUE IN UNNEST(ARRAY(...)) Use the equality operator with the ANY function, as shown in the following example: SELECT value = any(array[...]) GoogleSQL dialect function differences GoogleSQL function PostgreSQL dialect recommendation ACOSH Use the formula of the function explicitly, as shown in the following example: SELECT LN(x + SQRT(x x - 1)); APPROX COSINE DISTANCE No recommendation available.",
+          "Home Documentation Databases Spanner Reference Send feedback Dialect parity between GoogleSQL and PostgreSQL Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes the dialect differences between GoogleSQL and PostgreSQL and offers recommendations for using PostgreSQL approaches for specific GoogleSQL features."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spanner.farm"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/graph/iso-standards",
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

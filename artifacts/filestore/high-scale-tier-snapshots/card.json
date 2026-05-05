@@ -1,0 +1,156 @@
+{
+  "feature_name": "High Scale tier snapshots",
+  "feature_slug": "high-scale-tier-snapshots",
+  "summary": "High Scale tier snapshots are available for Filestore instances.",
+  "extended_definition": "High Scale tier snapshots are available for Filestore instances.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/creating-instances",
+      "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+      "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+      "https://docs.cloud.google.com/filestore/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mounting file shares on Compute Engine clients \\_|\\_ Filestore \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect . ip-address is the IP address for the Filestore instance. file-share is the name of the file share on the instance.",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect .",
+          "For specific service tiers, we recommend specifying the following number of connections between the client and server: Tier Capacity Number of connections Regional, zonal 1-9.75 TiB nconnect=2 Regional, zonal 10-100 TiB nconnect=7 Enterprise - nconnect=2 High scale SSD - nconnect=7 In general, the larger the file share capacity and the fewer the connecting client VMs, the more performance you gain by specifying additional connections with nconnect ."
+        ]
+      },
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 199,
+        "relevance": "",
+        "evidence_snippets": [
+          "Alternatively, Filestore multishares for GKE , available for enterprise-tier instances only, offers access to multiple shares on a single instance.",
+          "A justification for the deletion protection setting is provided. gcloud filestore instances create render1 \\ --project=myproject \\ --region=us-central1 \\ --tier=REGIONAL \\ --performance=max-iops-per-tb=17000 \\ --network=name=\"default\",reserved-ip-range=\"10.0.7.0/29\" \\ --flags-file=nfs-export-options.json \\ --deletion-protection \\ --deletion-protection-reason=\"All genomics data must adhere to current organization policies.\" nfs-export-options.json file contents: { \"--file-share\": { \"capacity\": \"2048\", \"name\": \"my vol\", \"nfs-export-options\": [ { \"access-mode\": \"READ WRITE\", \"ip-ranges\": [ \"10.0.0.0/29\", \"10.2.0.0/29\" ], \"squash-mode\": \"ROOT SQUASH\", \"anon uid\": 1003, \"anon gid\": 1003 }, { \"access-mode\": \"READ ONLY\", \"ip-ranges\": [ \"192.168.0.0/26\" ], \"squash-mode\": \"NO ROOT SQUASH\" } ] } } REST API Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header.",
+          "The following table summarizes capabilities available by service tier: Capabilities of Filestore service tiers Capability Basic HDD and Basic SSD Zonal Regional Enterprise Capacity 1 TiB to 63.9 TiB 1 TiB to 100 TiB 100 GiB or 1 TiB to 100 TiB 1 TiB to 10 TiB Scalability Basic HDD (1 TiB to 63.9 TiB) : Scales up in increments of 1 GiB Basic SSD (2.5 TiB to 63.9 TiB) : Scales up only in increments of 1 GiB Zonal (1 TiB to 9.75 TiB) : Scales up or down in increments of 256 GiB Zonal (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Regional Depending on the access to the small instances feature , you can use one of the following options: Users with access to small instances feature: 100 GiB to 10,239 GiB ."
+        ]
+      },
+      {
+        "title": "Filestore overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/overview",
+        "source_id": "site-api-reference",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "This means you can optimize your Filestore instances for your workload requirements and scale your file shares to meet the demands of your applications without resizing the capacity.",
+          "Networking For information related to Filestore networking requirements, see the following resources: Filestore networking and IP resource requirements Configure NFS ports on client VMs Configure firewall rules Create an instance on a Shared VPC network in service projects Supported file system protocols Performance Custom performance lets you define the performance settings for your Filestore instances independently of the specified capacity.",
+          "Filestore instances are fully managed file servers on Google Cloud that can be connected to a number of client types: Compute Engine VMs Google Kubernetes Engine (GKE) clusters External datastores such as Google Cloud VMware Engine On-premises machines Cloud Run services Once provisioned, you can scale the capacity of your instances according to need without any downtime."
+        ]
+      },
+      {
+        "title": "Monitoring instances and quota \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/monitoring-instances",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the Filestore instance caches the data, some write operations are not reflected as disk writes. ✓ ✓ Metadata operations count Number of disk metadata operations. ✓ Free bytes Number of free disk bytes. ✓ ✓ Free disk space percent Percentage of free disk bytes. ✓ ✓ Free raw capacity percent Free raw capacity as a percentage of total space. ✓ Procedure call count Returns the same information as the nfsstat -s command. ✓ Snapshots used bytes The amount of space used for storing snapshots, measured in bytes. ✓ Time (in milliseconds) spent on read operations Time spent on disk reads. ✓ Time (in milliseconds) spent on write operations Time spent on disk writes. ✓ Used bytes Number of used disk bytes. ✓ ✓ Used space percent Percentage of used disk bytes. ✓ ✓ Memory-cached operations only occur in basic tier instances.",
+          "Low backups quota If you are scheduling or automating backups creation for your Filestore instances, you should set up alerts for when you're running low on backups quota.",
+          "Select an available metric to view: Metric Description Basic tiers Regional, zonal, and enterprise tiers Average read latency The average time a read operation takes (in milliseconds). ✓ Average write latency The average time a write operation takes (in milliseconds). ✓ Bytes written Number of bytes written. ✓ ✓ Bytes read Number of bytes read from persistent storage."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerClient",
+      "com.google.cloud.filestore.v1.CloudFilestoreManagerGrpc.CloudFilestoreManagerBlockingStub",
+      "configs.cfg",
+      "file.googleapis.com",
+      "options.json",
+      "projects.locations.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/mounting-fileshares",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "https://docs.cloud.google.com/filestore/docs/overview",
+        "https://docs.cloud.google.com/filestore/docs/monitoring-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:31.904Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore"
+}

@@ -1,0 +1,139 @@
+{
+  "feature_name": "Custom region configurations",
+  "feature_slug": "custom-region-configurations",
+  "summary": "Custom region configurations let a Dataproc Metastore service run workloads from two separate regions; Custom region configurations let a Dataproc Metastore service run workloads from two separate regions.",
+  "extended_definition": "Custom region configurations let a Dataproc Metastore service run workloads from two separate regions; Custom region configurations let a Dataproc Metastore service run workloads from two separate regions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a Dataproc Metastore service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "source_id": "site-docs-root",
+        "final_score": 247,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Provisioning the service might take a few minutes. gcloud CLI To create a metastore, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \\ --location= LOCATION \\ --instance-size= INSTANCE SIZE \\ --scaling-factor= SCALING FACTOR \\ --port= PORT \\ --tier= TIER \\ --endpoint-protocol= ENDPOINT PROTOCOL \\ --database-type= DATABASE TYPE \\ --hive-metastore-version= HIVE METASTORE VERSION \\ --data-catalog-sync= DATA CATALOG SYNC \\ --release-channel= RELEASE CHANNEL \\ --hive-metastore-configs= METADATA OVERRIDE \\ --labels= LABELS \\ --auxiliary-versions= AUXILIARY VERSION \\ --network= NETWORK \\ --consumer-subnetworks=\"projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET1 , projects/ PROJECT ID /regions/ LOCATION /subnetworks/ SUBNET2 \" \\ --kerberos-principal= KERBEROS PRINCIPAL \\ --krb5-config= KRB5 CONFIG \\ --keytab= CLOUD SECRET \\ --encryption-kms-key= KMS KEY Replace the following: Service settings : SERVICE : The name of your new Dataproc Metastore service.",
+          "Return to the Dataproc Metastore page, and verify that your service was successfully created. gcloud CLI To create a Dataproc Metastore service with a Hive override, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \\ --location= LOCATION \\ --hive-metastore-configs=\"hive.metastore.warehouse.dir= CUSTOMER DIR \" Replace the following: SERVICE : The name of your new Dataproc Metastore service.",
+          "Provisioning the service might take a few minutes. gcloud CLI To create a Dataproc Metastore metastore service 2 using the provided defaults, run the following gcloud metastore services create command: gcloud metastore services create SERVICE \\ --location= LOCATION \\ --instance-size= INSTANCE SIZE \\ --scaling-factor= SCALING FACTOR Replace the following: SERVICE : The name of your new Dataproc Metastore service."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreAsyncClient (1.22.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dataproc Metastore API defines the following resource model: The service works with a collection of Google Cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ (a location must refer to a Google Cloud region ) Each location has a collection of services, named: /services/ Dataproc Metastore services are resources with names of the form: /projects/{project number}/locations/{location id}/services/{service id} .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 async def sample delete service(): Create a client client = metastore v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 async def sample delete backup(): Create a client client = metastore v1."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreClient (1.22.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "source_id": "site-python-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Dataproc Metastore API defines the following resource model: The service works with a collection of Google Cloud projects, named: /projects/ Each project has a collection of available locations, named: /locations/ (a location must refer to a Google Cloud region ) Each location has a collection of services, named: /services/ Dataproc Metastore services are resources with names of the form: /projects/{project number}/locations/{location id}/services/{service id} .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample delete service(): Create a client client = metastore v1.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 def sample delete backup(): Create a client client = metastore v1."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreFederationAsyncClient (1.22.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 async def sample delete federation(): Create a client client = metastore v1.",
+          "CreateFederationRequest ( parent=\"parent value\", federation id=\"federation id value\", ) Make the request operation = client. create federation (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.metastore v1.types.CreateFederationRequest , dict]] The request object.",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import metastore v1 async def sample create federation(): Create a client client = metastore v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "core.retry",
+      "core.retry.Retry",
+      "googleapis.dev",
+      "hive.metastore.warehouse.dir",
+      "options.html",
+      "v1.types.CreateFederationRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreClient",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore_federation.DataprocMetastoreFederationAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.183Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore"
+}

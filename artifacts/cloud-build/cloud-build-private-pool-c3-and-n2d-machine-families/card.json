@@ -1,0 +1,111 @@
+{
+  "feature_name": "Cloud Build private pool C3 and N2D machine families",
+  "feature_slug": "cloud-build-private-pool-c3-and-n2d-machine-families",
+  "summary": "Cloud Build private pools now support both the C3 and N2D machine families.",
+  "extended_definition": "Cloud Build private pools now support both the C3 and N2D machine families.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/overview",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Private pools are private, dedicated pools of workers that offer greater customization over the build environment, including the ability to access resources in a private network.",
+          "Private pools, similar to default pools, are hosted and fully-managed by Cloud Build and scale up and down to zero, with no infrastructure to set up, upgrade, or scale.",
+          "Default pools and private pools By default, when you run a build on Cloud Build, the build runs in a secure, hosted environment with access to the public internet."
+        ]
+      },
+      {
+        "title": "\"Class CloudBuildClient.ListWorkerPoolsFixedSizeCollection (3.90.0) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "ListWorkerPoolsFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > CloudBuildClient.ListWorkerPoolsFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<CloudBuildClient.ListWorkerPoolsPage> pages, int collectionSize) protected CloudBuildClient .",
+          "ListWorkerPoolsPage > pages , int collectionSize ) Parameters Name Description pages List < ListWorkerPoolsPage > collectionSize int Returns Type Description CloudBuildClient.ListWorkerPoolsFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class CloudBuildClient.ListWorkerPoolsFixedSizeCollection (3.90.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class CloudBuildClient.ListWorkerPoolsPage (3.90.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage",
+        "source_id": "site-java-reference",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "ListWorkerPoolsPage > Inheritance java.lang.Object > AbstractPage > CloudBuildClient.ListWorkerPoolsPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListWorkerPoolsRequest,ListWorkerPoolsResponse,WorkerPool> context, ListWorkerPoolsResponse response) protected CloudBuildClient .",
+          "ListWorkerPoolsPage > createPageAsync ( PageContext<ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > context , ApiFuture<ListWorkerPoolsResponse> futureResponse ) Parameters Name Description context PageContext < ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > futureResponse ApiFuture < ListWorkerPoolsResponse > Returns Type Description ApiFuture < ListWorkerPoolsPage > Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPageAsync(PageContext<RequestT,ResponseT,ResourceT> context, ApiFuture<ResponseT> futureResponse) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "ListWorkerPoolsPage createPage ( PageContext<ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > context , ListWorkerPoolsResponse response ) Parameters Name Description context PageContext < ListWorkerPoolsRequest , ListWorkerPoolsResponse , WorkerPool > response ListWorkerPoolsResponse Returns Type Description CloudBuildClient.ListWorkerPoolsPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListWorkerPoolsRequest,ListWorkerPoolsResponse,WorkerPool> context, ApiFuture<ListWorkerPoolsResponse> futureResponse) public ApiFuture<CloudBuildClient ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPagedResponse",
+      "java.lang.Object"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/overview",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-build/latest/com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListWorkerPoolsPage"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

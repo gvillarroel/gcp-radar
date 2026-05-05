@@ -1,0 +1,188 @@
+{
+  "feature_name": "User IP address source selection in Connectivity Tests",
+  "feature_slug": "user-ip-address-source-selection-in-connectivity-tests",
+  "summary": "Connectivity Tests lets you use your user IP address as the source IP address for a connectivity test in the Google Cloud console.",
+  "extended_definition": "Connectivity Tests lets you use your user IP address as the source IP address for a connectivity test in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connectivity Tests overview \\_|\\_ Network Intelligence Center - Connectivity\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "",
+        "evidence_snippets": [
+          "Source endpoints Connectivity Tests configuration analysis supports the following source endpoints: Compute Engine instance Cloud Run revision Cloud Run functions (1st gen) App Engine standard environment Cloud SQL instance GKE control plane GKE Pod Internet IP address IP address from an on-premises network IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod Unassigned IP address in a Virtual Private Cloud network Destination endpoints Connectivity Tests configuration analysis supports the following destination endpoints: Compute Engine instance Cloud SQL instance GKE control plane GKE Pod External and internal Application Load Balancer External and internal Proxy Network Load Balancer External and internal Passthrough Network Load Balancer Private Service Connect endpoint Memorystore for Redis Cluster Memorystore for Redis instance Internet IP address IP address from an on-premises network IP address of a forwarding rule IP address of a Compute Engine instance IP address of a Cloud SQL instance IP address of a GKE control plane IP address of a GKE Pod IP address of a Memorystore for Redis Cluster IP address of a Memorystore for Redis instance Google Cloud networking features You can test connectivity between resources that use the following features (both IPv4 and IPv6 are supported whenever applicable): VPC networks VPC Network Peering Shared VPC Private Google Access Cloud Load Balancing Alias IP ranges Privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing VPC firewall rules Regional network firewall policies Hierarchical firewall policies and global network firewall policies Resource Manager tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Private Service Connect Instances with IPv6 addresses , including instances with multiple network interfaces VPC spokes and hybrid spokes for NCC Public NAT and Private NAT Cloud VPN Cloud Interconnect Cloud Router , including dynamic routes that use BGP and static routes Considerations for Cloud Load Balancing For Cloud Load Balancing, Connectivity Tests configuration analysis supports the following features: Testing connectivity to the load balancer IP addresses Verifying connectivity of Cloud Load Balancing health checks to backends Internal TCP/UDP load balancers can be used as next hops For Cloud Load Balancing features that are unsupported, see the Unsupported configurations section .",
+          "Google Cloud networking features Live data plane analysis supports the following features: VPC networks VPC Network Peering Shared VPC VPC spokes and hybrid spokes in NCC Alias IP ranges External IP addresses Internal IP addresses , including privately used public IPv4 addresses Compute Engine instances with multiple network interfaces VPC routing Public NAT and Private NAT , except for NAT64 VPC firewall rules Hierarchical firewall policies , global network firewall policies , and regional network firewall policies Secure tags for firewalls , including when attached to Compute Engine instances with multiple network interfaces Policy-based routes Instances with IPv6 addresses , including instances with multiple network interfaces Unsupported configurations Live data plane analysis doesn't support and isn't executed for the following network configurations: Non-Google Cloud resources as source endpoints: Internet IP addresses Inbound traffic to Google Cloud through Cloud Interconnect , Cloud VPN , and NCC hybrid spokes Unassigned IP addresses in a VPC network as source endpoints Source and destination endpoints are the same Compute Engine instance Non-running Compute Engine instances GKE Pods Google API and services External and internal Application Load Balancer External and internal Proxy Network Load Balancer External passthrough Network Load Balancer Cloud VPN NAT64 Considerations and constraints Evaluate the following considerations when deciding whether to use Connectivity Tests.",
+          "How Connectivity Tests analyzes the live data plane The live data plane analysis feature tests connectivity by sending multiple probe packets from the source endpoint to the destination."
+        ]
+      },
+      {
+        "title": "\"Add Monitoring Points \\_|\\_ Network Intelligence Center - Cloud Network\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "source_id": "site-iam-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Username : admin Default Password : The MAC address in UPPERCASE with no colons (for example, 00505681450A).",
+          "If the target network assigns IP addresses automatically, select Obtain settings using DHCP .",
+          "IP Address : The IPv4 address that you want to assign to the Monitoring Point."
+        ]
+      },
+      {
+        "title": "Binding \\_|\\_ Network Intelligence Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "source_id": "site-docs-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, google.com or example.com . principal://iam.googleapis.com/locations/global/workforcePools/{pool id}/subject/{subject attribute value} : A single identity in a workforce identity pool. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/group/{groupId} : All workforce identities in a group. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/attribute.{attribute name}/{attribute value} : All workforce identities with a specific attribute value. principalSet://iam.googleapis.com/locations/global/workforcePools/{pool id}/ : All identities in a workforce identity pool. principal://iam.googleapis.com/projects/{project number}/locations/global/workloadIdentityPools/{pool id}/subject/{subject attribute value} : A single identity in a workload identity pool. principalSet://iam.googleapis.com/projects/{project number}/locations/global/workloadIdentityPools/{pool id}/group/{groupId} : A workload identity pool group. principalSet://iam.googleapis.com/projects/{project number}/locations/global/workloadIdentityPools/{pool id}/attribute.{attribute name}/{attribute value} : All identities in a workload identity pool with a certain attribute. principalSet://iam.googleapis.com/projects/{project number}/locations/global/workloadIdentityPools/{pool id}/ : All identities in a workload identity pool. deleted:user:{emailid}?uid={uniqueid} : An email address (plus unique identifier) representing a user that has been recently deleted.",
+          "For a list of the available pre-defined roles, see here . members[] string Specifies the principals requesting access for a Google Cloud resource. members can have the following values: allUsers : A special identifier that represents anyone who is on the internet; with or without a Google account. allAuthenticatedUsers : A special identifier that represents anyone who is authenticated with a Google account or a service account.",
+          "If the user is recovered, this value reverts to user:{emailid} and the recovered user retains the role in the binding. deleted:serviceAccount:{emailid}?uid={uniqueid} : An email address (plus unique identifier) representing a service account that has been recently deleted."
+        ]
+      },
+      {
+        "title": "\"Set up logging \\_|\\_ Network Intelligence Center - Cloud Network Insights\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "NetworkPathItem Field Type Description display name string The user-defined display name of the Network Path. destination string The destination IP address or hostname. network protocol string The network protocol used, such as TCP , UDP , or ICMP . monitoring policy id string The ID of the monitoring policy. monitoring policy display name string The display name of the monitoring policy. provider tags array of objects Tags defined in AppNeta for the path. source monitoring point MonitoringPointItem Details of the source MonitoringPointItem. destination monitoring point MonitoringPointItem Details of the destination MonitoringPointItem (for MonitoringPoint-to-MonitoringPoint paths only).",
+          "WebPathItem Field Type Description display name string The user-defined display name of the Web Path. destination string The destination URL. monitoring policy id string The ID of the monitoring policy. monitoring policy display name string The display name of the monitoring policy. provider tags array Tags defined in the provider for the path. source monitoring point object Details of the source MonitoringPoint.",
+          "MonitoringPointHost Field Type Description cloud provider string Cloud Provider such as GCP , AWS , or AZURE . cloud instance id string The instance ID from the cloud provider. cloud zone string The cloud zone of the endpoint, for example, us-central1-a . cloud region string The cloud region of the endpoint, for example, us-central1 . cloud project id string The Google Cloud project ID. os string The Operating System of the Monitoring Point's host. cloud virtual network ids array of strings User-visible cloud virtual network IDs. labels map User-defined labels configured on the VM instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "iam.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/connectivity-tests/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/add-monitoring-points",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/reference/networkmanagement/rest/Shared.Types/Binding",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/set-up-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:47.484Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center"
+}

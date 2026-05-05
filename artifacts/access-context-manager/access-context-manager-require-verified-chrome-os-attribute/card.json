@@ -1,0 +1,166 @@
+{
+  "feature_name": "Access Context Manager require verified Chrome OS attribute",
+  "feature_slug": "access-context-manager-require-verified-chrome-os-attribute",
+  "summary": "The Require verified Chrome OS device-policy access-level attribute became available in Access Context Manager.",
+  "extended_definition": "The Require verified Chrome OS device-policy access-level attribute became available in Access Context Manager.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+      "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes",
+      "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access level attributes \\_|\\_ Access Context Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "source_id": "site-api-reference",
+        "final_score": 134,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Valid values for requireVerifiedChromeOs are: true false If you specify IOS or ANDROID for osType , you can optionally include any device policy attribute that supports mobile devices.",
+          "This attribute can only be included in conditions when creating or modifying an access level using the gcloud command-line tool or the Access Context Manager API.",
+          "If you specify DESKTOP CHROME OS for osType , you can optionally include requireVerifiedChromeOs ."
+        ]
+      },
+      {
+        "title": "\"Custom access level specification \\_|\\_ Access Context Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example: device.verified chrome os == true chrome.management state Type string Description Is the browser managed, at the browser level or at the profile level, and by the enterprise under the correct domain.",
+          "Example: device.ios device security.is device jailbroken == true verified chrome os Type boolean Description Whether the request comes from a device with a verified Chrome OS .",
+          "VERY GOOD = 5 ; } Examples: device.vendors [ \"some vendor\" ] . is compliant device == true device.vendors [ \"some vendor\" ] . is managed device == true device.vendors [ \"some vendor\" ] . device health score == DeviceHealthScore.VERY GOOD device.vendors [ \"some vendor\" ] . data [ \"is device compromised\" ] == true device.vendors [ \"some vendor\" ] . data [ \"some num\" ] == 1.0 Note: is device compromised is only an example that represents a key defined by a vendor. android device security.verified boot Type boolean Description Whether the Android verified boot status is green ."
+        ]
+      },
+      {
+        "title": "\"Configuring Chrome browser attributes \\_|\\_ Access Context Manager \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes",
+        "source_id": "site-iam-reference",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "IMPORTANT: The Chrome attributes are only effective for browser-based traffic; the attributes have no effect when the requests are not coming from a browser, such as requests from gcloud CLI or Google Cloud SDKs.",
+          "Home Documentation Security Access Context Manager Guides Send feedback Configuring Chrome browser attributes Stay organized with collections Save and categorize content based on your preferences.",
+          "If the browser is CBCM enrolled in another domain, it will always be CHROME MANAGEMENT STATE MANAGED BY OTHER DOMAIN , even if the logged-in user is in a different domain. device.chrome.management state == ChromeManagementState.CHROME MANAGEMENT STATE MANAGED BY OTHER DOMAIN ChromeManagementState.CHROME MANAGEMENT STATE BROWSER MANAGED ChromeManagementState.CHROME MANAGEMENT STATE PROFILE MANAGED ChromeManagementState.CHROME MANAGEMENT STATE UNMANAGED versionAtLeast(min version) Is the browser above a certain minimum version. device.chrome.versionAtLeast(\"88.0.4321.44\") is realtime url check enabled Is the real-time URL check connector enabled. device.chrome.is realtime url check enabled == true false is file upload analysis enabled Is the file upload analysis connector enabled. device.chrome.is file upload analysis enabled == true false is file download analysis enabled Is the file download analysis connector enabled. device.chrome.is file download analysis enabled == true false is bulk data entry analysis enabled Is the bulk text (paste) analysis connector enabled. device.chrome.is bulk data entry analysis enabled == true false is security event analysis enabled Is the security event reporting connector enabled. device.chrome.is security event analysis enabled == true false The following table contains examples of policies that you can set: Example Policy Expression Only allow access when the user is coming from a fully managed Chrome browser and not just a managed Chrome profile."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chrome.management",
+      "device.chrome.is",
+      "device.chrome.management",
+      "device.chrome.versionAtLeast",
+      "device.ios",
+      "device.vendors",
+      "device.verified",
+      "request.auth",
+      "request.time",
+      "security.is",
+      "security.verified"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/access-context-manager/docs/access-level-attributes",
+        "https://docs.cloud.google.com/access-context-manager/docs/custom-access-level-spec",
+        "https://docs.cloud.google.com/access-context-manager/docs/browser-attributes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.714Z",
+  "source_step08_card": "data/step-08/current/products/access-context-manager/card.json",
+  "product_name": "Access Context Manager",
+  "product_slug": "access-context-manager"
+}

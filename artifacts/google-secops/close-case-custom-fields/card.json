@@ -1,0 +1,162 @@
+{
+  "feature_name": "Close case custom fields",
+  "feature_slug": "close-case-custom-fields",
+  "summary": "Custom fields can be added to the Close Case dialog to require analysts to provide specific information when closing a case; Custom fields can be added to the Close Case page to require analysts to provide specific information when closing a case.",
+  "extended_definition": "Custom fields can be added to the Close Case dialog to require analysts to provide specific information when closing a case; Custom fields can be added to the Close Case page to require analysts to provide specific information when closing a case.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following examples show supported boolean operators ( AND , OR , and NOT ): A AND B A OR B Use parentheses ( ) to group expressions and control evaluation order: (A OR B) AND (B OR C) AND (C OR NOT D) Examples: Search for login events on the finance server: metadata.event type = \"USER LOGIN\" and target.hostname = \"finance-svr\" Use the operator (>) to search for connections where more than 10 MB of data was sent: metadata.event type = \"NETWORK CONNECTION\" and network.sent bytes > 10000000 Use multiple conditions to search for winword.exe launching cmd.exe or powershell.exe : metadata.event type = \"PROCESS LAUNCH\" and principal.process.file.full path = /winword/ and ( target.process.file.full path = /cmd.exe/ or target.process.file.full path = /powershell.exe/ ) Search key-value pairs in additional and labels fields: The additional and labels fields act as customizable containers for event data that doesn't map to standard UDM fields.",
+          "Supported fields You can download the following fields to a CSV file from the platform: user hostname process name event type timestamp raw log (valid only when raw logs are enabled for the customer) All fields starting with udm.additional Valid field types You can download the following field types to a CSV file: double float int32 uint32 int64 uint64 bool string enum bytes google.protobuf.Timestamp google.protobuf.Duration Unsupported fields Fields that start with \"udm\" (not udm.additional) and meet either of the following conditions cannot be downloaded to CSV: The nesting of the field is more than 10 deep in udm proto.",
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url ."
+        ]
+      },
+      {
+        "title": "\"Integrate ArcSight with Google SecOps \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "source_id": "site-api-reference",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Jobs Close Cases The job requires the following parameters: Parameter name Type Default value Is mandatory Description Server Address String 192.0.2.1 Yes N/A Username String N/A Yes N/A Password Password N/A Yes N/A Need more help?",
+          "Connector severity prioritization The connector assigns severity with the following prioritization values: 1 and 2 - very low 3 and 4 - low 5 and 6 - medium 7 and 8 - high 9 and 10 - critical Connector inputs Use the following parameters to configure the connector: Parameter name Type Default value Is mandatory Description Environment DDL N/A Yes Select the required environment, for example, Customer One .",
+          "ESM rule or case forwarding to Google SecOps Working with Triggered Rules/Correlations You will be required to configure ArcSight ESM to forward the latest correlation objects to Google SecOps while you configure Google SecOps to function on ArcSight ESM as a SIEM provider, and also to provide API access to ArcSight ESM through an authorized user."
+        ]
+      },
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required actions for customers To ensure continuous data ingestion, you must manually re-create your feeds in the new environment.",
+          "Verify required accesses and permissions are added.",
+          "Verify required accesses and permissions are added."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "fields.value",
+      "file.full",
+      "labels.value",
+      "metadata.description",
+      "metadata.event",
+      "metadata.product",
+      "network.http.user",
+      "network.parent",
+      "network.sent",
+      "network.session",
+      "powershell.exe",
+      "principal.asset",
+      "principal.process.command",
+      "principal.process.file.full",
+      "principal.process.product",
+      "principal.registry.registry",
+      "principal.resource.id",
+      "principal.url",
+      "registry.registry",
+      "resource.id",
+      "result.description",
+      "result.detection",
+      "result.rule",
+      "result.summary",
+      "src.labels.value",
+      "target.hostname",
+      "target.process.file.full",
+      "target.process.pid",
+      "udm.additional",
+      "winword.exe"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/arcsight",
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

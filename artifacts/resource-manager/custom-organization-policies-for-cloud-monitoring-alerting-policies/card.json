@@ -1,0 +1,177 @@
+{
+  "feature_name": "Custom organization policies for Cloud Monitoring alerting policies",
+  "feature_slug": "custom-organization-policies-for-cloud-monitoring-alerting-policies",
+  "summary": "Cloud Monitoring alerting policies, notification channels, and snoozes support custom organization policies for more granular control over these resources.",
+  "extended_definition": "Cloud Monitoring alerting policies, notification channels, and snoozes support custom organization policies for more granular control over these resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+      "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+      "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create custom constraints for Essential Contacts \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 152,
+        "relevance": "",
+        "evidence_snippets": [
+          "Apply the constraint: gcloud org-policies set-custom-constraint constraint-technical-notification.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT ACTION TYPE METHOD TYPES RESOURCE TYPES DISPLAY NAME custom.onlyTechnicalNotificationsAllowed ALLOW CREATE,UPDATE essentialcontacts.googleapis.com/Contact TechnicalNotifications ...",
+          "Before you begin, you need to know the following: Your organization ID A project ID Create the constraint Save the following file as constraint-technical-notification.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.onlyTechnicalNotificationsAllowed resourceTypes : - essentialcontacts.googleapis.com/TechnicalNotifications methodTypes : - CREATE - UPDATE condition : \"resource.notificationCategorySubscriptions \\ [0 \\ ] == 'TECHNICAL' && resource.notificationCategorySubscriptions.size()==1\" actionType : ALLOW displayName : TechnicalNotifications description : The contact can only be subscribed to technical notifications.",
+          "Apply the policy: gcloud org-policies set-policy policy-technical-notification.yaml Verify that the policy exists: gcloud org-policies list --project = PROJECT ID The output is similar to the following: CONSTRAINT LIST POLICY BOOLEAN POLICY ETAG custom.onlyTechnicalNotificationsAllowed - SET COCsm5QGENiXi2E= After you apply the policy, wait for about two minutes for Google Cloud to start enforcing the policy."
+        ]
+      },
+      {
+        "title": "Essential Contacts overview \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "source_id": "site-docs-reference-2",
+        "final_score": 124,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Security bulletins Vulnerability alerts, including details on detected critical vulnerabilities affecting your resources Data breach incidents Information on detected malicious attacks originating from or targeting your resources Advisories on widespread threats that might require user attention Abuse and security incident notifications Terms of Service violations Notifications related to project deletion IT security teams Security Operations Center (SOC) Operations security personnel Incident response teams Chief Information Security Officer (CISO) Organization Administrator ( roles/resourcemanager.organizationAdmin ) Security is a highly specialized area; direct alerts to security experts that you set as custom contacts help with rapid response and mitigation.",
+          "Assign custom contacts for every relevant category : Verify that proper contacts are assigned for each notification category that is important to your organization to achieve comprehensive coverage.",
+          "Enforcement actions related to your services Regulatory compliance updates Government notices or legal requests concerning your account Changes to Terms of Service or other legal agreements Legal counsel Compliance officers Government relations specialists Other relevant legal team members from your organization Billing Account Administrator ( roles/billing.admin ) Legal matters often require specialized legal team review; direct routing to custom contacts is crucial."
+        ]
+      },
+      {
+        "title": "\"Manage resources with custom constraints \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Apply the constraint: gcloud org-policies set-custom-constraint /constraint-allow-dev-projects.yaml Verify that the constraint exists: gcloud org-policies list-custom-constraints --organization = ORGANIZATION ID The output is similar to the following: CUSTOM CONSTRAINT ACTION TYPE METHOD TYPES RESOURCE TYPES DISPLAY NAME custom.allowProjectForDevIdOnly ALLOW CREATE,UPDATE cloudresourcemanager.googleapis.com/Project Allow dev projects ...",
+          "Apply the policy: gcloud org-policies set-policy /policy-enable-dev-projects.yaml Verify that the policy exists: gcloud org-policies list --organization = ORGANIZATION ID The output is similar to the following: CONSTRAINT LIST POLICY BOOLEAN POLICY ETAG custom.allowProjectForDevIdOnly - SET COCsm5QGENiXi2E= After you apply the policy, Google Cloud takes about two minutes to start enforcing the policy.",
+          "Test the policy Create a project with project ID sampleDemoProject in the organization: gcloud projects create sampleDemoProject \\ --organization = ORGANIZATION ID The output is the following: PERMISSION DENIED: The caller does not have permission Example custom organization policies for common use cases This table provides syntax examples for some common custom constraints."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.admin",
+      "cloudresourcemanager.googleapis.com",
+      "custom.allowProjectForDevIdOnly",
+      "custom.onlyTechnicalNotificationsAllowed",
+      "essentialcontacts.googleapis.com",
+      "notification.yaml",
+      "projects.yaml",
+      "resource.notificationCategorySubscriptions",
+      "resource.notificationCategorySubscriptions.size",
+      "resourcemanager.organizationAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/billing.admin",
+      "roles/owner",
+      "roles/resourcemanager.organizationAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "https://docs.cloud.google.com/resource-manager/docs/managing-notification-contacts",
+        "https://docs.cloud.google.com/resource-manager/docs/custom-constraints"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.065Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

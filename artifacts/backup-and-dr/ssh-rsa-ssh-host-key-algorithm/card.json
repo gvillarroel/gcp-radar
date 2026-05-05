@@ -1,0 +1,95 @@
+{
+  "feature_name": "ssh-rsa SSH host key algorithm",
+  "feature_slug": "ssh-rsa-ssh-host-key-algorithm",
+  "summary": "Support for ssh-rsa as an SSH Host Key algorithm is being deprecated; deprecated on 2024-11-21.",
+  "extended_definition": "Support for ssh-rsa as an SSH Host Key algorithm is being deprecated; deprecated on 2024-11-21.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-21",
+    "deprecation_date": "2024-11-21",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+      "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+      "https://docs.cloud.google.com/compute/docs/deprecations/serial-console-ssh-host-key-endpoint"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Serial console SSH host key endpoint deprecation \\_|\\_ Compute Engine \\_\\",
+        "url": "https://docs.cloud.google.com/compute/docs/deprecations/serial-console-ssh-host-key-endpoint",
+        "source_id": "site-docs-reference-2",
+        "final_score": 82,
+        "relevance": "",
+        "evidence_snippets": [
+          "Deprecated endpoint : https://www.gstatic.com/vm serial port/ REGION / REGION .pub New endpoint : https://www.gstatic.com/vm serial port public keys/ REGION / REGION .pub To use the new endpoint, do one of the following, depending on how you connect to the serial console: Connect using the Google Cloud console : no action is required.",
+          "Home Documentation Compute Compute Engine Resources Send feedback Serial console SSH host key endpoint deprecation Stay organized with collections Save and categorize content based on your preferences.",
+          "Date Event March 31, 2025 The https://www.gstatic.com/vm serial port/ REGION / REGION .pub server SSH key endpoint was deprecated."
+        ]
+      },
+      {
+        "title": "\"Monitor jobs in the appliance management console \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "source_id": "site-docs-root",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "When adding multiple new applications or VMs, try to stagger the initial protection jobs for each new application over time, to prevent all of the new data from being ingested simultaneously.",
+          "Unmount Delete unmount delete Unmounts an image previously mounted to a host and discards all changes made in that mount.",
+          "Filter by job name, host and application in the Jobs view or by event message in the Events view is now auto-submit."
+        ]
+      },
+      {
+        "title": "\"Migrate containers that were deployed on VMs during VM creation \\_|\\_ Compute\\",
+        "url": "https://docs.cloud.google.com/compute/docs/containers/migrate-containers",
+        "source_id": "site-docs-reference-2",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "To mount a disk, first mount it on the VM, and then mount that disk to the container: To mount the disk to the VM, run the following command: #!/bin/bash DISK DEVICE NAME = \"my-persistent-disk\" # This name MUST match the 'device-name' in the gcloud --disk flag DISK BY ID PATH = \"/dev/disk/by-id/google- ${ DISK DEVICE NAME } \" HOST MOUNT POINT = \"/mnt/disks/my-persistent-disk\" # This is the path where the disk will be mounted on the VM CONTAINER MOUNT PATH = \"/usr/share/my-persistent-disk\" # This is the path where the disk will be mounted in the container format a disk as an ext4 filesystem, if it doesn't already contain one file -sL $DISK BY ID PATH grep -q filesystem \\ mkfs.ext4 -m 0 -E lazy itable init = 0 ,lazy journal init = 0 ,discard $DISK BY ID PATH create a directory for mounting point sudo mkdir -p \" ${ HOST MOUNT POINT } \" mount a disk to the VM sudo mount -o defaults,discard \" ${ DISK BY ID PATH } \" \" ${ HOST MOUNT POINT } \" After you mount the disk to the VM, add the --mount flag with the docker run command to mount the disk to the container: docker run -d --name = $CONTAINER NAME --mount type = bind,source = \" ${ HOST MOUNT POINT } \" ,target = \" ${ CONTAINER MOUNT PATH } \" ,readonly nginx:latest Create a VM by using the startup script After creating a startup script with your container configuration, use this startup script to create a VM based on Container-Optimized OS.",
+          "Example 1 Run a standalone container in a VM based on Container-Optimized OS: #!/bin/bash A name for the container CONTAINER NAME = \"my-app-container\" Stop and remove the container if it exists docker stop $CONTAINER NAME true docker rm $CONTAINER NAME true Pull the latest version of the container image from Docker Hub docker pull busybox:latest Run docker container from image in docker hub docker run busybox:latest \\ echo \"hello world!\" Example 2 Run a web server container in a VM based on Container-Optimized OS: #!/bin/bash Enable incoming traffic iptables -A INPUT -j ACCEPT A name for the container CONTAINER NAME = \"my-app-container\" Stop and remove the container if it exists docker stop $CONTAINER NAME true docker rm $CONTAINER NAME true Pull the latest version of the container image from Docker Hub docker pull nginx:latest Run docker container from image in docker hub docker run \\ --name = $CONTAINER NAME \\ --privileged \\ --restart = always \\ --tty \\ --detach \\ --network = \"host\" \\ nginx:latest Additional configuration options for container deployment This section describes the additional configuration parameters for deploying containers on your VMs.",
+          "If the output of the command from the preceding step lists instances that use the gce-container-declaration metadata key, run the following command to get more details about the container declaration on your VMs: gcloud compute instances list \\ --filter = 'metadata.items.key:gce-container-declaration AND (metadata.items.value \"image:\")' \\ --format = \"table(name, zone, metadata.items.filter(key='gce-container-declaration').extract(value).slice(0):label=CONTAINER DECLARATION)\" Based on the output of the command, consider the following: If the metadata contains the definition for the deprecated container startup agent, then you must migrate the container deployment to an alternative solution as described in this document."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metadata.items.filter",
+      "metadata.items.key",
+      "metadata.items.value",
+      "mkfs.ext4"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/deprecations/serial-console-ssh-host-key-endpoint",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/monitor-reports/monitor-jobs",
+        "https://docs.cloud.google.com/compute/docs/containers/migrate-containers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

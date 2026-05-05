@@ -1,0 +1,93 @@
+{
+  "feature_name": "Cloud Build Pub/Sub triggers",
+  "feature_slug": "cloud-build-pub-sub-triggers",
+  "summary": "Cloud Build can execute builds in response to events published to a Pub/Sub topic.",
+  "extended_definition": "Cloud Build can execute builds in response to events published to a Pub/Sub topic.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+      "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+      "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Automate builds in response to Pub/Sub events \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "1st gen 2nd gen Cloud Build Pub/Sub triggers enable you to execute builds in response to Google Cloud events published over Pub/Sub.",
+          "Not required : When a pull request is created or updated by any contributor, builds will automatically be executed by triggers.",
+          "Not required : When a pull request is created or updated by any contributor, builds will automatically be executed by triggers."
+        ]
+      },
+      {
+        "title": "\"Automate builds in response to webhook events \\_|\\_ Cloud Build \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "source_id": "site-docs-root-2",
+        "final_score": 157,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Not required : When a pull request is created or updated by any contributor, builds will automatically be executed by triggers.",
+          "This page outlines how you can create webhook triggers to automate builds in response to webhook events.",
+          "Click Create to create your build trigger. gcloud To create a webhook trigger: gcloud builds triggers create webhook \\ -- name = TRIGGER NAME \\ -- repo = PATH TO REPO \\ -- repo - type = REPO TYPE \\ -- secret = PATH TO SECRET \\ -- substitutions = SUB ONE = '$ ( body . message . test ) ' , SUB TWO = '$ ( body . message . output ) ' \\ -- subscription - filter = ' SUB ONE == \"prod\" ' \\ -- inline - config = PATH TO INLINE BUILD CONFIG \\ -- tag = TAG NAME -- build - config = PATH TO BUILD CONFIG \\ -- branch = BRANCH NAME Where: + TRIGGER NAME is the name of your trigger. + PATH TO REPO is the path to the repository to invoke a build on."
+        ]
+      },
+      {
+        "title": "Create and manage build triggers \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "source_id": "site-docs-root-2",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "Only the service account specified on your trigger will be used for builds executed by triggers.",
+          "To create a trigger if your source code is in GitHub : gcloud builds triggers create github \\ -- name = TRIGGER NAME \\ -- region = REGION \\ -- repo - name = REPO NAME \\ -- repo - owner = REPO OWNER \\ -- branch - pattern = BRANCH PATTERN \\ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \\ -- service - account = SERVICE ACCOUNT \\ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.",
+          "Click Create to save your build trigger. gcloud To create a trigger if your source code is in Cloud Source Repositories : gcloud builds triggers create cloud-source-repositories \\ --repo= REPO NAME \\ --branch-pattern= BRANCH PATTERN \\ # or --tag-pattern= TAG PATTERN --build-config= BUILD CONFIG FILE \\ --service-account= SERVICE ACCOUNT \\ --require-approval Where: REPO NAME is the name of your repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.devtools.cloudbuild.v1.stub.GrpcCloudBuildStub",
+      "com.google.cloud.devtools.cloudbuild.v1.stub.HttpJsonCloudBuildStub"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automate-builds-pubsub-events",
+        "https://docs.cloud.google.com/build/docs/automate-builds-webhook-events",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

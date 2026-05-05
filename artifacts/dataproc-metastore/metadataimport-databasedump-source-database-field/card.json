@@ -1,0 +1,177 @@
+{
+  "feature_name": "MetadataImport.DatabaseDump.source_database field",
+  "feature_slug": "metadataimport-databasedump-source-database-field",
+  "summary": "This API field specifies the source database for a metadata import database dump; deprecated on 2021-08-18.",
+  "extended_definition": "This API field specifies the source database for a metadata import database dump; deprecated on 2021-08-18.",
+  "lifecycle": {
+    "latest_feature_date": "2021-02-19",
+    "deprecation_date": "2021-08-18",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Dataproc Metastore API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST Resource: v1beta.projects.locations REST Resource: v1beta.projects.locations.federations REST Resource: v1beta.projects.locations.operations REST Resource: v1beta.projects.locations.services REST Resource: v1beta.projects.locations.services.backups REST Resource: v1beta.projects.locations.services.databases REST Resource: v1beta.projects.locations.services.databases.tables REST Resource: v1beta.projects.locations.services.metadataImports REST Resource: v1beta.projects.locations.services.migrationExecutions REST Resource: v1alpha.projects.locations REST Resource: v1alpha.projects.locations.federations REST Resource: v1alpha.projects.locations.operations REST Resource: v1alpha.projects.locations.services REST Resource: v1alpha.projects.locations.services.backups REST Resource: v1alpha.projects.locations.services.databases REST Resource: v1alpha.projects.locations.services.databases.tables REST Resource: v1alpha.projects.locations.services.metadataImports REST Resource: v1alpha.projects.locations.services.migrationExecutions REST Resource: v1.projects.locations REST Resource: v1.projects.locations.federations REST Resource: v1.projects.locations.operations REST Resource: v1.projects.locations.services REST Resource: v1.projects.locations.services.backups REST Resource: v1.projects.locations.services.databases REST Resource: v1.projects.locations.services.databases.tables REST Resource: v1.projects.locations.services.metadataImports REST Resource: v1.projects.locations.services.migrationExecutions Service: metastore.googleapis.com To call this service, we recommend that you use the Google-provided client libraries .",
+          "This service provides the following discovery documents: https://metastore.googleapis.com/$discovery/rest?version=v1 https://metastore.googleapis.com/$discovery/rest?version=v1beta https://metastore.googleapis.com/$discovery/rest?version=v1alpha Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://metastore.googleapis.com REST Resource: v1beta.projects.locations Methods get GET /v1beta/{name} Gets information about a location. list GET /v1beta/{name}/locations Lists information about the supported locations for this service."
+        ]
+      },
+      {
+        "title": "\"Class AlterMetadataResourceLocationRequest.Builder (2.89.0) \\_|\\_ Java client\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+        "source_id": "site-java-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The relative metadata resource name in the following format. databases/{database id} or databases/{database id}/tables/{table id} or databases/{database id}/tables/{table id}/partitions/{partition id} string resource name = 2 [(.google.api.field behavior) = REQUIRED]; Returns Type Description AlterMetadataResourceLocationRequest.Builder This builder for chaining. clearService() public AlterMetadataResourceLocationRequest .",
+          "The relative resource name of the metastore service to mutate metadata, in the following format: projects/{project id}/locations/{location id}/services/{service id} . string service = 1 [(.google.api.field behavior) = REQUIRED, (.google.api.resource reference) = { ... } Returns Type Description AlterMetadataResourceLocationRequest.Builder This builder for chaining. getDefaultInstanceForType() public AlterMetadataResourceLocationRequest getDefaultInstanceForType () Returns Type Description AlterMetadataResourceLocationRequest getDescriptorForType() public Descriptors .",
+          "The relative metadata resource name in the following format. databases/{database id} or databases/{database id}/tables/{table id} or databases/{database id}/tables/{table id}/partitions/{partition id} string resource name = 2 [(.google.api.field behavior) = REQUIRED]; Returns Type Description String The resourceName. getResourceNameBytes() public ByteString getResourceNameBytes () Required."
+        ]
+      },
+      {
+        "title": "\"Package types (1.22.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types",
+        "source_id": "site-python-reference",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MetadataExport The details of a metadata export operation. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields MetadataImport A metastore resource that imports metadata. .. oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields MetadataManagementActivity The metadata management activities of the metastore service.",
+          "This specifies when Dataproc Metastore may perform system maintenance operation to the service.",
+          "DatabaseDumpSpec The specification of database dump to import from or export to."
+        ]
+      },
+      {
+        "title": "\"Class DataprocMetastoreAsyncClient (1.22.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 164,
+        "relevance": "",
+        "evidence_snippets": [
+          "This corresponds to the metadata import id field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "This corresponds to the update mask field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata.",
+          "This corresponds to the update mask field on the request instance; if request is provided, this should not be set. retry google.api core.retry async.AsyncRetry Designation of what errors, if any, should be retried. timeout float The timeout for this request. metadata Sequence[Tuple[str, Union[str, bytes]]] Key/value pairs which should be sent along with the request as metadata."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "async.AsyncRetry",
+      "com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest",
+      "com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+      "com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequestOrBuilder",
+      "core.retry",
+      "fields.html",
+      "metastore.googleapis.com",
+      "python.readthedocs.io",
+      "service.name",
+      "v1.projects.locations",
+      "v1.projects.locations.federations",
+      "v1.projects.locations.operations",
+      "v1.projects.locations.services",
+      "v1.projects.locations.services.backups",
+      "v1.projects.locations.services.databases",
+      "v1.projects.locations.services.databases.tables",
+      "v1.projects.locations.services.metadataImports",
+      "v1.projects.locations.services.migrationExecutions",
+      "v1alpha.projects.locations",
+      "v1alpha.projects.locations.federations",
+      "v1alpha.projects.locations.operations",
+      "v1alpha.projects.locations.services",
+      "v1alpha.projects.locations.services.backups",
+      "v1alpha.projects.locations.services.databases",
+      "v1alpha.projects.locations.services.databases.tables",
+      "v1alpha.projects.locations.services.metadataImports",
+      "v1alpha.projects.locations.services.migrationExecutions",
+      "v1beta.projects.locations",
+      "v1beta.projects.locations.federations",
+      "v1beta.projects.locations.operations",
+      "v1beta.projects.locations.services",
+      "v1beta.projects.locations.services.backups",
+      "v1beta.projects.locations.services.databases",
+      "v1beta.projects.locations.services.databases.tables",
+      "v1beta.projects.locations.services.metadataImports",
+      "v1beta.projects.locations.services.migrationExecutions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc-metastore/docs/reference/rest",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dataproc-metastore/latest/com.google.cloud.metastore.v1.AlterMetadataResourceLocationRequest.Builder",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.types",
+        "https://docs.cloud.google.com/python/docs/reference/metastore/latest/google.cloud.metastore_v1.services.dataproc_metastore.DataprocMetastoreAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.183Z",
+  "source_step08_card": "data/step-08/current/products/dataproc-metastore/card.json",
+  "product_name": "Dataproc Metastore",
+  "product_slug": "dataproc-metastore"
+}

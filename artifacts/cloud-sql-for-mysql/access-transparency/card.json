@@ -1,0 +1,196 @@
+{
+  "feature_name": "Access Transparency",
+  "feature_slug": "access-transparency",
+  "summary": "Cloud SQL supports Access Transparency logs for actions Google staff take when accessing customer data.",
+  "extended_definition": "Cloud SQL supports Access Transparency logs for actions Google staff take when accessing customer data.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users",
+      "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Data residency overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access Approval complements the visibility provided by Access Transparency , which generates near-real-time audit logs when Google administrators interact with your data.",
+          "Using Access Approval, Access Transparency, and Key Access Justifications with Cloud KMS and Cloud EKM, you can deny Google the ability to decrypt your data.",
+          "The audit logs include the office location of the administrator and the reason for the access."
+        ]
+      },
+      {
+        "title": "\"Configure both private services access and Private Service Connect \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "source_id": "site-docs-reference-3",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Create a Private Service Connect endpoint . gcloud To create an instance that supports both private services access and Private Service Connect, use the gcloud sql instances create command: gcloud sql instances create INSTANCE NAME \\ --project = PROJECT ID \\ --region = REGION NAME \\ --enable-private-service-connect \\ --allowed-psc-projects = ALLOWED PROJECTS \\ --availability-type = AVAILABILITY TYPE \\ --no-assign-ip \\ --allocated-ip-range-name = RANGE NAME \\ --enable-google-private-path \\ --tier = MACHINE TYPE \\ --database-version = DATABASE VERSION \\ --network = VPC PSA NETWORK PATH \\ --enable-bin-log \\ --psc-auto-connections = network = VPC PSC NETWORK PATH ,project = SERVICE PROJECT Make the following replacements: INSTANCE NAME : the name of the instance.",
+          "Create a instance that supports private services access and Private Service Connect By creating a Cloud SQL instance that supports both private services access and Private Service Connect, you get the benefits of both services.",
+          "You can create a Cloud SQL instance that supports private services access and Private Service Connect by using gcloud CLI or the API."
+        ]
+      },
+      {
+        "title": "\"Manage users with built-in authentication \\_|\\_ Cloud SQL for MySQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users",
+        "source_id": "site-docs-reference-3",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users?name= USER ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2021-11-02T19:12:08.132Z\", \"startTime\": \"2021-11-02T19:12:08.132Z\", \"endTime\": \"2021-11-02T19:12:09.125Z\", \"operationType\": \"UPDATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } To view the user password policy, see List users . mysql Client To set a user password policy, at the mysql prompt, use the following ALTER USER statement: ALTER USER USER NAME FAILED LOGIN ATTEMPTS ALLOWED FAILED ATTEMPTS PASSWORD EXPIRE INTERVAL PASSWORD EXPIRATION DURATION DAY PASSWORD REQUIRE CURRENT ; Replace the following: USER NAME : The user name.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /users?name= user-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2020-02-07T22:38:41.217Z\", \"startTime\": \"2020-02-07T22:38:41.217Z\", \"endTime\": \"2020-02-07T22:38:44.801Z\", \"operationType\": \"UPDATE USER\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } mysql Client To change the password, at the mysql prompt, use the following SET PASSWORD statement: SET PASSWORD FOR USER NAME = PASSWORD ( 'auth string' ); Flush the mysql.user table to ensure that the change persists: FLUSH TABLES mysql . user ; If a user is locked out due to password policy settings, change the password to unlock them.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method DELETE -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users?host=&name= USERNAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2020-02-07T22:38:41.217Z\", \"startTime\": \"2020-02-07T22:38:41.217Z\", \"endTime\": \"2020-02-07T22:38:44.801Z\", \"operationType\": \"DELETE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } mysql Client To delete a user, at the mysql prompt, use the following DROP USER statement: DROP USER ' USER NAME ' @ ' HOST NAME ' ; Flush the mysql.user table to ensure that the change persists: FLUSH TABLES mysql . user ; Update user properties To update user properties such as host or privileges, you must use the mysql client."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "address.default.self",
+      "address.name",
+      "address.private",
+      "connection.default",
+      "connection.default.peering",
+      "data.google",
+      "example.com",
+      "instance.default.name",
+      "instance.default.psc",
+      "mysql.user",
+      "network.id",
+      "network.name",
+      "network.peering",
+      "request.json",
+      "resource.google",
+      "servicenetworking.googleapis.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-services-access-and-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-manage-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

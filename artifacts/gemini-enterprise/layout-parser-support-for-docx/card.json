@@ -1,0 +1,182 @@
+{
+  "feature_name": "Layout parser support for DOCX",
+  "feature_slug": "layout-parser-support-for-docx",
+  "summary": "The layout parser now supports DOCX, PPTX, and XLSX files, and both the layout and digital parsers can parse PDF, HTML, DOCX, PPTX, and XLSX.",
+  "extended_definition": "The layout parser now supports DOCX, PPTX, and XLSX files, and both the layout and digital parsers can parse PDF, HTML, DOCX, PPTX, and XLSX.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/authentication",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Chat with the assistant \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "source_id": "site-docs-root-2",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "File formats and size limitations The following table lists the file formats and size limitations for files that you can upload to the assistant: File type Description Images Maximum image size: 30 MB Supported file extensions: .png , .jpeg , .svg Documents Maximum document size: .pdf : 100 MB .xlsx : 50 MB The .xlsx limit applies to the size of the file after it's decompressed. .csv : 7 MB .docx : 3 MB .pptx : 100 MB .txt : 7 MB .md : 2 MB .json : 1 MB .js : 1 MB .html : 0.5 MB .css : 1 MB .java : 1 MB .py : 2 MB Supported file extensions: .pdf , .xlsx , .csv , .docx , .pptx , .txt , .md , .json , .js , .html , .css , .java , .py Video Maximum document size: 200 MB Supported file extensions: .mp4 Audio Maximum document size: 200 MB Supported file extensions: .mp3 Add context with mentions You can mention an agent, person, or uploaded file in your chat with the assistant by typing @ in the chat box.",
+          "Connectors Supported files Required connector actions Google Drive CSV PDF PPTX XLSX Download document For more information, see the Google Drive supported actions .",
+          "Microsoft SharePoint CSV PDF PPTX XLSX Download document For more information, see the Microsoft SharePoint supported actions ."
+        ]
+      },
+      {
+        "title": "Configure facets for the UI \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "source_id": "site-docs-root",
+        "final_score": 96,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]",
+          "You can use the Configurations page in the Google Cloud console to specify which fields to use as facets on your UI for apps with structured data or unstructured data with metadata.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Configure facets for the UI Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "About apps and data stores \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "source_id": "site-docs-root",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "PPTX and DOCX formats are available in Preview.",
+          "PPTX and DOCX formats are available in Preview.",
+          "Blended search allows the following fields in search requests : boostSpec contentSearchSpec dataStoreSpecs facetSpecs filter languageCode offset oneBoxPageSize orderBy query pageSize pageToken relevanceScoreSpec relevanceThreshold session sessionSpec spellCorrectionSpec userInfo userPseudoId Blended search allows the following fields in dataStoreSpecs : dataStore boostSpec : If there are boost specs specified for both SearchRequest and dataStoreSpecs , both boost specs are applied to search results filter : If there are filters specified for both SearchRequest and dataStoreSpecs , both filters are applied to search results Create, Read, Update, and Delete (CRUD) operations on serving configs are supported for blended apps."
+        ]
+      },
+      {
+        "title": "Authenticate to Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/authentication",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Execute the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" PowerShell (Windows) Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers ` -Uri \"https://iam.googleapis.com/v1/projects/ PROJECT ID /serviceAccounts\" Select-Object -Expand Content For more information about authenticating using REST and gRPC, see Authenticate for using REST .",
+          "Grant the required role to the principal that will attach the service account to other resources. gcloud iam service-accounts add-iam-policy-binding SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com --member = \"user: USER EMAIL \" --role = roles/iam.serviceAccountUser Replace the following: SERVICE ACCOUNT NAME : the name of the service account PROJECT ID : the project ID where you created the service account USER EMAIL : the email address for a Google Account Create the resource that will run your code, and attach the service account to that resource.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-10 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "iam.googleapis.com",
+      "iam.gserviceaccount.com",
+      "iam.serviceAccountUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/assistant-chat",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-facets",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apps-data-stores",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/authentication"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.016Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise"
+}

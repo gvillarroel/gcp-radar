@@ -1,0 +1,128 @@
+{
+  "feature_name": "OS inventory management installer properties",
+  "feature_slug": "os-inventory-management-installer-properties",
+  "summary": "OS inventory management can expose installer properties for Windows applications.",
+  "extended_definition": "OS inventory management can expose installer properties for Windows applications.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/compute/docs/tutorials/creating-high-performance-sql-server-instance",
+      "https://docs.cloud.google.com/compute/docs/tutorials/performing-in-place-upgrade-windows-server",
+      "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Performing an in-place upgrade of Windows\\_Server \\_|\\_ Compute Engine \\_\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/performing-in-place-upgrade-windows-server",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Detach the installation disk You can now detach the installation disk from the VM instance: In Cloud Shell, detach the installation disk from your VM instance, replacing VM NAME with the name of your VM instance: gcloud compute instances detach-disk VM NAME --disk=win-installers Install updates and restore access After the upgrade is complete, run Windows Update to download and install any security updates.",
+          "Replace ZONE with the name of the zone where the VM is located: gcloud compute disks create win-installers --image-family=windows-install-media --image-project=compute-image-tools --zone= ZONE This command adds a disk named win-installers to your project.",
+          "Analyze log files offline If you can't connect to the instance by using Windows Remote Management (WinRM), you can cancel the upgrade and analyze the log files from a different VM instance."
+        ]
+      },
+      {
+        "title": "\"Creating a high-performance SQL Server instance \\_|\\_ Compute Engine \\_\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/creating-high-performance-sql-server-instance",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 103,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Here is a helper script to run in Management Studio: ALTER DATABASE model MODIFY FILE ( NAME = modeldev , FILENAME = 'D:\\SQLData\\model.mdf' ) ALTER DATABASE model MODIFY FILE ( NAME = modellog , FILENAME = 'D:\\SQLData\\modellog.ldf' ) ALTER DATABASE msdb MODIFY FILE ( NAME = MSDBData , FILENAME = 'D:\\SQLData\\MSDBData.mdf' ) ALTER DATABASE msdb MODIFY FILE ( NAME = MSDBlog , FILENAME = 'D:\\SQLData\\MSDBLog.ldf' ) After you execute these commands: Use the services.msc snap-in to stop the SQL Server database service.",
+          "Grant full security access to the \"NT Service\\MSSQLSERVER\" user account: icacls p : \\ tempdb / Grant \"NT Service\\MSSQLServer:(OI)(CI)F\" Run the following script inside SQL Server Management Studio, to move the tempdb data file and log file: USE master GO ALTER DATABASE [tempdb] MODIFY FILE (NAME = tempdev, FILENAME = 'p:\\tempdb\\tempdb.mdf') GO ALTER DATABASE [tempdb] MODIFY FILE (NAME = templog, FILENAME = 'p:\\tempdb\\templog.ldf') GO Restart SQL Server.",
+          "The log contains an entry such as, \"Using locked pages in the memory manager.\" Granting the Perform volume maintenance tasks permission By default, when an application requests a slice of disk space from Windows, the operating system locates an appropriately sized chunk of disk space, and then zeroes out the entire chunk of disk, before handing it back to the application."
+        ]
+      },
+      {
+        "title": "\"Running Windows Server Failover Clustering \\_|\\_ Compute Engine \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Using the Windows Computer Management desktop app, set a password for the local Administrator account .",
+          "Replace [YOUR ZONE 3] with the name of your zone: gcloud compute instances create wsfc - dc --zone [YOUR ZONE 3] --machine-type n1-standard-2 --image-project windows-cloud --image-family windows-2016 --scopes https://www.googleapis.com/auth/compute --can-ip-forward --private-network-ip 10.0.0.6 --network wsfcnet --subnet wsfcnetsub1 View your instances You can see the details about the instances you created. gcloud compute instances list You will see output similar to the following: NAME ZONE MACHINE TYPE PREEMPTIBLE INTERNAL IP EXTERNAL IP STATUS wsfc-1 us-central1-a n1-standard-2 10.0.0.4 35.203.131.133 RUNNING wsfc-2 us-central1-b n1-standard-2 10.0.0.5 35.203.130.194 RUNNING wsfc-dc us-central1-c n1-standard-2 10.0.0.6 35.197.27.2 RUNNING Connecting to your VMs To connect to a Windows-based VM, you must first generate a password for the VM.",
+          "Run the following command, replacing [YOUR ZONE 1] with the name of your first zone: gcloud compute instances create wsfc - 1 --zone [YOUR ZONE 1] --machine-type n1-standard-2 --image-project windows-cloud --image-family windows-2016 --scopes https://www.googleapis.com/auth/compute --can-ip-forward --private-network-ip 10.0.0.4 --network wsfcnet --subnet wsfcnetsub1 --metadata enable-wsfc=true Create the second cluster-node server For the second server, follow the same steps, except: Set the instance name to: wsfc-2 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "model.mdf",
+      "modellog.ldf",
+      "services.msc",
+      "tempdb.mdf",
+      "templog.ldf"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/performing-in-place-upgrade-windows-server",
+        "https://docs.cloud.google.com/compute/docs/tutorials/creating-high-performance-sql-server-instance",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/performing-in-place-upgrade-windows-server",
+        "https://docs.cloud.google.com/compute/docs/tutorials/creating-high-performance-sql-server-instance",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/performing-in-place-upgrade-windows-server",
+        "https://docs.cloud.google.com/compute/docs/tutorials/creating-high-performance-sql-server-instance",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/performing-in-place-upgrade-windows-server",
+        "https://docs.cloud.google.com/compute/docs/tutorials/creating-high-performance-sql-server-instance",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/compute/docs/tutorials/performing-in-place-upgrade-windows-server",
+        "https://docs.cloud.google.com/compute/docs/tutorials/creating-high-performance-sql-server-instance",
+        "https://docs.cloud.google.com/compute/docs/tutorials/running-windows-server-failover-clustering"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.943Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine"
+}

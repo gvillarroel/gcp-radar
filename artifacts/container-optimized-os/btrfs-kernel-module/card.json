@@ -1,0 +1,117 @@
+{
+  "feature_name": "Btrfs kernel module",
+  "feature_slug": "btrfs-kernel-module",
+  "summary": "Container-Optimized OS enables the Btrfs kernel module; Enables the Btrfs kernel module on Container-Optimized OS.",
+  "extended_definition": "Container-Optimized OS enables the Btrfs kernel module; Enables the Btrfs kernel module on Container-Optimized OS.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits",
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Running instances with GPU accelerators \\_|\\_ Container-Optimized OS \\_\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "source_id": "site-docs-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, on a COS VM, you could use the following command to install the NVIDIA driver and load the nvidia.ko kernel module with the NVreg EnableGpuFirmware=0 parameter. sudo cos-extensions install gpu -- --module-arg nvidia.NVreg EnableGpuFirmware=0 Preload the driver You can preload the GPU driver on your Container-Optimized OS instance even when no GPU device is attached.",
+          "Security Just like other kernel modules on Container-Optimized OS, GPU drivers are cryptographically signed and verified by keys that are built into the Container-Optimized OS kernel.",
+          "Unlike some other distros, Container-Optimized OS does not allow users to enroll their Machine Owner Key (MOK) and use the keys to sign custom kernel modules."
+        ]
+      },
+      {
+        "title": "Security Overview \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "Security-hardened kernel Container-Optimized OS enables several security-hardening kernel features, including Integrity Measurement Architecture (IMA), Audit, Kernel Page Table Isolation (KPTI), and some Linux Security Modules (LSMs) from Chromium OS.",
+          "Testing and qualification process Before we publish a new Container-Optimized OS image to Google Cloud, we test it at multiple levels—including kernel fuzz testing by syzkaller , cluster-level Kubernetes tests, integration testing with Compute Engine features, and several performance benchmarks.",
+          "Built from source at Google Each package in Container-Optimized OS, including the Linux kernel itself, is built from source from ChromiumOS code repositories."
+        ]
+      },
+      {
+        "title": "Container-Optimized OS Overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits",
+        "source_id": "site-docs-reference",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "Container-Optimized OS may not be the right choice for you in the following cases: Your application is not containerized or your containerized application depends on kernel modules, drivers and other additional packages that are not available in Container-Optimized OS.",
+          "The Container-Optimized OS kernel is locked down; you'll be unable to install third-party kernel modules or drivers.",
+          "Limitations Container-Optimized OS has limited or no support for some of the common features you may be familiar with on other operating systems: Container-Optimized OS does not include a package manager; as such, you'll be unable to install software packages directly on an instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "nvidia.ko",
+      "nvidia.NVreg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/run-gpus",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/security",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:23.337Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

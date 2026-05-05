@@ -1,0 +1,151 @@
+{
+  "feature_name": "_PARTITIONTIME support with wildcard queries over partitioned tables",
+  "feature_slug": "partitiontime-support-with-wildcard-queries-over-partitioned-tables",
+  "summary": "BigQuery supports the _PARTITIONTIME pseudocolumn in wildcard table queries over partitioned tables.",
+  "extended_definition": "BigQuery supports the _PARTITIONTIME pseudocolumn in wildcard table queries over partitioned tables.",
+  "lifecycle": {
+    "latest_feature_date": "2017-11-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Copy a table with customer-managed encryption keys (CMEK) \\_|\\_ BigQuery\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 48,
+        "relevance": "",
+        "evidence_snippets": [
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId sourceTable = TableId . of ( sourceDatasetName , sourceTableId ); TableId destinationTable = TableId . of ( destinationDatasetName , destinationTableId ); // For more information on CopyJobConfiguration see: // https://googleapis.dev/java/google-cloud-clients/latest/com/google/cloud/bigquery/JobConfiguration.html CopyJobConfiguration configuration = CopyJobConfiguration . newBuilder ( destinationTable , sourceTable ) . setDestinationEncryptionConfiguration ( encryption ) . build (); // For more information on Job see: // https://googleapis.dev/java/google-cloud-clients/latest/index.html?com/google/cloud/bigquery/package-summary.html Job job = bigquery . create ( JobInfo . of ( configuration )); // Blocks until this job completes its execution, either failing or succeeding.",
+          "Job completedJob = job . waitFor (); if ( completedJob == null ) { System . out . println ( \"Job not executed since it no longer exists.\" ); return ; } else if ( completedJob . getStatus (). getError () != null ) { System . out . println ( \"BigQuery was unable to copy table due to an error: \\n\" + job . getStatus (). getError ()); return ; } System . out . println ( \"Table cmek copied successfully.\" ); } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Table cmek copying job was interrupted. \\n\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // copyTableWithCMEK demonstrates creating a copy of a table and ensuring the copied data is // protected with a customer managed encryption key. func copyTableWithCMEK ( projectID , datasetID , tableID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydataset\" // tableID := \"mytable\" ctx := context ."
+        ]
+      },
+      {
+        "title": "Create a table using a template \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 46,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // createTableFromTemplateTable demonstrates how to use the properties of one // table (schema, partitioning, clustering) to create a new empty table with // the same configuration. func createTableFromTemplateTable ( srcProjectID , srcDatasetID , srcTableID , dstProjectID , dstDatasetID , dstTableID string ) error { // srcProjectID := \"bigquery-public-data\" // srcDatasetID := \"samples\" // srcTableID := \"shakespeare\" // dstProjectID := \"my-project-id\" // dstDatasetID := \"mydataset\" // dstTableID := \"mytable\" ctx := context .",
+          "Home Documentation Data analytics BigQuery Samples Create a table using a template Stay organized with collections Save and categorize content based on your preferences.",
+          "Other properties to consider include // attributes like expiration policy and managed encryption settings. dstMeta := & bigquery ."
+        ]
+      },
+      {
+        "title": "Introduction to partitioned tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "Table pricing When you create and use partitioned tables in BigQuery, your charges are based on how much data is stored in the partitions and on the queries you run against the data: For information on storage pricing, see Storage pricing .",
+          "Quotas and limits for jobs against partitioned tables Quotas and limits also apply to the different types of jobs you can run against partitioned tables, including: Loading data (load jobs) Exporting data (extract jobs) Querying data (query jobs) Copying tables (copy jobs) Number of partition modifications for column-partitioned tables quota errors BigQuery returns this error when your column-partitioned table reaches the quota of the number of partition modifications permitted per day.",
+          "For best practices for controlling costs in BigQuery, see Controlling costs in BigQuery Table security Access control for partitioned tables is the same as access control for standard tables."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "index.html",
+      "summary.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-copy-table-cmek",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-from-template"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

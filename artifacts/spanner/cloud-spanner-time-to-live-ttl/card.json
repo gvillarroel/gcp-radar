@@ -1,0 +1,98 @@
+{
+  "feature_name": "Cloud Spanner Time to Live (TTL)",
+  "feature_slug": "cloud-spanner-time-to-live-ttl",
+  "summary": "Introduces generally available TTL support in Spanner to automatically remove data based on user-defined retention policies.",
+  "extended_definition": "Introduces generally available TTL support in Spanner to automatically remove data based on user-defined retention policies.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backup",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/change-streams"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Backups overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup",
+        "source_id": "site-docs-root",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backups are highly available, encrypted, and can be retained for up to a year from the time they are created.",
+          "This size represents the billable size of the backup. freeableSizeBytes : shows the number of bytes that are released if you delete the backup. oldestVersionTime : shows the versionTime of the oldest full backup in the chain, even if that backup has expired.",
+          "A backup's storage can be smaller than the database's storage because the backup contains only one version of the data, whereas the live database can contain multiple versions of data due to ongoing operations."
+        ]
+      },
+      {
+        "title": "Change streams overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "These changes can come from: DML statements Mutations Cascading deletes on interleaved child tables Deletes resulting from time to live rules Change streams can watch data changes only in user-created columns and tables.",
+          "Exclude time-to-live based deletes In Spanner, time-to-live (TTL) lets you set policies to periodically delete data from Spanner tables.",
+          "You can filter one or more of these table modifications from your change stream's scope using the following available filter options: exclude insert : exclude all INSERT table modifications exclude update : exclude all UPDATE table modifications exclude delete : exclude all DELETE table modifications The default value for these filters is false ."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "Evaluate Spanner needs for production When you move from development to testing, and then into production, it's important that you reevaluate your Spanner needs to insure your game can handle live player traffic.",
+          "In the following diagram, adding an IndexPartition column to the schema after the launch resolves the hotspot issue, and players are evenly distributed across the available Spanner splits.",
+          "All queries against the old schema are returned (although they might return less quickly than usual), and queries against the new schema are returned as they become available."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/backup",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "https://docs.cloud.google.com/spanner/docs/backup",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

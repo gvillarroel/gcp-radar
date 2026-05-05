@@ -1,0 +1,96 @@
+{
+  "feature_name": "%J format element",
+  "feature_slug": "j-format-element",
+  "summary": "The %J format element provides the ISO 8601 1-based day of the year for date and time functions.",
+  "extended_definition": "The %J format element provides the ISO 8601 1-based day of the year for date and time functions.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/date_functions",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Date functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/date_functions",
+        "source_id": "site-docs-root",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When two (or more) format elements have overlapping information (for example both %F and %Y affect the year), the last one generally overrides any earlier ones.",
+          "Return Data Type DATE Example These both return the last day of the month: SELECT LAST DAY ( DATE '2008-11-25' , MONTH ) AS last day / ------------+ last day +------------+ 2008-11-30 +------------ / SELECT LAST DAY ( DATE '2008-11-25' ) AS last day / ------------+ last day +------------+ 2008-11-30 +------------ / This returns the last day of the year: SELECT LAST DAY ( DATE '2008-11-25' , YEAR ) AS last day / ------------+ last day +------------+ 2008-12-31 +------------ / This returns the last day of the week for a week that starts on a Sunday: SELECT LAST DAY ( DATE '2008-11-10' , WEEK ( SUNDAY )) AS last day / ------------+ last day +------------+ 2008-11-15 +------------ / This returns the last day of the week for a week that starts on a Monday: SELECT LAST DAY ( DATE '2008-11-10' , WEEK ( MONDAY )) AS last day / ------------+ last day +------------+ 2008-11-16 +------------ / PARSE DATE PARSE DATE ( format string , date string ) Description Converts a STRING value to a DATE value.",
+          "For example, the function arguments ('%g %J', '8405') return a value with the year 1984 , whereas the arguments ('%g %j', '8405') return a value with the year 1970 because the ISO element %g is ignored."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . from google.cloud import bigquery project = 'my-project' dataset id = 'my dataset' table id = 'new view' client = bigquery.Client(project=project) sql = \"\"\" CREATE VIEW {} . {} . {} OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name=\"new view\", description=\"a view that expires in 2 days\", labels=[(\"org unit\", \"development\")] ) AS SELECT name, state, year, number FROM bigquery-public-data.usa names.usa 1910 current WHERE state LIKE 'W%' \"\"\" . format ( project , dataset id , table id ) job = client . query ( sql ) # API request. job . result () # Waits for the query to finish. print ( 'Created new view \" {} . {} . {} \".' . format ( job . destination . project , job . destination . dataset id , job . destination . table id , ) ) On-demand query size calculation If you use on-demand billing, BigQuery charges for data definition language (DDL) queries based on the number of bytes processed by the query.",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library and create a client const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function ddlCreateView () { // Creates a view via a DDL query / TODO(developer): Uncomment the following lines before running the sample. / // const projectId = \"my project\" // const datasetId = \"my dataset\" // const tableId = \"my new view\" const query = CREATE VIEW \\ ${ projectId } . ${ datasetId } . ${ tableId } \\ OPTIONS( expiration timestamp=TIMESTAMP ADD( CURRENT TIMESTAMP(), INTERVAL 48 HOUR), friendly name=\"new view\", description=\"a view that expires in 2 days\", labels=[(\"org unit\", \"development\")] ) AS SELECT name, state, year, number FROM \\bigquery-public-data.usa names.usa 1910 current\\ WHERE state LIKE 'W%' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query const options = { query : query , }; // Run the query as a job const [ job ] = await bigquery . createQueryJob ( options ); job . on ( 'complete' , metadata = > { console . log ( Created new view ${ tableId } via job ${ metadata . id } ); }); } Python Call the Client.query() method to start a query job.",
+          "The table option list specifies the following: Expiration time: 365 days after the time that the table is created Friendly name: my table Description: A table that expires in 1 year Label: org unit = development Create a clone of a table: ignore if the destination table already exists The following example creates the table clone myproject.mydataset.mytableclone based on the table myproject.mydataset.mytable : CREATE TABLE IF NOT EXISTS myproject.mydataset.mytableclone CLONE myproject.mydataset.mytable OPTIONS ( expiration timestamp = TIMESTAMP ADD ( CURRENT TIMESTAMP (), INTERVAL 365 DAY ), friendly name = \"my table\" , description = \"A table that expires in 1 year\" , labels =[ ( \"org unit\" , \"development\" ) ] ) The table option list specifies the following: Expiration time: 365 days after the time the table is created Friendly name: my table Description: A table that expires in 1 year Label: org unit = development If the table name exists in the dataset, then no action is taken, and no error is returned."
+        ]
+      },
+      {
+        "title": "Query syntax \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT DISTINCT can't return columns of the following types: GRAPH ELEMENT GRAPH PATH In the following example, SELECT DISTINCT is used to produce distinct arrays: WITH PlayerStats AS ( SELECT [ 'Coolidge' , 'Adams' ] as Name , 3 as PointsScored UNION ALL SELECT [ 'Adams' , 'Buchanan' ] , 0 UNION ALL SELECT [ 'Coolidge' , 'Adams' ] , 1 UNION ALL SELECT [ 'Kiran' , 'Noam' ] , 1 ) SELECT DISTINCT Name FROM PlayerStats ; / ------------------+ Name +------------------+ [Coolidge,Adams] [Adams,Buchanan] [Kiran,Noam] +------------------ / In the following example, SELECT DISTINCT is used to produce distinct structs: WITH PlayerStats AS ( SELECT STRUCT<last name STRING , first name STRING , age INT64 > ( 'Adams' , 'Noam' , 20 ) AS Player , 3 AS PointsScored UNION ALL SELECT ( 'Buchanan' , 'Jie' , 19 ), 0 UNION ALL SELECT ( 'Adams' , 'Noam' , 20 ), 4 UNION ALL SELECT ( 'Buchanan' , 'Jie' , 19 ), 13 ) SELECT DISTINCT Player FROM PlayerStats ; / --------------------------+ player +--------------------------+ { last name: \"Adams\", first name: \"Noam\", age: 20 } +--------------------------+ { last name: \"Buchanan\", first name: \"Jie\", age: 19 } +--------------------------- / SELECT ALL A SELECT ALL statement returns all rows, including duplicate rows.",
+          "Examples The following examples reference a table called Produce that looks like this: WITH Produce AS ( SELECT 'Kale' as product , 51 as sales , 'Q1' as quarter , 2020 as year UNION ALL SELECT 'Kale' , 23 , 'Q2' , 2020 UNION ALL SELECT 'Kale' , 45 , 'Q3' , 2020 UNION ALL SELECT 'Kale' , 3 , 'Q4' , 2020 UNION ALL SELECT 'Kale' , 70 , 'Q1' , 2021 UNION ALL SELECT 'Kale' , 85 , 'Q2' , 2021 UNION ALL SELECT 'Apple' , 77 , 'Q1' , 2020 UNION ALL SELECT 'Apple' , 0 , 'Q2' , 2020 UNION ALL SELECT 'Apple' , 1 , 'Q1' , 2021 ) SELECT FROM Produce / ---------+-------+---------+------+ product sales quarter year +---------+-------+---------+------ Kale 51 Q1 2020 Kale 23 Q2 2020 Kale 45 Q3 2020 Kale 3 Q4 2020 Kale 70 Q1 2021 Kale 85 Q2 2021 Apple 77 Q1 2020 Apple 0 Q2 2020 Apple 1 Q1 2021 +---------+-------+---------+------ / With the PIVOT operator, the rows in the quarter column are rotated into these new columns: Q1 , Q2 , Q3 , Q4 .",
+          "Conceptual example: -- Before PIVOT is used to rotate sales and quarter into Q1, Q2, Q3, Q4 columns: / ---------+-------+---------+------+ product sales quarter year +---------+-------+---------+------ Kale 51 Q1 2020 Kale 23 Q2 2020 Kale 45 Q3 2020 Kale 3 Q4 2020 Kale 70 Q1 2021 Kale 85 Q2 2021 Apple 77 Q1 2020 Apple 0 Q2 2020 Apple 1 Q1 2021 +---------+-------+---------+------ / -- After PIVOT is used to rotate sales and quarter into Q1, Q2, Q3, Q4 columns: / ---------+------+----+------+------+------+ product year Q1 Q2 Q3 Q4 +---------+------+----+------+------+------+ Apple 2020 77 0 NULL NULL Apple 2021 1 NULL NULL NULL Kale 2020 51 23 45 3 Kale 2021 70 85 NULL NULL +---------+------+----+------+------+------ / Definitions Top-level definitions: from item : The table, subquery, or table-valued function (TVF) on which to perform a pivot operation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.Client",
+      "data.usa",
+      "myproject.mydataset.mytable",
+      "myproject.mydataset.mytableclone",
+      "names.usa"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/date_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,159 @@
+{
+  "feature_name": "Terraform support for self-service maintenance",
+  "feature_slug": "terraform-support-for-self-service-maintenance",
+  "summary": "Cloud SQL self-service maintenance supports Terraform.",
+  "extended_definition": "Cloud SQL self-service maintenance supports Terraform.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "AUTOMATIC ROTATION DURING MAINTENANCE : With this option, automatic server certificate rotation is enabled during Cloud SQL scheduled maintenance or self-service maintenance updates.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /users?host=%25&name=root\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2019-09-26T14:32:30.592Z\", \"startTime\": \"2019-09-26T14:32:30.594Z\", \"endTime\": \"2019-09-26T14:32:33.518Z\", \"operationType\": \"UPDATE USER\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Retrieve the IPv4 address Retrieve the automatically assigned IPv4 address for the new instance: Before using any of the request data, make the following replacements: project-id : your project ID instance-id : instance ID created in prior step HTTP method and URL: GET https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"MYSQL 8 0 18\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-f1-micro\", \"kind\": \"sql#settings\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \"us-west1-a\", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"backupConfiguration\": { \"startTime\": \"18:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"1\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" }, \"etag\": \"--redacted--\", \"ipAddresses\": [ { \"type\": \"PRIMARY\", \"ipAddress\": \" 10.0.0.1 \" } ], \"serverCaCert\": { ... }, \"instanceType\": \"CLOUD SQL INSTANCE\", \"project\": \" project-id \", \"serviceAccountEmailAddress\": \"redacted@gcp-sa-cloud-sql.iam.gserviceaccount.com\", \"backendType\": \"SECOND GEN\", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"connectionName\": \" project-id:region:instance-id \", \"name\": \" instance-id \", \"region\": \"us-west1\", \"gceZone\": \"us-west1-a\" } Look for the ipAddress field in the response."
+        ]
+      },
+      {
+        "title": "Configure public IP \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ?fields=settings\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type 4\", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [ { \"value\": \" ip-address1 \", \"name\": \" ip-address-name1 \", \"kind\": \"sql#aclEntry\" }, { \"value\": \" ip-address2 \", \"name\": \" ip-address-name2 \", \"kind\": \"sql#aclEntry\" } ], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } Update the instance, by including all the addresses you want to keep and dropping off any addresses you want to remove: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 The authorized IP address or network range to remove HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id Request JSON body: { \"settings\": { \"ipConfiguration\": { \"authorizedNetworks\": [{\"value\": \" network range 1 \"}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ?fields=settings\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type 4\", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [ { \"value\": \" ip-address1 \", \"name\": \" ip-address-name1 \", \"kind\": \"sql#aclEntry\" }, { \"value\": \" ip-address2 \", \"name\": \" ip-address-name2 \", \"kind\": \"sql#aclEntry\" } ], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } Update the instance, by including all the addresses you want to keep and dropping off any addresses you want to remove: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID network range 1 The authorized IP address or network range to remove HTTP method and URL: PATCH https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id Request JSON body: { \"settings\": { \"ipConfiguration\": { \"authorizedNetworks\": [{\"value\": \" network range 1 \"}] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id ?fields=settings\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \" machine-type \", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"privateNetwork\": \"projects/ project-id /global/networks/default\", \"authorizedNetworks\": [ { \"value\": \" ip-address \", \"name\": \" ip-address-name \", \"kind\": \"sql#aclEntry\" } ], \"ipv4Enabled\": true }, \"locationPreference\": { \"zone\": \" zone \", \"kind\": \"sql#locationPreference\" }, \"dataDiskType\": \"PD SSD\", \"maintenanceWindow\": { \"kind\": \"sql#maintenanceWindow\", \"hour\": 0, \"day\": 0 }, \"backupConfiguration\": { \"startTime\": \"03:00\", \"kind\": \"sql#backupConfiguration\", \"enabled\": true, \"binaryLogEnabled\": true }, \"settingsVersion\": \"54\", \"storageAutoResizeLimit\": \"0\", \"storageAutoResize\": true, \"dataDiskSizeGb\": \"10\" } } REST v1beta4 Show all existing authorized addresses by describing the instance: Before using any of the request data, make the following replacements: project-id : The project ID instance-id : The instance ID ip-address1 : The CIDR form of the first IP address ip-address-name1 : The name of the first IP address ip-address2 : The CIDR form of the second IP address ip-address-name2 : The name of the second IP address machine-type The instance machine type zone The instance zone HTTP method and URL: GET https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id ?fields=settings To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users",
+        "source_id": "site-docs-reference-3",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "Then before you can use IAM group authentication, your Cloud SQL instance requires the following maintenance update: R20240514.00 04 or later You can apply the maintenance update to your instance by using self-service maintenance.",
+          "For more information, see Perform self-service maintenance .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-07T22:44:16.656Z\", \"startTime\": \"2025-10-07T22:44:16.686Z\", \"endTime\": \"2025-10-07T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID for the instance you are adding the user to USERNAME : the email address for the user USER TYPE : the Cloud SQL user type, which can be one of the following IAM user types: CLOUD IAM USER CLOUD IAM SERVICE ACCOUNT CLOUD IAM GROUP ROLE 1 , ROLE 2 ..., ROLE N : the database role or roles to assign to the IAM user, service account, or group REVOKE EXISTING ROLES : set to true to revoke the user's existing roles, set to false to keep the user's existing roles HTTP method and URL: PUT https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USERNAME \", \"type\": \" USER TYPE \", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ], \"revokeExistingRoles\": REVOKE EXISTING ROLES } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sql.iam.gserviceaccount.com",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-ip",
+        "https://docs.cloud.google.com/sql/docs/mysql/add-manage-iam-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

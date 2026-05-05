@@ -1,0 +1,160 @@
+{
+  "feature_name": "NFSv4.1 protocol support with Managed Service for Microsoft Active Directory",
+  "feature_slug": "nfsv4-1-protocol-support-with-managed-service-for-microsoft-active-directory",
+  "summary": "Filestore supports the NFSv4.1 protocol with integration for Managed Service for Microsoft Active Directory.",
+  "extended_definition": "Filestore supports the NFSv4.1 protocol with integration for Managed Service for Microsoft Active Directory.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+      "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+      "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+      "https://docs.cloud.google.com/filestore/docs/creating-instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a Filestore instance with Managed Microsoft AD \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "source_id": "site-docs-root-2",
+        "final_score": 288,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If Managed Microsoft AD is in a separate project, then the VPC network should be configured with Active Directory network peering on the Managed Microsoft AD configuration.",
+          "For more information on how to configure objects in Managed Microsoft AD, see Managed Active Directory objects .",
+          "Create a Filestore instance that uses the NFSv4.1 protocol with Managed Microsoft AD."
+        ]
+      },
+      {
+        "title": "About NFSv4.1 protocol \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "source_id": "site-docs-root-2",
+        "final_score": 258,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filestore offers NFSv4.1 protocol support for instances created in the following service tiers : Zonal Regional Enterprise This capability can be integrated with Managed Service for Microsoft Active Directory (Managed Microsoft AD) to support workloads that require client and server authentication, message data integrity checks, and in-transit data encryption, capabilities previously unavailable in Filestore.",
+          "In the Filestore NFSv4.1 protocol, several network ACL security flavors or settings are available: krb5 Authenticates the client using a Kerberos ticket, which is validated against the Managed Microsoft AD Kerberos server. krb5i Includes the authentication provided by krb5 and also uses Kerberos to run message integrity checks on all network traffic to and from the instance. krb5p Includes the authentication provided by krb5 and message integrity checks of krb5i and also uses Kerberos for in-transit data encryption.",
+          "Managed Microsoft AD is the only fully-managed Google Cloud solution that supports both LDAP and Kerberos , requirements for the NFSv4.1 protocol and its security and privacy benefits."
+        ]
+      },
+      {
+        "title": "\"About supported file system protocols \\_|\\_ Filestore \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "source_id": "site-docs-root-2",
+        "final_score": 254,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed Service for Microsoft Active Directory While Managed Service for Microsoft Active Directory (Managed Microsoft AD) is not a strict requirement, it is the only Google Cloud-managed solution to support both LDAP and Kerberos, both of which are requirements for the Filestore NFSv4.1 protocol.",
+          "Create a Filestore instance with Private Service Connect Configure the NFSv4.1 protocol Create a Filestore instance with Managed Microsoft AD Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Administrators are strongly encouraged to use Managed Service for Microsoft Active Directory (Managed Microsoft AD) to implement and manage LDAP and Kerberos."
+        ]
+      },
+      {
+        "title": "Create an instance \\_|\\_ Filestore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/filestore/docs/creating-instances",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "Scales up or down in increments of 256 GiB Regional (10 TiB to 100 TiB) : Scales up or down in increments of 2.5 TiB Scales up or down in increments of 256 GiB Performance Basic HDD : Static Basic SSD : Performance step at 10 TiB Configurable Configurable Scales linearly with capacity Protocol NFSv3 NFSv3, NFSv4.1 NFSv3, NFSv4.1 NFSv3, NFSv4.1 Create operations for zonal, regional, and enterprise instances can take anywhere between 15 minutes and one hour to complete, depending on instance size.",
+          "What's next Learn how to configure an instance for use with the NFSv4.1 protocol .",
+          "For details, see Encrypt data with customer-managed encryption keys ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.instances"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4-managed-ad",
+        "https://docs.cloud.google.com/filestore/docs/configure-nfsv4",
+        "https://docs.cloud.google.com/filestore/docs/about-supported-protocols",
+        "https://docs.cloud.google.com/filestore/docs/creating-instances"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:31.904Z",
+  "source_step08_card": "data/step-08/current/products/filestore/card.json",
+  "product_name": "Filestore",
+  "product_slug": "filestore"
+}

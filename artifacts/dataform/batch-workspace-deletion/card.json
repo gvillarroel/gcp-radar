@@ -1,0 +1,305 @@
+{
+  "feature_name": "Batch workspace deletion",
+  "feature_slug": "batch-workspace-deletion",
+  "summary": "Batch workspace deletion lets users delete multiple Dataform workspaces together.",
+  "extended_definition": "Batch workspace deletion lets users delete multiple Dataform workspaces together.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataform/docs/access-control",
+      "https://docs.cloud.google.com/dataform/docs/create-workspace",
+      "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+      "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control access with IAM \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "The permissions in the Code Creator let you create and list code in Dataform, and access only the code that you created and code that was explicitly shared with you. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform.folders.create dataform.locations. dataform.locations.get dataform.locations.list dataform.repositories.create dataform.repositories.list resourcemanager.projects.get resourcemanager.projects.list Code Editor ( roles/ dataform.codeEditor ) Edit access code resources. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.addContents dataform.folders.create dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Code Owner ( roles/ dataform.codeOwner ) Full access to code resources. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders. dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. setIamPolicy dataform.repositories.update dataform.workspaces. dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Code Scheduler Beta ( roles/ dataform.codeScheduler ) Access for scheduling workflows and releases. dataform.releaseConfigs.create dataform. workflowConfigs. create Code Viewer ( roles/ dataform.codeViewer ) Read-only access to all code resources. dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Team Folder Commenter Beta ( roles/ dataform.teamFolderCommenter ) View and comment access to a team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Team Folder Contributor ( roles/ dataform.teamFolderContributor ) Edit access to a team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.addContents dataform.folders.create dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.teamFolders.update dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Team Folder Creator ( roles/ dataform.teamFolderCreator ) Access to create new team folders. dataform.teamFolders.create Team Folder Owner ( roles/ dataform.teamFolderOwner ) Full access to a team folder and its contents.",
+          "Predefined Dataform roles The following table lists the predefined roles that give you access to Dataform resources: Role Permissions Dataform Admin ( roles/ dataform.admin ) Full access to all Dataform resources. dataform. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.config.update dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations.get dataform.locations.list dataform.operations.cancel dataform.operations.delete dataform.operations.get dataform.operations.list dataform.releaseConfigs.create dataform.releaseConfigs.delete dataform.releaseConfigs.get dataform.releaseConfigs.list dataform.releaseConfigs.update dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. scheduleRelease dataform. repositories. scheduleWorkflow dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.create dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform. workflowConfigs. create dataform. workflowConfigs. delete dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowConfigs. update dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Editor ( roles/ dataform.editor ) Edit access to Workspaces and Read-only access to Repositories. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform.workflowInvocations. dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Dataform Viewer ( roles/ dataform.viewer ) Read-only access to all Dataform resources. dataform.commentThreads.get dataform.commentThreads.list dataform.comments.get dataform.comments.list dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.releaseConfigs.get dataform.releaseConfigs.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Code Commenter Beta ( roles/ dataform.codeCommenter ) Permissions to comment, at the repository level.",
+          "Can share the team folder and its contents. dataform.commentThreads. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments. dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders. dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations. dataform.locations.get dataform.locations.list dataform.operations.get dataform.operations.list dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform.workspaces. dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile resourcemanager.projects.get resourcemanager.projects.list Team Folder Viewer ( roles/ dataform.teamFolderViewer ) View access to a team folder and its contents. dataform.compilationResults. dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.folders.get dataform.folders.getIamPolicy dataform.folders.queryContents dataform.locations. dataform.locations.get dataform.locations.list dataform. repositories. computeAccessTokenStatus dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform.workspaces.list dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. searchFiles resourcemanager.projects.get resourcemanager.projects.list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      },
+      {
+        "title": "Create a development workspace \\_|\\_ Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "source_id": "site-docs-root-2",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to create, initialize, and delete a development workspace, ask your administrator to grant you the Dataform Editor ( roles/dataform.editor ) IAM role on workspaces.",
+          "However, if you want to delete a development workspace, follow these steps: In the Google Cloud console, go to the Dataform page.",
+          "Delete a Dataform workspace There are no costs associated with creating Dataform development workspaces."
+        ]
+      },
+      {
+        "title": "Use JavaScript in Dataform \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "source_id": "site-docs-root-2",
+        "final_score": 141,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following code sample shows the self Dataform core built-in JavaScript function added inline to the post operations block in a SQLX file: config {type: \"table\"} SELECT FROM ... post operations { GRANT roles/bigquery.dataViewer ON TABLE ${self()} TO \"group:allusers@example.com\", \"user:otheruser@example.com\" } The following code sample shows a constant defined in a JavaScript block and used inline inside a query in a SQLX file: js { const columnName = \"foo\" ; } SELECT 1 AS $ { columnName } FROM \"...\" Reuse code across a single SQLX file with JavaScript encapsulation You can reuse JavaScript code to streamline development in Dataform.",
+          "Additionally, you must be familiar with JavaScript syntax and the following JavaScript concepts: Variables Arrays Conditional statements For loops Maps Functions Objects Exporting and importing modules Required roles To get the permissions that you need to develop a workflow with JavaScript and reuse code with JavaScript includes, ask your administrator to grant you the Dataform Editor ( roles/dataform.editor ) IAM role on workspaces.",
+          "PROJECT ID }. my schema name . my table name The following code sample shows the previous Dataform core table definition query compiled into SQL: SELECT FROM my project name . my schema name . my table name Create a custom JavaScript function To create a custom JavaScript function that you can reuse across your project, follow these steps: Go to your development workspace."
+        ]
+      },
+      {
+        "title": "Dataform core sample scripts \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Adding a custom assertion with Dataform core The following code sample shows a custom assertion in a table definition file that validates if columns a , or b , or c from source data are null : config { type: \"assertion\" } SELECT FROM ${ref(\"source data\")} WHERE a is null or b is null or c is null Developing with JavaScript Using inline variables and functions with JavaScript The following code sample shows the foo variable defined in a js block and then used inline in a SQLX file: js { const foo = 1; function bar(number){ return number+1; } } SELECT ${foo} AS one, ${bar(foo)} AS two Generating one table per country with JavaScript The following code sample shows the use of the forEach function to generate one table per each country defined in countries in the definitions/one table per country.js file: const countries = [ \"GB\" , \"US\" , \"FR\" , \"TH\" , \"NG\" ]; countries . forEach ( country = > { publish ( \"reporting \" + country ) . dependencies ([ \"source table\" ]) . query ( ctx = > SELECT ' ${ country } ' AS country ); }); Declaring multiple sources within one file with JavaScript The following code sample shows declaration of multiple data sources in the definitions/external dependencies.js file: declare ({ schema : \"stripe\" , name : \"charges\" }); declare ({ schema : \"shopify\" , name : \"orders\" }); declare ({ schema : \"salesforce\" , name : \"accounts\" }); Declaring multiple sources within one file using forEach The following code sample shows declaration of multiple data sources with the forEach function in the definitions/external dependencies.js file: [\"charges\", \"subscriptions\", \"line items\", \"invoices\"] .forEach(source => declare({ schema: \"stripe\", name: source }) ); Deleting sensitive information in all tables containing PII with JavaScript The following code sample shows a function in the definitions/delete pii.js file that deletes selected information in all tables that contain personal identifiable information (PII): const pii tables = [ \"users\" , \"customers\" , \"leads\" ]; pii tables . forEach ( table = > operate ( gdpr cleanup: ${ table } , ctx = > DELETE FROM raw data. ${ table } WHERE user id in (SELECT FROM users who requested deletion) ) . tags ([ \"gdpr deletion\" ])) ); Adding preOps and postOps with JavaScript The following code sample shows the publish function used to create a query with preOps and postOps in the definitions/pre and post ops example.js table: publish(\"example\") .preOps(ctx => GRANT \\roles/bigquery.dataViewer\\ ON TABLE ${ctx.ref(\"other table\")} TO \"group:automation@example.com\") .query(ctx => SELECT FROM ${ctx.ref(\"other table\")}) .postOps(ctx => REVOKE \\roles/bigquery.dataViewer\\ ON TABLE ${ctx.ref(\"other table\")} TO \"group:automation@example.com\") Creating incremental tables with JavaScript The following code sample shows the publish function used to create an incremental table in the definitions/incremental example.js file: publish ( \"incremental example\" , { type : \"incremental\" }). query ( ctx = > SELECT FROM ${ ctx . ref ( \"other table\" ) } ${ ctx . when ( ctx . incremental (), WHERE timestamp > (SELECT MAX(date) FROM ${ ctx . self () } ) } ) Backfilling a daily table with JavaScript The following code sample shows backfilling a table that updates daily in the definitions/backfill daily data.js file: var getDateArray = function ( start , end ) { var startDate = new Date ( start ); //YYYY-MM-DD var endDate = new Date ( end ); //YYYY-MM-DD var arr = new Array (); var dt = new Date ( startDate ); while ( dt < = endDate ) { arr . push ( new Date ( dt ). toISOString (). split ( \"T\" )[ 0 ]); dt . setDate ( dt . getDate () + 1 ); } return arr ; }; var dateArr = getDateArray ( \"2020-03-01\" , \"2020-04-01\" ); // step 1: create table operate ( create table , 'create table if not exists backfill table (fields) ); // step 2: insert into the table dateArr.forEach((day, i) = > operate(backfill ${day} insert into backfill table select fields where day = ' $ { day } ' ) ); Reusing code with includes Using global variables with JavaScript The following code sample shows definition of project id and first date constants in the includes/constants.js : const project id = \"project id\" ; const first date = \"'1970-01-01'\" ; module . exports = { project id , first date }; The following code sample shows the first date constant referenced in the definitions/new table.sqlx file: config {type: \"table\"} SELECT FROM source table WHERE date > ${constants.first date} Creating a country mapping with JavaScript The following code sample shows the country group custom function defined in the includes/mapping.js file: function country group ( country ){ return case when ${ country } in ('US', 'CA') then 'NA' when ${ country } in ('GB', 'FR', 'DE', 'IT', 'PL', 'SE') then 'EU' when ${ country } in ('AU') then ${ country } else 'Other' end ; } module . exports = { country group }; The following code sample shows a table definition that uses the country group function in the definitions/new table.sqlx table definition file: config { type: \"table\"} SELECT country AS country, ${mapping.country group(\"country\")} AS country group, device type AS device type, sum(revenue) AS revenue, sum(pageviews) AS pageviews, sum(sessions) AS sessions FROM ${ref(\"source table\")} GROUP BY 1, 2, 3 The following code sample shows the query defined in definitions/new table.sqlx compiled to SQL: SELECT country AS country, case when country in ('US', 'CA') then 'NA' when country in ('GB', 'FR', 'DE', 'IT', 'PL', 'SE') then 'EU' when country in ('AU') then country else 'Other' end AS country group, device type AS device type, sum(revenue) AS revenue, sum(pageviews) AS pageviews, sum(sessions) AS sessions FROM \"dataform\".\"source table\" GROUP BY 1, 2, 3 Generating a SQL script with a custom JavaScript function The following code sample shows the render script custom function defined in includes/script builder.js : function render script ( table , dimensions , metrics ) { return SELECT ${ dimensions . map ( field = > ${ field } AS ${ field } ). join ( \",\" ) } , ${ metrics . map ( field = > sum( ${ field } ) AS ${ field } ). join ( \",\\n\" ) } FROM ${ table } GROUP BY ${ dimensions . map (( field , i ) = > ${ i + 1 } ). join ( \", \" ) } ` ; } module . exports = { render script }; The following code sample shows a table definition that uses the render script function in the definitions/new table.sqlx table definition file: config { type: \"table\", tags: [\"advanced\", \"hourly\"], disabled: true } ${script builder.render script(ref(\"source table\"), [\"country\", \"device type\"], [\"revenue\", \"pageviews\", \"sessions\"] )} The following code sample shows the query defined in definitions/new table.sqlx compiled to SQL: SELECT country AS country, device type AS device type, sum(revenue) AS revenue, sum(pageviews) AS pageviews, sum(sessions) AS sessions FROM \"dataform\".\"source table\" GROUP BY 1, 2 Actions configs Loading SQL files with action configs Action configs facilitate loading pure SQL files.",
+          "In this configuration, Dataform creates a temporary incremental example that updates incrementally, and deletes the table after 30 days from its creation: config {type: \"incremental\"} post operations { delete FROM ${self()} WHERE date < (date add(Day, -30, CURRENT DATE)) } SELECT date(timestamp) AS date, order id, FROM source table ${ when(incremental(), WHERE timestamp > (SELECT max(date) FROM ${self()})) } Creating custom SQL operations Running several SQL operations in a SQLX file with Dataform core The following code sample shows ; used to separate multiple SQL operations defined in definitions/operations.sqlx : config { type: \"operations\" } DELETE FROM datatable where country = 'GB'; DELETE FROM datatable where country = 'FR'; Running custom SQL before creating a table with Dataform core The following code sample shows a custom SQL operation defined in the pre operations block of the definitions/table with preops.sqlx table definition file: config {type: \"table\"} SELECT FROM ... pre operations { INSERT INTO table ... } Running custom SQL after creating a table with Dataform core The following code sample shows a custom SQL operation defined in the post operations block of the definitions/table with postops.sqlx table definition file: config {type: \"table\"} SELECT FROM ... post operations { GRANT roles/bigquery.dataViewer ON TABLE ${self()} TO \"group:allusers@example.com\", \"user:otheruser@example.com\" } Validating tables Adding assertions to a table, view, or declaration with Dataform core The following code sample shows uniqueKey , nonNull , and rowConditions assertions added to the definitions/tested table.sqlx table definition file: config { type: \"table\", assertions: { uniqueKey: [\"user id\"], nonNull: [\"user id\", \"customer id\"], rowConditions: [ 'signup date is null or signup date > \"2022-01-01\"', 'email like \"%@%.%\"' ] } } SELECT ...",
+          "Creating tables Creating a view with Dataform core The following code sample shows definition of a view called new view in the definitions/new view.sqlx file: config { type: \"view\" } SELECT FROM source data Creating a materialized view with Dataform core The following code sample shows definition of a materialized view called new materialized view in the definitions/new materialized view.sqlx file: config { type: \"view\", materialized: true } SELECT FROM source data Creating a table with Dataform core The following code sample shows definition of a table called new table in the definitions/new table.sqlx file: config { type: \"table\" } SELECT FROM source data Creating an incremental table with Dataform core The following code sample shows an incremental table that incrementally processes rows of the productiondb.logs table: config { type: \"incremental\" } SELECT timestamp, message FROM ${ref(\"productiondb\", \"logs\")} ${when(incremental(), WHERE timestamp > (SELECT MAX(timestamp) FROM ${self()})) } Using the ref function to reference tables with Dataform core The following code sample shows the ref function used to reference the source data table in the definitions/new table with ref.sqlx table definition file: config { type: \"table\" } SELECT FROM ${ref(\"source data\")} Adding documentation to a table, view, or declaration with Dataform core The following code sample shows table and columns descriptions in the definitions/documented table.sqlx table definition file: config { type: \"table\", description: \"This table is an example\", columns:{ user name: \"Name of the user\", user id: \"ID of the user\" } } SELECT user name, user id FROM ${ref(\"source data\")} Configuring incremental tables Adding new table rows for new dates in source data with Dataform core The following code sample shows a configuration of an incremental table in the definitions/incremental table.sqlx file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataViewer",
+      "builder.js",
+      "builder.render",
+      "constants.first",
+      "constants.js",
+      "country.js",
+      "ctx.ref",
+      "data.js",
+      "dataform.admin",
+      "dataform.codeCommenter",
+      "dataform.codeEditor",
+      "dataform.codeOwner",
+      "dataform.codeScheduler",
+      "dataform.codeViewer",
+      "dataform.comments",
+      "dataform.comments.create",
+      "dataform.comments.delete",
+      "dataform.comments.get",
+      "dataform.comments.list",
+      "dataform.comments.update",
+      "dataform.commentThreads",
+      "dataform.commentThreads.create",
+      "dataform.commentThreads.delete",
+      "dataform.commentThreads.get",
+      "dataform.commentThreads.list",
+      "dataform.commentThreads.update",
+      "dataform.compilationResults",
+      "dataform.config.get",
+      "dataform.config.update",
+      "dataform.editor",
+      "dataform.folders",
+      "dataform.folders.addContents",
+      "dataform.folders.create",
+      "dataform.folders.delete",
+      "dataform.folders.deleteTree",
+      "dataform.folders.get",
+      "dataform.folders.getIamPolicy",
+      "dataform.folders.move",
+      "dataform.folders.queryContents",
+      "dataform.folders.setIamPolicy",
+      "dataform.folders.update",
+      "dataform.locations",
+      "dataform.locations.get",
+      "dataform.locations.list",
+      "dataform.operations.cancel",
+      "dataform.operations.delete",
+      "dataform.operations.get",
+      "dataform.operations.list",
+      "dataform.releaseConfigs.create",
+      "dataform.releaseConfigs.delete",
+      "dataform.releaseConfigs.get",
+      "dataform.releaseConfigs.list",
+      "dataform.releaseConfigs.update",
+      "dataform.repositories.commit",
+      "dataform.repositories.create",
+      "dataform.repositories.delete",
+      "dataform.repositories.get",
+      "dataform.repositories.list",
+      "dataform.repositories.move",
+      "dataform.repositories.readFile",
+      "dataform.repositories.update",
+      "dataform.teamFolderCommenter",
+      "dataform.teamFolderContributor",
+      "dataform.teamFolderCreator",
+      "dataform.teamFolderOwner",
+      "dataform.teamFolders.create",
+      "dataform.teamFolders.delete",
+      "dataform.teamFolders.get",
+      "dataform.teamFolders.update",
+      "dataform.teamFolderViewer",
+      "dataform.viewer",
+      "dataform.workflowConfigs.get",
+      "dataform.workflowConfigs.list",
+      "dataform.workflowInvocations",
+      "dataform.workspaces",
+      "dataform.workspaces.commit",
+      "dataform.workspaces.create",
+      "dataform.workspaces.delete",
+      "dataform.workspaces.get",
+      "dataform.workspaces.list",
+      "dataform.workspaces.moveFile",
+      "dataform.workspaces.pull",
+      "dataform.workspaces.push",
+      "dataform.workspaces.readFile",
+      "dataform.workspaces.removeFile",
+      "dataform.workspaces.reset",
+      "dataform.workspaces.writeFile",
+      "dependencies.js",
+      "example.com",
+      "example.js",
+      "example.sqlx",
+      "mapping.country",
+      "mapping.js",
+      "operations.sqlx",
+      "pii.js",
+      "postops.sqlx",
+      "preops.sqlx",
+      "productiondb.customers",
+      "productiondb.logs",
+      "ref.sqlx",
+      "table.sqlx",
+      "view.sqlx"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataViewer",
+      "roles/dataform.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataform/docs/access-control",
+        "https://docs.cloud.google.com/dataform/docs/create-workspace",
+        "https://docs.cloud.google.com/dataform/docs/javascript-in-dataform",
+        "https://docs.cloud.google.com/dataform/docs/reference/sample-scripts"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.138Z",
+  "source_step08_card": "data/step-08/current/products/dataform/card.json",
+  "product_name": "Dataform",
+  "product_slug": "dataform"
+}

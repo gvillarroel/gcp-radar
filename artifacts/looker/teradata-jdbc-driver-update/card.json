@@ -1,0 +1,125 @@
+{
+  "feature_name": "Teradata JDBC driver update",
+  "feature_slug": "teradata-jdbc-driver-update",
+  "summary": "The Teradata JDBC driver was updated to version 20.00.00.45 for connections to Teradata.",
+  "extended_definition": "The Teradata JDBC driver was updated to version 20.00.00.45 for connections to Teradata.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/migration/teradata-tutorial",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Migrating Teradata to BigQuery tutorial \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/migration/teradata-tutorial",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-14 UTC.\"],[],[]]",
+          "On the computer where you will connect to Teradata, use a web browser to download the latest available version of the TPC-H tools from the TPC website .",
+          "Install the Teradata SQL Driver for Python for scripting interactions with Teradata Database."
+        ]
+      },
+      {
+        "title": "Create or update artifacts \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "source_id": "site-api-reference",
+        "final_score": 111,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The version must be provided for any updates to an existing artifact. namespace lock string Artifact storage namespace. created at lock string Timestamp when this artifact was created. updated at lock string Timestamp when this artifact was updated. value size lock integer Size (in bytes) of the stored value. created by userid lock string User id of the artifact creator. updated by userid lock string User id of the artifact updater.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-25 UTC.\"],[],[]]",
+          "The version must be provided for any updates to an existing artifact. query HTTP Query Expand HTTP Query definition... fields string Comma-delimited names of fields to return in responses."
+        ]
+      },
+      {
+        "title": "Get one or more artifacts \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact",
+        "source_id": "site-api-reference",
+        "final_score": 81,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The version must be provided for any updates to an existing artifact. namespace lock string Artifact storage namespace. created at lock string Timestamp when this artifact was created. updated at lock string Timestamp when this artifact was updated. value size lock integer Size (in bytes) of the stored value. created by userid lock string User id of the artifact creator. updated by userid lock string User id of the artifact updater.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-03-25 UTC.\"],[],[]]",
+          "Omit for all fields limit integer Number of results to return. (used with offset) offset integer Number of results to skip before returning any. (used with limit) tally boolean Return the full count of results in the X-Total-Count response header. (Slight performance hit.) Response 200: Created or updated artifacts Datatype Description (array) Artifact [] key string Key of value to store."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "tpch.error",
+      "tpch.lineitem"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration/teradata-tutorial",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration/teradata-tutorial",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration/teradata-tutorial",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration/teradata-tutorial",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/migration/teradata-tutorial",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/update_artifacts",
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Artifact/artifact"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

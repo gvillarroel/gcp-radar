@@ -1,0 +1,115 @@
+{
+  "feature_name": "Trace sinks",
+  "feature_slug": "trace-sinks",
+  "summary": "Trace sinks export trace spans to external destinations such as BigQuery; deprecated on 2026-02-18.",
+  "extended_definition": "Trace sinks export trace spans to external destinations such as BigQuery; deprecated on 2026-02-18.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-17",
+    "deprecation_date": "2026-02-18",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/analytics-migrate",
+      "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+      "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces",
+      "https://docs.cloud.google.com/trace/docs/trace-alerting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate to Observability Analytics \\_|\\_ Cloud Trace \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/trace/docs/analytics-migrate",
+        "source_id": "site-docs-root-2",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are using sinks to export trace data to BigQuery , then this document applies to you.",
+          "The usage of sinks to export trace data is no longer recommended.",
+          "Delete trace sinks and unnecessary datasets: To list existing trace sinks, execute the gcloud alpha trace sinks list command: gcloud alpha trace sinks list For each sink, execute the gcloud alpha trace sinks delete command: gcloud alpha trace sinks delete SINK NAME Optional: Delete any unnecessary BigQuery datasets."
+        ]
+      },
+      {
+        "title": "\"Monitor trace quota usage and spans ingested \\_|\\_ Cloud Trace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "source_id": "site-docs-root-2",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filter service = cloudtrace.googleapis.com response code = 429 Across time series Time series aggregation sum Rolling window 1 m Rolling window function sum Configure alert trigger Field Value Condition type Threshold Alert trigger Any time series violates Threshold position Above threshold Threshold value 0 Retest window 1 minute Monitor monthly span ingestion To create an alerting policy that triggers when your monthly Cloud Trace spans ingested exceeds a user-defined limit, use the following settings.",
+          "Home Documentation Observability Cloud Trace Guides Send feedback Monitor trace quota usage and spans ingested Stay organized with collections Save and categorize content based on your preferences.",
+          "Monitor over-quota on Cloud Trace API usage To create an alerting policy that triggers when your monthly Cloud Trace spans ingested exceeds your quota, use the following settings."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: cloudtrace.googleapis.com \\_|\\_ Cloud Trace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Trace JSON representation { \"projectId\" : string , \"traceId\" : string , \"spans\" : [ { object ( TraceSpan ) } ] } Fields projectId string Project ID of the Cloud project where the trace data is stored. traceId string Globally unique identifier for the trace.",
+          "For the same executable and the same call point, a best practice is to use a consistent name, which makes it easier to correlate cross-trace spans. startTime string ( Timestamp format) Start time of the span in seconds and nanoseconds from the UNIX epoch.",
+          "Curl Request curl --location 'https://cloudtrace.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get trace\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema The request message for the GetTrace method."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: cloudtrace.googleapis.com \\_|\\_ Cloud Trace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Trace JSON representation { \"projectId\" : string , \"traceId\" : string , \"spans\" : [ { object ( TraceSpan ) } ] } Fields projectId string Project ID of the Cloud project where the trace data is stored. traceId string Globally unique identifier for the trace.",
+          "For the same executable and the same call point, a best practice is to use a consistent name, which makes it easier to correlate cross-trace spans. startTime string ( Timestamp format) Start time of the span in seconds and nanoseconds from the UNIX epoch.",
+          "Curl Request curl --location 'https://cloudtrace.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list traces\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema The request message for the ListTraces method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudtrace.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/analytics-migrate",
+        "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/analytics-migrate",
+        "https://docs.cloud.google.com/trace/docs/trace-alerting",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.017Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace"
+}

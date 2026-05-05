@@ -1,0 +1,197 @@
+{
+  "feature_name": "Secret Manager event notifications",
+  "feature_slug": "secret-manager-event-notifications",
+  "summary": "Secret Manager Event Notifications lets secrets send Pub/Sub messages when a secret or secret version changes; Secret Manager can publish secret and secret version changes to Pub/Sub.",
+  "extended_definition": "Secret Manager Event Notifications lets secrets send Pub/Sub messages when a secret or secret version changes; Secret Manager can publish secret and secret version changes to Pub/Sub.",
+  "lifecycle": {
+    "latest_feature_date": "2021-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1",
+      "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+      "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+      "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Analyze secrets with Cloud Asset Inventory \\_|\\_ Secret Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "source_id": "site-iam-reference",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Set up alerts : Configure Cloud Asset Inventory to send notifications to Pub/Sub when specific events occur, such as when secrets are created, modified, or deleted.",
+          "Home Documentation Security Secret Manager Guides Send feedback Analyze secrets with Cloud Asset Inventory Stay organized with collections Save and categorize content based on your preferences.",
+          "BigQuery SELECT FROM BIGQUERY TABLE WHERE asset type = 'secretmanager.googleapis.com/SecretVersion' AND ( JSON VALUE ( resource . data , \"$.replicationStatus.automatic.customerManagedEncryption.kmsKeyVersionName\" ) IS NULL AND JSON VALUE ( resource . data , \"$.replicationStatus.userManaged.replicas[0].customerManagedEncryption.kmsKeyVersionName\" ) IS NULL ) AND JSON VALUE ( resource . data , \"$.state\" ) = \"ENABLED\" ; Replace BIGQUERY TABLE with the full path to the BigQuery table that you have exported all the assets to in the Export assets to BigQuery section of this document. gcloud NOW = $ ( TZ = GMT date + \"%Y-%m-%dT%H:%M:%SZ\" ) gcloud asset list -- project = PROJECT ID \\ -- asset - types = ' secretmanager . googleapis . com / SecretVersion ' \\ -- snapshot - time = $ NOW \\ -- content - type = ' resource ' \\ -- filter = \"(resource.data.replicationStatus.userManaged.replicas.customerManagedEncryption = NULL OR resource.data.replicationStatus.automatic.customerManagedEncryption=NULL) AND resource.data.state=ENABLED\" Replace PROJECT ID with the ID of the project containing the secrets to be analyzed."
+        ]
+      },
+      {
+        "title": "Add labels to secrets \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 240,
+        "relevance": "",
+        "evidence_snippets": [
+          "SecretManagerServiceClient ; import java.io.IOException ; public class CreateSecretWithLabels { public static void createSecretWithLabels () throws IOException { // TODO(developer): Replace these variables before running the sample. // This is the id of the GCP project String projectId = \"your-project-id\" ; // This is the id of the secret to act on String secretId = \"your-secret-id\" ; // This is the key of the label to be added String labelKey = \"your-label-key\" ; // This is the value of the label to be added String labelValue = \"your-label-value\" ; createSecretWithLabels ( projectId , secretId , labelKey , labelValue ); } // Create a secret with labels. public static Secret createSecretWithLabels ( String projectId , String secretId , String labelKey , String labelValue ) throws IOException { // Initialize client that will be used to send requests.",
+          "HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets?secretId= SECRET ID ?update mask=labels Request JSON body: { \"labels\": { \" KEY \": \" VALUE \" } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets?secretId= SECRET ID ?update mask=labels Request JSON body: { \"labels\": { \" KEY \": \" VALUE \" } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Create a secret \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets?secretId= SECRET ID Request JSON body: { \"replication\": { \" REPLICATION POLICY \": {} } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . using Google.Api.Gax.ResourceNames ; using Google.Cloud.SecretManager.V1 ; public class CreateSecretSample { public Secret CreateSecret ( string projectId = \"my-project\" , string secretId = \"my-secret\" ) { // Create the client.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets?secretId= SECRET ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /secrets/ SECRET ID \", \"createTime\": \"2024-03-25T08:24:13.153705Z\", \"etag\": \"\\\"161477e6071da9\\\"\" } C# To run this code, first set up a C# development environment and install the Secret Manager C# SDK ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.secretmanager.v1 (2.88.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1",
+        "source_id": "site-java-reference",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Builder A Pub/Sub topic which Secret Manager will publish to when control plane events occur on this secret. com. google. cloud. secretmanager. v1.",
+          "Topic A Pub/Sub topic which Secret Manager will publish to when control plane events occur on this secret. com. google. cloud. secretmanager. v1.",
+          "At next rotation time, Secret Manager will send a Pub/Sub notification to the topics configured on the com. google. cloud. secretmanager. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "automatic.customerManagedEncryption.kmsKeyVersionName",
+      "com.google.cloud.secretmanager.v1",
+      "java.io.IOException",
+      "replication.automatic.customerManagedEncryption.kmsKeyName",
+      "replication.userManaged.replicas",
+      "request.json",
+      "resource.data.createTime",
+      "resource.data.replicationStatus.automatic.customerManagedEncryption",
+      "resource.data.replicationStatus.userManaged.replicas.customerManagedEncryption",
+      "resource.data.state",
+      "secretmanager.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/analyze-resources",
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-accessing-secrets",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-secretmanager/latest/com.google.cloud.secretmanager.v1"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.802Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager"
+}

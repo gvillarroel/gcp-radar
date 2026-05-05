@@ -1,0 +1,93 @@
+{
+  "feature_name": "Blue-green node pool upgrades",
+  "feature_slug": "blue-green-node-pool-upgrades",
+  "summary": "GKE node pools can be upgraded with a blue-green mechanism instead of the default surge upgrade mechanism.",
+  "extended_definition": "GKE node pools can be upgraded with a blue-green mechanism instead of the default surge upgrade mechanism.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Node upgrade strategies \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 201,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If enabled, GKE uses blue-green upgrades when the following types of changes occur: Version changes (upgrades) Vertically scaling the nodes by changing the node machine attributes , including machine type, disk type, and disk size Image type changes Add or replace storage pools in a node pool Surge upgrades are used for any other updates requiring the nodes to be recreated.",
+          "When to choose blue-green upgrades for your environment If you have highly-available production workloads that you need to be able to roll back quickly in case the workload does not tolerate the upgrade, and a temporary cost increase is acceptable, we recommend choosing blue-green upgrades for your node pools.",
+          "When to choose autoscaled blue-green upgrades for your environment If you have workloads that need the maximum amount of time before eviction, but don't need to be rescheduled as quickly as possible, we recommend choosing autoscaled blue-green upgrades for your node pools."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "source_id": "site-api-reference",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "UpgradeSettings JSON representation { \"maxSurge\" : integer , \"maxUnavailable\" : integer , // Union field strategy can be only one of the following: \"strategy\" : enum ( NodePoolUpdateStrategy ) // End of list of possible types for union field strategy . // Union field blue green settings can be only one of the following: \"blueGreenSettings\" : { object ( BlueGreenSettings ) } // End of list of possible types for union field blue green settings . } Fields maxSurge integer The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. maxUnavailable integer The maximum number of nodes that can be simultaneously unavailable during the upgrade process.",
+          "BlueGreenSettings JSON representation { // Union field rollout policy can be only one of the following: \"standardRolloutPolicy\" : { object ( StandardRolloutPolicy ) } , \"autoscaledRolloutPolicy\" : { object ( AutoscaledRolloutPolicy ) } // End of list of possible types for union field rollout policy . // Union field node pool soak duration can be only one of the following: \"nodePoolSoakDuration\" : string // End of list of possible types for union field node pool soak duration . } Fields Union field rollout policy .",
+          "Union field node pool soak duration . node pool soak duration can be only one of the following: nodePoolSoakDuration string ( Duration format) Time needed after draining entire blue pool."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "source_id": "site-api-reference",
+        "final_score": 185,
+        "relevance": "",
+        "evidence_snippets": [
+          "UpgradeSettings JSON representation { \"maxSurge\" : integer , \"maxUnavailable\" : integer , // Union field strategy can be only one of the following: \"strategy\" : enum ( NodePoolUpdateStrategy ) // End of list of possible types for union field strategy . // Union field blue green settings can be only one of the following: \"blueGreenSettings\" : { object ( BlueGreenSettings ) } // End of list of possible types for union field blue green settings . } Fields maxSurge integer The maximum number of nodes that can be created beyond the current size of the node pool during the upgrade process. maxUnavailable integer The maximum number of nodes that can be simultaneously unavailable during the upgrade process.",
+          "BlueGreenSettings JSON representation { // Union field rollout policy can be only one of the following: \"standardRolloutPolicy\" : { object ( StandardRolloutPolicy ) } , \"autoscaledRolloutPolicy\" : { object ( AutoscaledRolloutPolicy ) } // End of list of possible types for union field rollout policy . // Union field node pool soak duration can be only one of the following: \"nodePoolSoakDuration\" : string // End of list of possible types for union field node pool soak duration . } Fields Union field rollout policy .",
+          "Union field node pool soak duration . node pool soak duration can be only one of the following: nodePoolSoakDuration string ( Duration format) Time needed after draining entire blue pool."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com",
+      "gke.2201000"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/node-pool-upgrade-strategies",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_node_pools",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

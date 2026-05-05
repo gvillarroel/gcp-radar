@@ -1,0 +1,153 @@
+{
+  "feature_name": "API hub user interface performance improvements",
+  "feature_slug": "api-hub-user-interface-performance-improvements",
+  "summary": "API hub included performance improvements to its user interface.",
+  "extended_definition": "API hub included performance improvements to its user interface.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+      "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "What is Apigee? \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "Apigee offers high performance API proxies to create a consistent, reliable interface for your backend services.",
+          "Apigee is designed to benefit two key types of users and the unique API management challenges they face: API producers : API producers build and manage the APIs that expose their backend services.",
+          "Maintaining a consistent API interface allows API producers to implement backend service changes without disruption to API consumers."
+        ]
+      },
+      {
+        "title": "Apigee known issues \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/release/known-issues",
+        "source_id": "site-docs-reference",
+        "final_score": 44,
+        "relevance": "",
+        "evidence_snippets": [
+          "To distinguish actual spikes in requests vs. this issue, please consult the API Analytics page (specifically the Proxy Performance and Target Performance pages) Affected Metrics: apigee.googleapis.com/proxyv2/request count apigee.googleapis.com/proxyv2/response count apigee.googleapis.com/targetv2/request count apigee.googleapis.com/targetv2/response count New metrics You can use the new metrics to avoid this issue.",
+          "310384001 hybrid 1.11.0 OPEN Cert validation failures may return a 502 instead of a 503 error response when users add the tag <Enforce>true</Enforce> in the target <SSLInfo> block for default validation of TLS target endpoint certificates.",
+          "If a user provides an invalid service account to the UpdateControlPlaneAccess api, the operation goes on a retry loop effectively locking the organization from invoking the API until the operation times out."
+        ]
+      },
+      {
+        "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 44,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following sections provide suggested user prompts to include in the API requests to test for the following conditions included in your Model Armor template: Responsible AI (RAI) match Malicious URL detection Prompt injection detection Each example includes the expected response if the Model Armor policies are working as intended.",
+          "Create a Model Armor template Create a Model Armor template for sanitizing user prompts and LLM responses: gcloud model-armor templates create --location $LOCATION TEMPLATE NAME --rai-settings-filters = '[{ \"filterType\":\"HATE SPEECH\", \"confidenceLevel\": \"MEDIUM AND ABOVE\" },{ \"filterType\": \"HARASSMENT\", \"confidenceLevel\": \"MEDIUM AND ABOVE\" },{ \"filterType\": \"SEXUALLY EXPLICIT\", \"confidenceLevel\": \"MEDIUM AND ABOVE\" }]' --basic-config-filter-enforcement = enabled --pi-and-jailbreak-filter-settings-enforcement = enabled --pi-and-jailbreak-filter-settings-confidence-level = LOW AND ABOVE --malicious-uri-filter-settings-enforcement = enabled --template-metadata-custom-llm-response-safety-error-code = 798 --template-metadata-custom-llm-response-safety-error-message = \"test template llm response evaluation failed\" --template-metadata-custom-prompt-safety-error-code = 799 --template-metadata-custom-prompt-safety-error-message = \"test template prompt evaluation failed\" --template-metadata-ignore-partial-invocation-failures --template-metadata-log-operations --template-metadata-log-sanitize-operations Substitute TEMPLATE NAME with the name of the template you want to create.",
+          "This region name can be used to identify the correct Model Armor template to use for that instance For example: <SanitizeModelResponse async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/ {system.region.name} /templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource> </SanitizeModelResponse> Model Armor response processing You can add additional processing logic after the Model Armor policy processes the LLM response."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "apigee.googleapis.com",
+      "content.parts",
+      "request.content",
+      "response.content",
+      "response.response.content",
+      "system.region.name"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/get-started/what-apigee",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "https://docs.cloud.google.com/apigee/docs/release/known-issues"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.329Z",
+  "source_step08_card": "data/step-08/current/products/apigee-api-hub/card.json",
+  "product_name": "Apigee API hub",
+  "product_slug": "apigee-api-hub"
+}

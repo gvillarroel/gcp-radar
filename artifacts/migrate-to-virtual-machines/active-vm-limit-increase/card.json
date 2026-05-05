@@ -1,0 +1,94 @@
+{
+  "feature_name": "Active VM limit increase",
+  "feature_slug": "active-vm-limit-increase",
+  "summary": "Increases the maximum number of active VMs from 100 to 200.",
+  "extended_definition": "Increases the maximum number of active VMs from 100 to 200.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+      "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "The cut-over process, follow these steps: If data replication is active, that is, the Replication status of the VM is Active (Current cycle: XX%) , waits for it to complete.",
+          "The Replication status column of a VM on an incremental replication step displays the Active status followed by the appropriate sub-step.",
+          "The Active state means the first replication sync of the VM succeeded and VM data is being incrementally replicated."
+        ]
+      },
+      {
+        "title": "\"Migrate VM disks and attach them to a new VM \\_|\\_ Migrate to Virtual Machines\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-disks",
+        "source_id": "site-docs-root-2",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "The cut-over process, follow these steps: If data replication is active, that is, the Replication status of the VM is Active (Current cycle: XX%) , waits for it to complete.",
+          "The Replication status column of a VM on an incremental replication step displays the Active status followed by the appropriate sub-step.",
+          "The Active state means the first replication sync of the VM succeeded and VM data is being incrementally replicated."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "For both a test and a production environment, configure the target Compute Engine instance to specify settings including: Google project Number of CPUs Amount of memory This section describes how to set the initial configuration of the Compute Engine instance used to host the migrated VM.",
+          "The cut-over process, follow these steps: If data replication is active, that is, the Replication status of the VM is Active (Current cycle: XX%) , waits for it to complete.",
+          "After changing a Windows VM hostname locally, make sure that you update the hostname in the Active Directory (AD) so that AD trust doesn't break."
+        ]
+      },
+      {
+        "title": "\"Migrate individual VMs \\_|\\_ Migrate to Virtual Machines \\_|\\_ Google Cloud\\",
+        "url": "https://cloud.google.com/migrate/virtual-machines/docs/5.0/migrate/migrating-vms",
+        "source_id": "site-docs-root-2",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "For both a test and a production environment, configure the target Compute Engine instance to specify settings including: Google project Number of CPUs Amount of memory This section describes how to set the initial configuration of the Compute Engine instance used to host the migrated VM.",
+          "The cut-over process, follow these steps: If data replication is active, that is, the Replication status of the VM is Active (Current cycle: XX%) , waits for it to complete.",
+          "After changing a Windows VM hostname locally, make sure that you update the hostname in the Active Directory (AD) so that AD trust doesn't break."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.792Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-virtual-machines/card.json",
+  "product_name": "Migrate to Virtual Machines",
+  "product_slug": "migrate-to-virtual-machines"
+}

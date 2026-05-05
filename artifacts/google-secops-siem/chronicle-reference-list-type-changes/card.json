@@ -1,0 +1,120 @@
+{
+  "feature_name": "Chronicle reference list type changes",
+  "feature_slug": "chronicle-reference-list-type-changes",
+  "summary": "Chronicle reference lists can now have their type changed after creation.",
+  "extended_definition": "Chronicle reference lists can now have their type changed after creation.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure data RBAC for users \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Functional limitations Custom Label query don't support the following advanced features: Reference lists Enrichment fields Data tables Query execution time : Custom label query is subject to a maximum execution time limit of 5 seconds.",
+          "You have the following two options to set up data RBAC: Enable data RBAC before assigning scopes: when data RBAC is enabled, rules, reference lists, and data tables don't have any scopes assigned.",
+          "Enable data RBAC Enabling data RBAC applies all assigned scopes to rules and reference lists, making sure users see only the data relevant to their scopes."
+        ]
+      },
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-api-reference",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reference lists June 2026 September 2026 The reference list functionality is being retired from the Google SecOps platform.",
+          "During this migration period, you can continue to use your existing reference lists until they're migrated.",
+          "All existing reference lists will be transparently migrated to data tables."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 149,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "Reference lists are also supported.",
+          "To share column sets, you must have the following permissions: chronicle.googleapis.com/savedColumnSets.create chronicle.googleapis.com/savedColumnSets.delete chronicle.googleapis.com/savedColumnSets.update chronicle.googleapis.com/savedColumnSets.list chronicle.googleapis.com/savedColumnSets.get In the Column Manager, add or remove the columns to create your customized view."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "chronicle.googleapis.com",
+      "e.metadata.event",
+      "e.principal.ip",
+      "susupicious.ip",
+      "udm.metadata.event"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

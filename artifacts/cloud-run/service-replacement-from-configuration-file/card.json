@@ -1,0 +1,202 @@
+{
+  "feature_name": "Service replacement from configuration file",
+  "feature_slug": "service-replacement-from-configuration-file",
+  "summary": "Cloud Run services can be deployed from a local configuration file with the gcloud services replace command.",
+  "extended_definition": "Cloud Run services can be deployed from a local configuration file with the gcloud services replace command.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+      "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+      "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Tutorial: Local troubleshooting of a Cloud Run service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 176,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Update components: gcloud components update Follow the instructions to install Docker locally Required roles To get the permissions that you need to complete the tutorial, ask your administrator to grant you the following IAM roles on your project: Cloud Build Editor ( roles/cloudbuild.builds.editor ) Cloud Run Admin ( roles/run.admin ) Error Reporting Viewer ( roles/errorreporting.viewer ) Logs View Accessor ( roles/logging.viewAccessor ) Project IAM Admin ( roles/resourcemanager.projectIamAdmin ) Service Account User ( roles/iam.serviceAccountUser ) Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) Storage Admin ( roles/storage.admin ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Check whether the service works locally with the NAME environment available in place: Run the container locally with the environment variable added: PORT = 8080 && docker run --rm -e PORT = $PORT -p 9000 : $PORT \\ -e NAME = \"Local World!\" \\ gcr.io/ PROJECT ID /hello-service Navigate your browser to http://localhost:9000 See \"Hello Local World!\" appear on the page Modify the running Cloud Run service environment to include this variable: Run the services update command to add an environment variable: gcloud run services update hello - service \\ -- set - env - vars NAME = Override Wait a few seconds while Cloud Run creates a new revision based on the previous revision with the new environment variable added.",
+          "Printf ( \"warning: NAME not set, default to %s\" , name ) } Java String name = System . getenv (). getOrDefault ( \"NAME\" , \"World\" ); if ( System . getenv ( \"NAME\" ) == null ) { logger . warn ( String . format ( \"NAME not set, default to %s\" , name )); } Test locally by re-building and running the container through the affected configuration cases: Node.js docker build --tag gcr.io/ PROJECT ID /hello-service ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy a Cloud Run function using the gcloud CLI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "source_id": "site-docs-reference-2",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See the License for the specific language governing permissions and limitations under the License . -- > < project xmlns = \"http://maven.apache.org/POM/4.0.0\" xmlns : xsi = \"http://www.w3.org/2001/XMLSchema-instance\" xsi : schemaLocation = \"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\" > < modelVersion>4 .0.0 < / modelVersion > < groupId>com . example . functions < / groupId > < artifactId>functions - hello - world < / artifactId > < version>1 .0.0 - SNAPSHOT < / version > < parent > < groupId>com . google . cloud . samples < / groupId > < artifactId>shared - configuration < / artifactId > < version>1 .2.0 < / version > < / parent > < dependencyManagement > < dependencies > < dependency > < artifactId>libraries - bom < / artifactId > < groupId>com . google . cloud < / groupId > < scope>import < / scope > < type>pom < / type > < version>26 .32.0 < / version > < / dependency > < / dependencies > < / dependencyManagement > < properties > < maven . compiler . target>11 < / maven . compiler . target > < maven . compiler . source>11 < / maven . compiler . source > < / properties > < dependencies > < !-- Required for Function primitives -- > < dependency > < groupId>com . google . cloud . functions < / groupId > < artifactId>functions - framework - api < / artifactId > < version>1 .1.0 < / version > < scope>provided < / scope > < / dependency > < !-- The following dependencies are only required for testing -- > < dependency > < groupId>com . google . truth < / groupId > < artifactId>truth < / artifactId > < version>1 .4.0 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . guava < / groupId > < artifactId>guava - testlib < / artifactId > < scope>test < / scope > < / dependency > < dependency > < groupId>org . mockito < / groupId > < artifactId>mockito - core < / artifactId > < version>5 .10.0 < / version > < scope>test < / scope > < / dependency > < / dependencies > < build > < plugins > < plugin > < !-- Google Cloud Functions Framework Maven plugin This plugin allows you to run Cloud Functions Java code locally .",
+          "Write the sample function To write an application, follow these steps: Node.js Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a package.json file in the helloworld directory to specify Node.js dependencies: { \"name\" : \"nodejs-docs-samples-functions-hello-world-get\" , \"version\" : \"0.0.1\" , \"private\" : true , \"license\" : \"Apache-2.0\" , \"author\" : \"Google Inc.\" , \"repository\" : { \"type\" : \"git\" , \"url\" : \"https://github.com/GoogleCloudPlatform/nodejs-docs-samples.git\" }, \"engines\" : { \"node\" : \">=16.0.0\" }, \"scripts\" : { \"test\" : \"c8 mocha -p -j 2 test/ .test.js --timeout=6000 --exit\" }, \"dependencies\" : { \"@google-cloud/functions-framework\" : \"^3.1.0\" }, \"devDependencies\" : { \"c8\" : \"^10.0.0\" , \"gaxios\" : \"^6.0.0\" , \"mocha\" : \"^10.0.0\" , \"wait-port\" : \"^1.0.4\" } } Create an index.js file in the helloworld directory with the following Node.js sample: const functions = require ( '@google-cloud/functions-framework' ); // Register an HTTP function with the Functions Framework that will be executed // when you make an HTTP request to the deployed function's endpoint. functions . http ( 'helloGET' , ( req , res ) = > { res . send ( 'Hello World!' ); }); Python Create a new directory named helloworld and change directory into it: mkdir helloworld cd helloworld Create a requirements.txt file in the helloworld directory, to specify Python dependencies: functions - framework == 3.9.2 flask == 3.0.3 google - cloud - error - reporting == 1.11.1 MarkupSafe == 2.1.3 This adds packages needed by the sample.",
+          "From the console, create a new empty web project using the dotnet command. dotnet new web -o helloworld-csharp Change directory to helloworld-csharp : Replace the sample code in the project file helloworld-csharp.csproj with the following: <Project Sdk=\"Microsoft.NET.Sdk\"> <PropertyGroup> <OutputType>Exe</OutputType> <TargetFramework>net8.0</TargetFramework> </PropertyGroup> <ItemGroup> <PackageReference Include=\"Google.Cloud.Functions.Hosting\" Version=\"3.0.1\" /> </ItemGroup> </Project> Replace the sample code in Program.cs file with the following: using Google.Cloud.Functions.Framework; using Microsoft.AspNetCore.Http; using System.Threading.Tasks; namespace HelloWorld; public class Function : IHttpFunction { public async Task HandleAsync(HttpContext context) { await context.Response.WriteAsync(\"Hello World!\", context.RequestAborted); } } Deploy the function To deploy your Cloud Run function, follow these steps: Deploy the function by running the following command in the directory that contains the sample code: Node.js gcloud run deploy nodejs-http-function \\ --source . \\ --function helloGET \\ --base-image nodejs24 \\ --region REGION \\ --allow-unauthenticated Replace REGION with the Google Cloud region of the service where you want to deploy your function."
+        ]
+      },
+      {
+        "title": "\"Process images from Cloud Storage tutorial \\_|\\_ Cloud Run \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/image-processing",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Node.js // Blurs the given file using ImageMagick, and uploads it to another bucket. const blurImage = async ( file , blurredBucketName ) = > { const tempLocalPath = /tmp/ ${ path . parse ( file . name ). base } ; // Download file from bucket. try { await file . download ({ destination : tempLocalPath }); console . log ( Downloaded ${ file . name } to ${ tempLocalPath } . ); } catch ( err ) { throw new Error ( File download failed: ${ err } ); } await new Promise (( resolve , reject ) = > { gm ( tempLocalPath ) . blur ( 0 , 16 ) . write ( tempLocalPath , ( err , stdout ) = > { if ( err ) { console . error ( 'Failed to blur image.' , err ); reject ( err ); } else { console . log ( Blurred image: ${ file . name } ); resolve ( stdout ); } }); }); // Upload result to a different bucket, to avoid re-triggering this function. const blurredBucket = storage . bucket ( blurredBucketName ); // Upload the Blurred image back into the bucket. const gcsPath = gs:// ${ blurredBucketName } / ${ file . name } ; try { await blurredBucket . upload ( tempLocalPath , { destination : file . name }); console . log ( Uploaded blurred image to: ${ gcsPath } ); } catch ( err ) { throw new Error ( Unable to upload blurred image to ${ gcsPath } : ${ err } ); } // Delete the temporary file. const unlink = promisify ( fs . unlink ); return unlink ( tempLocalPath ); }; Python def blur image ( current blob ): \"\"\"Blurs the given file using ImageMagick.",
+          "To grant this permission and create a Cloud Storage notification, add the following to your existing main.tf file: data \"google storage project service account\" \"gcs account\" {} resource \"google pubsub topic iam binding\" \"binding\" { topic = google pubsub topic.default.name role = \"roles/pubsub.publisher\" members = [ \"serviceAccount:${data.google storage project service account.gcs account.email address}\" ] } resource \"google storage notification\" \"notification\" { bucket = google storage bucket.imageproc input.name payload format = \"JSON API V1\" topic = google pubsub topic.default.id depends on = [ google pubsub topic iam binding.binding ] } Try it out Upload an offensive image, such as this image of a flesh-eating zombie : curl -o zombie.jpg https://cdn.pixabay.com/photo/2015/09/21/14/24/zombie-949916 960 720.jpg gcloud storage cp zombie.jpg gs:// INPUT BUCKET NAME where INPUT BUCKET NAME is the Cloud Storage bucket you created earlier for uploading images.",
+          "Use the gcloud credential helper to authorize Docker to push to your Artifact Registry. gcloud auth configure-docker Build your final container with Jib and publish on Artifact Registry: < plugin > < groupId>com . google . cloud . tools < / groupId > < artifactId>jib - maven - plugin < / artifactId > < version>3 .4.0 < / version > < configuration > < from > < image>gcr . io / PROJECT ID / imagemagick < / image > < / from > < to > < image>gcr . io / PROJECT ID / pubsub < / image > < / to > < / configuration > < / plugin > mvn compile jib:build \\ -Dimage = REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /pubsub \\ -Djib.from.image = REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /imagemagick Replace: PROJECT ID with your Google Cloud project ID REPOSITORY with the name of the Artifact Registry repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.email",
+      "account.gcs",
+      "app.rb",
+      "binding.binding",
+      "bucket.imageproc",
+      "cdn.pixabay.com",
+      "cloudbuild.builds.editor",
+      "context.RequestAborted",
+      "context.Response.WriteAsync",
+      "csharp.csproj",
+      "data.google",
+      "docker.pkg.dev",
+      "e.g",
+      "errorreporting.viewer",
+      "from.image",
+      "gcr.io",
+      "github.com",
+      "iam.serviceAccountUser",
+      "index.js",
+      "input.name",
+      "issues.apache.org",
+      "logging.viewAccessor",
+      "main.tf",
+      "maven.apache.org",
+      "net8.0",
+      "package.json",
+      "pubsub.publisher",
+      "requirements.txt",
+      "resourcemanager.projectIamAdmin",
+      "run.admin",
+      "samples.git",
+      "serviceusage.serviceUsageConsumer",
+      "storage.admin",
+      "test.js",
+      "topic.default.id",
+      "topic.default.name",
+      "zombie.jpg"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.builds.editor",
+      "roles/errorreporting.viewer",
+      "roles/iam.serviceAccountUser",
+      "roles/logging.viewAccessor",
+      "roles/pubsub.publisher",
+      "roles/resourcemanager.projectIamAdmin",
+      "roles/run.admin",
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/tutorials/local-troubleshooting",
+        "https://docs.cloud.google.com/run/docs/quickstarts/functions/deploy-functions-gcloud",
+        "https://docs.cloud.google.com/run/docs/tutorials/image-processing"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

@@ -1,0 +1,122 @@
+{
+  "feature_name": "virtctl diagnose command",
+  "feature_slug": "virtctl-diagnose-command",
+  "summary": "VM Runtime now supports the `virtctl diagnose` command for diagnosing VM issues.",
+  "extended_definition": "VM Runtime now supports the `virtctl diagnose` command for diagnosing VM issues.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm",
+      "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to VMs that use VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you use the kubectl virt vnc command, VM Runtime on GDC opens VNC for you, so you aren't required to enable VNC in the guest OS.",
+          "After you confirm (or force) the password reset, the command returns the new password for the specified VM and username: Resetting and retrieving password for USERNAME on VM NAME vm name: VM NAME username: USERNAME password: PASSWORD What's next Manage the power state of a VM in Google Distributed Cloud .",
+          "After you have successfully connected using SSH the VM and no longer need the connection, exit the SSH session: exit Connect directly using the console If you don't have direct network connectivity to your Linux VM for SSH access, connect to the console of the VM using the VM Runtime on GDC console."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Deploy an existing VM in a cluster using VM Runtime on GDC \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following example output shows the VMRuntime is ready: vmruntime.vm.cluster.gke.io/vmruntime condition met Install the virtctl plugin for kubectl : sudo -E bmctl install virtctl The following example output shows the virtctl plugin installation process is complete: Please check the logs at bmctl-workspace/log/install-virtctl-20220831-182135/install-virtctl.log [ 2022 -08-31 18 :21:35+0000 ] Install virtctl succeeded Verify installation of the virtctl plugin: kubectl virt The following example output shows that the virtctl plugin is available for use with kubectl : Available Commands: addvolume add a volume to a running VM completion generate the autocompletion script for the specified shell config Config subcommands. console Connect to a console of a virtual machine instance. create Create subcommands. delete Delete subcommands. ...",
+          "The ConfigMap defines the credentials for the MySQL instance, which are the same credentials passed into the point of sale application . kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/point-of-sale/main/k8-manifests/common/mysql-db.yaml Deploy the VM workload using the pre-prepared qcow2 image: kubectl virt create vm pos-vm \\ --boot-disk-size = 80Gi \\ --memory = 4Gi \\ --vcpu = 2 \\ --image = https://storage.googleapis.com/pos-vm-images/pos-vm.qcow2 This command creates a YAML file named after the VM ( google-virtctl/pos-vm.yaml ).",
+          "Objectives Enable VM Runtime on GDC and install the virtctl plugin Deploy the VM-based workload Log in to the VM and check the application status Access the VM-based workload Before you begin To complete this document you need the following resources: Access to a version 1.12.0 or higher bare metal cluster that was created by following the Install with Manual Loadbalancer guide."
+        ]
+      },
+      {
+        "title": "\"Edit VM configuration in VM Runtime on GDC \\_|\\_ Google Distributed Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you have made label or scheduling changes for the VM prior to enabling the automatic restart feature, adding autoRestartOnConfigurationChange now without any other change doesn't trigger a restart.",
+          "If your VM doesn't start after you make changes, use the kubectl describe gvm VM NAME command to view troubleshooting information and correct the errors.",
+          "If you have made any other changes to the VM that need to be synchronized with the corresponding VM instance, VM Runtime on GDC restarts the VM."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Create and manage a Linux VM in VM Runtime on GDC \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm",
+        "source_id": "site-docs-reference",
+        "final_score": 198,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Objectives Configure basic dependencies Create a StorageClass for VM Runtime on GDC Create a virtual network for your VMs to use Create a virtual machine boot disk Create a VM Edit a VM to add a new virtual disk Before you begin To complete this tutorial, you need access to the following resources and tools: Access to Google Distributed Cloud version 1.12.0 ( anthosBareMetalVersion: 1.12.0 ) or higher cluster.",
+          "Check the status of the VM with the kubectl command: kubectl get gvm VM NAME The following example output shows the VM in a Running state: NAME STATUS AGE IP MY VM Running 64s 192 .168.2.124 Connect to the VM When your VM is running, connect to the console of the VM.",
+          "Create the disk using kubectl : kubectl apply -f my-disk.yaml Create a VM With a virtual network and boot disk created in the previous sections, now create a VM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "db.yaml",
+      "disk.yaml",
+      "raw.githubusercontent.com",
+      "storage.googleapis.com",
+      "virtctl.log",
+      "vm.qcow2",
+      "vm.yaml",
+      "vmruntime.vm.cluster.gke.io"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/connect-vms",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-deploy-existing-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/edit-vm",
+        "https://docs.cloud.google.com/kubernetes-engine/distributed-cloud/bare-metal/docs/vm-runtime/tutorial-create-vm"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:57.427Z",
+  "source_step08_card": "data/step-08/current/products/vm-runtime-on-google-distributed-cloud/card.json",
+  "product_name": "VM Runtime on Google Distributed Cloud",
+  "product_slug": "vm-runtime-on-google-distributed-cloud"
+}

@@ -1,0 +1,187 @@
+{
+  "feature_name": "Vertex AI Search ServiceNow data source connector",
+  "feature_slug": "vertex-ai-search-servicenow-data-source-connector",
+  "summary": "Adds a Private Preview integration that allows Vertex AI Search to connect to ServiceNow as a third-party data source.",
+  "extended_definition": "Adds a Private Preview integration that allows Vertex AI Search to connect to ServiceNow as a third-party data source.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 93,
+        "relevance": "",
+        "evidence_snippets": [
+          "Import data from Bigtable. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"bigtableSource \": { \"projectId\": \" BIGTABLE PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"tableId\": \" TABLE ID \", \"bigtableOptions\": { \"keyFieldName\": \" KEY FIELD NAME \", \"families\": { \"key\": \" KEY \", \"value\": { \"fieldName\": \" FIELD NAME \", \"encoding\": \" ENCODING \", \"type\": \" TYPE \", \"columns\": [ { \"qualifier\": \" QUALIFIER \", \"fieldName\": \" FIELD NAME \", \"encoding\": \" COLUMN ENCODING \", \"type\": \" COLUMN VALUES TYPE \" } ] } } ... } }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project.",
+          "This page describes how to create a data store and ingest data for custom search apps in Vertex AI Search. go to the section for the source you plan to use: Create a data store using website content Import from BigQuery Import from Cloud Storage Sync from Google Drive Sync from Gmail (Public preview) Sync from Google Sites (Public preview) Sync from Google Calendar (Public preview) Sync from Google Groups (Public preview) Import from Cloud SQL Import from Spanner (Public preview) Import from Firestore Import from Bigtable (Public Preview) Import from AlloyDB for PostgreSQL (Public Preview) Upload structured JSON data with the API Create a data store using Terraform To sync data from a third-party data source instead, see Connect a third-party data source .",
+          "Import data from Spanner. curl -X POST \\ -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"Content-Type: application/json\" \\ \"https://discoveryengine.googleapis.com/v1/projects/ PROJECT ID /locations/global/collections/default collection/dataStores/ DATA STORE ID /branches/0/documents:import\" \\ -d '{ \"cloudSpannerSource\": { \"projectId\": \" SPANNER PROJECT ID \", \"instanceId\": \" INSTANCE ID \", \"databaseId\": \" DATABASE ID \", \"tableId\": \" TABLE ID \", \"enableDataBoost\": \" DATA BOOST BOOLEAN \" }, \"reconciliationMode\": \" RECONCILIATION MODE \", \"autoGenerateIds\": \" AUTO GENERATE IDS \", \"idField\": \" ID FIELD \", }' Replace the following: PROJECT ID : the ID of your Vertex AI Search project."
+        ]
+      },
+      {
+        "title": "\"Set up data source access control \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You have configured SSO with Google Identity such that your users begin their sign in using Google Identity and then get directed to your third-party identity provider. (You might have already done this sync when setting up other Google Cloud resources or Google Workspace.) Third-party identity provider federation: If you use an external identity provider—for example, Microsoft Entra ID, Okta, or Ping, but don't want to sync your identities into Google Cloud Identity, then you must set up Workforce Identity Federation in Google Cloud before you can turn on data source access control for Vertex AI Search.",
+          "When following the steps for data import in Create a search data store , make sure to do the following: Upload your metadata with ACL information from the same bucket as your unstructured data If using the API, set GcsSource.dataSchema to document Unstructured data from BigQuery When setting up a data store for unstructured data from BigQuery, you need to set the data store as access controlled and provide ACL metadata using a predefined schema for Vertex AI Search: When preparing your data, specify the following schema.",
+          "Google recommends that you create a custom IAM role to grant to your user group, using the following permissions: discoveryengine.answers.get discoveryengine.servingConfigs.answer discoveryengine.servingConfigs.search discoveryengine.sessions.get discoveryengine.widgetConfigs.get For more information about permissions for Vertex AI Search resources using Identity and Access Management (IAM), see Access control with IAM ."
+        ]
+      },
+      {
+        "title": "\"Create a custom recommendations data store \\_|\\_ Vertex AI Search \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations",
+        "source_id": "site-docs-root",
+        "final_score": 81,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin To import data from a source Google Cloud project that's different from the Google Cloud project with the Vertex AI Search data store, grant the following Identity and Access Management (IAM) roles to the service- PROJECT NUMBER @gcp-sa-discoveryengine.iam.gserviceaccount.com service account in the project that contains the Vertex AI Search data store: Storage Object Admin ( roles/storage.objectAdmin ) Storage Object Viewer ( roles/storage.objectViewer ) Caution: When you import data from Cloud Storage into a Vertex AI Search data store, Cloud Storage permissions aren't imported with the data.",
+          "Before you begin To import data from a source Google Cloud project that's different from the Google Cloud project with the Vertex AI Search data store, grant the following Identity and Access Management (IAM) roles to the service- PROJECT NUMBER @gcp-sa-discoveryengine.iam.gserviceaccount.com service account in the project that contains the Vertex AI Search data store: BigQuery Job User ( roles/bigquery.jobUser ) BigQuery data Editor ( roles/bigquery.dataEditor ) Caution: When you import data from BigQuery into a Vertex AI Search data store, BigQuery permissions aren't imported with the data.",
+          "The following procedure describes how to create a data connector that associates a Cloud Storage location with a Vertex AI Search data connector and how to specify a folder or file in that location for the data store that you want to create."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.dataEditor",
+      "bigquery.jobUser",
+      "discoveryengine.answers.get",
+      "discoveryengine.googleapis.com",
+      "discoveryengine.iam.gserviceaccount.com",
+      "discoveryengine.servingConfigs.answer",
+      "discoveryengine.servingConfigs.search",
+      "discoveryengine.sessions.get",
+      "discoveryengine.widgetConfigs.get",
+      "storage.objectAdmin",
+      "storage.objectViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.jobUser",
+      "roles/storage.objectAdmin",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/data-source-access-control",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-recommendations"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:55.115Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

@@ -1,0 +1,45 @@
+# GRE traffic support for external TCP/UDP Network Load Balancing
+
+Product: Cloud Load Balancing
+Feature slug: `gre-traffic-support-for-external-tcp-udp-network-load-balancing`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+External TCP/UDP Network Load Balancing supports load balancing GRE traffic using L3_DEFAULT forwarding rules and UNSPECIFIED backend protocol.
+
+## Lifecycle
+
+- Latest feature date: 2022-06-06
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- audit (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- auth (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- authorization (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- certificate (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- constraint (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- encrypt (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- firewall (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- iam (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- identity (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- logging (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- permission (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- policy (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- private (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- role (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+- security (evidence: [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols), [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal), [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/load-balancing/docs/internal](https://docs.cloud.google.com/load-balancing/docs/internal)
+- [https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview](https://docs.cloud.google.com/load-balancing/docs/internal/ilb-next-hop-overview)
+- [https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols](https://docs.cloud.google.com/load-balancing/docs/internal/setting-up-ilb-multiple-protocols)

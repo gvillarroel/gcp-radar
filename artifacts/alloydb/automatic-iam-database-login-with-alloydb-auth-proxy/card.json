@@ -1,0 +1,179 @@
+{
+  "feature_name": "Automatic IAM database login with AlloyDB Auth Proxy",
+  "feature_slug": "automatic-iam-database-login-with-alloydb-auth-proxy",
+  "summary": "The AlloyDB Auth Proxy can automatically authenticate IAM-based database logins for the proxy's IAM account.",
+  "extended_definition": "The AlloyDB Auth Proxy can automatically authenticate IAM-based database logins for the proxy's IAM account.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+      "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"About the AlloyDB Auth Proxy \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Benefits of using the AlloyDB Auth Proxy The Auth Proxy provides these advantages over connecting clients directly to AlloyDB databases: IAM-based connection authorization (AuthZ): The Auth Proxy uses the credentials and permissions of an Identity and Access Management (IAM) principal to authorize connections to AlloyDB instances.",
+          "Secure, encrypted communication: The Auth Proxy automatically creates, uses, and maintains a mutual TLS (mTLS) 1.3 connection using a 256-bit AES cipher between your client and an AlloyDB instance to verify client and server identities and encrypt data traffic.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback About the AlloyDB Auth Proxy Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Connect using an IAM account \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "source_id": "site-docs-reference-2",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, if you run your workload using the IAM user account kai@altostrat.com , then you can use the proxy client or Language Connectors to automatically authenticate the kai@altostrat.com database user without specifying an OAuth 2.0 token.",
+          "Authenticate automatically To automatically authenticate an IAM-based AlloyDB user without the need for an OAuth 2.0 token, you have two options: AlloyDB Auth Proxy and AlloyDB Language Connectors .",
+          "For additional security, you can restrict the token for use with only AlloyDB authentication by following these alternative steps: Add the alloydb.login scope to your current environment's access credentials using the gcloud auth application-default login command , if you have not already done so: gcloud auth application-default login --scopes = https://www.googleapis.com/auth/alloydb.login,https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/userinfo.email,openid Print a restricted OAuth 2.0 token using the gcloud auth application-default print-access-token command , scoping the token only to AlloyDB authentication: gcloud auth application-default print-access-token –-scopes=https://www.googleapis.com/auth/alloydb.login Caution: Treat your OAuth 2.0 token as sensitive information."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Connect to AlloyDB from Cloud Shell using the Auth Proxy \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell",
+        "source_id": "site-docs-reference",
+        "final_score": 121,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Required roles To use the Auth Proxy, your user account must have the following Identity and Access Management (IAM) roles : AlloyDB Client ( roles/alloydb.client ) Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) If you don't have the required roles, ask your administrator to grant the roles or follow these steps to grant them to your user account.",
+          "In the Cloud Shell terminal, use the copied URI and specify the --public-ip flag. alloydb-auth-proxy CONNECTION URI --public-ip Replace the following: CONNECTION URI : the Connection URI that you copied from the Google Cloud console.",
+          "Connect to AlloyDB from Cloud Shell using the Auth Proxy Learn how to establish a secure connection to your AlloyDB for PostgreSQL instance from a Cloud Shell terminal using the AlloyDB Auth Proxy."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.client",
+      "alloydb.login",
+      "altostrat.com",
+      "serviceusage.serviceUsageConsumer",
+      "userinfo.email"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.client",
+      "roles/serviceusage.serviceUsageConsumer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/auth-proxy/overview",
+        "https://docs.cloud.google.com/alloydb/docs/connect-iam",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/connect-cloud-shell"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

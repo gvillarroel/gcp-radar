@@ -1,0 +1,98 @@
+{
+  "feature_name": "Spanner multi-region configuration eur5",
+  "feature_slug": "spanner-multi-region-configuration-eur5",
+  "summary": "A new second multi-region instance configuration, eur5 (London/Belgium), became available for Spanner.",
+  "extended_definition": "A new second multi-region instance configuration, eur5 (London/Belgium), became available for Spanner.",
+  "lifecycle": {
+    "latest_feature_date": "2020-06-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backup",
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/compute-capacity"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "In load tests, this model does an acceptable job of distributing the secondary index read and write load across multiple Spanner splits, as illustrated in the following diagram: Although the synthetic data used in the load test is similar to the eventual steady state of the game where Attribute values are well distributed, the game design dictates that all players start with Attribute=50 .",
+          "Although synthetic load tests are a good way to validate how many queries per second (QPS) your instance can handle, a beta test with real players is necessary to validate your schema and prepare a successful launch.",
+          "To help support your GDPR needs, see the Google Cloud and the GDPR whitepaper and select the correct Spanner regional configuration ."
+        ]
+      },
+      {
+        "title": "Backups overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup",
+        "source_id": "site-docs-root",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, if you copy your database from the source multi-region instance configuration nam7 to the destination multi-region instance configuration nam-eur-asia3 , the following charges apply: No charge for overlapping us-central1 region No charge for witness us-central2 region Inter-continental data transfer charge apply twice: once for each new continent (Europe and Asia) Data transfer between regions within the same continent charge apply once for us-east1 Data transfer between regions within the same continent charge apply once in Europe Spanner optimizes the copying process to minimize the number of cross-region transfers.",
+          "For multi-region instances, all read-write and read-only zones in all regions must complete their backup replicas before the backup is marked as restorable.",
+          "For dual-region and multi-regional instances , the backup is stored in all zones that contain either a read-write or read-only replica."
+        ]
+      },
+      {
+        "title": "\"Compute capacity, nodes and processing units \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/compute-capacity",
+        "source_id": "site-docs-root",
+        "final_score": 119,
+        "relevance": "",
+        "evidence_snippets": [
+          "Compute capacity and instance configurations As described in Regional, dual-region, and multi-region configurations , Spanner distributes an instance across zones of one or more regions to provide high performance and high availability.",
+          "For information about data replicas in instance configurations, see Regional, dual-region, and multi-region configurations .",
+          "When removing compute capacity, monitor your CPU utilization and request latencies in Cloud Monitoring to ensure CPU utilization stays under 65% for regional instances and 45% for each region in multi-region instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/backup",
+        "https://docs.cloud.google.com/spanner/docs/compute-capacity"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "https://docs.cloud.google.com/spanner/docs/backup",
+        "https://docs.cloud.google.com/spanner/docs/compute-capacity"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

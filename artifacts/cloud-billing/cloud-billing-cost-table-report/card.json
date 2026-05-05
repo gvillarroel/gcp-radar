@@ -1,0 +1,124 @@
+{
+  "feature_name": "Cloud Billing Cost Table Report",
+  "feature_slug": "cloud-billing-cost-table-report",
+  "summary": "Introduces the Cost Table report to view invoice costs in tabular form by project and SKU with filtering and CSV export options.",
+  "extended_definition": "Introduces the Cost Table report to view invoice costs in tabular form by project and SKU with filtering and CSV export options.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/read-invoice",
+      "https://docs.cloud.google.com/billing/docs/how-to/reports"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and download the cost details of your invoice or statement \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "source_id": "site-docs-root",
+        "final_score": 253,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To gain this permission, ask your administrator to grant you one of the following Cloud Billing IAM roles on your Cloud Billing account: Billing Account Viewer Billing Account Costs Manager Billing Account Administrator For more information about billing permissions, see: Overview of Cloud Billing access control Create custom roles for Cloud Billing Understanding predefined IAM roles for Cloud Billing Access the report To view the Cost table report for your Cloud Billing account: In the Google Cloud console, go to your Cloud Billing account.",
+          "Configure your report views and settings You can select the costs you want to analyze and configure the display of your Cost table report using the following features: Invoice month Filters Table setting and report tools As you configure the report filters, your page URL updates to include your selections.",
+          "Permissions required to access the Cost table report To view the Cost table report for your Cloud Billing account, you need a role that includes the following permission on your Cloud Billing account: billing.accounts.getSpendingInformation to view costs and usage for a billing account."
+        ]
+      },
+      {
+        "title": "\"Analyze billing data and cost trends with Reports \\_|\\_ Cloud Billing \\_\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "source_id": "site-docs-root",
+        "final_score": 231,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When viewing costs by Invoice month , the following data is available in the Cloud Billing reports: Invoices generally include all costs incurred during a given calendar month, but the cost for some services' usage at the very end of a calendar month might roll over to the next month's invoice.",
+          "Related reports Cost Table report : A detailed, tabular view of your monthly costs for a given invoice or statement, which can be filtered and downloaded.",
+          "If your permissions limit your billing report access to viewing costs for a single project, you won't see invoice-level charges."
+        ]
+      },
+      {
+        "title": "Understand Your monthly invoice \\_|\\_ Cloud Billing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/read-invoice",
+        "source_id": "site-docs-root",
+        "final_score": 217,
+        "relevance": "",
+        "evidence_snippets": [
+          "Related topics Cost table report: View and download the cost details of your invoice or statement Get a Cloud Billing document such as an invoice, statement, or receipt View your cost and payment history Export Cloud Billing data to BigQuery Key concepts for Cloud Billing data export, online reports, and invoices Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "You can view the invoice cost details in the downloadable Cost Table report , including project-level costs and additional details you might need, such as service IDs, credit IDs, labels, and total costs by subaccount (for resellers).",
+          "Note: If you want to review and analyze detailed month-to-month costs for projects, SKUs, and subaccounts (for resellers) view your Cost Table report and download it to CSV for analysis."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.accounts.getSpendingInformation"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/read-invoice"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/read-invoice"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/read-invoice"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/read-invoice"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/reports",
+        "https://docs.cloud.google.com/billing/docs/how-to/read-invoice"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.750Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}

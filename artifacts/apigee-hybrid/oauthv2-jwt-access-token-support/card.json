@@ -1,0 +1,172 @@
+{
+  "feature_name": "OAuthV2 JWT access token support",
+  "feature_slug": "oauthv2-jwt-access-token-support",
+  "summary": "Apigee hybrid v1.7.0 adds OAuthV2 JWT operations to generate, verify, and refresh JWT-compliant access tokens.",
+  "extended_definition": "Apigee hybrid v1.7.0 adds OAuthV2 JWT operations to generate, verify, and refresh JWT-compliant access tokens.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Using JWT OAuth tokens \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The refresh operation generates a new JWT token with an updated expiry time, keeping other claims the same. <OAuthV2 name=\"RefreshAccessToken\"> <Operation>RefreshJWTAccessToken</Operation> <GenerateResponse enabled=\"true\"/> <Algorithm>HS512</Algorithm> <SecretKey> <Value ref=\"private.mysecretkey\"/> </SecretKey> <RefreshTokenExpiresIn ref=\"kvm.oauth.expires in\">3600000</RefreshTokenExpiresIn> </OAuthV2> Refreshing an RSA-signed JWT access token The following policy sample illustrates how to configure the OAuthV2 policy to refresh a JWT token that was signed with an RSA algorithm.",
+          "The following example shows a policy configured to generate a JWT signed with an RSA private key using the RS256 algorithm. <OAuthV2 name=\"generate-policy\"> <Operation>GenerateJWTAccessToken</Operation> <SupportedGrantTypes> <GrantType>client credentials</GrantType> </SupportedGrantTypes> <GenerateResponse enabled=\"true\"/> <Algorithm>RS256</Algorithm> <PrivateKey> <Value ref=\"private.rsa-privatekey-1\"/> </PrivateKey> <ExpiresIn ref=\"kvm.oauth.expires in\">3600000</ExpiresIn> </OAuthV2> RSA private keys are secrets.",
+          "The following example shows a policy configured to generate a JWT signed with the HS512 algorithm, using the specified secret key. <OAuthV2 name=\"generate-policy\"> <Operation>GenerateJWTAccessToken</Operation> <SupportedGrantTypes> <GrantType>client credentials</GrantType> </SupportedGrantTypes> <GenerateResponse enabled=\"true\"/> <Algorithm>HS512</Algorithm> <SecretKey> <Value ref=\"private.mysecretkey\"/> </SecretKey> <ExpiresIn ref=\"kvm.oauth.expires in\">3600000</ExpiresIn> </OAuthV2> Secret keys are secrets."
+        ]
+      },
+      {
+        "title": "Secure an API with OAuth 2.0 \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 83,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click the GenerateAccessTokenClient policy in the Request pane: The following XML configuration is displayed: < OAuthV2 name = \"GenerateAccessTokenClient\" > < ! -- This policy generates an OAuth 2.0 access token using the client credentials grant type -- > < Operation>GenerateAccessToken < / Operation > < ! -- This is in milliseconds , so expire in an hour -- > < ExpiresIn>3600000 < / ExpiresIn > < SupportedGrantTypes > < ! -- This part is very important : most real OAuth 2.0 apps will want to use other grant types .",
+          "In this case it is important to NOT include the \"client credentials\" type because it allows a client to get access to a token with no user authentication -- > < GrantType>client credentials < / GrantType > < / SupportedGrantTypes > < GrantType>request . queryparam . grant type < / GrantType > < GenerateResponse / > < / OAuthV2 > The configuration includes the following: The <Operation> , which can be one of several predefined values, defines what the policy is going to do.",
+          "Click the Verify OAuth v2.0 Access Token icon in the right-hand pane and look at the XML below it in the text editor. <OAuthV2 async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"verify-oauth-v2-access-token\"> <DisplayName>Verify OAuth v2.0 Access Token</DisplayName> <Operation>VerifyAccessToken</Operation> </OAuthV2> Notice that the <Operation> is VerifyAccessToken ."
+        ]
+      },
+      {
+        "title": "Security actions overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To use the API keys , API products , access tokens , developers , or developer apps conditions, you need to also use either the Verify API Key policy or the OAuthV2 policy.",
+          "For Apigee hybrid, these conditions are available in version 1.12 and later: API keys, API products, access tokens, developers, developer apps, and user agents.",
+          "Access tokens , one or more access tokens."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.email",
+      "example.com",
+      "kvm.oauth.expires",
+      "private.mysecretkey",
+      "private.rsa",
+      "propertyset.non",
+      "secrets.rsa",
+      "v1.7.0",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/security/oauth/using-jwt-oauth",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.392Z",
+  "source_step08_card": "data/step-08/current/products/apigee-hybrid/card.json",
+  "product_name": "Apigee hybrid",
+  "product_slug": "apigee-hybrid"
+}

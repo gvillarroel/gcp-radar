@@ -1,0 +1,133 @@
+{
+  "feature_name": "Regular expression matching in URL maps",
+  "feature_slug": "regular-expression-matching-in-url-maps",
+  "summary": "Application Load Balancer URL maps support RE2 regular expressions for route rules, header matches, and query parameter matches.",
+  "extended_definition": "Application Load Balancer URL maps support RE2 regular expressions for route rules, header matches, and query parameter matches.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/quotas",
+      "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "URL maps overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Additional usage notes: Regular expressions are supported only for the following products: Regional internal Application Load Balancers Cross-region internal Application Load Balancers Regional external Application Load Balancers Global and classic Application Load Balancers don't support regular expressions.",
+          "For example, in the following sample URL maps, the route rule regular expression, /videos/hd. , would apply to a URL with the path /videos/hd-abcd?key=245 . defaultService : projects/example-project/global/backendServices/org-site name : rule-match-url-map hostRules : - hosts : - ' ' # Match any host pathMatcher : video-matcher - hosts : - example.net pathMatcher : video-matcher pathMatchers : - name : video-matcher Optional: default service for this path matcher if no routeRules match defaultService : projects/example-project/global/backendServices/video-site routeRules : - priority : 100000 matchRules : - regexMatch : /videos/hd. routeAction : weightedBackendServices : - backendService : projects/example-project/global/backendServices/video-hd weight : 100 Here is an explanation for each field of the sample URL map: defaultService : Specifies the default backend service to use if no other rules in the URL map match the incoming request. name : Assigns the name rule-match-url-map to this URL map configuration. hostRules : Defines a list of rules for matching the host header of incoming requests.",
+          "Pattern matching with wildcards is supported only for the following products: Global external Application Load Balancer Regional external Application Load Balancer Regional internal Application Load Balancer Cross-region internal Application Load Balancer Cloud Service Mesh The following example routes traffic for an eCommerce application that has separate services for cart information and user information."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 134,
+        "relevance": "",
+        "evidence_snippets": [
+          "Host rules, path matchers per URL map Limit: 1000 Limit: 2000 Path rules or route rules per path matcher Limit: 1000 Limit: 1000 Hosts per host rule Limit: 1000 Limit: 1000 Predicates per path matcher Limit: 1000 Limit: 1000 pathTemplateMatch predicates per path matcher Global external Application Load Balancers and regional external Application Load Balancers: Limit: 100 Not supported for classic Application Load Balancers Limit: 100 Number of distinct backend services or backend buckets that can be referenced by a URL map Limit: 2500 Limit: 2500 Maximum number of regular expressions per path matcher For regional external Application Load Balancers: 5 Global external Application Load Balancers don't support regular expressions.",
+          "5 Maximum number of characters in a regular expression For regional external Application Load Balancers: 250 Global external Application Load Balancers don't support regular expressions.",
+          "Quota name: REGIONAL INTERNAL MANAGED BACKEND SERVICES Available metrics: compute.googleapis.com/quota/regional internal managed backend services/limit compute.googleapis.com/quota/regional internal managed backend services/usage compute.googleapis.com/quota/regional internal managed backend services/exceeded Number of backend services per Application Load Balancer Varies based on the URL map configuration For more details, see URL maps ."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table summarizes the required source IP address ranges for the firewall rules: Load balancer mode Health check source ranges Request source ranges Global external Application Load Balancer 35.191.0.0/16 130.211.0.0/22 For IPv6 traffic to the backends: 2600:2d00:1:b029::/64 The source of GFE traffic depends on the backend type: Instance groups and zonal NEGs ( GCE VM IP PORT ): 130.211.0.0/22 35.191.0.0/16 For IPv6 traffic to the backends: 2600:2d00:1:1::/64 Hybrid connectivity NEGs ( NON GCP PRIVATE IP PORT ): 130.211.0.0/22 35.191.0.0/16 Internet NEGs ( INTERNET FQDN PORT and INTERNET IP PORT ): 34.96.0.0/20 34.127.192.0/18 SERVERLESS NEGs and backend buckets: Google's production network handles packet routing Classic Application Load Balancer 35.191.0.0/16 130.211.0.0/22 The source of GFE traffic depends on the backend type: Instance groups, zonal NEGs ( GCE VM IP PORT ), and hybrid connectivity NEGs ( NON GCP PRIVATE IP PORT ): 35.191.0.0/16 130.211.0.0/22 Internet NEGs ( INTERNET FQDN PORT and INTERNET IP PORT ): 34.96.0.0/20 34.127.192.0/18 SERVERLESS NEGs and backend buckets: Google's production network handles packet routing.",
+          "To update the load balancer, click Update . gcloud Configure the TLS early data mode on the target HTTPS proxy of an Application Load Balancer. gcloud compute target-https-proxies update TARGET HTTPS PROXY \\ --tls-early-data= TLS EARLY DATA MODE Replace the following: TARGET HTTPS PROXY : the target HTTPS proxy of your load balancer TLS EARLY DATA MODE : STRICT , PERMISSIVE , DISABLED , or UNRESTRICTED API PATCH https://compute.googleapis.com/compute/v1/projects/{project}/global/targetHttpsProxies/ TARGET HTTPS PROXY { \"tlsEarlyData\":\" TLS EARLY DATA MODE \", \"fingerprint\": \" FINGERPRINT \" } Replace the following: TARGET HTTPS PROXY : the target HTTPS proxy of your load balancer TLS EARLY DATA MODE : STRICT , PERMISSIVE , DISABLED , or UNRESTRICTED FINGERPRINT : a Base64 encoded string.",
+          "Backend service scope The following table indicates which backend service resource and scope is used by external Application Load Balancers: Load balancer mode Backend service resource Global external Application Load Balancer backendServices (global) Classic Application Load Balancer backendServices (global) Regional external Application Load Balancer regionBackendServices (regional) Protocol to the backends Backend services for Application Load Balancers must use one of the following protocols to send requests to backends: HTTP, which uses HTTP/1.1 and no TLS HTTPS, which uses HTTP/1.1 and TLS HTTP/2, which uses HTTP/2 and TLS (HTTP/2 without encryption isn't supported.) H2C, which uses HTTP/2 over TCP."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "example.net"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/url-map-concepts",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

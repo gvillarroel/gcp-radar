@@ -1,0 +1,124 @@
+{
+  "feature_name": "Cloud Text-to-Speech WaveNet voices",
+  "feature_slug": "cloud-text-to-speech-wavenet-voices",
+  "summary": "WaveNet voices were added for Danish (Denmark), Polish (Poland), Portuguese (Brazil), Russian (Russia), Slovak (Slovakia), and Turkish (Turkey).",
+  "extended_definition": "WaveNet voices were added for Danish (Denmark), Polish (Poland), Portuguese (Brazil), Russian (Russia), Slovak (Slovakia), and Turkish (Turkey).",
+  "lifecycle": {
+    "latest_feature_date": "2019-02-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+      "https://docs.cloud.google.com/text-to-speech/docs/voices",
+      "https://docs.cloud.google.com/text-to-speech/docs/wavenet"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported voices and languages \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/voices",
+        "source_id": "site-docs-reference",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace PROJECT ID with your project ID. curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://texttospeech.googleapis.com/v1/voices\" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { \"voices\": [ { \"languageCodes\": [ \"es-ES\" ], \"name\": \"es-ES-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, { \"languageCodes\": [ \"ja-JP\" ], \"name\": \"ja-JP-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 22050 }, { \"languageCodes\": [ \"pt-BR\" ], \"name\": \"pt-BR-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .",
+          "For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.",
+          "TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries ."
+        ]
+      },
+      {
+        "title": "\"Supported voices and languages \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/wavenet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace PROJECT ID with your project ID. curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://texttospeech.googleapis.com/v1/voices\" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { \"voices\": [ { \"languageCodes\": [ \"es-ES\" ], \"name\": \"es-ES-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, { \"languageCodes\": [ \"ja-JP\" ], \"name\": \"ja-JP-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 22050 }, { \"languageCodes\": [ \"pt-BR\" ], \"name\": \"pt-BR-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .",
+          "For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.",
+          "TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries ."
+        ]
+      },
+      {
+        "title": "\"Supported voices and languages \\_|\\_ Cloud Text-to-Speech \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "source_id": "site-docs-root",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace PROJECT ID with your project ID. curl -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" \\ -H \"x-goog-user-project: PROJECT ID \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ \"https://texttospeech.googleapis.com/v1/voices\" The Cloud Text-to-Speech API returns a JSON-formatted result that looks similar to the following: { \"voices\": [ { \"languageCodes\": [ \"es-ES\" ], \"name\": \"es-ES-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, { \"languageCodes\": [ \"ja-JP\" ], \"name\": \"ja-JP-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 22050 }, { \"languageCodes\": [ \"pt-BR\" ], \"name\": \"pt-BR-Standard-A\", \"ssmlGender\": \"FEMALE\", \"naturalSampleRateHertz\": 24000 }, ... ] } Go To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries .",
+          "For more information, see Set up authentication for a local development environment . / Demonstrates using the Text to Speech client to list the client's supported voices. @throws Exception on TextToSpeechClient Errors. / public static List<Voice> listAllSupportedVoices () throws Exception { // Instantiates a client try ( TextToSpeechClient textToSpeechClient = TextToSpeechClient . create ()) { // Builds the text to speech list voices request ListVoicesRequest request = ListVoicesRequest . getDefaultInstance (); // Performs the list voices request ListVoicesResponse response = textToSpeechClient . listVoices ( request ); List<Voice> voices = response . getVoicesList (); for ( Voice voice : voices ) { // Display the voice's name.",
+          "TextToSpeechClient (); const [ result ] = await client . listVoices ({}); const voices = result . voices ; console . log ( 'Voices:' ); voices . forEach ( voice = > { console . log ( Name: ${ voice . name } ); console . log ( SSML Voice Gender: ${ voice . ssmlGender } ); console . log ( Natural Sample Rate Hertz: ${ voice . naturalSampleRateHertz } ); console . log ( ' Supported languages:' ); voice . languageCodes . forEach ( languageCode = > { console . log ( ${ languageCode } ); }); }); Python To learn how to install and use the client library for Cloud TTS, see Cloud TTS client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "texttospeech.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/wavenet",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/wavenet",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/wavenet",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/wavenet",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/text-to-speech/docs/wavenet",
+        "https://docs.cloud.google.com/text-to-speech/docs/list-voices-and-types",
+        "https://docs.cloud.google.com/text-to-speech/docs/voices"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:53.617Z",
+  "source_step08_card": "data/step-08/current/products/text-to-speech/card.json",
+  "product_name": "Text-to-Speech",
+  "product_slug": "text-to-speech"
+}

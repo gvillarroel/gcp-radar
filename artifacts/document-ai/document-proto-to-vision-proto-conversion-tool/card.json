@@ -1,0 +1,168 @@
+{
+  "feature_name": "Document proto-to-Vision proto conversion tool",
+  "feature_slug": "document-proto-to-vision-proto-conversion-tool",
+  "summary": "The proto conversion tool helps convert Document protos to AnnotateFileResponse protos for migration from Vision API text detection to Document OCR; The proto conversion tool converts Document protos to AnnotateFileResponse protos to support migration comparisons with Vision API text detection.",
+  "extended_definition": "The proto conversion tool helps convert Document protos to AnnotateFileResponse protos for migration from Vision API text detection to Document OCR; The proto conversion tool converts Document protos to AnnotateFileResponse protos to support migration comparisons with Vision API text detection.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+      "https://docs.cloud.google.com/document-ai/docs/handle-response",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+      "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Handle processing response \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "source_id": "site-docs-root-2",
+        "final_score": 231,
+        "relevance": "",
+        "evidence_snippets": [
+          "Document . from gcs ( gcs bucket name = gcs bucket name , gcs prefix = gcs prefix ) Converting wrapped document to vision AnnotateFileResponse annotate file response = ( wrapped document . convert document to annotate file response () ) print ( \"Document converted to AnnotateFileResponse!\" ) print ( f \"Number of Pages : { len ( annotate file response . responses [ 0 ] . full text annotation . pages ) } \" ) hOCR conversion from google.cloud.documentai toolbox import document TODO(developer): Uncomment these variables before running the sample.",
+          "Document . from document path ( document path = document path ) output files = wrapped document . export images ( output path = output path , output file prefix = output file prefix , output file extension = output file extension , ) print ( \"Images Successfully Exported\" ) for output file in output files : print ( output file ) Vision conversion from google.cloud.documentai toolbox import document TODO(developer): Uncomment these variables before running the sample.",
+          "Document . from document path ( document path = document path ) Converting wrapped document to hOCR format hocr string = wrapped document . export hocr str ( title = document title ) print ( \"Document converted to hOCR!\" ) return hocr string Third-party conversion from google.cloud.documentai toolbox import converter TODO(developer): Uncomment these variables before running the sample."
+        ]
+      },
+      {
+        "title": "\"Class DocumentProcessorServiceClient (3.14.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Processors are built using state-of-the-art Google AI such as natural language, computer vision, and translation to extract structured information from unstructured or semi-structured documents.",
+          "SetDefaultProcessorVersionRequest ( processor=\"processor value\", default processor version=\"default processor version value\", ) Make the request operation = client. set default processor version (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.documentai v1.types.SetDefaultProcessorVersionRequest , dict] The request object.",
+          "ReviewDocumentRequest ( inline document=inline document, human review config=\"human review config value\", ) Make the request operation = client. review document (request=request) print(\"Waiting for operation to complete...\") response = operation.result() Handle the response print(response) Parameters Name Description request Union[ google.cloud.documentai v1.types.ReviewDocumentRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "source_id": "site-docs-root",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "Convert document objects to Vision AI API format The Document AI Toolbox includes a tool that converts the Document AI API Document format to the Vision AI AnnotateFileResponse format, enabling users to compare the responses between the document OCR processor and Vision AI API.",
+          "Here is an example of LaTeX representation: Image detected Conversion to LaTeX Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableMathOcr to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"premiumFeatures\" : { \"enableMathOcr\" : true } } } } Output The Math OCR output appears in Document.pages[].visualElements[] with \"type\": \"math formula\" . \"visualElements\" : [ { \"layout\" : { \"textAnchor\" : { \"textSegments\" : [ { \"endIndex\" : \"46\" } ] }, \"confidence\" : 1 , \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.14662756 , \"y\" : 0.27891156 }, { \"x\" : 0.9032258 , \"y\" : 0.27891156 }, { \"x\" : 0.9032258 , \"y\" : 0.8027211 }, { \"x\" : 0.14662756 , \"y\" : 0.8027211 } ] }, \"orientation\" : \"PAGE UP\" }, \"type\" : \"math formula\" } ] You can check the full Document JSON output in this link .",
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"skipHumanReview\": skipHumanReview , \"rawDocument\": { \"mimeType\": \" MIME TYPE \", \"content\": \" IMAGE CONTENT \" }, \"fieldMask\": \" FIELD MASK \", \"processOptions\": { \"ocrConfig\": { \"enableNativePdfParsing\": ENABLE NATIVE PDF PARSING , \"enableImageQualityScores\": ENABLE IMAGE QUALITY SCORES , \"enableSymbol\": ENABLE SYMBOL , \"disableCharacterBoxesDetection\": DISABLE CHARACTER BOXES DETECTION , \"hints\": { \"languageHints\": [ \" LANGUAGE HINTS \" ] }, \"advancedOcrOptions\": [\" ADVANCED OCR OPTIONS \"], \"premiumFeatures\": { \"enableSelectionMarkDetection\": ENABLE SELECTION MARK DETECTION , \"computeStyleInfo\": COMPUTE STYLE INFO , \"enableMathOcr\": ENABLE MATH OCR , } }, \"individualPageSelector\" { \"pages\": [ INDIVIDUAL PAGES ] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "source_id": "site-docs-root-2",
+        "final_score": 201,
+        "relevance": "",
+        "evidence_snippets": [
+          "Convert document objects to Vision AI API format The Document AI Toolbox includes a tool that converts the Document AI API Document format to the Vision AI AnnotateFileResponse format, enabling users to compare the responses between the document OCR processor and Vision AI API.",
+          "Here is an example of LaTeX representation: Image detected Conversion to LaTeX Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableMathOcr to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"premiumFeatures\" : { \"enableMathOcr\" : true } } } } Output The Math OCR output appears in Document.pages[].visualElements[] with \"type\": \"math formula\" . \"visualElements\" : [ { \"layout\" : { \"textAnchor\" : { \"textSegments\" : [ { \"endIndex\" : \"46\" } ] }, \"confidence\" : 1 , \"boundingPoly\" : { \"normalizedVertices\" : [ { \"x\" : 0.14662756 , \"y\" : 0.27891156 }, { \"x\" : 0.9032258 , \"y\" : 0.27891156 }, { \"x\" : 0.9032258 , \"y\" : 0.8027211 }, { \"x\" : 0.14662756 , \"y\" : 0.8027211 } ] }, \"orientation\" : \"PAGE UP\" }, \"type\" : \"math formula\" } ] You can check the full Document JSON output in this link .",
+          "HTTP method and URL: POST https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/ PROCESSOR VERSION :process Request JSON body: { \"skipHumanReview\": skipHumanReview , \"rawDocument\": { \"mimeType\": \" MIME TYPE \", \"content\": \" IMAGE CONTENT \" }, \"fieldMask\": \" FIELD MASK \", \"processOptions\": { \"ocrConfig\": { \"enableNativePdfParsing\": ENABLE NATIVE PDF PARSING , \"enableImageQualityScores\": ENABLE IMAGE QUALITY SCORES , \"enableSymbol\": ENABLE SYMBOL , \"disableCharacterBoxesDetection\": DISABLE CHARACTER BOXES DETECTION , \"hints\": { \"languageHints\": [ \" LANGUAGE HINTS \" ] }, \"advancedOcrOptions\": [\" ADVANCED OCR OPTIONS \"], \"premiumFeatures\": { \"enableSelectionMarkDetection\": ENABLE SELECTION MARK DETECTION , \"computeStyleInfo\": COMPUTE STYLE INFO , \"enableMathOcr\": ENABLE MATH OCR , } }, \"individualPageSelector\" { \"pages\": [ INDIVIDUAL PAGES ] } } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1",
+      "com.google.cloud.documentai.v1.BarcodeProto",
+      "documentai.googleapis.com",
+      "operation.result",
+      "toolbox.wrappers.document.Document",
+      "v1.types.EvaluateProcessorVersionRequest",
+      "v1.types.ReviewDocumentRequest",
+      "v1.types.SetDefaultProcessorVersionRequest",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/handle-response",
+        "https://docs.cloud.google.com/python/docs/reference/documentai/latest/google.cloud.documentai_v1.services.document_processor_service.DocumentProcessorServiceClient",
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:28.926Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

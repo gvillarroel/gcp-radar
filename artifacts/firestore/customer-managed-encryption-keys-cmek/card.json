@@ -1,0 +1,121 @@
+{
+  "feature_name": "Customer-managed encryption keys (CMEK)",
+  "feature_slug": "customer-managed-encryption-keys-cmek",
+  "summary": "Firestore supports customer-managed encryption keys for protecting data.",
+  "extended_definition": "Firestore supports customer-managed encryption keys for protecting data.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+      "https://docs.cloud.google.com/firestore/docs/cmek",
+      "https://docs.cloud.google.com/firestore/native/docs/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/docs/cmek",
+        "source_id": "site-docs-reference",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about CMEK in general, including when and why to enable it, see the following Cloud KMS documentation: Customer-managed encryption keys (CMEK) Best practices for using CMEKs For instructions on performing CMEK-related tasks with Firestore, see Use CMEK .",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Firestore.",
+          "Customer-managed encryption keys (CMEK) By default, all the data at rest in Firestore is encrypted using Google's default encryption ."
+        ]
+      },
+      {
+        "title": "\"Customer-managed encryption keys (CMEK) \\_|\\_ Firestore in Native mode \\_\\",
+        "url": "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 51,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information about CMEK in general, including when and why to enable it, see the following Cloud KMS documentation: Customer-managed encryption keys (CMEK) Best practices for using CMEKs For instructions on performing CMEK-related tasks with Firestore, see Use CMEK .",
+          "If you have specific compliance or regulatory requirements related to the keys that protect your data, you can use customer-managed encryption keys (CMEK) for Firestore.",
+          "Customer-managed encryption keys (CMEK) By default, all the data at rest in Firestore is encrypted using Google's default encryption ."
+        ]
+      },
+      {
+        "title": "\"Managing Firestore in Datastore mode from the Console \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/console/managing-datastore",
+        "source_id": "site-docs-root",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Managing Firestore in Datastore mode from the Console Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/docs/cmek",
+        "https://docs.cloud.google.com/firestore/native/docs/cmek",
+        "https://docs.cloud.google.com/datastore/docs/console/managing-datastore"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:32.054Z",
+  "source_step08_card": "data/step-08/current/products/firestore/card.json",
+  "product_name": "Firestore",
+  "product_slug": "firestore"
+}

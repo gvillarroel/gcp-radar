@@ -1,0 +1,188 @@
+{
+  "feature_name": "Google Cloud VPC Service Controls support",
+  "feature_slug": "google-cloud-vpc-service-controls-support",
+  "summary": "Google SecOps now supports Google Cloud VPC Service Controls for perimeter-based protection of resources and data.",
+  "extended_definition": "Google SecOps now supports Google Cloud VPC Service Controls for perimeter-based protection of resources and data.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/onboard",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 80,
+        "relevance": "",
+        "evidence_snippets": [
+          "Further Resources to get started: Model Armor Documentation AI Protection Overview Blog Post Security Command Center Documentation Sensitive Data Protection Documentation Continuous Security Validation: Stop Reacting, Start Preventing with Google SecOps Security teams in SOCs are constantly overwhelmed trying to keep up with the ever-changing threat landscape.",
+          "Strengthening Endpoint Security: Integrated protection with Google Chrome Enterprise Premium & Google SecOps Chrome Enterprise Premium (CEP) integration with Google SecOps provides critical visibility into threats originating from browser activity to strengthen your endpoint security posture.",
+          "Centralized Visibility and Response within Security Command Center : AI Protection is delivered in SCC-E which provides CNAPP capabilities and SIEM/SOAR integration with Google SecOps as part of GUS."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "View aggregated results For statistics-based searches, Google SecOps supports large aggregated result sets.",
+          "Search large result sets Google SecOps supports returning and navigating up to 1 million results.",
+          "Understand suggestion ranking The editor organizes suggestions into three distinct categories to help you find fields quickly: Recently used fields : The top seven suggestions are based on fields you have used recently that match your typed field."
+        ]
+      },
+      {
+        "title": "\"Onboard a Google SecOps instance \\_|\\_ Google Security Operations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "source_id": "site-iam-reference",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Audit Logs: administrative activities Cloud Audit Logs Yes Yes Cloud Audit Logs: data access Cloud Audit Logs Yes Yes Cloud Billing: online subscription or pay-as-you-go Cloud Billing Yes No Chronicle APIs: general access, mint and manage credentials using third-party IdP Google Cloud APIs Yes Yes Chronicle APIs: general access, mint and manage credentials using Cloud Identity Google Cloud APIs, Cloud Identity Yes Yes Compliant controls: CMEK Cloud Key Management Service or Cloud External Key Manager Yes No Compliant controls: FedRAMP High or above Assured Workloads Yes Yes Compliant controls: Organization Policy Service Organization Policy Service Yes No Contact management: legal disclosures Essential Contacts Yes No Health monitoring: ingestion pipeline outages Cloud Monitoring Yes No Ingestion: webhook, Pub/Sub, Azure Event Hub, Amazon Kinesis Data Firehose Identity and Access Management Yes No Role-based access controls: data Identity and Access Management Yes Yes Role-based access controls: features or resources Identity and Access Management Yes Yes Support access: case submission, tracking Cloud Customer Care Yes No Unified SecOps authentication Google workforce identity federation No Yes Need more help?",
+          "Onboard a Google SecOps instance Supported in: Google secops This document describes how to onboard (deploy) a Google SecOps (SIEM and SOAR) instance, and enable Google SecOps features based on your Google SecOps package tier and entitlements.",
+          "Grant the onboarding SME the roles and permissions listed in these following sections: Permissions in the Google billing account Predefined IAM roles Permissions to create an Assured Workloads folder Permissions to add a Google Cloud project Permissions to configure an identity provider Permissions to configure Cloud Identity or Google Workspace Permissions to configure a third-party identity provider Permissions to link a Google SecOps instance to Google Cloud services Permissions to configure feature access control using IAM Permissions to configure data access control Google SecOps advanced capabilities requirements Permissions in the Google billing account Grant the onboarding SME the billing.resourceAssociations.list permission for the Google billing account specified in the contract."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "billing.resourceAssociations.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "https://docs.cloud.google.com/chronicle/docs/onboard",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

@@ -1,0 +1,100 @@
+{
+  "feature_name": "Flex-start VMs for inference jobs",
+  "feature_slug": "flex-start-vms-for-inference-jobs",
+  "summary": "Flexible-start VMs powered by Dynamic Workload Scheduler allow running inference workloads at discounted rates, with a preview release focused on short-duration jobs.",
+  "extended_definition": "Flexible-start VMs powered by Dynamic Workload Scheduler allow running inference workloads at discounted rates, with a preview release focused on short-duration jobs.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+      "https://docs.cloud.google.com/vertex-ai/docs/start/training-methods",
+      "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: aiplatform.googleapis.com \\_|\\_ Vertex AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "source_id": "site-api-reference-2",
+        "final_score": 140,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DedicatedResources JSON representation { \"machineSpec\" : { object ( MachineSpec ) } , \"minReplicaCount\" : integer , \"maxReplicaCount\" : integer , \"requiredReplicaCount\" : integer , \"initialReplicaCount\" : integer , \"autoscalingMetricSpecs\" : [ { object ( AutoscalingMetricSpec ) } ] , \"spot\" : boolean , \"flexStart\" : { object ( FlexStart ) } , \"scaleToZeroSpec\" : { object ( ScaleToZeroSpec ) } } Fields machineSpec object ( MachineSpec ) Required.",
+          "MonitoredResourceLabelsEntry JSON representation { \"key\" : string , \"value\" : string } Fields key string value string FlexStart JSON representation { \"maxRuntimeDuration\" : string } Fields maxRuntimeDuration string ( Duration format) The max duration of the deployment is max runtime duration.",
+          "If true, schedule the deployment workload on spot VMs . flexStart object ( FlexStart ) Optional."
+        ]
+      },
+      {
+        "title": "Choose a training method \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/start/training-methods",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Ray on Vertex AI provides a managed environment with configurable compute resources, integration with services like Vertex AI Inference and BigQuery, and flexible networking options for developing and running distributed workloads.",
+          "You have complete control over training application functionality, from single-node jobs to massive, multi-node distributed training.",
+          "Involves code development, but job start-up is faster as resources are already reserved, eliminating queues and provisioning time."
+        ]
+      },
+      {
+        "title": "Custom training notebook tutorials \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks",
+        "source_id": "site-docs-reference-2",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Colab Colab Enterprise GitHub Vertex AI Workbench getting predictions from a custom trained model Get started with TensorFlow Serving with Vertex AI Inference .",
+          "Colab Colab Enterprise GitHub Vertex AI Workbench Vertex AI Inference Get started with NVIDIA Triton server .",
+          "Tutorial steps Create a local BigQuery table in your project Train a BigQuery ML model Evaluate the BigQuery ML model Export the BigQuery ML model as a cloud model Upload the exported model as a Vertex AI model resource Hyperparameter tune a BigQuery ML model with Vertex AI Vizier Automatically register a BigQuery ML model to Vertex AI Model Registry Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Vertex AI Inference Deploying Iris-detection model using FastAPI and Vertex AI custom container serving ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/training-methods",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/mcp/tools_list/create_endpoint",
+        "https://docs.cloud.google.com/vertex-ai/docs/start/training-methods",
+        "https://docs.cloud.google.com/vertex-ai/docs/tutorials/custom-training-pipelines/custom-training-jupyter-notebooks"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.145Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

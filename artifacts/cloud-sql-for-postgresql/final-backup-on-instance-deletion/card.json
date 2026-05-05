@@ -1,0 +1,126 @@
+{
+  "feature_name": "Final backup on instance deletion",
+  "feature_slug": "final-backup-on-instance-deletion",
+  "summary": "Final backup on instance deletion lets an instance take a final backup when it is deleted and retain it for a configured period.",
+  "extended_definition": "Final backup on instance deletion lets an instance take a final backup when it is deleted and retain it for a configured period.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage backups for deleted instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "source_id": "site-iam-reference",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server You can manage backups after an instance is deleted if you elected to retain backups after instance deletion , or took a final backup prior to deleting your instance.",
+          "Update a final backup You can update the retention settings and the description of a final backup taken before an instance is deleted.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /backups/ BACKUP ID \", \"kind\": \"sql#backup\", \"status\": \"SUCCESSFUL\", \"backupInterval\": { \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", } \"type\": \"FINAL\", \"instance\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /backups/ BACKUP ID \", \"location\": \"us\" \"description\": \"final backup\", \"backupKind\": \"SNAPSHOT\", \"dataDiskSizeGB\": \"10\", \"expiryTime\": \"2020-01-30T11:26:18.663Z\", \"backup run\": \"projects/ PROJECT ID /instances/ INSTANCE ID /backupRuns/ BACKUP RUN ID \", \"satisfies pzs\": false, \"satisfies pzi\": false } Update a retained or final backup after instance deletion After you delete an instance, you can update the settings for any retained or final backups associated with that instance that are stored at the project level."
+        ]
+      },
+      {
+        "title": "\"Manage standard backups \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "source_id": "site-iam-reference",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you don't enable final backup for your instance prior to deletion, you can also take a final backup when you delete your instance .",
+          "To preserve your data, you can either take a final backup of your instance at time of deletion, enable retained backups for your instance before you delete it, or export your data to Cloud Storage before you delete it.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME /backupRuns/ BACKUP ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"name\": \"projects/ PROJECT ID /instances/ INSTANCE NAME /backupRuns/ BACKUP ID \", \"kind\": \"sql#backupRun\", \"enqueuedTime\": \"2024-04-24T22:16:02.208Z\", \"id\": \" INSTANCE ID \", \"startTime\": \"2020-01-21T11:25:33.858Z\", \"endTime\": \"2020-01-21T11:26:18.663Z\", \"type\": \"AUTOMATED\", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/instances/ INSTANCE NAME /backupRuns/ BACKUP ID \", \"location\": \"us\", \"description\": \"view details about a backup\", \"maxChargeableBytes\": \" BYTE NUMBER \", \"instance\": \" INSTANCE NAME \" } Configure final backups You can set your instance to automatically take a backup by enabling the final backup instance setting and setting the final backup retention period ."
+        ]
+      },
+      {
+        "title": "\"Choose your backup option \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "source_id": "site-iam-reference",
+        "final_score": 252,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you elect to take a final backup of your instance prior to deletion, then you can set the backup retention for the final backup for up to 10 years as well.",
+          "You can retain backups after instance deletion, or take a final backup of your instance prior to deletion.",
+          "You can also select to retain all backups and take a final backup of your data at instance deletion."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-backups-deleted-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

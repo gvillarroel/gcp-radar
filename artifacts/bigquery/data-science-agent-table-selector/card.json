@@ -1,0 +1,166 @@
+{
+  "feature_name": "Data Science Agent table selector",
+  "feature_slug": "data-science-agent-table-selector",
+  "summary": "The Data Science Agent in BigQuery includes a table selector for choosing one or more tables to analyze.",
+  "extended_definition": "The Data Science Agent in BigQuery includes a table selector for choosing one or more tables to analyze.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+      "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+      "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Colab Enterprise Data Science Agent with BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "source_id": "site-docs-reference-5",
+        "final_score": 183,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Data Science Agent supports the following data sources: CSV files BigQuery tables The code produced by the Data Science Agent only runs in your notebook's runtime.",
+          "The Data Science Agent (DSA) for Colab Enterprise and BigQuery lets you automate exploratory data analysis, perform machine learning tasks, and deliver insights all within a Colab Enterprise notebook.",
+          "Analyze BigQuery tables To analyze a BigQuery table, choose one or more tables in the table selector, provide a reference to the table in your prompt, or search for a table by using the @ symbol."
+        ]
+      },
+      {
+        "title": "Explore BigQuery in the Google Cloud console \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "source_id": "site-docs-reference-5",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you select a data source, you can do the following based on the capabilities available for your data source: Set up BigQuery table over external data ( federation ) : enables BigQuery to access external data without ingesting it into BigQuery.",
+          "The Studio page has the following components: Explorer tab of the left pane : use the Explorer tab to work with tables, views, routines, and other BigQuery resources, and view your job history .",
+          "Data agents contain table metadata and use case-specific query processing instructions that define the best way to answer user questions about a set of tables that you select."
+        ]
+      },
+      {
+        "title": "\"Migrate Apache Hive Metastore tables to Google Cloud \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer",
+        "source_id": "site-api-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "The service account should belong to the same Google Cloud project where the transfer configuration and destination dataset is created. bq To schedule Hive Metastore transfer, enter the bq mk command and supply the transfer creation flag --transfer config : bq mk --transfer config --data source = hadoop display name = ' TRANSFER NAME ' --service account name = ' SERVICE ACCOUNT ' --project id = ' PROJECT ID ' location = ' REGION ' --params = '{ \"transfer strategy\":\" TRANSFER STRATEGY \", \"table name patterns\":\" LIST OF TABLES \", \"table metadata path\":\"gs:// DUMPER BUCKET /hive-dumper-output.zip\", \"target gcs file path\":\"gs:// MIGRATION BUCKET \", \"metastore\":\" METASTORE \", \"destination dataproc metastore\":\" DATAPROC METASTORE URL \", \"destination bigquery dataset\":\" BIGLAKE METASTORE DATASET \", \"translation output gcs path\":\"gs:// TRANSLATION OUTPUT BUCKET /metadata/config/default database/\", \"storage type\":\" STORAGE TYPE \", \"agent pool name\":\" AGENT POOL NAME \", \"aws access key id\":\" AWS ACCESS KEY ID \", \"aws secret access key\":\" AWS SECRET ACCESS KEY \", \"azure sas token\":\" AZURE SAS TOKEN \", \"partition filter gcs path\":\" FILTER GCS PATH \" }' Replace the following: TRANSFER NAME : the display name for the transfer configuration.",
+          "Run the API request with the following information: GET https://bigquerydatatransfer.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /transferConfigs/ CONFIG ID /transferResources Example Response (abridged) (JSON): { \"transferResources\": [ { \"name\": \"projects/.../transferResources/table1\", \"latestStatusDetail\": { \"state\": \"RESOURCE TRANSFER SUCCEEDED\", \"completedPercentage\": 100.0 }, \"updateTime\": \"2026-02-03T22:42:06Z\" } ] } curl command: curl -X GET \"https://bigquerydatatransfer.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /transferConfigs/ CONFIG ID /transferResources\" -H \"Authorization: Bearer $( gcloud auth print-access-token ) \" -H \"Accept: application/json\" You can filter the results by resource name or state.",
+          "If you are using a service account, grant the service agent the roles/iam.serviceAccountTokenCreator role with the following command: gcloud iam service-accounts add-iam-policy-binding SERVICE ACCOUNT --member serviceAccount:service- PROJECT NUMBER @gcp-sa-bigquerydatatransfer.iam.gserviceaccount.com --role roles/iam.serviceAccountTokenCreator Grant the Storage Transfer Service service agent ( project- PROJECT NUMBER @storage-transfer-service.iam.gserviceaccount.com ) the following roles in the project: roles/storage.admin If you are migrating from on-prem/HDFS, you must also grant the roles/storagetransfer.serviceAgent role."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquerydatatransfer.googleapis.com",
+      "bigquerydatatransfer.iam.gserviceaccount.com",
+      "iam.serviceAccountTokenCreator",
+      "output.zip",
+      "service.iam.gserviceaccount.com",
+      "storage.admin",
+      "storagetransfer.serviceAgent"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/storage.admin",
+      "roles/storagetransfer.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/colab-data-science-agent",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-web-ui",
+        "https://docs.cloud.google.com/bigquery/docs/hdfs-data-lake-transfer"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

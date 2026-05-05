@@ -1,0 +1,151 @@
+{
+  "feature_name": "Favoriting LookML Dashboards",
+  "feature_slug": "favoriting-lookml-dashboards",
+  "summary": "LookML dashboards can be marked as favorites and shown on the Looker Favorites tab; LookML dashboards can now be marked as favorites and shown on the Looker Favorites tab.",
+  "extended_definition": "LookML dashboards can be marked as favorites and shown on the Looker Favorites tab; LookML dashboards can now be marked as favorites and shown on the Looker Favorites tab.",
+  "lifecycle": {
+    "latest_feature_date": "2026-01-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/actions-overview",
+      "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Common LookML patterns \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "This page describes the following common patterns in LookML: Labeling fields (and names in the UI) Filtering counts by a dimension Percentages Using sets for drill-down details Filtering result sets Labeling fields (and names in the UI) Looker converts LookML field names into the strings that the UI displays by combining the view name in regular-weight font with the field's short name in bold.",
+          "Home Documentation Data analytics Looker Guides Send feedback Common LookML patterns Stay organized with collections Save and categorize content based on your preferences.",
+          "If you wanted a field that counted users from the EU, you could use something like this: measure: eu count { type: count # COUNT(CASE WHEN users.countrycode IN 'UK','FR','ES' THEN 1 ELSE NULL END) drill fields: [detail] filters: [users.countrycode: \"UK,FR,ES\"] } If you want to filter with a mathematical expression , be sure to enclose it in double quotes: measure: total orders above 100 dollars { type: sum # SUM(CASE WHEN order.value > 100 THEN order.value ELSE NULL END) sql: ${order.value} ;; drill fields: [detail] filters: [order.value: \">100\"] } Percentages Many key performance indicators are expressed in the form of percentages, such as \"the percent of items returned,\" \"the percent of emails that resulted in a sale,\" or other instances of \"the percent of X that Y.\" In LookML, the design pattern is to create counts for the two conditions and create a third field that computes the percentage between the two. dimension: returned { type: yesno } measure: count { # total count of items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] } measure: returned count { # count of returned items type: count distinct sql: ${TABLE}.id ;; drill fields: [detail] filters: [returned: \"Yes\"] } measure: percent returned { type: number sql: 100.0 ${returned count} / NULLIF(${count}, 0) ;; value format: \"0.00\" } Use the following format to compute percentages."
+        ]
+      },
+      {
+        "title": "Looker actions overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 80,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Integrated service Description Link to README file How to use this integration Required LookML tags Action type Content available for scheduled deliveries Uses Google OAuth authentication (Yes/No) Uses data streaming (Yes/No) Minimum supported Looker version Airtable Add records to a table in Airtable.",
+          "Here is how to use the list: The URLs that are shown in the Link to README file column provide instructions for enabling and configuring the integrated service to work with Looker.",
+          "The URLs that are shown in the How to use this integration column provide instructions for how to send data from Looker to the integrated service."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "This setting lets Looker admins define the email domains to which your users can deliver Looker content — Looks, dashboards, queries with visualizations — or alert notifications through email.",
+          "Limit Automatically refresh dashboard option When this setting is enabled, only Looker admins will be able to enable the Automatically refresh dashboard option on user-defined dashboards.",
+          "This allows LookML dashboards that use those collections to render consistently across instances if both instances have the same custom collections named identically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "airports.cntrl",
+      "airports.has",
+      "order.value",
+      "users.countrycode"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/additional-lookml-basics",
+        "https://docs.cloud.google.com/looker/docs/actions-overview",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

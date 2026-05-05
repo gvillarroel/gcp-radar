@@ -1,0 +1,142 @@
+{
+  "feature_name": "IAM authentication for Managed Connection Pooling",
+  "feature_slug": "iam-authentication-for-managed-connection-pooling",
+  "summary": "IAM authentication for Managed Connection Pooling lets users secure pooled connections with IAM-based authentication.",
+  "extended_definition": "IAM authentication for Managed Connection Pooling lets users secure pooled connections with IAM-based authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "IAM authentication \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Built-in database authentication IAM database authentication (individual) IAM group authentication Authentication method Password Temporary authentication token Temporary authentication token Network traffic encryption SSL not required SSL required SSL required User management Manual Centralized through IAM Centralized through IAM and Cloud Identity groups IAM group authentication IAM group authentication lets you manage Cloud SQL users at a group level.",
+          "For this reason, we don't recommend that you use manual IAM database authentication for long-lived processes or applications that rely on connection pooling.",
+          "With automatic IAM database authentication, users need to pass only the IAM database username in a connection request from the client."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Managed Connection Pooling lets you scale your workloads by optimizing resource utilization and connection latency Cloud SQL instances using pooling and multiplexing.",
+          "Note: This feature is only available for Cloud SQL Enterprise Plus edition instances that are configured to meet Managed Connection Pooling requirements.",
+          "Connectivity Managed Connection Pooling --enable-connection-pooling Enables Managed Connection Pooling in the new instance."
+        ]
+      },
+      {
+        "title": "\"Configure Managed Connection Pooling \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp",
+        "source_id": "site-iam-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed Connection Pooling lets you scale your workloads by optimizing resource utilization and connection latency for your instances using pooling.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 To modify Managed Connection Pooling Advanced configurations , use the following command and set ConnectionPoolConfig : Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"connectionPoolConfig\": { \"flags\": [ { \"name\": \" CONFIGURATION NAME \", \"value\":\" CONFIGURATION VALUE \" } ] } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 To disable Managed Connection Pooling for an instance, use the following command and set connectionPoolingEnabled : Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"connectionPoolConfig\": { \"connectionPoolingEnabled\": false } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/project-access-control",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-mcp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

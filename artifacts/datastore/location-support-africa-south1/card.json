@@ -1,0 +1,164 @@
+{
+  "feature_name": "Location support: africa-south1",
+  "feature_slug": "location-support-africa-south1",
+  "summary": "Firestore in Datastore mode supports the africa-south1 Johannesburg region.",
+  "extended_definition": "Firestore in Datastore mode supports the africa-south1 Johannesburg region.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+      "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+      "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+      "https://docs.cloud.google.com/datastore/docs/store-query-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Store and query data in Firestore in Datastore mode \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "source_id": "site-docs-root",
+        "final_score": 224,
+        "relevance": "",
+        "evidence_snippets": [
+          "Store and query data in Firestore in Datastore mode This page shows you how to store and query data in Firestore in Datastore mode using the Google Cloud console.",
+          "When you create a new Firestore database, you have the option to use Firestore in either Native Mode or Datastore mode.",
+          "The location applies to both Datastore mode databases and App Engine apps for your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Getting started with the Firestore in Datastore mode API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "source_id": "site-iam-reference",
+        "final_score": 206,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Datastore Guides Send feedback Getting started with the Firestore in Datastore mode API Stay organized with collections Save and categorize content based on your preferences.",
+          "This page provides a short exercise in building a command-line TaskList application with the Firestore in Datastore mode API.",
+          "Datastore mode supports fast and highly scalable ACID transactions, SQL-like queries, indexes and more."
+        ]
+      },
+      {
+        "title": "Exporting and Importing Entities \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "source_id": "site-docs-root",
+        "final_score": 186,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a Cloud Storage bucket in the same location as your Firestore in Datastore mode database .",
+          "Export and import operations contribute to your Google Cloud costs in the following ways: Entity reads and writes performed by export and import operations count towards your Firestore in Datastore mode costs .",
+          "This page describes how to export and import Firestore in Datastore mode entities using the managed export and import service."
+        ]
+      },
+      {
+        "title": "Optimizing Indexes \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes",
+        "source_id": "site-iam-reference",
+        "final_score": 183,
+        "relevance": "",
+        "evidence_snippets": [
+          "By merging different sections of the built-in index for the tag property, Firestore in Datastore mode supports queries that combine multiple tag filters in a logical AND : Python from google.cloud import datastore For help authenticating your client, visit https://cloud.google.com/docs/authentication/getting-started client = datastore .",
+          "By merging built-in indexes, Firestore in Datastore mode supports queries with equality filters on multiple properties: Python from google.cloud import datastore For help authenticating your client, visit https://cloud.google.com/docs/authentication/getting-started client = datastore .",
+          "Firestore in Datastore mode supports an index merging feature that lets your database merge built-in indexes to support additional queries."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "storage.buckets.get",
+      "storage.objects.create",
+      "storage.objects.delete",
+      "storage.objects.get",
+      "storage.objects.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/store-query-data",
+        "https://docs.cloud.google.com/datastore/docs/datastore-api-tutorial",
+        "https://docs.cloud.google.com/datastore/docs/export-import-entities",
+        "https://docs.cloud.google.com/datastore/docs/concepts/optimize-indexes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.286Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

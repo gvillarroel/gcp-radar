@@ -1,0 +1,40 @@
+# Private Service Connect for southbound traffic
+
+Product: Apigee X
+Feature slug: `private-service-connect-for-southbound-traffic`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Private Service Connect enables Apigee to privately connect to target services across VPC networks for southbound traffic; Private Service Connect enables Apigee to connect to backend target services in VPC networks outside the peered network.
+
+## Lifecycle
+
+- Latest feature date: 2022-09-09
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- auth (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- authorization (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- credential (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- key (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- permission (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- policy (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- private (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- secret (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- security (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+- token (evidence: [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference), [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls), [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference](https://docs.cloud.google.com/apigee/docs/api-platform/reference/java-permission-reference)
+- [https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls](https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/options-configuring-tls)

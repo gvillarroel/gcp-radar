@@ -1,0 +1,96 @@
+{
+  "feature_name": "Java runtime Maven wrapper support",
+  "feature_slug": "java-runtime-maven-wrapper-support",
+  "summary": "The Java runtime supports using Maven wrappers to manage a project's Maven dependency.",
+  "extended_definition": "The Java runtime supports using Maven wrappers to manage a project's Maven dependency.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/docs/buildpacks/java",
+      "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+      "https://docs.cloud.google.com/docs/buildpacks/python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Building a Java application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/java",
+        "source_id": "site-docs-reference",
+        "final_score": 154,
+        "relevance": "",
+        "evidence_snippets": [
+          "To manage your project's dependency on Maven itself, you can use the Maven Wrapper .",
+          "If your application requires a specific version, you can use the GOOGLE RUNTIME VERSION environment variable to specify a JDK version: pack build sample - java -- builder = gcr . io / buildpacks / builder \\ -- env GOOGLE RUNTIME VERSION = 21 You can also use a project.toml project descriptor to encode the environment variable alongside your project files.",
+          "Manage dependencies Dependency configuration is supported for projects that use Maven or Gradle."
+        ]
+      },
+      {
+        "title": "Build a Python application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/python",
+        "source_id": "site-docs-reference",
+        "final_score": 110,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You set the GOOGLE PYTHON PACKAGE MANAGER environment variable to pip . uv buildpack : Supports Python projects you manage with uv .",
+          "Poetry buildpack : Supports Python projects you manage with Poetry .",
+          "The following is an example pyproject.toml file: [project] name = \"demo-app\" version = \"0.1.0\" description = \"\" requires-python = \">=3.10\" dependencies = [ \"flask>=3.1.1\" , \"gunicorn>=23.0.0\" , ] [build-system] requires = [ \"setuptools>=61.0\" ] build-backend = \"setuptools.build meta\" Package manager If you manage your dependencies using a requirements.txt file , the default package manager varies based on the Python version you configure."
+        ]
+      },
+      {
+        "title": "Building a Node.js application \\_|\\_ Buildpacks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/docs/buildpacks/nodejs",
+        "source_id": "site-docs-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When deploying a function onto Cloud Run functions, the engines.node property should be compatible with the runtime used to deploy your function Install dependencies NPM is the default package manager for all versions of Node.js.",
+          "Specify the yarn version in the engines.yarn field of your package.json file. buildpack supports Yarn2 PnP mode if your project includes a .yarn/cache folder.",
+          "Bun package manager The Node.js buildpack supports the Bun package manager, google.nodejs.bun buildpack for installing dependencies."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "central.storage",
+      "download.googleapis.com",
+      "engines.node",
+      "engines.yarn",
+      "lock.yaml",
+      "package.json",
+      "poetry.lock",
+      "project.toml",
+      "pyproject.toml",
+      "requirements.txt",
+      "settings.xml",
+      "setuptools.build",
+      "tool.poetry",
+      "uv.lock"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.096Z",
+  "source_step08_card": "data/step-08/current/products/buildpacks/card.json",
+  "product_name": "Buildpacks",
+  "product_slug": "buildpacks"
+}

@@ -1,0 +1,120 @@
+{
+  "feature_name": "Cloud Data Fusion instance creation tags",
+  "feature_slug": "cloud-data-fusion-instance-creation-tags",
+  "summary": "Cloud Data Fusion now allows attaching tags to instances during instance creation for immediate metadata, organization, and policy automation.",
+  "extended_definition": "Cloud Data Fusion now allows attaching tags to instances during instance creation for immediate metadata, organization, and policy automation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a public instance \\_|\\_ Cloud Data Fusion \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API Create an instance: To create a Cloud Data Fusion instance with the Cloud Data Fusion REST API , construct an instances.create API request, filling in the Instance resource with your configuration information.",
+          "Console If the API is enabled , the Cloud Data Fusion section in the Google Cloud console shows an Instances page, where you can create and manage your Cloud Data Fusion instances.",
+          "While Cloud Data Fusion creates your instance, a progress wheel displays next to the instance name on the Instances page."
+        ]
+      },
+      {
+        "title": "\"Class DataFusionClient.ListInstancesFixedSizeCollection (1.88.0) \\_|\\_ Java\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "ListInstancesFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > DataFusionClient.ListInstancesFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<DataFusionClient.ListInstancesPage> pages, int collectionSize) protected DataFusionClient .",
+          "ListInstancesPage > pages , int collectionSize ) Parameters Name Description pages List < ListInstancesPage > collectionSize int Returns Type Description DataFusionClient.ListInstancesFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListInstancesFixedSizeCollection (1.88.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Class DataFusionClient.ListInstancesPage (1.88.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage",
+        "source_id": "site-java-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "ListInstancesPage > Inheritance java.lang.Object > AbstractPage > DataFusionClient.ListInstancesPage Inherited Members AbstractPage.createPage(PageContext<RequestT,ResponseT,ResourceT>,ResponseT) AbstractPage.createPageAsync(PageContext<RequestT,ResponseT,ResourceT>,ApiFuture<ResponseT>) AbstractPage.getNextPage() AbstractPage.getNextPage(int) AbstractPage.getNextPageAsync() AbstractPage.getNextPageToken() AbstractPage.getPageElementCount() AbstractPage.getRequest() AbstractPage.getResponse() AbstractPage.getValues() AbstractPage.hasNextPage() AbstractPage.iterateAll() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createPage(PageContext<ListInstancesRequest,ListInstancesResponse,Instance> context, ListInstancesResponse response) protected DataFusionClient .",
+          "ListInstancesPage createPage ( PageContext<ListInstancesRequest , ListInstancesResponse , Instance > context , ListInstancesResponse response ) Parameters Name Description context PageContext < ListInstancesRequest , ListInstancesResponse , Instance > response ListInstancesResponse Returns Type Description DataFusionClient.ListInstancesPage Overrides AbstractPage<RequestT,ResponseT,ResourceT,PageT>.createPage(PageContext<RequestT,ResponseT,ResourceT> context, ResponseT response) createPageAsync(PageContext<ListInstancesRequest,ListInstancesResponse,Instance> context, ApiFuture<ListInstancesResponse> futureResponse) public ApiFuture<DataFusionClient .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class DataFusionClient.ListInstancesPage (1.88.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection",
+      "com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage",
+      "com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPagedResponse",
+      "instances.create",
+      "java.lang.Object"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/data-fusion/docs/how-to/create-instance",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesFixedSizeCollection",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-data-fusion/latest/com.google.cloud.datafusion.v1.DataFusionClient.ListInstancesPage"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.569Z",
+  "source_step08_card": "data/step-08/current/products/cloud-data-fusion/card.json",
+  "product_name": "Cloud Data Fusion",
+  "product_slug": "cloud-data-fusion"
+}

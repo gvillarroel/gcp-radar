@@ -1,0 +1,167 @@
+{
+  "feature_name": "Custom organization policies",
+  "feature_slug": "custom-organization-policies",
+  "summary": "Cloud SQL supports custom organization policies for instances.",
+  "extended_definition": "Cloud SQL supports custom organization policies for instances.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL organization policies \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The types of organization policies specific to Cloud SQL are as follows: Predefined organization policies Connection organization policies Customer-managed encryption keys (CMEK) organization policies Custom organization policies Predefined organization policies You can use the predefined constraints to control the public IP settings and Customer Managed Encryption Key (CMEK) settings of Cloud SQL instances.",
+          "Customer-managed encryption keys (CMEK) organization policies Cloud SQL supports two organization policy constraints that help ensure CMEK protection across an organization: constraints/gcp.restrictNonCmekServices and constraints/gcp.restrictCmekCryptoKeyProjects .",
+          "By default, you can add Authorized Networks to Cloud SQL instances. constraints/sql.restrictAuthorizedNetworks Allowed Restrictions for connection organization policies When you set the organization policy for each project, you need to determine if any one of the following apply to your project: Read replicas public IP conflicts Incompatibility using gcloud CLI sql connect Google Cloud hosted services access MySQL failover replica public IP conflicts Non-RFC 1918 private IP addresses Read replicas public IP address conflicts Cloud SQL read replicas connect to the primary instance over the non-proxied database connection."
+        ]
+      },
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "source_id": "site-docs-reference-3",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also set an Cloud SQL custom organization policy to take a final back at instance deletion for all instances in your organization and set a standard retention period.",
+          "For more information, see Example custom organization policies for common use cases .",
+          "This way, you can recreate any instances that you delete accidentally without contacting Cloud Customer Care ."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\" { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"binaryLogEnabled\": true, \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "This feature is available in Preview and for CUSTOMER MANAGED CAS CA instances only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcp.restrictCmekCryptoKeyProjects",
+      "gcp.restrictNonCmekServices",
+      "sql.restrictAuthorizedNetworks",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connection-org-policy",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

@@ -1,0 +1,178 @@
+{
+  "feature_name": "Server attribute configuration in Bare Metal Solution Order Form",
+  "feature_slug": "server-attribute-configuration-in-bare-metal-solution-order-form",
+  "summary": "Allows setting server name, type, operating system, and hyperthreading settings during order form deployment.",
+  "extended_definition": "Allows setting server name, type, operating system, and hyperthreading settings during order form deployment.",
+  "lifecycle": {
+    "latest_feature_date": "2022-01-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+      "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+      "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deployment Manager: SAP HANA scale-up high-availability cluster configuration\\",
+        "url": "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "source_id": "site-docs-reference-2",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If you are using RHEL 7.7 or earlier, the value of transport: is udpu instead of knet : totem { version: 2 cluster name: hacluster transport: knet join: 60 max messages: 20 token: 20000 token retransmits before loss const: 10 crypto cipher: aes256 crypto hash: sha256 } nodelist { node { ring0 addr: example-rha-vm1 name: example-rha-vm1 nodeid: 1 } node { ring0 addr: example-rha-vm2 name: example-rha-vm2 nodeid: 2 } } quorum { provider: corosync votequorum two node: 1 } logging { to logfile: yes logfile: /var/log/cluster/corosync.log to syslog: yes timestamp: on } SLES Display your cluster resource configurations: crm config show The automation scripts that are used by this guide create the resource configurations that are shown in the following example: node 1: example-ha-vm1 \\ attributes hana ha1 op mode=logreplay lpa ha1 lpt=1635380335 hana ha1 srmode=syncmem hana ha1 vhost=example-ha-vm1 hana ha1 remoteHost=example-ha-vm2 hana ha1 site=example-ha-vm1 node 2: example-ha-vm2 \\ attributes lpa ha1 lpt=30 hana ha1 op mode=logreplay hana ha1 vhost=example-ha-vm2 hana ha1 site=example-ha-vm2 hana ha1 srmode=syncmem hana ha1 remoteHost=example-ha-vm1 primitive STONITH-example-ha-vm1 stonith:external/gcpstonith \\ op monitor interval=300s timeout=120s \\ op start interval=0 timeout=60s \\ params instance name=example-ha-vm1 gcloud path=\"/usr/bin/gcloud\" logging=yes pcmk reboot timeout=300 pcmk monitor retries=4 pcmk delay max=30 primitive STONITH-example-ha-vm2 stonith:external/gcpstonith \\ op monitor interval=300s timeout=120s \\ op start interval=0 timeout=60s \\ params instance name=example-ha-vm2 gcloud path=\"/usr/bin/gcloud\" logging=yes pcmk reboot timeout=300 pcmk monitor retries=4 primitive rsc SAPHanaTopology HA1 HDB00 ocf:suse:SAPHanaTopology \\ operations $id=rsc sap2 HA1 HDB00-operations \\ op monitor interval=10 timeout=600 \\ op start interval=0 timeout=600 \\ op stop interval=0 timeout=300 \\ params SID=HA1 InstanceNumber=00 primitive rsc SAPHana HA1 HDB00 ocf:suse:SAPHana \\ operations $id=rsc sap HA1 HDB00-operations \\ op start interval=0 timeout=3600 \\ op stop interval=0 timeout=3600 \\ op promote interval=0 timeout=3600 \\ op demote interval=0 timeout=3600 \\ op monitor interval=60 role=Master timeout=700 \\ op monitor interval=61 role=Slave timeout=700 \\ params SID=HA1 InstanceNumber=00 PREFER SITE TAKEOVER=true DUPLICATE PRIMARY TIMEOUT=7200 AUTOMATED REGISTER=true primitive rsc vip hc-primary anything \\ params binfile=\"/usr/bin/socat\" cmdline options=\"-U TCP-LISTEN:60000,backlog=10,fork,reuseaddr /dev/null\" \\ op monitor timeout=20s interval=10s \\ op params depth=0 primitive rsc vip int-primary IPaddr2 \\ params ip=10.128.15.101 cidr netmask=32 nic=eth0 \\ op monitor interval=3600s timeout=60s group g-primary rsc vip int-primary rsc vip hc-primary ms msl SAPHana HA1 HDB00 rsc SAPHana HA1 HDB00 \\ meta notify=true clone-max=2 clone-node-max=1 target-role=Started interleave=true clone cln SAPHanaTopology HA1 HDB00 rsc SAPHanaTopology HA1 HDB00 \\ meta clone-node-max=1 target-role=Started interleave=true location LOC STONITH example-ha-vm1 STONITH-example-ha-vm1 -inf: example-ha-vm1 location LOC STONITH example-ha-vm2 STONITH-example-ha-vm2 -inf: example-ha-vm2 colocation col saphana ip HA1 HDB00 4000: g-primary:Started msl SAPHana HA1 HDB00:Master order ord SAPHana HA1 HDB00 Optional: cln SAPHanaTopology HA1 HDB00 msl SAPHana HA1 HDB00 property cib-bootstrap-options: \\ have-watchdog=false \\ dc-version=\"1.1.24+20210811.f5abda0ee-3.18.1-1.1.24+20210811.f5abda0ee\" \\ cluster-infrastructure=corosync \\ cluster-name=hacluster \\ maintenance-mode=false \\ stonith-timeout=300s \\ stonith-enabled=true rsc defaults rsc-options: \\ resource-stickiness=1000 \\ migration-threshold=5000 op defaults op-options: \\ timeout=600 Display your cluster configuration file, corosync.conf : cat /etc/corosync/corosync.conf The automation scripts that are used by this guide specify parameters settings in the corosync.conf file as shown in the following example: totem { version: 2 secauth: off crypto hash: sha1 crypto cipher: aes256 cluster name: hacluster clear node high bit: yes token: 20000 token retransmits before loss const: 10 join: 60 max messages: 20 transport: udpu interface { ringnumber: 0 bindnetaddr: 10.128.1.63 mcastport: 5405 ttl: 1 } } logging { fileline: off to stderr: no to logfile: no logfile: /var/log/cluster/corosync.log to syslog: yes debug: off timestamp: on logger subsys { subsys: QUORUM debug: off } } nodelist { node { ring0 addr: example-ha-vm1 nodeid: 1 } node { ring0 addr: example-ha-vm2 nodeid: 2 } } quorum { provider: corosync votequorum expected votes: 2 two node: 1 } Check the load balancer and the health of the instance groups To confirm that the load balancer and health check were set up correctly, check the load balancer and instance groups in the Google Cloud console.",
+          "Cluster Name: hacluster Corosync Nodes: example-rha-vm1 example-rha-vm2 Pacemaker Nodes: example-rha-vm1 example-rha-vm2 Resources: Group: g-primary Resource: rsc healthcheck HA1 (class=service type=haproxy) Operations: monitor interval=10s timeout=20s (rsc healthcheck HA1-monitor-interval-10s) start interval=0s timeout=100 (rsc healthcheck HA1-start-interval-0s) stop interval=0s timeout=100 (rsc healthcheck HA1-stop-interval-0s) Resource: rsc vip HA1 00 (class=ocf provider=heartbeat type=IPaddr2) Attributes: cidr netmask=32 ip=10.128.15.100 nic=eth0 Operations: monitor interval=3600s timeout=60s (rsc vip HA1 00-monitor-interval-3600s) start interval=0s timeout=20s (rsc vip HA1 00-start-interval-0s) stop interval=0s timeout=20s (rsc vip HA1 00-stop-interval-0s) Clone: SAPHanaTopology HA1 00-clone Meta Attrs: clone-max=2 clone-node-max=1 interleave=true Resource: SAPHanaTopology HA1 00 (class=ocf provider=heartbeat type=SAPHanaTopology) Attributes: InstanceNumber=00 SID=HA1 Operations: methods interval=0s timeout=5 (SAPHanaTopology HA1 00-methods-interval-0s) monitor interval=10 timeout=600 (SAPHanaTopology HA1 00-monitor-interval-10) reload interval=0s timeout=5 (SAPHanaTopology HA1 00-reload-interval-0s) start interval=0s timeout=600 (SAPHanaTopology HA1 00-start-interval-0s) stop interval=0s timeout=300 (SAPHanaTopology HA1 00-stop-interval-0s) Clone: SAPHana HA1 00-clone Meta Attrs: promotable=true Resource: SAPHana HA1 00 (class=ocf provider=heartbeat type=SAPHana) Attributes: AUTOMATED REGISTER=true DUPLICATE PRIMARY TIMEOUT=7200 InstanceNumber=00 PREFER SITE TAKEOVER=true SID=HA1 Meta Attrs: clone-max=2 clone-node-max=1 interleave=true notify=true Operations: demote interval=0s timeout=3600 (SAPHana HA1 00-demote-interval-0s) methods interval=0s timeout=5 (SAPHana HA1 00-methods-interval-0s) monitor interval=61 role=Slave timeout=700 (SAPHana HA1 00-monitor-interval-61) monitor interval=59 role=Master timeout=700 (SAPHana HA1 00-monitor-interval-59) promote interval=0s timeout=3600 (SAPHana HA1 00-promote-interval-0s) reload interval=0s timeout=5 (SAPHana HA1 00-reload-interval-0s) start interval=0s timeout=3600 (SAPHana HA1 00-start-interval-0s) stop interval=0s timeout=3600 (SAPHana HA1 00-stop-interval-0s) Stonith Devices: Resource: STONITH-example-rha-vm1 (class=stonith type=fence gce) Attributes: pcmk delay max=30 pcmk monitor retries=4 pcmk reboot timeout=300 port=example-rha-vm1 project=sap-certification-env zone=us-central1-a Operations: monitor interval=300s timeout=120s (STONITH-example-rha-vm1-monitor-interval-300s) start interval=0 timeout=60s (STONITH-example-rha-vm1-start-interval-0) Resource: STONITH-example-rha-vm2 (class=stonith type=fence gce) Attributes: pcmk monitor retries=4 pcmk reboot timeout=300 port=example-rha-vm2 project=sap-certification-env zone=us-central1-c Operations: monitor interval=300s timeout=120s (STONITH-example-rha-vm2-monitor-interval-300s) start interval=0 timeout=60s (STONITH-example-rha-vm2-start-interval-0) Fencing Levels: Location Constraints: Resource: STONITH-example-rha-vm1 Disabled on: example-rha-vm1 (score:-INFINITY) (id:location-STONITH-example-rha-vm1-example-rha-vm1--INFINITY) Resource: STONITH-example-rha-vm2 Disabled on: example-rha-vm2 (score:-INFINITY) (id:location-STONITH-example-rha-vm2-example-rha-vm2--INFINITY) Ordering Constraints: start SAPHanaTopology HA1 00-clone then start SAPHana HA1 00-clone (kind:Mandatory) (non-symmetrical) (id:order-SAPHanaTopology HA1 00-clone-SAPHana HA1 00-clone-mandatory) Colocation Constraints: g-primary with SAPHana HA1 00-clone (score:4000) (rsc-role:Started) (with-rsc-role:Master) (id:colocation-g-primary-SAPHana HA1 00-clone-4000) Ticket Constraints: Alerts: No alerts defined Resources Defaults: migration-threshold=5000 resource-stickiness=1000 Operations Defaults: timeout=600s Cluster Properties: cluster-infrastructure: corosync cluster-name: hacluster dc-version: 2.0.2-3.el8 1.2-744a30d655 have-watchdog: false stonith-enabled: true stonith-timeout: 300s Quorum: Options: Display your cluster configuration file, corosync.conf : cat /etc/corosync/corosync.conf The following example shows the parameters that the automation scripts set for RHEL 8.1 and later.",
+          "RHEL [root@example-ha-vm1 ]# df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 0 126G 0% /dev tmpfs 126G 54M 126G 1% /dev/shm tmpfs 126G 25M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda2 30G 5.4G 25G 18% / /dev/sda1 200M 6.9M 193M 4% /boot/efi /dev/mapper/vg hana-shared 251G 52G 200G 21% /hana/shared /dev/mapper/vg hana-sap 32G 477M 32G 2% /usr/sap /dev/mapper/vg hana-data 426G 9.8G 417G 3% /hana/data /dev/mapper/vg hana-log 125G 7.0G 118G 6% /hana/log /dev/mapper/vg hanabackup-backup 512G 9.3G 503G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/899 tmpfs 26G 0 26G 0% /run/user/1003 SLES example-ha-vm1: # df -h Filesystem Size Used Avail Use% Mounted on devtmpfs 126G 8.0K 126G 1% /dev tmpfs 189G 54M 189G 1% /dev/shm tmpfs 126G 34M 126G 1% /run tmpfs 126G 0 126G 0% /sys/fs/cgroup /dev/sda3 30G 5.4G 25G 18% / /dev/sda2 20M 2.9M 18M 15% /boot/efi /dev/mapper/vg hana-shared 251G 50G 202G 20% /hana/shared /dev/mapper/vg hana-sap 32G 281M 32G 1% /usr/sap /dev/mapper/vg hana-data 426G 8.0G 418G 2% /hana/data /dev/mapper/vg hana-log 125G 4.3G 121G 4% /hana/log /dev/mapper/vg hanabackup-backup 512G 6.4G 506G 2% /hanabackup tmpfs 26G 0 26G 0% /run/user/473 tmpfs 26G 0 26G 0% /run/user/900 tmpfs 26G 0 26G 0% /run/user/0 tmpfs 26G 0 26G 0% /run/user/1003 Check the status of the new cluster by entering the status command that is specific to your operating system: RHEL pcs status SLES crm status You should see results similar to the following the example, in which both VM instances are started and example-ha-vm1 is the active primary instance: RHEL [root@example-ha-vm1 ]# pcs status Cluster name: hacluster Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.3-5.el8 2.4-4b1f869f0f) - partition with quorum Last updated: Wed Jul 7 23:05:11 2021 Last change: Wed Jul 7 23:04:43 2021 by root via crm attribute on example-ha-vm2 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:fence gce): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:fence gce): Started example-ha-vm1 Resource Group: g-primary: rsc healthcheck HA1 (service:haproxy): Started example-ha-vm2 rsc vip HA1 00 (ocf::heartbeat:IPaddr2): Started example-ha-vm2 Clone Set: SAPHanaTopology HA1 00-clone [SAPHanaTopology HA1 00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: SAPHana HA1 00-clone [SAPHana HA1 00] (promotable): Masters: [ example-ha-vm2 ] Slaves: [ example-ha-vm1 ] Failed Resource Actions: rsc healthcheck HA1 start 0 on example-ha-vm1 'error' (1): call=29, status='complete', exitreason='', last-rc-change='2021-07-07 21:07:35Z', queued=0ms, exec=2097ms SAPHana HA1 00 monitor 61000 on example-ha-vm1 'not running' (7): call=44, status='complete', exitreason='', last-rc-change='2021-07-07 21:09:49Z', queued=0ms, exec=0ms Daemon Status: corosync: active/enabled pacemaker: active/enabled pcsd: active/enabled SLES example-ha-vm1: # crm status Cluster Summary: Stack: corosync Current DC: example-ha-vm1 (version 2.0.4+20200616.2deceaa3a-3.9.1-2.0.4+20200616.2deceaa3a) - partition with quorum Last updated: Wed Jul 7 22:57:59 2021 Last change: Wed Jul 7 22:57:03 2021 by root via crm attribute on example-ha-vm1 2 nodes configured 8 resource instances configured Node List: Online: [ example-ha-vm1 example-ha-vm2 ] Full List of Resources: STONITH-example-ha-vm1 (stonith:external/gcpstonith): Started example-ha-vm2 STONITH-example-ha-vm2 (stonith:external/gcpstonith): Started example-ha-vm1 Resource Group: g-primary: rsc vip int-primary (ocf::heartbeat:IPaddr2): Started example-ha-vm1 rsc vip hc-primary (ocf::heartbeat:anything): Started example-ha-vm1 Clone Set: cln SAPHanaTopology HA1 HDB00 [rsc SAPHanaTopology HA1 HDB00]: Started: [ example-ha-vm1 example-ha-vm2 ] Clone Set: msl SAPHana HA1 HDB00 [rsc SAPHana HA1 HDB00] (promotable): Masters: [ example-ha-vm1 ] Slaves: [ example-ha-vm2 ] Change to the SAP admin user by replacing SID LC in the following command with the SID value that you specified in the configuration file template."
+        ]
+      },
+      {
+        "title": "Maintain the Bare Metal Solution environment \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "source_id": "site-docs-reference",
+        "final_score": 127,
+        "relevance": "",
+        "evidence_snippets": [
+          "NAME PROJECT REGION MACHINE TYPE IP ADDRESSES STATE SERVER NAME PROJECT ID REGION o2-standard-32-metal 192.168.1.1,192.168.2.1 RUNNING Additional command options include: --region : View devices in a specific Google Cloud region. --limit : Limit the output to show a specific number of devices To get network and storage information for a specific server in your Bare Metal Solution environment, enter your server name, project ID, and region, and issue the gcloud bms instances describe command: gcloud bms instances describe SERVER NAME --project= PROJECT ID --region= REGION The following output example shows an operational server with 12 LUNs, a client network of 192.168.1.1, and a private network of 192.168.2.1. luns: - bootLun: true name: SERVER NAME -lun000-b1 sizeGb: '200' state: READY storageVolume: SERVER NAME -vol000-b1 - name: STORAGE DEVICE NAME -lun001 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun002 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun003 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun004 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun005 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun006 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun007 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun008 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun009 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun010 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun011 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 - name: STORAGE DEVICE NAME -lun012 sizeGb: '85' state: READY storageVolume: STORAGE DEVICE NAME -vol001 machineType: o2-standard-32-metal name: projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME networks: - ipAddress: 192.168.1.1 macAddress: - 34:80:0D:52:AF:28 - 34:80:0D:15:3E:0D network: STORAGE DEVICE NAME -vlan001 - ipAddress: 192.168.2.1 macAddress: - 34:80:0D:52:AF:38 - 34:80:0D:15:3E:1D network: STORAGE DEVICE NAME -vlan002 state: RUNNING API Open a Cloud Shell terminal window in your Google Cloud console.",
+          "SQL> alter diskgroup DEMO drop disk DEMO 0001 rebalance power 5; Diskgroup altered. col diskgroup for a15 col diskname for a15 col path for a35 select a.name DiskGroup,b.name DiskName, b.total mb, (b.total mb-b.free mb) Used MB, b.free mb,b.path,b.header status from v$asm disk b, v$asm diskgroup a where a.group number (+) =b.group number order by b.group number,b.name; DISKGROUP DISKNAME TOTAL MB USED MB FREE MB PATH HEADER STATU --------------- --------------- ---------- ---------- ---------- ----------------------------------- ------------ 0 0 0 /dev/asmdisks/DEMO2 FORMER DATA DATA 0000 25600 5676 19924 /dev/asmdisks/DATA1 MEMBER DEMO DEMO 0000 25600 64 25536 /dev/asmdisks/DEMO1 MEMBER RECO RECO 0000 25600 3896 21704 /dev/asmdisks/RECO1 MEMBER SQL> exit (Perform this step on all nodes in the cluster.) Remove all the references to the disk from the /etc/udev/rules.d/99-oracle-asmdevices.rules file.",
+          "To list the servers in your Bare Metal Solution environment and see their status, enter your project ID and region into the following curl command, copy the command, paste it into the Cloud Shell prompt, and press the Enter or Return key: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances\" To get network and storage information for a server in your Bare Metal Solution environment, issue the following command: curl -X GET \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://baremetalsolution.googleapis.com/v2/projects/ PROJECT ID /locations/ REGION /instances/ SERVER NAME \" Organize servers by using labels To help organize your servers, you can use labels."
+        ]
+      },
+      {
+        "title": "Order Bare Metal Solution resources \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources",
+        "source_id": "site-docs-reference",
+        "final_score": 126,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can use procurements to order the following Bare Metal Solution resources: Servers ( available server configurations ) Storage ( available storage choices ) Partner Interconnect bandwidth To procure any other Bare Metal Solution resource, contact Google Cloud sales .",
+          "For information about the types of servers available, see Server configurations .",
+          "After you've executed a simplified, one-time Bare Metal Solution Order Form, you can order your Bare Metal Solution resources online by creating procurements through the Google Cloud console."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.group",
+      "a.name",
+      "asmdevices.rules",
+      "b.free",
+      "b.group",
+      "b.header",
+      "b.name",
+      "b.path",
+      "b.total",
+      "baremetalsolution.googleapis.com",
+      "corosync.conf",
+      "corosync.log",
+      "global.ini",
+      "indexserver.ini",
+      "rules.d"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sap/docs/sap-hana-ha-deployment-guide",
+        "https://docs.cloud.google.com/bare-metal/docs/bms-maintenance",
+        "https://docs.cloud.google.com/bare-metal/docs/order-bms-resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.420Z",
+  "source_step08_card": "data/step-08/current/products/bare-metal-solution/card.json",
+  "product_name": "Bare Metal Solution",
+  "product_slug": "bare-metal-solution"
+}

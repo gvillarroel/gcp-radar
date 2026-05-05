@@ -1,0 +1,108 @@
+{
+  "feature_name": "Remote API OAuth2 credentials support",
+  "feature_slug": "remote-api-oauth2-credentials-support",
+  "summary": "The Remote API now supports OAuth2 authentication using Application Default Credentials.",
+  "extended_definition": "The Remote API now supports OAuth2 authentication using Application Default Credentials.",
+  "lifecycle": {
+    "latest_feature_date": "2015-08-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/access-control",
+      "https://docs.cloud.google.com/appengine/docs/standard/php7/granting-project-access"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "source_id": "site-docs-reference",
+        "final_score": 82,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Here's an example of creating a client for Cloud Storage: Go // implicit uses Application Default Credentials to authenticate. func implicit () { ctx := context .",
+          "You can override this default flow by doing any of the following: Set the GOOGLE APPLICATION CREDENTIALS environment variable.",
+          "Client () Make an authenticated API request buckets = list ( storage client . list buckets ()) print ( buckets ) Ruby project id = \"Your Google Cloud project ID\" require \"google/cloud/storage\" If you don't specify credentials when constructing the client, the client library will look for credentials in the environment. storage = Google :: Cloud :: Storage . new project : project id Make an authenticated API request storage . buckets . each do bucket puts bucket . name end By default, the app's environment contains credentials from the default App Engine service account ."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/access-control",
+        "source_id": "site-docs-reference-4",
+        "final_score": 82,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Here's an example of creating a client for Cloud Storage: Go // implicit uses Application Default Credentials to authenticate. func implicit () { ctx := context .",
+          "You can override this default flow by doing any of the following: Set the GOOGLE APPLICATION CREDENTIALS environment variable.",
+          "Client () Make an authenticated API request buckets = list ( storage client . list buckets ()) print ( buckets ) Ruby project id = \"Your Google Cloud project ID\" require \"google/cloud/storage\" If you don't specify credentials when constructing the client, the client library will look for credentials in the environment. storage = Google :: Cloud :: Storage . new project : project id Make an authenticated API request storage . buckets . each do bucket puts bucket . name end By default, the app's environment contains credentials from the default App Engine service account ."
+        ]
+      },
+      {
+        "title": "\"Setting up access control \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/php7/granting-project-access",
+        "source_id": "site-docs-reference-4",
+        "final_score": 82,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Here's an example of creating a client for Cloud Storage: Go // implicit uses Application Default Credentials to authenticate. func implicit () { ctx := context .",
+          "You can override this default flow by doing any of the following: Set the GOOGLE APPLICATION CREDENTIALS environment variable.",
+          "Client () Make an authenticated API request buckets = list ( storage client . list buckets ()) print ( buckets ) Ruby project id = \"Your Google Cloud project ID\" require \"google/cloud/storage\" If you don't specify credentials when constructing the client, the client library will look for credentials in the environment. storage = Google :: Cloud :: Storage . new project : project id Make an authenticated API request storage . buckets . each do bucket puts bucket . name end By default, the app's environment contains credentials from the default App Engine service account ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/granting-project-access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/granting-project-access"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/access-control",
+        "https://docs.cloud.google.com/appengine/docs/standard/php7/granting-project-access"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.136Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-php/card.json",
+  "product_name": "App Engine standard environment PHP",
+  "product_slug": "app-engine-standard-environment-php"
+}

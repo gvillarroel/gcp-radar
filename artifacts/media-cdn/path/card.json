@@ -1,0 +1,140 @@
+{
+  "feature_name": "path",
+  "feature_slug": "path",
+  "summary": "Media CDN can invalidate cached content by host, path, or tag, with tag-based invalidation supporting status codes, MIME type, and origin.",
+  "extended_definition": "Media CDN can invalidate cached content by host, path, or tag, with tag-based invalidation supporting status codes, MIME type, and origin.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+      "https://docs.cloud.google.com/media-cdn/docs/caching",
+      "https://docs.cloud.google.com/media-cdn/docs/overview",
+      "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Invalidate cached content \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "source_id": "site-docs-root",
+        "final_score": 317,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Media CDN supports multiple ways of selecting content to be invalidated, as follows: Host and URL path URL prefix (wildcard) Cache tags, including built-in tags for status , origin , and content-type You can combine these invalidation parameters to target specific cached responses and minimize origin load on the subsequent cache fill.",
+          "Supported invalidation syntax The supported invalidation syntax is as follows: Type Syntax Example Host invalidation Invalidate cached responses for the specified host. gcloud edge-cache services invalidate-cache SERVICE NAME \\ --host=\"media.example.com\" Path invalidation Invalidate cached responses for the specified path or path prefix. gcloud edge-cache services invalidate-cache SERVICE NAME \\ --path=\"/content/1234/hls/ \" gcloud edge-cache services invalidate-cache SERVICE NAME \\ --path=\"/videos/funny.mp4\" Cache tag invalidation on HTTP status code, origin name, or MIME type Invalidate cached responses with a matching tag.",
+          "Cache tag limitations Cache tags have the following restrictions: Must not exceed 120 bytes per tag Must not exceed 4 KiB (4096 bytes) of total tag names per cached object Must not exceed 50 tags per object, not including default tags added by Media CDN Must be a valid HTTP token name, as defined in Section 3.2.6 of HTTP RFC 7230 Must not include the built-in status= , origin= , or content-type= prefixes (which are ignored)."
+        ]
+      },
+      {
+        "title": "Configure caching behavior \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "source_id": "site-docs-root",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To maximize client performance and origin offload, Media CDN can serve the requested individual byte ranges from its cache, consolidating them into a single response with an HTTP 206 Partial Response status code to the client with the Content-Type set to multipart/byteranges .",
+          "For popular content, Media CDN revalidates that the cached response is the latest version by issuing a HEAD request to the origin to confirm that the headers have not changed.",
+          "In other cases, such as when interoperability with DASH is not required, the media playlist indicates to the player which bytes represent each chunk: #EXTINF:4.08, fs270.mp4 #EXT-X-PART:DURATION=1.02,URI=\"fs271.mp4\",BYTERANGE=20000@0 #EXT-X-PART:DURATION=1.02,URI=\"fs271.mp4\",BYTERANGE=23000@20000 #EXT-X-PART:DURATION=1.02,URI=\"fs271.mp4\",BYTERANGE=18000@43000 #EXT-X-PRELOAD-HINT:TYPE=PART,URI=\"fs271.mp4\",BYTERANGE-START=61000 You can configure how long Media CDN waits between reads by using the EdgeCacheOrigin.timeouts.readTimeout configuration value."
+        ]
+      },
+      {
+        "title": "Media CDN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Media CDN supports the following ways of invalidating content: By host and URL path By URL prefix and wildcard By cache tags, including built-in tags for status, origin, and media type You can combine the invalidation parameters to target specific cached responses and to minimize origin load on the subsequent cache fill.",
+          "You can use Media CDN with your existing origin infrastructure, whether the content is hosted within Cloud Storage, in another cloud, or within your on-premises infrastructure.",
+          "Extensibility Media CDN lets you add custom code to the request-response processing path by using Service Extensions plugins ( Preview )."
+        ]
+      },
+      {
+        "title": "Set up a Media CDN service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 229,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Such a file indicates the following: How routing works—by first matching the host and then the path How caching works—based on the cache mode and TTL How requests and responses are modified—for example, by inserting the cdn cache status variable into a response header Paste the following sample content into the file, and then save it: name : SERVICE routing : hostRules : - hosts : - DOMAIN pathMatcher : routes pathMatchers : - name : routes routeRules : - priority : 1 matchRules : - prefixMatch : / origin : ORIGIN routeAction : cdnPolicy : cacheMode : CACHE ALL STATIC defaultTtl : 3600s headerAction : responseHeadersToAdd : - headerName : \"x-cache-status\" headerValue : \"{cdn cache status}\" Replace the following: SERVICE : name of the service DOMAIN : the domain for the new service If you specify the domain name, Media CDN responds with a 404 error for other hosts.",
+          "The retrieved details include the IP addresses assigned to the service: ipv4Addresses: IPV4 ADDRESS ipv6Addresses: IPV6 ADDRESS Test whether a response is being cached Before testing the service, make sure that you have cacheable content stored at your origin so that Media CDN can retrieve it.",
+          "Note: Media CDN can take up to 10 minutes to create the service API Use the edgeCacheServices.create method : POST https://networkservices.googleapis.com/v1/ PARENT /edgeCacheServices?edgeCacheServiceId= SERVICE ID { \"name\": \" SERVICE ID \", \"routing\": { \"hostRules\": [ { \"hosts\": [\" DOMAIN \"], \"pathMatcher\": \"routes\" } ], \"pathMatchers\": [ { \"name\": \"routes\", \"routeRules\": [ { \"priority\": \"1\", \"matchRules\": [ { \"prefixMatch\": \"/\" } ], \"origin\": \" ORIGIN \", \"routeAction\": { \"cdnPolicy\": { \"cacheMode\": \"CACHE ALL STATIC\", \"defaultTtl\": \"3600s\" } } \"headerAction\": { \"responseHeadersToAdd\": [ { \"headerName\": \"x-cache-status\", \"headerValue\": \"{cdn cache status}\" } ] }, } ] } ] } } Replace the following: PARENT : the parent resource in the format projects/ PROJECT /locations/global SERVICE ID : the name of the service DOMAIN : the domain for the new service If you specify the domain name, Media CDN responds with a 404 error for other hosts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "fs270.mp4",
+      "fs271.mp4",
+      "funny.mp4",
+      "googlecloudexample.com",
+      "media.example.com",
+      "networkservices.googleapis.com",
+      "origin.default.name",
+      "timeouts.readTimeout"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.909Z",
+  "source_step08_card": "data/step-08/current/products/media-cdn/card.json",
+  "product_name": "Media CDN",
+  "product_slug": "media-cdn"
+}

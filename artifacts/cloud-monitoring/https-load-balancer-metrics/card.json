@@ -1,0 +1,120 @@
+{
+  "feature_name": "HTTPS Load Balancer Metrics",
+  "feature_slug": "https-load-balancer-metrics",
+  "summary": "Monitoring supports metrics for HTTPS load balancers; Monitoring supports metrics for HTTPS load balancers.",
+  "extended_definition": "Monitoring supports metrics for HTTPS load balancers; Monitoring supports metrics for HTTPS load balancers.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Application Monitoring supported infrastructure \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "Layer 7 external and internal Application Load Balancers with HTTP or HTTPS traffic (Global, regional, and cross region) Traffic : Based on a Cloud Load Balancing metric type that records the request count, like https/request count .",
+          "For Application Load Balancers, only forwarding rules and backend services are integrated with App Hub.",
+          "The dashboards that Application Monitoring creates display log and metric data, including the following golden signals, when that data includes application-specific labels: Traffic : Incoming request rates on the service or workload over the selected time period."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "The agent supports the following Windows operating systems: Windows Server: windows-2016, windows-2019, windows-2022, windows-2025 Windows Server Core: windows-2016-core, windows-2019-core, windows-20h2-core, windows-2022-core, windows-2025-core Agent access requirements Installing the agent requires access to the following DNS names: Google Cloud package repository: packages.cloud.google.com Google downloads subdomain: dl.google.com Running the agent requires access to the following DNS names: OAuth2 token server: oauth2.googleapis.com Earlier versions of the agent may require access to www.googleapis.com (full URL: https://www.googleapis.com/oauth2/v3/token ).",
+          "Combining the collection of logs, metrics, and traces into a single process, the Ops Agent uses Fluent Bit for logs, which supports high-throughput logging, and the OpenTelemetry Collector for metrics and traces.",
+          "The Cloud Monitoring Metrics Management page provides information that can help you control the amount you spend on billable metrics without affecting observability."
+        ]
+      },
+      {
+        "title": "\"Class MetricServiceAsyncClient (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 94,
+        "relevance": "",
+        "evidence_snippets": [
+          "User-created metric descriptors define custom metrics <https://cloud.google.com/monitoring/custom-metrics> .",
+          "Only user-created custom metrics <https://cloud.google.com/monitoring/custom-metrics> can be deleted.",
+          "The new custom metric https://cloud.google.com/monitoring/custom-metrics descriptor."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dl.google.com",
+      "googleapis.dev",
+      "oauth2.googleapis.com",
+      "options.html",
+      "packages.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.metric_service.MetricServiceAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

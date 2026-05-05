@@ -1,0 +1,156 @@
+{
+  "feature_name": "FQDN Network Policy",
+  "feature_slug": "fqdn-network-policy",
+  "summary": "GKE network policy can match a fully qualified domain name or regular expression to control Pod egress traffic.",
+  "extended_definition": "GKE network policy can match a fully qualified domain name or regular expression to control Pod egress traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2023-06-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "source_id": "site-api-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "NetworkConfig JSON representation { \"network\" : string , \"subnetwork\" : string , \"enableIntraNodeVisibility\" : boolean , \"defaultSnatStatus\" : { object ( DefaultSnatStatus ) } , \"enableL4ilbSubsetting\" : boolean , \"datapathProvider\" : enum ( DatapathProvider ) , \"privateIpv6GoogleAccess\" : enum ( PrivateIPv6GoogleAccess ) , \"dnsConfig\" : { object ( DNSConfig ) } , \"serviceExternalIpsConfig\" : { object ( ServiceExternalIPsConfig ) } , \"gatewayApiConfig\" : { object ( GatewayAPIConfig ) } , \"enableMultiNetworking\" : boolean , \"networkPerformanceConfig\" : { object ( ClusterNetworkPerformanceConfig ) } , // Union field enable fqdn network policy can be only one of the following: \"enableFqdnNetworkPolicy\" : boolean // End of list of possible types for union field enable fqdn network policy . // Union field in transit encryption config can be only one of the following: \"inTransitEncryptionConfig\" : enum ( InTransitEncryptionConfig ) // End of list of possible types for union field in transit encryption config . // Union field enable cilium clusterwide network policy can be only one of the // following: \"enableCiliumClusterwideNetworkPolicy\" : boolean // End of list of possible types for union field // enable cilium clusterwide network policy . // Union field default enable private nodes can be only one of the following: \"defaultEnablePrivateNodes\" : boolean // End of list of possible types for union field default enable private nodes . // Union field disable l4 lb firewall reconciliation can be only one of the // following: \"disableL4LbFirewallReconciliation\" : boolean // End of list of possible types for union field // disable l4 lb firewall reconciliation . } Fields network string Output only.",
+          "CertificateAuthorityDomainConfig JSON representation { \"fqdns\" : [ string ] , // Union field certificate config can be only one of the following: \"gcpSecretManagerCertificateConfig\" : { object ( GCPSecretManagerCertificateConfig ) } // End of list of possible types for union field certificate config . } Fields fqdns[] string List of fully qualified domain names (FQDN).",
+          "Union field enable fqdn network policy . enable fqdn network policy can be only one of the following: enableFqdnNetworkPolicy boolean Whether FQDN Network Policy is enabled on this cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "source_id": "site-api-reference",
+        "final_score": 189,
+        "relevance": "",
+        "evidence_snippets": [
+          "NetworkConfig JSON representation { \"network\" : string , \"subnetwork\" : string , \"enableIntraNodeVisibility\" : boolean , \"defaultSnatStatus\" : { object ( DefaultSnatStatus ) } , \"enableL4ilbSubsetting\" : boolean , \"datapathProvider\" : enum ( DatapathProvider ) , \"privateIpv6GoogleAccess\" : enum ( PrivateIPv6GoogleAccess ) , \"dnsConfig\" : { object ( DNSConfig ) } , \"serviceExternalIpsConfig\" : { object ( ServiceExternalIPsConfig ) } , \"gatewayApiConfig\" : { object ( GatewayAPIConfig ) } , \"enableMultiNetworking\" : boolean , \"networkPerformanceConfig\" : { object ( ClusterNetworkPerformanceConfig ) } , // Union field enable fqdn network policy can be only one of the following: \"enableFqdnNetworkPolicy\" : boolean // End of list of possible types for union field enable fqdn network policy . // Union field in transit encryption config can be only one of the following: \"inTransitEncryptionConfig\" : enum ( InTransitEncryptionConfig ) // End of list of possible types for union field in transit encryption config . // Union field enable cilium clusterwide network policy can be only one of the // following: \"enableCiliumClusterwideNetworkPolicy\" : boolean // End of list of possible types for union field // enable cilium clusterwide network policy . // Union field default enable private nodes can be only one of the following: \"defaultEnablePrivateNodes\" : boolean // End of list of possible types for union field default enable private nodes . // Union field disable l4 lb firewall reconciliation can be only one of the // following: \"disableL4LbFirewallReconciliation\" : boolean // End of list of possible types for union field // disable l4 lb firewall reconciliation . } Fields network string Output only.",
+          "CertificateAuthorityDomainConfig JSON representation { \"fqdns\" : [ string ] , // Union field certificate config can be only one of the following: \"gcpSecretManagerCertificateConfig\" : { object ( GCPSecretManagerCertificateConfig ) } // End of list of possible types for union field certificate config . } Fields fqdns[] string List of fully qualified domain names (FQDN).",
+          "Union field enable fqdn network policy . enable fqdn network policy can be only one of the following: enableFqdnNetworkPolicy boolean Whether FQDN Network Policy is enabled on this cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: container.googleapis.com \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool",
+        "source_id": "site-api-reference",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "CertificateAuthorityDomainConfig JSON representation { \"fqdns\" : [ string ] , // Union field certificate config can be only one of the following: \"gcpSecretManagerCertificateConfig\" : { object ( GCPSecretManagerCertificateConfig ) } // End of list of possible types for union field certificate config . } Fields fqdns[] string List of fully qualified domain names (FQDN).",
+          "It supports fully qualified domain names (FQDN) and IP addresses: Specifying port is supported.",
+          "It supports fully qualified domain names (FQDN) and IP addresses: Specifying port is supported."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "container.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/get_node_pool"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

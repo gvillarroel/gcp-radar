@@ -1,0 +1,136 @@
+{
+  "feature_name": "launcher.gcr.io container registry",
+  "feature_slug": "launcher-gcr-io-container-registry",
+  "summary": "The launcher.gcr.io container registry is deprecated for Marketplace container deployments; deprecated on 2018-07-18.",
+  "extended_definition": "The launcher.gcr.io container registry is deprecated for Marketplace container deployments; deprecated on 2018-07-18.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-18",
+    "deprecation_date": "2018-07-18",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/marketplace/docs/container-images",
+      "https://docs.cloud.google.com/marketplace/docs/partners",
+      "https://docs.cloud.google.com/marketplace/docs/partners/develop",
+      "https://docs.cloud.google.com/marketplace/docs/transaction-models"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploying container images from Google Cloud Marketplace to Kubernetes or\\",
+        "url": "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "source_id": "site-iam-reference",
+        "final_score": 215,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "As of July 18, 2018, the container registry launcher.gcr.io and its alias l.gcr.io are deprecated.",
+          "Set up authentication for Container Registry, using the following command: gcloud auth configure-docker Deploy a container The following sections describe how to deploy to Kubernetes and to Docker.",
+          "Verify that kubectl can connect to the clusters While Minikube is running (after running minikube start ), you can use the following command to check if your nodes are running: kubectl get nodes Follow the getting started documentation for the container in the Kubernetes section Each container product on Cloud Marketplace contains a getting started guide."
+        ]
+      },
+      {
+        "title": "Develop \\_|\\_ Google Cloud Marketplace Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners/develop",
+        "source_id": "site-api-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[],[],[]]",
+          "Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Kubernetes and GKE Enterprise apps Containerized apps that your users can run in a Kubernetes cluster on Google Kubernetes Engine, or on their own infrastructure."
+        ]
+      },
+      {
+        "title": "Transaction models \\_|\\_ Google Cloud Marketplace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/marketplace/docs/transaction-models",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "Your Google Cloud organization's payment profile is located in one of the following countries: The United Kingdom Germany France For all other transactions, you continue to receive a single invoice from Google for your Cloud Marketplace transactions and your usage of Google products and services.",
+          "When you make a transaction through Cloud Marketplace, Cloud Marketplace notifies you during the purchasing process that it is using either the agency model or the Merchant of Record model for that transaction."
+        ]
+      },
+      {
+        "title": "Google Cloud Marketplace Partners documentation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/marketplace/docs/partners",
+        "source_id": "site-api-reference",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Documentation resources Find quickstarts and guides, review key references, and get help with common issues. follow the signs Get started Offer products through Google Cloud Marketplace info Develop Offer software as a service (SaaS) products Offer virtual machine (VM) products Offer Kubernetes apps Offer data products Offer professional services Offer free container images info Go to market Receiving payments from Google Reports for your Google Cloud Marketplace products Creating private offers for specific customers Related resources Explore self-paced training, use cases, reference architectures, and code samples with examples of how to use and connect Google Cloud services.",
+          "Last updated 2026-04-08 UTC. [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-08 UTC.\"],[],[]]",
+          "Home Documentation Access and resource management Google Cloud Marketplace Partners Google Cloud Marketplace Partners documentation Read product documentation Google Cloud Marketplace is one of the fastest ways for your customers to get started on Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "l.gcr.io",
+      "launcher.gcr.io",
+      "providers.accounts",
+      "providers.accounts.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/partners/develop",
+        "https://docs.cloud.google.com/marketplace/docs/transaction-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/partners/develop",
+        "https://docs.cloud.google.com/marketplace/docs/transaction-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/partners/develop",
+        "https://docs.cloud.google.com/marketplace/docs/transaction-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/marketplace/docs/container-images",
+        "https://docs.cloud.google.com/marketplace/docs/partners/develop",
+        "https://docs.cloud.google.com/marketplace/docs/transaction-models",
+        "https://docs.cloud.google.com/marketplace/docs/partners"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:36.828Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-marketplace/card.json",
+  "product_name": "Google Cloud Marketplace",
+  "product_slug": "google-cloud-marketplace"
+}

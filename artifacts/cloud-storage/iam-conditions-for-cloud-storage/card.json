@@ -1,0 +1,372 @@
+{
+  "feature_name": "IAM Conditions for Cloud Storage",
+  "feature_slug": "iam-conditions-for-cloud-storage",
+  "summary": "IAM Conditions for Cloud Storage let permissions be granted for limited times or subsets of objects in buckets.",
+  "extended_definition": "IAM Conditions for Cloud Storage let permissions be granted for limited times or subsets of objects in buckets.",
+  "lifecycle": {
+    "latest_feature_date": "2019-12-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+      "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+      "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"IAM permissions for gcloud storage commands \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 274,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Command Flag Required IAM Permissions batch-operations jobs create storagebatchoperations.jobs.create batch-operations jobs cancel storagebatchoperations.jobs.cancel batch-operations jobs delete storagebatchoperations.jobs.delete batch-operations jobs get storagebatchoperations.jobs.get batch-operations jobs list storagebatchoperations.jobs.list buckets add-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets anywhere-caches create storage.anywhereCaches.create buckets anywhere-caches describe storage.anywhereCaches.get buckets anywhere-caches list storage.anywhereCaches.list buckets anywhere-caches update storage.anywhereCaches.update buckets anywhere-caches pause storage.anywhereCaches.pause buckets anywhere-caches resume storage.anywhereCaches.resume buckets anywhere-caches disable storage.anywhereCaches.disable buckets create storage.buckets.create storage.buckets.setIpFilter 15 buckets delete storage.buckets.delete buckets describe storage.buckets.get storage.buckets.getIamPolicy 1 storage.buckets.getIpFilter 16 buckets get-iam-policy storage.buckets.get storage.buckets.getIamPolicy buckets list storage.buckets.list storage.buckets.getIamPolicy 1 buckets notifications create storage.buckets.get storage.buckets.update pubsub.topics.get (for the project containing the Pub/Sub topic) pubsub.topics.create 3 (for the project containing the Pub/Sub topic) pubsub.topics.getIamPolicy (for Pub/Sub topic receiving notifications) pubsub.topics.setIamPolicy 3 (for Pub/Sub topic receiving notifications) buckets notifications create --skip-topic-setup storage.buckets.get storage.buckets.update buckets notifications delete storage.buckets.get storage.buckets.update buckets notifications describe storage.buckets.get buckets notifications list storage.buckets.get buckets relocate storage.buckets.relocate buckets remove-iam-policy-binding storage.buckets.get storage.buckets.getIamPolicy storage.buckets.setIamPolicy storage.buckets.update buckets set-iam-policy storage.buckets.setIamPolicy storage.buckets.update buckets update storage.buckets.update storage.buckets.setIpFilter 15 buckets update --no-requester-pays storage.buckets.update resourcemanager.projects.createBillingAssignment 2 buckets update --recovery-point-objective --rpo --[no-]uniform-bucket-level-access storage.buckets.get storage.buckets.update buckets update --clear-pap --clear-public-access-prevention --[no-]pap --[no-]public-access-prevention storage.buckets.get storage.buckets.update storage.buckets.setIamPolicy cat storage.objects.get storage.objects.list 13 cp storage.objects.get (for the source objects) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) du storage.objects.list folders create storage.folders.create folders delete storage.folders.delete folders describe storage.folders.get folders list storage.folders.list folders rename storage.folders.rename (for the source bucket) storage.folders.create (for the destination bucket) hash storage.objects.get hmac create storage.hmacKeys.create hmac delete storage.hmacKeys.delete hmac describe storage.hmacKeys.get hmac list storage.hmacKeys.list hmac update storage.hmacKeys.update insights dataset-configs create storageinsights.datasetConfigs.create insights dataset-configs create-link storageinsights.datasetConfigs.linkDataset insights dataset-configs delete storageinsights.datasetConfigs.delete insights dataset-configs delete-link storageinsights.datasetConfigs.unlinkDataset insights dataset-configs describe storageinsights.datasetConfigs.get insights dataset-configs list storageinsights.datasetConfigs.list insights dataset-configs update storageinsights.datasetConfigs.update insights inventory-reports create storageinsights.reportConfigs.create insights inventory-reports delete storageinsights.reportConfigs.delete insights inventory-reports details list storageinsights.reportDetails.list insights inventory-reports details describe storageinsights.reportDetails.get insights inventory-reports list storageinsights.reportConfigs.list insights inventory-reports update storageinsights.reportConfigs.get storageinsights.reportConfigs.update ls (for bucket listing) storage.buckets.list storage.buckets.getIamPolicy 6 ls (for object listing) storage.objects.get 7 storage.objects.list storage.objects.getIamPolicy 8 ls --buckets storage.buckets.get storage.buckets.getIamPolicy 6 storage intelligence-config enable storage.intelligenceConfigs.update storage-intelligence disable storage.intelligenceConfigs.update storage-intelligence describe storage.intelligenceConfigs.get storage-intelligence update storage.intelligenceConfigs.update mv storage.objects.get (for the source objects) storage.objects.delete (for the source bucket) storage.objects.create (for the destination bucket) storage.objects.list 4 (for the destination bucket) storage.objects.delete 5 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) objects compose storage.objects.get storage.objects.create storage.objects.delete 9 objects describe storage.objects.get storage.objects.getIamPolicy 8 objects list storage.objects.list storage.objects.getIamPolicy 8 objects update storage.objects.get storage.objects.list storage.objects.update objects update --storage-class --encryption-key --clear-encryption-key storage.objects.get storage.objects.list storage.objects.create storage.objects.delete objects update --retention-mode --retain-until --clear-retention storage.objects.get storage.objects.list storage.objects.update storage.objects.setRetention storage.objects.overrideUnlockedRetention 11 operations cancel storage.bucketOperations.cancel operations describe storage.bucketOperations.get operations list storage.bucketOperations.list restore storage.objects.create storage.objects.delete 9 storage.objects.restore restore --async storage.objects.create storage.objects.delete 14 storage.objects.restore storage.buckets.restore rm storage.buckets.delete storage.objects.delete storage.objects.list rsync storage.objects.list (for the source bucket) storage.objects.get (for the source objects) storage.objects.list (for the destination bucket) storage.objects.get (for the destination bucket) storage.objects.create (for the destination bucket) storage.objects.delete 10 (for the destination bucket) storage.buckets.get 12 (for the destination bucket) rsync --dry-run storage.objects.list (for the source and destination buckets) service-agent resourceManager.projects.get sign-url None; however, the service account whose key is used as part of this command must have permission to perform the request being encoded into the signed URL.",
+          "Home Documentation Storage Cloud Storage Reference Send feedback IAM permissions for gcloud storage commands Stay organized with collections Save and categorize content based on your preferences.",
+          "For example, buckets notification create requires only storage.buckets.get and storage.buckets.update to use, but you must have additional permissions for the feature to work properly."
+        ]
+      },
+      {
+        "title": "\"Set and manage IAM policies on buckets \\_|\\_ Cloud Storage \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "source_id": "site-iam-reference",
+        "final_score": 273,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To see how to express a condition in CEL, visit: @see https://cloud.google.com/storage/docs/access-control/iam#conditions. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') @param string $role the role that will be given to members in this binding. (e.g. 'roles/storage.objectViewer') @param string $title The title of the condition. (e.g. 'Title') @param string $description The description of the condition. (e.g. 'Condition Description') @param string $expression Te condition specified in CEL expression language. (e.g. 'resource.name.startsWith(\"projects/ /buckets/bucket-name/objects/prefix-a-\")') / function remove bucket conditional iam binding(string $bucketName, string $role, string $title, string $description, string $expression): void { $storage = new StorageClient(); $bucket = $storage->bucket($bucketName); $policy = $bucket->iam()->policy(['requestedPolicyVersion' => 3]); $policy['version'] = 3; $key of conditional binding = null; foreach ($policy['bindings'] as $key => $binding) { if ($binding['role'] == $role && isset($binding['condition'])) { $condition = $binding['condition']; if ($condition['title'] == $title && $condition['description'] == $description && $condition['expression'] == $expression) { $key of conditional binding = $key; break; } } } if ($key of conditional binding != null) { unset($policy['bindings'][$key of conditional binding]); // Ensure array keys are sequential, otherwise JSON encodes // the array as an object, which fails when calling the API. $policy['bindings'] = array values($policy['bindings']); $bucket->iam()->setPolicy($policy); print('Conditional Binding was removed.' .",
+          "For more information, see Set up authentication for client libraries . use Google\\Cloud\\Storage\\StorageClient; / Adds a conditional IAM binding to a bucket's IAM policy. @param string $bucketName The name of your Cloud Storage bucket. (e.g. 'my-bucket') @param string $role The role that will be given to members in this binding. (e.g. 'roles/storage.objectViewer') @param string[] $members The member(s) associated with this binding. (e.g. ['group:example@google.com']) @param string $title The title of the condition. (e.g. 'Title') @param string $description The description of the condition. (e.g. 'Condition Description') @param string $expression The condition specified in CEL expression language. (e.g. 'resource.name.startsWith(\"projects/ /buckets/bucket-name/objects/prefix-a-\")') To see how to express a condition in CEL, visit: @see https://cloud.google.com/storage/docs/access-control/iam#conditions. / function add bucket conditional iam binding(string $bucketName, string $role, array $members, string $title, string $description, string $expression): void { $storage = new StorageClient(); $bucket = $storage->bucket($bucketName); $policy = $bucket->iam()->policy(['requestedPolicyVersion' => 3]); $policy['version'] = 3; $policy['bindings'][] = [ 'role' => $role, 'members' => $members, 'condition' => [ 'title' => $title, 'description' => $description, 'expression' => $expression, ], ]; $bucket->iam()->setPolicy($policy); printf('Added the following member(s) with role %s to %s:' .",
+          "For more information, see Set up authentication for client libraries . using Google.Apis.Storage.v1.Data ; using Google.Cloud.Storage.V1 ; using System ; using System.Collections.Generic ; public class AddBucketConditionalIamBindingSample { /// <summary> /// Adds a conditional Iam policy to a bucket. /// </summary> /// <param name=\"bucketName\">The name of the bucket.</param> /// <param name=\"role\">The role that members may assume.</param> /// <param name=\"member\">The identifier of the member who may assume the provided role.</param> /// <param name=\"title\">Title for the expression.</param> /// <param name=\"description\">Description of the expression.</param> /// <param name=\"expression\">Describes the conditions that need to be met for the policy to be applied. /// It's represented as a string using Common Expression Language syntax.</param> public Policy AddBucketConditionalIamBinding ( string bucketName = \"your-unique-bucket-name\" , string role = \"roles/storage.objectViewer\" , string member = \"serviceAccount:dev@iam.gserviceaccount.com\" , string title = \"title\" , string description = \"description\" , string expression = \"resource.name.startsWith(\\\"projects/ /buckets/bucket-name/objects/prefix-a-\\\")\" ) { var storage = StorageClient ."
+        ]
+      },
+      {
+        "title": "IAM roles for Cloud Storage \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 270,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Bucket cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig firebase.projects.get monitoring.timeSeries.create orgpolicy.policy.get recommender. iamPolicyInsights. recommender. iamPolicyInsights. get recommender. iamPolicyInsights. list recommender. iamPolicyInsights. update recommender. iamPolicyRecommendations. recommender. iamPolicyRecommendations. get recommender. iamPolicyRecommendations. list recommender. iamPolicyRecommendations. update recommender. storageBucketSoftDeleteInsights. recommender. storageBucketSoftDeleteInsights. get recommender. storageBucketSoftDeleteInsights. list recommender. storageBucketSoftDeleteInsights. update recommender. storageBucketSoftDeleteRecommendations. recommender. storageBucketSoftDeleteRecommendations. get recommender. storageBucketSoftDeleteRecommendations. list recommender. storageBucketSoftDeleteRecommendations. update resourcemanager. hierarchyNodes. listEffectiveTags resourcemanager.projects.get resourcemanager.projects.list storage.anywhereCaches. storage.anywhereCaches.create storage.anywhereCaches.disable storage.anywhereCaches.get storage.anywhereCaches.list storage.anywhereCaches.pause storage.anywhereCaches.resume storage.anywhereCaches.update storage.bucketOperations. storage. bucketOperations. cancel storage.bucketOperations.get storage.bucketOperations.list storage.buckets. storage.buckets.create storage. buckets. createTagBinding storage.buckets.delete storage. buckets. deleteTagBinding storage. buckets. enableObjectRetention storage.buckets.get storage.buckets.getIamPolicy storage.buckets.getIpFilter storage. buckets. getObjectInsights storage.buckets.list storage. buckets. listEffectiveTags storage. buckets. listTagBindings storage.buckets.relocate storage.buckets.restore storage.buckets.setIamPolicy storage.buckets.setIpFilter storage.buckets.update storage. buckets. viewIntelligenceDetails storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.intelligenceConfigs. storage. intelligenceConfigs. get storage. intelligenceConfigs. update storage.managedFolders. storage.managedFolders.create storage.managedFolders.delete storage.managedFolders.get storage. managedFolders. getIamPolicy storage.managedFolders.list storage. managedFolders. setIamPolicy storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects. storage.objects.create storage.objects.createContext storage.objects.delete storage.objects.deleteContext storage.objects.get storage.objects.getIamPolicy storage.objects.list storage.objects.move storage. objects. overrideUnlockedRetention storage.objects.restore storage.objects.setIamPolicy storage.objects.setRetention storage.objects.update storage.objects.updateContext storagebatchoperations. storagebatchoperations. bucketOperations. get storagebatchoperations. bucketOperations. list storagebatchoperations. jobs. cancel storagebatchoperations. jobs. create storagebatchoperations. jobs. delete storagebatchoperations. jobs. get storagebatchoperations. jobs. list storagebatchoperations. locations. get storagebatchoperations. locations. list storagebatchoperations. operations. cancel storagebatchoperations. operations. delete storagebatchoperations. operations. get storagebatchoperations. operations. list Storage Bucket Viewer Beta ( roles/ storage.bucketViewer ) Grants permission to view buckets and their metadata, excluding IAM policies. storage.buckets.get storage.buckets.list Storage Editor ( roles/ storage.editor ) Editor role for storage resourcemanager.projects.get resourcemanager.projects.list storage.buckets.create storage.buckets.delete storage.buckets.list storage. buckets. listEffectiveTags storage. buckets. listTagBindings storage. buckets. viewIntelligenceDetails storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.hmacKeys. storage.hmacKeys.create storage.hmacKeys.delete storage.hmacKeys.get storage.hmacKeys.list storage.hmacKeys.update storage. intelligenceConfigs. get Storage Folder Admin ( roles/ storage.folderAdmin ) Grants full control over folders and objects, including listing, creating, viewing, and deleting objects. orgpolicy.policy.get resourcemanager.projects.get resourcemanager.projects.list storage.folders. storage.folders.create storage.folders.delete storage.folders.get storage.folders.list storage.folders.rename storage.managedFolders. storage.managedFolders.create storage.managedFolders.delete storage.managedFolders.get storage. managedFolders. getIamPolicy storage.managedFolders.list storage. managedFolders. setIamPolicy storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects. storage.objects.create storage.objects.createContext storage.objects.delete storage.objects.deleteContext storage.objects.get storage.objects.getIamPolicy storage.objects.list storage.objects.move storage. objects. overrideUnlockedRetention storage.objects.restore storage.objects.setIamPolicy storage.objects.setRetention storage.objects.update storage.objects.updateContext Storage Legacy Bucket Owner ( roles/ storage.legacyBucketOwner ) Grants permission to create, overwrite, and delete objects; list objects in a bucket and read object metadata, excluding allow policies, when listing; and read and edit bucket metadata, including allow policies.",
+          "Lowest-level resources where you can grant this role: Bucket resourcemanager.projects.get resourcemanager.projects.list storage.folders.get storage.folders.list storage.managedFolders.get storage.managedFolders.list storage.objects.get storage.objects.list Storage Viewer ( roles/ storage.viewer ) Viewer role for storage resourcemanager.projects.get resourcemanager.projects.list storage.buckets.list storage. buckets. listEffectiveTags storage. buckets. listTagBindings storage. buckets. viewIntelligenceDetails storage.folders.get storage.folders.list storage.hmacKeys.get storage.hmacKeys.list storage. intelligenceConfigs. get Storage Annotation Generator Service Beta ( roles/ storage.annotationGeneratorService ) Grants all permissions needed to generate annotations for objects in a bucket. storage.objects.createContext storage.objects.deleteContext storage.objects.get storage.objects.list storage.objects.update storage.objects.updateContext Storage Express Mode Service Input Beta ( roles/ storage.expressModeServiceInput ) Grants permission to Express Mode service accounts at a managed folder so they can create objects but not read them on input folders. storage.objects.create storage.objects.delete storage.objects.list storage.objects.update Storage Express Mode Service Output Beta ( roles/ storage.expressModeServiceOutput ) Grants permission to EasyGCP service accounts at a managed folder so they can read objects but not write them on output folders. storage.objects.delete storage.objects.get storage.objects.list Storage Express Mode User Access Beta ( roles/ storage.expressModeUserAccess ) Grants permission to Express Mode accounts at the project level so they can read, list, create and delete any object in any of their buckets in Express Mode. orgpolicy.policy.get storage.buckets.get storage.buckets.list storage.multipartUploads. storage.multipartUploads.abort storage. multipartUploads. create storage.multipartUploads.list storage. multipartUploads. listParts storage.objects.create storage.objects.delete storage.objects.get storage.objects.list storage.objects.restore storage.objects.update Storage HMAC Key Admin ( roles/ storage.hmacKeyAdmin ) Full control of Cloud Storage HMAC keys. firebase.projects.get orgpolicy.policy.get resourcemanager.projects.get resourcemanager.projects.list storage.hmacKeys. storage.hmacKeys.create storage.hmacKeys.delete storage.hmacKeys.get storage.hmacKeys.list storage.hmacKeys.update Storage Insights Collector Service ( roles/ storage.insightsCollectorService ) Read-only access to Cloud Storage Inventory metadata for Storage Insights. resourcemanager.projects.get resourcemanager.projects.list storage.buckets.get storage. buckets. getObjectInsights Note: Consider the following for permissions: The orgpolicy.policy.get permission allows principals to know the organization policy constraints that a project is subject to.",
+          "Role Permissions Storage Insights Admin ( roles/ storageinsights.admin ) Full access to Storage Insights resources. resourcemanager.projects.get resourcemanager.projects.list storageinsights. storageinsights. datasetConfigs. create storageinsights. datasetConfigs. delete storageinsights. datasetConfigs. get storageinsights. datasetConfigs. linkDataset storageinsights. datasetConfigs. list storageinsights. datasetConfigs. unlinkDataset storageinsights. datasetConfigs. update storageinsights.locations.get storageinsights.locations.list storageinsights. operations. cancel storageinsights. operations. delete storageinsights.operations.get storageinsights. operations. list storageinsights. reportConfigs. create storageinsights. reportConfigs. delete storageinsights. reportConfigs. get storageinsights. reportConfigs. list storageinsights. reportConfigs. update storageinsights. reportDetails. get storageinsights. reportDetails. list Storage Insights Viewer ( roles/ storageinsights.viewer ) Read-only access to Storage Insights resources. resourcemanager.projects.get resourcemanager.projects.list storageinsights. datasetConfigs. get storageinsights. datasetConfigs. list storageinsights.locations. storageinsights.locations.get storageinsights.locations.list storageinsights.operations.get storageinsights. operations. list storageinsights. reportConfigs. get storageinsights. reportConfigs. list storageinsights. reportDetails. storageinsights. reportDetails. get storageinsights. reportDetails. list Storage Insights Analyst ( roles/ storageinsights.analyst ) Data access to Storage Insights. resourcemanager.projects.get resourcemanager.projects.list storageinsights. datasetConfigs. get storageinsights. datasetConfigs. linkDataset storageinsights. datasetConfigs. list storageinsights. datasetConfigs. unlinkDataset storageinsights.locations. storageinsights.locations.get storageinsights.locations.list storageinsights.operations.get storageinsights. operations. list storageinsights. reportConfigs. get storageinsights. reportConfigs. list storageinsights. reportDetails. storageinsights. reportDetails. get storageinsights. reportDetails. list Service agent roles Service agent roles should only be granted to service agents ."
+        ]
+      },
+      {
+        "title": "\"Set and manage IAM policies on managed folders \\_|\\_ Cloud Storage \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders",
+        "source_id": "site-iam-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Edit the tmp-policy.json file in a text editor to add new conditions to the bindings in the IAM policy: { \"version\": VERSION , \"bindings\": [ { \"role\": \" IAM ROLE \", \"members\": [ \" PRINCIPAL IDENTIFIER \" ], \"condition\": { \"title\": \" TITLE \", \"description\": \" DESCRIPTION \", \"expression\": \" EXPRESSION \" } } ], \"etag\": \" ETAG \" } Where: VERSION is the IAM policy version , which is required to be 3 for managed folders with IAM Conditions.",
+          "Use cURL to call the JSON API with a PUT setIamPolicy request: curl -X PUT --data-binary @ JSON FILE NAME \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://storage.googleapis.com/storage/v1/b/ BUCKET NAME /managedFolders/ MANAGED FOLDER NAME /iam\" Where: JSON FILE NAME is the path for the file that you created in Step 3.",
+          "Use the gcloud storage managed-folders set-iam-policy command to set the modified IAM policy on the managed folder. gcloud storage managed-folders set-iam-policy gs:// BUCKET NAME / MANAGED FOLDER NAME tmp-policy.json REST APIs JSON Have gcloud CLI installed and initialized , which lets you generate an access token for the Authorization header."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "e.g",
+      "firebase.projects.get",
+      "iam.gserviceaccount.com",
+      "monitoring.timeSeries.create",
+      "orgpolicy.policy.get",
+      "policy.json",
+      "projects.get",
+      "pubsub.topics.create",
+      "pubsub.topics.get",
+      "pubsub.topics.getIamPolicy",
+      "pubsub.topics.setIamPolicy",
+      "resource.name.startsWith",
+      "resourcemanager.projects.createBillingAssignment",
+      "storage.annotationGeneratorService",
+      "storage.anywhereCaches",
+      "storage.anywhereCaches.create",
+      "storage.anywhereCaches.disable",
+      "storage.anywhereCaches.get",
+      "storage.anywhereCaches.list",
+      "storage.anywhereCaches.pause",
+      "storage.anywhereCaches.resume",
+      "storage.anywhereCaches.update",
+      "storage.bucketOperations",
+      "storage.bucketOperations.cancel",
+      "storage.bucketOperations.get",
+      "storage.bucketOperations.list",
+      "storage.buckets",
+      "storage.buckets.create",
+      "storage.buckets.createTagBinding",
+      "storage.buckets.delete",
+      "storage.buckets.deleteTagBinding",
+      "storage.buckets.get",
+      "storage.buckets.getIamPolicy",
+      "storage.buckets.getIpFilter",
+      "storage.buckets.list",
+      "storage.buckets.listEffectiveTags",
+      "storage.buckets.listTagBindings",
+      "storage.buckets.relocate",
+      "storage.buckets.restore",
+      "storage.buckets.setIamPolicy",
+      "storage.buckets.setIpFilter",
+      "storage.buckets.update",
+      "storage.bucketViewer",
+      "storage.editor",
+      "storage.expressModeServiceInput",
+      "storage.expressModeServiceOutput",
+      "storage.expressModeUserAccess",
+      "storage.folderAdmin",
+      "storage.folders",
+      "storage.folders.create",
+      "storage.folders.delete",
+      "storage.folders.get",
+      "storage.folders.list",
+      "storage.folders.rename",
+      "storage.googleapis.com",
+      "storage.hmacKeyAdmin",
+      "storage.hmacKeys",
+      "storage.hmacKeys.create",
+      "storage.hmacKeys.delete",
+      "storage.hmacKeys.get",
+      "storage.hmacKeys.list",
+      "storage.hmacKeys.update",
+      "storage.insightsCollectorService",
+      "storage.intelligenceConfigs",
+      "storage.intelligenceConfigs.get",
+      "storage.intelligenceConfigs.update",
+      "storage.legacyBucketOwner",
+      "storage.managedFolders",
+      "storage.managedFolders.create",
+      "storage.managedFolders.delete",
+      "storage.managedFolders.get",
+      "storage.managedFolders.list",
+      "storage.multipartUploads",
+      "storage.multipartUploads.abort",
+      "storage.multipartUploads.list",
+      "storage.objects",
+      "storage.objects.create",
+      "storage.objects.createContext",
+      "storage.objects.delete",
+      "storage.objects.deleteContext",
+      "storage.objects.get",
+      "storage.objects.getIamPolicy",
+      "storage.objects.list",
+      "storage.objects.move",
+      "storage.objects.overrideUnlockedRetention",
+      "storage.objects.restore",
+      "storage.objects.setIamPolicy",
+      "storage.objects.setRetention",
+      "storage.objects.update",
+      "storage.objects.updateContext",
+      "storage.objectViewer",
+      "storage.viewer",
+      "storagebatchoperations.jobs.cancel",
+      "storagebatchoperations.jobs.create",
+      "storagebatchoperations.jobs.delete",
+      "storagebatchoperations.jobs.get",
+      "storagebatchoperations.jobs.list",
+      "storageinsights.admin",
+      "storageinsights.analyst",
+      "storageinsights.datasetConfigs.create",
+      "storageinsights.datasetConfigs.delete",
+      "storageinsights.datasetConfigs.get",
+      "storageinsights.datasetConfigs.linkDataset",
+      "storageinsights.datasetConfigs.list",
+      "storageinsights.datasetConfigs.unlinkDataset",
+      "storageinsights.datasetConfigs.update",
+      "storageinsights.locations",
+      "storageinsights.locations.get",
+      "storageinsights.locations.list",
+      "storageinsights.operations.get",
+      "storageinsights.reportConfigs.create",
+      "storageinsights.reportConfigs.delete",
+      "storageinsights.reportConfigs.get",
+      "storageinsights.reportConfigs.list",
+      "storageinsights.reportConfigs.update",
+      "storageinsights.reportDetails.get",
+      "storageinsights.reportDetails.list",
+      "storageinsights.viewer",
+      "v1.Data"
+    ],
+    "missing_inventory_roles": [
+      "roles/storage.folderAdmin",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-gcloud",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-permissions",
+        "https://docs.cloud.google.com/storage/docs/access-control/iam-roles",
+        "https://docs.cloud.google.com/storage/docs/access-control/using-iam-for-managed-folders"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:17.220Z",
+  "source_step08_card": "data/step-08/current/products/cloud-storage/card.json",
+  "product_name": "Cloud Storage",
+  "product_slug": "cloud-storage"
+}

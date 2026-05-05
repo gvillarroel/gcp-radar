@@ -1,0 +1,93 @@
+{
+  "feature_name": "Cloud Spanner database export",
+  "feature_slug": "cloud-spanner-database-export",
+  "summary": "Cloud Spanner supports exporting databases through the REST API and the gcloud command-line tool.",
+  "extended_definition": "Cloud Spanner supports exporting databases through the REST API and the gcloud command-line tool.",
+  "lifecycle": {
+    "latest_feature_date": "2018-08-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 2,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      },
+      {
+        "severity": "warn",
+        "rule": "generic_supporting_pages",
+        "message": "Supporting pages do not mention any informative feature tokens.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.WorkerProxy",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncResultSet",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.CompositeTracer"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class WorkerProxy (6.111.1) \\_|\\_ Java client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.executor.spanner.WorkerProxy",
+        "source_id": "site-java-reference",
+        "final_score": 28,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Interface AsyncResultSet (6.111.1) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.AsyncResultSet",
+        "source_id": "site-java-reference",
+        "final_score": 24,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Class CompositeTracer (6.111.1) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-spanner/latest/com.google.cloud.spanner.CompositeTracer",
+        "source_id": "site-java-reference",
+        "final_score": 20,
+        "relevance": "WEAK",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.executor.spanner.WorkerProxy",
+      "com.google.cloud.spanner.AsyncResultSet",
+      "com.google.cloud.spanner.AsyncRunner",
+      "com.google.cloud.spanner.AsyncRunner.AsyncWork",
+      "com.google.cloud.spanner.CompositeTracer",
+      "com.google.cloud.spanner.CompositeTracerFactory"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

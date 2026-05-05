@@ -1,0 +1,222 @@
+{
+  "feature_name": "Regional availability",
+  "feature_slug": "regional-availability",
+  "summary": "Workflows is available in the asia-southeast1 and europe-west4 regions.",
+  "extended_definition": "Workflows is available in the asia-southeast1 and europe-west4 regions.",
+  "lifecycle": {
+    "latest_feature_date": "2020-12-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+      "https://docs.cloud.google.com/workflows/docs/access-control",
+      "https://docs.cloud.google.com/workflows/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Workflows overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 41,
+        "relevance": "",
+        "evidence_snippets": [
+          "Regionality Workflows is a regional service and workflows are regional resources that are subject to the resource locations constraint .",
+          "Visualization support while editing the Workflows syntax is also available through the Google Cloud console.",
+          "Built-in environment variables require no declaration and are available in every workflow execution."
+        ]
+      },
+      {
+        "title": "\"Resource attributes for IAM Conditions \\_|\\_ Identity and Access Management\\",
+        "url": "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "source_id": "site-iam-reference-required-2",
+        "final_score": 39,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Resource reference Resource name format template Apigee API product attributes organizations/ organization-name /apiproducts/ product-id /attributes/ attribute-id Apigee API products organizations/ organization-name /apiproducts/ product-id Apigee API proxies organizations/ organization-name /apis/ proxy-id Apigee API proxy key-value map entries organizations/ organization-name /api/ proxy-id /keyvaluemaps/ keyvaluemap-id /entries/ entry-id Apigee API proxy key-value maps organizations/ organization-name /apis/ proxy-id /keyvaluemaps/ key-value-map-id Apigee API proxy revisions organizations/ organization-name /apis/ proxy-id /revisions/ revision-id Apigee caches organizations/ organization-name /environments/ environment-id /caches/ cache-id Apigee developer app attributes organizations/ organization-name /developers/ developer-id /apps/ app-id /attributes/ attribute-id Apigee developer apps organizations/ organization-name /developers/ developer-id /apps/ app-id Apigee developer attributes organizations/ organization-name /developers/ developer-id /attributes/ attribute-id Apigee developers organizations/ organization-name /developers/ developer-id Apigee environment key-value map entries organizations/ organization-name /environments/ environment-id /keyvaluemaps/ keyvaluemap-id /entries/ entry-id Apigee environment key-value maps organizations/ organization-name /environments/ environment /keyvaluemaps/ key-value-map-id Apigee exports organizations/ organization-name /environments/ environment-id /analytics/exports/ export-id Apigee flow hooks organizations/ organization-name /environments/ environment-id /flowhooks/ flowhook-id Apigee keystore aliases organizations/ organization-name /environments/ environment-id /keystores/ keystore-id /aliases/ alias-id Apigee keystores organizations/ organization-name /environments/ environment-id /keystores/ keystore-id Apigee queries organizations/ organization-name /environments/ environment-id /queries/ query-id Apigee rate plans organizations/ organization-name /apiproducts/ product-id /rateplans/ rate-plan-id Apigee references organizations/ organization-name /environments/ environment-id /references/ reference-id Apigee shared flow revisions organizations/ organization-name /sharedflows/ shared-flow-id /revisions/ revision-id Apigee shared flows organizations/ organization-name /sharedflows/ shared-flow-id Apigee target servers organizations/ organization-name /environments/ environment-id /targetservers/ targetserver-id Apigee trace (debug) sessions organizations/ organization-name /environments/ environment-id /apis/ proxy-id /revisions/ revision-id /debugsessions/ session-id Apigee API Hub apis projects/ project-id /locations/ location-id /apis/ api-id Apigee API Hub deployments projects/ project-id /locations/ location-id /deployments/ deployment-id Apigee API Hub versions projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id Apigee API Hub specs projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /specs/ spec-id Apigee API Hub operations projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /operations/ operation-id Apigee API Hub definitions projects/ project-id /locations/ location-id /apis/ api-id /versions/ version-id /definitions/ definition-id Backup and DR Service backupVaults science projects/ project-id /locations/ location-id /backupVaults/ backup-vault-id BigQuery datasets projects/ project-id /datasets/ dataset-id BigQuery models projects/ project-id /datasets/ dataset-id /models/ model-id BigQuery routines projects/ project-id /datasets/ dataset-id /routines/ routine-id BigQuery tables projects/ project-id /datasets/ dataset-id /tables/ table-id BigQuery Reservation API assignments projects/ project-id /locations/ location-id /reservations/ reservation-id /assignments/ assignment-id BigQuery Reservation API BI reservations projects/ project-id /locations/ location-id /biReservation BigQuery Reservation API capacity commitments projects/ project-id /locations/ location-id /capacityCommitments/ capacity-commitment-id BigQuery Reservation API locations projects/ project-id /locations/ location-id BigQuery Reservation API reservations projects/ project-id /locations/ location-id /reservations/ reservation-id Binary Authorization attestors projects/ project-number /attestors/ attestor-id Binary Authorization continuous validation configs projects/ project-number /continuousValidationConfig Binary Authorization policies projects/ project-number /policy Customer Experience Agent Studio apps projects/ project-id /locations/ location-id /apps/ app-id Customer Experience Agent Studio operations projects/ project-id /locations/ location-id /operations/ operation-id Bigtable appProfiles projects/ project-id /instances/ instance-id /appProfiles/ appProfile-id Bigtable backups projects/ project-id /instances/ instance-id /clusters/ cluster-id /backups/ backup-id Bigtable clusters projects/ project-id /instances/ instance-id /clusters/ cluster-id Bigtable instances projects/ project-id /instances/ instance-id Bigtable tables projects/ project-id /instances/ instance-id /tables/ table-id Cloud Deploy automation runs projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /automationRuns/ automation-run-id Cloud Deploy automations projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /automations/ automation-id Cloud Deploy custom target types projects/ project-id /locations/ location-id /customTargetTypes/ custom-target-type-id Cloud Deploy delivery pipelines projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id Cloud Deploy job runs projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id /rollouts/ rollout-id /jobRuns/ job-run-id Cloud Deploy releases projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id Cloud Deploy rollouts projects/ project-id /locations/ location-id /deliveryPipelines/ delivery-pipeline-id /releases/ release-id /rollouts/ rollout-id Cloud Deploy targets projects/ project-id /locations/ location-id /targets/ target-id Firestore databases projects/ project-id /databases/ database-id Cloud NGFW address groups projects/ project-number /locations/ location /addressGroups/ address-group-name organizations/ organization-id /locations/ location /addressGroups/ address-group-name Network Security Integration intercept deployment groups projects/ project-number /locations/ location /interceptDeploymentGroups/ intercept-deployment-group-id Network Security Integration intercept deployments projects/ project-number /locations/ location /interceptDeployments/ intercept-deployment-id Network Security Integration intercept endpoint group associations projects/ project-number /locations/ location /interceptEndpointGroupAssociations/ intercept-endpoint-group-association-id Network Security Integration intercept endpoint groups projects/ project-number /locations/ location /interceptEndpoints/ intercept-endpoint-group-id Network Security Integration mirroring deployment groups projects/ project-number /locations/ location /mirroringDeploymentGroups/ mirroring-deployment-group-id Network Security Integration mirroring deployments projects/ project-number /locations/ location /mirroringDeployments/ mirroring-deployment-id Network Security Integration mirroring endpoint group associations projects/ project-number /locations/ location /mirroringEndpointGroupAssociations/ mirroring-endpoint-group-association-id Network Security Integration mirroring endpoint groups projects/ project-number /locations/ location /mirroringEndpoints/ mirroring-endpoint-group-id Cloud Key Management Service crypto keys projects/ project-id /locations/ location-id /keyRings/ keyring-id /cryptoKeys/ cryptokey-id Cloud Key Management Service crypto key versions projects/ project-id /locations/ location-id /keyRings/ keyring-id /cryptoKeys/ cryptokey-id /cryptoKeyVersions/ cryptokeyversion-id Cloud Key Management Service key rings projects/ project-id /locations/ location-id /keyRings/ keyring-id Cloud Logging log buckets projects/ project-id /locations/ location-id /buckets/ bucket-id Cloud Logging log views projects/ project-id /locations/ location-id /buckets/ bucket-id /views/ view-id Spanner backups projects/ project-id /instances/ instance-id /backups/ backup-id Spanner databases projects/ project-id /instances/ instance-id /databases/ database-id Spanner instances projects/ project-id /instances/ instance-id Cloud SQL backup runs projects/ project-id /instances/ instance-id /backupRuns/ backup-id Cloud SQL instances projects/ project-id /instances/ instance-id Cloud Storage buckets 1 projects/ /buckets/ bucket-name Cloud Storage managed folders 1, 2 projects/ /buckets/ bucket-name /managedFolders/ managed-folder-name Cloud Storage objects 1, 3 projects/ /buckets/ bucket-name /objects/ object-name Compute Engine global backend services projects/ project-id /global/backendServices/ backend-service-id Compute Engine regional backend services projects/ project-id /regions/ region-id /backendServices/ backend-service-id Compute Engine firewalls projects/ project-id /global/firewalls/ firewall-id Compute Engine global forwarding rules projects/ project-id /global/forwardingRules/ forwarding-rule-id Compute Engine regional forwarding rules projects/ project-id /regions/ region-id /forwardingRules/ forwarding-rule-id Compute Engine images projects/ project-id /global/images/ image-id Compute Engine instance templates projects/ project-id /global/instanceTemplates/ instance-template-id Compute Engine instances projects/ project-id /zones/ zone-id /instances/ instance-id Compute Engine regional persistent disks projects/ project-id /regions/ region-id /disks/ disk-id Compute Engine zonal persistent disks projects/ project-id /zones/ zone-id /disks/ disk-id Compute Engine snapshots projects/ project-id /global/snapshots/ snapshot-id Compute Engine global target HTTP proxies projects/ project-id /global/targetHttpProxies/ target-http-proxy-id Compute Engine regional target HTTP proxies projects/ project-id /regions/ region-id /targetHttpProxies/ target-http-proxy-id Compute Engine global target HTTPS proxies projects/ project-id /global/targetHttpsProxies/ target-https-proxy-id Compute Engine regional target HTTPS proxies projects/ project-id /regions/ region-id /targetHttpsProxies/ target-https-proxy-id Compute Engine target SSL proxies projects/ project-id /global/targetSslProxies/ target-ssl-proxy-id Compute Engine target TCP proxies projects/ project-id /global/targetTcpProxies/ target-tcp-proxy-id Google Kubernetes Engine zonal clusters projects/ project-id /zones/ zone /clusters/ cluster-id Google Kubernetes Engine regional clusters projects/ project-id /locations/ location /clusters/ cluster-id Dataform compilation results projects/ project-id /locations/ location /repositories/ repository /compilationResults/ compilation-result Dataform locations projects/ project-id /locations/ location Dataform release configs projects/ project-id /locations/ location /repositories/ repository /releaseConfigs/ release-config Dataform repositories projects/ project-id /locations/ location /repositories/ repository Dataform workflow configs projects/ project-id /locations/ location /repositories/ repository /workflowConfigs/ workflow-config Dataform workflow invocations projects/ project-id /locations/ location /repositories/ repository /workflowInvocations/ workflow-invocation Dataform workspaces projects/ project-id /locations/ location /repositories/ repository /workspaces/ workspace Integration Connectors connections projects/ project-id /locations/ location /connections/ connection-name Integration Connectors connection schema metadata projects/ project-id /locations/ location /connections/ connection-name /connectionSchemaMetadata Integration Connectors endpoint attachments projects/ project-id /locations/ location /endpointAttachments/ endpoint-attachment-name Integration Connectors event subscriptions projects/ project-id /locations/ location /eventSubscriptions/ event-subscription-name Integration Connectors managed zones projects/ project-id /locations/global/managedZones/ managed-zone-name Google Cloud Managed Service for Apache Kafka clusters projects/ project-number /locations/ location /clusters/ cluster-name Google Cloud Managed Service for Apache Kafka consumer groups projects/ project-number /locations/ location /clusters/ cluster-name /consumerGroups/ consumer-group Google Cloud Managed Service for Apache Kafka operations projects/ project-number /locations/ location /operations/ operation Google Cloud Managed Service for Apache Kafka topics projects/ project-number /locations/ location /clusters/ cluster-name /topics/ topic-name Parameter Manager parameters projects/ project-number /locations/ location /parameters/ parameter-id Parameter Manager parameter versions projects/ project-number /locations/ location /parameters/ parameter-id /versions/ version-id Pub/Sub Lite locations projects/ project-number /locations/ location Pub/Sub Lite subscriptions projects/ project-number /locations/ location /subscriptions/ subscription-id Pub/Sub Lite topics projects/ project-number /locations/ location /topics/ topic-id Resource Manager organizations 4 organizations/ organization-name Secret Manager secrets projects/ project-number /secrets/ secret-id Secret Manager secret versions 5 projects/ project-number /secrets/ secret-id /versions/ secret-version 1 For Cloud Storage, resource names contain an underscore ( ) rather than a project ID.",
+          "To learn how to list the tag keys and values that are available to you, see Listing tag keys and Listing tag values .",
+          "Resource attributes are available for the Google Cloud services and resource types that are listed on this page."
+        ]
+      },
+      {
+        "title": "Workflows roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/access-control",
+        "source_id": "site-docs-root-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Permission Definition workflows.callbacks.list List callbacks for a workflow execution. workflows.callbacks.send Trigger a workflow execution callback. workflows.executions.cancel Cancel a workflow execution, without deleting traces. workflows.executions.create Trigger a workflow execution. workflows.executions.get Get the latest state of workflow execution operations. workflows.executions.list List the workflow's execution operations. workflows.locations.get Get the location of a workflow. workflows.locations.list List the locations where the service is available. workflows.operations.cancel Cancel long-running operations. workflows.operations.get Get details of long-running operations. workflows.operations.list Get a list of long-running operations. workflows.stepEntries.get Get a step entry for a workflow execution. workflows.stepEntries.list List step entries for a workflow execution. workflows.workflows.create Create and deploy a new workflow. workflows.workflows.delete Delete an existing workflow. workflows.workflows.get Get a workflow's settings, including source code, labels, and description. workflows.workflows.list List the workflows in a project. workflows.workflows.listRevision List a workflow's revisions. workflows.workflows.update Update a workflow's settings, including its source code, labels, and description.",
+          "This page describes the Identity and Access Management (IAM) roles and permissions available to control access to Workflows resources.",
+          "If your use case isn't covered by the available roles, you can create an IAM custom role ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "workflows.callbacks.list",
+      "workflows.callbacks.send",
+      "workflows.executions.cancel",
+      "workflows.executions.create",
+      "workflows.executions.get",
+      "workflows.executions.list",
+      "workflows.locations.get",
+      "workflows.locations.list",
+      "workflows.operations.cancel",
+      "workflows.operations.get",
+      "workflows.operations.list",
+      "workflows.stepEntries.get",
+      "workflows.stepEntries.list",
+      "workflows.workflows.create",
+      "workflows.workflows.delete",
+      "workflows.workflows.get",
+      "workflows.workflows.list",
+      "workflows.workflows.listRevision",
+      "workflows.workflows.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iam/docs/conditions-resource-attributes",
+        "https://docs.cloud.google.com/workflows/docs/overview",
+        "https://docs.cloud.google.com/workflows/docs/access-control"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

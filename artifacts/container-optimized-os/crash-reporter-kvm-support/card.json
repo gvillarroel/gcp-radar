@@ -1,0 +1,100 @@
+{
+  "feature_name": "Crash reporter KVM support",
+  "feature_slug": "crash-reporter-kvm-support",
+  "summary": "Enables KVM support in the crash reporter component; The crash reporter previously supported collecting crash data in KVM environments; deprecated on 2024-08-20.",
+  "extended_definition": "Enables KVM support in the crash reporter component; The crash reporter previously supported collecting crash data in KVM environments; deprecated on 2024-08-20.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-20",
+    "deprecation_date": "2024-08-20",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+      "https://docs.cloud.google.com/container-optimized-os/docs/how-to/using-debugging-tools"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Collecting debugging information using sosreport \\_|\\_ Container-Optimized\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "source_id": "site-docs-reference",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Collecting the sosreport data To generate a sosreport: Connect to the instance using the gcloud compute ssh command. gcloud compute ssh [INSTANCE NAME] --zone [ZONE] --project [PROJECT ID] Check the OS version: sudo cat /etc/os-release egrep -w 'NAME VERSION' The output is similar to the following: NAME=\"Container-Optimized OS\" VERSION=105 Run the sos command that corresponds to your OS version: COS 85 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo toolbox sudo apt install sosreport -y COS 105 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo toolbox sudo apt install sosreport -y Ubuntu-18 and earlier Run the following sosreport command to collect the logs: sudo sosreport --all-logs --batch --tmp-dir = /var If the previous command fails with sosreport: command not found , install the sosreport package and then run the previous sosreport command: sudo apt install sosreport Ubuntu-20 and later Run the following sos command to collect the logs: sudo sos report --all-logs --batch --tmp-dir = /var If the previous command fails with sos: command not found , install the sosreport package and then run the previous sos report command: sudo apt install sosreport You can change the directory where the report is stored by passing a different directory to the --tmp-dir option.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Collecting debugging information using sosreport Stay organized with collections Save and categorize content based on your preferences.",
+          "The archive may contain personally identifiable information (PII), because it collects data from many critical system components (e.g. journald)."
+        ]
+      },
+      {
+        "title": "\"Creating and configuring instances \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "source_id": "site-docs-reference",
+        "final_score": 43,
+        "relevance": "",
+        "evidence_snippets": [
+          "If enabled, the behavior depends on the release channel: cos-dev and cos-beta: Updates from latest OS version in the corresponding image family LTS milestone and cos-stable: Updates from latest OS version from the same milestone Milestones < 117: Enabled by default Milestones >= 117: Disabled by default cos-metrics-enabled Enables crash dump collection.",
+          "The previous example can be expanded to collect usage statistics and crash dump collection with the following command: gcloud compute instances create instance-name \\ --image image-name \\ --image-project cos-cloud \\ --metadata-from-file user-data= filename \\ --metadata=cos-metrics-enabled=true Other metadata flags Metadata Key Description Default Behavior cos-update-strategy Specifies automatic update behavior.",
+          "Crash reports contain a snippet of the most recent portion of the kernel log buffer at the time of the crash, and may contain user or personal information, depending on what was happening at the time of the crash."
+        ]
+      },
+      {
+        "title": "Use debugging tools \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/how-to/using-debugging-tools",
+        "source_id": "site-docs-reference",
+        "final_score": 35,
+        "relevance": "",
+        "evidence_snippets": [
+          "Enable kernel crash dump collection In the rare event of a kernel panic, enabling kernel crash dump collection can help you and Cloud Customer Care determine the root cause.",
+          "This user guide explains how to collect kernel crash dumps on GKE nodes with Container-Optimized OS or Container-Optimized OS instances created from Compute Engine.",
+          "To enable crash dumps, see User Guide: Kernel Crash Dump Collection for COS in the open source documentation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/using-debugging-tools"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/sosreport",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/create-configure-instance",
+        "https://docs.cloud.google.com/container-optimized-os/docs/how-to/using-debugging-tools"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:23.337Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

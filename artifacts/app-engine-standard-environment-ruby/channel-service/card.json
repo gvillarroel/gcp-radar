@@ -1,0 +1,109 @@
+{
+  "feature_name": "Channel service",
+  "feature_slug": "channel-service",
+  "summary": "The Channel service provides real-time communication support for App Engine applications; deprecated on 2017-10-31.",
+  "extended_definition": "The Channel service provides real-time communication support for App Engine applications; deprecated on 2017-10-31.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-27",
+    "deprecation_date": "2017-10-31",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Ruby Runtime Environment \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The runtime will install all dependencies before your entrypoint is called. source \"https://rubygems.org\" gem \"rack\" gem \"puma\" An example entrypoint using puma for a Rails application: entrypoint : bundle exec rails server Puma - p $PORT An example entrypoint using puma for any Rack application: entrypoint : bundle exec rackup - s Puma - p $PORT For applications that can handle requests without a Rack server, you can just execute a ruby script: entrypoint : bundle exec ruby app . rb Note: The entrypoint command will be executed by bash's exec function .",
+          "Home Documentation Application hosting App Engine Standard environment Guides Send feedback Ruby Runtime Environment Stay organized with collections Save and categorize content based on your preferences.",
+          "This document explains the details of the Ruby runtime environment, including what headers are provided to your code and other information to successfully deploy your application on App Engine."
+        ]
+      },
+      {
+        "title": "\"Runtime lifecycle \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "source_id": "site-docs-reference-4",
+        "final_score": 71,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Decommissioned Applications that continue to use a decommissioned runtime may be disabled without further notice.",
+          "Google provides support for a runtime during General availability (GA) .",
+          "Runtime lifecycle GA-level support End of Support Deprecated Decommissioned Creation & redeployment Yes No 1 No No Project Configuration Updates Yes Yes No No Running existing workloads Yes Yes Yes May be disabled UI & CLI Warnings Yes Yes No No Language patches Automatic No automatic updates No automatic updates No automatic updates Patching APIs & SDKs Automatic No automatic updates No automatic updates No automatic updates Patching OS Automatic No automatic updates No automatic updates No automatic updates Customer Support GA-level support No runtime support No runtime support No runtime support Notification period App Engine will begin issuing in-app notifications 90 days before the application reaches end of support."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 67,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "Example basic scaling : max instances : 11 idle timeout : 10m manual scaling Applications that use an instance class of B1 or higher must specify either this element or basic scaling .",
+          "A high maximum means users might wait longer for their requests to be served (if there are pending requests and no idle instances to serve them), but your application will cost less to run. min pending latency An optional element you can set to specify the minimum amount of time that App Engine should allow a request to wait in the pending queue before starting a new instance to handle it."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "rubygems.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/runtime",
+        "https://docs.cloud.google.com/appengine/docs/standard/lifecycle/runtime-lifecycle",
+        "https://docs.cloud.google.com/appengine/docs/standard/ruby/config/appref"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.277Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-ruby/card.json",
+  "product_name": "App Engine standard environment Ruby",
+  "product_slug": "app-engine-standard-environment-ruby"
+}

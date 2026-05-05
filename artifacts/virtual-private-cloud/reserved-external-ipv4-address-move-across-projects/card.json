@@ -1,0 +1,115 @@
+{
+  "feature_name": "Reserved external IPv4 address move across projects",
+  "feature_slug": "reserved-external-ipv4-address-move-across-projects",
+  "summary": "Google Cloud Virtual Private Cloud now supports moving a reserved external IPv4 address from one project to another, available in Preview.",
+  "extended_definition": "Google Cloud Virtual Private Cloud now supports moving a reserved external IPv4 address from one project to another, available in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+      "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+      "https://docs.cloud.google.com/vpc/docs/quota",
+      "https://docs.cloud.google.com/vpc/docs/subnets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quickstart: Create and manage VPC networks \\_|\\_ Virtual Private Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "source_id": "site-docs-root",
+        "final_score": 198,
+        "relevance": "",
+        "evidence_snippets": [
+          "Edit secondary IPv4 ranges You can add secondary IPv4 ranges to subnets, or you can remove any secondary IPv4 range as long as no resources are using IP addresses in it. gcloud To add a new secondary IPv4 range to a subnet, use the subnets update command . gcloud compute networks subnets update SUBNET \\ --region= REGION \\ --add-secondary-ranges= SECONDARY RANGE NAME = SECONDARY RANGE Replace the following: SUBNET : the name of the subnet.",
+          "To list all subnets in a region and include their IP address utilization, make the following GET request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks?views=WITH UTILIZATION Describe a subnet You can view the details of an existing subnet—such as its primary IPv4 ranges, secondary IP ranges, IPv6 ranges, IP address utilization, and region—by following the steps in this section.",
+          "To describe the subnet and view its IP address utilization, send the following request: GET https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /subnetworks/ SUBNET ?views=WITH UTILIZATION Add an IPv4-only subnet When you create a subnet, you set a name, a region, and at least a primary IPv4 address range according to the name and IPv4 subnet range limitations."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/quota",
+        "source_id": "site-docs-root",
+        "final_score": 191,
+        "relevance": "",
+        "evidence_snippets": [
+          "Static global internal IPv4 addresses The number of static global internal IPv4 address ranges that you can reserve in your project, such as allocated IPv4 address ranges for private services access and IPv4 addresses reserved for Private Service Connect endpoints that are used to access global Google APIs.",
+          "External IP addresses Static IP addresses The number of static regional external IPv4 addresses that you can reserve in each region in your project.",
+          "Maximum egress data rate to an external IP address destination all flows: about 7 Gbps (gigabits per second) sustained or 25 Gbps with per VM Tier 1 networking performance single flow: 3 Gbps sustained See Egress to external IP address destinations in the Compute Engine documentation."
+        ]
+      },
+      {
+        "title": "\"Bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 180,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use IPv4 BYOIP addresses to create external forwarding rules used with GKE ingress for external Application Load Balancers .",
+          "You can create IPv4 BYOIP addresses in Shared VPC host projects and use the host project IP addresses in the service projects.",
+          "Support for BYOIP addresses IPv4 BYOIP addresses can be used with most resources that support static external IP addresses."
+        ]
+      },
+      {
+        "title": "Subnets \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vpc/docs/subnets",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "199.36.153.4/30 and 199.36.153.8/30 Private Google Access-specific virtual IP addresses 0.0.0.0/8 Current (local) network RFC 1122 127.0.0.0/8 Local host RFC 1122 169.254.0.0/16 Link-local RFC 3927 224.0.0.0/4 Multicast (Class D) RFC 5771 255.255.255.255/32 Limited broadcast destination address RFC 8190 and RFC 919 Unusable addresses in IPv4 subnet ranges Google Cloud uses the first two and last two IPv4 addresses in each subnet primary IPv4 address range to host the subnet.",
+          "100.64.0.0/10 Shared address space RFC 6598 192.0.0.0/24 IETF protocol assignments RFC 6890 192.0.2.0/24 (TEST-NET-1) 198.51.100.0/24 (TEST-NET-2) 203.0.113.0/24 (TEST-NET-3) Documentation RFC 5737 192.88.99.0/24 IPv6 to IPv4 relay (deprecated) RFC 7526 198.18.0.0/15 Benchmark testing RFC 2544 240.0.0.0/4 Reserved for future use (Class E) as noted in RFC 5735 and RFC 1112 .",
+          "Unusable IPv4 address Description Example Network address First address in the primary IPv4 range 10.1.2.0 from range 10.1.2.0/24 Default gateway address Second address in the primary IPv4 range 10.1.2.1 from range 10.1.2.0/24 Second-to-last address Second-to-last address in the primary IPv4 range This range is reserved by Google Cloud for potential future use."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/subnets"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/create-modify-vpc-networks",
+        "https://docs.cloud.google.com/vpc/docs/quota",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/subnets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

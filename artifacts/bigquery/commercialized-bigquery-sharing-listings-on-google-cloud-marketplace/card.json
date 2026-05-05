@@ -1,0 +1,171 @@
+{
+  "feature_name": "Commercialized BigQuery sharing listings on Google Cloud Marketplace",
+  "feature_slug": "commercialized-bigquery-sharing-listings-on-google-cloud-marketplace",
+  "summary": "BigQuery sharing listings can be commercialized through Google Cloud Marketplace.",
+  "extended_definition": "BigQuery sharing listings can be commercialized through Google Cloud Marketplace.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Commercialize listings on Google Cloud Marketplace \\_|\\_ BigQuery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "source_id": "site-docs-reference-2",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to use Cloud Marketplace-integrated listings, ask your administrator to grant you the following IAM roles: Create and manage BigQuery sharing listings: Analytics Hub Admin ( roles/analyticshub.admin ) BigQuery Data Owner ( roles/bigquery.dataOwner ) Service Management Administrator ( roles/servicemanagement.admin ) Create and manage data product listings on Cloud Marketplace: Commerce Producer Admin ( roles/commerceproducer.admin ) Subscribe to paid BigQuery sharing listings on Cloud Marketplace: Billing Account Administrator ( roles/billing.admin ) Analytics Hub Viewer ( roles/analyticshub.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Architecture and terminology The following diagram shows the interaction between Cloud Marketplace and BigQuery sharing for commercial listings: Data product on Cloud Marketplace A Cloud Marketplace data product listing is created by selecting a BigQuery sharing listing, choosing a pricing model, and submitting the product to Cloud Marketplace for review.",
+          "Commercialize listings on Google Cloud Marketplace As a BigQuery sharing publisher, you can use the integration of BigQuery sharing (formerly Analytics Hub) with Google Cloud Marketplace to create revenue by listing your own data products on Cloud Marketplace."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the listing is of a commercial dataset, BigQuery sharing subscribers can either request access to the listing directly from the data provider, or they can browse and purchase Google Cloud Marketplace-integrated commercial listings .",
+          "Enable the Analytics Hub API gcloud Run the gcloud services enable command: gcloud services enable analyticshub.googleapis.com Required roles To manage listings and subscriptions, you must have one of the following BigQuery sharing Identity and Access Management (IAM) roles: Analytics Hub Publisher role ( roles/analyticshub.publisher ), which lets you create, update, delete, and set IAM policies on your listings.",
+          "Even though you can allow Google Cloud users ( allAuthenticatedUsers ) to subscribe to your listings, the listing will remain private and won't show as a public listing on the BigQuery sharing page ."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can discover Cloud Marketplace-integrated commercial listings on both BigQuery sharing and Cloud Marketplace.",
+          "As an Analytics Hub Viewer, you can browse through the shared resources that you have access to in BigQuery sharing and make a request to the publisher to access the shared data.",
+          "Listings let you share data without replicating the shared data, and they can be monetized on the Google Cloud Marketplace or through your own channels."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.admin",
+      "analyticshub.googleapis.com",
+      "analyticshub.publisher",
+      "analyticshub.viewer",
+      "bigquery.dataOwner",
+      "billing.admin",
+      "commerceproducer.admin",
+      "servicemanagement.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.admin",
+      "roles/analyticshub.publisher",
+      "roles/analyticshub.viewer",
+      "roles/bigquery.dataOwner",
+      "roles/billing.admin",
+      "roles/commerceproducer.admin",
+      "roles/servicemanagement.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-cloud-marketplace",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

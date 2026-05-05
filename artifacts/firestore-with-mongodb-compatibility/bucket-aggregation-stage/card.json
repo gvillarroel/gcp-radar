@@ -1,0 +1,115 @@
+{
+  "feature_name": "$bucket aggregation stage",
+  "feature_slug": "bucket-aggregation-stage",
+  "summary": "Supports the $bucket aggregation stage.",
+  "extended_definition": "Supports the $bucket aggregation stage.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-resources",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported features: 8.0 \\_|\\_ Firestore with MongoDB compatibility \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "source_id": "site-docs-root",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "Operator Supported $abs Yes $add Yes $ceil Yes $divide Yes $exp Yes $floor Yes $ln Yes $log Yes $log10 Yes $mod Yes $multiply Yes $pow Yes $round Yes $sqrt Yes $subtract Yes $trunc Yes Array operators Operator Supported $arrayElemAt Yes $arrayToObject Yes $concatArrays Yes $filter Yes $firstN Yes $in Yes $indexOfArray Yes $isArray Yes $lastN Yes $map Yes $maxN Yes $minN Yes $objectToArray Yes $range Yes $reduce Yes $reverseArray Yes $size Yes $slice Yes $sortArray Yes $zip Yes Boolean operators Operator Supported $and Yes $not Yes $or Yes Comparison operators Operator Supported $cmp Yes $eq Yes $gt Yes $gte Yes $lt Yes $lte Yes $ne Yes Conditional expression operators Operator Supported $cond Yes $ifNull Yes $switch Yes Data size operators Operator Supported $binarySize Yes $bsonSize Yes Date operators Operator Supported $dateAdd Yes $dateDiff Yes $dateFromParts Yes $dateFromString Yes $dateSubtract Yes $dateToParts Yes $dateToString Yes $dateTrunc Yes $dayOfMonth Yes $dayOfWeek Yes $dayOfYear Yes $hour Yes $isoDayOfWeek Yes $isoWeek Yes $isoWeekYear Yes $millisecond Yes $minute Yes $month Yes $second Yes $toDate Yes $week Yes $year Yes Timestamp operators Operator Supported $tsIncrement No $tsSecond No Miscellaneous operators Operator Supported $getField Yes $natural Yes (ascending) $rand Yes $sampleRate No $toHashedIndexKey No Literal expression operators Operator Supported $literal Yes Object operators Operator Supported $mergeObjects Yes $objectToArray Yes $setField No Set operators Operator Supported $allElementsTrue Yes $anyElementTrue Yes $setDifference Yes $setEquals Yes $setIntersection Yes $setIsSubset Yes $setUnion Yes Stage operators Operator Supported $addFields Yes $bucket Yes $bucketAuto No $changeStream No $collStats No $count Yes $currentOp No $documents Yes $facet Yes $geoNear No $graphLookup No $group Yes $indexStats No $limit Yes $listLocalSessions No $listSessions No $lookup Yes $match Yes $merge No $out No $planCacheStats No $project Yes $redact No $replaceRoot Yes $replaceWith Yes $sample Yes $set Yes $search No $setWindowFields No $skip Yes $sort Yes $sortByCount Yes $unionWith Yes $unset Yes $unwind Yes String operators Operator Supported $concat Yes $dateFromString Yes $dateToString Yes $indexOfBytes Yes $indexOfCP Yes $ltrim Yes $regexFind Yes $regexFindAll Yes $regexMatch Yes $replaceAll Yes $replaceOne Yes $rtrim Yes $split Yes $strcasecmp Yes $strLenBytes Yes $strLenCP Yes $substr Yes $substrBytes Yes $substrCP Yes $toLower Yes $toString Yes $toUpper Yes $trim Yes System variables Variable Supported $$CLUSTERTIME No $$CURRENT No $$DESCEND No $$KEEP No $$NOW Yes $$PRUNE No $$REMOVE Yes $$ROOT Yes Text operators Operator Supported $meta No Trigonometry operators Operator Supported $acos No $acosh No $asin No $asinh No $atan No $atan2 No $atanh No $cos No $cosh No $degreesToRadians No $radiansToDegrees No $sin No $sinh No $tan No $tanh No Type operators Operator Supported $convert Yes $isNumber Yes $toBool Yes $toDate Yes $toDecimal Yes $toDouble Yes $toInt Yes $toLong Yes $toObjectId Yes $toString Yes $type Yes Variable operators Operator Supported $let Yes Geospatial Firestore with MongoDB compatibility supports the following Geospatial operators.",
+          "Aggregation Command Supported aggregate Yes count Yes distinct Yes group No The $group stage in aggregations is supported whereas the group command isn't. mapReduce No Authentication Command Supported authenticate No getnonce No logout No Query and write operations Command Supported watch (Change Streams) No delete Yes eval No find Yes findAndModify Yes getLastError Yes getMore Yes getPrevError No GridFS No insert Yes parallelCollectionScan No replaceOne No The replaceOne driver method is supported with the update command. resetError No update Yes Session commands Command Supported abortTransaction Yes commitTransaction Yes endSessions Yes killAllSessions No killAllSessionsByPattern No killSessions No refreshSessions No startSession Sessions can be started using the startSession driver method.",
+          "Array operators Operator Supported $ Yes $[] Yes $[<identifier>] Yes $addToSet Yes $percentile Yes $pop Yes $pull Yes $pullAll Yes $push Yes Bitwise operators Operator Supported $bit Yes Field operators Operator Supported $currentDate Yes $inc Yes $max Yes $min Yes $mul Yes $rename Yes $set Yes $setOnInsert Yes $unset Yes Update modifiers Modifier Supported $each Yes $position Yes $slice Yes $sort Yes Aggregation pipeline operators Firestore with MongoDB compatibility supports the following aggregation pipeline operators."
+        ]
+      },
+      {
+        "title": "\"Configure environment variables \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars",
+        "source_id": "site-iam-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dataflow template parameters: GCS BUCKET TEMPLATE PATH : A sub-path in the GCS BUCKET ROOT PATH directory where a Dataflow template will be staged.",
+          "Set the following variables before proceeding with other commands in this guide: General parameters PROJECT ID = \" PROJECT ID \" LOCATION = \" LOCATION \" Datastream connection parameters SRC CONNECTION PROFILE NAME = \" SRC CONNECTION PROFILE NAME \" DST CONNECTION PROFILE NAME = \" DST CONNECTION PROFILE NAME \" DATASTREAM NAME = \" DATASTREAM NAME \" Datastream data placement parameters GCS BUCKET NAME = \" GCS BUCKET NAME \" GCS BUCKET ROOT PATH = \" GCS BUCKET ROOT PATH \" GCS BUCKET SUB PATH = \" GCS BUCKET SUB PATH \" Dataflow template parameters GCS BUCKET TEMPLATE PATH = \" GCS BUCKET TEMPLATE PATH \" NUM WORKERS = NUM WORKERS MAX WORKERS = MAX WORKERS WORKER TYPE = \" WORKER TYPE \" Additional Dataflow template parameters: these are initialized from parameters above and don't require further customization INPUT FILE LOCATION = \"gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } / ${ GCS BUCKET SUB PATH } /\" TEMP OUTPUT LOCATION = \"gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } /tmp\" DLQ LOCATION = \"gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } /dql\" STAGING LOCATION = \"gs:// ${ GCS BUCKET NAME } / ${ GCS BUCKET ROOT PATH } /staging\" Firestore connection parameters FIRESTORE CONNECTION URI = \" FIRESTORE CONNECTION URI \" FIRESTORE DATABASE NAME = \" FIRESTORE DATABASE NAME \" Replace the following: General parameters: PROJECT ID : a Project ID of the Google Cloud project where the migration pipeline will run.",
+          "Dataflow template parameters for managing the pipeline that will copy data from the Cloud Storage bucket into your Firestore with MongoDB compatibility database."
+        ]
+      },
+      {
+        "title": "\"Import from the source Mongo database \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source",
+        "source_id": "site-iam-reference",
+        "final_score": 91,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Import from the source Mongo database This page describes the first stage of the migration process where you use a Datastream stream to capture the contents of your MongoDB-compatible source database and transfer them into a Cloud Storage bucket.",
+          "As an alternative, you can create these files in any text editor and substitute the values manually. echo \" $( cat <<EOF includeObjects: databases: - database: ${ MONGODB DATABASE NAME } EOF ) \" > mongo source config.yaml echo \" $( cat <<EOF path: \"/ ${ GCS BUCKET SUB PATH } \" avroFileFormat: {} EOF ) \" > gcs dst config.yaml The previous example configures the full contents of $MONGODB DATABASE NAME for migration.",
+          "As the stream begins pulling data and streaming changes from the Mongo source, you can observe new directories and files created in the Cloud Storage bucket, under the path configured in the connection profile and the stream."
+        ]
+      },
+      {
+        "title": "\"Configure resources for migration \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-resources",
+        "source_id": "site-iam-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a new Cloud Storage bucket with the chosen name and in the chosen region by following instructions provided on the Create a bucket page in the Cloud Storage documentation.",
+          "Create a Cloud Storage bucket Create a new Cloud Storage bucket in the following way: Choose a Cloud Storage region where the migration pipeline will run.",
+          "At this stage, you do the following: Install command-line tools required for running commands at later stages of the migration process."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-resources"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/supported-features-80",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-import-from-source",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-resources"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:32.983Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility"
+}

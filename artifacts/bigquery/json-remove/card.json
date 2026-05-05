@@ -1,0 +1,132 @@
+{
+  "feature_name": "JSON_REMOVE",
+  "feature_slug": "json-remove",
+  "summary": "JSON_REMOVE produces JSON with specified JSON data removed.",
+  "extended_definition": "JSON_REMOVE produces JSON with specified JSON data removed.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+      "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "JSON functions \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "SELECT JSON QUERY ARRAY ( '{\"a\": \"foo\", \"b\": []}' , '$.b' ) AS result ; / --------+ result +--------+ [] +-------- / JSON REMOVE JSON REMOVE ( json expr , json path [ , ... ] ) Produces a new SQL JSON value with the specified JSON data removed.",
+          "JSON REMOVE Produces JSON with the specified JSON data removed.",
+          "SELECT JSON REMOVE ( JSON 'null' , '$.a.b' ) AS json data / -----------+ json data +-----------+ null +----------- / JSON SET JSON SET ( json expr , json path value pair [ , ... ] [ , create if missing = > { TRUE FALSE } ] ) json path value pair : json path , value Produces a new SQL JSON value with the specified JSON data inserted or replaced."
+        ]
+      },
+      {
+        "title": "\"Data definition language (DDL) statements in GoogleSQL \\_|\\_ BigQuery \\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "Syntax: '{ \"differential privacy policy\": { \"privacy unit column\": value, \"max epsilon per query\": value, \"epsilon budget\": value, \"delta per query\": value, \"delta budget\": value, \"max groups contributed\": value } }' Parameters: differential privacy policy : The differential privacy policy for the view. privacy unit column : The column that represents the privacy unit column for differentially private queries on the view. value is a JSON string. max epsilon per query : The maximum amount of epsilon that can be specified for a differentially private query on the view. value is a JSON number from 0.001 to 1e+15. epsilon budget : The amount of epsilon that can be used in totality for all differentially private queries on the view. value is JSON number from 0.001 to 1e+15. delta per query : The maximum amount of delta that can be specified for a differentially private query on the view. value is a JSON number from 1e-15 to 1. delta budget : The amount of delta that can be used in totality for all differentially private queries on the view.",
+          "See Table path syntax . (ALTER COLUMN) IF EXISTS : If the specified column does not exist, the statement has no effect. column name : The name of the top-level column to remove the default value from.",
+          "The statement fails if ivf options is specified and index type is not IVF . tree ah options JSON-formatted STRING The options to use with the TREE AH algorithm."
+        ]
+      },
+      {
+        "title": "BigQuery audit logs overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "source_id": "site-docs-reference",
+        "final_score": 68,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following sample query shows when these messages occur and includes a URI that references the table resource that was removed. standardSQL SELECT protopayload auditlog . resourceName AS resourceName , receiveTimestamp as logTime FROM my - project - id . auditlog dataset . cloudaudit googleapis com system event WHERE protopayload auditlog . methodName = 'InternalTableExpired' ORDER BY resourceName Example: Most popular datasets This query shows coarse, per-dataset statistics about table reads and table modifications.",
+          "System event (system event) You can set an expiration time on tables to remove them at a specified time.",
+          "The system event stream reports a TableDeletion event when the table expires and is removed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "a.b"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/json_functions",
+        "https://docs.cloud.google.com/bigquery/docs/reference/auditlogs",
+        "https://docs.cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

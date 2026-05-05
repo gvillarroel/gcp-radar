@@ -1,0 +1,116 @@
+{
+  "feature_name": "Direct VPC egress",
+  "feature_slug": "direct-vpc-egress",
+  "summary": "Direct VPC egress lets Cloud Run send traffic directly to a VPC network without requiring a Serverless VPC Access connector; Direct VPC egress lets Cloud Run send traffic directly to a VPC network without requiring a Serverless VPC Access connector.",
+  "extended_definition": "Direct VPC egress lets Cloud Run send traffic directly to a VPC network without requiring a Serverless VPC Access connector; Direct VPC egress lets Cloud Run send traffic directly to a VPC network without requiring a Serverless VPC Access connector.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/reference/container-contract"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "This means that they can send traffic to private resources within your configured VPC network, such as databases or internal services.",
+          "Transport layer encryption (TLS) The container shouldn't implement any transport layer security directly.",
+          "Cloud Run worker pools support both Direct VPC egress and Direct VPC ingress ."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "This means that they can send traffic to private resources within your configured VPC network, such as databases or internal services.",
+          "Transport layer encryption (TLS) The container shouldn't implement any transport layer security directly.",
+          "Cloud Run worker pools support both Direct VPC egress and Direct VPC ingress ."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.run.v2 (0.88.0) \\_|\\_ Java client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2",
+        "source_id": "site-java-reference",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information on sending traffic to a VPC network, visit https://cloud.google.com/run/docs/configuring/connecting-vpc . com. google. cloud. run. v2.",
+          "For more information on sending traffic to a VPC network, visit https://cloud.google.com/run/docs/configuring/connecting-vpc . com. google. cloud. run. v2.",
+          "Network Interface Direct VPC egress settings. com. google. cloud. run. v2."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.run.v2"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-run/latest/com.google.cloud.run.v2"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

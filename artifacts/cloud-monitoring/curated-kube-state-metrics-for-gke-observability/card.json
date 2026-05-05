@@ -1,0 +1,98 @@
+{
+  "feature_name": "Curated kube state metrics for GKE Observability",
+  "feature_slug": "curated-kube-state-metrics-for-gke-observability",
+  "summary": "This feature lets GKE clusters enable a curated set of kube state metrics and preview related charts and metrics.",
+  "extended_definition": "This feature lets GKE clusters enable a curated set of kube state metrics and preview related charts and metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+      "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+      "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Application Monitoring supported infrastructure \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "source_id": "site-docs-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Golden signals for Kubernetes For Kubernetes DaemonSets, Deployments, and StatefulSets, Google Cloud Observability uses the following metric data to derive values for golden signals, when that metric data is available: Traffic : service/server/request count .",
+          "To learn how to use a StatefulSet or deploy a stateful application, see About StatefulSets in Google Kubernetes Engine .",
+          "For some golden signals, Google Cloud Observability has a prioritized list of source metrics."
+        ]
+      },
+      {
+        "title": "Ops Agent overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "source_id": "site-iam-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics collected include: cpu metrics disk metrics iis metrics (Windows only) interface metrics gpu metrics (Linux only) memory metrics mssql metrics (Windows only) pagefile metrics (Windows only) swap metrics network metrics processes metrics agent self metrics : Third-party application support Curated integrations for third-party application metrics , which collect common app metrics and offer sample dashboards and alert policies.",
+          "The Cloud Monitoring Metrics Management page provides information that can help you control the amount you spend on billable metrics without affecting observability.",
+          "Google Kubernetes Engine node instances: GKE on Google Cloud clusters are configured to collect logs and metrics with Logging and Monitoring by default."
+        ]
+      },
+      {
+        "title": "Collect metrics overview \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 103,
+        "relevance": "",
+        "evidence_snippets": [
+          "Metrics from third-party monitoring applications Cloud Monitoring provides integrations that let you collect telemetry from applications such as Apache Web Server, MySQL, Redis, and others for deployments running on Compute Engine and Google Kubernetes Engine: When using Compute Engine, third-party telemetry is collected by the Ops Agent .",
+          "Home Documentation Observability Cloud Monitoring Guides Send feedback Collect metrics overview Stay organized with collections Save and categorize content based on your preferences.",
+          "These metrics are a key component of your system's overall observability."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/monitoring/docs/application-monitoring-services",
+        "https://docs.cloud.google.com/monitoring/agent/ops-agent",
+        "https://docs.cloud.google.com/monitoring/docs/collect-metrics-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

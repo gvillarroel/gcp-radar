@@ -1,0 +1,112 @@
+{
+  "feature_name": "Streaming Engine for Python pipelines",
+  "feature_slug": "streaming-engine-for-python-pipelines",
+  "summary": "Python streaming pipelines can use Dataflow Streaming Engine.",
+  "extended_definition": "Python streaming pipelines can use Dataflow Streaming Engine.",
+  "lifecycle": {
+    "latest_feature_date": "2019-10-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+      "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+      "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Set the pipeline streaming mode \\_|\\_ Cloud Dataflow \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Java --dataflowServiceOptions=streaming mode at least once Python --dataflow service options=streaming mode at least once Go --dataflow service options=streaming mode at least once If you don't specify the streaming mode at least once option, then Dataflow uses exactly-once streaming mode.",
+          "If you set the streaming mode at least once option, Dataflow automatically enables Streaming Engine with resource-based billing .",
+          "For more information, see the following sections in the Dataflow templates documentation: Flex templates: Metadata Classic templates: Use metadata in your pipeline code View a job's streaming mode To view the streaming mode for a job, go to the Jobs page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Deploy Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "source_id": "site-docs-reference-2",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run your pipeline If you want to learn how to create your first pipeline and deploy it locally and on Dataflow, you can follow one of the Dataflow quickstarts: Run a Java pipeline Run a Python pipeline Run a Go pipeline Run a streaming pipeline from a template --> After you create and test your Apache Beam pipeline, run your pipeline.",
+          "Streaming Engine By default, the Dataflow pipeline runner executes the steps of your streaming pipeline entirely on worker virtual machines, consuming worker CPU, memory, and Persistent Disk storage.",
+          "Dataflow's Streaming Engine moves pipeline execution out of the worker VMs and into the Dataflow service backend."
+        ]
+      },
+      {
+        "title": "Troubleshoot and debug Dataflow pipelines \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Python For example, if your pipeline uses type hints and the argument type in one of the transforms is not as expected, an error message similar to the following occurs: ... in <module> run() ... in run beam.Map('count', lambda (word, ones): (word, sum(ones)))) ... in or return self.pipeline.apply(ptransform, self) ... in apply transform.type check inputs(pvalueish) ... in type check inputs self.type check inputs or outputs(pvalueish, 'input') ... in type check inputs or outputs pvalue .element type)) google.cloud.dataflow.typehints.decorators.TypeCheckError: Input type hint violation at group: expected Tuple[TypeVariable[K], TypeVariable[V]], got <type 'str'> Go For example, if your pipeline uses a DoFn that doesn't take in any inputs, an error message similar to the following occurs: ... panic: Method ProcessElement in DoFn main.extractFn is missing all inputs.",
+          "Worker pool stopped. ... com.google.cloud.dataflow.sdk.runners.BlockingDataflowPipelineRunner run INFO: Job finished with status FAILED Exception in thread \"main\" com.google.cloud.dataflow.sdk.runners.DataflowJobExecutionException: Job 2016-03-08 18 59 25-16868399470801620798 failed with status FAILED at com.google.cloud.dataflow.sdk.runners.DataflowRunner.run(DataflowRunner.java:155) at com.google.cloud.dataflow.sdk.runners.DataflowRunner.run(DataflowRunner.java:56) at com.google.cloud.dataflow.sdk.Pipeline.run(Pipeline.java:180) at com.google.cloud.dataflow.integration.BigQueryCopyTableExample.main(BigQueryCopyTableExample.java:74) Python INFO:root:Created job with id: [2016-03-08 14 12 01-2117248033993412477] ...",
+          "File \".../apache beam/examples/wordcount.runfiles/py/apache beam/examples/wordcount.py\", line 73, in <lambda> ValueError: invalid literal for int() with base 10: 'www' Note: The Dataflow service retries failed tasks up to 4 times in batch mode, and an unlimited number of times in streaming mode."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "beam.Map",
+      "com.google.cloud.dataflow.integration.BigQueryCopyTableExample.main",
+      "com.google.cloud.dataflow.sdk.Pipeline.run",
+      "com.google.cloud.dataflow.sdk.runners.BlockingDataflowPipelineRunner",
+      "com.google.cloud.dataflow.sdk.runners.DataflowJobExecutionException",
+      "com.google.cloud.dataflow.sdk.runners.DataflowRunner.run",
+      "main.extractFn",
+      "org.apache.beam.examples.WordCount",
+      "self.pipeline.apply",
+      "self.type",
+      "transform.type",
+      "wordcount.py",
+      "wordcount.runfiles"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataflow/docs/guides/deploying-a-pipeline",
+        "https://docs.cloud.google.com/dataflow/docs/guides/streaming-modes",
+        "https://docs.cloud.google.com/dataflow/docs/guides/troubleshooting-your-pipeline"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:24.520Z",
+  "source_step08_card": "data/step-08/current/products/dataflow/card.json",
+  "product_name": "Dataflow",
+  "product_slug": "dataflow"
+}

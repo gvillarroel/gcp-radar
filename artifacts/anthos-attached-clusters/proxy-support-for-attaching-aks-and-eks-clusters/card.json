@@ -1,0 +1,142 @@
+{
+  "feature_name": "Proxy support for attaching AKS and EKS clusters",
+  "feature_slug": "proxy-support-for-attaching-aks-and-eks-clusters",
+  "summary": "Added support for using a proxy when attaching AKS and EKS clusters to Anthos Attached Clusters.",
+  "extended_definition": "Added support for using a proxy when attaching AKS and EKS clusters to Anthos Attached Clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+      "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported Kubernetes cluster versions \\_|\\_ GKE attached clusters \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Added a mechanism to detect and automatically restart the agent when this occurs.",
+          "Added a mechanism to detect and automatically restart the agent when this occurs.",
+          "For more information see: Customize system components on AKS clusters Customize system components on EKS clusters Customize system components on CNCF conformant clusters Security Fixes Fixed CVE-2023-4039 Fixed CVE-2024-13176 Fixed CVE-2024-26462 Fixed CVE-2025-0395 Fixed CVE-2025-1390 Fixed CVE-2025-24528 Fixed CVE-2025-31115 Fixed CVE-2025-4207 1.30.0-gke.6 Security Fixes Fixed CVE-2020-13529 Fixed CVE-2021-33560 Fixed CVE-2022-4899 Fixed CVE-2023-5678 Fixed CVE-2024-0727 Fixed CVE-2024-12133 Fixed CVE-2024-12243 Fixed CVE-2024-2511 Fixed CVE-2024-4741 Fixed CVE-2024-5535 Fixed CVE-2024-9143 Fixed CVE-2025-1094 1.30.0-gke.5 Security Fixes Fixed CVE-2024-10976 Fixed CVE-2024-10977 Fixed CVE-2024-10978 Fixed CVE-2024-10979 1.30.0-gke.4 Breaking Change: GKE attached clusters validate that the following required services are enabled when creating or updating attached clusters: cloudresourcemanager.googleapis.com , monitoring.googleapis.com ."
+        ]
+      },
+      {
+        "title": "\"Attach your CNCF conformant cluster \\_|\\_ GKE attached clusters \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 63,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When attaching your cluster, you must specify the following: A supported Google Cloud administrative region A platform version The administrative region is a Google Cloud region to administer your attached cluster from.",
+          "When attaching or updating your cluster, you must choose a platform version whose minor version is the same as or one level below the Kubernetes version of your cluster.",
+          "Note: If you're attaching an Amazon EKS or Azure AKS cluster, see Attach your EKS cluster or Attach your AKS cluster ."
+        ]
+      },
+      {
+        "title": "\"Connect to your AKS cluster \\_|\\_ GKE attached clusters \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster",
+        "source_id": "site-docs-root",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Method #3: give access to external identities when attaching or updating a cluster Method #3 grants access to external identities when you attach or update a cluster.",
+          "When running the gcloud CLI command to register or update a cluster, specify the admin-users and/or admin-groups parameters as follows: gcloud container attached clusters [ register update ] CLUSTER NAME \\ --admin-users = principal://iam.googleapis.com/locations/global/workforcePools/ WORKFORCE POOL ID /subject SUBJECT VALUE \\ --admin-groups = principalSet://iam.googleapis.com/locations/global/workforcePools/ WORKFORCE POOL ID /group/ GROUP ID Replace the following: CLUSTER NAME : the name of your cluster.",
+          "Set up and apply RBAC rules either automatically or manually: Automatic method : If, when you attached your cluster, you specified Google users in the --admin-users field of the gcloud container attached clusters register command, these users were automatically granted administrator privileges on the cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudresourcemanager.googleapis.com",
+      "gke.1",
+      "gke.2",
+      "gke.4",
+      "gke.5",
+      "gke.6",
+      "gke.7",
+      "gke.8",
+      "gke.9",
+      "iam.googleapis.com",
+      "monitoring.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/reference/supported-versions",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/generic/how-to/attach-cluster",
+        "https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/attached/aks/how-to/connect-to-cluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.954Z",
+  "source_step08_card": "data/step-08/current/products/anthos-attached-clusters/card.json",
+  "product_name": "Anthos Attached Clusters",
+  "product_slug": "anthos-attached-clusters"
+}

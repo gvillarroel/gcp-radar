@@ -1,0 +1,146 @@
+{
+  "feature_name": "Remote repository context prioritization in Gemini prompts",
+  "feature_slug": "remote-repository-context-prioritization-in-gemini-prompts",
+  "summary": "Gemini prompts can start with @ to select a remote repository and prioritize that codebase as context; Gemini prompts can start with @ to select a remote repository and prioritize that codebase as context.",
+  "extended_definition": "Gemini prompts can start with @ to select a remote repository and prioritize that codebase as context; Gemini prompts can start with @ to select a remote repository and prioritize that codebase as context.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root-2",
+        "final_score": 294,
+        "relevance": "",
+        "evidence_snippets": [
+          "Get more relevant suggestions with remote repository context You can get more contextually aware and relevant code suggestions by directing Gemini Code Assist to focus on specific remote repositories.",
+          "Use a remote repository as context To direct Gemini Code Assist to use one or more repositories as the primary context for your prompts: In your IDE's chat, start your prompt with the @ symbol.",
+          "Example prompts This section includes examples of how you can get more relevant suggestions with remote repository context."
+        ]
+      },
+      {
+        "title": "\"Use Gemini Code Assist code customization \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "source_id": "site-docs-root-2",
+        "final_score": 274,
+        "relevance": "",
+        "evidence_snippets": [
+          "Include health checks.\" \"Write a FUNCTION OR CLASS in the following structure: EXPLAIN STRUCTURE .\" After you generate some code, try using a follow-up prompt to improve it: \"Try the /fix command to adjust the generated code—for example, syntax errors.\" \"Add missing imports.\" \"Try /fix on chat-generated code.\" Cleaning, simplifying, and refactoring code Try the following prompts in Gemini Code Assist chat: \"Can you merge IMPORTS VARIABLES OR NOTE EXPORTED FUNCTIONS in this file?\" \"How would you simplify the FUNCTION NAME function?\" \"Can you merge FUNCTION NAME 1 and FUNCTION NAME 2 into one function?\" \"Could you inline some variables in FUNCTION NAME ?\" \"Could you simplify variable naming in the function FUNCTION NAME ?\" Readability Try the following prompts in Gemini Code Assist chat: \"Write the function FUNCTION NAME in fewer lines of code, if possible.\" \"Add comments to the function FUNCTION NAME .\" \"Remove unnecessary whitespaces in the function FUNCTION NAME .\" \"Format the function FUNCTION NAME in a similar way as the rest of the code.\" Code review Try the following prompts in Gemini Code Assist chat: \"Split the code in parts and explain each part using our codebase.\" \"Are there variables or keywords that could be shorter and more self-explanatory?\" \"Can you give me useful code from the REPOSITORY NAME PACKAGE MODULE context for this code?\" \"What do you think about the function FUNCTION NAME ?\" Debugging Try the following prompts in Gemini Code Assist chat: \"I am getting an error when I try to do X/add Y.",
+          "Can you give me an overview of this repository's purpose and key modules?\" For code generation and modification: \" @ REPOSITORY NAME Implement an authentication function similar to the one in this repository.\" \" @ REPOSITORY NAME Refactor the following code to follow the conventions in the selected repository.\" \" @ REPOSITORY A NAME How can I use the latest functions from this repository to improve my code in REPOSITORY B NAME ?\" For testing: \" @ UNIT TEST FILE NAME Generate unit tests for MODULE based on the examples in the selected file.\" By using remote repositories as a focused source of context, you can get more accurate and relevant suggestions from Gemini Code Assist, which can help you code faster and more efficiently.",
+          "Get more relevant suggestions with remote repository context You can get more contextually aware and relevant code suggestions by directing Gemini Code Assist to focus on specific remote repositories."
+        ]
+      },
+      {
+        "title": "\"Use the Gemini Code Assist agent mode \\_|\\_ Gemini for Google Cloud \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "source_id": "site-docs-root-2",
+        "final_score": 258,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example mcp.json file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in IntelliJ. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Your configured MCP servers are available for the agent to use in agent mode.",
+          "The following example Gemini settings JSON file configures two remote Cloudflare MCP servers, a remote GitLab MCP server, and a local GitHub MCP server for use with Gemini Code Assist in VS Code. { \"mcpServers\" : { \"github\" : { \"command\" : \"npx\" , \"args\" : [ \"-y\" , \"@modelcontextprotocol/server-github\" ], \"env\" : { \"GITHUB PERSONAL ACCESS TOKEN\" : \"ghp example personal access token12345\" } }, \"gitlab\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://your-gitlab-instance.com/api/v4/mcp\" ] }, \"cloudflare-observability\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://observability.mcp.cloudflare.com/sse\" ] }, \"cloudflare-bindings\" : { \"command\" : \"npx\" , \"args\" : [ \"mcp-remote\" , \"https://bindings.mcp.cloudflare.com/sse\" ] } } } Open the command palette and select Developer: Reload Window .",
+          "VS Code You can use the following built-in Gemini CLI commands in agent mode: /tools : Displays a list of tools that are available in your agent mode session. /mcp : Lists configured Model Context Protocol (MCP) servers, their connection status, server details, and available tools. /deploy : Deploys a web application to Cloud Run."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "Manage files and folders in the Context Drawer After you specify a file or folder to be used as context for your Gemini Code Assist prompts , these files and folders are placed in the Context Drawer , where you can view and remove them from the prompt context.",
+          "Stop in-progress chat VS Code You can stop an in-progress chat response by pressing stop Stop : IntelliJ You can stop an in-progress chat response by pressing stop Stop : Select the model If you use Gemini Code Assist Standard or Enterprise , or if you have a Google AI Pro or Ultra subscription, you can select the model that Gemini Code Assist uses when processing your prompts.",
+          "View query history If you want to re-use your previous prompts, you can find them in your Query History in the Gemini Code Assist tool window by clicking schedule Show Query History ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bindings.mcp.cloudflare.com",
+      "com.google.cloud.geminidataanalytics.v1beta",
+      "instance.com",
+      "mcp.json",
+      "observability.mcp.cloudflare.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-agentic-chat-pair-programmer",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.293Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

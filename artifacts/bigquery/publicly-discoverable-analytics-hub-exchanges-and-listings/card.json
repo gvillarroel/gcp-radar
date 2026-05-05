@@ -1,0 +1,163 @@
+{
+  "feature_name": "Publicly discoverable Analytics Hub exchanges and listings",
+  "feature_slug": "publicly-discoverable-analytics-hub-exchanges-and-listings",
+  "summary": "Analytics Hub exchanges and listings can be made publicly discoverable.",
+  "extended_definition": "Analytics Hub exchanges and listings can be made publicly discoverable.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage Sharing data exchanges and listings using custom constraints \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "source_id": "site-docs-reference-2",
+        "final_score": 175,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Description Constraint syntax DataExchange resources can't be publicly discoverable. name : organizations/ ORGANIZATION ID /customConstraints/custom.enforceDataExchangeDiscovery resource types : analyticshub.googleapis.com/DataExchange method types : - CREATE - UPDATE condition : resource.discoveryType == 'DISCOVERY TYPE PUBLIC' action type : DENY display name : Reject public DataExchanges. description : All DataExchange resources must be private.",
+          "The Listing resource can't be publicly discoverable. name : organizations/ ORGANIZATION ID /customConstraints/custom.noPublicListing resource types : analyticshub.googleapis.com/Listing method types : - CREATE - UPDATE condition : resource.discoveryType == 'DISCOVERY TYPE PUBLIC' action type : DENY display name : Reject public Listings. description : All Listing resources must be undiscoverable.",
+          "Before you begin, you must have the following: Your organization ID A project ID Create the constraint To create a custom constraint, follow these steps: Save the following file as constraint-enforce-dataExchangeDiscovery.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.enforceDataExchangeDiscovery resourceTypes : - analyticshub.googleapis.com/DataExchange methodTypes : - CREATE condition : \"resource.discoveryType == 'DISCOVERY TYPE PUBLIC'\" actionType : DENY displayName : Reject public DataExchanges. description : All DataExchange resources must be private."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "Publicly discoverable exchanges can't have private listings due to permission inheritance, but private exchanges can have public listings.",
+          "Publicly discoverable exchanges can't have private listings due to permission inheritance, but private exchanges can have public listings.",
+          "Use the following format to add members: user:test-user@gmail.com group:admins@example.com serviceAccount:test123@example.domain.com domain:example.domain.com For example, to grant the roles/analyticshub.subscriber role to group:subscribers@example.com , add the following binding to the policy: { \"members\": [ \"group:subscribers@example.com\" ], \"role\":\"roles/analyticshub.subscriber\" } Write the updated policy by using the projects.locations.dataExchanges.listings.setIamPolicy method ."
+        ]
+      },
+      {
+        "title": "\"View and subscribe to listings and data exchanges \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Required roles To get the permissions that you need to use listings, ask your BigQuery sharing administrator to grant you the following Identity and Access Management (IAM) roles on the BigQuery sharing subscriber project: Discover listings : Analytics Hub Viewer ( roles/analyticshub.viewer ) Discover data exchanges : Analytics Hub Viewer ( roles/analyticshub.viewer ) Subscribe to listings : BigQuery User ( roles/bigquery.user ) To subscribe to listings, you must also ask the BigQuery sharing listing publisher to grant you the Analytics Hub Subscriber role ( roles/analyticshub.subscriber ) on their listing, exchange, or project, depending on the scope that's most appropriate for your use case.",
+          "POST https://analyticshub.googleapis.com/v1/projects/ PROJECT ID /location/ LOCATION /dataExchanges/ DATAEXCHANGE ID /listings/ LISTING ID :subscribe Replace the following: PROJECT ID : the project ID of the listing that you want to subscribe to.",
+          "View and subscribe to listings and data exchanges This document describes how to view and subscribe to listings and data exchanges in BigQuery sharing (formerly Analytics Hub)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.googleapis.com",
+      "analyticshub.subscriber",
+      "analyticshub.viewer",
+      "bigquery.user",
+      "custom.enforceDataExchangeDiscovery",
+      "custom.noPublicListing",
+      "example.com",
+      "example.domain.com",
+      "gmail.com",
+      "projects.locations.dataExchanges.listings",
+      "projects.locations.dataExchanges.listings.setIamPolicy",
+      "resource.discoveryType"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.viewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-custom-constraints",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

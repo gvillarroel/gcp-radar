@@ -1,0 +1,93 @@
+{
+  "feature_name": "Custom payload templates",
+  "feature_slug": "custom-payload-templates",
+  "summary": "Dialogflow CX supports reusable custom payload templates for responses.",
+  "extended_definition": "Dialogflow CX supports reusable custom payload templates for responses.",
+  "lifecycle": {
+    "latest_feature_date": "2023-01-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Fulfillments \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Custom payloads are sometimes large and complex, so using templates can help make the agent creation process easier.",
+          "Custom payload templates If you use custom payloads often, you should use custom payload templates .",
+          "For example, the JSON payload for \"yes\" and \"no\" buttons can be defined as custom payload templates."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Connectivity Custom payload template link In this section, you can create descriptions and payloads for custom payload templates .",
+          "Custom payload template In this section, you can create descriptions and payloads for custom payload templates .",
+          "If you are using telephony gateway, make sure the Dialogflow Service Agent service account service- PROJECT NUMBER @gcp-sa-dialogflow.iam.gserviceaccount.com is granted with \"AutoML Predictor\" in your custom voice project."
+        ]
+      },
+      {
+        "title": "Fulfillment \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment",
+        "source_id": "site-docs-reference",
+        "final_score": 92,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The rich response message. message can be only one of the following: text object ( Text ) Returns a text response. payload object ( Struct format) Returns a response containing a custom, platform-specific payload. conversationSuccess object ( ConversationSuccess ) Indicates that the conversation succeeded. outputAudioText object ( OutputAudioText ) A text or ssml response that is preferentially used for TTS output audio synthesis, as described in the comment on the ResponseMessage message. liveAgentHandoff object ( LiveAgentHandoff ) Hands off conversation to a human agent. endInteraction object ( EndInteraction ) Output only.",
+          "Format: projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/webhooks/<WebhookID> . returnPartialResponses boolean Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs.",
+          "If the response contains generative knowledge prediction, Dialogflow will return a payload with Infobot Messenger compatible info card."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/fulfillment",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/Fulfillment"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

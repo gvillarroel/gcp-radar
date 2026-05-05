@@ -1,0 +1,174 @@
+{
+  "feature_name": "FHIR base resource validation level via fhirStores.patch",
+  "feature_slug": "fhir-base-resource-validation-level-via-fhirstores-patch",
+  "summary": "The projects.locations.datasets.fhirStores.patch method can now determine the base resource validation level.",
+  "extended_definition": "The projects.locations.datasets.fhirStores.patch method can now determine the base resource validation level.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+      "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+      "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "REST Resource: projects.locations.datasets.fhirStores | Cloud Healthcare API | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "source_id": "feature-recovery-http",
+        "final_score": 478,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: projects.locations.datasets.fhirStores | Cloud Healthcare API | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Cloud Healthcare API Start free Overview Guides Reference Samples Support Resources Technology areas More Overview Guides Reference Samples Support Resources Cross-product tools More Console Cloud Healthcare API All APIs & references Authenticate to the Cloud Healthcare API REST reference Overview v1 REST Resources projects.locations Overview get list projects.locations.datasets Overview create deidentify delete get getIamPolicy list patch setIamPolicy testIamPermissions projects.locations.datasets.consentStores Overview checkDataAccess create delete evaluateUserConsents get getIamPolicy list patch queryAccessibleData setIamPolicy testIamPermissions projects.locations.datasets.consentStores.attributeDefinitions Overview create delete get list patch projects.locations.datasets.consentStores.consentArtifacts Overview create delete get list projects.locations.datasets.consentStores.consents Overview activate create delete deleteRevision get list listRevisions patch reject revoke projects.locations.datasets.consentStores.userDataMappings Overview archive create delete get list patch projects.locations.datasets.dataMapperWorkspaces Overview getIamPolicy setIamPolicy testIamPermissions projects.locations.datasets.dicomStores Overview create deidentify delete export get getDICOMStoreMetrics getIamPolicy import list patch searchForInstances searchForSeries searchForStudies setBlobStorageSettings setIamPolicy storeInstances testIamPermissions projects.locations.datasets.dicomStores.dicomWeb.studies Overview getStudyMetrics setBlobStorageSettings projects.locations.datasets.dicomStores.dicomWeb.studies.series Overview getSeriesMetrics projects.locations.datasets.dicomStores.dicomWeb.studies.series.instances Overview getStorageInfo projects.locations.datasets.dicomStores.studies Overview delete retrieveMetadata retrieveStudy searchForInstances searchForSeries storeInstances projects.locations.datasets.dicomStores.studies.series Overview delete retrieveMetadata retrieveSeries searchForInstances projects.locations.datasets.dicomStores.studies.series.instances Overview delete retrieveInstance retrieveMetadata retrieveRendered projects.locations.datasets.dicomStores.studies.series.instances.bulkdata Overview retrieveBulkdata projects.locations.datasets.dicomStores.studies.series.instances.frames Overview retrieveFrames retrieveRendered projects.locations.datasets.fhirStores Overview applyAdminConsents applyConsents bulk-export-group create deidentify delete explainDataAccess bulkDelete export get getFHIRStoreMetrics getIamPolicy import list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.fhirStores.fhir Overview Binary-create Binary-read Binary-update Binary-vread Consent-enforcement-status Patient-consent-enforcement-status Patient-everything Resource-purge Resource-validate bulk-export capabilities conditionalDelete conditionalPatch conditionalUpdate create delete executeBundle history patch read search search-type update vread projects.locations.datasets.fhirStores.operations Overview delete-fhir-operation get-fhir-operation-status projects.locations.datasets.hl7V2Stores Overview create delete export get getHL7v2StoreMetrics getIamPolicy import list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.hl7V2Stores.messages Overview create delete get ingest list patch projects.locations.datasets.operations Overview cancel get list projects.locations.services.nlp Overview analyzeEntities Types Attribute BlobStorageClass BlobStorageSettings ConsentEvaluation ConsentList DicomFilterConfig MessageView NotificationConfig OperationMetadata v1beta1 REST Resources projects.locations Overview get list projects.locations.datasets Overview create deidentify delete get getIamPolicy list patch setIamPolicy testIamPermissions projects.locations.datasets.consentStores Overview checkDataAccess create delete evaluateUserConsents get getIamPolicy list patch queryAccessibleData setIamPolicy testIamPermissions projects.locations.datasets.consentStores.attributeDefinitions Overview create delete get list patch projects.locations.datasets.consentStores.consentArtifacts Overview create delete get list projects.locations.datasets.consentStores.consents Overview activate create delete deleteRevision get list listRevisions patch reject revoke projects.locations.datasets.consentStores.userDataMappings Overview archive create delete get list patch projects.locations.datasets.dataMapperWorkspaces Overview getIamPolicy setIamPolicy testIamPermissions projects.locations.datasets.dicomStores Overview create deidentify delete export get getDICOMStoreMetrics getIamPolicy import list patch searchForInstances searchForSeries searchForStudies setBlobStorageSettings setIamPolicy storeInstances testIamPermissions updateInstances projects.locations.datasets.dicomStores.dicomWeb.studies Overview getStudyMetrics setBlobStorageSettings projects.locations.datasets.dicomStores.dicomWeb.studies.series Overview getSeriesMetrics projects.locations.datasets.dicomStores.dicomWeb.studies.series.instances Overview getStorageInfo projects.locations.datasets.dicomStores.studies Overview delete retrieveMetadata retrieveStudy searchForInstances searchForSeries storeInstances updateInstances updateMetadata projects.locations.datasets.dicomStores.studies.series Overview delete retrieveMetadata retrieveSeries searchForInstances updateMetadata projects.locations.datasets.dicomStores.studies.series.instances Overview delete retrieveInstance retrieveMetadata retrieveRendered updateMetadata projects.locations.datasets.dicomStores.studies.series.instances.bulkdata Overview retrieveBulkdata projects.locations.datasets.dicomStores.studies.series.instances.frames Overview retrieveFrames retrieveRendered projects.locations.datasets.fhirStores Overview applyAdminConsents applyConsents bulk-export-group configureSearch create deidentify delete explainDataAccess export exportHistory get getFHIRStoreMetrics getIamPolicy import importHistory list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.fhirStores.fhir Overview Binary-create Binary-read Binary-update Binary-vread ConceptMap-search-translate ConceptMap-translate Consent-enforcement-status Encounter-everything Observation-lastn Patient-consent-enforcement-status Patient-everything Resource-incoming-references Resource-purge Resource-validate bulk-export capabilities conditionalDelete conditionalPatch conditionalUpdate create delete executeBundle history patch read search search-type update vread projects.locations.datasets.fhirStores.operations Overview delete-fhir-operation get-fhir-operation-status projects.locations.datasets.hl7V2Stores Overview create delete export get getHL7v2StoreMetrics getIamPolicy import list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.hl7V2Stores.messages Overview batchGet create delete get ingest list patch projects.locations.datasets.operations Overview cancel get list projects.locations.services.nlp Overview analyzeEntities Types Attribute BlobStorageClass BlobStorageSettings ConsentEvaluation ConsentList DicomFilterConfig GcsDestination GcsSource MessageView NotificationConfig OperationMetadata Shared Types Types ApplyAdminConsentsErrorDetail ApplyAdminConsentsResponse ApplyConsentsResponse AuditConfig Binding CancelOperationRequest Code DeidentifyDicomStoreSummary DeidentifyFhirStoreSummary DeidentifySummary ExportDicomDataResponse ExportMessagesResponse ExportResourcesResponse GetIamPolicyRequest GetLocationRequest GetOperationRequest HttpBody ImportDicomDataResponse ImportMessagesResponse ImportResourcesResponse ListLocationsRequest ListLocationsResponse ListOperationsRequest ListOperationsResponse LogType Policy QueryAccessibleDataResponse RollbackFhirResourcesResponse RollbackHl7V2MessagesResponse SetBlobStorageSettingsResponse SetIamPolicyRequest Status TestIamPermissionsRequest TestIamPermissionsResponse UpdateSeriesMetadataResponse UpdateStudyMetadataResponse RPC reference Overview google.api google.cloud.healthcare.v1 Overview consent dataset deidentify dicom fhir Overview hl7v2 nlp google.cloud.healthcare.v1beta1 Overview annotation consent dataset deidentify dicom fhir hl7v2 nlp storageinfo google.cloud.location google.iam.v1 google.longrunning google.rpc google.type gcloud CLI reference DICOM conformance statement FHIR conformance statement AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Industry solutions Cloud Healthcare API Reference Send feedback REST Resource: projects.locations.datasets.fhirStores Stay organized with collections Save and categorize content based on your preferences.",
+          "The accessor's request headers The logLevel of the [AccessDeterminationLogConfig][projects.locations.datasets.fhirStores#AccessDeterminationLogConfig] The final consent evaluation( PERMIT , DENY , or NO_CONSENT ) A human-readable summary of the evaluation VERBOSE Includes MINIMUM and, for each resource owner, returns: The resource owner's name Most specific part of the X-Consent-Scope resulting in consensual determination Timestamp of the applied enforcement leading to the decision Enforcement version at the time the applicable consents were applied The Consent resource name The timestamp of the Consent resource used for enforcement Policy type( PATIENT or ADMIN ) Due to the limited space for logging, this mode is the same as MINIMUM for methods that return multiple resources (such as FHIR Search ).",
+          "If set to false, [fhirStores.importHistory] and [ExecuteBundle] requests will return errors. validationConfig object( ValidationConfig ) Configuration for how to validate incoming FHIR resources against configured profiles. defaultSearchHandlingStrict boolean If true, overrides the default search behavior for this FHIR store to handling=strict which returns an error for unrecognized search parameters."
+        ]
+      },
+      {
+        "title": "REST Resource: projects.locations.datasets.dicomStores | Cloud Healthcare API | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "source_id": "feature-recovery-http",
+        "final_score": 363,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: projects.locations.datasets.dicomStores | Cloud Healthcare API | Google Cloud Documentation Skip to main content Area teknologi close AI dan ML Pengembangan aplikasi Hosting aplikasi Compute Pipeline dan analisis data Database Terdistribusi, hybrid, dan multicloud Solusi industri Migrasi Jaringan Kemampuan observasi dan pemantauan Keamanan Storage Alat cross product close Pengelolaan akses dan resource Pengelolaan biaya dan penggunaan Infrastruktur sebagai kode SDK, bahasa, framework, dan alat / Console English Deutsch Español – América Latina Français Indonesia Português – Brasil 中文 – 简体 日本語 한국어 Sign in Cloud Healthcare API Mulai gratis Ringkasan Panduan Referensi Contoh Dukungan Referensi Area teknologi More Ringkasan Panduan Referensi Contoh Dukungan Referensi Alat cross product More Console Cloud Healthcare API Semua API & referensi Melakukan autentikasi ke Cloud Healthcare API Referensi REST Ringkasan v1 Resource REST projects.locations Ringkasan get list projects.locations.datasets Ringkasan create melakukan deidentifikasi delete get getIamPolicy list patch setIamPolicy testIamPermissions projects.locations.datasets.consentStores Ringkasan checkDataAccess create delete evaluateUserConsents get getIamPolicy list patch queryAccessibleData setIamPolicy testIamPermissions projects.locations.datasets.consentStores.attributeDefinitions Ringkasan create delete get list patch projects.locations.datasets.consentStores.consentArtifacts Ringkasan create delete get list projects.locations.datasets.consentStores.consents Ringkasan activate create delete deleteRevision get list listRevisions patch reject revoke projects.locations.datasets.consentStores.userDataMappings Ringkasan archive create delete get list patch projects.locations.datasets.dataMapperWorkspaces Ringkasan getIamPolicy setIamPolicy testIamPermissions projects.locations.datasets.dicomStores Ringkasan create melakukan deidentifikasi delete ekspor get getDICOMStoreMetrics getIamPolicy impor list patch searchForInstances searchForSeries searchForStudies setBlobStorageSettings setIamPolicy storeInstances testIamPermissions projects.locations.datasets.dicomStores.dicomWeb.studies Ringkasan getStudyMetrics setBlobStorageSettings projects.locations.datasets.dicomStores.dicomWeb.studies.series Ringkasan getSeriesMetrics projects.locations.datasets.dicomStores.dicomWeb.studies.series.instances Ringkasan getStorageInfo projects.locations.datasets.dicomStores.studies Ringkasan delete retrieveMetadata retrieveStudy searchForInstances searchForSeries storeInstances projects.locations.datasets.dicomStores.studies.series Ringkasan delete retrieveMetadata retrieveSeries searchForInstances projects.locations.datasets.dicomStores.studies.series.instances Ringkasan delete retrieveInstance retrieveMetadata retrieveRendered projects.locations.datasets.dicomStores.studies.series.instances.bulkdata Ringkasan retrieveBulkdata projects.locations.datasets.dicomStores.studies.series.instances.frames Ringkasan retrieveFrames retrieveRendered projects.locations.datasets.fhirStores Ringkasan applyAdminConsents applyConsents bulk-export-group create melakukan deidentifikasi delete explainDataAccess bulkDelete ekspor get getFHIRStoreMetrics getIamPolicy impor list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.fhirStores.fhir Ringkasan Binary-create Binary-read Binary-update Binary-vread Consent-enforcement-status Patient-consent-enforcement-status Patient-everything Resource-purge Resource-validate bulk-export capabilities conditionalDelete conditionalPatch conditionalUpdate create delete executeBundle history patch baca search search-type update vread projects.locations.datasets.fhirStores.operations Ringkasan delete-fhir-operation get-fhir-operation-status projects.locations.datasets.hl7V2Stores Ringkasan create delete ekspor get getHL7v2StoreMetrics getIamPolicy impor list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.hl7V2Stores.messages Ringkasan create delete get ingest list patch projects.locations.datasets.operations Ringkasan batal get list projects.locations.services.nlp Ringkasan analyzeEntities Types Attribute BlobStorageClass BlobStorageSettings ConsentEvaluation ConsentList DicomFilterConfig MessageView NotificationConfig OperationMetadata v1beta1 Resource REST projects.locations Ringkasan get list projects.locations.datasets Ringkasan create melakukan deidentifikasi delete get getIamPolicy list patch setIamPolicy testIamPermissions projects.locations.datasets.consentStores Ringkasan checkDataAccess create delete evaluateUserConsents get getIamPolicy list patch queryAccessibleData setIamPolicy testIamPermissions projects.locations.datasets.consentStores.attributeDefinitions Ringkasan create delete get list patch projects.locations.datasets.consentStores.consentArtifacts Ringkasan create delete get list projects.locations.datasets.consentStores.consents Ringkasan activate create delete deleteRevision get list listRevisions patch reject revoke projects.locations.datasets.consentStores.userDataMappings Ringkasan archive create delete get list patch projects.locations.datasets.dataMapperWorkspaces Ringkasan getIamPolicy setIamPolicy testIamPermissions projects.locations.datasets.dicomStores Ringkasan create melakukan deidentifikasi delete ekspor get getDICOMStoreMetrics getIamPolicy impor list patch searchForInstances searchForSeries searchForStudies setBlobStorageSettings setIamPolicy storeInstances testIamPermissions updateInstances projects.locations.datasets.dicomStores.dicomWeb.studies Ringkasan getStudyMetrics setBlobStorageSettings projects.locations.datasets.dicomStores.dicomWeb.studies.series Ringkasan getSeriesMetrics projects.locations.datasets.dicomStores.dicomWeb.studies.series.instances Ringkasan getStorageInfo projects.locations.datasets.dicomStores.studies Ringkasan delete retrieveMetadata retrieveStudy searchForInstances searchForSeries storeInstances updateInstances updateMetadata projects.locations.datasets.dicomStores.studies.series Ringkasan delete retrieveMetadata retrieveSeries searchForInstances updateMetadata projects.locations.datasets.dicomStores.studies.series.instances Ringkasan delete retrieveInstance retrieveMetadata retrieveRendered updateMetadata projects.locations.datasets.dicomStores.studies.series.instances.bulkdata Ringkasan retrieveBulkdata projects.locations.datasets.dicomStores.studies.series.instances.frames Ringkasan retrieveFrames retrieveRendered projects.locations.datasets.fhirStores Ringkasan applyAdminConsents applyConsents bulk-export-group configureSearch create melakukan deidentifikasi delete explainDataAccess ekspor exportHistory get getFHIRStoreMetrics getIamPolicy impor importHistory list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.fhirStores.fhir Ringkasan Binary-create Binary-read Binary-update Binary-vread ConceptMap-search-translate ConceptMap-translate Consent-enforcement-status Encounter-everything Observation-lastn Patient-consent-enforcement-status Patient-everything Resource-incoming-references Resource-purge Resource-validate bulk-export capabilities conditionalDelete conditionalPatch conditionalUpdate create delete executeBundle history patch baca search search-type update vread projects.locations.datasets.fhirStores.operations Ringkasan delete-fhir-operation get-fhir-operation-status projects.locations.datasets.hl7V2Stores Ringkasan create delete ekspor get getHL7v2StoreMetrics getIamPolicy impor list patch rollback setIamPolicy testIamPermissions projects.locations.datasets.hl7V2Stores.messages Ringkasan batchGet create delete get ingest list patch projects.locations.datasets.operations Ringkasan batal get list projects.locations.services.nlp Ringkasan analyzeEntities Types Attribute BlobStorageClass BlobStorageSettings ConsentEvaluation ConsentList DicomFilterConfig GcsDestination GcsSource MessageView NotificationConfig OperationMetadata Shared Types Types ApplyAdminConsentsErrorDetail ApplyAdminConsentsResponse ApplyConsentsResponse AuditConfig Binding CancelOperationRequest Kode DeidentifyDicomStoreSummary DeidentifyFhirStoreSummary DeidentifySummary ExportDicomDataResponse ExportMessagesResponse ExportResourcesResponse GetIamPolicyRequest GetLocationRequest GetOperationRequest HttpBody ImportDicomDataResponse ImportMessagesResponse ImportResourcesResponse ListLocationsRequest ListLocationsResponse ListOperationsRequest ListOperationsResponse LogType Kebijakan QueryAccessibleDataResponse RollbackFhirResourcesResponse RollbackHl7V2MessagesResponse SetBlobStorageSettingsResponse SetIamPolicyRequest Status TestIamPermissionsRequest TestIamPermissionsResponse UpdateSeriesMetadataResponse UpdateStudyMetadataResponse Referensi RPC Ringkasan google.api google.cloud.healthcare.v1 Ringkasan consent kumpulan data melakukan deidentifikasi dicom fhir Ringkasan hl7v2 nlp google.cloud.healthcare.v1beta1 Ringkasan anotasi consent kumpulan data melakukan deidentifikasi dicom fhir hl7v2 nlp storageinfo google.cloud.location google.iam.v1 google.longrunning google.rpc google.type Referensi gcloud CLI Pernyataan kesesuaian DICOM Pernyataan kesesuaian FHIR AI dan ML Pengembangan aplikasi Hosting aplikasi Compute Pipeline dan analisis data Database Terdistribusi, hybrid, dan multicloud Solusi industri Migrasi Jaringan Kemampuan observasi dan pemantauan Keamanan Storage Pengelolaan akses dan resource Pengelolaan biaya dan penggunaan Infrastruktur sebagai kode SDK, bahasa, framework, dan alat Home Documentation Industry solutions Cloud Healthcare API Referensi Send feedback REST Resource: projects.locations.datasets.dicomStores Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods create Creates a new DICOM store within the parent dataset. deidentify De-identifies data from the source store and writes it to the destination store. delete Deletes the specified DICOM store and removes all images that are contained within it. export Exports data to the specified destination by copying it from the DICOM store. get Gets the specified DICOM store. getDICOMStoreMetrics Gets metrics associated with the DICOM store. getIamPolicy Gets the access control policy for a resource. import Imports data into the DICOM store by copying it from the specified source. list Lists the DICOM stores in the given dataset. patch Updates the specified DICOM store. searchForInstances SearchForInstances returns a list of matching instances. searchForSeries SearchForSeries returns a list of matching series. searchForStudies SearchForStudies returns a list of matching studies. setBlobStorageSettings SetBlobStorageSettings sets the blob storage settings of the specified resources. setIamPolicy Sets the access control policy on the specified resource. storeInstances StoreInstances stores DICOM instances associated with study instance unique identifiers (SUID). testIamPermissions Returns permissions that a caller has on the specified resource. updateInstances UpdateInstances updates DICOM instances associated with study instance unique identifiers (SUID).",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Hard to understand\",\"hardToUnderstand\",\"thumb-down\"],[\"Incorrect information or sample code\",\"incorrectInformationOrSampleCode\",\"thumb-down\"],[\"Missing the information/samples I need\",\"missingTheInformationSamplesINeed\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-12-16 UTC.\"],[],[]] Products and pricing See all products Google Cloud pricing Google Cloud Marketplace Contact sales Support Community forums Support Release Notes System status Resources GitHub Getting Started with Google Cloud Code samples Cloud Architecture Center Training and Certification Engage Blog Events X (Twitter) Google Cloud on YouTube Google Cloud Tech on YouTube About Google Privacy Site terms Google Cloud terms Manage cookies Our third decade of climate action: join us Sign up for the Google Cloud newsletter Subscribe English Deutsch Español – América Latina Français Indonesia Português – Brasil 中文 – 简体 日本語 한국어"
+        ]
+      },
+      {
+        "title": "\"Creating and managing FHIR stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir",
+        "source_id": "site-docs-root",
+        "final_score": 357,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "REST To disable base resource validation in an existing FHIR store, use the projects.locations.datasets.fhirStores.patch method.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const patchFhirStore = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const fhirStoreId = 'my-fhir-store'; // const pubsubTopic = 'my-topic' const name = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /fhirStores/ ${ fhirStoreId } ; const request = { name , updateMask : 'notificationConfigs' , resource : { notificationConfigs : [ { pubsubTopic : projects/ ${ projectId } /topics/ ${ pubsubTopic } , }, ], }, }; await healthcare . projects . locations . datasets . fhirStores . patch ( request ); console . log ( Patched FHIR store ${ fhirStoreId } with Cloud Pub/Sub topic ${ pubsubTopic } ); }; patchFhirStore (); Python def patch fhir store ( project id , location , dataset id , fhir store id , pubsub topic ): \"\"\"Updates the FHIR store.",
+          "Before using any of the command data below, make the following replacements: PROJECT ID : the ID of your Google Cloud project LOCATION : the dataset location DATASET ID : the FHIR store's parent dataset FHIR STORE ID : the FHIR store ID PUBSUB TOPIC ID : a Pub/Sub topic to which messages are published when an event occurs in a data store Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID \\ --dataset = DATASET ID \\ --location = LOCATION \\ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID --dataset = DATASET ID --location = LOCATION --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud healthcare fhir-stores update FHIR STORE ID ^ --dataset = DATASET ID ^ --location = LOCATION ^ --pubsub-topic = projects/ PROJECT ID /topics/ PUBSUB TOPIC ID You should receive a response similar to the following: Response Updated fhirStore [ FHIR STORE ID ]. name: projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /fhirStores/ FHIR STORE ID notificationConfig: pubsubTopic: projects/ PROJECT ID /topics/ PUBSUB TOPIC ID version: FHIR STORE VERSION REST To edit a FHIR store, use the projects.locations.datasets.fhirStores.patch method."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "fhir.executeBundle",
+      "projects.locations",
+      "projects.locations.datasets",
+      "projects.locations.datasets.consentStores",
+      "projects.locations.datasets.consentStores.attributeDefinitions",
+      "projects.locations.datasets.consentStores.consentArtifacts",
+      "projects.locations.datasets.consentStores.consents",
+      "projects.locations.datasets.consentStores.userDataMappings",
+      "projects.locations.datasets.dataMapperWorkspaces",
+      "projects.locations.datasets.dicomStores",
+      "projects.locations.datasets.dicomStores.dicomWeb.studies",
+      "projects.locations.datasets.dicomStores.dicomWeb.studies.series",
+      "projects.locations.datasets.dicomStores.dicomWeb.studies.series.instances",
+      "projects.locations.datasets.dicomStores.studies",
+      "projects.locations.datasets.dicomStores.studies.series",
+      "projects.locations.datasets.dicomStores.studies.series.instances",
+      "projects.locations.datasets.dicomStores.studies.series.instances.bulkdata",
+      "projects.locations.datasets.dicomStores.studies.series.instances.frames",
+      "projects.locations.datasets.fhirStores",
+      "projects.locations.datasets.fhirStores.fhir",
+      "projects.locations.datasets.fhirStores.operations",
+      "projects.locations.datasets.fhirStores.patch",
+      "projects.locations.datasets.hl7V2Stores",
+      "projects.locations.datasets.hl7V2Stores.messages",
+      "projects.locations.datasets.operations",
+      "projects.locations.services.nlp"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.fhirStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/reference/rest/v1beta1/projects.locations.datasets.dicomStores",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/fhir"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.317Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

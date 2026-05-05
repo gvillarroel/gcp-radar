@@ -1,0 +1,231 @@
+{
+  "feature_name": "Autonomous Data Guard cross-region disaster recovery",
+  "feature_slug": "autonomous-data-guard-cross-region-disaster-recovery",
+  "summary": "Autonomous Databases can use Autonomous Data Guard for cross-region disaster recovery in Google Cloud.",
+  "extended_definition": "Autonomous Databases can use Autonomous Data Guard for cross-region disaster recovery in Google Cloud.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+      "https://docs.cloud.google.com/oracle/database/docs/create-peer-database",
+      "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+      "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Protect Autonomous AI Databases with cross-region disaster recovery \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "source_id": "site-docs-reference",
+        "final_score": 349,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This page describes how you can use Oracle Autonomous Data Guard to set up cross-region disaster recovery for your Autonomous AI Databases in Google Cloud.",
+          "Home Documentation Databases Oracle Database at Google Cloud Guides Send feedback Protect Autonomous AI Databases with cross-region disaster recovery Stay organized with collections Save and categorize content based on your preferences.",
+          "Overview Cross-region Autonomous Data Guard on Oracle Database@Google Cloud offers a powerful and streamlined disaster recovery solution for Autonomous AI Database."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.autonomousDatabases \\_|\\_ Oracle Database\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "source_id": "site-api-reference",
+        "final_score": 255,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"ocid\" : string , \"computeCount\" : number , \"cpuCoreCount\" : integer , \"dataStorageSizeTb\" : integer , \"dataStorageSizeGb\" : integer , \"dbWorkload\" : enum ( DBWorkload ) , \"dbEdition\" : enum ( DatabaseEdition ) , \"characterSet\" : string , \"nCharacterSet\" : string , \"privateEndpointIp\" : string , \"privateEndpointLabel\" : string , \"dbVersion\" : string , \"isAutoScalingEnabled\" : boolean , \"isStorageAutoScalingEnabled\" : boolean , \"licenseType\" : enum ( LicenseType ) , \"customerContacts\" : [ { object ( CustomerContact ) } ] , \"secretId\" : string , \"vaultId\" : string , \"maintenanceScheduleType\" : enum ( MaintenanceScheduleType ) , \"mtlsConnectionRequired\" : boolean , \"backupRetentionPeriodDays\" : integer , \"actualUsedDataStorageSizeTb\" : number , \"allocatedStorageSizeTb\" : number , \"apexDetails\" : { object ( AutonomousDatabaseApex ) } , \"lifecycleDetails\" : string , \"state\" : enum ( State ) , \"autonomousContainerDatabaseId\" : string , \"availableUpgradeVersions\" : [ string ] , \"connectionStrings\" : { object ( AutonomousDatabaseConnectionStrings ) } , \"connectionUrls\" : { object ( AutonomousDatabaseConnectionUrls ) } , \"failedDataRecoveryDuration\" : string , \"memoryTableGbs\" : integer , \"isLocalDataGuardEnabled\" : boolean , \"localAdgAutoFailoverMaxDataLossLimit\" : integer , \"localStandbyDb\" : { object ( AutonomousDatabaseStandbySummary ) } , \"memoryPerOracleComputeUnitGbs\" : integer , \"localDisasterRecoveryType\" : enum ( LocalDisasterRecoveryType ) , \"dataSafeState\" : enum ( DataSafeState ) , \"databaseManagementState\" : enum ( DatabaseManagementState ) , \"openMode\" : enum ( OpenMode ) , \"operationsInsightsState\" : enum ( OperationsInsightsState ) , \"peerDbIds\" : [ string ] , \"permissionLevel\" : enum ( PermissionLevel ) , \"privateEndpoint\" : string , \"refreshableMode\" : enum ( RefreshableMode ) , \"refreshableState\" : enum ( RefreshableState ) , \"role\" : enum ( Role ) , \"scheduledOperationDetails\" : [ { object ( ScheduledOperationDetails ) } ] , \"sqlWebDeveloperUrl\" : string , \"supportedCloneRegions\" : [ string ] , \"usedDataStorageSizeTbs\" : integer , \"ociUrl\" : string , \"totalAutoBackupStorageSizeGbs\" : number , \"nextLongTermBackupTime\" : string , \"dataGuardRoleChangedTime\" : string , \"disasterRecoveryRoleChangedTime\" : string , \"maintenanceBeginTime\" : string , \"maintenanceEndTime\" : string , \"allowlistedIps\" : [ string ] , \"encryptionKey\" : { object ( EncryptionKey ) } , \"encryptionKeyHistoryEntries\" : [ { object ( EncryptionKeyHistoryEntry ) } ] , \"serviceAgentEmail\" : string , \"arePrimaryAllowlistedIpsUsed\" : boolean } Fields ocid string Output only.",
+          "AutonomousDatabaseStandbySummary Autonomous Data Guard standby database details. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/datatypes/AutonomousDatabaseStandbySummary JSON representation { \"lagTimeDuration\" : string , \"lifecycleDetails\" : string , \"state\" : enum ( State ) , \"dataGuardRoleChangedTime\" : string , \"disasterRecoveryRoleChangedTime\" : string } Fields lagTimeDuration string ( Duration format) Output only.",
+          "Resource: AutonomousDatabase JSON representation AutonomousDatabaseProperties JSON representation DatabaseEdition LicenseType MaintenanceScheduleType AutonomousDatabaseApex JSON representation State AutonomousDatabaseConnectionStrings JSON representation AllConnectionStrings JSON representation DatabaseConnectionStringProfile JSON representation ConsumerGroup HostFormat Protocol SessionMode SyntaxFormat TLSAuthentication AutonomousDatabaseConnectionUrls JSON representation AutonomousDatabaseStandbySummary JSON representation LocalDisasterRecoveryType DataSafeState DatabaseManagementState OpenMode OperationsInsightsState PermissionLevel RefreshableMode RefreshableState Role ScheduledOperationDetails JSON representation TimeOfDay JSON representation EncryptionKey JSON representation Provider EncryptionKeyHistoryEntry JSON representation SourceConfig JSON representation Methods Resource: AutonomousDatabase Details of the Autonomous Database resource. https://docs.oracle.com/en-us/iaas/api/#/en/database/20160918/AutonomousDatabase/ JSON representation { \"name\" : string , \"database\" : string , \"displayName\" : string , \"entitlementId\" : string , \"adminPassword\" : string , \"properties\" : { object ( AutonomousDatabaseProperties ) } , \"labels\" : { string : string , ... } , \"network\" : string , \"cidr\" : string , \"odbNetwork\" : string , \"odbSubnet\" : string , \"sourceConfig\" : { object ( SourceConfig ) } , \"peerAutonomousDatabases\" : [ string ] , \"createTime\" : string , \"disasterRecoverySupportedLocations\" : [ string ] } Fields name string Identifier."
+        ]
+      },
+      {
+        "title": "\"Create databases \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "source_id": "site-docs-reference",
+        "final_score": 203,
+        "relevance": "",
+        "evidence_snippets": [
+          "Not required if you're creating a cross-region disaster recovery standby instance or cross-region Autonomous Data Guard standby instance.",
+          "Not required if you're creating a cross-region disaster recovery standby instance or cross-region Autonomous Data Guard standby instance.",
+          "API To create an Autonomous AI Database, run the following curl command: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json\" \\ \"https://oracledatabase.googleapis.com/v1/projects/ PROJECT ID /locations/ REGION /autonomousDatabases/ DATABASE ID \" -d \\ '{ \"database\": \" DATABASE NAME \", \"displayName\": \" DISPLAY NAME \", \"admin password\": \" PASSWORD \", \"odb subnet\": \"projects/ ODB NETWORK PROJECT ID /locations/ REGION /odbNetworks/ ODB NETWORK ID /odbSubnets/ ODB SUBNET ID \", \"properties\": { \"licenseType\": \" LICENSE TYPE \", \"computeCount\": COMPUTE COUNT , \"dbVersion\": \" DATABASE VERSION \", \"dbWorkload\": \" WORKLOAD TYPE \", \"dataStorageSizeTb\": STORAGE SIZE } }' Replace the following: PROJECT ID : the ID of your Google Cloud project in which to create the database."
+        ]
+      },
+      {
+        "title": "\"Create a peer database \\_|\\_ Oracle Database at Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/oracle/database/docs/create-peer-database",
+        "source_id": "site-docs-reference",
+        "final_score": 189,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you already have peer databases in all regions and no additional region appears in the list, then you can't create any more peer databases. (Optional) Select the Enable cross-region backup replication to disaster recovery peer checkbox.",
+          "Once you create an Autonomous AI Database, you can set up one or more peer databases for it as a part of your disaster recovery plan.",
+          "You can only create peer databases with Autonomous Data Guard."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "demodb1.adb.us",
+      "high.adb.oraclecloud.com",
+      "low.adb.oraclecloud.com",
+      "medium.adb.oraclecloud.com",
+      "oraclecloud.com",
+      "oracledatabase.googleapis.com",
+      "projects.locations.autonomousDatabases",
+      "projects.locations.autonomousDatabases.generateWallet",
+      "properties.connectionStrings.profiles"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/oracle/database/docs/cross-region-dr-with-data-guard",
+        "https://docs.cloud.google.com/oracle/database/docs/reference/rest/v1/projects.locations.autonomousDatabases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-databases",
+        "https://docs.cloud.google.com/oracle/database/docs/create-peer-database"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:47.727Z",
+  "source_step08_card": "data/step-08/current/products/oracle-database-google-cloud/card.json",
+  "product_name": "Oracle Database@Google Cloud",
+  "product_slug": "oracle-database-google-cloud"
+}

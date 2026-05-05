@@ -1,0 +1,209 @@
+{
+  "feature_name": "VPC Service Controls integration with Image streaming",
+  "feature_slug": "vpc-service-controls-integration-with-image-streaming",
+  "summary": "This integration lets VPC Service Controls protect Image streaming.",
+  "extended_definition": "This integration lets VPC Service Controls protect Image streaming.",
+  "lifecycle": {
+    "latest_feature_date": "2022-05-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+      "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported products and limitations \\_|\\_ VPC Service Controls \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "source_id": "site-docs-reference-2",
+        "final_score": 261,
+        "relevance": "",
+        "evidence_snippets": [
+          "The integration of this product with VPC Service Controls is in Preview and is ready for broader testing and use, but is not fully supported for production environments.",
+          "The integration of this product with VPC Service Controls is in Preview and is ready for broader testing and use, but is not fully supported for production environments.",
+          "The integration of this product with VPC Service Controls is in Preview and is ready for broader testing and use, but is not fully supported for production environments."
+        ]
+      },
+      {
+        "title": "\"Troubleshoot common issues \\_|\\_ VPC Service Controls \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "source_id": "site-docs-reference-2",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example, suppose the following command is used to list all App Engine services within a service perimeter: gcloud app services list The command returns the following output: ERROR: (gcloud.app.services.list) User [ ] does not have permission to access apps instance [ ] (or it may not exist): <!DOCTYPE html> <html lang=en> <meta charset=utf-8> <meta name=viewport content=\"initial-scale=1, minimum-scale=1, width=device-width\"> <title>Error 403 (Forbidden)!!1</title> <style> {margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px} > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding-right:205px}p{margin:11px 0 22px;overflow:hidden}ins{color:#777;text-decoration:none}a img{border:0}@media screen and (max-width:772px){body{background:none;margin-top:0;max-width:none;padding-right:0}}#logo{background:url(//www.google.com/images/branding/googlelogo/1x/googlelogo color 150x54dp.png) no-repeat;margin-left:-5px}@media only screen and (min-resolution:192dpi){ #logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo color 150x54dp.png) no-repeat 0% 0%/100% 100%;-moz-border-image:url(//www.google.com/images/branding/googlelogo/2x/googlelogo color 150x54dp.png) 0}}@media only screen and (-webkit-min-device-pixel-ratio:2){ #logo{background:url(//www.google.com/images/branding/googlelogo/2x/googlelogo color 150x54dp.png) no-repeat;-webkit-background-size:100% 100%}}#logo{display:inline-block;height:54px;width:150px} </style> <a href=//www.google.com/><span id=logo aria-label=Google></span></a> <p><b>403.</b> <ins>That's an error.</ins> <p>Your client does not have permission to get URL <code>/v1/apps/ /services</code> from this server. <ins>That's all we know.</ins> This type of error is expected for services that are not supported by VPC Service Controls and not available on the restricted VIP.",
+          "Cloud Storage access from on-premises BigQuery access from VM outside of project Cross-project BigQuery query Move Cloud Storage file inside perimeter Move Cloud Storage file outside perimeter BigQuery dataset copy from VM inside perimeter Managed Service for Apache Spark job reading from project Unsupported service with restricted VIP Log export to project outside perimeter BigQuery extract to Cloud Storage Cloud Storage access from on-premises In this example, VPC Service Controls blocks a request from an employee workstation (identified by callerIp ) to a Cloud Storage bucket in project corp-storage .",
+          "If the caller IP address is missing or appears as an internal IP address, then this violation might be due to a Google Cloud service that isn't integrated with VPC Service Controls."
+        ]
+      },
+      {
+        "title": "\"Troubleshoot common VPC Service Controls issues with Google Cloud services\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "source_id": "site-docs-root-2",
+        "final_score": 209,
+        "relevance": "",
+        "evidence_snippets": [
+          "Egress errors from a service agent while copying Artifact Registry-owned Docker image to a project in a perimeter When you try to copy an Artifact Registry-owned image to your project that is within a VPC Service Controls perimeter, you might encounter egress errors in the logs from the service agent cloud-cicd-artifact-registry-copier@system.gserviceaccount.com .",
+          "To resolve this issue, add an ingress rule with the aforementioned service agents access to the cloudkms.googleapis.com service in the project mentioned in the VPC Service Controls error logs.",
+          "This page provides solutions to issues that you might encounter when using a Google Cloud service that is within a VPC Service Controls perimeter."
+        ]
+      },
+      {
+        "title": "\"Secure data exchange with ingress and egress rules \\_|\\_ VPC Service Controls\\",
+        "url": "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange",
+        "source_id": "site-docs-root",
+        "final_score": 207,
+        "relevance": "",
+        "evidence_snippets": [
+          "Access a Google Cloud resource outside the perimeter Share data by using Pub/Sub between two organizations that use VPC Service Controls Share anonymized PHI data with partner organization Grant access to a third-party Compute Engine disk image Read a BigQuery dataset by allowing private access from a VPC network outside the perimeter Load into a Cloud Storage bucket (write) by allowing private access from a VPC network outside the perimeter Share logs in a separate perimeter by allowing projects from multiple perimeters to share logs Access a Google Cloud resource outside the perimeter The following diagram shows a Compute Engine resource inside a service perimeter that requires access to a Cloud Storage resource, which is outside the perimeter: Assume that you have defined the following perimeter: name: accessPolicies/222/servicePerimeters/Example status: resources: - projects/111 restrictedServices: - bigquery.googleapis.com - containerregistry.googleapis.com - storage.googleapis.com title: Example You need to grant read access to a Cloud Storage bucket in project 999 , which is in a different organization.",
+          "Home Documentation Networking VPC Service Controls Guides Send feedback Secure data exchange with ingress and egress rules Stay organized with collections Save and categorize content based on your preferences.",
+          "Share data by using Pub/Sub between two organizations that use VPC Service Controls The following diagram shows two organizations, Org1 and Org2 , which use VPC Service Controls and share data by using a Pub/Sub topic: Assume that you have defined the following perimeters: Org 1 Perimeter Definition name: accessPolicies/222/servicePerimeters/Example1 status: resources: - projects/111 restrictedServices: - pubsub.googleapis.com title: Example1 Org 2 Perimeter Definition name: accessPolicies/333/servicePerimeters/Example2 status: resources: - projects/222 restrictedServices: - pubsub.googleapis.com title: Example2 To enable data exchange, Org1 must define the following egress rule that allows the subscription and save the file as org1egress.yaml : Org1: Org1's perimeter must allow a Pub/Sub subscription to project 222. echo \"\"\" - egressTo: operations: - serviceName: pubsub.googleapis.com methodSelectors: - method: Subscriber.CreateSubscription resources: - projects/222 egressFrom: identityType: ANY IDENTITY \"\"\" > org1egress.yaml Org2 must define a corresponding ingress rule allowing the subscription and save the file as org2ingress.yaml ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.googleapis.com",
+      "cloudaudit.googleapis.com",
+      "cloudkms.googleapis.com",
+      "compute.googleapis.com",
+      "containerregistry.googleapis.com",
+      "example.iam.gserviceaccount.com",
+      "gcloud.app.services.list",
+      "org1egress.yaml",
+      "org2ingress.yaml",
+      "pubsub.googleapis.com",
+      "robot.png",
+      "storage.googleapis.com",
+      "system.gserviceaccount.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc-service-controls/docs/supported-products",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshooting",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/troubleshoot-services-within-perimeter",
+        "https://docs.cloud.google.com/vpc-service-controls/docs/secure-data-exchange"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:57.535Z",
+  "source_step08_card": "data/step-08/current/products/vpc-service-controls/card.json",
+  "product_name": "VPC Service Controls",
+  "product_slug": "vpc-service-controls"
+}

@@ -1,0 +1,178 @@
+{
+  "feature_name": "Media CDN keys support",
+  "feature_slug": "media-cdn-keys-support",
+  "summary": "Video Stitcher API supports CDN keys that are created for Media CDN.",
+  "extended_definition": "Video Stitcher API supports CDN keys that are created for Media CDN.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+      "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+      "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class VideoStitcherServiceAsyncClient (0.11.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import stitcher v1 async def sample list cdn keys(): Create a client client = stitcher v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import stitcher v1 async def sample create cdn key(): Create a client client = stitcher v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import stitcher v1 async def sample delete cdn key(): Create a client client = stitcher v1 ."
+        ]
+      },
+      {
+        "title": "\"Class VideoStitcherServiceClient (0.11.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 298,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import stitcher v1 def sample list cdn keys(): Create a client client = stitcher v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import stitcher v1 def sample create cdn key(): Create a client client = stitcher v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud.video import stitcher v1 def sample delete cdn key(): Create a client client = stitcher v1 ."
+        ]
+      },
+      {
+        "title": "Insert ads into VOD assets \\_|\\_ Video Stitcher API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "source_id": "site-api-reference",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"hostname\": \" HOSTNAME \", \"mediaCdnKey\": { \"keyName\": \" MEDIA CDN KEYNAME \", \"privateKey\": \" MEDIA CDN PRIVATE KEY \" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://videostitcher.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /cdnKeys?cdnKeyId= CDN KEY ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.common.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT NUMBER /locations/ LOCATION /cdnKeys/ CDN KEY ID \", \"verb\": \"create\", \"cancelRequested\": false, \"apiVersion\": \"v1\" }, \"done\": false } This command creates a long-running operation (LRO) that you can query to track progress.",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: cat > request.json HOSTNAME \", \"mediaCdnKey\": { \"keyName\": \" MEDIA CDN KEYNAME \", \"privateKey\": \" MEDIA CDN PRIVATE KEY \" } } EOF Then execute the following command to send your REST request: curl -X POST \\ -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://videostitcher.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /cdnKeys?cdnKeyId= CDN KEY ID \" PowerShell (Windows) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login .",
+          "Run the following command in the terminal to create or overwrite this file in the current directory: @' { \"hostname\": \" HOSTNAME \", \"googleCdnKey\": { \"keyName\": \" GCDN KEYNAME \", \"privateKey\": \" GCDN PRIVATE KEY \" } } '@ Out-File -FilePath request.json -Encoding utf8 Then execute the following command to send your REST request: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://videostitcher.googleapis.com/v1/projects/ PROJECT NUMBER /locations/ LOCATION /cdnKeys?cdnKeyId= CDN KEY ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT NUMBER /locations/ LOCATION /operations/ OPERATION ID \", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.common.OperationMetadata\", \"createTime\": CREATE TIME , \"target\": \"projects/ PROJECT NUMBER /locations/ LOCATION /cdnKeys/ CDN KEY ID \", \"verb\": \"create\", \"cancelRequested\": false, \"apiVersion\": \"v1\" }, \"done\": false } This command creates a long-running operation (LRO) that you can query to track progress."
+        ]
+      },
+      {
+        "title": "\"Method: projects.locations.cdnKeys.list \\_|\\_ Video Stitcher API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list",
+        "source_id": "site-api-reference",
+        "final_score": 254,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Video Stitcher API Reference Send feedback Method: projects.locations.cdnKeys.list Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request GET https://videostitcher.googleapis.com/v1/{parent=projects/ /locations/ }/cdnKeys The URL uses gRPC Transcoding syntax.",
+          "IAM Permissions Requires the following IAM permission on the parent resource: videostitcher.cdnKeys.list For more information, see the IAM documentation ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "projects.locations.cdnKeys",
+      "projects.locations.cdnKeys.delete",
+      "projects.locations.cdnKeys.get",
+      "projects.locations.cdnKeys.list",
+      "request.json",
+      "type.googleapis.com",
+      "videostitcher.cdnKeys.list",
+      "videostitcher.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/videostitcher/latest/google.cloud.video.stitcher_v1.services.video_stitcher_service.VideoStitcherServiceClient",
+        "https://docs.cloud.google.com/video-stitcher/docs/quickstarts/inserting-ads-into-vod",
+        "https://docs.cloud.google.com/video-stitcher/docs/reference/rest/v1/projects.locations.cdnKeys/list"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.726Z",
+  "source_step08_card": "data/step-08/current/products/video-stitcher-api/card.json",
+  "product_name": "Video Stitcher API",
+  "product_slug": "video-stitcher-api"
+}

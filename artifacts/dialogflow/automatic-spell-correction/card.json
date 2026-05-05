@@ -1,0 +1,90 @@
+{
+  "feature_name": "Automatic Spell Correction",
+  "feature_slug": "automatic-spell-correction",
+  "summary": "Automatic Spell Correction corrects misspellings in end-user input.",
+  "extended_definition": "Automatic Spell Correction corrects misspellings in end-user input.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Automatic Spell Correction : If this is enabled and user input has a spelling or grammar mistake, an intent will be matched as though it was written correctly.",
+          "Warnings and best practices: Spell correction can't correct ASR (automatic speech recognition) errors, so we don't recommend enabling it for agents using ASR inputs.",
+          "Spell correction is trained on general user queries."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following intent training settings are available: Spell correction link If this is enabled and end-user input has a spelling or grammar mistake, an intent will be matched as though it was written correctly.",
+          "Warnings and best practices: Spell correction can't correct ASR (automatic speech recognition) errors, so we don't recommend enabling it for agents using ASR inputs.",
+          "Warnings and best practices: Spell correction can't correct ASR (automatic speech recognition) errors, so we don't recommend enabling it for agents using ASR inputs."
+        ]
+      },
+      {
+        "title": "\"General agent design best practices \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+        "source_id": "site-iam-reference",
+        "final_score": 123,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are using text input, you should enable automatic spell correction .",
+          "Enable automatic spell correction.",
+          "For example, if the initial prompt is \"What color do you want?\" and the user replies with \"jungle parrot\", a fallback/follow-up intent should rephrase the question, like \"Sorry, what color was that?\" Agents should have customized, brand-specific responses in the default fallback intent."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-design",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

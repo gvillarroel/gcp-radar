@@ -1,0 +1,83 @@
+{
+  "feature_name": "Approximate nearest neighbor (ANN) distance functions in GoogleSQL",
+  "feature_slug": "approximate-nearest-neighbor-ann-distance-functions-in-googlesql",
+  "summary": "Spanner GA support for ANN distance functions in GoogleSQL was introduced for similarity and nearest-neighbor workloads.",
+  "extended_definition": "Spanner GA support for ANN distance functions in GoogleSQL was introduced for similarity and nearest-neighbor workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+      "https://docs.cloud.google.com/spanner/docs/choose-vector-distance-function",
+      "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Get started using Spanner for generative AI applications \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/vector-search-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 141,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Cymbal Phoenix See and be seen 87 0.525101413779242 Lights with the Phoenix bike lights... ------------------+--------------------+----------------+-------------------- / Scale vector search to use approximate nearest neighbors The previous vector search example uses exact, K-nearest neighbors (KNN) vector search .",
+          "To scale and use ANN vector search in Spanner, do the following: Create a vector index Modify your query to use an ANN distance function Create a vector index Spanner accelerates ANN vector searches by using a specialized vector index that leverages Google Research's Scalable Nearest Neighbor (ScaNN) .",
+          "Approximate nearest neighbors (ANN) vector search becomes useful in these situations."
+        ]
+      },
+      {
+        "title": "\"Choose among vector distance functions to measure vector embeddings similarity\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/choose-vector-distance-function",
+        "source_id": "site-docs-root",
+        "final_score": 136,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Learn more about the GoogleSQL COSINE DISTANCE() , EUCLIDEAN DISTANCE() , and DOT PRODUCT() functions.",
+          "Home Documentation Databases Spanner Guides Send feedback Choose among vector distance functions to measure vector embeddings similarity Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes how to choose among the vector distance functions provided in Spanner to measure similarity between vector embeddings."
+        ]
+      },
+      {
+        "title": "\"Generate vector embeddings for textual data in bulk using partitioned DML\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/backfill-embeddings",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Custom tuned text embedding models aren't supported with the GoogleSQL ML.PREDICT and PostgreSQL spanner.ML PREDICT ROW functions.",
+          "What's next Learn how to perform a similarity vector search by finding the K-nearest neighbors .",
+          "ML PREDICT ROW ( 'projects/ PROJECT /locations/ LOCATION /publishers/google/models/ $MODEL NAME ' , JSONB BUILD OBJECT ( 'instances' , JSONB BUILD ARRAY ( JSONB BUILD OBJECT ( 'content' , description )))) FROM Products LIMIT 10 ; Replace the following: PROJECT : the project hosting the Vertex AI endpoint LOCATION : the location of the Vertex AI endpoint MODEL NAME : the name of the Vertex AI text embedding model Update the source table to include additional columns to store the embeddings Next, update the source table schema to include an additional column of the data type ARRAY<FLOAT32> to store the generated embeddings: GoogleSQL ALTER TABLE TABLE NAME ADD COLUMN EMBEDDING COLUMN NAME ARRAY<FLOAT32> ; Replace the following: TABLE NAME : the name of the source table EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings PostgreSQL ALTER TABLE TABLE NAME ADD COLUMN EMBEDDING COLUMN NAME real []; Replace the following: TABLE NAME : the name of the source table EMBEDDING COLUMN NAME : the name of the column in which you want to add generated embeddings For example, using the products table example, run: GoogleSQL ALTER TABLE Products ADD COLUMN desc embed ARRAY<FLOAT32> ; PostgreSQL ALTER TABLE Products ADD COLUMN desc embed real []; You can add another column to manage the version of the embedding model."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spanner.ML"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

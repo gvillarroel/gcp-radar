@@ -1,0 +1,90 @@
+{
+  "feature_name": "Bigtable write-time aggregates",
+  "feature_slug": "bigtable-write-time-aggregates",
+  "summary": "Bigtable now supports building distributed counters using write-time aggregates.",
+  "extended_definition": "Bigtable now supports building distributed counters using write-time aggregates.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigtable/docs/aggregates",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+      "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Bigtable for Cassandra users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "Because a write to Colossus is replicated multiple times, the durability is ensured even if nodal hardware failure occurs before the data is persisted to an SSTable for the row range.",
+          "In Bigtable, because each row key is only assigned to a single node at any point in time, a response from the node is all that's needed to confirm that a write is successful.",
+          "It also supports modern workloads, such as machine learning and AI, that require frequent iteration on feature stores and real-time serving at global scale."
+        ]
+      },
+      {
+        "title": "Aggregating values at write time \\_|\\_ Bigtable \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/aggregates",
+        "source_id": "site-docs-reference-2",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Aggregating your Bigtable data at write time lets you avoid the need to use any extract, transform, and load (ETL) or streaming processing software to aggregate your data before or after you write it to Bigtable.",
+          "Read then write Another way to aggregate your data at write time is by using a ReadModifyWriteRow request, which lets you manipulate the value of a cell by incrementing or appending to the value transactionally.",
+          "Bigtable offers multiple ways of aggregating data at write time, including conflict-free replicated data types, ReadModifyWriteRow requests, and continuous materialized views."
+        ]
+      },
+      {
+        "title": "Bigtable for Aerospike users \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users",
+        "source_id": "site-docs-root-2",
+        "final_score": 106,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Bigtable provides fully consistent single-row writes within a cluster and supports single-row transactions through mutate-row requests.",
+          "Advanced types might be increasingly supported in the future, but at the time of writing this document there is no way to put such types into Bigtable, everything is serialized client side.",
+          "No directly corresponding item. cell : a label for a timestamped value stored in a table. (record) digest : a hash of a three-tuple identifying a record: namespace, set, and key."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigtable/docs/aggregates",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-cassandra-users",
+        "https://docs.cloud.google.com/bigtable/docs/cloud-bigtable-for-aerospike-users"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:06.484Z",
+  "source_step08_card": "data/step-08/current/products/bigtable/card.json",
+  "product_name": "Bigtable",
+  "product_slug": "bigtable"
+}

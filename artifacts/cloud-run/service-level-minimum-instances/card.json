@@ -1,0 +1,81 @@
+{
+  "feature_name": "Service-level minimum instances",
+  "feature_slug": "service-level-minimum-instances",
+  "summary": "Service-level minimum instances let you keep a configured minimum number of instances warm for a Cloud Run service; Service-level minimum instances let you keep a configured minimum number of instances warm for a Cloud Run service.",
+  "extended_definition": "Service-level minimum instances let you keep a configured minimum number of instances warm for a Cloud Run service; Service-level minimum instances let you keep a configured minimum number of instances warm for a Cloud Run service.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/configuring",
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/reference/container-contract"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure Cloud Run services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/configuring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 130,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you need to change the default number of container instances that are kept warm, ready to receive requests, you can set revision-level maximum instances and minimum instances .",
+          "You can avoid cold starts for your application and reduce application latency by setting a minimum number of instances.",
+          "Setting a maximum number of instances can help to curb costs and guard against abnormally high request levels ."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Shutdown For Cloud Run services, an idle instance can be shut down at any time, including instances kept warm due to a configured minimum number of instances .",
+          "If you have configured a number of minimum instances , you must use instance-based billing so that CPU is allocated outside of requests .",
+          "When a revision does not receive any traffic, it is scaled in to the minimum number of instances configured (zero by default)."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/reference/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 126,
+        "relevance": "",
+        "evidence_snippets": [
+          "Shutdown For Cloud Run services, an idle instance can be shut down at any time, including instances kept warm due to a configured minimum number of instances .",
+          "If you have configured a number of minimum instances , you must use instance-based billing so that CPU is allocated outside of requests .",
+          "When a revision does not receive any traffic, it is scaled in to the minimum number of instances configured (zero by default)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

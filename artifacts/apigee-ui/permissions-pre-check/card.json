@@ -1,0 +1,142 @@
+{
+  "feature_name": "Permissions Pre-check",
+  "feature_slug": "permissions-pre-check",
+  "summary": "Permissions Pre-check alerts users during Apigee pay-as-you-go provisioning when required permissions are missing and explains how to resolve them.",
+  "extended_definition": "Permissions Pre-check alerts users during Apigee pay-as-you-go provisioning when required permissions are missing and explains how to resolve them.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage users in the Apigee UI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "source_id": "site-iam-reference",
+        "final_score": 99,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When you first configure Apigee and create the Google Cloud project to which the Apigee organization is bound, you typically add a few users with different roles like API Admin and Environment Admin .",
+          "Home Documentation Application development Apigee Guides Send feedback Manage users in the Apigee UI Stay organized with collections Save and categorize content based on your preferences.",
+          "Add user accounts in the Apigee UI To specify user permissions for an environment: Ensure that you have already added the user to your Google Cloud project."
+        ]
+      },
+      {
+        "title": "\"Manage users, roles, and permissions using the API \\_|\\_ Apigee \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "source_id": "site-iam-reference-required-2",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "More Information For more information, see: Users and roles Manage users, roles, and permissions using the Apigee APIs described in the following table: API method Description Organizations list API List all Apigee organizations, and the related projects for which a user has permissions.",
+          "Home Documentation Application development Apigee Guides Send feedback Manage users, roles, and permissions using the API Stay organized with collections Save and categorize content based on your preferences.",
+          "Environments Test IAM Permissions API Tests the permissions of a user on an environment."
+        ]
+      },
+      {
+        "title": "Handling faults \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling",
+        "source_id": "site-docs-reference-required-14",
+        "final_score": 70,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Category Subcategory Fault Name Description Messaging Failures that occur during the message flow (not including policy failures) Custom faults {fault name} Any faults explicitly handled by the API proxy using the RaiseFault policy Response codes InternalServerError, NotFound HTTP error codes 5xx , 4xx Routing failures NoRoutesMatched Failure in selecting a named TargetEndpoint for a request Classification failures NotFound Failures caused by a request URI that does not match any BasePath for any ProxyEndpoint configurations (that is, no API proxies match the URL in the client app's request) Transport HTTP transport-level errors Connectivity ConnectionRefused, ConnectionReset, ConnectionTimeout Failures occur while establishing network or transport-level connections Request validations ContentLengthMissing, HostHeaderMissing Faults occur during semantics checks on every request Response validations Faults occur during semantics checks on every response IO errors SSLHandshakeError, ReadTimeout, ReadError, WriteTimeout, WriteError, ChunkError Read/write errors at client or target endpoints, timeouts, TLS/SSL errors, and chunked errors System Undefined runtime errors Memory OutOfMemory, GCOverLimit Memory-related failures Thread RogueTaskTerminated Failures such as termination of run-away tasks Policy Faults for each policy type are defined in the Policy reference .",
+          "By default, following is the response that gets returned to the client app: HTTP / 1.1 401 Unauthorized Date : Wed, 20 Jul 2016 19:19:32 GMT Content-Type : application/json Content-Length : 150 Connection : keep-alive Server : Apigee Router Co nne c t io n # 0 t o hos t myorg - test .apigee. net le ft i nta c t { \"fault\" :{ \"faultstring\" : \"Failed to resolve API Key variable request.queryparam.apikey\" , \"detail\" :{ \"errorcode\" : \"steps.oauth.v2.FailedToResolveAPIKey\" }}} Your API users may be able to figure out the error message, but they may not.",
+          "Apigee moves UP to check the next FaultRule. --> <FaultRule name=\"invalid key rule\"> <Step> <Name>invalid-key-message</Name> </Step> <Condition>(fault.name = \"FailedToResolveAPIKey\")</Condition> </FaultRule> </FaultRules> <!-- If no <FaultRule> is executed, the <DefaultFaultRule> is executed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "fault.name",
+      "request.queryparam.apikey",
+      "steps.oauth.v2.FailedToResolveAPIKey"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/system-administration/manage-users-roles",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/fundamentals/fault-handling"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.504Z",
+  "source_step08_card": "data/step-08/current/products/apigee-ui/card.json",
+  "product_name": "Apigee UI",
+  "product_slug": "apigee-ui"
+}

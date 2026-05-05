@@ -1,0 +1,109 @@
+{
+  "feature_name": "nftables flow offload support",
+  "feature_slug": "nftables-flow-offload-support",
+  "summary": "Container-Optimized OS supports nftables flow offload and flowtable infrastructure.",
+  "extended_definition": "Container-Optimized OS supports nftables flow offload and flowtable infrastructure.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+      "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits",
+      "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Support policy \\_|\\_ Container-Optimized OS \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "source_id": "site-docs-reference",
+        "final_score": 31,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Contact us For technical support: Contact Google Cloud support For general questions: StackOverflow: google-container-os tag Mailing list for Compute Engine users: gce-discussion Mailing list for Kubernetes Users: kubernetes-users Visit the Google Cloud Slack community ; use this form to sign up .",
+          "Support duration Approximately twice each year, the Container-Optimized OS team releases a Long Term Supported (LTS) milestone on its cos-[MILESTONE]-lts and cos-arm64-[MILESTONE]-lts image families.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Resources Send feedback Support policy Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Disks and file system overview \\_|\\_ Container-Optimized OS \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "source_id": "site-docs-reference",
+        "final_score": 30,
+        "relevance": "",
+        "evidence_snippets": [
+          "Working with the Container-Optimized OS file system The following is a list of paths in the Container-Optimized OS node image file system, along with their properties and recommended usage: Path Properties Purpose / read-only executable The root filesystem is mounted as read-only to maintain integrity.",
+          "Home Documentation Compute Compute Engine Container-Optimized OS Guides Send feedback Disks and file system overview Stay organized with collections Save and categorize content based on your preferences.",
+          "When using Container-Optimized OS, be aware of the partitioning if you run your own services that have certain expectations about the file system layout outside of containers."
+        ]
+      },
+      {
+        "title": "Container-Optimized OS Overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits",
+        "source_id": "site-docs-reference",
+        "final_score": 20,
+        "relevance": "",
+        "evidence_snippets": [
+          "Limitations Container-Optimized OS has limited or no support for some of the common features you may be familiar with on other operating systems: Container-Optimized OS does not include a package manager; as such, you'll be unable to install software packages directly on an instance.",
+          "Container-Optimized OS may not be the right choice for you in the following cases: Your application is not containerized or your containerized application depends on kernel modules, drivers and other additional packages that are not available in Container-Optimized OS.",
+          "Features and Benefits Container-Optimized OS provides the following benefits: Run Containers Out of the Box : Container-Optimized OS instances come pre-installed with the Docker and containerd runtimes and cloud-init ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/container-optimized-os/docs/resources/support-policy",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/disks-and-filesystem",
+        "https://docs.cloud.google.com/container-optimized-os/docs/concepts/features-and-benefits"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:23.337Z",
+  "source_step08_card": "data/step-08/current/products/container-optimized-os/card.json",
+  "product_name": "Container Optimized OS",
+  "product_slug": "container-optimized-os"
+}

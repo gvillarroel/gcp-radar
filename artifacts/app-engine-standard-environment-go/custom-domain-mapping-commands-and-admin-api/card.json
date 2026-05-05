@@ -1,0 +1,156 @@
+{
+  "feature_name": "Custom domain mapping commands and Admin API",
+  "feature_slug": "custom-domain-mapping-commands-and-admin-api",
+  "summary": "App Engine provides generally available gcloud commands and Admin API methods for verifying and mapping custom domains.",
+  "extended_definition": "App Engine provides generally available gcloud commands and Admin API methods for verifying and mapping custom domains.",
+  "lifecycle": {
+    "latest_feature_date": "2017-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+      "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Mapping custom domains \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "source_id": "site-docs-reference-4",
+        "final_score": 219,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Deleting custom domains from your app In order to delete a custom domain mapping from your app, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.update permission.",
+          "In order to add or edit a custom domain mapping, your account must have the App Engine Admin role ( roles/appengine.appAdmin ) or a custom role that contains the appengine.applications.get permission.",
+          "Alternatively, you can use gcloud commands or the Admin API to delete custom domains."
+        ]
+      },
+      {
+        "title": "\"Securing custom domains with SSL \\_|\\_ App Engine standard environment \\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "source_id": "site-docs-reference-4",
+        "final_score": 189,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To move from your own SSL certificates to Google-managed SSL certificates, or to add managed SSL certificates to an existing app with a custom domain, update your domain mapping: In the Google Cloud console, go to App Engine > Settings > Custom Domains : Go to Custom Domains Select the domain you want to secure, and click Enable managed security .",
+          "After mapping a custom domain to your application and updating your DNS records , App Engine provisions a managed SSL certificate, renews the certificate, and revokes it when you remove the custom domain from your application.",
+          "Check your DNS settings then update your custom domain mapping by following the steps to update to managed SSL certificates ."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "REGION ID .r.appspot.com To use custom domains with HTTPS, you must first activate and configure SSL certificates for that domain .",
+          "Example The following is an example of an app.yaml file: runtime : python314 instance class : F2 env variables : BUCKET NAME : \"example-gcs-bucket\" handlers : Matches requests to /images/... to files in static/images/... - url : /images static dir : static/images - url : /. secure : always redirect http response code : 301 script : auto The following table provides YAML examples of available fields in an app.yaml file: Runtime and app elements Element Description app engine apis Optional.",
+          "Python example handlers : - url : /youraccount/. secure : always script : auto To target a specific version of your app using the REGION ID .r.appspot.com domain, you replace the periods that would usually separate the subdomain components of the URL with the string \" -dot- \", for example: https:// VERSION ID -dot-default-dot- PROJECT ID ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.appAdmin",
+      "appengine.applications.get",
+      "appengine.applications.update",
+      "com.crt",
+      "concat.crt",
+      "r.appspot.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/appengine.appAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/standard/go/mapping-custom-domains",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/securing-custom-domains-with-ssl",
+        "https://docs.cloud.google.com/appengine/docs/standard/go/config/appref"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.872Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-go/card.json",
+  "product_name": "App Engine standard environment Go",
+  "product_slug": "app-engine-standard-environment-go"
+}

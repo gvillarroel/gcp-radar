@@ -1,0 +1,106 @@
+{
+  "feature_name": "Data quality monitoring",
+  "feature_slug": "data-quality-monitoring",
+  "summary": "Data quality monitoring scans tables to help ensure data is accurate and reliable.",
+  "extended_definition": "Data quality monitoring scans tables to help ensure data is accurate and reliable.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+      "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud Ready - BigQuery Partners \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "source_id": "site-docs-reference-5",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Partner references BigQuery data source Partner Advantage page Direct link Masthead Data Solution Data Monitoring Category Data Quality, Observability, & FinOps Description Masthead Data is a data reliability platform that helps organizations govern their data and ensure it is of the highest quality.",
+          "Partner references BigQuery Integration Query Results Save Detection Google Cloud Monitoring Partner Advantage page Direct link Datafold Solution Datafold Category Data Quality, Observability, & FinOps Description Datafold is the unified platform for proactive data quality that combines automated data testing, data reconciliation, and observability to help data teams prevent data quality issues and accelerate their development velocity.",
+          "Partner references BigQuery instant observability BigQuery monitoring integration Partner Advantage page Direct link Sifflet Data Solution Sifflet Data Observability Platform Category Data Quality, Observability, & FinOps Description Sifflet is a data observability platform that helps companies trust their data and make data-driven decisions."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery administration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "source_id": "site-docs-reference-2",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "Label resources To help organize your BigQuery resources, you can add labels to your datasets, tables, and views.",
+          "Troubleshoot In addition to the features described in this document for monitoring and managing your organization's BigQuery system, the following resources are available for troubleshooting problems that might arise: BigQuery error messages BigQuery billing questions Troubleshoot quota errors If you need additional assistance, see Get support .",
+          "You can create tables, load data into tables from various types of sources and in various formats, partition tables based on a specific column or by ingestion time, cluster tables, update table properties, and export table data."
+        ]
+      },
+      {
+        "title": "\"Query multiple tables using a wildcard table \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "However, the following query does not limit the scan based on the second filter condition, TABLE SUFFIX = (SELECT SUBSTR(MAX(table name), LENGTH('gsod19') + 1) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%') , because it is a dynamic expression: #standardSQL Scans all tables with names that fall between gsod1940 and gsod1960 SELECT ROUND (( max - 32 ) 5 / 9 , 1 ) celsius FROM bigquery-public-data.noaa gsod.gsod19 WHERE TABLE SUFFIX BETWEEN '40' AND '60' AND TABLE SUFFIX = ( SELECT SUBSTR ( MAX ( table name ), LENGTH ( 'gsod19' ) + 1 ) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%' ) As a workaround, you can perform two separate queries instead; for example: First query: standardSQL Get the list of tables that match the required table name prefixes SELECT SUBSTR(MAX(table name), LENGTH('gsod19') + 1) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%' Second query: standardSQL Construct the second query based on the values from the first query SELECT ROUND((max-32) 5/9,1) celsius FROM bigquery-public-data.noaa gsod.gsod19 WHERE TABLE SUFFIX = '49' These example queries use the INFORMATION SCHEMA.TABLES view.",
+          "For example, the following query does not limit the tables scanned for the wildcard table bigquery-public-data.noaa gsod.gsod19 because the filter uses the dynamic value of the table id column: #standardSQL Scans all tables that match the prefix gsod19 SELECT ROUND (( max - 32 ) 5 / 9 , 1 ) celsius FROM bigquery-public-data.noaa gsod.gsod19 WHERE TABLE SUFFIX = ( SELECT SUBSTR ( MAX ( table name ), LENGTH ( 'gsod19' ) + 1 ) FROM bigquery-public-data.noaa gsod.INFORMATION SCHEMA.TABLES WHERE table name LIKE 'gsod194%' ) As another example, the following query limits the scan based on the first filter condition, TABLE SUFFIX BETWEEN '40' and '60' , because it is a constant expression.",
+          "For example, the following query finds the maximum temperature reported during the 1940s: standardSQL SELECT max, ROUND((max-32) 5/9,1) celsius, mo, da, year FROM bigquery-public-data.noaa gsod.gsod194 WHERE max != 9999.9 # code for missing data ORDER BY max DESC Filter selected tables using TABLE SUFFIX To restrict a query so that it scans only a specified set of tables, use the TABLE SUFFIX pseudocolumn in a WHERE clause with a condition that is a constant expression."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "data.noaa",
+      "gsod.gsod19",
+      "gsod.gsod1929",
+      "gsod.gsod1930",
+      "gsod.gsod1931",
+      "gsod.gsod194",
+      "gsod.INFORMATION"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ready-partners",
+        "https://docs.cloud.google.com/bigquery/docs/admin-intro",
+        "https://docs.cloud.google.com/bigquery/docs/wildcard-table-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,102 @@
+{
+  "feature_name": "Namespace selection",
+  "feature_slug": "namespace-selection",
+  "summary": "The option to choose the installation and migration namespace was removed; deprecated on 2020-07-28.",
+  "extended_definition": "The option to choose the installation and migration namespace was removed; deprecated on 2020-07-28.",
+  "lifecycle": {
+    "latest_feature_date": "2020-07-28",
+    "deprecation_date": "2020-07-28",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a migration plan \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 106,
+        "relevance": "",
+        "evidence_snippets": [
+          "To retrieve this value, check the running JBoss server process: ps aux grep jboss.home.dir To perform the analysis, run the following command: ./m2c analyze \\ -s PATH TO COPIED FILESYSTEM \\ -p jboss-container \\ -o ANALYSIS OUTPUT PATH \\ -r jboss-home= PATH TO JBOSS HOME Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory ANALYSIS OUTPUT PATH : the path to the folder where you want the analysis output to be created PATH TO JBOSS HOME : path to the JBoss installation After the analysis is complete, a new directory is created in the specified output path which contains the migration plan, config.yaml .",
+          "Create a migration plan for WebSphere workloads Optional: Set up the binaryAppScanner.jar Note: If you want to migrate Liberty workloads and maintain their Java environment, you don't need to set up the binaryAppScanner.jar .",
+          "To retrieve these values, check the running Tomcat server process: ps aux grep catalina To perform the analysis, run the following command: ./m2c analyze \\ -s PATH TO COPIED FILESYSTEM \\ -p tomcat-container \\ -o ANALYSIS OUTPUT PATH \\ -r catalina-home= PATH TO CATALINA HOME \\ -r catalina-base= PATH TO CATALINA BASE \\ -r java-version= JAVA VERSION Replace the following: PATH TO COPIED FILESYSTEM : the path to copied file system directory ANALYSIS OUTPUT PATH : the path to the folder where you want the analysis output to be created PATH TO CATALINA HOME : path to the root of the Tomcat installation PATH TO CATALINA BASE : path to the root of the runtime configuration of the Tomcat instance that you're migrating."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for Tomcat servers \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "",
+        "evidence_snippets": [
+          "Edit the target catalinaHome field directly in your migration plan: tomcatServers : - name : latest . . . images : - name : tomcat-latest . . . baseImage : name : BASE IMAGE NAME catalinaHome : PATH Replace PATH with the Tomcat installation path.",
+          "Update Tomcat installation path During the migration process, if your target image has a non default CATALINA HOME path, then you can specify a custom CATALINA HOME path.",
+          "To turn off the probes, remove the probes section from the YAML file. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : tcpSocket : port : 8080 readinessProbe : tcpSocket : port : 8080 You can change this migration plan to use an existing Tomcat HTTP endpoint. tomcatServers : - name : latest images : - name : tomcat-latest ports : - 8080 probes : livenessProbe : httpGet : path : /healthz port : 8080 httpHeaders : - name : Custom-Header value : Awesome initialDelaySeconds : 3 periodSeconds : 3 readinessProbe : httpGet : tcpSocket : port : 8080 There are four predefined ways to check a container using a probe."
+        ]
+      },
+      {
+        "title": "\"Customize migration plan for WebSphere traditional workloads \\_|\\_ Migrate\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you do not want to migrate all applications, you can remove them. applications: - appName: hello-world-servlet-ear httpEndpoints: - httpPort: 9080 httpsPort: 9443 id: defaulthttpendpoint image: name: hello-world-servlet-ear path: /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/m4a-twas-ndNode01Cell/applications/Hello-World-Servlet.ear … - appName: commons-ejb-ear-provided-ear httpEndpoints: - httpPort: 9080 httpsPort: 9443 id: defaulthttpendpoint image: name: commons-ejb-ear-provided-ear path: /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/config/cells/m4a-twas-ndNode01Cell/applications/commons-ejb-ear-provided.ear sharedLibraries: - /opt/IBM/WebSphere/AppServer/sharedJars/commons-io-2.8.0.jar Set the scanner options In the migration plan, the scannerOptions field represents the argument to pass to the IBM WebSphere Application Server Migration Toolkit for Application Binaries .",
+          "You can edit the arguments. scannerOptions : Setting 'includeSensitiveData: true' will upload sensitive data, if exists, such as private keys, to the artifacts repository includeSensitiveData : false sourceAppServer : was90 Note: In order to collect sensitive data, in the migration plan, under scannerOptions , modify the value of includeSensitiveData: to be true .",
+          "Edit the migration plan After you have copied the file system and analyzed it, you can find the migration plan in the new directory that is created in the specified output path: ANALYSIS OUTPUT PATH / config.yaml ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "config.yaml",
+      "jboss.home.dir",
+      "provided.ear"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/create-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/tomcat/tomcat-customizing-a-migration-plan",
+        "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli/websphere-traditional/websphere-traditional-customizing-a-migration"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.501Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

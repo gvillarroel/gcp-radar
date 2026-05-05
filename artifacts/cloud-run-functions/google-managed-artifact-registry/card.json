@@ -1,0 +1,220 @@
+{
+  "feature_name": "Google-managed Artifact Registry",
+  "feature_slug": "google-managed-artifact-registry",
+  "summary": "Cloud Run functions 1st gen supports Google-managed Artifact Registry.",
+  "extended_definition": "Cloud Run functions 1st gen supports Google-managed Artifact Registry.",
+  "lifecycle": {
+    "latest_feature_date": "2022-04-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/building",
+      "https://docs.cloud.google.com/functions/docs/concepts/iam",
+      "https://docs.cloud.google.com/functions/docs/securing/cmek"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Protect your data with CMEK \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "source_id": "site-iam-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Granting service accounts access to the key For all functions, you must grant the following service accounts access to the key: Cloud Run functions service agent ( service- PROJECT NUMBER @gcf-admin-robot.iam.gserviceaccount.com ) Artifact Registry service agent ( service- PROJECT NUMBER @gcp-sa-artifactregistry.iam.gserviceaccount.com ) Cloud Storage service agent ( service- PROJECT NUMBER @gs-project-accounts.iam.gserviceaccount.com ) Cloud Run service agent ( service- PROJECT NUMBER @serverless-robot-prod.iam.gserviceaccount.com ) Eventarc service agent ( service- PROJECT NUMBER @gcp-sa-eventarc.iam.gserviceaccount.com ) To grant these service accounts access to the key, add each service account as a principal of the key and then grant the service account the Cloud KMS CryptoKey Encrypter/Decrypter role: Console Go to the Cloud Key Management Service page in the Google Cloud console: Go to the Cloud KMS page Click the name of the key ring that contains the chosen key.",
+          "Enabling CMEK for a function After setting up an Artifact Registry repository with CMEK enabled and granting Cloud Run functions access to your key, you're ready to enable CMEK for your function.",
+          "Cloud Run functions CMEK protection only applies to Google-managed Cloud Run functions resources; you are responsible for protecting data and resources managed by you, such as your source code repositories, event channels that live in the customer project, or any services used by your functions."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "source_id": "site-iam-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following service accounts are used for Cloud Run functions: Name Member ID Role Compute Engine default service account PROJECT NUMBER-compute@developer.gserviceaccount.com Editor Google Cloud Functions Service Agent service-PROJECT NUMBER@gcf-admin-robot.iam.gserviceaccount.com Google Cloud Functions Service Agent Legacy Cloud Build service account 1 PROJECT NUMBER@cloudbuild.gserviceaccount.com Cloud Build Service Account Cloud Build Service Account service-PROJECT NUMBER@gcp-sa-cloudbuild.iam.gserviceaccount.com Cloud Build Service Agent Google Container Registry Service Agent service-PROJECT NUMBER@containerregistry.iam.gserviceaccount.com Container Registry Service Agent Artifact Registry Service Agent service-PROJECT NUMBER@gcp-sa-artifactregistry.iam.gserviceaccount.com Artifact Registry Service Agent Note: The iam.automaticIamGrantsForDefaultServiceAccounts organization policy constraint prevents the Editor role from being automatically granted to default service accounts.",
+          "Here's a few of the notable permissions that the cloudfunctions.serviceAgent uses: Permission Description roles/artifactregistry.admin Manage repositories and store build images in Artifact Registry. roles/cloudbuild.builds.editor Required to use Cloud Build to perform builds in user project. roles/cloudbuild.customworkers.builder Create builds in Cloud Build custom workers. compute.globalOperations.get , compute.networks.access , vpcaccess.connectors.{get, use} Provision functions with access to the consumer projects VPC. roles/eventarc.developer Manage Eventarc triggers for functions. firebasedatabase.instances.{get, update} Create functions triggered by the Firebase Realtime Database. iam.serviceAccounts.{actAs, getAccessToken, signBlob} Ability to get runtime service account credentials. iam.serviceAccounts.getOpenIdToken Needed for the agent to get an OpenID token on a user-specified authority.",
+          "Cloud Run functions supports the following roles: Cloud Run predefined roles (recommended) Cloud Functions predefined roles Basic roles of Editor , Owner , and Viewer ."
+        ]
+      },
+      {
+        "title": "Build process overview \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/building",
+        "source_id": "site-iam-reference",
+        "final_score": 87,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To specify a self-managed Artifact Registry repository, run the following command: gcloud functions deploy FUNCTION NAME \\ --docker-repository = REPOSITORY \\ [ FLAGS... ] Replace the following: FUNCTION NAME : The name of the function.",
+          "This can be accomplished by adding an IAM condition to the role grant such as (resource.type == \"storage.googleapis.com/Object\" && (resource.name.startsWith(\"projects/ /buckets/gcf-v2-sources-\") resource.name.startsWith(\"projects/ /buckets/gcf-v2-uploads-\") resource.name.startsWith(\"projects/ /buckets/run-sources-\"))) Grant the following roles using the Google Cloud CLI , or use Google Cloud console . gcloud projects add - iam - policy - binding PROJECT ID \\ -- member = serviceAccount: SA EMAIL \\ -- role = roles / logging . logWriter gcloud projects add - iam - policy - binding PROJECT ID \\ -- member = serviceAccount: SA EMAIL \\ -- role = roles / artifactregistry . writer gcloud projects add - iam - policy - binding PROJECT ID \\ -- member = serviceAccount: SA EMAIL \\ -- role = roles / storage . objectViewer Replace the following: PROJECT ID : Your Google Cloud project ID .",
+          "When specifying a Artifact Registry repository located in a different project or region you may need to consider additional configurations: IAM configurations: IAM configurations: Ensure that the build service account has authorized access to read and write to the REPOSITORY ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.iam.gserviceaccount.com",
+      "artifactregistry.admin",
+      "artifactregistry.iam.gserviceaccount.com",
+      "cloudbuild.builds.editor",
+      "cloudbuild.customworkers.builder",
+      "cloudbuild.gserviceaccount.com",
+      "cloudbuild.iam.gserviceaccount.com",
+      "cloudfunctions.serviceAgent",
+      "compute.globalOperations.get",
+      "compute.networks.access",
+      "containerregistry.iam.gserviceaccount.com",
+      "developer.gserviceaccount.com",
+      "eventarc.developer",
+      "eventarc.iam.gserviceaccount.com",
+      "firebasedatabase.instances",
+      "iam.automaticIamGrantsForDefaultServiceAccounts",
+      "iam.serviceAccounts",
+      "iam.serviceAccounts.getOpenIdToken",
+      "prod.iam.gserviceaccount.com",
+      "projects.locations.functions",
+      "resource.name.startsWith",
+      "resource.type",
+      "robot.iam.gserviceaccount.com",
+      "storage.googleapis.com",
+      "storage.objectViewer",
+      "vpcaccess.connectors"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.admin",
+      "roles/cloudbuild.builds.editor",
+      "roles/cloudbuild.customworkers.builder",
+      "roles/cloudfunctions.serviceAgent",
+      "roles/eventarc.developer",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/securing/cmek",
+        "https://docs.cloud.google.com/functions/docs/concepts/iam",
+        "https://docs.cloud.google.com/functions/docs/building"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:13.254Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions"
+}

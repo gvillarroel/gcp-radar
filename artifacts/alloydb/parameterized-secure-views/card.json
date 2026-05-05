@@ -1,0 +1,108 @@
+{
+  "feature_name": "Parameterized secure views",
+  "feature_slug": "parameterized-secure-views",
+  "summary": "Parameterized secure views enhance AlloyDB data security and row access control by providing a secure SQL interface for application developers; Parameterized secure views provide a secure SQL interface that improves data security and row access control for application developers.",
+  "extended_definition": "Parameterized secure views enhance AlloyDB data security and row access control by providing a secure SQL interface for application developers; Parameterized secure views provide a secure SQL interface that improves data security and row access control for application developers.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+      "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+      "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Generate SQL queries using natural language questions \\_|\\_ AlloyDB for\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 181,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You achieve this by providing param names and param values inputs, as shown in the following example: SELECT alloydb ai nl . get sql summary ( nl config id = > 'my app config' , nl question = > 'Give me the total number of accounts and the earliest opening date and other information for accounts who choose issuance after transaction are staying in east Bohemia region?' , param names = > ARRAY [ 'user id' ], param values = > ARRAY [ '123' ] ); Providing param names and param values arguments makes sure that, when the nl question is answerable by a SQL statement that is enforced by parameterized secure views, the designated security filters are applied when the result set is produced and the summary is generated.",
+          "Manage application data security using AlloyDB parameterized secure views Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "SELECT alloydb ai nl . apply generated templates ( 'my app config' ); Configure security for natural language To configure security for AlloyDB AI natural language, see Manage data application security using parameterized secure views ."
+        ]
+      },
+      {
+        "title": "\"Integrate QueryData with an application \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "source_id": "site-docs-root-2",
+        "final_score": 177,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To prevent these generated queries from accessing data outside a specific user's scope, implement parameterized secure views (PSVs).",
+          "V2 YOUR CONTEXT SET ID : The context set ID for version 2 Add a secure access layer using SQL views When integrating QueryData with your application, QueryData generates SQL queries based on natural language inputs.",
+          "For an example of how to use PSV with context sets, see Secure data agents with parameterized secure views ."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Ready - AlloyDB Partners \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 122,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Connecting ThoughtSpot with AlloyDB Adding a Google AlloyDB connection, Partner Advantage page Direct link Data governance, modeling, and security Collibra Solution Collibra Category Data governance Description Collibra data intelligence cloud combines data silos on a complete and scalable cloud-services platform, design easy-to-use intuitive workflows for data creators and innovators, use an open and flexible architecture to connect data applications, trust in data that's secure and compliant with enterprise-level standards.",
+          "Partner references Collibra JDBC driver for AlloyDB Collibra catalogue connector for AlloyDB Partner Advantage page Direct link Liquibase Solution Liquibase Secure Category CI/CD automation with security and governance Description Liquibase helps forward-thinking companies harness the power of Database DevOps to accelerate, secure, and manage their organization.",
+          "Partner references Connecting to AlloyDB Partner Advantage page Direct link Denodo Solution Denodo Platform Category Data integration and migration Description The Denodo platform provides business applications with easy access to integrated views of various heterogeneous and distributed, both structured and unstructured, data sources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "nl.get"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/generate-sql-queries-natural-language",
+        "https://docs.cloud.google.com/alloydb/docs/ai/integrate-applications-data-agent",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

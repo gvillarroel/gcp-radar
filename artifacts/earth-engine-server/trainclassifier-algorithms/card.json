@@ -1,0 +1,93 @@
+{
+  "feature_name": "trainClassifier algorithms",
+  "feature_slug": "trainclassifier-algorithms",
+  "summary": "The trainClassifier algorithms are deprecated and should be replaced with Classifier.train; deprecated on 2017-12-20.",
+  "extended_definition": "The trainClassifier algorithms are deprecated and should be replaced with Classifier.train; deprecated on 2017-12-20.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-20",
+    "deprecation_date": "2017-12-20",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/best_practices",
+      "https://developers.google.com/earth-engine/guides/classification",
+      "https://developers.google.com/earth-engine/guides/clustering"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Coding Best Practices \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/best_practices",
+        "source_id": "site-docs-root",
+        "final_score": 115,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Classifier . smileCart (). train ({ features : training , classProperty : 'landcover' , inputProperties : bands }); print ( classifier . explain ()); // Computed value is too large The better approach is to start with a moderate amount of data and tune the hyperparameters of the classifier to determine if you can achieve your desired accuracy: Tune hyperparameters! var l8raw = ee .",
+          "Don't do this: labels = labels . map ( function ( f ) { return f . buffer ( 100000 , 1000 ); }); var bands = [ 'B2' , 'B3' , 'B4' , 'B5' , 'B6' , 'B7' ]; var training = composite . select ( bands ). sampleRegions ({ collection : labels , properties : [ 'landcover' ], scale : 30 }); var classifier = ee .",
+          "Classifier . smileCart ({ minLeafPopulation : p }) . train ({ features : training , classProperty : 'landcover' , inputProperties : bands }); return testing . classify ( classifier ) . errorMatrix ( 'landcover' , 'classification' ) . accuracy (); }); print ( ui ."
+        ]
+      },
+      {
+        "title": "Supervised Classification \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/classification",
+        "source_id": "site-docs-root",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "To train the classifier, specify the name of the class label property and a list of properties in the training table which the classifier should use for predictors.",
+          "Classifier CLASSIFICATION REGRESSION PROBABILITY MULTIPROBABILITY RAW RAW REGRESSION ee.Classifier.amnhMaxent close close check circle close close close ee.Classifier.minimumDistance check circle check circle close close check circle close ee.Classifier.smileCart check circle check circle check circle check circle close close ee.Classifier.smileGradientTreeBoost check circle check circle check circle check circle close close ee.Classifier.smileKNN check circle close check circle close close close ee.Classifier.smileNaiveBayes check circle close check circle check circle close close ee.Classifier.smileRandomForest check circle check circle check circle check circle check circle check circle ee.Classifier.libsvm C SVC check circle close check circle check circle close close ee.Classifier.libsvm NU SVC check circle close check circle check circle close close ee.Classifier.libsvm ONE CLASS check circle close close close close close ee.Classifier.libsvm EPSILON SVR check circle close close close close close ee.Classifier.libsvm NU SVR close check circle close close close close Use setOutputMode() before training a classifier to define the output format.",
+          "Classifier . smileRandomForest ( 10 ) . train ({ features : training , classProperty : 'LC Type1' , inputProperties : [ 'SR B2' , 'SR B3' , 'SR B4' , 'SR B5' , 'SR B6' , 'SR B7' ] }); // Classify the input imagery. var classified = input . classify ( classifier ); // Get a confusion matrix representing resubstitution accuracy. var trainAccuracy = classifier . confusionMatrix (); print ( 'Resubstitution error matrix: ' , trainAccuracy ); print ( 'Training overall accuracy: ' , trainAccuracy . accuracy ()); // Sample the input with a different random seed to get validation data. var validation = input . addBands ( modis ). sample ({ region : roi , numPixels : 5000 , seed : 1 // Filter the result to get rid of any null pixels. }). filter ( ee ."
+        ]
+      },
+      {
+        "title": "\"Unsupervised Classification (clustering) \\_|\\_ Google Earth Engine \\_|\\_\\",
+        "url": "https://developers.google.com/earth-engine/guides/clustering",
+        "source_id": "site-docs-root",
+        "final_score": 67,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Clusterer . wekaKMeans ( 15 ) . train ( training ) Cluster the input using the trained clusterer. result = input . cluster ( clusterer ) Display the clusters with random colors. m . add layer ( result . randomVisualizer (), {}, 'clusters' ) m Please note: The same inputs should always produce the same outputs, but reordering the inputs can change the results.",
+          "Training data for a clusterer is a FeatureCollection with properties, but unlike classifiers, it doesn't have an input class value.",
+          "Like classifiers, the data for the train and apply steps are expected to have the same number of values."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.GeometryConstructors.MultiPoint",
+      "ee.Algorithms.GeometryConstructors.Point",
+      "ee.Classifier.amnhMaxent",
+      "ee.Classifier.libsvm",
+      "ee.Classifier.minimumDistance",
+      "ee.Classifier.smileCart",
+      "ee.Classifier.smileGradientTreeBoost",
+      "ee.Classifier.smileKNN",
+      "ee.Classifier.smileNaiveBayes",
+      "ee.Classifier.smileRandomForest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

@@ -452,8 +452,8 @@ contains external HTTP(S) links outside official Google hosts before any radar
 Markdown is rewritten.
 Step 10 also rejects promoted feature READMEs that have drifted from their
 promoted feature cards before rewriting final reports. The preflight checks
-identity, lifecycle, official evidence links, IAM status and details, security
-capability names, and official security evidence links.
+feature title, identity, lifecycle, official evidence links, IAM status and
+details, security capability names, and official security evidence links.
 Step 10 also rejects promoted product indexes that are missing the service card
 link, missing any promoted feature README link listed by the promotion
 manifest, or still linking stale feature or service artifact paths before any
@@ -561,6 +561,8 @@ listed in a promotion manifest must have both its promoted `card.json` and
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact review remains possible from
 the human-readable artifact itself.
+Each promoted feature README title must match the promoted feature card's
+feature name so artifact review cannot silently retain a stale heading.
 Each promoted feature README must also keep its IAM mapping status and rendered
 IAM detail aligned with its promoted feature card. Explicit role and permission
 values must appear in the README when the card classifies the mapping as

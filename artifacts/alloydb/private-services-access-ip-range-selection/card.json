@@ -1,0 +1,117 @@
+{
+  "feature_name": "Private services access IP range selection",
+  "feature_slug": "private-services-access-ip-range-selection",
+  "summary": "AlloyDB lets you specify a private services access IP range when creating a cluster.",
+  "extended_definition": "AlloyDB lets you specify a private services access IP range when creating a cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2023-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+      "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+      "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Private services access overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "source_id": "site-docs-reference",
+        "final_score": 160,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "IP address range size considerations It's important to choose a private services access address range that is wide enough to accommodate the needs of AlloyDB, as well as any other Google Cloud services that require IP addresses from the same address pool.",
+          "Configure users who can create AlloyDB resources as Service Project Admins with access to the appropriate allocated IP address ranges in the private services access configuration.",
+          "Connectivity between clusters and internal resources Private services access lets the AlloyDB clusters communicate with the internal resources that enable them."
+        ]
+      },
+      {
+        "title": "\"Connect from Google Kubernetes Engine (GKE) to AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "This can take several minutes. gcloud In the Cloud Shell, check if the unused IP addresses (IPv4) range is already assigned to service peering: gcloud services vpc-peerings list --network = default Skip the next step if your output looks similar to the following: network: projects/493573376485/global/networks/default peering: servicenetworking-googleapis-com reservedPeeringRanges: - default-ip-range service: services/servicenetworking.googleapis.com In this output, the value of reservedPeeringRanges is default-ip-range , which you can use as IP RANGE NAME to create a private connection in step 3. (Skip when using the default value of reservedPeeringRanges ) To allocate unused IP addresses in the VPC, use the following command: gcloud compute addresses create IP RANGE NAME \\ --global \\ --purpose = VPC PEERING \\ --prefix-length = 16 \\ --description = \"VPC private service access\" \\ --network = default Replace IP RANGE NAME with your name for available internal IP addresses within an AlloyDB subnet, such as alloydb-gke-psa-01 .",
+          "To configure service access using the allocated IP range, run the following command: gcloud services vpc-peerings connect \\ --service = servicenetworking.googleapis.com \\ --ranges = IP RANGE NAME \\ --network = default To deploy the AlloyDB cluster, run the following command: gcloud alloydb clusters create CLUSTER ID \\ --database-version = POSTGRES VERSION \\ --password = CLUSTER PASSWORD \\ --network = default \\ --region = REGION \\ --project = PROJECT ID Replace the following: CLUSTER ID : the ID of the cluster that you are creating.",
+          "To connect to an AlloyDB for PostgreSQL cluster from outside its configured VPC, you configure Private Service Access configuration in the VPC for AlloyDB and use the default VPC network to run queries from an application deployed on a GKE cluster."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.locations.clusters \\_|\\_ AlloyDB for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters",
+        "source_id": "site-iam-reference",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "Name of the allocated IP range for the private IP AlloyDB cluster, for example: \"google-managed-services-default\".",
+          "The resource link for the VPC network in which cluster resources are created and from which they are accessible via Private IP.",
+          "The resource link for the VPC network in which cluster resources are created and from which they are accessible via Private IP."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.clusters",
+      "servicenetworking.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/about-private-services-access",
+        "https://docs.cloud.google.com/alloydb/docs/quickstart/integrate-kubernetes",
+        "https://docs.cloud.google.com/alloydb/docs/reference/rest/v1/projects.locations.clusters"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

@@ -1,0 +1,107 @@
+{
+  "feature_name": "PostgreSQL 16 compatibility",
+  "feature_slug": "postgresql-16-compatibility",
+  "summary": "AlloyDB supports PostgreSQL 16 compatibility for new clusters and homogeneous migrations from PostgreSQL; AlloyDB supports preview PostgreSQL 16 compatibility for creating new clusters.",
+  "extended_definition": "AlloyDB supports PostgreSQL 16 compatibility for new clusters and homogeneous migrations from PostgreSQL; AlloyDB supports preview PostgreSQL 16 compatibility for creating new clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+      "https://docs.cloud.google.com/alloydb/docs/high-availability",
+      "https://docs.cloud.google.com/alloydb/docs/maintenance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Maintenance overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "source_id": "site-docs-reference-2",
+        "final_score": 26,
+        "relevance": "",
+        "evidence_snippets": [
+          "AlloyDB for PostgreSQL clusters and instances rely upon many internal, low-level Google Cloud resources.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Maintenance overview Stay organized with collections Save and categorize content based on your preferences.",
+          "Database compatibility upgrades: the PostgreSQL community regularly releases minor-version updates to supported major versions of PostgreSQL."
+        ]
+      },
+      {
+        "title": "\"Advanced query insights features overview \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 25,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback Advanced query insights features overview Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes advanced query insights features in AlloyDB for PostgreSQL.",
+          "The metrics are stored in AlloyDB tables, and normalized execution plans are stored in Cloud Trace ."
+        ]
+      },
+      {
+        "title": "\"AlloyDB high availability overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/high-availability",
+        "source_id": "site-docs-reference-2",
+        "final_score": 25,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases AlloyDB for PostgreSQL Guides Send feedback AlloyDB high availability overview Stay organized with collections Save and categorize content based on your preferences.",
+          "New architecture Newly created AlloyDB instances with PostgreSQL 18 provide improved failover using a read replica on the standby node (hot standby node).",
+          "This document provides an overview of the high availability (HA) configuration for AlloyDB for PostgreSQL instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/high-availability"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

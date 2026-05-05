@@ -1,0 +1,191 @@
+{
+  "feature_name": "Self-service restore for Looker (Google Cloud core)",
+  "feature_slug": "self-service-restore-for-looker-google-cloud-core",
+  "summary": "Lets users restore Looker (Google Cloud core) instances through a self-service workflow.",
+  "extended_definition": "Lets users restore Looker (Google Cloud core) instances through a self-service workflow.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+      "https://docs.cloud.google.com/looker/docs/looker-core-access-control"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Users \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "source_id": "site-docs-reference",
+        "final_score": 160,
+        "relevance": "",
+        "evidence_snippets": [
+          "Differences between disabling and deleting an account are described in the following table: Description Disabled Deleted The user can sign in to the Looker instance No No The user's personal folder Still exists Deleted Looks and dashboards in the user's personal folder Still exist Moved to the Trash folder Looks and dashboards the user saved to a Shared folder Still exist in the Shared folder Still exist in the Shared folder Schedules created by the user Schedules are disabled Schedules are deleted Schedules based on the user's content, but created by another user Schedules continue to run User's content is deleted; schedules based on that content are deleted Schedules that list the user as a recipient and are created by another user with the ability to deliver content to external email accounts Schedules will continue to run and deliver normally (user will be treated as an external user) Schedules continue to run and deliver normally (user will be treated as an external user) Schedules that have Run schedule as recipient enabled and list the user as a recipient Schedules will continue to run but will fail to deliver to the disabled user upon next run Schedules continue to run but will fail to deliver to all users with error run as recipient was specified on ScheduledPlan but recipient is not a Looker user Boards created by the user Still exist Still exist Alerts created by the user Remain active, but are not visible or editable from the dashboard on which the alert is set unless self-assigned by an admin.",
+          "Viewing and searching users The Users page shows the following information: Tabs group your users by type: The Standard Users tab shows users who sign in to Looker directly, through either the regular authentication process or through the Looker API.",
+          "Therefore, we recommend any Looker (Google Cloud core) users who have API keys that were created prior to Looker 25.18 delete those existing API keys and create new API keys."
+        ]
+      },
+      {
+        "title": "Looker (Google Cloud core) access control with IAM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the looker.instances.login permission lets a principal log in to Looker (Google Cloud core) instances.",
+          "Role Name Permissions Looker Viewer (roles/looker.viewer) Read-only access to all Looker (Google Cloud core) resources in the Google Cloud console. looker.backups.get looker.backups.list looker.instances.get looker.instances.list looker.instances.login looker.locations.get looker.locations.list looker.operations.get looker.operations.list resourcemanager.projects.get resourcemanager.projects.list Looker Instance User roles/looker.instanceUser Access to sign in to a Looker (Google Cloud core) instance. looker.instances.get looker.instances.login resourcemanager.projects.get resourcemanager.projects.list Looker Schema Viewer roles/looker.schemaViewer Access to Looker (Google Cloud core) schema data in Knowledge Catalog. looker.schemas.view Looker Admin roles/looker.admin Full access to all Looker (Google Cloud core) resources. looker.backups.create looker.backups.delete looker.backups.get looker.backups.list looker.instances.create looker.instances.delete looker.instances.export looker.instances.get looker.instances.import looker.instances.list looker.instances.login looker.instances.update looker.locations.get looker.locations.list looker.operations.cancel looker.operations.delete looker.operations.get looker.operations.list looker.schemas.view resourcemanager.projects.get resourcemanager.projects.list At least one principal must have the Looker Admin ( roles/looker.admin ) IAM role.",
+          "What's next Use Google OAuth for Looker (Google Cloud core) user authentication Manage users within Looker (Google Cloud core) Configure a Looker (Google Cloud core) instance Looker (Google Cloud core) admin settings Administer a Looker (Google Cloud core) instance from the Google Cloud console Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 148,
+        "relevance": "",
+        "evidence_snippets": [
+          "This setting lets Looker admins define the email domains to which your users can deliver Looker content — Looks, dashboards, queries with visualizations — or alert notifications through email.",
+          "For an overview of how user permissions affect the domains to which users can send Looker content deliveries or alert notifications, see the following table: User type Permissions Email Domain Allowlist for Scheduled Content contains the domain friendly domain.org Email Domain Allowlist for Scheduled Content contains no domains Non-embed schedule look emails only Can email content deliveries to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries to any email address schedule look emails and create alerts Can email content deliveries and alert notifications to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries and alert notifications to any email address schedule external look emails only Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Signed embed schedule look emails only Can email content deliveries to an email address with the friendly domain.org domain Cannot email any Looker content schedule look emails and create alerts Can email content deliveries and alert notifications to an email address with the friendly domain.org domain Cannot email any Looker content or alert notifications schedule external look emails Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Embedded Looker content is accessed through a dedicated embed user account, not by individual user accounts.",
+          "Onboarding When enabled, Looker admins and developers who log in to a new Looker instance will see the Looker onboarding walkthrough, which guides users through the four major steps to make use of a Looker instance: Adding a connection Creating a project Editing project files as needed Exploring data Once any combination of admins or developers completes the full guide, it stops being displayed."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "domain.org",
+      "looker.admin",
+      "looker.backups.create",
+      "looker.backups.delete",
+      "looker.backups.get",
+      "looker.backups.list",
+      "looker.instances.create",
+      "looker.instances.delete",
+      "looker.instances.export",
+      "looker.instances.get",
+      "looker.instances.import",
+      "looker.instances.list",
+      "looker.instances.login",
+      "looker.instances.update",
+      "looker.instanceUser",
+      "looker.locations.get",
+      "looker.locations.list",
+      "looker.operations.cancel",
+      "looker.operations.delete",
+      "looker.operations.get",
+      "looker.operations.list",
+      "looker.schemas.view",
+      "looker.schemaViewer",
+      "looker.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/looker.admin",
+      "roles/looker.instanceUser",
+      "roles/looker.schemaViewer",
+      "roles/looker.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/looker-core-access-control",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

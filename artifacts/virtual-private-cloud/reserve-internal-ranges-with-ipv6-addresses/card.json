@@ -1,0 +1,147 @@
+{
+  "feature_name": "Reserve internal ranges with IPv6 addresses",
+  "feature_slug": "reserve-internal-ranges-with-ipv6-addresses",
+  "summary": "Allows internal ranges in Virtual Private Cloud to be reserved using IPv6 address space.",
+  "extended_definition": "Allows internal ranges in Virtual Private Cloud to be reserved using IPv6 address space.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+      "https://docs.cloud.google.com/vpc/docs/about-migrating-peering-services-private-service-connect",
+      "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+      "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Add Dynamic Network Interfaces to an instance \\_|\\_ Virtual Private Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "source_id": "site-docs-root-2",
+        "final_score": 226,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select one of the following options for the IP stack type for the Dynamic NIC: IPv4 (single-stack) IPv4 and IPv6 (dual-stack) IPv6 (single-stack) For Dynamic NICs with IPv4 addresses, do the following: For Primary internal IPv4 address , select one of the following: Ephemeral (Automatic) to automatically assign a new ephemeral IPv4 address Ephemeral (Custom) to manually specify a new ephemeral IPv4 address A reserved static internal IPv4 address from the list Reserve static internal IPv4 address to reserve and assign a new static internal IPv4 address For External IPv4 address , select one of the following: Ephemeral to assign a new ephemeral IPv4 address None to not assign an external IPv4 address A reserved static IPv4 address from the list Reserve static external IP address to reserve and assign a new static external IPv4 address You can optionally assign one or more alias IP ranges to the network interface.",
+          "Select one of the following options for the IP stack type for the Dynamic NIC: IPv4 (single-stack) IPv4 and IPv6 (dual-stack) IPv6 (single-stack) For Dynamic NICs with IPv4 addresses, do the following: For Primary internal IPv4 address , select one of the following: Ephemeral (Automatic) to automatically assign a new ephemeral IPv4 address Ephemeral (Custom) to manually specify a new ephemeral IPv4 address A reserved static internal IPv4 address from the list Reserve static internal IPv4 address to reserve and assign a new static internal IPv4 address For External IPv4 address , select one of the following: Ephemeral to assign a new ephemeral IPv4 address None to not assign an external IPv4 address A reserved static IPv4 address from the list Reserve static external IP address to reserve and assign a new static external IPv4 address You can optionally assign one or more alias IP ranges to the network interface.",
+          "For Dynamic NICs with IPv6 addresses, configure an internal or external IPv6 address range, depending on the access type of the connected subnet."
+        ]
+      },
+      {
+        "title": "\"Bring your own IP addresses \\_|\\_ Virtual Private Cloud \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "source_id": "site-docs-root-2",
+        "final_score": 218,
+        "relevance": "",
+        "evidence_snippets": [
+          "Configuration Regional (v2) Regional internal (v2) Regional (v1) Global (v1) Availability Recommended regional configuration Used for internal IPv6 addresses Not recommended for new regional configurations Must request adding your project to an allowlist Public advertised prefix provisioning time Approximately 2 weeks Immediate Approximately 4 weeks Approximately 4 weeks Public delegated prefix provisioning time A few minutes Immediate 4 weeks Can overlap with public advertised prefix provisioning time 4 weeks Can overlap with public advertised prefix provisioning time Sub-prefix provisioning time A few minutes Immediate A few minutes A few minutes BGP announcement The public advertised prefix is not automatically announced when it is provisioned.",
+          "For information about using addresses in an internal IPv6 range, see Internal IPv6 specifications When you create IP addresses from a public delegated prefix or sub-prefix, the IP addresses can be used only within the project and scope that they are allocated to.",
+          "Must be smaller than the associated sub-prefix—the difference between the allocatable prefix length and the sub-prefix length must be at least 8, and can't be greater than 32 Valid lengths: /48 , /56 , /64 , /72 , /80 , /88 , /96 Default lengths: If the parent sub-prefix's length is /64 or /72 , the default allocatable prefix length is /96 Otherwise, the default allocatable prefix length is /64 Sub-prefix for external subnet ranges (--mode=EXTERNAL IPV6 SUBNETWORK CREATION) Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix The difference between the prefix length of a sub-prefix and its parent public delegated prefix can't be greater than 24 Valid lengths: /32 , /40 , /48 , /56 External Sub-prefix for internal subnet ranges (--mode=INTERNAL IPV6 SUBNETWORK CREATION) Can be the same size or smaller (have a longer prefix length) than the parent public delegated prefix The difference between the prefix length of a sub-prefix and its parent public delegated prefix can't be greater than 24 Valid lengths: /32 , /40 , /48 , /56 Internal Limitations Provisioning time takes multiple weeks and cannot be accelerated."
+        ]
+      },
+      {
+        "title": "\"About accessing published services through endpoints \\_|\\_ Virtual Private\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "source_id": "site-docs-root-2",
+        "final_score": 213,
+        "relevance": "",
+        "evidence_snippets": [
+          "The IP address counts toward the project's quota for static internal IPv4 addresses or static internal IPv6 addresses .",
+          "Target producer Consumer configuration (endpoint) Consumer global access Hybrid access Automatic DNS configuration (IPv4-only) VPC Network Peering access NCC connection propagation (IPv4 only) Supported target services for IPv4 endpoints Supported target services for IPv6 endpoints Cross-region internal Application Load Balancer IPv4 services IPv4 services Internal passthrough Network Load Balancer Only if global access is enabled on the load balancer ( known issue ) IPv4 services IPv4 services IPv6 services Internal protocol forwarding (target instance) Only if global access is enabled on the producer forwarding rule ( known issue ) IPv4 services IPv4 services IPv6 services Port mapping services Only if global access is enabled on the producer forwarding rule IPv4 services IPv4 services IPv6 services Regional internal Application Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Regional internal proxy Network Load Balancer Only if global access is enabled on the load balancer before the service attachment is created IPv4 services IPv4 services Secure Web Proxy IPv4 services IPv4 services Producer configuration This table summarizes the supported configuration options and capabilities of published services that are accessed by endpoints .",
+          "Producer type Producer configuration (published service) Supported producer backends PROXY protocol (TCP traffic only) IP version Cross-region internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups IPv4 Internal passthrough Network Load Balancer GCE VM IP zonal NEGs Instance groups IPv4 IPv6 Internal protocol forwarding (target instance) Not applicable IPv4 IPv6 Port mapping services Port mapping NEG IPv4 IPv6 Regional internal Application Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Serverless NEGs Private Service Connect NEGs Instance groups Regional internet NEGs IPv4 Regional internal proxy Network Load Balancer GCE VM IP PORT zonal NEGs Hybrid NEGs Private Service Connect NEGs Instance groups IPv4 Secure Web Proxy Not applicable IPv4 Different load balancers support different port configurations; some load balancers support a single port, some support a range of ports, and some support all ports."
+        ]
+      },
+      {
+        "title": "\"About migrating peering-based services to Private Service Connect \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/vpc/docs/about-migrating-peering-services-private-service-connect",
+        "source_id": "site-docs-root-2",
+        "final_score": 210,
+        "relevance": "",
+        "evidence_snippets": [
+          "Internal ranges for migration The internal range is used to reserve the CIDR range that is used in the producer subnet so that when the producer subnet is deleted, the CIDR range can't be used for another purpose.",
+          "Task Producer Consumer Deploy a Private Service Connect service Deploy the service in a new subnet in a new VPC network in the producer project and publish it by using Private Service Connect Performed by producer Shut down the peering-based service Reserve the producer subnet CIDR range by creating an internal range in the producer project Performed by producer Consumer provides the subnet name to use for the migration target Delete all resources in the producer subnet, and then delete the subnet Performed by producer The consumer can no longer access the service Create a Private Service Connect endpoint in the consumer network Create a migration subnet in the consumer network If consumer didn't choose the subnet name, the producer provides the subnet name to consumer Performed by consumer (or by producer through a service agent) Create a Private Service Connect endpoint in the consumer network Producer provides service attachment URI to consumer Performed by consumer (or by producer through a service agent) The consumer can access the service Validate access through the Private Service Connect endpoint Performed by consumer Finalize the migration Delete the internal range Performed by producer Update the consumer's migration subnet to convert it to a regular subnet Performed by consumer (or by producer through a service agent) If it's not needed for other services, delete the peering connection in the producer and consumer networks Performed by producer Performed by consumer (or by producer through a service agent) Considerations If you are a service producer who wants to migrate your peering-based service to Private Service Connect, consider the following: The Private Service Connect implementation of the service must offer the same features as the peering-based service.",
+          "The compute.subnetworks.usePeerMigration permission is included in the following roles: Compute Peer Subnet Migration Admin ( roles/compute.peerSubnetMigrationAdmin ) Compute Network Admin ( roles/compute.networkAdmin ) Principals with the Compute Peer Subnet Migration Admin role can create and delete IP addresses and Private Service Connect endpoints in a peer migration subnet, but they can't create, update, or delete the migration subnet."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.networkAdmin",
+      "compute.peerSubnetMigrationAdmin",
+      "compute.subnetworks.usePeerMigration"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin",
+      "roles/compute.peerSubnetMigrationAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/about-migrating-peering-services-private-service-connect"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/about-migrating-peering-services-private-service-connect"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/about-migrating-peering-services-private-service-connect"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/about-migrating-peering-services-private-service-connect"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vpc/docs/add-dynamic-nics",
+        "https://docs.cloud.google.com/vpc/docs/bring-your-own-ip",
+        "https://docs.cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints",
+        "https://docs.cloud.google.com/vpc/docs/about-migrating-peering-services-private-service-connect"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:56.755Z",
+  "source_step08_card": "data/step-08/current/products/virtual-private-cloud/card.json",
+  "product_name": "Virtual Private Cloud",
+  "product_slug": "virtual-private-cloud"
+}

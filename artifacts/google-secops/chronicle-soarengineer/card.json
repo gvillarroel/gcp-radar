@@ -1,0 +1,185 @@
+{
+  "feature_name": "chronicle.soarEngineer",
+  "feature_slug": "chronicle-soarengineer",
+  "summary": "This Cloud IAM role for SOAR engineers is being deprecated; deprecated on 2026-03-02.",
+  "extended_definition": "This Cloud IAM role for SOAR engineers is being deprecated; deprecated on 2026-03-02.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-02",
+    "deprecation_date": "2026-03-02",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/deprecations",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+      "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Feature deprecations \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "source_id": "site-docs-reference-2",
+        "final_score": 188,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SOAR IAM Roles February 23, 2026 August 23, 2026 The chronicle.soarAnalyst , chronicle.soarViewer , and chronicle.soarEngineer roles in Cloud IAM are deprecated and will be removed.",
+          "These roles were non-operational and are being replaced by Google Cloud IAM functionality as part of the SOAR Migration.",
+          "For more information see Overview of the YARA-L 2.0 language . labels fields for UDM nouns November 29, 2023 November 29, 2024 On or after November 29, 2023, the following Google Security Operations labels fields for UDM nouns are deprecated: about.labels , intermediary.labels , observer.labels , principal.labels , src.labels , security result.about.labels , and target.labels ."
+        ]
+      },
+      {
+        "title": "\"Migrate SOAR endpoints to Chronicle API \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "source_id": "site-docs-reference",
+        "final_score": 147,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate SOAR endpoints to Chronicle API Supported in: Google secops SOAR This document outlines the steps and considerations for migrating from the deprecated SOAR API surface to the unified Chronicle API.",
+          "Map the service account or workload identity to SOAR parameters If you are using a service account or workload identity federation to authenticate to the Chronicle API, you must authorize it within the platform to ensure it can successfully communicate with Google SecOps.",
+          "Deprecation schedule The old API surface for SOAR is scheduled to be fully deprecated on September 30, 2026."
+        ]
+      },
+      {
+        "title": "\"SOAR migration overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp",
+        "source_id": "site-api-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Assign the following predefined IAM roles in Google Cloud to the onboarding SME: Chronicle API Admin Chronicle Service Admin Chronicle SOAR Admin Project IAM Admin Service Usage Admin Assign one of the following predefined IAM roles to all existing SOAR users: Chronicle API Admin Chronicle API Editor Chronicle API Viewer Chronicle API Limited Viewer Complete the authentication setup in SOAR by mapping each user (including administrators) to an email user group .",
+          "Chronicle API Admin Chronicle Service Admin Chronicle SOAR Admin Project IAM Admin Service Usage Admin Assign one of the following roles in IAM to all existing SOAR users: Chronicle API Admin Chronicle API Editor Chronicle API Viewer Chronicle API Limited Viewer Complete the authentication setup in SOAR by mapping all the IdP groups that need access to SOAR .",
+          "For example, a webhook defined on: https:// xxxx.siemplify-soar.com/api/external/v1 /webhooks/{webhook id}?api key=xxxx will need to be updated to: https:// us-chronicle.googleapis.com/v1alpha/projects/{project id}/locations/{location}/instances/{instance/{instance id} /webhooks/{webhook id}?api key=xxxx The authentication for webhooks remains unchanged."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.labels",
+      "central1.rep.googleapis.com",
+      "central2.rep.googleapis.com",
+      "chronicle.africa",
+      "chronicle.asia",
+      "chronicle.australia",
+      "chronicle.eu.rep.googleapis.com",
+      "chronicle.europe",
+      "chronicle.googleapis.com",
+      "chronicle.me",
+      "chronicle.northamerica",
+      "chronicle.soarAnalyst",
+      "chronicle.soarEngineer",
+      "chronicle.soarViewer",
+      "chronicle.southamerica",
+      "chronicle.us.rep.googleapis.com",
+      "east1.rep.googleapis.com",
+      "intermediary.labels",
+      "northeast1.rep.googleapis.com",
+      "northeast2.rep.googleapis.com",
+      "observer.labels",
+      "principal.labels",
+      "result.about.labels",
+      "soar.com",
+      "south1.rep.googleapis.com",
+      "southeast1.rep.googleapis.com",
+      "southeast2.rep.googleapis.com",
+      "src.labels",
+      "target.labels",
+      "tp.iam.gserviceaccount.com",
+      "west1.rep.googleapis.com",
+      "west12.rep.googleapis.com",
+      "west2.rep.googleapis.com",
+      "west3.rep.googleapis.com",
+      "west6.rep.googleapis.com",
+      "west9.rep.googleapis.com",
+      "xxxx.siemplify",
+      "yyyyyy.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/deprecations",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/api-migration-guide",
+        "https://docs.cloud.google.com/chronicle/docs/soar/admin-tasks/advanced/migrate-to-gcp"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

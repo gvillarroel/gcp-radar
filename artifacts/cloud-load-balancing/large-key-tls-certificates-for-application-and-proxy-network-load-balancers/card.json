@@ -1,0 +1,114 @@
+{
+  "feature_name": "Large-key TLS certificates for Application and Proxy Network Load Balancers",
+  "feature_slug": "large-key-tls-certificates-for-application-and-proxy-network-load-balancers",
+  "summary": "Application Load Balancers and Proxy Network Load Balancers support self-managed TLS certificates with RSA-3072, RSA-4096, and ECDSA P-384 keys.",
+  "extended_definition": "Application Load Balancers and Proxy Network Load Balancers support self-managed TLS certificates with RSA-3072, RSA-4096, and ECDSA P-384 keys.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/https",
+      "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+      "https://docs.cloud.google.com/load-balancing/docs/tcp"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"External proxy Network Load Balancer overview \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "source_id": "site-docs-root",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "SSL certificates SSL certificates are only required if you're deploying a global external proxy Network Load Balancer and classic proxy Network Load Balancer with a target SSL proxy.",
+          "Depending on the type of traffic your application needs to handle, you can configure an external proxy Network Load Balancer with either a target TCP proxy or a target SSL proxy.",
+          "Note: Although external proxy Network Load Balancers can support HTTPS traffic, you should use an external Application Load Balancer for HTTPS traffic instead."
+        ]
+      },
+      {
+        "title": "\"SSL certificates overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Load balancer Certificate configuration method Compute Engine SSL certificates Certificate Manager (certificate map) Certificate Manager (individual certificates) Application Load Balancers (target HTTPS proxies) Global external Application Load Balancer Self-managed Google-managed Self-managed Google-managed Classic Application Load Balancer Self-managed Google-managed Self-managed Google-managed Regional external Application Load Balancer Self-managed Google-managed Self-managed Google-managed Regional internal Application Load Balancer Self-managed Google-managed Self-managed Google-managed Cross-region internal Application Load Balancer Self-managed Google-managed Proxy Network Load Balancers (target SSL proxies) Global external proxy Network Load Balancer Self-managed Google-managed Self-managed Google-managed Classic proxy Network Load Balancer Self-managed Google-managed Self-managed Google-managed Configuration method rules Google Cloud enforces the following certificate configuration method rules: For load balancers that support both Compute Engine SSL certificates and Certificate Manager certificate maps : the load balancer's target proxy can simultaneously reference both a certificate map and one or more Compute Engine SSL certificates.",
+          "Multiple SSL certificates An Application Load Balancer or proxy Network Load Balancer can host two or more SSL certificates simultaneously when its target proxy is configured using a supported certificate configuration method .",
+          "Note: This page discusses SSL certificates and encryption in transit between an Application Load Balancer or proxy Network Load Balancer that uses SSL and its clients."
+        ]
+      },
+      {
+        "title": "\"External Application Load Balancer overview \\_|\\_ Cloud Load Balancing \\_\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "Backend VMs or endpoints of all regional external Application Load Balancers in a region and VPC network receive connections from the proxy-only subnet.",
+          "You can use GCE VM IP PORT zonal NEG created and managed by GKE Services as backends for any Application Load Balancer or Proxy Network Load Balancer.",
+          "Regional external Application Load Balancer The forwarding rule's VPC network is the network where the proxy-only subnet has been created."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/tcp",
+        "https://docs.cloud.google.com/load-balancing/docs/ssl-certificates",
+        "https://docs.cloud.google.com/load-balancing/docs/https"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

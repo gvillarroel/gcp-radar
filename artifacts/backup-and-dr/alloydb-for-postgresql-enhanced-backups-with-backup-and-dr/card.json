@@ -1,0 +1,114 @@
+{
+  "feature_name": "AlloyDB for PostgreSQL enhanced backups with Backup and DR",
+  "feature_slug": "alloydb-for-postgresql-enhanced-backups-with-backup-and-dr",
+  "summary": "AlloyDB for PostgreSQL enhanced backups entered public preview with Backup and DR, including backup vault support, backup plans, and centralized management.",
+  "extended_definition": "AlloyDB for PostgreSQL enhanced backups entered public preview with Backup and DR, including backup vault support, backup plans, and centralized management.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Backup vault for immutable and indelible backups \\_|\\_ Backup and DR \\_\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Create and manage a backup vault in the Google Cloud console Manage data sources in the Google Cloud console Manage backups in the Google Cloud console Create and manage a backup vault in the Google Cloud console Back up Compute Engine instances to a backup vault Back up Cloud SQL instances to a backup vault Back up AlloyDB clusters to a backup vault Back up Filestore instances to a backup vault Back up disks to a backup vault Manage data sources in the Google Cloud console Manage backups in the Google Cloud console Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The following regions are supported for cross-region backups as well ( Preview ): Geographic Area Region Name Region Description North America northamerica-northeast1 Montréal Low CO 2 northamerica-northeast2 Toronto Low CO 2 us-central1 Iowa Low CO 2 us-east1 South Carolina us-east4 Northern Virginia us-east5 Columbus us-south1 Dallas Low CO 2 us-west1 Oregon Low CO 2 us-west2 Los Angeles us-west3 Salt Lake City us-west4 Las Vegas northamerica-south1 Querétaro South America southamerica-east1 São Paulo Low CO 2 southamerica-west1 Santiago Low CO 2 Europe europe-central2 Warsaw europe-north1 Finland Low CO 2 europe-north2 Stockholm Low CO 2 europe-southwest1 Madrid Low CO 2 europe-west1 Belgium Low CO 2 europe-west2 London Low CO 2 europe-west3 Frankfurt europe-west4 Netherlands Low CO 2 europe-west6 Zürich Low CO 2 europe-west8 Milan europe-west9 Paris Low CO 2 europe-west10 Berlin europe-west12 Turin Middle East me-central1 Doha me-central2 Dammam me-west1 Israel Africa africa-south1 Johannesburg Asia Pacific asia-east1 Taiwan asia-east2 Hong Kong asia-northeast1 Tokyo asia-northeast2 Osaka asia-northeast3 Seoul asia-southeast1 Singapore asia-southeast2 Jakarta australia-southeast1 Sydney australia-southeast2 Melbourne India asia-south1 Mumbai asia-south2 Delhi Querétaro (northamerica-south1), Montréal (northamerica-northeast1), and Osaka (asia-northeast2) don't support zone separation.",
+          "Supported backup vault regions Compute Engine instance No All supported locations including multi-region and cross-region Compute Engine disk No All supported locations including multi-region (and cross-region ( Preview )) Cloud SQL instance Yes All supported regions including multi-region AlloyDB cluster Yes Not multi-regions Filestore instance Yes Not multi-regions Google Cloud VMware Engine, Oracle database, and SQL Server database No Not multi-regions If a workload supports use of multi-region backup vaults, the source workload location must be compatible with the multi-region backup vault location."
+        ]
+      },
+      {
+        "title": "Backup and DR Service for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql",
+        "source_id": "site-api-reference",
+        "final_score": 92,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "What's next Prepare the database for Backup and DR Other documentation for Backup and DR for PostgreSQL Backup and DR for PostgreSQL Prepare the database for Backup and DR Add a PostgreSQL database host and discover databases Define policy templates and resource profiles Set application details and settings Check staging disk format and backup method Protect the PostgreSQL database and its logs Mount a PostgreSQL database Recover PostgreSQL Backups Create a PostgreSQL Backup and DR Workflow Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "PostgreSQL backup API used by Backup and DR Volume level (Linux change block tracking and LVM snapshot) backups : Backup and DR uses the PostgreSQL pg start backup(label) and pg stop backup() commands when performing backups with Linux change block tracking and LVM snapshot.",
+          "Full+Incremental (file-based traditional) backups : Backup and DR uses the PostgreSQL pg dump file-based backups commands."
+        ]
+      },
+      {
+        "title": "\"Protect and recover an AlloyDB cluster to a backup vault \\_|\\_ Backup and\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 90,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Storage Backup and DR Guides Send feedback Protect and recover an AlloyDB cluster to a backup vault Stay organized with collections Save and categorize content based on your preferences.",
+          "The next page shows the restore details so far, and prompts you to Configure a new cluster : This creates a new AlloyDB cluster based on the configuration stored in your backup.",
+          "Go to Vaulted backups The Vaulted backups page lists only the data resources that have backup plans applied and their backups stored in a backup vault within that project."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backup-vault",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/quickstarts/alloydb-quickstart",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-postgresql"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

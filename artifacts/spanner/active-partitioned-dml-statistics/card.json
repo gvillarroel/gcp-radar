@@ -1,0 +1,109 @@
+{
+  "feature_name": "Active partitioned DML statistics",
+  "feature_slug": "active-partitioned-dml-statistics",
+  "summary": "Spanner now provides statistics for active partitioned DML queries, including query progress, in statistics tables.",
+  "extended_definition": "Spanner now provides statistics for active partitioned DML queries, including query progress, in statistics tables.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/commit-statistics",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Spanner JDBC driver supports three alternatives for executing partitioned queries: SET AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "Example: Optimizer statistics package (Click to expand) The following example shows how to execute queries using a specific optimizer statistics package with the Spanner JDBC driver. -- Show the available optimizer statistics packages in this database.",
+          "SHOW VARIABLE AUTO PARTITION MODE SET AUTO PARTITION MODE = { true false } Set this variable to true if you want the connection to use partitioned query for all queries that are executed."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (PostgreSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "source_id": "site-docs-reference",
+        "final_score": 124,
+        "relevance": "",
+        "evidence_snippets": [
+          "The JDBC driver supports three alternatives for executing partitioned queries: SET SPANNER.AUTO PARTITION MODE = true RUN PARTITIONED QUERY sql PARTITION sql followed by multiple RUN PARTITION 'partition-token' Each of these methods are described in the following sections.",
+          "Example: Optimizer statistics package (Click to expand) The following example shows how to execute queries using a specific optimizer statistics package with the Spanner JDBC driver. -- Show the available optimizer statistics packages in this database.",
+          "SPANNER.AUTO PARTITION MODE A property of type BOOL indicating whether the connection automatically uses partitioned queries for all queries that are executed."
+        ]
+      },
+      {
+        "title": "\"Retrieve commit statistics for a transaction \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/commit-statistics",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "The MutationCount is then retrieved from this response and displayed. using Google.Cloud.Spanner.Data ; using Google.Cloud.Spanner.V1 ; using Google.Cloud.Spanner.V1.Internal.Logging ; using System ; using System.Collections.Generic ; using System.Diagnostics ; using System.Threading.Tasks ; public class LogCommitStatsAsyncSample { public async Task<long> LogCommitStatsAsync ( string projectId , string instanceId , string databaseId ) { // Commit statistics are logged at level Info by the default logger. // This sample uses a custom logger to access the commit statistics. // See https://googleapis.github.io/google-cloud-dotnet/docs/Google.Cloud.Spanner.Data/logging.html // for more information on how to use loggers. var logger = new CommitStatsSampleLogger (); var options = new SessionPoolOptions (); var poolManager = SessionPoolManager .",
+          "Build ()}, google :: cloud :: Options {}. set<spanner :: CommitReturnStatsOption > ( true )); if ( ! commit ) throw std :: move ( commit ). status (); if ( commit - > commit stats ) { std :: cout << \"Updated data with \" << commit - > commit stats - > mutation count << \" mutations. \\n \" ; } std :: cout << \"Update was successful [spanner get commit stats] \\n \" ; } C# In C#, commit statistics are not returned directly through the API.",
+          "Create ( options , logger ); var connectionStringBuilder = new SpannerConnectionStringBuilder { ConnectionString = $\"Data Source=projects/{projectId}/instances/{instanceId}/databases/{databaseId}\" , // Set LogCommitStats to true to enable logging commit statistics for all transactions on the connection. // LogCommitStats can also be enabled/disabled for individual Spanner transactions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.github.io",
+      "logging.html"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands-pgcompat",
+        "https://docs.cloud.google.com/spanner/docs/commit-statistics"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

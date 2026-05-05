@@ -1,0 +1,152 @@
+{
+  "feature_name": "reCAPTCHA SMS toll fraud protection",
+  "feature_slug": "recaptcha-sms-toll-fraud-protection",
+  "summary": "SMS toll fraud protection helps detect and prevent SMS fraud.",
+  "extended_definition": "SMS toll fraud protection helps detect and prevent SMS fraud.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+      "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+      "https://docs.cloud.google.com/recaptcha/docs/account-takeovers",
+      "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Detect and prevent account-related fraudulent activities on mobile applications\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+        "source_id": "site-iam-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By using the site-specific model, reCAPTCHA Account defense helps you detect the following: Suspicious activities Accounts with similar behaviors Requests coming from devices that were marked as trusted for specific users Based on the analysis of reCAPTCHA Account defense and the site-specific model, you can take the following actions: Restrict or disable fraudulent accounts.",
+          "This document shows you how to use reCAPTCHA Account defense to detect and prevent account-related fraudulent activities on mobile applications. reCAPTCHA helps you protect critical actions, such as login and checkout.",
+          "Home Documentation Security reCAPTCHA Guides Send feedback Detect and prevent account-related fraudulent activities on mobile applications Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Detect and prevent account-related fraudulent activities on websites \\_\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "By using the site-specific model, reCAPTCHA Account defense helps you detect the following: Suspicious activities Accounts with similar behaviors Requests coming from devices that were marked as trusted for specific users Based on the analysis of reCAPTCHA Account defense and the site-specific model, you can take the following actions: Restrict or disable fraudulent accounts.",
+          "This document shows you how to use reCAPTCHA Account defense to detect and prevent account-related fraudulent activities on websites. reCAPTCHA helps you protect critical actions, such as login and checkout.",
+          "Home Documentation Security reCAPTCHA Guides Send feedback Detect and prevent account-related fraudulent activities on websites Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Best practices for protection from automated threats \\_|\\_ reCAPTCHA \\_\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "source_id": "site-iam-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn how to use reCAPTCHA account defender, see Detect and prevent account-related fraudulent activities .",
+          "To learn how to use reCAPTCHA account defender, see Detect and prevent account-related fraudulent activities .",
+          "To learn how to use reCAPTCHA account defender, see Detect and prevent account-related fraudulent activities ."
+        ]
+      },
+      {
+        "title": "\"Detect and prevent account takeovers \\_|\\_ reCAPTCHA \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/recaptcha/docs/account-takeovers",
+        "source_id": "site-docs-root",
+        "final_score": 185,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Detect and prevent ATOs With reCAPTCHA, you can detect and prevent ATOs by using one of the following options: reCAPTCHA account defender \"I'm not a robot\" checkbox Scores and custom challenges Use the I'm not a robot checkbox Adding the I'm not a robot checkbox to your site is the fastest and easiest way to provide some protection against ATOs without having to integrate additional features, such as SMS or email verification.",
+          "The backend must create an Assessment with the token // and verify the token is valid. console.log(token); } </script> </head> <body> <form id=\"loginForm\" action=\"?\" method=\"POST\"> Username: <input type=\"text\" name=\"username\"/><br/> Password: <input type=\"password\" name=\"password\"/><br/> <div class=\"g-recaptcha\" data-sitekey=\"6LeAkOgUAAAAACcy3uY6N9H9SJMS27n3Zx2OOnYK\" data-action=\"account login\" data-callback=\"onSuccess\"></div> </form> </body> </html> Use scores and custom challenges To protect against ATOs, use the reCAPTCHA score-based keys and use Multi-factor authentication (MFA) challenges, such as email and SMS challenges in which one-time codes (OTPs) are sent to the user.",
+          "Home Documentation Security reCAPTCHA Guides Send feedback Detect and prevent account takeovers Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.android.recaptcha",
+      "console.log"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "https://docs.cloud.google.com/recaptcha/docs/account-takeovers"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "https://docs.cloud.google.com/recaptcha/docs/account-takeovers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "https://docs.cloud.google.com/recaptcha/docs/account-takeovers"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "https://docs.cloud.google.com/recaptcha/docs/account-takeovers"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "https://docs.cloud.google.com/recaptcha/docs/account-takeovers"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender-mobile",
+        "https://docs.cloud.google.com/recaptcha/docs/account-defender",
+        "https://docs.cloud.google.com/recaptcha/docs/best-practices-oat",
+        "https://docs.cloud.google.com/recaptcha/docs/account-takeovers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.755Z",
+  "source_step08_card": "data/step-08/current/products/recaptcha/card.json",
+  "product_name": "reCAPTCHA",
+  "product_slug": "recaptcha"
+}

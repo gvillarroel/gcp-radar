@@ -1,0 +1,168 @@
+{
+  "feature_name": "Google-managed data plane",
+  "feature_slug": "google-managed-data-plane",
+  "summary": "Google-managed data plane automatically upgrades data plane proxies in managed Anthos Service Mesh; Google-managed data plane automatically upgrades data plane proxies in managed Anthos Service Mesh.",
+  "extended_definition": "Google-managed data plane automatically upgrades data plane proxies in managed Anthos Service Mesh; Google-managed data plane automatically upgrades data plane proxies in managed Anthos Service Mesh.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+      "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+      "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+      "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-root",
+        "final_score": 290,
+        "relevance": "",
+        "evidence_snippets": [
+          "To disable the managed data plane for a namespace: kubectl annotate --overwrite namespace NAMESPACE \\ mesh.cloud.google.com/proxy='{\"managed\":\"false\"}' To disable the managed data plane for a pod: kubectl annotate --overwrite pod POD NAME \\ mesh.cloud.google.com/proxy='{\"managed\":\"false\"}' Enable maintenance windows for the managed data plane If you have a GKE maintenance window configured, active upgrades will commence at the start of the next available maintenance window and continue without pause until all managed pods have been updated (usually 12 hours).",
+          "Replace the example value with the revision label of your previous control plane. kubectl label namespace NAMESPACE istio-injection- istio.io/rev=asm-191-1 --overwrite Restart the Pods to trigger re-injection so the proxies have the previous version: kubectl rollout restart deployment -n NAMESPACE The managed control plane will automatically scale to zero and not use any resource when not in use.",
+          "Role name Role ID Grant location Description Anthos Service Mesh Service Agent roles/anthosservicemesh.serviceAgent Fleet project Mesh Managed Control Plane Service Agent (legacy) roles/meshcontrolplane.serviceAgent Fleet project This is a legacy role that was part of older installations of Cloud Service Mesh."
+        ]
+      },
+      {
+        "title": "\"Managed control plane for continuing customers \\_|\\_ Cloud Service Mesh\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "source_id": "site-docs-root-2",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you are an Anthos Service Mesh user, the next steps for the control plane in your existing deployment depend on whether you use the managed control plane or the in-cluster control plane.",
+          "Managed control plane for continuing customers This document is for you if you're a continuing Anthos Service Mesh customer using the managed control plane or in-cluster control plane.",
+          "Anthos Service Mesh offered two control planes: a managed control plane and an in-cluster control plane."
+        ]
+      },
+      {
+        "title": "\"Supported features using Istio APIs (managed control plane) \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "source_id": "site-docs-root",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Managed control plane supported features Install, upgrade, and rollback Feature Managed (TD) Managed (istiod) Installation on GKE clusters using fleet feature API Upgrades from ASM 1.9 versions that use Mesh CA Direct (skip-level) upgrades from Cloud Service Mesh versions prior to 1.9 (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio OSS (see notes for indirect upgrades) Direct (skip-level) upgrades from Istio-on-GKE add-on (see notes for indirect upgrades) Enabling optional features Note: Indirect migrations and upgrades are supported, meaning that you can follow the standard Cloud Service Mesh upgrade paths through each version until you reach Cloud Service Mesh 1.28 with an in-cluster control plane, then you can migrate to the managed control plane.",
+          "Service entry Feature Managed (TD) Managed (istiod) ServiceEntry v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields and values in fields: workloadSelector field endpoints[].network field endpoints[].locality field endpoints[].weight field endpoints[].serviceAccount field DNS ROUND ROBIN value in resolution field MESH INTERNAL value in location field Unix domain socket address in endpoints[].address field subjectAltNames field Two or more endpoints[] entries if resolution field has DNS value Destination rule Feature Managed (TD) Managed (istiod) DestinationRule v1beta1 † † The TRAFFIC DIRECTOR control plane implementation does not support following fields. trafficPolicy.loadBalancer.localityLbSetting field trafficPolicy.tunnel field trafficPolicy.tls.credentialName field trafficPolicy.portLevelSettings[].tls.credentialName field Additionally, the TRAFFIC DIRECTOR control plane implementation requires that the destination rule defining subsets is in the same namespace and cluster with the Kubernetes service or ServiceEntry.",
+          "EnvoyFilter Feature Managed (TD) Managed (istiod) EnvoyFilter v1alpha3 † † Refer to Dataplane Extensibility page for supported fields and configurable extensions MeshConfig Feature Managed (TD) Managed (istiod) DiscoverySelectors clusterLocal LocalityLB § ExtensionProviders § CACert ImageType - distroless § OutboundTrafficPolicy § defaultProviders.accessLogging defaultProviders.tracing defaultConfig.tracing.stackdriver § accessLogFile § ProxyConfig Feature Managed (TD) Managed (istiod) HTTP/1.0 support (ISTIO META NETWORK) Image selection (distroless or base image) † Kubernetes native sidecar (ENABLE NATIVE SIDECARS) † Distroless image is used for the injection."
+        ]
+      },
+      {
+        "title": "Security bulletins \\_|\\_ Cloud Service Mesh \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security-bulletins",
+        "source_id": "site-docs-root",
+        "final_score": 226,
+        "relevance": "",
+        "evidence_snippets": [
+          "Mitigation If you are running standalone Cloud Service Mesh , upgrade your cluster to one of the following patched versions: If you're using Anthos Service Mesh 1.14, upgrade to v1.14.4-asm.2 If you're using Anthos Service Mesh 1.13, upgrade to v1.13.8-asm.4 If you're using Anthos Service Mesh 1.12, upgrade to v1.12.9-asm.3 If you are running managed Cloud Service Mesh , your system will be automatically updated within the next few days.",
+          "These versions support configuring the Envoy proxies in the system with more normalization options: 1.9.5-asm.2 1.8.6-asm.3 1.7.8-asm.8 Note: The rollout of the Cloud Service Mesh Managed Control Plane (available only in 1.9.x versions) will complete in the next few days.",
+          "Check if your clusters are impacted Your cluster is impacted if it uses Cloud Service Mesh patch versions earlier than 1.17.4 1.16.6 1.15.7 Mitigation Upgrade your cluster to one of the following patched versions: 1.17.5-asm.0 1.16.7-asm.0 1.15.7-asm.23 If you are running managed Cloud Service Mesh , your system will be automatically updated within the next few days."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "asm.0",
+      "asm.2",
+      "asm.23",
+      "asm.3",
+      "asm.4",
+      "asm.8",
+      "istio.io",
+      "mesh.cloud.google.com",
+      "meshcontrolplane.serviceAgent",
+      "tls.credentialName",
+      "tracing.stackdriver",
+      "v1.12.9",
+      "v1.13.8",
+      "v1.14.4"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent",
+      "roles/meshcontrolplane.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/docs/managed-control-plane-overview",
+        "https://docs.cloud.google.com/service-mesh/docs/supported-features-managed",
+        "https://docs.cloud.google.com/service-mesh/docs/security-bulletins"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.079Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh"
+}

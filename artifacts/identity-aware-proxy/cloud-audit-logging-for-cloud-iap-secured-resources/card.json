@@ -1,0 +1,209 @@
+{
+  "feature_name": "Cloud Audit Logging for Cloud IAP-secured resources",
+  "feature_slug": "cloud-audit-logging-for-cloud-iap-secured-resources",
+  "summary": "Cloud Audit Logging records activity for resources secured by Cloud IAP.",
+  "extended_definition": "Cloud Audit Logging records activity for resources secured by Cloud IAP.",
+  "lifecycle": {
+    "latest_feature_date": "2017-06-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+      "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+      "https://docs.cloud.google.com/iap/docs/managing-access",
+      "https://docs.cloud.google.com/iap/docs/tutorial-gce"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Identity-Aware Proxy audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "source_id": "site-docs-root",
+        "final_score": 209,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Filter for this method : protoPayload.methodName=\"google.cloud.iap.v1.IdentityAwareProxyAdminService.ListTunnelDestGroups\" SetIamPolicy Method : google.cloud.iap.v1.IdentityAwareProxyAdminService.SetIamPolicy Audit log type : Admin activity Permissions : iap.web.setIamPolicy - ADMIN WRITE iap.webServiceVersions.setIamPolicy - ADMIN WRITE iap.webServices.setIamPolicy - ADMIN WRITE iap.webTypes.setIamPolicy - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.iap.v1beta1.IdentityAwareProxyAdminV1Beta1.GetIamPolicy\" SetIamPolicy Method : google.cloud.iap.v1beta1.IdentityAwareProxyAdminV1Beta1.SetIamPolicy Audit log type : Admin activity Permissions : iap.webServiceVersions.setIamPolicy - ADMIN WRITE iap.webServices.setIamPolicy - ADMIN WRITE iap.webTypes.setIamPolicy - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Permission type Methods ADMIN READ google.cloud.iap.v1.IdentityAwareProxyAdminService.GetIamPolicy google.cloud.iap.v1.IdentityAwareProxyAdminService.GetIapSettings google.cloud.iap.v1beta1.IdentityAwareProxyAdminV1Beta1.GetIamPolicy ADMIN WRITE google.cloud.iap.v1.IdentityAwareProxyAdminService.SetIamPolicy google.cloud.iap.v1beta1.IdentityAwareProxyAdminV1Beta1.SetIamPolicy DATA READ google.cloud.iap.v1.IdentityAwareProxyAdminService.GetTunnelDestGroup google.cloud.iap.v1.IdentityAwareProxyAdminService.ListTunnelDestGroups DATA WRITE google.cloud.iap.v1.IdentityAwareProxyAdminService.CreateTunnelDestGroup google.cloud.iap.v1.IdentityAwareProxyAdminService.DeleteTunnelDestGroup google.cloud.iap.v1.IdentityAwareProxyAdminService.UpdateIapSettings google.cloud.iap.v1.IdentityAwareProxyAdminService.UpdateTunnelDestGroup google.cloud.iap.v1.IdentityAwareProxyAdminService.ValidateIapAttributeExpression API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Identity-Aware Proxy. google.cloud.iap.v1.IdentityAwareProxyAdminService The following audit logs are associated with methods belonging to google.cloud.iap.v1.IdentityAwareProxyAdminService ."
+        ]
+      },
+      {
+        "title": "\"Manage access to IAP-secured resources \\_|\\_ Identity-Aware Proxy \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/iap/docs/managing-access",
+        "source_id": "site-iam-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "Path https://iap.googleapis.com/v1/projects/ PROJECT NUMBER /iap web/appengine- APP ID / services/ APP SERVICE ID /versions/ VERSION ID iap.webServiceVersions.getIamPolicy iap.webServiceVersions.setIamPolicy Every IAP-secured VM instance in the project This is the same as the All Tunnel Resources checkbox on the IAP admin page.",
+          "Home Documentation Security Identity-Aware Proxy Guides Send feedback Manage access to IAP-secured resources Stay organized with collections Save and categorize content based on your preferences.",
+          "Role Includes permission(s) Description IAP-Secured Web App User ( roles/iap.httpsResourceAccessor ) iap.webServiceVersions.accessViaIAP Grants access to App Engine and Compute Engine resources."
+        ]
+      },
+      {
+        "title": "\"Setting up IAP for Compute Engine \\_|\\_ Identity-Aware Proxy \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "After you finish setting up IAP for Compute Engine, you can clean up the resources that you created on Google Cloud so you aren't billed for them in the future.",
+          "See the License for the specific language governing permissions and limitations under the License. apt-get -y update apt-get -y install git apt-get -y install virtualenv git clone https://github.com/GoogleCloudPlatform/python-docs-samples cd python-docs-samples/iap virtualenv venv -p python3 source venv/bin/activate pip install -r requirements.txt cat example gce backend.py sed -e \"s/YOUR BACKEND SERVICE ID/ $( gcloud compute backend-services describe my-backend-service --global --format = \"value(id)\" ) /g\" sed -e \"s/YOUR PROJECT ID/ $( gcloud config get-value account tr -cd \"[0-9]\" ) /g\" > real backend.py gunicorn real backend:app -b 0 .0.0.0:80 When you're finished updating values, click Create to create the template.",
+          "Clean up To avoid incurring charges to your Google Cloud account for the resources used in this tutorial, either delete the project that contains the resources, or keep the project and delete the individual resources."
+        ]
+      },
+      {
+        "title": "\"Setting up context-aware access with Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Audit Logs and access levels Enabling Cloud Audit Logs for your IAP-secured project lets you see authorized and unauthorized access requests.",
+          "See Managing access to IAP-secured resources for more information about using the IAM API to manage access policies.",
+          "The following is an example of an edited policy.json file that binds the iap.httpsResourceAccessor role to two users, granting them access to the IAP-secured resources."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "backend.py",
+      "github.com",
+      "iap.googleapis.com",
+      "iap.httpsResourceAccessor",
+      "iap.web.setIamPolicy",
+      "iap.webServices.setIamPolicy",
+      "iap.webServiceVersions.accessViaIAP",
+      "iap.webServiceVersions.getIamPolicy",
+      "iap.webServiceVersions.setIamPolicy",
+      "iap.webTypes.setIamPolicy",
+      "policy.json",
+      "requirements.txt"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/audit-log-howto",
+        "https://docs.cloud.google.com/iap/docs/managing-access",
+        "https://docs.cloud.google.com/iap/docs/tutorial-gce",
+        "https://docs.cloud.google.com/iap/docs/cloud-iap-context-aware-access-howto"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.405Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy"
+}

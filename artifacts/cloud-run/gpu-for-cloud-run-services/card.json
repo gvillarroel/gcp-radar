@@ -1,0 +1,166 @@
+{
+  "feature_name": "GPU for Cloud Run services",
+  "feature_slug": "gpu-for-cloud-run-services",
+  "summary": "Cloud Run services support GPU configuration for service workloads.",
+  "extended_definition": "Cloud Run services support GPU configuration for service workloads.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/configuring",
+      "https://docs.cloud.google.com/run/docs/container-contract",
+      "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Configure Cloud Run services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/configuring",
+        "source_id": "site-docs-reference-2",
+        "final_score": 57,
+        "relevance": "",
+        "evidence_snippets": [
+          "Some configurations settings require additional permissions or enabling APIs, and some additional settings will appear in the web interface if you select GitHub or Functions as your deployment option.",
+          "After specifying the deployment option , service name, and region, you will see the following configuration settings described on this page.",
+          "C GPU If you need to host AI workloads, such as inference models and model training, you can configure Cloud Run services with GPUs ."
+        ]
+      },
+      {
+        "title": "Secure Cloud Run services tutorial \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/secure-services",
+        "source_id": "site-docs-root",
+        "final_score": 52,
+        "relevance": "",
+        "evidence_snippets": [
+          "Remove the gcloud default configurations you added during tutorial setup. gcloud config unset run / region Remove the project configuration: gcloud config unset project Delete other Google Cloud resources created in this tutorial: Delete the editor container image named REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /editor from Artifact Registry Delete the render container image named REGION -docker.pkg.dev/ PROJECT ID / REPOSITORY /renderer from Artifact Registry Delete the editor service account editor-identity@PROJECT ID.iam.gserviceaccount.com Delete the render service account renderer-identity@PROJECT ID.iam.gserviceaccount.com What's next Further secure your project by walking through the using IAM securely checklist Extend this sample application to track Markdown usage with Cloud Monitoring custom metrics Review the Pub/Sub tutorial for an approach to secure, asynchronous microservices Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Builder () . url ( url ) . addHeader ( \"Authorization\" , \"Bearer \" + token ) . post ( body ) . build (); Response response = ok . newCall ( request ). execute (); html = response . body (). string (); } catch ( IOException e ) { logger . error ( \"Unable to get rendered data\" , e ); } return html ; } Parse the markdown from JSON and send it to the Renderer service to be transformed into HTML. // '/render' expects a JSON body payload with a 'data' property holding plain text // for rendering. @PostMapping ( value = \"/render\" , consumes = \"application/json\" ) public String render ( @RequestBody Data data ) { String markdown = data . getData (); String url = System . getenv ( \"EDITOR UPSTREAM RENDER URL\" ); if ( url == null ) { String msg = \"No configuration for upstream render service: \" + \"add EDITOR UPSTREAM RENDER URL environment variable\" ; logger . error ( msg ); throw new IllegalStateException ( msg ); } String html = makeAuthenticatedRequest ( url , markdown ); return html ; } C# GetAuthenticatedPostResponse creates authenticated requests to private services.",
+          "Command line gcloud run services add-iam-policy-binding renderer \\ --member serviceAccount:editor-identity@ PROJECT ID .iam.gserviceaccount.com \\ --role roles/run.invoker Terraform To learn how to apply or remove a Terraform configuration, see Basic Terraform commands . resource \"google cloud run service iam member\" \"editor invokes renderer\" { location = google cloud run v2 service.renderer.location service = google cloud run v2 service.renderer.name role = \"roles/run.invoker\" member = \"serviceAccount:${google service account.editor.email}\" } Because this is given the invoker role in the context of the render service, the render service is the only private Cloud Run service the editor can invoke."
+        ]
+      },
+      {
+        "title": "Container runtime contract \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/container-contract",
+        "source_id": "site-docs-root",
+        "final_score": 51,
+        "relevance": "",
+        "evidence_snippets": [
+          "8080 K SERVICE The name of the Cloud Run service being run. hello-world K REVISION The name of the Cloud Run revision being run. hello-world.1 K CONFIGURATION The name of the Cloud Run configuration that created the revision. hello-world Environment variables for jobs For Cloud Run jobs, the following environment variables are set: Name Description Example CLOUD RUN JOB The name of the Cloud Run job being run. hello-world CLOUD RUN EXECUTION The name of the Cloud Run execution being run. hello-world-abc CLOUD RUN TASK INDEX The index of this task.",
+          "This restricts some network capabilities and prevents your root containers from running as \"true root.\" Limited file system mounts from inside containers The supported path for mounting file systems in Cloud Run is through the fully managed volume mounts feature in your Cloud Run container configuration .",
+          "If a workload-processing instance must be shut down, Cloud Run gives tasks in-process tasks time to complete and routes new workloads to other instances."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "account.editor.email",
+      "account.renderer.email",
+      "docker.pkg.dev",
+      "gcr.io",
+      "iam.gserviceaccount.com",
+      "run.invoker",
+      "service.renderer.location",
+      "service.renderer.name",
+      "world.1"
+    ],
+    "missing_inventory_roles": [
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/configuring",
+        "https://docs.cloud.google.com/run/docs/container-contract",
+        "https://docs.cloud.google.com/run/docs/tutorials/secure-services"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

@@ -1,0 +1,162 @@
+{
+  "feature_name": "Cloud console links in Gemini responses",
+  "feature_slug": "cloud-console-links-in-gemini-responses",
+  "summary": "Gemini can include direct links to relevant Cloud console pages in response output.",
+  "extended_definition": "Gemini can include direct links to relevant Cloud console pages in response output.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+      "https://docs.cloud.google.com/gemini/docs/configure-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Gemini Code Assist Standard and Enterprise logging \\_|\\_ Gemini\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 271,
+        "relevance": "",
+        "evidence_snippets": [
+          "If the command succeeds, it returns the operation metadata in the following format: { \"name\": \"projects/<var>CONTAINER PROJECT NAME</var>/locations/global/operations/operation-1737646069712-62c6140bb04bb-49261230-43701daf\", \"metadata\": { \"@type\": \"type.googleapis.com/google.cloud.cloudaicompanion.v1.OperationMetadata\", \"createTime\": \"2025-01-23T15:27:50.076075570Z\", \"target\": \"projects/<var>TARGET PROJECT NAME</var>/locations/global/loggingSettings/<var>LOGS SETTING ID</var>/settingBindings/<var>LOGS BINDING ID</var>\", \"verb\": \"create\", \"requestedCancellation\": false, \"apiVersion\": \"v1\" }, \"done\": false } Disable logging for Gemini Code Assist in a project Select one of the following options: Console In the Google Cloud console, go to the Admin for Gemini page.",
+          "If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to false : { \"name\": \"projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID \", \"createTime\": \"2025-01-23T15:22:49.717166932Z\", \"updateTime\": \"2025-01-23T15:22:49.717166932Z\", \"log prompts and responses\": false, \"log metadata\": false } Set up multi-project logging You can use logs from Gemini Code Assist to create metrics and dashboards for monitoring per-project usage.",
+          "If the command succeeds, it returns a response body that shows the log prompts and responses and log metadata set to true : { \"name\": \"projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID \", \"createTime\": \"2025-01-23T15:22:49.717166932Z\", \"updateTime\": \"2025-01-23T15:22:49.717166932Z\", \"log prompts and responses\": true, \"log metadata\": true } Run the following command to create the Gemini Code Assist Standard and Enterprise logs setting binding: curl -X POST \\ -H \"Authorization: Bearer $TOKEN\" \\ -H 'Content-Type: application/json' \\ -d '{ \"target\": \"projects/ TARGET PROJECT NAME \" }' \\ \"https://cloudaicompanion.googleapis.com/v1/projects/ CONTAINER PROJECT NAME /locations/global/loggingSettings/ LOGS SETTING ID /settingBindings?setting binding id= LOGS BINDING ID \" Replace the following: TARGET PROJECT NAME : Enter the target project to which the binding should be bound."
+        ]
+      },
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "",
+        "evidence_snippets": [
+          "Known issues This section outlines the known issues of Gemini Code Assist: VS Code Chat responses may be truncated when they include an updated version of a large open file To work around this issue, select a smaller section of code and include an additional directive in the chat prompt, such as only output the selected code.",
+          "A successful check results in the following output: $ grpc-health-probe -addr cloudaicompanion.googleapis.com:443 -tls error: this server does not implement the grpc health protocol (grpc.health.v1.Health): GRPC target method can't be resolved An unsuccessful check results in the following output: timeout: failed to connect service \"cloudaicompanion.googleapis.com:443\" within 1s To obtain more details, run the following before grpc-health-probe : export GRPC GO LOG SEVERITY LEVEL=info 'Activate Gemini Code Assist' still appears after selecting Gemini Code Assist project If you selected your project per the instructions in this guide, which includes enabling the Gemini for Google Cloud API, then there may be an issue with the LS server.",
+          "Rules in Gemini let you define your preferences, such as: Coding style Output formats Tech stack Language For example, you can create a rule such as \"Always give me concise responses in Kotlin.\" VS Code In your code file, press Control+I (for Windows and Linux) or Command+I (for macOS) to open the Gemini Code Assist Quick Pick menu."
+        ]
+      },
+      {
+        "title": "\"Gemini 3 in Gemini Code Assist \\_|\\_ Gemini for Google Cloud \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "source_id": "site-docs-root",
+        "final_score": 246,
+        "relevance": "",
+        "evidence_snippets": [
+          "Responses generated with Gemini 3 include a label identifying the model.",
+          "You can't select a different model in agent mode, as Gemini CLI automatically selects the model.",
+          "Gemini 3 availability License or subscription Gemini 3 availability Google AI Ultra Available to all users in VS Code and IntelliJ Google AI Pro Available to all users in VS Code and IntelliJ Gemini Code Assist Enterprise Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist Standard Available to users in VS Code and IntelliJ whose administrator has configured the Preview release channel Gemini Code Assist for individuals Available to select users from the waitlist in VS Code and IntelliJ."
+        ]
+      },
+      {
+        "title": "\"Set up Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 242,
+        "relevance": "",
+        "evidence_snippets": [
+          "All of the users who have been granted these roles can access Gemini for Google Cloud features in the Google Cloud console within the specified project.",
+          "Learn more about the supported features: Code features overview Chat features overview Get started with the following guides: Code with Gemini Code Assist Chat with Gemini Code Assist List of directories where Gemini Code Assist caches information The following table provides a list of directories where Gemini Code Assist stores extension information such as auth tokens: Windows %LOCALAPPDATA%/cloud-code %LOCALAPPDATA%/google-vscode-extension macOS /Library/Application Support/cloud-code /Library/Application Support/google-vscode-extension Linux /.cache/cloud-code /.cache/google-vscode-extension Sign into Google and select a Google Cloud project Once users have installed Gemini Code Assist in their IDEs, they need to sign in to their Google Accounts, and if it's their first time using Gemini Code Assist Standard or Enterprise in their IDE, they select a Google Cloud project.",
+          "After you set up Gemini Code Assist, you can view license assignments by navigating to the Admin for Gemini page, selecting your billing account, clicking Manage Gemini Code Assist Subscription , and then selecting the License management tab."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaicompanion.googleapis.com",
+      "grpc.health.v1.Health",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/configure-logging",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/gemini-3",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/set-up-gemini"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.293Z",
+  "source_step08_card": "data/step-08/current/products/gemini/card.json",
+  "product_name": "Gemini",
+  "product_slug": "gemini"
+}

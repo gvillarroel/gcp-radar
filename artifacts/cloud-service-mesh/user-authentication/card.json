@@ -1,0 +1,241 @@
+{
+  "feature_name": "User authentication",
+  "feature_slug": "user-authentication",
+  "summary": "User authentication lets Anthos Service Mesh use existing identity providers for workload access control; User authentication lets Anthos Service Mesh use existing identity providers for workload access control.",
+  "extended_definition": "User authentication lets Anthos Service Mesh use existing identity providers for workload access control; User authentication lets Anthos Service Mesh use existing identity providers for workload access control.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+      "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+      "https://docs.cloud.google.com/service-mesh/docs/security/security-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cloud Service Mesh security overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "source_id": "site-docs-root",
+        "final_score": 250,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "User authentication with your existing Identity Provider You can integrate your existing Identity Provider with Cloud Service Mesh to provide browser-based end-user authentication and access control to your deployed workloads.",
+          "User authentication with Identity-Aware Proxy You authenticate users who are accessing any service exposed on a Cloud Service Mesh ingress gateway by using Identity-Aware Proxy (IAP) .",
+          "Authentication refers to identity: who is this service? who is this end-user? and can I trust that they are who they say they are? mTLS makes it possible for workloads to verify each other's identities and authenticate with each other."
+        ]
+      },
+      {
+        "title": "\"Identity federation: products and limitations \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "source_id": "site-iam-reference",
+        "final_score": 194,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Other: No known limitations Document AI GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Endpoint Verification Unsupported Alternatives: No alternatives available Enterprise Knowledge Graph Unsupported Alternatives: No alternatives available Error Reporting GA Console (federated): No known limitations Google Cloud API: No known limitations Other: No known limitations Eventarc GA Console (federated): Although you can use an existing workflow as an Eventarc trigger destination, Workforce Identity Federation users can't create new workflows.",
+          "Workforce Identity Federation administrators must enable Identity Platform either through the Firebase Authentication console or by logging into the Google Cloud console using a Cloud Identity or Workspace account before Workforce Identity Federation users can access Identity Platform through the console (federated).",
+          "Workforce Identity Federation Workforce Identity Federation lets your workforce—employees, vendors, partners, and other users—access Google Cloud products by using an identity provider (IdP)."
+        ]
+      },
+      {
+        "title": "\"Using Cloud Service Mesh egress gateways on GKE clusters: Tutorial \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 188,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a Google service account for your application to use: gcloud iam service-accounts create sa-test-app-team-x Allow the Kubernetes service account to impersonate the Google service account: gcloud iam service-accounts add-iam-policy-binding \\ --role roles/iam.workloadIdentityUser \\ --member \"serviceAccount: ${ PROJECT ID } .svc.id.goog[team-x/test]\" \\ sa-test-app-team-x@ ${ PROJECT ID } .iam.gserviceaccount.com Annotate the Kubernetes service account for the test app in the team-x namespace with the email address of the Google service account: cat <<EOF kubectl apply -f - apiVersion : v1 kind : ServiceAccount metadata : annotations : iam.gke.io/gcp-service-account : sa-test-app-team-x@${PROJECT ID}. iam.gserviceaccount.com name : test namespace : team-x EOF The test application pod must be able to access the Google metadata server (running as a DaemonSet) to obtain temporary credentials for calling Google APIs.",
+          "Managed (TD) Apply the default injection label to the namespace: kubectl label namespace istio-egress \\ istio.io/rev- istio-injection = enabled --overwrite Managed (Istiod) Recommended: Run the following command to apply the default injection label to the namespace: kubectl label namespace istio-egress \\ istio.io/rev- istio-injection = enabled --overwrite If you are an existing user with the Managed Istiod control plane: We recommend that you use default injection, but revision-based injection is supported.",
+          "Connections on port 80 still use mTLS: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : DestinationRule metadata : name : target-egress-gateway namespace : istio-egress spec : host : istio-egressgateway.istio-egress.svc.cluster.local subsets : - name : target-egress-gateway-mTLS trafficPolicy : portLevelSettings : - port : number : 80 tls : mode : ISTIO MUTUAL - name : target-egress-gateway-TLS-passthrough EOF Update the virtual service for example.com so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1alpha3 kind : VirtualService metadata : name : example-com-through-egress-gateway namespace : istio-egress spec : hosts : - example.com gateways : - mesh - istio-egress/egress-gateway http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : example.com port : number : 443 subset : example-com-originate-TLS weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - example.com route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - example.com route : - destination : host : example.com port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' EOF Update the virtual service for httpbin.org so that TLS traffic on port 443 is passed through the gateway: cat <<EOF kubectl apply -f - apiVersion : networking.istio.io/v1beta1 kind : VirtualService metadata : name : httpbin-org-through-egress-gateway namespace : istio-egress spec : hosts : - httpbin.org gateways : - istio-egress/egress-gateway - mesh http : - match : - gateways : - mesh port : 80 route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-mTLS port : number : 80 weight : 100 - match : - gateways : - istio-egress/egress-gateway port : 80 route : - destination : host : httpbin.org port : number : 80 weight : 100 tls : - match : - gateways : - mesh port : 443 sniHosts : - httpbin.org route : - destination : host : istio-egressgateway.istio-egress.svc.cluster.local subset : target-egress-gateway-TLS-passthrough port : number : 443 - match : - gateways : - istio-egress/egress-gateway port : 443 sniHosts : - httpbin.org route : - destination : host : httpbin.org port : number : 443 weight : 100 exportTo : - 'istio-egress' - 'team-x' - 'team-y' EOF Add an authorization policy that accepts any kind of traffic sent to port 443 of the egress gateway service."
+        ]
+      },
+      {
+        "title": "\"Migrate from Istio 1.11 or later to Cloud Service Mesh \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace onlineboutique Use the istio.io/rev=asm-managed label to add the onlineboutique namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace onlineboutique 'istio.io/rev=asm-managed' Deploy Online Boutique's 12 services, including the load generator that imitates user traffic: kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/kubernetes-manifests.yaml kubectl \\ --context cluster-with-csm \\ --namespace = onlineboutique \\ apply -f anthos-service-mesh-samples/docs/shared/online-boutique/virtual-service.yaml Get the external IP address of the Cloud Service Mesh ingress gateway: kubectl \\ --context cluster-with-csm \\ --namespace asm-ingress \\ get service --output jsonpath = '{.items[0].status.loadBalancer.ingress[0].ip}' Copy the external IP address of the asm-ingressgateway Service, and access it through your web browser.",
+          "Create the namespace: kubectl \\ --context cluster-with-csm \\ create namespace asm-ingress Use the istio.io/rev=asm-managed label to add the asm-ingress namespace to the service mesh and enable automatic sidecar proxy injection. kubectl \\ --context cluster-with-csm \\ label namespace asm-ingress 'istio.io/rev=asm-managed' Deploy the Cloud Service Mesh ingress gateway : kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/asm-gateway-deployment-svc.yaml kubectl \\ --context cluster-with-csm \\ --namespace = asm-ingress \\ apply -f anthos-service-mesh-samples/docs/shared/asm-ingress-gateway/gateway.yaml The output is similar to: namespace/asm-ingress configured serviceaccount/asm-ingressgateway configured service/asm-ingressgateway configured deployment.apps/asm-ingressgateway configured gateway.networking.istio.io/asm-ingressgateway configured Note: You can browse the resources in the official Cloud Service Mesh samples GitHub repository .",
+          "You will use the external IP address in the next section, so copy it into an environment variable: export INGRESS IP OF CLUSTER WITH MANAGED ASM = $( \\ kubectl \\ --context cluster-with-csm \\ --namespace asm-ingress \\ get service --output jsonpath = '{.items[0].status.loadBalancer.ingress[0].ip}' \\ ) Test the cluster with Cloud Service Mesh using a canary deployment In this section, you configure the cluster with Istio such that 50% of the user traffic to Online Boutique is shifted to the instance of Online Boutique on the cluster with managed Cloud Service Mesh."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "demo.git",
+      "deployment.apps",
+      "egress.svc.cluster.local",
+      "egressgateway.istio",
+      "example.com",
+      "gateway.networking.istio.io",
+      "gateway.yaml",
+      "github.com",
+      "googleapis.com",
+      "httpbin.org",
+      "iam.gke.io",
+      "iam.gserviceaccount.com",
+      "iam.workloadIdentityUser",
+      "istio.io",
+      "items..metadata.name",
+      "manifests.yaml",
+      "metadata.google.internal",
+      "networking.istio.io",
+      "private.googleapis.com",
+      "samples.git",
+      "service.istio.io",
+      "service.yaml",
+      "status.loadBalancer.ingress",
+      "storage.googleapis.com",
+      "svc.id.goog",
+      "svc.yaml"
+    ],
+    "missing_inventory_roles": [
+      "roles/iam.workloadIdentityUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/docs/security/security-overview",
+        "https://docs.cloud.google.com/iam/docs/federated-identity-supported-services",
+        "https://docs.cloud.google.com/service-mesh/docs/security/egress-gateway-gke-tutorial",
+        "https://docs.cloud.google.com/service-mesh/docs/migrate-istio-to-anthos-service-mesh"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.079Z",
+  "source_step08_card": "data/step-08/current/products/cloud-service-mesh/card.json",
+  "product_name": "Cloud Service Mesh",
+  "product_slug": "cloud-service-mesh"
+}

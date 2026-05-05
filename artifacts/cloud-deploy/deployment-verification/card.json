@@ -1,0 +1,84 @@
+{
+  "feature_name": "Deployment verification",
+  "feature_slug": "deployment-verification",
+  "summary": "Deployment verification validates deployed applications as part of the deployment process.",
+  "extended_definition": "Deployment verification validates deployed applications as part of the deployment process.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/architecture",
+      "https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout",
+      "https://docs.cloud.google.com/deploy/docs/parameters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage rollouts \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/deployment-strategies/manage-rollout",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 144,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For a rollout in a standard deployment strategy, with no deployment verification enabled, there is one phase ( stable ).",
+          "After that, the application is deployed, and future canary deployments will include the canary phases.",
+          "SUCCEEDED When a job run finishes successfully, without failing or being terminated by a user, it's put into a SUCCEEDED state, which Manage your rollout Using the Google Cloud console or the Google Cloud SDK, you can do the following with a Cloud Deploy rollout: Advance the rollout Cancel the rollout Terminate a job run Ignore a job Retry a failed job If you're using parallel deployment with a canary deployment strategy, see how to manage parallel canary rollouts ."
+        ]
+      },
+      {
+        "title": "\"Pass parameters to your deployment \\_|\\_ Cloud Deploy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/parameters",
+        "source_id": "site-docs-reference-2",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Deploy parameters with deployment verification You can use any deploy parameter as an environment variable in deployment verification .",
+          "For example, if we have a deploy parameter of webserver.port configured, we could utilise it like so: apiVersion : apps/v1 kind : Deployment metadata : name : webserver spec : replicas : 3 selector : matchLabels : app : webserver template : metadata : labels : app : webserver spec : containers : - name : webserver image : gcr.io/example/webserver:latest ports : - containerPort : {{ .Values.webserver.port }} # replaced by deploy parameter webserver.port. name : web env : - name : WEBSERVER PORT value : {{ .Values.webserver.port }} # replaced by deploy parameter webserver.port.",
+          "Here's an example: apiVersion : apps/v1 kind : Deployment metadata : name : nginx-deployment labels : app : nginx spec : selector : matchLabels : app : nginx template : metadata : labels : app : nginx spec : containers : - name : nginx image : nginx:1.14.2 env : - name : envvar1 value : example1 # from-param: ${application env1} - name : envvar2 value : example2 # from-param: ${application env2} In this manifest, the parameter envvar1 is set to a default of example1 , and envvar2 is set to a default of example2 ."
+        ]
+      },
+      {
+        "title": "Cloud Deploy service architecture \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/architecture",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "An artifact is any output from your CI process (for example, a container image ) that is deployed to a target runtime as part of a rollout.",
+          "This process is true not only for promotions, but also for rollbacks and for redeployments.",
+          "Cloud Deploy resources The following diagram shows the resources that Cloud Deploy uses to deliver your applications, and the relationships among those resources: As shown in this diagram, the relationships among the resources are as follows: The delivery pipeline can yield zero or more releases and can reference one or more targets , including multi-targets and their associated child-targets ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "webserver.port"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.843Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy"
+}

@@ -1,0 +1,112 @@
+{
+  "feature_name": "BigQuery navigation menu categories",
+  "feature_slug": "bigquery-navigation-menu-categories",
+  "summary": "BigQuery has a reorganized navigation menu with new categories.",
+  "extended_definition": "BigQuery has a reorganized navigation menu with new categories.",
+  "lifecycle": {
+    "latest_feature_date": "2025-01-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/automatic-discovery",
+      "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot quota and limit errors \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "source_id": "site-docs-root",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "Identify API calls Go to the Google Cloud navigation menu menu, and then select Logging > Logs Explorer : Go to the Logs Explorer Filter logs to view table operations by running the following query: resource.type=\"bigquery dataset\" protoPayload.resourceName=\"projects/my-project-id/datasets/my dataset/tables/my table\" (protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.PatchTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.UpdateTable\" OR protoPayload.methodName=\"google.cloud.bigquery.v2.TableService.InsertTable\") Identify jobs The following query returns a list of jobs that modify the affected table in the project within the past day.",
+          "To identify the method that reached the limit, do the following: In the Google Cloud console, go to the Google Cloud navigation menu menu and then select Logging > Logs Explorer for your project: Go to the Logs Explorer Filter logs by running the following query: resource.type=\"bigquery resource\" protoPayload.authenticationInfo.principalEmail=\"<user email or service account>\" \"Too many API requests per user per method for this user method\" In the log entry, you can find the method name under the property protoPayload.method name.",
+          "For example, using Logs Explorer , the following query returns errors with either Quota exceeded or limit in the message string: resource.type = (\"bigquery project\" OR \"bigquery dataset\") protoPayload.status.code =\"7\" protoPayload.status.message: (\"Quota exceeded\" OR \"limit\") In this example, the status code 7 indicates PERMISSION DENIED , which corresponds to the HTTP 403 status code."
+        ]
+      },
+      {
+        "title": "\"Discover and catalog Cloud Storage data \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/automatic-discovery",
+        "source_id": "site-docs-reference-5",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "Go to BigQuery In the navigation menu, click Governance > Metadata curation .",
+          "Go to BigQuery In the navigation menu, click Governance > Metadata curation .",
+          "Go to BigQuery In the navigation menu, click Governance > Metadata curation ."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 60,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the body of the request, specify updated values for the following fields: displayName description primaryContact documentation icon categories[] discoveryType logLinkedDatasetQueryUserEmail bigqueryDataset.replicaLocations For details on these fields, see Resource: Listing .",
+          "If you select BigQuery dataset , then do the following: In the Shared dataset menu, select an existing dataset, or click Create a dataset to create a new dataset.",
+          "In the Configure data section, in the Resource type menu, select BigQuery dataset or Pub/Sub Topic ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "jobservice.insert",
+      "resource.jobConfiguration.tableCopy",
+      "resource.type",
+      "status.code",
+      "status.message"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/automatic-discovery"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/automatic-discovery"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/troubleshoot-quotas",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/automatic-discovery"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

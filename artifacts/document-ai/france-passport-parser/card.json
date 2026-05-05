@@ -1,0 +1,198 @@
+{
+  "feature_name": "France Passport Parser",
+  "feature_slug": "france-passport-parser",
+  "summary": "The France Passport Parser is available in limited preview.",
+  "extended_definition": "The France Passport Parser is available in limited preview.",
+  "lifecycle": {
+    "latest_feature_date": "2022-06-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/create-processor",
+      "https://docs.cloud.google.com/document-ai/docs/fields",
+      "https://docs.cloud.google.com/document-ai/docs/languages",
+      "https://docs.cloud.google.com/document-ai/docs/processors-list"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "",
+        "evidence_snippets": [
+          "Includes access to all OCR add-ons. pretrained-ocr-v2.1-2024-08-07 Stable GA The main areas of improvement for v2.1 are: better printed text recognition, more precise checkbox detection and more accurate reading order. pretrained-ocr-v2.1.1-2025-01-31 Release candidate Public Preview v2.1.1 is similar to V2.1, and is available in all regions except: US , EU , and asia-southeast1 .",
+          "Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.5-pro-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.",
+          "This is the default pre-trained processor version. pretrained-layout-parser-v1.5-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Flash LLM for better layout analysis on PDF files."
+        ]
+      },
+      {
+        "title": "Creating and managing processors \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "source_id": "site-docs-root",
+        "final_score": 170,
+        "relevance": "",
+        "evidence_snippets": [
+          "The publicly available processor types are: Digitize processors OCR PROCESSOR FORM PARSER PROCESSOR LAYOUT PARSER PROCESSOR Pretrained processors BANK STATEMENT PROCESSOR EXPENSE PROCESSOR FORM W2 PROCESSOR ID PROOFING PROCESSOR INVOICE PROCESSOR PAYSTUB PROCESSOR US DRIVER LICENSE PROCESSOR US PASSPORT PROCESSOR UTILITY PROCESSOR Extract / classify / split processors CUSTOM EXTRACTION PROCESSOR CUSTOM CLASSIFICATION PROCESSOR CUSTOM SPLITTING PROCESSOR SUMMARIZER PROCESSOR List processor types Web UI In the Google Cloud console, in the Document AI section, go to the Processor Gallery page.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION :fetchProcessorTypes\" Select-Object -Expand Content The response is a list of ProcessorType which shows the available processor types, along with the category and available locations. { \"processorTypes\": [ [ ... { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processorTypes/FORM PARSER PROCESSOR\", \"type\": \"FORM PARSER PROCESSOR\", \"category\": \"GENERAL\", \"availableLocations\": [ { \"locationId\": \"eu\" }, { \"locationId\": \"us\" } ], \"allowCreation\": true, \"launchStage\": \"GA\" }, { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processorTypes/OCR PROCESSOR\", \"type\": \"OCR PROCESSOR\", \"category\": \"GENERAL\", \"availableLocations\": [ { \"locationId\": \"eu\" }, { \"locationId\": \"us\" } ], \"allowCreation\": true, \"launchStage\": \"GA\" }, { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processorTypes/INVOICE PROCESSOR\", \"type\": \"INVOICE PROCESSOR\", \"category\": \"SPECIALIZED\", \"availableLocations\": [ { \"locationId\": \"eu\" }, { \"locationId\": \"us\" } ], \"allowCreation\": true, \"launchStage\": \"GA\" }, { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processorTypes/US DRIVER LICENSE PROCESSOR\", \"type\": \"US DRIVER LICENSE PROCESSOR\", \"category\": \"SPECIALIZED\", \"availableLocations\": [ { \"locationId\": \"us\" }, { \"locationId\": \"eu\" } ], \"allowCreation\": true, \"launchStage\": \"GA\" }, ... ] } Python For more information, see the Document AI Python API reference documentation .",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors\" Select-Object -Expand Content The response is a list of Processors , which contains information about each processor such as its name , type , state , and other details. { \"processors\": [ { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID \", \"type\": \"FORM PARSER PROCESSOR\", \"displayName\": \" DISPLAY NAME \", \"state\": \"ENABLED\", \"processEndpoint\": \"https:// LOCATION -documentai.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID :process\", \"createTime\": \"2022-03-02T22:33:54.938593Z\", \"defaultProcessorVersion\": \"projects/ PROJECT ID /locations/ LOCATION /processors/ PROCESSOR ID /processorVersions/pretrained\" } ] } Python For more information, see the Document AI Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/fields",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Includes access to all OCR add-ons. pretrained-ocr-v2.1-2024-08-07 Stable GA The main areas of improvement for v2.1 are: better printed text recognition, more precise checkbox detection and more accurate reading order. pretrained-ocr-v2.1.1-2025-01-31 Release candidate Public Preview v2.1.1 is similar to V2.1, and is available in all regions except: US , EU , and asia-southeast1 .",
+          "Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.5-pro-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.",
+          "This is the default pre-trained processor version. pretrained-layout-parser-v1.5-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Flash LLM for better layout analysis on PDF files."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/languages",
+        "source_id": "site-docs-reference",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Includes access to all OCR add-ons. pretrained-ocr-v2.1-2024-08-07 Stable GA The main areas of improvement for v2.1 are: better printed text recognition, more precise checkbox detection and more accurate reading order. pretrained-ocr-v2.1.1-2025-01-31 Release candidate Public Preview v2.1.1 is similar to V2.1, and is available in all regions except: US , EU , and asia-southeast1 .",
+          "Note: If it's used for non-PDF files, it will have the same behavior as the stable pretrained-layout-parser-v1.0-2024-06-03 . pretrained-layout-parser-v1.5-pro-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Pro LLM for better layout analysis on PDF files. v1.5-pro has higher latency than v1.5.",
+          "This is the default pre-trained processor version. pretrained-layout-parser-v1.5-2025-08-25 Release Candidate Public Preview Preview version powered by Gemini 2.5 Flash LLM for better layout analysis on PDF files."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1.BatchDocumentsInputConfig",
+      "com.google.cloud.documentai.v1.BatchProcessMetadata.IndividualProcessStatus",
+      "core.client",
+      "documentai.googleapis.com",
+      "e.g",
+      "v1.0",
+      "v1.1",
+      "v1.2",
+      "v1.5",
+      "v2.0",
+      "v2.1",
+      "v2.1.1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/processors-list",
+        "https://docs.cloud.google.com/document-ai/docs/create-processor",
+        "https://docs.cloud.google.com/document-ai/docs/fields",
+        "https://docs.cloud.google.com/document-ai/docs/languages"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:28.926Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

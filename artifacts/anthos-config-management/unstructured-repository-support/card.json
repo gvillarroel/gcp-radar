@@ -1,0 +1,124 @@
+{
+  "feature_name": "Unstructured repository support",
+  "feature_slug": "unstructured-repository-support",
+  "summary": "Unstructured repository support allows Anthos Config Management to operate without hierarchical repository structure, with some hierarchy-dependent features disabled.",
+  "extended_definition": "Unstructured repository support allows Anthos Config Management to operate without hierarchical repository structure, with some hierarchy-dependent features disabled.",
+  "lifecycle": {
+    "latest_feature_date": "2020-02-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/gitops-best-practices",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure syncing from more than one source of truth \\_|\\_ Config Sync \\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "source_id": "site-docs-root",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Helm root-sync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : ROOT SYNC NAME namespace : config-management-system spec : sourceType : helm sourceFormat : unstructured helm : repo : ROOT HELM REPOSITORY chart : HELM CHART NAME version : HELM CHART VERSION releaseName : HELM RELEASE NAME namespace : HELM RELEASE NAMESPACE values : foo : bar : VALUE 1 baz : - qux : VALUE 2 xyz : VALUE 3 includeCRDs : HELM INCLUDE CRDS auth : ROOT AUTH TYPE gcpServiceAccountEmail : ROOT EMAIL secretRef : name : ROOT SECRET NAME caCertSecretRef : name : ROOT CA CERT SECRET NAME Replace the following: ROOT SYNC NAME : add the name of your RootSync object.",
+          "Helm root-sync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : ROOT SYNC NAME namespace : config-management-system spec : sourceType : helm sourceFormat : unstructured helm : repo : ROOT HELM REPOSITORY chart : HELM CHART NAME version : HELM CHART VERSION releaseName : HELM RELEASE NAME namespace : HELM RELEASE NAMESPACE values : foo : bar : VALUE 1 baz : - qux : VALUE 2 xyz : VALUE 3 includeCRDs : HELM INCLUDE CRDS auth : ROOT AUTH TYPE gcpServiceAccountEmail : ROOT EMAIL secretRef : name : ROOT SECRET NAME caCertSecretRef : name : ROOT CA CERT SECRET NAME Replace the following: ROOT SYNC NAME : add the name of your RootSync object.",
+          "Git root-sync.yaml apiVersion : configsync.gke.io/v1beta1 kind : RootSync metadata : name : ROOT SYNC NAME namespace : config-management-system spec : sourceType : git sourceFormat : unstructured git : repo : ROOT REPOSITORY revision : ROOT REVISION branch : ROOT BRANCH dir : ROOT DIRECTORY auth : ROOT AUTH TYPE gcpServiceAccountEmail : ROOT EMAIL secretRef : name : ROOT SECRET NAME noSSLVerify : ROOT NO SSL VERIFY caCertSecretRef : name : ROOT CA CERT SECRET NAME Replace the following: ROOT SYNC NAME : add the name of your RootSync object."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "Terraform For each cluster that you want to configure Config Sync, apply a google gkehub feature membership resource block that contains a configmanagement and config sync block, such as in the following example: git data \"google project\" \"default\" {} resource \"google container cluster\" \"default\" { name = \"gke-autopilot-basic\" location = \"us-central1\" fleet { project = data.google project.default.project id } enable autopilot = true } resource \"google gke hub feature\" \"configmanagement feature\" { name = \"configmanagement\" location = \"global\" } resource \"google gke hub feature membership\" \"configmanagement feature member\" { location = \"global\" feature = google gke hub feature.configmanagement feature.name membership = google container cluster.default.fleet[0].membership id membership location = google container cluster.default.fleet[0].membership location configmanagement { config sync { The field enabled was introduced in Terraform version 5.41.0, and needs to be set to true explicitly to install Config Sync. enabled = true git { sync repo = \" REPO \" sync branch = \" BRANCH \" policy dir = \" DIRECTORY \" secret type = \" SECRET \" } } } } Replace the following: REPO : the URL to the Git repository that contains your configuration files.",
+          "SECRET : the secret auth type. oci data \"google project\" \"default\" {} resource \"google container cluster\" \"default\" { name = \"gke-autopilot-basic\" location = \"us-central1\" fleet { project = data.google project.default.project id } enable autopilot = true } resource \"google gke hub feature\" \"configmanagement feature\" { name = \"configmanagement\" location = \"global\" } resource \"google gke hub feature membership\" \"configmanagement feature member\" { location = \"global\" feature = google gke hub feature.configmanagement feature.name membership = google container cluster.default.fleet[0].membership id membership location = google container cluster.default.fleet[0].membership location configmanagement { config sync { The field enabled was introduced in Terraform version 5.41.0, and needs to be set to true explicitly to install Config Sync. enabled = true oci { sync repo = \" REPO \" policy dir = \" DIRECTORY \" secret type = \" SECRET \" } } } } Replace the following: REPO : the URL to the OCI image repository that contains your configuration files.",
+          "For example, https://github.com/GoogleCloudPlatform/anthos-config-management-samples ."
+        ]
+      },
+      {
+        "title": "GitOps best practices \\_|\\_ Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/gitops-best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use unstructured repositories Config Sync supports two structures for organizing a repository: unstructured and hierarchical.",
+          "By using an unstructured repository, it becomes much easier to share and reuse configuration packages.",
+          "Although you must add additional tools and logic to your commit process, testing before applying configs has the following benefits: Surfacing config changes in a change request can help prevent errors from making it into a repository."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cluster.default.fleet",
+      "configsync.gke.io",
+      "data.google",
+      "feature.configmanagement",
+      "feature.name",
+      "github.com",
+      "project.default.project",
+      "spec.yaml",
+      "sync.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/gitops-best-practices",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/gitops-best-practices",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/gitops-best-practices",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/multiple-repositories",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/concepts/gitops-best-practices",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

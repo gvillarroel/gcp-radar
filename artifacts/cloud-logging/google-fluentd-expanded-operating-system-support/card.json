@@ -1,0 +1,133 @@
+{
+  "feature_name": "google-fluentd expanded operating system support",
+  "feature_slug": "google-fluentd-expanded-operating-system-support",
+  "summary": "The google-fluentd logging agent supports additional operating systems including Debian, Ubuntu, Red Hat, and CentOS.",
+  "extended_definition": "The google-fluentd logging agent supports additional operating systems including Debian, Ubuntu, Red Hat, and CentOS.",
+  "lifecycle": {
+    "latest_feature_date": "2015-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use agent policies (GA) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 181,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the operating system supports VM Manager, then you can install the OS Config agent manually.",
+          "To enable debug-level logging for the entire project, run the following command: gcloud compute project-info add-metadata \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug To enable debug-level logging for one VM, run the following command: gcloud compute instances add-metadata INSTANCE ID \\ --project PROJECT ID \\ --metadata osconfig-log-level=debug Helper scripts This section provides additional information about the helper scripts described in this document: The prepare-for-ops-agents-policies.sh script The diagnose policies.sh script The prepare-for-ops-agents-policies.sh script After you download the prepare-for-ops-agents-policies.sh script, you can use the script to perform the following actions, based on the arguments you provide: Enable the Cloud Logging API, the Cloud Monitoring API, and the OS Config API for the project.",
+          "To apply the agent policy to a specific set of VMs in a zone, describe the VMs by using a combination of any of the following: Labels on the VM, either for inclusion or exclusion: inclusionLabels: exclusionLabels: Operating system: inventories: For example, the following filter applies the agent policy to the VMs with the specified operating systems that have the label \"env=prod\" and don't have the label \"app=web\": instanceFilter : inclusionLabels : - labels : env : prod exclusionLabels : - labels : app : web inventories : - osShortName : rhel osVersion : '7. ' - osShortName : debian osVersion : '11' For information about finding the operating-system values, see Find operating system information ."
+        ]
+      },
+      {
+        "title": "Use agent policies (beta) \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "source_id": "site-docs-root-2",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If the operating system supports VM Manager, then you can install the OS Config agent manually.",
+          "Here is an example of a phased rollout plan for Debian 11 VMs in a project called my project : Phase 1: Create a policy named ops-agents-policy-safe-rollout to install the Ops Agent on all VMs with the labels env=test and app=myproduct . gcloud beta compute instances \\ ops - agents policies create ops - agents - policy - safe - rollout \\ -- agent - rules = \"type=ops-agent,version=current-major,package-state=installed,enable-autoupgrade=true\" \\ -- os - types = short - name = debian , version = 11 \\ -- group - labels = env = test , app = myproduct \\ -- project = my project For more information about specifying the operating system, see gcloud beta compute instances ops-agents policies create .",
+          "Get-Service google osconfig agent A sample output is: Status Name DisplayName ------ ---- ----------- Running google osconfig a… Google OSConfig Agent If the OS Config agent is not installed, then you might be using an operating system that doesn't support VM Manager."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 171,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In addition, the following Prometheus metrics are exposed by the output plugin in prometheus mode: uptime with a version label: Uptime of the Logging agent. stackdriver successful requests count with grpc and code labels: The number of successful requests to the Logging API. stackdriver failed requests count with grpc and code labels: The number of failed requests to the Logging API, broken down by the error code. stackdriver ingested entries count with grpc and code labels: The number of log entries ingested by the Logging API. stackdriver dropped entries count with grpc and code labels: The number of log entries rejected by the Logging API. stackdriver retried entries count with grpc and code labels: The number of log entries that failed to be ingested by the Google Cloud fluentd output plugin due to a transient error and were retried. prometheus and prometheus monitor plugin configuration Note: The following default monitoring configuration is exclusive to Linux operating systems.",
+          "Windows: C:\\Program Files (x86)\\Stackdriver\\LoggingAgent\\fluent.conf If you are running a Logging agent before v1-5, the location is: C:\\GoogleStackdriverLoggingAgent\\fluent.conf Syslog configuration Note: The following default syslog configuration, as part of the google-fluentd-catch-all-config package, is exclusive to Linux operating systems.",
+          "When the agent is configured to ingest JSON content, the input must be formatted so that each JSON object is on a newline: {\"name\" : \"zeeshan\", \"age\" : 28} {\"name\" : \"reeba\", \"age\" : 15} To configure the Logging agent to ingest JSON formatted content, do the following: From the Linux command prompt, create a log file: touch /tmp/test-structured-log.log Create a new configuration file labeled test-structured-log.conf in the additional configuration directory /etc/google-fluentd/config.d : sudo tee /etc/google-fluentd/config.d/test-structured-log.conf <<EOF < source > @type tail <parse> 'json' indicates the log is structured (JSON). @type json </parse> The path of the log file. path /tmp/test-structured-log.log The path of the position file that records where in the log file we have processed already."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com",
+      "config.d",
+      "diagnose.sh",
+      "fluent.conf",
+      "log.conf",
+      "log.log",
+      "permissions.sh",
+      "policies.sh"
+    ],
+    "missing_inventory_roles": [
+      "roles/owner"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/managing-agent-policies",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

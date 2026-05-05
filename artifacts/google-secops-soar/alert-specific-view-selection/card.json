@@ -1,0 +1,151 @@
+{
+  "feature_name": "Alert-specific view selection",
+  "feature_slug": "alert-specific-view-selection",
+  "summary": "The Alert Overview page lets users choose a customized view for each alert.",
+  "extended_definition": "The Alert Overview page lets users choose a customized view for each alert.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Explore the alert overview tab \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "source_id": "site-docs-root",
+        "final_score": 295,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alert Overview widgets The Alert Overview tab displays important information about the alert using specific widgets.",
+          "Quick Actions : This widget lets you quickly execute predefined actions directly from the Alert Overview tab.",
+          "The display you see in the Alert Overview tab depends on a variety of factors: If no playbook is attached to the alert, the default display is defined by the administrator in SOAR Settings ."
+        ]
+      },
+      {
+        "title": "Cases overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "source_id": "site-docs-root",
+        "final_score": 205,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Case overview tab The Case Overview tab displays case-specific widgets configured by the administrator.",
+          "Alert Overview tab: Lists all alerts linked to the case, including associated events and metadata.",
+          "Each case entry shows key metadata, such as: Case name and unique ID Case timestamp Number of associated alerts Assigned analyst (with avatar) Case priority and stage (optional, depending on view) Analysts can toggle between these views: Default view : Shows case cards with essential information."
+        ]
+      },
+      {
+        "title": "\"Google SecOps overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "source_id": "site-api-reference",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google SecOps overview Supported in: Google secops Google Security Operations is a cloud service, built as a specialized layer on top of Google infrastructure, designed for enterprises to privately retain, analyze, and search the large amounts of security and network telemetry they generate.",
+          "IP Address view : Investigate specific IP addresses within your enterprise and what impact they have on your assets.",
+          "Domain view : Investigate specific domains within your enterprise and what impact they have on your assets."
+        ]
+      },
+      {
+        "title": "\"Use the curated detections page \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections",
+        "source_id": "site-docs-root-2",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Before you begin For information about predefined threat detection policies, see the following: Overview of Cloud Threats category Overview of Chrome Enterprise Threats category Overview of Windows Threats category Overview of Linux Threats category Overview of macOS Threats category Overview of Risk Analytics for UEBA category Overview of Applied Threat Intelligence category To verify that data required for each policy is in the correct format, see Verify log data ingestion using test rules .",
+          "Mitre ATT&CK® techniques represent specific actions of malicious behavior Note: For more information about Mitre Tactics and Techniques, see the official MITRE ATT&CK page at https://attack.mitre.org/ .",
+          "This view lets you examine any of the detections associated with the rule and pivot to other views such as Asset view from the Timeline."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "attack.mitre.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-alerts/whats-on-the-alert-overview-tab",
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/secops-overview",
+        "https://docs.cloud.google.com/chronicle/docs/detection/curated-detections"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:41.039Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-soar/card.json",
+  "product_name": "Google SecOps SOAR",
+  "product_slug": "google-secops-soar"
+}

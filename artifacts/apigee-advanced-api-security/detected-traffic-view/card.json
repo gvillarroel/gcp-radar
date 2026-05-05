@@ -1,0 +1,114 @@
+{
+  "feature_name": "Detected Traffic view",
+  "feature_slug": "detected-traffic-view",
+  "summary": "A dedicated Detected Traffic view was added to show API traffic from detected bots and related abuse signals.",
+  "extended_definition": "A dedicated Detected Traffic view was added to show API traffic from detected bots and related abuse signals.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-scores"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 163,
+        "relevance": "",
+        "evidence_snippets": [
+          "It shows detected rules, first and last detection dates, and attributes for detected traffic from the IP address of API key. (See the Analytics dimensions reference and the Security stats API dimensions for more information on the detail fields.) For IP addresses, the Details tab also includes information about related Ingress access logs .",
+          "Abuse Detail tab If the incident or detected traffic includes detected anomalies, the Abuse Detail tab shows information about the detected anomalous events, including time series graphs of traffic from the IP address with anomalous events indicated.",
+          "This opens the Environment details view: If you see an incident or detected traffic, and want to create a security action to block or flag requests related to the incident or detected traffic, click Create Security Action at the top of the page."
+        ]
+      },
+      {
+        "title": "Risk assessment overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Click Detected Traffic to view the Detected traffic tab in the Abuse detection page.",
+          "Source: Shows the detected abuse traffic.",
+          "Security scores assessment types There are three assessment types that contribute to the overall security score calculated by Advanced API Security: Source assessment: Assesses the detected abuse traffic, using the Advanced API Security detection rules . \"Abuse\" refers to requests sent to the API for purposes other than what the API is intended for."
+        ]
+      },
+      {
+        "title": "Security reports overview \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Metric Description Aggregation function bot The number of distinct IP addresses for detected bots over one-minute intervals. count distinct bot traffic The number of messages from IP addresses of detected bots over one-minute intervals. sum message count Total number of API calls processed by Apigee in one-minute intervals.",
+          "Reference security reports This table lists examples of security of reports that you can create using different metrics and dimensions: Report Metrics Dimensions All Bot Traffic & Bot Count Report for per environment bot , bot traffic environment Bot Traffic & Bot Count Report for different bot reasons bot , bot traffic bot reason Bot Traffic & Bot Count Report for different Countries bot , bot traffic ax geo country Bot Traffic & Bot Count Report for different ISPs bot , bot traffic ax isp Bot Detection Report (Detailed List View) bot traffic Resolved Client IP , ax isp , bot reason , request uri , client id Bot traffic per Access Token bot traffic access token Bot traffic per API proxy bot traffic apiproxy Bot traffic per Agent Family bot traffic ax ua agent family Bot traffic per User Agent bot traffic useragent Bot traffic per Agent Type bot traffic ax ua agent type Bot traffic per Device Category bot traffic ax ua device category Bot traffic per OS family bot traffic ax ua os family Bot traffic per Client ID bot traffic client id Bot traffic per Proxy Basepath bot traffic proxy basepath Bot traffic per Proxy Path Suffix bot traffic proxy pathsuffix Bot traffic per Request URI bot traffic request uri Bot traffic per Request Verb bot traffic request verb Bot traffic per Response Status Code bot traffic response status code Limitations on security reports Security reports have the following limitations: Data flowing into the Apigee Analytics pipeline has a delay of up to 15 to 20 minutes on average.",
+          "The following table describes the dimensions that are specific to Advanced API Security: Dimension Description bot reason Can be any combination of the security detection rules . bot reason consists of the subset of the detection rules that the bot's traffic pattern matched. bot reason only works with the following metrics: bot bot traffic response size incident id (preview) The UUID for a security incident, which is returned by a call to the Incidents API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-scores",
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-report-jobs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.267Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security"
+}

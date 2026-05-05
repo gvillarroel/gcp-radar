@@ -1,0 +1,112 @@
+{
+  "feature_name": "SKU Group Snapshot CSV Export",
+  "feature_slug": "sku-group-snapshot-csv-export",
+  "summary": "Allows downloading a snapshot of product SKUs for each SKU group as a CSV file from Partner Sales Console.",
+  "extended_definition": "Allows downloading a snapshot of product SKUs for each SKU group as a CSV file from Partner Sales Console.",
+  "lifecycle": {
+    "latest_feature_date": "2022-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+      "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries",
+      "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Export Channel Services data to BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "source_id": "site-docs-reference",
+        "final_score": 100,
+        "relevance": "",
+        "evidence_snippets": [
+          "DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id IN ( PAYER BILLING ACCOUNT IDS ) GROUP BY billing account id , currency , invoice . month ORDER BY billing account id , currency , invoice . month ; For more information on partitioning, clustering, and best practices, see the following links: Query Partitioned tables Query Clustered tables Optimize query computation Best Practices to control costs in BigQuery Finding payer's billing account ID To find the payer's billing account ID, open the billing accounts page of the Partner Sales Console and click the Partner billing tab.",
+          "The following fields don't apply to Google Workspace exports: project labels resource credits adjustmentsInfo customer repricing config name channel partner repricing config name tags price.effective price price.tier start amount price.list price price.effective price default price.list price consumption model transaction type seller name consumption model Columns not applicable to Google Workspace Consumptive SKUs When a column or field doesn't apply to a Product Family, the exported data for this product family contains null in this field.",
+          "If credits.type is RESELLER MARGIN, this amount will be zero. adjustmentsInfo Struct, Repeated Contains fields that describe the structure and value of an adjustment to cost line items. adjustmentsInfo.adjustment id String If populated, an adjustment is associated with a cost line item. adjustmentsInfo.adjustments id is the unique ID for all the adjustments caused by an issue. adjustmentsInfo.adjustment description String A description of the adjustment and its cause. adjustmentsInfo.adjustment type String The type of the adjustment. adjustmentsInfo.adjustment mode String How the adjustment was issued. export time Timestamp A processing time associated with an append of billing data."
+        ]
+      },
+      {
+        "title": "Google Cloud SKU groups \\_|\\_ Channel Services \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To view the SKUs this might include, you can export this SKU group to a file and view the full list of available SKUs.",
+          "Elastic Marketplace SKUs (Id: 4935495f-6ae7-44b8-b3b5-e3545492b732) Splunk Marketplace SKUs (Id: d4806ac5-1df1-4a95-9dfc-c22784c3ea0d) MongoDB Marketplace SKUs (Id: 3c98e00f-626d-40b1-8806-678b19ec51f8) Netapp Marketplace SKUs (Id: cd701612-f7a4-436e-ab6f-9398172307b2) Palo Alto Networks Marketplace SKUs (Id: d8938e23-f696-4242-8385-ab3f86e0b0f0) Redis Marketplace SKUs (Id: de0c79ce-c2fd-49bd-b1b2-66277e14b278) Itopia Marketplace SKUs (Id: 2e573702-a404-4d9f-bcb8-67f31faa571d) HashiCorp Marketplace SKUs (Id: 53ce8604-8e0b-4e8a-9540-85f2e5154a03) Third party Marketplace SKU group This group includes product SKUs from third-party software providers.",
+          "Channel Services SKU groups All public SKU groups in addition to the following SKU groups are available for use when you create and manage custom repricing configurations: Third Party Marketplace (Id: 31f47c09-96ff-43dc-912b-bb3808148be2) Google Maps Platform (Id: d56c1f4c-d3bb-4a7b-acb0-8376793b4105) GCP Reseller (Id: 3d50fd57-3157-4577-a5a9-a219b8490041) Marketplace vendor SKU Groups The SKUs in the groups under this category include private SKUs and might not be visible to all partners."
+        ]
+      },
+      {
+        "title": "\"BigQuery export query examples \\_|\\_ Channel Services \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries",
+        "source_id": "site-docs-reference",
+        "final_score": 88,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id = ' EXTERNAL BILLING ACCOUNT ID ' AND invoice . month = ' INVOICE MONTH ' GROUP BY domain name , customer id , sku name , sku id , description , order name , start date , end date , po number HAVING amount != 0 ORDER BY domain name , order name , start date , end date ; Other columns of interest to add to SELECT and GROUP BY clauses: billing account id : Represents the Customer Cloud Identity ID. customer name : Represents the customer resource which can be used in API calls. channel partner name : (For distributors) Represents the channel partner. entitlement name : Resource name of the Entitlement in Channel Services. customer correlation id : A Customer Relationship Management (CRM) ID that you can define for a customer. usage.amount : For Google Workspace seat-based usage, this indicates paid seats.",
+          "DATASET NAME . reseller billing detailed export v1 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) GROUP BY customer name , billing account id , payer billing account id , currency , invoice . month ORDER BY customer name , billing account id , payer billing account id , currency , invoice . month ; Sum of customer costs by Cloud Billing subaccount, as shown to the subaccount owner This query shows you how the data cost numbers map with what a resold customer (or you as the partner) sees when they open the Google Cloud console for their subaccount.",
+          "DATASET NAME . reseller billing offline orders detailed export v0 WHERE export time BETWEEN TIMESTAMP ( START DATE ) AND TIMESTAMP ( END DATE ) AND payer billing account id = ' EXTERNAL BILLING ACCOUNT ID ' AND invoice . month = ' INVOICE MONTH ' GROUP BY customer name , sku name , sku id , start date , end date HAVING amount != 0 ORDER BY customer name , start date , end date , sku id ; The query result differs from the PDF invoice in the following ways: You can convert the timestamp value to a date value in the \"America/Los Angeles\" timezone."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "credits.type",
+      "price.effective",
+      "price.list",
+      "price.tier",
+      "usage.amount"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/channel/docs/rebilling/export-data-to-bigquery",
+        "https://docs.cloud.google.com/channel/docs/concepts/sku-groups",
+        "https://docs.cloud.google.com/channel/docs/rebilling/example-export-queries"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.326Z",
+  "source_step08_card": "data/step-08/current/products/channel-services/card.json",
+  "product_name": "Channel Services",
+  "product_slug": "channel-services"
+}

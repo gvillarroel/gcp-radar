@@ -1,0 +1,94 @@
+{
+  "feature_name": "max instances setting",
+  "feature_slug": "max-instances-setting",
+  "summary": "The max instances setting lets you cap the total number of instances scheduled for an app.",
+  "extended_definition": "The max instances setting lets you cap the total number of instances scheduled for an app.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/managing-costs",
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Manage App Engine costs \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/managing-costs",
+        "source_id": "site-docs-reference-4",
+        "final_score": 131,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To specify the maximum number of instances, use the max instances setting in your app's app.yaml file.",
+          "To limit the costs of your App Engine app, you can use any of the following mechanisms: Specify the maximum number of instances Create budget alerts Disable your app manually Disable your app programmatically Specify the maximum number of instances Since App Engine costs usually scale based on the amount of traffic your app receives, you can limit your costs by limiting the number of instances App Engine can create.",
+          "When you receive a notification, you can limit costs by lowering the value of the max instances setting or disabling your app ."
+        ]
+      },
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-4",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "A high maximum means users might wait longer for their requests to be served, if there are pending requests and no idle instances to serve them, but your application will cost less to run. <min-idle-instances> The number of instances to be kept running and ready to serve traffic.This setting only applies to the version that receives most of the traffic.",
+          "You will need to test your application and expected traffic volume to determine the ideal number of instances to keep in reserve. <min-pending-latency> The minimum amount of time in seconds that App Engine should allow a request to wait in the pending queue before starting a new instance to handle it.",
+          "However, you won't be charged for more instances than the maximum number you've specified. <max-pending-latency> The maximum amount of time that App Engine should allow a request to wait in the pending queue before starting additional instances to handle requests so that pending latency is reduced."
+        ]
+      },
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Setting an appropriate number of idle instances for your application based on request volume allows your application to serve every request with little latency, unless you are experiencing abnormally high request volume.",
+          "A service with basic scaling is configured by setting the maximum number of instances in the max instances parameter of the basic scaling setting.",
+          "One of the benefits App Engine standard environment's \"pay for only what you need\" platform as described earlier in Scaling Down is that the system autoscales the number of instances down to zero when there is no traffic."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "traffic.This",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/managing-costs",
+        "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.952Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java"
+}

@@ -1,0 +1,117 @@
+{
+  "feature_name": "Tasks service",
+  "feature_slug": "tasks-service",
+  "summary": "Apps Script includes a service for managing tasks and task lists.",
+  "extended_definition": "Apps Script includes a service for managing tasks and task lists.",
+  "lifecycle": {
+    "latest_feature_date": "2011-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/advanced/tasks",
+      "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Tasks Service \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/advanced/tasks",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Tasks Service Stay organized with collections Save and categorize content based on your preferences.",
+          "Like all advanced services in Apps Script, the Tasks service uses the same objects, methods, and parameters as the public API.",
+          "Page Summary outlined flag The Tasks service in Apps Script allows you to use the Google Tasks API to manage tasks in Gmail."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 76,
+        "relevance": "",
+        "evidence_snippets": [
+          "Added the Tasks Services , which allow users to manage tasks and task lists.",
+          "This API includes and extends the original Apps Script API.",
+          "This change includes published Apps Script web apps."
+        ]
+      },
+      {
+        "title": "\"Method: processes.listScriptProcesses \\_|\\_ Apps Script \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses",
+        "source_id": "site-api-reference",
+        "final_score": 62,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Method: processes.listScriptProcesses Stay organized with collections Save and categorize content based on your preferences.",
+          "Query parameters Parameters scriptId string The script ID of the project whose processes are listed. scriptProcessFilter object ( ListScriptProcessesFilter ) A filter used to limit the list results; only processes matching the filter criteria are returned. pageSize integer The maximum number of returned processes per page of results.",
+          "The ListScriptProcessesFilter object allows for filtering processes by deployment ID, function name, start and end time, process types, statuses, and user access levels."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "processes.listScriptProcesses"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/tasks",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/tasks",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/tasks",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/advanced/tasks",
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/api/reference/rest/v1/processes/listScriptProcesses"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

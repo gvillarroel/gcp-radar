@@ -1,0 +1,82 @@
+{
+  "feature_name": "Intel Optimized Python packages",
+  "feature_slug": "intel-optimized-python-packages",
+  "summary": "All distributions include Intel-optimized Python packages such as NumPy, SciPy, scikit-learn, TensorFlow, and PyTorch when applicable.",
+  "extended_definition": "All distributions include Intel-optimized Python packages such as NumPy, SciPy, scikit-learn, TensorFlow, and PyTorch when applicable.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Introduction to Deep Learning VM \\_|\\_ Deep Learning VM Images \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "source_id": "site-docs-reference",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "Python 3.10 with the following packages: numpy scipy matplotlib pandas nltk pillow scikit-image opencv-python scikit-learn many more JupyterLab notebook environments for quick prototyping Nvidia packages with the latest Nvidia driver for GPU-enabled instances: CUDA 11. x and 12. x (the version depends on the framework) CuDNN 7. x and NCCL 2. x (the version depends on the CUDA version) Updates Deep Learning VM images are updated regularly with bug fixes and package updates.",
+          "Pre-installed packages Images are based on the Debian 11 and Ubuntu 22.04 operating systems, and these images can be configured to include the following: Specific frameworks (for example, TensorFlow) and supporting packages.",
+          "Deep Learning VM Images is a set of virtual machine images optimized for data science and machine learning tasks."
+        ]
+      },
+      {
+        "title": "\"Create a PyTorch Deep Learning VM instance \\_|\\_ Deep Learning VM Images\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 64,
+        "relevance": "",
+        "evidence_snippets": []
+      },
+      {
+        "title": "\"Quickstart: Create a Deep Learning VM instance by using the gcloud CLI \\_\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud",
+        "source_id": "site-docs-reference",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/pytorch_start_instance",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/create-vm-instance-gcloud"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.097Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images"
+}

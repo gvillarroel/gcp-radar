@@ -1,0 +1,81 @@
+{
+  "feature_name": "BigQuery non-incremental materialized views over Spanner",
+  "feature_slug": "bigquery-non-incremental-materialized-views-over-spanner",
+  "summary": "Spanner now supports creating BigQuery non-incremental materialized views over Spanner data to improve query performance by periodically caching results.",
+  "extended_definition": "Spanner now supports creating BigQuery non-incremental materialized views over Spanner data to improve query performance by periodically caching results.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/backup",
+      "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+      "https://docs.cloud.google.com/spanner/docs/change-streams"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Disaster recovery overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup/disaster-recovery-overview",
+        "source_id": "site-docs-root",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Failure scenarios and resiliency with Spanner Backups overview Create backups Create and manage backup schedules PITR overview Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Disaster recovery techniques Spanner offers disaster recovery techniques to protect your data against the following disasters: Zonal failure : Spanner regional configuration provides automatic protection against zonal failures, ensuring that if one zone within a region fails, your application remains operational.",
+          "Optimize costs for your disaster recovery strategy You can optimize Spanner disaster recovery costs in the following ways: Multi-region configurations : Use multi-region configurations only for applications that require 99.999% availability."
+        ]
+      },
+      {
+        "title": "Backups overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/backup",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table shows possible storage costs for these backup schedules: Day Full schedule backup size Incremental schedule backup size 1 100 GB 100 GB 2 110 GB 10 GB 3 120 GB 10 GB 4 130 GB 10 GB 5 140 GB 10 GB Over 5 days, the full backup schedule uses 600 GB of storage, while the incremental backup schedule uses about 140 GB of storage.",
+          "Delete a backup When you delete a backup in an incremental backup chain, you can't recover storage if there are newer backups present in the chain.",
+          "For example, if you copy your database from the source multi-region instance configuration nam7 to the destination multi-region instance configuration nam-eur-asia3 , the following charges apply: No charge for overlapping us-central1 region No charge for witness us-central2 region Inter-continental data transfer charge apply twice: once for each new continent (Europe and Asia) Data transfer between regions within the same continent charge apply once for us-east1 Data transfer between regions within the same continent charge apply once in Europe Spanner optimizes the copying process to minimize the number of cross-region transfers."
+        ]
+      },
+      {
+        "title": "Change streams overview \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Databases Spanner Guides Send feedback Change streams overview Stay organized with collections Save and categorize content based on your preferences.",
+          "You can optionally configure a change stream with the following: Specify the data retention period to override the default, one-day retention period.",
+          "For a more detailed overview of how change streams and Dataflow work together, see Build change streams connections with Dataflow ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

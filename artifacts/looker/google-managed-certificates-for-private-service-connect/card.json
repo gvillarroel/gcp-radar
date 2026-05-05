@@ -1,0 +1,165 @@
+{
+  "feature_name": "Google-managed certificates for Private Service Connect",
+  "feature_slug": "google-managed-certificates-for-private-service-connect",
+  "summary": "Uses Google-managed certificates to simplify custom domain setup for Looker (Google Cloud core) instances with Private Service Connect.",
+  "extended_definition": "Uses Google-managed certificates to simplify custom domain setup for Looker (Google Cloud core) instances with Private Service Connect.",
+  "lifecycle": {
+    "latest_feature_date": "2025-12-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Roles \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "source_id": "site-docs-reference",
+        "final_score": 165,
+        "relevance": "",
+        "evidence_snippets": [
+          "Gemini gemini in looker Conversational Analytics Agent Manager access data , gemini in looker , chat with agent , chat with explore , save agents Conversational Analytics User access data , gemini in looker , chat with agent Customer Engineer Advanced Editor access data , can create forecast , can override vis config , chat with agent , chat with explore , clear cache refresh , create custom fields , create table calculations , deploy , develop , explore , follow alerts , gemini in looker , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , save agents , save content , save dashboards , save looks , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Customer Engineer Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.",
+          "Support Advanced Editor access data , clear cache refresh , create custom fields , create table calculations , develop , explore , follow alerts , manage embed settings , manage models , manage privatelabel , manage project connections , manage project connections restricted , manage project models , manage themes , see admin , see alerts , see datagroups , see drill overlay , see logs , see lookml , see lookml dashboards , see looks , see pdts , see queries , see schedules , see sql , see system activity , see user dashboards , see users , update datagroups , use global connections NOTE : The Support Advanced Editor permission set is available only when the Tiered Support Access Labs feature is enabled.",
+          "These roles won't appear on a Looker (Google Cloud core) instance if the instance uses private connections (private services access or Private Service Connect) networking or hybrid connections networking ."
+        ]
+      },
+      {
+        "title": "\"Admin settings - OpenID Connect authentication \\_|\\_ Looker \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "source_id": "site-docs-reference",
+        "final_score": 137,
+        "relevance": "",
+        "evidence_snippets": [
+          "Additionally, Looker (Google Cloud core) customers who are using OIDC with a private connections instance, must ensure that their networks are set up to allow access to the OIDC provider.",
+          "Groups and roles You have the option for Looker to create groups that mirror your externally managed OpenID Connect groups.",
+          "The test uses the settings entered on the OpenID Connect Authentication page, even if those settings have not been saved."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 136,
+        "relevance": "",
+        "evidence_snippets": [
+          "For information about how to set up a custom domain in Looker (Google Cloud core), see the Set up a custom domain for a Looker (Google Cloud core) instance documentation page.",
+          "Organizations can create documents that describe their individual certification process, which users can connect to using this custom URL.",
+          "For an overview of how user permissions affect the domains to which users can send Looker content deliveries or alert notifications, see the following table: User type Permissions Email Domain Allowlist for Scheduled Content contains the domain friendly domain.org Email Domain Allowlist for Scheduled Content contains no domains Non-embed schedule look emails only Can email content deliveries to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries to any email address schedule look emails and create alerts Can email content deliveries and alert notifications to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries and alert notifications to any email address schedule external look emails only Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Signed embed schedule look emails only Can email content deliveries to an email address with the friendly domain.org domain Cannot email any Looker content schedule look emails and create alerts Can email content deliveries and alert notifications to an email address with the friendly domain.org domain Cannot email any Looker content or alert notifications schedule external look emails Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Embedded Looker content is accessed through a dedicated embed user account, not by individual user accounts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "accounts.google.com",
+      "domain.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-roles",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-openid-connect",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

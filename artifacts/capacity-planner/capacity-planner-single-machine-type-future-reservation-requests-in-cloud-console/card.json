@@ -1,0 +1,137 @@
+{
+  "feature_name": "Capacity Planner single-machine-type future reservation requests in Cloud Console",
+  "feature_slug": "capacity-planner-single-machine-type-future-reservation-requests-in-cloud-console",
+  "summary": "Capacity Planner preview enables creating future reservation requests in the Google Cloud console for a single VM machine type.",
+  "extended_definition": "Capacity Planner in Google Cloud allows users to create future reservation requests from the Cloud Console by selecting a Compute Engine resource with usage data, then entering request details (name, name prefix, auto-delete option, instance count, and share type) and creating draft requests before submitting. The documented flow supports requests for one or more machine types and requires specific access (for example, compute.futureReservations.create on the owner project and the Compute Future Reservation User role to create requests). Evidence for a strict single-machine-type-only workflow is weak in these pages; they describe future reservation requests generally, including single or multiple machine types.",
+  "lifecycle": {
+    "latest_feature_date": "2024-12-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+      "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create future reservation requests \\_|\\_ Capacity Planner \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "source_id": "site-docs-root",
+        "final_score": 69,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to create future reservation requests: To create future reservation requests: compute.futureReservations.create on the owner project To let Compute Engine auto-create reservations: compute.reservations.create on the owner project To view the forecasted usage of your instances or GPUs: capacityplanner.forecasts.list on the project, folder, or organization To view the actual usage of your instances or GPUs: capacityplanner.usageHistories.list on the project, folder, or organization To summarize the actual usage of your instances or GPUs: capacityplanner.usageHistories.summarize on the project, folder, or organization You might also be able to get these permissions with custom roles or other predefined roles .",
+          "Create future reservation requests After you select a Compute Engine resource and its usage data in the previous section using the Google Cloud console, you can create future reservation requests for one or more machine types by completing the following steps: Specify the request name, name prefix, and auto-delete option Specify the number of instances to reserve Specify the share type Create draft requests and submit them Specify the request name, name prefix, and auto-delete option If you're creating multiple future reservation requests at once by generating gcloud CLI commands, then the following properties will have matching values across all requests: Auto-delete option Name prefix Reservation period You can optionally customize these values for individual requests by editing the generated gcloud CLI commands.",
+          "Required roles To get the permissions that you need to create future reservation requests, ask your administrator to grant you the following IAM roles: To access and view Capacity Planner: Capacity Planner Viewer ( roles/capacityplanner.viewer ) on the project, folder, or organization To create future reservation requests: Compute Future Reservation User ( roles/compute.futureReservationUser ) on the owner project For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "View usage and forecast data \\_|\\_ Capacity Planner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/capacity-planner/docs/view-data",
+        "source_id": "site-docs-root",
+        "final_score": 53,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also view your reservations, including current on-demand reservations as well as past and current future reservation requests, of compute resources.",
+          "You can only view reservations and future reservation requests when you do both of the following: You view usage and forecast data for instances or GPUs.",
+          "In the Reservations by CPU platform section, the existing reservations and future reservation requests grouped by CPU platform."
+        ]
+      },
+      {
+        "title": "\"Support levels for permissions in custom roles \\_|\\_ Identity and Access\\",
+        "url": "https://docs.cloud.google.com/iam/docs/custom-roles-permissions-support",
+        "source_id": "site-iam-reference",
+        "final_score": 50,
+        "relevance": "",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "These official Capacity Planner pages document the Cloud Console creation workflow, required permissions/roles, and that reservations and future reservation requests are viewable together when usage/forecast data is being viewed."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "capacityplanner.forecasts.list",
+      "capacityplanner.usageHistories.list",
+      "capacityplanner.usageHistories.summarize",
+      "capacityplanner.viewer",
+      "compute.futureReservations.create",
+      "compute.futureReservationUser",
+      "compute.reservations.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/capacityplanner.viewer",
+      "roles/compute.futureReservationUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/capacity-planner/docs/choose-request-method",
+        "https://docs.cloud.google.com/capacity-planner/docs/view-data"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.172Z",
+  "source_step08_card": "data/step-08/current/products/capacity-planner/card.json",
+  "product_name": "Capacity Planner",
+  "product_slug": "capacity-planner"
+}

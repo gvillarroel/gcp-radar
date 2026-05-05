@@ -1,0 +1,107 @@
+{
+  "feature_name": "Cloud Shell in Google Cloud documentation",
+  "feature_slug": "cloud-shell-in-google-cloud-documentation",
+  "summary": "Cloud Shell can be launched directly within Google Cloud documentation pages to run sample code in an embedded terminal.",
+  "extended_definition": "Cloud Shell can be launched directly within Google Cloud documentation pages to run sample code in an embedded terminal.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+      "https://docs.cloud.google.com/shell/docs/editor-overview",
+      "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+      "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "How Cloud Shell works \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Available tools The Cloud Shell virtual machine instance has the following pre-installed tools: Type Tool Linux shell interpreters bash sh Linux utilities Standard Debian system utilities gcloud CLI and tools App Engine SDK Google Cloud CLI including the gcloud CLI gsutil for Cloud Storage Text editors Emacs Vim Nano Build and package tools Gradle Helm Make Maven Bazel npm nvm pip uv Composer Source control tools Git Mercurial Additional tools Docker iPython MySQL client gRPC compiler TensorFlow Terraform You can install additional software packages on the virtual machine instance but the installation will not persist after the instance terminates unless you install the software in your $HOME directory or create a custom environment .",
+          "You can't pick your own region and if Cloud Shell doesn't pick the closest region, Cloud Shell tries to migrate your Cloud Shell VM to a closer region when your Cloud Shell VM isn't in use.",
+          "Warning: If you delete your $HOME directory, or if you don't access Cloud Shell for 120 days, Cloud Shell automatically deletes your $HOME directory and can't recover your files."
+        ]
+      },
+      {
+        "title": "Cloud Shell Editor directives \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+        "source_id": "site-api-reference",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Open file with text selected < walkthrough - editor - select - line filePath = \" FILE PATH \" startLine = \" START LINE \" endLine = \" END LINE \" > LINK TEXT < / walkthrough - editor - select - line > Creates a link that opens a file on the Cloud Shell disk in the editor, and selects lines of text within it.",
+          "Cloud Code cloud-code-gke-explorer Cloud Code Kubernetes Explorer > Google Kubernetes Engine section. cloud-code-k8s-explorer Cloud Code Kubernetes Explorer > Kubernetes section. cloud-code-k8s-explorer-minikube Cloud Code Kubernetes Explorer > minikube cluster (if it exists). cloud-code-logs-viewer-cluster Logs viewer > Cluster filter. cloud-code-logs-viewer-container Logs viewer > Container filter. cloud-code-logs-viewer-deployment Logs viewer > Deployment filter. cloud-code-logs-viewer-namespace Logs viewer > Namespace filter. cloud-code-logs-viewer-pod Logs viewer > Pod filter. cloud-code-logs-viewer-refresh Logs viewer > Refresh button. cloud-code-logs-viewer-stream-toggle Logs viewer > Streaming toggle. cloud-code-new-app Cloud Code quick access > New Application . cloud-code-debug-on-k8s Cloud Code quick access > Debug on Kubernetes . cloud-code-run-on-k8s Cloud Code quick access > Run on Kubernetes . cloud-code-open-welcome-page Cloud Code quick access > Open Welcome Page . cloud-code-cloud-run-deploy Cloud Code quick access > Deploy to Cloud Run . cloud-code-run-on-cloud-run-emulator Cloud Code quick access > Run on Cloud Run Emulator .",
+          "The spotlightId parameter only accepts the following values: Spotlight ID Highlighted element Activity bar activity-bar-cloud-apis The Cloud API activity bar icon. activity-bar-cloud-k8s The Cloud Kubernetes activity bar icon. activity-bar-cloud-run The Cloud Run activity bar icon. activity-bar-debug The Debug activity bar icon. activity-bar-scm The Source Control activity bar icon. activity-bar-search The Search activity bar icon."
+        ]
+      },
+      {
+        "title": "Cloud Shell Editor interface overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/shell/docs/editor-overview",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "With Cloud Shell, you can initialize repositories, diff between file states, stage, unstage, and commit changes.",
+          "Open a file in Cloud Shell Editor To open an existing file in Cloud Shell Editor from Cloud Shell, run the cloudshell command: cloudshell edit README-cloudshell.txt Upload and download files You can manage your files with the Cloud Shell Editor Explorer.",
+          "In addition to the Cloud Code menu available in the status bar of Cloud Shell, you can also access Cloud Code commands using the command palette; press Cmd / Ctrl + Shift + P or click View > Command Palette to display available commands."
+        ]
+      },
+      {
+        "title": "Launch the Cloud Shell Editor \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Cloud Shell Editor can be launched in different ways to best fit your use case.",
+          "Launch a standalone Cloud Shell Editor session The easiest way to start a Cloud Shell session and begin using Cloud Shell Editor is to directly launch a Cloud Shell Editor session with ide.cloud.google.com .",
+          "Launch from the Cloud Shell terminal From the Cloud Shell terminal (accessible by clicking Activate Cloud Shell in your Google Cloud console ), you can run the following command: cloudshell edit ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudshell.txt",
+      "ide.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/shell/docs/how-cloud-shell-works",
+        "https://docs.cloud.google.com/shell/docs/cloud-shell-tutorials/directives-cloud-shell-editor",
+        "https://docs.cloud.google.com/shell/docs/editor-overview",
+        "https://docs.cloud.google.com/shell/docs/launching-cloud-shell-editor"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-shell/card.json",
+  "product_name": "Cloud Shell",
+  "product_slug": "cloud-shell"
+}

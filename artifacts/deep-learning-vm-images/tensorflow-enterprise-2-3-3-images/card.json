@@ -1,0 +1,98 @@
+{
+  "feature_name": "TensorFlow Enterprise 2.3.3 images",
+  "feature_slug": "tensorflow-enterprise-2-3-3-images",
+  "summary": "Deep Learning VM Images provide TensorFlow Enterprise 2.3.3 environments.",
+  "extended_definition": "Deep Learning VM Images provide TensorFlow Enterprise 2.3.3 environments.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+      "https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a TensorFlow Deep Learning VM instance \\_|\\_ Deep Learning VM Images\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance",
+        "source_id": "site-docs-reference",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "To provision a Deep Learning VM instance with one or more GPUs: export IMAGE FAMILY = \"tf-ent-latest-gpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release \\ -- maintenance - policy = TERMINATE \\ -- accelerator = \"type=nvidia-tesla-v100,count=1\" \\ -- metadata = \"install-nvidia-driver=True\" Options: --image-family must be one of the following: tf-ent-latest-gpu to get the latest TensorFlow Enterprise 2 image An earlier TensorFlow or TensorFlow Enterprise image family name (see Choosing an image ) --image-project must be deeplearning-platform-release . --maintenance-policy must be TERMINATE .",
+          "Without GPUs To provision a Deep Learning VM instance without a GPU: export IMAGE FAMILY = \"tf-ent-latest-cpu\" export ZONE = \"us-west1-b\" export INSTANCE NAME = \"my-instance\" gcloud compute instances create $ INSTANCE NAME \\ -- zone =$ ZONE \\ -- image - family =$ IMAGE FAMILY \\ -- image - project = deeplearning - platform - release Options: --image-family must be one of the following: tf-ent-latest-cpu to get the latest TensorFlow Enterprise 2 image An earlier TensorFlow or TensorFlow Enterprise image family name (see Choosing an image ) --image-project must be deeplearning-platform-release .",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Create a TensorFlow Deep Learning VM instance Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Deep Learning VM framework support policy \\_|\\_ Deep Learning VM Images\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy",
+        "source_id": "site-docs-reference",
+        "final_score": 47,
+        "relevance": "",
+        "evidence_snippets": [
+          "Deep Learning VM Images provides containers and virtual machine images to simplify the configuration of your machine learning (ML) workloads.",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Resources Send feedback Deep Learning VM framework support policy Stay organized with collections Save and categorize content based on your preferences.",
+          "While Deep Learning VM regularly publishes new versions of images to address security vulnerabilities, you are responsible for tasks such as the following: Manually upgrading to the latest version."
+        ]
+      },
+      {
+        "title": "\"Introduction to Deep Learning VM \\_|\\_ Deep Learning VM Images \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "source_id": "site-docs-reference",
+        "final_score": 46,
+        "relevance": "",
+        "evidence_snippets": [
+          "Python 3.10 with the following packages: numpy scipy matplotlib pandas nltk pillow scikit-image opencv-python scikit-learn many more JupyterLab notebook environments for quick prototyping Nvidia packages with the latest Nvidia driver for GPU-enabled instances: CUDA 11. x and 12. x (the version depends on the framework) CuDNN 7. x and NCCL 2. x (the version depends on the CUDA version) Updates Deep Learning VM images are updated regularly with bug fixes and package updates.",
+          "Home Documentation Compute Compute Engine Deep Learning VM Images Guides Send feedback Introduction to Deep Learning VM Stay organized with collections Save and categorize content based on your preferences.",
+          "There are currently images supporting TensorFlow Enterprise , TensorFlow, PyTorch, and generic high-performance computing, with versions for both CPU-only and GPU-enabled workflows."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deep-learning-vm/docs/tensorflow_start_instance",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/introduction",
+        "https://docs.cloud.google.com/deep-learning-vm/docs/framework-support-policy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.097Z",
+  "source_step08_card": "data/step-08/current/products/deep-learning-vm-images/card.json",
+  "product_name": "Deep Learning VM Images",
+  "product_slug": "deep-learning-vm-images"
+}

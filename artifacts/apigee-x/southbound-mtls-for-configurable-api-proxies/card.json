@@ -1,0 +1,145 @@
+{
+  "feature_name": "Southbound mTLS for configurable API proxies",
+  "feature_slug": "southbound-mtls-for-configurable-api-proxies",
+  "summary": "Configurable API proxies support southbound mutual TLS for secure communication with backend services.",
+  "extended_definition": "Configurable API proxies support southbound mutual TLS for secure communication with backend services.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "API proxy configuration reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "source_id": "site-api-reference",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "N/A No ClientAuthEnabled If set to true , enables two-way TLS (also known as mutual TLS or mTLS) between Apigee and the remote peer - either the API client, or the target backend.",
+          "Without this EKU, mTLS connections will fail for both northbound (client to Apigee) and southbound (Apigee to backend) traffic.",
+          "This industry-wide change affects Apigee mutual TLS (mTLS) configurations in Apigee platform ."
+        ]
+      },
+      {
+        "title": "Secure an API with OAuth 2.0 \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Related topics OAuth 2.0 home OAuthV2 policy Download API proxies (which shows how to bundle an API proxy into a ZIP file like the one you downloaded) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Before you begin To complete this tutorial, you must have access to an Apigee organization where you have permission to: Create and deploy API proxies Create API products Create developer apps You must also have a properly configured environment group hostname with which you can make Apigee API proxy calls.",
+          "Home Documentation Application development Apigee Guides Send feedback Secure an API with OAuth 2.0 Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Endpoint properties reference \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference",
+        "source_id": "site-api-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported values are: gzip: always send message using gzip compression deflate: always send message using deflate compression none: always send message without any compression See also: Does Apigee support compression/de-compression with GZIP/deflate compression? api.timeout N/A Configure the timeout for individual API proxies (in milliseconds) You can configure API proxies, even those with streaming enabled, to time out after a specified time with a 504 Gateway Timeout status.",
+          "See Setting io.timeout.millis and api.timeout . supports.http11 true If this is true and the client sends a 1.1 request, the target is also sent a 1.1 request, otherwise 1.0 request is sent to the target. use.proxy true If the Apigee hybrid overrides file contains the HTTP PROXY configuration, as described in Configure forward proxying for API proxies , then use this property to manage/control which proxies should not use the proxy configuration.",
+          "If set to false , the API Proxy will skip the HTTP proxy configurations specified in the Apigee hybrid overrides file for target connections set in the proxy. use.proxy.tunneling true If this is set to true, and proxy configurations are specified Apigee hybrid overrides file as described in Configure forward proxying for API proxies , then target connections are set to use the specified tunnel."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "api.timeout",
+      "io.timeout.millis",
+      "proxy.pathsuffix",
+      "supports.http11",
+      "use.proxy",
+      "use.proxy.tunneling"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/api-proxy-configuration-reference",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/reference/endpoint-properties-reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.539Z",
+  "source_step08_card": "data/step-08/current/products/apigee-x/card.json",
+  "product_name": "Apigee X",
+  "product_slug": "apigee-x"
+}

@@ -1,0 +1,96 @@
+{
+  "feature_name": "MySQL stream start from specific binary log position",
+  "feature_slug": "mysql-stream-start-from-specific-binary-log-position",
+  "summary": "Datastream can start a MySQL source stream from a specific binary log position using the API.",
+  "extended_definition": "Datastream can start a MySQL source stream from a specific binary log position using the API.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/run_stream",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "source_id": "site-api-reference",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MysqlSourceConfig JSON representation { \"includeObjects\" : { object ( MysqlRdbms ) } , \"excludeObjects\" : { object ( MysqlRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field cdc method can be only one of the following: \"binaryLogPosition\" : { object ( BinaryLogPosition ) } , \"gtid\" : { object ( Gtid ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( MysqlRdbms ) The MySQL objects to retrieve from the source. excludeObjects object ( MysqlRdbms ) The MySQL objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "OracleSourceConfig JSON representation { \"includeObjects\" : { object ( OracleRdbms ) } , \"excludeObjects\" : { object ( OracleRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field large objects handling can be only one of the following: \"dropLargeObjects\" : { object ( DropLargeObjects ) } , \"streamLargeObjects\" : { object ( StreamLargeObjects ) } // End of list of possible types for union field large objects handling . // Union field cdc method can be only one of the following: \"logMiner\" : { object ( LogMiner ) } , \"binaryLogParser\" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( OracleRdbms ) The Oracle objects to include in the stream. excludeObjects object ( OracleRdbms ) The Oracle objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "The CDC method to use for the stream. cdc method can be only one of the following: binaryLogPosition object ( BinaryLogPosition ) Use Binary log position based replication. gtid object ( Gtid ) Use GTID based replication."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "source_id": "site-api-reference",
+        "final_score": 268,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "MysqlSourceConfig JSON representation { \"includeObjects\" : { object ( MysqlRdbms ) } , \"excludeObjects\" : { object ( MysqlRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field cdc method can be only one of the following: \"binaryLogPosition\" : { object ( BinaryLogPosition ) } , \"gtid\" : { object ( Gtid ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( MysqlRdbms ) The MySQL objects to retrieve from the source. excludeObjects object ( MysqlRdbms ) The MySQL objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "OracleSourceConfig JSON representation { \"includeObjects\" : { object ( OracleRdbms ) } , \"excludeObjects\" : { object ( OracleRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field large objects handling can be only one of the following: \"dropLargeObjects\" : { object ( DropLargeObjects ) } , \"streamLargeObjects\" : { object ( StreamLargeObjects ) } // End of list of possible types for union field large objects handling . // Union field cdc method can be only one of the following: \"logMiner\" : { object ( LogMiner ) } , \"binaryLogParser\" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( OracleRdbms ) The Oracle objects to include in the stream. excludeObjects object ( OracleRdbms ) The Oracle objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "The CDC method to use for the stream. cdc method can be only one of the following: binaryLogPosition object ( BinaryLogPosition ) Use Binary log position based replication. gtid object ( Gtid ) Use GTID based replication."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/run_stream",
+        "source_id": "site-api-reference",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SpecificStartPosition JSON representation { // Union field position can be only one of the following: \"mysqlLogPosition\" : { object ( MysqlLogPosition ) } , \"oracleScnPosition\" : { object ( OracleScnPosition ) } , \"sqlServerLsnPosition\" : { object ( SqlServerLsnPosition ) } , \"mysqlGtidPosition\" : { object ( MysqlGtidPosition ) } , \"mongodbChangeStreamPosition\" : { object ( MongodbChangeStreamPosition ) } // End of list of possible types for union field position . } Fields Union field position . position can be only one of the following: mysqlLogPosition object ( MysqlLogPosition ) MySQL specific log position to start replicating from. oracleScnPosition object ( OracleScnPosition ) Oracle SCN to start replicating from. sqlServerLsnPosition object ( SqlServerLsnPosition ) SqlServer LSN to start replicating from. mysqlGtidPosition object ( MysqlGtidPosition ) MySQL GTID set to start replicating from. mongodbChangeStreamPosition object ( MongodbChangeStreamPosition ) MongoDB change stream position to start replicating from.",
+          "Log sequence number (LSN) from where Logs will be read MysqlGtidPosition JSON representation { \"gtidSet\" : string } Fields gtidSet string Required.",
+          "Resume replication from the next available position in the source. specificStartPosition object ( SpecificStartPosition ) Optional."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.datastream.v1 (1.87.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-datastream/latest/com.google.cloud.datastream.v1",
+        "source_id": "site-java-reference",
+        "final_score": 262,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Specific Start Position CDC strategy to start replicating from a specific position in the source. com. google. cloud. datastream. v1.",
+          "Builder CDC strategy to start replicating from a specific position in the source. com. google. cloud. datastream. v1.",
+          "Next Available Start Position CDC strategy to resume replication from the next available position in the source. com. google. cloud. datastream. v1."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastream.v1"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.597Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream"
+}

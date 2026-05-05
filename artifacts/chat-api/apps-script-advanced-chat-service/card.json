@@ -1,0 +1,135 @@
+{
+  "feature_name": "Apps Script Advanced Chat Service",
+  "feature_slug": "apps-script-advanced-chat-service",
+  "summary": "Apps Script can call the Chat API through the Advanced Chat Service.",
+  "extended_definition": "Apps Script can call the Chat API through the Advanced Chat Service.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+      "https://developers.google.com/workspace/chat/api/reference",
+      "https://developers.google.com/workspace/chat/quickstart/apps-script-app"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script quickstart \\_|\\_ Google Chat \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Replace the contents of the script editor with the following code: chat/quickstart/Code.gs View on GitHub / This quickstart sample shows how to list spaces with user credential It relies on the OAuth2 scope 'https://www.googleapis.com/auth/chat.spaces.readonly' referenced in the manifest file (appsscript.json). / function listSpaces () { // Initialize request argument(s) // Filter spaces by space type (SPACE or GROUP CHAT or DIRECT MESSAGE) const filter = 'space type = \"SPACE\"' ; // Iterate through the response pages using page tokens let responsePage ; let pageToken = null ; do { // Request response pages responsePage = Chat .",
+          "Click Editor code , select the file appscript.json , and replace the contents with the following code: chat/quickstart/appsscript.json View on GitHub { \"timeZone\" : \"America/New York\" , \"exceptionLogging\" : \"STACKDRIVER\" , \"runtimeVersion\" : \"V8\" , \"oauthScopes\" : [ \"https://www.googleapis.com/auth/chat.spaces.readonly\" ], \"chat\" : {}, \"dependencies\" : { \"enabledAdvancedServices\" : [ { \"userSymbol\" : \"Chat\" , \"version\" : \"v1\" , \"serviceId\" : \"chat\" } ] } } Run the sample In the Apps Script editor, click Run .",
+          "In Apps Script, Google Workspace quickstarts use Advanced Google services to call Google Workspace APIs and handle some details of the authentication and authorization flow."
+        ]
+      },
+      {
+        "title": "Build a Google Chat app with Google Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "source_id": "site-docs-root",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key actions include: setting up a Google Cloud environment and enabling the Chat API; configuring the OAuth consent screen; creating an Apps Script project from a template and linking it to the Cloud project; publishing the app with a deployment ID; and testing the app by sending a direct message.",
+          "The following diagram shows the architecture and messaging pattern: In the preceding diagram, a user interacting with an Apps Script Chat app has the following flow of information: A user sends a message to a Chat app, either in a direct message or in a Chat space.",
+          "Home Google Workspace Google Chat Guides Send feedback Build a Google Chat app with Google Apps Script Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Google Chat API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/chat/api/reference",
+        "source_id": "site-api-reference",
+        "final_score": 118,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Developers are encouraged to use the provided client libraries for Python, Java, Node.js, or the Advanced Chat service for Google Apps Script.",
+          "If you're coding with Google Apps Script, use the Advanced Chat service instead of installing a client library.",
+          "Developers can use Cloud Client Libraries, or the Advanced Chat service with Google Apps Script."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appscript.json",
+      "appsscript.json",
+      "chat.spaces.readonly",
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "https://developers.google.com/workspace/chat/api/reference"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "https://developers.google.com/workspace/chat/api/reference"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "https://developers.google.com/workspace/chat/api/reference"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "https://developers.google.com/workspace/chat/api/reference"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "https://developers.google.com/workspace/chat/api/reference"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/workspace/chat/api/guides/quickstart/apps-script",
+        "https://developers.google.com/workspace/chat/quickstart/apps-script-app",
+        "https://developers.google.com/workspace/chat/api/reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.385Z",
+  "source_step08_card": "data/step-08/current/products/chat-api/card.json",
+  "product_name": "Chat API",
+  "product_slug": "chat-api"
+}

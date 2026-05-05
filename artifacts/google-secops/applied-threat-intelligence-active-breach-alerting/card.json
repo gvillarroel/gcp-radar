@@ -1,0 +1,134 @@
+{
+  "feature_name": "Applied Threat Intelligence active breach alerting",
+  "feature_slug": "applied-threat-intelligence-active-breach-alerting",
+  "summary": "Mandiant incident response intelligence can alert on potential active breaches.",
+  "extended_definition": "Mandiant incident response intelligence can alert on potential active breaches.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+      "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Applied Threat Intelligence priority overview \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Applied Threat Intelligence priority overview Supported in: Google secops SIEM Applied Threat Intelligence (ATI) alerts in Google Security Operations are IoC matches that have been contextualized by YARA-L rules using curated detection.",
+          "The following priority models are available: Active breach priority The Active breach model prioritizes indicators Mandiant observed in active or past compromises, where the GTI Verdict is Malicious and GTI Severity is High .",
+          "Medium priority The Medium model prioritizes indicators identified by Google Threat Intelligence with a Malicious GTI Verdict and High GTI Severity, even if they weren't observed in Mandiant investigations."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence curated detections overview \\_|\\_ Google Security\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "source_id": "site-docs-reference",
+        "final_score": 225,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curated detection rule sets The Curated Prioritization category includes the following rule sets that support the Applied Threat Intelligence feature in Google SecOps: Active Breach Priority Network Indicators : Detects network-related Indicators of Compromise (IoCs) in event data using Mandiant Threat Intelligence and prioritizes IoCs with the 'Active breach' label.",
+          "These fields, combined with prioritization features from Mandiant Threat Intelligence, help determine priority levels, such as Active breach, High, or Medium: network.direction security result.[]action event count (active breach IP address only) For IP address indicators, the network.direction is required.",
+          "Active Breach Priority Host Indicators : Detects host-related IoCs in event data using Mandiant Threat Intelligence and prioritizes them with the 'Active breach' label."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence Fusion Feed overview \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "source_id": "site-docs-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Condition section The condition section ensures that e1 , context graph , and matched conditions exist and or match the specified condition. condition: // Ensure $e1, $context graph and $matched conditions conditions are met. $e1 AND $context graph AND $matched conditions = 1 Complete YARA-L rule At this point the rule is ready for use and should look like the following: rule fusion feed example principal process file md5 { meta: rule name = \"File Hash - Applied Threat Intelligence\" description = \"Matches file hashes against the Applied Threat Intelligence Fusion Feed.\" events: // Filter graph $context graph.graph.metadata.product name = \"MANDIANT FUSION IOC\" $context graph.graph.metadata.vendor name = \"MANDIANT FUSION IOC\" $context graph.graph.metadata.entity type = \"FILE\" $context graph.graph.metadata.source type = \"GLOBAL CONTEXT\" // Do join $ioc = $context graph.graph.entity.file.md5 $ioc = $e1.principal.process.file.md5 match: $ioc over 1h outcome: // Extract the Mandiant Automated Intel confidence score of maliciousness $confidence score = max(if($context graph.graph.metadata.threat.verdict info.source provider = \"Mandiant Automated Intel\", $context graph.graph.metadata.threat.verdict info.confidence score, 0)) // Extract the status of the indicator as seen in a breached environment $breached = max(if($context graph.graph.metadata.threat.verdict info.pwn = true, 1, 0)) // Intermediary outcome variable to combine conditions of intelligence extracted in the previous outcome variables. // Return 1 if conditions are met, otherwise return 0. $matched conditions = if($confidence score >= 80 AND $breached = 1, 1, 0) condition: // Ensure $e1, $context graph and $matched conditions conditions are met. $e1 AND $context graph AND $matched conditions = 1 } ATI Fusion Feed context entity fields You can use many fields from the ATI Fusion Feed in rules.",
+          "This can all be done in the outcome section of the rule. outcome: // Extract the Mandiant Automated Intel confidence score of maliciousness $confidence score = max(if($context graph.graph.metadata.threat.verdict info.source provider = \"Mandiant Automated Intel\", $context graph.graph.metadata.threat.verdict info.confidence score, 0)) // Extract the status of the indicator as seen in a breached environment $breached = max(if($context graph.graph.metadata.threat.verdict info.pwn = true, 1, 0)) // Intermediary outcome variable to combine conditions of intelligence extracted in the previous outcome variables. // Return 1 if conditions are met, otherwise return 0. $matched conditions = if($confidence score >= 80 AND $breached = 1, 1, 0) In the outcome section of the YARA-L rule, the confidence score is extracted using an if statement wrapped in a max function.",
+          "Applied Threat Intelligence Fusion Feed overview Supported in: Google secops SIEM The Applied Threat Intelligence (ATI) Fusion Feed is a collection of Indicators of Compromise (IoCs), including hashes, IPs, domains, and URLs, that are associated with known threat actors, malware strains, active campaigns, and finished intelligence reporting."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e1.principal.process.file.md5",
+      "graph.graph.entity.file.md5",
+      "graph.graph.metadata.entity",
+      "graph.graph.metadata.product",
+      "graph.graph.metadata.source",
+      "graph.graph.metadata.threat.verdict",
+      "graph.graph.metadata.vendor",
+      "info.confidence",
+      "info.pwn",
+      "info.source",
+      "network.direction"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-prioritization",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-curated-detections",
+        "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

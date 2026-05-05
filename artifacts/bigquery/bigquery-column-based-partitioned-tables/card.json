@@ -1,0 +1,117 @@
+{
+  "feature_name": "BigQuery column-based partitioned tables",
+  "feature_slug": "bigquery-column-based-partitioned-tables",
+  "summary": "BigQuery supports tables partitioned on a DATE or TIMESTAMP column.",
+  "extended_definition": "BigQuery supports tables partitioned on a DATE or TIMESTAMP column.",
+  "lifecycle": {
+    "latest_feature_date": "2018-10-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+      "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Column-based time partitioning \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 44,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function createTablePartitioned () { // Creates a new partitioned table named \"my table\" in \"my dataset\". / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = \"my dataset\"; // const tableId = \"my table\"; const schema = 'Name:string, Post Abbr:string, Date:date' ; // For all options, see https://cloud.google.com/bigquery/docs/reference/v2/tables#resource const options = { schema : schema , location : 'US' , timePartitioning : { type : 'DAY' , expirationMs : '7776000000' , field : ' date ' , }, }; // Create a new table in the dataset const [ table ] = await bigquery . dataset ( datasetId ) . createTable ( tableId , options ); console . log ( Table ${ table . id } created with partitioning: ); console . log ( table . metadata . timePartitioning ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "DAY ) . setField ( \"date\" ) // name of column to use for partitioning . setExpirationMs ( 7776000000L ) // 90 days . build (); StandardTableDefinition tableDefinition = StandardTableDefinition . newBuilder () . setSchema ( schema ) . setTimePartitioning ( partitioning ) . build (); TableInfo tableInfo = TableInfo . newBuilder ( tableId , tableDefinition ). build (); bigquery . create ( tableInfo ); System . out . println ( \"Partitioned table created successfully\" ); } catch ( BigQueryException e ) { System . out . println ( \"Partitioned table was not created. \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "DAY , field = \"date\" , # name of column to use for partitioning expiration ms = 1000 60 60 24 90 , ) # 90 days table = client . create table ( table ) print ( f \"Created table { table . project } . { table . dataset id } . { table . table id } , \" f \"partitioned on column { table . time partitioning . field } .\" ) Terraform To learn how to apply or remove a Terraform configuration, see Basic Terraform commands ."
+        ]
+      },
+      {
+        "title": "Introduction to partitioned tables \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "source_id": "site-docs-root",
+        "final_score": 40,
+        "relevance": "",
+        "evidence_snippets": [
+          "Time-unit column-partitioned tables are subject to the following limitations: The partitioning column must be either a scalar DATE , TIMESTAMP , or DATETIME column.",
+          "Quotas and limits for jobs against partitioned tables Quotas and limits also apply to the different types of jobs you can run against partitioned tables, including: Loading data (load jobs) Exporting data (extract jobs) Querying data (query jobs) Copying tables (copy jobs) Number of partition modifications for column-partitioned tables quota errors BigQuery returns this error when your column-partitioned table reaches the quota of the number of partition modifications permitted per day.",
+          "Table pricing When you create and use partitioned tables in BigQuery, your charges are based on how much data is stored in the partitions and on the queries you run against the data: For information on storage pricing, see Storage pricing ."
+        ]
+      },
+      {
+        "title": "\"Introduction to BigLake external tables \\_|\\_ BigQuery \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/biglake-intro",
+        "source_id": "site-docs-reference-5",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "To find information about metadata refresh jobs, query the INFORMATION SCHEMA.JOBS view , as shown in the following example: SELECT FROM region-us.INFORMATION SCHEMA.JOBS BY PROJECT WHERE job id LIKE '%metadata cache refresh%' AND creation time > TIMESTAMP SUB ( CURRENT TIMESTAMP (), INTERVAL 6 HOUR ) ORDER BY start time DESC LIMIT 10 ; For Cloud Storage BigLake tables that are based on Parquet files, table statistics are collected during the metadata cache refresh and used to improve query plans.",
+          "Supported data stores You can use BigLake tables with the following data stores: Amazon S3 by using BigQuery Omni Blob Storage by using BigQuery Omni Cloud Storage Temporary table support BigLake tables based on Cloud Storage can be temporary or permanent.",
+          "The BigQuery Storage API enforces row- and column-level governance policies on all data access to BigLake tables, including through connectors."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "us.INFORMATION"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-table-partitioned",
+        "https://docs.cloud.google.com/bigquery/docs/partitioned-tables",
+        "https://docs.cloud.google.com/bigquery/docs/biglake-intro"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

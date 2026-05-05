@@ -1,0 +1,108 @@
+{
+  "feature_name": "Cluster storage quota recommender",
+  "feature_slug": "cluster-storage-quota-recommender",
+  "summary": "The Cluster storage quota recommender helps identify opportunities to increase AlloyDB cluster storage quota.",
+  "extended_definition": "The Cluster storage quota recommender helps identify opportunities to increase AlloyDB cluster storage quota.",
+  "lifecycle": {
+    "latest_feature_date": "2025-04-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+      "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+      "https://docs.cloud.google.com/alloydb/docs/cluster-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google Cloud Ready - AlloyDB Partners \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 108,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Vaultree and AlloyDB: the world's first Fully Homomorphic and Searchable Cloud Encryption Solution Vaultree launches support for Google's AlloyDB Partner Advantage page Direct link Data integration, optimization, and migration Airbyte Solution Airbyte Cloud Category Data integration and migration Description Airbyte is an open-source data integration engine that helps you consolidate your data in your data warehouses, lakes, and databases.",
+          "Partner references Scaling Postgres AI Workloads with AlloyDB Omni on Silk Platform AlloyDB Omni and Silk Partner Advantage page Direct link Business intelligence and advanced analytics BoostKpi Solution BoostKPI Category Business intelligence and advanced analytics Description Use BoostKPI to identify and receive alerts about granular anomalies in your business data stored in BigQuery, as well as the root causes of these anomalies.",
+          "Partner references Configuring AlloyDB Omni Cloud SQL for PostgreSQL and AlloyDB for PostgreSQL Integration Partner Advantage page Direct link Hitachi Solution Hitachi Virtual Storage Platform One Block 20 Category Application ISV Description Hitachi Virtual Storage Platform One Block 20 offers three models with the same capacity, featuring 72 NVMe flash drives and support for Fibre Channel, iSCSI, and NVMe TCP connectivity."
+        ]
+      },
+      {
+        "title": "\"Advanced query insights features overview \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 89,
+        "relevance": "",
+        "evidence_snippets": [
+          "Storing data for primary instances consumes about 180 GB and might increase based on the number of read pool nodes present in the cluster.",
+          "Benefits of advanced query insights features The following advanced query insights features are available to help you detect and fix query performance problems: Prebuilt dashboards that help you identify query performance problems early and let you identify, diagnose, and resolve issues in a single page on the Google Cloud console.",
+          "To help you proactively identify and troubleshoot root causes of query performance issues, advanced query insights features let you do the following: Perform ad hoc analysis to diagnose difficult problems using near real-time query stats and correlation analysis across multiple dimensions like users, hosts, and databases."
+        ]
+      },
+      {
+        "title": "\"View cluster and instance settings \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cluster-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 86,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Primary cluster Primary instance Secondary cluster Secondary instance Read pool instance Settings Modifiable after creation Values Cluster ID N Enter a cluster ID to uniquely identify your cluster.",
+          "Private networking: Private services access or Private Service Connect N AlloyDB supports private IP through one of the following: Private services access : To create a private services access-enabled AlloyDB cluster, select Network: Private IP in the Google Cloud console.",
+          "Private networking: Private services access settings N If you create a private services access-enabled AlloyDB cluster, then you must also configure the following: Network : Select the VPC network that is already configured with private services access."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "projects.locations.clusters"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-settings"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-settings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/cluster-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

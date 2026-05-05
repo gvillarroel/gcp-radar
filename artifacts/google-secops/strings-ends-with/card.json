@@ -1,0 +1,164 @@
+{
+  "feature_name": "strings.ends_with",
+  "feature_slug": "strings-ends-with",
+  "summary": "A YARA-L function that returns true when a string ends with a non-empty suffix.",
+  "extended_definition": "A YARA-L function that returns true when a string ends with a non-empty suffix.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 337,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example: returns true Returns true when the suffix is found at end-of-value. strings.ends with(target.hostname, \"com\") = true Example: returns false Returns false when the suffix isn't at end-of-value. strings.ends with(target.hostname, \"com\") = false Example: returns false when identical Returns false when suffix and value are identical. target.hostname != \"example.com\" strings.ends with(\"str\", \"str\") = true Example: returns false when suffix empty Returns false when suffix is an empty string. target.hostname != \"example.com\" strings.ends with(\"str\", \"\") = false Example: returns false when value empty Returns false when value is an empty string. target.hostname != \"example.com\" strings.ends with(\"\", \"str\") = false Example: returns false when suffix and value are empty Returns false when suffix and value are empty strings. target.hostname != \"example.com\" strings.ends with(\"\", \"\") = false strings.extract domain Supported in: Rules Search strings.extract domain(url string) Description Extracts the domain from a string.",
+          "Param data types STRING , STRING Return type BOOL Code samples Example 1 This example returns true because the string has a substring \"is\". strings.contains(\"thisisastring\", \"is\") = true Example 2 This example returns false because the string does not have substring \"that\". strings.contains(\"thisisastring\", \"that\") = false strings.count substrings Supported in: Rules Search strings.count substrings(string to search in, substring to count) Description When given a string and a substring, returns an int64 of the count of non-overlapping occurrences of the substring within the string.",
+          "Example: split string with default The following example splits the string using the default delimiter, which is a comma. strings.split(\"a,b,c,d\") = [\"a\", \"b\", \"c\", \"d\"] Example: split string with colon The following example splits the string at each colon ( : ). strings.split(\"a:b:c:d\", \":\") = [\"a\", \"b\", \"c\", \"d\"] Example: missing delimiter The following example is missing the delimiter in the string value. strings.split(\"a,b,c,d\", \":\") = [\"a,b,c,d\"] Example: empty delimiter The following example has an empty delimiter string. strings.split(\"abc\", \"\") = [\"a\", \"b\", \"c\"] strings.to lower Supported in: Rules Search strings.to lower(stringText) Description This function takes an input string and returns a string after changing all characters to lowercase Param data types STRING Return type STRING Code samples Example 1 The following example returns true . \"test@google.com\" = strings.to lower($e.network.email.to) strings.to upper Supported in: Rules Search strings.to upper(string val) Description Returns the original string with all alphabetic characters in uppercase."
+        ]
+      },
+      {
+        "title": "\"Applied Threat Intelligence Fusion Feed overview \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/ati-fusion-feed",
+        "source_id": "site-docs-reference",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "Condition section The condition section ensures that e1 , context graph , and matched conditions exist and or match the specified condition. condition: // Ensure $e1, $context graph and $matched conditions conditions are met. $e1 AND $context graph AND $matched conditions = 1 Complete YARA-L rule At this point the rule is ready for use and should look like the following: rule fusion feed example principal process file md5 { meta: rule name = \"File Hash - Applied Threat Intelligence\" description = \"Matches file hashes against the Applied Threat Intelligence Fusion Feed.\" events: // Filter graph $context graph.graph.metadata.product name = \"MANDIANT FUSION IOC\" $context graph.graph.metadata.vendor name = \"MANDIANT FUSION IOC\" $context graph.graph.metadata.entity type = \"FILE\" $context graph.graph.metadata.source type = \"GLOBAL CONTEXT\" // Do join $ioc = $context graph.graph.entity.file.md5 $ioc = $e1.principal.process.file.md5 match: $ioc over 1h outcome: // Extract the Mandiant Automated Intel confidence score of maliciousness $confidence score = max(if($context graph.graph.metadata.threat.verdict info.source provider = \"Mandiant Automated Intel\", $context graph.graph.metadata.threat.verdict info.confidence score, 0)) // Extract the status of the indicator as seen in a breached environment $breached = max(if($context graph.graph.metadata.threat.verdict info.pwn = true, 1, 0)) // Intermediary outcome variable to combine conditions of intelligence extracted in the previous outcome variables. // Return 1 if conditions are met, otherwise return 0. $matched conditions = if($confidence score >= 80 AND $breached = 1, 1, 0) condition: // Ensure $e1, $context graph and $matched conditions conditions are met. $e1 AND $context graph AND $matched conditions = 1 } ATI Fusion Feed context entity fields You can use many fields from the ATI Fusion Feed in rules.",
+          "This can all be done in the outcome section of the rule. outcome: // Extract the Mandiant Automated Intel confidence score of maliciousness $confidence score = max(if($context graph.graph.metadata.threat.verdict info.source provider = \"Mandiant Automated Intel\", $context graph.graph.metadata.threat.verdict info.confidence score, 0)) // Extract the status of the indicator as seen in a breached environment $breached = max(if($context graph.graph.metadata.threat.verdict info.pwn = true, 1, 0)) // Intermediary outcome variable to combine conditions of intelligence extracted in the previous outcome variables. // Return 1 if conditions are met, otherwise return 0. $matched conditions = if($confidence score >= 80 AND $breached = 1, 1, 0) In the outcome section of the YARA-L rule, the confidence score is extracted using an if statement wrapped in a max function.",
+          "The following example shows the use of flexible joins for multiple UDM fields in the event section: events: // Filter graph $mandiant.graph.metadata.product name = \"MANDIANT FUSION IOC\" $mandiant.graph.metadata.vendor name = \"MANDIANT FUSION IOC\" $mandiant.graph.metadata.entity type = \"FILE\" $mandiant.graph.metadata.source type = \"GLOBAL CONTEXT\" $mandiant.graph.entity.file.md5 = strings.coalesce($e.target.process.file.md5, $e.target.process.file.md5) OR $mandiant.graph.entity.file.md5 = strings.coalesce($e.principal.process.file.md5, $e.principal.process.file.md5) Need more help?"
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 77,
+        "relevance": "",
+        "evidence_snippets": [
+          "The results are slightly different when searching in UDM Fields versus Values : Searching for a text string in UDM field names returns an exact match found at any location in the name.",
+          "Supported fields You can download the following fields to a CSV file from the platform: user hostname process name event type timestamp raw log (valid only when raw logs are enabled for the customer) All fields starting with udm.additional Valid field types You can download the following field types to a CSV file: double float int32 uint32 int64 uint64 bool string enum bytes google.protobuf.Timestamp google.protobuf.Duration Unsupported fields Fields that start with \"udm\" (not udm.additional) and meet either of the following conditions cannot be downloaded to CSV: The nesting of the field is more than 10 deep in udm proto.",
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "arrays.index",
+      "e.network.email.to",
+      "e.principal.process.file.md5",
+      "e.target.process.file.md5",
+      "e1.principal.process.file.md5",
+      "example.com",
+      "fields.value",
+      "file.full",
+      "graph.graph.entity.file.md5",
+      "graph.graph.metadata.entity",
+      "graph.graph.metadata.product",
+      "graph.graph.metadata.source",
+      "graph.graph.metadata.threat.verdict",
+      "graph.graph.metadata.vendor",
+      "info.confidence",
+      "info.pwn",
+      "info.source",
+      "labels.value",
+      "mandiant.graph.entity.file.md5",
+      "mandiant.graph.metadata.entity",
+      "mandiant.graph.metadata.product",
+      "mandiant.graph.metadata.source",
+      "mandiant.graph.metadata.vendor",
+      "metadata.description",
+      "metadata.product",
+      "network.http.user",
+      "network.parent",
+      "network.session",
+      "principal.asset",
+      "principal.process.command",
+      "principal.process.file.full",
+      "principal.process.product",
+      "principal.registry.registry",
+      "principal.resource.id",
+      "principal.url",
+      "registry.registry",
+      "resource.id",
+      "result.description",
+      "result.detection",
+      "result.rule",
+      "result.summary",
+      "src.labels.value",
+      "strings.coalesce",
+      "strings.contains",
+      "strings.count",
+      "strings.ends",
+      "strings.ends_with",
+      "strings.extract",
+      "strings.split",
+      "strings.to",
+      "target.hostname",
+      "target.process.pid",
+      "udm.additional"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

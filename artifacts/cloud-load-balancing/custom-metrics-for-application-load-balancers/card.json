@@ -1,0 +1,116 @@
+{
+  "feature_name": "Custom metrics for Application Load Balancers",
+  "feature_slug": "custom-metrics-for-application-load-balancers",
+  "summary": "Application Load Balancers can distribute traffic based on user-defined custom metrics instead of standard utilization or rate metrics; Application Load Balancers can distribute traffic based on user-defined custom metrics instead of standard utilization or rate metrics.",
+  "extended_definition": "Application Load Balancers can distribute traffic based on user-defined custom metrics instead of standard utilization or rate metrics; Application Load Balancers can distribute traffic based on user-defined custom metrics instead of standard utilization or rate metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+      "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+      "https://docs.cloud.google.com/load-balancing/docs/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Custom metrics for Application Load Balancers \\_|\\_ Cloud Load Balancing\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 299,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Supported load balancers and backends Custom metrics are supported for the following Application Load Balancers: Global external Application Load Balancer Regional external Application Load Balancer Cross-region internal Application Load Balancer Regional internal Application Load Balancer Custom metrics are supported with the following backend types: Managed instance groups Zonal NEGs (with GCE VM IP PORT endpoints) Hybrid connectivity NEGs How custom metrics work To enable your load balancer to make traffic distribution decisions based on custom metrics, you must first determine what the most relevant metrics are for your specific application.",
+          "Custom metrics let you configure your load balancer's traffic distribution behavior to be based on metrics specific to your application or infrastructure requirements, rather than Google Cloud's standard utilization or rate-based metrics.",
+          "Home Documentation Networking Load Balancing Guides Send feedback Custom metrics for Application Load Balancers Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Backend services overview \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "source_id": "site-docs-reference-required-3",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Table : Balancing modes for Application Load Balancer and Cloud Service Mesh backends using the long traffic duration setting Supported backend Balancing mode CONNECTION RATE IN FLIGHT UTILIZATION CUSTOM METRICS Instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs Balancing modes for Proxy Network Load Balancers Available balancing modes for proxy Network Load Balancer backends depend on the type of supported backend.",
+          "Advanced traffic management features To learn about advanced traffic management features that are configured on the backend services and URL maps associated with load balancers, see the following: Traffic management overview for internal Application Load Balancers Traffic management overview for global external Application Load Balancers Traffic management overview for regional external Application Load Balancers API and gcloud reference For more information about the properties of the backend service resource, see the following references: Global backend service API resource Regional backend service API resource gcloud compute backend-services page, for both global and regional backend services What's next For related documentation and information about how backend services are used in load balancing, review the following: Create custom headers Create an external Application Load Balancer External Application Load Balancer overview Enable connection draining Encryption in transit in Google Cloud For related videos: How to configure backend services for global external Application Load Balancers Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Custom metrics target capacity parameters for Application Load Balancer backends with a long traffic duration setting Application Load Balancer backends with a long traffic duration setting can use the CUSTOM METRICS balancing mode with one of the following target capacity parameters or combinations of parameters: Table: CUSTOM METRICS balancing mode target capacity parameters and parameter combinations for Application Load Balancer backends with a long traffic duration setting ( Preview ) Target capacity parameter or parameter combination Supported backend Zonal (managed or unmanaged) instance groups Regional managed instance groups Zonal NEGs with GCE VM IP PORT endpoints Zonal hybrid connectivity NEGs backends[].customMetrics[].maxUtilization Target custom metric utilization per backend zone max-in-flight-requests Target number of in-progress HTTP requests per backend zone max-in-flight-requests and backends[].customMetrics[].maxUtilization Target is the first to be reached in the backend zone: Zone's target custom metric utilization Zone's target number of in-progress HTTP requests max-in-flight-requests-per-instance Target number of in-progress HTTP requests per VM instance."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud Load Balancing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/load-balancing/docs/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Quota name: REGIONAL EXTERNAL MANAGED FORWARDING RULES PER REGION PER NETWORK Available metrics: compute.googleapis.com/quota/regional external managed forwarding rules per region per vpc network/limit compute.googleapis.com/quota/regional external managed forwarding rules per region per vpc network/usage compute.googleapis.com/quota/regional external managed forwarding rules per region per vpc network/exceeded Internal Application Load Balancers and Internal proxy Network Load Balancers Cross-region internal Application Load Balancer and Cross-region internal proxy Network Load Balancer forwarding rules per region per network Quota This is a per-region and per-network quota defining the maximum number of forwarding rules for cross-region internal Application Load Balancers and cross-region internal proxy Network Load Balancers that you can create in a region of a VPC network.",
+          "Quota name: GLOBAL INTERNAL MANAGED FORWARDING RULES PER REGION PER NETWORK Available metrics: compute.googleapis.com/quota/global internal managed forwarding rules per region per vpc network/limit compute.googleapis.com/quota/global internal managed forwarding rules per region per vpc network/usage compute.googleapis.com/quota/global internal managed forwarding rules per region per vpc network/exceeded Regional internal Application Load Balancer and Regional internal proxy Network Load Balancer forwarding rules per region per network Quota This is a per-region and per-network quota defining the maximum number of forwarding rules for regional internal Application Load Balancers and regional internal proxy Network Load Balancers that you can create in a region of a VPC network.",
+          "Quota name: GLOBAL EXTERNAL MANAGED FORWARDING RULES Available metrics: compute.googleapis.com/quota/global external managed forwarding rules/limit compute.googleapis.com/quota/global external managed forwarding rules/usage compute.googleapis.com/quota/global external managed forwarding rules/exceeded Regional external Application Load Balancer and Regional external proxy Network Load Balancer forwarding rules per region per network Quota This is a per-region and per-network quota defining the maximum number of forwarding rules for regional external Application Load Balancers and global external proxy Network Load Balancers whose backends are located in a region of a VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/load-balancing/docs/https/applb-custom-metrics",
+        "https://docs.cloud.google.com/load-balancing/docs/backend-service",
+        "https://docs.cloud.google.com/load-balancing/docs/quotas"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.281Z",
+  "source_step08_card": "data/step-08/current/products/cloud-load-balancing/card.json",
+  "product_name": "Cloud Load Balancing",
+  "product_slug": "cloud-load-balancing"
+}

@@ -1,0 +1,136 @@
+{
+  "feature_name": "Pub/Sub message filtering",
+  "feature_slug": "pub-sub-message-filtering",
+  "summary": "Pub/Sub message filtering lets subscriptions deliver only messages that match filter expressions; Pub/Sub message filtering lets subscriptions deliver only messages that match filter expressions.",
+  "extended_definition": "Pub/Sub message filtering lets subscriptions deliver only messages that match filter expressions; Pub/Sub message filtering lets subscriptions deliver only messages that match filter expressions.",
+  "lifecycle": {
+    "latest_feature_date": "2020-11-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+      "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+      "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create BigQuery subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Use the default Pub/Sub service agent that lets any user with the ability to create subscriptions in the project to create a subscription that writes to the table.",
+          "Use table schema This option lets Pub/Sub use the schema of the BigQuery table to write the fields of a JSON message to the corresponding columns.",
+          "When enabled, this option lets Pub/Sub drop any field that is present in the topic schema or message but not in the BigQuery schema."
+        ]
+      },
+      {
+        "title": "Publish message overview \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "source_id": "site-docs-root",
+        "final_score": 272,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Pub/Sub identifies subscribers with subscriptions matching the message's topic, and delivers a copy of the message to each.",
+          "Messages with the same ordering key are expected to be delivered to a subscriber in the order they were published.",
+          "The Pub/Sub service uses this topic name to route the message to all subscriptions attached to the topic."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: pubsub.googleapis.com \\_|\\_ Pub/Sub \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "source_id": "site-api-reference",
+        "final_score": 263,
+        "relevance": "",
+        "evidence_snippets": [
+          "Users should ensure that there is a subscription attached to this topic since messages published to a topic with no subscriptions are lost. maxDeliveryAttempts integer Optional.",
+          "If non-empty, then only PubsubMessage s whose attributes field matches the filter are delivered on this subscription.",
+          "Pattern: \"projects/{project}/locations/{location}/subscriptions/{subscription}\" MessageTransform JSON representation { \"enabled\" : boolean , \"disabled\" : boolean , // Union field transform can be only one of the following: \"javascriptUdf\" : { object ( JavaScriptUDF ) } , \"aiInference\" : { object ( AIInference ) } // End of list of possible types for union field transform . } Fields enabled (deprecated) boolean This item is deprecated!"
+        ]
+      },
+      {
+        "title": "Create Cloud Storage subscriptions \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription",
+        "source_id": "site-docs-root-2",
+        "final_score": 261,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To create a Cloud Storage subscription, run the gcloud pubsub subscriptions create command . gcloud pubsub subscriptions create SUBSCRIPTION ID \\ --topic = TOPIC ID \\ --cloud-storage-bucket = BUCKET NAME \\ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \\ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \\ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \\ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \\ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \\ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \\ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \\ --cloud-storage-write-metadata --cloud-storage-use-topic-schema If you want to use a custom service account, provide it as an additional argument: gcloud pubsub subscriptions create SUBSCRIPTION ID \\ --topic = TOPIC ID \\ --cloud-storage-bucket = BUCKET NAME \\ --cloud-storage-file-prefix = CLOUD STORAGE FILE PREFIX \\ --cloud-storage-file-suffix = CLOUD STORAGE FILE SUFFIX \\ --cloud-storage-file-datetime-format = CLOUD STORAGE FILE DATETIME FORMAT \\ --cloud-storage-max-duration = CLOUD STORAGE MAX DURATION \\ --cloud-storage-max-bytes = CLOUD STORAGE MAX BYTES \\ --cloud-storage-max-messages = CLOUD STORAGE MAX MESSAGES \\ --cloud-storage-output-format = CLOUD STORAGE OUTPUT FORMAT \\ --cloud-storage-write-metadata --cloud-storage-use-topic-schema --cloud-storage-service-account-email = SERVICE ACCOUNT NAME In the command, only SUBSCRIPTION ID , the --topic flag, and the --cloud-storage-bucket flag are required.",
+          "Here is the Avro schema for the output messages with write metadata disabled: { \"type\" : \"record\" , \"namespace\" : \"com.google.pubsub\" , \"name\" : \"PubsubMessage\" , \"fields\" : [ { \"name\" : \"data\" , \"type\" : \"bytes\" } ] } Here is the Avro schema for the output messages with write metadata enabled: { \"type\" : \"record\" , \"namespace\" : \"com.google.pubsub\" , \"name\" : \"PubsubMessageWithMetadata\" , \"fields\" : [ { \"name\" : \"subscription name\" , \"type\" : \"string\" }, { \"name\" : \"message id\" , \"type\" : \"string\" }, { \"name\" : \"publish time\" , \"type\" : { \"type\" : \"long\" , \"logicalType\" : \"timestamp-micros\" } }, { \"name\" : \"attributes\" , \"type\" : { \"type\" : \"map\" , \"values\" : \"string\" } }, { \"name\" : \"data\" , \"type\" : \"bytes\" } ] } Use topic schema : This option lets Pub/Sub use the schema of the Pub/Sub topic to which the subscription is attached when writing Avro files.",
+          "Values are as follows: text : Messages are written as raw text, separated by a newline. avro : Messages are written as an Avro binary. --cloud-storage-write-metadata and --cloud-storage-use-topic-schema only affect subscriptions with output format avro ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.pubsub",
+      "i.e",
+      "pubsub.googleapis.com",
+      "pubsub.iam.gserviceaccount.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/create-bigquery-subscription",
+        "https://docs.cloud.google.com/pubsub/docs/publish-message-overview",
+        "https://docs.cloud.google.com/pubsub/docs/reference/mcp/tools_list/list_subscriptions",
+        "https://docs.cloud.google.com/pubsub/docs/create-cloudstorage-subscription"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.474Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

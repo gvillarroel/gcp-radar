@@ -1,0 +1,42 @@
+# IAM authentication
+
+Product: Memorystore for Redis Cluster
+Feature slug: `iam-authentication`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Memorystore for Redis Cluster supports IAM authentication.
+
+## Lifecycle
+
+- Latest feature date: 2023-08-16
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- allow (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- auth (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- certificate (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- credential (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- encrypt (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- iam (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- key (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- permission (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- policy (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- role (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+- token (evidence: [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth), [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control), [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/about-iam-auth)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/access-control](https://docs.cloud.google.com/memorystore/docs/cluster/access-control)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection](https://docs.cloud.google.com/memorystore/docs/cluster/client-library-connection)
+- [https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth](https://docs.cloud.google.com/memorystore/docs/cluster/manage-iam-auth)

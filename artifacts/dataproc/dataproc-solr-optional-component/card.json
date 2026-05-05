@@ -1,0 +1,152 @@
+{
+  "feature_name": "Dataproc Solr Optional Component",
+  "feature_slug": "dataproc-solr-optional-component",
+  "summary": "The Dataproc Solr Optional Component adds Solr as an optional component for Dataproc clusters.",
+  "extended_definition": "The Dataproc Solr Optional Component adds Solr as an optional component for Dataproc clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 105,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON representation { \"clusterType\" : enum ( ClusterType ) , \"clusterTier\" : enum ( ClusterTier ) , \"configBucket\" : string , \"tempBucket\" : string , \"gceClusterConfig\" : { object ( GceClusterConfig ) } , \"masterConfig\" : { object ( InstanceGroupConfig ) } , \"workerConfig\" : { object ( InstanceGroupConfig ) } , \"secondaryWorkerConfig\" : { object ( InstanceGroupConfig ) } , \"softwareConfig\" : { object ( SoftwareConfig ) } , \"initializationActions\" : [ { object ( NodeInitializationAction ) } ] , \"encryptionConfig\" : { object ( EncryptionConfig ) } , \"autoscalingConfig\" : { object ( AutoscalingConfig ) } , \"securityConfig\" : { object ( SecurityConfig ) } , \"lifecycleConfig\" : { object ( LifecycleConfig ) } , \"endpointConfig\" : { object ( EndpointConfig ) } , \"metastoreConfig\" : { object ( MetastoreConfig ) } , \"dataprocMetricConfig\" : { object ( DataprocMetricConfig ) } , \"auxiliaryNodeGroups\" : [ { object ( AuxiliaryNodeGroup ) } ] } Fields clusterType enum ( ClusterType ) Optional.",
+          "JSON representation ClusterType ClusterTier GceClusterConfig JSON representation PrivateIpv6GoogleAccess ReservationAffinity JSON representation Type NodeGroupAffinity JSON representation ShieldedInstanceConfig JSON representation ConfidentialInstanceConfig JSON representation SoftwareConfig JSON representation Component NodeInitializationAction JSON representation EncryptionConfig JSON representation AutoscalingConfig JSON representation SecurityConfig JSON representation KerberosConfig JSON representation IdentityConfig JSON representation LifecycleConfig JSON representation EndpointConfig JSON representation DataprocMetricConfig JSON representation Metric JSON representation MetricSource AuxiliaryNodeGroup JSON representation The cluster config.",
+          "You can test a node's role metadata to run an executable on a master or worker node, as shown below using curl (you can also use wget ): ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role) if [[ \"${ROLE}\" == 'Master' ]]; then ... master specific actions ... else ... worker specific actions ... fi encryptionConfig object ( EncryptionConfig ) Optional."
+        ]
+      },
+      {
+        "title": "\"Class NodeGroupControllerAsyncClient (5.26.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional [ google . cloud . dataproc v1 . types . clusters .",
+          "CreateNodeGroupRequest ( parent=\"parent value\", node group=node group, ) Make the request operation = client. create node group (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.CreateNodeGroupRequest , dict]] The request object.",
+          "ResizeNodeGroupRequest ( name=\"name value\", size=443, ) Make the request operation = client. resize node group (request=request) print(\"Waiting for operation to complete...\") response = (await operation).result() Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.dataproc v1.types.ResizeNodeGroupRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class NodeGroupControllerClient (5.26.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient",
+        "source_id": "site-python-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Optional [ google . cloud . dataproc v1 . types . clusters .",
+          "Format: projects/{project}/regions/{region}/clusters/{cluster} This corresponds to the parent field on the request instance; if request is provided, this should not be set. node group google.cloud.dataproc v1.types.NodeGroup Required.",
+          "Union [ str , bytes ]]] = () ) - > google . cloud . dataproc v1 . types . clusters ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "core.retry.Retry",
+      "v1.types.CreateNodeGroupRequest",
+      "v1.types.GetNodeGroupRequest",
+      "v1.types.NodeGroup",
+      "v1.types.ResizeNodeGroupRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/dataproc/latest/google.cloud.dataproc_v1.services.node_group_controller.NodeGroupControllerClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

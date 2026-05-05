@@ -1,0 +1,194 @@
+{
+  "feature_name": "Private Google Access",
+  "feature_slug": "private-google-access",
+  "summary": "Firestore with MongoDB compatibility supports Private Google Access.",
+  "extended_definition": "Firestore with MongoDB compatibility supports Private Google Access.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+      "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Private Google Access in Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "source_id": "site-iam-reference",
+        "final_score": 371,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "About Private Google Access in Firestore with MongoDB compatibility By default, when a Compute Engine VM lacks an external IP address assigned to its network interface, it can only send packets to other internal IP address destinations.",
+          "Unlike other Google APIs, the Firestore with MongoDB compatibility API uses different domain names and IP addresses for Private Google Access: restricted.firestore.goog enables API access to the Firestore with MongoDB compatibility API.",
+          "Configure Private Google Access in Firestore with MongoDB compatibility This page describes how to enable and configure Private Google Access in Firestore with MongoDB compatibility."
+        ]
+      },
+      {
+        "title": "\"Extend Firestore with MongoDB compatibility with event triggers using Cloud\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "source_id": "site-iam-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Extend Firestore with MongoDB compatibility with event triggers using Cloud Run functions With Cloud Run functions, you can deploy code to handle events triggered by changes in your Cloud Run database.",
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Write a Firestore-triggered function To write a function that responds to Firestore events, prepare to specify the following during deployment: a trigger event type a trigger event filter to select the documents associated with the function the function code to run Event types Firestore supports create , update , delete , and write events."
+        ]
+      },
+      {
+        "title": "\"Authenticate and connect to a database \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "source_id": "site-iam-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This requires adding the auth library as a dependency : // Maven <dependency> <groupId>com.google.auth</groupId> <artifactId>google-auth-library-oauth2-http</artifactId> <version>1.19.0</version> </dependency> // Gradle implementation 'com.google.auth:google-auth-library-oauth2-http:1.19.0' The following code sample demonstrates how to connect: val db = MongoClients . create ( clientSettings ( \" DATABASE UID \" , \" LOCATION \" ). build () ). getDatabase ( \" DATABASE ID \" ) / Creates a connection to a Firestore with MongoDB Compatibility database. @param databaseUid The uid of the database to connect to as a string.",
+          "Expr ; public class FirestoreUserCredsExample { / Provision user credentials and configure an IAM policy to allow SCRAM authentication into the specified Firestore with Mongo Compatibility database. / private static void provisionFirestoreUserCredsAndIAM ( String projectId , String databaseId , String userName ) throws Exception { UserCreds userCreds = createUserCreds ( projectId , databaseId , userName ); // Note the password returned in the UserCreds proto - it cannot be retrieved again // after the initial call to the createUserCreds API.",
+          "Create a user and connect to a database To create a user for your Firestore with MongoDB compatibility database, use one of the following method: Google Cloud console In the Google Cloud console, go to the Databases page."
+        ]
+      },
+      {
+        "title": "\"Configure environment variables \\_|\\_ Firestore with MongoDB compatibility\\",
+        "url": "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars",
+        "source_id": "site-iam-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Firestore with MongoDB compatibility Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Dataflow template parameters for managing the pipeline that will copy data from the Cloud Storage bucket into your Firestore with MongoDB compatibility database.",
+          "Firestore connection parameters: FIRESTORE DATABASE NAME : The name of the Firestore with MongoDB compatibility database where you migrate the data."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.auth",
+      "firebase.google.com",
+      "io.cloudevents.CloudEvent",
+      "java.util.concurrent.ExecutionException",
+      "java.util.logging.Logger",
+      "java.util.Map",
+      "projects.databases.documents",
+      "restricted.firestore.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/configure-private-google-access",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect",
+        "https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-configure-env-vars"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:32.983Z",
+  "source_step08_card": "data/step-08/current/products/firestore-with-mongodb-compatibility/card.json",
+  "product_name": "Firestore with MongoDB compatibility",
+  "product_slug": "firestore-with-mongodb-compatibility"
+}

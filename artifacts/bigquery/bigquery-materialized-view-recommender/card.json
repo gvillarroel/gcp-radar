@@ -1,0 +1,126 @@
+{
+  "feature_name": "BigQuery materialized view recommender",
+  "feature_slug": "bigquery-materialized-view-recommender",
+  "summary": "The BigQuery materialized view recommender analyzes past query jobs to identify opportunities for materialized views.",
+  "extended_definition": "The BigQuery materialized view recommender analyzes past query jobs to identify opportunities for materialized views.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-insights",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create materialized view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see the Terraform provider reference documentation . resource \"google bigquery dataset\" \"default\" { dataset id = \"mydataset\" default partition expiration ms = 2592000000 # 30 days default table expiration ms = 31536000000 # 365 days description = \"dataset description\" location = \"US\" max time travel hours = 96 # 4 days labels = { billing group = \"accounting\" , pii = \"sensitive\" } } resource \"google bigquery table\" \"default\" { dataset id = google bigquery dataset.default.dataset id table id = \"my materialized view\" materialized view { query = \"SELECT ID, description, date created FROM myproject.orders.items\" enable refresh = \"true\" refresh interval ms = 172800000 # 2 days allow non incremental definition = \"false\" } } What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "BigQuery bigquery = BigQueryOptions . getDefaultInstance (). getService (); TableId tableId = TableId . of ( datasetName , materializedViewName ); MaterializedViewDefinition materializedViewDefinition = MaterializedViewDefinition . newBuilder ( query ). build (); bigquery . create ( TableInfo . of ( tableId , materializedViewDefinition )); System . out . println ( \"Materialized view created successfully\" ); } catch ( BigQueryException e ) { System . out . println ( \"Materialized view was not created. \\n\" + e . toString ()); } } } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . import ( \"context\" \"fmt\" \"cloud.google.com/go/bigquery\" ) // createMaterializedView demonstrates generated a materialized view based on an existing // base table. func createMaterializedView ( projectID , datasetID , baseTableID , viewID string ) error { // projectID := \"my-project-id\" // datasetID := \"mydatasetid\" // baseTableID := \"mytableid\" // viewID := \"myviewid\" ctx := context ."
+        ]
+      },
+      {
+        "title": "Authorized views \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "source_id": "site-docs-reference-5",
+        "final_score": 164,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "View types A logical view is the default view type for BigQuery, and a materialized view is a precomputed view that periodically caches the results of a query for increased performance and efficiency.",
+          "For details about how row-level security interacts with materialized views, see Use row-level security with other BigQuery features .",
+          "Authorized views This document describes how to create authorized views and authorized materialized views in BigQuery."
+        ]
+      },
+      {
+        "title": "INFORMATION_SCHEMA.INSIGHTS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-insights",
+        "source_id": "site-docs-reference-3",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "The result is similar to the following: +---------------------------------------------------+---------------------+--------------------+--------------------------+-------------------------+---------------------+ recommender target resource gb saved monthly slot hours saved monthly observation period days last updated time +---------------------------------------------------+---------------------+--------------------+--------------------------+-------------------------+---------------------+ google.bigquery.table.PartitionClusterRecommender [\"table resource1\"] 3934.07264107652 10.499466666666667 30.0 2024-07-01 16:41:25 google.bigquery.table.PartitionClusterRecommender [\"table resource2\"] 4393.7416711859405 56.61476777777777 30.0 2024-07-01 16:41:25 google.bigquery.materializedview.Recommender [\"project resource\"] 140805.38289248943 9613.139166666666 2.0 2024-07-01 13:00:31 +---------------------------------------------------+---------------------+--------------------+--------------------------+-------------------------+---------------------+ Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "The INFORMATION SCHEMA.INSIGHTS view supports the following recommendations: Partition and cluster recommendations Materialized view recommendations Role recommendations for BigQuery datasets Required permission To view insights with the INFORMATION SCHEMA.INSIGHTS view, you must have the required permissions for the corresponding recommender.",
+          "For example, google.bigquery.materializedview.Insight . subtype STRING The subtype of the insight. project id STRING The ID of the project. project number STRING The number of the project. description STRING The description about the recommendation. last updated time TIMESTAMP This field represents the time when the insight was last refreshed. category STRING The optimization category of the impact. target resources STRING Fully qualified resource names this insight is targeting. state STRING The state of the insight."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.jobs.create",
+      "dataset.default.dataset",
+      "myproject.orders.items"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-create-materialized-view",
+        "https://docs.cloud.google.com/bigquery/docs/authorized-views",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-insights"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

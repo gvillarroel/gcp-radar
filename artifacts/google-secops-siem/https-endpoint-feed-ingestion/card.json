@@ -1,0 +1,154 @@
+{
+  "feature_name": "HTTPS endpoint feed ingestion",
+  "feature_slug": "https-endpoint-feed-ingestion",
+  "summary": "Google SecOps can ingest logs through feeds that push data to an HTTPS endpoint using the feed management UI or API.",
+  "extended_definition": "Google SecOps can ingest logs through feeds that push data to an HTTPS endpoint using the feed management UI or API.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed",
+      "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+      "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the Feed Management UI \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table outlines the different file sizes that Google SecOps feeds transformation supports: Operation Input type Recommended size Expected duration Max size Data Modeling CSV 10 GB Data Modeling CSV 30 min 10 GB Data Modeling CSV TBD TBD 2 GB Data Modeling XML / JSON 2 GB Data Modeling XLS / XLSX 1 min 50 MB Merge Files Any Varies on number of files 100 GB Decompress Files Non-ZIP Varies on number of files 10 GB (uncompressed) Decompress Files ZIP - Varies on number of files 4 GB (uncompressed) Log line limits and delimiters When ingesting text-based logs (JSON, CSV, or Syslog), ensure your data adheres to these specific ingestion limits: Maximum Line Size : A single log line cannot exceed 4MB .",
+          "Impact of changing your linked Cloud Project on data feeds If you are updating the Google Cloud project associated with your Google SecOps instance, all feeds ingesting data using the following connectors will stop, and must be re-created manually: AMAZON S3 V2 AMAZON SQS V2 GOOGLE CLOUD STORAGE V2 AZURE BLOBSTORE V2 GOOGLE CLOUD STORAGE EVENT DRIVEN For all other feeds that are not utilizing these connectors, ingestion continues without any interruption.",
+          "Send multiple events in a single webhook request The following code sample shows how to format a single request body with multiple, newline-separated JSON objects after the curl --location item: --header 'Content-Type: application/json' \\ --header 'X-goog-api-key: API KEY' \\ --header 'X-Webhook-Access-Key: SECRET' \\ --data '{\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}} {\"principal\": {\"asset id\": \"asset 123\"}, \"metadata\": {\"event type\": \"GENERIC EVENT\", \"product name\": \"Product Acme\"}}' Create an HTTPS webhook feed In the Google SecOps menu, select Settings , and then click Feeds ."
+        ]
+      },
+      {
+        "title": "\"Ingest Google Cloud data \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "source_id": "site-api-reference",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Available log types include: Cloud Audit Logs Cloud NAT Cloud DNS Cloud Next Generation Firewall Cloud Intrusion Detection System Cloud Load Balancing Cloud SQL Windows Event logs Linux syslog Linux Sysmon Zeek Google Kubernetes Engine Audit Daemon ( auditd ) Apigee reCAPTCHA Enterprise Cloud Run logs ( GCP RUN ) Google Cloud Abuse Events Google Cloud DNS Advanced Threat Detection ( GCP DNS ATD ) Model Armor logs For details about the specific log filters and more ingestion details, see Export Google Cloud logs to Google SecOps.",
+          "The following list is organized by log type and corresponding Google SecOps ingestion label: Cloud Audit Logs ( GCP CLOUDAUDIT ): This includes Admin Activity, Data Access, System Event, Access Transparency, and Policy Denied logs.",
+          "When you configure Google Cloud data ingestion, Google SecOps doesn't create any resource in your Google Cloud organization; the internal system publishes Google Cloud logs to Google SecOps."
+        ]
+      },
+      {
+        "title": "\"Create an Azure Event Hub feed \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 169,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The label to be applied to the events from this feed Note: Google SecOps manages its own checkpointing when ingesting data from Azure Event Hub.",
+          "Configure the feed in Google SecOps : configure the feed in Google SecOps to connect to your Azure event hub and to begin ingesting data.",
+          "To ensure optimal data ingestion, deploy the Event Hub namespace in the same region as your Google SecOps instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/feed-management",
+        "https://docs.cloud.google.com/chronicle/docs/ingestion/cloud/ingest-gcp-logs",
+        "https://docs.cloud.google.com/chronicle/docs/administration/create-azure-feed"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

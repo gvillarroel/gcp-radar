@@ -1,0 +1,162 @@
+{
+  "feature_name": "Secret Manager regional availability in me-west1",
+  "feature_slug": "secret-manager-regional-availability-in-me-west1",
+  "summary": "Cloud Secret Manager became available in the me-west1 region.",
+  "extended_definition": "Cloud Secret Manager became available in the me-west1 region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+      "https://docs.cloud.google.com/secret-manager/docs/locations",
+      "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Compare global and regional service \\_|\\_ Secret Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "source_id": "site-docs-root",
+        "final_score": 264,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For organizations with stringent data sovereignty and compliance requirements, Secret Manager offers a regional service where you can choose to store your data solely within specific geographical locations or data residency zones (DRZs).",
+          "Home Documentation Security Secret Manager Guides Send feedback Compare global and regional service Stay organized with collections Save and categorize content based on your preferences.",
+          "This page explains the key differences between the global and regional service of Secret Manager."
+        ]
+      },
+      {
+        "title": "Secret Manager locations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Region Regional Secret Manager Parameter Manager europe-west1 (Belgium) Yes Yes europe-west10 (Berlin) Yes No europe-north1 (Finland) No No europe-north2 (Stockholm) Yes No europe-west3 (Frankfurt) Yes Yes europe-west2 (London) Yes Yes europe-southwest1 (Madrid) Yes Yes europe-west8 (Milan) Yes Yes europe-west4 (Netherlands) Yes Yes europe-west12 (Turin) Yes No europe-west9 (Paris) Yes Yes europe-central2 (Warsaw) Yes Yes europe-west6 (Zurich) Yes Yes Locations in North America The following table lists the locations in North America where Secret Manager and Parameter Manager resources can be stored.",
+          "Region Regional Secret Manager Parameter Manager us-central1 (Iowa) Yes Yes us-west4 (Las Vegas) Yes Yes us-west2 (Los Angeles) Yes Yes northamerica-south1 (Mexico) Yes Yes northamerica-northeast1 (Montréal) Yes Yes us-east4 (Northern Virginia) Yes Yes us-west1 (Oregon) Yes Yes us-west3 (Salt Lake City) Yes Yes us-east1 (South Carolina) Yes Yes northamerica-northeast2 (Toronto) Yes Yes us-east5 (Columbus) Yes Yes us-south1 (Dallas) Yes Yes Locations in South America The following table lists the locations in South America where Secret Manager resources can be stored.",
+          "Region Regional Secret Manager Parameter Manager southamerica-east1 (São Paulo) Yes Yes southamerica-west1 (Santiago) Yes Yes Locations in Middle East The following table lists the locations in the Middle East where Secret Manager and Parameter Manager resources can be stored."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceAsyncClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 251,
+        "relevance": "",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = secretmanager v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = secretmanager v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample set iam policy(): Create a client client = secretmanager v1 ."
+        ]
+      },
+      {
+        "title": "\"Class SecretManagerServiceClient (2.27.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 251,
+        "relevance": "",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = secretmanager v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample get iam policy(): Create a client client = secretmanager v1 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import secretmanager v1 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample set iam policy(): Create a client client = secretmanager v1 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "googleapis.dev",
+      "options.html",
+      "pb2.TestIamPermissionsRequest"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/secret-manager-secrets-comparison",
+        "https://docs.cloud.google.com/secret-manager/docs/locations",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/secretmanager/latest/google.cloud.secretmanager_v1.services.secret_manager_service.SecretManagerServiceClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.802Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager"
+}

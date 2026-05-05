@@ -1,0 +1,80 @@
+# App Engine flexible environment Ruby
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-08/current/products/app-engine-flexible-environment-ruby/card.json`
+
+## Summary
+
+- Promoted features: 64
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2026-03-17
+- Official source links: 45
+
+## Features
+
+- [App Engine firewall](./app-engine-firewall/README.md)
+- [App-level default service account selection](./app-level-default-service-account-selection/README.md)
+- [app.yaml env setting](./app-yaml-env-setting/README.md)
+- [asia-northeast1 region availability](./asia-northeast1-region-availability/README.md)
+- [Cloud Build deployment builds](./cloud-build-deployment-builds/README.md)
+- [Cloud CDN integration](./cloud-cdn-integration/README.md)
+- [Cloud Scheduler integration](./cloud-scheduler-integration/README.md)
+- [Cloud Tasks integration](./cloud-tasks-integration/README.md)
+- [Custom domain mapping commands and API](./custom-domain-mapping-commands-and-api/README.md)
+- [Custom domains and SSL certificate management](./custom-domains-and-ssl-certificate-management/README.md)
+- [Custom machine types](./custom-machine-types/README.md)
+- [Debian 8 Jessie OS support](./debian-8-jessie-os-support/README.md)
+- [europe-west region availability](./europe-west-region-availability/README.md)
+- [europe-west2 region availability](./europe-west2-region-availability/README.md)
+- [External HTTP(S) Load Balancing via serverless NEGs](./external-http-s-load-balancing-via-serverless-negs/README.md)
+- [Go App Engine package](./go-app-engine-package/README.md)
+- [Gzip response compression by default](./gzip-response-compression-by-default/README.md)
+- [Internal IP mode](./internal-ip-mode/README.md)
+- [java-compat runtime](./java-compat-runtime/README.md)
+- [jetty9-compat runtime](./jetty9-compat-runtime/README.md)
+- [Legacy health checks](./legacy-health-checks/README.md)
+- [Managed SSL certificates](./managed-ssl-certificates/README.md)
+- [Modern networking stack](./modern-networking-stack/README.md)
+- [Multi-zonal deployment support](./multi-zonal-deployment-support/README.md)
+- [.NET Core runtime](./net-core-runtime/README.md)
+- [Network ingress controls](./network-ingress-controls/README.md)
+- [Per-second instance billing](./per-second-instance-billing/README.md)
+- [Per-version user-managed service account](./per-version-user-managed-service-account/README.md)
+- [PHP 7 runtime](./php-7-runtime/README.md)
+- [python-compat runtime](./python-compat-runtime/README.md)
+- [python27 runtime](./python27-runtime/README.md)
+- [Region availability: asia-east1](./region-availability-asia-east1/README.md)
+- [Region availability: asia-east2](./region-availability-asia-east2/README.md)
+- [Region availability: asia-northeast2](./region-availability-asia-northeast2/README.md)
+- [Region availability: asia-northeast3](./region-availability-asia-northeast3/README.md)
+- [Region availability: asia-south1](./region-availability-asia-south1/README.md)
+- [Region availability: asia-southeast1](./region-availability-asia-southeast1/README.md)
+- [Region availability: asia-southeast2](./region-availability-asia-southeast2/README.md)
+- [Region availability: australia-southeast1](./region-availability-australia-southeast1/README.md)
+- [Region availability: europe-central2](./region-availability-europe-central2/README.md)
+- [Region availability: europe-west3](./region-availability-europe-west3/README.md)
+- [Region availability: europe-west6](./region-availability-europe-west6/README.md)
+- [Region availability: northamerica-northeast1](./region-availability-northamerica-northeast1/README.md)
+- [Region availability: southamerica-east1](./region-availability-southamerica-east1/README.md)
+- [Region availability: us-west1](./region-availability-us-west1/README.md)
+- [Region availability: us-west2](./region-availability-us-west2/README.md)
+- [Region availability: us-west3](./region-availability-us-west3/README.md)
+- [Region availability: us-west4](./region-availability-us-west4/README.md)
+- [Region ID in app URLs](./region-id-in-app-urls/README.md)
+- [Resource labeling for billing analysis](./resource-labeling-for-billing-analysis/README.md)
+- [Ruby 2.3.3 default runtime](./ruby-2-3-3-default-runtime/README.md)
+- [Ruby 2.3.4 default runtime](./ruby-2-3-4-default-runtime/README.md)
+- [Ruby 3.2 runtime](./ruby-3-2-runtime/README.md)
+- [Ruby 3.3 runtime](./ruby-3-3-runtime/README.md)
+- [Ruby 3.4 runtime](./ruby-3-4-runtime/README.md)
+- [Ruby 4.0 runtime](./ruby-4-0-runtime/README.md)
+- [Ruby build pipeline](./ruby-build-pipeline/README.md)
+- [Ruby runtime](./ruby-runtime/README.md)
+- [Runtime lifecycle stage filtering](./runtime-lifecycle-stage-filtering/README.md)
+- [SSH access to internal-IP-only instances](./ssh-access-to-internal-ip-only-instances/README.md)
+- [TLS 1.1 and earlier support](./tls-1-1-and-earlier-support/README.md)
+- [TLS 1.2 and later support](./tls-1-2-and-later-support/README.md)
+- [Updated health checks](./updated-health-checks/README.md)
+- [us-east4 region availability](./us-east4-region-availability/README.md)

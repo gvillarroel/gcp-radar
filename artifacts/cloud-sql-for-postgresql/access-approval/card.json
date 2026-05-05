@@ -1,0 +1,183 @@
+{
+  "feature_name": "Access Approval",
+  "feature_slug": "access-approval",
+  "summary": "Access Approval requires explicit approval before Google Support can access a database for support purposes.",
+  "extended_definition": "Access Approval requires explicit approval before Google Support can access a database for support purposes.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases",
+      "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Data residency overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Access Approval lets you require Google employees to get your explicit approval before they access your data or configurations on Google Cloud (for exclusions, see Access Approval exclusions ).",
+          "Cloud SQL Identity and Access Management (IAM) database authentication provides a single interface to help you better monitor and manage database access for users and service accounts.",
+          "Using IAM permissions, Access Approval, Access Transparency, and Key Access Justifications with Cloud KMS and Cloud EKM, you can deny Google the ability to decrypt your data."
+        ]
+      },
+      {
+        "title": "\"Manage users with IAM database authentication \\_|\\_ Cloud SQL for PostgreSQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "source_id": "site-iam-reference",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-07T22:44:16.656Z\", \"startTime\": \"2025-10-07T22:44:16.686Z\", \"endTime\": \"2025-10-07T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID for the instance you are adding the user to USERNAME : the email address for the user USER TYPE : the Cloud SQL user type, which can be one of the following IAM user types: CLOUD IAM USER CLOUD IAM SERVICE ACCOUNT CLOUD IAM GROUP ROLE 1 , ROLE 2 ..., ROLE N : the database role or roles to assign to the IAM user, service account, or group REVOKE EXISTING ROLES : set to true to revoke the user's existing roles, set to false to keep the user's existing roles HTTP method and URL: PUT https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USERNAME \", \"type\": \" USER TYPE \", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ], \"revokeExistingRoles\": REVOKE EXISTING ROLES } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-07T22:44:16.656Z\", \"startTime\": \"2025-10-07T22:44:16.686Z\", \"endTime\": \"2025-10-07T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta4 Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID for the instance you are adding the user to USERNAME : the email address for the user USER TYPE : the Cloud SQL user type, which is one of the following IAM user types: CLOUD IAM USER CLOUD IAM SERVICE ACCOUNT CLOUD IAM GROUP ROLE 1 , ROLE 2 ..., ROLE N : the database role or roles to assign to the IAM user, service account, or group HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users Request JSON body: { \"name\": \" USERNAME \", \"type\": \"CLOUD IAM USER\", \"databaseRoles\": [ \" ROLE 1 \", \" ROLE 2 \" ] } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2020-02-07T22:44:16.656Z\", \"startTime\": \"2020-02-07T22:44:16.686Z\", \"endTime\": \"2020-02-07T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } Create a service account Before using any of the request data, make the following replacements: SERVICE ACCT : the service account email Note: Due to the length limit on a database username, you need to omit the .gserviceaccount.com suffix in the email."
+        ]
+      },
+      {
+        "title": "\"Create and manage databases \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases",
+        "source_id": "site-docs-root",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"CREATE DATABASE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } psql Client For reference information, see CREATE DATABASE in the PostgreSQL documentation.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /databases\" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"CREATE DATABASE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } REST v1beta4 Note: You can't use REST APIs to set values for the character set and collation.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method DELETE -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /databases/ database-name \" Select-Object -Expand Content You should receive a JSON response similar to the following: Response { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-21T22:43:37.981Z\", \"operationType\": \"DELETE DATABASE\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } psql Client For reference information, see DROP DATABASE in the PostgreSQL documentation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "gserviceaccount.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/data-residency-overview",
+        "https://docs.cloud.google.com/sql/docs/postgres/add-manage-iam-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-databases"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

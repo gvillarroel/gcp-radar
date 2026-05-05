@@ -1,0 +1,166 @@
+{
+  "feature_name": "Cloud SQL Data API administrative queries",
+  "feature_slug": "cloud-sql-data-api-administrative-queries",
+  "summary": "Cloud SQL Data API administrative queries let users execute SQL statements for administrative tasks through the Data API.",
+  "extended_definition": "Cloud SQL Data API administrative queries let users execute SQL statements for administrative tasks through the Data API.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and manage users \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "source_id": "site-docs-root",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-20T22:44:16.656Z\", \"startTime\": \"2025-10-20T22:44:16.686Z\", \"endTime\": \"2025-10-20T22:44:20.437Z\", \"operationType\": \"UPDATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } Replace database roles for an existing user If you want to replace or remove database roles from the user, you must revoke all of their existing roles while specifying new database roles, if any.",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2025-10-20T22:44:16.656Z\", \"startTime\": \"2025-10-20T22:44:16.686Z\", \"endTime\": \"2025-10-20T22:44:20.437Z\", \"operationType\": \"CREATE USER\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } If you create a PostgreSQL user that uses built-in authentication, then the user is granted the cloudsqlsuperuser role automatically.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /users\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#usersList\", \"items\": [ { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \"sqlserver\", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-1 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { \"kind\": \"sql#user\", \"etag\": \"--redacted--\", \"name\": \" user-id-2 \", \"host\": \"\", \"instance\": \" instance-id \", \"project\": \" project-id \", \"sqlserverUserDetails\": { \"serverRoles\": [ \"CustomerDbRootRole\" ] } }, { ... }, { ... } ] } If a user password policy was set, the items section of the response includes a passwordPolicy section."
+        ]
+      },
+      {
+        "title": "Cloud SQL metrics \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "source_id": "site-api-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "After sampling, data is not visible for up to 165 seconds. database/mysql/queries GA (project) Queries DELTA , INT64 , 1 cloudsql database Delta count of statements executed by the server.",
+          "This can be either replay location, flush location, write location or sent location. database/postgresql/statements executed count GA (project) Statements executed count DELTA , INT64 , 1 cloudsql database Total count of statements executed in postgresql instance.",
+          "After sampling, data is not visible for up to 165 seconds. database/mysql/questions GA (project) Questions DELTA , INT64 , 1 cloudsql database Delta count of statements executed by the server sent by the client."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you set dataApiAccess to ALLOW DATA API , then you allow authorized users to use the Data API to connect to and execute SQL statements on your instance.",
+          "For Private IP-only instances, enabling Data API access lets authorized users connect and execute SQL statements from the public internet.",
+          "Allow Data API By selecting this checkbox, you let authorized users to call the Data API to execute SQL statements on the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/create-manage-users",
+        "https://docs.cloud.google.com/sql/docs/postgres/admin-api/metrics",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

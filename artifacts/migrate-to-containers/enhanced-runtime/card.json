@@ -1,0 +1,102 @@
+{
+  "feature_name": "Enhanced runtime",
+  "feature_slug": "enhanced-runtime",
+  "summary": "Enhanced runtime lets you deploy containers to GKE Autopilot and Cloud Run using a non-privileged lightweight system init based on LXC; Enhanced runtime adds preview support for deploying containers to GKE Autopilot and Cloud Run with updated service manager, environment, and logging settings.",
+  "extended_definition": "Enhanced runtime lets you deploy containers to GKE Autopilot and Cloud Run using a non-privileged lightweight system init based on LXC; Enhanced runtime adds preview support for deploying containers to GKE Autopilot and Cloud Run with updated service manager, environment, and logging settings.",
+  "lifecycle": {
+    "latest_feature_date": "2021-10-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/autopilot-overview",
+      "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+      "https://docs.cloud.google.com/migrate/containers/docs/services-manager"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "New enhanced runtime \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/autopilot-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 200,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This simplified Linux service manager adds functionality that lets you deploy your migrated container workloads to: GKE Autopilot clusters Cloud Run The simplified Linux service manager also resolves compatibility issues with Kubernetes plugins.",
+          "Readiness probes When using the current runtime, Migrate to Containers adds a readiness probe in the deployment spec.yaml file.",
+          "New enhanced runtime The original Linux service manager for Migrate to Containers relied on sysv init and systemd ."
+        ]
+      },
+      {
+        "title": "\"Upgrade container workloads for enhanced runtime \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "source_id": "site-docs-reference",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Upgrade container workloads for enhanced runtime If you have existing container workloads created using Migrate to Containers versions 1.7.x and 1.8.x, you can convert them to use the simplified Linux service manager.",
+          "This conversion lets you then run these containers on GKE Autopilot clusters.",
+          "For example: vi deployment spec.yaml Locate the following three sections in the file and delete the indicated lines: apiVersion : apps/v1 kind : StatefulSet ... spec : containers : - image : gcr.io/ PROJECT NAME / IMAGE NAME : LABEL name : IMAGE NAME Delete the following lines: readinessProbe : exec : command : - /code/ready.sh resources : {} securityContext : privileged : true Stop the delete here. volumeMounts : Delete the following lines: - mountPath : /sys/fs/cgroup name : cgroups Stop the delete here. - mountPath : /opt/suitecrm-7.10.5-0/mysql/data name : data-pvc-0-1b12-d0af-48b3-9f5e-6c25fa5 subPath : opt/suitecrm-7.10.5-0/mysql/data volumes : Delete the following lines: - hostPath : path : /sys/fs/cgroup type : Directory name : cgroups Stop the delete here. - name : data-pvc-2-d0af-48b3-9f5e09c25fa5 persistentVolumeClaim : claimName : data-pvc-0-1a2-d0af-48b3-9f5e-605fa5 Notice that you only remove the volumeMounts and volumes definitions for cgroups and leave the remaining definitions."
+        ]
+      },
+      {
+        "title": "New enhanced runtime \\_|\\_ Migrate to Containers \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/services-manager",
+        "source_id": "site-docs-root-2",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This simplified Linux service manager adds functionality that lets you deploy your migrated container workloads to: GKE Autopilot clusters Cloud Run The simplified Linux service manager also resolves compatibility issues with Kubernetes plugins.",
+          "Readiness probes When using the current runtime, Migrate to Containers adds a readiness probe in the deployment spec.yaml file.",
+          "New enhanced runtime The original Linux service manager for Migrate to Containers relied on sysv init and systemd ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "gcr.io",
+      "ready.sh",
+      "spec.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/autopilot-overview",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/services-manager"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/migrate/containers/docs/autopilot-overview",
+        "https://docs.cloud.google.com/migrate/containers/docs/convert-runtime",
+        "https://docs.cloud.google.com/migrate/containers/docs/services-manager"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.501Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

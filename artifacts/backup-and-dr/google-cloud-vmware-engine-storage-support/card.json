@@ -1,0 +1,98 @@
+{
+  "feature_name": "Google Cloud VMware Engine Storage support",
+  "feature_slug": "google-cloud-vmware-engine-storage-support",
+  "summary": "Backup and DR Service added support for Google Cloud VMware Engine Storage-only nodes.",
+  "extended_definition": "Backup and DR Service added support for Google Cloud VMware Engine Storage-only nodes.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+      "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Committed use discounts for Backup and DR for Google Cloud VMware Engine\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "source_id": "site-docs-reference",
+        "final_score": 167,
+        "relevance": "",
+        "evidence_snippets": [
+          "Committed use discounts (CUDs) provide deeply-discounted prices in exchange for committing to continuously use VMware Engine and VMware Engine storage-only nodes in a particular region for a one- or three-year term.",
+          "Home Documentation Storage Backup and DR Resources Send feedback Committed use discounts for Backup and DR for Google Cloud VMware Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: CUDs are applicable to both ve1 and ve1 storage-only nodes."
+        ]
+      },
+      {
+        "title": "Backup and DR Service for VMware Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms",
+        "source_id": "site-api-reference",
+        "final_score": 149,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Documentation Storage Backup and DR Reference Send feedback Backup and DR Service for VMware Engine Stay organized with collections Save and categorize content based on your preferences.",
+          "Note: Only backing up old Windows server OS versions inside the Google Cloud VMware Engine VM is supported.",
+          "The VMware administrator's guide Backup and DR for VMware VMs Configure Google Cloud VMware Engine for Backup and DR protection Add vCenter and ESX server hosts to the appliance management console Discover and protect VMware VMs Apply a backup template to protect a VM Configure application settings for VMware VMs Restore a VMware VM Mount a VMware image Clone an image of a VMware VM Create LiveClone workflows Move VM management between two backup/recovery appliances Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Configure advanced policy settings \\_|\\_ Backup and DR \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Advanced setting Description Application consistent (applicable only for Google Cloud VMware Engine VMs and Compute Engine VMs) Select one of the following: Crash consistent backup : Crash consistent backup is a fast backup of application data in storage as if power were lost at that moment.",
+          "In the event of an ESX host failure, this option manages failover copies of VMware VMs. (Oracle, local file systems, SMB, NFS, SQL Server): Map staging disk to ESX host for VM only Map staging disk to all ESX hosts in the cluster Map staging disk to two ESX hosts in the cluster Backup SQL Server User Logins Captures the SQL Server database login credentials.",
+          "Map Staging Disk to All ESX Hosts in a Cluster (For VMware VMs only) If your ESX servers are in an appliance, you can use this setting to ensure that the VMs are managed in case of failover during backup."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/configuration/cud",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/concepts/backupdr-for-vmware-vms",
+        "https://docs.cloud.google.com/backup-disaster-recovery/docs/create-plan/policy-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.176Z",
+  "source_step08_card": "data/step-08/current/products/backup-and-dr/card.json",
+  "product_name": "Backup and DR",
+  "product_slug": "backup-and-dr"
+}

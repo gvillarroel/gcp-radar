@@ -233,6 +233,11 @@ function validatePromotedFeatureEligibility(productSlug, featureSlug, card, prom
 }
 
 function validateFeatureReadmeAgainstCard(productSlug, featureSlug, readmePath, readme, card, errors) {
+  const expectedTitle = `# ${card.feature_name || ""}`;
+  if (!readme.split(/\r?\n/).includes(expectedTitle)) {
+    errors.push(`Promoted feature README title mismatch for ${productSlug}/${featureSlug}: ${relativeToCwd(readmePath)} missing ${expectedTitle}`);
+  }
+
   const identityLines = [
     `Product: ${card.product_name || ""}`,
     `Feature slug: \`${card.feature_slug || ""}\``,

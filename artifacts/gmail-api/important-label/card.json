@@ -1,0 +1,136 @@
+{
+  "feature_name": "IMPORTANT label",
+  "feature_slug": "important-label",
+  "summary": "Gmail API adds an IMPORTANT system label to match the Gmail UI.",
+  "extended_definition": "Gmail API adds an IMPORTANT system label to match the Gmail UI.",
+  "lifecycle": {
+    "latest_feature_date": "2014-10-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/guides",
+      "https://developers.google.com/workspace/gmail/api/guides/filter_settings",
+      "https://developers.google.com/workspace/gmail/api/guides/labels"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage labels \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/labels",
+        "source_id": "site-docs-root",
+        "final_score": 78,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The following table lists several of the most common Gmail system labels: Name Can be manually applied Notes INBOX yes SPAM yes TRASH yes UNREAD yes STARRED yes IMPORTANT yes SENT no Applied automatically to messages that are: sent with drafts.send or messages.send . inserted with messages.insert and the user's email in the From header. sent by the user through the web interface.",
+          "System label names are reserved; no USER label can be created with the same name as any SYSTEM label.",
+          "System labels typically correspond to predefined elements in the Gmail web interface such as INBOX ."
+        ]
+      },
+      {
+        "title": "Manage Gmail filters \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides/filter_settings",
+        "source_id": "site-docs-root",
+        "final_score": 68,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Builder ( new NetHttpTransport (), GsonFactory . getDefaultInstance (), requestInitializer ) . setApplicationName ( \"Gmail samples\" ) . build (); try { // Filter the mail from sender and archive them(skip the inbox) Filter filter = new Filter () . setCriteria ( new FilterCriteria () . setFrom ( \"gduser2@workspacesamples.dev\" )) . setAction ( new FilterAction () . setAddLabelIds ( Arrays . asList ( labelId )) . setRemoveLabelIds ( Arrays . asList ( \"INBOX\" ))); Filter result = service . users (). settings (). filters (). create ( \"me\" , filter ). execute (); // Prints the new created filter ID System . out . println ( \"Created filter \" + result . getId ()); return result . getId (); } catch ( GoogleJsonResponseException e ) { // TODO(developer) - handle error appropriately GoogleJsonError error = e . getDetails (); if ( error . getCode () == 403 ) { System . err . println ( \"Unable to create filter: \" + e . getDetails ()); } else { throw e ; } } return null ; } } Python gmail/snippet/settings snippets/create filter.py View on GitHub import google.auth from googleapiclient.discovery import build from googleapiclient.errors import HttpError def create filter (): \"\"\"Create a filter.",
+          "TODO(developer) - See https://developers.google.com/identity for guides on implementing OAuth2 for the application. \"\"\" creds , = google . auth . default () try : create gmail api client service = build ( \"gmail\" , \"v1\" , credentials = creds ) label name = \"IMPORTANT\" filter content = { \"criteria\" : { \"from\" : \"gsuder1@workspacesamples.dev\" }, \"action\" : { \"addLabelIds\" : [ label name ], \"removeLabelIds\" : [ \"INBOX\" ], }, } pylint: disable=E1101 result = ( service . users () . settings () . filters () . create ( userId = \"me\" , body = filter content ) . execute () ) print ( f 'Created filter with id: { result . get ( \"id\" ) } ' ) except HttpError as error : print ( f \"An error occurred: { error } \" ) result = None return result . get ( \"id\" ) if name == \" main \" : create filter () Related topics Search and filter messages Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For example, common filter patterns include: Filter Matches criteria.from='sender@example.com' Emails from sender@example.com criteria.size=10485760 criteria.sizeComparison='larger' Emails larger than 10 MB criteria.hasAttachment=true Emails with an attachment criteria.subject='[People with Pets]' Emails with [People with Pets] in the subject criteria.query='\"my important project\"' Emails containing my important project criteria.negatedQuery='\"secret knock\"' Emails not containing secret knock If multiple criteria are present in a filter, a message must satisfy all criteria for the filter to apply."
+        ]
+      },
+      {
+        "title": "Gmail API overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/guides",
+        "source_id": "site-docs-root",
+        "final_score": 65,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "When a message matches, filters automatically trigger actions such as adding or removing labels, or forwarding the email to a specified address.",
+          "There are two types of labels: System labels Internally-created labels, such as INBOX , TRASH , or SPAM .",
+          "However, some system labels, such as INBOX can be applied to, or removed from, messages and threads."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "action.addLabelIds",
+      "action.removeLabelIds",
+      "criteria.from",
+      "criteria.hasAttachment",
+      "criteria.negatedQuery",
+      "criteria.query",
+      "criteria.size",
+      "criteria.sizeComparison",
+      "criteria.subject",
+      "developers.google.com",
+      "drafts.send",
+      "example.com",
+      "filter.py",
+      "googleapiclient.discovery",
+      "googleapiclient.errors",
+      "messages.insert",
+      "messages.send",
+      "users.labels",
+      "users.labels.create",
+      "users.labels.delete",
+      "workspacesamples.dev"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/labels",
+        "https://developers.google.com/workspace/gmail/api/guides/filter_settings",
+        "https://developers.google.com/workspace/gmail/api/guides"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/labels",
+        "https://developers.google.com/workspace/gmail/api/guides/filter_settings",
+        "https://developers.google.com/workspace/gmail/api/guides"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/labels",
+        "https://developers.google.com/workspace/gmail/api/guides/filter_settings",
+        "https://developers.google.com/workspace/gmail/api/guides"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/guides/labels",
+        "https://developers.google.com/workspace/gmail/api/guides/filter_settings",
+        "https://developers.google.com/workspace/gmail/api/guides"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.415Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api"
+}

@@ -1,0 +1,176 @@
+{
+  "feature_name": "Network Topology higher-egress views and insights",
+  "feature_slug": "network-topology-higher-egress-views-and-insights",
+  "summary": "Network Topology provides dedicated views and insights for VMs and instance groups that generate higher egress and supports traffic-type filtering.",
+  "extended_definition": "Network Topology provides dedicated views and insights for VMs and instance groups that generate higher egress and supports traffic-type filtering.",
+  "lifecycle": {
+    "latest_feature_date": "2022-10-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+      "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Network Topology overview \\_|\\_ Network Intelligence Center - Network Topology\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "source_id": "site-docs-root",
+        "final_score": 270,
+        "relevance": "",
+        "evidence_snippets": [
+          "In the Infrastructure view, the insights for metrics for the selected hour on the timeline include the following: High egress instances: aggregated hourly values for various types of egress High egress instance groups: aggregated hourly values for various types of egress In the GKE Enterprise view available for GKE Enterprise projects, the insights for metrics for the selected hour on the timeline include the following: High egress GKE workloads: aggregated hourly values for various types of egress for GKE workloads, in the GKE Enterprise view Filter the traffic based on the traffic types You can further filter the traffic based on the following traffic types: All egress traffic for an entity Cross-zonal egress traffic: useful for analyzing billable traffic Egress to internet: used for analyzing billable traffic and for analyzing the traffic that reaches external endpoints Hybrid egress: used to analyze the volume of traffic to on-premises, including Cloud Interconnect, Cloud VPN, and Router appliance connections In the GKE Enterprise view, you can further filter the traffic based on the following traffic types: All measured egress traffic from the selected entity Cross-zonal egress traffic: useful for analyzing billable traffic between Google Cloud zones Multiple projects Network Topology visualizes resources in your project, or you can use Cloud Monitoring, which can visualize metrics for multiple Google Cloud projects.",
+          "Network Topology provides dedicated views that rank resources where you can start your troubleshooting and analysis.",
+          "Metrics for the selected hour on the timeline include the following: Average hourly throughput available for most entities Average hourly packet loss available for traffic within Google Cloud regions and zones Hourly median latency (RTT) available for many entity types In the GKE Enterprise view available for GKE Enterprise projects, the metrics for the selected hour on the timeline also include the following: Average hourly throughput available for most entities Median latency available for traffic within Google Cloud regions and zones with GKE clusters Network verdict metrics displaying the GKE workloads with the most dropped and most forwarded traffic flows for the selected cluster You can also download the table of outliers in a CSV format for the High egress and Network verdict traffic insights."
+        ]
+      },
+      {
+        "title": "\"Roles and permissions \\_|\\_ Network Intelligence Center - Cloud Network\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "source_id": "site-iam-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Predefined roles for Cloud Network Insights Cloud Network Insights has the following predefined roles that allow you to either modify all Cloud Network Insights resources or view the resources: Cloud Network Insights Editor ( roles/networkmanagement.CloudNetworkInsightsEditor ) Cloud Network Insights Viewer ( roles/networkmanagement.CloudNetworkInsightsViewer ) If you want to grant users the ability to view Cloud Network Insights in projects where it is already enabled, you can grant users one of the following predefined roles: Cloud Network Management Viewer ( roles/networkmanagement.viewer ) Cloud Network Insights Viewer ( roles/networkmanagement.CloudNetworkInsightsViewer ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Lowest-level resources where you can grant this role: Project networkmanagement.providers.get networkmanagement.providers.list networkmanagement.providers.generateProviderAccessToken networkmanagement.monitoringPoints.get networkmanagement.monitoringPoints.list networkmanagement.networkPaths.get networkmanagement.networkPaths.list networkmanagement.webPaths.get networkmanagement.webPaths.list productrequirementsservice.requirements.check Alerts and logs roles The following table describes the IAM predefined roles and their associated permissions to view or manage alerts and logs based on Cloud Network Insights data.",
+          "Home Documentation Networking Network Intelligence Center Cloud Network Insights Guides Roles and permissions Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"APIs and reference \\_|\\_ Network Intelligence Center - Cloud Network Insights\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "source_id": "site-iam-reference",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Intelligence Center Cloud Network Insights APIs & Reference APIs and reference Stay organized with collections Save and categorize content based on your preferences.",
+          "This page describes Google Cloud CLI commands and APIs that can be used with Cloud Network Insights and links to Broadcom AppNeta APIs that can be used in conjunction with Google Cloud CLI APIs.",
+          "As such, both Google Cloud APIs and Broadcom AppNeta APIs can be used to perform actions with Cloud Network Insights."
+        ]
+      },
+      {
+        "title": "\"Enable Cloud Network Insights \\_|\\_ Network Intelligence Center - Cloud\\",
+        "url": "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights",
+        "source_id": "site-iam-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Networking Network Intelligence Center Cloud Network Insights Guides Enable Cloud Network Insights Stay organized with collections Save and categorize content based on your preferences.",
+          "Cloud Network Insights Editor ( roles/networkmanagement.CloudNetworkInsightsEditor ): To enable Cloud Network Insights and editing permissions for Cloud Network Insights resources.",
+          "Once Cloud Network Insights is enabled, a corresponding AppNeta instance is provisioned to provide telemetry data, more monitoring options, and to allow further configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "networkmanagement.CloudNetworkInsightsEditor",
+      "networkmanagement.CloudNetworkInsightsViewer",
+      "networkmanagement.monitoringPoints.get",
+      "networkmanagement.monitoringPoints.list",
+      "networkmanagement.networkPaths.get",
+      "networkmanagement.networkPaths.list",
+      "networkmanagement.providers.generateProviderAccessToken",
+      "networkmanagement.providers.get",
+      "networkmanagement.providers.list",
+      "networkmanagement.viewer",
+      "networkmanagement.webPaths.get",
+      "networkmanagement.webPaths.list",
+      "productrequirementsservice.requirements.check"
+    ],
+    "missing_inventory_roles": [
+      "roles/networkmanagement.CloudNetworkInsightsEditor",
+      "roles/networkmanagement.CloudNetworkInsightsViewer",
+      "roles/networkmanagement.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-intelligence-center/docs/network-topology/concepts/overview",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/access-control",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/apis",
+        "https://docs.cloud.google.com/network-intelligence-center/docs/cloud-network-insights/enable-network-insights"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:47.484Z",
+  "source_step08_card": "data/step-08/current/products/network-intelligence-center/card.json",
+  "product_name": "Network Intelligence Center",
+  "product_slug": "network-intelligence-center"
+}

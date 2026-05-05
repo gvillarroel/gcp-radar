@@ -1,0 +1,119 @@
+{
+  "feature_name": "Document OCR legacy layout detection",
+  "feature_slug": "document-ocr-legacy-layout-detection",
+  "summary": "Document OCR supports a heuristics-based layout detection algorithm as an alternative to the ML-based layout detector.",
+  "extended_definition": "Document OCR supports a heuristics-based layout detection algorithm as an alternative to the ML-based layout detector.",
+  "lifecycle": {
+    "latest_feature_date": "2023-03-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+      "https://docs.cloud.google.com/document-ai/docs/fields",
+      "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+      "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "source_id": "site-docs-root",
+        "final_score": 285,
+        "relevance": "",
+        "evidence_snippets": [
+          "Input Disable by setting ProcessOptions.ocrConfig.disableCharacterBoxesDetection to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"disableCharacterBoxesDetection\" : true } } } Legacy layout If you require a heuristics layout-detection algorithm, you can enable legacy layout, which serves as an alternative to the current ML-based, layout-detection algorithm.",
+          "Current valid values are: legacy layout : a heuristics layout detection algorithm, which serves as an alternative to the current ML-based layout detection algorithm.",
+          "Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableSelectionMarkDetection to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"premiumFeatures\" : { \"enableSelectionMarkDetection\" : true } } } } Output The checkbox output appears in Document.pages[].visualElements[] with \"type\": \"unfilled checkbox\" or \"type\": \"filled checkbox\" . \"visualElements\" : [ { \"layout\" : { \"confidence\" : 0.89363575 , \"boundingPoly\" : { \"vertices\" : [ { \"x\" : 11 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 56 }, { \"x\" : 11 , \"y\" : 56 } ], \"normalizedVertices\" : [ { \"x\" : 0.017488075 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.9032258 }, { \"x\" : 0.017488075 , \"y\" : 0.9032258 } ] } }, \"type\" : \"unfilled checkbox\" }, { \"layout\" : { \"confidence\" : 0.9148201 , \"boundingPoly\" : ... }, \"type\" : \"filled checkbox\" } ], You can check the full Document JSON output in this link ."
+        ]
+      },
+      {
+        "title": "Enterprise Document OCR \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "source_id": "site-docs-root-2",
+        "final_score": 285,
+        "relevance": "",
+        "evidence_snippets": [
+          "Input Disable by setting ProcessOptions.ocrConfig.disableCharacterBoxesDetection to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"disableCharacterBoxesDetection\" : true } } } Legacy layout If you require a heuristics layout-detection algorithm, you can enable legacy layout, which serves as an alternative to the current ML-based, layout-detection algorithm.",
+          "Current valid values are: legacy layout : a heuristics layout detection algorithm, which serves as an alternative to the current ML-based layout detection algorithm.",
+          "Input Enable by setting ProcessOptions.ocrConfig.premiumFeatures.enableSelectionMarkDetection to true in the processing request. { \"rawDocument\" : { \"mimeType\" : \" MIME TYPE \" , \"content\" : \" IMAGE CONTENT \" }, \"processOptions\" : { \"ocrConfig\" : { \"premiumFeatures\" : { \"enableSelectionMarkDetection\" : true } } } } Output The checkbox output appears in Document.pages[].visualElements[] with \"type\": \"unfilled checkbox\" or \"type\": \"filled checkbox\" . \"visualElements\" : [ { \"layout\" : { \"confidence\" : 0.89363575 , \"boundingPoly\" : { \"vertices\" : [ { \"x\" : 11 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 24 }, { \"x\" : 37 , \"y\" : 56 }, { \"x\" : 11 , \"y\" : 56 } ], \"normalizedVertices\" : [ { \"x\" : 0.017488075 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.38709676 }, { \"x\" : 0.05882353 , \"y\" : 0.9032258 }, { \"x\" : 0.017488075 , \"y\" : 0.9032258 } ] } }, \"type\" : \"unfilled checkbox\" }, { \"layout\" : { \"confidence\" : 0.9148201 , \"boundingPoly\" : ... }, \"type\" : \"filled checkbox\" } ], You can check the full Document JSON output in this link ."
+        ]
+      },
+      {
+        "title": "\"Process documents with Gemini layout parser \\_|\\_ Document AI \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "source_id": "site-docs-root-2",
+        "final_score": 214,
+        "relevance": "",
+        "evidence_snippets": [
+          "Reduced hallucinations Unlike pure LLM-based parsers that try to read text that isn't there, Gemini layout parser's foundation in advanced OCR grounds it in the document's actual content.",
+          "Release Candidate January 13, 2026 Key capabilities Going forward in this documentation, Gemini layout parser refers to Gemini based pretrained layout parser processor versions, such as pretrained-layout-parser-v1.5-2025-08-25 and pretrained-layout-parser-v1.5-pro-2025-08-25 .",
+          "Primary use cases Document OCR: It can parse text and layout elements like heading, header, footer, table structure and figures from PDF documents."
+        ]
+      },
+      {
+        "title": "Processor list \\_|\\_ Document AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/document-ai/docs/fields",
+        "source_id": "site-docs-reference",
+        "final_score": 205,
+        "relevance": "",
+        "evidence_snippets": [
+          "Category Extract Functions Layout Parsing, Document Chunking Release stage General availability Access status Public lock open Type in API LAYOUT PARSER PROCESSOR Notes This parser supports PDF, HTML, DOCX, PPTX, and XLSX/XLSM files.",
+          "Category Digitize Functions OCR, Quality Analysis Release stage General availability Access status Public lock open Type in API OCR PROCESSOR Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-ocr-v1.2-2022-11-10 Stable GA Frozen model version of v1.0: Model files, configurations, and binaries of a version snapshot frozen in a container image for up to 18 months. pretrained-ocr-v2.0-2023-06-02 Stable GA Production-ready model specialized for document use cases.",
+          "Supported languages Full list of languages Language Name BCP 47 Tag Script Handwriting supported Afrikaans af Latn Albanian sq Latn Arabic ar Arab Armenian hy Armn Belarusian be Cyrl Bangla bn Beng Bengali bn Beng Bulgarian bg Cyrl Catalan ca Latn Chinese zh Hani Croatian hr Latn Czech cs Latn Danish da Latn Dutch nl Latn English en Latn Estonian et Latn Filipino fil Latn Finnish fi Latn French fr Latn German de Latn Greek el Grek Gujarati gu Gujr Hebrew iw Hebr Hindi hi Deva Hungarian hu Latn Icelandic is Latn Indonesian id Latn Italian it Latn Japanese ja Jpan Kannada kn Knda Khmer km Khmr Korean ko Kore Lao lo Laoo Latvian lv Latn Lithuanian lt Latn Macedonian mk Cyrl Malay ms Latn Malayalam ml Mlym Marathi mr Deva Nepali ne Deva Norwegian no Latn Persian fa Arab Polish pl Latn Portuguese (Portugal & Brazil) pt Latn Punjabi pa Guru Romanian ro Latn Russian ru Cyrl Serbian sr Cyrl Slovak sk Latn Slovenian sl Latn Spanish es Latn Swedish sv Latn Tagalog tl Latn Tamil ta Taml Telugu te Telu Thai th Thai Turkish tr Latn Ukrainian uk Cyrl Vietnamese vi Latn Yiddish yi Hebr Processor versions Version ID Release Channel Release Maturity Description pretrained-layout-parser-v1.0-2024-06-03 Stable GA General availability version for document layout analysis."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.documentai.v1",
+      "v1.0",
+      "v1.2",
+      "v1.5",
+      "v2.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/fields"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/document-ai/docs/process-documents-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/enterprise-document-ocr",
+        "https://docs.cloud.google.com/document-ai/docs/layout-parse-chunk",
+        "https://docs.cloud.google.com/document-ai/docs/fields"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:28.926Z",
+  "source_step08_card": "data/step-08/current/products/document-ai/card.json",
+  "product_name": "Document AI",
+  "product_slug": "document-ai"
+}

@@ -1,0 +1,101 @@
+{
+  "feature_name": "4-week query metric retention",
+  "feature_slug": "4-week-query-metric-retention",
+  "summary": "The Query Insights dashboard retains query metrics for four weeks.",
+  "extended_definition": "The Query Insights dashboard retains query metrics for four weeks.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+      "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+      "https://docs.cloud.google.com/alloydb/docs/query-insights-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Advanced query insights features overview \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 212,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In addition, standard query insights metrics are available in system metrics in Cloud Monitoring to keep the functionalities of the standard query insights intact.",
+          "Advanced query insights features load an extension that records query metrics and execution plans that are implemented using hooks.",
+          "Limitations The metrics exposed by advanced query insights features aren't available using a Cloud Monitoring API."
+        ]
+      },
+      {
+        "title": "About query insights \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/query-insights-overview",
+        "source_id": "site-docs-root",
+        "final_score": 210,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Query insights integrate with Cloud Monitoring , letting you create custom dashboards and alerts on query metrics or tags and receive notifications using email, SMS, Slack, PagerDuty, and more.",
+          "Security Users who have access to the AlloyDB dashboard can access query insights metrics on the query insights dashboard.",
+          "You view metrics for queries on the query insights dashboard."
+        ]
+      },
+      {
+        "title": "\"Optimize database performance by comparing performance snapshots \\_|\\_ AlloyDB\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots",
+        "source_id": "site-docs-reference-2",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "This tool complements other AlloyDB observability features like systems insights , query insights , and the Metrics Explorer , which provide real-time metrics about your instance.",
+          "Using the performance snapshot report, you compare the metrics to a performance baseline to gain insights into workload performance metrics, which you can use to optimize or troubleshoot database performance.",
+          "The output looks similar to the following: postgres=# select from perfsnap.g$snapshots; snap id snap time instance id node id snap description snap type is baseline ---------+-------------------------------+--------------+---------------------------------+-------------------+-----------+------------- 1 2023-11-13 22:13:43.159237+00 perf-primary sab3-perf-primary-cab835ef-4cm8 Manual snapshot Manual f 2 2023-11-13 22:53:40.49565+00 perf-primary sab3-perf-primary-cab835ef-4cm8 Automatic snapshot Automatic f 3 2023-11-13 22:56:42.57094+00 perf-replica sab3-perf-replica-b9250422-tz4n Automatic snapshot Automatic f 4 2023-11-13 22:56:42.59476+00 perf-replica sab3-perf-replica-b9250422-63q3 Automatic snapshot Automatic f 5 2023-11-13 23:11:55.23157+00 perf-replica sab3-perf-replica-b9250422-tz4n Manual snapshot Manual f (5 rows) Note: To support basic metrics tracking, AlloyDB automatically takes a snapshot once a day."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "perfsnap.g",
+      "perfsnap.snap"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/advanced-query-insights-overview",
+        "https://docs.cloud.google.com/alloydb/docs/optimize-database-performance-compare-snapshots"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

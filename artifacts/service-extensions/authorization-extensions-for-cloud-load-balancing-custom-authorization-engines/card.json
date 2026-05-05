@@ -1,0 +1,191 @@
+{
+  "feature_name": "Authorization extensions for Cloud Load Balancing custom authorization engines",
+  "feature_slug": "authorization-extensions-for-cloud-load-balancing-custom-authorization-engines",
+  "summary": "Authorization extensions now enable configuring Cloud Load Balancing authorization policies to use custom authorization engines.",
+  "extended_definition": "Authorization extensions now enable configuring Cloud Load Balancing authorization policies to use custom authorization engines.",
+  "lifecycle": {
+    "latest_feature_date": "2024-09-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-extensions/docs/callouts-overview",
+      "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+      "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+      "https://docs.cloud.google.com/service-extensions/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud Load Balancing and Cloud CDN extensions overview \\_|\\_ Service Extensions\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 266,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "After a load balancer calls an edge extension, it does the following: Selects the backend service by evaluating the URL map Applies Google Cloud Armor policies security policies Does a cache lookup and serves from cache if there is a cache hit Applies Cloud Armor policies for the selected backend service Applies CORS policies Applies the stateful session affinity policy Applies Identity-Aware Proxy (IAP) policies for the selected backend service Calls authorization extensions, if any are configured in the processing path of the selected backend service Performs fault injection Calls traffic extensions, if any Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring How authorization extensions work On the request path, authorization extensions are called after route extensions are called and a backend for the request has been selected.",
+          "Before a load balancer calls a traffic extension on the request path for a request, it does the following: Performs fault injection Selects a backend service for the request Applies Cloud Armor policies for the selected backend service Applies IAP policies for the selected backend service Applies Cloud CDN caching policies for the selected backend service in the case of global external Application Load Balancers After a load balancer calls a traffic extension on the request path for a request, it does the following: Performs URL rewrites Performs header manipulation according to the URL map and adds custom request header variables Performs redirects or routing to the selected backend service while applying timeouts and retry policies in the URL map and the load balancing settings for the backend service Performs request mirroring After a load balancer calls a traffic extension on the response path for a request, it does the following: Performs response header transformations and resolves custom response header variables Performs logging by using Cloud Logging Performs Cloud CDN caching in the case of global external Application Load Balancers Custom headers In the traffic path, edge and route extensions run at extensibility points before the stage at which the load balancer adds custom headers .",
+          "After a load balancer calls a route extension for a request, it does the following: Selects the backend service by evaluating the URL map Applies Cloud Armor policies for the selected backend service Applies IAP policies for the selected backend service Performs fault injection Performs request header transformations and resolves custom request header variables Calls traffic extensions, if they exist in the processing path of the selected backend service Performs URL rewrites Performs redirects or routing to the selected backend service and applies timeouts and retry policies in the URL map and other load balancing settings for the backend service How traffic extensions work Load balancers run traffic extensions last in the request processing path and first in the response processing path."
+        ]
+      },
+      {
+        "title": "\"Configure an authorization extension \\_|\\_ Service Extensions \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "source_id": "site-docs-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The CUSTOM action indicates that an extension is being used. cat >authz-policy.yaml <<EOF name: my-authz-policy target: loadBalancingScheme: INTERNAL MANAGED resources: - \"https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/us-east1/forwardingRules/fr1\" action: CUSTOM customProvider: authzExtension: resources: - \"projects/ PROJECT ID /locations/us-east1/authzExtensions/my-authz-ext\" EOF Import the authorization policy to the project.",
+          "Use the sample values provided. cat >authz-extension.yaml <<EOF name: my-authz-ext authority: ext11.com loadBalancingScheme: INTERNAL MANAGED service: https://www.googleapis.com/compute/v1/projects/ PROJECT ID /regions/us-west1/backendServices/authz-service forwardHeaders: - Authorization failOpen: false timeout: \"0.1s\" wireFormat: EXT AUTHZ GRPC forwardAttributes: - request.mcp param - connection.client cert leaf EOF Replace PROJECT ID with the project ID .",
+          "Introduction Cloud Load Balancing lets you configure authorization policies that enforce access control on traffic entering load balancers."
+        ]
+      },
+      {
+        "title": "Service Extensions overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Cloud Load Balancing extensions Service Extensions for Cloud Load Balancing empowers users to add rich customization to the load balancing request and response processing paths for supported Application Load Balancers .",
+          "Plugins Service Extensions helps you use prepublished plugins for your custom needs by adding them in the Cloud Load Balancing processing path.",
+          "Use callouts with Cloud Load Balancing for the following: When the amount of compute or storage is arbitrary When you want to maintain state When you want to use external services, such as BigQuery or third-party applications hosted anywhere Callouts are highly flexible and support a variety of customizations."
+        ]
+      },
+      {
+        "title": "\"Cloud Load Balancing callouts overview \\_|\\_ Service Extensions \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/service-extensions/docs/callouts-overview",
+        "source_id": "site-docs-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For authorization extensions, the load balancer doesn't forward any request body to the callout backend service.",
+          "The following are the limitations with header manipulation: Header manipulation isn't supported for the following headers: X-user-IP CDN-Loop Headers starting with X-Forwarded , X-Google , X-GFE , or X-Amz- connection keep-alive transfer-encoding , te upgrade proxy-connection , proxy-authenticate , proxy-authorization trailers For traffic and authorization extensions, header manipulation is also not supported for these: :method , :authority , :scheme , or host headers.",
+          "For information about disallowed headers, see Limitations with header manipulation . dynamic metadata : includes optional metadata for use by any extensions that are called after the authorization extension, such as traffic extensions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "connection.client",
+      "ext11.com",
+      "extension.yaml",
+      "policy.yaml",
+      "request.mcp"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-extensions/docs/lb-extensions-overview",
+        "https://docs.cloud.google.com/service-extensions/docs/configure-authorization-extensions",
+        "https://docs.cloud.google.com/service-extensions/docs/overview",
+        "https://docs.cloud.google.com/service-extensions/docs/callouts-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.288Z",
+  "source_step08_card": "data/step-08/current/products/service-extensions/card.json",
+  "product_name": "Service Extensions",
+  "product_slug": "service-extensions"
+}

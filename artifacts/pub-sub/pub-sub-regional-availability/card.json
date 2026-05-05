@@ -1,0 +1,193 @@
+{
+  "feature_name": "Pub/Sub regional availability",
+  "feature_slug": "pub-sub-regional-availability",
+  "summary": "Pub/Sub became available in the me-west1 region; Pub/Sub became available in the us-south1 region.",
+  "extended_definition": "Pub/Sub became available in the me-west1 region; Pub/Sub became available in the us-south1 region.",
+  "lifecycle": {
+    "latest_feature_date": "2022-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+      "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+      "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+      "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Pub/Sub: Introduction to reliability \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "source_id": "site-docs-root",
+        "final_score": 278,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Regional Isolation To minimize the infrastructure that publish and subscribe operations depend on outside a single region and to ensure that all data stays isolated to that region, follow these steps: Create a topic per region.",
+          "When using the regional endpoints , such as us-central1-pubsub.googleapis.com , or locational endpoints , such as pubsub.us-central1.rep.googleapis.com , publishers and subscribers connect to Pub/Sub in the specified region.",
+          "Publishers in Australia are unavailable If the publishers in one region become unavailable, the messages that are already published are still delivered to the nearest subscribers: Figure 5."
+        ]
+      },
+      {
+        "title": "Choosing Pub/Sub or Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Yes with ordering keys Explicit rate controls Yes Pull subscriber clients can implement flow control Pull via API No Yes Batch insert No Yes Multiple handlers/subscribers per message No Yes Task/message retention 30 days Up to 31 days Max size of task/message 1MB 10MB Max delivery rate 500 qps/queue No upper limit Geographic availability Regional Global Maximum push handler/subscriber processing duration 30 minutes (HTTP) 10 minutes (App Engine Standard automatic scaling) 24 hours (App Engine Standard manual or basic scaling) 60 minutes (App Engine Flexible) 10 minutes for push operations Number of queues/subscriptions per project 1,000/project, more available via quota increase request 10,000/project Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "In this way, Pub/Sub supports implicit invocation: a publisher implicitly causes the subscribers to execute by publishing an event.",
+          "Key Differences The core difference between Pub/Sub and Cloud Tasks is in the notion of implicit vs. explicit invocation."
+        ]
+      },
+      {
+        "title": "Configure message storage policies \\_|\\_ Pub/Sub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "source_id": "site-docs-root",
+        "final_score": 236,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: subscription/num retained acked messages by region Performance and availability implications The message storage policy does not affect the overall SLA, but it does introduce an availability-control trade-off when publishers or subscribers run outside Google Cloud or in regions not allowed by the policy.",
+          "When publishing from outside of Google Cloud, an additional layer of routing is involved to get the request to a nearby Google Cloud region where the Pub/Sub service is available.",
+          "Click Update . gcloud CLI To push the message storage policy defined in your organization's Resource Location Restriction policy to a topic, run the following gcloud pubsub topics update command: gcloud pubsub topics update TOPIC ID \\ --recompute-message-storage-policy To update the message storage policy of a topic with specific regions, run the gcloud pubsub topics update command with the --message-storage-policy-allowed-regions flag: gcloud pubsub topics update TOPIC ID \\ --message-storage-policy-allowed-regions = REGION1,REGION2 Replace the following: TOPIC ID : the ID of the topic you're updating."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Publish and receive messages in Pub/Sub by using the gcloud\\",
+        "url": "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud",
+        "source_id": "site-docs-root",
+        "final_score": 234,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next See all the available gcloud CLI commands for Pub/Sub Learn more about the Pub/Sub concepts discussed in this page.",
+          "Create a topic Create a topic with the ID my-topic : gcloud pubsub topics create my-topic Create a subscription Create a subscription with the ID my-sub and attach it to my-topic : gcloud pubsub subscriptions create my-sub --topic = my-topic Publish messages Publish a message to my-topic : gcloud pubsub topics publish my-topic --message = \"hello\" Receive messages Receive the message from my-sub : gcloud pubsub subscriptions pull my-sub --auto-ack The gcloud CLI prints the message to the command line.",
+          "Publish and receive messages in Pub/Sub by using the gcloud CLI This page shows you how to do the following operations in Pub/Sub using the Google Cloud CLI: Create a topic and subscription."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "body.json",
+      "central1.rep.googleapis.com",
+      "pubsub.editor",
+      "pubsub.googleapis.com",
+      "pubsub.us"
+    ],
+    "missing_inventory_roles": [
+      "roles/pubsub.editor"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/pubsub/docs/reliability-intro",
+        "https://docs.cloud.google.com/pubsub/docs/choosing-pubsub-or-cloud-tasks",
+        "https://docs.cloud.google.com/pubsub/docs/resource-location-restriction",
+        "https://docs.cloud.google.com/pubsub/docs/publish-receive-messages-gcloud"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.474Z",
+  "source_step08_card": "data/step-08/current/products/pub-sub/card.json",
+  "product_name": "Pub/Sub",
+  "product_slug": "pub-sub"
+}

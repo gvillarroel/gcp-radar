@@ -1,0 +1,169 @@
+{
+  "feature_name": "Databases configuration support",
+  "feature_slug": "databases-configuration-support",
+  "summary": "The databases configuration is supported for Memorystore for Redis.",
+  "extended_definition": "The databases configuration is supported for Memorystore for Redis.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+      "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+      "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Supported Redis configurations \\_|\\_ Memorystore for Redis \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "source_id": "site-docs-root",
+        "final_score": 389,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback Supported Redis configurations Stay organized with collections Save and categorize content based on your preferences.",
+          "0 (default) Integers >= 120 Unit = seconds Unmodifiable configuration parameters The following table lists the Redis configuration parameters that you cannot modify in Memorystore for Redis and their default values.",
+          "Modifiable configuration parameters You can modify the following parameters when creating or updating a Memorystore for Redis instance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 327,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Currently, the supported values are: REDIS 3 2 for Redis 3.2 compatibility REDIS 4 0 for Redis 4.0 compatibility REDIS 5 0 for Redis 5.0 compatibility REDIS 6 X for Redis 6.x compatibility REDIS 7 0 for Redis 7.0 compatibility (default) REDIS 7 2 for Redis 7.2 compatibility reservedIpRange string Optional.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Instance JSON representation { \"name\" : string , \"displayName\" : string , \"labels\" : { string : string , ... } , \"locationId\" : string , \"alternativeLocationId\" : string , \"redisVersion\" : string , \"reservedIpRange\" : string , \"secondaryIpRange\" : string , \"host\" : string , \"port\" : integer , \"currentLocationId\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"statusMessage\" : string , \"redisConfigs\" : { string : string , ... } , \"tier\" : enum ( Tier ) , \"memorySizeGb\" : integer , \"authorizedNetwork\" : string , \"persistenceIamIdentity\" : string , \"connectMode\" : enum ( ConnectMode ) , \"authEnabled\" : boolean , \"serverCaCerts\" : [ { object ( TlsCertificate ) } ] , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"replicaCount\" : integer , \"nodes\" : [ { object ( NodeInfo ) } ] , \"readEndpoint\" : string , \"readEndpointPort\" : integer , \"readReplicasMode\" : enum ( ReadReplicasMode ) , \"customerManagedKey\" : string , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"suspensionReasons\" : [ enum ( SuspensionReason ) ] , \"maintenanceVersion\" : string , \"availableMaintenanceVersions\" : [ string ] , \"tags\" : { string : string , ... } , // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Required."
+        ]
+      },
+      {
+        "title": "High availability for Memorystore for Redis \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "source_id": "site-docs-root",
+        "final_score": 325,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For information about the metrics that Cloud Monitoring provides for Memorystore for Redis, see Monitor Redis Instances and Supported monitoring metrics for Memorystore for Redis .",
+          "Home Documentation Databases Memorystore Memorystore for Redis Guides Send feedback High availability for Memorystore for Redis Stay organized with collections Save and categorize content based on your preferences.",
+          "How a failover affects your application When the primary instance fails over to the replica, Memorystore for Redis drops existing connections to the primary endpoint of the instance."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: redis.googleapis.com \\_|\\_ Memorystore for Redis \\_\\",
+        "url": "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 321,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Currently, the supported values are: REDIS 3 2 for Redis 3.2 compatibility REDIS 4 0 for Redis 4.0 compatibility REDIS 5 0 for Redis 5.0 compatibility REDIS 6 X for Redis 6.x compatibility REDIS 7 0 for Redis 7.0 compatibility (default) REDIS 7 2 for Redis 7.2 compatibility reservedIpRange string Optional.",
+          "Home Documentation Databases Memorystore Memorystore for Redis Reference Send feedback MCP Tools Reference: redis.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "Instance JSON representation { \"name\" : string , \"displayName\" : string , \"labels\" : { string : string , ... } , \"locationId\" : string , \"alternativeLocationId\" : string , \"redisVersion\" : string , \"reservedIpRange\" : string , \"secondaryIpRange\" : string , \"host\" : string , \"port\" : integer , \"currentLocationId\" : string , \"createTime\" : string , \"state\" : enum ( State ) , \"statusMessage\" : string , \"redisConfigs\" : { string : string , ... } , \"tier\" : enum ( Tier ) , \"memorySizeGb\" : integer , \"authorizedNetwork\" : string , \"persistenceIamIdentity\" : string , \"connectMode\" : enum ( ConnectMode ) , \"authEnabled\" : boolean , \"serverCaCerts\" : [ { object ( TlsCertificate ) } ] , \"transitEncryptionMode\" : enum ( TransitEncryptionMode ) , \"maintenancePolicy\" : { object ( MaintenancePolicy ) } , \"maintenanceSchedule\" : { object ( MaintenanceSchedule ) } , \"replicaCount\" : integer , \"nodes\" : [ { object ( NodeInfo ) } ] , \"readEndpoint\" : string , \"readEndpointPort\" : integer , \"readReplicasMode\" : enum ( ReadReplicasMode ) , \"customerManagedKey\" : string , \"persistenceConfig\" : { object ( PersistenceConfig ) } , \"suspensionReasons\" : [ enum ( SuspensionReason ) ] , \"maintenanceVersion\" : string , \"availableMaintenanceVersions\" : [ string ] , \"tags\" : { string : string , ... } , // Union field satisfies pzs can be only one of the following: \"satisfiesPzs\" : boolean // End of list of possible types for union field satisfies pzs . // Union field satisfies pzi can be only one of the following: \"satisfiesPzi\" : boolean // End of list of possible types for union field satisfies pzi . } Fields name string Required."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "redis.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/memorystore/docs/redis/supported-redis-configurations",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/memorystore/docs/redis/high-availability-for-memorystore-for-redis",
+        "https://docs.cloud.google.com/memorystore/docs/redis/reference/mcp/tools_list/get_instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.027Z",
+  "source_step08_card": "data/step-08/current/products/memorystore-for-redis/card.json",
+  "product_name": "Memorystore for Redis",
+  "product_slug": "memorystore-for-redis"
+}

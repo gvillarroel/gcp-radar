@@ -1,0 +1,101 @@
+{
+  "feature_name": "Spreadsheet data source refresh cancellation",
+  "feature_slug": "spreadsheet-data-source-refresh-cancellation",
+  "summary": "Spreadsheet data source refresh cancellation lets scripts stop running refresh operations for linked data source objects.",
+  "extended_definition": "Spreadsheet data source refresh cancellation lets scripts stop running refresh operations for linked data source objects.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-source-chart",
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule",
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule-frequency"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class DataSourceRefreshScheduleFrequency \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule-frequency",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getDaysOfTheWeek() Gets the days of the week on which to refresh the data source.",
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getStartHour() Gets the start hour (as a number 0-23) of the time interval during which the refresh schedule runs.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[\"This content describes the DataSourceRefreshScheduleFrequency class for managing data refresh schedules connected to databases."
+        ]
+      },
+      {
+        "title": "Class DataSourceRefreshSchedule \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getTimeIntervalOfNextRun() Gets the time window of the next run of this refresh schedule.",
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets isEnabled() Determines whether this refresh schedule is enabled.",
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getScope() Gets the scope of this refresh schedule."
+        ]
+      },
+      {
+        "title": "Class DataSourceChart \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-source-chart",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods Method Return type Brief description cancel Data Refresh() Data Source Chart Cancels the data refresh associated with this object if it's currently running. force Refresh Data() Data Source Chart Refreshes the data of this object regardless of the current state. get Data Source() Data Source Gets the data source the object is linked to. get Status() Data Execution Status Gets the data execution status of the object. refresh Data() Data Source Chart Refreshes the data of the object. wait For Completion(timeoutInSeconds) Data Execution Status Waits until the current execution completes, timing out after the provided number of seconds.",
+          "This example shows how to cancel a formula refresh. const spreadsheet = SpreadsheetApp . getActive (); const formula = spreadsheet . getDataSourceFormulas ()[ 0 ]; // Cancel the ongoing refresh on the formula. formula . cancelDataRefresh (); Throws an exception if the data source type is not enabled.",
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets forceRefreshData() Refreshes the data of this object regardless of the current state."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "spreadsheets.currentonly"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-chart",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule-frequency"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-chart",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-refresh-schedule-frequency"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

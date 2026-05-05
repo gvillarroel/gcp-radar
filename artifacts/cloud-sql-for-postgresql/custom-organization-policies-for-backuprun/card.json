@@ -1,0 +1,168 @@
+{
+  "feature_name": "Custom organization policies for BackupRun",
+  "feature_slug": "custom-organization-policies-for-backuprun",
+  "summary": "Cloud SQL supports custom organization policies for BackupRun resources and additional Instances resource fields.",
+  "extended_definition": "Cloud SQL supports custom organization policies for BackupRun resources and additional Instances resource fields.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+      "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+      "https://docs.cloud.google.com/sql/docs/postgres/quotas"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/create-instance",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"enableGoogleMlIntegration\": \" true \" \" false \" \"databaseFlags\": [ { \"name\": \"cloudsql.enable google ml integration\", \"value\": \" on \" \" off \" } ] \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", \"passwordChangeInterval\": \" PASSWORD CHANGE INTERVAL \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "HTTP method and URL: POST https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances Request JSON body: { \"name\": \" INSTANCE ID \", \"region\": \" REGION \", \"databaseVersion\": \" DATABASE VERSION \", \"rootPassword\": \" PASSWORD \", \"settings\": { \"tier\": \" MACHINE TYPE \", \"edition\": \" EDITION TYPE \", \"enableGoogleMlIntegration\": \" true \" \" false \" \"databaseFlags\": [ { \"name\": \"cloudsql.enable google ml integration\", \"value\": \" on \" \" off \" } ] \"dataCacheConfig\": { \"dataCacheEnabled\": DATA CACHE ENABLED }, \"backupConfiguration\": { \"enabled\": true }, \"passwordValidationPolicy\": { \"enablePasswordPolicy\": true \"minLength\": \" MIN LENGTH \", \"complexity\": COMPLEXITY DEFAULT, \"reuseInterval\": \" REUSE INTERVAL \", \"disallowUsernameSubstring\": \" DISALLOW USERNAME SUBSTRING \", \"passwordChangeInterval\": \" PASSWORD CHANGE INTERVAL \" }, \"ipConfiguration\": { \"privateNetwork\": \" PRIVATE NETWORK \", \"authorizedNetworks\": [ AUTHORIZED NETWORKS ], \"ipv4Enabled\": false, \"enablePrivatePathForGoogleCloudServices\": true, \"serverCaMode\": \" CA MODE \", \"serverCertificateRotationMode\": \" SERVER CERTIFICATE ROTATION MODE \", \"customSubjectAlternativeNames\": \" DNS NAMES \" }, \"dataApiAccess\": \"ALLOW DATA API\" }, \"sqlNetworkArchitecture\": \"NEW NETWORK ARCHITECTURE\" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Set the password for the postgres user: gcloud sql users set-password postgres \\ --instance = INSTANCE NAME \\ --password = PASSWORD Terraform To create an instance, use a Terraform resource . resource \"google sql database instance\" \"postgres pvp instance name\" { name = \"postgres-pvp-instance-name\" region = \"asia-northeast1\" database version = \"POSTGRES 14\" root password = \"abcABC123!\" settings { tier = \"db-custom-2-7680\" password validation policy { min length = 6 reuse interval = 2 complexity = \"COMPLEXITY DEFAULT\" disallow username substring = true password change interval = \"30s\" enable password policy = true } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections."
+        ]
+      },
+      {
+        "title": "Quotas and limits \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "source_id": "site-docs-root",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "SqlBackupRunsService.Get SqlDatabasesService.Get SqlInstancesService.Get SqlOperationsService.Get SqlSslCertsService.Get SqlUsersService.Get 500 List sqladmin.googleapis.com/list The number of requests that are made per minute per user per region to use the APIs in this category.",
+          "SqlFlagsService.List SqlTiersService.List 180 Limits There are restrictions on some Cloud SQL resources that are not replenished periodically and not shown on the Quotas page in the Google Cloud console.",
+          "SqlBackupRunsService.Delete SqlBackupRunsService.Insert SqlDatabasesService.Delete SqlDatabasesService.Insert SqlDatabasesService.Patch SqlDatabasesService.Update SqlInstancesService."
+        ]
+      },
+      {
+        "title": "\"Connect to an instance using Private Service Connect \\_|\\_ Cloud SQL for\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "source_id": "site-iam-reference",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Cloud SQL instance is located in the myproject project. gcloud network-connectivity service-connection-policies create cloud-sql-policy \\ --network=default \\ --project=my-project \\ --region=us-central1 \\ --service-class=google-cloud-sql \\ --subnets=managed-service-subnet \\ --psc-connection-limit=10 \\ --producer-instance-location=custom-resource-hierarchy-levels \\ --allowed-google-producers-resource-hierarchy-level=projects/myproject REST Before using any of the request data, make the following replacements: PROJECT ID : the ID of your project.",
+          "You can set the value of PRODUCER INSTANCE LOCATION to only one of the following: custom-resource-hierarchy-levels : the instance must be located in one of the projects, folders, or organizations that you provide as a value for the allowed-google-producers-resource-hierarchy-level parameter. none : the instance is in the same project as the service connection policy.",
+          "Execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method GET -Headers $headers -Uri \"https://sqladmin.googleapis.com/v1/projects/ PROJECT ID /instances/ INSTANCE NAME \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#instance\", \"state\": \"RUNNABLE\", \"databaseVersion\": \"POSTGRES 13\", \"settings\": { \"authorizedGaeApplications\": [], \"tier\": \"db-custom-2-7680\", \"kind\": \"sql#settings\", \"availabilityType\": \"REGIONAL\", \"pricingPlan\": \"PER USE\", \"replicationType\": \"SYNCHRONOUS\", \"activationPolicy\": \"ALWAYS\", \"ipConfiguration\": { \"authorizedNetworks\": [], \"pscConfig\": { \"allowedConsumerProjects\": [ \" ALLOWED PROJECTS \" ], \"pscAutoConnections\": { consumerNetwork:\"projects/ PARENT PROJECT /global/networks/ CONSUMER NETWORK \", consumerNetworkStatus:\" CONSUMER NETWORK STATUS \", consumerProject:\" CONSUMER PROJECT \", ipAddress:\" IP ADDRESS \", status:\" STATUS \" }, \"pscEnabled\": true }, \"ipv4Enabled\": false }, } The following fields exist for instances that have Private Service Connect enabled for them: allowedConsumerProjects : a list of the allowed projects for the instance."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "networkconnectivity.googleapis.com",
+      "request.json",
+      "sqladmin.googleapis.com",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/configure-private-service-connect",
+        "https://docs.cloud.google.com/sql/docs/postgres/quotas",
+        "https://docs.cloud.google.com/sql/docs/postgres/create-instance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

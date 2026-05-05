@@ -1,0 +1,181 @@
+{
+  "feature_name": "History view",
+  "feature_slug": "history-view",
+  "summary": "The Access Approval UI includes a History view for previously acted-on requests with status, timing, details, and audit logs.",
+  "extended_definition": "The Access Approval UI includes a History view for previously acted-on requests with status, timing, details, and audit logs.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/app-hub/docs/overview",
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging",
+      "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Viewing historical Access Approval requests \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Viewing historical Access Approval requests This document explains how you can view all historical access requests for a project.",
+          "Ensure that you have the Access Approval Viewer ( roles/accessapproval.viewer ) Identity and Access Management (IAM) role.",
+          "View historical access requests Console Go to the Access Approval page in the Google Cloud console."
+        ]
+      },
+      {
+        "title": "App Hub overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/app-hub/docs/overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 69,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "This approach aligns your application management boundary with your organization's structure by business unit, environment, or team, and automatically includes all projects within that folder. ( Preview ) Single-project boundary : For small applications where all Google Cloud resources reside in one project, you can designate that single project as your boundary.",
+          "For example, when an AI agent is deployed through a managed platform like Vertex AI Agent Engine , App Hub automatically classifies the resource with the AGENT functional type value to indicate that the workload runs an AI agent. ( Preview ) Extended metadata : an schema-driven property that provides rich, structured information about the service or workload.",
+          "To learn how to visualize this metadata, see View extended metadata schemas . ( Preview ) Identity : an output-only property that contains the service account or managed workload identity name for a service or workload."
+        ]
+      },
+      {
+        "title": "Access Approval audit logging information \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 64,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN WRITE google.cloud.accessapproval.v1.AccessApproval.ApproveApprovalRequest google.cloud.accessapproval.v1.AccessApproval.DeleteAccessApprovalSettings google.cloud.accessapproval.v1.AccessApproval.DismissApprovalRequest google.cloud.accessapproval.v1.AccessApproval.InvalidateApprovalRequest google.cloud.accessapproval.v1.AccessApproval.UpdateAccessApprovalSettings API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Access Approval. google.cloud.accessapproval.v1.AccessApproval The following audit logs are associated with methods belonging to google.cloud.accessapproval.v1.AccessApproval .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.accessapproval.v1.AccessApproval.InvalidateApprovalRequest\" UpdateAccessApprovalSettings Method : google.cloud.accessapproval.v1.AccessApproval.UpdateAccessApprovalSettings Audit log type : Admin activity Permissions : accessapproval.settings.update - ADMIN WRITE Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.accessapproval.v1.AccessApproval.ApproveApprovalRequest\" DeleteAccessApprovalSettings Method : google.cloud.accessapproval.v1.AccessApproval.DeleteAccessApprovalSettings Audit log type : Admin activity Permissions : accessapproval.settings.delete - ADMIN WRITE Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "accessapproval.requests.invalidate",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver"
+        ]
+      },
+      {
+        "permission": "accessapproval.settings.delete",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "accessapproval.settings.update",
+        "group": "accessapproval",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [
+      "accessapproval"
+    ],
+    "missing_inventory_permissions": [
+      "accessapproval.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/accessapproval.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/view-historical-requests",
+        "https://docs.cloud.google.com/app-hub/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/access-approval/docs/audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.605Z",
+  "source_step08_card": "data/step-08/current/products/access-approval/card.json",
+  "product_name": "Access Approval",
+  "product_slug": "access-approval"
+}

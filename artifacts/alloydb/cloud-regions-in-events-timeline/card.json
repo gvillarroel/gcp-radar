@@ -1,0 +1,92 @@
+{
+  "feature_name": "Cloud regions in events timeline",
+  "feature_slug": "cloud-regions-in-events-timeline",
+  "summary": "AlloyDB events timeline supports Cloud region information.",
+  "extended_definition": "AlloyDB events timeline supports Cloud region information.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/maintenance",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "The name of the resource will be in the format of projects/<alloydb-tenant-project-number>/regions/<region-name>/serviceAttachments/<service-attachment-name> allowedConsumerProjects[] string Optional.",
+          "Instances in the read pools are evenly distributed across available zones within the region (i.e. read pools with more than one node will have a node in at least two zones). gceZone string The Compute Engine zone that the instance should serve from, per https://cloud.google.com/compute/docs/regions-zones This can ONLY be specified for ZONAL instances.",
+          "This is of the format: \"projects/${CONSUMER PROJECT}/regions/${REGION}/networkAttachments/${NETWORK ATTACHMENT NAME}\"."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "",
+        "evidence_snippets": [
+          "The name of the resource will be in the format of projects/<alloydb-tenant-project-number>/regions/<region-name>/serviceAttachments/<service-attachment-name> allowedConsumerProjects[] string Optional.",
+          "Instances in the read pools are evenly distributed across available zones within the region (i.e. read pools with more than one node will have a node in at least two zones). gceZone string The Compute Engine zone that the instance should serve from, per https://cloud.google.com/compute/docs/regions-zones This can ONLY be specified for ZONAL instances.",
+          "This is of the format: \"projects/${CONSUMER PROJECT}/regions/${REGION}/networkAttachments/${NETWORK ATTACHMENT NAME}\"."
+        ]
+      },
+      {
+        "title": "Maintenance overview \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/alloydb/docs/maintenance",
+        "source_id": "site-docs-reference-2",
+        "final_score": 100,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "AlloyDB release notes and maintenance changelogs are published soon after maintenance is complete for all regions.",
+          "Non-emergency maintenance for an AlloyDB cluster with no configured maintenance windows can occur any time except for the hours between 6 AM and 10 PM on weekdays, in the local time of the region where the cluster is located.",
+          "In addition, if you opt in to receive email notifications about scheduled AlloyDB maintenance events, then you receive an automated notification about the event as soon as it's scheduled."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "i.e"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/maintenance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

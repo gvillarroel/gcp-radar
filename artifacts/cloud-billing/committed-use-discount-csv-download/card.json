@@ -1,0 +1,90 @@
+{
+  "feature_name": "Committed use discount CSV download",
+  "feature_slug": "committed-use-discount-csv-download",
+  "summary": "Cloud Billing now allows downloading committed use discount (CUD) data as a CSV file including subscription IDs for joining with usage data.",
+  "extended_definition": "Cloud Billing now allows downloading committed use discount (CUD) data as a CSV file including subscription IDs for joining with usage data.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+      "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+      "https://docs.cloud.google.com/billing/docs/how-to/pricing-table"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"View and download the cost details of your invoice or statement \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "CSV file name For the Cost table report, the file name follows this pattern: [Billing Account name] Cost table, [YYYY-MM-DD] — [YYYY-MM-DD].csv For example, a CSV file of the cost table data downloaded for a Cloud Billing account named My Billing Account , for an invoice month of March 2023 , is named: My Billing Account Cost table, 2023-03-01 — 2023-03-31.csv Note: If you download a report with the same invoice month multiple times, then the default report name will be the same.",
+          "COMMITTED USAGE DISCOUNT DOLLAR BASE : For legacy spend-based committed use discounts (CUDs) that aren't part of the new pricing model , this is the credit earned in exchange for your commitment to spend a minimum amount for a service in a particular region.",
+          "Home Documentation Costs and usage management Cloud Billing Guides Send feedback View and download the cost details of your invoice or statement Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"View and download prices for Google's cloud services \\_|\\_ Cloud Billing\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "source_id": "site-docs-root",
+        "final_score": 103,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Here's how the SKU's pricing tiers are listed in the pricing table: SKU ID SKU description Unit description Tiered usage start List price 6F81-5844-456A Network Internet Data Transfer from Americas to Australia gibibyte 0 0.19 6F81-5844-456A Network Internet Data Transfer from Americas to Australia gibibyte 1,024 0.18 6F81-5844-456A Network Internet Data Transfer from Americas to Australia gibibyte 10,240 0.15 Related topics Export Cloud Billing cost and pricing data to BigQuery View and download the cost details of your invoice or statement Get an invoice, statement, or receipt View your Cloud Billing reports and cost trends View your cost and payment history Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "For Cloud Billing accounts with a custom pricing contract, the effective discount percentage is computed using this equation: Effective discount = (List price - Contract price) / List price × 100 Figure 2 : Example of the pricing table showing prices for SKUs with historical usage, for a Cloud Billing account with a custom pricing contract.",
+          "Home Documentation Costs and usage management Cloud Billing Guides Send feedback View and download prices for Google's cloud services Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Optimize costs with Committed Use Discounts \\_|\\_ Cloud Billing \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis",
+        "source_id": "site-docs-root",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "Related topics Overview of committed use discounts Purchasing spend-based committed use discounts Purchasing resource-based committed use discounts View your Cloud Billing reports and cost trends Understand your savings with cost breakdown reports Export Cloud Billing data to BigQuery View your cost and payment history Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Costs and usage management Cloud Billing Guides Send feedback Optimize costs with Committed Use Discounts Stay organized with collections Save and categorize content based on your preferences.",
+          "Committed use discounts (CUDs) provide discounted prices in exchange for your commitment to use a minimum level of resources for a one-year or three-year period."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/billing/docs/how-to/cost-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/pricing-table",
+        "https://docs.cloud.google.com/billing/docs/how-to/cud-analysis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.750Z",
+  "source_step08_card": "data/step-08/current/products/cloud-billing/card.json",
+  "product_name": "Cloud Billing",
+  "product_slug": "cloud-billing"
+}

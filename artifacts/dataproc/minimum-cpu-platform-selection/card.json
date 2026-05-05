@@ -1,0 +1,169 @@
+{
+  "feature_name": "Minimum CPU platform selection",
+  "feature_slug": "minimum-cpu-platform-selection",
+  "summary": "Minimum CPU platform selection lets users choose a minimum CPU platform when creating a Dataproc cluster.",
+  "extended_definition": "Minimum CPU platform selection lets users choose a minimum CPU platform when creating a Dataproc cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2017-12-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+      "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"InstanceGroupConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 98,
+        "relevance": "",
+        "evidence_snippets": [
+          "List of instance selection options that the group will use when creating new VMs. instanceSelectionResults[] object ( InstanceSelectionResult ) Output only.",
+          "See Dataproc -> Minimum CPU Platform . minNumInstances integer Optional.",
+          "Specifies the minimum cpu platform for the Instance Group."
+        ]
+      },
+      {
+        "title": "\"ClusterConfig \\_|\\_ Managed Service for Apache Spark \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig",
+        "source_id": "site-docs-reference",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "When this key resource name is provided, the following job arguments of the following job types submitted to the cluster are encrypted using CMEK: FlinkJob args HadoopJob args SparkJob args SparkRJob args PySparkJob args SparkSqlJob scriptVariables and queryList.queries HiveJob scriptVariables and queryList.queries PigJob scriptVariables and queryList.queries PrestoJob scriptVariables and queryList.queries AutoscalingConfig Autoscaling Policy config associated with the cluster.",
+          "JSON representation { \"userServiceAccountMapping\" : { string : string , ... } } Fields userServiceAccountMapping map (key: string, value: string) Required.",
+          "The time when cluster became idle (most recent job finished) and became eligible for deletion due to idleness (see JSON representation of Timestamp )."
+        ]
+      },
+      {
+        "title": "Create a Dataproc Metastore service \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "source_id": "site-docs-root-2",
+        "final_score": 91,
+        "relevance": "",
+        "evidence_snippets": [
+          "Under Instance Size , use the slider to choose a minimum and maximum instance size.",
+          "Caution: This IAM policy change grants Dataproc Metastore users with the metastore.services.create permission in the service project to indirectly create addresses and peerings in the network project. gcloud projects add-iam-policy-binding NETWORK PROJECT ID \\ --role \"roles/metastore.serviceAgent\" \\ --member \"serviceAccount:service- SERVICE PROJECT NUMBER @gcp-sa-metastore.iam.gserviceaccount.com\" Note: If you have never created a Dataproc Metastore service in the service project, then the gcloud projects add-iam-policy-binding command might fail with an error message containing Service account [SERVICE ACCOUNT NAME] does not exist.",
+          "You can check the active account by executing gcloud auth list . curl -X POST -s -i -H \"Authorization: Bearer $(gcloud auth print-access-token)\" \\ -d '{\"scaling config\":{\"autoscaling config\":{\"autoscaling enabled\": true,\"limit config\":{\"max scaling factor\": MAX SCALING FACTOR ,\"min scaling factor\": MIN SCALING FACTOR }}}}' \\ -H \"Content-Type:application/json\" \\ https://metastore.googleapis.com/v1/projects/ PROJECT ID /locations/us-central1/services?service id= SERVICE ID Replace the following: MIN INSTANCES Optional: The minimum number of instances to use in your autoscaling configuration."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "metastore.googleapis.com",
+      "metastore.iam.gserviceaccount.com",
+      "metastore.serviceAgent",
+      "metastore.services.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/metastore.serviceAgent"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/InstanceGroupConfig",
+        "https://docs.cloud.google.com/dataproc-metastore/docs/create-service",
+        "https://docs.cloud.google.com/dataproc/docs/reference/rest/v1/ClusterConfig"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:25.491Z",
+  "source_step08_card": "data/step-08/current/products/dataproc/card.json",
+  "product_name": "Dataproc",
+  "product_slug": "dataproc"
+}

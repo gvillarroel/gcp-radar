@@ -1,0 +1,83 @@
+{
+  "feature_name": "Persistent disk",
+  "feature_slug": "persistent-disk",
+  "summary": "Disks, snapshots, and images are available in all zones of the Toronto northamerica-northeast2 region.",
+  "extended_definition": "Disks, snapshots, and images are available in all zones of the Toronto northamerica-northeast2 region.",
+  "lifecycle": {
+    "latest_feature_date": "2021-08-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/compute/docs/disks/persistent-disks",
+      "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+      "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.services.disks.DisksClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Persistent Disk \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/compute/docs/disks/persistent-disks",
+        "source_id": "site-docs-root",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reliability Compute Engine replicates data of your regional Persistent Disk to the zones you selected when you created your disks.",
+          "Design considerations for Regional Persistent Disk If you're designing robust systems or high availability services on Compute Engine, use Regional Persistent Disk combined with other best practices such as backing up your data using snapshots .",
+          "If you need block storage for a virtual machine (VM) instance or container, such as for a boot disk or data disk, use Persistent Disk volumes if Google Cloud Hyperdisk isn't available for your compute instance."
+        ]
+      },
+      {
+        "title": "Persistent Disk \\_|\\_ Compute Engine \\_|\\_ Google Cloud Documentation",
+        "url": "https://developers.google.com/compute/docs/disks/persistent-disks",
+        "source_id": "site-docs-root-3",
+        "final_score": 312,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Reliability Compute Engine replicates data of your regional Persistent Disk to the zones you selected when you created your disks.",
+          "Design considerations for Regional Persistent Disk If you're designing robust systems or high availability services on Compute Engine, use Regional Persistent Disk combined with other best practices such as backing up your data using snapshots .",
+          "If you need block storage for a virtual machine (VM) instance or container, such as for a boot disk or data disk, use Persistent Disk volumes if Google Cloud Hyperdisk isn't available for your compute instance."
+        ]
+      },
+      {
+        "title": "\"Class DisksClient (1.41.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/compute/latest/google.cloud.compute_v1.services.disks.DisksClient",
+        "source_id": "site-python-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Compute Engine has two Disk resources: \\ Zonal \\ Regional Persistent disks are required for running your VM instances.",
+          "ListPager Retrieves a list of persistent disks contained within the specified zone.",
+          "AggregatedListPager Retrieves an aggregated list of persistent disks."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.943Z",
+  "source_step08_card": "data/step-08/current/products/compute-engine/card.json",
+  "product_name": "Compute Engine",
+  "product_slug": "compute-engine"
+}

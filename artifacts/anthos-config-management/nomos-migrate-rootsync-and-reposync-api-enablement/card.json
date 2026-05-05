@@ -1,0 +1,84 @@
+{
+  "feature_name": "nomos migrate RootSync and RepoSync API enablement",
+  "feature_slug": "nomos-migrate-rootsync-and-reposync-api-enablement",
+  "summary": "The nomos migrate command can enable the RootSync and RepoSync APIs on a cluster.",
+  "extended_definition": "The nomos migrate command can enable the RootSync and RepoSync APIs on a cluster.",
+  "lifecycle": {
+    "latest_feature_date": "2021-12-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Monitor RootSync and RepoSync objects \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/monitor-rootsync-reposync",
+        "source_id": "site-docs-root",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "To view the logs for the RootSync or RepoSync reconciler, run the following command: kubectl logs -n config-management-system deployment/ RECONCILER NAME CONTAINER NAME Replace the following: RECONCILER NAME : the reconciler name of the RootSync or RepoSync object.",
+          "View object details To view details of the RootSync and RepoSync objects and to discover further information about potential errors, use the kubectl describe command.",
+          "To get the ResourceGroup object for a RootSync object: kubectl get resourcegroup ROOT SYNC NAME -n config-management-system -o yaml To get the ResourceGroup object for a RepoSync object: kubectl get resourcegroup REPO SYNC NAME -n REPO SYNC NAMESPACE -o yaml Replace the following: ROOT SYNC NAME : the name of the ResourceGroup object that you want to look up."
+        ]
+      },
+      {
+        "title": "Customize your Config Sync installation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/installing-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you need to override the resources for a root or namespace reconciler, you can use the spec.override.resources field in the RootSync or RepoSync object.",
+          "You can then later use kubectl commands to create additional RootSync objects or RepoSyncs that you can fully manage using kubectl commands later. apply-spec.yaml applySpecVersion : 1 spec : configSync : enabled : true If you don't have a source of truth yet, omit the following fields.",
+          "You can configure your RootSync or RepoSync object to sync from a Helm repository using the Kubernetes API , or declare it in another source of truth ."
+        ]
+      },
+      {
+        "title": "Configure Config Sync with kubectl commands \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/configure-config-sync-kubectl",
+        "source_id": "site-docs-root",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you want to create and then update RootSync or RepoSync objects directly using kubectl commands, see RootSync and RepoSync fields .",
+          "If you manually created a RootSync object named root-sync using an alternate installation method, you can edit all of the fields listed in RootSync and RepoSync fields .",
+          "Deleting a RootSync or RepoSync object does not clean up Config Sync annotations and labels."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "spec.override.resources",
+      "spec.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

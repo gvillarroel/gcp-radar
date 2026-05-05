@@ -1,0 +1,106 @@
+{
+  "feature_name": "NUMERIC Data Type",
+  "feature_slug": "numeric-data-type",
+  "summary": "Spanner introduced general availability of the NUMERIC data type.",
+  "extended_definition": "Spanner introduced general availability of the NUMERIC data type.",
+  "lifecycle": {
+    "latest_feature_date": "2020-09-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+      "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+      "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Dialect parity between GoogleSQL and PostgreSQL \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "source_id": "site-docs-reference",
+        "final_score": 109,
+        "relevance": "",
+        "evidence_snippets": [
+          "WITH numbers AS ( SELECT 1::int8 AS a, 9223372036854775807::int8 AS b UNION ALL SELECT 10, 2 ) SELECT CASE WHEN b = 0 THEN NULL WHEN a::numeric / b::numeric > 9223372036854775807 THEN NULL WHEN a::numeric / b::numeric < -9223372036854775808 THEN NULL ELSE a / b END AS result FROM numbers; SAFE.MULTIPLY We recommend that you protect against an overflow explicitly leveraging the NUMERIC data type during a multiplication operation.",
+          "WITH numbers AS ( SELECT 1::int8 AS a, 9223372036854775807::int8 AS b UNION ALL SELECT 1, 2 ) SELECT CASE WHEN a::numeric b::numeric > 9223372036854775807 THEN NULL WHEN a::numeric b::numeric < -9223372036854775808 THEN NULL ELSE a b END AS result FROM numbers; SAFE.NEGATE We recommend that you protect against an overflow explicitly leveraging the NUMERIC data type during a negation operation.",
+          "NUMERIC column as a primary key, secondary index, or foreign key We recommend using an index over a TEXT generated column, as shown in the following example: CREATE TABLE singers( id numeric NOT NULL, pk text GENERATED ALWAYS AS (id::text) STORED, PRIMARY KEY(pk) ); Protocol buffer data type You can store serialized protocol buffers as the PostgreSQL BYTEA data type ."
+        ]
+      },
+      {
+        "title": "\"Information schema for PostgreSQL-dialect databases \\_|\\_ Spanner \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "source_id": "site-docs-reference",
+        "final_score": 97,
+        "relevance": "",
+        "evidence_snippets": [
+          "Only two values are supported: 2 for double precision float8 , and bigint 10 for numeric For all other data types the value is NULL . numeric scale BIGINT Contains the scale of the numeric column type, which is the number of precision base units after the radix point.",
+          "The default is public for a PostgreSQL-dialect database. sequence name character varying The name of the sequence. data type character varying Sequence only supports int8 . numeric precision bigint Not used.",
+          "For all other data types, the value is NULL . numeric precision radix BIGINT The base (unit) of the precision for numeric types."
+        ]
+      },
+      {
+        "title": "\"Best practices for using Spanner as a gaming database \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "",
+        "evidence_snippets": [
+          "This type of availability makes it a good choice for the critical authentication path required at the beginning of every player session.",
+          "Similar to other relational databases, an inventory table in Spanner has a primary key that is a globally unique identifier for the item, as illustrated in the following table. itemID type playerID 7c14887e-8d45 1 6f1ede3b-25e2 8ca83609-bb93 40 6f1ede3b-25e2 33fedada-3400 1 5fa0aa7d-16da e4714487-075e 23 5fa0aa7d-16da d4fbfb92-a8bd 14 5fa0aa7d-16da 31b7067b-42ec 3 26a38c2c-123a In the example inventory table, itemID and playerID are truncated for readability.",
+          "Spanner has configurations offering either 99.99% (\"four nines\") or 99.999% (\"five nines\") of availability , with \"five nines\" corresponding to less than five and a half minutes of unavailability in a year."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/reference/dialect-differences",
+        "https://docs.cloud.google.com/spanner/docs/information-schema-pg",
+        "https://docs.cloud.google.com/spanner/docs/best-practices-gaming-database"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

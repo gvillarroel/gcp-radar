@@ -1,0 +1,196 @@
+{
+  "feature_name": "HTTP targets",
+  "feature_slug": "http-targets",
+  "summary": "Cloud Tasks supports dispatching tasks to HTTP endpoints; Cloud Tasks supports dispatching tasks to HTTP endpoints.",
+  "extended_definition": "Cloud Tasks supports dispatching tasks to HTTP endpoints; Cloud Tasks supports dispatching tasks to HTTP endpoints.",
+  "lifecycle": {
+    "latest_feature_date": "2019-11-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+      "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient",
+      "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create HTTP target tasks \\_|\\_ Cloud Tasks \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For tasks that have HTTP targets (as opposed to explicit App Engine targets, which are less common), there are two ways to create tasks: CreateTask method: You must explicitly create a task object.",
+          "Removing or replacing it should not affect the execution of the samples in anyway . -- > < parent > < groupId>com . google . cloud . samples < / groupId > < artifactId>shared - configuration < / artifactId > < version>1 .2.0 < / version > < / parent > < properties > < maven . compiler . target>1 .8 < / maven . compiler . target > < maven . compiler . source>1 .8 < / maven . compiler . source > < project . build . sourceEncoding>UTF - 8 < / project . build . sourceEncoding > < / properties > < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>26 .32.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - tasks < / artifactId > < / dependency > < dependency > < groupId>junit < / groupId > < artifactId>junit < / artifactId > < version>4 .13.2 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . truth < / groupId > < artifactId>truth < / artifactId > < version>1 .4.0 < / version > < scope>test < / scope > < / dependency > < / dependencies > < / project > Node.js // Imports the Google Cloud Tasks library. const { CloudTasksClient } = require ( ' @google-cloud/tasks ' ); // Instantiates a client. const client = new CloudTasksClient (); async function createHttpTask () { // TODO(developer): Uncomment these lines and replace with your values. // const project = 'my-project-id'; // const queue = 'my-queue'; // const location = 'us-central1'; // const url = 'https://example.com/taskhandler'; // const payload = 'Hello, World!'; // const inSeconds = 180; // Construct the fully qualified queue name. const parent = client . queuePath ( project , location , queue ); const task = { httpRequest : { headers : { 'Content-Type' : 'text/plain' , // Set content type to ensure compatibility your application's request parsing }, httpMethod : 'POST' , url , }, }; if ( payload ) { task . httpRequest . body = Buffer . from ( payload ). toString ( 'base64' ); } if ( inSeconds ) { // The time when the task is scheduled to be attempted. task . scheduleTime = { seconds : parseInt ( inSeconds ) + Date . now () / 1000 , }; } // Send create task request. console . log ( 'Sending task:' ); console . log ( task ); const request = { parent : parent , task : task }; const [ response ] = await client . createTask ( request ); console . log ( Created task ${ response . name } ); } createHttpTask (); Note the package.json file: { \"name\" : \"appengine-cloudtasks\" , \"description\" : \"Google App Engine Cloud Tasks example.\" , \"license\" : \"Apache-2.0\" , \"author\" : \"Google Inc.\" , \"private\" : true , \"engines\" : { \"node\" : \">=16.0.0\" }, \"files\" : [ \" .js\" ], \"scripts\" : { \"test\" : \"c8 mocha -p -j 2 --timeout 30000\" , \"start\" : \"node server.js\" }, \"dependencies\" : { \"@google-cloud/tasks\" : \"^5.0.0\" , \"express\" : \"^4.16.3\" }, \"devDependencies\" : { \"c8\" : \"^10.0.0\" , \"chai\" : \"^4.5.0\" , \"mocha\" : \"^10.0.0\" , \"uuid\" : \"^10.0.0\" } } PHP use Google\\Cloud\\Tasks\\V2\\Client\\CloudTasksClient; use Google\\Cloud\\Tasks\\V2\\CreateTaskRequest; use Google\\Cloud\\Tasks\\V2\\HttpMethod; use Google\\Cloud\\Tasks\\V2\\HttpRequest; use Google\\Cloud\\Tasks\\V2\\Task; / Uncomment and populate these variables in your code / // $projectId = 'The Google project ID'; // $locationId = 'The Location ID'; // $queueId = 'The Cloud Tasks Queue ID'; // $url = 'The full url path that the task request will be sent to.' // $payload = 'The payload your task should carry to the task handler.",
+          "Removing or replacing it should not affect the execution of the samples in anyway . -- > < parent > < groupId>com . google . cloud . samples < / groupId > < artifactId>shared - configuration < / artifactId > < version>1 .2.0 < / version > < / parent > < properties > < maven . compiler . target>1 .8 < / maven . compiler . target > < maven . compiler . source>1 .8 < / maven . compiler . source > < project . build . sourceEncoding>UTF - 8 < / project . build . sourceEncoding > < / properties > < dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>libraries - bom < / artifactId > < version>26 .32.0 < / version > < type>pom < / type > < scope>import < / scope > < / dependency > < / dependencies > < / dependencyManagement > < dependencies > < dependency > < groupId>com . google . cloud < / groupId > < artifactId>google - cloud - tasks < / artifactId > < / dependency > < dependency > < groupId>junit < / groupId > < artifactId>junit < / artifactId > < version>4 .13.2 < / version > < scope>test < / scope > < / dependency > < dependency > < groupId>com . google . truth < / groupId > < artifactId>truth < / artifactId > < version>1 .4.0 < / version > < scope>test < / scope > < / dependency > < / dependencies > < / project > Node.js // Imports the Google Cloud Tasks library. const { CloudTasksClient } = require ( ' @google-cloud/tasks ' ); // Instantiates a client. const client = new CloudTasksClient (); async function createHttpTaskWithToken () { // TODO(developer): Uncomment these lines and replace with your values. // const project = 'my-project-id'; // const queue = 'my-queue'; // const location = 'us-central1'; // const url = 'https://example.com/taskhandler'; // const serviceAccountEmail = 'client@<project-id>.iam.gserviceaccount.com'; // const payload = 'Hello, World!'; // Construct the fully qualified queue name. const parent = client . queuePath ( project , location , queue ); const task = { httpRequest : { headers : { 'Content-Type' : 'text/plain' , // Set content type to ensure compatibility your application's request parsing }, httpMethod : 'POST' , url , oidcToken : { serviceAccountEmail , }, }, }; if ( payload ) { task . httpRequest . body = Buffer . from ( payload ). toString ( 'base64' ); } console . log ( 'Sending task:' ); console . log ( task ); // Send create task request. const request = { parent : parent , task : task }; const [ response ] = await client . createTask ( request ); const name = response . name ; console . log ( Created task ${ name } ); } createHttpTaskWithToken (); Note the package.json file: { \"name\" : \"appengine-cloudtasks\" , \"description\" : \"Google App Engine Cloud Tasks example.\" , \"license\" : \"Apache-2.0\" , \"author\" : \"Google Inc.\" , \"private\" : true , \"engines\" : { \"node\" : \">=16.0.0\" }, \"files\" : [ \" .js\" ], \"scripts\" : { \"test\" : \"c8 mocha -p -j 2 --timeout 30000\" , \"start\" : \"node server.js\" }, \"dependencies\" : { \"@google-cloud/tasks\" : \"^5.0.0\" , \"express\" : \"^4.16.3\" }, \"devDependencies\" : { \"c8\" : \"^10.0.0\" , \"chai\" : \"^4.5.0\" , \"mocha\" : \"^10.0.0\" , \"uuid\" : \"^10.0.0\" } } Python from typing import Optional from google.cloud import tasks v2 def create http task with token ( project : str , location : str , queue : str , url : str , payload : bytes , service account email : str , audience : Optional [ str ] = None , ) - > tasks v2 ."
+        ]
+      },
+      {
+        "title": "\"Class CloudTasksClient (2.88.0) \\_|\\_ Java client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "source_id": "site-java-reference",
+        "final_score": 193,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example: To customize credentials: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library CloudTasksSettings cloudTasksSettings = CloudTasksSettings . newBuilder () . setCredentialsProvider ( FixedCredentialsProvider . create ( myCredentials )) . build (); CloudTasksClient cloudTasksClient = CloudTasksClient . create ( cloudTasksSettings ); To customize the endpoint: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library CloudTasksSettings cloudTasksSettings = CloudTasksSettings . newBuilder (). setEndpoint ( myEndpoint ). build (); CloudTasksClient cloudTasksClient = CloudTasksClient . create ( cloudTasksSettings ); To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over the wire: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library CloudTasksSettings cloudTasksSettings = CloudTasksSettings . newHttpJsonBuilder (). build (); CloudTasksClient cloudTasksClient = CloudTasksClient . create ( cloudTasksSettings ); Please refer to the GitHub repository's samples for more quickstart code snippets.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CloudTasksClient cloudTasksClient = CloudTasksClient . create ()) { ListTasksRequest request = ListTasksRequest . newBuilder () . setParent ( QueueName . of ( \"[PROJECT]\" , \"[LOCATION]\" , \"[QUEUE]\" ). toString ()) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<Task> future = cloudTasksClient . listTasksPagedCallable (). futureCall ( request ); // Do something. for ( Task element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < ListTasksRequest , ListTasksPagedResponse > pauseQueue(PauseQueueRequest request) public final Queue pauseQueue ( PauseQueueRequest request ) Pauses the queue.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( CloudTasksClient cloudTasksClient = CloudTasksClient . create ()) { ListLocationsRequest request = ListLocationsRequest . newBuilder () . setName ( \"name3373707\" ) . setFilter ( \"filter-1274492040\" ) . setPageSize ( 883849137 ) . setPageToken ( \"pageToken873572522\" ) . build (); ApiFuture<Location> future = cloudTasksClient . listLocationsPagedCallable (). futureCall ( request ); // Do something. for ( Location element : future . get (). iterateAll ()) { // doThingsWith(element); } } Returns Type Description UnaryCallable < com.google.cloud.location.ListLocationsRequest , ListLocationsPagedResponse > listQueues(ListQueuesRequest request) public final CloudTasksClient ."
+        ]
+      },
+      {
+        "title": "\"Class CloudTasksAsyncClient (2.22.0) \\_|\\_ Python client libraries \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample test iam permissions(): Create a client client = tasks v2 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample get iam policy(): Create a client client = tasks v2 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore async def sample set iam policy(): Create a client client = tasks v2 ."
+        ]
+      },
+      {
+        "title": "\"Class CloudTasksClient (2.22.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient",
+        "source_id": "site-python-reference",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample test iam permissions(): Create a client client = tasks v2 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample get iam policy(): Create a client client = tasks v2 .",
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import tasks v2 import google.iam.v1.iam policy pb2 as iam policy pb2 # type: ignore def sample set iam policy(): Create a client client = tasks v2 ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.location.ListLocationsRequest",
+      "com.google.cloud.tasks.v2.AppEngineHttpRequestOrBuilder",
+      "com.google.cloud.tasks.v2.CloudTasksClient",
+      "example.com",
+      "googleapis.dev",
+      "iam.gserviceaccount.com",
+      "options.html",
+      "package.json",
+      "requirements.txt",
+      "server.js"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/tasks/docs/creating-http-target-tasks",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-tasks/latest/com.google.cloud.tasks.v2.CloudTasksClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/cloudtasks/latest/google.cloud.tasks_v2.services.cloud_tasks.CloudTasksClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:17.786Z",
+  "source_step08_card": "data/step-08/current/products/cloud-tasks/card.json",
+  "product_name": "Cloud Tasks",
+  "product_slug": "cloud-tasks"
+}

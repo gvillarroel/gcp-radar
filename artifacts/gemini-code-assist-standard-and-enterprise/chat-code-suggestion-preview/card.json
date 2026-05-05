@@ -1,0 +1,122 @@
+{
+  "feature_name": "Chat code suggestion preview",
+  "feature_slug": "chat-code-suggestion-preview",
+  "summary": "Displays chat code suggestions in a preview block by default in VS Code Gemini Code Assist, with options to show them collapsed or expanded.",
+  "extended_definition": "Displays chat code suggestions in a preview block by default in VS Code Gemini Code Assist, with options to show them collapsed or expanded.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+      "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Chat with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "source_id": "site-docs-reference",
+        "final_score": 292,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also use the Quick Preview in the prompt response to accept or reject all suggestions across multiple code files.",
+          "You can also use the Quick Preview in the prompt response to accept or reject all suggestions across multiple code files.",
+          "With this setting enabled, the preview code block in the Gemini Code Assist chat shows the first 6 lines of code."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 282,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also select a part of your code and then prompt Gemini Code Assist for help through the chat feature, and receive and accept or reject code suggestions while you code.",
+          "If you're using Gemini Code Assist Enterprise , you can use Code customization , which lets you get code suggestions based on your organization's private codebase directly from Gemini Code Assist Enterprise.",
+          "Get more relevant suggestions with remote repository context You can get more contextually aware and relevant code suggestions by directing Gemini Code Assist to focus on specific remote repositories."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist Standard and Enterprise \\_|\\_ Gemini for Google\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "source_id": "site-docs-root",
+        "final_score": 272,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can also select a part of your code and then prompt Gemini Code Assist for help through the chat feature, and receive and accept or reject code suggestions while you code.",
+          "If you're using Gemini Code Assist Enterprise , you can use Code customization , which lets you get code suggestions based on your organization's private codebase directly from Gemini Code Assist Enterprise.",
+          "Get more relevant suggestions with remote repository context You can get more contextually aware and relevant code suggestions by directing Gemini Code Assist to focus on specific remote repositories."
+        ]
+      },
+      {
+        "title": "\"Use Gemini Code Assist code customization \\_|\\_ Gemini for Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization",
+        "source_id": "site-docs-root",
+        "final_score": 227,
+        "relevance": "",
+        "evidence_snippets": [
+          "Can you give me an overview of this repository's purpose and key modules?\" For code generation and modification: \" @ REPOSITORY NAME Implement an authentication function similar to the one in this repository.\" \" @ REPOSITORY NAME Refactor the following code to follow the conventions in the selected repository.\" \" @ REPOSITORY A NAME How can I use the latest functions from this repository to improve my code in REPOSITORY B NAME ?\" For testing: \" @ UNIT TEST FILE NAME Generate unit tests for MODULE based on the examples in the selected file.\" By using remote repositories as a focused source of context, you can get more accurate and relevant suggestions from Gemini Code Assist, which can help you code faster and more efficiently.",
+          "Get more relevant suggestions with remote repository context You can get more contextually aware and relevant code suggestions by directing Gemini Code Assist to focus on specific remote repositories.",
+          "Include health checks.\" \"Write a FUNCTION OR CLASS in the following structure: EXPLAIN STRUCTURE .\" After you generate some code, try using a follow-up prompt to improve it: \"Try the /fix command to adjust the generated code—for example, syntax errors.\" \"Add missing imports.\" \"Try /fix on chat-generated code.\" Cleaning, simplifying, and refactoring code Try the following prompts in Gemini Code Assist chat: \"Can you merge IMPORTS VARIABLES OR NOTE EXPORTED FUNCTIONS in this file?\" \"How would you simplify the FUNCTION NAME function?\" \"Can you merge FUNCTION NAME 1 and FUNCTION NAME 2 into one function?\" \"Could you inline some variables in FUNCTION NAME ?\" \"Could you simplify variable naming in the function FUNCTION NAME ?\" Readability Try the following prompts in Gemini Code Assist chat: \"Write the function FUNCTION NAME in fewer lines of code, if possible.\" \"Add comments to the function FUNCTION NAME .\" \"Remove unnecessary whitespaces in the function FUNCTION NAME .\" \"Format the function FUNCTION NAME in a similar way as the rest of the code.\" Code review Try the following prompts in Gemini Code Assist chat: \"Split the code in parts and explain each part using our codebase.\" \"Are there variables or keywords that could be shorter and more self-explanatory?\" \"Can you give me useful code from the REPOSITORY NAME PACKAGE MODULE context for this code?\" \"What do you think about the function FUNCTION NAME ?\" Debugging Try the following prompts in Gemini Code Assist chat: \"I am getting an error when I try to do X/add Y."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-in-ide",
+        "https://docs.cloud.google.com/gemini/docs/codeassist/use-code-customization"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:33.757Z",
+  "source_step08_card": "data/step-08/current/products/gemini-code-assist-standard-and-enterprise/card.json",
+  "product_name": "Gemini Code Assist Standard and Enterprise",
+  "product_slug": "gemini-code-assist-standard-and-enterprise"
+}

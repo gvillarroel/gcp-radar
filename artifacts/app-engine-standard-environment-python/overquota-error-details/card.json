@@ -1,0 +1,105 @@
+{
+  "feature_name": "OverQuota error details",
+  "feature_slug": "overquota-error-details",
+  "summary": "OverQuota exceptions include available error details in returned error messages.",
+  "extended_definition": "OverQuota exceptions include available error details in returned error messages.",
+  "lifecycle": {
+    "latest_feature_date": "2016-04-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/appengine/docs/quotas",
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Quotas and limits \\_|\\_ App Engine standard environment \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/quotas",
+        "source_id": "site-docs-reference-4",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "In the Go API, the appengine.IsOverQuota function reports whether an error represents an API call failure due to insufficient available quota.",
+          "The following example illustrates how to catch the OverQuotaError , which may be raised by the SendMessage() method if an email-related quota has been exceeded: try: mail.SendMessage ( to = 'test@example.com' , from = 'admin@example.com' , subject = 'Test Email' , body = 'Testing' ) except apiproxy errors.OverQuotaError, message: Log the error. logging.error(message) Display an informative message to the user. self.response.out.write ( 'The email could not be sent. ' 'Please try again later.' ) Is your app exceeding the default limits?",
+          "This includes: data served in response to both secure requests and non-secure requests by application servers, static file servers, or the Blobstore data sent in email messages data in outgoing HTTP requests sent by the URL fetch service."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Don't include PII or sensitive data in your constraint ID, because it could be exposed in error messages.",
+          "Don't include PII or sensitive data in your constraint ID, because it could be exposed in error messages.",
+          "Don't include PII or sensitive data in your description, because it could be exposed in error messages."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference-3",
+        "final_score": 130,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Don't include PII or sensitive data in your constraint ID, because it could be exposed in error messages.",
+          "Don't include PII or sensitive data in your constraint ID, because it could be exposed in error messages.",
+          "Don't include PII or sensitive data in your description, because it could be exposed in error messages."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.IsOverQuota",
+      "errors.OverQuotaError",
+      "example.com",
+      "logging.error",
+      "mail.SendMessage",
+      "self.response.out.write"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/quotas",
+        "https://cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.208Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-python/card.json",
+  "product_name": "App Engine standard environment Python",
+  "product_slug": "app-engine-standard-environment-python"
+}

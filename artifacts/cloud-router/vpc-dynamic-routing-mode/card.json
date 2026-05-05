@@ -1,0 +1,119 @@
+{
+  "feature_name": "VPC dynamic routing mode",
+  "feature_slug": "vpc-dynamic-routing-mode",
+  "summary": "VPC dynamic routing mode determines whether Cloud Router advertises and propagates routes globally or regionally; VPC dynamic routing mode determines whether Cloud Router advertises and propagates routes globally or regionally.",
+  "extended_definition": "VPC dynamic routing mode determines whether Cloud Router advertises and propagates routes globally or regionally; VPC dynamic routing mode determines whether Cloud Router advertises and propagates routes globally or regionally.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes",
+      "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create a Cloud Router to connect a VPC network to a peer network \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network",
+        "source_id": "site-docs-root",
+        "final_score": 228,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The \"advertisedGroups\": [ALL SUBNETS] flag is valid only when bgp.advertiseMode: CUSTOM , when bgp.advertisedGroups: [ALL SUBNETS] , the router-level advertisements include local subnet ranges according to the dynamic routing mode of the VPC network.",
+          "When this flag and value are specified, the router-level advertisements include local subnet ranges according to the dynamic routing mode of the VPC network.",
+          "To create a Cloud Router that's associated with a region of a VPC network, use the following request: POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /regions/ REGION /routers { \"name\": \" ROUTER NAME \", \"network\": \" NETWORK \", \"encryptedInterconnectRouter\": True False, \"bgp\": { \"asn\": \" ASN NUMBER \", \"advertiseMode\": \" ADVERTISEMENT MODE \", \"advertisedGroups\": [ALL SUBNETS], \"advertisedIpRanges\": [ { \"range\": CUSTOM ADVERTISED RANGE , \"description\": CUSTOM ADVERTISED RANGE DESCRIPTION }, ... ], \"identifierRange\": ROUTER IDENTIFIER RANGE , \"keepaliveInterval\": KEEPALIVE TIMER } } Replace the following: ROUTER NAME : the name of the Cloud Router PROJECT ID : the project ID for the project that contains the Cloud Router NETWORK : the VPC network that contains the Cloud Router REGION : the region that contains the Cloud Router ASN NUMBER : any private ASN ( 64512 - 65534 , 4200000000 - 4294967294 ) that you aren't already using in the on-premises network Cloud Router requires you to use a private ASN, but your on-premises ASN can be public or private."
+        ]
+      },
+      {
+        "title": "\"Set routing and best path selection modes \\_|\\_ Cloud Router \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes",
+        "source_id": "site-docs-root",
+        "final_score": 222,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dynamic routing mode effects on learned routes Create a Cloud Router to connect a VPC network to a peer network Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Set routing and best path selection modes The following Virtual Private Cloud (VPC) network settings control how all Cloud Routers work within the network: Advertised routes are controlled by the dynamic routing mode of the VPC network.",
+          "API To set the dynamic routing and best path selection modes when creating a new VPC network, use the networks.insert method : POST https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/ NETWORK NAME { \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" \"bgpBestPathSelectionMode\": \" BEST PATH SELECTION MODE \" \"bgpAlwaysCompareMed\": True False \"bgpInterRegionCost\": \" COST \" } } To change the dynamic routing and best path selection modes for an existing VPC network, use the networks.patch method : PATCH https://compute.googleapis.com/compute/v1/projects/ PROJECT ID /global/networks/ NETWORK NAME { \"routingConfig\": { \"routingMode\": \" DYNAMIC ROUTING MODE \" \"bgpBestPathSelectionMode\": \" BEST PATH SELECTION MODE \" \"bgpAlwaysCompareMed\": True False \"bgpInterRegionCost\": \" COST \" } } Replace the following: PROJECT ID : the ID of the project that contains the VPC network to modify NETWORK NAME : the name of the VPC network to modify DYNAMIC ROUTING MODE : the dynamic routing mode to use—specify REGIONAL or GLOBAL ."
+        ]
+      },
+      {
+        "title": "Advertised routes \\_|\\_ Cloud Router \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A custom IP address range is ignored if it exactly matches a subnet route that a Cloud Router advertises according to the dynamic routing mode of its VPC network.",
+          "Cloud Router uses the configured base advertised priority plus an inter-regional cost to advertise subnet ranges that come from regions that don't match the region of the Cloud Router when both of the following conditions are met: The dynamic routing mode of VPC network that contains the Cloud Router is global dynamic routing mode.",
+          "Cloud Router can advertise the following routes: Local subnet ranges NCC-imported subnet ranges NCC-imported transit dynamic routes Custom IPv4 and IPv6 prefixes Advertisement modes The advertisement mode of a Cloud Router controls whether it advertises subnet routes, custom prefixes, or both."
+        ]
+      },
+      {
+        "title": "\"Route exchange with VPC spokes \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes",
+        "source_id": "site-iam-reference",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The dynamic routing mode of a routing VPC network determines in which regions the NCC dynamic routes are programmed in the VPC spokes: If the dynamic routing mode is regional, NCC dynamic routes from its hybrid spokes are only programmed in the same region as each hybrid spoke.",
+          "To establish connectivity between hybrid spokes and VPC spokes: Network administrators for the routing VPC networks must first review the Cloud Router path selection and dynamic routing mode: NCC hybrid spokes only support the Cloud Router legacy best path selection mode.",
+          "The dynamic routing mode and best path selection mode of the workload VPC network aren't relevant because the workload VPC network doesn't contain the Cloud Router resources that manage the BGP sessions for the VLAN attachments."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bgp.advertisedGroups",
+      "bgp.advertiseMode",
+      "compute.googleapis.com",
+      "networks.insert",
+      "networks.patch"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-router-vpc-network",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/how-to/create-network-set-modes",
+        "https://docs.cloud.google.com/network-connectivity/docs/router/concepts/advertised-routes",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/dynamic-route-exchange-with-vpc-spokes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.821Z",
+  "source_step08_card": "data/step-08/current/products/cloud-router/card.json",
+  "product_name": "Cloud Router",
+  "product_slug": "cloud-router"
+}

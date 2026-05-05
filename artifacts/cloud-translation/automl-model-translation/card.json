@@ -1,0 +1,143 @@
+{
+  "feature_name": "AutoML model translation",
+  "feature_slug": "automl-model-translation",
+  "summary": "Cloud Translation API v3beta1 supports translating text with AutoML models.",
+  "extended_definition": "Cloud Translation API v3beta1 supports translating text with AutoML models.",
+  "lifecycle": {
+    "latest_feature_date": "2019-04-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+      "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+      "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+      "https://docs.cloud.google.com/translate/docs/basic/translating-text"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :translateText\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"translation\": { \"translatedText\": \"Доктор Ватсон, пожалуйста, откажитесь от своего мусора. Вы поделились нежелательной электронной почтой со мной. Давайте поговорим о спаме и важности рейтинга в конфиденциальном режиме.\", \"model\": \"projects/ PROJECT NUMBER /locations/ LOCATION /models/1395675701985363739\" } } Go Before trying this sample, follow the Go setup instructions in the Cloud Translation quickstart using client libraries .",
+          "Translation LLM with Cloud Translation - Basic API To use the standard Translation LLM model in Cloud Translation - Basic API, pass its full resource name in the model parameter. curl -X POST \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d '{ \"q\": [\"The old lighthouse stood on the edge of the cliff.\"], \"target\": \"es\", \"model\": \"projects/PROJECT ID/locations/REGION NAME/models/general/translation-llm\" }' \\ \"https://translation.googleapis.com/language/translate/v2?key=YOUR API KEY\" The Cloud Translation - Basic API supports only standard NMT and standard LLM models, not customized models.",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :translateText Request JSON body: { \"model\": \"projects/ PROJECT ID /locations/ LOCATION /models/1395675701985363739\", \"sourceLanguageCode\": \"en\", \"targetLanguageCode\": \"ru\", \"contents\": [\"Dr."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/basic/translating-text",
+        "source_id": "site-docs-root",
+        "final_score": 212,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :translateText\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"translation\": { \"translatedText\": \"Доктор Ватсон, пожалуйста, откажитесь от своего мусора. Вы поделились нежелательной электронной почтой со мной. Давайте поговорим о спаме и важности рейтинга в конфиденциальном режиме.\", \"model\": \"projects/ PROJECT NUMBER /locations/ LOCATION /models/1395675701985363739\" } } Go Before trying this sample, follow the Go setup instructions in the Cloud Translation quickstart using client libraries .",
+          "Translation LLM with Cloud Translation - Basic API To use the standard Translation LLM model in Cloud Translation - Basic API, pass its full resource name in the model parameter. curl -X POST \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d '{ \"q\": [\"The old lighthouse stood on the edge of the cliff.\"], \"target\": \"es\", \"model\": \"projects/PROJECT ID/locations/REGION NAME/models/general/translation-llm\" }' \\ \"https://translation.googleapis.com/language/translate/v2?key=YOUR API KEY\" The Cloud Translation - Basic API supports only standard NMT and standard LLM models, not customized models.",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :translateText Request JSON body: { \"model\": \"projects/ PROJECT ID /locations/ LOCATION /models/1395675701985363739\", \"sourceLanguageCode\": \"en\", \"targetLanguageCode\": \"ru\", \"contents\": [\"Dr."
+        ]
+      },
+      {
+        "title": "Upgrade AutoML resources \\_|\\_ Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "source_id": "site-iam-reference",
+        "final_score": 207,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Model evaluation Supports running evaluations against a new test set or from an existing dataset Supports running evaluations against a new test set only Cancel operations Supports canceling dataset import and model creation operations You cannot cancel long-running operations Google Cloud console behavior post upgrade If you upgrade at least one resource, the Google Cloud console switches to using the Cloud Translation API instead of the deprecated AutoML API.",
+          "During the upgrade, Cloud Translation copies your AutoML (legacy) resources, such as datasets and models, and creates new Cloud Translation (native) resources through the Cloud Translation API.",
+          "Feature Legacy Native Import data into datasets when using the API Use CSV file to specify source file locations in Cloud Storage Specify TMX and TSV files locations in Cloud Storage Export data Supports exporting segment pairs from a dataset or data from the model evaluation, which includes the test set along with model predictions Supports exporting segment pairs from a dataset only View data splits by source file The Google Cloud console shows a list of source files that were used to populate a dataset and how the data was split for each file."
+        ]
+      },
+      {
+        "title": "Translate text with Cloud Translation \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance",
+        "source_id": "site-docs-root",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :translateText\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"translation\": { \"translatedText\": \"Доктор Ватсон, пожалуйста, откажитесь от своего мусора. Вы поделились нежелательной электронной почтой со мной. Давайте поговорим о спаме и важности рейтинга в конфиденциальном режиме.\", \"model\": \"projects/ PROJECT NUMBER /locations/ LOCATION /models/1395675701985363739\" } } Go Before trying this sample, follow the Go setup instructions in the Cloud Translation quickstart using client libraries .",
+          "Translation LLM with Cloud Translation - Basic API To use the standard Translation LLM model in Cloud Translation - Basic API, pass its full resource name in the model parameter. curl -X POST \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d '{ \"q\": [\"The old lighthouse stood on the edge of the cliff.\"], \"target\": \"es\", \"model\": \"projects/PROJECT ID/locations/REGION NAME/models/general/translation-llm\" }' \\ \"https://translation.googleapis.com/language/translate/v2?key=YOUR API KEY\" The Cloud Translation - Basic API supports only standard NMT and standard LLM models, not customized models.",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :translateText Request JSON body: { \"model\": \"projects/ PROJECT ID /locations/ LOCATION /models/1395675701985363739\", \"sourceLanguageCode\": \"en\", \"targetLanguageCode\": \"ru\", \"contents\": [\"Dr."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.json",
+      "translation.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translating-text",
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translating-text",
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translating-text",
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translating-text",
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/translating-text-v3",
+        "https://docs.cloud.google.com/translate/docs/basic/translating-text",
+        "https://docs.cloud.google.com/translate/docs/advanced/automl-upgrade",
+        "https://docs.cloud.google.com/translate/docs/advanced/translate-text-advance"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.137Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation"
+}

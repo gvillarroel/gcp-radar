@@ -1,0 +1,180 @@
+{
+  "feature_name": "translation.googleapis.com API endpoint",
+  "feature_slug": "translation-googleapis-com-api-endpoint",
+  "summary": "Cloud Translation uses translation.googleapis.com as the newer API endpoint.",
+  "extended_definition": "Cloud Translation uses translation.googleapis.com as the newer API endpoint.",
+  "lifecycle": {
+    "latest_feature_date": "2016-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+      "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+      "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+      "https://docs.cloud.google.com/translate/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Global and multi-regional endpoints \\_|\\_ Cloud Translation \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "source_id": "site-iam-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Global and multi-regional endpoints Cloud Translation - Advanced offers a global endpoint as well as EU and US multi-regional endpoints: translate.googleapis.com (global) translate-eu.googleapis.com translate-us.googleapis.com If you use a multi-regional endpoint, your data at-rest and machine learning processing stays within the continental boundaries of the EU or US.",
+          "For example, if you use the translate-eu.googleapis.com endpoint, specify a region in Europe such as europe-west1 .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json ` -Uri \"https:// ENDPOINT /v3/projects/ PROJECT NUMBER OR ID /locations/ LOCATION :translateText\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"translations\": [ { \"translatedText\": \"Komm her!\", \"model\": \"projects/ PROJECT NUMBER OR ID /locations/ LOCATION /models/general/base\" } ] } Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Translate text by using adaptive translation \\_|\\_ Cloud Translation \\_\\",
+        "url": "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "source_id": "site-iam-reference",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID \", \"displayName\": \" DISPLAY NAME \", \"sourceLanguageCode\": \" SOURCE LANGUAGE \", \"targetLanguageCode\": \" TARGET LANGUAGE \" } Java Before trying this sample, follow the Java setup instructions in the Cloud Translation quickstart using client libraries .",
+          "HTTP method and URL: POST https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION :adaptiveMtTranslate Request JSON body: { \"referenceSentenceConfig\": { \"referenceSentencePairLists\": [ { \"referenceSentencePairs\": [{ \"sourceSentence\": REFERENCE SOURCE 1 1 , \"targetSentence\": REFERENCE TARGET 1 1 }, { \"sourceSentence\": REFERENCE SOURCE 1 2 , \"targetSentence\": REFERENCE SOURCE 1 2 }] } ], \"sourceLanguageCode\": SOURCE LANGUAGE , \"targetLanguageCode\": TARGET LANGUAGE } \"content\": [\" SOURCE TEXT \"], \"mimeType\": \" MIME TYPE \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\"; \"x-goog-user-project\" = \" PROJECT NUMBER OR ID \" } Invoke-WebRequest -Method POST -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://translation.googleapis.com/v3/projects/ PROJECT ID /locations/ LOCATION /adaptiveMtDatasets/ DATASET ID :importAdaptiveMtFile\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"adaptiveMtFile\": { \"name\": \" DATASET NAME \", \"displayName\": \" FILE NAME \", \"entryCount\": TOTAL ENTRIES } } Java Before trying this sample, follow the Java setup instructions in the Cloud Translation quickstart using client libraries ."
+        ]
+      },
+      {
+        "title": "Overview of the Cloud Translation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "source_id": "site-iam-reference",
+        "final_score": 242,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Feature Basic Advanced Translate with the NMT model Translate with the Translation LLM Translate with Adaptive Translation models Translate with custom models Translate multiple strings in a single request Batch translations with Cloud Storage Translate documents Glossary support (control terminology) Train custom models Language Detection Integrated REST API Integrated gRPC API Service Account API Key Audit logging Supports HTML Supports 100+ Languages Romanization support Transliteration support Adaptive Translation Multi-regional endpoint support VPC Service Controls support Refer to Cloud Translation - Advanced API features for more details on Cloud Translation - Advanced API.",
+          "Cloud Translation API editions and models The Cloud Translation API comes in two different editions, namely a Basic edition and an Advanced edition .",
+          "Advanced API features Using Cloud Translation - Advanced API rather than Cloud Translation - Basic API gives you access to the following features that can make your translation solution more robust and better suited to your specific use case: Model selection and customization Cloud Translation - Advanced API model selection lets you dynamically select different models, including models that you customize to suit your particular application."
+        ]
+      },
+      {
+        "title": "Cloud Translation API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/translate/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 239,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This service has the following service endpoint and all URIs below are relative to this service endpoint: https://translate.googleapis.com REST Resource: v3beta1.projects Methods detectLanguage POST /v3beta1/{parent=projects/ }:detectLanguage Detects the language of text within a request. getSupportedLanguages GET /v3beta1/{parent=projects/ }/supportedLanguages Returns a list of supported languages for translation. translateText POST /v3beta1/{parent=projects/ }:translateText Translates input text and returns translated text.",
+          "This service provides the following discovery documents: https://translate.googleapis.com/$discovery/rest?version=v3 https://translate.googleapis.com/$discovery/rest?version=v3beta1 Service endpoint A service endpoint is a base URL that specifies the network address of an API service.",
+          "REST Resource: v3beta1.projects REST Resource: v3beta1.projects.locations REST Resource: v3beta1.projects.locations.glossaries REST Resource: v3beta1.projects.locations.operations REST Resource: v3.projects REST Resource: v3.projects.locations REST Resource: v3.projects.locations.adaptiveMtDatasets REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles.adaptiveMtSentences REST Resource: v3.projects.locations.adaptiveMtDatasets.adaptiveMtSentences REST Resource: v3.projects.locations.datasets REST Resource: v3.projects.locations.datasets.examples REST Resource: v3.projects.locations.glossaries REST Resource: v3.projects.locations.glossaries.glossaryEntries REST Resource: v3.projects.locations.models REST Resource: v3.projects.locations.operations Service: translate.googleapis.com To call this service, we recommend that you use the Google-provided client libraries ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "eu.googleapis.com",
+      "request.json",
+      "translate.googleapis.com",
+      "translation.googleapis.com",
+      "us.googleapis.com",
+      "v3.projects",
+      "v3.projects.locations",
+      "v3.projects.locations.adaptiveMtDatasets",
+      "v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles",
+      "v3.projects.locations.adaptiveMtDatasets.adaptiveMtFiles.adaptiveMtSentences",
+      "v3.projects.locations.adaptiveMtDatasets.adaptiveMtSentences",
+      "v3.projects.locations.datasets",
+      "v3.projects.locations.datasets.examples",
+      "v3.projects.locations.glossaries",
+      "v3.projects.locations.glossaries.glossaryEntries",
+      "v3.projects.locations.models",
+      "v3.projects.locations.operations",
+      "v3beta1.projects",
+      "v3beta1.projects.locations",
+      "v3beta1.projects.locations.glossaries",
+      "v3beta1.projects.locations.operations"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/reference/rest"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/translate/docs/advanced/endpoints",
+        "https://docs.cloud.google.com/translate/docs/advanced/adaptive-translation",
+        "https://docs.cloud.google.com/translate/docs/intro-to-v3",
+        "https://docs.cloud.google.com/translate/docs/reference/rest"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.137Z",
+  "source_step08_card": "data/step-08/current/products/cloud-translation/card.json",
+  "product_name": "Cloud Translation",
+  "product_slug": "cloud-translation"
+}

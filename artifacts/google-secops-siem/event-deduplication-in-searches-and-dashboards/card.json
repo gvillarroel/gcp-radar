@@ -1,0 +1,149 @@
+{
+  "feature_name": "Event deduplication in searches and dashboards",
+  "feature_slug": "event-deduplication-in-searches-and-dashboards",
+  "summary": "Adds a dedup section to remove duplicate events after the match clause in searches and dashboards.",
+  "extended_definition": "Adds a dedup section to remove duplicate events after the match clause in searches and dashboards.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "For example: additional.fields[\"key\"]=\"value\" Examples of searches using specific key-value pairs in the additional and labels fields: Search for events containing specified key-value pairs: additional.fields[\"pod name\"] = \"kube-scheduler\" metadata.ingestion labels[\"MetadataKeyDeletion\"] = \"startup-script\" Use the AND operator with key-value pair searches: additional.fields[\"pod name\"] = \"kube-scheduler\" AND additional.fields[\"pod name1\"] = \"kube-scheduler1\" Search for all events that contain the specified key, regardless of the value: additional.fields[\"pod name\"] != \"\" Search for events that contain a specific key, using a regular expression: additional.fields.value.string value = \"mystring\" Note: You can also use value.bool value or value.number value for boolean and numeric matches.",
+          "Grouped fields can also be used in combination with regular UDM fields as shown in the following example: ip = \"5.6.7.8\" AND metadata.event type = \"NETWORK CONNECTION\" Grouped fields have a separate section in Aggregations .",
+          "In the Events columns tab, select fields from the following collapsible sections: Quick fields : Use quick fields to quickly add the most relevant UDM field for that data type."
+        ]
+      },
+      {
+        "title": "\"Overview of context-aware analytics \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Outcome section and detection deduplication / detection grouping For rules with a match section, recall that detections are \"grouped by\" the match variables.",
+          "Invalid. $host over 3h after $e1 condition: $e1 and $e2 } Login example using outcome section The following example uses the outcome section to calculate a risk score for the detection. rule Detection { meta: events: $auth.metadata.event type = \"USER LOGIN\" $auth.metadata.vendor name = \"Acme\" $auth.metadata.product name = \"Acme SSO\" $auth.target.user.userid = $user $auth.metadata.event timestamp.seconds > $context.graph.entity.user.termination date.seconds $context.graph.metadata.vendor name = \"Microsoft\" $context.graph.metadata.product name = \"Azure Active Directory\" $context.graph.metadata.entity type = \"USER\" $context.graph.entity.user.userid = $user $context.graph.entity.user.termination date.seconds > 0 match: $user over 15m outcome: $risk score = max( if ( $auth.metadata.event type = \"USER LOGIN\", 50) + if ( $context.graph.entity.user.title = \"Remote\" nocase or $context.graph.entity.user.title = \"Temp\" nocase or $context.graph.entity.user.title = \"Vendor\" nocase, 40) + if ( $context.graph.entity.user.title = \"Legal\" nocase, 10) ) condition: $auth and $context } Suspicious process launch example The following example evaluates UDM event process data against IOC context data stored as an entity context. rule ProcessLaunch { meta: events: $ioc.graph.metadata.vendor name = \"ACME\" $ioc.graph.metadata.product name = \"IOCs\" $ioc.graph.metadata.entity type = \"FILE\" $ioc.graph.entity.file.sha256 = $hash $process.metadata.event type = \"PROCESS LAUNCH\" $process.principal.hostname = $hostname ( not $process.target.process.file.sha256 = \"\" and $process.target.process.file.sha256 = $hash ) match: $hash over 15m condition: $ioc and $process } Additional qualifiers for entity context To create an event variable that uses an entity context, you must provide a <source> after the event name.",
+          "The outcome variables are ignored when doing this deduplication."
+        ]
+      },
+      {
+        "title": "Functions \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/yara-l/functions",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 101,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can omit events where no match occurs by excluding the empty string, which is especially important when you are using re.capture() with an inequality: // Exclude the empty string to omit events where no match occurs. \"\" != re.capture($e.network.email.from , \"@(. )\") // Exclude a specific string with an inequality. \"google.com\" != re.capture($e.network.email.from , \"@(. )\") re.capture all Supported in: Rules Search Dashboards re.capture all( stringText , regex ) Description Use the re.capture all() function to extract every non-overlapping match of a regular expression from a string.",
+          "You can use these functions in the following parts of a YARA-L query: events section BOOL CLAUSE of a conditional in the outcome section arrays.concat Supported in: Rules Search arrays.concat(string array, string array) Description Returns a new string array by copying elements from original string arrays.",
+          "You use these patterns in the events section to filter data or the outcome section to enrich your final detection alerts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "additional.fields",
+      "additional.fields.value.string",
+      "arrays.concat",
+      "auth.metadata.event",
+      "auth.metadata.product",
+      "auth.metadata.vendor",
+      "auth.target.user.userid",
+      "context.graph.entity.resource.attribute.roles.type",
+      "context.graph.entity.user.termination",
+      "context.graph.entity.user.title",
+      "context.graph.entity.user.user",
+      "context.graph.entity.user.userid",
+      "context.graph.metadata.entity",
+      "context.graph.metadata.product",
+      "context.graph.metadata.vendor",
+      "date.seconds",
+      "e.network.email.from",
+      "e1.graph.entity.hostname",
+      "e2.udm.principal.hostname",
+      "inout.metadata.event",
+      "inout.principal.user.user",
+      "ioc.graph.entity.file.sha256",
+      "ioc.graph.metadata.entity",
+      "ioc.graph.metadata.product",
+      "ioc.graph.metadata.vendor",
+      "metadata.event",
+      "metadata.ingestion",
+      "process.metadata.event",
+      "process.principal.hostname",
+      "process.target.process.file.sha256",
+      "re.capture",
+      "timestamp.seconds",
+      "value.bool",
+      "value.number"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/detection/context-aware-analytics",
+        "https://docs.cloud.google.com/chronicle/docs/yara-l/functions"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

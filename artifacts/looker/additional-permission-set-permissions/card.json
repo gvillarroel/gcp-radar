@@ -1,0 +1,371 @@
+{
+  "feature_name": "Additional permission set permissions",
+  "feature_slug": "additional-permission-set-permissions",
+  "summary": "Permission sets now support manage_groups, manage_roles, manage_user_attributes, manage_embed_settings, manage_themes, and manage_privatelabel permissions.",
+  "extended_definition": "Permission sets now support manage_groups, manage_roles, manage_user_attributes, manage_embed_settings, manage_themes, and manage_privatelabel permissions.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-14",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-control",
+      "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration",
+      "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Access control and permission management \\_|\\_ Looker \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How content access and permissions interact Content access is managed by users when they are viewing a folder, or managed by a Looker admin on the Content Access page in the Admin panel.",
+          "This is how a user can get permissions: The best practice is to identify one or more groups of users that should have a permission set , creating a group if necessary.",
+          "Most permissions are applied to specific model sets, such as being able to see user-defined dashboards based on those models."
+        ]
+      },
+      {
+        "title": "BigQuery IAM roles and permissions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Lowest-level resources where you can grant this role: Dataset These resources within a dataset: Table View Routine Connection Saved query Data canvas Pipeline Data preparation Repository This role can also be granted on Resource Manager resources (projects, folders, and organizations). bigquery.bireservations. bigquery.bireservations.get bigquery.bireservations.update bigquery.capacityCommitments. bigquery. capacityCommitments. create bigquery. capacityCommitments. delete bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery. capacityCommitments. update bigquery.config. bigquery.config.get bigquery.config.update bigquery.connections. bigquery.connections.create bigquery.connections.delegate bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery. connections. setIamPolicy bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update bigquery.datasets. bigquery.datasets.create bigquery. datasets. createTagBinding bigquery.datasets.delete bigquery. datasets. deleteTagBinding bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery.datasets.link bigquery. datasets. listEffectiveTags bigquery. datasets. listSharedDatasetUsage bigquery. datasets. listTagBindings bigquery.datasets.setIamPolicy bigquery.datasets.update bigquery.datasets.updateTag bigquery.jobs. bigquery.jobs.create bigquery. jobs. createGlobalQuery bigquery.jobs.delete bigquery.jobs.get bigquery.jobs.list bigquery.jobs.listAll bigquery. jobs. listExecutionMetadata bigquery.jobs.update bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.objectRefs. bigquery.objectRefs.read bigquery.objectRefs.write bigquery.readsessions. bigquery.readsessions.create bigquery.readsessions.getData bigquery.readsessions.update bigquery. reservationAssignments. bigquery. reservationAssignments. create bigquery. reservationAssignments. delete bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups. bigquery. reservationGroups. create bigquery. reservationGroups. delete bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations. bigquery.reservations.create bigquery.reservations.delete bigquery.reservations.get bigquery. reservations. getIamPolicy bigquery.reservations.list bigquery. reservations. listFailoverDatasets bigquery. reservations. setIamPolicy bigquery.reservations.update bigquery.reservations.use bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. overrideTimeTravelRestrictions bigquery. rowAccessPolicies. setIamPolicy bigquery. rowAccessPolicies. update bigquery.savedqueries. bigquery.savedqueries.create bigquery.savedqueries.delete bigquery.savedqueries.get bigquery.savedqueries.list bigquery.savedqueries.update bigquery.tables. bigquery.tables.create bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery. tables. createTagBinding bigquery.tables.delete bigquery.tables.deleteIndex bigquery.tables.deleteSnapshot bigquery. tables. deleteTagBinding bigquery.tables.export bigquery.tables.get bigquery.tables.getData bigquery.tables.getIamPolicy bigquery.tables.list bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.setCategory bigquery. tables. setColumnDataPolicy bigquery.tables.setIamPolicy bigquery.tables.update bigquery.tables.updateData bigquery.tables.updateIndex bigquery.tables.updateTag bigquery.transfers. bigquery.transfers.get bigquery.transfers.update bigquerymigration. translation. translate cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig dataform. dataform.commentThreads.create dataform.commentThreads.delete dataform.commentThreads.get dataform.commentThreads.list dataform.commentThreads.update dataform.comments.create dataform.comments.delete dataform.comments.get dataform.comments.list dataform.comments.update dataform. compilationResults. create dataform. compilationResults. get dataform. compilationResults. list dataform. compilationResults. query dataform.config.get dataform.config.update dataform.folders.addContents dataform.folders.create dataform.folders.delete dataform.folders.deleteTree dataform.folders.get dataform.folders.getIamPolicy dataform.folders.move dataform.folders.queryContents dataform.folders.setIamPolicy dataform.folders.update dataform.locations.get dataform.locations.list dataform.operations.cancel dataform.operations.delete dataform.operations.get dataform.operations.list dataform.releaseConfigs.create dataform.releaseConfigs.delete dataform.releaseConfigs.get dataform.releaseConfigs.list dataform.releaseConfigs.update dataform.repositories.commit dataform. repositories. computeAccessTokenStatus dataform.repositories.create dataform.repositories.delete dataform. repositories. fetchHistory dataform. repositories. fetchRemoteBranches dataform.repositories.get dataform. repositories. getIamPolicy dataform.repositories.list dataform.repositories.move dataform. repositories. queryDirectoryContents dataform.repositories.readFile dataform. repositories. scheduleRelease dataform. repositories. scheduleWorkflow dataform. repositories. setIamPolicy dataform.repositories.update dataform.teamFolders.create dataform.teamFolders.delete dataform. teamFolders. deleteTree dataform.teamFolders.get dataform. teamFolders. getIamPolicy dataform. teamFolders. setIamPolicy dataform.teamFolders.update dataform. workflowConfigs. create dataform. workflowConfigs. delete dataform.workflowConfigs.get dataform.workflowConfigs.list dataform. workflowConfigs. update dataform. workflowInvocations. cancel dataform. workflowInvocations. create dataform. workflowInvocations. delete dataform. workflowInvocations. get dataform. workflowInvocations. list dataform. workflowInvocations. query dataform.workspaces.commit dataform.workspaces.create dataform.workspaces.delete dataform. workspaces. fetchFileDiff dataform. workspaces. fetchFileGitStatuses dataform. workspaces. fetchGitAheadBehind dataform.workspaces.get dataform. workspaces. getIamPolicy dataform. workspaces. installNpmPackages dataform.workspaces.list dataform. workspaces. makeDirectory dataform. workspaces. moveDirectory dataform.workspaces.moveFile dataform.workspaces.pull dataform.workspaces.push dataform. workspaces. queryDirectoryContents dataform.workspaces.readFile dataform. workspaces. removeDirectory dataform.workspaces.removeFile dataform.workspaces.reset dataform. workspaces. searchFiles dataform. workspaces. setIamPolicy dataform.workspaces.writeFile dataplex.datascans. dataplex.datascans.create dataplex.datascans.delete dataplex.datascans.get dataplex.datascans.getData dataplex. datascans. getIamPolicy dataplex.datascans.list dataplex.datascans.run dataplex. datascans. setIamPolicy dataplex.datascans.update dataplex.operations.get dataplex.operations.list dataplex.projects.search resourcemanager.projects.get resourcemanager.projects.list BigQuery Connection Admin ( roles/ bigquery.connectionAdmin ) Lowest-level resources where you can grant this role: Connection This role can also be granted on Resource Manager resources (projects, folders, and organizations). bigquery.connections. bigquery.connections.create bigquery.connections.delegate bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery. connections. setIamPolicy bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use BigQuery Connection User ( roles/ bigquery.connectionUser ) Lowest-level resources where you can grant this role: Connection This role can also be granted on Resource Manager resources (projects, folders, and organizations). bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery.connections.use BigQuery Data Editor ( roles/ bigquery.dataEditor ) When granted on a dataset, this role grants these permissions: Get metadata and permissions for the dataset.",
+          "Role Permissions BigQuery Data Policy Admin ( roles/ bigquerydatapolicy.admin ) Role for managing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update Bigquerydatapolicy Editor ( roles/ bigquerydatapolicy.editor ) Editor role for bigquerydatapolicy bigquery.bireservations. bigquery.bireservations.get bigquery.bireservations.update bigquery. capacityCommitments. get bigquery. capacityCommitments. list bigquery. capacityCommitments. update bigquery.config. bigquery.config.get bigquery.config.update bigquery.connections.create bigquery.connections.delete bigquery.connections.get bigquery. connections. getIamPolicy bigquery.connections.list bigquery.connections.update bigquery.connections.updateTag bigquery.connections.use bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery.dataPolicies.update bigquery.datasets.create bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery. datasets. listEffectiveTags bigquery. datasets. listTagBindings bigquery.datasets.updateTag bigquery.jobs.create bigquery. jobs. createGlobalQuery bigquery.jobs.delete bigquery.jobs.get bigquery.jobs.list bigquery. jobs. listExecutionMetadata bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.objectRefs. bigquery.objectRefs.read bigquery.objectRefs.write bigquery.readsessions. bigquery.readsessions.create bigquery.readsessions.getData bigquery.readsessions.update bigquery. reservationAssignments. bigquery. reservationAssignments. create bigquery. reservationAssignments. delete bigquery. reservationAssignments. list bigquery. reservationAssignments. search bigquery.reservationGroups. bigquery. reservationGroups. create bigquery. reservationGroups. delete bigquery.reservationGroups.get bigquery. reservationGroups. list bigquery.reservations.create bigquery.reservations.delete bigquery.reservations.get bigquery. reservations. getIamPolicy bigquery.reservations.list bigquery. reservations. listFailoverDatasets bigquery.reservations.update bigquery.reservations.use bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. update bigquery.savedqueries. bigquery.savedqueries.create bigquery.savedqueries.delete bigquery.savedqueries.get bigquery.savedqueries.list bigquery.savedqueries.update bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery.tables.deleteIndex bigquery.tables.getIamPolicy bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.updateIndex bigquery.transfers. bigquery.transfers.get bigquery.transfers.update resourcemanager.projects.get resourcemanager.projects.list BigQuery Data Policy Viewer ( roles/ bigquerydatapolicy.viewer ) Role for viewing Data Policies in BigQuery This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery.dataPolicies.get bigquery.dataPolicies.list Masked Reader ( roles/ bigquerydatapolicy.maskedReader ) Masked read access to sub-resources tagged by the policy tag associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. maskedGet Raw Data Reader Beta ( roles/ bigquerydatapolicy.rawDataReader ) Raw read access to sub-resources associated with a data policy, for example, BigQuery columns This role can only be granted on Resource Manager resources (projects, folders, and organizations). bigquery. dataPolicies. getRawData BigQuery Data Transfer Service roles This table lists the predefined IAM roles and permissions for BigQuery Data Transfer Service.",
+          "Lowest-level resources where you can grant this role: Dataset These resources within a dataset: Table View Routine This role can also be granted on Resource Manager resources (projects, folders, and organizations). bigquery.config.get bigquery.dataPolicies.attach bigquery.dataPolicies.create bigquery.dataPolicies.delete bigquery.dataPolicies.get bigquery. dataPolicies. getIamPolicy bigquery.dataPolicies.list bigquery. dataPolicies. setIamPolicy bigquery.dataPolicies.update bigquery.datasets. bigquery.datasets.create bigquery. datasets. createTagBinding bigquery.datasets.delete bigquery. datasets. deleteTagBinding bigquery.datasets.get bigquery.datasets.getIamPolicy bigquery.datasets.link bigquery. datasets. listEffectiveTags bigquery. datasets. listSharedDatasetUsage bigquery. datasets. listTagBindings bigquery.datasets.setIamPolicy bigquery.datasets.update bigquery.datasets.updateTag bigquery.models. bigquery.models.create bigquery.models.delete bigquery.models.export bigquery.models.getData bigquery.models.getMetadata bigquery.models.list bigquery.models.updateData bigquery.models.updateMetadata bigquery.models.updateTag bigquery.routines. bigquery.routines.create bigquery.routines.delete bigquery.routines.get bigquery.routines.list bigquery.routines.update bigquery.routines.updateTag bigquery. rowAccessPolicies. create bigquery. rowAccessPolicies. delete bigquery.rowAccessPolicies.get bigquery. rowAccessPolicies. getIamPolicy bigquery. rowAccessPolicies. list bigquery. rowAccessPolicies. setIamPolicy bigquery. rowAccessPolicies. update bigquery.tables. bigquery.tables.create bigquery.tables.createIndex bigquery.tables.createSnapshot bigquery. tables. createTagBinding bigquery.tables.delete bigquery.tables.deleteIndex bigquery.tables.deleteSnapshot bigquery. tables. deleteTagBinding bigquery.tables.export bigquery.tables.get bigquery.tables.getData bigquery.tables.getIamPolicy bigquery.tables.list bigquery. tables. listEffectiveTags bigquery. tables. listTagBindings bigquery.tables.replicateData bigquery. tables. restoreSnapshot bigquery.tables.setCategory bigquery. tables. setColumnDataPolicy bigquery.tables.setIamPolicy bigquery.tables.update bigquery.tables.updateData bigquery.tables.updateIndex bigquery.tables.updateTag cloudkms.keyHandles. cloudkms.keyHandles.create cloudkms.keyHandles.get cloudkms.keyHandles.list cloudkms.operations.get cloudkms. projects. showEffectiveAutokeyConfig dataplex.datascans. dataplex.datascans.create dataplex.datascans.delete dataplex.datascans.get dataplex.datascans.getData dataplex. datascans. getIamPolicy dataplex.datascans.list dataplex.datascans.run dataplex. datascans. setIamPolicy dataplex.datascans.update dataplex.operations.get dataplex.operations.list resourcemanager.projects.get resourcemanager.projects.list BigQuery Data Viewer ( roles/ bigquery.dataViewer ) When granted on a dataset, this role grants these permissions: Get metadata and permissions for the dataset."
+        ]
+      },
+      {
+        "title": "Migrating permissions from Hadoop \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration",
+        "source_id": "site-docs-reference-required-6",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "This document describes how you can migrate permissions from Apache Hadoop Distributed File System (HDFS), Ranger HDFS, and Apache Hive into Identity and Access Management (IAM) roles in Cloud Storage or BigQuery.",
+          "Generate target permissions file The target permissions file contains information about the mapping of source permissions set in the Hadoop cluster to IAM roles for BigQuery or Cloud Storage managed folders.",
+          "Before you run the permissions migration tool, verify that you have met the following prerequisites: You have created the required principals (users, groups, service accounts) in Google Cloud."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.bireservations",
+      "bigquery.bireservations.get",
+      "bigquery.bireservations.update",
+      "bigquery.capacityCommitments",
+      "bigquery.config",
+      "bigquery.config.get",
+      "bigquery.config.update",
+      "bigquery.connectionAdmin",
+      "bigquery.connections",
+      "bigquery.connections.create",
+      "bigquery.connections.delegate",
+      "bigquery.connections.delete",
+      "bigquery.connections.get",
+      "bigquery.connections.list",
+      "bigquery.connections.update",
+      "bigquery.connections.updateTag",
+      "bigquery.connections.use",
+      "bigquery.connectionUser",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.dataPolicies.attach",
+      "bigquery.dataPolicies.create",
+      "bigquery.dataPolicies.delete",
+      "bigquery.dataPolicies.get",
+      "bigquery.dataPolicies.list",
+      "bigquery.dataPolicies.update",
+      "bigquery.datasets",
+      "bigquery.datasets.create",
+      "bigquery.datasets.delete",
+      "bigquery.datasets.get",
+      "bigquery.datasets.getIamPolicy",
+      "bigquery.datasets.link",
+      "bigquery.datasets.setIamPolicy",
+      "bigquery.datasets.update",
+      "bigquery.datasets.updateTag",
+      "bigquery.dataViewer",
+      "bigquery.jobs",
+      "bigquery.jobs.create",
+      "bigquery.jobs.delete",
+      "bigquery.jobs.get",
+      "bigquery.jobs.list",
+      "bigquery.jobs.listAll",
+      "bigquery.jobs.update",
+      "bigquery.models",
+      "bigquery.models.create",
+      "bigquery.models.delete",
+      "bigquery.models.export",
+      "bigquery.models.getData",
+      "bigquery.models.getMetadata",
+      "bigquery.models.list",
+      "bigquery.models.updateData",
+      "bigquery.models.updateMetadata",
+      "bigquery.models.updateTag",
+      "bigquery.objectRefs",
+      "bigquery.objectRefs.read",
+      "bigquery.objectRefs.write",
+      "bigquery.readsessions",
+      "bigquery.readsessions.create",
+      "bigquery.readsessions.getData",
+      "bigquery.readsessions.update",
+      "bigquery.reservationGroups",
+      "bigquery.reservationGroups.get",
+      "bigquery.reservations",
+      "bigquery.reservations.create",
+      "bigquery.reservations.delete",
+      "bigquery.reservations.get",
+      "bigquery.reservations.list",
+      "bigquery.reservations.update",
+      "bigquery.reservations.use",
+      "bigquery.routines",
+      "bigquery.routines.create",
+      "bigquery.routines.delete",
+      "bigquery.routines.get",
+      "bigquery.routines.list",
+      "bigquery.routines.update",
+      "bigquery.routines.updateTag",
+      "bigquery.rowAccessPolicies.get",
+      "bigquery.savedqueries",
+      "bigquery.savedqueries.create",
+      "bigquery.savedqueries.delete",
+      "bigquery.savedqueries.get",
+      "bigquery.savedqueries.list",
+      "bigquery.savedqueries.update",
+      "bigquery.tables",
+      "bigquery.tables.create",
+      "bigquery.tables.createIndex",
+      "bigquery.tables.createSnapshot",
+      "bigquery.tables.delete",
+      "bigquery.tables.deleteIndex",
+      "bigquery.tables.deleteSnapshot",
+      "bigquery.tables.export",
+      "bigquery.tables.get",
+      "bigquery.tables.getData",
+      "bigquery.tables.getIamPolicy",
+      "bigquery.tables.list",
+      "bigquery.tables.replicateData",
+      "bigquery.tables.setCategory",
+      "bigquery.tables.setIamPolicy",
+      "bigquery.tables.update",
+      "bigquery.tables.updateData",
+      "bigquery.tables.updateIndex",
+      "bigquery.tables.updateTag",
+      "bigquery.transfers",
+      "bigquery.transfers.get",
+      "bigquery.transfers.update",
+      "bigquerydatapolicy.admin",
+      "bigquerydatapolicy.editor",
+      "bigquerydatapolicy.maskedReader",
+      "bigquerydatapolicy.rawDataReader",
+      "bigquerydatapolicy.viewer",
+      "cloudkms.keyHandles",
+      "cloudkms.keyHandles.create",
+      "cloudkms.keyHandles.get",
+      "cloudkms.keyHandles.list",
+      "cloudkms.operations.get",
+      "dataform.comments.create",
+      "dataform.comments.delete",
+      "dataform.comments.get",
+      "dataform.comments.list",
+      "dataform.comments.update",
+      "dataform.commentThreads.create",
+      "dataform.commentThreads.delete",
+      "dataform.commentThreads.get",
+      "dataform.commentThreads.list",
+      "dataform.commentThreads.update",
+      "dataform.config.get",
+      "dataform.config.update",
+      "dataform.folders.addContents",
+      "dataform.folders.create",
+      "dataform.folders.delete",
+      "dataform.folders.deleteTree",
+      "dataform.folders.get",
+      "dataform.folders.getIamPolicy",
+      "dataform.folders.move",
+      "dataform.folders.queryContents",
+      "dataform.folders.setIamPolicy",
+      "dataform.folders.update",
+      "dataform.locations.get",
+      "dataform.locations.list",
+      "dataform.operations.cancel",
+      "dataform.operations.delete",
+      "dataform.operations.get",
+      "dataform.operations.list",
+      "dataform.releaseConfigs.create",
+      "dataform.releaseConfigs.delete",
+      "dataform.releaseConfigs.get",
+      "dataform.releaseConfigs.list",
+      "dataform.releaseConfigs.update",
+      "dataform.repositories.commit",
+      "dataform.repositories.create",
+      "dataform.repositories.delete",
+      "dataform.repositories.get",
+      "dataform.repositories.list",
+      "dataform.repositories.move",
+      "dataform.repositories.readFile",
+      "dataform.repositories.update",
+      "dataform.teamFolders.create",
+      "dataform.teamFolders.delete",
+      "dataform.teamFolders.get",
+      "dataform.teamFolders.update",
+      "dataform.workflowConfigs.get",
+      "dataform.workflowConfigs.list",
+      "dataform.workspaces.commit",
+      "dataform.workspaces.create",
+      "dataform.workspaces.delete",
+      "dataform.workspaces.get",
+      "dataform.workspaces.list",
+      "dataform.workspaces.moveFile",
+      "dataform.workspaces.pull",
+      "dataform.workspaces.push",
+      "dataform.workspaces.readFile",
+      "dataform.workspaces.removeFile",
+      "dataform.workspaces.reset",
+      "dataform.workspaces.writeFile",
+      "dataplex.datascans",
+      "dataplex.datascans.create",
+      "dataplex.datascans.delete",
+      "dataplex.datascans.get",
+      "dataplex.datascans.getData",
+      "dataplex.datascans.list",
+      "dataplex.datascans.run",
+      "dataplex.datascans.update",
+      "dataplex.operations.get",
+      "dataplex.operations.list",
+      "dataplex.projects.search"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/access-control-and-permission-management",
+        "https://docs.cloud.google.com/bigquery/docs/access-control",
+        "https://docs.cloud.google.com/bigquery/docs/hadoop-permissions-migration"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

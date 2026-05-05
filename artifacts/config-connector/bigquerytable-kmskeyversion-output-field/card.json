@@ -1,0 +1,260 @@
+{
+  "feature_name": "BigQueryTable kmsKeyVersion output field",
+  "feature_slug": "bigquerytable-kmskeyversion-output-field",
+  "summary": "Config Connector exposes the output-only encryptionConfiguration.kmsKeyVersion field for BigQueryTable.",
+  "extended_definition": "Config Connector exposes the output-only encryptionConfiguration.kmsKeyVersion field for BigQueryTable.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-22",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+      "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "BigQueryTable | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "source_id": "feature-recovery-http",
+        "final_score": 256,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "BigQueryTable Property Value Google Cloud Service Name BigQuery Google Cloud Service Documentation /bigquery/docs/ Google Cloud REST Resource Name bigquery/v2/tables Google Cloud Rest Resource Documentation /bigquery/docs/reference/rest/v2/tables Config Connector Resource Short Names gcpbigquerytable gcpbigquerytables bigquerytable Config Connector Service Name bigquery.googleapis.com Config Connector Resource Fully Qualified Name bigquerytables.bigquery.cnrm.cloud.google.com Can Be Referenced by IAMPolicy/IAMPolicyMember Yes Supports IAM Conditions Yes Supports IAM Audit Configs No IAM External Reference Format projects/{{project}}/datasets/{{dataset_id}}/tables/{{table_id}} Config Connector Default Average Reconcile Interval In Seconds 600 Custom Resource Definition Properties Annotations Fields cnrm.cloud.google.com/project-id cnrm.cloud.google.com/unmanaged Spec Schema clustering : - string datasetRef : external : string name : string namespace : string description : string encryptionConfiguration : kmsKeyRef : external : string name : string namespace : string kmsKeyVersion : string expirationTime : integer externalDataConfiguration : autodetect : boolean avroOptions : useAvroLogicalTypes : boolean compression : string connectionId : string csvOptions : allowJaggedRows : boolean allowQuotedNewlines : boolean encoding : string fieldDelimiter : string quote : string skipLeadingRows : integer fileSetSpecType : string googleSheetsOptions : range : string skipLeadingRows : integer hivePartitioningOptions : mode : string requirePartitionFilter : boolean sourceUriPrefix : string ignoreUnknownValues : boolean jsonOptions : encoding : string maxBadRecords : integer metadataCacheMode : string objectMetadata : string parquetOptions : enableListInference : boolean enumAsString : boolean referenceFileSchemaUri : string schema : string sourceFormat : string sourceUris : - string friendlyName : string labels : string : string materializedView : allowNonIncrementalDefinition : boolean enableRefresh : boolean query : string refreshIntervalMs : integer maxStaleness : string rangePartitioning : field : string range : end : integer interval : integer start : integer requirePartitionFilter : boolean resourceID : string schema : string tableConstraints : foreignKeys : - columnReferences : referencedColumn : string referencingColumn : string name : string referencedTable : datasetId : string projectId : string tableId : string primaryKey : columns : - string timePartitioning : expirationMs : integer field : string requirePartitionFilter : boolean type : string view : query : string useLegacySql : boolean Fields clustering Optional list (string) Clustering specification for the table.",
+          "A hash of this resource. externalRef string A unique specifier for the BigQueryTable resource in Google Cloud. lastModifiedTime integer Output only.",
+          "BigQueryTable | Config Connector | Google Cloud Documentation Skip to main content Technology areas close AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Cross-product tools close Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools / Console English Deutsch Español – América Latina Français Português – Brasil 中文 – 简体 日本語 한국어 Sign in Config Connector Start free Overview Guides API and reference Resources Technology areas More Overview Guides API and reference Resources Cross-product tools More Console Config Connector API resources overview AccessContextManager AccessContextManagerAccessLevel AccessContextManagerAccessPolicy AccessContextManagerServicePerimeter AccessContextManagerServicePerimeterResource AlloyDB AlloyDBBackup AlloyDBCluster AlloyDBInstance AlloyDBUser API Gateway APIGatewayAPI App Hub AppHubApplication Apigee ApigeeEndpointAttachment ApigeeEnvgroup ApigeeEnvgroupAttachment ApigeeEnvironment ApigeeInstance ApigeeInstanceAttachment ApigeeOrganization ArtifactRegistry ArtifactRegistryRepository Backup and DR BackupDRBackupPlan BackupDRBackupPlanAssociation BackupDRBackupVault BigQueryAnalyticsHub BigQueryAnalyticsHubDataExchange BigQueryAnalyticsHubListing BigQuery BigLake BigLakeTable BigQuery BigqueryConnectionConnection BigQueryDataset BigQueryJob BigQueryRoutine BigQueryTable BigQueryDataTransferConfig BigQuery Reservation BigQueryReservationAssignment BigQueryReservationReservation BillingBudgets BillingBudgetsBudget BinaryAuthorization BinaryAuthorizationAttestor BinaryAuthorizationPolicy Certificate Manager CertificateManagerCertificate CertificateManagerCertificateMap CertificateManagerCertificateMapEntry CertificateManagerDNSAuthorization Cloud Asset Inventory AssetFeed AssetSavedQuery Cloud Bigtable BigtableAppProfile BigtableGCPolicy BigtableInstance BigtableTable Cloud Build CloudBuildTrigger CloudBuildWorkerPool Cloud Composer ComposerEnvironment Cloud Deploy CloudDeployDeliveryPipeline Cloud Quotas APIQuotaAdjusterSettings APIQuotaPreference Cloud Functions CloudFunctionsFunction Cloud Identity CloudIdentityGroup CloudIdentityMembership Cloud Intrusion Detection System CloudIDSEndpoint Cloud Scheduler CloudSchedulerJob Config Controller ConfigControllerInstance Cloud DLP DLPDeidentifyTemplate DLPInspectTemplate DLPJobTrigger DLPStoredInfoType Cloud DNS DNSManagedZone DNSPolicy DNSRecordSet Cloud Key Management Service KMSAutokeyConfig KMSCryptoKey KMSImportJob KMSKeyHandle KMSKeyRing Eventarc EventarcTrigger Identity and Access Management (IAM) IAMAccessBoundaryPolicy IAMAuditConfig IAMCustomRole IAMPartialPolicy IAMPolicy IAMPolicyMember IAMServiceAccount IAMServiceAccountKey IAMWorkforcePool IAMWorkforcePoolProvider IAMWorkloadIdentityPool IAMWorkloadIdentityPoolProvider Identity-Aware Proxy (IAP) IAPBrand IAPIdentityAwareProxyClient IAPSettings Identity Platform IdentityPlatformConfig IdentityPlatformTenant IdentityPlatformTenantOAuthIDPConfig IdentityPlatformOAuthIDPConfig Cloud Logging LoggingLink LoggingLogBucket LoggingLogExclusion LoggingLogMetric LoggingLogSink LoggingLogView Cloud Memorystore for Memcached MemcacheInstance Cloud Monitoring MonitoringAlertPolicy MonitoringDashboard MonitoringGroup MonitoringMetricDescriptor MonitoringMonitoredProject MonitoringNotificationChannel MonitoringService MonitoringServiceLevelObjective MonitoringUptimeCheckConfig OS Config OSConfigGuestPolicy OSConfigOSPolicyAssignment Organization Policy OrgPolicyCustomConstraint Cloud Source Repositories SourceRepoRepository Speech-to-Text SpeechCustomClass SpeechPhraseSet SpeechRecognizer Cloud Spanner SpannerBackupSchedule SpannerDatabase SpannerInstance Cloud SQL SQLDatabase SQLInstance SQLSSLCert SQLUser Cloud Storage StorageBucket StorageAnywhereCache StorageBucketAccessControl StorageDefaultObjectAccessControl StorageNotification Compute Engine ComputeAddress ComputeBackendBucket ComputeBackendService ComputeDisk ComputeExternalVPNGateway ComputeFirewall ComputeFirewallPolicy ComputeFirewallPolicyAssociation ComputeFirewallPolicyRule ComputeForwardingRule ComputeHealthCheck ComputeHTTPHealthCheck ComputeHTTPSHealthCheck ComputeImage ComputeInstance ComputeInstanceGroup ComputeInstanceGroupManager ComputeInstanceTemplate ComputeInterconnectAttachment ComputeManagedSSLCertificate ComputeNetwork ComputeNetworkEndpointGroup ComputeNetworkFirewallPolicy ComputeNetworkFirewallPolicyAssociation ComputeNetworkPeering ComputeNodeGroup ComputeNodeTemplate ComputePacketMirroring ComputeProjectMetadata ComputeRegionNetworkEndpointGroup ComputeReservation ComputeResourcePolicy ComputeRoute ComputeRouter ComputeRouterInterface ComputeRouterNAT ComputeRouterPeer ComputeSecurityPolicy ComputeServiceAttachment ComputeSharedVPCHostProject ComputeSharedVPCServiceProject ComputeSnapshot ComputeSSLCertificate ComputeSSLPolicy ComputeSubnetwork ComputeTargetGRPCProxy ComputeTargetHTTPProxy ComputeTargetHTTPSProxy ComputeTargetInstance ComputeTargetPool ComputeTargetSSLProxy ComputeTargetTCPProxy ComputeTargetVPNGateway ComputeURLMap ComputeVPNGateway ComputeVPNTunnel Container Analysis ContainerAnalysisNote Container Attached ContainerAttachedCluster Data Catalog DataCatalogPolicyTag DataCatalogTaxonomy Dataflow DataflowJob DataflowFlexTemplateJob Dataform DataformRepository Data Fusion DataFusionInstance Dataproc DataprocAutoscalingPolicy DataprocCluster DataprocWorkflowTemplate Dataproc Metastore MetastoreBackup Filestore FilestoreBackup FilestoreInstance Firestore FirestoreDatabase FirestoreIndex Google Kubernetes Engine (GKE) ContainerCluster ContainerNodePool Distributed Cloud Edge EdgeContainerCluster EdgeContainerNodePool EdgeContainerVPNConnection EdgeNetworkNetwork EdgeNetworkSubnet Document AI DocumentAIProcessorVersion Essential Contacts EssentialContactsContact GKE Hub GKEHubFeature GKEHubFeatureMembership GKEHubMembership Managed Kafka ManagedKafkaCluster ManagedKafkaTopic Memorystore (Redis) RedisCluster RedisInstance Memorystore for Valkey MemorystoreInstance Network Connectivity NetworkConnectivityHub NetworkConnectivitySpoke Network Security NetworkSecurityAuthorizationPolicy NetworkSecurityClientTLSPolicy NetworkSecurityServerTLSPolicy Network Services NetworkServicesEndpointPolicy NetworkServicesGateway NetworkServicesGRPCRoute NetworkServicesHTTPRoute NetworkServicesMesh NetworkServicesTCPRoute NetworkServicesTLSRoute Notebooks NotebooksInstance Private CA PrivateCACAPool PrivateCACertificate PrivateCACertificateAuthority PrivateCACertificateTemplate Privileged Access Manager PrivilegedAccessManagerEntitlement Pub/Sub PubSubSchema PubSubSnapshot PubSubSubscription PubSubTopic Pub/Sub Lite PubSubLiteReservation reCAPTCHA Enterprise RecaptchaEnterpriseKey Resource Manager Folder Project ResourceManagerLien ResourceManagerPolicy Cloud Run RunJob RunService SecretManager SecretManagerSecret SecretManagerSecretVersion SecureSourceManager SecureSourceManagerInstance SecureSourceManagerRepository Service Directory ServiceDirectoryEndpoint ServiceDirectoryNamespace ServiceDirectoryService Service Networking ServiceNetworkingConnection Service Usage Service ServiceIdentity Storage Transfer Service StorageTransferJob Tags TagsLocationTagBinding TagsTagBinding TagsTagKey TagsTagValue Vertex AI VertexAIDataset VertexAIEndpoint VertexAIIndex VertexAIMetadataStore VMware Engine VMwareEngineExternalAddress VPC Access VPCAccessConnector Workstations WorkstationCluster WorkstationConfig Workstation Annotations AI and ML Application development Application hosting Compute Data analytics and pipelines Databases Distributed, hybrid, and multicloud Industry solutions Migration Networking Observability and monitoring Security Storage Access and resources management Costs and usage management Infrastructure as code SDK, languages, frameworks, and tools Home Documentation Access and resource management Config Connector API and reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "BigQueryJob | Config Connector | Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "source_id": "feature-recovery-http",
+        "final_score": 121,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample YAML(s) Copy BigQuery Job # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryJob metadata : labels : label-one : \"value-one\" # BigQueryJobs cannot be deleted from GCP, so you must use a new unique name # if you want to create a new job, otherwise Config Connector will try to # acquire the job with the given name. name : bigqueryjob-sample-copy spec : location : \"US\" jobTimeoutMs : \"600000\" copy : sourceTables : - tableRef : name : bigqueryjobdep1copy - tableRef : name : bigqueryjobdep2copy destinationTable : tableRef : name : bigqueryjobdep3copy destinationEncryptionConfiguration : kmsKeyRef : name : bigqueryjob-dep-copy writeDisposition : \"WRITE_APPEND\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigqueryjobdep1copy spec : friendlyName : bigqueryjob-dep1-copy description : \"Source BigQueryDataset 1\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigqueryjobdep2copy spec : friendlyName : bigqueryjob-dep2-copy description : \"Source BigQueryDataset 2\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigqueryjobdep3copy spec : friendlyName : bigqueryjob-dep3-copy description : \"Destination BigQueryDataset\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : bigqueryjobdep1copy spec : friendlyName : bigqueryjob-dep1-copy description : \"Source BigQueryTable 1\" datasetRef : name : bigqueryjobdep1copy schema : | [ { \"name\": \"name\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"post_abbr\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"date\", \"type\": \"DATE\", \"mode\": \"NULLABLE\" } ] --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : bigqueryjobdep2copy spec : friendlyName : bigqueryjob-dep2-copy description : \"Source BigQueryTable 2\" datasetRef : name : bigqueryjobdep2copy schema : | [ { \"name\": \"name\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"post_abbr\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"date\", \"type\": \"DATE\", \"mode\": \"NULLABLE\" } ] --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : bigqueryjobdep3copy spec : friendlyName : bigqueryjob-dep3-copy description : \"Destination BigQueryTable\" datasetRef : name : bigqueryjobdep3copy schema : | [ { \"name\": \"name\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"post_abbr\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"date\", \"type\": \"DATE\", \"mode\": \"NULLABLE\" } ] encryptionConfiguration : kmsKeyRef : name : bigqueryjob-dep-copy --- # Replace ${PROJECT_ID?} below with your project ID and ${PROJECT_NUMBER?} with # your project number. apiVersion : iam.cnrm.cloud.google.com/v1beta1 kind : IAMPolicyMember metadata : name : bigqueryjob-dep-copy spec : member : serviceAccount:bq-${PROJECT_NUMBER?}@bigquery-encryption.iam.gserviceaccount.com role : roles/cloudkms.cryptoKeyEncrypterDecrypter resourceRef : kind : Project external : projects/${PROJECT_ID?} --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSCryptoKey metadata : name : bigqueryjob-dep-copy spec : keyRingRef : name : bigqueryjob-dep-copy --- apiVersion : kms.cnrm.cloud.google.com/v1beta1 kind : KMSKeyRing metadata : name : bigqueryjob-dep-copy spec : location : global Extract BigQuery Job # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryJob metadata : labels : label-one : \"value-one\" # BigQueryJobs cannot be deleted from GCP, so you must use a new unique name # if you want to create a new job, otherwise Config Connector will try to # acquire the job with the given name. name : bigqueryjob-sample-extract spec : location : \"US\" jobTimeoutMs : \"600000\" extract : sourceTable : tableRef : name : bigqueryjobdepextract destinationUris : - \"gs://${PROJECT_ID?}-bigqueryjob-dep-extract/extract\" destinationFormat : \"CSV\" compression : \"GZIP\" printHeader : true fieldDelimiter : \",\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigqueryjobdepextract spec : friendlyName : bigqueryjob-dep-extract --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : bigqueryjobdepextract spec : friendlyName : bigqueryjob-dep-extract datasetRef : name : bigqueryjobdepextract schema : | [ { \"name\": \"name\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"post_abbr\", \"type\": \"STRING\", \"mode\": \"NULLABLE\" }, { \"name\": \"date\", \"type\": \"DATE\", \"mode\": \"NULLABLE\" } ] --- apiVersion : storage.cnrm.cloud.google.com/v1beta1 kind : StorageBucket metadata : annotations : cnrm.cloud.google.com/force-destroy : \"true\" # StorageBucket names must be globally unique.",
+          "Replace ${PROJECT_ID?} with your project ID. name : ${PROJECT_ID?}-bigqueryjob-dep-extract Load BigQuery Job # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryJob metadata : labels : label-one : \"value-one\" # BigQueryJobs cannot be deleted from GCP, so you must use a new unique name # if you want to create a new job, otherwise Config Connector will try to # acquire the job with the given name. name : bigqueryjob-sample-load spec : location : \"US\" jobTimeoutMs : \"600000\" load : sourceUris : - \"gs://cloud-samples-data/bigquery/us-states/us-states-by-date.csv\" destinationTable : tableRef : name : bigqueryjobdepload sourceFormat : \"CSV\" encoding : \"UTF-8\" fieldDelimiter : \",\" quote : '\"' allowQuotedNewlines : false maxBadRecords : 0 allowJaggedRows : false ignoreUnknownValues : false skipLeadingRows : 1 autodetect : true writeDisposition : \"WRITE_APPEND\" schemaUpdateOptions : - \"ALLOW_FIELD_ADDITION\" - \"ALLOW_FIELD_RELAXATION\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigqueryjobdepload spec : friendlyName : bigqueryjob-dep-load --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : bigqueryjobdepload spec : friendlyName : bigqueryjob-dep-load datasetRef : name : bigqueryjobdepload Query BigQuery Job # Copyright 2020 Google LLC # # Licensed under the Apache License, Version 2.0 (the \"License\"); # you may not use this file except in compliance with the License. # You may obtain a copy of the License at # # http://www.apache.org/licenses/LICENSE-2.0 # # Unless required by applicable law or agreed to in writing, software # distributed under the License is distributed on an \"AS IS\" BASIS, # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. # See the License for the specific language governing permissions and # limitations under the License. apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryJob metadata : labels : label-one : \"value-one\" # BigQueryJobs cannot be deleted from GCP, so you must use a new unique name # if you want to create a new job, otherwise Config Connector will try to # acquire the job with the given name. name : bigqueryjob-sample-query spec : location : \"US\" jobTimeoutMs : \"600000\" query : query : \"SELECT state FROM [lookerdata:cdc.project_tycho_reports]\" useLegacySql : true defaultDataset : datasetRef : name : bigqueryjobdep1query destinationTable : tableRef : name : bigqueryjobdepquery allowLargeResults : true flattenResults : true useQueryCache : true priority : \"INTERACTIVE\" writeDisposition : \"WRITE_APPEND\" schemaUpdateOptions : - \"ALLOW_FIELD_ADDITION\" - \"ALLOW_FIELD_RELAXATION\" scriptOptions : statementTimeoutMs : \"300000\" keyResultStatement : \"LAST\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigqueryjobdep1query spec : friendlyName : bigqueryjob-dep1-query description : \"Default Source BigQueryDataset\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryDataset metadata : name : bigqueryjobdep2query spec : friendlyName : bigqueryjob-dep2-query description : \"Destination BigQueryDataset\" --- apiVersion : bigquery.cnrm.cloud.google.com/v1beta1 kind : BigQueryTable metadata : name : bigqueryjobdepquery spec : friendlyName : bigqueryjob-dep-query description : \"Destination BigQueryTable\" datasetRef : name : bigqueryjobdep2query Note: If you have any trouble with instantiating the resource, refer to Troubleshoot Config Connector .",
+          "For queries that produce anonymous (cached) results, this field will be populated by BigQuery. query.destinationTable.tableRef Required* object A reference to the table. query.destinationTable.tableRef.external Optional string Allowed value: The `selfLink` field of a `BigQueryTable` resource. query.destinationTable.tableRef.name Optional string Name of the referent."
+        ]
+      },
+      {
+        "title": "AlloyDBCluster \\_|\\_ Config Connector \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "Field is required when parent field is specified Status Schema backupSource : - backupName : string conditions : - lastTransitionTime : string message : string reason : string status : string type : string continuousBackupInfo : - earliestRestorableTime : string enabledTime : string encryptionInfo : - encryptionType : string kmsKeyVersions : - string schedule : - string databaseVersion : string encryptionInfo : - encryptionType : string kmsKeyVersions : - string externalRef : string migrationSource : - hostPort : string referenceId : string sourceType : string name : string observedGeneration : integer observedState : clusterType : string databaseVersion : string uid : string Fields backupSource list (object) Output only.",
+          "Cloud KMS key versions that are being used to protect the database or the backup. encryptionInfo[].kmsKeyVersions[] string externalRef string A unique specifier for the AlloyDBCluster resource in GCP. migrationSource list (object) Output only.",
+          "Cloud KMS key versions that are being used to protect the database or the backup. continuousBackupInfo[].encryptionInfo[].kmsKeyVersions[] string continuousBackupInfo[].schedule list (string) Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.cnrm.cloud.google.com",
+      "bigquery.googleapis.com",
+      "bigquerytables.bigquery.cnrm.cloud.google.com",
+      "cdc.project_tycho_reports",
+      "cloudkms.cryptoKeyEncrypterDecrypter",
+      "cnrm.cloud.google.com",
+      "copy.sourceTables",
+      "date.csv",
+      "encryption.iam.gserviceaccount.com",
+      "iam.cnrm.cloud.google.com",
+      "kms.cnrm.cloud.google.com",
+      "query.destinationTable.tableRef",
+      "query.destinationTable.tableRef.external",
+      "query.destinationTable.tableRef.name",
+      "storage.cnrm.cloud.google.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudkms.cryptoKeyEncrypterDecrypter"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigquerytable",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/bigquery/bigqueryjob",
+        "https://docs.cloud.google.com/config-connector/docs/reference/resource-docs/alloydb/alloydbcluster"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:20.276Z",
+  "source_step08_card": "data/step-08/current/products/config-connector/card.json",
+  "product_name": "Config Connector",
+  "product_slug": "config-connector"
+}

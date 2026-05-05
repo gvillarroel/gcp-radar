@@ -1,0 +1,170 @@
+{
+  "feature_name": "messages.insert deleted parameter",
+  "feature_slug": "messages-insert-deleted-parameter",
+  "summary": "The messages.insert method supports the deleted request parameter.",
+  "extended_definition": "The messages.insert method supports the deleted request parameter.",
+  "lifecycle": {
+    "latest_feature_date": "2015-03-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/gmail/api/reference/quota",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+      "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Method: users.messages.insert \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 214,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Google Workspace Gmail Reference Send feedback Method: users.messages.insert Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request Upload URI, for media upload requests: POST https://gmail.googleapis.com/upload/gmail/v1/users/{userId}/messages Metadata URI, for metadata-only requests: POST https://gmail.googleapis.com/gmail/v1/users/{userId}/messages The URL uses gRPC Transcoding syntax.",
+          "Query parameters Parameters internalDateSource enum ( InternalDateSource ) Source for Gmail's internal date of the message. deleted boolean Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator."
+        ]
+      },
+      {
+        "title": "Method: users.messages.get \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Home Google Workspace Gmail Reference Send feedback Method: users.messages.get Stay organized with collections Save and categorize content based on your preferences.",
+          "HTTP request GET https://gmail.googleapis.com/gmail/v1/users/{userId}/messages/{id} The URL uses gRPC Transcoding syntax.",
+          "The ID is also contained in the result when a message is inserted ( messages.insert ) or imported ( messages.import )."
+        ]
+      },
+      {
+        "title": "Usage limits \\_|\\_ Gmail \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/gmail/api/reference/quota",
+        "source_id": "site-docs-reference",
+        "final_score": 84,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following table outlines the per-method quota unit usage: Method Quota units drafts.create 10 drafts.delete 10 drafts.get 5 drafts.list 5 drafts.send 100 drafts.update 15 getProfile 1 history.list 2 labels.create 5 labels.delete 5 labels.get 1 labels.list 1 labels.update 5 messages.attachments.get 5 messages.batchDelete 50 messages.batchModify 50 messages.delete 10 messages.get 5 messages.import 25 messages.insert 25 messages.list 5 messages.modify 5 messages.send 100 messages.trash 5 messages.untrash 5 settings.delegates.create 100 settings.delegates.delete 5 settings.delegates.get 1 settings.delegates.list 1 settings.filters.create 5 settings.filters.delete 5 settings.filters.get 1 settings.filters.list 1 settings.forwardingAddresses.create 100 settings.forwardingAddresses.delete 5 settings.forwardingAddresses.get 1 settings.forwardingAddresses.list 1 settings.getAutoForwarding 1 settings.getImap 1 settings.getPop 1 settings.getVacation 1 settings.sendAs.create 100 settings.sendAs.delete 5 settings.sendAs.get 1 settings.sendAs.list 1 settings.sendAs.update 100 settings.sendAs.verify 100 settings.updateAutoForwarding 5 settings.updateImap 5 settings.updatePop 100 settings.updateVacation 5 stop 50 threads.delete 20 threads.get 10 threads.list 10 threads.modify 10 threads.trash 10 threads.untrash 10 watch 100 When using the Gmail API, there's also a limit of 500 recipients per email message.",
+          "Per-method quota usage The number of quota units consumed by a request varies depending on the method called.",
+          "To learn more, see the following resources: About quota adjustments View your current quota usage and limits Request a higher quota limit Related topics Improve performance Limits for sending & getting mail Gmail sending limits in Google Workspace Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "drafts.create",
+      "drafts.delete",
+      "drafts.get",
+      "drafts.list",
+      "drafts.send",
+      "drafts.update",
+      "gmail.googleapis.com",
+      "history.list",
+      "labels.create",
+      "labels.delete",
+      "labels.get",
+      "labels.list",
+      "labels.update",
+      "messages.attachments.get",
+      "messages.batchDelete",
+      "messages.batchModify",
+      "messages.delete",
+      "messages.get",
+      "messages.import",
+      "messages.insert",
+      "messages.list",
+      "messages.modify",
+      "messages.send",
+      "messages.trash",
+      "messages.untrash",
+      "settings.delegates.create",
+      "settings.delegates.delete",
+      "settings.delegates.get",
+      "settings.delegates.list",
+      "settings.filters.create",
+      "settings.filters.delete",
+      "settings.filters.get",
+      "settings.filters.list",
+      "settings.forwardingAddresses.create",
+      "settings.forwardingAddresses.delete",
+      "settings.forwardingAddresses.get",
+      "settings.forwardingAddresses.list",
+      "settings.getAutoForwarding",
+      "settings.getImap",
+      "settings.getPop",
+      "settings.getVacation",
+      "settings.sendAs.create",
+      "settings.sendAs.delete",
+      "settings.sendAs.get",
+      "settings.sendAs.list",
+      "settings.sendAs.update",
+      "settings.sendAs.verify",
+      "settings.updateAutoForwarding",
+      "settings.updateImap",
+      "settings.updatePop",
+      "settings.updateVacation",
+      "threads.delete",
+      "threads.get",
+      "threads.list",
+      "threads.modify",
+      "threads.trash",
+      "threads.untrash",
+      "users.messages",
+      "users.messages.batchDelete",
+      "users.messages.get",
+      "users.messages.import",
+      "users.messages.insert"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/reference/quota"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/reference/quota"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/insert",
+        "https://developers.google.com/workspace/gmail/api/reference/rest/v1/users.messages/get",
+        "https://developers.google.com/workspace/gmail/api/reference/quota"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.415Z",
+  "source_step08_card": "data/step-08/current/products/gmail-api/card.json",
+  "product_name": "Gmail API",
+  "product_slug": "gmail-api"
+}

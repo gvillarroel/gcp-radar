@@ -1,0 +1,113 @@
+{
+  "feature_name": "Dynamic Workload Scheduler via Provisioning Request API",
+  "feature_slug": "dynamic-workload-scheduler-via-provisioning-request-api",
+  "summary": "GKE Standard clusters can use Dynamic Workload Scheduler to obtain large atomic sets of available GPU models.",
+  "extended_definition": "GKE Standard clusters can use Dynamic Workload Scheduler to obtain large atomic sets of available GPU models.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run a large-scale workload with flex-start with queued provisioning \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 212,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Additionally, with the ClusterQueue configuration, incoming Jobs try to use reservation-nodepool , and if there is no capacity then these Jobs use Dynamic Workload Scheduler to get the GPU resources. apiVersion : kueue.x-k8s.io/v1beta1 kind : ResourceFlavor metadata : name : \"reservation\" spec : nodeLabels : cloud.google.com/gke-nodepool : \"reservation-nodepool\" # placeholder value --- apiVersion : kueue.x-k8s.io/v1beta1 kind : ResourceFlavor metadata : name : \"dws\" spec : nodeLabels : cloud.google.com/gke-nodepool : \"dws-nodepool\" # placeholder value --- apiVersion : kueue.x-k8s.io/v1beta1 kind : ClusterQueue metadata : name : \"cluster-queue\" spec : namespaceSelector : {} # match all. resourceGroups : - coveredResources : [ \"cpu\" , \"memory\" , \"nvidia.com/gpu\" ] flavors : - name : \"reservation\" # first we try reservation resources : - name : \"cpu\" nominalQuota : 9 - name : \"memory\" nominalQuota : 36Gi - name : \"nvidia.com/gpu\" nominalQuota : 9 - name : \"dws\" # if reservation is saturated we try dws resources : - name : \"cpu\" nominalQuota : 1000000000 # \"Infinite\" quota - name : \"memory\" nominalQuota : 1000000000Gi # \"Infinite\" quota - name : \"nvidia.com/gpu\" nominalQuota : 1000000000 # \"Infinite\" quota admissionChecksStrategy : admissionChecks : - name : \"dws-prov\" onFlavors : [ dws ] --- apiVersion : kueue.x-k8s.io/v1beta1 kind : LocalQueue metadata : namespace : \"default\" name : \"user-queue\" spec : clusterQueue : \"cluster-queue\" --- apiVersion : kueue.x-k8s.io/v1beta1 kind : AdmissionCheck metadata : name : dws-prov spec : controllerName : kueue.x-k8s.io/provisioning-request parameters : apiGroup : kueue.x-k8s.io kind : ProvisioningRequestConfig name : dws-config --- apiVersion : kueue.x-k8s.io/v1beta1 kind : ProvisioningRequestConfig metadata : name : dws-config spec : provisioningClassName : queued-provisioning.gke.io managedResources : - nvidia.com/gpu This cluster's queue has high quota limits and only the flex-start with queued provisioning integration is enabled.",
+          "Flex-start with queued provisioning uses the following tools: Flex-start with queued provisioning is based on Dynamic Workload Scheduler combined with the Provisioning Request custom resource definition (CRD) .",
+          "This page shows you how to optimize GPU obtainability for large-scale batch and AI workloads with GPUs using flex-start with queued provisioning powered by Dynamic Workload Scheduler ."
+        ]
+      },
+      {
+        "title": "\"About dynamic resource allocation in GKE \\_|\\_ Google Kubernetes Engine\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "source_id": "site-docs-reference-2",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Comparison of ResourceClaims and ResourceClaimTemplates Manually-created ResourceClaims Automatically-created ResourceClaims Managed by you Managed by Kubernetes Provides access to the same devices from multiple Pods Provides access to devices from a single Pod Exists in the cluster independently of Pods Bound to the lifecycle of the corresponding Pod Ideal for multiple workloads that need to share a specific device Ideal for multiple workloads that need independent device access Comparison of DRA with manual device allocation DRA makes allocating attached devices a similar experience to dynamically provisioning PersistentVolumes.",
+          "The following resources might help you to learn CEL: Read the CEL overview Do a CEL tutorial Refer to the CEL language definition Learn about ComputeClasses in GKE : you can use ComputeClasses with DRA to meet business needs like provisioning Spot VMs to run inference workloads that request cost-efficient GPUs.",
+          "The Kubernetes scheduler uses ResourceSlices to decide which devices to allocate to satisfy workload requests."
+        ]
+      },
+      {
+        "title": "\"About GKE cluster autoscaling \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler",
+        "source_id": "site-docs-reference-2",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Supported Provisioning Classes There are three supported ProvisioningClasses: queued-provisioning.gke.io : this GKE-specific class integrates with the Dynamic Workload Scheduler, lets you queue requests and have them fulfilled when resources become available.",
+          "See Deploy GPUs for batch and AI workloads with Dynamic Workload Scheduler to learn how to use queued provisioning in GKE.",
+          "GKE will try to provision these VMs first. spot : true gpu : type : nvidia-l4 count : 2 If GKE can't satisfy the preceding rule, request on-demand nodes with the same configuration - machineType : g2-standard-24 spot : false gpu : type : nvidia-l4 count : 2 nodePoolAutoCreation : enabled : true Configures active migration behavior for workloads using this ComputeClass. activeMigration : optimizeRulePriority : true Enables Cluster Autoscaler to attempt to migrate workloads to Spot VMs if Spot capacity becomes available and the workload is currently running on an on-demand VM (based on the priority rules in this example)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "autoscaling.x",
+      "k8s.io",
+      "kueue.x",
+      "nvidia.com",
+      "provisioning.gke.io",
+      "request.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/provisioningrequest",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-dynamic-resource-allocation",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/cluster-autoscaler"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

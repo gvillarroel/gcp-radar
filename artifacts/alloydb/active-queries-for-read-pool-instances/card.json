@@ -1,0 +1,108 @@
+{
+  "feature_name": "Active queries for read pool instances",
+  "feature_slug": "active-queries-for-read-pool-instances",
+  "summary": "Active queries monitoring can be used on AlloyDB read pool instances.",
+  "extended_definition": "Active queries monitoring can be used on AlloyDB read pool instances.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+      "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "source_id": "site-api-reference",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Instances in the read pools are evenly distributed across available zones within the region (i.e. read pools with more than one node will have a node in at least two zones). gceZone string The Compute Engine zone that the instance should serve from, per https://cloud.google.com/compute/docs/regions-zones This can ONLY be specified for ZONAL instances.",
+          "ObservabilityInstanceConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field preserve comments can be only one of the following: \"preserveComments\" : boolean // End of list of possible types for union field preserve comments . // Union field track wait events can be only one of the following: \"trackWaitEvents\" : boolean // End of list of possible types for union field track wait events . // Union field track wait event types can be only one of the following: \"trackWaitEventTypes\" : boolean // End of list of possible types for union field track wait event types . // Union field max query string length can be only one of the following: \"maxQueryStringLength\" : integer // End of list of possible types for union field max query string length . // Union field record application tags can be only one of the following: \"recordApplicationTags\" : boolean // End of list of possible types for union field record application tags . // Union field query plans per minute can be only one of the following: \"queryPlansPerMinute\" : integer // End of list of possible types for union field query plans per minute . // Union field track active queries can be only one of the following: \"trackActiveQueries\" : boolean // End of list of possible types for union field track active queries . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Observability feature status for an instance.",
+          "Instance JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"instanceType\" : enum ( InstanceType ) , \"machineConfig\" : { object ( MachineConfig ) } , \"availabilityType\" : enum ( AvailabilityType ) , \"gceZone\" : string , \"databaseFlags\" : { string : string , ... } , \"writableNode\" : { object ( Node ) } , \"nodes\" : [ { object ( Node ) } ] , \"queryInsightsConfig\" : { object ( QueryInsightsInstanceConfig ) } , \"observabilityConfig\" : { object ( ObservabilityInstanceConfig ) } , \"readPoolConfig\" : { object ( ReadPoolConfig ) } , \"ipAddress\" : string , \"publicIpAddress\" : string , \"reconciling\" : boolean , \"etag\" : string , \"annotations\" : { string : string , ... } , \"clientConnectionConfig\" : { object ( ClientConnectionConfig ) } , \"satisfiesPzs\" : boolean , \"pscInstanceConfig\" : { object ( PscInstanceConfig ) } , \"networkConfig\" : { object ( InstanceNetworkConfig ) } , \"outboundPublicIpAddresses\" : [ string ] , \"activationPolicy\" : enum ( ActivationPolicy ) , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"maintenanceVersionName\" : string , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields name string Output only."
+        ]
+      },
+      {
+        "title": "\"Create a read pool instance in a cluster \\_|\\_ AlloyDB for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To enable managed connection pooling in your read pool instance, add the --enable-connection-pooling flag to the gcloud alloydb instances create command: gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --enable-connection-pooling To create a read pool instance for a public IP-enabled cluster, add the --assign-inbound-public-ip= ASSIGN IPV4 parameter. gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID \\ --assign-inbound-public-ip = ASSIGN IPV4 Optionally, you can pass the comma separated list of CIDR blocks, such as 64.233.160.0/16 to the --authorized-external-networks parameter to set authorized external networks on your instance.",
+          "Use the gcloud alloydb instances create command to create a read pool instance. gcloud alloydb instances create INSTANCE ID \\ --instance-type = READ POOL \\ --read-pool-node-count = NODE COUNT \\ --region = REGION ID \\ --cluster = CLUSTER ID \\ --cpu-count = CPU COUNT \\ --machine-type = MACHINE TYPE \\ --project = PROJECT ID Replace the following: INSTANCE ID : The ID of the instance you are creating.",
+          "Note: You can have a maximum of 20 nodes across all the read pool instances in a cluster."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: alloydb \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "source_id": "site-api-reference",
+        "final_score": 152,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Instances in the read pools are evenly distributed across available zones within the region (i.e. read pools with more than one node will have a node in at least two zones). gceZone string The Compute Engine zone that the instance should serve from, per https://cloud.google.com/compute/docs/regions-zones This can ONLY be specified for ZONAL instances.",
+          "ObservabilityInstanceConfig JSON representation { // Union field enabled can be only one of the following: \"enabled\" : boolean // End of list of possible types for union field enabled . // Union field preserve comments can be only one of the following: \"preserveComments\" : boolean // End of list of possible types for union field preserve comments . // Union field track wait events can be only one of the following: \"trackWaitEvents\" : boolean // End of list of possible types for union field track wait events . // Union field track wait event types can be only one of the following: \"trackWaitEventTypes\" : boolean // End of list of possible types for union field track wait event types . // Union field max query string length can be only one of the following: \"maxQueryStringLength\" : integer // End of list of possible types for union field max query string length . // Union field record application tags can be only one of the following: \"recordApplicationTags\" : boolean // End of list of possible types for union field record application tags . // Union field query plans per minute can be only one of the following: \"queryPlansPerMinute\" : integer // End of list of possible types for union field query plans per minute . // Union field track active queries can be only one of the following: \"trackActiveQueries\" : boolean // End of list of possible types for union field track active queries . } Fields Union field enabled . enabled can be only one of the following: enabled boolean Observability feature status for an instance.",
+          "Instance JSON representation { \"name\" : string , \"displayName\" : string , \"uid\" : string , \"createTime\" : string , \"updateTime\" : string , \"deleteTime\" : string , \"labels\" : { string : string , ... } , \"state\" : enum ( State ) , \"instanceType\" : enum ( InstanceType ) , \"machineConfig\" : { object ( MachineConfig ) } , \"availabilityType\" : enum ( AvailabilityType ) , \"gceZone\" : string , \"databaseFlags\" : { string : string , ... } , \"writableNode\" : { object ( Node ) } , \"nodes\" : [ { object ( Node ) } ] , \"queryInsightsConfig\" : { object ( QueryInsightsInstanceConfig ) } , \"observabilityConfig\" : { object ( ObservabilityInstanceConfig ) } , \"readPoolConfig\" : { object ( ReadPoolConfig ) } , \"ipAddress\" : string , \"publicIpAddress\" : string , \"reconciling\" : boolean , \"etag\" : string , \"annotations\" : { string : string , ... } , \"clientConnectionConfig\" : { object ( ClientConnectionConfig ) } , \"satisfiesPzs\" : boolean , \"pscInstanceConfig\" : { object ( PscInstanceConfig ) } , \"networkConfig\" : { object ( InstanceNetworkConfig ) } , \"outboundPublicIpAddresses\" : [ string ] , \"activationPolicy\" : enum ( ActivationPolicy ) , \"connectionPoolConfig\" : { object ( ConnectionPoolConfig ) } , \"maintenanceVersionName\" : string , \"dataApiAccess\" : enum ( DataApiAccess ) } Fields name string Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "i.e"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/list_instances",
+        "https://docs.cloud.google.com/alloydb/docs/reference/mcp/tools_list/get_instance",
+        "https://docs.cloud.google.com/alloydb/docs/instance-read-pool-create"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

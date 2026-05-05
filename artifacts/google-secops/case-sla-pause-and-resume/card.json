@@ -1,0 +1,124 @@
+{
+  "feature_name": "Case SLA pause and resume",
+  "feature_slug": "case-sla-pause-and-resume",
+  "summary": "Users can pause and resume SLA timers on cases.",
+  "extended_definition": "Users can pause and resume SLA timers on cases.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+      "https://docs.cloud.google.com/chronicle/docs/secops/understand-the-secops-platform",
+      "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Cases overview \\_|\\_ Google Security Operations \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "source_id": "site-docs-reference-2",
+        "final_score": 138,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The case queue—automatically refreshed every minute—lists all active cases and lets you manually refresh, sort, filter, add, or close cases as needed.",
+          "They collect enrichment data, analyst comments, and historical context, letting analysts track entity behavior over time and across cases.",
+          "Analysts can also: Automatically group additional alerts into existing cases based on shared entities and configurable rules."
+        ]
+      },
+      {
+        "title": "\"Understand the Google SecOps platform \\_|\\_ Google Security Operations \\_\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/secops/understand-the-secops-platform",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alerts ingested from both the inbuilt SIEM and third party SIEMS can be grouped into Cases and looked at as part of the Case Management features.",
+          "From this screen, you can search for both open or closed cases or search for entities that were involved in cases.",
+          "For more information, see SIEM Search The SOAR Search screen focuses on two main areas: cases and entities."
+        ]
+      },
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "When searching Values , UDM Lookup displays Possible value match when a match is found in the following cases: Matches in the following UDM fields: metadata.description security result.description security result.detection fields.value security result.summary network.http.user agent Matches in fields with a full path that ends in one of the following values: .command line For example principal.process.command line . .file.full path For example principal.process.file.full path . .labels.value For example src.labels.value . .registry.registry key For example principal.registry.registry key . .url For example principal.url .",
+          "When searching Values , UDM Lookup does not return matches in the following cases: Matches in the following UDM fields: metadata.product log id network.session id security result.rule id network.parent session id Matches in UDM fields with a full path that ends in one of the following values: .pid For example target.process.pid . .asset id For example principal.asset id . .product specific process id For example principal.process.product specific process id . .resource.id For example principal.resource.id .",
+          "In such cases, the system retrieves only the latest results, up to the search limit of 1M events and 1,000 alerts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "additional.fields",
+      "additional.fields.key",
+      "fields.value",
+      "file.full",
+      "labels.value",
+      "metadata.description",
+      "metadata.product",
+      "network.http.user",
+      "network.parent",
+      "network.session",
+      "principal.asset",
+      "principal.process.command",
+      "principal.process.file.full",
+      "principal.process.product",
+      "principal.registry.registry",
+      "principal.resource.id",
+      "principal.url",
+      "registry.registry",
+      "resource.id",
+      "result.description",
+      "result.detection",
+      "result.rule",
+      "result.summary",
+      "src.labels.value",
+      "target.process.pid"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/understand-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/soar/investigate/working-with-cases/cases-overview",
+        "https://docs.cloud.google.com/chronicle/docs/secops/understand-the-secops-platform",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

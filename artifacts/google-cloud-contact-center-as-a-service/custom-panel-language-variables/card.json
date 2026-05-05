@@ -1,0 +1,92 @@
+{
+  "feature_name": "Custom panel language variables",
+  "feature_slug": "custom-panel-language-variables",
+  "summary": "Custom panel URLs can use agent language variables to dynamically set the panel language.",
+  "extended_definition": "Custom panel URLs can use agent language variables to dynamically set the panel language.",
+  "lifecycle": {
+    "latest_feature_date": "2026-02-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+      "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure custom panels \\_|\\_ Google Cloud Contact Center as a Service \\_\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "source_id": "site-docs-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Dynamically control the custom-panel language You can use the {AGENT LOCATION LANGUAGE} or the {AGENT LANGUAGE} variable in your custom URL to dynamically control the language for a custom panel: Agent location language : Add the {AGENT LOCATION LANGUAGE} variable to your URL to display the custom panel in the language of the agent's assigned location.",
+          "Agent variables {AGENT ID} : the agent ID {AGENT CUSTOM ID} : the agent's custom ID {AGENT EMAIL} : the agent's email {AGENT ALIAS} : the agent's alias {AGENT LOCATION LANGUAGE} : the language code for the language of the agent's assigned location—for example, en-US .",
+          "Optional: To dynamically control the custom-panel language based on the agent's assigned location or language selection, see Dynamically control the custom-panel language ."
+        ]
+      },
+      {
+        "title": "\"Customizing languages, recordings, & messages \\_|\\_ Google Cloud Contact\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "source_id": "site-docs-reference-2",
+        "final_score": 192,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following agent facing languages are supported: Arabic Chinese English French (France) French (Canada) Japanese German Italian Korean Portuguese Spanish (Mexico) Spanish (Spain) Thai Turkish Vietnamese Consumer facing languages For consumer-facing languages, once a language is added: You can customize queue names.",
+          "Customer-facing languages currently include: Arabic Czech Chinese, Simplified Chinese, Traditional Danish Dutch English (Australian) English (Canada) English (UK) English (US) Finnish French (France) French (Canada) German Hungarian Italian Japanese Korean Norwegian Polish Portuguese (Brazil) Portuguese (Portugal) Spanish (Spain) Spanish (Mexico) Swedish Thai Turkish Vietnamese Note: Text-to-Speech (TTS) is not yet available for these languages.",
+          "If you still need help, email support@yourcompany.com Chat : Shows once the chat option is selected with other queues available for selection below Example after hours chat screen: Sample variable attributes for customizing web and mobile messages The following variables can be inserted into Mobile and Web SDK messages and reference either information passed from the SDK or wait information."
+        ]
+      },
+      {
+        "title": "\"Chat Settings and Features \\_|\\_ Google Cloud Contact Center as a Service\\",
+        "url": "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features",
+        "source_id": "site-docs-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following variables are available: Customer Attributes : First Name : the end-user's first name Last Name : the end-user's last name Full Name : the end-user's full name Agent Attributes : First Name : the agent's first name Last Name : the agent's last name Full Name : the agent's full name Alias : the agent's alias ID : the agent's ID Session Attributes : Queue : the assigned queue Repeat this step to add more attributes.",
+          "Chat Settings - Live Translation Live translation provides real-time language translation between customers (end users) and agents.",
+          "This enables agents to communicate with customers in their preferred language."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "yourcompany.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/agent-desktop-configure-widgets",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Customizing_Languages__Recordings____Messages",
+        "https://docs.cloud.google.com/contact-center/ccai-platform/docs/Chat_Settings_and_Features"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:35.850Z",
+  "source_step08_card": "data/step-08/current/products/google-cloud-contact-center-as-a-service/card.json",
+  "product_name": "Google Cloud Contact Center as a Service",
+  "product_slug": "google-cloud-contact-center-as-a-service"
+}

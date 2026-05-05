@@ -1,0 +1,94 @@
+{
+  "feature_name": "Legacy map renderer",
+  "feature_slug": "legacy-map-renderer",
+  "summary": "The MapsInitializer.Renderer.LEGACY option is deprecated in Maps SDK for Android v19.0.0 in favor of the latest map renderer; deprecated on 2024-06-25.",
+  "extended_definition": "The MapsInitializer.Renderer.LEGACY option is deprecated in Maps SDK for Android v19.0.0 in favor of the latest map renderer; deprecated on 2024-06-25.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-25",
+    "deprecation_date": "2024-06-25",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/android-sdk/advanced-markers/start",
+      "https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles",
+      "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "GoogleMap \\_|\\_ Navigation SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "source_id": "site-docs-reference",
+        "final_score": 76,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "UiSettings getUiSettings () Gets the user interface settings for the map. boolean isBuildingsEnabled () Returns whether 3D buildings layer is enabled. boolean isCameraFollowingMyLocation () Returns whether the camera is following current location or not. boolean isIndoorEnabled () Gets whether indoor maps are currently enabled. boolean isMyLocationEnabled () Gets the status of the my-location layer. boolean isTrafficEnabled () Checks whether the map is drawing traffic data. boolean isTransitEnabled () Checks whether the map is drawing transit data. void moveCamera ( CameraUpdate update) Repositions the camera according to the instructions defined in the update. void removeOnMapCapabilitiesChangedListener ( GoogleMap.OnMapCapabilitiesChangedListener listener) Removes a listener that's invoked when the map capabilities are changed. void resetMinMaxZoomPreference () Removes any previously specified upper and lower zoom bounds. void setBuildingsEnabled (boolean enabled) Turns the 3D buildings layer on or off. void setContentDescription (String description) Sets a contentDescription for the map. boolean setIndoorEnabled (boolean enabled) Sets whether indoor maps should be enabled. void setInfoWindowAdapter ( GoogleMap.InfoWindowAdapter adapter) Sets a custom renderer for the contents of info windows. void setLatLngBoundsForCameraTarget ( LatLngBounds bounds) Specifies a LatLngBounds to constrain the camera target, so that when users scroll and pan the map, the camera target does not move outside these bounds. void setLocationSource ( LocationSource source) Replaces the location source of the my-location layer. void setMapColorScheme (int mapColorScheme) Sets the map rendering color scheme to light, dark, or follow system settings after initialization. boolean setMapStyle ( MapStyleOptions style) Sets the styling of the base map. void setMapType (int type) Sets the type of map tiles that should be displayed. void setMaxZoomPreference (float maxZoomPreference) Sets a preferred upper bound for the camera zoom. void setMinZoomPreference (float minZoomPreference) Sets a preferred lower bound for the camera zoom. void setMyLocationEnabled (boolean enabled) Enables or disables the my-location layer. void setOnCameraChangeListener ( GoogleMap.OnCameraChangeListener listener) This method is deprecated.",
+          "Constant Summary String DEMO MAP ID Data-driven styling features are not available in the Navigation SDK. int MAP TYPE HYBRID Satellite maps with a transparent layer of major streets. int MAP TYPE NONE No base map tiles. int MAP TYPE NORMAL Basic maps. int MAP TYPE SATELLITE Satellite maps with no labels. int MAP TYPE TERRAIN This constant is deprecated.",
+          "Parameters style Returns true if the style was successfully parsed; false if problems were detected with the MapStyleOptions , including, e.g. unparsable styling JSON, unrecognized feature type, unrecognized element type, or invalid styler keys."
+        ]
+      },
+      {
+        "title": "Get started \\_|\\_ Maps SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/android-sdk/advanced-markers/start",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With the release of version 18.2.0 of the Maps SDK for Android, Google switched the default renderer from the legacy renderer to the upgraded map renderer.",
+          "Page Summary outlined flag Advanced markers necessitate the utilization of the upgraded map renderer, available in Maps SDK for Android version 18.0.0 and later, and are enabled by default in version 18.2.0 and later.",
+          "Enable the new map renderer An upgraded map renderer is available as of version 18.0.0 of the Maps SDK for Android."
+        ]
+      },
+      {
+        "title": "Create and use map styles \\_|\\_ Maps SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles",
+        "source_id": "site-docs-reference-required-2",
+        "final_score": 56,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Select platform: Android iOS JavaScript Web Service To use cloud-based maps styling on Android, you must use the latest renderer for Maps SDK for Android.",
+          "Page Summary outlined flag Cloud-based map styling requires the latest Maps SDK for Android renderer for implementation.",
+          "In the Make a copy dialog, enter a new map style name and optionally a description. science (Optional) To create the complementary light or dark mode version of the copied style, select the checkbox in the Style mode options section."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "e.g",
+      "v19.0.0"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/android-sdk/reference/com/google/android/gms/maps/GoogleMap",
+        "https://developers.google.com/maps/documentation/android-sdk/advanced-markers/start",
+        "https://developers.google.com/maps/documentation/android-sdk/cloud-customization/map-styles"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.872Z",
+  "source_step08_card": "data/step-08/current/products/maps-sdk-for-android/card.json",
+  "product_name": "Maps SDK for Android",
+  "product_slug": "maps-sdk-for-android"
+}

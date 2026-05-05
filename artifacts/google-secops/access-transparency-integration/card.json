@@ -1,0 +1,178 @@
+{
+  "feature_name": "Access Transparency integration",
+  "feature_slug": "access-transparency-integration",
+  "summary": "Google SecOps now integrates with Access Transparency to write logs when Google personnel access supported customer content.",
+  "extended_definition": "Google SecOps now integrates with Access Transparency to write logs when Google personnel access supported customer content.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-18",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+      "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+      "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Google SecOps audit logs \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "source_id": "site-docs-reference",
+        "final_score": 122,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google SecOps writes Data Access and Admin Activity audit logs to the project.",
+          "Actions in Google SecOps that generate this type of log include creating a Google Cloud Association and updating Google Cloud log filters. chronicleservicemanager.googleapis.com/gcpAssociations.create chronicleservicemanager.googleapis.com/gcpAssociations.delete chronicleservicemanager.googleapis.com/gcpSettings.delete Data Access audit logs Includes admin read operations that read metadata or configuration information.",
+          "Actions in Google SecOps that generate this type of log include updating feeds and creating rules. chronicle.googleapis.com/feeds.update chronicle.googleapis.com/rules.create chronicle.googleapis.com/parsers.activate Data Access audit logs Includes admin read operations that read metadata or configuration information."
+        ]
+      },
+      {
+        "title": "\"Integrate Amazon Macie with Google SecOps \\_|\\_ Google Security Operations\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "source_id": "site-api-reference",
+        "final_score": 102,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Action results Script result Script result name Value options Example is success True or False is success:False JSON result { \"ResponseMetadata\" :{ \"HTTPHeaders\" :{ \"connection\" : \"keep-alive\" , \"content-length\" : \"2741\" , \"content-type\" : \"application/json\" , \"date\" : \"Thu, 22 Oct 2020 11:08:58 GMT\" , \"x-amz-apigw-id\" : \" ID \" , \"x-amzn-remapped-content-length\" : \"2741\" , \"x-amzn-remapped-date\" : \"Thu, 22 Oct \"\"2020 11:08:57 \"\"GMT\" , \"x-amzn-remapped-x-amzn-requestid\" : \"eaea00d2-11f8-40d8-adce-f6c9f17e9815\" , \"x-amzn-requestid\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" }, \"HTTPStatusCode\" : 200 , \"RequestId\" : \"4102349a-a5da-4bfc-ad78-40f48885985f\" , \"RetryAttempts\" : 0 }, \"findings\" :[ { \"accountId\" : \" ACCOUNT ID \" , \"archived\" : false , \"category\" : \"CLASSIFICATION\" , \"classificationDetails\" :{ \"detailedResultsLocation\" : \"s3://[export-config-not-set]/AWSLogs/ ACCOUNT ID /Macie/us-east-1/\" , \"jobArn\" : \"arn:aws:macie2:us-east-1\" , \"jobId\" : \"088009521d393eda440a24f3c7ad8fbd\" , \"result\" :{ \"additionalOccurrences\" : false , \"customDataIdentifiers\" :{ \"detections\" :[ ], \"totalCount\" : 0 }, \"mimeType\" : \"application/zip\" , \"sensitiveData\" :[ { \"category\" : \"PERSONAL INFORMATION\" , \"detections\" :[ { \"count\" : 80 , \"type\" : \"PHONE NUMBER\" }, { \"count\" : 5 , \"type\" : \"ADDRESS\" }, { \"count\" : 207 , \"type\" : \"NAME\" } ], \"totalCount\" : 292 }, { \"category\" : \"CREDENTIALS\" , \"detections\" :[ { \"count\" : 5 , \"type\" : \"AWS CREDENTIALS\" } ], \"totalCount\" : 5 } ], \"sizeClassified\" : 44213802 , \"status\" :{ \"code\" : \"PARTIAL\" , \"reason\" : \"ARCHIVE CONTAINS UNPROCESSED FILES\" } } }, \"count\" : 1 , \"createdAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" , \"description\" : \"The object contains more than one type of \"\"sensitive information.\" , \"id\" : \" FINDING ID \" , \"partition\" : \"aws\" , \"region\" : \"us-east-1\" , \"resourcesAffected\" :{ \"s3Bucket\" :{ \"arn\" : \"arn:aws:s3:::testexample\" , \"createdAt\" : da tet ime.da tet ime( 2020 , 9 , 14 , 10 , 31 , 56 , \"tzinfo=tzutc())\" , \"defaultServerSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"name\" : \"testexample\" , \"owner\" :{ \"displayName\" : \"lab aws\" , \"id\" : \" OWNER ID \" }, \"publicAccess\" :{ \"effectivePermission\" : \"PUBLIC\" , \"permissionConfiguration\" :{ \"accountLevelPermissions\" :{ \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false } }, \"bucketLevelPermissions\" :{ \"accessControlList\" :{ \"allowsPublicReadAccess\" : false , \"allowsPublicWriteAccess\" : false }, \"blockPublicAccess\" :{ \"blockPublicAcls\" : false , \"blockPublicPolicy\" : false , \"ignorePublicAcls\" : false , \"restrictPublicBuckets\" : false }, \"bucketPolicy\" :{ \"allowsPublicReadAccess\" : true , \"allowsPublicWriteAccess\" : false } } } }, \"tags\" :[ ] }, \"s3Object\" :{ \"bucketArn\" : \"arn:aws:s3:::testsiemplify\" , \"eTag\" : \"8dfbe2ba101b3ca0a62f8fde823503b4-5\" , \"extension\" : \"zip\" , \"key\" : \"awscliv2.zip\" , \"lastModified\" : da tet ime.da tet ime( 2020 , 9 , 28 , 18 , 47 , 30 , \"tzinfo=tzutc())\" , \"path\" : \"testexample/awscliv2.zip\" , \"publicAccess\" : false , \"serverSideEncryption\" :{ \"encryptionType\" : \"NONE\" }, \"size\" : 33775890 , \"storageClass\" : \"STANDARD\" , \"tags\" :[ ], \"versionId\" : \"\" } }, \"sample\" : false , \"schemaVersion\" : \"1.0\" , \"severity\" :{ \"description\" : \"High\" , \"score\" : 3 }, \"title\" : \"The S3 object contains multiple types of sensitive \"\"information.\" , \"type\" : \"SensitiveData:S3Object/Multiple\" , \"updatedAt\" : da tet ime.da tet ime( 2020 , 10 , 22 , 3 , 12 , 9 , 364000 , \"tzinfo=tzutc())\" } ] } Case wall Result type Description Type Output message The action should not fail nor stop a playbook execution: If successful: \"Amazon Macie findings found\" If is success=False, for example no findings were found: \"No findings were returned.\" The action should fail and stop a playbook execution: If a critical error, like wrong credentials or lost connectivity is reported: \"Failed to connect to the Amazon Macie service!",
+          "For instructions about how to configure an integration in Google SecOps, see Configure integrations .",
+          "AWS Access Key ID String N/A True AWS Access Key ID to use in integration."
+        ]
+      },
+      {
+        "title": "\"Google Unified Security \\_|\\_ Google Security Operations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security",
+        "source_id": "site-docs-reference-2",
+        "final_score": 92,
+        "relevance": "",
+        "evidence_snippets": [
+          "Strengthening Endpoint Security: Integrated protection with Google Chrome Enterprise Premium & Google SecOps Chrome Enterprise Premium (CEP) integration with Google SecOps provides critical visibility into threats originating from browser activity to strengthen your endpoint security posture.",
+          "SIEM Log Searching and Investigation : During a CDIR investigation, or on an ad-hoc basis, analysts can use either natural language syntax, Yara-L syntax, or raw log searching to surface information in various logs ingested into Google SecOps related to cloud infrastructure and services.",
+          "This integration leverages Google SecOps curated detections to evaluate event data against GTI IOCs, automatically generating prioritized alerts (such as Active Breach or High ) to ensure focus on critical threats."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "awscliv2.zip",
+      "chronicle.googleapis.com",
+      "chronicleservicemanager.googleapis.com",
+      "feeds.update",
+      "ime.da",
+      "parsers.activate",
+      "rules.create"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/administration/audit-logging",
+        "https://docs.cloud.google.com/chronicle/docs/soar/marketplace-integrations/amazon-macie",
+        "https://docs.cloud.google.com/chronicle/docs/reference/google-unified-security"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.473Z",
+  "source_step08_card": "data/step-08/current/products/google-secops/card.json",
+  "product_name": "Google SecOps",
+  "product_slug": "google-secops"
+}

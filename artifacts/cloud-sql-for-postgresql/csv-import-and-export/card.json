@@ -1,0 +1,106 @@
+{
+  "feature_name": "CSV import and export",
+  "feature_slug": "csv-import-and-export",
+  "summary": "Cloud SQL for PostgreSQL added support for importing and exporting instances in CSV format.",
+  "extended_definition": "Cloud SQL for PostgreSQL added support for importing and exporting instances in CSV format.",
+  "lifecycle": {
+    "latest_feature_date": "2018-11-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-csv",
+      "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Export and import using CSV files \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-csv",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If you're migrating an entire database from a supported database server (on-premises, in AWS, or Cloud SQL) to a new Cloud SQL instance, you can use the Database Migration Service instead of exporting and then importing files.",
+          "MySQL PostgreSQL SQL Server This page describes exporting and importing data into Cloud SQL instances using CSV files.",
+          "Learn more about best practices for importing and exporting data ."
+        ]
+      },
+      {
+        "title": "\"Export and import using pg_dump, pg_dumpall, and pg_restore \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Note: If you're migrating an entire database from a supported database server (on-premises, in AWS, or Cloud SQL) to a new Cloud SQL instance, you can use the Database Migration Service instead of exporting and then importing files.",
+          "MySQL PostgreSQL SQL Server This page describes exporting and importing data into Cloud SQL instances using pg dump, pg dumpall, and pg restore.",
+          "For best practices, see Best Practices for Importing and Exporting Data ."
+        ]
+      },
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "MySQL PostgreSQL SQL Server Check if your question or problem has already been addressed on one of the following pages: FAQ Known issues Error messages Diagnose issues Debug connection issues Issues updating storage capacity Topics in this page include: Backup and recovery Cancel import and export Cloning Connectivity Creating instances Flags High availability Import and export Integrate with Vertex AI Logging Managing instances Private Service Connect Replication Backup and recovery Issue Troubleshooting You can't see the current operation's status.",
+          "Import Issue Troubleshooting Error message: permission denied for schema public For PostgreSQL versions 15 and later, if the target database is created from template0 , then importing data might fail.",
+          "Before importing a dump file, all the database users who own objects or were granted permissions on objects in the dumped database must exist in the target database."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-csv",
+        "https://docs.cloud.google.com/sql/docs/postgres/import-export/import-export-dmp",
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

@@ -1,0 +1,37 @@
+# GKE on AWS Service Account-based Installation and Upgrade Access
+
+Product: Anthos clusters on AWS (previous generation)
+Feature slug: `gke-on-aws-service-account-based-installation-and-upgrade-access`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Installation and upgrade of Anthos GKE on AWS can be performed with any authenticated Google Cloud service account without requiring allowlist access.
+
+## Lifecycle
+
+- Latest feature date: 2020-10-02
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+- allow (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+- auth (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+- iam (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+- identity (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+- logging (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+- role (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+- security (evidence: [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade), [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade), [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting](https://docs.cloud.google.com/kubernetes-engine/multi-cloud/docs/aws/troubleshooting)
+- [https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.21/docs/upgrade/upgrade)
+- [https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade](https://docs.cloud.google.com/service-mesh/v1.22/docs/upgrade/upgrade)

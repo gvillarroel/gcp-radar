@@ -1,0 +1,117 @@
+{
+  "feature_name": "Form progress bar controls",
+  "feature_slug": "form-progress-bar-controls",
+  "summary": "FormApp can get and set whether a form shows a progress bar.",
+  "extended_definition": "FormApp can get and set whether a form shows a progress bar.",
+  "lifecycle": {
+    "latest_feature_date": "2013-10-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule",
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 74,
+        "relevance": "",
+        "evidence_snippets": [
+          "October 08, 2013 Feature Added the following FormApp methods, which allow scripts to work with progress bars, custom closed-form messages, and YouTube videos. + Form.hasProgressBar() + Form.setProgressBar(enabled) + Form.getCustomClosedFormMessage() + Form.setCustomClosedFormMessage(message) + Form.addVideoItem() September 23, 2013 Feature Added the following DriveApp methods, which allow scripts to get the owner of a File or Folder.",
+          "Added a getUi method to DocumentApp and FormApp , which returns a Ui object that allows the script to add features like menus, dialogs, and sidebars to the Docs or Forms editor.",
+          "December 01, 2014 Feature Added five new FormApp methods: Form.getShuffleQuestions() : Determines whether the order of the questions on each page of the form is randomized."
+        ]
+      },
+      {
+        "title": "Class ConditionalFormatRule \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Boolean conditions contain formatting settings such as font weight, font color, and background color. // Log the boolean criteria type of the first conditional format rules of a // sheet. const rule = SpreadsheetApp . getActiveSheet (). getConditionalFormatRules ()[ 0 ]; const booleanCondition = rule . getBooleanCondition (); if ( booleanCondition != null ) { Logger . log ( booleanCondition . getCriteriaType ()); } Return BooleanCondition null — The boolean condition object, or null if the rule does not use a boolean condition. getGradientCondition() Retrieves the rule's GradientCondition information, if this rule uses gradient condition criteria.",
+          "Logger . log ( gradientCondition . getMinColorObject (). asRgbColor (). asHexString ()); } Return GradientCondition null — The gradient condition object, or null if the rule does not use a gradient condition. getRanges() Retrieves the ranges to which this conditional format rule is applied. // Log each range of the first conditional format rule of a sheet. const rule = SpreadsheetApp . getActiveSheet (). getConditionalFormatRules ()[ 0 ]; const ranges = rule . getRanges (); for ( let i = 0 ; i < ranges . length ; i ++ ) { Logger . log ( ranges [ i ]. getA1Notation ()); } Return Range[] — The ranges to which this conditional format rule is applied.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[\"Conditional format rules can be accessed and managed using the provided methods."
+        ]
+      },
+      {
+        "title": "Class DataSourceFormula \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 61,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Methods Method Return type Brief description cancel Data Refresh() Data Source Formula Cancels the data refresh associated with this object if it's currently running. force Refresh Data() Data Source Formula Refreshes the data of this object regardless of the current state. get Anchor Cell() Range Returns the Range representing the cell where this data source formula is anchored. get Data Source() Data Source Gets the data source the object is linked to. get Display Value() String Returns the display value of the data source formula. get Formula() String Returns the formula for this data source formula. get Status() Data Execution Status Gets the data execution status of the object. refresh Data() Data Source Formula Refreshes the data of the object. set Formula(formula) Data Source Formula Updates the formula. wait For Completion(timeoutInSeconds) Data Execution Status Waits until the current execution completes, timing out after the provided number of seconds.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[]]",
+          "Authorization Scripts that use this method require authorization with one or more of the following scopes : https://www.googleapis.com/auth/spreadsheets.currentonly https://www.googleapis.com/auth/spreadsheets getAnchorCell() Returns the Range representing the cell where this data source formula is anchored."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "spreadsheets.currentonly"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula",
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula",
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula",
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula",
+        "https://developers.google.com/apps-script/reference/spreadsheet/conditional-format-rule"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

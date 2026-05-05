@@ -1,0 +1,185 @@
+{
+  "feature_name": "Data location support",
+  "feature_slug": "data-location-support",
+  "summary": "Eventarc can be configured for data location and can be used as a resource location.",
+  "extended_definition": "Eventarc can be configured for data location and can be used as a resource location.",
+  "lifecycle": {
+    "latest_feature_date": "2021-09-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+      "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+      "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Understand Eventarc locations \\_|\\_ Eventarc Standard \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "source_id": "site-docs-root-2",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, to capture Cloud Storage events from a bucket in the europe-west1 region with an audit logs trigger, create a trigger in the same location: gcloud eventarc triggers create trigger-auditlog \\ --destination-run-service = hello \\ --destination-run-region = us-central1 \\ --location = europe-west1 \\ --event-filters = \"type=google.cloud.audit.log.v1.written\" \\ --event-filters = \"serviceName=storage.googleapis.com\" \\ --event-filters = \"methodName=storage.objects.create\" \\ --service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com As there's no filtering by bucket when you use a Cloud Audit Logs trigger, this will match all buckets in the europe-west1 region. (To filter by bucket, you can instead use a direct Cloud Storage trigger.) Or, to match a dual-region or multi-region bucket such as eu , you can create a trigger with a global location and this will match all buckets in all regions for which the event filters match: gcloud eventarc triggers create trigger-storage \\ --destination-run-service = hello \\ --destination-run-region = us-central1 \\ --location = global \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket=my-bucket-in-europe-west1-region\" \\ --service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com Note: There is a known issue with Cloud Audit Logs triggers for Compute Engine that results in events originating from a single region: us-central1 .",
+          "Cloud Storage Important: Because Eventarc Standard uses Pub/Sub as its transport layer, Cloud Storage triggers can fail if a Cloud Storage event originates from a region not permitted by your Pub/Sub message storage policy, and if in-transit operations are enforced ( \"enforceInTransit\": true ).",
+          "In the following example, the trigger location matches that of the Cloud Storage bucket (the eu multi-region location): gcloud eventarc triggers create trigger-storage \\ --destination-run-service = hello \\ --destination-run-region = us-central1 \\ --location = eu \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket=my-bucket-in-eu-multi-region\" \\ --service-account = $PROJECT NUMBER -compute@developer.gserviceaccount.com If the bucket and trigger regions don't match, you will see an error similar to the following: ERROR: ( gcloud.eventarc.triggers.create ) INVALID ARGUMENT: The request was invalid: Bucket \"my-bucket-in-eu-multi-region\" location \"eu\" does not match trigger location \"europe-west1\" ."
+        ]
+      },
+      {
+        "title": "\"Route AlloyDB for PostgreSQL events to GKE \\_|\\_ Eventarc Standard \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "source_id": "site-iam-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \\ --location = LOCATION \\ --destination-gke-cluster = DESTINATION GKE CLUSTER \\ --destination-gke-location = DESTINATION GKE LOCATION \\ --destination-gke-namespace = DESTINATION GKE NAMESPACE \\ --destination-gke-service = DESTINATION GKE SERVICE \\ --destination-gke-path = DESTINATION GKE PATH \\ --event-filters = \"type= EVENT FILTER TYPE \" \\ --event-filters = \" COLLECTION ID = RESOURCE ID \" \\ --event-filters-path-pattern = \" COLLECTION ID = PATH PATTERN \" \\ --event-data-content-type = \" EVENT DATA CONTENT TYPE \" \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \" Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.",
+          "Example: gcloud eventarc triggers create helloworld-trigger \\ --location=us-central1 \\ --destination-gke-cluster=gke-events-cluster \\ --destination-gke-location=us-central1-a \\ --destination-gke-namespace=default \\ --destination-gke-service=helloworld-events \\ --destination-gke-path=/ \\ --event-filters=\"type=google.cloud.alloydb.cluster.v1.updated\" \\ --event-filters-path-pattern=\"cluster=my-cluster- \" \\ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.alloydb.cluster.v1.updated and matches events for cluster IDs starting with my-cluster- .",
+          "To sort your triggers, beside any supported column heading, click arrow upward Sort . gcloud Run the following command to list your triggers: gcloud eventarc triggers list --location = - This command lists your triggers in all locations, and includes details such as names, types, destinations, and statuses."
+        ]
+      },
+      {
+        "title": "\"Route backup for GKE events to GKE \\_|\\_ Eventarc Standard \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "source_id": "site-iam-reference",
+        "final_score": 269,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For more information, see Manage triggers . gcloud You can create a trigger by running a gcloud eventarc triggers create command along with required and optional flags. gcloud eventarc triggers create TRIGGER \\ --location = LOCATION \\ --destination-gke-cluster = DESTINATION GKE CLUSTER \\ --destination-gke-location = DESTINATION GKE LOCATION \\ --destination-gke-namespace = DESTINATION GKE NAMESPACE \\ --destination-gke-service = DESTINATION GKE SERVICE \\ --destination-gke-path = DESTINATION GKE PATH \\ --event-filters = \"type= EVENT FILTER TYPE \" \\ --event-filters = \" COLLECTION ID = RESOURCE ID \" \\ --event-filters-path-pattern = \" COLLECTION ID = PATH PATTERN \" \\ --event-data-content-type = \" EVENT DATA CONTENT TYPE \" \\ --service-account = SERVICE ACCOUNT NAME @ PROJECT ID .iam.gserviceaccount.com \" Replace the following: TRIGGER : the ID of the trigger or a fully qualified identifier LOCATION : the location of the Eventarc trigger.",
+          "Example: gcloud eventarc triggers create helloworld-trigger \\ --location=us-central1 \\ --destination-gke-cluster=gke-events-cluster \\ --destination-gke-location=us-central1-a \\ --destination-gke-namespace=default \\ --destination-gke-service=helloworld-events \\ --destination-gke-path=/ \\ --event-filters=\"type=google.cloud.gkebackup.backupPlan.v1.updated\" \\ --event-filters-path-pattern=\"backupplan=my-backupplan- \" \\ --service-account=${SERVICE ACCOUNT NAME}@${PROJECT ID}.iam.gserviceaccount.com This command creates a trigger called helloworld-trigger for the event identified as google.cloud.gkebackup.backupPlan.v1.updated and matches events for backupplan IDs starting with my-backupplan- .",
+          "To sort your triggers, beside any supported column heading, click arrow upward Sort . gcloud Run the following command to list your triggers: gcloud eventarc triggers list --location = - This command lists your triggers in all locations, and includes details such as names, types, destinations, and statuses."
+        ]
+      },
+      {
+        "title": "\"Class EventarcAsyncClient (1.20.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 263,
+        "relevance": "",
+        "evidence_snippets": [
+          "JSON Example :: { \"bindings\": [ { \"role\": \"roles/resourcemanager.organizationAdmin\", \"members\": [ \"user:mike@example.com\", \"group:admins@example.com\", \"domain:google.com\", \"serviceAccount:my-project-id@appspot.gserviceaccount.com\" ] }, { \"role\": \"roles/resourcemanager.organizationViewer\", \"members\": [\"user:eve@example.com\"], \"condition\": { \"title\": \"expirable access\", \"description\": \"Does not grant access after Sep 2020\", \"expression\": \"request.time < timestamp('2020-10-01t00:00:00.000z')\",=\"\" }=\"\" }=\"\" ]=\"\" }=\"\" yaml=\"\" example =\"\" ::=\"\" bindings:=\"\" -=\"\" members:=\"\" -=\"\" user:mike@example.com=\"\" -=\"\" group:admins@example.com=\"\" -=\"\" domain:google.com=\"\" -=\"\" serviceaccount:my-project-id@appspot.gserviceaccount.com=\"\" role:=\"\" roles/resourcemanager.organizationadmin=\"\" -=\"\" members:=\"\" -=\"\" user:eve@example.com=\"\" role:=\"\" roles/resourcemanager.organizationviewer=\"\" condition:=\"\" title:=\"\" expirable=\"\" access=\"\" description:=\"\" does=\"\" not=\"\" grant=\"\" access=\"\" after=\"\" sep=\"\" 2020=\"\" expression:=\"\" request.time=\"\">< timestamp('2020-10-01t00:00:00.000z')=\"\" for=\"\" a=\"\" description=\"\" of=\"\" iam=\"\" and=\"\" its=\"\" features,=\"\" see=\"\" the=\"\"> IAM developer's guide . get location get location ( request : typing .",
+          "If the GOOGLE API USE CLIENT CERTIFICATE environment variable is \"true\", then the client cert source property can be used to provide a client certificate for mTLS transport.",
+          "ClientInfo ) Eventarc allows users to subscribe to various events that are provided by Google Cloud services and forward them to supported destinations."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "developer.gserviceaccount.com",
+      "example.com",
+      "gcloud.eventarc.triggers.create",
+      "iam.gserviceaccount.com",
+      "request.time",
+      "resourcemanager.organizationadmin",
+      "resourcemanager.organizationAdmin",
+      "resourcemanager.organizationviewer",
+      "resourcemanager.organizationViewer",
+      "storage.googleapis.com",
+      "storage.objects.create"
+    ],
+    "missing_inventory_roles": [
+      "roles/resourcemanager.organizationadmin",
+      "roles/resourcemanager.organizationAdmin",
+      "roles/resourcemanager.organizationviewer",
+      "roles/resourcemanager.organizationViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/eventarc/docs/understand-locations",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-alloydb",
+        "https://docs.cloud.google.com/eventarc/standard/docs/gke/route-trigger-backup-gke",
+        "https://docs.cloud.google.com/python/docs/reference/eventarc/latest/google.cloud.eventarc_v1.services.eventarc.EventarcAsyncClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:31.673Z",
+  "source_step08_card": "data/step-08/current/products/eventarc/card.json",
+  "product_name": "Eventarc",
+  "product_slug": "eventarc"
+}

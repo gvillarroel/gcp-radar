@@ -1,0 +1,117 @@
+{
+  "feature_name": "Write endpoint",
+  "feature_slug": "write-endpoint",
+  "summary": "This feature provides a global DNS write endpoint that always resolves to the current primary Cloud SQL instance; The write endpoint provides a global DNS name that resolves to the current primary private IP Cloud SQL instance to avoid application connection changes after failover or switchover.",
+  "extended_definition": "This feature provides a global DNS write endpoint that always resolves to the current primary Cloud SQL instance; The write endpoint provides a global DNS name that resolves to the current primary private IP Cloud SQL instance to avoid application connection changes after failover or switchover.",
+  "lifecycle": {
+    "latest_feature_date": "2025-07-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/configure-private-ip",
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Connect to an instance using a write endpoint \\_|\\_ Cloud SQL for MySQL\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+        "source_id": "site-docs-reference-3",
+        "final_score": 238,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Write endpoints always end with the .global.sql-psa.goog. suffix, similar to the following example: 103uufa2svq8u.2rb3qdj9tkf4d.global.sql-psa.goog.",
+          "A write endpoint is a global domain name service (DNS) name that resolves to the IP address of the current primary instance automatically.",
+          "The write endpoint always ends with the .global.sql-psa.goog. suffix."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "Generate the write endpoint A write endpoint is a global domain name service (DNS) name that resolves to the IP address of the current primary instance automatically.",
+          "Note: Cloud SQL generates a write endpoint automatically for your Cloud SQL Enterprise Plus edition instance if you do the following: If you haven't already enabled the Cloud DNS API, enable the Cloud DNS API for your Google Cloud project.",
+          "Note: Cloud SQL generates a write endpoint automatically for your Cloud SQL Enterprise Plus edition instance if you do the following: Enable the Cloud DNS API for your Google Cloud project (if this API isn't enabled)."
+        ]
+      },
+      {
+        "title": "Configure private IP \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/configure-private-ip",
+        "source_id": "site-docs-reference-3",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A write endpoint is a global domain name service (DNS) name that resolves to the IP address of the current primary instance automatically.",
+          "How Cloud SQL creates a write endpoint If you enable the Cloud DNS API for your Google Cloud project, and then you create a primary Cloud SQL Enterprise Plus edition instance , promote the replica for the instance , or upgrade the instance from Cloud SQL Enterprise edition , Cloud SQL generates a write endpoint automatically and assigns it to the instance.",
+          "Assign a write endpoint to an instance If you don't enable the Cloud DNS API for your Google Cloud project, and then you create, promote, or upgrade your instance, Cloud SQL doesn't assign the write endpoint to the instance automatically."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "global.sql",
+      "psa.goog"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-ip"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-to-instance-using-write-endpoint",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/configure-private-ip"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

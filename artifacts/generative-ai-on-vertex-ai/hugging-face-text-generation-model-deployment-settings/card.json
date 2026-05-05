@@ -1,0 +1,182 @@
+{
+  "feature_name": "Hugging Face text generation model deployment settings",
+  "feature_slug": "hugging-face-text-generation-model-deployment-settings",
+  "summary": "Model Garden provides verified deployment settings for about 400 Hugging Face text generation models and auto-generated unverified settings for other supported models.",
+  "extended_definition": "Model Garden provides verified deployment settings for about 400 Hugging Face text generation models and auto-generated unverified settings for other supported models.",
+  "lifecycle": {
+    "latest_feature_date": "2024-04-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI GPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "source_id": "site-docs-root",
+        "final_score": 244,
+        "relevance": "",
+        "evidence_snippets": [
+          "The output doesn't include any tuned models. import vertexai from vertexai import model garden TODO(developer): Update and un-comment below lines PROJECT ID = \"your-project-id\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) List deployable models, optionally list Hugging Face models only or filter by model name. deployable models = model garden . list deployable models ( list hf models = False , model filter = \"gemma\" ) print ( deployable models ) Example response: ['google/gemma2@gemma-2-27b','google/gemma2@gemma-2-27b-it', ...] View the deployment specifications for a model by using the model ID from the previous step.",
+          "To run the command asynchronously, include the --asynchronous flag. gcloud ai model-garden models deploy \\ --model = MODEL ID \\ [ --machine-type = MACHINE TYPE ] \\ [ --accelerator-type = ACCELERATOR TYPE ] \\ [ --endpoint-display-name = ENDPOINT NAME ] \\ [ --hugging-face-access-token = HF ACCESS TOKEN ] \\ [ --reservation-affinity reservation-affinity-type = any-reservation ] \\ [ --reservation-affinity reservation-affinity-type = specific-reservation, key = \"compute.googleapis.com/reservation-name\" , values = RESERVATION RESOURCE NAME ] \\ [ --asynchronous ] Replace the following placeholders: MODEL ID : The model ID from the previous list command.",
+          "You can view the machine type, accelerator type, and container image URI that Model Garden has verified for a particular model. import vertexai from vertexai import model garden TODO(developer): Update and un-comment below lines PROJECT ID = \"your-project-id\" model = \"google/gemma3@gemma-3-1b-it\" vertexai . init ( project = PROJECT ID , location = \"us-central1\" ) For Hugging Face modelsm the format is the Hugging Face model name, as in \"meta-llama/Llama-3.3-70B-Instruct\"."
+        ]
+      },
+      {
+        "title": "\"Deploy and inference Gemma using Model Garden and Vertex AI TPU-backed endpoints\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "source_id": "site-docs-root",
+        "final_score": 216,
+        "relevance": "",
+        "evidence_snippets": [
+          "Learn how to deploy Gemma 2 to Google Kubernetes Engine using HuggingFace Textgen Inference (TGI) .",
+          "For more information, see Set up authentication for a local development environment . // Imports the Google Cloud Prediction Service Client library const { // TODO(developer): Uncomment PredictionServiceClient before running the sample. // PredictionServiceClient, helpers , } = require ( ' @google-cloud/aiplatform ' ); / TODO(developer): Update these variables before running the sample. / const projectId = 'your-project-id' ; const endpointRegion = 'your-vertex-endpoint-region' ; const endpointId = 'your-vertex-endpoint-id' ; // Prompt used in the prediction const prompt = 'Why is the sky blue?' ; // Encapsulate the prompt in a correct format for TPUs // Example format: [{prompt: 'Why is the sky blue?', temperature: 0.9}] const input = { prompt , // Parameters for default configuration maxOutputTokens : 1024 , temperature : 0.9 , topP : 1.0 , topK : 1 , }; // Convert input message to a list of GAPIC instances for model input const instances = [ helpers . toValue ( input )]; // TODO(developer): Uncomment apiEndpoint and predictionServiceClient before running the sample. // const apiEndpoint = ${endpointRegion}-aiplatform.googleapis.com; // Create a client // predictionServiceClient = new PredictionServiceClient({apiEndpoint}); // Call the Gemma2 endpoint const gemma2Endpoint = projects/ ${ projectId } /locations/ ${ endpointRegion } /endpoints/ ${ endpointId } ; const [ response ] = await predictionServiceClient . predict ({ endpoint : gemma2Endpoint , instances , }); const predictions = response . predictions ; const text = predictions [ 0 ]. stringValue ; console . log ( 'Predictions:' , text ); Java Before trying this sample, follow the Java setup instructions in the Vertex AI quickstart using client libraries .",
+          "String projectId = \"YOUR PROJECT ID\" ; String endpointRegion = \"us-west1\" ; String endpointId = \"YOUR ENDPOINT ID\" ; PredictionServiceSettings predictionServiceSettings = PredictionServiceSettings . newBuilder () . setEndpoint ( String . format ( \"%s-aiplatform.googleapis.com:443\" , endpointRegion )) . build (); PredictionServiceClient predictionServiceClient = PredictionServiceClient . create ( predictionServiceSettings ); Gemma2PredictTpu creator = new Gemma2PredictTpu ( predictionServiceClient ); creator . gemma2PredictTpu ( projectId , endpointRegion , endpointId ); } // Demonstrates how to run inference on a Gemma2 model // deployed to a Vertex AI endpoint with TPU accelerators. public String gemma2PredictTpu ( String projectId , String region , String endpointId ) throws IOException { Map<String , Object > paramsMap = new HashMap <> (); paramsMap . put ( \"temperature\" , 0.9 ); paramsMap . put ( \"maxOutputTokens\" , 1024 ); paramsMap . put ( \"topP\" , 1.0 ); paramsMap . put ( \"topK\" , 1 ); Value parameters = mapToValue ( paramsMap ); // Prompt used in the prediction String instance = \"{ \\\"prompt\\\": \\\"Why is the sky blue?\\\"}\" ; Value ."
+        ]
+      },
+      {
+        "title": "Generative AI on Vertex AI Cookbook \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "",
+        "evidence_snippets": [
+          "View on GitHub Agent engine Gemini Langchain Deploying a RAG Application with AlloyDB to Agent Engine View on GitHub Agent engine Agents Gemini Rag Search Building a Conversational Search Agent with Agent Engine and RAG on Vertex AI Search View on GitHub Agent engine Agents Gemini Langgraph Rag Building a Multi-Agent RAG Application with LangGraph and Agent Engine View on GitHub Agent engine Gemini Langgraph Rag Deploying a RAG Application with Cloud SQL for PostgreSQL to Agent Engine View on GitHub Agent engine Agents Gemini Building and Deploying a Google Maps API Agent with Agent Engine View on GitHub Agent engine Gemini Langgraph Building and Deploying a LangGraph Application with Agent Engine in Vertex AI View on GitHub Gemini Multimodal YouTube Video Analysis with Gemini View on GitHub Gemini Multimodal Vector search Building a Multimodal Chatbot for Warranty Claims using Gemini and Vector Search in Vertex AI View on GitHub Gemini Multimodal Rag Multimodal Retrieval Augmented Generation (RAG) using Gemini API in Vertex AI View on GitHub Gemini Llamaindex Rag LlamaIndex with Vertex AI Vector Search to perform question answering RAG View on GitHub Gemini Langchain Multimodal Rag Multimodal Retrieval Augmented Generation (RAG) with Gemini, Vertex AI Vector Search, and LangChain View on GitHub Gemini Rag Small-to-big Retrieval-Augmented Generation View on GitHub Gemini Prompting ReAct (Reasoning + Acting) + Custom tool for Healthcare NL API + Gemini + LangChain View on GitHub Gemini Prompting Using Gemini in Education View on GitHub Gemini Prompting AI Quick Build Experience View on GitHub Gemini Multimodal Rag Code Retrieval Augmented Generation (RAG) with Gemini API View on GitHub Gemini Multimodal Product listing generation with Gemini View on GitHub Gemini Multimodal Multimodal retail recommendation: using Gemini to recommend items based on images and image reasoning View on GitHub Gemini Multimodal Prompting Sheet Music Analysis with Gemini View on GitHub Gemini Multimodal Analyzing movie posters in BigQuery with Gemini View on GitHub Gemini Langchain Getting Started with LangChain 🦜️🔗 + Gemini API in Vertex AI View on GitHub Agents Gemini Building a Weather Agent with AutoGen and Gemini View on GitHub Gemini Prompting Vertex AI Prompt Optimizer Notebook UI View on GitHub Gemini Prompting Vertex AI Prompt Optimizer - Tool usage View on GitHub Gemini Prompting Vertex AI Prompt Optimizer - Custom metric View on GitHub Gemini Prompting Intro to Vertex AI Prompt Optimizer View on GitHub Gemini Prompting Text Summarization with Generative Models on Vertex AI View on GitHub Gemini Prompting Ideation with Generative Models on Vertex AI View on GitHub Gemini Prompting Chain of Thought & ReAct View on GitHub Gemini Prompting Question Answering with Generative Models on Vertex AI View on GitHub Gemini Prompting Text Classification with Generative Models on Vertex AI View on GitHub Gemini Prompting Text Extraction with Generative Models on Vertex AI View on GitHub Gemini Tuning Supervised Fine Tuning with Gemini 2.0 Flash for Change Detection View on GitHub Gemini Tuning Supervised Fine-Tuning with Gemini 2.0 Flash for Q & A View on GitHub Gemini Tuning Supervised Fine Tuning with Gemini 2.0 Flash for Image Captioning View on GitHub Evaluation Gemini Model garden Use Gen AI Evaluation SDK to Evaluate Models in Vertex AI Studio, Model Garden, and Model Registry View on GitHub Evaluation Gemini Rag Evaluate Generated Answers from RAG using Rapid Evaluation and Dataflow ML with Vertex AI Pipelines View on GitHub Evaluation Gemini Enhancing Quality and Explainability with Vertex AI Evaluation View on GitHub Evaluation Gemini Evaluate and Compare Gen AI Model Settings View on GitHub Evaluation Gemini Bring-Your-Own-Autorater using Custom Metrics View on GitHub Evaluation Gemini Evaluate a Translation Model View on GitHub Evaluation Gemini Compare and Migrate from PaLM to Gemini Model View on GitHub Evaluation Gemini Multimodal Evaluating Multimodal Tasks View on GitHub Evaluation Gemini Langchain Evaluate LangChain View on GitHub Evaluation Gemini Compare Generative AI Models View on GitHub Evaluation Gemini Rag Evaluate Generated Answers from RAG for QA with Gen AI Evaluation Service SDK View on GitHub Evaluation Gemini Customize Model-based Metrics to Evaluate a Gen AI Model View on GitHub Evaluation Gemini Rag Evaluate Generative Model Tool Use View on GitHub Gemini Prompting Rag Security Gen AI and LLM Security - ReAct and RAG Attacks & Mitigations View on GitHub Gemini Security Responsible AI with Gemini API in Vertex AI: Safety Ratings and Thresholds View on GitHub Batch prediction Gemini Monitor Batch Prediction with Gemini API View on GitHub Imagen Multimodal Imagen 3 Customized Images View on GitHub Gemini Imagen Multimodal Create High Quality Visual Assets with Imagen and Gemini View on GitHub Imagen Multimodal Create a Photoshop Document with Image Segmentation on Vertex AI View on GitHub Gemini Imagen Multimodal Enhance Imagen Prompts with Gemini View on GitHub Imagen Multimodal Image Segmentation on Vertex AI View on GitHub Search Vertex AI Search with Filters & Metadata View on GitHub Gemini Search Vertex AI Search - Querying Blended Data Apps and Summarization with Gemini View on GitHub Search Create a Vertex AI Search Datastore and Search Engine View on GitHub Search Building Search Applications with Vertex AI Search View on GitHub Gemini Langchain Rag Search Question Answering Over Documents View on GitHub Gemini Rag Search Bulk Question Answering with Vertex AI Search View on GitHub Embeddings Search Custom Embeddings with Vertex AI Search View on GitHub Chirp Speech Get Started with Chirp 2 - Advanced Features View on GitHub Claude Function calling Model garden Multimodal Function Calling with Claude Models View on GitHub Agents Search Vertex AI Search and Conversation Data Store Status Checker View on GitHub Agents Gemini Building a Research Multi Agent System - a Design Pattern Overview with Gemini 2.0 View on GitHub Code execution Gemini Intro to Generating and Executing Python Code with Gemini 2.0 View on GitHub Agents Evaluation Gemini Evaluating Agents - Evaluate a CrewAI agent with Vertex AI Gen AI Evaluation View on GitHub Agents Evaluation Gemini Langgraph Evaluating Agents - Evaluate a LangGraph agent with Vertex AI Gen AI Evaluation View on GitHub Gemini Live api Multimodal Rag Interactive Loan Application Assistant (Financial Services) View on GitHub Rag Rag engine Search Vertex AI RAG Engine with Vertex AI Search View on GitHub Agent engine Agents Evaluation Evaluate a CrewAI agent on Vertex AI Agent Engine (Customized template) View on GitHub Agent engine Agents Evaluation Langchain Evaluating a LangChain Agent on Vertex AI Agent Engine (Prebuilt template) View on GitHub Agent engine Agents Evaluation Langgraph Evaluate a LangGraph agent on Vertex AI Agent Engine (Customized template) View on GitHub Gemini Search Q&A Chatbot with Vertex AI Search for summarized website results View on GitHub Gemini Getting started with Gemini using Vertex AI in Express Mode View on GitHub Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "View on GitHub All Tutorials Filter by: Agent Engine Agents Batch Prediction Chirp Claude Code Execution Embeddings Evaluation Function Calling Gemini Gemma Grounding Hugging Face Image Generation Imagen LangChain LangGraph Live API LlamaIndex Model Garden Multimodal Orchestration Prompting RAG RAG Engine Search Security Speech Thinking Tuning Vector Search Veo Workspace Function calling Gemini Grounding Multimodal Prompting Thinking Intro to Gemini 3 Pro Get started with Gemini 3 Pro in Vertex AI with the Gen AI Python SDK.",
+          "View on GitHub Hugging face Guess who or what app using Hugging Face Deep Learning container model on Vertex AI Create a\"Guess who or what\" application using Vertex AI, Hugging Face Deep Learning container, an image generation open model, and Gemini to solve and visualize riddles."
+        ]
+      },
+      {
+        "title": "\"Test model capabilities in Model Garden \\_|\\_ Generative AI on Vertex AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart",
+        "source_id": "site-docs-root",
+        "final_score": 159,
+        "relevance": "",
+        "evidence_snippets": [
+          "Required roles for users To get the permissions that you need to test model capabilities in Model Garden, ask your administrator to grant you the following IAM roles on your Google Cloud project: Service Usage Admin ( roles/serviceusage.serviceUsageAdmin ) Artifact Registry Administrator ( roles/artifactregistry.admin ) Cloud Run Admin ( roles/run.admin ) Storage Admin ( roles/storage.admin ) Vertex AI User ( roles/aiplatform.user ) For more information about granting roles, see Manage access to projects, folders, and organizations .",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Test model capabilities in Model Garden Stay organized with collections Save and categorize content based on your preferences.",
+          "For supported models, you can try demo playgrounds or launch demo applications called Model Garden Spaces that you can share with others to showcase a model's capabilities."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "aiplatform.user",
+      "artifactregistry.admin",
+      "compute.googleapis.com",
+      "labels.VERIFIED",
+      "run.admin",
+      "serviceusage.serviceUsageAdmin",
+      "storage.admin"
+    ],
+    "missing_inventory_roles": [
+      "roles/aiplatform.user",
+      "roles/artifactregistry.admin",
+      "roles/run.admin",
+      "roles/serviceusage.serviceUsageAdmin",
+      "roles/storage.admin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/deploy-and-inference-tutorial-tpu",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/cookbook",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/model-garden/quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.525Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

@@ -1,0 +1,115 @@
+{
+  "feature_name": "Aggregation function: count",
+  "feature_slug": "aggregation-function-count",
+  "summary": "Aggregation queries support the count function; Aggregation queries support the count function.",
+  "extended_definition": "Aggregation queries support the count function; Aggregation queries support the count function.",
+  "lifecycle": {
+    "latest_feature_date": "2023-04-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+      "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+      "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+      "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Aggregation queries \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+        "source_id": "site-iam-reference",
+        "final_score": 172,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "GetDoubleValue ()) GQL AGGREGATE SUM(hours) AS total hours, COUNT( ) AS total tasks OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) GQL supports a simplified form for aggregation queries: SELECT SUM(hours) AS total hours, COUNT( ) AS total tasks FROM tasks WHERE is done = false AND tag = 'house' This example uses the optional aliases of total hours and total tasks .",
+          "Firestore in Datastore mode supports the following aggregation queries: count() sum() avg() Aggregation queries simplify your application code and cost less than fetching each entity for processing.",
+          "Read this page to learn how to use aggregation queries. count() aggregation Use the count() aggregation to return the total number of indexed entities that match a given query."
+        ]
+      },
+      {
+        "title": "Datastore queries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "source_id": "site-iam-reference",
+        "final_score": 153,
+        "relevance": "",
+        "evidence_snippets": [
+          "Aggregation queries Firestore in Datastore mode supports the count() aggregation query.",
+          "For more information, see Set up authentication for a local development environment . / Fetch a query cursor. @param int $pageSize @param string $pageCursor @param string $namespaceId / function cursor paging(int $pageSize, string $pageCursor = '', string $namespaceId = null) { $datastore = new DatastoreClient(['namespaceId' => $namespaceId]); $query = $datastore->query() ->kind('Task') ->limit($pageSize) ->start($pageCursor); $result = $datastore->runQuery($query); $nextPageCursor = ''; $entities = []; / @var Entity $entity / foreach ($result as $entity) { $nextPageCursor = $entity->cursor(); $entities[] = $entity; } printf('Found %s entities', count($entities)); $entities = []; if (!empty($nextPageCursor)) { $query = $datastore->query() ->kind('Task') ->limit($pageSize) ->start($nextPageCursor); $result = $datastore->runQuery($query); foreach ($result as $entity) { $entities[] = $entity; } printf('Found %s entities with next page cursor', count($entities)); } } Python To learn how to install and use the client library for Cloud Datastore, see Cloud Datastore client libraries .",
+          "For more information, see Set up authentication for a local development environment . / TODO(developer): Uncomment these variables before running the sample. / // const projectId = \"your Google Cloud project id\"; // Imports the Cloud Datastore const { Datastore , PropertyFilter , or } = require ( ' @google-cloud/datastore ' ); async function queryFilterOr () { // Instantiate the Datastore const datastore = new Datastore (); const query = datastore . createQuery ( 'Task' ) . filter ( or ([ new PropertyFilter ( 'description' , '=' , 'Buy milk' ), new PropertyFilter ( 'description' , '=' , 'Feed cats' ), ]), ); const [ entities ] = await datastore . runQuery ( query ); for ( const entity of entities ) { console . log ( Entity found: ${ entity [ 'description' ] } ); } } queryFilterOr (); PHP Snippet not available."
+        ]
+      },
+      {
+        "title": "GQL Reference \\_|\\_ Datastore \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "source_id": "site-docs-root",
+        "final_score": 145,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grammar The GQL grammar is summarized as follows: < aggregation query > : = ( SELECT ( < aggregation > + , ) [ FROM < kind > ] [ WHERE < compound - condition > ] AGGREGATE ( < aggregation > + , ) OVER \"(\" < query > \")\" ) < aggregation > : = ( COUNT \"(\" \" \" \")\" COUNT UP TO \"(\" < integer - literal > \")\" SUM \"(\" < property - name > \")\" AVG \"(\" < property - name > \")\" ) [ AS < alias > ] < alias > : = < name > < query > : = SELECT ( \" \" < property - name > + , DISTINCT < property - name > + , DISTINCT ON \"(\" < property - name > + , \")\" \" \" DISTINCT ON \"(\" < property - name > + , \")\" < property - name > + , ) [ FROM < kind > ] [ WHERE < compound - condition > ] [ ORDER BY ( < property - name > [ ASC DESC ] ) + , ] [ LIMIT ( < result - position > FIRST \"(\" < result - position > , < result - position > \")\" ) ] [ OFFSET < result - position > [ \"+\" < result - position > ] ] < compound - condition > := < condition > AND < compound - condition > < condition > OR < compound - condition > \"(\" < compound - condition > \")\" < condition > < condition > : = < property - name > IS NULL < property - name > < forward - comparator > < value > < value > < backward - comparator > < property - name > < forward - comparator > := < either - comparator > CONTAINS HAS ANCESTOR IN NOT IN < backward - comparator > := < either - comparator > IN HAS DESCENDANT < either - comparator > := = < < = > > = != < result - position > := < binding - site > < integer - literal > < value > : = < binding - site > < synthetic - literal > < string - literal > < integer - literal > < double - literal > < boolean - literal > < null - literal > < synthetic - literal > := KEY \"(\" [ \"PROJECT\" \"(\" < string - literal > \")\" \",\" ] [ \"NAMESPACE\" \"(\" < string - literal > \")\" \",\" ] < key - path - element > + , \")\" ARRAY \"(\" < value > + , \")\" BLOB \"(\" < string - literal > \")\" DATETIME \"(\" < string - literal > \")\" < key - path - element > := < kind > \",\" ( < integer - literal > < string - literal > ) < kind > : = < name > < property - name > := < name > + .",
+          "AGGREGATE COUNT( ) OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) AGGREGATE COUNT UP TO(5) OVER ( SELECT FROM tasks WHERE is done = false AND tag = 'house' ) Or over a more complicated base query: AGGREGATE COUNT( ) AS total OVER ( SELECT FROM tasks WHERE is done = true LIMIT 5 OFFSET 10 ) AGGREGATE COUNT UP TO(5) AS total OVER ( SELECT FROM tasks WHERE is done = true LIMIT 5 OFFSET 10 ) Simplified form SELECT COUNT( ) AS total FROM tasks WHERE is done = false AND tag = 'house' SELECT COUNT UP TO(5) AS total FROM tasks WHERE is done = false AND tag = 'house' SUM() and AVG() Use the SUM() aggregation to return the sum of the values of the requested property.",
+          "Aggregations Firestore in Datastore mode supports the following aggregations: COUNT( ) COUNT UP TO() SUM() AVG() In GQL, you can write aggregations in either a pipelined form or a simplified form."
+        ]
+      },
+      {
+        "title": "\"Class CountAggregation (2.24.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation",
+        "source_id": "site-python-reference",
+        "final_score": 144,
+        "relevance": "",
+        "evidence_snippets": [
+          "2.24.0 (latest) 2.23.0 2.22.0 2.21.0 2.20.2 2.19.0 2.18.0 2.17.0 2.16.1 2.15.2 2.14.0 2.13.2 2.12.0 2.11.1 2.10.0 2.9.0 2.8.3 2.7.2 2.6.2 2.5.1 2.4.0 2.3.0 2.2.0 2.1.6 2.0.1 1.15.5 1.14.0 1.13.2 1.12.0 1.11.0 1.10.0 1.9.0 CountAggregation ( alias = None ) Representation of a \"Count\" aggregation query.",
+          "Home Documentation Developer tools Python Client libraries Send feedback Class CountAggregation (2.24.0) Stay organized with collections Save and categorize content based on your preferences.",
+          "Parameters Name Description alias str The alias for the aggregation. value int The resulting value from the aggregation."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.datastore.AggregationQuery"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastore/docs/aggregation-queries",
+        "https://docs.cloud.google.com/datastore/docs/concepts/queries",
+        "https://docs.cloud.google.com/datastore/docs/reference/gql_reference",
+        "https://docs.cloud.google.com/python/docs/reference/datastore/latest/google.cloud.datastore.aggregation.CountAggregation"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.286Z",
+  "source_step08_card": "data/step-08/current/products/datastore/card.json",
+  "product_name": "Datastore",
+  "product_slug": "datastore"
+}

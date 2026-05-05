@@ -1,0 +1,38 @@
+# ProgrammaticBuyer resource
+
+Product: Google Ad Manager API
+Feature slug: `programmaticbuyer-resource`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+The API now includes the ProgrammaticBuyer resource.
+
+## Lifecycle
+
+- Latest feature date: 2025-06-26
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+- allow (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+- auth (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+- credential (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+- key (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+- private (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+- role (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+- token (evidence: [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest), [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits), [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications))
+
+## Official Evidence
+
+- [https://developers.google.com/ad-manager/api/beta/authentication](https://developers.google.com/ad-manager/api/beta/authentication)
+- [https://developers.google.com/ad-manager/api/beta/reference/rest](https://developers.google.com/ad-manager/api/beta/reference/rest)
+- [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.adUnits)
+- [https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications](https://developers.google.com/ad-manager/api/beta/reference/rest/v1/networks.applications)

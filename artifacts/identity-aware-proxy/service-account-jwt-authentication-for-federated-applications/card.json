@@ -1,0 +1,226 @@
+{
+  "feature_name": "Service account JWT authentication for federated applications",
+  "feature_slug": "service-account-jwt-authentication-for-federated-applications",
+  "summary": "Applications configured with Identity Platform or Workforce Identity Federation can accept service account JWT authentication.",
+  "extended_definition": "Applications configured with Identity Platform or Workforce Identity Federation can accept service account JWT authentication.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+      "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+      "https://docs.cloud.google.com/iap/docs/authentication-howto",
+      "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Programmatic authentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "source_id": "site-docs-root",
+        "final_score": 204,
+        "relevance": "",
+        "evidence_snippets": [
+          "Authenticate with a service account JWT IAP supports service account JWT authentication for Google identities, Identity Platform, and Workforce Identity Federation configured applications.",
+          "For more information, see Set up authentication for a local development environment . gcloud Run the following command to prepare a request with the JWT payload: cat > claim.json << EOM { \"iss\" : \" SERVICE ACCOUNT EMAIL ADDRESS \" , \"sub\" : \" SERVICE ACCOUNT EMAIL ADDRESS \" , \"aud\" : \" TARGET URL \" , \"iat\" : $( date +%s ) , \"exp\" : $(( date +%s + 3600 )) } EOM Use the following Google Cloud CLI command to sign the payload in claim.json : gcloud iam service-accounts sign-jwt --iam-account = \" SERVICE ACCOUNT EMAIL ADDRESS \" claim.json output.jwt After a successful request, output.jwt contains a signed JWT that you can use to access your IAP-secured resource.",
+          "The following Bash script demonstrates this process: Bash #!/usr/bin/env bash Example script that generates an OIDC token using a service account key file and uses it to access an IAP-secured resource. set -euo pipefail get token () { Get the bearer token in exchange for the service account credentials local service account key file path = \" ${ 1 } \" local iap client id = \" ${ 2 } \" Define the scope and token endpoint local iam scope = \"https://www.googleapis.com/auth/iam\" local oauth token uri = \"https://www.googleapis.com/oauth2/v4/token\" Extract data from service account key file local private key id = \" $( cat \" ${ service account key file path } \" jq -r '.private key id' ) \" local client email = \" $( cat \" ${ service account key file path } \" jq -r '.client email' ) \" local private key = \" $( cat \" ${ service account key file path } \" jq -r '.private key' ) \" Set token timestamps (current time and expiration 10 minutes later) local issued at = \" $( date +%s ) \" local expires at = \" $(( issued at + 600 )) \" Create JWT header and payload local header = \"{'alg':'RS256','typ':'JWT','kid':' ${ private key id } '}\" local header base64 = \" $( echo \" ${ header } \" base64 tr -d '\\n' ) \" local payload = \"{'iss':' ${ client email } ','aud':' ${ oauth token uri } ','exp': ${ expires at } ,'iat': ${ issued at } ,'sub':' ${ client email } ','target audience':' ${ iap client id } '}\" local payload base64 = \" $( echo \" ${ payload } \" base64 tr -d '\\n' ) \" Create JWT signature using the private key local signature base64 = \" $( printf %s \" ${ header base64 } . ${ payload base64 } \" openssl dgst -binary -sha256 -sign < ( printf '%s\\n' \" ${ private key } \" ) base64 tr -d '\\n')\" local assertion = \" ${ header base64 } . ${ payload base64 } . ${ signature base64 } \" Exchange the signed JWT assertion for an ID token local token payload = \" $( curl -s \\ --data-urlencode \"grant type=urn:ietf:params:oauth:grant-type:jwt-bearer\" \\ --data-urlencode \"assertion= ${ assertion } \" \\ https://www.googleapis.com/oauth2/v4/token ) \" Extract just the ID token from the response local bearer id token = \" $( echo \" ${ token payload } \" jq -r '.id token' ) \" echo \" ${ bearer id token } \" } main () { Check if required arguments are provided if [[ $# -lt 3 ]] ; then echo \"Usage: $0 <service account key file.json> <iap client id> <url>\" exit 1 fi Assign parameters to variables SERVICE ACCOUNT KEY = \" $1 \" IAP CLIENT ID = \" $2 \" URL = \" $3 \" Generate the ID token echo \"Generating token...\" ID TOKEN = $( get token \" ${ SERVICE ACCOUNT KEY } \" \" ${ IAP CLIENT ID } \" ) Access the IAP-secured resource with the token echo \"Accessing: ${ URL } \" curl --header \"Authorization: Bearer ${ ID TOKEN } \" \" ${ URL } \" } Run the main function with all provided arguments main \" $@ \" This script performs the following steps: Extracts the service account key information from your JSON key file Creates a JWT with the necessary fields, including the IAP client ID as the target audience Signs the JWT using the service account's private key Exchanges this JWT for an OIDC token through Google's OAuth service Uses the resulting token to make an authenticated request to your IAP-secured resource To use this script: Save it to a file, for example: get iap token.sh Make it executable: chmod +x get iap token.sh Run it with three parameters: ./get iap token.sh service-account-key.json \\ OAUTH CLIENT ID \\ URL Where: service-account-key.json is your downloaded service account key file OAUTH CLIENT ID is the OAuth client ID for your IAP-secured resource URL is the URL you want to access Obtain an OIDC token by using service account impersonation In all other cases, use the IAM credentials API to generate an OIDC token by impersonating a target service account right before accessing an IAP-secured resource."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Authenticate users with Google Accounts \\_|\\_ Identity-Aware\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "source_id": "site-docs-root",
+        "final_score": 173,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Run the following command to specify the project that contains the applications that you want to protect with IAP. gcloud config set project PROJECT ID To enable IAP, run the following command. gcloud iap web enable --resource-type=app-engine --versions= version Add principals who should have the IAP-secured Web App user role to the project. gcloud projects add-iam-policy-binding PROJECT ID \\ --member= PRINCIPAL IDENTIFIER \\ --role=roles/iap.httpsResourceAccessor Replace PROJECT ID with your project ID.",
+          "Only principals with the IAP-Secured Web App User ( roles/iap.httpsResourceAccessor ) role on the project will be given access. gcloud Before you set up your project and IAP, you need an up-to-date version of the gcloud CLI.",
+          "Required roles To get the permissions that you need to authenticate users with Google Accounts, ask your administrator to grant you the IAP Policy Admin ( roles/iap.policyAdmin ) IAM role on your project."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Authenticate users with external identities \\_|\\_ Identity-Aware\\",
+        "url": "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Test user authentication To test that IAP is protecting your app and authenticating users with Facebook: Go to the client App Engine app in your browser: https:// project-id .appspot.com After a brief loading screen, you are redirected to the Identity Platform sign-in page.",
+          "By combining IAP and Identity Platform , you can authenticate users with a wide range of identity providers, such as OAuth , SAML , and OIDC , in addition to Google Accounts.",
+          "If the user signs in successfully, the authentication app responds with a JSON Web Token (JWT)."
+        ]
+      },
+      {
+        "title": "IAP reauthentication \\_|\\_ Identity-Aware Proxy \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/iap/docs/configuring-reauth",
+        "source_id": "site-docs-root",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, mobile and desktop applications cannot reauthenticate users because the resources that require reauthentication are inaccessible to these applications.",
+          "To prevent frequent reauthentication for applications on the same domain, the cookie is set on the top-level private domain and is valid for that entire domain.",
+          "IAP reauthentication (or, reauth) is designed to enforce reauthentication policies for IAP-protected services and applications (or, apps)."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.com",
+      "claim.json",
+      "file.json",
+      "github.com",
+      "iap.httpsResourceAccessor",
+      "iap.policyAdmin",
+      "key.json",
+      "output.jwt",
+      "token.sh",
+      "toolkit.git"
+    ],
+    "missing_inventory_roles": [
+      "roles/iap.httpsResourceAccessor",
+      "roles/iap.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/iap/docs/authentication-howto",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-google-accounts",
+        "https://docs.cloud.google.com/iap/docs/authenticate-users-external-identities",
+        "https://docs.cloud.google.com/iap/docs/configuring-reauth"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.405Z",
+  "source_step08_card": "data/step-08/current/products/identity-aware-proxy/card.json",
+  "product_name": "Identity-Aware Proxy",
+  "product_slug": "identity-aware-proxy"
+}

@@ -1,0 +1,148 @@
+{
+  "feature_name": "Serverless VPC Access connector updates",
+  "feature_slug": "serverless-vpc-access-connector-updates",
+  "summary": "Cloud Run functions supports updating Serverless VPC Access connectors, including instance type and scaling limits.",
+  "extended_definition": "Cloud Run functions supports updating Serverless VPC Access connectors, including instance type and scaling limits.",
+  "lifecycle": {
+    "latest_feature_date": "2024-01-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+      "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType",
+      "https://docs.cloud.google.com/functions/docs/running/direct-vpc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Configure Direct VPC egress for 2nd gen functions \\_|\\_ Cloud Run functions\\",
+        "url": "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "source_id": "site-iam-reference",
+        "final_score": 36,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can't use Direct VPC egress and Serverless VPC Access connectors at the same time.",
+          "BACKEND URL ; if ( ! backendUrl ) { console . error ( 'BACKEND URL environment variable not set.' ); res . status ( 500 ). send ( 'BACKEND URL not configured.' ); return ; } try { const metadataServerURL = 'http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/identity?audience=' ; const tokenUrl = metadataServerURL + backendUrl ; const tokenResponse = await axios . get ( tokenUrl , { headers : { 'Metadata-Flavor' : 'Google' , }, }); const token = tokenResponse . data ; const response = await axios . get ( backendUrl , { headers : { Authorization : bearer ${ token } , }, }); res . status ( 200 ). send ( Response from backend: ${ response . data } ); } catch ( error ) { console . error ( Error calling backend service: ${ error . message } ); res . status ( 500 ). send ( Error calling backend: ${ error . message } ); } }; functions . http ( 'callVPCService' , callVPCService ); Deploy the function with Direct VPC egress configured to route all traffic to your default VPC network: gcloud functions deploy my-2ndgen-function \\ --source . \\ --runtime nodejs20 \\ --trigger-http \\ --entry-point callVPCService \\ --network = default \\ --subnet = default \\ --direct-vpc-egress = all \\ --region = REGION \\ --allow-unauthenticated \\ --set-env-vars BACKEND URL = BACKEND URL Replace the following: REGION : the region where you deployed the backend service.",
+          "Configure Direct VPC egress Configure Direct VPC egress for new or existing 2nd gen functions. gcloud To configure Direct VPC egress when you deploy a function, use the gcloud functions deploy command with flags for your network settings. gcloud functions deploy FUNCTION NAME \\ --source . \\ --runtime RUNTIME \\ --trigger-http \\ --region REGION \\ --network = NETWORK \\ --subnet = SUBNET \\ --network-tags = NETWORK TAG NAMES \\ --direct-vpc-egress = EGRESS SETTING Replace the following: FUNCTION NAME : the name of your function."
+        ]
+      },
+      {
+        "title": "ListOperationsResponse \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "source_id": "site-docs-reference-2",
+        "final_score": 36,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Cloud Run Cloud Run functions Reference Send feedback ListOperationsResponse Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "LogType \\_|\\_ Cloud Run functions \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType",
+        "source_id": "site-docs-reference-2",
+        "final_score": 34,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Application hosting Cloud Run Cloud Run functions Reference Send feedback LogType Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "index.js",
+      "metadata.google.internal",
+      "package.json",
+      "projects.locations.functions"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/functions/docs/running/direct-vpc",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/ListOperationsResponse",
+        "https://docs.cloud.google.com/functions/docs/reference/rest/Shared.Types/LogType"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:13.254Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run-functions/card.json",
+  "product_name": "Cloud Run functions",
+  "product_slug": "cloud-run-functions"
+}

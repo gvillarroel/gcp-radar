@@ -1,0 +1,78 @@
+# Apigee hybrid
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-08/current/products/apigee-hybrid/card.json`
+
+## Summary
+
+- Promoted features: 62
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2025-12-19
+- Official source links: 49
+
+## Features
+
+- [Advanced API Security Actions in Apigee hybrid](./advanced-api-security-actions-in-apigee-hybrid/README.md)
+- [and setup fees for monetization](./and-setup-fees-for-monetization/README.md)
+- [Apigee Classic UI](./apigee-classic-ui/README.md)
+- [Apigee Deployer IAM role](./apigee-deployer-iam-role/README.md)
+- [apigee-guardrails IAM service account](./apigee-guardrails-iam-service-account/README.md)
+- [Apigee Hybrid analytics and debug data pipeline](./apigee-hybrid-analytics-and-debug-data-pipeline/README.md)
+- [Apigee Hybrid analytics and debug data pipeline for data residency](./apigee-hybrid-analytics-and-debug-data-pipeline-for-data-residency/README.md)
+- [Apigee hybrid Anthos Service Mesh version support (1.13)](./apigee-hybrid-anthos-service-mesh-version-support-1-13/README.md)
+- [Apigee hybrid Anthos version support (1.12)](./apigee-hybrid-anthos-version-support-1-12/README.md)
+- [Apigee hybrid Kubernetes version support (1.23)](./apigee-hybrid-kubernetes-version-support-1-23/README.md)
+- [Apigee ingress gateway](./apigee-ingress-gateway/README.md)
+- [Apigee Operator namespace placement](./apigee-operator-namespace-placement/README.md)
+- [apigee-pull-push.sh --list option](./apigee-pull-push-sh-list-option/README.md)
+- [Apigee-watcher leader election](./apigee-watcher-leader-election/README.md)
+- [apigeectl command-line tool](./apigeectl-command-line-tool/README.md)
+- [apigeectl --v verbosity option](./apigeectl-v-verbosity-option/README.md)
+- [apigeectl --verbose option](./apigeectl-verbose-option/README.md)
+- [AppGroups](./appgroups/README.md)
+- [Artifact Registry-hosted Java callout JAR dependencies](./artifact-registry-hosted-java-callout-jar-dependencies/README.md)
+- [Automated Issue Surfacing (AIS)](./automated-issue-surfacing-ais/README.md)
+- [Automatic Cassandra credential rotation in HashiCorp Vault](./automatic-cassandra-credential-rotation-in-hashicorp-vault/README.md)
+- [Cassandra credential rotation](./cassandra-credential-rotation/README.md)
+- [Client IP resolution](./client-ip-resolution/README.md)
+- [CSI backup and restore](./csi-backup-and-restore/README.md)
+- [Custom Apigee Ingress access log formats](./custom-apigee-ingress-access-log-formats/README.md)
+- [Custom contract encryption key support for new Apigee hybrid installations](./custom-contract-encryption-key-support-for-new-apigee-hybrid-installations/README.md)
+- [Custom metrics scaling](./custom-metrics-scaling/README.md)
+- [Customer-installed Anthos Service Mesh](./customer-installed-anthos-service-mesh/README.md)
+- [Data residency support for Apigee data collectors](./data-residency-support-for-apigee-data-collectors/README.md)
+- [Enhanced per-environment proxy limits](./enhanced-per-environment-proxy-limits/README.md)
+- [Environment-level scaling for Apigee hybrid components](./environment-level-scaling-for-apigee-hybrid-components/README.md)
+- [External secret store support for Apigee Hybrid secrets](./external-secret-store-support-for-apigee-hybrid-secrets/README.md)
+- [Forward proxy allowlist access](./forward-proxy-allowlist-access/README.md)
+- [GraphQL policy JSON payload support](./graphql-policy-json-payload-support/README.md)
+- [HashiCorp Vault integration for Cassandra credentials in Apigee hybrid](./hashicorp-vault-integration-for-cassandra-credentials-in-apigee-hybrid/README.md)
+- [HeaderName support for Authentication bearer token header customization](./headername-support-for-authentication-bearer-token-header-customization/README.md)
+- [Hybrid cluster management via Helm or apigeectl](./hybrid-cluster-management-via-helm-or-apigeectl/README.md)
+- [Hybrid proxy and target endpoint monitoring metrics suite](./hybrid-proxy-and-target-endpoint-monitoring-metrics-suite/README.md)
+- [Improved Apigee Hybrid backup and restore system](./improved-apigee-hybrid-backup-and-restore-system/README.md)
+- [Kubernetes network policies for Cassandra and Redis](./kubernetes-network-policies-for-cassandra-and-redis/README.md)
+- [KVM pagination](./kvm-pagination/README.md)
+- [Large message payload support](./large-message-payload-support/README.md)
+- [MessageLogging Cloud Logging support](./messagelogging-cloud-logging-support/README.md)
+- [Metrics-based autoscaling via customAutoscaling.enabled](./metrics-based-autoscaling-via-customautoscaling-enabled/README.md)
+- [mTLS for Cassandra client-node communication](./mtls-for-cassandra-client-node-communication/README.md)
+- [OAuthV2 JWT access token support](./oauthv2-jwt-access-token-support/README.md)
+- [Organization-level UDCA](./organization-level-udca/README.md)
+- [Per-virtual-host ingress gateway targeting](./per-virtual-host-ingress-gateway-targeting/README.md)
+- [Pre-install cluster readiness check job for Apigee hybrid](./pre-install-cluster-readiness-check-job-for-apigee-hybrid/README.md)
+- [ProxyV2 and TargetV2 metrics suite](./proxyv2-and-targetv2-metrics-suite/README.md)
+- [PublishMessage policy](./publishmessage-policy/README.md)
+- [Recurring](./recurring/README.md)
+- [Runtime service creation guardrails validation](./runtime-service-creation-guardrails-validation/README.md)
+- [SanitizeModelResponse policy](./sanitizemodelresponse-policy/README.md)
+- [SanitizeUserPrompt policy](./sanitizeuserprompt-policy/README.md)
+- [Seccomp Profiles](./seccomp-profiles/README.md)
+- [SemanticCacheLookup policy](./semanticcachelookup-policy/README.md)
+- [SemanticCachePopulate policy](./semanticcachepopulate-policy/README.md)
+- [Service account key storage in HashiCorp Vault for Apigee hybrid](./service-account-key-storage-in-hashicorp-vault-for-apigee-hybrid/README.md)
+- [top-up](./top-up/README.md)
+- [Upgrade backup guardrails](./upgrade-backup-guardrails/README.md)
+- [Workload Identity Federation authentication for Apigee hybrid on AKS and EKS](./workload-identity-federation-authentication-for-apigee-hybrid-on-aks-and-eks/README.md)

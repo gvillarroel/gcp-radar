@@ -1,0 +1,30 @@
+# Unified Maintenance
+
+Generated at: `2026-05-05T13:13:05.575Z`
+
+Service card: [card.json](../../artifacts/unified-maintenance/card.json)
+
+Artifacts index: [unified-maintenance](../../artifacts/unified-maintenance/index.md)
+
+## Summary
+
+- Promoted features: 11
+- Skipped features during promotion: 0
+- Latest feature date: 2026-02-27
+- Service IAM status: {"explicit":0,"derived_from_permission_prefix":0,"unknown":11}
+
+## Features
+
+| Feature | IAM | Explicit roles | Explicit permissions | Derived roles | Derived permissions | Coverage | Official sources |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [Unified Maintenance logging](../../artifacts/unified-maintenance/unified-maintenance-logging/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/audit-logging)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/turn-off-logs-storage) |
+| [Unified Maintenance support for AlloyDB for PostgreSQL](../../artifacts/unified-maintenance/unified-maintenance-support-for-alloydb-for-postgresql/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/supported-services)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Cloud Composer](../../artifacts/unified-maintenance/unified-maintenance-support-for-cloud-composer/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Cloud Composer environments](../../artifacts/unified-maintenance/unified-maintenance-support-for-cloud-composer-environments/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/overview)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Cloud Interconnect](../../artifacts/unified-maintenance/unified-maintenance-support-for-cloud-interconnect/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Cloud SQL for MySQL](../../artifacts/unified-maintenance/unified-maintenance-support-for-cloud-sql-for-mysql/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/supported-services)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Cloud SQL for PostgreSQL](../../artifacts/unified-maintenance/unified-maintenance-support-for-cloud-sql-for-postgresql/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/log-schema)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/supported-services)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Cloud SQL for SQL Server](../../artifacts/unified-maintenance/unified-maintenance-support-for-cloud-sql-for-sql-server/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/log-schema)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/supported-services)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Compute Engine VM and bare metal instances](../../artifacts/unified-maintenance/unified-maintenance-support-for-compute-engine-vm-and-bare-metal-instances/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/reschedule-and-on-demand-updates)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance) |
+| [Unified Maintenance support for Google Kubernetes Engine](../../artifacts/unified-maintenance/unified-maintenance-support-for-google-kubernetes-engine/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/reference/rest/Shared.Types/ResourceMaintenance)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/reference/rpc/google.cloud.maintenance.api.v1)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |
+| [Unified Maintenance support for Looker](../../artifacts/unified-maintenance/unified-maintenance-support-for-looker/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/unified-maintenance/docs/set-up-unified-maintenance)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/supported-services)<br>[source](https://docs.cloud.google.com/unified-maintenance/docs/view-maintenance) |

@@ -1,0 +1,104 @@
+{
+  "feature_name": "dbt-bigquery support for BigQuery DataFrames Python",
+  "feature_slug": "dbt-bigquery-support-for-bigquery-dataframes-python",
+  "summary": "The dbt-bigquery adapter can run Python code defined in BigQuery DataFrames.",
+  "extended_definition": "The dbt-bigquery adapter can run Python code defined in BigQuery DataFrames.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+      "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a clustering model with BigQuery DataFrames \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 37,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Explore further For detailed documentation that includes this code sample, see the following: Use BigQuery DataFrames Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . from bigframes.ml.cluster import KMeans import bigframes.pandas as bpd Load data from BigQuery query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) Create the KMeans model cluster model = KMeans ( n clusters = 10 ) cluster model . fit ( bq df [ \"culmen length mm\" ], bq df [ \"sex\" ]) Predict using the model result = cluster model . predict ( bq df ) Score the model score = cluster model . score ( bq df ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Create a clustering model with BigQuery DataFrames Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Run queries using the BigQuery DataFrames bigframes.pandas APIs \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 31,
+        "relevance": "",
+        "evidence_snippets": [
+          "Explore further For detailed documentation that includes this code sample, see the following: Use BigQuery DataFrames Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . import bigframes.pandas as bpd Load data from BigQuery query or table = \"bigquery-public-data.ml datasets.penguins\" bq df = bpd . read gbq ( query or table ) Inspect one of the columns (or series) of the DataFrame: bq df [ \"body mass g\" ] Compute the mean of this series: average body mass = bq df [ \"body mass g\" ] . mean () print ( f \"average body mass: { average body mass } \" ) Find the heaviest species using the groupby operation to calculate the mean body mass g: ( bq df [ \"body mass g\" ] . groupby ( by = bq df [ \"species\" ]) . mean () . sort values ( ascending = False ) . head ( 10 ) ) What's next To search and filter code samples for other Google Cloud products, see the Google Cloud sample browser .",
+          "Home Documentation Data analytics BigQuery Samples Run queries using the BigQuery DataFrames bigframes.pandas APIs Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"Deploy and apply a remote function using BigQuery DataFrames \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function",
+        "source_id": "site-docs-reference-required-15",
+        "final_score": 29,
+        "relevance": "",
+        "evidence_snippets": [
+          "The BigQuery remote function created to support the BigQuery DataFrames remote function can be located via a property bigframes remote function set in the remote function object. print ( f \"Created BQ remote function: { get bucket . bigframes remote function } \" ) The cloud function can be located via another property bigframes cloud function set in the remote function object. print ( f \"Created cloud function: { get bucket . bigframes cloud function } \" ) Warning: The deployed cloud function may be visible to other users with sufficient privilege in the project, so the user should be careful about having any sensitive data in the code that will be deployed as a remote function.",
+          "Code sample Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "Use the BigQuery DataFrames API to deploy a Python function as a Cloud Function and use it as a remote function."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigframes.ml.cluster",
+      "bigframes.pandas",
+      "data.ml",
+      "datasets.penguins"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-clustering-model",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-pandas-methods",
+        "https://docs.cloud.google.com/bigquery/docs/samples/bigquery-dataframes-remote-function"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

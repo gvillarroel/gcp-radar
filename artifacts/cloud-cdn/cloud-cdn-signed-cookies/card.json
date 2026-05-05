@@ -1,0 +1,178 @@
+{
+  "feature_name": "Cloud CDN Signed Cookies",
+  "feature_slug": "cloud-cdn-signed-cookies",
+  "summary": "Cloud CDN Signed Cookies are generally available and allow signing a URL prefix and issuing cookies for protected cached content.",
+  "extended_definition": "Cloud CDN Signed Cookies are generally available and allow signing a URL prefix and issuing cookies for protected cached content.",
+  "lifecycle": {
+    "latest_feature_date": "2020-04-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/cdn/docs/caching",
+      "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+      "https://docs.cloud.google.com/cdn/docs/using-signed-urls"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Use signed cookies \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "source_id": "site-docs-root-2",
+        "final_score": 186,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Sprintf ( \"%s:Signature=%s\" , input , sig , ) return signedValue , nil } Java import java.net.MalformedURLException ; import java.net.URL ; import java.nio.charset.StandardCharsets ; import java.nio.file.Files ; import java.nio.file.Paths ; import java.security.InvalidKeyException ; import java.security.Key ; import java.security.NoSuchAlgorithmException ; import java.time.ZonedDateTime ; import java.util.Base64 ; import javax.crypto.Mac ; import javax.crypto.spec.SecretKeySpec ; public class SignedCookies { public static void main ( String [] args ) throws Exception { // TODO(developer): Replace these variables before running the sample. // The name of the signing key must match a key added to the back end bucket or service.",
+          "Signed cookies let you do the following: Authorize a user and provide them with a time-limited token for accessing your protected content (instead of signing each URL).",
+          "Signed cookies protect access when separately signing tens or hundreds of URLs for each user isn't feasible in your application."
+        ]
+      },
+      {
+        "title": "Use signed URLs \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "source_id": "site-docs-root",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ComputeHash ( buffer ); } } Java / Samples to create a signed URL for a Cloud CDN endpoint / public class SignedUrls { / Creates a signed URL for a Cloud CDN endpoint with the given key URL must start with http:// or https://, and must contain a forward slash (/) after the hostname. @param url the Cloud CDN endpoint to sign @param key url signing key uploaded to the backend service/bucket, as a 16-byte array @param keyName the name of the signing key added to the back end bucket or service @param expirationTime the date that the signed URL expires @return a properly formatted signed URL @throws InvalidKeyException when there is an error generating the signature for the input key @throws NoSuchAlgorithmException when HmacSHA1 algorithm is not available in the environment / public static String signUrl ( String url , byte [] key , String keyName , Date expirationTime ) throws InvalidKeyException , NoSuchAlgorithmException { final long unixTime = expirationTime . getTime () / 1000 ; String urlToSign = url + ( url . contains ( \"?\" ) ? \"&\" : \"?\" ) + \"Expires=\" + unixTime + \"&KeyName=\" + keyName ; String encoded = SignedUrls . getSignature ( key , urlToSign ); return urlToSign + \"&Signature=\" + encoded ; } public static String getSignature ( byte [] privateKey , String input ) throws InvalidKeyException , NoSuchAlgorithmException { final String algorithm = \"HmacSHA1\" ; final int offset = 0 ; Key key = new SecretKeySpec ( privateKey , offset , privateKey . length , algorithm ); Mac mac = Mac . getInstance ( algorithm ); mac . init ( key ); return Base64 . getUrlEncoder (). encodeToString ( mac . doFinal ( input . getBytes ())); } Python import argparse import base64 from datetime import datetime , timezone import hashlib import hmac from urllib.parse import parse qs , urlsplit def sign url ( url : str , key name : str , base64 key : str , expiration time : datetime , ) - > str : \"\"\"Gets the Signed URL string for the specified URL and configuration.",
+          "Go import ( \"crypto/hmac\" \"crypto/sha1\" \"encoding/base64\" \"fmt\" \"io\" \"io/ioutil\" \"os\" \"strings\" \"time\" ) // SignURLWithPrefix creates a signed URL prefix for an endpoint on Cloud CDN. // Prefixes allow access to any URL with the same prefix, and can be useful for // granting access broader content without signing multiple URLs. // // - urlPrefix must start with \"https://\" and should not include query parameters. // - key should be in raw form (not base64url-encoded) which is 16-bytes long. // - keyName must match a key added to the backend service or bucket. func signURLWithPrefix ( urlPrefix , keyName string , key [] byte , expiration time .",
+          "Returns: Returns the Signed URL appended with the query parameters based on the specified configuration. \"\"\" stripped url = url . strip () parsed url = urlsplit ( stripped url ) query params = parse qs ( parsed url . query , keep blank values = True ) epoch = datetime . fromtimestamp ( 0 , timezone . utc ) expiration timestamp = int (( expiration time - epoch ) . total seconds ()) decoded key = base64 . urlsafe b64decode ( base64 key ) url to sign = f \" { stripped url }{ '&' if query params else '?' } Expires= { expiration timestamp } & KeyName= { key name } \" digest = hmac . new ( decoded key , url to sign . encode ( \"utf-8\" ), hashlib . sha1 ) . digest () signature = base64 . urlsafe b64encode ( digest ) . decode ( \"utf-8\" ) return f \" { url to sign } & Signature= { signature } \" PHP / Decodes base64url (RFC4648 Section 5) string @param string $input base64url encoded string @return string / function base64url decode($input) { $input .= str repeat('=', (4 - strlen($input) % 4) % 4); return base64 decode(strtr($input, '- ', '+/'), true); } / Encodes a string with base64url (RFC4648 Section 5) Keeps the '=' padding by default. @param string $input String to be encoded @param bool $padding Keep the '=' padding @return string / function base64url encode($input, $padding = true) { $output = strtr(base64 encode($input), '+/', '- '); return ($padding) ? $output : str replace('=', '', $output); } / Creates signed URL for Google Cloud CDN Details about order of operations: https://cloud.google.com/cdn/docs/using-signed-urls#creating signed urls Example function invocation (In production store the key safely with other secrets): <?php $base64UrlKey = 'wpLL7f4VB9RNe WI0BBGmA=='; // head -c 16 /dev/urandom base64 tr +/ - $signedUrl = sign url('https://example.com/foo', 'my-key', $base64UrlKey, time() + 1800); echo $signedUrl; ? > @param string $url URL of the endpoint served by Cloud CDN @param string $keyName Name of the signing key added to the Google Cloud Storage bucket or service @param string $base64UrlKey Signing key as base64url (RFC4648 Section 5) encoded string @param int $expirationTime Expiration time as a UNIX timestamp (GMT, e.g. time()) @return string / function sign url($url, $keyName, $base64UrlKey, $expirationTime) { // Decode the key $decodedKey = base64url decode($base64UrlKey); // Determine which separator makes sense given a URL $separator = (strpos($url, '?') === false) ? '?' : '&'; // Concatenate url with expected query parameters Expires and KeyName $url = \"{$url}{$separator}Expires={$expirationTime}&KeyName={$keyName}\"; // Sign the url using the key and encode the signature using base64url $signature = hash hmac('sha1', $url, $decodedKey, true); $encodedSignature = base64url encode($signature); // Concatenate the URL and encoded signature return \"{$url}&Signature={$encodedSignature}\"; } Programmatically create signed URLs with a URL prefix The following code samples demonstrate how to programmatically create signed URLs with a URL prefix."
+        ]
+      },
+      {
+        "title": "Caching overview \\_|\\_ Cloud CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/cdn/docs/caching",
+        "source_id": "site-docs-reference-2",
+        "final_score": 114,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature GKE ingress through backend configuration GKE gateway using GCPHTTPFilter Basic Caching (Modes/TTLs) Cache Key Customization Negative Caching Serve While Stale Dynamic Compression Signed URLs & Cookies Request Coalescing Cacheable content Cloud CDN caches responses that meet all of the requirements in this section.",
+          "Before you set the cache mode to FORCE CACHE ALL , consider the following behaviors: For signed URLs or signed cookies , FORCE CACHE ALL overrides the maximum age specified through the Cache entry maximum age setting in the Google Cloud console or the gcloud --signed-url-cache-max-age option.",
+          "If you are serving your static content from a different hostname from which you issue cookies, ensure that the Domain attribute of the cookie (and the Path ) attribute allows the cookie to be sent along with requests for static content."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "e.g",
+      "example.com",
+      "java.net.MalformedURLException",
+      "java.net.URL",
+      "java.nio.charset.StandardCharsets",
+      "java.nio.file.Files",
+      "java.nio.file.Paths",
+      "java.security.InvalidKeyException",
+      "java.security.Key",
+      "java.security.NoSuchAlgorithmException",
+      "java.time.ZonedDateTime",
+      "java.util.Base64",
+      "javax.crypto.Mac",
+      "javax.crypto.spec.SecretKeySpec",
+      "urllib.parse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/cdn/docs/using-signed-cookies",
+        "https://docs.cloud.google.com/cdn/docs/using-signed-urls",
+        "https://docs.cloud.google.com/cdn/docs/caching"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.447Z",
+  "source_step08_card": "data/step-08/current/products/cloud-cdn/card.json",
+  "product_name": "Cloud CDN",
+  "product_slug": "cloud-cdn"
+}

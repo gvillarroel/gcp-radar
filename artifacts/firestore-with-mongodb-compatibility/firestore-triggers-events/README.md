@@ -1,0 +1,40 @@
+# Firestore Triggers (Events)
+
+Product: Firestore with MongoDB compatibility
+Feature slug: `firestore-triggers-events`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+Enables Firestore Triggers for Firestore with MongoDB compatibility databases.
+
+## Lifecycle
+
+- Latest feature date: 2025-08-26
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- audit (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- auth (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- constraint (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- credential (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- iam (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- identity (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- logging (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- policy (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+- private (evidence: [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data), [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/connect)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/eventarc)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/extend-with-cloud-run-functions)
+- [https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data](https://docs.cloud.google.com/firestore/mongodb-compatibility/docs/migrate-data)

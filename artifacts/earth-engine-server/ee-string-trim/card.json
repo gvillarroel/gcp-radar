@@ -1,0 +1,86 @@
+{
+  "feature_name": "ee.String.trim()",
+  "feature_slug": "ee-string-trim",
+  "summary": "Removes leading and trailing whitespace from a string.",
+  "extended_definition": "Removes leading and trailing whitespace from a string.",
+  "lifecycle": {
+    "latest_feature_date": "2016-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-linestring",
+      "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring",
+      "https://developers.google.com/earth-engine/guides/computation_overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ee.Algorithms.GeometryConstructors.MultiLineString \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring",
+        "source_id": "site-docs-reference",
+        "final_score": 60,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-07-13 UTC.\"],[],[\"The function MultiLineString creates a geometry object from a list of coordinates.",
+          "Usage Returns ee.Algorithms.GeometryConstructors.MultiLineString(coordinates, crs , geodesic , maxError ) Geometry Argument Type Details coordinates List The list of LineStrings, or to wrap a single LineString, the list of Points or pairs of Numbers in x,y order. crs Projection, default: null The coordinate reference system of the coordinates.",
+          "Home Products Google Earth Engine Reference Send feedback ee.Algorithms.GeometryConstructors.MultiLineString Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"ee.Algorithms.GeometryConstructors.LineString \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-linestring",
+        "source_id": "site-docs-reference",
+        "final_score": 52,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Usage Returns ee.Algorithms.GeometryConstructors.LineString(coordinates, crs , geodesic , maxError ) Geometry Argument Type Details coordinates List The list of Points or pairs of Numbers in x,y order. crs Projection, default: null The coordinate reference system of the coordinates.",
+          "Home Products Google Earth Engine Reference Send feedback ee.Algorithms.GeometryConstructors.LineString Stay organized with collections Save and categorize content based on your preferences.",
+          "Constructs a LineString from the given coordinates."
+        ]
+      },
+      {
+        "title": "Computation Overview \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/computation_overview",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Number ( 3.14 ) . add ( 0.00159 ) . getInfo ()) print ( 'Output:' ) print ( out . getvalue ()) Here is a suggestion for turning the profile string into a table for easier analysis in Colab and Jupyter Notebooks (note that this is just one approach and may not be suitable for all cases): import re import pandas as pd lines = out . getvalue () . split ( ' \\n ' ) column names = re . split ( r '\\s{1,}' , lines [ 0 ]) column names = [ name . strip () for name in column names if name . strip ()] data = [ [ element for element in re . split ( r '\\s{2,}' , line ) if element . strip ()] for line in lines [ 1 : - 1 ] ] df = pd .",
+          "Metrics for failed requests Earth Engine doesn't provide performance metrics for failed requests/tasks, since these numbers would be inaccurate or misleading.",
+          "To capture the profile as a string, write the profile to a string buffer: import io out = io ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.GeometryConstructors.LineString",
+      "ee.Algorithms.GeometryConstructors.MultiLineString",
+      "ee.String.trim"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

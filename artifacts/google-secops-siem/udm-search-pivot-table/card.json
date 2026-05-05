@@ -1,0 +1,154 @@
+{
+  "feature_name": "UDM Search Pivot Table",
+  "feature_slug": "udm-search-pivot-table",
+  "summary": "The UDM Search Pivot Table lets users group search results and run aggregations across UDM fields.",
+  "extended_definition": "The UDM Search Pivot Table lets users group search results and run aggregations across UDM fields.",
+  "lifecycle": {
+    "latest_feature_date": "2023-05-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+      "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Search for events and alerts \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "source_id": "site-api-reference",
+        "final_score": 214,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Click an entity to display the Entity context dialog, which can include the following items: Asset name First time seen Last time seen IP addresses MAC addresses Number of alerts Highest alert count by rule Alerts-over-time bar graph Open Alerts & IOCs link View in Alerts Tab link Use the Pivot Table to analyze events The Pivot Table lets you analyze events using expressions and functions against the results from the search.",
+          "For example, if you have a database called suspicious with a column of IP addresses you know are problematic, you can reference that database in Search instead of manually entering individual IP addresses in Search: events: $e.principal.ip in %susupicious.ip You can narrow your results by searching for specific metadata in addition to IP addresses, for example you might be specifically concerned with changes to user resources: events: $e.metadata.event type = \"USER RESOURCE UPDATE CONTENT\" $e.principal.ip in %susupicious.ip You can narrow a search against interrelated UDM fields and match against multiple data table columns.",
+          "If your Group by value includes a timestamp, you have the following additional Transform options: (Time) Resolution in milliseconds (Time) Resolution in seconds (Time) Resolution in minutes (Time) Resolution in hours (Time) Resolution in days Specify a Value for your Pivot from the list of Fields in your results."
+        ]
+      },
+      {
+        "title": "\"Configure data RBAC for users \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "source_id": "site-docs-reference-required-1",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create and manage scopes You can create and manage data scopes within the Google SecOps user interface, and then assign those scopes to users or groups through IAM.",
+          "The scope assignment lets you restrict access to these events to specific users or roles within your organization.",
+          "You can refine the query and click Run Search until the results display the data that you want to label."
+        ]
+      },
+      {
+        "title": "\"View alerts and IOC matches \\_|\\_ Google Security Operations \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs",
+        "source_id": "site-api-reference",
+        "final_score": 112,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example SQL to query for specific IP-address IOC matches: -- Add your IP IOC Matches here DECLARE IP IOCS ARRAY < STRING > ; SET IP IOCS = [ '40.79.150.120' ]; ------ SELECT MIN ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS first observed , MAX ( DATE ( TIMESTAMP SECONDS ( CAST ( day bucket seconds AS INT64 )), 'UTC' )) AS last observed , COUNT ( 4 ) AS hits , ioc value , feed log type , is global , CONCAT ( COALESCE ( asset . namespace , \"untagged\" ), \":\" , COALESCE ( asset . hostname , asset . asset ip address , asset . mac , \"-\" )) AS asset FROM datalake . ioc matches WHERE ioc value IN UNNEST ( IP IOCS ) AND ioc type = \"IOC TYPE IP\" GROUP BY 4 , 5 , 6 , 7 Here are the truncated results: Row first observed last observed hits ioc value feed log type is global asset 1 2025-02-23 2025-03-05 64 40.79.150.120 CATCH ALL false untagged:192.168.12.16 2 2025-02-27 2025-03-05 29 40.79.150.120 CATCH ALL false untagged:192.168.12.129 You can also query the datalake.events table for multi-dimensional IOC matching by constructing a concatenated string, for example: DECLARE IOC MULTIPLE ATTRIBUTES ARRAY < STRING > ; SET IOC MULTIPLE ATTRIBUTES = [ '1.2.3.4,80' , '1.2.3.4,443' ]; SELECT MIN ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS first seen , MAX ( TIMESTAMP SECONDS ( metadata . event timestamp . seconds )) AS last seen , target ip , target . port FROM datalake . events , UNNEST ( target . ip ) target ip WHERE DATE ( hour time bucket ) BETWEEN DATE SUB ( CURRENT DATE , INTERVAL 60 DAY ) AND DATE SUB ( CURRENT DATE , INTERVAL 1 DAY ) AND target ip != \"\" AND target . port > 0 AND CONCAT ( target ip , \",\" , CAST ( target . port AS STRING )) IN UNNEST ( IOC MULTIPLE ATTRIBUTES ) GROUP BY 3 , 4 Note: The Google SecOps Data Lake typically retains data for six months.",
+          "UDM Search and Search API UDM Search : Supports using data tables (previously called reference lists ) for single-dimension searches (for example, a list of hashes).",
+          "The following table details which specific UDM fields are used for automatic IOC matching based on your package: Enterprise package Enterprise Plus package about.file network.dns.answers network.dns.questions network.dns.questions principal.administrative domain principal.asset principal.ip principal.process.file principal.process.file principal.process.parent process.file principal.process.parent process.file security result.about.file security result.about.file src.file src.file src.ip target.asset.ip target.domain.name target.file target.file target.hostname target.hostname target.ip target.ip target.process.file target.process.file target.process.parent process.file Understanding which UDM fields are used helps ensure your data parsers correctly map raw log fields to the appropriate UDM fields for effective IOC matching."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "about.file",
+      "datalake.events",
+      "e.metadata.event",
+      "e.principal.ip",
+      "network.dns.answers",
+      "network.dns.questions",
+      "principal.administrative",
+      "principal.asset",
+      "principal.ip",
+      "principal.process.file",
+      "principal.process.parent",
+      "process.file",
+      "result.about.file",
+      "src.file",
+      "src.ip",
+      "susupicious.ip",
+      "target.asset.ip",
+      "target.domain.name",
+      "target.file",
+      "target.hostname",
+      "target.ip",
+      "target.process.file",
+      "target.process.parent"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/chronicle/docs/investigation/udm-search",
+        "https://docs.cloud.google.com/chronicle/docs/administration/configure-datarbac-users",
+        "https://docs.cloud.google.com/chronicle/docs/investigation/alerts-iocs"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:40.378Z",
+  "source_step08_card": "data/step-08/current/products/google-secops-siem/card.json",
+  "product_name": "Google SecOps SIEM",
+  "product_slug": "google-secops-siem"
+}

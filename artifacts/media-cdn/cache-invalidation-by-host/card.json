@@ -1,0 +1,226 @@
+{
+  "feature_name": "Cache invalidation by host",
+  "feature_slug": "cache-invalidation-by-host",
+  "summary": "Media CDN can invalidate cached content by host, path, or tag, with tag-based invalidation supporting status codes, MIME type, and origin.",
+  "extended_definition": "Media CDN can invalidate cached content by host, path, or tag, with tag-based invalidation supporting status codes, MIME type, and origin.",
+  "lifecycle": {
+    "latest_feature_date": "2021-06-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+      "https://docs.cloud.google.com/media-cdn/docs/caching",
+      "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates",
+      "https://docs.cloud.google.com/media-cdn/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Invalidate cached content \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "source_id": "site-docs-root",
+        "final_score": 322,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Media CDN supports multiple ways of selecting content to be invalidated, as follows: Host and URL path URL prefix (wildcard) Cache tags, including built-in tags for status , origin , and content-type You can combine these invalidation parameters to target specific cached responses and minimize origin load on the subsequent cache fill.",
+          "Supported invalidation syntax The supported invalidation syntax is as follows: Type Syntax Example Host invalidation Invalidate cached responses for the specified host. gcloud edge-cache services invalidate-cache SERVICE NAME \\ --host=\"media.example.com\" Path invalidation Invalidate cached responses for the specified path or path prefix. gcloud edge-cache services invalidate-cache SERVICE NAME \\ --path=\"/content/1234/hls/ \" gcloud edge-cache services invalidate-cache SERVICE NAME \\ --path=\"/videos/funny.mp4\" Cache tag invalidation on HTTP status code, origin name, or MIME type Invalidate cached responses with a matching tag.",
+          "Click Invalidate and then click Confirm to indicate that you want Media CDN to invalidate the content matching the host. gcloud gcloud edge-cache services invalidate-cache SERVICE NAME \\ --host= HOST Replace the following: SERVICE NAME with the name of the Edge Cache service."
+        ]
+      },
+      {
+        "title": "Configure caching behavior \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "source_id": "site-docs-root",
+        "final_score": 248,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In other cases, such as when interoperability with DASH is not required, the media playlist indicates to the player which bytes represent each chunk: #EXTINF:4.08, fs270.mp4 #EXT-X-PART:DURATION=1.02,URI=\"fs271.mp4\",BYTERANGE=20000@0 #EXT-X-PART:DURATION=1.02,URI=\"fs271.mp4\",BYTERANGE=23000@20000 #EXT-X-PART:DURATION=1.02,URI=\"fs271.mp4\",BYTERANGE=18000@43000 #EXT-X-PRELOAD-HINT:TYPE=PART,URI=\"fs271.mp4\",BYTERANGE-START=61000 You can configure how long Media CDN waits between reads by using the EdgeCacheOrigin.timeouts.readTimeout configuration value.",
+          "Routes without an explicit cdnPolicy configured behave as if they have the following configuration: cdnPolicy : cacheMode : CACHE ALL STATIC defaultTtl : 3600s cacheKeyPolicy : includeProtocol : false excludeHost : false excludeQueryString : false signedRequestMode : DISABLED negativeCaching : false Cacheable responses A cacheable response is an HTTP response that Media CDN can store and quickly retrieve, thus allowing for faster load times.",
+          "To maximize client performance and origin offload, Media CDN can serve the requested individual byte ranges from its cache, consolidating them into a single response with an HTTP 206 Partial Response status code to the client with the Content-Type set to multipart/byteranges ."
+        ]
+      },
+      {
+        "title": "Media CDN overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 240,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Media CDN supports the following ways of invalidating content: By host and URL path By URL prefix and wildcard By cache tags, including built-in tags for status, origin, and media type You can combine the invalidation parameters to target specific cached responses and to minimize origin load on the subsequent cache fill.",
+          "You can use Media CDN with your existing origin infrastructure, whether the content is hosted within Cloud Storage, in another cloud, or within your on-premises infrastructure.",
+          "You can configure what items Media CDN considers as part of a cache key, which can reduce requests from Media CDN to the upstream origin."
+        ]
+      },
+      {
+        "title": "Configure SSL (TLS) certificates \\_|\\_ Media CDN \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates",
+        "source_id": "site-docs-root",
+        "final_score": 213,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You must have the following Identity and Access Management permissions to authorize, create, and attach certificates to an Edge Cache service: certificatemanager.certs.create certificatemanager.certs.get certificatemanager.certs.list certificatemanager.certs.use certificatemanager.dnsauthorizations.create certificatemanager.dnsauthorizations.get certificatemanager.dnsauthorizations.list certificatemanager.dnsauthorizations.use Users who need to attach an existing certificate to an Media CDN service require the certificatemanager.certs.get , certificatemanager.certs.list , and certificatemanager.certs.use IAM permissions.",
+          "Make sure you specify --scope=EDGE CACHE for certificates associated with Media CDN. gcloud certificate-manager certificates create stream-example-com \\ --certificate-file= CERT .pem \\ --private-key-file= PRIVATE KEY .pem \\ --scope=EDGE CACHE Create request issued for: [stream-example-com] Created certificate [stream-example-com].",
+          "Issue a managed certificate To create a managed certificate and attach it to your Media CDN service, you must do the following: Demonstrate ownership (\"authorization\") of the domains that you want to issue certificates for by creating a challenge token and adding a DNS record."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "certificatemanager.certs.create",
+      "certificatemanager.certs.get",
+      "certificatemanager.certs.list",
+      "certificatemanager.certs.use",
+      "certificatemanager.dnsauthorizations.create",
+      "certificatemanager.dnsauthorizations.get",
+      "certificatemanager.dnsauthorizations.list",
+      "certificatemanager.dnsauthorizations.use",
+      "fs270.mp4",
+      "fs271.mp4",
+      "funny.mp4",
+      "media.example.com",
+      "timeouts.readTimeout"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/media-cdn/docs/cache-invalidation",
+        "https://docs.cloud.google.com/media-cdn/docs/caching",
+        "https://docs.cloud.google.com/media-cdn/docs/overview",
+        "https://docs.cloud.google.com/media-cdn/docs/configure-ssl-certificates"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.909Z",
+  "source_step08_card": "data/step-08/current/products/media-cdn/card.json",
+  "product_name": "Media CDN",
+  "product_slug": "media-cdn"
+}

@@ -1,0 +1,211 @@
+{
+  "feature_name": "Root asset folder quota usage",
+  "feature_slug": "root-asset-folder-quota-usage",
+  "summary": "Users can view quota usage for a root asset folder.",
+  "extended_definition": "Users can view quota usage for a root asset folder.",
+  "lifecycle": {
+    "latest_feature_date": "2016-06-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/guides/access_control",
+      "https://developers.google.com/earth-engine/guides/command_line",
+      "https://developers.google.com/earth-engine/guides/playground"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Control access to resources \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/access_control",
+        "source_id": "site-docs-root-2",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Full access to the Earth Engine API To give users full access to the Earth Engine service, either through the REST API directly, through the Code Editor or through a client library, users will need permission to perform operations like: Executing Earth Engine expressions Running batch computations (exports) Getting interactive results (online maps, thumbnails, charts, etc.) Creating/deleting Earth Engine assets Using OAuth Authentication via a Client Library to connect to Earth Engine Permissions needed clientauthconfig.clients.listWithSecrets earthengine.assets.get earthengine.assets.getIamPolicy earthengine.assets.list earthengine.computations.create earthengine.operations.get earthengine.operations.list monitoring.timeSeries.list resourcemanager.projects.get resourcemanager.projects.list serviceusage.operations.get serviceusage.operations.list serviceusage.quotas.get serviceusage.services.get serviceusage.services.list serviceusage.services.use Suggested roles Service Usage Consumer ( roles/serviceusage.serviceUsageConsumer ) AND one of: Earth Engine Resource Viewer ( roles/earthengine.viewer ) OR Earth Engine Resource Writer ( roles/earthengine.writer ) OR Earth Engine Resource Admin ( roles/earthengine.admin ) OAuth Config Editor ( roles/oauthconfig.editor ) is additionally required for users who access Earth Engine through a notebook environment and use the Notebook Authenticator.",
+          "Permissions needed resourcemanager.projects.get resourcemanager.folders.list resourcemanager.folders.get resourcemanager.organizations.get (uncommon) Suggested roles Viewer ( roles/viewer ) OR Earth Engine Resource Viewer ( roles/earthengine.viewer ) on relevant projects OR Browser ( roles/browser , recommended for advanced organization cases) Folder Viewer ( roles/resourcemanager.folderViewer ) on relevant folders Select a project for use in the Code Editor Permissions needed resourcemanager.projects.get serviceusage.services.get If project has not previously been set up On first selecting a project through the Code Editor, the project is initialized for use with Earth Engine.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-02-04 UTC.\"],[],[\"Earth Engine resources are shared at project or asset levels, requiring specific permissions like serviceusage.services.use and Earth Engine roles (Viewer, Writer, Admin, Apps Publisher)."
+        ]
+      },
+      {
+        "title": "Command Line Tool \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/command_line",
+        "source_id": "site-docs-reference",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key actions include: authenticate to sign in; acl to manage asset access; asset to view/edit asset metadata; cp/mv to copy/move assets; create to make folders/collections; ls to list contents; model prepare for TensorFlow model transformation; project config to configure project settings; rm to delete assets; set project to set the default cloud project; task to manage long running tasks; and upload to add images or tables from Google Cloud Storage.\\n\"]]",
+          "You may specify --max items number (or -m for short) to limit the number of items from each folder or collection you list: earthengine ls -m 10 projects/my-project/assets/my large collection Running the ls command with no arguments will list the top-level folders that you own. model Tool with which to manipulate TensorFlow saved models. model prepare Prepare a saved model for serving in Earth Engine.",
+          "Before using this command, be sure to set a project using set project . get To view a project configuration, use the get sub-command: earthengine alpha project config get If you have permission to view the project's batch task settings , the output contains: maxConcurrentExports : a number indicating the maximum number of batch tasks that can run in parallel across all users for the given project."
+        ]
+      },
+      {
+        "title": "Earth Engine Code Editor \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/playground",
+        "source_id": "site-docs-root",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The repositories are arranged by access level, with your private scripts stored in a repository you own in the Owner folder: users/username/default .",
+          "Caution: If your shared script includes private asset imports, be sure to share them with intended users or publicly.",
+          "For example: Code Editor (JavaScript) var Foo = require ( 'users/username/default:Modules/FooModule.js' ); print ( Foo . doc ); print ( Foo . foo ( 'world' )); print ( 'Time now:' , Foo . bar ); The require function expects a string that describes the absolute path to the location of the module."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "explicit",
+    "explicit_roles": [
+      "roles/accessapproval.admin",
+      "roles/accessapproval.approver",
+      "roles/accessapproval.configEditor"
+    ],
+    "explicit_permissions": [
+      {
+        "permission": "resourcemanager.projects.get",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      },
+      {
+        "permission": "resourcemanager.projects.list",
+        "group": "resourcemanager",
+        "roles": [
+          "roles/accessapproval.admin",
+          "roles/accessapproval.approver",
+          "roles/accessapproval.configEditor"
+        ]
+      }
+    ],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clientauthconfig.clients.listWithSecrets",
+      "developers.google.com",
+      "earthengine.admin",
+      "earthengine.assets.get",
+      "earthengine.assets.getIamPolicy",
+      "earthengine.assets.list",
+      "earthengine.computations.create",
+      "earthengine.operations.get",
+      "earthengine.operations.list",
+      "earthengine.viewer",
+      "earthengine.writer",
+      "monitoring.timeSeries.list",
+      "oauthconfig.editor",
+      "resourcemanager.folders.get",
+      "resourcemanager.folders.list",
+      "resourcemanager.folderViewer",
+      "resourcemanager.organizations.get",
+      "serviceusage.operations.get",
+      "serviceusage.operations.list",
+      "serviceusage.quotas.get",
+      "serviceusage.services.get",
+      "serviceusage.services.list",
+      "serviceusage.services.use",
+      "serviceusage.serviceUsageConsumer"
+    ],
+    "missing_inventory_roles": [
+      "roles/browser",
+      "roles/earthengine.admin",
+      "roles/earthengine.viewer",
+      "roles/earthengine.writer",
+      "roles/oauthconfig.editor",
+      "roles/resourcemanager.folderViewer",
+      "roles/serviceusage.serviceUsageConsumer",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/access_control",
+        "https://developers.google.com/earth-engine/guides/command_line",
+        "https://developers.google.com/earth-engine/guides/playground"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.409Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-code-editor/card.json",
+  "product_name": "Earth Engine Code Editor",
+  "product_slug": "earth-engine-code-editor"
+}

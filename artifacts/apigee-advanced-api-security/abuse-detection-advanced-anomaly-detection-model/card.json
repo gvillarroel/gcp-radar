@@ -1,0 +1,132 @@
+{
+  "feature_name": "Abuse Detection advanced anomaly detection model",
+  "feature_slug": "abuse-detection-advanced-anomaly-detection-model",
+  "summary": "Abuse Detection now uses a new customer-specific Vertex AI anomaly detection model with traffic-data training, replacing the previous model without API or UI changes.",
+  "extended_definition": "Abuse Detection now uses a new customer-specific Vertex AI anomaly detection model with traffic-data training, replacing the previous model without API or UI changes.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 204,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Use a machine learning model for Abuse Detection Advanced Anomaly Detection In order to see detected anomalies in Abuse Detection, you must opt in to allow the Advanced Anomaly Detection machine learning model to train on your API traffic data.",
+          "To opt in to use your API traffic data for anomaly detection model training, select that option when adding anomaly detection to your Abuse Detection configuration.",
+          "Change permissions for allowing Apigee to improve your machine learning models You can change your permissions for allowing Apigee to improve your machine learning models at any time, by clicking Settings at the top right of the Abuse detection page and selecting the option to either enable or disable this feature."
+        ]
+      },
+      {
+        "title": "Detection rules \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 170,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "However, this additional information can help you make the best use of anomaly detection: Accounting for seasonal variance: Because the model is trained on your traffic data, it can recognize and account for seasonal traffic variances (such as holiday traffic), if your traffic data includes previous data for that pattern, such as the same holiday in a previous year.",
+          "Two of the detection rules are based on machine learning models: Advanced API Scraper Advanced Anomaly Detection Note: The data used to train the machine learning models for the rules Advanced API Scraper and Advanced Anomaly Detection contain metadata, including source IP address, source geography, and the values of some HTTP request headers.",
+          "Machine learning and detection rules Advanced API Security uses models built with Google's machine learning algorithms to detect security threats to your APIs."
+        ]
+      },
+      {
+        "title": "Get started with Apigee Model Armor policies \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies",
+        "source_id": "site-api-reference-required-1",
+        "final_score": 94,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The sample policy shown below uses all default parameters: <SanitizeUserPrompt async=\"false\" continueOnError=\"false\" enabled=\"true\" name=\"sanitize-response\"> <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables> <DisplayName>Sanitize-Response-sample</DisplayName> <ModelArmor> <TemplateName>projects/$PROJECT/locations/$LOCATION/templates/$TEMPLATE NAME</TemplateName> </ModelArmor> <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> </SanitizeUserPrompt> When you call your API proxy, the input from the prompt is automatically extracted and passed on to Model Armor and processed according to the parameters of your Model Armor template.",
+          "The following sections provide suggested user prompts to include in the API requests to test for the following conditions included in your Model Armor template: Responsible AI (RAI) match Malicious URL detection Prompt injection detection Each example includes the expected response if the Model Armor policies are working as intended.",
+          "Default model detection and prompt extraction This example shows how the Model Armor policies work to extract and evaluate user prompts according to the parameters of your Model Armor template."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "request.content"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.267Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security"
+}

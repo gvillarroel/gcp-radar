@@ -1,0 +1,33 @@
+# Outline
+
+Product: Gemini
+Feature slug: `outline`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+An IntelliJ feature generates short English summaries of code blocks in the Outline tab; An IntelliJ feature generates short English summaries of code blocks in the Outline tab.
+
+## Lifecycle
+
+- Latest feature date: 2025-12-05
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini), [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini), [https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts](https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts), [https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance](https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance))
+- key (evidence: [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini), [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini), [https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts](https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts), [https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance](https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance))
+- security (evidence: [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini), [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini), [https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts](https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts), [https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance](https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/chat-gemini)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts](https://docs.cloud.google.com/gemini/docs/codeassist/keyboard-shortcuts)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance](https://docs.cloud.google.com/gemini/docs/codeassist/security-privacy-compliance)
+- [https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini](https://docs.cloud.google.com/gemini/docs/codeassist/write-code-gemini)

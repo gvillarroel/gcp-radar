@@ -1,0 +1,110 @@
+{
+  "feature_name": "Enhanced Speech Models",
+  "feature_slug": "enhanced-speech-models",
+  "summary": "Enhanced Speech Models improve speech recognition performance for supported use cases.",
+  "extended_definition": "Enhanced Speech Models improve speech recognition performance for supported use cases.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/best-practices",
+      "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+      "https://docs.cloud.google.com/dialogflow/es/docs/data-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Speech data logging \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/data-logging",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With Dialogflow Essentials, you can opt in to speech data logging to access enhanced speech models , which use customer data for speech recognition improvements.",
+          "Toggle Enable enhanced speech models and data logging off.",
+          "Scroll to the Improve Speech Recognition Quality section."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow ES \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "source_id": "site-iam-reference",
+        "final_score": 123,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following settings are available: Improve Speech Recognition Quality Enable Enhanced Speech Models and Data Logging : See Data logging and enhanced speech models .",
+          "Warnings and best practices: Spell correction can't correct ASR (automatic speech recognition) errors, so we don't recommend enabling it for agents using ASR inputs.",
+          "These are the settings for speech recognition and speech synthesis."
+        ]
+      },
+      {
+        "title": "Service use best practices \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/best-practices",
+        "source_id": "site-docs-root",
+        "final_score": 114,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Performance per operation The following table provides information about the typical performance of Dialogflow operations: Action Notes Flow actions: state handlers Fastest operation Flows: intent detection (text) Fastest operation Flows: parameter detection (text) Fast operation Speech recognition (streaming) Data is processed and responses are returned as soon as possible.",
+          "Client reuse You can improve the performance of your application by reusing Client client library instances for the duration of your application's execution lifetime.",
+          "Key Notes: Streaming: For streaming calls (speech recognition and synthesis), data is processed as it arrives, and responses are returned as soon as possible."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "index.json",
+      "package.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/data-logging",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/best-practices"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/data-logging",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/best-practices"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/es/docs/data-logging",
+        "https://docs.cloud.google.com/dialogflow/es/docs/agents-settings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/best-practices"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

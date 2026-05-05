@@ -1,0 +1,95 @@
+{
+  "feature_name": "ee.Number.format()",
+  "feature_slug": "ee-number-format",
+  "summary": "Formats a number as a string.",
+  "extended_definition": "Formats a number as a string.",
+  "lifecycle": {
+    "latest_feature_date": "2016-03-10",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring",
+      "https://developers.google.com/earth-engine/guides/computation_overview",
+      "https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Hosted Model Payload Formats Supported on Earth Engine \\_|\\_ Google Earth\\",
+        "url": "https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats",
+        "source_id": "site-docs-root-2",
+        "final_score": 142,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Earth Engine also supports HTTP API payloads with formats like SERIALIZED TF TENSORS (default for TensorFlow), RAW JSON (flexible for other frameworks like PyTorch and AutoML but converts numbers to strings), and ND ARRAYS (similar to RAW JSON but without keys, suitable for PyTorch).",
+          "Users configure the payload format using payloadFormat in ee.Model.fromVertexAi. gRPC is preferred for lower latency and higher reliability, using formats like GRPC TF TENSORS, GRPC SERIALIZED TF TENSORS, or GRPC SERIALIZED TF EXAMPLES.",
+          "HTTP API payloads are also supported, including SERIALIZED TF TENSORS (default for TensorFlow), RAW JSON (for PyTorch/AutoML, converting numbers to strings), and ND ARRAYS (similar to RAW JSON, but without keys)."
+        ]
+      },
+      {
+        "title": "\"ee.Algorithms.GeometryConstructors.MultiLineString \\_|\\_ Google Earth Engine\\",
+        "url": "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring",
+        "source_id": "site-docs-reference",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2024-07-13 UTC.\"],[],[\"The function MultiLineString creates a geometry object from a list of coordinates.",
+          "Usage Returns ee.Algorithms.GeometryConstructors.MultiLineString(coordinates, crs , geodesic , maxError ) Geometry Argument Type Details coordinates List The list of LineStrings, or to wrap a single LineString, the list of Points or pairs of Numbers in x,y order. crs Projection, default: null The coordinate reference system of the coordinates.",
+          "The function returns a Geometry object representing the constructed MultiLineString. coordinates can be a list of LineStrings, points or a list of number pairs in x,y order.\\n\"]]"
+        ]
+      },
+      {
+        "title": "Computation Overview \\_|\\_ Google Earth Engine \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/earth-engine/guides/computation_overview",
+        "source_id": "site-docs-root",
+        "final_score": 79,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Number ( 3.14 ) . add ( 0.00159 ) . getInfo ()) print ( 'Output:' ) print ( out . getvalue ()) Here is a suggestion for turning the profile string into a table for easier analysis in Colab and Jupyter Notebooks (note that this is just one approach and may not be suitable for all cases): import re import pandas as pd lines = out . getvalue () . split ( ' \\n ' ) column names = re . split ( r '\\s{1,}' , lines [ 0 ]) column names = [ name . strip () for name in column names if name . strip ()] data = [ [ element for element in re . split ( r '\\s{2,}' , line ) if element . strip ()] for line in lines [ 1 : - 1 ] ] df = pd .",
+          "Common drivers of differences include: caching , such as reusing the results of previous computations (including partial or intermediate results) different underlying data , such as varying numbers of satellite images, geometries of different complexity, etc. algorithm changes on the EE platform, including performance optimizations, bugfixes, etc. changes to client libraries , particularly if you depend on other users' EE code or packages Benchmarks Explore sample Earth Engine computation benchmarks .",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2025-01-21 UTC.\"],[],[]]"
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "ee.Algorithms.GeometryConstructors.MultiLineString",
+      "ee.Model.fromVertexAi",
+      "ee.Number.format"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/earth-engine/guides/ee-vertex-payload-formats",
+        "https://developers.google.com/earth-engine/apidocs/ee-algorithms-geometryconstructors-multilinestring",
+        "https://developers.google.com/earth-engine/guides/computation_overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:30.974Z",
+  "source_step08_card": "data/step-08/current/products/earth-engine-server/card.json",
+  "product_name": "Earth Engine Server",
+  "product_slug": "earth-engine-server"
+}

@@ -1,0 +1,31 @@
+# Apigee Integrated Portal
+
+Generated at: `2026-05-05T13:13:05.575Z`
+
+Service card: [card.json](../../artifacts/apigee-integrated-portal/card.json)
+
+Artifacts index: [apigee-integrated-portal](../../artifacts/apigee-integrated-portal/index.md)
+
+## Summary
+
+- Promoted features: 12
+- Skipped features during promotion: 0
+- Latest feature date: 2026-03-05
+- Service IAM status: {"explicit":0,"derived_from_permission_prefix":0,"unknown":12}
+
+## Features
+
+| Feature | IAM | Explicit roles | Explicit permissions | Derived roles | Derived permissions | Coverage | Official sources |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [Apigee Classic UI](../../artifacts/apigee-integrated-portal/apigee-classic-ui/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies) |
+| [Apigee Integrated Developer Portal Admin UI in Google Cloud console](../../artifacts/apigee-integrated-portal/apigee-integrated-developer-portal-admin-ui-in-google-cloud-console/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart) |
+| [Apps and Teams table column sorting](../../artifacts/apigee-integrated-portal/apps-and-teams-table-column-sorting/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/secure-calls-your-api-through-oauth-20-client-credentials) |
+| [AsyncAPI publishing in Integrated Portal](../../artifacts/apigee-integrated-portal/asyncapi-publishing-in-integrated-portal/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace) |
+| [Content Security Policy for portals](../../artifacts/apigee-integrated-portal/content-security-policy-for-portals/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis) |
+| [GraphQL schema publishing](../../artifacts/apigee-integrated-portal/graphql-schema-publishing/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data) |
+| [Inactive user login error messaging](../../artifacts/apigee-integrated-portal/inactive-user-login-error-messaging/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/using-model-armor-policies) |
+| [Integrated portal APIs](../../artifacts/apigee-integrated-portal/integrated-portal-apis/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/local-development/vscode/tutorial-create-proxy)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/add-spike-arrest) |
+| [Portal catalog pagination](../../artifacts/apigee-integrated-portal/portal-catalog-pagination/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/apigee-mcp/apigee-mcp-quickstart)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/tutorials/view-with-trace) |
+| [Portal SSO email sender address configuration](../../artifacts/apigee-integrated-portal/portal-sso-email-sender-address-configuration/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/search-page) |
+| [Publishing data export](../../artifacts/apigee-integrated-portal/publishing-data-export/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/service-extensions/extension-processor-quickstart) |
+| [Workforce Identity Federation portal administration in Cloud console](../../artifacts/apigee-integrated-portal/workforce-identity-federation-portal-administration-in-cloud-console/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/intro-portals)<br>[source](https://docs.cloud.google.com/apigee/docs/api-platform/publish/portal/publish-apis)<br>[source](https://docs.cloud.google.com/apigee/docs/apihub/tutorials/enrich-api-data) |

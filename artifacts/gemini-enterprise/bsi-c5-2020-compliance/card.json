@@ -1,0 +1,172 @@
+{
+  "feature_name": "BSI C5:2020 compliance",
+  "feature_slug": "bsi-c5-2020-compliance",
+  "summary": "Gemini Enterprise is certified for BSI C5:2020 compliance.",
+  "extended_definition": "Gemini Enterprise is certified for BSI C5:2020 compliance.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-31",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "thin_token_overlap",
+        "message": "Supporting pages only weakly overlap with informative feature tokens.",
+        "suggested_steps": [
+          "step-03",
+          "step-04",
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/gemini/enterprise/docs/apis",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+      "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "NotebookLM Enterprise, Gemini Enterprise, or both? \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "source_id": "site-docs-root",
+        "final_score": 195,
+        "relevance": "",
+        "evidence_snippets": [
+          "NotebookLM Enterprise Gemini Enterprise Primary Goal Centralized knowledge, content generation from your own documents Enterprise-wide data search, multi-modal content generation, and agent orchestration Input Your uploaded documents, websites, and specific sources Broad queries and data from across enterprise systems (Google and third-party SaaS) Output Synthesized insights, generated content (FAQs, timelines), interactive audio podcasts, and chat-based questions and answers confined to sources Answers from diverse data, text and multi-modal content from across your enterprise, and automated actions by agents User Individual knowledge workers, small teams, content creators Process owners, developers, IT, operations, business analysts, general knowledge seekers, and content creators Complexity Focused knowledge management and document-specific chat experiences Orchestrating multi-agent systems for business processes and general AI assistance Core Function Understanding and extracting from unstructured text, generating content based on your sources Comprehensive information retrieval, multi-modal content creation, and autonomous agent execution How NotebookLM Enterprise and Gemini Enterprise work together NotebookLM Enterprise and Gemini Enterprise are complementary products , enhancing each other's value.",
+          "Key features of Gemini Enterprise Gemini Enterprise includes the following key features: Enterprise-wide search : Gemini Enterprise gives you comprehensive content search across all enterprise data, including Google and third-party SaaS applications.",
+          "Gemini Enterprise, the broad AI assistant and agentic platform Gemini Enterprise is an advanced AI assistant and an agentic platform for comprehensive information retrieval, multi-modal content generation, and autonomous AI agent orchestration."
+        ]
+      },
+      {
+        "title": "\"Configure Chrome Enterprise cloud-managed browsers \\_|\\_ Gemini Enterprise\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "source_id": "site-docs-root",
+        "final_score": 190,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example copied value: https://discoveryengine.googleapis.com/v1alpha/projects/1234/locations/global/collections/default collection/engines/enterprisesearch/ servingConfigs/default search:search Formatted value: https://discoveryengine.googleapis.com/v1alpha/projects/1234/locations/global/collections/default collection/engines/enterprisesearch/ completionConfig:completeQuery Note: To find the ID for your Gemini Enterprise agent, navigate to your Google Cloud Console's AI Applications page, select the appropriate Gemini Enterprise application, then select Integration > Web App.",
+          "Example copied value: https://vertexaisearch.cloud.google.com/home/cid/ 1234 Formatted value: https://vertexaisearch.cloud.google.com/home/cid/ 1234?q={searchTerms} Note: To find the ID for your Gemini Enterprise agent, navigate to your Google Cloud Console's AI Applications page, select the appropriate Gemini Enterprise application, then select Integration > Web App.",
+          "Enable autocomplete in your Gemini Enterprise project To enable Autocomplete in your Gemini Enterprise project, go to your Google Cloud Console Gemini Enterprise page , select your app, then select Configurations > Autocomplete ."
+        ]
+      },
+      {
+        "title": "\"Configure results for the UI \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "source_id": "site-docs-root",
+        "final_score": 187,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure search results for unstructured or website data The UI for unstructured and website data offers the following search customizations: Search (single-turn) Search with an answer (single-turn search with summarization) Search with follow-ups (multi-turn search) To configure how the UI displays search results for unstructured data: In the Google Cloud console, go to the Gemini Enterprise page.",
+          "Home Documentation AI and ML Gemini Enterprise Send feedback Configure results for the UI Stay organized with collections Save and categorize content based on your preferences.",
+          "To configure how the UI displays search results for structured data: In the Google Cloud console, go to the Gemini Enterprise page."
+        ]
+      },
+      {
+        "title": "APIs and reference \\_|\\_ Gemini Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/apis",
+        "source_id": "site-docs-reference",
+        "final_score": 186,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Client libraries Gemini Enterprise API client libraries REST reference Gemini Enterprise API REST reference RPC reference Gemini Enterprise API RPC reference Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Gemini Enterprise Reference Send feedback APIs and reference Stay organized with collections Save and categorize content based on your preferences.",
+          "For information about the Business edition, see the Gemini Enterprise - Business edition Help Center ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com",
+      "vertexaisearch.cloud.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apis"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apis"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apis"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apis"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apis"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apis"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/gemini/enterprise/docs/choose-product",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-chrome",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/configure-ui-results",
+        "https://docs.cloud.google.com/gemini/enterprise/docs/apis"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.016Z",
+  "source_step08_card": "data/step-08/current/products/gemini-enterprise/card.json",
+  "product_name": "Gemini Enterprise",
+  "product_slug": "gemini-enterprise"
+}

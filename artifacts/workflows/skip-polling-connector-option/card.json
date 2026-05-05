@@ -1,0 +1,138 @@
+{
+  "feature_name": "skip_polling connector option",
+  "feature_slug": "skip-polling-connector-option",
+  "summary": "The skip_polling option lets connectors execute asynchronously without waiting for the operation to complete.",
+  "extended_definition": "The skip_polling option lets connectors execute asynchronously without waiting for the operation to complete.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/best-practice",
+      "https://docs.cloud.google.com/workflows/docs/connectors",
+      "https://docs.cloud.google.com/workflows/docs/reference/googleapis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Connectors reference \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "source_id": "site-api-reference",
+        "final_score": 156,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can specify a timeout value and polling policy using the connector params block: - STEP NAME : call : CONNECTOR args : ARG : ARG VALUE [ ... ] body : KEY : KEY VALUE [...] connector params : timeout : TIMEOUT IN SECONDS polling policy : initial delay : INITIAL DELAY IN SECONDS multiplier : MULTIPLIER VALUE max delay : MAX DELAY IN SECONDS skip polling : SKIP POLLING SWITCH scopes : OAUTH2 SCOPE result : RESPONSE VALUE Replace the following: STEP NAME : the name of the step.",
+          "SKIP POLLING SWITCH : if set to True , the connector invocation call is non-blocking if the initial request to manage or update the resource succeeds (usually HTTP POST , HTTP UPDATE , or HTTP DELETE ).",
+          "List of supported connectors Google Cloud product Connector Long-running operation type AI Platform Training ml Job Application Integration integrations None Batch batch Job Operation BigQuery bigquery Job BigQuery Data Transfer Service bigquerydatatransfer TransferRun Cloud Build cloudbuild Operation Cloud Run functions cloudfunctions Operation Cloud Natural Language API language None Cloud Run run None Cloud Scheduler cloudscheduler None Cloud SQL sqladmin Operation Cloud Storage storage None Cloud Tasks cloudtasks None Cloud Translation translate Operation Compute Engine compute Operation Dataflow dataflow Job Document AI documentai Operation Processor Firestore firestore Operation Google Forms forms None Google Kubernetes Engine container Operation Google Sheets sheets None Kubernetes API (control plane) gke None Pub/Sub pubsub None Resource Manager cloudresourcemanager None Secret Manager secretmanager None Spanner spanner Operation Storage Transfer Service storagetransfer Operation Transcoder API transcoder Job Vertex AI aiplatform (Vertex AI) Artifact Execution Job Operation Pipeline Schedule Study Trial Workflows workflows workflowexecutions Operation Execution Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Best practices for Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 139,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example Run gcloud in a workflow: This example shows how to execute gcloud commands from Workflows using Cloud Build and returns the output main : steps : - execute command : call : gcloud args : args : \"workflows list\" result : result - return result : return : ${result} gcloud : params : [ args ] steps : - create build : call : googleapis.cloudbuild.v1.projects.builds.create args : projectId : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} parent : ${\"projects/\" + sys.get env(\"GOOGLE CLOUD PROJECT ID\") + \"/locations/global\"} body : serviceAccount : ${sys.get env(\"GOOGLE CLOUD SERVICE ACCOUNT NAME\")} options : logging : CLOUD LOGGING ONLY steps : - name : gcr.io/google.com/cloudsdktool/cloud-sdk entrypoint : /bin/bash args : ${[\"-c\", \"gcloud \" + args + \" > $$BUILDER OUTPUT/output\"]} result : result builds create - return build result : return : ${text.split(text.decode(base64.decode(result builds create.metadata.build.results.buildStepOutputs[0])), \"\\n\")} Run kubectl in a workflow: This example shows how to execute kubectl commands from Workflows using Cloud Build and returns the output main : steps : - execute command : call : kubectl args : args : \"--help\" result : result - return result : return : ${result} kubectl : params : [ args ] steps : - create build : call : googleapis.cloudbuild.v1.projects.builds.create args : projectId : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} parent : ${\"projects/\" + sys.get env(\"GOOGLE CLOUD PROJECT ID\") + \"/locations/global\"} body : serviceAccount : ${sys.get env(\"GOOGLE CLOUD SERVICE ACCOUNT NAME\")} options : logging : CLOUD LOGGING ONLY steps : - name : gcr.io/cloud-builders/kubectl entrypoint : /bin/bash args : ${[\"-c\", \"kubectl \" + args + \" > $$BUILDER OUTPUT/output\"]} result : result builds create - return build result : return : ${text.split(text.decode(base64.decode(result builds create.metadata.build.results.buildStepOutputs[0])), \"\\n\")} Use Terraform to create your workflow Terraform is an infrastructure-as-code tool that lets you predictably create, change, and improve your cloud infrastructure by using code.",
+          "When using connectors that wait for long-running operations, set a custom polling policy that optimizes latency for cost.",
+          "General tips Avoid hardcoding URLs Use nested steps Wrap expressions Use declarative calls Store only what you need Use subworkflows and external workflows Best practices Use Workflows connectors Run workflow steps in parallel Apply retries and the saga pattern Use callbacks to wait Orchestrate long-running jobs Containerize long-running tasks Run command-line tools from Workflows Use Terraform to create your workflow Deploy a workflow from a Git repository Optimize usage What's next Security best practices Debugging overview Troubleshoot issues Known issues for Workflows Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Understand connectors \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/connectors",
+        "source_id": "site-api-reference-required-3",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Note: API operations that are facilitated by Workflows connectors should not be confused with calling or invoking a Google Cloud service—such as Cloud Run functions or Cloud Run—which is done through an HTTP request .",
+          "Connectors simplify calling services because they handle the formatting of requests for you, providing methods and arguments so that you don't need to know the details of a Google Cloud API.",
+          "Home Documentation Application development Workflows Guides Send feedback Understand connectors Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "base64.decode",
+      "create.metadata.build.results.buildStepOutputs",
+      "gcr.io",
+      "googleapis.cloudbuild.v1.projects.builds.create",
+      "sys.get",
+      "text.decode",
+      "text.split"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/connectors"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/connectors"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/connectors"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/connectors"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/connectors"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/googleapis",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/connectors"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

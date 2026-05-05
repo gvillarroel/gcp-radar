@@ -1,0 +1,84 @@
+{
+  "feature_name": "Cloud Build triggers",
+  "feature_slug": "cloud-build-triggers",
+  "summary": "Cloud Build triggers were released in beta.",
+  "extended_definition": "Cloud Build triggers were released in beta.",
+  "lifecycle": {
+    "latest_feature_date": "2017-03-06",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+      "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+      "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create and manage build triggers \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "source_id": "site-docs-root-2",
+        "final_score": 71,
+        "relevance": "",
+        "evidence_snippets": [
+          "See the gcloud instructions for how to update a build trigger to show or hide build logs for GitHub or GitHub Enterprise triggers. gcloud To update a trigger: Export the trigger you would like to update: gcloud beta builds triggers export TRIGGER NAME -- destination = EXPORT PATH Where: TRIGGER NAME is the name of your trigger.",
+          "Select Disable . gcloud To disable a trigger: Export the trigger you would like to disable: gcloud beta builds triggers export TRIGGER NAME -- destination = EXPORT PATH Where: TRIGGER NAME is the name of your trigger.",
+          "To create a trigger if your source code is in GitHub : gcloud builds triggers create github \\ -- name = TRIGGER NAME \\ -- region = REGION \\ -- repo - name = REPO NAME \\ -- repo - owner = REPO OWNER \\ -- branch - pattern = BRANCH PATTERN \\ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \\ -- service - account = SERVICE ACCOUNT \\ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger."
+        ]
+      },
+      {
+        "title": "Deploying to Cloud Run using Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/configuring-builds/build-test-deploy-artifacts",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .",
+          "Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.",
+          "For more information on creating Cloud Build triggers, see Creating and managing build triggers ."
+        ]
+      },
+      {
+        "title": "Deploying to Cloud Run using Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/deploying-builds/deploy-cloud-run",
+        "source_id": "site-docs-root",
+        "final_score": 70,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create a build trigger with the config file created in the previous step: Open the Triggers page: Go to the Triggers page Click Create Trigger .",
+          "Continuous deployment You can automate the deployment of your software to Cloud Run by creating Cloud Build triggers.",
+          "For more information on creating Cloud Build triggers, see Creating and managing build triggers ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersFixedSizeCollection",
+      "com.google.cloud.devtools.cloudbuild.v1.CloudBuildClient.ListBuildTriggersPage"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

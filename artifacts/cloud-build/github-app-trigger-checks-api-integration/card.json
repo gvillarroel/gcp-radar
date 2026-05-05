@@ -1,0 +1,116 @@
+{
+  "feature_name": "GitHub App trigger Checks API integration",
+  "feature_slug": "github-app-trigger-checks-api-integration",
+  "summary": "Cloud Build posts GitHub App trigger results to GitHub using the GitHub Checks API.",
+  "extended_definition": "Cloud Build posts GitHub App trigger results to GitHub using the GitHub Checks API.",
+  "lifecycle": {
+    "latest_feature_date": "2019-09-26",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+      "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+      "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Building repositories from GitHub Enterprise \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "source_id": "site-docs-root-2",
+        "final_score": 162,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can adjust status check configurations to look for your trigger name by: Disabling any Cloud Build-specific required checks on the GitHub Enterprise repository Ensuring that data sharing is enabled in Cloud Build Executing a new build in Cloud Build that posts statuses to your repository Re-enabling required status checks, selecting trigger name Note: Enabling data sharing for a project is not reversible.",
+          "Terraform For sample Terraform code about creating a build trigger and connecting it to your GitHub Enterprise installation using Developer Connect, see the following topics in the Terraform documentation: Create a Developer Connect push trigger Create a Developer Connect pull trigger Data sharing The data sent to GitHub Enterprise from Cloud Build helps you identify triggers by name and see build results on GitHub Enterprise.",
+          "Note: Manual triggers and Pub/Sub triggers cannot build GitHub Enterprise repositories through Cloud Build's integration."
+        ]
+      },
+      {
+        "title": "Building repositories from GitHub \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "source_id": "site-docs-root-2",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "You can adjust status check configurations to look for your trigger name by: Disabling any Cloud Build-specific required checks on the GitHub repository Ensuring that data sharing is enabled in Cloud Build Executing a new build in Cloud Build that posts statuses to your repository Re-enabling required status checks, selecting trigger name Note: Enabling data sharing for a project is not reversible.",
+          "The following table compares GitHub legacy triggers, GitHub triggers, and GitHub Enterprise triggers: Feature GitHub legacy triggers GitHub triggers GitHub Enterprise triggers Execute builds on pushes to the source code Yes Yes Yes Execute builds on pull requests No Yes Yes Create trigger using Google Cloud console Yes Yes Yes Create trigger using the Cloud Build API No Yes Yes Create trigger using the Cloud Build GitHub app No Yes Yes View build status on Google Cloud console Yes Yes Yes View build status on GitHub No Yes Yes Data sharing The data sent to GitHub from Cloud Build helps you identify triggers by name and see build results on GitHub.",
+          "GitHub triggers allow you to automatically start builds on Git pushes and pull requests and view build results on GitHub and the Google Cloud console."
+        ]
+      },
+      {
+        "title": "Create and manage build triggers \\_|\\_ Cloud Build \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers",
+        "source_id": "site-docs-root-2",
+        "final_score": 117,
+        "relevance": "",
+        "evidence_snippets": [
+          "To create a trigger if your source code is in GitHub : gcloud builds triggers create github \\ -- name = TRIGGER NAME \\ -- region = REGION \\ -- repo - name = REPO NAME \\ -- repo - owner = REPO OWNER \\ -- branch - pattern = BRANCH PATTERN \\ # or -- tag - pattern = TAG PATTERN -- build - config = BUILD CONFIG FILE \\ -- service - account = SERVICE ACCOUNT \\ -- require - approval -- include - logs - with - status Where: REGION is the region for your trigger.",
+          "Your file will look similar to the following: createTime: '2020-02-21T20:02:50.215599013Z' description: Push to any branch filename: cloudbuild.yaml github: name: example-repo-name owner: example-owner push: branch: . id: example-id name: Push-to-any-branch tags: - github-default-push-trigger Add the disabled field to the end of your file and set the value to True . disabled: True Save your file.",
+          "Your file will look similar to the following: createTime: '2022-05-26T21:56:11.830784153Z' filename: cloudbuild.yaml github: name: cloud-build-example owner: main push: branch: master id: 86201062-3b14-4b6a-a2fb-4ee924e8b1dd remove field name and value to not show build logs includeBuildLogs: INCLUDE BUILD LOGS WITH STATUS name: trigger-001 Manually edit your file to update your trigger."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudbuild.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github-enterprise",
+        "https://docs.cloud.google.com/build/docs/automating-builds/github/build-repos-from-github",
+        "https://docs.cloud.google.com/build/docs/automating-builds/create-manage-triggers"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

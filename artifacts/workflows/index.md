@@ -1,0 +1,80 @@
+# Workflows
+
+Service card: [card.json](./card.json)
+
+Generated from Step 08 card: `data/step-08/current/products/workflows/card.json`
+
+## Summary
+
+- Promoted features: 64
+- Step 07 product status: PASS
+- Corpus health: healthy
+- Latest feature date: 2025-03-28
+- Official source links: 83
+
+## Features
+
+- [AI Platform Training and Prediction connector](./ai-platform-training-and-prediction-connector/README.md)
+- [Application Integration connector](./application-integration-connector/README.md)
+- [Batch API connector](./batch-api-connector/README.md)
+- [BigQuery Data Transfer connector](./bigquery-data-transfer-connector/README.md)
+- [Call logging](./call-logging/README.md)
+- [Callback endpoints](./callback-endpoints/README.md)
+- [Cloud Asset Inventory integration](./cloud-asset-inventory-integration/README.md)
+- [Cloud Resource Manager connector](./cloud-resource-manager-connector/README.md)
+- [compute_checksum function](./compute-checksum-function/README.md)
+- [compute_hmac function](./compute-hmac-function/README.md)
+- [Connectors](./connectors/README.md)
+- [Cross-project service account deployment](./cross-project-service-account-deployment/README.md)
+- [Custom organization policy constraints](./custom-organization-policy-constraints/README.md)
+- [Customer-Managed Encryption Keys](./customer-managed-encryption-keys/README.md)
+- [Deployment-time environment variables](./deployment-time-environment-variables/README.md)
+- [Dynamic keys](./dynamic-keys/README.md)
+- [Eventarc triggers](./eventarc-triggers/README.md)
+- [Execution backlogging](./execution-backlogging/README.md)
+- [Execution current or final step in results](./execution-current-or-final-step-in-results/README.md)
+- [Execution status field](./execution-status-field/README.md)
+- [Execution step history](./execution-step-history/README.md)
+- [Expression default function](./expression-default-function/README.md)
+- [Expression if function](./expression-if-function/README.md)
+- [get_type function](./get-type-function/README.md)
+- [GOOGLE_CLOUD_SERVICE_ACCOUNT_NAME environment variable](./google-cloud-service-account-name-environment-variable/README.md)
+- [Google Forms connector](./google-forms-connector/README.md)
+- [Google Sheets connector](./google-sheets-connector/README.md)
+- [HIPAA compliance](./hipaa-compliance/README.md)
+- [Independent source and details editing in Cloud Console](./independent-source-and-details-editing-in-cloud-console/README.md)
+- [Invocation of IAP-enabled private endpoints](./invocation-of-iap-enabled-private-endpoints/README.md)
+- [Invocation of internal-ingress Cloud Functions and Cloud Run](./invocation-of-internal-ingress-cloud-functions-and-cloud-run/README.md)
+- [Iteration over sequences and collections](./iteration-over-sequences-and-collections/README.md)
+- [Iteration syntax visualization](./iteration-syntax-visualization/README.md)
+- [Kubernetes API connector](./kubernetes-api-connector/README.md)
+- [List and map value update syntax](./list-and-map-value-update-syntax/README.md)
+- [list.concat function](./list-concat-function/README.md)
+- [List key existence check](./list-key-existence-check/README.md)
+- [list.prepend function](./list-prepend-function/README.md)
+- [map.get function](./map-get-function/README.md)
+- [map.merge function](./map-merge-function/README.md)
+- [map.merge_nested function](./map-merge-nested-function/README.md)
+- [math.floor function](./math-floor-function/README.md)
+- [Parallel step concurrency limits](./parallel-step-concurrency-limits/README.md)
+- [Parallel steps](./parallel-steps/README.md)
+- [Platform logs in Cloud Logging](./platform-logs-in-cloud-logging/README.md)
+- [Regional availability](./regional-availability/README.md)
+- [Resource tags](./resource-tags/README.md)
+- [Service agent quota and billing attribution](./service-agent-quota-and-billing-attribution/README.md)
+- [Service Level Agreement](./service-level-agreement/README.md)
+- [skip_polling connector option](./skip-polling-connector-option/README.md)
+- [sys.sleep_until function](./sys-sleep-until-function/README.md)
+- [Text module string processing functions](./text-module-string-processing-functions/README.md)
+- [text.url_decode function](./text-url-decode-function/README.md)
+- [text.url_encode function](./text-url-encode-function/README.md)
+- [text.url_encode_plus function](./text-url-encode-plus-function/README.md)
+- [time.format function](./time-format-function/README.md)
+- [time.parse function](./time-parse-function/README.md)
+- [Transcoder API connector](./transcoder-api-connector/README.md)
+- [uuid.generate function](./uuid-generate-function/README.md)
+- [Vertex AI API connector](./vertex-ai-api-connector/README.md)
+- [VPC Service Controls-compliant private endpoint invocation](./vpc-service-controls-compliant-private-endpoint-invocation/README.md)
+- [Workflow scheduling in Cloud Console](./workflow-scheduling-in-cloud-console/README.md)
+- [Workflow visualization](./workflow-visualization/README.md)
+- [Workflows JSON schema](./workflows-json-schema/README.md)

@@ -1,0 +1,150 @@
+{
+  "feature_name": "Data Science Agent file upload search shortcut",
+  "feature_slug": "data-science-agent-file-upload-search-shortcut",
+  "summary": "The Data Science Agent in BigQuery supports + syntax to search files for upload.",
+  "extended_definition": "The Data Science Agent in BigQuery supports + syntax to search files for upload.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+      "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Access historical data \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "source_id": "site-docs-reference-2",
+        "final_score": 50,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For this example, we choose the current time as we're about to delete the table immediately afterwards. / const snapshotEpoch = Date . now (); // Delete the table await bigquery . dataset ( datasetId ) . table ( tableId ) . delete (); console . log ( Table ${ tableId } deleted. ); // Construct the restore-from table ID using a snapshot decorator. const snapshotTableId = ${ tableId } @ ${ snapshotEpoch } ; // Construct and run a copy job. await bigquery . dataset ( datasetId ) . table ( snapshotTableId ) . copy ( bigquery . dataset ( datasetId ). table ( recoveredTableId )); console . log ( Copied data from deleted table ${ tableId } to ${ recoveredTableId } ); } Python Before trying this sample, follow the Python setup instructions in the BigQuery quickstart using client libraries .",
+          "TableId . of ( datasetName , recoverTableName ), TableId . of ( datasetName , snapshotTableId )) . build (); Job job = bigquery . create ( JobInfo . of ( configuration )); job = job . waitFor (); if ( job . isDone () && job . getStatus (). getError () == null ) { System . out . println ( \"Undelete table recovered successfully.\" ); } else { System . out . println ( \"BigQuery was unable to copy the table due to an error: \\n\" + job . getStatus (). getError ()); return ; } } catch ( BigQueryException InterruptedException e ) { System . out . println ( \"Table not found. \\n\" + e . toString ()); } } } Node.js Before trying this sample, follow the Node.js setup instructions in the BigQuery quickstart using client libraries .",
+          "For more information, see Set up authentication for client libraries . // Import the Google Cloud client library const { BigQuery } = require ( ' @google-cloud/bigquery ' ); const bigquery = new BigQuery (); async function undeleteTable () { // Undeletes \"my table to undelete\" from \"my dataset\". / TODO(developer): Uncomment the following lines before running the sample. / // const datasetId = \"my dataset\"; // const tableId = \"my table to undelete\"; // const recoveredTableId = \"my recovered table\"; / TODO(developer): Choose an appropriate snapshot point as epoch milliseconds."
+        ]
+      },
+      {
+        "title": "SCHEMATA view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "source_id": "site-docs-reference-3",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the permissions that you need in order to get the SCHEMATA view: roles/bigquery.admin roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.dataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "Before you begin To query the SCHEMATA view for dataset metadata, you need the bigquery.datasets.get Identity and Access Management (IAM) permission at the project level.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "SCHEMATA_LINKS view \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links",
+        "source_id": "site-docs-reference-3",
+        "final_score": 48,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Each of the following predefined IAM roles includes the permissions that you need in order to query the INFORMATION SCHEMA.SCHEMATA LINKS view: roles/bigquery.admin roles/bigquery.dataEditor roles/bigquery.dataOwner roles/bigquery.dataViewer For more information about BigQuery permissions, see Access control with IAM .",
+          "Required permission To query the INFORMATION SCHEMA.SCHEMATA LINKS view, you need the bigquery.datasets.get Identity and Access Management (IAM) permission at the project level.",
+          "Home Documentation Data analytics BigQuery Reference Send feedback Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.admin",
+      "bigquery.dataEditor",
+      "bigquery.dataOwner",
+      "bigquery.datasets.get",
+      "bigquery.dataViewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/bigquery.admin",
+      "roles/bigquery.dataEditor",
+      "roles/bigquery.dataOwner",
+      "roles/bigquery.dataViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/access-historical-data",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata",
+        "https://docs.cloud.google.com/bigquery/docs/information-schema-datasets-schemata-links"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,189 @@
+{
+  "feature_name": "GKE logging agent",
+  "feature_slug": "gke-logging-agent",
+  "summary": "In GKE 1.34.1-gke.2037001 and later, the logging agent processes logs faster per node and uses fewer node resources.",
+  "extended_definition": "In GKE 1.34.1-gke.2037001 and later, the logging agent processes logs faster per node and uses fewer node resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Security bulletins \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "source_id": "site-docs-reference-2",
+        "final_score": 121,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can use the following tools to check inbound traffic to your resources running in Google Cloud: VPC Flow Logs for visibility into network throughput and performance Cloud Logging to search and analyze logging data and events from Google Cloud services and applications configured to send logs Firewall Rules Logging to audit, verify, and analyze the effects of your firewall rules Security Command Center for visibility into security findings indicating suspicious network activity Your application logs High GDC (VMware) Description Severity A security issue was discovered that impacts Multi-Cluster Gateway (MCG), a GKE feature that allows customers to load balance traffic across multiple clusters.",
+          "COS 1.8.8 or later 1.9.5 or later 1.10.2 or later 1.11.0 or later Ubuntu 1.9.6 or later 1.10.3 or later 1.11.0 or later The vulnerability is found in the Linux kernel's cgroup release agent write in the kernel/cgroup/cgroup-v1.c function and can be used as a container breakout.",
+          "The following versions of GKE or later have been updated to address the providerID issue: 1.33.1-gke.1386000 1.32.4-gke.1533000 1.31.9-gke.1119000 1.30.12-gke.1208000 Optionally, if you cannot upgrade, implement the following validating admission policy on your cluster to mitigate the providerID issue: apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicy metadata : name : validate - node - providerid spec : failurePolicy : Fail matchConstraints : resourceRules : - apiGroups : [ \"\" ] apiVersions : [ \"v1\" ] operations : [ \"CREATE\", \"UPDATE\" ] resources : [ \"nodes\" ] matchConditions : - name : \"has-providerid\" expression : \"has(object.spec.providerID)\" validations : - expression : \"object.spec.providerID == '' object.spec.providerID.endsWith('/' + object.metadata.name)\" message : \"node.spec.providerID must match the node name\" --- apiVersion : admissionregistration . k8s . io / v1 kind : ValidatingAdmissionPolicyBinding metadata : name : validate - node - providerid - binding spec : policyName : validate - node - providerid validationActions : [ Deny ] Use node restricted labels when isolating workloads to specific nodes as a security control If you are using labels for node isolation, as described in Kubernetes documentation , use node restricted labels (for example, labels of the form node-restriction.kubernetes.io/example-constraint ) in node affinity and node selector terms used for workload isolation."
+        ]
+      },
+      {
+        "title": "\"Deploy an agentic AI application on GKE with the Agent Development Kit (ADK)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 117,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Wait for the Deployment to become available: kubectl wait --for = condition = available --timeout = 300s deployment/adk-agent View the logs from the running agent Pod: export AGENT POD = $( kubectl get pods -l app = adk-agent -o jsonpath = '{.items[0].metadata.name}' ) kubectl logs -f $AGENT POD The deployment is successful when you see log output similar to the following, indicating that the Uvicorn server is running and ready to accept requests: INFO: Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit) Test your deployed agent After successfully deploying both the vLLM server and the agent application, you can test the end-to-end functionality by interacting with the agent's web UI.",
+          "LLM Pod logs : View the logs of the vllm-llama3-deployment Pod to see the incoming request from the agent. kubectl logs -f $LLM POD The logs shows the full prompt sent by the agent to the LLM, including the system message, your query, and the definition of the get weather tool.",
+          "You should see a response similar to the following: The weather in Tokyo is 25°C and sunny. (Optional) Verify the tool call in the logs : You can observe the agent's interaction with the LLM and the tool execution by viewing the logs of the respective Pods."
+        ]
+      },
+      {
+        "title": "\"Deploy an agentic AI application on GKE with the Agent Development Kit (ADK)\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 113,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "ROLES TO ASSIGN =( \"roles/artifactregistry.writer\" \"roles/storage.objectViewer\" \"roles/logging.viewer\" ) for ROLE in \" ${ ROLES TO ASSIGN [@] } \" ; do gcloud projects add-iam-policy-binding \" ${ PROJECT ID } \" \\ --member = \"serviceAccount: ${ PROJECT NUMBER } -compute@developer.gserviceaccount.com\" \\ --role = \" ${ ROLE } \" done Build and push the agent container image : Run this command to build your Docker image and push it to your Artifact Registry.",
+          "What can you do for me?\" }] } }' You should receive a JSON response from your agent, indicating that it successfully processes requests and interacts with the Gemini model through Vertex AI.",
+          "Learn how to use Cloud Logging and Cloud Monitoring to gain insights into your agent's performance and health within your GKE cluster."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.writer",
+      "compute.googleapis.com",
+      "container.googleapis.com",
+      "deployment.yaml",
+      "developer.gserviceaccount.com",
+      "docker.pkg.dev",
+      "gke.1119000",
+      "gke.1208000",
+      "gke.1386000",
+      "gke.1533000",
+      "gke.2037001",
+      "logging.viewer",
+      "metadata.name",
+      "node.spec.providerID",
+      "object.metadata.name",
+      "object.spec.providerID",
+      "object.spec.providerID.endsWith",
+      "operation.last",
+      "resource.type",
+      "restriction.kubernetes.io",
+      "storage.objectViewer",
+      "v1.c"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.writer",
+      "roles/logging.viewer",
+      "roles/storage.objectViewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/security-bulletins",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vertex",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/tutorials/agentic-adk-vllm"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

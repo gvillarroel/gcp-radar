@@ -1,0 +1,124 @@
+{
+  "feature_name": "Cloud Trace API MCP server",
+  "feature_slug": "cloud-trace-api-mcp-server",
+  "summary": "The Cloud Trace API MCP server lets agents and AI applications interact with trace data.",
+  "extended_definition": "The Cloud Trace API MCP server lets agents and AI applications interact with trace data.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/trace/docs/finding-traces",
+      "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp",
+      "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+      "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"MCP Reference: cloudtrace.googleapis.com \\_|\\_ Cloud Trace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp",
+        "source_id": "site-docs-reference",
+        "final_score": 271,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The cloudtrace.googleapis.com MCP server has the following tools: MCP Tools list traces Use this as the primary tool to retrieve and examine distributed traces from Google Cloud Trace.",
+          "Curl Request curl --location 'https://cloudtrace.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/list\", \"jsonrpc\": \"2.0\", \"id\": 1 }' Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "An MCP server that provides tools for Cloud Trace Server Endpoints An MCP service endpoint is the network address and communication interface (usually a URL) of the MCP server that an AI application (the Host for the MCP client) uses to establish a secure, standardized connection."
+        ]
+      },
+      {
+        "title": "Find and explore traces \\_|\\_ Cloud Trace \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To learn about which remote Google Cloud MCP servers support trace generation and how to configure your application to instruct these servers to generate spans, see Investigate MCP calls using Trace .",
+          "For each project, verify that your IAM role lets you view trace data and then ensure that the Scope element lists the project's default view for trace data.",
+          "For example, some remote Google Cloud MCP servers can generate a trace span when they receive a tools/call operation."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: cloudtrace.googleapis.com \\_|\\_ Cloud Trace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+        "source_id": "site-docs-reference",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://cloudtrace.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"get trace\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema The request message for the GetTrace method.",
+          "Home Documentation Observability Cloud Trace Reference Send feedback MCP Tools Reference: cloudtrace.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "For the same executable and the same call point, a best practice is to use a consistent name, which makes it easier to correlate cross-trace spans. startTime string ( Timestamp format) Start time of the span in seconds and nanoseconds from the UNIX epoch."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: cloudtrace.googleapis.com \\_|\\_ Cloud Trace \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces",
+        "source_id": "site-docs-reference",
+        "final_score": 249,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Curl Request curl --location 'https://cloudtrace.googleapis.com/mcp' \\ --header 'content-type: application/json' \\ --header 'accept: application/json, text/event-stream' \\ --data '{ \"method\": \"tools/call\", \"params\": { \"name\": \"list traces\", \"arguments\": { // provide these details according to the tool' s MCP specification } } , \"jsonrpc\" : \"2.0\" , \"id\" : 1 } ' Input Schema The request message for the ListTraces method.",
+          "Home Documentation Observability Cloud Trace Reference Send feedback MCP Tools Reference: cloudtrace.googleapis.com Stay organized with collections Save and categorize content based on your preferences.",
+          "ListTracesResponse JSON representation { \"traces\" : [ { object ( Trace ) } ] , \"nextPageToken\" : string } Fields traces[] object ( Trace ) List of trace records as specified by the view parameter. nextPageToken string If defined, indicates that there are more traces that match the request and that this value should be passed to the next request to continue retrieving additional traces."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudtrace.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp",
+        "https://docs.cloud.google.com/trace/docs/finding-traces",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/get_trace",
+        "https://docs.cloud.google.com/trace/docs/reference/mcp/mcp/tools_list/list_traces"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.017Z",
+  "source_step08_card": "data/step-08/current/products/cloud-trace/card.json",
+  "product_name": "Cloud Trace",
+  "product_slug": "cloud-trace"
+}

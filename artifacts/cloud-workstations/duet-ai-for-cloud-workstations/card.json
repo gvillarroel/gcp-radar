@@ -1,0 +1,126 @@
+{
+  "feature_name": "Duet AI for Cloud Workstations",
+  "feature_slug": "duet-ai-for-cloud-workstations",
+  "summary": "Duet AI for Cloud Workstations provides AI-assisted coding help with contextual responses and source citations in the Cloud Workstations editor; Duet AI for Cloud Workstations provides AI-assisted coding help with contextual responses and source citations in the Cloud Workstations editor.",
+  "extended_definition": "Duet AI for Cloud Workstations provides AI-assisted coding help with contextual responses and source citations in the Cloud Workstations editor; Duet AI for Cloud Workstations provides AI-assisted coding help with contextual responses and source citations in the Cloud Workstations editor.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-01",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workstations/docs/ai-agent-assisted-coding-gemini-cli",
+      "https://docs.cloud.google.com/workstations/docs/overview",
+      "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+      "https://docs.cloud.google.com/workstations/docs/write-code-gemini"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"AI agent-assisted coding with Gemini CLI \\_|\\_ Cloud Workstations \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/ai-agent-assisted-coding-gemini-cli",
+        "source_id": "site-docs-root-2",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For instructions, see Create and launch your workstation Start AI agent-assisted coding To begin using Gemini CLI for AI agent-assisted coding, follow these steps: In your workstation's base editor, open a folder or workspace using one of the following methods: Click Open Folder from the explorer view.",
+          "Home Documentation Application development Cloud Workstations Guides Send feedback AI agent-assisted coding with Gemini CLI Stay organized with collections Save and categorize content based on your preferences.",
+          "For example: Explain the architecture of this codebase Write a unit test for the function in main.py Refactor the current file to use async/await Work with diffs When Gemini CLI suggests code modifications, it can open a diff view directly within your editor."
+        ]
+      },
+      {
+        "title": "\"Code with Gemini Code Assist \\_|\\_ Cloud Workstations \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/write-code-gemini",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To prevent code that matches cited sources from being suggested, you can modify the geminicodeassist.recitation.maxCitedLength setting to 0 in a settings.json file: \"geminicodeassist.recitation.maxCitedLength\" : 0 Use smart actions To help you be more productive while minimizing context switching, Gemini Code Assist provides AI-powered smart actions directly in your source code editor.",
+          "As a result, Gemini Code Assist does not run on Cloud Workstations IDEs that require JetBrains Gateway to connect. 'Activate Gemini Code Assist' still appears after selecting Gemini Code Assist project If you selected your project per the instructions in this guide, which includes enabling the Gemini for Google Cloud API, then there may be an issue with the LS server.",
+          "The path should be relative to the workspace root directory. my/sensitive/dir/ Disable code suggestions that match cited sources Gemini provides citation information when it directly quotes at length from another source, such as publicly available source code."
+        ]
+      },
+      {
+        "title": "\"Help secure the Cloud Workstations API using Chrome Enterprise Premium \\_\\",
+        "url": "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "source_id": "site-docs-root-2",
+        "final_score": 190,
+        "relevance": "",
+        "evidence_snippets": [
+          "Cloud Workstations access Chrome Enterprise Premium context-aware access control Google Cloud console gcloud CLI: Create, Edit, Delete resource gcloud CLI: SSH API: REST API: RPC API: Client Libraries API: browser access HTTP: browser access HTTP: SSH HTTP: local JetBrains IDEs HTTP: local VS Code Objectives This document describes the steps that an administrator follows to set up Chrome Enterprise Premium access control for the Cloud Workstations API and to provide additional mechanisms that help prevent source code exfiltration from browser-based Cloud Workstations IDEs.",
+          "Part 1: Set up Chrome Enterprise Premium for Cloud Workstations This section takes you through the steps to help you secure context-aware access to the Cloud Workstations API: Set up Cloud Workstations .",
+          "Create an IAM group for Cloud Workstations access, name it Cloud Workstations Users , and assign the previously created demo user, demo-user@<domain> ."
+        ]
+      },
+      {
+        "title": "Cloud Workstations overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workstations/docs/overview",
+        "source_id": "site-docs-root",
+        "final_score": 178,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you select the Cloud Workstations Base Editor (Code OSS for Cloud Workstations) when you create your workstation configuration , Gemini can help you with the following in the base editor: Provide guidance to help you solve problems with your code.",
+          "Additionally, administrators and platform teams can configure an idle timeout or running timeout in the workstation configuration to help make sure that workstations shut down when they are no longer used, which reduces costs.",
+          "Administrators and platform teams can configure an idle timeout or running timeout in the workstation configuration to help make sure that workstations synchronize with configuration updates within a bounded period of time."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "geminicodeassist.recitation.maxCitedLength",
+      "main.py",
+      "settings.json"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/ai-agent-assisted-coding-gemini-cli",
+        "https://docs.cloud.google.com/workstations/docs/write-code-gemini",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/overview"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/ai-agent-assisted-coding-gemini-cli",
+        "https://docs.cloud.google.com/workstations/docs/write-code-gemini",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/overview"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workstations/docs/ai-agent-assisted-coding-gemini-cli",
+        "https://docs.cloud.google.com/workstations/docs/write-code-gemini",
+        "https://docs.cloud.google.com/workstations/docs/tutorial-help-secure-workstations-api-using-beyondcorp-enterprise",
+        "https://docs.cloud.google.com/workstations/docs/overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:18.433Z",
+  "source_step08_card": "data/step-08/current/products/cloud-workstations/card.json",
+  "product_name": "Cloud Workstations",
+  "product_slug": "cloud-workstations"
+}

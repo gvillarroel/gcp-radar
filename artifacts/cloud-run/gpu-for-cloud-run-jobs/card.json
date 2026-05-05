@@ -1,0 +1,133 @@
+{
+  "feature_name": "GPU for Cloud Run jobs",
+  "feature_slug": "gpu-for-cloud-run-jobs",
+  "summary": "Cloud Run jobs support GPU configuration for job execution.",
+  "extended_definition": "Cloud Run jobs support GPU configuration for job execution.",
+  "lifecycle": {
+    "latest_feature_date": "2025-06-16",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient",
+      "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class JobsAsyncClient (0.16.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The result type for the operation will be Execution Execution represents the configuration of a single execution.",
+          "Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . execution path execution path ( project : str , location : str , job : str , execution : str ) - > str Returns a fully-qualified execution string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "JobsAsyncClient () Initialize request argument(s) request = iam policy pb2.TestIamPermissionsRequest( resource=\"resource value\", permissions=['permissions value1', 'permissions value2'], ) Make the request response = await client. test iam permissions (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.iam.v1.iam policy pb2.TestIamPermissionsRequest , dict]] The request object."
+        ]
+      },
+      {
+        "title": "\"Class JobsClient (0.16.0) \\_|\\_ Python client libraries \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "source_id": "site-python-reference",
+        "final_score": 132,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The result type for the operation will be Execution Execution represents the configuration of a single execution.",
+          "Normally, each value must be of type str , but for metadata keys ending with the suffix -bin , the corresponding values must be of type bytes . execution path execution path ( project : str , location : str , job : str , execution : str ) - > str Returns a fully-qualified execution string. from service account file from service account file ( filename : str , args , kwargs ) Creates an instance of this client using the provided credentials file.",
+          "JobsClient () Initialize request argument(s) request = iam policy pb2.TestIamPermissionsRequest( resource=\"resource value\", permissions=['permissions value1', 'permissions value2'], ) Make the request response = client. test iam permissions (request=request) Handle the response print(response) Parameters Name Description request Union[ google.iam.v1.iam policy pb2.TestIamPermissionsRequest , dict] The request object."
+        ]
+      },
+      {
+        "title": "\"Class ExecutionsClient (0.16.0) \\_|\\_ Python client libraries \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient",
+        "source_id": "site-python-reference",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution} , where {project} can be project id or number.",
+          "Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution} , where {project} can be project id or number.",
+          "Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution} , where {project} can be project id or number."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "pb2.TestIamPermissionsRequest",
+      "v2.types.Execution"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.jobs.JobsClient",
+        "https://docs.cloud.google.com/python/docs/reference/run/latest/google.cloud.run_v2.services.executions.ExecutionsClient"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

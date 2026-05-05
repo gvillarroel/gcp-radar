@@ -1,0 +1,111 @@
+{
+  "feature_name": "NamespaceSelector support",
+  "feature_slug": "namespaceselector-support",
+  "summary": "NamespaceSelector support allows configuration to target namespaces based on selector criteria.",
+  "extended_definition": "NamespaceSelector support allows configuration to target namespaces based on selector criteria.",
+  "lifecycle": {
+    "latest_feature_date": "2019-03-04",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-tenancy",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects",
+      "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Sync objects to multiple namespaces \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects",
+        "source_id": "site-docs-root",
+        "final_score": 255,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Create a namespace selector called exclude-exempt-namespaces : kind : NamespaceSelector apiVersion : configmanagement.gke.io/v1 metadata : name : excludes-exempt-namespaces spec : selector : matchExpressions : - key : quota-exempt operator : NotIn values : - exempt If another object's configuration references this namespace selector, that configuration is applied to all namespaces except those with the quota-exempt: exempt key-value pair.",
+          "Create a namespace selector called gamestore-selector . kind : NamespaceSelector apiVersion : configmanagement.gke.io/v1 metadata : name : gamestore-selector spec : selector : matchLabels : app : gamestore If another object's configuration references this namespace selector, that configuration can only be applied to objects in namespaces that have the app: gamestore label.",
+          "For each object that you want to sync to one or more namespaces, modify the object's configuration to remove the metadata.namespace field and add the configmanagement.gke.io/namespace-selector annotation with a value that matches the metadata.name of your NamespaceSelector ."
+        ]
+      },
+      {
+        "title": "\"Manage team resources across your fleet \\_|\\_ Config Sync \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-tenancy",
+        "source_id": "site-docs-root",
+        "final_score": 249,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The dynamic mode allows the selection of namespaces both statically declared in the source of truth and any namespaces dynamically present on the cluster. apiVersion : configmanagement.gke.io/v1 kind : NamespaceSelector metadata : name : NAMESPACE SELECTOR NAME spec : mode : dynamic selector : matchLabels : fleet.gke.io/fleet-scope : SCOPE NAME Replace the following: NAMESPACE SELECTOR NAME : the name for the NamespaceSelector object, for example backend-scope .",
+          "For each team, create a NamespaceSelector object in your configuration directory: Important: the NamespaceSelector must have the mode set to dynamic .",
+          "When a fleet namespace is created in the cluster, the namespace is automatically labelled with fleet.gke.io/fleet-scope: SCOPE NAME , allowing Config Sync to select namespaces based on the NamespaceSelector labels present when syncing Kubernetes resources."
+        ]
+      },
+      {
+        "title": "Safe rollouts with Config Sync \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync",
+        "source_id": "site-docs-root",
+        "final_score": 155,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "We recommend the following actions: Use ClusterSelector and NamespaceSelector objects if you need to apply a configuration change to only a subset of clusters or namespaces indefinitely or for a long time.",
+          "ClusterSelector and NamespaceSelector objects also let you implement advanced testing and release methodologies, such as the following: Canary releases of policies, where you deploy a new policy to a small subset of clusters and namespaces for a long time to study the policy's impact.",
+          "Use ClusterSelector and NamespaceSelector objects Git branches are a good way of doing a staged rollout of changes across multiple clusters that will eventually all have the same policies."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "configmanagement.gke.io",
+      "fleet.gke.io",
+      "metadata.name",
+      "metadata.namespace"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-tenancy",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-tenancy",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/fleet-tenancy",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/how-to/namespace-scoped-objects",
+        "https://docs.cloud.google.com/kubernetes-engine/config-sync/docs/tutorials/safe-rollouts-with-config-sync"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.067Z",
+  "source_step08_card": "data/step-08/current/products/anthos-config-management/card.json",
+  "product_name": "Anthos Config Management",
+  "product_slug": "anthos-config-management"
+}

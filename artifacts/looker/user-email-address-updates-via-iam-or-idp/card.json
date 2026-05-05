@@ -1,0 +1,146 @@
+{
+  "feature_name": "User Email Address Updates via IAM or IdP",
+  "feature_slug": "user-email-address-updates-via-iam-or-idp",
+  "summary": "Admins can update a user email address through IAM or an identity provider.",
+  "extended_definition": "Admins can update a user email address through IAM or an identity provider.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-users-users"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Admin settings - Users \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "For name and email address, when you enter any string, the list of users displayed shows all users whose name or email address contains the string entered in the filter field.",
+          "If you need to set or reset a password, you can click this button to send a link to the user's email address that you previously specified.",
+          "Warning: Editing a user's email address logs out that user and sends an email verification link to the user's new email address."
+        ]
+      },
+      {
+        "title": "Admin settings - Scheduled Emails \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 131,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Scheduled Emails page lists any email addresses that are scheduled to receive Looks or dashboards but that are not associated with one of your Looker instance's user accounts.",
+          "Admins should check with their users to see if these have been set up and decide how to manage changes to the emailed data policy.",
+          "Changing your emailed data policy option Although your Looker instance will have a default emailed data policy option selected based on the instance's settings prior to an update to Looker 7.8, Looker admins can change this default setting at any time by navigating to the Scheduled Emails page in the Admin panel under Alerts & Schedules ."
+        ]
+      },
+      {
+        "title": "Admin settings - SAML authentication \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "When a user logs in for the first time through SAML, this option will connect the user into their existing account by finding the account with a matching email address.",
+          "Standard attributes You'll need to specify these standard attributes: Email Attr : The attribute name your IdP uses for user email addresses.",
+          "This option allows alternate email-based login using /login/email for admins and for specified users with the login special email permission."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/admin-panel-users-users",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-alerts-and-schedules-scheduled-emails",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-authentication-saml"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}

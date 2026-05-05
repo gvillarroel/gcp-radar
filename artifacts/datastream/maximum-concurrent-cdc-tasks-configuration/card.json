@@ -1,0 +1,181 @@
+{
+  "feature_name": "Maximum concurrent CDC tasks configuration",
+  "feature_slug": "maximum-concurrent-cdc-tasks-configuration",
+  "summary": "The Datastream API can set the maximum number of concurrent CDC tasks for a stream.",
+  "extended_definition": "The Datastream API can set the maximum number of concurrent CDC tasks for a stream.",
+  "lifecycle": {
+    "latest_feature_date": "2022-08-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/datastream/docs/faq",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+      "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+      "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "source_id": "site-api-reference",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "OracleSourceConfig JSON representation { \"includeObjects\" : { object ( OracleRdbms ) } , \"excludeObjects\" : { object ( OracleRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field large objects handling can be only one of the following: \"dropLargeObjects\" : { object ( DropLargeObjects ) } , \"streamLargeObjects\" : { object ( StreamLargeObjects ) } // End of list of possible types for union field large objects handling . // Union field cdc method can be only one of the following: \"logMiner\" : { object ( LogMiner ) } , \"binaryLogParser\" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( OracleRdbms ) The Oracle objects to include in the stream. excludeObjects object ( OracleRdbms ) The Oracle objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "MysqlSourceConfig JSON representation { \"includeObjects\" : { object ( MysqlRdbms ) } , \"excludeObjects\" : { object ( MysqlRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field cdc method can be only one of the following: \"binaryLogPosition\" : { object ( BinaryLogPosition ) } , \"gtid\" : { object ( Gtid ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( MysqlRdbms ) The MySQL objects to retrieve from the source. excludeObjects object ( MysqlRdbms ) The MySQL objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "SqlServerSourceConfig JSON representation { \"includeObjects\" : { object ( SqlServerRdbms ) } , \"excludeObjects\" : { object ( SqlServerRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field cdc method can be only one of the following: \"transactionLogs\" : { object ( SqlServerTransactionLogs ) } , \"changeTables\" : { object ( SqlServerChangeTables ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( SqlServerRdbms ) The SQLServer objects to include in the stream. excludeObjects object ( SqlServerRdbms ) The SQLServer objects to exclude from the stream. maxConcurrentCdcTasks integer Max concurrent CDC tasks. maxConcurrentBackfillTasks integer Max concurrent backfill tasks."
+        ]
+      },
+      {
+        "title": "MCP Tools Reference: datastream \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "source_id": "site-api-reference",
+        "final_score": 233,
+        "relevance": "",
+        "evidence_snippets": [
+          "OracleSourceConfig JSON representation { \"includeObjects\" : { object ( OracleRdbms ) } , \"excludeObjects\" : { object ( OracleRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field large objects handling can be only one of the following: \"dropLargeObjects\" : { object ( DropLargeObjects ) } , \"streamLargeObjects\" : { object ( StreamLargeObjects ) } // End of list of possible types for union field large objects handling . // Union field cdc method can be only one of the following: \"logMiner\" : { object ( LogMiner ) } , \"binaryLogParser\" : { object ( BinaryLogParser ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( OracleRdbms ) The Oracle objects to include in the stream. excludeObjects object ( OracleRdbms ) The Oracle objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "MysqlSourceConfig JSON representation { \"includeObjects\" : { object ( MysqlRdbms ) } , \"excludeObjects\" : { object ( MysqlRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field cdc method can be only one of the following: \"binaryLogPosition\" : { object ( BinaryLogPosition ) } , \"gtid\" : { object ( Gtid ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( MysqlRdbms ) The MySQL objects to retrieve from the source. excludeObjects object ( MysqlRdbms ) The MySQL objects to exclude from the stream. maxConcurrentCdcTasks integer Maximum number of concurrent CDC tasks.",
+          "SqlServerSourceConfig JSON representation { \"includeObjects\" : { object ( SqlServerRdbms ) } , \"excludeObjects\" : { object ( SqlServerRdbms ) } , \"maxConcurrentCdcTasks\" : integer , \"maxConcurrentBackfillTasks\" : integer , // Union field cdc method can be only one of the following: \"transactionLogs\" : { object ( SqlServerTransactionLogs ) } , \"changeTables\" : { object ( SqlServerChangeTables ) } // End of list of possible types for union field cdc method . } Fields includeObjects object ( SqlServerRdbms ) The SQLServer objects to include in the stream. excludeObjects object ( SqlServerRdbms ) The SQLServer objects to exclude from the stream. maxConcurrentCdcTasks integer Max concurrent CDC tasks. maxConcurrentBackfillTasks integer Max concurrent backfill tasks."
+        ]
+      },
+      {
+        "title": "FAQ \\_|\\_ Datastream \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/faq",
+        "source_id": "site-docs-root",
+        "final_score": 215,
+        "relevance": "",
+        "evidence_snippets": [
+          "You must grant the following roles and permissions to your Datastream user to replicate data from a SQL Server database: For the change tables CDC method: db owner db denydatawriter Additionally, for the transaction logs CDC method: SELECT permissions on the database and for the sys.fn dblog function SELECT permissions on the dbo.sysjobs table VIEW SERVER STATE For detailed information about configuring your source, see the respective configuration pages for your database type.",
+          "If your organization doesn't permit granting the networkAdmin role to the Datastream service account, then create a custom role with the following specific permissions: Select IP ranges dynamically compute.routes.get compute.routes.list compute.subnetworks.get compute.subnetworks.list Create peered networks compute.globalOperations.get compute.networks.addPeering compute.networks.removePeering compute.networks.get Reserve IP addresses compute.globalAddresses.get compute.globalAddresses.create compute.globalAddresses.createInternal compute.globalAddresses.delete compute.globalAddresses.deleteInternal compute.networks.use compute.networks.listPeeringRoutes Can I use Private Service Connect to create a private connectivity configuration?",
+          "Why does the Create a private connectivity configuration page state that you must grant the roles/compute.networkAdmin role to the Datastream service account to create a private connectivity configuration on a shared VPC?"
+        ]
+      },
+      {
+        "title": "Use the Datastream API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api",
+        "source_id": "site-api-reference",
+        "final_score": 206,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "API examples You can see examples of using the Datastream API with cURL in the following pages of the Datastream documentation: Manage private connectivity configurations Manage connection profiles Manage streams Provide JSON data from a file When you use the API with cURL, you provide property values using the command line.",
+          "At the command line, provide the path to the file, preceded by the @ character, as the --data parameter: --data @<path-to-file>/<filename> For example, to create a connection profile for a MySQL source, you could create a file named request.json with the following content: { \"displayName\": \"my MySQL connection profile\", \"mysql\": { \"host\": \"10.11.12.13\", \"port\": 3306, \"username\": \"myusername\", \"password\": \"mypassword\" } } Then, you would use the following cURL command at the command line: curl --header \"Authorization: Bearer ${ ACCESS TOKEN } \" \\ --header 'Content-Type: application/json' \\ --data @./request.json \\ -X POST \\ https://datastream.googleapis.com/v1/projects/myProject/locations/myLocation/connectionProfiles?connectionProfileId = myMySQLconnectionprofile Work with long-running API calls Some API calls, such as object creation, can take some time to complete.",
+          "Select Continue . gcloud Enter the following to display the project IDs for your Google Cloud projects: gcloud projects list Set your default project: gcloud config set project YOUR PROJECT ID Enable the Datastream API: gcloud services enable datastream.googleapis.com Permissions You must have the required permissions to use the Datastream API."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "compute.globalAddresses.create",
+      "compute.globalAddresses.createInternal",
+      "compute.globalAddresses.delete",
+      "compute.globalAddresses.deleteInternal",
+      "compute.globalAddresses.get",
+      "compute.globalOperations.get",
+      "compute.networkAdmin",
+      "compute.networks.addPeering",
+      "compute.networks.get",
+      "compute.networks.listPeeringRoutes",
+      "compute.networks.removePeering",
+      "compute.networks.use",
+      "compute.routes.get",
+      "compute.routes.list",
+      "compute.subnetworks.get",
+      "compute.subnetworks.list",
+      "datastream.googleapis.com",
+      "dbo.sysjobs",
+      "request.json",
+      "sys.fn"
+    ],
+    "missing_inventory_roles": [
+      "roles/compute.networkAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/get_stream",
+        "https://docs.cloud.google.com/datastream/docs/reference/mcp/tools_list/list_streams",
+        "https://docs.cloud.google.com/datastream/docs/faq",
+        "https://docs.cloud.google.com/datastream/docs/use-the-datastream-api"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:26.597Z",
+  "source_step08_card": "data/step-08/current/products/datastream/card.json",
+  "product_name": "Datastream",
+  "product_slug": "datastream"
+}

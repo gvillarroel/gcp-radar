@@ -1,0 +1,113 @@
+{
+  "feature_name": "Include export filters",
+  "feature_slug": "include-export-filters",
+  "summary": "Lets you restrict connectivity to permitted CIDR ranges and block all other traffic; Lets you restrict connectivity to permitted CIDR ranges and block all other traffic.",
+  "extended_definition": "Lets you restrict connectivity to permitted CIDR ranges and block all other traffic; Lets you restrict connectivity to permitted CIDR ranges and block all other traffic.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-30",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+      "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Preset connectivity topologies \\_|\\_ Network Connectivity Center \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "source_id": "site-iam-reference",
+        "final_score": 245,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "When you add two or more workload VPC networks to the hub as VPC spokes, each VPC spoke exports its subnet routes according to the configured export include and export exclude filters.",
+          "Subject to the spoke group route table rules, spoke administrators or network administrators can do the following: Use export include and export exclude filters to control which subnet ranges a VPC spoke exports to the route table of the spoke group that the VPC spoke belongs to.",
+          "Use export include and export exclude filters to control which subnet ranges a VPC spoke exports to the route table of the spoke group that the VPC spoke belongs to."
+        ]
+      },
+      {
+        "title": "NCC overview \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 193,
+        "relevance": "",
+        "evidence_snippets": [
+          "Spoke filters NCC lets you limit the connectivity between spokes by using spoke filters.",
+          "NCC supports the following types of spokes: Virtual Private Cloud (VPC) spokes Producer VPC spokes NCC Gateway spokes Hybrid spokes, that can be associated with any of the following resources: HA VPN tunnels Cloud Interconnect VLAN attachments Router appliance VMs Cross-Cloud Interconnect VLAN attachments Partner Cross-Cloud Interconnect for Oracle Cloud Infrastructure (OCI) VLAN attachments Partner Cross-Cloud Interconnect for Amazon Web Services (AWS) ( Preview ) With the hub and spoke connectivity, you can do the following: Connect multiple VPC networks to one another.",
+          "Router appliance spokes A spoke associated with a Router appliance VM instance supports the following use cases: IPv4 site-to-cloud connectivity : establish connectivity between an external site and your VPC network resources."
+        ]
+      },
+      {
+        "title": "\"Producer VPC spokes \\_|\\_ Network Connectivity Center \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 179,
+        "relevance": "",
+        "evidence_snippets": [
+          "To reduce the usage of the number of subnet routes per hub route table quota, you can use export filters to limit which of the subnets in the producer VPC spoke are exported.",
+          "Additionally, services in a producer VPC spoke are accessible by other VPC spokes on the hub, subject to spoke group and export filters.",
+          "Properties unique to producer VPC spokes Producer VPC spokes have the following unique properties and requirements: Property Description Dependencies Creating a producer VPC spoke requires that you have the following existing resources and connections: A VPC network that consumes a supported service from a producer network through VPC Network Peering."
+        ]
+      },
+      {
+        "title": "\"Private Service Connect connection propagation through NCC \\_|\\_ Network\\",
+        "url": "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For information about the --exclude-export-ranges and --include-export-ranges flags, see VPC connectivity with export filters .",
+          "Because the --exclude-export-ranges filter is not mutable for a spoke after the spoke is created, we recommend that you create two subnets to host Private Service Connect endpoints—one subnet for within-VPC-network-only Private Service Connect endpoints and the other for the Private Service Connect endpoints shared to the hub.",
+          "The spoke owner can use the --exclude-export-ranges and --include-export-ranges flags to exclude specific Private Service Connect allocated subnets from the NCC routing so that specified subnets can't be reached from other VPC networks, thus keeping them private to the local VPC network."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/connectivity-topologies",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/producer-vpc-spokes-overview",
+        "https://docs.cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/psc-propagated-connection-overview"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:47.416Z",
+  "source_step08_card": "data/step-08/current/products/network-connectivity-center/card.json",
+  "product_name": "Network Connectivity Center",
+  "product_slug": "network-connectivity-center"
+}

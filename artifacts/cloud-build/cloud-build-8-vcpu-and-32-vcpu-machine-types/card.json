@@ -1,0 +1,192 @@
+{
+  "feature_name": "Cloud Build 8-vCPU and 32-vCPU machine types",
+  "feature_slug": "cloud-build-8-vcpu-and-32-vcpu-machine-types",
+  "summary": "Cloud Build added new machine types with 8 vCPUs and 32 vCPUs.",
+  "extended_definition": "Cloud Build added new machine types with 8 vCPUs and 32 vCPUs.",
+  "lifecycle": {
+    "latest_feature_date": "2017-10-25",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+      "https://docs.cloud.google.com/build/docs/build-config",
+      "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Python client libraries \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "source_id": "site-python-reference",
+        "final_score": 69,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Version latest keyboard arrow down 3.35.0 (latest) 3.34.0 3.33.0 3.32.0 3.31.3 3.30.0 3.29.0 3.28.0 3.27.1 3.26.0 3.25.0 3.24.2 3.23.3 3.22.0 3.21.0 3.20.1 3.19.0 3.18.0 3.17.1 3.16.0 3.15.0 3.14.0 3.13.0 3.12.0 3.11.1 3.10.0 3.9.3 3.8.3 3.7.1 3.6.0 3.5.2 3.4.0 3.3.2 3.2.1 3.1.1 3.0.2 2.0.2 1.1.2 1.0.0 0.1.0 Changelog PyPI History 3.35.0 (2026-01-08) Features auto-enable mTLS when supported certificates are detected ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) check Python and dependency versions in generated GAPICs ( c353aa5bcc937ef9399c8efc90492dadbcf01aa2 ) 3.34.0 (2025-12-04) Features Update GCB with latest proto changes ( 2da5c2afe0241e6dcb33aa9a0e5032012bf63df4 ) 3.33.0 (2025-10-16) Features Add support for Python 3.14 ( 98ee71abc0f97c88239b50bf0e0827df19630def ) Bug Fixes Deprecate credentials file argument ( 98ee71abc0f97c88239b50bf0e0827df19630def ) 3.32.0 (2025-08-29) Features Add option to enable nested virtualization if available ( 47981a8 ) Documentation Update comments for machine type and disk size gb ( 47981a8 ) 3.31.3 (2025-07-26) Documentation [google-cloud-build] Updated Private Service Connect IP ranges when route all traffic is false ( #14149 ) ( 7bbeba4 ) 3.31.2 (2025-06-11) Documentation Update import statement example in README ( 8697120 ) 3.31.1 (2025-03-15) Bug Fixes [Many APIs] Allow Protobuf 6.x ( 1e43e75 ) remove setup.cfg configuration for creating universal wheels ( #13659 ) ( 59bfd42 ) 3.31.0 (2025-02-18) Features Add option to enable fetching dependencies ( 3fe8899 ) Support for git proxy setup ( 3fe8899 ) Bug Fixes deps: Require grpc-google-iam-v1>=0.14.0 ( 3fe8899 ) Documentation Updates to proto message comments ( 3fe8899 ) 3.30.0 (2025-02-12) Features Add REST Interceptors which support reading metadata ( e22e2bd ) Add support for reading selective GAPIC generation methods from service YAML ( e22e2bd ) 3.29.0 (2025-01-13) Features [google-cloud-build] Add GoModule to Artifact and Results messages and new GO MODULE H1 hash type ( #13416 ) ( 8a3a6d6 ) [google-cloud-build] Add option to enable structured logging ( #13430 ) ( dc7d7f2 ) 3.28.0 (2024-12-12) Features Add support for opt-in debug logging ( e31cbb0 ) Bug Fixes Fix typing issue with gRPC metadata when key ends in -bin ( e31cbb0 ) 3.27.1 (2024-11-11) Bug Fixes disable universe-domain validation ( #13242 ) ( b479ff8 ) 3.27.0 (2024-10-28) Features [google-cloud-build] Add PrivateServiceConnect option to WorkerPool ( #13221 ) ( 629b927 ) 3.26.0 (2024-10-24) Features Add support for Python 3.13 ( #13206 ) ( eb980d5 ) 3.25.0 (2024-09-23) Features Add LEGACY BUCKET option to DefaultLogsBucketBehavior ( e889809 ) Documentation Sanitize docs ( e889809 ) 3.24.2 (2024-07-30) Bug Fixes Retry and timeout values do not propagate in requests during pagination ( a6f7356 ) 3.24.1 (2024-07-08) Bug Fixes Allow Protobuf 5.x ( #12865 ) ( 7f9dedb ) 3.24.0 (2024-03-22) Features Add Bitbucket Data Center Config and Bitbucket Cloud config for Cloud Build Repositories ( 6994587 ) 3.23.3 (2024-03-05) Bug Fixes deps: Exclude google-auth 2.24.0 and 2.25.0 ( #12382 ) ( d5db265 ) 3.23.2 (2024-02-22) Bug Fixes deps: [Many APIs] Require google-api-core&gt;=1.34.1 ( #12304 ) ( c52e0cd ) fix ValueError in test validate universe domain ( dd749df ) 3.23.1 (2024-02-06) Bug Fixes Add google-auth as a direct dependency ( 8465244 ) Add staticmethod decorator to get client cert source and get api endpoint ( 8465244 ) Resolve AttributeError ‘Credentials’ object has no attribute ‘universe domain’ ( 8465244 ) 3.23.0 (2024-02-01) Features Allow users to explicitly configure universe domain ( #12238 ) ( 8701267 ) 3.22.0 (2023-12-07) Features Add support for python 3.12 ( 0d1a592 ) Introduce compatibility with native namespace packages ( 0d1a592 ) Bug Fixes Require proto-plus >= 1.22.3 ( 0d1a592 ) Use retry async instead of retry in async client ( 0d1a592 ) 3.21.0 (2023-11-02) Features Add optional field “SourceFetcher” to choose source fetcher tool ( #11965 ) ( bf00c56 ) 3.20.1 (2023-10-09) Documentation Minor formatting ( #433 ) ( 165c6e7 ) 3.20.0 (2023-08-08) Features Add automap substitutions flag to use substitutions as envs in Cloud Build ( a1e03be ) Add git file source and git repo source to build trigger ( a1e03be ) Add update mask to UpdateBuildTriggerRequest proto ( a1e03be ) 3.19.0 (2023-07-17) Features Add routing information in Cloud Build GRPC clients ( #419 ) ( d94aabd ) 3.18.0 (2023-07-10) Features Added e2-medium machine type ( #415 ) ( 9880460 ) 3.17.1 (2023-07-04) Bug Fixes Add async context manager return types ( #413 ) ( 794de7a ) 3.17.0 (2023-06-29) Features Add GitLabConfig and fetchGitRefs for Cloud Build Repositories ( #412 ) ( f5b1b42 ) Add repositoryevent to buildtrigger ( #409 ) ( a7d5ed3 ) 3.16.0 (2023-04-18) Features Add NpmPackages to Artifact and Results messages and new SHA512 hash type ( 95ebbce ) Add PeeredNetworkIpRange to NetworkConfigs message ( 95ebbce ) Documentation Various doc updates ( 95ebbce ) 3.15.0 (2023-04-17) Features v1: Update third party clodubuild.proto library to include git source ( #400 ) ( 4ae6238 ) 3.14.0 (2023-03-23) Features Add DefaultLogsBucketBehavior to BuildOptions ( #391 ) ( 599c938 ) Documentation Fix formatting of request arg in docstring ( #397 ) ( 1c7725f ) 3.13.0 (2023-02-17) Features Enable “rest” transport in Python for services supporting numeric enums ( 0c4d84f ) Bug Fixes Remove empty v2.CloudBuild definition ( 0c4d84f ) 3.12.0 (2023-02-04) Features Client libraries for Cloud Build Repositories (preview) ( #376 ) ( 9b53646 ) 3.11.1 (2023-01-20) Bug Fixes Add context manager return types ( 51b64ba ) Documentation Add documentation for enums ( 51b64ba ) 3.11.0 (2023-01-10) Features Add support for python 3.11 ( #367 ) ( 40e3315 ) 3.10.0 (2022-12-15) Features Add allow failure, exit code, and allow exit code to BuildStep message ( #351 ) ( 0ef62e5 ) Add support for google.cloud.devtools.cloudbuild. version ( f2962f8 ) Add typing to proto.Message based class attributes ( f2962f8 ) Integration of Cloud Build with Artifact Registry ( f2962f8 ) Bug Fixes Add dict typing for client options ( f2962f8 ) deps: Require google-api-core >=1.34.0, >=2.11.0 ( 601b46c ) Drop usage of pkg resources ( 601b46c ) Fix timeout default values ( 601b46c ) Documentation samples: Snippetgen handling of repeated enum field ( f2962f8 ) samples: Snippetgen should call await on the operation coroutine before calling result ( 601b46c ) 3.9.3 (2022-10-07) Bug Fixes deps: Allow protobuf 3.19.5 ( #346 ) ( ea6537c ) 3.9.2 (2022-10-03) Bug Fixes deps: Require protobuf >= 3.20.2 ( #342 ) ( c43b994 ) 3.9.1 (2022-08-11) Bug Fixes deps: allow protobuf < 5.0.0 ( #319 ) ( db1e8be ) deps: require proto-plus >= 1.22.0 ( db1e8be ) 3.9.0 (2022-07-16) Features add audience parameter ( f019b54 ) Bug Fixes deps: require google-api-core>=1.32.0,>=2.8.0 ( #306 ) ( f019b54 ) require python 3.7+ ( #308 ) ( 5e52f5c ) 3.8.3 (2022-06-03) Bug Fixes deps: require protobuf <4.0.0dev ( #293 ) ( cc1bd84 ) Documentation fix changelog header to consistent size ( #294 ) ( 057a06d ) 3.8.2 (2022-05-05) Documentation fix type in docstring for map fields ( 3a4be49 ) 3.8.1 (2022-03-05) Bug Fixes deps: require google-api-core>=1.31.5, >=2.3.2 ( #239 ) ( d2d9c83 ) deps: require proto-plus>=1.15.0 ( d2d9c83 ) 3.8.0 (2022-02-14) Features add api key support ( #222 ) ( 9c62e7e ) Bug Fixes resolve DuplicateCredentialArgs error when using credentials file ( 2af2b18 ) 3.7.1 (2021-11-05) Bug Fixes deps: require google-api-core >= 1.28.0, drop packaging dep ( f3fb436 ) Documentation list oneofs in docstring ( f3fb436 ) 3.7.0 (2021-10-13) Features add support for python 3.10 ( #189 ) ( 0f2e580 ) 3.6.0 (2021-10-11) Features add context manager support in client ( #184 ) ( 7ac092c ) 3.5.2 (2021-09-30) Bug Fixes improper types in pagers generation ( f56eed5 ) 3.5.1 (2021-09-24) Bug Fixes add ‘dict’ annotation type to ‘request’ ( 925a436 ) 3.5.0 (2021-08-27) Features add script field to BuildStep message ( #154 ) ( 8336413 ) Update cloudbuild proto with the service account for BYOSA Triggers. ( #155 ) ( e18dbee ) 3.4.0 (2021-08-20) Features Add ability to configure BuildTriggers to create Builds that require approval before executing and ApproveBuild API to approve or reject pending Builds ( #147 ) ( 0ba4e0d ) 3.3.2 (2021-07-28) Documentation Add a new build phase SETUPBUILD for timing information ( #142 ) ( eb23c8d ) 3.3.1 (2021-07-24) Features add a WorkerPools API ( #129 ) ( 2ea98bd ) add Samples section to CONTRIBUTING.rst ( #131 ) ( 7593c96 ) Implementation of Build Failure Info: - Added message FailureInfo field ( #132 ) ( 76564e8 ) Bug Fixes deps: pin ‘google-{api,cloud}-core’, ‘google-auth’ to allow 2.x versions ( #130 ) ( e92b7a2 ) enable self signed jwt for grpc ( #139 ) ( 89f7931 ) Miscellaneous Chores release as 3.3.1 ( #136 ) ( 5d6e342 ) 3.3.0 (2021-06-30) Features add always use jwt access ( #118 ) ( 6414a3b ) Bug Fixes disable always use jwt access ( #123 ) ( c1c9608 ) Documentation omit mention of Python 2.7 in ‘CONTRIBUTING.rst’ ( #1127 ) ( #112 ) ( e2420f8 ), closes #1126 3.2.1 (2021-05-16) Bug Fixes deps: add packaging requirement ( #101 ) ( 9563889 ) 3.2.0 (2021-04-01) Features Add COMMENTS ENABLED FOR EXTERNAL CONTRIBUTORS ONLY for corresponding comment control behavior with triggered builds. ( df8ddd0 ) Add E2 HIGHCPU 8 and E2 HIGHCPU 32 machine types. ( df8ddd0 ) Add ReceiveTriggerWebhook for webhooks activating specific triggers. ( df8ddd0 ) Add SecretManager -related resources and messages for corresponding integration. ( #73 ) ( df8ddd0 ) Bug Fixes Specify build as the body of a CreateBuild call."
+        ]
+      },
+      {
+        "title": "\"Connecting to a VPC network \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "source_id": "site-docs-reference-2",
+        "final_score": 65,
+        "relevance": "",
+        "evidence_snippets": [
+          "To learn about available machine types, see the documentation on Throughput and scaling . gcloud In the Google Cloud console, activate Cloud Shell.",
+          "To learn about available machine types, see the documentation on Throughput and scaling .",
+          "Terraform You can use a Terraform resource to enable the vpcaccess.googleapis.com API. resource \"google project service\" \"vpcaccess-api\" { project = var.project id # Replace this with your project ID in quotes service = \"vpcaccess.googleapis.com\" } You can use Terraform modules to create a VPC network and subnet and then create the connector. module \"test-vpc-module\" { source = \"terraform-google-modules/network/google\" version = \" > 16.0\" project id = var.project id # Replace this with your project ID in quotes network name = \"my-serverless-network\" mtu = 1460 subnets = [ { subnet name = \"serverless-subnet\" subnet ip = \"10.10.10.0/28\" subnet region = \"us-central1\" } ] } module \"serverless-connector\" { source = \"terraform-google-modules/network/google//modules/vpc-serverless-connector-beta\" version = \" > 16.0\" project id = var.project id vpc connectors = [{ name = \"central-serverless\" region = \"us-central1\" subnet name = module.test-vpc-module.subnets[\"us-central1/serverless-subnet\"].name host project id = var.host project id # Specify a host project id for shared VPC machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } Uncomment to specify an ip cidr range , { name = \"central-serverless2\" region = \"us-central1\" network = module.test-vpc-module.network name ip cidr range = \"10.10.11.0/28\" subnet name = null machine type = \"e2-standard-4\" min instances = 2 max instances = 7 } ] depends on = [ google project service.vpcaccess-api ] } Configure your service to use a connector After you have created a Serverless VPC Access connector, you must configure each service in your App Engine app that you want to connect to your VPC network."
+        ]
+      },
+      {
+        "title": "Build configuration file schema \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/build/docs/build-config",
+        "source_id": "site-docs-root-2",
+        "final_score": 63,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following snippet specifies that the hash algorithm is SHA256 : YAML steps : - name : 'gcr.io/cloud-builders/docker' args : [ 'build' , '-t' , 'gcr.io/myproject/myimage' , '.' ] options : sourceProvenanceHash : [ 'SHA256' ] JSON { \"steps\" : [ { \"name\" : \"gcr.io/cloud-builders/docker\" , \"args\" : [ \"build\" , \"-t\" , \"gcr.io/myproject/myimage\" , \".\" ] } ], \"options\" : { \"sourceProvenanceHash\" : [ \"SHA256\" ] } } machineType : Cloud Build provides four high-CPU virtual machine types to run your builds: two machine types with 8 CPUs and two machine types with 32 CPUs.",
+          "Cloud Build also provides two additional virtual machine types with 1 CPU and 2 CPUs to run your builds.",
+          "A build config file has the following structure: YAML steps : - name : string args : [ string , string , ... ] env : [ string , string , ... ] allowFailure : boolean allowExitCodes : [ string (int64 format) , string (int64 format) , ... ] dir : string id : string waitFor : [ string , string , ... ] entrypoint : string secretEnv : string volumes : object(Volume) timeout : string (Duration format) script : string automapSubstitutions : boolean - name : string ... - name : string ... timeout : string (Duration format) queueTtl : string (Duration format) logsBucket : string options : env : [ string , string , ... ] secretEnv : string volumes : object(Volume) sourceProvenanceHash : enum(HashType) machineType : enum(MachineType) diskSizeGb : string (int64 format) substitutionOption : enum(SubstitutionOption) dynamicSubstitutions : boolean automapSubstitutions : boolean logStreamingOption : enum(LogStreamingOption) logging : enum(LoggingMode) defaultLogsBucketBehavior : enum(DefaultLogsBucketBehavior) pool : object(PoolOption) pubsubTopic : string requestedVerifyOption : enum(RequestedVerifyOption) substitutions: map (key : string, value : string) tags : [ string , string , ... ] serviceAccount : string secrets : object(Secret) availableSecrets : object(Secrets) artifacts : object(Artifacts) goModules : [ object(GoModules) , ... ] mavenArtifacts : [ object(MavenArtifact) , ... ] pythonPackages : [ object(PythonPackage) , ... ] npmPackages : [ object(npmPackage) , ... ] images : - [ string , string , ... ] JSON { \"steps\" : [ { \"name\" : \"string\" , \"args\" : [ \"string\" , \"string\" , \"...\" ], \"env\" : [ \"string\" , \"string\" , \"...\" ], \"allowFailure\" : \"boolean\" , \"allowExitCodes: [ \" s tr i n g (i nt 64 f orma t ) \", \" s tr i n g (i nt 64 f orma t ) \", \" ... \" ], \" dir \": \" s tr i n g \", \" id \": \" s tr i n g \", \" wai t For \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" e ntr ypoi nt \": \" s tr i n g \", \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" scrip t \" : \" s tr i n g \", \" au t omapSubs t i tut io ns \" : \" boolea n \" }, { \" na me \": \" s tr i n g \" ... }, { \" na me \": \" s tr i n g \" ... } ], \" t imeou t \": \" s tr i n g (Dura t io n f orma t ) \", \" queueT tl \": \" s tr i n g (Dura t io n f orma t ) \", \" logsBucke t \": \" s tr i n g \", \" op t io ns \": { \" sourceProve nan ceHash \": \" e nu m(HashType) \", \" machi ne Type \": \" e nu m(Machi ne Type) \", \" diskSizeGb \": \" s tr i n g (i nt 64 f orma t ) \", \" subs t i tut io n Op t io n \": \" e nu m(Subs t i tut io n Op t io n ) \", \" dy na micSubs t i tut io ns \": \" boolea n \", \" au t omapSubs t i tut io ns \": \" boolea n \", \" logS trea mi n gOp t io n \": \" e nu m(LogS trea mi n gOp t io n ) \", \" loggi n g \": \" e nu m(Loggi n gMode) \" \" de fault LogsBucke t Behavior \": \" e nu m(De fault LogsBucke t Behavior) \" \" e n v \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" secre t E n v \": \" s tr i n g \", \" volumes \": \" objec t (Volume) \", \" pool \": \" objec t (PoolOp t io n ) \" \" reques te dVeri f yOp t io n \": \" e nu m(Reques te dVeri f yOp t io n ) \" }, \" subs t i tut io ns \": \" map (key : s tr i n g , value : s tr i n g) \", \" ta gs \": [ \" s tr i n g \", \" s tr i n g \", \" ... \" ], \" serviceAccou nt \": \" s tr i n g \", \" secre ts \": \" objec t (Secre t ) \", \" availableSecre ts \": \" objec t (Secre ts ) \", \" ar t i fa c ts \": \" objec t (Ar t i fa c ts ) \", \" goModules \": [object(GoModules), ...], \" mave n Ar t i fa c ts \": [\" objec t (Mave n Ar t i fa c t ) \", ...], \" py t ho n Packages \": [\" objec t (Py t ho n Package) \", ...], \" n pmPackages \": [\" objec t ( n pmPackage) \", ...], \" images \": [ \" s tr i n g \", \" s tr i n g \", \" ...\" ] } Each of the sections of the build config file defines a part of the task you want Cloud Build to execute: Build steps A build step specifies an action that you want Cloud Build to perform."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clodubuild.proto",
+      "custom.allowlistNetworks",
+      "custom.defaultNetworkConstraint",
+      "gcr.io",
+      "module.network",
+      "module.subnets",
+      "module.test",
+      "proto.Message",
+      "resource.network",
+      "service.vpcaccess",
+      "setup.cfg",
+      "v2.CloudBuild",
+      "var.host",
+      "var.project",
+      "vpcaccess.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/cloudbuild/latest/changelog",
+        "https://docs.cloud.google.com/appengine/docs/standard/connecting-vpc",
+        "https://docs.cloud.google.com/build/docs/build-config"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.131Z",
+  "source_step08_card": "data/step-08/current/products/cloud-build/card.json",
+  "product_name": "Cloud Build",
+  "product_slug": "cloud-build"
+}

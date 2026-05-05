@@ -1,0 +1,152 @@
+{
+  "feature_name": "Pub/Sub streaming data sharing in BigQuery sharing",
+  "feature_slug": "pub-sub-streaming-data-sharing-in-bigquery-sharing",
+  "summary": "BigQuery sharing can share Pub/Sub streaming data with additional client library support and provider usage metrics.",
+  "extended_definition": "BigQuery sharing can share Pub/Sub streaming data with additional client library support and provider usage metrics.",
+  "lifecycle": {
+    "latest_feature_date": "2025-05-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Stream sharing with Pub/Sub \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "source_id": "site-docs-reference-5",
+        "final_score": 151,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Stream sharing with Pub/Sub You can share Pub/Sub topics through BigQuery sharing (formerly Analytics Hub) to curate and distribute a library of streaming data across multiple internal and external organizational boundaries.",
+          "Real-time streaming data is shared using BigQuery sharing exchanges and listings, which lets you logically categorize and group large sets of Pub/Sub topics and provision access at scale.",
+          "Pricing Pub/Sub topic publishers incur no additional charge to list and share topics through BigQuery sharing."
+        ]
+      },
+      {
+        "title": "Introduction to BigQuery sharing \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "source_id": "site-docs-reference-5",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "Shared topics A shared topic is a Pub/Sub topic , which is the unit of streaming data sharing in BigQuery .",
+          "BigQuery sharing supports the following Google Cloud resources: BigQuery datasets Pub/Sub topics Publisher workflow The following diagram describes how a publisher shares assets: The following sections describe the features in this workflow.",
+          "Introduction to BigQuery sharing BigQuery sharing (formerly Analytics Hub) is a data exchange platform that lets you share data and insights at scale across organizational boundaries with a robust security and privacy framework."
+        ]
+      },
+      {
+        "title": "Sharing audit logging \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging",
+        "source_id": "site-docs-reference-2",
+        "final_score": 112,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.GetDataExchange google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.GetIamPolicy google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.GetListing google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.GetSubscription google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListDataExchanges google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListListings google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListOrgDataExchanges google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListSharedResourceSubscriptions google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListSubscriptions google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.GetDataExchange google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.GetIamPolicy google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.GetListing google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.ListDataExchanges google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.ListListings google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.ListOrgDataExchanges google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.SubscribeListing ADMIN WRITE google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.CreateDataExchange google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.CreateListing google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.DeleteDataExchange google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.DeleteListing google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.DeleteSubscription (LRO) google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.RefreshSubscription (LRO) google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.RevokeSubscription google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.SetIamPolicy google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.SubscribeDataExchange (LRO) google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.SubscribeListing google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.UpdateDataExchange google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.UpdateListing google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.CreateDataExchange google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.CreateListing google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.DeleteDataExchange google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.DeleteListing google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.SetIamPolicy google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.UpdateDataExchange google.cloud.bigquery.dataexchange.v1beta1.AnalyticsHubService.UpdateListing API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for BigQuery sharing. google.cloud.bigquery.analyticshub.v1.AnalyticsHubService The following audit logs are associated with methods belonging to google.cloud.bigquery.analyticshub.v1.AnalyticsHubService .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListOrgDataExchanges\" ListSharedResourceSubscriptions Method : google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListSharedResourceSubscriptions Audit log type : Data access Permissions : analyticshub.listings.viewSubscriptions - ADMIN READ Method is a long-running or streaming operation : No.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListSharedResourceSubscriptions\" ListSubscriptions Method : google.cloud.bigquery.analyticshub.v1.AnalyticsHubService.ListSubscriptions Audit log type : Data access Permissions : analyticshub.subscriptions.list - ADMIN READ Method is a long-running or streaming operation : No."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.dataExchanges.update",
+      "analyticshub.listings.update",
+      "analyticshub.listings.viewSubscriptions",
+      "analyticshub.subscriptions.list",
+      "analyticshub.subscriptions.update"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-stream-sharing",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-introduction",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-audit-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

@@ -1,0 +1,167 @@
+{
+  "feature_name": "compute_hmac function",
+  "feature_slug": "compute-hmac-function",
+  "summary": "This standard library function computes HMAC values using common hashing algorithms.",
+  "extended_definition": "This standard library function computes HMAC values using common hashing algorithms.",
+  "lifecycle": {
+    "latest_feature_date": "2024-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/workflows/docs/best-practice",
+      "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+      "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Standard library overview \\_|\\_ Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 167,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Functions compute checksum Computes checksum using a given hashing algorithm. compute hmac Computes the hash-based message authentication code (HMAC) for data given a secret key and hashing algorithm.",
+          "Functions in() Checks whether a given key is present in a list or map. keys() Accepts an attribute of type map and returns a list of key elements in the map. len() Computes the length of value according to its type.",
+          "Home Documentation Application development Workflows Reference Send feedback Standard library overview Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "Best practices for Workflows \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "source_id": "site-api-reference-required-2",
+        "final_score": 84,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "For example, the following counts as one step: - type check : return : if(get type((int(\"6\"))) == integer, 1, 2) Key operations that count and don't count toward the maximum steps limit are categorized in the following table: Category Operation Counts as a step Data operations: Assigning, returning values Controlling flow: Jumps ( next ), switches, starting a for loop, and each iteration of a for loop Calls: Invoking sys.get env or other standard library function, another workflow, or a connector Concurrency: Spawning threads and parallel execution Error handling: Each raise , try , retry , and except block counts as a separate step, even if other operations are part of the same larger step.",
+          "However, you should create services to do any work that is too complex for Workflows; for example, implementing reusable business logic, complex computations, or transformations that are not supported by Workflows expressions and its standard library .",
+          "General tips Avoid hardcoding URLs Use nested steps Wrap expressions Use declarative calls Store only what you need Use subworkflows and external workflows Best practices Use Workflows connectors Run workflow steps in parallel Apply retries and the saga pattern Use callbacks to wait Orchestrate long-running jobs Containerize long-running tasks Run command-line tools from Workflows Use Terraform to create your workflow Deploy a workflow from a Git repository Optimize usage What's next Security best practices Debugging overview Troubleshoot issues Known issues for Workflows Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Pause and resume a workflow using callbacks and Google Sheets \\_|\\_ Workflows\\",
+        "url": "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 74,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Click Deploy . gcloud Create a source code file for your workflow: touch workflows-awaits-callback-sheets.yaml In a text editor, copy the following workflow to your source code file: main : steps : - init : assign : Replace with your sheetId and make sure the service account for the workflow has write permissions to the sheet - sheetId : \"10hieAH6b-oMeIVT AerSLNxQck14IGhgi8ign-x2x8g\" - before sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here before waiting for callback from sheets\"} - wait for sheets callback : call : await callback sheets args : sheetId : ${sheetId} result : await callback result - after sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here after receiving callback from sheets\"} - returnResult : return : ${await callback result} await callback sheets : params : [ sheetId ] steps : - init : assign : - project id : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : ${sys.get env(\"GOOGLE CLOUD LOCATION\")} - workflow id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW ID\")} - execution id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW EXECUTION ID\")} - create callback : call : events.create callback endpoint args : http callback method : POST result : callback details - save callback to sheets : call : googleapis.sheets.v4.spreadsheets.values.append args : range : ${\"Sheet1!A1:G1\"} spreadsheetId : ${sheetId} valueInputOption : RAW body : majorDimension : \"ROWS\" values : - [ \"${project id}\" , \"${location}\" , \"${workflow id}\" , \"${execution id}\" , \"${callback details.url}\" , \"\" , \"FALSE\" ] - log and await callback : try : steps : - log await start : call : sys.log args : severity : INFO data : ${\"Started waiting for callback from sheet \" + sheetId} - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - log await stop : call : sys.log args : severity : INFO data : ${\"Stopped waiting for callback from sheet \" + sheetId} except : as : e steps : - log error : call : sys.log args : severity : \"ERROR\" text : ${\"Received error \" + e.message} - check null await result : switch : - condition : ${callback request == null} return : null - log await result : call : sys.log args : severity : INFO data : ${\"Approved by \" + callback request.http request.body.approver} - return await result : return : ${callback request.http request.body} Make sure to replace the placeholder sheetId value with your spreadsheetId .",
+          "In the workflow editor, enter the following definition for your workflow: main : steps : - init : assign : Replace with your sheetId and make sure the service account for the workflow has write permissions to the sheet - sheetId : \"10hieAH6b-oMeIVT AerSLNxQck14IGhgi8ign-x2x8g\" - before sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here before waiting for callback from sheets\"} - wait for sheets callback : call : await callback sheets args : sheetId : ${sheetId} result : await callback result - after sheets callback : call : sys.log args : severity : INFO data : ${\"Execute steps here after receiving callback from sheets\"} - returnResult : return : ${await callback result} await callback sheets : params : [ sheetId ] steps : - init : assign : - project id : ${sys.get env(\"GOOGLE CLOUD PROJECT ID\")} - location : ${sys.get env(\"GOOGLE CLOUD LOCATION\")} - workflow id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW ID\")} - execution id : ${sys.get env(\"GOOGLE CLOUD WORKFLOW EXECUTION ID\")} - create callback : call : events.create callback endpoint args : http callback method : POST result : callback details - save callback to sheets : call : googleapis.sheets.v4.spreadsheets.values.append args : range : ${\"Sheet1!A1:G1\"} spreadsheetId : ${sheetId} valueInputOption : RAW body : majorDimension : \"ROWS\" values : - [ \"${project id}\" , \"${location}\" , \"${workflow id}\" , \"${execution id}\" , \"${callback details.url}\" , \"\" , \"FALSE\" ] - log and await callback : try : steps : - log await start : call : sys.log args : severity : INFO data : ${\"Started waiting for callback from sheet \" + sheetId} - await callback : call : events.await callback args : callback : ${callback details} timeout : 3600 result : callback request - log await stop : call : sys.log args : severity : INFO data : ${\"Stopped waiting for callback from sheet \" + sheetId} except : as : e steps : - log error : call : sys.log args : severity : \"ERROR\" text : ${\"Received error \" + e.message} - check null await result : switch : - condition : ${callback request == null} return : null - log await result : call : sys.log args : severity : INFO data : ${\"Approved by \" + callback request.http request.body.approver} - return await result : return : ${callback request.http request.body} Make sure to replace the placeholder sheetId value with your spreadsheetId .",
+          "New projects that have enabled the Compute Engine API have this service account created with the IAM basic Editor role, and with the following email format: PROJECT NUMBER -compute@developer.gserviceaccount.com You can retrieve your project number: gcloud projects describe PROJECT ID For production environments, we strongly recommend creating a new service account and granting it one or more IAM roles that contain the minimum permissions required and follow the principle of least privilege ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.workflows.executions.v1.Execution",
+      "details.url",
+      "developer.gserviceaccount.com",
+      "e.message",
+      "each.key",
+      "events.await",
+      "events.create",
+      "googleapis.sheets.v4.spreadsheets.values.append",
+      "local.env",
+      "path.module",
+      "request.body",
+      "request.body.approver",
+      "request.http",
+      "sheets.yaml",
+      "sys.get",
+      "sys.log",
+      "var.project",
+      "var.url1",
+      "var.url2",
+      "workflow.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/workflows/docs/reference/stdlib/overview",
+        "https://docs.cloud.google.com/workflows/docs/best-practice",
+        "https://docs.cloud.google.com/workflows/docs/tutorials/workflow-waits-callback-sheets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:58.114Z",
+  "source_step08_card": "data/step-08/current/products/workflows/card.json",
+  "product_name": "Workflows",
+  "product_slug": "workflows"
+}

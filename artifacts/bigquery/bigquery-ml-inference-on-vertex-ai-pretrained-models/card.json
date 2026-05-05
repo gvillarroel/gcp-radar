@@ -1,0 +1,98 @@
+{
+  "feature_name": "BigQuery ML inference on Vertex AI pretrained models",
+  "feature_slug": "bigquery-ml-inference-on-vertex-ai-pretrained-models",
+  "summary": "BigQuery ML functions can run inference on Vertex AI pretrained models for natural language processing, translation, and computer vision tasks.",
+  "extended_definition": "BigQuery ML functions can run inference on Vertex AI pretrained models for natural language processing, translation, and computer vision tasks.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-24",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+      "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Make predictions with remote models on Vertex AI \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 132,
+        "relevance": "",
+        "evidence_snippets": [
+          "Import the model to the Vertex AI Model Registry In this tutorial you use a pretrained TensorFlow model that is available in Cloud Storage at gs://cloud-samples-data/bigquery/ml/remote model tutorial/ .",
+          "Home Documentation Data analytics BigQuery Guides Send feedback Make predictions with remote models on Vertex AI Stay organized with collections Save and categorize content based on your preferences.",
+          "In the Connection type list, select Vertex AI remote models, remote functions and BigLake (Cloud Resource) ."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a classification model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.",
+          "In the Connection type list, select Vertex AI remote models, remote functions, BigLake and Spanner (Cloud Resource) .",
+          "Click the Vertex AI Models: BigQuery Federation solution card."
+        ]
+      },
+      {
+        "title": "\"Tutorial: Run inference on an object table by using a feature vector model\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet",
+        "source_id": "site-docs-reference-2",
+        "final_score": 129,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To load the model into BigQuery ML, you need the following permissions: bigquery.jobs.create bigquery.models.create bigquery.models.getData bigquery.models.updateData To run inference, you need the following permissions: bigquery.tables.getData on the object table bigquery.models.getData on the model bigquery.jobs.create Costs In this document, you use the following billable components of Google Cloud: BigQuery : You incur storage costs for the object table you create in BigQuery.",
+          "In the Connection type list, select Vertex AI remote models, remote functions, BigLake and Spanner (Cloud Resource) .",
+          "Click the Vertex AI Models: BigQuery Federation solution card."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "bigquery.jobs.create",
+      "bigquery.models.create",
+      "bigquery.models.getData",
+      "bigquery.models.updateData",
+      "bigquery.tables.getData",
+      "test.sample",
+      "us.lake"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-resnet",
+        "https://docs.cloud.google.com/bigquery/docs/bigquery-ml-remote-model-tutorial",
+        "https://docs.cloud.google.com/bigquery/docs/inference-tutorial-mobilenet"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

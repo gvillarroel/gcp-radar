@@ -1,0 +1,49 @@
+# OS Login API username format control
+
+Product: Compute Engine
+Feature slug: `os-login-api-username-format-control`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+OS Login API username format control lets administrators choose whether generated usernames include the domain suffix.
+
+## Lifecycle
+
+- Latest feature date: 2020-02-07
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- access (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- allow (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- audit (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- auth (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- certificate (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- confidential (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- constraint (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- credential (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- encrypt (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- iam (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- identity (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- key (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- kms (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- logging (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- permission (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- policy (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- private (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- role (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- secret (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+- security (evidence: [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines), [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker), [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/compute/docs/access](https://docs.cloud.google.com/compute/docs/access)
+- [https://docs.cloud.google.com/compute/docs/general-purpose-machines](https://docs.cloud.google.com/compute/docs/general-purpose-machines)
+- [https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker](https://docs.cloud.google.com/compute/docs/tutorials/high-availability-linux-pacemaker)

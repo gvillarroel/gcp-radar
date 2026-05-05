@@ -1,0 +1,266 @@
+{
+  "feature_name": "Organization Policy custom constraints for networksecurity and networkservices resources",
+  "feature_slug": "organization-policy-custom-constraints-for-networksecurity-and-networkservices-resources",
+  "summary": "Custom constraints can be used with Organization Policy to control specific fields in some networksecurity and networkservices resources; Custom constraints can be used with Organization Policy to control specific fields in some networksecurity and networkservices resources.",
+  "extended_definition": "Custom constraints can be used with Organization Policy to control specific fields in some networksecurity and networkservices resources; Custom constraints can be used with Organization Policy to control specific fields in some networksecurity and networkservices resources.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+      "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+      "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Provision a managed Cloud Service Mesh control plane on GKE \\_|\\_ Cloud\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "For example, the following configuration customizes a variety of settings, including lowering the CPU requests, adding a volume mount, and adding a preStop hook: apiVersion : v1 kind : Pod metadata : name : example spec : containers : - name : hello image : alpine - name : istio-proxy image : auto resources : requests : cpu : \"200m\" memory : \"256Mi\" limits : cpu : \"200m\" memory : \"256Mi\" volumeMounts : - mountPath : /etc/certs name : certs lifecycle : preStop : exec : command : [ \"sleep\" , \"10\" ] volumes : - name : certs secret : secretName : istio-certs In general, any field in a pod can be set.",
+          "Yes Warning: Disabling connectgateway.googleapis.com , trafficdirector.googleapis.com , networkservices.googleapis.com , and/or networksecurity.googleapis.com causes managed Cloud Service Mesh control plane to stop working.",
+          "Customize injection (optional) You can override default values and customize injection settings but this can lead to unforeseen configuration errors and resulting issues with sidecar containers."
+        ]
+      },
+      {
+        "title": "\"Automate TLS certificate management for Cloud Service Mesh ingress gateway\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In Cloud Shell, delete the project: gcloud projects delete PROJECT ID Delete the resources If you want to keep the Google Cloud project you used in this tutorial, delete the individual resources: In Cloud Shell, unregister the GKE cluster from GKE Hub: gcloud container hub memberships unregister CLUSTER NAME \\ -- gke - cluster ZONE / CLUSTER NAME Delete the GKE cluster: gcloud container clusters delete CLUSTER NAME \\ --zone ZONE --async --quiet Delete the IAM policy bindings on the subordinate CA pool: gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \\ --location CA LOCATION \\ --member \"serviceAccount: CAS ISSUER GSA @ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/privateca.certificateRequester gcloud privateca pools remove - iam - policy - binding SUBORDINATE CA POOL GATEWAYS \\ --location CA LOCATION \\ --member \"serviceAccount: CLIENT VM GSA @ PROJECT ID .iam.gserviceaccount.com\" \\ --role roles/privateca.certificateRequester Disable and schedule deletion of the subordinate CAs and the root CA: gcloud privateca subordinates disable SUBORDINATE CA GATEWAYS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL GATEWAYS \\ --quiet gcloud privateca subordinates delete SUBORDINATE CA GATEWAYS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL GATEWAYS \\ --ignore-active-certificates \\ --quiet gcloud privateca subordinates disable SUBORDINATE CA SIDECARS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL SIDECARS \\ --quiet gcloud privateca subordinates delete SUBORDINATE CA SIDECARS \\ --location CA LOCATION \\ --pool SUBORDINATE CA POOL SIDECARS \\ --ignore-active-certificates \\ --quiet gcloud privateca roots disable ROOT CA \\ --location CA LOCATION \\ --pool ROOT CA POOL \\ --quiet gcloud privateca roots delete ROOT CA \\ --location CA LOCATION \\ --pool ROOT CA POOL \\ --ignore-active-certificates \\ --quiet Delete the IAM policy binding for the CA Service issuer controller Google service account: gcloud iam service - accounts remove - iam - policy - binding \\ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com \\ -- member \"serviceAccount: PROJECT ID .svc.id.goog[cert-manager/ksa-google-cas-issuer]\" \\ -- role roles / iam . workloadIdentityUser Delete the Google service accounts: gcloud iam service - accounts delete --quiet \\ CAS ISSUER GSA @ PROJECT ID . iam.gserviceaccount.com gcloud iam service - accounts delete --quiet \\ CLIENT VM GSA @ PROJECT ID . iam.gserviceaccount.com Delete the reserved load balancer IP address: gcloud compute addresses delete asm - ingress - gateway - ilb \\ -- region REGION -- quiet Delete the Compute Engine VM instance: gcloud compute instances delete cas-tutorial-client \\ --zone ZONE --quiet What's next Explore other Certificate Authority Service how-to guides .",
+          "Install the ca-certificates and coreutils packages, and the curl , openssl , and jq command-line tools: sudo apt-get update --yes sudo apt-get install --yes ca-certificates coreutils curl jq openssl Create a key pair for the client TLS certificate: openssl genrsa -out private-key.pem 2048 openssl rsa -in private-key.pem -pubout -out public-key.pem Query the metadata server to get the email address of the Google service account identity attached to the VM instance: GSA EMAIL=$(curl --silent --header \"Metadata-Flavor: Google\" http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email) Create a JSON file that you use as the request body when requesting a client TLS certificate from the Certificate Authority Service API : cat << EOF > request.json { \"config\": { \"publicKey\": { \"format\": \"PEM\", \"key\": \"$(base64 --wrap 0 public-key.pem)\" }, \"subjectConfig\": { \"subject\": { \"commonName\": \"$(hostname --short)\", \"organization\": \"Example Organization\" }, \"subjectAltName\": { \"dnsNames\": [ \"$(hostname --fqdn)\" ], \"emailAddresses\": [ \"$GSA EMAIL\" ] } }, \"x509Config\": { \"caOptions\": { \"isCa\": false }, \"keyUsage\": { \"baseKeyUsage\": { \"digitalSignature\": true, \"keyEncipherment\": true }, \"extendedKeyUsage\": { \"clientAuth\": true } } } }, \"lifetime\": \"86400s\" } EOF To learn more about the fields in the config section, see the CertificateConfig type in the CA Service API documentation.",
+          "Create a certificate issuance policy : cat << EOF > policy . yaml baselineValues : keyUsage : baseKeyUsage : digitalSignature : true keyEncipherment : true extendedKeyUsage : serverAuth : true clientAuth : true caOptions : isCa : false identityConstraints : allowSubjectPassthrough : false allowSubjectAltNamesPassthrough : true celExpression : expression : subject alt names . all ( san , san . type == URI && san . value . startsWith ( \"spiffe:// PROJECT ID .svc.id.goog/ns/\" ) ) EOF This issuance policy constrains CAs to only issue certificates for workloads in the mesh."
+        ]
+      },
+      {
+        "title": "\"Install Cloud Service Mesh for Kubernetes workloads off Google Cloud \\_\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "source_id": "site-docs-reference",
+        "final_score": 142,
+        "relevance": "",
+        "evidence_snippets": [
+          "If it is meant to only service certificates for Cloud Service Mesh workloads, set up the following issuance policy for the CA pool: policy.yaml baselineValues: keyUsage: baseKeyUsage: digitalSignature: true keyEncipherment: true extendedKeyUsage: serverAuth: true clientAuth: true caOptions: isCa: false identityConstraints: allowSubjectPassthrough: false allowSubjectAltNamesPassthrough: true celExpression: expression: subject alt names.all(san, san.type == URI && san.value.startsWith(\"spiffe:// PROJECT ID .svc.id.goog/ns/\") ) Note: As a best practice for multi-cluster meshes, set one subordinate CA pool per unique cluster region.",
+          "To add multiple files, specify --custom overlay and the filename, for example: --custom overlayoverlay file1.yaml --custom overlay overlay file2.yaml --custom overlay overlay file3.yaml ./asmcli install \\ --fleet id FLEET PROJECT ID \\ --kubeconfig KUBECONFIG FILE \\ --output dir DIR PATH \\ --platform multicloud \\ --enable all \\ --ca mesh ca \\ --custom overlay OVERLAY FILE --fleet id The project ID of the fleet host project . --kubeconfig The full path to the kubeconfig file .",
+          "To update the CA pool's issuance policy, use the following command: gcloud privateca pools update CA POOL --location ca region --issuance-policy policy.yaml For information on setting a policy on a pool, see Using a certificate issuance policy ."
+        ]
+      },
+      {
+        "title": "\"Resolving managed Cloud Service Mesh issues \\_|\\_ Cloud Service Mesh v1.21\\",
+        "url": "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh",
+        "source_id": "site-iam-reference",
+        "final_score": 134,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Google Cloud CLI In the Google Cloud CLI, run the following command to check if the required IAM role has been granted: gcloud projects get-iam-policy PROJECT ID \\ --flatten = \"bindings[].members\" \\ --filter = \"bindings.members:serviceAccount:service- PROJECT NUMBER @gcp-sa-servicemesh.iam.gserviceaccount.com AND bindings.role:roles/anthosservicemesh.serviceAgent\" \\ --format = 'table(bindings.role)' Review the ROLE list.",
+          "For instructions, see Manage access to projects, folders, and organizations .",
+          "NodePool Workload Identity Federation for GKE is disabled The following command displays the state of managed Cloud Service Mesh: gcloud container fleet mesh describe You may see the NODEPOOL WORKLOAD IDENTITY FEDERATION REQUIRED error code in the Conditions field of your membership: membershipStates: projects/test-project/locations/us-central1/memberships/my-membership: servicemesh: conditions: - code: NODEPOOL WORKLOAD IDENTITY FEDERATION REQUIRED details: One or more node pools have workload identity federation disabled. documentationLink: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity severity: ERROR controlPlaneManagement: details: - code: REVISION FAILED PRECONDITION details: Required in -cluster components are not ready."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "anthosservicemesh.serviceAgent",
+      "bindings.members",
+      "bindings.role",
+      "connectgateway.googleapis.com",
+      "file1.yaml",
+      "file2.yaml",
+      "file3.yaml",
+      "iam.gserviceaccount.com",
+      "injector.istio.io",
+      "install.istio.io",
+      "key.pem",
+      "lb.yaml",
+      "metadata.google.internal",
+      "names.all",
+      "networksecurity.googleapis.com",
+      "networkservices.googleapis.com",
+      "policy.yaml",
+      "privateca.certificateRequester",
+      "request.json",
+      "resource.labels.location",
+      "resource.labels.project",
+      "resource.type",
+      "rev.namespace.sidecar",
+      "san.type",
+      "san.value.startsWith",
+      "service.beta.kubernetes.io",
+      "servicemesh.iam.gserviceaccount.com",
+      "svc.id.goog",
+      "trafficdirector.googleapis.com",
+      "v1.20",
+      "v1.21",
+      "v1.26"
+    ],
+    "missing_inventory_roles": [
+      "roles/anthosservicemesh.serviceAgent",
+      "roles/privateca.certificateRequester"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/provision-control-plane",
+        "https://docs.cloud.google.com/service-mesh/v1.20/docs/automate-tls",
+        "https://docs.cloud.google.com/service-mesh/v1.26/docs/onboarding/kubernetes-off-gcp/install/install-in-cluster-cloud-service-mesh",
+        "https://docs.cloud.google.com/service-mesh/v1.21/docs/troubleshooting/troubleshoot-managed-service-mesh"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:44.616Z",
+  "source_step08_card": "data/step-08/current/products/managed-cloud-service-mesh/card.json",
+  "product_name": "Managed Cloud Service Mesh",
+  "product_slug": "managed-cloud-service-mesh"
+}

@@ -1,0 +1,134 @@
+{
+  "feature_name": "Organization policy for final backup settings",
+  "feature_slug": "organization-policy-for-final-backup-settings",
+  "summary": "Organization policy for final backup settings lets administrators define final backup behavior with a custom organization policy.",
+  "extended_definition": "Organization policy for final backup settings lets administrators define final backup behavior with a custom organization policy.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "source_id": "site-docs-root",
+        "final_score": 223,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you create a new instance with the final backup instance setting enabled, then you must update the final backup organization policy to apply the backup configurations to the primary instance only.",
+          "If you leave the field empty, then Cloud SQL takes the final backup configuration set in instance settings to take a final backup and define its retention.",
+          "The rolling period is defined based on the retention settings of the instance prior to deletion, which can range from 1 day to 10 years, depending on your instance's selected backup option ."
+        ]
+      },
+      {
+        "title": "\"Choose your backup option \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "source_id": "site-iam-reference",
+        "final_score": 221,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Unlike enhanced backups, where backup settings are defined by a backup plan, backup configurations for standard backups are set at the instance level and defined in the instance's settings.",
+          "Therefore, if you have multiple Cloud SQL instances, then you'll need to define the backup configurations for each instance separately in the instance's backup settings.",
+          "The following table provides an overview of the key features available with each backup option: Features Standard backups Enhanced backups Centralized backup management across projects - ✔ Backup vault - ✔ Automated backup schedule Daily Hourly, daily, weekly, monthly, yearly On-demand backups ✔ ✔ Multi-region backups ✔ ✔ Final backup in instance deletion ✔ ✔ Backup retention period 1 year 10 years Retain all backups on instance deletion ✔ ✔ Retain backups on project deletion - ✔ Enforced retention with retention lock - ✔ Point-in-time recovery using logs ✔ ✔ Point-in-time recovery after instance deletion ✔ ✔ Cross-region backup and restore ✔ - CMEK support ✔ - For detailed information about these backup options, see Standard backups and Enhanced backups ."
+        ]
+      },
+      {
+        "title": "\"Manage standard backups \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups",
+        "source_id": "site-iam-reference",
+        "final_score": 165,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta To update the final backup retention days setting, do the following: Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID RETENTION DAYS : the number of days to retain final backups HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"FinalBackupConfig\": { \"retentionDays: RETENTION DAYS } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta To enable final backups, do the following: Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID RETENTION DAYS : the number of days to retain final backups HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"FinalBackupConfig\": { \"enabled\": true, \"retentionDays: RETENTION DAYS } } } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /instances/ INSTANCE ID \", \"status\": \"PENDING\", \"user\": \"user@example.com\", \"insertTime\": \"2020-01-16T02:32:12.281Z\", \"operationType\": \"UPDATE\", \"name\": \" OPERATION ID \", \"targetId\": \" INSTANCE ID \", \"selfLink\": \"https://sqladmin.googleapis.com/sql/v1/projects/ PROJECT ID /operations/ OPERATION ID \", \"targetProject\": \" PROJECT ID \" } REST v1beta To disable final backups, do the following: Before using any of the request data, make the following replacements: PROJECT ID : the project ID INSTANCE ID : the instance ID HTTP method and URL: PATCH https://sqladmin.googleapis.com/sql/v1beta4/projects/ PROJECT ID /instances/ INSTANCE ID Request JSON body: { \"settings\": { \"FinalBackupConfig\": { \"enabled\": false } }s } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/backup-options",
+        "https://docs.cloud.google.com/sql/docs/postgres/backup-recovery/manage-standard-backups"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

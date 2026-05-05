@@ -1,0 +1,100 @@
+{
+  "feature_name": "Vertex AI Search Enterprise Search snippet status in results",
+  "feature_slug": "vertex-ai-search-enterprise-search-snippet-status-in-results",
+  "summary": "Enterprise Search now returns snippet status together with the snippet in search responses.",
+  "extended_definition": "Enterprise Search now returns snippet status together with the snippet in search responses.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-29",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+      "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a search data store \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "source_id": "site-docs-root",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "FieldMask ; public class SyncImportDocuments { public static void main ( String [] args ) throws Exception { syncImportDocuments (); } public static void syncImportDocuments () throws Exception { // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( DocumentServiceClient documentServiceClient = DocumentServiceClient . create ()) { ImportDocumentsRequest request = ImportDocumentsRequest . newBuilder () . setParent ( BranchName . ofProjectLocationDataStoreBranchName ( \"[PROJECT]\" , \"[LOCATION]\" , \"[DATA STORE]\" , \"[BRANCH]\" ) . toString ()) . setErrorConfig ( ImportErrorConfig . newBuilder (). build ()) . setUpdateMask ( FieldMask . newBuilder (). build ()) . setAutoGenerateIds ( true ) . setIdField ( \"idField1629396127\" ) . setForceRefreshContent ( true ) . build (); ImportDocumentsResponse response = documentServiceClient . importDocumentsAsync ( request ). get (); } } } Node.js For more information, see the Vertex AI Search Node.js API reference documentation .",
+          "If set to true, the content part of the documents will be refreshed regardless of the update status of the referencing content. / // const forceRefreshContent = true // Imports the Discoveryengine library const { DocumentServiceClient } = require ( ' @google-cloud/discoveryengine ' ). v1 ; // Instantiates a client const discoveryengineClient = new DocumentServiceClient (); async function callImportDocuments () { // Construct request const request = { parent , }; // Run request const [ operation ] = await discoveryengineClient . importDocuments ( request ); const [ response ] = await operation . promise (); console . log ( response ); } callImportDocuments (); Python For more information, see the Vertex AI Search Python API reference documentation ."
+        ]
+      },
+      {
+        "title": "Get answers and follow-ups \\_|\\_ Vertex AI Search \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "source_id": "site-docs-reference",
+        "final_score": 118,
+        "relevance": "",
+        "evidence_snippets": [
+          "They can replicate data from Spanner into BigQuery and perform analytics against local data, or they can use federated queries to retrieve data from Spanner on-demand.\\n\", \"steps\": [ { \"state\": \"SUCCEEDED\", \"description\": \"Rephrase the query and search.\", \"actions\": [ { \"searchAction\": { \"query\": \"Compare bigquery with spanner database?\" }, \"observation\": { \"searchResults\": [ { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/ecc0e7547253f4ca3ff3328ce89995af\", \"uri\": \"https://cloud.google.com/blog/topics/developers-practitioners/how-spanner-and-bigquery-work-together-handle-transactional-and-analytical-workloads\", \"title\": \"How Spanner and BigQuery work together to handle transactional and analytical workloads Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"Using Cloud \\u003cb\\u003eSpanner\\u003c/b\\u003e and \\u003cb\\u003eBigQuery\\u003c/b\\u003e also allows customers to build their \\u003cb\\u003edata\\u003c/b\\u003e clouds using Google Cloud, a unified, open approach to \\u003cb\\u003edata\\u003c/b\\u003e-driven transformation ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d7e238f73608a860e00b752ef80e2941\", \"uri\": \"https://cloud.google.com/blog/products/databases/cloud-spanner-gets-stronger-with-bigquery-federated-queries\", \"title\": \"Cloud Spanner gets stronger with BigQuery-federated queries Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"As enterprises compete for market share, their need for real-time insights has given rise to increased demand for transactional \\u003cb\\u003edatabases\\u003c/b\\u003e to support \\u003cb\\u003edata\\u003c/b\\u003e ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/e10a5a3c267dc61579e7c00fefe656eb\", \"uri\": \"https://cloud.google.com/blog/topics/developers-practitioners/replicating-cloud-spanner-bigquery-scale\", \"title\": \"Replicating from Cloud Spanner to BigQuery at scale Google Cloud Blog\", \"snippetInfo\": [ { \"snippet\": \"... \\u003cb\\u003eSpanner data\\u003c/b\\u003e into \\u003cb\\u003eBigQuery\\u003c/b\\u003e for analytics.",
+          "Users can leverage federated queries to read data from Spanner and write to a native BigQuery table. \\n\" , \"steps\" : [ { \"state\" : \"SUCCEEDED\" , \"description\" : \"Rephrase the query and search.\" , \"actions\" : [ { \"searchAction\" : { \"query\" : \"Compare bigquery with spanner database?\" } , \"observation\" : { \"searchResults\" : [ { \"document\" : \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/ecc0e7547253f4ca3ff3328ce89995af\" , \"uri\" : \"https://cloud.google.com/blog/topics/developers-practitioners/how-spanner-and-bigquery-work-together-handle-transactional-and-analytical-workloads\" , \"title\" : \"How Spanner and BigQuery work together to handle transactional and analytical workloads Google Cloud Blog\" , \"snippetInfo\" : [ { \"snippet\" : \"Using Cloud \\u003cb\\u003eSpanner\\u003c/b\\u003e and \\u003cb\\u003eBigQuery\\u003c/b\\u003e also allows customers to build their \\u003cb\\u003edata\\u003c/b\\u003e clouds using Google Cloud, a unified, open approach to \\u003cb\\u003edata\\u003c/b\\u003e-driven transformation ...\" , \"snippetStatus\" : \"SUCCESS\" } ] } , { \"document\" : \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/d7e238f73608a860e00b752ef80e2941\" , \"uri\" : \"https://cloud.google.com/blog/products/databases/cloud-spanner-gets-stronger-with-bigquery-federated-queries\" , \"title\" : \"Cloud Spanner gets stronger with BigQuery-federated queries Google Cloud Blog\" , \"snippetInfo\" : [ { \"snippet\" : \"As enterprises compete for market share, their need for real-time insights has given rise to increased demand for transactional \\u003cb\\u003edatabases\\u003c/b\\u003e to support \\u003cb\\u003edata\\u003c/b\\u003e ...\" , \"snippetStatus\" : \"SUCCESS\" } ] } , { \"document\" : \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/e10a5a3c267dc61579e7c00fefe656eb\" , \"uri\" : \"https://cloud.google.com/blog/topics/developers-practitioners/replicating-cloud-spanner-bigquery-scale\" , \"title\" : \"Replicating from Cloud Spanner to BigQuery at scale Google Cloud Blog\" , \"snippetInfo\" : [ { \"snippet\" : \"... \\u003cb\\u003eSpanner data\\u003c/b\\u003e into \\u003cb\\u003eBigQuery\\u003c/b\\u003e for analytics.",
+          "BigQuery is really good at working with lots of data, even billions of pieces of information. \\n\", \"steps \": [ { \"state\": \"SUCCEEDED\", \"description\": \"Rephrase the query and search.\", \"actions\": [ { \"searchAction\": { \"query\": \"What is BigQuery?\" }, \"observation\": { \"searchResults\": [ { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/2d032dc582689e8c0ecea7fc7bfa3189\", \"uri\": \"https://cloud.google.com/bigquery\", \"title\": \"BigQuery enterprise data warehouse Google Cloud\", \"snippetInfo\": [ { \"snippet\": \"\\u003cb\\u003eBigQuery\\u003c/b\\u003e is a fully managed, AI-ready data analytics platform that helps you maximize value from your data and is designed to be multi-engine, multi-format, ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/4474f4a5a18ecd611dedfe323dfe55d9\", \"uri\": \"https://cloud.google.com/bigquery/docs/introduction\", \"title\": \"BigQuery overview Google Cloud\", \"snippetInfo\": [ { \"snippet\": \"\\u003cb\\u003eBigQuery\\u003c/b\\u003e is a fully managed, AI-ready data platform that helps you manage and analyze your data with built-in features like machine learning, search, ...\", \"snippetStatus\": \"SUCCESS\" } ] }, { \"document\": \"projects/123456/locations/global/collections/default collection/dataStores/my-data-store/branches/0/documents/c840fdef90d86328f13bbedbdbf0ac10\", \"uri\": \"https://cloud.google.com/bigquery/docs/query-overview\", \"title\": \"Overview of BigQuery analytics Google Cloud\", \"snippetInfo\": [ { \"snippet\": \"\\u003cb\\u003eBigQuery\\u003c/b\\u003e lets you save queries and share queries with others."
+        ]
+      },
+      {
+        "title": "\"MCP Tools Reference: discoveryengine.googleapis.com \\_|\\_ Vertex AI Search\\",
+        "url": "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search",
+        "source_id": "site-docs-reference-2",
+        "final_score": 104,
+        "relevance": "",
+        "evidence_snippets": [
+          "SearchResponse JSON representation { \"results\" : [ { object ( SearchResult ) } ] , \"facets\" : [ { object ( Facet ) } ] , \"guidedSearchResult\" : { object ( GuidedSearchResult ) } , \"totalSize\" : integer , \"attributionToken\" : string , \"redirectUri\" : string , \"nextPageToken\" : string , \"correctedQuery\" : string , \"suggestedQuery\" : string , \"summary\" : { object ( Summary ) } , \"appliedControls\" : [ string ] , \"geoSearchDebugInfo\" : [ { object ( GeoSearchDebugInfo ) } ] , \"queryExpansionInfo\" : { object ( QueryExpansionInfo ) } , \"naturalLanguageQueryUnderstandingInfo\" : { object ( NaturalLanguageQueryUnderstandingInfo ) } , \"sessionInfo\" : { object ( SessionInfo ) } , \"oneBoxResults\" : [ { object ( OneBoxResult ) } ] , \"searchLinkPromotions\" : [ { object ( SearchLinkPromotion ) } ] , \"semanticState\" : enum ( SemanticState ) } Fields results[] object ( SearchResult ) A list of matched documents.",
+          "ContentSearchSpec JSON representation { \"snippetSpec\" : { object ( SnippetSpec ) } , \"summarySpec\" : { object ( SummarySpec ) } , \"extractiveContentSpec\" : { object ( ExtractiveContentSpec ) } , \"searchResultMode\" : enum ( SearchResultMode ) , \"chunkSpec\" : { object ( ChunkSpec ) } } Fields snippetSpec object ( SnippetSpec ) If snippetSpec is not specified, snippets are not included in the search response. summarySpec object ( SummarySpec ) If summarySpec is not specified, summaries are not included in the search response. extractiveContentSpec object ( ExtractiveContentSpec ) If there is no extractive content spec provided, there will be no extractive answer in the search response. searchResultMode enum ( SearchResultMode ) Specifies the search result mode.",
+          "This field is only returned if SearchRequest.ContentSearchSpec.summary spec is set. appliedControls[] string Controls applied as part of the Control service. geoSearchDebugInfo[] object ( GeoSearchDebugInfo ) queryExpansionInfo object ( QueryExpansionInfo ) Query expansion information for the returned results. naturalLanguageQueryUnderstandingInfo object ( NaturalLanguageQueryUnderstandingInfo ) Output only."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "discoveryengine.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/answer",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/create-data-store-es",
+        "https://docs.cloud.google.com/generative-ai-app-builder/docs/reference/mcp/search"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:55.115Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai-search/card.json",
+  "product_name": "Vertex AI Search",
+  "product_slug": "vertex-ai-search"
+}

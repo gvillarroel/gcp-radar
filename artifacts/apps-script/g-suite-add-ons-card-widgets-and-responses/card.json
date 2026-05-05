@@ -1,0 +1,92 @@
+{
+  "feature_name": "G Suite Add-ons card widgets and responses",
+  "feature_slug": "g-suite-add-ons-card-widgets-and-responses",
+  "summary": "Apps Script Card Service adds new widgets and event response types for building G Suite Add-on interfaces.",
+  "extended_definition": "Apps Script Card Service adds new widgets and event response types for building G Suite Add-on interfaces.",
+  "lifecycle": {
+    "latest_feature_date": "2020-01-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/add-ons/overview",
+      "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 107,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Card service has been extended with the following classes and methods that provide new widgets and event responses: CalendarEventActionResponse CalendarEventActionResponseBuilder DatePicker DateTimePicker DisplayStyle DriveItemsSelectedActionResponse DriveItemsSelectedActionResponseBuilder FixedFooter SwitchControlType TimePicker CardBuilder.setDisplayStyle(displayStyle) CardBuilder.setFixedFooter(fixedFooter) CardBuilder.setPeekCardHeader(peekCardHeader) CardService.newCalendarEventActionResponseBuilder() CardService.newDatePicker() CardService.newDateTimePicker() CardService.newDriveItemsSelectedActionResponseBuilder() CardService.newFixedFooter() CardService.newTimePicker() Switch.setControlType(controlType) The Conference Data service has been added to Apps Script.",
+          "FileIterator.getContinuationToken() FolderIterator.getContinuationToken() DriveApp.continueFileIterator(continuationToken) DriveApp.continueFolderIterator(continuationToken) Deprecated The UiApp widgets Hyperlink , InlineHyperlink , LayoutPanel , and RichTextArea have now been disabled, as announced on March 13, 2013 and documented in the Apps Script sunset schedule .",
+          "For more information refer to the following: Columns for Apps Script Columns for other runtimes February 20, 2024 Feature (Developer Preview) : Google Chat apps now support Google Apps Script's Card Service."
+        ]
+      },
+      {
+        "title": "Add-ons overview \\_|\\_ Google Workspace add-ons \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/add-ons/overview",
+        "source_id": "site-docs-root",
+        "final_score": 90,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Try a quickstart To see how building an add-on works, try a quickstart: Node.js Google Workspace add-on quickstart Apps Script Google Workspace add-on quickstart Apps Script Editor add-on quickstart Want to see Google Workspace add-ons in action?",
+          "Quickstart guides are available for developers to learn how to build Google Workspace add-ons using Node.js or Apps Script.",
+          "Quickstarts are available for Node.js and Apps Script to build these add-ons.\\n\"]]"
+        ]
+      },
+      {
+        "title": "\"Class CalendarEventActionResponseBuilder \\_|\\_ Apps Script \\_|\\_ Google\\",
+        "url": "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder",
+        "source_id": "site-docs-reference-3",
+        "final_score": 86,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Google Workspace Apps Script Reference Send feedback Class CalendarEventActionResponseBuilder Stay organized with collections Save and categorize content based on your preferences.",
+          "Methods Method Return type Brief description add Attachments(attachments) Calendar Event Action Response Builder Specifies that the response should add the attachments to the Calendar event when the associated UI action is taken. add Attendees(emails) Calendar Event Action Response Builder Specifies that the response should add the indicated attendees to the Calendar event when the associated UI action is taken. build() Calendar Event Action Response Builds the current Calendar event action response and validates it. set Conference Data(conferenceData) Calendar Event Action Response Builder Specifies that the response should set the indicated conference data to the Calendar event when the associated UI action is taken.",
+          "Parameters Name Type Description conference Data Conference Data Conference data to set to the event, created by an add on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/releases",
+        "https://developers.google.com/apps-script/add-ons/overview",
+        "https://developers.google.com/apps-script/reference/add-ons-response-service/calendar-event-action-response-builder"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

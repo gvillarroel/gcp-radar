@@ -1,0 +1,96 @@
+{
+  "feature_name": "Birthday event type",
+  "feature_slug": "birthday-event-type",
+  "summary": "The Calendar API supports a birthday eventType for creating, managing, filtering, and watching birthday events as special recurring all-day events.",
+  "extended_definition": "The Calendar API supports a birthday eventType for creating, managing, filtering, and watching birthday events as special recurring all-day events.",
+  "lifecycle": {
+    "latest_feature_date": "2024-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+      "https://developers.google.com/workspace/calendar/api/guides/event-types",
+      "https://developers.google.com/workspace/calendar/api/v3/reference"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Event types \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/event-types",
+        "source_id": "site-docs-root",
+        "final_score": 43,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The API supports the watch method to subscribe to changes on birthday events on Google Calendar. eventTypes can be set to 'birthday' to subscribe to updates on birthday events.",
+          "Google Calendar API supports get , instances , and list methods for reading birthday events. eventTypes can be set to 'birthday' to list only birthday events.",
+          "If no type is specified, all event types, including birthdays, will be subscribed to."
+        ]
+      },
+      {
+        "title": "API Reference \\_|\\_ Google Calendar \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/calendar/api/v3/reference",
+        "source_id": "site-api-reference",
+        "final_score": 41,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To retrieve an event using its iCalendar ID, call the events.list method using the iCalUID parameter . import POST /calendars/ calendarId /events/import Imports an event.",
+          "Note that only default events can be moved; birthday , focusTime , fromGmail , outOfOffice and workingLocation events cannot be moved.",
+          "Deprecated behavior: If a non- default event is imported, its type will be changed to default and any event-type-specific properties it may have will be dropped. insert POST /calendars/ calendarId /events Creates an event. instances GET /calendars/ calendarId /events/ eventId /instances Returns instances of the specified recurring event. list GET /calendars/ calendarId /events Returns events on the specified calendar. move POST /calendars/ calendarId /events/ eventId /move Moves an event to another calendar, i.e. changes an event's organizer."
+        ]
+      },
+      {
+        "title": "\"Manage focus time, out of office, and working location events \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/calendar/api/guides/calendar-status",
+        "source_id": "site-docs-root",
+        "final_score": 38,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To list status events, use the events.list method, specifying one or more of the following values in the eventTypes field: 'focusTime' 'outOfOffice' 'workingLocation' Then, in the returned Event objects, inspect that the eventType field has the requested value, and refer to the corresponding field for details about the status created by the user in Google Calendar: focusTimeProperties outOfOfficeProperties workingLocationProperties Subscribe to changes on status events You can subscribe to changes on status events in the Events resource of the Calendar API.",
+          "Use the events.watch method, specifying the calendarId of the Calendar to subscribe to and one or more of the following values in the eventTypes field: 'focusTime' 'outOfOffice' 'workingLocation' Create and update Calendar status events To create a status event, you create an instance of the Events resource using the events.insert method, setting the required fields for the event type.",
+          "Secondary calendars can't have status events. / Creates a focus time event. / function createFocusTime () { const event = { start : { dateTime : '2023-11-14T10:00:00+01:00' }, end : { dateTime : '2023-11-14T12:00:00+01:00' }, eventType : 'focusTime' , focusTimeProperties : { chatStatus : 'doNotDisturb' , autoDeclineMode : 'declineOnlyNewConflictingInvitations' , declineMessage : 'Declined because I am in focus time.' , } } createEvent ( event ); } / Creates an out of office event. / function createOutOfOffice () { const event = { start : { dateTime : '2023-11-15T10:00:00+01:00' }, end : { dateTime : '2023-11-15T18:00:00+01:00' }, eventType : 'outOfOffice' , outOfOfficeProperties : { autoDeclineMode : 'declineOnlyNewConflictingInvitations' , declineMessage : 'Declined because I am on vacation.' , } } createEvent ( event ); } / Creates a working location event. / function createWorkingLocation () { const event = { start : { date : \"2023-06-01\" }, end : { date : \"2023-06-02\" }, eventType : \"workingLocation\" , visibility : \"public\" , transparency : \"transparent\" , workingLocationProperties : { type : 'customLocation' , customLocation : { label : \"a custom location\" }, } } createEvent ( event ); } / Creates a Calendar event."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "events.insert",
+      "events.list",
+      "events.watch",
+      "i.e"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:07.126Z",
+  "source_step08_card": "data/step-08/current/products/calendar-api/card.json",
+  "product_name": "Calendar API",
+  "product_slug": "calendar-api"
+}

@@ -1,0 +1,86 @@
+{
+  "feature_name": "Dynamic-only instance labeling in auto scaling",
+  "feature_slug": "dynamic-only-instance-labeling-in-auto-scaling",
+  "summary": "Auto scaling no longer uses resident instance labels and now labels all instances as Dynamic.",
+  "extended_definition": "Auto scaling no longer uses resident instance labels and now labels all instances as Dynamic.",
+  "lifecycle": {
+    "latest_feature_date": "2018-05-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+      "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+      "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"How instances are managed \\_|\\_ App Engine standard environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/how-instances-are-managed",
+        "source_id": "site-docs-reference",
+        "final_score": 171,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "One of the benefits App Engine standard environment's \"pay for only what you need\" platform as described earlier in Scaling Down is that the system autoscales the number of instances down to zero when there is no traffic.",
+          "Scaling dynamic instances App Engine applications that use basic or automatic scaling are powered by any number of dynamic instances at a given time, depending on the volume of incoming requests.",
+          "Scaling types App Engine supports the following scaling types , which controls how and when instances are created: Automatic (default) Basic Manual You specify the scaling type in your app's app.yaml ."
+        ]
+      },
+      {
+        "title": "\"appengine-web.xml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java-gen2/config/appref-xml",
+        "source_id": "site-docs-reference-4",
+        "final_score": 141,
+        "relevance": "",
+        "evidence_snippets": [
+          "Example <appengine-web-app xmlns=\"http://appengine.google.com/ns/1.0\"> <application>simple-app</application> <module>default</module> <version>uno</version> <instance-class>F2</instance-class> <automatic-scaling> <target-cpu-utilization>0.65</target-cpu-utilization> <min-instances>5</min-instances> <max-instances>100</max-instances> <max-concurrent-requests>50</max-concurrent-requests> </automatic-scaling> </appengine-web-app> <basic-scaling> Optional.",
+          "A high maximum means users might wait longer for their requests to be served, if there are pending requests and no idle instances to serve them, but your application will cost less to run. <min-idle-instances> The number of instances to be kept running and ready to serve traffic.This setting only applies to the version that receives most of the traffic.",
+          "Default: F1 is assigned if you don't specify an instance class along with the automatic scaling element. basic scaling When using basic scaling, the B1, B2, B4, B4 1G, and B8 instance classes are available."
+        ]
+      },
+      {
+        "title": "\"App Engine app.yaml reference \\_|\\_ App Engine standard environment \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/standard/java/config/appref",
+        "source_id": "site-docs-reference-4",
+        "final_score": 120,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example automatic scaling : target cpu utilization : 0.65 min instances : 5 max instances : 100 min pending latency : 30ms max pending latency : automatic max concurrent requests : 50 basic scaling Applications that use an instance class of B1 or higher must specify either this element or manual scaling .",
+          "The following values are available depending on your service's scaling : Automatic scaling F1 , F2 , F4 , F4 1G Default: F1 Optionally use the automatic scaling element to change default settings for automatic scaling, such as minimum and maximum number of instances, latency, and concurrent connections.",
+          "Specify this element to change default settings for automatic scaling, such as setting minimum and maximum levels for number of instances, latency, and concurrent connections for a service."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "appengine.google.com",
+      "traffic.This",
+      "web.xml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.952Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-standard-environment-java/card.json",
+  "product_name": "App Engine standard environment Java",
+  "product_slug": "app-engine-standard-environment-java"
+}

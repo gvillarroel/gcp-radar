@@ -1,0 +1,147 @@
+{
+  "feature_name": "Subscriber email logging",
+  "feature_slug": "subscriber-email-logging",
+  "summary": "Subscriber email logging records the principal identifiers of users who run jobs and queries against linked datasets; Subscriber email logging records principal identifiers for users who run jobs and queries against linked datasets.",
+  "extended_definition": "Subscriber email logging records the principal identifiers of users who run jobs and queries against linked datasets; Subscriber email logging records principal identifiers for users who run jobs and queries against linked datasets.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+      "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Manage data exchanges \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "source_id": "site-docs-reference-5",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "To log the principal identifiers of all users running jobs and queries on linked datasets, click the Subscriber Email Logging toggle.",
+          "Note: When managing access for users in external identity providers , replace instances of Google Account principal identifiers—like user:kiran@example.com , group:support@example.com , and domain:example.com —with appropriate Workforce Identity Federation principal identifiers .",
+          "If you enable subscriber email logging with the logLinkedDatasetQueryUserEmail field, the data exchange response contains log linked dataset query user email: true ."
+        ]
+      },
+      {
+        "title": "Manage listings \\_|\\_ BigQuery \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "source_id": "site-docs-reference-5",
+        "final_score": 203,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Subscriber Email Logging : turn on logging of the principal identifiers of all users running jobs and queries on linked datasets.",
+          "Subscriber Email Logging : turn on logging of the principal identifiers of subscribers running jobs and queries on this listing's linked dataset for all future subscriptions.",
+          "If you enable subscriber email logging with the logLinkedDatasetQueryUserEmail field, the listing response contains log linked dataset query user email: true ."
+        ]
+      },
+      {
+        "title": "\"View and subscribe to listings and data exchanges \\_|\\_ BigQuery \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings",
+        "source_id": "site-docs-root-2",
+        "final_score": 131,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you enable subscriber email logging for the data exchange or listing with the logLinkedDatasetQueryUserEmail field, the subscription response contains log linked dataset query user email: true .",
+          "If you have enabled subscriber email logging ( Preview ) for the data exchange, the subscription response contains log linked dataset query user email: true .",
+          "The dialog shows if the provider enabled subscriber email logging."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "analyticshub.subscriber",
+      "analyticshub.viewer",
+      "bigquery.user",
+      "example.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/analyticshub.subscriber",
+      "roles/analyticshub.viewer",
+      "roles/bigquery.user"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-exchanges",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-manage-listings",
+        "https://docs.cloud.google.com/bigquery/docs/analytics-hub-view-subscribe-listings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.653Z",
+  "source_step08_card": "data/step-08/current/products/bigquery/card.json",
+  "product_name": "BigQuery",
+  "product_slug": "bigquery"
+}

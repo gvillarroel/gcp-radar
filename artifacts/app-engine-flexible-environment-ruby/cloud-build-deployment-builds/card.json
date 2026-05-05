@@ -1,0 +1,133 @@
+{
+  "feature_name": "Cloud Build deployment builds",
+  "feature_slug": "cloud-build-deployment-builds",
+  "summary": "Managed VMs deployments can use the Cloud Build service to build container images remotely.",
+  "extended_definition": "Managed VMs deployments can use the Cloud Build service to build container images remotely.",
+  "lifecycle": {
+    "latest_feature_date": "2016-02-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+      "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/build",
+      "https://docs.cloud.google.com/appengine/docs/flexible/roles"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Roles that grant access to App Engine \\_|\\_ App Engine flexible environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/roles",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the account uses gcloud commands to deploy, add these roles as well: Storage Object Admin ( roles/storage.objectAdmin ) Cloud Build Editor ( roles/cloudbuild.builds.editor ) To access data stored in Datastore, or update indexes, enable the Cloud Datastore Index Admin role ( roles/datastore.indexAdmin ).",
+          "To deploy new versions, a principal must have the Service Account User ( roles/iam.serviceAccountUser ) role on the assigned App Engine service account , and the Cloud Build Editor ( roles/cloudbuild.builds.editor ), and Cloud Storage Object Admin ( roles/storage.objectAdmin ) roles on the project.",
+          "To deploy new versions, you must also have the Service Account User ( roles/iam.serviceAccountUser ) role on the assigned App Engine service account , and the Cloud Build Editor ( roles/cloudbuild.builds.editor ), and Cloud Storage Object Admin ( roles/storage.objectAdmin ) roles on the project."
+        ]
+      },
+      {
+        "title": "\"Roles that grant access to App Engine \\_|\\_ App Engine standard environment\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "source_id": "site-docs-reference-2",
+        "final_score": 87,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "If the account uses gcloud commands to deploy, add these roles as well: Storage Object Admin ( roles/storage.objectAdmin ) Cloud Build Editor ( roles/cloudbuild.builds.editor ) To access data stored in Datastore, or update indexes, enable the Cloud Datastore Index Admin role ( roles/datastore.indexAdmin ).",
+          "To deploy new versions, a principal must have the Service Account User ( roles/iam.serviceAccountUser ) role on the assigned App Engine service account , and the Cloud Build Editor ( roles/cloudbuild.builds.editor ), and Cloud Storage Object Admin ( roles/storage.objectAdmin ) roles on the project.",
+          "To deploy new versions, you must also have the Service Account User ( roles/iam.serviceAccountUser ) role on the assigned App Engine service account , and the Cloud Build Editor ( roles/cloudbuild.builds.editor ), and Cloud Storage Object Admin ( roles/storage.objectAdmin ) roles on the project."
+        ]
+      },
+      {
+        "title": "\"Build custom runtimes \\_|\\_ App Engine flexible environment \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/build",
+        "source_id": "site-docs-reference",
+        "final_score": 61,
+        "relevance": "",
+        "evidence_snippets": [
+          "If your application uses Cloud Build for compiling Docker images, the cloudbuild network hosts the Application Default Credentials enabling the associated Google Cloud services to automatically find your credentials.",
+          "Home Documentation Application hosting App Engine Flexible environment Guides Send feedback Build custom runtimes Stay organized with collections Save and categorize content based on your preferences.",
+          "With a custom runtime, the flexible environment provides and manages your scaling, monitoring, and load balancing infrastructure for you, so you can focus on building your application."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "app.yaml",
+      "cloudbuild.builds.editor",
+      "datastore.indexAdmin",
+      "iam.serviceAccountUser",
+      "storage.objectAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/cloudbuild.builds.editor",
+      "roles/datastore.indexAdmin",
+      "roles/iam.serviceAccountUser",
+      "roles/storage.objectAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/roles",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/build"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/roles",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/build"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/roles",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/build"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/roles",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/build"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/appengine/docs/admin-api/access-control",
+        "https://docs.cloud.google.com/appengine/docs/flexible/roles",
+        "https://docs.cloud.google.com/appengine/docs/flexible/custom-runtimes/build"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.830Z",
+  "source_step08_card": "data/step-08/current/products/app-engine-flexible-environment-ruby/card.json",
+  "product_name": "App Engine flexible environment Ruby",
+  "product_slug": "app-engine-flexible-environment-ruby"
+}

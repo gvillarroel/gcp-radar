@@ -1,0 +1,142 @@
+{
+  "feature_name": "reCAPTCHA Enterprise legacy secret keys",
+  "feature_slug": "recaptcha-enterprise-legacy-secret-keys",
+  "summary": "Lets users find legacy secret keys for reCAPTCHA Enterprise keys in the Google Cloud console.",
+  "extended_definition": "Lets users find legacy secret keys for reCAPTCHA Enterprise keys in the Google Cloud console.",
+  "lifecycle": {
+    "latest_feature_date": "2022-07-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection",
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceAsyncClient (1.29.0) \\_|\\_ Python client\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 async def sample retrieve legacy secret key(): Create a client client = recaptchaenterprise v1 .",
+          "RetrieveLegacySecretKeyRequest ( key=\"key value\", ) Make the request response = await client. retrieve legacy secret key (request=request) Handle the response print(response) Parameters Name Description request Optional[Union[ google.cloud.recaptchaenterprise v1.types.RetrieveLegacySecretKeyRequest , dict]] The request object.",
+          "Returns Type Description google.cloud.recaptchaenterprise v1.types.ReorderFirewallPoliciesResponse The reorder firewall policies response message. retrieve legacy secret key retrieve legacy secret key ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient (1.29.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "It will require modifications to work: - It may require correct/in-range values for request initialization. - It may require specifying regional endpoints when creating the service client as shown in: https://googleapis.dev/python/google-api-core/latest/client options.html from google.cloud import recaptchaenterprise v1 def sample retrieve legacy secret key(): Create a client client = recaptchaenterprise v1 .",
+          "RetrieveLegacySecretKeyRequest ( key=\"key value\", ) Make the request response = client. retrieve legacy secret key (request=request) Handle the response print(response) Parameters Name Description request Union[ google.cloud.recaptchaenterprise v1.types.RetrieveLegacySecretKeyRequest , dict] The request object.",
+          "Returns Type Description google.cloud.recaptchaenterprise v1.types.ReorderFirewallPoliciesResponse The reorder firewall policies response message. retrieve legacy secret key retrieve legacy secret key ( request : typing ."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient (3.85.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "source_id": "site-java-reference",
+        "final_score": 243,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { RetrieveLegacySecretKeyRequest request = RetrieveLegacySecretKeyRequest . newBuilder () . setKey ( KeyName . of ( \"[PROJECT]\" , \"[KEY]\" ). toString ()) . build (); RetrieveLegacySecretKeyResponse response = recaptchaEnterpriseServiceClient . retrieveLegacySecretKey ( request ); } Parameter Name Description request RetrieveLegacySecretKeyRequest The request object containing all of the parameters for the API call.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { RetrieveLegacySecretKeyRequest request = RetrieveLegacySecretKeyRequest . newBuilder () . setKey ( KeyName . of ( \"[PROJECT]\" , \"[KEY]\" ). toString ()) . build (); ApiFuture<RetrieveLegacySecretKeyResponse> future = recaptchaEnterpriseServiceClient . retrieveLegacySecretKeyCallable (). futureCall ( request ); // Do something.",
+          "Sample code: // This snippet has been automatically generated and should be regarded as a code template only. // It will require modifications to work: // - It may require correct/in-range values for request initialization. // - It may require specifying regional endpoints when creating the service client as shown in // https://cloud.google.com/java/docs/setup#configure endpoints for the client library try ( RecaptchaEnterpriseServiceClient recaptchaEnterpriseServiceClient = RecaptchaEnterpriseServiceClient . create ()) { String key = KeyName . of ( \"[PROJECT]\" , \"[KEY]\" ). toString (); RetrieveLegacySecretKeyResponse response = recaptchaEnterpriseServiceClient . retrieveLegacySecretKey ( key ); } Parameter Name Description key String Required."
+        ]
+      },
+      {
+        "title": "\"Class RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection (3.85.0)\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection",
+        "source_id": "site-java-reference",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "ListKeysFixedSizeCollection > Inheritance java.lang.Object > AbstractFixedSizeCollection > RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection Inherited Members AbstractFixedSizeCollection.createCollection(List<PageT>,int) AbstractFixedSizeCollection.getCollectionSize() AbstractFixedSizeCollection.getNextCollection() AbstractFixedSizeCollection.getNextPageToken() AbstractFixedSizeCollection.getValues() AbstractFixedSizeCollection.hasNextCollection() Object.clone() Object.equals(Object) Object.finalize() Object.getClass() Object.hashCode() Object.notify() Object.notifyAll() Object.toString() Object.wait() Object.wait(long) Object.wait(long,int) Methods createCollection(List<RecaptchaEnterpriseServiceClient.ListKeysPage> pages, int collectionSize) protected RecaptchaEnterpriseServiceClient .",
+          "ListKeysPage > pages , int collectionSize ) Parameters Name Description pages List < ListKeysPage > collectionSize int Returns Type Description RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection Overrides AbstractFixedSizeCollection<RequestT,ResponseT,ResourceT,PageT,CollectionT>.createCollection(List<PageT> pages, int collectionSize) Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation Developer tools Java Client libraries Send feedback Class RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection (3.85.0) Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPage",
+      "com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse",
+      "googleapis.dev",
+      "java.lang.Object",
+      "options.html",
+      "v1.types.ReorderFirewallPoliciesResponse",
+      "v1.types.RetrieveLegacySecretKeyRequest",
+      "v1.types.RetrieveLegacySecretKeyResponse"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "firewall",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/recaptchaenterprise/latest/google.cloud.recaptchaenterprise_v1.services.recaptcha_enterprise_service.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-recaptchaenterprise/latest/com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysFixedSizeCollection"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.755Z",
+  "source_step08_card": "data/step-08/current/products/recaptcha/card.json",
+  "product_name": "reCAPTCHA",
+  "product_slug": "recaptcha"
+}

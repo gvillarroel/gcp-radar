@@ -1,0 +1,88 @@
+{
+  "feature_name": "Linux discovery tool multiple NIC detection",
+  "feature_slug": "linux-discovery-tool-multiple-nic-detection",
+  "summary": "The Linux discovery tool now warns when multiple NICs are detected because they can increase migration effort.",
+  "extended_definition": "The Linux discovery tool now warns when multiple NICs are detected because they can increase migration effort.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/migrate/containers/docs/fit-assessment",
+      "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-linux",
+      "https://docs.cloud.google.com/migrate/containers/docs/mcdc-vmware-batch-collection-tutorial"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Batching guest discovery and data collection \\_|\\_ Migrate to Containers\\",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/mcdc-vmware-batch-collection-tutorial",
+        "source_id": "site-docs-reference",
+        "final_score": 116,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Download the script: curl -O https://raw.githubusercontent.com/GoogleCloudPlatform/migrate-to-containers/main/scripts/mcdc/mcdc discovery export guest tools.sh chmod +x mcdc discovery export guest tools.sh Run the script and save the output to a file: ./mcdc discovery export guest tools.sh > VMS CSV FILE Replace VMS CSV FILE with the name you want for the CSV file.",
+          "Split the CSV file into multiple CSV files with a subset of the VMs To split the large CSV file into smaller CSV files, use the splitter script from the Migrate to Containers repository on GitHub. tail -n +2 $1 split -d -l $num of lines - $2 for file in $2 do head -n 1 $1 > tmp file cat \" $file \" >> tmp file mv -f tmp file \" $file \" done Download the script: curl -O https://raw.githubusercontent.com/GoogleCloudPlatform/migrate-to-containers/main/scripts/mcdc/csv splitter.sh chmod +x csv splitter.sh Run the script: ./csv splitter.sh VMS CSV FILE CSV FILES PREFIX LINES PER FILE VMS CSV FILE CSV FILES PREFIX Replace the following: VMS CSV FILE : the input CSV file to split.",
+          "Create the text file: cat <<EOF >> INPUT FILE CSV FILES PREFIX CSV FILE SUFFIX VSPHERE URL VSPHERE USER VSPHERE PASSWORD VM USER VM PASSWORD EOF Replace the following: INPUT FILE : input filename CSV FILES PREFIX : CSV filename prefix CSV FILE SUFFIX : CSV filename suffix VSPHERE URL : the URL for your vCenter Server instance or the vSphere Client VSPHERE USER : vCenter username VSPHERE PASSWORD : vCenter password VM USER : VM username VM PASSWORD : VM password Run the guest collection script: nohup ./mcdc collect vms guest tools.sh < INPUT FILE > /tmp/mcdc.out 2>&1 & Repeat steps 1 and 2 for each CSV file generated in the previous step."
+        ]
+      },
+      {
+        "title": "Migrate to Containers CLI reference for Linux \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/m2c-cli-reference-linux",
+        "source_id": "site-docs-root",
+        "final_score": 83,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Migrate to Containers CLI reference for Linux m2c is a command-line tool that lets you set up and execute migrations on your local machine. m2c A command-line interface to Migrate to Containers.",
+          "You can execute the following once: echo \"autoload -U compinit; compinit\" >> /. zshrc To load completions in your current shell session: source <(m2c completion zsh) To load completions for every new session, execute once: Linux: m2c completion zsh > \" ${ fpath [ 1 ] } / m2c\" macOS: m2c completion zsh > $(brew --prefix)/share/zsh/site-functions/ m2c You will need to start a new shell for this setup to take effect.",
+          "To load completions in your current shell session: source <(m2c completion bash) To load completions for every new session, execute once: Linux: m2c completion bash > /etc/bash completion.d/m2c macOS: m2c completion bash > $(brew --prefix)/etc/bash completion.d/m2c You will need to start a new shell for this setup to take effect."
+        ]
+      },
+      {
+        "title": "Migration Center discovery client CLI overview \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/migrate/containers/docs/fit-assessment",
+        "source_id": "site-docs-root",
+        "final_score": 77,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The Migration Center discovery client CLI ( mcdc CLI) is an offline tool that lets you run different types of asset discoveries on your infrastructure.",
+          "Available collection methods Using the mcdc CLI, you can run the following collection methods: Inventory discovery scans and lists all of the VMware VM instances, Amazon Elastic Compute Cloud (EC2) instances, Amazon Relational Database Service (RDS) and Azure Virtual Machine instances ( Preview ).",
+          "Learn more about the following discovery methods: Inventory discovery Guest discovery IP range scan Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "completion.d",
+      "mcdc.out",
+      "raw.githubusercontent.com",
+      "release.storage.googleapis.com",
+      "splitter.sh",
+      "tools.sh"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:45.501Z",
+  "source_step08_card": "data/step-08/current/products/migrate-to-containers/card.json",
+  "product_name": "Migrate to Containers",
+  "product_slug": "migrate-to-containers"
+}

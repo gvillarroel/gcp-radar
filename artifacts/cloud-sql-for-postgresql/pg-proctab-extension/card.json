@@ -1,0 +1,130 @@
+{
+  "feature_name": "pg_proctab extension",
+  "feature_slug": "pg-proctab-extension",
+  "summary": "The pg_proctab extension exposes operating system process table data for use with pg_top and reporting.",
+  "extended_definition": "The pg_proctab extension exposes operating system process table data for use with pg_top and reporting.",
+  "lifecycle": {
+    "latest_feature_date": "2021-11-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+      "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Troubleshoot \\_|\\_ Cloud SQL for PostgreSQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "source_id": "site-docs-root",
+        "final_score": 95,
+        "relevance": "",
+        "evidence_snippets": [
+          "The system can create many temporary tables at one time, depending on the queries and the load.",
+          "Run the following commands: GRANT pg signal backend TO USERNAME ; Find the process ID of the blocked or stuck process: SELECT pid, username, state, query FROM pg stat activity ; Stop a running or idle process using these commands: SELECT pg cancel backend ( pid ) FROM pg stat activity WHERE username = ' USERNAME ' ; SELECT pg terminate backend ( pid ) FROM pg stat activity WHERE username = ' USERNAME ' ; Instance is nearing 100% consumption of transaction IDs.",
+          "From a terminal, connect to your database: gcloud sql connect INSTANCE NAME Run this command to create the extension: CREATE EXTENSION pgaudit ; Exit the database, and from a terminal run the following command: gcloud sql instances patch INSTANCE NAME \\ --database-flags = cloudsql.enable pgaudit = on,pgaudit.log = all Manage instances Issue Troubleshooting You want to find out what queries are running now."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "You do not have to use /cloudsql as the directory for the Cloud SQL Auth Proxy sockets. (That directory name was chosen to minimize differences with App Engine connection strings.) If you change the directory name, however, keep the overall length to a minimum; it is incorporated in a longer string that has a length limit imposed by the operating system.",
+          "Other OS For other operating systems not included here, you can compile the Cloud SQL Auth Proxy from source .",
+          "URL . create ( drivername = \"mysql+pymysql\" , username = db user , password = db pass , database = db name , query = { \"unix socket\" : unix socket path }, ), ... ) return pool Java To see this snippet in the context of a web application, view the README on GitHub . import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import javax.sql.DataSource ; public class ConnectorConnectionPoolFactory extends ConnectionPoolFactory { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. private static final String INSTANCE CONNECTION NAME = System . getenv ( \"INSTANCE CONNECTION NAME\" ); private static final String INSTANCE UNIX SOCKET = System . getenv ( \"INSTANCE UNIX SOCKET\" ); private static final String DB USER = System . getenv ( \"DB USER\" ); private static final String DB PASS = System . getenv ( \"DB PASS\" ); private static final String DB NAME = System . getenv ( \"DB NAME\" ); public static DataSource createConnectionPool () { // The configuration object specifies behaviors for the connection pool."
+        ]
+      },
+      {
+        "title": "\"Connect using the Cloud SQL Auth Proxy \\_|\\_ Cloud SQL for PostgreSQL \\_\\",
+        "url": "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy",
+        "source_id": "site-iam-reference",
+        "final_score": 88,
+        "relevance": "",
+        "evidence_snippets": [
+          "You do not have to use /cloudsql as the directory for the Cloud SQL Auth Proxy sockets. (That directory name was chosen to minimize differences with App Engine connection strings.) If you change the directory name, however, keep the overall length to a minimum; it is incorporated in a longer string that has a length limit imposed by the operating system.",
+          "Other OS For other operating systems not included here, you can compile the Cloud SQL Auth Proxy from source .",
+          "URL . create ( drivername = \"postgresql+pg8000\" , username = db user , password = db pass , database = db name , query = { \"unix sock\" : f \" { unix socket path } /.s.PGSQL.5432\" }, ), ... ) return pool Java To see this snippet in the context of a web application, view the README on GitHub . import com.zaxxer.hikari.HikariConfig ; import com.zaxxer.hikari.HikariDataSource ; import javax.sql.DataSource ; public class ConnectorConnectionPoolFactory extends ConnectionPoolFactory { // Note: Saving credentials in environment variables is convenient, but not // secure - consider a more secure solution such as // Cloud Secret Manager (https://cloud.google.com/secret-manager) to help // keep secrets safe. private static final String INSTANCE CONNECTION NAME = System . getenv ( \"INSTANCE CONNECTION NAME\" ); private static final String INSTANCE UNIX SOCKET = System . getenv ( \"INSTANCE UNIX SOCKET\" ); private static final String DB USER = System . getenv ( \"DB USER\" ); private static final String DB PASS = System . getenv ( \"DB PASS\" ); private static final String DB NAME = System . getenv ( \"DB NAME\" ); public static DataSource createConnectionPool () { // The configuration object specifies behaviors for the connection pool."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudsql.enable",
+      "com.zaxxer.hikari.HikariConfig",
+      "com.zaxxer.hikari.HikariDataSource",
+      "javax.sql.DataSource",
+      "pgaudit.log",
+      "pom.xml",
+      "s.PGSQL.5432"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/postgres/troubleshooting",
+        "https://docs.cloud.google.com/sql/docs/mysql/connect-auth-proxy",
+        "https://docs.cloud.google.com/sql/docs/postgres/connect-auth-proxy"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:15.626Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-postgresql/card.json",
+  "product_name": "Cloud SQL for PostgreSQL",
+  "product_slug": "cloud-sql-for-postgresql"
+}

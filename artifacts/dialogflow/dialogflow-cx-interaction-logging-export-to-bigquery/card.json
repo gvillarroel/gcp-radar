@@ -1,0 +1,119 @@
+{
+  "feature_name": "Dialogflow CX interaction logging export to BigQuery",
+  "feature_slug": "dialogflow-cx-interaction-logging-export-to-bigquery",
+  "summary": "Dialogflow CX supports exporting interaction logs to BigQuery.",
+  "extended_definition": "Dialogflow CX supports exporting interaction logs to BigQuery.",
+  "lifecycle": {
+    "latest_feature_date": "2023-07-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+      "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Interaction logging export to BigQuery \\_|\\_ Dialogflow CX \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq",
+        "source_id": "site-docs-root",
+        "final_score": 161,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Interaction logging export to BigQuery Stay organized with collections Save and categorize content based on your preferences.",
+          "You can export interaction logging to BigQuery .",
+          "Use the following SQL statement for creation: CREATE TABLE < your dataset name > . dialogflow bigquery export data ( project id STRING , agent id STRING , conversation name STRING , turn position INTEGER , request time TIMESTAMP , language code STRING , request JSON , response JSON , partial responses JSON , derived data JSON , conversation signals JSON , bot answer feedback JSON ); Configure your agent settings to enable BigQuery export, and to provide the dataset and table names created above."
+        ]
+      },
+      {
+        "title": "\"Package com.google.cloud.dialogflow.v2 (4.94.0) \\_|\\_ Java client libraries\\",
+        "url": "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "source_id": "site-java-reference",
+        "final_score": 111,
+        "relevance": "",
+        "evidence_snippets": [
+          "A conversation is an interaction between an agent, including live agents and Dialogflow agents, and a support customer.",
+          "A conversation is an interaction between an agent, including live agents and Dialogflow agents, and a support customer.",
+          "Logging Config Defines logging behavior for conversation lifecycle events. com. google. cloud. dialogflow. v2."
+        ]
+      },
+      {
+        "title": "AdvancedSettings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "source_id": "site-docs-reference",
+        "final_score": 93,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"audioExportGcsDestination\" : { object ( GcsDestination ) } , \"speechSettings\" : { object ( SpeechSettings ) } , \"dtmfSettings\" : { object ( DtmfSettings ) } , \"loggingSettings\" : { object ( LoggingSettings ) } } Fields audioExportGcsDestination object ( GcsDestination ) If present, incoming audio is exported by Dialogflow to the configured Google Cloud Storage destination.",
+          "JSON representation { \"enableStackdriverLogging\" : boolean , \"enableInteractionLogging\" : boolean , \"enableConsentBasedRedaction\" : boolean } Fields enableStackdriverLogging boolean Enables Google Cloud Logging. enableInteractionLogging boolean Enables DF Interaction logging. enableConsentBasedRedaction boolean Enables consent-based end-user input redaction, if true, a pre-defined session parameter $session.params.conversation-redaction will be used to determine if the utterance should be redacted.",
+          "GcsDestination Google Cloud Storage location for a Dialogflow operation that writes or exports objects (e.g. exported agent or transcripts) outside of Dialogflow."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "dialogflow.iam.gserviceaccount.com",
+      "e.g",
+      "session.params.conversation"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/export-bq",
+        "https://docs.cloud.google.com/java/docs/reference/google-cloud-dialogflow/latest/com.google.cloud.dialogflow.v2",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

@@ -1,0 +1,106 @@
+{
+  "feature_name": "Spanner database views in Google Cloud Console",
+  "feature_slug": "spanner-database-views-in-google-cloud-console",
+  "summary": "Allows users to view and manage Spanner database views directly from the Cloud Console via the database Overview page's Views tab.",
+  "extended_definition": "Allows users to view and manage Spanner database views directly from the Cloud Console via the database Overview page's Views tab.",
+  "lifecycle": {
+    "latest_feature_date": "2022-03-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+      "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+      "https://docs.cloud.google.com/spanner/docs/information-schema"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Create and query a database in the Google Cloud console \\_|\\_ Spanner \\_\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "source_id": "site-docs-reference",
+        "final_score": 162,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The Singers table now has two rows: GoogleSQL PostgreSQL Run a query in the Google Cloud console On the database Overview page, click Spanner Studio in the navigation menu.",
+          "The Google Cloud console returns to the database Overview page and shows that Schema updates are underway.",
+          "The Google Cloud console displays the Overview page for the database you created."
+        ]
+      },
+      {
+        "title": "\"Information schema for GoogleSQL-dialect databases \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/information-schema",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "",
+        "evidence_snippets": [
+          "All other principals can see only views on which the SELECT fine-grained access control privilege is granted to the current database role, to roles of which the current database role is a member, or to public .",
+          "All other principals can see only privileges granted on tables and views to the current database role and to roles of which the current database role is a member, not including public .",
+          "All other principals can see only privileges granted on tables and views to the current database role and to roles of which the current database role is a member, not including public ."
+        ]
+      },
+      {
+        "title": "Create and manage change streams \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "View change streams with Google Cloud console To see a list of a database's change streams and review their definitions: Visit the Spanner instances page of the Google Cloud console.",
+          "List and view change streams The Google Cloud console provides a web interface for listing and reviewing a database's change stream definitions.",
+          "Because change streams are schema objects, you create and manage them through the same DDL-driven schema updates used for any other kind of database-definition work, such as creating tables or adding indexes."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/create-query-database-console",
+        "https://docs.cloud.google.com/spanner/docs/change-streams/manage",
+        "https://docs.cloud.google.com/spanner/docs/information-schema"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

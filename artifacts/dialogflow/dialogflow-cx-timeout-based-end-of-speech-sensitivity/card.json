@@ -1,0 +1,117 @@
+{
+  "feature_name": "Dialogflow CX timeout-based end-of-speech sensitivity",
+  "feature_slug": "dialogflow-cx-timeout-based-end-of-speech-sensitivity",
+  "summary": "Dialogflow CX provides a timeout-based end-of-speech sensitivity setting.",
+  "extended_definition": "Dialogflow CX provides a timeout-based end-of-speech sensitivity setting.",
+  "lifecycle": {
+    "latest_feature_date": "2023-08-08",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+      "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Advanced speech settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+        "source_id": "site-docs-root",
+        "final_score": 163,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "While the End of speech sensitivity setting supports only the phone call speech model for the en-US language tag by default, the Enable advanced timeout-based end of speech sensitivity setting allows for configuring end of speech sensitivity for all languages and speech models supported by Dialogflow.",
+          "Settings availability by level The following table indicates which advanced speech settings are available at each level: Setting name Agent Flow Page Fulfillment Model selection (Speech-to-Text) ✔ ✔ ✔ End of speech sensitivity ✔ ✔ ✔ Advanced timeout-based end of speech sensitivity ✔ ✔ ✔ Enable smart endpointing ✔ No speech timeout ✔ ✔ ✔ Barge-in ✔ ✔ ✔ Allow cancellation of partial response playback ✔ Audio export bucket ✔ ✔ DTMF ✔ ✔ ✔ Model selection (Speech-to-Text) Can be set at the agent, flow, and page levels.",
+          "Note: This setting only supports the phone call speech model for the en-US language tag unless you check the Enable advanced timeout-based end of speech sensitivity setting."
+        ]
+      },
+      {
+        "title": "AdvancedSettings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "source_id": "site-docs-reference",
+        "final_score": 125,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation { \"endpointerSensitivity\" : integer , \"noSpeechTimeout\" : string , \"useTimeoutBasedEndpointing\" : boolean , \"models\" : { string : string , ... } } Fields endpointerSensitivity integer Sensitivity of the speech model that detects the end of speech.",
+          "Example: \"3.5s\" . useTimeoutBasedEndpointing boolean Use timeout based endpointing, interpreting endpointer sensitivity as seconds of timeout value. models map (key: string, value: string) Mapping from language to Speech-to-Text model.",
+          "For example, if the caller presses a button on their telephone keypad and DTMF processing is enabled, Dialogflow will detect the event (e.g. a \"3\" was pressed) in the incoming audio and pass the event to the bot to drive business logic (e.g. when 3 is pressed, return the account balance). maxDigits integer Max length of DTMF digits. finishDigit string The digit that terminates a DTMF digit sequence. interdigitTimeoutDuration string ( Duration format) Interdigit timeout setting for matching dtmf input to regex."
+        ]
+      },
+      {
+        "title": "Agent settings \\_|\\_ Dialogflow CX \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings",
+        "source_id": "site-docs-root",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Dialogflow Dialogflow CX Send feedback Agent settings Stay organized with collections Save and categorize content based on your preferences.",
+          "Dangerous content Promotes or enables access to harmful goods, services, and/or activities Sexually explicit content Contains references to sexual acts and/or other lewd content Harassment Malicious, intimidating, bullying, and/or abusive comments targeting another individual Content is blocked based on the probability that it's harmful.",
+          "Dangerous content Promotes or enables access to harmful goods, services, and activities Sexually explicit content Contains references to sexual acts or other lewd content Harassment Malicious, intimidating, bullying, or abusive comments targeting another individual Content is blocked based on the probability that it's harmful."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.cloud.dialogflow.v2",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/advanced-speech",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/reference/rest/v3/AdvancedSettings",
+        "https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:27.745Z",
+  "source_step08_card": "data/step-08/current/products/dialogflow/card.json",
+  "product_name": "Dialogflow",
+  "product_slug": "dialogflow"
+}

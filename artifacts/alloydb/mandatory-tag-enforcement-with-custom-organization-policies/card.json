@@ -1,0 +1,153 @@
+{
+  "feature_name": "Mandatory tag enforcement with custom organization policies",
+  "feature_slug": "mandatory-tag-enforcement-with-custom-organization-policies",
+  "summary": "AlloyDB can enforce required tags on cluster and backup resources through custom organization policies.",
+  "extended_definition": "AlloyDB can enforce required tags on cluster and backup resources through custom organization policies.",
+  "lifecycle": {
+    "latest_feature_date": "2025-03-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+      "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+      "https://docs.cloud.google.com/alloydb/docs/db-version-policies"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Use the AlloyDB remote MCP server \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "source_id": "site-docs-reference-2",
+        "final_score": 98,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "To minimize and manage these risks, Google Cloud offers defaults and customizable policies to control the use of MCP tools in your Google Cloud organization or project.",
+          "To see the exact permissions that are required, expand the Required permissions section: Required permissions The following permissions are required to use the AlloyDB for PostgreSQL MCP server: Make MCP tool calls: mcp.tools.call Create an AlloyDB cluster: alloydb.cluster.create Create an AlloyDB user: alloydb.users.create Clone an AlloyDB instance: alloydb.instances.create Execute SQL queries on an AlloyDB instance: alloydb.instances.executeSql alloydb.instances.login Get an AlloyDB cluster: alloydb.instances.get Get an AlloyDB cluster operation: alloydb.clusters.get Import data to an AlloyDB instance: alloydb.clusters.import List AlloyDB clusters in a project: alloydb.clusters.list List AlloyDB users: alloydb.users.list Update an AlloyDB cluster: alloydb.clusters.update Update an AlloyDB user: alloydb.users.update You might also be able to get these permissions with custom roles or other predefined roles .",
+          "To initialize the gcloud CLI, run the following command: gcloud init Required roles To get the permissions that you need to use the AlloyDB for PostgreSQL MCP server, ask your administrator to grant you the following IAM roles on the project where you want to use the AlloyDB for PostgreSQL MCP server: Make MCP tool calls: MCP Tool User ( roles/mcp.toolUser ) Create an AlloyDB instance: AlloyDB Admin ( roles/alloydb.admin ) Create an AlloyDB user: AlloyDB Admin ( roles/alloydb.admin ) Execute SQL queries in AlloyDB: AlloyDB Admin ( roles/alloydb.admin ) Studio Query User ( roles/databasesconsole.studioQueryUser ) Get a AlloyDB instance or list all AlloyDB instances in a project: AlloyDB Viewer ( roles/alloydb.viewer ) List AlloyDB users: AlloyDB Viewer ( roles/alloydb.viewer ) For more information about granting roles, see Manage access to projects, folders, and organizations ."
+        ]
+      },
+      {
+        "title": "\"Google Cloud Ready - AlloyDB Partners \\_|\\_ AlloyDB for PostgreSQL \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "source_id": "site-docs-reference-2",
+        "final_score": 73,
+        "relevance": "",
+        "evidence_snippets": [
+          "Partner references Consolidate Your Data on AlloyDB With Integrate.io in Minutes Connect AlloyDB to Your Data Sources using Integrate.io ETL Integrate.io + AlloyDB demo Partner Advantage page Direct link Integrate.io DreamFactory Solution DreamFactory Category Data integration and migration Description Integrate.io ETL platform lets organizations integrate, process, and prepare data for analytics on the cloud.",
+          "Partner references AlloyDB integration with Hightouch Sync data to AlloyDB with Hightouch Sync data from PostgreSQL to AlloyDB Partner Advantage page Direct link Integrate.io Integrate.io ETL Solution Integrate.io ETL Category Data integration and migration Description Integrate.io ETL platform lets organizations integrate, process, and prepare data for analytics on the cloud.",
+          "Partner references Collibra JDBC driver for AlloyDB Collibra catalogue connector for AlloyDB Partner Advantage page Direct link Liquibase Solution Liquibase Secure Category CI/CD automation with security and governance Description Liquibase helps forward-thinking companies harness the power of Database DevOps to accelerate, secure, and manage their organization."
+        ]
+      },
+      {
+        "title": "\"Database version policies \\_|\\_ AlloyDB for PostgreSQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/alloydb/docs/db-version-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "AlloyDB and AlloyDB Omni version policies AlloyDB for PostgreSQL , which runs in Google Cloud, and AlloyDB Omni , which you install and run on your own computing environment, have related but distinct versioning policies as described in this section.",
+          "Home Documentation Databases AlloyDB for PostgreSQL Resources Send feedback Database version policies Stay organized with collections Save and categorize content based on your preferences.",
+          "AlloyDB Omni version policies Every version of AlloyDB Omni has compatibility with a specific version of PostgreSQL, as detailed in Major version compatibility release policy ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "alloydb.admin",
+      "alloydb.cluster.create",
+      "alloydb.clusters.get",
+      "alloydb.clusters.import",
+      "alloydb.clusters.list",
+      "alloydb.clusters.update",
+      "alloydb.instances.create",
+      "alloydb.instances.executeSql",
+      "alloydb.instances.get",
+      "alloydb.instances.login",
+      "alloydb.users.create",
+      "alloydb.users.list",
+      "alloydb.users.update",
+      "alloydb.viewer",
+      "databasesconsole.studioQueryUser",
+      "mcp.tools.call",
+      "mcp.toolUser"
+    ],
+    "missing_inventory_roles": [
+      "roles/alloydb.admin",
+      "roles/alloydb.viewer",
+      "roles/databasesconsole.studioQueryUser",
+      "roles/mcp.toolUser"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/alloydb/docs/ai/use-alloydb-mcp",
+        "https://docs.cloud.google.com/alloydb/docs/cloud-ready/partners",
+        "https://docs.cloud.google.com/alloydb/docs/db-version-policies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:58.803Z",
+  "source_step08_card": "data/step-08/current/products/alloydb/card.json",
+  "product_name": "AlloyDB",
+  "product_slug": "alloydb"
+}

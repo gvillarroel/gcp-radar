@@ -1,0 +1,111 @@
+{
+  "feature_name": "Proxy support for GKE targets",
+  "feature_slug": "proxy-support-for-gke-targets",
+  "summary": "Cloud Deploy supports deployments to Google Kubernetes Engine targets through a proxy.",
+  "extended_definition": "Cloud Deploy supports deployments to Google Kubernetes Engine targets through a proxy.",
+  "lifecycle": {
+    "latest_feature_date": "2024-06-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "LOW",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 1,
+    "findings": [
+      {
+        "severity": "warn",
+        "rule": "coverage_low",
+        "message": "The feature ended with coverage LOW.",
+        "suggested_steps": [
+          "step-06"
+        ]
+      }
+    ]
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel",
+      "https://docs.cloud.google.com/deploy/docs/gke-targets",
+      "https://docs.cloud.google.com/deploy/docs/parallel"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Deploy to a Google Kubernetes Engine cluster \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "source_id": "site-docs-reference-2",
+        "final_score": 42,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Putting it all together Now that you have your Kubernetes manifests, your skaffold.yaml configuration, and your Cloud Deploy target definitions, and you've registered your targets as Cloud Deploy resources, you can now invoke your delivery pipeline to create a release and progress it through the progression of targets defined in the pipeline.",
+          "Home Documentation Application development Cloud Deploy Guides Send feedback Deploy to a Google Kubernetes Engine cluster Stay organized with collections Save and categorize content based on your preferences.",
+          "Cloud Deploy lets you deploy your container-based workloads to any Google Kubernetes Engine cluster."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Deploy an app to multiple targets at the same time \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel",
+        "source_id": "site-docs-reference-2",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Create your delivery pipeline and target definition: GKE In the deploy-gke-parallel-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion: deploy.cloud.google.com/v1 kind: DeliveryPipeline metadata: name: my-parallel-demo-app-1 description: main application pipeline serialPipeline: stages: - targetId: qsprod-multi profiles: [] deployParameters: - values: replicaCount: \"1\" matchTargetLabels: label1: label1 - values: replicaCount: \"2\" matchTargetLabels: label2: label2 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-multi description: production clusters multiTarget: targetIds: [qsprod-a, qsprod-b] --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-a labels: label1: label1 description: production cluster 2 gke: cluster: projects/ PROJECT ID /locations/us-central1/clusters/quickstart-cluster-qsprod1 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-b labels: label2: label2 description: production cluster 3 gke: cluster: projects/ PROJECT ID /locations/us-west1/clusters/quickstart-cluster-qsprod2 Note: In this file, targets are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.",
+          "Cloud Run In the deploy-run-parallel-quickstart directory, create a new file: clouddeploy.yaml , with the following contents: apiVersion: deploy.cloud.google.com/v1 kind: DeliveryPipeline metadata: name: my-parallel-demo-app-1 description: main application pipeline serialPipeline: stages: - targetId: qsprod-multi profiles: [] deployParameters: - values: minInstances: \"2\" matchTargetLabels: label1: label1 - values: minInstances: \"3\" matchTargetLabels: label2: label2 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-multi description: production multiTarget: targetIds: [qsprod-a, qsprod-b] --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-a labels: label1: label1 description: production us-central1 run: location: projects/ PROJECT ID /locations/us-central1 --- apiVersion: deploy.cloud.google.com/v1 kind: Target metadata: name: qsprod-b labels: label2: label2 description: production us-west1 run: location: projects/ PROJECT ID /locations/us-west1 Note: In this file, targets are included with the delivery pipeline, but you can define targets in a separate file or multiple separate files.",
+          "Delete the GKE clusters or Cloud Run services: GKE gcloud container clusters delete quickstart - cluster - qsprod1 -- region = us - central1 -- project = PROJECT ID \\ && gcloud container clusters delete quickstart - cluster - qsprod2 -- region = us - west1 -- project = PROJECT ID Cloud Run gcloud run services delete my - parallel - run - service -- region = us - central1 -- project = PROJECT ID \\ && gcloud run services delete my - parallel - run - service -- region = us - west1 -- project = PROJECT ID Delete the delivery pipeline, multi-target, child targets, release, and rollouts: gcloud deploy delete -- file = clouddeploy . yaml -- force -- region = us - central1 -- project = PROJECT ID Delete the Cloud Storage buckets that Cloud Deploy created."
+        ]
+      },
+      {
+        "title": "Deploy to multiple targets at the same time \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/deploy/docs/parallel",
+        "source_id": "site-docs-reference-2",
+        "final_score": 39,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure the child targets For each target identified as a child in your multi-target configuration, configure another target, as a child target: In your delivery pipeline YAML or in a separate YAML file, create the basic target definition: GKE apiVersion : deploy.cloud.google.com/v1 kind : Target metadata : name : CHILD TARGET1 description : TARGET DESCRIPTION gke : cluster : projects/ PROJECT ID /locations/ REGION /clusters/ CLUSTER NAME In this YAML...",
+          "Cloud Deploy resources used for parallel deployment Parallel deployment uses the following Cloud Deploy specialized resources: multi-targets A multi-target is a target that is configured with the property multiTarget , at the top level of the target config YAML, and instead of referencing the runtime cluster or service, it references one or more other targets, using multiTarget.targetIds .",
+          "The lifecycle of the delivery pipeline is the same as with any Cloud Deploy pipeline and targets, except that when it gets to the stage with the multi-target, Cloud Deploy creates a controller rollout for the multi-target and a child rollout to deploy the application to each child target."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "clouddeploy.yaml",
+      "deploy.cloud.google.com",
+      "skaffold.yaml"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel",
+        "https://docs.cloud.google.com/deploy/docs/parallel"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/deploy/docs/gke-targets",
+        "https://docs.cloud.google.com/deploy/docs/deploy-app-parallel",
+        "https://docs.cloud.google.com/deploy/docs/parallel"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:08.843Z",
+  "source_step08_card": "data/step-08/current/products/cloud-deploy/card.json",
+  "product_name": "Cloud Deploy",
+  "product_slug": "cloud-deploy"
+}

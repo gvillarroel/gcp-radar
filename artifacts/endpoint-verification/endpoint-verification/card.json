@@ -1,0 +1,167 @@
+{
+  "feature_name": "Endpoint Verification",
+  "feature_slug": "endpoint-verification",
+  "summary": "Endpoint Verification is a Google tool for verifying endpoint devices and collecting device information for access decisions.",
+  "extended_definition": "Endpoint Verification is a Google tool for verifying endpoint devices and collecting device information for access decisions.",
+  "lifecycle": {
+    "latest_feature_date": "2018-07-03",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+      "https://docs.cloud.google.com/endpoint-verification/docs/quickstart",
+      "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+      "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Troubleshoot sync issues with the Endpoint Verification extension \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "source_id": "site-docs-reference",
+        "final_score": 294,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation Security Endpoint Verification Guides Send feedback Troubleshoot sync issues with the Endpoint Verification extension Stay organized with collections Save and categorize content based on your preferences.",
+          "To do so, Endpoint Verification uses the Windows API and that API needs the device to be trusted for delegation, and the current user account must be configured to allow delegation.",
+          "If the sync is unsuccessful, do the following: In the list of passwords, right-click Endpoint Verification Safe Storage and then click Delete \"Endpoint Verification Safe Storage\" ."
+        ]
+      },
+      {
+        "title": "\"Device attributes collected by Endpoint Verification \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "source_id": "site-docs-reference",
+        "final_score": 280,
+        "relevance": "",
+        "evidence_snippets": [
+          "Attribute name Description Supported OS Serial number The serial number of the device. macOS ChromeOS (only for enterprise-enrolled devices) Windows Linux Hostname The hostname of the device. macOS Windows Linux Device ID The unique identification number associated with the device. macOS Windows Linux Wifi MAC Address The MAC address of the device. macOS ChromeOS Windows Linux Configurable device attributes Endpoint Verification provides an option to collect granular device attributes called configurable device attributes , such as metadata attributes of files, folders, and binaries; registry entries; and properties in a plist.",
+          "Windows device.chrome.is third party blocking enabled == true What's next Set up Endpoint Verification on your devices Deploy Endpoint Verification Enable collection of configurable device attributes Create device-based access levels Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Note: String comparisons are case-sensitive. macOS Windows device.clients[\"bce\"].data[\"registry config\"][\"config name\"][\"value\"] == device.clients[\"bce\"].data[\"plist config\"][\"config name\"][\"value\"] == Chrome browser attributes The following table describes the Google Chrome browser attributes that are collected by Endpoint Verification that you can use to create access levels: Attribute name Description Supported OS Example of using the attribute in the CEL expressions versionAtLeast(min version) The minimum version of the Chrome browser. macOS ChromeOS Windows Linux device.chrome.versionAtLeast(\"88.0.4321.44\") management state The management state of the browser for a device."
+        ]
+      },
+      {
+        "title": "Install the Endpoint Verification extension \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "source_id": "site-docs-reference",
+        "final_score": 278,
+        "relevance": "",
+        "evidence_snippets": [
+          "Add the package source and import the key: Create the keyrings directory: sudo mkdir -m 0755 -p /etc/apt/keyrings/ Import Google's public GPG key and convert it to a binary that is required for package verification: curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg sudo gpg --dearmor -o /etc/apt/keyrings/endpoint-verification.gpg Register Endpoint Verification to use the GPG key to verify the authenticity of the software: echo \"deb [signed-by=/etc/apt/keyrings/endpoint-verification.gpg] https://packages.cloud.google.com/apt endpoint-verification main\" sudo tee /etc/apt/sources.list.d/endpoint-verification.list > /dev/null Update and install Endpoint Verification: Update the package index files to get the latest list of available packages: sudo apt-get update Install Endpoint Verification: sudo apt-get install endpoint-verification Open the Chrome browser and on the toolbar, click Endpoint Verification > Sync now .",
+          "Before you begin Ensure that your device is running one of the following operating systems: ChromeOS Apple® Mac® OS X® El Capitan (10.11) or later Microsoft® Windows® 10 and 11 Linux® Debian® and Ubuntu® Install the Endpoint Verification extension Open the Chrome browser and install the Endpoint Verification extension .",
+          "What's next Troubleshoot issues with Endpoint Verification Uninstall the Endpoint Verification extension Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "Set up Endpoint Verification on your devices \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/endpoint-verification/docs/quickstart",
+        "source_id": "site-docs-reference",
+        "final_score": 276,
+        "relevance": "",
+        "evidence_snippets": [
+          "Set up Endpoint Verification on your devices This quickstart document guides you how to set up Endpoint Verification on your devices to understand the security posture of your devices.",
+          "What's next Endpoint Verification overview Device attributes collected by Endpoint Verification Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Turn on Endpoint Verification To collect information about the devices accessing the resources of your organization, Endpoint Verification must be turned on for your organizational unit."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "device.chrome.is",
+      "device.chrome.versionAtLeast",
+      "device.clients",
+      "key.gpg",
+      "packages.cloud.google.com",
+      "sources.list.d",
+      "verification.gpg",
+      "verification.list"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "https://docs.cloud.google.com/endpoint-verification/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "https://docs.cloud.google.com/endpoint-verification/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "armor",
+      "evidence_links": [
+        "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "https://docs.cloud.google.com/endpoint-verification/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "https://docs.cloud.google.com/endpoint-verification/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "https://docs.cloud.google.com/endpoint-verification/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "https://docs.cloud.google.com/endpoint-verification/docs/quickstart"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/endpoint-verification/docs/troubleshoot-issues-user",
+        "https://docs.cloud.google.com/endpoint-verification/docs/device-information",
+        "https://docs.cloud.google.com/endpoint-verification/docs/self-install-extension",
+        "https://docs.cloud.google.com/endpoint-verification/docs/quickstart"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:31.398Z",
+  "source_step08_card": "data/step-08/current/products/endpoint-verification/card.json",
+  "product_name": "Endpoint Verification",
+  "product_slug": "endpoint-verification"
+}

@@ -1,0 +1,154 @@
+{
+  "feature_name": "Sink Creation from Logs Explorer and Logs Router",
+  "feature_slug": "sink-creation-from-logs-explorer-and-logs-router",
+  "summary": "Cloud Logging lets users create sinks directly from the Logs Explorer and Logs Router pages.",
+  "extended_definition": "Cloud Logging lets users create sinks directly from the Logs Explorer and Logs Router pages.",
+  "lifecycle": {
+    "latest_feature_date": "2020-10-28",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/audit",
+      "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+      "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "View and analyze logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "source_id": "site-docs-root",
+        "final_score": 157,
+        "relevance": "",
+        "evidence_snippets": [
+          "Before you begin To get the permissions that you need to use the Logs Explorer to view log entries, ask your administrator to grant you the following IAM roles: To view log entries in the Required bucket and those in the Default view on the Default bucket, or to select a log scope: Logs Viewer ( roles/logging.viewer ) on your project, folder, or organization.",
+          "Get started To begin using the Logs Explorer, do the following: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "Logs Explorer interface The Logs Explorer interface lets you display log entries, parse and analyze them, and specify query parameters."
+        ]
+      },
+      {
+        "title": "Regionalize your logs \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Example command: gcloud logging sinks update Default \\ logging.googleapis.com/projects/ PROJECT ID /locations/ LOCATION /buckets/ BUCKET ID \\ --log-filter='NOT LOG ID(\"cloudaudit.googleapis.com/activity\") AND NOT LOG ID(\"externalaudit.googleapis.com/activity\") AND NOT LOG ID(\"cloudaudit.googleapis.com/system event\") AND NOT LOG ID(\"externalaudit.googleapis.com/system event\") AND NOT LOG ID(\"cloudaudit.googleapis.com/access transparency\") AND NOT LOG ID(\"externalaudit.googleapis.com/access transparency\")' \\ --description=\"Updated the Default sink to route logs to the LOCATION region\" Note: When you create a project, the filter for the Default sink is as shown in the previous command.",
+          "Search logs in the Google Cloud console To view the log entries in your log bucket, go to the Google Cloud console and complete the following steps: In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "The Log Router might send logs to a different region based on a sink's definition or if you've opted to share log data with another Google Cloud service such as the Security Command Center Threat Detection ."
+        ]
+      },
+      {
+        "title": "Cloud Audit Logs overview \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/audit",
+        "source_id": "site-docs-root",
+        "final_score": 135,
+        "relevance": "",
+        "evidence_snippets": [
+          "For more information about querying by using the Logs Explorer, see Build queries in the Logs Explorer . gcloud The Google Cloud CLI provides a command-line interface to the Logging API.",
+          "In the Google Cloud console, go to the segment Logs Explorer page: Go to Logs Explorer If you use the search bar to find this page, then select the result whose subheading is Logging .",
+          "Access control IAM permissions and roles determine your ability to access audit logs data in the Logging API , the Logs Explorer , and the Google Cloud CLI ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudaudit.googleapis.com",
+      "externalaudit.googleapis.com",
+      "logging.googleapis.com",
+      "logging.logEntries.list",
+      "logging.viewer"
+    ],
+    "missing_inventory_roles": [
+      "roles/logging.viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/regionalized-logs",
+        "https://docs.cloud.google.com/logging/docs/view/logs-viewer-interface",
+        "https://docs.cloud.google.com/logging/docs/audit"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

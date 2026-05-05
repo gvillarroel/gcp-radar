@@ -1,0 +1,128 @@
+{
+  "feature_name": "GPT-OSS-20B MaaS model in Model Garden",
+  "feature_slug": "gpt-oss-20b-maas-model-in-model-garden",
+  "summary": "OpenAI's GPT-OSS-20B model is now available as a Model-as-a-Service (MaaS) model in Vertex AI Model Garden.",
+  "extended_definition": "OpenAI's GPT-OSS-20B model is now available as a Model-as-a-Service (MaaS) model in Vertex AI Model Garden.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-13",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+      "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+      "https://docs.cloud.google.com/vertex-ai/docs/reference/rest"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Vertex AI API \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "source_id": "site-api-reference",
+        "final_score": 66,
+        "relevance": "",
+        "evidence_snippets": [
+          "REST Resource: v1beta1.projects.modelGardenEula Methods accept POST /v1beta1/{parent}/modelGardenEula:accept Accepts the EULA acceptance status of a publisher model. check POST /v1beta1/{parent}/modelGardenEula:check Checks the EULA acceptance status of a publisher model.",
+          "REST Resource: v1beta1.publishers.models Methods get GET /v1beta1/{name} Gets a Model Garden publisher model. list GET /v1beta1/{parent}/models Lists publisher models in Model Garden.",
+          "REST Resource: v1.publishers.models Methods get GET /v1/{name} Gets a Model Garden publisher model."
+        ]
+      },
+      {
+        "title": "Model evaluation components \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component",
+        "source_id": "site-api-reference",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "The default schema includes the following fields: id : string displayNames : string type : enum timeSegmentStart : string timeSegmentEnd : string confidence : float The following is an example CSV file with sale dollars as the target column: date,store name,city,zip code,county,sale dollars 2020-03-17,Thriftway,,,,774.08999999999992 2020-03-10,Thriftway,,,,1160.67 2020-03-03,Thriftway,,,,2247.24 2020-06-08,New Star / Fort Dodge,,,,753.98 2020-06-01,New Star / Fort Dodge,,,,967.73 2020-01-10,Casey's General Store #1280 / Fort Dodge,,,,1040.92 2020-10-30,KUM & GO #76 / ADAIR,Adair,50002,ADAIR,1387.02 The TargetFieldDataRemoverOp component removes the target column before sending the file to the BatchPredictionJob component: date,store name,city,zip code,county 2020-03-17,Thriftway,nan,nan,nan 2020-03-10,Thriftway,nan,nan,nan 2020-03-03,Thriftway,nan,nan,nan 2020-06-08,New Star / Fort Dodge,nan,nan,nan 2020-06-01,New Star / Fort Dodge,nan,nan,nan 2020-01-10,Casey's General Store #1280 / Fort Dodge,nan,nan,nan 2020-10-30,KUM & GO #76 / ADAIR,Adair,50002.0,ADAIR The following is an example of a batch prediction output file without the target column of sale dollars : { \"instance\": { \"content\": \"gs://kbn-us-central1-test/datasets/text/happy 11556.txt\", \"mimeType\":\"text/plain\" }, \"prediction\": { \"ids\": [\"7903916851837534208\",\"3292230833410146304\",\"986387824196452352\",\"2139309328803299328\",\"5598073842623840256\",\"6750995347230687232\",\"4559431178561519616\"], \"displayNames\": [\"affection\",\"bonding\",\"achievement\",\"exercise\",\"nature\",\"enjoy the moment\",\"leisure\"], \"confidences\": [0.99483216,0.005162797,4.1117933E-6,3.9997E-7,2.4624453E-7,1.9969502E-7,1.16997434E-7] } } This table describes the required parameters for the ModelEvaluationForecastingOp component with a tabular model: Evaluation component parameter Required target field name Yes prediction label column Not required for forecasting models. prediction score column Not required for default schema.",
+          "The following is an example CSV dataset with species as the target column: petal length,petal width,sepal length,sepal width,species 6.4,2.8,5.6,2.2,2 5.0,2.3,3.3,1.0,1 4.9,2.5,4.5,1.7,2 4.9,3.1,1.5,0.1,0 The TargetFieldDataRemoverOp component removes the target column before sending the file to the batch prediction component: petal length,petal width,sepal length,sepal width 6.4,2.8,5.6,2.2 5.0,2.3,3.3,1.0 4.9,2.5,4.5,1.7 4.9,3.1,1.5,0.1 The following is an example of a batch prediction output file without the target column of species : { \"instance\": [5.6, 2.5, 3.9, 1.1], \"prediction\": [0.0005816521588712931, 0.9989032745361328, 0.0005150380893610418] } { \"instance\": [5.0, 3.6, 1.4, 0.2], \"prediction\": [0.999255359172821, 0.000527293945197016, 0.00021737271163146943] } { \"instance\": [6.0, 2.9, 4.5, 1.5], \"prediction\": [0.00025063654175028205, 0.9994204044342041, 0.00032893591560423374] } This table describes the required parameters for the ModelEvaluationClassificationOp component with a custom-trained model: Evaluation component parameter Required target field name Yes prediction label column Must be empty; this column doesn't exist in custom-trained models. prediction score column Not required for default schema; is set automatically for JSONL , CSV , or BIGQUERY formats. evaluation class labels Yes.",
+          "You can view and download schema files from the following Cloud Storage location: gs://google-cloud-aiplatform/schema/modelevaluation/ The following tabs show example batch prediction output files and required input parameters for each Tabular model type parameters: Classification The default schema includes the following fields: scores : array classes : array The following is an example of a batch prediction output file with the target column of male : { \"instance\": { \"male\": \"1\", \"age\": \"49\", \"heartRate\": \"67\", \"education\": \"medium high\", \"totChol\": \"282\", \"diaBP\": \"79\", \"BPMeds\": \"0\", \"currentSmoker\": \"current high\", \"cigsPerDay\": \"25\", \"prevalentStroke\": \"stroke 0\", \"prevalentHyp\": \"hyp 0\", \"TenYearCHD\": \"FALSE\", \"diabetes\": \"0\", \"sysBP\": \"134\", \"BMI\": \"26.87\", \"glucose\": \"78\" }, \"prediction\": { \"scores\": [0.3666940927505493, 0.6333059072494507], \"classes\": [\"0\", \"1\"] } } This table describes the required parameters for the ModelEvaluationClassificationOp component with a tabular model: Evaluation component parameter Required target field name Yes prediction label column Not required for default schema."
+        ]
+      },
+      {
+        "title": "Vertex AI model evaluation notebook tutorials \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "source_id": "site-docs-reference-2",
+        "final_score": 62,
+        "relevance": "",
+        "evidence_snippets": [
+          "Tutorial steps Installation of required libraries Reading the dataset from a Cloud Storage bucket Performing exploratory analysis on the dataset Preprocessing the dataset Training a random forest model using scikitlearn Saving the model to a Cloud Storage bucket Creating a Vertex AI model resource and deploying to an endpoint Running the WhatIf Tool on test data Undeploying the model and cleaning up the model resources Colab GitHub Vertex AI Workbench Vertex AI Workbench BigQuery ML Churn prediction for game developers using Google Analytics 4 and BigQuery ML .",
+          "Tutorial steps Create utility functions to download data and prepare csv files for creating Vertex AI managed dataset Download Data Prepare CSV Files for creating managed dataset Create custom training Python package Create TensorFlow Serving container Run custom Python package training with managed text dataset Deploy a model and create an endpoint on Vertex AI Predict on the endpoint Create a Batch Prediction job on the model Colab Colab Enterprise GitHub Vertex AI Workbench Tabular Workflow for TabNet Vertex AI Explanations with TabNet models .",
+          "Tutorial steps Create a local BigQuery table in your project Train a BigQuery ML model Evaluate the BigQuery ML model Export the BigQuery ML model as a cloud model Upload the exported model as a Vertex AI model resource Hyperparameter tune a BigQuery ML model with Vertex AI Vizier Automatically register a BigQuery ML model to Vertex AI Model Registry Colab Colab Enterprise GitHub Vertex AI Workbench Custom training Vertex AI Inference Deploying Iris-detection model using FastAPI and Vertex AI custom container serving ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "endpoint.name",
+      "v1.publishers.models",
+      "v1beta1.projects.locations.endpoints",
+      "v1beta1.projects.modelGardenEula",
+      "v1beta1.publishers.models"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/reference/rest",
+        "https://docs.cloud.google.com/vertex-ai/docs/evaluation/model-evaluation-notebook-tutorials",
+        "https://docs.cloud.google.com/vertex-ai/docs/pipelines/model-evaluation-component"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.145Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

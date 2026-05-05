@@ -1,0 +1,120 @@
+{
+  "feature_name": "Logging API v2",
+  "feature_slug": "logging-api-v2",
+  "summary": "The Stackdriver Logging API v2 provides a simplified log format and is generally available.",
+  "extended_definition": "The Stackdriver Logging API v2 provides a simplified log format and is generally available.",
+  "lifecycle": {
+    "latest_feature_date": "2016-10-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+      "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Installing the Ops Agent on individual VMs \\_|\\_ Cloud Logging \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "source_id": "site-docs-root-2",
+        "final_score": 83,
+        "relevance": "",
+        "evidence_snippets": [
+          "For version information, see List all agent versions . --uninstall : Uninstalls the agent. --remove-repo : Removes the corresponding agent package repository after installing or uninstalling the agent. --dry-run : Triggers only a dry run of the script execution and prints out the commands that it is supposed to execute. --uninstall-standalone-logging-agent : Uninstalls the legacy Logging agent ( StackdriverLogging ). --uninstall-standalone-monitoring-agent : Uninstalls the legacy Monitoring agent ( StackdriverMonitoring ).",
+          "For version information, see List all agent versions . -Uninstall : Uninstalls the agent. -RemoveRepo : Removes the corresponding agent package repository after installing or uninstalling the agent. -WhatIf : Triggers only a dry run of the script execution and prints out the commands that it is supposed to execute. -UninstallStandaloneLoggingAgent : Uninstalls the legacy Logging agent ( StackdriverLogging ). -UninstallStandaloneMonitoringAgent : Uninstalls the legacy Monitoring agent ( StackdriverMonitoring ).",
+          "However, the status might be inaccurate if the VM lacks necessary access scopes or if the associated service account has insufficient IAM roles. gcpdiag : gcpdiag provides more reliable and robust information about agent status than the VM Instances dashboard, verifying both agent installation and transmission of telemetry from the VM."
+        ]
+      },
+      {
+        "title": "\"Installing the Cloud Logging agent on individual VMs \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/installation",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "This sets the http proxy and https proxy environment variables so that the agent can send data using outbound HTTPS: setx http proxy http:// proxy-ip : proxy-port /m setx https proxy http:// proxy-ip : proxy-port /m setx no proxy 169.254.169.254 /m Determine the agent version To determine the version of the Logging agent on your system, run the following commands on your VM instance: DEBIAN / UBUNTU Run the following command on Debian or Ubuntu: dpkg-query --show --showformat ' ${ Package } ${ Version } ${ Architecture } ${ Status } \\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured SLES / SUSE Run the following command on SUSE: rpm --query --queryformat '%{NAME} %{VERSION} %{RELEASE} %{ARCH}\\n' google-fluentd google-fluentd-catch-all-config google-fluentd-catch-all-config-structured WINDOWS Connect to your instance using RDP or a similar tool and login to Windows.",
+          "Run the following PowerShell commands: (New-Object Net.WebClient).DownloadFile(\"https://dl.google.com/cloudagents/windows/StackdriverLogging-v1-22.exe\", \"${env:UserProfile}\\StackdriverLogging-v1-22.exe\") & \"${env:UserProfile}\\StackdriverLogging-v1-22.exe\" Alternatively, you can browse to the following URL to download and run the agent's installer: https://dl.google.com/cloudagents/windows/StackdriverLogging-v1-22.exe Caution: You must download the installer to a non-system directory, such as C:\\Users\\[USERNAME] .",
+          "Run one of the following commands, depending on your Linux distribution: YUM: sudo yum remove -y google-fluentd-catch-all-config sudo yum install -y google-fluentd-catch-all-config-structured sudo service google-fluentd restart APT: sudo apt-get remove -y google-fluentd-catch-all-config sudo apt-get install -y google-fluentd-catch-all-config-structured sudo service google-fluentd restart For information about structured logging, refer to the structured logging guide."
+        ]
+      },
+      {
+        "title": "Configure the Logging agent \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "source_id": "site-docs-root",
+        "final_score": 75,
+        "relevance": "",
+        "evidence_snippets": [
+          "Setting labels statically If you don't have this information in the payload, and simply want to add a static metadata label called environment , add the following to your output plugin configuration in the main configuration file ( /etc/google-fluentd/google-fluentd.conf on Linux or C:\\Program Files (x86)\\Stackdriver\\LoggingAgent\\fluent.conf on Windows): Configure all sources to output to Cloud Logging <match > @type google cloud labels { \"environment\" : \"production\" } ... </match> In this case, instead of using a map to replace one label with another, we use a labels setting to attach a label with a given literal value to a log entry, regardless of whether the entry already has a label or not.",
+          "If you accepted the default installation directory, this directory is: C: \\P rogram Files ( x86 ) \\S tackdriver \\L oggingAgent \\c onfig.d \\ Restart the agent by running the following commands in a command-line shell: net stop StackdriverLogging net start StackdriverLogging For more information on fluentd configuration files, see fluentd's Configuration File Syntax documentation .",
+          "If autoformat stackdriver trace is true and [V] matches the format of ResourceTrace traceId the LogEntry trace field has the value projects/[PROJECT-ID]/traces/[V] . logging.googleapis.com/trace sampled traceSampled The value of this field must be either true or false ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "dl.google.com",
+      "fluent.conf",
+      "fluentd.conf",
+      "logging.googleapis.com",
+      "onfig.d"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/installation",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/configuration",
+        "https://docs.cloud.google.com/logging/docs/agent/logging/installation"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

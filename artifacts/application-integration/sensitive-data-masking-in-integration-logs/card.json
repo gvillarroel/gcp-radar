@@ -1,0 +1,166 @@
+{
+  "feature_name": "Sensitive data masking in integration logs",
+  "feature_slug": "sensitive-data-masking-in-integration-logs",
+  "summary": "Application Integration now provides data masking in integration execution logs to prevent sensitive data from appearing in log output.",
+  "extended_definition": "Application Integration now provides data masking in integration execution logs to prevent sensitive data from appearing in log output.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+      "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+      "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Application Integration audit logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "source_id": "site-docs-root-2",
+        "final_score": 91,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Permission type Methods ADMIN READ google.cloud.integrations.v1alpha.AuthConfigs.GetAuthConfig google.cloud.integrations.v1alpha.AuthConfigs.ListAuthConfigs google.cloud.integrations.v1alpha.Certificates.GetCertificate google.cloud.integrations.v1alpha.Certificates.ListCertificates google.cloud.integrations.v1alpha.Client.GetClient google.cloud.integrations.v1alpha.Client.GetClientMetadata google.cloud.integrations.v1alpha.SfdcChannels.GetSfdcChannel google.cloud.integrations.v1alpha.SfdcChannels.ListSfdcChannels google.cloud.integrations.v1alpha.SfdcInstances.GetSfdcInstance google.cloud.integrations.v1alpha.SfdcInstances.ListSfdcInstances ADMIN WRITE google.cloud.integrations.v1alpha.AuthConfigs.CreateAuthConfig google.cloud.integrations.v1alpha.AuthConfigs.DeleteAuthConfig google.cloud.integrations.v1alpha.AuthConfigs.UpdateAuthConfig google.cloud.integrations.v1alpha.Certificates.CreateCertificate google.cloud.integrations.v1alpha.Certificates.DeleteCertificate google.cloud.integrations.v1alpha.Certificates.UpdateCertificate google.cloud.integrations.v1alpha.Client.DeprovisionClient google.cloud.integrations.v1alpha.Client.ProvisionClient google.cloud.integrations.v1alpha.Client.ReplaceServiceAccount google.cloud.integrations.v1alpha.Client.SwitchEncryption google.cloud.integrations.v1alpha.Client.SwitchVariableMasking google.cloud.integrations.v1alpha.SfdcChannels.CreateSfdcChannel google.cloud.integrations.v1alpha.SfdcChannels.DeleteSfdcChannel google.cloud.integrations.v1alpha.SfdcChannels.UpdateSfdcChannel google.cloud.integrations.v1alpha.SfdcInstances.CreateSfdcInstance google.cloud.integrations.v1alpha.SfdcInstances.DeleteSfdcInstance google.cloud.integrations.v1alpha.SfdcInstances.UpdateSfdcInstance DATA READ google.cloud.integrations.v1alpha.Condition.ValidateCondition google.cloud.integrations.v1alpha.Executions.DownloadExecution google.cloud.integrations.v1alpha.Executions.GetExecution google.cloud.integrations.v1alpha.Executions.ListExecutions google.cloud.integrations.v1alpha.Experiment.ListExperiments google.cloud.integrations.v1alpha.IntegrationVersions.DownloadIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.DownloadJsonPackage google.cloud.integrations.v1alpha.IntegrationVersions.GetIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.ListIntegrationVersions google.cloud.integrations.v1alpha.Integrations.ListIntegrations google.cloud.integrations.v1alpha.Integrations.ListTaskEntities google.cloud.integrations.v1alpha.JsonSchema.GenerateJsonSchema google.cloud.integrations.v1alpha.Suspensions.ListSuspensions google.cloud.integrations.v1alpha.TemplateService.DownloadTemplate google.cloud.integrations.v1alpha.TemplateService.GetTemplate google.cloud.integrations.v1alpha.TemplateService.ListTemplates google.cloud.integrations.v1alpha.TemplateService.SearchTemplates google.cloud.integrations.v1alpha.TransformFunction.ListTransformFunctionDefinitions google.cloud.integrations.v1alpha.TransformFunction.ListTransformFunctions google.cloud.integrations.v2.Executions.ListExecutions DATA WRITE google.cloud.integrations.v1alpha.CloudFunctions.CreateCloudFunction google.cloud.integrations.v1alpha.Executions.ExecuteEvent google.cloud.integrations.v1alpha.Executions.ExecuteIntegrations google.cloud.integrations.v1alpha.Executions.ScheduleIntegrations google.cloud.integrations.v1alpha.Executions.TestIntegrations google.cloud.integrations.v1alpha.IntegrationVersions.CreateIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.DeleteIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.PublishIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.TakeoverEditLock google.cloud.integrations.v1alpha.IntegrationVersions.UnpublishIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.UpdateIntegrationVersion google.cloud.integrations.v1alpha.IntegrationVersions.UploadIntegrationVersion google.cloud.integrations.v1alpha.Integrations.DeleteIntegration google.cloud.integrations.v1alpha.Suspensions.LiftSuspension google.cloud.integrations.v1alpha.Suspensions.ResolveSuspension google.cloud.integrations.v1alpha.TemplateService.CreateTemplate google.cloud.integrations.v1alpha.TemplateService.DeleteTemplate google.cloud.integrations.v1alpha.TemplateService.ImportTemplate google.cloud.integrations.v1alpha.TemplateService.ShareTemplate google.cloud.integrations.v1alpha.TemplateService.UnshareTemplate google.cloud.integrations.v1alpha.TemplateService.UpdateTemplate google.cloud.integrations.v1alpha.TemplateService.UploadTemplate google.cloud.integrations.v1alpha.TemplateService.UseTemplate google.cloud.integrations.v2.Executions.ExecuteIntegration google.cloud.integrations.v2.Executions.ScheduleIntegration API interface audit logs For information about how and which permissions are evaluated for each method, see the Identity and Access Management documentation for Application Integration. google.cloud.integrations.v1alpha.AuthConfigs The following audit logs are associated with methods belonging to google.cloud.integrations.v1alpha.AuthConfigs .",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.integrations.v2.Executions.ScheduleIntegration\" Methods that don't produce audit logs A method might not produce audit logs for one or more of the following reasons: It is a high volume method involving significant log generation and storage costs.",
+          "Filter for this method : protoPayload.methodName=\"google.cloud.integrations.v1alpha.Client.SwitchVariableMasking\" google.cloud.integrations.v1alpha.CloudFunctions The following audit logs are associated with methods belonging to google.cloud.integrations.v1alpha.CloudFunctions ."
+        ]
+      },
+      {
+        "title": "\"View logs in Cloud Logging \\_|\\_ Application Integration \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/application-integration/docs/cloud-logging",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Sample queries You can use the following queries to view logs in Cloud Logging: To view all integration execution logs: resource.type=\"integrations.googleapis.com/IntegrationVersion\" You can view integration execution logs for a specific execution ID: Searches only the parents executions with the given execution ID: resource.type=\"integrations.googleapis.com/IntegrationVersion\" jsonPayload.executionId=\" EXECUTION ID \" Searches for both parent and child executions launched from the given execution ID: resource.type=\"integrations.googleapis.com/IntegrationVersion\" \" EXECUTION ID \" To view integration execution logs for a specific integration: resource.type=\"integrations.googleapis.com/IntegrationVersion\" \" INTEGRATION NAME \" Or resource.type=\"integrations.googleapis.com/IntegrationVersion\" jsonPayload.integration=\" INTEGRATION NAME \" To view failed integration executions for a specific integration: resource.type=\"integrations.googleapis.com/IntegrationVersion\" jsonPayload.integrationExecutionDetails.integrationExecutionState=\"FAILED\" jsonPayload.integration=\" INTEGRATION NAME \" To view logs with specific request param name.",
+          "In the Log settings , click the Enable Cloud Logging toggle and then from the Severity list, select the severity type of the logs that you want to store in Cloud Logging: Info : Select this option to capture all execution statuses: SUCCEEDED , FAILED , PROCESSING , PENDING , SUSPENDED , RETRY ON HOLD , and CANCELLED .",
+          "View logs in Cloud Logging In Cloud Logging, you can view the Integration execution logs containing integration details, such as status, performance, integration version, request and response parameters, and the trigger and task configurations."
+        ]
+      },
+      {
+        "title": "Cancel executions \\_|\\_ Application Integration \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "source_id": "site-docs-reference-2",
+        "final_score": 79,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "You can cancel an integration execution if the integration is in one of the following execution states : Suspended On hold Retry on hold Cancel an execution To cancel an execution, select one of the following options: Console In Application Integration , go to the Logs page.",
+          "You can't cancel an integration execution if the integration is in one of the following states: In process Succeeded Failed Canceled What's next Learn about logs in Application Integration .",
+          "The Execution Logs page appears."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "integrations.googleapis.com",
+      "projects.locations.integrations.executions.cancel",
+      "resource.type"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/application-integration/docs/audit-logging",
+        "https://docs.cloud.google.com/application-integration/docs/cancel-executions",
+        "https://docs.cloud.google.com/application-integration/docs/cloud-logging"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.484Z",
+  "source_step08_card": "data/step-08/current/products/application-integration/card.json",
+  "product_name": "Application Integration",
+  "product_slug": "application-integration"
+}

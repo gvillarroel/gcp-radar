@@ -1,0 +1,29 @@
+# Google Cloud Marketplace
+
+Generated at: `2026-05-05T13:13:05.575Z`
+
+Service card: [card.json](../../artifacts/google-cloud-marketplace/card.json)
+
+Artifacts index: [google-cloud-marketplace](../../artifacts/google-cloud-marketplace/index.md)
+
+## Summary
+
+- Promoted features: 10
+- Skipped features during promotion: 0
+- Latest feature date: 2025-03-26
+- Service IAM status: {"explicit":5,"derived_from_permission_prefix":0,"unknown":5}
+
+## Features
+
+| Feature | IAM | Explicit roles | Explicit permissions | Derived roles | Derived permissions | Coverage | Official sources |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [Cloud Marketplace SaaS procurement requests](../../artifacts/google-cloud-marketplace/cloud-marketplace-saas-procurement-requests/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/access-private-marketplace)<br>[source](https://docs.cloud.google.com/marketplace/docs/governance)<br>[source](https://docs.cloud.google.com/marketplace/docs/governance/access-requests) |
+| [Google Cloud Marketplace Kubernetes applications](../../artifacts/google-cloud-marketplace/google-cloud-marketplace-kubernetes-applications/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `resourcemanager.projects.get`<br>`resourcemanager.projects.list` | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/access-control)<br>[source](https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type)<br>[source](https://docs.cloud.google.com/marketplace/docs/container-images) |
+| [Google Cloud Private Marketplace product-level access control](../../artifacts/google-cloud-marketplace/google-cloud-private-marketplace-product-level-access-control/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `resourcemanager.projects.get`<br>`resourcemanager.projects.list` | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/access-control)<br>[source](https://docs.cloud.google.com/marketplace/docs/access-private-marketplace)<br>[source](https://docs.cloud.google.com/marketplace/docs/governance/access-requests) |
+| [launcher.gcr.io container registry](../../artifacts/google-cloud-marketplace/launcher-gcr-io-container-registry/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/container-images)<br>[source](https://docs.cloud.google.com/marketplace/docs/partners)<br>[source](https://docs.cloud.google.com/marketplace/docs/partners/develop) |
+| [Marketplace software trials for managed services and Kubernetes applications](../../artifacts/google-cloud-marketplace/marketplace-software-trials-for-managed-services-and-kubernetes-applications/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type)<br>[source](https://docs.cloud.google.com/marketplace/docs/commitment-api-purchasing)<br>[source](https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents) |
+| [Private Marketplace collections](../../artifacts/google-cloud-marketplace/private-marketplace-collections/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `resourcemanager.projects.get`<br>`resourcemanager.projects.list` | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/access-control)<br>[source](https://docs.cloud.google.com/marketplace/docs/access-private-marketplace)<br>[source](https://docs.cloud.google.com/marketplace/docs/governance/access-requests) |
+| [Private offer PDF downloads](../../artifacts/google-cloud-marketplace/private-offer-pdf-downloads/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `resourcemanager.projects.get`<br>`resourcemanager.projects.list` | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/access-control)<br>[source](https://docs.cloud.google.com/marketplace/docs/billing)<br>[source](https://docs.cloud.google.com/marketplace/docs/commitment-api-purchasing) |
+| [Security software agent deployment](../../artifacts/google-cloud-marketplace/security-software-agent-deployment/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents)<br>[source](https://docs.cloud.google.com/marketplace/docs/maintain-deployments)<br>[source](https://docs.cloud.google.com/marketplace/docs/manage-deployments) |
+| [Usage-metric-based private offer discounts](../../artifacts/google-cloud-marketplace/usage-metric-based-private-offer-discounts/README.md) | explicit | `roles/accessapproval.admin`<br>`roles/accessapproval.approver`<br>`roles/accessapproval.configEditor` | `resourcemanager.projects.get`<br>`resourcemanager.projects.list` | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/access-control)<br>[source](https://docs.cloud.google.com/marketplace/docs/billing)<br>[source](https://docs.cloud.google.com/marketplace/docs/billing/pricing-plans-by-product-type) |
+| [VM solution trials](../../artifacts/google-cloud-marketplace/vm-solution-trials/README.md) | unknown | none | none | none | none | MEDIUM | [source](https://docs.cloud.google.com/marketplace/docs/billing)<br>[source](https://docs.cloud.google.com/marketplace/docs/deploy-security-software-agents)<br>[source](https://docs.cloud.google.com/marketplace/docs/deploy-through-CLI) |

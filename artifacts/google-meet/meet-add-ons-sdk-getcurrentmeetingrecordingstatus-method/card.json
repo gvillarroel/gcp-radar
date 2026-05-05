@@ -1,0 +1,172 @@
+{
+  "feature_name": "Meet Add-ons SDK getCurrentMeetingRecordingStatus() method",
+  "feature_slug": "meet-add-ons-sdk-getcurrentmeetingrecordingstatus-method",
+  "summary": "The getCurrentMeetingRecordingStatus() method returned the current meeting recording status and was later deprecated with no replacement; deprecated on 2024-02-12.",
+  "extended_definition": "The getCurrentMeetingRecordingStatus() method returned the current meeting recording status and was later deprecated with no replacement; deprecated on 2024-02-12.",
+  "lifecycle": {
+    "latest_feature_date": "2024-02-12",
+    "deprecation_date": "2024-02-12",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+      "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+      "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+      "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Meet meeting spaces overview \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "source_id": "site-docs-root",
+        "final_score": 196,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "How to call the meeting space methods The following table details the meeting roles required to use the meeting space methods: Method Owners Participants Others endActiveConference x get x x x with settings x with active conference x x patch x How Meet identifies a meeting space The Google Meet REST API generates a spaces resource for each meeting space.",
+          "Related topics Create and manage meeting spaces Configure meeting spaces and members Join a meeting Countries where you can use a phone with Meet Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "During the conference, the meeting owner can call the spaces.endActiveConference method to programmatically end an active conference for all participants."
+        ]
+      },
+      {
+        "title": "\"Observe meeting events with Python and the Google Meet REST API \\_|\\_ Google\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "source_id": "site-docs-root",
+        "final_score": 182,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "AuthorizedSession ( USER CREDENTIALS ) body = { \"targetResource\" : f \"//cloudidentity.googleapis.com/users/ { user name } \" , \"eventTypes\" : [ \"google.workspace.meet.conference.v2.started\" , \"google.workspace.meet.conference.v2.ended\" , \"google.workspace.meet.participant.v2.joined\" , \"google.workspace.meet.participant.v2.left\" , \"google.workspace.meet.recording.v2.fileGenerated\" , \"google.workspace.meet.transcript.v2.fileGenerated\" , ], \"payloadOptions\" : { \"includeResource\" : False , }, \"notificationEndpoint\" : { \"pubsubTopic\" : topic name }, \"ttl\" : \"86400s\" , } response = session . post ( \"https://workspaceevents.googleapis.com/v1/subscriptions\" , json = body ) return response service = build ( \"people\" , \"v1\" , credentials = USER CREDENTIALS ) response = ( service . people () . get ( resourceName = \"people/me\" , personFields = \"names,emailAddresses\" ) . execute () ) resource name = response . get ( \"resourceName\" ) if resource name . startswith ( \"people/\" ): resource name = resource name [ len ( \"people/\" ) :] subscription = subscribe to user ( topic name = TOPIC NAME , user name = resource name ) Make sure to add \"https://www.googleapis.com/auth/userinfo.profile\" in the authorize method in the credential samples above.",
+          "AuthorizedSession ( USER CREDENTIALS ) body = { 'targetResource' : f \"//meet.googleapis.com/ { space name } \" , \"eventTypes\" : [ \"google.workspace.meet.conference.v2.started\" , \"google.workspace.meet.conference.v2.ended\" , \"google.workspace.meet.participant.v2.joined\" , \"google.workspace.meet.participant.v2.left\" , \"google.workspace.meet.recording.v2.fileGenerated\" , \"google.workspace.meet.transcript.v2.fileGenerated\" , ], \"payloadOptions\" : { \"includeResource\" : False , }, \"notificationEndpoint\" : { \"pubsubTopic\" : topic name }, \"ttl\" : \"86400s\" , } response = session . post ( \"https://workspaceevents.googleapis.com/v1/subscriptions\" , json = body ) return response Next, add the corresponding code to pull and process the events.",
+          "Add the code to main.py : space = create space () print ( f \"Join the meeting at { space . meeting uri } \" ) TOPIC NAME = \"projects/ PROJECT ID /topics/ TOPIC ID \" SUBSCRIPTION NAME = \"projects/ PROJECT ID /subscriptions/ SUBSCRIPTION ID \" subscription = subscribe to space ( topic name = TOPIC NAME , space name = space . name ) if ( subscription . status code ) == 200 : listen for events ( subscription name = SUBSCRIPTION NAME ) else : print ( f \"Subscription to Meet events failed, response data: { subscription . content } \" ) Replace the following: PROJECT ID : The unique Cloud project ID for your app, such as my-sample-project-191923 ."
+        ]
+      },
+      {
+        "title": "\"Authenticate and authorize Meet REST API requests \\_|\\_ Google Meet \\_|\\_\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "source_id": "site-docs-root",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Google Workspace Google Meet Guides Send feedback Authenticate and authorize Meet REST API requests Stay organized with collections Save and categorize content based on your preferences.",
+          "Authenticating and authorizing with user credentials lets Meet apps access user data and perform operations on the authenticated user's behalf.",
+          "Meet REST API scopes Authorization scopes are the permissions that you request users to authorize for your app to access the meeting content."
+        ]
+      },
+      {
+        "title": "\"Configure meeting spaces and members \\_|\\_ Google Meet \\_|\\_ Google for\\",
+        "url": "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration",
+        "source_id": "site-docs-root",
+        "final_score": 166,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following sections detail how to configure a meeting space using these objects and methods.",
+          "Related topics Start or schedule a Google Meet video meeting \"Take notes for me\" in Google Meet Use Transcripts with Google Meet Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Each method takes a path parameter with the create and list methods using the parent field to denote the meeting space, and the delete and get methods using the name field to filter the results based on the meeting space and the member name."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudidentity.googleapis.com",
+      "developers.google.com",
+      "main.py",
+      "meet.google.com",
+      "meet.googleapis.com",
+      "participants.participantSessions",
+      "participants.participantSessions.list",
+      "recordings.list",
+      "spaces.endActiveConference",
+      "transcripts.entries",
+      "transcripts.entries.list",
+      "userinfo.profile",
+      "workspaceevents.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-overview",
+        "https://developers.google.com/workspace/meet/api/guides/tutorial-events-python",
+        "https://developers.google.com/workspace/meet/api/guides/authenticate-authorize",
+        "https://developers.google.com/workspace/meet/api/guides/meeting-spaces-configuration"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:39.392Z",
+  "source_step08_card": "data/step-08/current/products/google-meet/card.json",
+  "product_name": "Google Meet",
+  "product_slug": "google-meet"
+}

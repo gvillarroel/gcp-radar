@@ -1,0 +1,139 @@
+{
+  "feature_name": "Artifact Registry Migration Admin IAM role",
+  "feature_slug": "artifact-registry-migration-admin-iam-role",
+  "summary": "Artifact Registry introduces the Container Registry to Artifact Registry Migration Admin role to simplify IAM permissions for migration.",
+  "extended_definition": "Artifact Registry introduces the Container Registry to Artifact Registry Migration Admin role to simplify IAM permissions for migration.",
+  "lifecycle": {
+    "latest_feature_date": "2024-11-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers",
+      "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Migrate container images from a third-party registry \\_|\\_ Artifact Registry\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers",
+        "source_id": "site-docs-root-2",
+        "final_score": 124,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Enable the Artifact Registry API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Enable the Artifact Registry API: Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Migration overview Migration of your container images includes the following steps: Set up prerequisites ."
+        ]
+      },
+      {
+        "title": "\"Quickstart: Store Docker container images in Artifact Registry \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images",
+        "source_id": "site-docs-root-2",
+        "final_score": 111,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Roles required to enable APIs To enable APIs, you need the Service Usage Admin IAM role ( roles/serviceusage.serviceUsageAdmin ), which contains the serviceusage.services.enable permission.",
+          "Enable the API Make sure that you have the following role or roles on the project: Artifact Registry Administrator Check for the roles In the Google Cloud console, go to the IAM page."
+        ]
+      },
+      {
+        "title": "Access control with IAM \\_|\\_ Artifact Registry \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "source_id": "site-docs-root",
+        "final_score": 110,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Role Description Container Registry -> Artifact Registry Migration Admin ( roles/artifactregistry.containerRegistryMigrationAdmin ) Includes all permissions required to run migration tooling Artifact Registry Create-on-push Writer ( roles/artifactregistry.createOnPushWriter ) Read and write artifacts.",
+          "For example, to remove a policy binding for the role roles/artifactregistry.writer for the user write@gmail.com with the repository my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \\ --location = us-west1 \\ --member = user:write@gmail.com \\ --role = roles/artifactregistry.writer To revoke public access to my-repo in the location --us-west1 , run: gcloud artifacts repositories remove-iam-policy-binding my-repo \\ --location = us-west1 \\ --member = allUsers \\ --role = roles/artifactregistry.reader Granting conditional access with tags Project administrators can create tags for resources across Google Cloud and manage them in Resource Manager .",
+          "Artifact Registry Create-on-push Repository Administrator ( roles/artifactregistry.createOnPushRepoAdmin ) Read, write, and delete artifacts."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "artifactregistry.containerRegistryMigrationAdmin",
+      "artifactregistry.createOnPushRepoAdmin",
+      "artifactregistry.createOnPushWriter",
+      "artifactregistry.reader",
+      "artifactregistry.writer",
+      "docker.pkg.dev",
+      "gmail.com",
+      "serviceusage.services.enable",
+      "serviceusage.serviceUsageAdmin"
+    ],
+    "missing_inventory_roles": [
+      "roles/artifactregistry.containerRegistryMigrationAdmin",
+      "roles/artifactregistry.createOnPushRepoAdmin",
+      "roles/artifactregistry.createOnPushWriter",
+      "roles/artifactregistry.reader",
+      "roles/artifactregistry.writer",
+      "roles/serviceusage.serviceUsageAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/migrate-external-containers",
+        "https://docs.cloud.google.com/artifact-registry/docs/access-control",
+        "https://docs.cloud.google.com/artifact-registry/docs/docker/store-docker-container-images"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:01.090Z",
+  "source_step08_card": "data/step-08/current/products/artifact-registry/card.json",
+  "product_name": "Artifact Registry",
+  "product_slug": "artifact-registry"
+}

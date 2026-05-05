@@ -1,0 +1,181 @@
+{
+  "feature_name": "Cloud HSM attestation certificate bundles",
+  "feature_slug": "cloud-hsm-attestation-certificate-bundles",
+  "summary": "Certificate bundles for verifying attestations for Cloud HSM keys were replaced by certificate chains; deprecated on 2024-03-20.",
+  "extended_definition": "Certificate bundles for verifying attestations for Cloud HSM keys were replaced by certificate chains; deprecated on 2024-03-20.",
+  "lifecycle": {
+    "latest_feature_date": "2024-03-20",
+    "deprecation_date": "2024-03-20",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kms/docs/attest-key",
+      "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+      "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+      "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Verifying attestations \\_|\\_ Cloud Key Management Service \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/kms/docs/attest-key",
+        "source_id": "site-iam-reference",
+        "final_score": 246,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The --output-file flag specifies the path and filename destination for the retrieved certificates. gcloud kms keys versions get-certificate-chain key-version \\ --key key-name \\ --location location \\ --keyring keyring-name \\ --output-file [certificates-file] \\ Download the script for verifying attestations and its prerequisites, and go through the documentation for the script to verify the attestation in the attestation file using the certificates in the certificates file.",
+          "This guide shows you how to verify attestations for Cloud HSM keys , which are always stored in a hardware security module (HSM).",
+          "The --attestation-file flag specifies the path and filename destination for the retrieved attestation. gcloud kms keys versions describe key-version \\ --key key-name \\ --location location \\ --keyring keyring-name \\ --attestation-file [attestation-file] \\ At the Cloud Shell command-line prompt, use the gcloud kms keys versions get-certificate-chain command to retrieve the certificate chains for the key that you want to attest."
+        ]
+      },
+      {
+        "title": "\"REST Resource: projects.cryptoKeys \\_|\\_ Cloud Key Management Service \\_\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "source_id": "site-api-reference",
+        "final_score": 182,
+        "relevance": "",
+        "evidence_snippets": [
+          "The certificate chains needed to validate the attestation AttestationFormat Attestation formats provided by the HSM.",
+          "For more information, see Verifying attestations .",
+          "Resource: CryptoKey JSON representation CryptoKeyVersion JSON representation CryptoKeyVersionState ProtectionLevel CryptoKeyVersionAlgorithm KeyOperationAttestation JSON representation AttestationFormat CertificateChains JSON representation ExternalProtectionLevelOptions JSON representation CryptoKeyPurpose CryptoKeyVersionTemplate JSON representation Methods Resource: CryptoKey A CryptoKey represents a logical key that can be used for cryptographic operations."
+        ]
+      },
+      {
+        "title": "\"KeyOperationAttestation \\_|\\_ Cloud Key Management Service \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "source_id": "site-api-reference",
+        "final_score": 168,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "JSON representation AttestationFormat CertificateChains JSON representation Contains an HSM-generated attestation about a key operation.",
+          "The certificate chains needed to validate the attestation AttestationFormat Attestation formats provided by the HSM.",
+          "For more information, see Verifying attestations ."
+        ]
+      },
+      {
+        "title": "\"Use a Cloud HSM key for TLS offloading with NGINX \\_|\\_ Cloud Key Management\\",
+        "url": "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx",
+        "source_id": "site-api-reference",
+        "final_score": 147,
+        "relevance": "",
+        "evidence_snippets": [
+          "Create a Cloud HSM-hosted signing key Create a Cloud HSM EC-P256-SHA256 signing key in your Google Cloud project, in the key ring that you previously configured for OpenSSL: gcloud kms keys create NGINX KEY \\ --keyring \" KEY RING \" --project \" PROJECT ID \" \\ --location \" LOCATION \" --purpose \"asymmetric-signing\" \\ --default-algorithm \"ec-sign-p256-sha256\" --protection-level \"hsm\" Note: Make sure that your Compute Engine service account has the correct Identity and Access Management (IAM) permissions on the key ring to be able to use it.",
+          "To do so, OpenSSL lets you use PKCS #11 URIs instead of a regular path, identifying the key by its label (for Cloud KMS keys, the label is the CryptoKey name). openssl req -new -x509 -days 3650 -subj '/CN= CERTIFICATE NAME /' \\ DIGEST FLAG -engine pkcs11 -keyform engine \\ -key PKCS KEY TYPE = KEY IDENTIFIER > CA CERT Replace the following: CERTIFICATE NAME : a name for the certificate.",
+          "After the event block and before the http block, add the following directives: ssl engine pkcs11 ; env KMS PKCS11 CONFIG = /etc/nginx/pkcs11-config.yaml ; In the same /etc/nginx/nginx.conf file, configure SSL directives to use your certificate and its private key in Cloud HSM."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "attestation.dat",
+      "config.yaml",
+      "nginx.conf",
+      "projects.cryptoKeys"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "certificate",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kms/docs/attest-key",
+        "https://docs.cloud.google.com/kms/docs/reference/inventory/rest/v1/projects.cryptoKeys",
+        "https://docs.cloud.google.com/kms/docs/reference/rest/v1/KeyOperationAttestation",
+        "https://docs.cloud.google.com/kms/docs/reference/pkcs11-nginx"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.806Z",
+  "source_step08_card": "data/step-08/current/products/cloud-key-management-service/card.json",
+  "product_name": "Cloud Key Management Service",
+  "product_slug": "cloud-key-management-service"
+}

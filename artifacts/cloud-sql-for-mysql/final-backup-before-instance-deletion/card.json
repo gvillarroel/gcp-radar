@@ -1,0 +1,142 @@
+{
+  "feature_name": "Final backup before instance deletion",
+  "feature_slug": "final-backup-before-instance-deletion",
+  "summary": "Final backup lets you create a backup before deleting a Cloud SQL instance so the data can be restored to a new instance.",
+  "extended_definition": "Final backup lets you create a backup before deleting a Cloud SQL instance so the data can be restored to a new instance.",
+  "lifecycle": {
+    "latest_feature_date": "2025-02-20",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+      "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+      "https://docs.cloud.google.com/sql/docs/mysql/create-instance"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Cloud SQL backups overview \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "source_id": "site-docs-reference-3",
+        "final_score": 227,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If you create a new instance with the final backup instance setting enabled, then you must update the final backup organization policy to apply the backup configurations to the primary instance only.",
+          "Note: If your instance was created before the enhanced backups launch , then your instance is using the standard backups option.",
+          "Retained backups are different from final backups , which are the last backups taken at time of instance deletion."
+        ]
+      },
+      {
+        "title": "Create instances \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "source_id": "site-docs-reference-3",
+        "final_score": 218,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Save the request body in a file named request.json , and execute the following command: $cred = gcloud auth print-access-token $headers = @{ \"Authorization\" = \"Bearer $cred\" } Invoke-WebRequest -Method PUT -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id /users?host=%25&name=root\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"kind\": \"sql#operation\", \"targetLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id \", \"status\": \"DONE\", \"user\": \"user@example.com\", \"insertTime\": \"2019-09-26T14:32:30.592Z\", \"startTime\": \"2019-09-26T14:32:30.594Z\", \"endTime\": \"2019-09-26T14:32:33.518Z\", \"operationType\": \"UPDATE USER\", \"name\": \" operation-id \", \"targetId\": \" instance-id \", \"selfLink\": \"https://sqladmin.googleapis.com/v1/projects/ project-id /operations/ operation-id \", \"targetProject\": \" project-id \" } Retrieve the IPv4 address Retrieve the automatically assigned IPv4 address for the new instance: Before using any of the request data, make the following replacements: project-id : your project ID instance-id : instance ID created in prior step HTTP method and URL: GET https://sqladmin.googleapis.com/v1/projects/ project-id /instances/ instance-id To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Set the password for the \"root@%\" MySQL user: gcloud sql users set-password root \\ --host = % \\ --instance INSTANCE NAME \\ --password PASSWORD Terraform To create an instance, use a Terraform resource . resource \"google sql database instance\" \"mysql pvp instance name\" { name = \"mysql-pvp-instance-name\" region = \"asia-northeast1\" database version = \"MYSQL 8 0\" root password = \"abcABC123!\" settings { tier = \"db-f1-micro\" password validation policy { min length = 6 complexity = \"COMPLEXITY DEFAULT\" reuse interval = 2 disallow username substring = true enable password policy = true } } set deletion protection to true, will ensure that one cannot accidentally delete this instance by use of Terraform whereas deletion protection enabled flag protects this instance at the GCP level. deletion protection = false } Apply the changes To apply your Terraform configuration in a Google Cloud project, complete the steps in the following sections.",
+          "Update the root password When the instance finishes initializing, update the root password: Before using any of the request data, make the following replacements: project-id : your project ID instance-id : instance ID created in prior step root-password : desired root password HTTP method and URL: PUT https://sqladmin.googleapis.com/sql/v1beta4/projects/ project-id /instances/ instance-id /users?host=%25&name=root Request JSON body: { \"name\": \"root\", \"host\": \"%\", \"password\": \" root-password \" } To send your request, expand one of these options: curl (Linux, macOS, or Cloud Shell) Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI ."
+        ]
+      },
+      {
+        "title": "Choose your backup option \\_|\\_ Cloud SQL for MySQL \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options",
+        "source_id": "site-docs-reference-required-5",
+        "final_score": 217,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "The following table provides an overview of the key features available with each backup option: Features Standard backups Enhanced backups Centralized backup management across projects - ✔ Backup vault - ✔ Automated backup schedule Daily Hourly, daily, weekly, monthly, yearly On-demand backups ✔ ✔ Multi-region backups ✔ ✔ Final backup in instance deletion ✔ ✔ Backup retention period 1 year 10 years Retain all backups on instance deletion ✔ ✔ Retain backups on project deletion - ✔ Enforced retention with retention lock - ✔ Point-in-time recovery using logs ✔ ✔ Point-in-time recovery after instance deletion ✔ ✔ Cross-region backup and restore ✔ - CMEK support ✔ - For detailed information about these backup options, see Standard backups and Enhanced backups .",
+          "If you elect to take a final backup of your instance prior to deletion, then you can set the backup retention for the final backup for up to 10 years as well.",
+          "Note: If your instance was created before the enhanced backups launch , then your instance is using the standard backups option."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "example.com",
+      "request.json",
+      "sqladmin.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backups",
+        "https://docs.cloud.google.com/sql/docs/mysql/create-instance",
+        "https://docs.cloud.google.com/sql/docs/mysql/backup-recovery/backup-options"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:14.695Z",
+  "source_step08_card": "data/step-08/current/products/cloud-sql-for-mysql/card.json",
+  "product_name": "Cloud SQL for MySQL",
+  "product_slug": "cloud-sql-for-mysql"
+}

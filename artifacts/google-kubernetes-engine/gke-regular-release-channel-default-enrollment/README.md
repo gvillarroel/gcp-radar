@@ -1,0 +1,43 @@
+# GKE Regular release channel default enrollment
+
+Product: Google Kubernetes Engine
+Feature slug: `gke-regular-release-channel-default-enrollment`
+Coverage: `MEDIUM`
+IAM mapping: `unknown`
+
+## Technical Summary
+
+New GKE clusters are enrolled in the Regular release channel by default when no conflicting flags are set.
+
+## Lifecycle
+
+- Latest feature date: 2021-02-05
+- Deprecation date: none recorded
+- Status: feature_observed
+
+## IAM
+
+No defensible IAM mapping was found in the current evidence.
+
+## Security Capabilities
+
+- auth (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- authorization (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- certificate (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- confidential (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- constraint (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- encrypt (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- iam (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- identity (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- key (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- logging (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- policy (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- private (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- secret (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+- security (evidence: [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels), [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule), [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters))
+
+## Official Evidence
+
+- [https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/release-channels)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters](https://docs.cloud.google.com/kubernetes-engine/docs/reference/mcp/tools_list/list_clusters)
+- [https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule](https://docs.cloud.google.com/kubernetes-engine/docs/release-schedule)

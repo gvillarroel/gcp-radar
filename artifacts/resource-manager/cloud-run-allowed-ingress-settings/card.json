@@ -1,0 +1,175 @@
+{
+  "feature_name": "Cloud Run allowed ingress settings",
+  "feature_slug": "cloud-run-allowed-ingress-settings",
+  "summary": "This organization policy constraint controls the ingress settings allowed for Cloud Run.",
+  "extended_definition": "This organization policy constraint controls the ingress settings allowed for Cloud Run.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-27",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+      "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+      "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"ListAvailableOrgPolicyConstraintsResponse \\_|\\_ Resource Manager \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "source_id": "site-api-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Google Cloud Console will try to default to a configuration that matches the value specified in this Constraint . supportsUnder boolean Indicates whether subtrees of Cloud Resource Manager resource hierarchy can be used in Policy.allowed values and Policy.denied values .",
+          "Constraints can be configured by the organization's policy administrator to fit the needs of the organzation by setting Policies for Constraints at different locations in the organization's resource hierarchy.",
+          "ListConstraint A Constraint that allows or disallows a list of string values, which are configured by an Organization's policy administrator with a Policy ."
+        ]
+      },
+      {
+        "title": "Handle special cases \\_|\\_ Resource Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "source_id": "site-iam-reference",
+        "final_score": 129,
+        "relevance": "",
+        "evidence_snippets": [
+          "Repeat steps 3 and 4 for each of the following organization policy constraints: appengine.enforceServiceAccountActAsCheck dataflow.enforceComputeDefaultServiceAccountCheck dataproc.enforceComputeDefaultServiceAccountCheck composer.enforceServiceAccountActAsCheck If any of these organization policy constraints appear, your organization resource uses the legacy behavior.",
+          "First, a user with the roles/orgpolicy.policyAdmin role in the source organization resource must set an organization policy containing the constraints/resourcemanager.allowEnabledServicesForExport constraint on the parent of the project to be exported.",
+          "You have applied an organization policy with the domain restriction constraint to project-C , which only allows it to access the domain of organizations/12345678901."
+        ]
+      },
+      {
+        "title": "\"Create custom constraints for Essential Contacts \\_|\\_ Resource Manager\\",
+        "url": "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies",
+        "source_id": "site-docs-reference-2",
+        "final_score": 120,
+        "relevance": "",
+        "evidence_snippets": [
+          "Test the policy Try creating a contact for a different category: gcloud essential-contacts create --email = randomemail@example.com --language = en --notification-categories = security The output is similar to the following: (gcloud.essential-contacts.create) FAILED PRECONDITION: Precondition check failed. - '@type': type.googleapis.com/google.rpc.ErrorInfo domain: iam.googleapis.com metadata: customConstraints: customConstraints/custom.onlyTechnicalNotificationsAllowed reason: CUSTOM ORG POLICY VIOLATION - '@type': type.googleapis.com/google.rpc.DebugInfo detail: '[ORIGINAL ERROR] generic::failed precondition: com.google.apps.framework.auth.IamFailedPreconditionException: Operation denied by custom org policy: [\"customConstraints/custom.onlyTechnicalNotificationsAllowed\": \"The contact can only be subscribed to technical notifications.\"]. [google.rpc.error details ext] { details { [type.googleapis.com/google.rpc.ErrorInfo] { reason: \"CUSTOM ORG POLICY VIOLATION\" domain: \"iam.googleapis.com\" metadata { key: \"customConstraints\" value: \"customConstraints/custom.onlyTechnicalNotificationsAllowed\" } } } }' Essential Contacts supported resources The following table lists the Essential Contacts resources that you can reference in custom constraints.",
+          "Before you begin, you need to know the following: Your organization ID A project ID Create the constraint Save the following file as constraint-technical-notification.yaml : name : organizations/ ORGANIZATION ID /customConstraints/custom.onlyTechnicalNotificationsAllowed resourceTypes : - essentialcontacts.googleapis.com/TechnicalNotifications methodTypes : - CREATE - UPDATE condition : \"resource.notificationCategorySubscriptions \\ [0 \\ ] == 'TECHNICAL' && resource.notificationCategorySubscriptions.size()==1\" actionType : ALLOW displayName : TechnicalNotifications description : The contact can only be subscribed to technical notifications.",
+          "After you verify that the organization policy in dry-run mode works as intended, set the live policy by clicking Set policy . gcloud To create an organization policy with boolean rules, create a policy YAML file that references the constraint: name : projects/ PROJECT ID /policies/ CONSTRAINT NAME spec : rules : - enforce : true dryRunSpec : rules : - enforce : true Replace the following: PROJECT ID : the project that you want to enforce your constraint on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appengine.enforceServiceAccountActAsCheck",
+      "com.google.apps.framework.auth.IamFailedPreconditionException",
+      "composer.enforceServiceAccountActAsCheck",
+      "contacts.create",
+      "custom.onlyTechnicalNotificationsAllowed",
+      "dataflow.enforceComputeDefaultServiceAccountCheck",
+      "dataproc.enforceComputeDefaultServiceAccountCheck",
+      "essentialcontacts.googleapis.com",
+      "example.com",
+      "folders.listAvailableOrgPolicyConstraints",
+      "gcloud.essential",
+      "iam.googleapis.com",
+      "notification.yaml",
+      "orgpolicy.policyAdmin",
+      "resource.notificationCategorySubscriptions",
+      "resource.notificationCategorySubscriptions.size",
+      "resourcemanager.allowEnabledServicesForExport",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": [
+      "roles/orgpolicy.policyAdmin"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/resource-manager/reference/rest/v1/ListAvailableOrgPolicyConstraintsResponse",
+        "https://docs.cloud.google.com/resource-manager/docs/handle-special-cases",
+        "https://docs.cloud.google.com/resource-manager/docs/essentialcontacts-custom-org-policies"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.065Z",
+  "source_step08_card": "data/step-08/current/products/resource-manager/card.json",
+  "product_name": "Resource Manager",
+  "product_slug": "resource-manager"
+}

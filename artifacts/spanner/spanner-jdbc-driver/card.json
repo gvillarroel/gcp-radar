@@ -1,0 +1,92 @@
+{
+  "feature_name": "Spanner JDBC driver",
+  "feature_slug": "spanner-jdbc-driver",
+  "summary": "Spanner introduced an open-source JDBC driver that enables Java applications to access Spanner via the JDBC API.",
+  "extended_definition": "Spanner introduced an open-source JDBC driver that enables Java applications to access Spanner via the JDBC API.",
+  "lifecycle": {
+    "latest_feature_date": "2019-08-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/spanner/docs/jdbc-drivers",
+      "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+      "https://docs.cloud.google.com/spanner/docs/open-source-jdbc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Spanner JDBC driver \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/open-source-jdbc",
+        "source_id": "site-docs-reference",
+        "final_score": 272,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "The open-source driver enables applications to access Spanner through the Java Database Connectivity (JDBC) API.",
+          "Google offers an open-source JDBC driver for Spanner.",
+          "Connection pools The Spanner JDBC driver handles pooling internally by keeping track of all connections that have been opened, as well as the connection properties that were used to open those connections."
+        ]
+      },
+      {
+        "title": "JDBC drivers \\_|\\_ Spanner \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-drivers",
+        "source_id": "site-docs-reference",
+        "final_score": 224,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Spanner JDBC driver PostgreSQL JDBC driver Download Maven Central Maven Central Written by Google PostgreSQL Support Google Google Open source Yes; Apache license Yes; BSD 2-Clause Note: Spanner previously supported the Simba JDBC driver.",
+          "Spanner supports the following JDBC drivers: The Spanner JDBC driver, which is an open-source JDBC driver that is written, provided, and supported by Google, similar to the Cloud Client Libraries .",
+          "Home Documentation Databases Spanner Reference Send feedback JDBC drivers Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      },
+      {
+        "title": "\"JDBC session management commands (GoogleSQL) \\_|\\_ Spanner \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands",
+        "source_id": "site-docs-reference",
+        "final_score": 184,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Example: Savepoint support (Click to expand) The following example shows how to enable and disable savepoints support in the Spanner JDBC driver. try ( Connection connection = DriverManager . getConnection ( String . format ( \"jdbc:cloudspanner:/projects/%s/instances/%s/databases/%s\" , \"my-project\" , \"my-instance\" , \"my-database\" ))) { // Savepoints can only be used when AutoCommit=false. connection . setAutoCommit ( false ); // Disables setting a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='DISABLED'\" ); // The following statement fails because savepoints have been disabled. connection . setSavepoint ( \"my savepoint1\" ); // Enables setting a savepoint and releasing a savepoint. // Rolling back to a savepoint is disabled. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='FAIL AFTER ROLLBACK'\" ); Savepoint mySavepoint2 = connection . setSavepoint ( \"my savepoint2\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (1, 'One')\" ); connection . releaseSavepoint ( mySavepoint2 ); connection . commit (); // Enables setting, releasing and rolling back to a savepoint. connection . createStatement (). execute ( \"SET SAVEPOINT SUPPORT='ENABLED'\" ); Savepoint mySavepoint3 = connection . setSavepoint ( \"my savepoint3\" ); connection . createStatement (). execute ( \"insert into my table (id, value) values (2, 'Two')\" ); connection . rollback ( mySavepoint3 ); } What's next Learn how to connect JDBC to a GoogleSQL-dialect database .",
+          "A statement timeout during a transaction invalidates the transaction, all subsequent statements in the invalidated transaction (except ROLLBACK ) fail, and the Spanner JDBC driver throws a java.sql.SQLTimeoutException .",
+          "The Spanner JDBC driver (Java Database Connectivity) supports session management statements, which let you modify the state of your connection, execute transactions, and efficiently execute batches of statements."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "java.sql.SQLTimeoutException"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/spanner/docs/open-source-jdbc",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-drivers",
+        "https://docs.cloud.google.com/spanner/docs/jdbc-session-mgmt-commands"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:51.611Z",
+  "source_step08_card": "data/step-08/current/products/spanner/card.json",
+  "product_name": "Spanner",
+  "product_slug": "spanner"
+}

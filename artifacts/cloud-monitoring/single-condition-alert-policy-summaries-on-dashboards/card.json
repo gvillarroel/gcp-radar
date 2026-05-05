@@ -1,0 +1,108 @@
+{
+  "feature_name": "Single-condition alert policy summaries on dashboards",
+  "feature_slug": "single-condition-alert-policy-summaries-on-dashboards",
+  "summary": "Custom dashboards can display summaries of single-condition alerting policies including time series, thresholds, and incident status.",
+  "extended_definition": "Custom dashboards can display summaries of single-condition alerting policies including time series, thresholds, and incident status.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-02",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient",
+      "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceClient"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Class AlertPolicyServiceAsyncClient (2.30.0) \\_|\\_ Python client libraries\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient",
+        "source_id": "site-python-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exceptions Type Description google.auth.exceptions.MutualTlsChannelError If mutual TLS transport creation failed for any reason. alert policy condition path alert policy condition path ( project : str , alert policy : str , condition : str ) - > str Returns a fully-qualified alert policy condition string. alert policy path alert policy path ( project : str , alert policy : str ) - > str Returns a fully-qualified alert policy string. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create alert policy create alert policy ( request : typing .",
+          "Returns Type Description google.cloud.monitoring v3.types.AlertPolicy A description of the conditions under which some aspect of your system is considered to be \"unhealthy\" and the ways to notify people or services about this state.",
+          "Returns Type Description google.cloud.monitoring v3.types.AlertPolicy A description of the conditions under which some aspect of your system is considered to be \"unhealthy\" and the ways to notify people or services about this state."
+        ]
+      },
+      {
+        "title": "\"Class AlertPolicyServiceClient (2.30.0) \\_|\\_ Python client libraries \\_\\",
+        "url": "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceClient",
+        "source_id": "site-python-reference",
+        "final_score": 202,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Exiting the with block will CLOSE the transport and may cause errors in other clients! alert policy condition path alert policy condition path ( project : str , alert policy : str , condition : str ) - > str Returns a fully-qualified alert policy condition string. alert policy path alert policy path ( project : str , alert policy : str ) - > str Returns a fully-qualified alert policy string. common billing account path common billing account path ( billing account : str ) - > str Returns a fully-qualified billing account string. common folder path common folder path ( folder : str ) - > str Returns a fully-qualified folder string. common location path common location path ( project : str , location : str ) - > str Returns a fully-qualified location string. common organization path common organization path ( organization : str ) - > str Returns a fully-qualified organization string. common project path common project path ( project : str ) - > str Returns a fully-qualified project string. create alert policy create alert policy ( request : typing .",
+          "Returns Type Description google.cloud.monitoring v3.types.AlertPolicy A description of the conditions under which some aspect of your system is considered to be \"unhealthy\" and the ways to notify people or services about this state.",
+          "Returns Type Description google.cloud.monitoring v3.types.AlertPolicy A description of the conditions under which some aspect of your system is considered to be \"unhealthy\" and the ways to notify people or services about this state."
+        ]
+      },
+      {
+        "title": "View and manage metric usage \\_|\\_ Cloud Monitoring \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/monitoring/docs/metrics-management",
+        "source_id": "site-docs-reference",
+        "final_score": 174,
+        "relevance": "",
+        "evidence_snippets": [
+          "You can list metrics that appear in no alerting policy or in no custom dashboard defined in the current Google Cloud project by selecting the No alert policies or No custom dashboards quick filter.",
+          "For example, to list active metrics that appear in no alerting policies and in no custom dashboards, add the following filters to the filter bar: Status: Active Alert Policies: (Empty) Custom Dashboards: (Empty) By default, when you add multiple filters, the table includes a row when the row meets all filters.",
+          "Note: The Metrics Management page lists only alerting policies and custom dashboards defined in the current project; metrics listed with no alerting policies or custom dashboards might have alerting policies or custom dashboards in another project in your metrics scope."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "v3.types.AlertPolicy"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceClient",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "constraint",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceClient",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceAsyncClient",
+        "https://docs.cloud.google.com/python/docs/reference/monitoring/latest/google.cloud.monitoring_v3.services.alert_policy_service.AlertPolicyServiceClient",
+        "https://docs.cloud.google.com/monitoring/docs/metrics-management"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:11.469Z",
+  "source_step08_card": "data/step-08/current/products/cloud-monitoring/card.json",
+  "product_name": "Cloud Monitoring",
+  "product_slug": "cloud-monitoring"
+}

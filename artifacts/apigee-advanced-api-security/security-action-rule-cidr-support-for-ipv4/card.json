@@ -1,0 +1,114 @@
+{
+  "feature_name": "Security action rule CIDR support for IPv4",
+  "feature_slug": "security-action-rule-cidr-support-for-ipv4",
+  "summary": "Security action rules now support CIDR range specification when matching IPv4 addresses.",
+  "extended_definition": "Security action rules now support CIDR range specification when matching IPv4 addresses.",
+  "lifecycle": {
+    "latest_feature_date": "2024-05-09",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+      "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+      "https://docs.cloud.google.com/apigee/docs/api-security/security-actions"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Security actions overview and UI \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 179,
+        "relevance": "WEAK",
+        "evidence_snippets": [
+          "Under New condition , enter the following: Condition type: Can be either Detection rules or one of the following attributes: IP addresses/CIDR ranges , which can include IP addresses and IPv4 CIDR ranges at the same time.",
+          "Notes: For the condition types Detection rules and IP addresses/CIDR ranges , you can create at most two conditions that have those types.",
+          "Values: Enter one of the following: If Condition type is Detection rules , select a set of detection rules that a request must have triggered for the security action to be applied to it."
+        ]
+      },
+      {
+        "title": "Abuse detection \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "source_id": "site-docs-reference-required-7",
+        "final_score": 138,
+        "relevance": "",
+        "evidence_snippets": [
+          "When Advanced API Security detects a security incident, it reports the following: The risk level and duration of the incident The proxies affected by the incident The IP addresses of the incident events The detection rules that were triggered by the incident The countries of origin of the incident and other related information about the incident.",
+          "It shows detected rules, first and last detection dates, and attributes for detected traffic from the IP address of API key. (See the Analytics dimensions reference and the Security stats API dimensions for more information on the detail fields.) For IP addresses, the Details tab also includes information about related Ingress access logs .",
+          "Mitigate large numbers of false positives If you're seeing a large number of false positives and internal IP addresses flagged as anomalies by Advanced API Security's Abuse Detection rules, follow the guidance in this section to mitigate the problem."
+        ]
+      },
+      {
+        "title": "Detection rules \\_|\\_ Apigee \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules",
+        "source_id": "site-docs-reference-required-8",
+        "final_score": 125,
+        "relevance": "",
+        "evidence_snippets": [
+          "Two of the detection rules are based on machine learning models: Advanced API Scraper Advanced Anomaly Detection Note: The data used to train the machine learning models for the rules Advanced API Scraper and Advanced Anomaly Detection contain metadata, including source IP address, source geography, and the values of some HTTP request headers.",
+          "Note that one incident might be triggered by multiple detection rules, in which case all of the rules that triggered the incident are listed in the Abuse detection Environment details view.",
+          "Home Documentation Application development Apigee Guides Send feedback Detection rules Stay organized with collections Save and categorize content based on your preferences."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    },
+    {
+      "capability": "threat",
+      "evidence_links": [
+        "https://docs.cloud.google.com/apigee/docs/api-security/security-actions",
+        "https://docs.cloud.google.com/apigee/docs/api-security/abuse-detection",
+        "https://docs.cloud.google.com/apigee/docs/api-security/detection-rules"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:11:59.267Z",
+  "source_step08_card": "data/step-08/current/products/apigee-advanced-api-security/card.json",
+  "product_name": "Apigee Advanced API Security",
+  "product_slug": "apigee-advanced-api-security"
+}

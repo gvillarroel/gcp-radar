@@ -1,0 +1,125 @@
+{
+  "feature_name": "Compute flexible committed use discounts",
+  "feature_slug": "compute-flexible-committed-use-discounts",
+  "summary": "Compute flexible committed use discounts let eligible Cloud Run services and jobs share flexible commitments across Compute Engine, GKE, and Cloud Run.",
+  "extended_definition": "Compute flexible committed use discounts let eligible Cloud Run services and jobs share flexible commitments across Compute Engine, GKE, and Cloud Run.",
+  "lifecycle": {
+    "latest_feature_date": "2024-07-15",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute",
+      "https://docs.cloud.google.com/run/docs/resources",
+      "https://docs.cloud.google.com/run/docs/tutorials/eventarc"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Resources \\_|\\_ Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/resources",
+        "source_id": "site-api-reference",
+        "final_score": 101,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Compute flexible committed use discounts Flexible CUD details for Cloud Run."
+        ]
+      },
+      {
+        "title": "\"Use Eventarc to receive events from Cloud Storage \\_|\\_ Cloud Run \\_|\\_\\",
+        "url": "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "source_id": "site-docs-root-2",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Grant the Eventarc Event Receiver role ( roles/eventarc.eventReceiver ) on the project to the Compute Engine default service account so that the Eventarc trigger can receive events from event providers. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/eventarc.eventReceiver Optional role for the Pub/Sub service agent If you enabled the Cloud Pub/Sub service agent on or before April 8, 2021, to support authenticated Pub/Sub push requests, grant the Service Account Token Creator role ( roles/iam.serviceAccountTokenCreator ) to the service agent.",
+          "Create a trigger that filters Cloud Storage events: gcloud eventarc triggers create ${ SERVICE NAME } \\ --destination-run-service = ${ SERVICE NAME } \\ --destination-run-region = ${ REGION } \\ --location = ${ REGION } \\ --event-filters = \"type=google.cloud.storage.object.v1.finalized\" \\ --event-filters = \"bucket= PROJECT ID -bucket\" \\ --service-account = PROJECT NUMBER -compute@developer.gserviceaccount.com This creates a trigger called helloworld-events .",
+          "This grants the role on all Cloud Run services and jobs in a project. gcloud projects add-iam-policy-binding PROJECT ID \\ --member = serviceAccount: PROJECT NUMBER -compute@developer.gserviceaccount.com \\ --role = roles/run.invoker Note that if you create a trigger for an authenticated Cloud Run service without granting the Cloud Run Invoker role, the trigger is created successfully and is active."
+        ]
+      },
+      {
+        "title": "Quickstart: Create and execute a job in Cloud Run \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute",
+        "source_id": "site-docs-reference-required-10",
+        "final_score": 54,
+        "relevance": "MODERATE",
+        "evidence_snippets": []
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developer.gserviceaccount.com",
+      "eventarc.eventReceiver",
+      "iam.serviceAccountTokenCreator",
+      "run.invoker"
+    ],
+    "missing_inventory_roles": [
+      "roles/eventarc.eventReceiver",
+      "roles/iam.serviceAccountTokenCreator",
+      "roles/run.invoker"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/run/docs/resources",
+        "https://docs.cloud.google.com/run/docs/tutorials/eventarc",
+        "https://docs.cloud.google.com/run/docs/quickstarts/jobs/create-execute"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:12.873Z",
+  "source_step08_card": "data/step-08/current/products/cloud-run/card.json",
+  "product_name": "Cloud Run",
+  "product_slug": "cloud-run"
+}

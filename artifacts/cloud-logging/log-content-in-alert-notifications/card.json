@@ -1,0 +1,106 @@
+{
+  "feature_name": "Log content in alert notifications",
+  "feature_slug": "log-content-in-alert-notifications",
+  "summary": "Alert notifications can dynamically include extracted log content for troubleshooting.",
+  "extended_definition": "Alert notifications can dynamically include extracted log content for troubleshooting.",
+  "lifecycle": {
+    "latest_feature_date": "2022-11-07",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/flink",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/hadoop",
+      "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Internet Information Services \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+        "source_id": "site-docs-root-2",
+        "final_score": 120,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alerting policies need to know where to send notifications that the alert has been triggered, so they require information from you for installation.",
+          "The IIS integration includes one or more alerting policies for you to use.",
+          "Detailed fields inside the LogEntry are as follows. iis access logs contain the following fields in the LogEntry : Field Type Description httpRequest.referer string Contents of the Referer header httpRequest.remoteIp string IP of the client that made the request httpRequest.requestMethod string HTTP method httpRequest.requestUrl string Request URL (typically just the path part of the URL) httpRequest.serverIp string The server's IP and port that was requested httpRequest.status number HTTP status code httpRequest.userAgent string Contents of the User-Agent header jsonPayload.sc substatus number The substatus error code jsonPayload.sc win32 status number The Windows status code jsonPayload.time taken number The length of time that the action took, in milliseconds jsonPayload.user string Authenticated username for the request timestamp string ( Timestamp ) Time the request was received Configure v1 metrics collection The Ops Agent on a Microsoft Windows VM automatically collects IIS v1 metrics."
+        ]
+      },
+      {
+        "title": "Apache Flink \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/flink",
+        "source_id": "site-docs-root-2",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alerting policies need to know where to send notifications that the alert has been triggered, so they require information from you for installation.",
+          "The Flink integration includes one or more alerting policies for you to use.",
+          "To configure a receiver for your flink logs, specify the following fields: Field Default Description exclude paths A list of filesystem path patterns to exclude from the set matched by include paths . include paths [/opt/flink/log/flink- -standalonesession- .log, /opt/flink/log/flink- -taskexecutor- .log, /opt/flink/log/flink- -client- .log] A list of filesystem paths to read by tailing each file."
+        ]
+      },
+      {
+        "title": "Apache Hadoop \\_|\\_ Cloud Logging \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/hadoop",
+        "source_id": "site-docs-root-2",
+        "final_score": 106,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Alerting policies need to know where to send notifications that the alert has been triggered, so they require information from you for installation.",
+          "The Hadoop integration includes one or more alerting policies for you to use.",
+          "To configure a receiver for your hadoop logs, specify the following fields: Field Default Description exclude paths A list of filesystem path patterns to exclude from the set matched by include paths . include paths [/opt/hadoop/logs/hadoop- .log, /opt/hadoop/logs/yarn- .log] A list of filesystem paths to read by tailing each file."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/flink",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/hadoop"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/flink",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/hadoop"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/iis",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/flink",
+        "https://docs.cloud.google.com/logging/docs/agent/ops-agent/third-party/hadoop"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:10.755Z",
+  "source_step08_card": "data/step-08/current/products/cloud-logging/card.json",
+  "product_name": "Cloud Logging",
+  "product_slug": "cloud-logging"
+}

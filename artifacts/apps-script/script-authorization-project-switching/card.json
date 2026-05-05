@@ -1,0 +1,125 @@
+{
+  "feature_name": "Script authorization project switching",
+  "feature_slug": "script-authorization-project-switching",
+  "summary": "Scripts can change which Google Developers Console project is used for authorization.",
+  "extended_definition": "Scripts can change which Google Developers Console project is used for authorization.",
+  "lifecycle": {
+    "latest_feature_date": "2015-03-19",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+      "https://developers.google.com/apps-script/guides/services/authorization",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Google Cloud projects \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "source_id": "site-docs-root",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Even if you change the project name on the shared drive, users that authorize the script still see the old name on authorization dialogs.",
+          "Effects of switching to a different standard Cloud project If you switch your script from a default project or to a different standard project, it has the following effects: If you activated advanced services for your script, you must turn on the corresponding APIs in the new Cloud project.",
+          "You can use either a default project that Apps Script creates or a standard project that you create yourself; default projects are for simple scripts, while standard projects are for complex, commercial, or publishable applications."
+        ]
+      },
+      {
+        "title": "Authorization for Google Services \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/services/authorization",
+        "source_id": "site-docs-root-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Scripts that you have previously authorized also ask for additional authorization if a code change adds new services.",
+          "Limit scope to the current document If you're building an add-on or other script that uses the Spreadsheet service , Document service , Slides service , or Forms service , you can force the authorization dialog to ask only for access to files in which the add-on or script is used, rather than all of a user's spreadsheets, documents, or forms.",
+          "How authorization for Google Services works When a script requires access to Google services, it follows this general process: Detection : Apps Script scans the script to identify which services it uses (for example, SpreadsheetApp or GmailApp )."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 116,
+        "relevance": "",
+        "evidence_snippets": [
+          "The Optimization service has been updated with the following batch methods: LinearOptimizationEngine.addContraints(lowerBounds, upperBounds, variableNames, coefficients) LinearOptimizationEngine.addVariables(names, lowerBounds, upperBounds, types, objectiveCoeffients) May 03, 2019 Feature The Document service has been updated to add methods to get and set the language of a document: Document.getLanguage() Document.getSupportedLanguageCodes() Document.setLanguage(languageCode) April 19, 2019 Feature The Data Studio service has been updated to add a few values to FieldType enum : HYPERLINK IMAGE IMAGE LINK April 08, 2019 Change The behavior of the Google Cloud (GCP) projects used by scripts has been altered.",
+          "July 19, 2022 Change Apps Script now automatically deletes default Google Cloud projects (Google Cloud projects that Apps Script creates in the background) when their associated scripts haven't run in 180 days or more.",
+          "Added the ability to change the Google Developers Console project that a script uses for authorization."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "scripts.run"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "https://developers.google.com/apps-script/guides/services/authorization",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "https://developers.google.com/apps-script/guides/services/authorization",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "https://developers.google.com/apps-script/guides/services/authorization",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "identity",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "https://developers.google.com/apps-script/guides/services/authorization",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/cloud-platform-projects",
+        "https://developers.google.com/apps-script/guides/services/authorization",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

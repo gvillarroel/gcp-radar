@@ -1,0 +1,151 @@
+{
+  "feature_name": "M4 machine series in GKE Autopilot",
+  "feature_slug": "m4-machine-series-in-gke-autopilot",
+  "summary": "The M4 machine series is generally available in GKE Autopilot clusters; The M4 machine series is generally available in GKE Autopilot clusters.",
+  "extended_definition": "The M4 machine series is generally available in GKE Autopilot clusters; The M4 machine series is generally available in GKE Autopilot clusters.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+      "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Run workloads in Autopilot mode in Standard clusters \\_|\\_ Google Kubernetes\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "source_id": "site-docs-reference-2",
+        "final_score": 166,
+        "relevance": "",
+        "evidence_snippets": [
+          "If you specify this field in a ComputeClass that you deploy to an Autopilot cluster, GKE ignores the field. priorities : defines an array of three different N4 machine family configurations. activeMigration : lets GKE migrate Pods to configurations that are higher in the list of priorities when resources become available.",
+          "Use a custom Autopilot ComputeClass in situations like the following: Your workloads require specific hardware to run optimally, like GPUs or a certain Compute Engine machine series.",
+          "Create a new custom Autopilot ComputeClass Save one of the following example ComputeClass manifests: Select specific machines : apiVersion : cloud.google.com/v1 kind : ComputeClass metadata : name : n4-class spec : autopilot : enabled : true priorities : - machineFamily : n4 spot : true minCores : 16 - machineFamily : n4 spot : true - machineFamily : n4 spot : false activeMigration : optimizeRulePriority : true This manifest includes the following fields: autopilot : enables Autopilot mode for the ComputeClass."
+        ]
+      },
+      {
+        "title": "\"GKE Autopilot overview \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "source_id": "site-iam-reference",
+        "final_score": 158,
+        "relevance": "",
+        "evidence_snippets": [
+          "Autopilot workloads that select specific hardware : Pods that select specific hardware, such as Compute Engine machine series or hardware accelerators, use a node-based billing model .",
+          "Network policy enforcement is available with GKE Dataplane V2, which is enabled by default in Autopilot clusters.",
+          "Autopilot clusters collect the following types of logs and metrics automatically, adhering to Google's best practices for telemetry collection: Logs for Cloud Logging System logs Workload logs Admin Activity audit logs Data Access audit logs Metrics for Cloud Monitoring System metrics Workload metrics (from Google Cloud Managed Service for Prometheus) No additional configuration is required to enable logging and monitoring."
+        ]
+      },
+      {
+        "title": "\"About custom ComputeClasses \\_|\\_ Google Kubernetes Engine (GKE) \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes",
+        "source_id": "site-docs-reference-2",
+        "final_score": 146,
+        "relevance": "",
+        "evidence_snippets": [
+          "GKE takes one of the following actions: In Autopilot clusters, GKE places the Pod on a new or existing node, regardless of the node machine configuration.",
+          "In Standard clusters that use node pool auto-creation, GKE might create a new node pool that uses the default E2 machine series to place the Pod.",
+          "For example, if the N4 machine series isn't available, you can fall back to C3 machines."
+        ]
+      }
+    ],
+    "evidence_summary": "Fallback definition because synthesis failed; coverage was derived from supporting-page quality."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "node.kubernetes.io",
+      "priorities.gpu.driverVersion",
+      "priorities.gpu.type",
+      "priorities.machineFamily",
+      "priorities.machineType",
+      "priorities.reservations.affinity",
+      "priorities.reservations.specific.name",
+      "priorities.reservations.specific.project",
+      "priorities.spot",
+      "priorities.storage.bootDiskSize",
+      "priorities.storage.bootDiskType",
+      "priorities.storage.localSSDCount"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "confidential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    },
+    {
+      "capability": "security",
+      "evidence_links": [
+        "https://docs.cloud.google.com/kubernetes-engine/docs/how-to/autopilot-classes-standard-clusters",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/autopilot-overview",
+        "https://docs.cloud.google.com/kubernetes-engine/docs/concepts/about-custom-compute-classes"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:37.533Z",
+  "source_step08_card": "data/step-08/current/products/google-kubernetes-engine/card.json",
+  "product_name": "Google Kubernetes Engine",
+  "product_slug": "google-kubernetes-engine"
+}

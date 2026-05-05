@@ -1,0 +1,181 @@
+{
+  "feature_name": "Secret Manager integration with Cloud Run",
+  "feature_slug": "secret-manager-integration-with-cloud-run",
+  "summary": "Cloud Run added UI, command line, and YAML support for using Secret Manager secrets in Preview.",
+  "extended_definition": "Cloud Run added UI, command line, and YAML support for using Secret Manager secrets in Preview.",
+  "lifecycle": {
+    "latest_feature_date": "2021-05-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+      "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+      "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+      "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Add labels to secrets \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 279,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\CreateSecretRequest; use Google\\Cloud\\SecretManager\\V1\\Replication; use Google\\Cloud\\SecretManager\\V1\\Replication\\Automatic; use Google\\Cloud\\SecretManager\\V1\\Secret; use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; / @param string $projectId Your Google Cloud Project ID (e.g. 'my-project') @param string $secretId Your secret ID (e.g. 'my-secret') @param string $labelKey Your label key (e.g. 'label-key') @param string $labelValue Your label value (e.g. 'label-value') / function create secret with labels(string $projectId, string $secretId, string $labelKey, string $labelValue): void { // Create the Secret Manager client. $client = new SecretManagerServiceClient(); // Build the resource name of the parent project. $parent = $client->projectName($projectId); $secret = new Secret([ 'replication' => new Replication([ 'automatic' => new Automatic(), ]), ]); // set the labels. $labels = [$labelKey => $labelValue]; $secret->setLabels($labels); // Build the request. $request = CreateSecretRequest::build($parent, $secretId, $secret); // Create the secret. $newSecret = $client->createSecret($request); // Print the new secret name. printf('Created secret %s with labels', $newSecret->getName()); } Python To run this code, first set up a Python development environment and install the Secret Manager Python SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . / TODO(developer): Uncomment these variables before running the sample. / // const name = 'projects/my-project/secrets/my-secret'; // const labelKey = 'gcp'; // const labelValue = 'rocks'; // Imports the Secret Manager library const { SecretManagerServiceClient } = require ( ' @google-cloud/secret-manager ' ); // Instantiates a client const client = new SecretManagerServiceClient (); async function getSecret () { const [ secret ] = await client . getSecret ({ name : name , }); return secret ; } async function createUpdateSecretLabel () { const oldSecret = await getSecret (); oldSecret . labels [ labelKey ] = labelValue ; const [ secret ] = await client . updateSecret ({ secret : { name : name , labels : oldSecret . labels , }, updateMask : { paths : [ 'labels' ], }, }); console . info ( Updated secret ${ secret . name } ); } createUpdateSecretLabel (); PHP To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . / TODO(developer): Uncomment these variables before running the sample. / // const name = 'projects/my-project/secrets/my-secret'; // const labelKey = 'secretmanager'; // Imports the Secret Manager library const { SecretManagerServiceClient } = require ( ' @google-cloud/secret-manager ' ); // Instantiates a client const client = new SecretManagerServiceClient (); async function getSecret () { const [ secret ] = await client . getSecret ({ name : name , }); return secret ; } async function deleteSecretLabel () { const oldSecret = await getSecret (); delete oldSecret . labels [ labelKey ]; const [ secret ] = await client . updateSecret ({ secret : { name : name , labels : oldSecret . labels , }, updateMask : { paths : [ 'labels' ], }, }); console . info ( Updated secret ${ secret . name } ); } deleteSecretLabel (); PHP To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK ."
+        ]
+      },
+      {
+        "title": "Add a secret version \\_|\\_ Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "source_id": "site-docs-root",
+        "final_score": 277,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; use Google\\Cloud\\SecretManager\\V1\\AddSecretVersionRequest; use Google\\Cloud\\SecretManager\\V1\\SecretPayload; / @param string $projectId Your Google Cloud Project ID (e.g. 'my-project') @param string $secretId Your secret ID (e.g. 'my-secret') / function add secret version(string $projectId, string $secretId): void { // Create the Secret Manager client. $client = new SecretManagerServiceClient(); // Build the resource name of the parent secret and the payload. $parent = $client->secretName($projectId, $secretId); $secretPayload = new SecretPayload([ 'data' => 'my super secret data', ]); // Build the request. $request = AddSecretVersionRequest::build($parent, $secretPayload); // Access the secret version. $response = $client->addSecretVersion($request); // Print the new secret version name. printf('Added secret version: %s', $response->getName()); } Python To run this code, first set up a Python development environment and install the Secret Manager Python SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . / TODO(developer): Uncomment these variables before running the sample. / // const parent = 'projects/my-project/secrets/my-secret'; // Imports the Secret Manager library const { SecretManagerServiceClient } = require ( ' @google-cloud/secret-manager ' ); // Instantiates a client const client = new SecretManagerServiceClient (); // Payload is the plaintext data to store in the secret const payload = Buffer . from ( 'my super secret data' , 'utf8' ); async function addSecretVersion () { const [ version ] = await client . addSecretVersion ({ parent : parent , payload : { data : payload , }, }); console . log ( Added secret version ${ version . name } ` ); } addSecretVersion (); PHP To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . project id = \"YOUR-GOOGLE-CLOUD-PROJECT\" # (e.g. \"my-project\") secret id = \"YOUR-SECRET-ID\" # (e.g. \"my-secret\") Require the Secret Manager client library. require \"google/cloud/secret manager\" Create a Secret Manager client. client = Google :: Cloud :: SecretManager . secret manager service Build the resource name of the secret version. name = client . secret path project : project id , secret : secret id Add the secret version. version = client . add secret version ( parent : name , payload : { data : \"my super secret data\" } ) Print the new secret version name. puts \"Added secret version: #{ version . name } \" Secret version states A secret version can be in one of the following states at any given time: Enabled - In this state, the secret version can be accessed and described."
+        ]
+      },
+      {
+        "title": "Create and access a secret using Secret Manager \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "source_id": "site-iam-reference",
+        "final_score": 265,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . // Import the Secret Manager client and instantiate it: const { SecretManagerServiceClient } = require ( ' @google-cloud/secret-manager ' ); const client = new SecretManagerServiceClient (); / TODO(developer): Uncomment these variables before running the sample. / // parent = 'projects/my-project', // Project for which to manage secrets. // secretId = 'foo', // Secret ID. // payload = 'hello world!' // String source data. async function createAndAccessSecret () { // Create the secret with automation replication. const [ secret ] = await client . createSecret ({ parent : parent , secret : { name : secretId , replication : { automatic : {}, }, }, secretId , }); console . info ( Created secret ${ secret . name } ); // Add a version with a payload onto the secret. const [ version ] = await client . addSecretVersion ({ parent : secret . name , payload : { data : Buffer . from ( payload , 'utf8' ), }, }); console . info ( Added secret version ${ version . name } ); // Access the secret. const [ accessResponse ] = await client . accessSecretVersion ({ name : version . name , }); const responsePayload = accessResponse . payload . data . toString ( 'utf8' ); console . info ( Payload: ${ responsePayload } ); } createAndAccessSecret (); PHP To run this code, first learn about using PHP on Google Cloud and install the Secret Manager PHP SDK .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . // Import the Secret Manager client library. use Google\\Cloud\\SecretManager\\V1\\AccessSecretVersionRequest; use Google\\Cloud\\SecretManager\\V1\\AddSecretVersionRequest; use Google\\Cloud\\SecretManager\\V1\\Client\\SecretManagerServiceClient; use Google\\Cloud\\SecretManager\\V1\\CreateSecretRequest; use Google\\Cloud\\SecretManager\\V1\\Replication; use Google\\Cloud\\SecretManager\\V1\\Replication\\Automatic; use Google\\Cloud\\SecretManager\\V1\\Secret; use Google\\Cloud\\SecretManager\\V1\\SecretPayload; / Uncomment and populate these variables in your code / // $projectId = 'YOUR GOOGLE CLOUD PROJECT' (e.g. 'my-project'); // $secretId = 'YOUR SECRET ID' (e.g. 'my-secret'); // Create the Secret Manager client. $client = new SecretManagerServiceClient(); // Build the parent name from the project. $parent = $client->projectName($projectId); // Create the parent secret. $createSecretRequest = (new CreateSecretRequest()) ->setParent($parent) ->setSecretId($secretId) ->setSecret(new Secret([ 'replication' => new Replication([ 'automatic' => new Automatic(), ]), ])); $secret = $client->createSecret($createSecretRequest); // Add the secret version. $addSecretVersionRequest = (new AddSecretVersionRequest()) ->setParent($secret->getName()) ->setPayload(new SecretPayload([ 'data' => 'hello world', ])); $version = $client->addSecretVersion($addSecretVersionRequest); // Access the secret version. $accessSecretVersionRequest = (new AccessSecretVersionRequest()) ->setName($version->getName()); $response = $client->accessSecretVersion($accessSecretVersionRequest); // Print the secret payload. // // WARNING: Do not print the secret in a production environment - this // snippet is showing how to access the secret material. $payload = $response->getPayload()->getData(); printf('Plaintext: %s' .",
+          "On Compute Engine or GKE, you must authenticate with the cloud-platform scope . require \"google/cloud/secret manager\" Secret manager quickstart @param project id [String] Your Google Cloud project (e.g. \"my-project\") @param secret id [String] Your secret name (e.g. \"my-secret\") def quickstart project id :, secret id : Create the Secret Manager client. client = Google :: Cloud :: SecretManager . secret manager service Build the parent name from the project. parent = \"projects/ #{ project id } \" Create the parent secret. secret = client . create secret ( parent : parent , secret id : secret id , secret : { replication : { automatic : {} } } ) Add a secret version. version = client . add secret version ( parent : secret . name , payload : { data : \"hello world!\" } ) Access the secret version. response = client . access secret version name : version . name Print the secret payload."
+        ]
+      },
+      {
+        "title": "\"Set an expiration date for a secret \\_|\\_ Secret Manager \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets",
+        "source_id": "site-iam-reference",
+        "final_score": 263,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Update the expiration date and time, and click Update secret . gcloud Update a secret's expiration using a timestamp Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --expire-time \" TIMESTAMP \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --expire-time \" TIMESTAMP \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --expire-time \" TIMESTAMP \" Update a secret's expiration using a duration Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --ttl \" DURATION \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --ttl \" DURATION \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --ttl \" DURATION \" REST Update a secret's expiration using a timestamp Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret TOKEN : your own Oauth2.0 access token TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time Request JSON body: {\"expire time\": \" TIMESTAMP \"} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"expireTime\": \"2024-09-04T09:25:39Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Update a secret's expiration using a duration Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl Request JSON body: {\"ttl\": \" DURATION \"} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=ttl\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"expireTime\": \"2024-09-04T09:25:39Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Remove a secret's expiration date To remove the secret's expiration date and time, use one of the following methods: Console In the Google Cloud console, go to the Secret Manager page.",
+          "Click Create secret . gcloud Create an expiring secret using a timestamp Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID \\ --replication-policy \"automatic\" \\ --expire-time \" TIMESTAMP \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID --replication-policy \"automatic\" --expire-time \" TIMESTAMP \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID ^ --replication-policy \"automatic\" ^ --expire-time \" TIMESTAMP \" Create an expiring secret using a duration Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret DURATION : the expiration duration in seconds, for example 86400s Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID \\ --replication-policy \"automatic\" \\ --ttl \" DURATION \" Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID --replication-policy \"automatic\" --ttl \" DURATION \" Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets create SECRET ID ^ --replication-policy \"automatic\" ^ --ttl \" DURATION \" REST Create an expiring secret using a timestamp Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret TIMESTAMP : the expiration time in RFC 3339 format, for example 2100-01-01T09:00:00-05:00 HTTP method and URL: POST https://secretmanager.googleapis.com/v1/projects/$ PROJECT ID /secrets?secretId=$ SECRET ID Request JSON body: { \"replication\": {\"automatic\": {}}, \"expire time\": \" TIMESTAMP \" } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "Clear the Set expiration date checkbox, and then click Update secret . gcloud Before using any of the command data below, make the following replacements: SECRET ID : the ID of the secret Execute the following command: Linux, macOS, or Cloud Shell Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID \\ --remove-expiration Windows (PowerShell) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID --remove-expiration Windows (cmd.exe) Note: Ensure you have initialized the Google Cloud CLI with authentication and a project by running either gcloud init ; or gcloud auth login and gcloud config set project . gcloud secrets update SECRET ID ^ --remove-expiration REST Before using any of the request data, make the following replacements: PROJECT ID : the Google Cloud project ID SECRET ID : the ID of the secret TOKEN : your own Oauth2.0 access token HTTP method and URL: PATCH https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time Request JSON body: {} To send your request, choose one of these options: curl Save the request body in a file named request.json , and execute the following command: curl -X PATCH \\ -H \"Authorization: Bearer TOKEN \" \\ -H \"Content-Type: application/json; charset=utf-8\" \\ -d @request.json \\ \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" PowerShell Save the request body in a file named request.json , and execute the following command: $headers = @{ \"Authorization\" = \"Bearer TOKEN \" } Invoke-WebRequest -Method PATCH -Headers $headers -ContentType: \"application/json; charset=utf-8\" -InFile request.json -Uri \"https://secretmanager.googleapis.com/v1/projects/ PROJECT ID /secrets/ SECRET ID ?updateMask=expire time\" Select-Object -Expand Content You should receive a JSON response similar to the following: { \"name\": \"projects/ PROJECT ID /locations/ LOCATION /secrets/ SECRET ID \", \"createTime\": \"2024-09-04T03:58:38.200877Z\", \"etag\": \"\\\"162143305d282d\\\"\" } Expiration logging Cloud Audit Logs are not produced when a secret automatically expires."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cmd.exe",
+      "e.g",
+      "request.json",
+      "secretmanager.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "logging",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/secret-manager/docs/add-labels-to-secrets",
+        "https://docs.cloud.google.com/secret-manager/docs/add-secret-version",
+        "https://docs.cloud.google.com/secret-manager/docs/create-secret-quickstart",
+        "https://docs.cloud.google.com/secret-manager/docs/creating-and-managing-expiring-secrets"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:49.802Z",
+  "source_step08_card": "data/step-08/current/products/secret-manager/card.json",
+  "product_name": "Secret Manager",
+  "product_slug": "secret-manager"
+}

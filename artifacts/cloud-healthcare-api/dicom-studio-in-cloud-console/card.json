@@ -1,0 +1,182 @@
+{
+  "feature_name": "DICOM Studio in Cloud Console",
+  "feature_slug": "dicom-studio-in-cloud-console",
+  "summary": "A new Cloud Console application called DICOM Studio was added to provide a web interface for exploring and managing DICOM Stores; A new Cloud Console application called DICOM Studio was added to provide a web interface for exploring and managing DICOM Stores.",
+  "extended_definition": "A new Cloud Console application called DICOM Studio was added to provide a web interface for exploring and managing DICOM Stores; A new Cloud Console application called DICOM Studio was added to provide a web interface for exploring and managing DICOM Stores.",
+  "lifecycle": {
+    "latest_feature_date": "2025-10-23",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/healthcare-api/docs/controlling-access",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+      "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Using the DICOMweb standard \\_|\\_ Cloud Healthcare API \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "source_id": "site-docs-root",
+        "final_score": 197,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "In the Google Cloud console, go to the DICOM Studio application.",
+          "The output file, which you send to the Cloud Healthcare API, is called multipart-request.file : cat opening.file instance.json middle.file image.jpg closing.file > multipart-request.file Make a POST request and specify the following information: The name of the parent dataset The name of the DICOM store The multipart-request.file file An access token The following sample shows a POST request using curl . curl -X POST \\ -H \"Content-Type: multipart/related; type=\\\"application/dicom+json\\\"; boundary=DICOMwebBoundary\" \\ -H \"Authorization: Bearer $( gcloud auth application-default print-access-token ) \" \\ https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies \\ --data-binary @multipart-request.file If the request is successful, the server returns the response in XML format: <NativeDicomModel> <DicomAttribute tag=\"00081190\" vr=\"UR\" keyword=\"RetrieveURL\"> <Value number=\"1\">https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY INSTANCE UID </Value> </DicomAttribute> <DicomAttribute tag=\"00081199\" vr=\"SQ\" keyword=\"ReferencedSOPSequence\"> <Item number=\"1\"> <DicomAttribute tag=\"00081150\" vr=\"UI\" keyword=\"ReferencedSOPClassUID\"> <Value number=\"1\"> SOP CLASS UID </Value> </DicomAttribute> <DicomAttribute tag=\"00081155\" vr=\"UI\" keyword=\"ReferencedSOPInstanceUID\"> <Value number=\"1\"> SOP INSTANCE UID </Value> </DicomAttribute> <DicomAttribute tag=\"00081190\" vr=\"UR\" keyword=\"RetrieveURL\"> <Value number=\"1\">https://healthcare.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION /datasets/ DATASET ID /dicomStores/ DICOM STORE ID /dicomWeb/studies/ STUDY INSTANCE UID /series/ SERIES INSTANCE UID /instances/ INSTANCE UID </Value> </DicomAttribute> </Item> </DicomAttribute> </NativeDicomModel> Use the DICOMweb CLI The following samples show how to use the Cloud Healthcare API DICOMweb CLI to store one or more DICOM instances.",
+          "GoogleAuth ({ scopes : [ 'https://www.googleapis.com/auth/cloud-platform' ], }), }); const fs = require ( 'fs' ); const util = require ( 'util' ); const writeFile = util . promisify ( fs . writeFile ); const fileName = 'instance file.dcm' ; const dicomWebRetrieveInstance = async () = > { // TODO(developer): uncomment these lines before running the sample // const cloudRegion = 'us-central1'; // const projectId = 'adjective-noun-123'; // const datasetId = 'my-dataset'; // const dicomStoreId = 'my-dicom-store'; // const studyUid = '1.3.6.1.4.1.5062.55.1.2270943358.716200484.1363785608958.61.0'; // const seriesUid = '2.24.52329571877967561426579904912379710633'; // const instanceUid = '1.3.6.2.4.2.14619.5.2.1.6280.6001.129311971280445372188125744148'; const parent = projects/ ${ projectId } /locations/ ${ cloudRegion } /datasets/ ${ datasetId } /dicomStores/ ${ dicomStoreId } ; const dicomWebPath = studies/ ${ studyUid } /series/ ${ seriesUid } /instances/ ${ instanceUid } ; const request = { parent , dicomWebPath }; const instance = await healthcare . projects . locations . datasets . dicomStores . studies . series . instances . retrieveInstance ( request , { headers : { Accept : 'application/dicom; transfer-syntax= ' }, responseType : 'arraybuffer' , } ); const fileBytes = Buffer . from ( instance . data ); await writeFile ( fileName , fileBytes ); console . log ( Retrieved DICOM instance and saved to ${ fileName } in current directory ); }; dicomWebRetrieveInstance (); Python def dicomweb retrieve instance ( project id , location , dataset id , dicom store id , study uid , series uid , instance uid , ): \"\"\"Handles the GET requests specified in the DICOMweb standard."
+        ]
+      },
+      {
+        "title": "\"Creating and managing DICOM stores \\_|\\_ Cloud Healthcare API \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery Imports Python's built-in \"json\" module import json api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" dicom stores = client . projects () . locations () . datasets () . dicomStores () dicom store = dicom stores . get ( name = dicom store name ) . execute () print ( json . dumps ( dicom store , indent = 2 )) return dicom store Listing the DICOM stores in a dataset The following samples show how to list the DICOM stores in a dataset: Console To view the data stores in a dataset: In the Google Cloud console, go to the Datasets page.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID pubsub topic = 'my-topic' # replace with an existing Pub/Sub topic dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" patch = { \"notificationConfig\" : { \"pubsubTopic\" : f \"projects/ { project id } /topics/ { pubsub topic } \" } } request = ( client . projects () . locations () . datasets () . dicomStores () . patch ( name = dicom store name , updateMask = \"notificationConfig\" , body = patch ) ) response = request . execute () print ( \"Patched DICOM store {} with Cloud Pub/Sub topic: {} \" . format ( dicom store id , pubsub topic ) ) return response Getting DICOM store details The following samples show how to get details about a DICOM store.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" request = ( client . projects () . locations () . datasets () . dicomStores () . delete ( name = dicom store name ) ) response = request . execute () print ( f \"Deleted DICOM store: { dicom store id } \" ) return response What's next Export and import DICOM object instances to and from Cloud Storage Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License ."
+        ]
+      },
+      {
+        "title": "\"Controlling access to Cloud Healthcare API resources \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/healthcare-api/docs/controlling-access",
+        "source_id": "site-docs-root-2",
+        "final_score": 128,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A member can be any of: - allUsers, that is, anyone - allAuthenticatedUsers, anyone authenticated with a Google account - user:email, as in 'user:somebody@example.com' - group:email, as in 'group:admins@example.com' - domain:domainname, as in 'domain:example.com' - serviceAccount:email, as in 'serviceAccount:my-other-app@appspot.gserviceaccount.com' A role can be any IAM role, such as 'roles/viewer', 'roles/owner', or 'roles/editor' See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID member = 'myemail@example.com' # replace with an authorized member role = 'roles/viewer' # replace with a Healthcare API IAM role dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" policy = { \"bindings\" : [{ \"role\" : role , \"members\" : [ member ]}]} if etag is not None : policy [ \"etag\" ] = etag request = ( client . projects () . locations () . datasets () . dicomStores () . setIamPolicy ( resource = dicom store name , body = { \"policy\" : policy }) ) response = request . execute () print ( \"etag: {} \" . format ( response . get ( \"name\" ))) print ( \"bindings: {} \" . format ( response . get ( \"bindings\" ))) return response curl Grant or revoke roles to users by modifying the policy that you retrieved, programmatically or using a text editor.",
+          "Returns: A dictionary representing an IAM policy. \"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery Imports HttpError from the Google Python API client errors module. from googleapiclient.errors import HttpError api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' location = 'us-central1' dataset id = 'my-dataset' dataset name = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) TODO(developer): Uncomment these lines and replace with your values. role = 'roles/viewer' member = 'serviceAccount:group@example.com' policy = { \"bindings\" : [{ \"role\" : role , \"members\" : [ member ]}]} if etag is not None : policy [ \"etag\" ] = etag request = ( client . projects () . locations () . datasets () . setIamPolicy ( resource = dataset name , body = { \"policy\" : policy }) ) try : response = request . execute () print ( \"etag: {} \" . format ( response . get ( \"name\" ))) print ( \"bindings: {} \" . format ( response . get ( \"bindings\" ))) return response except HttpError as err : raise err Using IAM with DICOM stores The following sections show how to get, modify, and set a policy for a DICOM store.",
+          "See https://github.com/GoogleCloudPlatform/python-docs-samples/tree/main/healthcare/api-client/v1/dicom before running the sample.\"\"\" Imports the Google API Discovery Service. from googleapiclient import discovery api version = \"v1\" service name = \"healthcare\" Returns an authorized API client by discovering the Healthcare API and using GOOGLE APPLICATION CREDENTIALS environment variable. client = discovery . build ( service name , api version ) TODO(developer): Uncomment these lines and replace with your values. project id = 'my-project' # replace with your GCP project ID location = 'us-central1' # replace with the parent dataset's location dataset id = 'my-dataset' # replace with the DICOM store's parent dataset ID dicom store id = 'my-dicom-store' # replace with the DICOM store's ID dicom store parent = \"projects/ {} /locations/ {} /datasets/ {} \" . format ( project id , location , dataset id ) dicom store name = f \" { dicom store parent } /dicomStores/ { dicom store id } \" request = ( client . projects () . locations () . datasets () . dicomStores () . getIamPolicy ( resource = dicom store name ) ) response = request . execute () print ( \"etag: {} \" . format ( response . get ( \"name\" ))) return response curl To read the IAM policy for a DICOM store, make a GET request and specify the name of the dataset, the name of the DICOM store, and an access token."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "appspot.gserviceaccount.com",
+      "closing.file",
+      "example.com",
+      "file.dcm",
+      "file.multipart",
+      "github.com",
+      "googleapiclient.errors",
+      "healthcare.datasetViewer",
+      "healthcare.googleapis.com",
+      "image.jpg",
+      "instance.json",
+      "middle.file",
+      "opening.file",
+      "request.file"
+    ],
+    "missing_inventory_roles": [
+      "roles/editor",
+      "roles/healthcare.datasetViewer",
+      "roles/owner",
+      "roles/viewer"
+    ]
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "audit",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "iam",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicomweb",
+        "https://docs.cloud.google.com/healthcare-api/docs/how-tos/dicom",
+        "https://docs.cloud.google.com/healthcare-api/docs/controlling-access"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:09.317Z",
+  "source_step08_card": "data/step-08/current/products/cloud-healthcare-api/card.json",
+  "product_name": "Cloud Healthcare API",
+  "product_slug": "cloud-healthcare-api"
+}

@@ -1,0 +1,174 @@
+{
+  "feature_name": "veo-3.0-generate-preview",
+  "feature_slug": "veo-3-0-generate-preview",
+  "summary": "A deprecated Veo 3.0 video generation preview endpoint scheduled for shutdown on 2026-04-02; deprecated on 2026-04-02.",
+  "extended_definition": "A deprecated Veo 3.0 video generation preview endpoint scheduled for shutdown on 2026-04-02; deprecated on 2026-04-02.",
+  "lifecycle": {
+    "latest_feature_date": "2026-03-03",
+    "deprecation_date": "2026-04-02",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+      "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "\"Veo on Vertex AI video generation prompt guide \\_|\\_ Generative AI on Vertex\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "source_id": "site-docs-root",
+        "final_score": 175,
+        "relevance": "",
+        "evidence_snippets": [
+          "What's next Best practices for Veo on Vertex AI Generate videos with Veo on Vertex AI from text prompts Generate videos with Veo on Vertex AI from an image Generate videos with Veo on Vertex AI using first and last video frames Extend Veo on Vertex AI-generate videos Understand responsible AI and usage guidelines for Veo on Vertex AI Send feedback Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License , and code samples are licensed under the Apache 2.0 License .",
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Veo on Vertex AI video generation prompt guide Stay organized with collections Save and categorize content based on your preferences.",
+          "Anatomy of a Veo prompt When you use Veo to generate videos, using the correct keywords and prompt structure helps the model to generate the content that you want."
+        ]
+      },
+      {
+        "title": "\"Responsible AI for Veo on Vertex AI video generation \\_|\\_ Generative AI\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "source_id": "site-docs-root",
+        "final_score": 156,
+        "relevance": "",
+        "evidence_snippets": [
+          "Home Documentation AI and ML Vertex AI Generative AI on Vertex AI Guides Send feedback Responsible AI for Veo on Vertex AI video generation Stay organized with collections Save and categorize content based on your preferences.",
+          "Safety filter code categories Depending on the safety filters that you configure, your output may contain a safety code similar to: \"Veo could not generate videos because the input image violates Vertex AI's usage guidelines.",
+          "Safety filters Veo on Vertex AI offers several ways to input prompts to generate videos, including text, video, and images."
+        ]
+      },
+      {
+        "title": "\"Content Credentials \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "source_id": "site-docs-root",
+        "final_score": 139,
+        "relevance": "",
+        "evidence_snippets": [
+          "All images or videos created or modified using the listed models are automatically digitally signed by Google LLC. \"Google Media Processing Services\" is specified as the app or device used in the Content Credential. gemini-3.1-flash-image-preview gemini-3-pro-image-preview gemini-2.5-flash-image imagen-3.0-generate-002 imagen-3.0-generate-001 imagen-3.0-fast-generate-001 imagen-3.0-capability-001 imagen-4.0-generate-001 imagen-4.0-fast-generate-001 imagen-4.0-ultra-generate-001 virtual-try-on-001 veo-2.0-generate-001 veo-2.0-generate-exp veo-2.0-generate-preview veo-3.0-generate-preview veo-3.0-fast-generate-preview veo-3.0-generate-001 veo-3.0-fast-generate-001 veo-3.1-generate-preview veo-3.1-fast-generate-preview veo-3.1-generate-001 veo-3.1-fast-generate-001 veo-3.1-lite-generate-001 lyria-3-clip-preview lyria-3-pro-preview What's next Guide Generate and edit images with Gemini Use Gemini's image generation models (Nano Banana and Nano Banana Pro) to create and edit images.",
+          "How to Use Content Credentials If you generate a media file, such as an image, using a supported Google model, Content Credentials are automatically added and signed by Google LLC.",
+          "Content Credentials provide a transparent look into the origin and history of media files, for example, images, video files, audio files, and documents."
+        ]
+      },
+      {
+        "title": "\"Vertex AI quickstart \\_|\\_ Generative AI on Vertex AI \\_|\\_ Google Cloud\\",
+        "url": "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal",
+        "source_id": "site-docs-root",
+        "final_score": 113,
+        "relevance": "",
+        "evidence_snippets": [
+          "GOOGLE CLOUD LOCATION 'global' ; async function generateContent ( projectId = GOOGLE CLOUD PROJECT , location = GOOGLE CLOUD LOCATION ) { const client = new GoogleGenAI ({ vertexai : true , project : projectId , location : location , }); const response = await client . models . generateContent ({ model : 'gemini-3-flash-preview' , contents : 'How does AI work?' , }); console . log ( response . text ); return response . text ; } Java import com.google.genai.Client ; import com.google.genai.types.GenerateContentResponse ; import com.google.genai.types.HttpOptions ; public class TextGenerationWithText { public static void main ( String [] args ) { // TODO ( developer ): Replace these variables before running the sample .",
+          "Generate images Note: Image generation with Gemini is in preview.",
+          "GOOGLE CLOUD LOCATION 'global' ; async function generateContent ( projectId = GOOGLE CLOUD PROJECT , location = GOOGLE CLOUD LOCATION ) { const client = new GoogleGenAI ({ vertexai : true , project : projectId , location : location , }); const image = { fileData : { fileUri : 'gs://cloud-samples-data/generative-ai/image/scones.jpg' , mimeType : 'image/jpeg' , }, }; const response = await client . models . generateContent ({ model : 'gemini-2.5-flash' , contents : [ image , 'What is shown in this image?' ], }); console . log ( response . text ); return response . text ; } Java import com.google.genai.Client ; import com.google.genai.types.Content ; import com.google.genai.types.GenerateContentResponse ; import com.google.genai.types.HttpOptions ; import com.google.genai.types.Part ; public class TextGenerationWithTextAndImage { public static void main ( String [] args ) { // TODO ( developer ): Replace these variables before running the sample ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "com.google.genai.Client",
+      "com.google.genai.types.Content",
+      "com.google.genai.types.GenerateContentResponse",
+      "com.google.genai.types.HttpOptions",
+      "com.google.genai.types.Part",
+      "scones.jpg"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    },
+    {
+      "capability": "credential",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/video-gen-prompt-guide",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/video/responsible-ai-and-usage-guidelines",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/content-credentials",
+        "https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstarts/quickstart-multimodal"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:34.525Z",
+  "source_step08_card": "data/step-08/current/products/generative-ai-on-vertex-ai/card.json",
+  "product_name": "Generative AI on Vertex AI",
+  "product_slug": "generative-ai-on-vertex-ai"
+}

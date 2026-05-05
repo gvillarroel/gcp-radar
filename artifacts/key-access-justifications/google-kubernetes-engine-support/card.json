@@ -1,0 +1,160 @@
+{
+  "feature_name": "Google Kubernetes Engine support",
+  "feature_slug": "google-kubernetes-engine-support",
+  "summary": "Google Kubernetes Engine support lets Key Access Justifications work with Google Kubernetes Engine in GA.",
+  "extended_definition": "Google Kubernetes Engine support lets Key Access Justifications work with Google Kubernetes Engine in GA.",
+  "lifecycle": {
+    "latest_feature_date": "2021-07-21",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+      "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm",
+      "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+      "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Overview of Key Access Justifications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "source_id": "site-docs-reference",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key Access Justifications works alongside Access Approval and Access Transparency in the following way: Access Approval lets you authorize requests from Google personnel to access Customer Data , Access Transparency helps you discover information about when Customer Data is accessed, and Key Access Justifications provides key access control for all interactions with at-rest Customer Data that is encrypted by a customer-managed key.",
+          "The following Compute Engine and Persistent Disk features are exempted when used with CMEK: Local SSDs Automatic restart Machine image operations Key Access Justifications with Access Approval For workloads with Access Approval enabled with a custom signing key, Key Access Justifications will also apply to processing signed access approval requests.",
+          "Enabling Key Access Justifications Key Access Justifications can only be used with Assured Workloads, and is enabled by default when you create a new Assured Workloads folder configured for a control package that includes Key Access Justifications."
+        ]
+      },
+      {
+        "title": "Overview of Key Access Justifications \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "source_id": "site-docs-root",
+        "final_score": 257,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Key Access Justifications works alongside Access Approval and Access Transparency in the following way: Access Approval lets you authorize requests from Google personnel to access Customer Data , Access Transparency helps you discover information about when Customer Data is accessed, and Key Access Justifications provides key access control for all interactions with at-rest Customer Data that is encrypted by a customer-managed key.",
+          "The following Compute Engine and Persistent Disk features are exempted when used with CMEK: Local SSDs Automatic restart Machine image operations Key Access Justifications with Access Approval For workloads with Access Approval enabled with a custom signing key, Key Access Justifications will also apply to processing signed access approval requests.",
+          "Enabling Key Access Justifications Key Access Justifications can only be used with Assured Workloads, and is enabled by default when you create a new Assured Workloads folder configured for a control package that includes Key Access Justifications."
+        ]
+      },
+      {
+        "title": "\"Configure Key Access Justifications with Cloud KMS and Cloud HSM \\_|\\_ Google\\",
+        "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "source_id": "site-docs-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Home Technology areas Assured Workloads Cloud provider access management Key Access Justifications Guides Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Configure Key Access Justifications with Cloud KMS and Cloud HSM This page describes how to configure Key Access Justifications with Cloud KMS or Cloud HSM for Assured Workloads' Japan Data Boundary .",
+          "Before you begin The ability to use Key Access Justifications with Cloud KMS and Cloud HSM keys is only available for the Japan Data Boundary in Assured Workloads."
+        ]
+      },
+      {
+        "title": "Configure Key Access Justifications with Cloud HSM \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm",
+        "source_id": "site-iam-reference",
+        "final_score": 237,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Configure Key Access Justifications with Cloud HSM This page describes how to configure Key Access Justifications with Cloud HSM for Assured Workloads' Japan Regions control package .",
+          "Home Assured Workloads Cloud provider access management Key Access Justifications Send feedback Stay organized with collections Save and categorize content based on your preferences.",
+          "Before you begin The ability to use Key Access Justifications with Cloud HSM keys is only available for the Japan Regions control package in Assured Workloads."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "cloudkms.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm"
+      ]
+    },
+    {
+      "capability": "encrypt",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm"
+      ]
+    },
+    {
+      "capability": "kms",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm"
+      ]
+    },
+    {
+      "capability": "policy",
+      "evidence_links": [
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/overview",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-kaj",
+        "https://docs.cloud.google.com/assured-workloads/key-access-justifications/docs/configure-hsm"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:42.947Z",
+  "source_step08_card": "data/step-08/current/products/key-access-justifications/card.json",
+  "product_name": "Key Access Justifications",
+  "product_slug": "key-access-justifications"
+}

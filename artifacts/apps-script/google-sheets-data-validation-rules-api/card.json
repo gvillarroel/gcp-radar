@@ -1,0 +1,124 @@
+{
+  "feature_name": "Google Sheets data validation rules API",
+  "feature_slug": "google-sheets-data-validation-rules-api",
+  "summary": "Apps Script can now programmatically control data-validation rules in Google Sheets.",
+  "extended_definition": "Apps Script can now programmatically control data-validation rules in Google Sheets.",
+  "lifecycle": {
+    "latest_feature_date": "2013-08-05",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/apps-script/guides/sheets",
+      "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+      "https://developers.google.com/apps-script/releases"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Extend Google Sheets \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/guides/sheets",
+        "source_id": "site-docs-root-2",
+        "final_score": 119,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Get started Apps Script includes special APIs to programmatically create, read, and edit Sheets.",
+          "You can programmatically create, read, and edit Google Sheets using Apps Script APIs.",
+          "The following example sets the font style of a range: function formatMySpreadsheet () { // Set the font style of the cells in the range of B2:C2 to be italic. const ss = SpreadsheetApp . getActiveSpreadsheet (); const sheet = ss . getSheets ()[ 0 ]; const cell = sheet . getRange ( 'B2:C2' ); cell . setFontStyle ( 'italic' ); } Data validation Access existing data-validation rules in Sheets or create new rules."
+        ]
+      },
+      {
+        "title": "Class DataValidationBuilder \\_|\\_ Apps Script \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+        "source_id": "site-docs-reference-required-4",
+        "final_score": 104,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "DataValidationBuilder Builder for data validation rules. // Set the data validation for cell A1 to require a value from B1:B10. const cell = SpreadsheetApp . getActive (). getRange ( 'A1' ); const range = SpreadsheetApp . getActive (). getRange ( 'B1:B10' ); const rule = SpreadsheetApp . newDataValidation (). requireValueInRange ( range ). build (); cell . setDataValidation ( rule ); Methods Method Return type Brief description build() Data Validation Constructs a data validation rule from the settings applied to the builder. copy() Data Validation Builder Creates a builder for a data validation rule based on this rule's settings. get Allow Invalid() Boolean Returns true if the rule shows a warning when input fails data validation, or false if it rejects the input entirely. get Criteria Type() Data Validation Criteria Gets the rule's criteria type as defined in the Data Validation Criteria enum. get Criteria Values() Object[] Gets an array of arguments for the rule's criteria. get Help Text() String Gets the rule's help text, or null if no help text is set. require Checkbox() Data Validation Builder Sets the data validation rule to require that the input is a boolean value; this value is rendered as a checkbox. require Checkbox(checkedValue) Data Validation Builder Sets the data validation rule to require that the input is the specified value or blank. require Checkbox(checkedValue, uncheckedValue) Data Validation Builder Sets the data validation rule to require that the input is one of the specified values. require Date() Data Validation Builder Sets the data validation rule to require a date. require Date After(date) Data Validation Builder Sets the data validation rule to require a date after the given value. require Date Before(date) Data Validation Builder Sets the data validation rule to require a date before the given value. require Date Between(start, end) Data Validation Builder Sets the data validation rule to require a date that falls between, or is either of, two specified dates. require Date Equal To(date) Data Validation Builder Sets the data validation rule to require a date equal to the given value. require Date Not Between(start, end) Data Validation Builder Sets the data validation rule to require a date that does not fall between, and is neither of, two specified dates. require Date On Or After(date) Data Validation Builder Sets the data validation rule to require a date on or after the given value. require Date On Or Before(date) Data Validation Builder Sets the data validation rule to require a date on or before the given value. require Formula Satisfied(formula) Data Validation Builder Sets the data validation rule to require that the given formula evaluates to true . require Number Between(start, end) Data Validation Builder Sets the data validation rule to require a number that falls between, or is either of, two specified numbers. require Number Equal To(number) Data Validation Builder Sets the data validation rule to require a number equal to the given value. require Number Greater Than(number) Data Validation Builder Sets the data validation rule to require a number greater than the given value. require Number Greater Than Or Equal To(number) Data Validation Builder Sets the data validation rule to require a number greater than or equal to the given value. require Number Less Than(number) Data Validation Builder Sets the data validation rule to require a number less than the given value. require Number Less Than Or Equal To(number) Data Validation Builder Sets the data validation rule to require a number less than or equal to the given value. require Number Not Between(start, end) Data Validation Builder Sets the data validation rule to require a number that does not fall between, and is neither of, two specified numbers. require Number Not Equal To(number) Data Validation Builder Sets the data validation rule to require a number not equal to the given value. require Text Contains(text) Data Validation Builder Sets the data validation rule to require that the input contains the given value. require Text Does Not Contain(text) Data Validation Builder Sets the data validation rule to require that the input does not contain the given value. require Text Equal To(text) Data Validation Builder Sets the data validation rule to require that the input is equal to the given value. require Text Is Email() Data Validation Builder Sets the data validation rule to require that the input is in the form of an email address. require Text Is Url() Data Validation Builder Sets the data validation rule to require that the input is in the form of a URL. require Value In List(values) Data Validation Builder Sets the data validation rule to require that the input is equal to one of the given values. require Value In List(values, showDropdown) Data Validation Builder Sets the data validation rule to require that the input is equal to one of the given values, with an option to hide the dropdown menu. require Value In Range(range) Data Validation Builder Sets the data validation rule to require that the input is equal to a value in the given range. require Value In Range(range, showDropdown) Data Validation Builder Sets the data validation rule to require that the input is equal to a value in the given range, with an option to hide the dropdown menu. set Allow Invalid(allowInvalidData) Data Validation Builder Sets whether to show a warning when input fails data validation or whether to reject the input entirely. set Help Text(helpText) Data Validation Builder Sets the help text that appears when the user hovers over the cell on which data validation is set. with Criteria(criteria, args) Data Validation Builder Sets the data validation rule to criteria defined by Data Validation Criteria values, typically taken from the criteria and arguments of an existing rule.",
+          "DATE BETWEEN && args [ 0 ]. getTime () === oldDates [ 0 ]. getTime () && args [ 1 ]. getTime () === oldDates [ 1 ]. getTime ()) { // Create a builder from the existing rule, then change the dates. rules [ i ][ j ] = rule . copy (). withCriteria ( criteria , newDates ). build (); } } } } range . setDataValidations ( rules ); Parameters Name Type Description criteria Data Validation Criteria The type of data validation criteria. args Object[] An array of arguments appropriate to the criteria type; the number of arguments and their type match the corresponding require...() method above.",
+          "Need to tell us more? [[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-04-13 UTC.\"],[],[\"The DataValidationBuilder creates data validation rules for spreadsheets."
+        ]
+      },
+      {
+        "title": "Google Apps Script release notes \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/apps-script/releases",
+        "source_id": "site-docs-root",
+        "final_score": 99,
+        "relevance": "",
+        "evidence_snippets": [
+          "Feature Generally Available : To complement the release of the granular consent flow in Apps Script IDE executions, the following methods have been added to the ScriptApp and AuthorizationInfo classes to let Apps Script developers programmatically interact with the scopes granted for a script.",
+          "April 23, 2025 Fixed Between approximately September 2024 and March 2025, for Google Sheets modifications made by time-based Apps Script triggers, a bug caused incorrect OAuth App IDs and App Names to be logged in the Google Admin console.",
+          "An add-on is an Apps Script project published to a store inside Docs or Sheets, which makes it easy for users to find and install new features."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/sheets",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/sheets",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/sheets",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/sheets",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/apps-script/guides/sheets",
+        "https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder",
+        "https://developers.google.com/apps-script/releases"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:00.566Z",
+  "source_step08_card": "data/step-08/current/products/apps-script/card.json",
+  "product_name": "Apps Script",
+  "product_slug": "apps-script"
+}

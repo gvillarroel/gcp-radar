@@ -1,0 +1,145 @@
+{
+  "feature_name": "PlacesClient.awaitFetchPhoto()",
+  "feature_slug": "placesclient-awaitfetchphoto",
+  "summary": "The awaitFetchPhoto() API and its related request class are deprecated in favor of the newer photo resolution flow; deprecated on 2025-09-25.",
+  "extended_definition": "The awaitFetchPhoto() API and its related request class are deprecated in favor of the newer photo resolution flow; deprecated on 2025-09-25.",
+  "lifecycle": {
+    "latest_feature_date": "2025-09-25",
+    "deprecation_date": "2025-09-25",
+    "status": "deprecation_noted"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/places/android-sdk/ktx",
+      "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+      "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places",
+      "https://developers.google.com/maps/documentation/places/android-sdk/support"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places",
+        "source_id": "site-docs-reference",
+        "final_score": 155,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Summary Public methods static void addInternalUsageAttributionId ( String internalUsageAttributionId) Adds a usage attribution ID to the initializer, which helps Google understand which libraries and samples are helpful to developers, such as usage of a marker clustering library. synchronized static PlacesClient createClient ( Context context) Gets an instance of PlacesClient for a given Context . synchronized static void deinitialize () Deinitializes Places . static void initialize ( Context applicationContext, String apiKey) This method is deprecated.",
+          "You may call this method again to update the API key and locale used; if you do so, all widgets and instances of PlacesClient will now use these new values.",
+          "You may call this method again to update the API key and locale used; if you do so, all widgets and instances of PlacesClient will now use these new values."
+        ]
+      },
+      {
+        "title": "Support Options for Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/support",
+        "source_id": "site-docs-reference",
+        "final_score": 152,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Members of the Google Maps and Google Places APIs team monitor several Google Maps and Google Places related tags on Stack Overflow.",
+          "Contact Billing Support as a Billing Admin The Billing Admin role does not grant permissions to create support cases on its billing account, because access to Support (Tech or Billing) is based on project permissions, and is granted to Project Owners , Project Editors , or Tech Support Editors on a project tied to the billing account.",
+          "Ask a new question Report an issue or feature request If you think you may have found a bug, or if you have a feature request that you would like to share with the Google Maps Platform APIs team, please file a bug or feature request in our issue tracker ."
+        ]
+      },
+      {
+        "title": "Autocomplete (New) \\_|\\_ Places SDK for Android \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+        "source_id": "site-docs-root",
+        "final_score": 151,
+        "relevance": "",
+        "evidence_snippets": [
+          "The following example specifies a query string of \"Soccer\" and uses the primary types parameter to restrict results to establishments of type \"sporting goods store\" : Places.initializeWithNewPlacesApiEnabled(context, apiKey); final List<Field> placeFields = getPlaceFields(); final List<Place.Field> primaryTypes = Arrays.asList(\"sporting goods store\"); LatLng center = new LatLng(37.7749, -122.4194); CircularBounds circle = CircularBounds.newInstance(center, / radius = / 5000); final FindAutocompletePredictionsRequest autocompletePlacesRequest = FindAutocompletePredictionsRequest.builder() .setQuery(\"Soccer\") .setIncludedPrimaryTypes(primaryTypes) .setLocationBias(circle) .build()); placesClient.findAutocompletePredictions(autoCompletePlacesRequest) .addOnSuccessListener( (response) -> { List<AutocompletePrediction> predictions = response.getResult().getAutocompletePredictions(); } ).addOnFailureListener( exception -> { Log.e(TAG, \"some exception happened\" + exception.getMessage()); }) ); If you omit the primary types parameter, the results can include establishments of a type that you may not want, such as \"athletic field\" .",
+          "The next example changes the previous request to use location bias: Places.initializeWithNewPlacesApiEnabled(context, apiKey); final List<Field> placeFields = getPlaceFields(); LatLng center = new LatLng(37.7749, -122.4194); CircularBounds circle = CircularBounds.newInstance(center, / radius = / 5000); final FindAutocompletePredictionsRequest autocompletePlacesRequest = FindAutocompletePredictionsRequest.builder() .setQuery(\"Amoeba\") .setLocationBias(circle) .build()); placesClient.findAutocompletePredictions(autoCompletePlacesRequest) .addOnSuccessListener( (response) -> { List<AutocompletePrediction> predictions = response.getResult().getAutocompletePredictions(); } ).addOnFailureListener( exception -> { Log.e(TAG, \"some exception happened\" + exception.getMessage()); }) ); Use primary types Use the primary types parameter to restrict results from a request to be of a certain type as listed in Table A and Table B .",
+          "BrandedTheme ) . build ()) . build ( this ); placeAutocompleteActivityResultLauncher . launch ( placeAutocompleteIntent ); Get place predictions programmatically Your app can get a list of predicted place names and/or addresses from the autocomplete API by calling PlacesClient.findAutocompletePredictions() , passing a FindAutocompletePredictionsRequest object."
+        ]
+      },
+      {
+        "title": "\"Places Android KTX Overview and Setup \\_|\\_ Places SDK for Android \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/places/android-sdk/ktx",
+        "source_id": "site-docs-root",
+        "final_score": 148,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "A demo app is available on GitHub; to run it, clone the repository, obtain a Places API key, and store it in a secrets.properties file in the root directory.",
+          "Note: As of version 4.0.0 , the Places SDK for Android includes native Kotlin APIs that can be used instead of the Places Android KTX extensions.",
+          "Native Kotlin APIs within the Places SDK for Android (version 4.0.0 and later) can be used as an alternative to Places Android KTX extensions."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "exception.getMessage",
+      "response.getResult",
+      "secrets.properties"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places",
+        "https://developers.google.com/maps/documentation/places/android-sdk/support",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "key",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places",
+        "https://developers.google.com/maps/documentation/places/android-sdk/support",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places",
+        "https://developers.google.com/maps/documentation/places/android-sdk/support",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places",
+        "https://developers.google.com/maps/documentation/places/android-sdk/support",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/places/android-sdk/reference/com/google/android/libraries/places/api/Places",
+        "https://developers.google.com/maps/documentation/places/android-sdk/support",
+        "https://developers.google.com/maps/documentation/places/android-sdk/place-autocomplete",
+        "https://developers.google.com/maps/documentation/places/android-sdk/ktx"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:48.086Z",
+  "source_step08_card": "data/step-08/current/products/places-sdk-for-android/card.json",
+  "product_name": "Places SDK for Android",
+  "product_slug": "places-sdk-for-android"
+}

@@ -1,0 +1,116 @@
+{
+  "feature_name": "3D buildings during navigation",
+  "feature_slug": "3d-buildings-during-navigation",
+  "summary": "The navigation map can display 3D buildings during turn-by-turn navigation.",
+  "extended_definition": "The navigation map can display 3D buildings during turn-by-turn navigation.",
+  "lifecycle": {
+    "latest_feature_date": "2025-08-12",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+      "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Modify the navigation UI \\_|\\_ Navigation SDK for iOS \\_|\\_ Google for Developers",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "source_id": "site-docs-root",
+        "final_score": 232,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Traffic lights and stop signs You can enable the display of traffic lights and stop signs during active navigation in the mapView , which provides additional context for routes and trip maneuvers.",
+          "3D building display during navigation 3D buildings are displayed during navigation by default.",
+          "Swift mapView . settings . isNavigationHeaderEnabled = true mapView . settings . isNavigationFooterEnabled = true mapView . settings . navigationHeaderPrimaryBackgroundColor = . blue mapView . settings . navigationHeaderSecondaryBackgroundColor = . red Objective-C mapView . settings . navigationHeaderEnabled = YES ; mapView . settings . navigationFooterEnabled = YES ; mapView . settings . navigationHeaderPrimaryBackgroundColor = [ UIColor blueColor ]; mapView . settings . navigationHeaderSecondaryBackgroundColor = [ UIColor redColor ]; Navigation accessory header view You can customize your app by replacing the secondary navigation header view with your own customized accessory view."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "source_id": "site-docs-reference",
+        "final_score": 230,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If this is YES, routes and turn-by-turn directions can be displayed on the map, the camera can enter following mode, and the re-center button appears when the camera is not following the device location.",
+          "Developers can customize map styles, zoom levels, 3D buildings, indoor maps, and control UI elements like padding and accessibility.",
+          "Declaration Swift func setHeaderAccessory ( headerAccessoryView : ( any UIView & GMSNavigationAccessoryView )?) Objective-C - ( void ) setHeaderAccessoryView : ( nullable UIView < GMSNavigationAccessoryView > ) headerAccessoryView ; CarPlay -didBeginPanGesture Preview feature This method should be called from the application’s implementation of the CPMapTemplateDelegate method -mapTemplateDidBeginPanGesture: in order to implement pan gestures for CarPlay map templates."
+        ]
+      },
+      {
+        "title": "\"The Google navigation experience \\_|\\_ Navigation SDK for iOS \\_|\\_ Google\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+        "source_id": "site-docs-root",
+        "final_score": 184,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Modification Details Modified navigation guidance: show/hide headers, colors and fonts, directions, alternate routes, and trip progress Map UI controls Navigation header and footer Navigation header accessory view Display directions list Hide alternate routes Display trip progress Adjust traffic information and speed limit information Display the speedometer Adjust speedometer alerts Enable traffic lights and stop signs Change the map experience UI and adjust the camera.",
+          "During active navigation, the Navigation SDK provides UI components, which are similar to those in the Google Maps apps.",
+          "The Google navigation experience refers to using the Navigation SDK to embed a turn-by-turn navigation experience that uses Google-provided UI elements and visuals, which are similar to the navigation experience within the Google Maps apps."
+        ]
+      },
+      {
+        "title": "\"GoogleNavigation Framework Reference \\_|\\_ Navigation SDK for iOS \\_|\\_\\",
+        "url": "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference",
+        "source_id": "site-docs-reference",
+        "final_score": 180,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "With style options you can customize the presentation of the standard Google map styles, changing the visual display of features like roads, parks, and other points of interest.",
+          "Declaration Swift class GMSIndoorDisplay : NSObject Objective-C @interface GMSIndoorDisplay : NSObject GMSIndoorLevel Declaration Swift class GMSIndoorLevel : NSObject Objective-C @interface GMSIndoorLevel : NSObject - ( instancetype ) init NS UNAVAILABLE ; / Localized display name for the level, e.g. \"Ground floor\". / @property ( nonatomic , copy , readonly , nullable ) NSString name ; / Localized short display name for the level, e.g. \"1\". / @property ( nonatomic , copy , readonly , nullable ) NSString shortName ; @end GMSMapID An opaque identifier for a custom map configuration.",
+          "Declaration Swift class GMSNavigationStepInfo : NSObject Objective-C @interface GMSNavigationStepInfo : NSObject GMSNavigationStepInfoImageOptions Declaration Swift class GMSNavigationStepInfoImageOptions : NSObject Objective-C @interface GMSNavigationStepInfoImageOptions : NSObject / The object which provides screen metrics for the screen the image will be displayed on."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 4 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "developers.google.com",
+      "e.g"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/controls",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference/objc/Classes/GMSMapView",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/intro-google-nav",
+        "https://developers.google.com/maps/documentation/navigation/ios-sdk/reference"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:46.841Z",
+  "source_step08_card": "data/step-08/current/products/navigation-sdk-for-ios/card.json",
+  "product_name": "Navigation SDK for iOS",
+  "product_slug": "navigation-sdk-for-ios"
+}

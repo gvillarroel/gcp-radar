@@ -1,0 +1,118 @@
+{
+  "feature_name": "Feature Registry",
+  "feature_slug": "feature-registry",
+  "summary": "Feature Registry enables registration of feature data sources in BigQuery by creating feature groups and features.",
+  "extended_definition": "Feature Registry enables registration of feature data sources in BigQuery by creating feature groups and features.",
+  "lifecycle": {
+    "latest_feature_date": "2023-11-17",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featuregroup",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+      "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create a feature view instance \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 201,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "While creating a feature view, you can associate features with it in the following ways: Add feature groups and features from Feature Registry : Associate with existing feature groups and features from the Feature Registry.",
+          "Note that you can configure vector retrieval and manage embeddings only if the feature view is created by specifying a BigQuery source URI and not from feature groups and features from Feature Registry.",
+          "To associate multiple BigQuery data sources with the same feature view, you can specify multiple feature groups."
+        ]
+      },
+      {
+        "title": "About Vertex AI Feature Store \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "source_id": "site-docs-reference-3",
+        "final_score": 191,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "There are two types of Vertex AI Feature Store resources in the Feature Registry: Feature Registry resources for feature data Feature Registry resources for feature monitoring Feature Registry resources for feature data To register your feature data in the Feature Registry, you need to create the following Vertex AI Feature Store resources: Feature group ( FeatureGroup ): A FeatureGroup resource is associated with a specific BigQuery source table or view.",
+          "Vertex AI Feature Store data model and resources This section explains the data models and resources associated with the following aspects of Vertex AI Feature Store: Data source preparation in BigQuery Feature Registry setup Online serving setup Online serving Data source preparation in BigQuery During online serving, Vertex AI Feature Store uses feature data from BigQuery data sources.",
+          "An online store instance doesn't specify the source of the feature data, but contains FeatureView resources that specify the feature data sources in either BigQuery or the Feature Registry."
+        ]
+      },
+      {
+        "title": "Create a feature group \\_|\\_ Vertex AI \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featuregroup",
+        "source_id": "site-docs-reference-3",
+        "final_score": 177,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "Aggregate features from multiple sources : Use feature groups to aggregate specific columns from multiple BigQuery data sources when you create a feature view instance .",
+          "HTTP method and URL: POST https:// LOCATION ID -aiplatform.googleapis.com/v1/projects/ PROJECT ID /locations/ LOCATION ID /featureGroups?feature group id= FEATUREGROUP NAME Request JSON body: { \"service agent type\": \" SERVICE AGENT TYPE \", \"big query\": { \"entity id columns\": \" ENTITY ID COLUMNS \", \"big query source\": { \"input uri\": \" BIGQUERY SOURCE URI \", } \"time series\": { \"timestamp column\": \"\" TIMESTAMP COLUMN \"\", }, \"static data source\": STATIC DATA SOURCE , \"dense\": DENSE } } To send your request, choose one of these options: curl Note: The following command assumes that you have logged in to the gcloud CLI with your user account by running gcloud init or gcloud auth login , or by using Cloud Shell , which automatically logs you into the gcloud CLI .",
+          "However, you must register your feature data by creating feature groups and features in the following scenarios: Use historical data in time series format to train a model : If the feature data source contains latest as well as historical feature data with multiple feature records for the same entity ID, then format this data as a time series by adding the feature timestamp column."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "aiplatform.googleapis.com",
+      "request.json",
+      "type.googleapis.com"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featuregroup"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featuregroup"
+      ]
+    },
+    {
+      "capability": "authorization",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featuregroup"
+      ]
+    },
+    {
+      "capability": "token",
+      "evidence_links": [
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featureview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/overview",
+        "https://docs.cloud.google.com/vertex-ai/docs/featurestore/latest/create-featuregroup"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:54.145Z",
+  "source_step08_card": "data/step-08/current/products/vertex-ai/card.json",
+  "product_name": "Vertex AI",
+  "product_slug": "vertex-ai"
+}

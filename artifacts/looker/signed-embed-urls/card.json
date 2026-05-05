@@ -1,0 +1,140 @@
+{
+  "feature_name": "Signed embed URLs",
+  "feature_slug": "signed-embed-urls",
+  "summary": "The Get embed URL option can now generate a signed embed URL for a dashboard, Look, or Explore.",
+  "extended_definition": "The Get embed URL option can now generate a signed embed URL for a dashboard, Look, or Explore.",
+  "lifecycle": {
+    "latest_feature_date": "2023-10-11",
+    "deprecation_date": "",
+    "status": "feature_observed"
+  },
+  "coverage_status": "MEDIUM",
+  "validation": {
+    "step07_pass": true,
+    "fail_count": 0,
+    "warn_count": 0,
+    "findings": []
+  },
+  "evidence": {
+    "source_links": [
+      "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+      "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+      "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url"
+    ],
+    "rejected_non_official_links": [],
+    "supporting_pages": [
+      {
+        "title": "Create Signed Embed Url \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "source_id": "site-api-reference",
+        "final_score": 149,
+        "relevance": "MODERATE",
+        "evidence_snippets": [
+          "If not specified, the URL will be signed with the newest active embed secret defined in the Looker instance. embed domain string Optional.",
+          "If the Looker instance is behind a load balancer or other proxy, target uri must be the public-facing domain name and port required to reach the Looker instance, not the actual internal network machine name of the Looker instance. session length integer Number of seconds the signed embed session will be valid after the embed session is started.",
+          "Request POST /embed/sso url Datatype Description Request HTTP Request body HTTP Body Expand HTTP Body definition... body EmbedSsoParams Signed Embed URL parameters Expand EmbedSsoParams definition... target url string The complete URL of the Looker UI page to display in the embed context."
+        ]
+      },
+      {
+        "title": "Admin settings - Embed \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "source_id": "site-docs-reference",
+        "final_score": 133,
+        "relevance": "",
+        "evidence_snippets": [
+          "Removing Look navigation from embedded Explores By default, embed users who have the explore and save content permissions will see the following options in the Explore Actions gear menu of an embedded Explore: The option to Save as a Look The Save & Schedule option (for embed users who have the send or scheduling permissions ) When set to Enabled , the Remove Look Navigation feature removes all references to Looks, including the options Save as a Look and Save & Schedule , from the embedded Explore's Explore Actions gear menu.",
+          "In these cases, you need to have the Same-Origin Protections for Looker Login Pages option set to Disabled : If you use private embedding of Looker content in an iframe of a web page hosted by a non-Looker domain, you need to disable Same-Origin Protections for Looker Login Pages so that Looker can display the login page in the iframe and allow users to log into Looker.",
+          "Dashboard Embed Content Navigation When this option is enabled, embedded dashboard viewers who have been granted the necessary permissions can view folders and the Looks and dashboards that they contain from embedded dashboards."
+        ]
+      },
+      {
+        "title": "Admin settings - General settings \\_|\\_ Looker \\_|\\_ Google Cloud Documentation",
+        "url": "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings",
+        "source_id": "site-docs-reference",
+        "final_score": 115,
+        "relevance": "",
+        "evidence_snippets": [
+          "For an overview of how user permissions affect the domains to which users can send Looker content deliveries or alert notifications, see the following table: User type Permissions Email Domain Allowlist for Scheduled Content contains the domain friendly domain.org Email Domain Allowlist for Scheduled Content contains no domains Non-embed schedule look emails only Can email content deliveries to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries to any email address schedule look emails and create alerts Can email content deliveries and alert notifications to their own email address, to the email address of another Looker user on the same instance, or to an email address with the friendly domain.org domain Can email content deliveries and alert notifications to any email address schedule external look emails only Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Signed embed schedule look emails only Can email content deliveries to an email address with the friendly domain.org domain Cannot email any Looker content schedule look emails and create alerts Can email content deliveries and alert notifications to an email address with the friendly domain.org domain Cannot email any Looker content or alert notifications schedule external look emails Can email content deliveries to any email address Can email content deliveries to any email address schedule external look emails and create alerts Can email content deliveries and alert notifications to any email address Can email content deliveries and alert notifications to any email address Embedded Looker content is accessed through a dedicated embed user account, not by individual user accounts.",
+          "When it is enabled, any Looker admin user will be emailed when a new Looker account is created. ( Signed embed users are an exception; emails are not generated when a signed embed user is created.) The email will contain the new user's email address.",
+          "One exception to the rules that are stipulated in the table is as follows: You can provide Looker with an embed user's email address by defining it in the email user attribute in the signed embed URL ."
+        ]
+      }
+    ],
+    "evidence_summary": "Fast-mode lexical matching selected 3 supporting page(s) from the Step 04 corpus."
+  },
+  "iam": {
+    "iam_mapping_status": "unknown",
+    "explicit_roles": [],
+    "explicit_permissions": [],
+    "derived_roles": [],
+    "derived_permissions": [],
+    "related_permission_groups": [],
+    "missing_inventory_permissions": [
+      "domain.org"
+    ],
+    "missing_inventory_roles": []
+  },
+  "security_capabilities": [
+    {
+      "capability": "access",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "allow",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "auth",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "permission",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "private",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "role",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    },
+    {
+      "capability": "secret",
+      "evidence_links": [
+        "https://docs.cloud.google.com/looker/docs/reference/looker-api/latest/methods/Auth/create_sso_embed_url",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-platform-embed",
+        "https://docs.cloud.google.com/looker/docs/admin-panel-general-settings"
+      ]
+    }
+  ],
+  "schema_version": "step-09-artifact-promotion-v1",
+  "generated_at": "2026-05-05T13:12:43.048Z",
+  "source_step08_card": "data/step-08/current/products/looker/card.json",
+  "product_name": "Looker",
+  "product_slug": "looker"
+}
