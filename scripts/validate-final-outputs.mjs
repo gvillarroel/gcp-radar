@@ -40,6 +40,7 @@ const officialGoogleHosts = [
 ];
 const existsCache = new Map();
 const jsonCache = new Map();
+const textCache = new Map();
 const directoryCache = new Map();
 const recursiveFilesCache = new Map();
 const recursiveDirsCache = new Map();
@@ -61,10 +62,15 @@ async function exists(target) {
 
 async function readText(filePath, fallback = null) {
   const resolved = path.resolve(filePath);
+  if (textCache.has(resolved)) {
+    return textCache.get(resolved);
+  }
   if (!(await exists(resolved))) {
     return fallback;
   }
-  return readFile(resolved, "utf8");
+  const text = await readFile(resolved, "utf8");
+  textCache.set(resolved, text);
+  return text;
 }
 
 async function readJson(filePath, fallback = null) {
