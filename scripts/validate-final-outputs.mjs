@@ -35,6 +35,11 @@ const outputFile = path.resolve(process.env.GCP_RADAR_VALIDATE_OUTPUT || "data/f
 const expectedStep08SchemaVersion = "step-08-product-feature-cards-v1";
 const expectedStep09SchemaVersion = "step-09-artifact-promotion-v1";
 const expectedStep10SchemaVersion = "step-10-radar-reports-v1";
+const allowedIamMappingStatuses = new Set([
+  "explicit",
+  "derived_from_permission_prefix",
+  "unknown",
+]);
 const officialGoogleHosts = [
   "cloud.google.com",
   "docs.cloud.google.com",
@@ -277,6 +282,21 @@ function validateGeneratedAtMatchesPromotion(record, promotion, recordPath, rule
     path: recordPath,
     expected: promotion.generated_at,
     actual: record.generated_at,
+    ...extra,
+  }];
+}
+
+function validateIamMappingStatus(record, recordPath, rule, extra = {}) {
+  const status = record?.iam?.iam_mapping_status;
+  if (allowedIamMappingStatuses.has(status)) {
+    return [];
+  }
+  return [{
+    severity: "error",
+    rule,
+    path: recordPath,
+    expected_one_of: [...allowedIamMappingStatuses].sort(),
+    actual: status || null,
     ...extra,
   }];
 }
@@ -1020,6 +1040,7 @@ async function validateArtifacts() {
       }
       findings.push(...validateGeneratedAtField(card, cardPath, "feature_card", { product_slug: productSlug, feature_slug: featureSlug }));
       findings.push(...validateGeneratedAtMatchesPromotion(card, promotion, cardPath, "feature_card_generated_at_mismatch", { product_slug: productSlug, feature_slug: featureSlug }));
+      findings.push(...validateIamMappingStatus(card, cardPath, "feature_card_invalid_iam_mapping_status", { product_slug: productSlug, feature_slug: featureSlug }));
       if (card.product_slug !== productSlug) {
         findings.push({
           severity: "error",
@@ -3306,6 +3327,10 @@ async function validateStep08IndexMatchesCards() {
         });
       }
       seenFeatureSlugs.add(featureSlug);
+      findings.push(...validateIamMappingStatus(feature, cardPath, "step08_card_feature_invalid_iam_mapping_status", {
+        product_slug: productSlug,
+        feature_slug: featureSlug,
+      }));
     }
     const explicitCount = features.filter((feature) => feature.iam?.iam_mapping_status === "explicit").length;
     const derivedCount = features.filter((feature) => feature.iam?.iam_mapping_status === "derived_from_permission_prefix").length;

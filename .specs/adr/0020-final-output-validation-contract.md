@@ -35,6 +35,8 @@ The validator must check:
   pass status is true, failure count is zero, a technical summary is present,
   source links are official Google URLs, and feature warning rules are listed
   in the product promotion manifest's accepted warning rules
+- promoted feature cards use one of the documented IAM mapping statuses:
+  `explicit`, `derived_from_permission_prefix`, or `unknown`
 - artifact IAM roles and permissions still exist in the Step 08 inventory
 - radar Markdown and JSON files do not reference intermediate `data/step-*`
   paths
@@ -56,6 +58,8 @@ The validator must check:
   05, Step 06, and Step 07 input roots that final-output validation is checking
 - Step 08 product entries, feature totals, IAM status totals, card paths, and
   per-product summary fields match the generated Step 08 product cards
+- every Step 08 feature card uses one of the documented IAM mapping statuses:
+  `explicit`, `derived_from_permission_prefix`, or `unknown`
 - Step 08 product entries are sorted and duplicate-free
 - every Step 08 product entry still has a generated product `card.json` and
   `card.md`

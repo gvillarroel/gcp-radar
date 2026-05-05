@@ -5,6 +5,11 @@ import path from "node:path";
 
 const schemaVersion = "step-10-radar-reports-v1";
 const expectedStep09SchemaVersion = "step-09-artifact-promotion-v1";
+const allowedIamMappingStatuses = new Set([
+  "explicit",
+  "derived_from_permission_prefix",
+  "unknown",
+]);
 const artifactsRoot = path.resolve(process.env.GCP_RADAR_STEP10_ARTIFACTS_ROOT || "artifacts");
 const radarRoot = path.resolve(process.env.GCP_RADAR_STEP10_RADAR_ROOT || "radar");
 const outputRoot = path.resolve(process.env.GCP_RADAR_STEP10_OUTPUT_ROOT || "data/step-10/current");
@@ -204,6 +209,7 @@ function collectUnacceptedWarningRules(feature, promotion) {
 function validatePromotedFeatureEligibility(productSlug, featureSlug, card, promotion, errors) {
   const validation = card?.validation || {};
   const sourceLinks = card?.evidence?.source_links || [];
+  const iamStatus = card?.iam?.iam_mapping_status;
 
   if (!validation.step07_pass) {
     errors.push(`Promoted feature no longer satisfies Step 09 eligibility for ${productSlug}/${featureSlug}: Step 07 did not pass`);
@@ -216,6 +222,9 @@ function validatePromotedFeatureEligibility(productSlug, featureSlug, card, prom
   }
   if (sourceLinks.length === 0) {
     errors.push(`Promoted feature no longer satisfies Step 09 eligibility for ${productSlug}/${featureSlug}: missing source links`);
+  }
+  if (!allowedIamMappingStatuses.has(iamStatus)) {
+    errors.push(`Promoted feature has invalid IAM mapping status for ${productSlug}/${featureSlug}: expected one of ${[...allowedIamMappingStatuses].sort().join(", ")}, got ${iamStatus || "missing"}`);
   }
   const unacceptedWarningRules = collectUnacceptedWarningRules(card, promotion);
   if (unacceptedWarningRules.length > 0) {

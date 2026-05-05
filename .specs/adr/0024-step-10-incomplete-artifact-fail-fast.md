@@ -84,7 +84,9 @@ Step 10 also checks that each promoted feature card still satisfies the Step 09
 promotion eligibility contract before rewriting reports. A promoted feature
 must still have Step 07 pass status, zero failures, a non-empty technical
 summary, at least one source link, and no warning rules outside the product
-promotion manifest's accepted warning-rule policy.
+promotion manifest's accepted warning-rule policy. The promoted feature IAM
+mapping status must also remain one of the documented Step 08 values:
+`explicit`, `derived_from_permission_prefix`, or `unknown`.
 
 Step 10 also verifies that each promoted product index links the product
 service card and every promoted feature README listed in the promotion

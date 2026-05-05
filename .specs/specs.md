@@ -582,7 +582,9 @@ Step 10 must also fail before rewriting reports when a promoted feature card no
 longer satisfies the Step 09 promotion eligibility contract: Step 07 must have
 passed, failure count must be zero, a technical summary must be present, at
 least one source link must be present, and all warning rules must be accepted
-by the product promotion manifest.
+by the product promotion manifest. The promoted feature IAM mapping status must
+also remain one of the documented Step 08 values: `explicit`,
+`derived_from_permission_prefix`, or `unknown`.
 Step 10 must also fail before rewriting reports when promoted product indexes
 or feature READMEs contain external HTTP(S) links outside official Google
 hosts.
@@ -711,7 +713,9 @@ Promoted feature cards must still satisfy the Step 09 promotion eligibility
 contract during final-output validation: Step 07 must have passed, failure
 count must be zero, a technical summary must be present, source links must be
 official Google URLs, and any warning rules on the promoted feature must be
-listed in the product promotion manifest's accepted warning rules.
+listed in the product promotion manifest's accepted warning rules. Promoted
+feature cards and Step 08 feature cards must also use only the documented IAM
+mapping statuses: `explicit`, `derived_from_permission_prefix`, or `unknown`.
 Every feature listed in a promotion manifest must have both a promoted
 `card.json` and `README.md` artifact.
 Each promoted feature README must include at least one official Google evidence

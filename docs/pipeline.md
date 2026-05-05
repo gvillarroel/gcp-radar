@@ -547,8 +547,11 @@ feature artifact cards must also point to official Google URLs using `http` or
 the promoted feature card and the product promotion manifest: Step 07 must have
 passed, failure count must be zero, a technical summary must be present, source
 links must remain official Google URLs, and any warning rule on the feature
-must be accepted by the promotion manifest. Every feature listed in a promotion
-manifest must have both its promoted `card.json` and `README.md`.
+must be accepted by the promotion manifest. Promoted feature cards and Step 08
+feature cards must also keep IAM mapping status inside the documented status
+set: `explicit`, `derived_from_permission_prefix`, or `unknown`. Every feature
+listed in a promotion manifest must have both its promoted `card.json` and
+`README.md`.
 Each promoted feature README must include at least one official Google evidence
 link from its promoted feature card so artifact review remains possible from
 the human-readable artifact itself.
