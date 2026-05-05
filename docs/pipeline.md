@@ -612,11 +612,11 @@ feature count, latest feature date, IAM counts, and rendered official source
 links aligned with the promoted service card and promotion manifest. The root
 radar index must link every promoted
 product report and service card, must not retain stale product or service-card
-links outside the promoted artifact inventory, and must keep its service-card
-and promoted-feature summary counts aligned with promoted artifacts. Root
-index product rows must also match promoted artifacts for product name,
-promoted feature count, latest feature date, product report link, and
-service-card link.
+links outside the promoted artifact inventory, must not duplicate valid
+promoted product-report or service-card links, and must keep its service-card
+and promoted-feature summary counts aligned with promoted artifacts. Root index
+product rows must also match promoted artifacts for product name, promoted
+feature count, latest feature date, product report link, and service-card link.
 The coverage report must include product slugs and must keep promoted,
 skipped, explicit IAM, derived IAM, and unknown IAM counts aligned with the
 promoted artifact manifests and feature cards.

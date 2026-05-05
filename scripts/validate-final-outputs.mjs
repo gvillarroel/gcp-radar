@@ -2269,11 +2269,14 @@ async function validateRadarRootIndexMatchesArtifacts() {
   const actualServiceCardLinks = new Set();
   const staleProductReportLinks = new Set();
   const staleServiceCardLinks = new Set();
+  const productReportLinkCounts = new Map();
+  const serviceCardLinkCounts = new Map();
   const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
 
   for (const match of report.matchAll(linkPattern)) {
     const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
     if (link.startsWith("./products/") && link.endsWith(".md")) {
+      productReportLinkCounts.set(link, (productReportLinkCounts.get(link) || 0) + 1);
       if (expectedProductReportLinks.has(link)) {
         actualProductReportLinks.add(link);
       } else {
@@ -2281,6 +2284,7 @@ async function validateRadarRootIndexMatchesArtifacts() {
       }
     }
     if (link.startsWith("../artifacts/") && link.endsWith("/card.json")) {
+      serviceCardLinkCounts.set(link, (serviceCardLinkCounts.get(link) || 0) + 1);
       if (expectedServiceCardLinks.has(link)) {
         actualServiceCardLinks.add(link);
       } else {
@@ -2377,6 +2381,28 @@ async function validateRadarRootIndexMatchesArtifacts() {
       path: rootIndexPath,
       link,
     });
+  }
+  for (const [link, count] of productReportLinkCounts) {
+    if (expectedProductReportLinks.has(link) && count > 1) {
+      findings.push({
+        severity: "error",
+        rule: "duplicate_radar_root_product_report_link",
+        path: rootIndexPath,
+        link,
+        count,
+      });
+    }
+  }
+  for (const [link, count] of serviceCardLinkCounts) {
+    if (expectedServiceCardLinks.has(link) && count > 1) {
+      findings.push({
+        severity: "error",
+        rule: "duplicate_radar_root_service_card_link",
+        path: rootIndexPath,
+        link,
+        count,
+      });
+    }
   }
   for (const [link, expected] of expectedRows) {
     const actual = actualRows.get(link);

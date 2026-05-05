@@ -206,6 +206,8 @@ The validator must check:
 - the Step 10 root index links every promoted product report and service card,
   and does not retain stale product or service-card links outside the promoted
   artifact inventory
+- the Step 10 root index does not duplicate valid promoted product-report or
+  service-card links
 - the Step 10 root index service-card and promoted-feature summary counts match
   the promoted artifact inventory
 - the Step 10 root index product rows match promoted artifacts for product
