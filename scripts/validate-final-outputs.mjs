@@ -3242,6 +3242,7 @@ async function validateStep08IndexMatchesCards() {
   let expectedExplicitIamFeatureCount = 0;
   let expectedDerivedIamFeatureCount = 0;
   let expectedUnknownIamFeatureCount = 0;
+  let latestStep08ProductCard = null;
 
   for (const productSlug of await listDirs(path.join(step08Root, "products"))) {
     const cardPath = path.join(step08Root, "products", productSlug, "card.json");
@@ -3263,6 +3264,13 @@ async function validateStep08IndexMatchesCards() {
       findings.push(...validateStep08ProductMarkdownAgainstCard(productSlug, cardMarkdownPath, cardMarkdown, card));
     }
     findings.push(...validateGeneratedAtField(card, cardPath, "step08_product_card", { product_slug: productSlug }));
+    if (isIsoTimestamp(card.generated_at) && (!latestStep08ProductCard || Date.parse(card.generated_at) > Date.parse(latestStep08ProductCard.generated_at))) {
+      latestStep08ProductCard = {
+        generated_at: card.generated_at,
+        path: cardPath,
+        product_slug: productSlug,
+      };
+    }
     if (card.schema_version !== expectedStep08SchemaVersion) {
       findings.push({
         severity: "error",
@@ -3396,6 +3404,12 @@ async function validateStep08IndexMatchesCards() {
         actual: step08Index[field] ?? null,
       });
     }
+  }
+  if (latestStep08ProductCard) {
+    findings.push(...validateGeneratedAtNotBefore(step08Index, latestStep08ProductCard, step08IndexPath, "step08_index_generated_at_before_product_card", {
+      product_slug: latestStep08ProductCard.product_slug,
+      product_card_path: latestStep08ProductCard.path,
+    }));
   }
 
   for (const [productSlug, expected] of expectedProducts) {

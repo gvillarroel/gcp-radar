@@ -669,13 +669,15 @@ Step 08 product must have both its generated `card.json` and generated
 `card.md` so the card layer remains reviewable before promotion.
 The Step 08 index and generated product cards must also record non-empty ISO
 8601 `generated_at` timestamps so card-construction metadata remains
-auditable. Generated Step 08 product cards must also use the current Step 08
-card-construction schema version so stale card payloads cannot pass under a
-current index. Each generated Step 08 product `card.md` must also keep its
-rendered product title, schema version, generation timestamp, Step 07 summary,
-corpus health, IAM summary, service-card summary, and feature rows aligned
-with the matching Step 08 `card.json` so the reviewable card layer cannot
-silently drift from its canonical JSON card.
+auditable. The Step 08 index timestamp must not be older than any generated
+Step 08 product card timestamp, because the index summarizes the completed
+card-construction run. Generated Step 08 product cards must also use the
+current Step 08 card-construction schema version so stale card payloads cannot
+pass under a current index. Each generated Step 08 product `card.md` must also
+keep its rendered product title, schema version, generation timestamp, Step 07
+summary, corpus health, IAM summary, service-card summary, and feature rows
+aligned with the matching Step 08 `card.json` so the reviewable card layer
+cannot silently drift from its canonical JSON card.
 Each Step 08 product card must also keep a duplicate-free feature inventory,
 and every feature in the card must carry a non-empty feature slug before later
 promotion accounting can rely on it.

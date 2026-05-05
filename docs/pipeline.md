@@ -505,9 +505,11 @@ product `card.md` still renders the product title, schema version, generation
 timestamp, Step 07 summary, corpus health, IAM summary, service-card summary,
 and feature rows from the matching `card.json`.
 The Step 08 index and generated product cards must also record non-empty ISO
-8601 `generated_at` timestamps. The Step 09 index, each promotion manifest,
-and each promoted service or feature artifact card must record non-empty ISO
-8601 `generated_at` timestamps as well, so validation can detect missing run
+8601 `generated_at` timestamps. The Step 08 index timestamp must not be older
+than any generated product card timestamp, because it summarizes the completed
+card-construction run. The Step 09 index, each promotion manifest, and each
+promoted service or feature artifact card must record non-empty ISO 8601
+`generated_at` timestamps as well, so validation can detect missing run
 provenance before final reporting is accepted. Within each promoted product,
 final validation also checks that the promoted service card and every promoted
 feature card keep the same `generated_at` timestamp as the product promotion
