@@ -10,4 +10,9 @@ Artifacts must be organized hierarchically:
 
 This content is the canonical source used to generate final reports.
 
+Current status:
+
+- promoted product and feature artifacts are present
+- Step 09 owns updates to this source-of-truth artifact inventory
+
 All documentation stored here must be written in English.
