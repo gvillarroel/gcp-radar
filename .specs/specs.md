@@ -706,6 +706,9 @@ Step 08 feature source links, Step 08 feature supporting page URLs, and Step
 08 security capability evidence links that are not official Google HTTP(S)
 URLs. This check does not make every Step 08 feature promotable, but it
 prevents non-authoritative evidence from remaining in the card layer.
+Generated Step 08 product-card Markdown must also avoid external HTTP(S) links
+outside official Google hosts, so reviewable card documentation cannot retain
+manual or stale non-authoritative links after the JSON card is clean.
 Each generated Step 08 product `card.md` feature table must be the exact
 ordered projection of the matching `card.json` feature inventory, so stale or
 extra rendered feature rows cannot remain reviewable after the JSON card

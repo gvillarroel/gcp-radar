@@ -193,6 +193,24 @@ function isOfficialGoogleUrl(url) {
   }
 }
 
+function collectExternalMarkdownUrls(markdown) {
+  const links = new Set();
+  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
+  const bareUrlPattern = /https?:\/\/[^\s<>)"']+/g;
+
+  for (const match of String(markdown || "").matchAll(linkPattern)) {
+    const rawLink = String(match[1] || "").trim();
+    if (/^https?:\/\//i.test(rawLink)) {
+      links.add(rawLink);
+    }
+  }
+  for (const match of String(markdown || "").matchAll(bareUrlPattern)) {
+    links.add(String(match[0] || "").trim().replace(/[.,;:]+$/g, ""));
+  }
+
+  return [...links].sort((left, right) => left.localeCompare(right));
+}
+
 function relativeToCwd(target) {
   return path.relative(process.cwd(), target).replace(/\\/g, "/") || ".";
 }
@@ -1454,32 +1472,46 @@ async function validateArtifactProductIndexes() {
 
 async function validateArtifactMarkdownExternalLinksAreOfficial() {
   const findings = [];
-  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
-  const bareUrlPattern = /https?:\/\/[^\s<>)"']+/g;
 
   for (const file of await listFilesRecursive(artifactsRoot)) {
     if (!file.endsWith(".md")) {
       continue;
     }
     const content = await readText(file, "");
-    const links = new Set();
 
-    for (const match of content.matchAll(linkPattern)) {
-      const rawLink = String(match[1] || "").trim();
-      if (/^https?:\/\//i.test(rawLink)) {
-        links.add(rawLink);
-      }
-    }
-    for (const match of content.matchAll(bareUrlPattern)) {
-      links.add(String(match[0] || "").trim().replace(/[.,;:]+$/g, ""));
-    }
-
-    for (const link of links) {
+    for (const link of collectExternalMarkdownUrls(content)) {
       if (!isOfficialGoogleUrl(link)) {
         findings.push({
           severity: "error",
           rule: "non_official_artifact_markdown_external_link",
           path: file,
+          link,
+        });
+      }
+    }
+  }
+
+  return findings;
+}
+
+async function validateStep08MarkdownExternalLinksAreOfficial() {
+  const findings = [];
+  const productsRoot = path.join(step08Root, "products");
+
+  for (const productSlug of await listDirs(productsRoot)) {
+    const markdownPath = path.join(productsRoot, productSlug, "card.md");
+    const content = await readText(markdownPath, null);
+    if (content === null) {
+      continue;
+    }
+
+    for (const link of collectExternalMarkdownUrls(content)) {
+      if (!isOfficialGoogleUrl(link)) {
+        findings.push({
+          severity: "error",
+          rule: "non_official_step08_markdown_external_link",
+          path: markdownPath,
+          product_slug: productSlug,
           link,
         });
       }
@@ -1821,27 +1853,14 @@ async function validateRadarArtifactLinks() {
 
 async function validateRadarExternalLinksAreOfficial() {
   const findings = [];
-  const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
-  const bareUrlPattern = /https?:\/\/[^\s<>)"']+/g;
 
   for (const file of await listFilesRecursive(radarRoot)) {
     if (!file.endsWith(".md")) {
       continue;
     }
     const content = await readText(file, "");
-    const links = new Set();
 
-    for (const match of content.matchAll(linkPattern)) {
-      const rawLink = String(match[1] || "").trim();
-      if (/^https?:\/\//i.test(rawLink)) {
-        links.add(rawLink);
-      }
-    }
-    for (const match of content.matchAll(bareUrlPattern)) {
-      links.add(String(match[0] || "").trim().replace(/[.,;:]+$/g, ""));
-    }
-
-    for (const link of links) {
+    for (const link of collectExternalMarkdownUrls(content)) {
       if (!isOfficialGoogleUrl(link)) {
         findings.push({
           severity: "error",
@@ -4184,6 +4203,7 @@ async function main() {
   const artifactValidation = await validateArtifacts();
   const artifactIndexFindings = await validateArtifactProductIndexes();
   const artifactMarkdownExternalLinkFindings = await validateArtifactMarkdownExternalLinksAreOfficial();
+  const step08MarkdownExternalLinkFindings = await validateStep08MarkdownExternalLinksAreOfficial();
   const featureReadmeCardFindings = await validateFeatureReadmesMatchCards();
   const promotedCardSourceFindings = await validatePromotedCardsMatchStep08Cards();
   const radarFindings = await validateRadarDoesNotReferenceDataSteps();
@@ -4203,6 +4223,7 @@ async function main() {
     ...artifactValidation.findings,
     ...artifactIndexFindings,
     ...artifactMarkdownExternalLinkFindings,
+    ...step08MarkdownExternalLinkFindings,
     ...featureReadmeCardFindings,
     ...promotedCardSourceFindings,
     ...radarFindings,

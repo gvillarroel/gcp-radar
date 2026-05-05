@@ -546,6 +546,9 @@ feature source links, feature supporting page URLs, and security capability
 evidence links. Any such link must be an official Google HTTP(S) URL, keeping
 the card-construction layer inside the same authoritative source policy as
 promoted artifacts and radar reports.
+Final validation also scans generated Step 08 product-card Markdown for
+external HTTP(S) links and rejects links outside official Google hosts, so the
+reviewable card layer cannot carry non-authoritative Markdown-only links.
 The Step 08 Markdown feature table must also be an exact ordered projection of
 the matching JSON feature inventory. Extra, stale, missing, or reordered
 feature rows are final-output validation failures because the reviewable card

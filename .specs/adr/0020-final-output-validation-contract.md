@@ -84,6 +84,8 @@ The validator must check:
 - Step 08 service-card source links, Step 08 feature source links, Step 08
   feature supporting page URLs, and Step 08 security capability evidence links
   use official Google HTTP(S) URLs when present
+- generated Step 08 product-card Markdown contains no external HTTP(S) links
+  outside official Google hosts
 - `radar/products/*.md` exactly matches the promoted product directories under
   `artifacts/`
 - `data/step-09/current/index.json` product and feature counts match promoted
