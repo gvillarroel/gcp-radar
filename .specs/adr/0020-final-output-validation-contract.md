@@ -68,6 +68,8 @@ The validator must check:
   extra or stale rendered feature rows
 - generated Step 08 product cards record non-empty ISO 8601 `generated_at`
   timestamps
+- generated Step 08 product cards use the current Step 08 card-construction
+  schema version
 - generated Step 08 product cards have a duplicate-free feature inventory, and
   every feature in that inventory has a non-empty feature slug
 - Step 08 service-card source links, Step 08 feature source links, Step 08

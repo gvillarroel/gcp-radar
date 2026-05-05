@@ -514,6 +514,10 @@ feature card keep the same `generated_at` timestamp as the product promotion
 manifest. The Step 09 index timestamp must not be older than any product
 promotion manifest timestamp, because it summarizes the reconciled promotion
 inventory after product promotion files are written.
+Each generated Step 08 product card must also use the current Step 08
+card-construction schema version. This prevents a stale product card from
+passing final validation just because the Step 08 index and rendered Markdown
+were regenerated around it.
 Step 08 product cards must also carry a duplicate-free feature inventory with
 a non-empty `feature_slug` on every feature. Step 08 rejects duplicate feature
 slugs while building cards, and final validation rechecks that card layer

@@ -3263,6 +3263,16 @@ async function validateStep08IndexMatchesCards() {
       findings.push(...validateStep08ProductMarkdownAgainstCard(productSlug, cardMarkdownPath, cardMarkdown, card));
     }
     findings.push(...validateGeneratedAtField(card, cardPath, "step08_product_card", { product_slug: productSlug }));
+    if (card.schema_version !== expectedStep08SchemaVersion) {
+      findings.push({
+        severity: "error",
+        rule: "step08_product_card_schema_version_mismatch",
+        path: cardPath,
+        product_slug: productSlug,
+        expected: expectedStep08SchemaVersion,
+        actual: card.schema_version || null,
+      });
+    }
     findings.push(...validateStep08CardOfficialLinks(productSlug, cardPath, card));
 
     const features = Array.isArray(card.features) ? card.features : [];
