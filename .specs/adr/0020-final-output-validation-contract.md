@@ -126,6 +126,8 @@ The validator must check:
   canonical radar report layout and resolve to existing files
 - `data/step-10/current/index.json` does not retain unknown report keys outside
   the canonical fixed reports and `products` report list
+- product report paths in `data/step-10/current/index.json` resolve to existing
+  generated product report files
 - every promoted feature listed in a promotion manifest has both its artifact
   `card.json` and `README.md`
 - every promoted feature README includes at least one official Google evidence

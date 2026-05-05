@@ -3896,6 +3896,15 @@ async function validateRadarMatchesArtifacts() {
   for (const report of actualReports) {
     if (!expectedReports.has(report)) {
       findings.push({ severity: "error", rule: "step10_index_stale_product_report", path: step10IndexPath, report });
+      continue;
+    }
+    if (!(await exists(path.resolve(report)))) {
+      findings.push({
+        severity: "error",
+        rule: "step10_index_product_report_missing",
+        path: step10IndexPath,
+        report,
+      });
     }
   }
 

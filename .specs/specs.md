@@ -690,6 +690,8 @@ The fixed Step 10 report paths recorded in `data/step-10/current/index.json`
 must match the canonical radar report layout and resolve to existing files.
 The Step 10 report index must not contain unknown report keys outside the
 canonical fixed reports and the `products` report list.
+Every product report path recorded in the Step 10 report index must also
+resolve to an existing generated product report file.
 Every external HTTP(S) link in generated radar Markdown must resolve to an
 official Google host.
 Every external HTTP(S) link in promoted artifact Markdown must resolve to an
