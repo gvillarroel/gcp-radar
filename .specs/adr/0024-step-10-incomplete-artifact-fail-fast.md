@@ -35,8 +35,9 @@ product with a promotion manifest also has:
 It also checks that required manifest paths, product slugs, promoted feature
 counts, duplicate promoted feature slugs, skipped feature counts, duplicate
 skipped feature slugs, promoted/skipped feature overlap, promoted or skipped
-feature names, and embedded service or feature card slugs match the artifact
-path being rendered. Step 10 also checks that the promotion manifest exposes
+feature names, promoted service-card `product_slug` and `service_slug`, and
+embedded feature card slugs match the artifact path being rendered. Step 10
+also checks that the promotion manifest exposes
 `promoted_features` and `skipped_features` as arrays, that those arrays give
 every canonical Step 08 feature exactly one promoted or skipped disposition,
 that every entry in both arrays carries a non-empty `feature_slug`, that both

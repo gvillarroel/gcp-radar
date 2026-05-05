@@ -132,8 +132,10 @@ The validator must check:
   coverage status, and lifecycle lines aligned with its promoted feature card
 - every promoted feature README keeps security capability names and official
   Google security evidence links aligned with its promoted feature card
-- promoted service and feature artifact cards have embedded slugs that match
-  their artifact path and promotion manifest
+- promoted service cards carry both `product_slug` and `service_slug`, and
+  both match their artifact product directory
+- promoted feature artifact cards have embedded slugs that match their
+  artifact path and promotion manifest
 - promoted service and feature artifact cards have `source_step08_card`
   provenance that matches the canonical Step 08 product card path being
   validated

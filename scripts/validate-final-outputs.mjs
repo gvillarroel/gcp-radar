@@ -884,21 +884,21 @@ async function validateArtifacts() {
         expected: expectedSourceStep08Card,
         actual: String(serviceCard.source_step08_card || "").replace(/\\/g, "/") || null,
       });
-    } else if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
+    } else if (serviceCard.product_slug !== productSlug) {
       findings.push({
         severity: "error",
         rule: "service_card_product_slug_mismatch",
         path: serviceCardPath,
         expected: productSlug,
-        actual: serviceCard.product_slug,
+        actual: serviceCard.product_slug || null,
       });
-    } else if (serviceCard.service_slug && serviceCard.service_slug !== productSlug) {
+    } else if (serviceCard.service_slug !== productSlug) {
       findings.push({
         severity: "error",
         rule: "service_card_service_slug_mismatch",
         path: serviceCardPath,
         expected: productSlug,
-        actual: serviceCard.service_slug,
+        actual: serviceCard.service_slug || null,
       });
     }
     if (serviceCard) {

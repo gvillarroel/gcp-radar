@@ -568,11 +568,11 @@ async function loadArtifacts() {
       }
       validateGeneratedAt(serviceCard, `Promoted service card for ${productSlug}`, errors);
       validatePromotionGeneratedAtMatch(serviceCard, promotion, "Promoted service card", productSlug, errors);
-      if (serviceCard.product_slug && serviceCard.product_slug !== productSlug) {
-        errors.push(`Promoted service card product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.product_slug}`);
+      if (serviceCard.product_slug !== productSlug) {
+        errors.push(`Promoted service card product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.product_slug || "missing"}`);
       }
-      if (serviceCard.service_slug && serviceCard.service_slug !== productSlug) {
-        errors.push(`Promoted service card service_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.service_slug}`);
+      if (serviceCard.service_slug !== productSlug) {
+        errors.push(`Promoted service card service_slug mismatch for ${productSlug}: expected ${productSlug}, got ${serviceCard.service_slug || "missing"}`);
       }
       if (step08Card && serviceCard.product_name !== step08Card.product_name) {
         errors.push(`Promoted service card product_name mismatch for ${productSlug}: expected ${step08Card.product_name}, got ${serviceCard.product_name || "missing"}`);

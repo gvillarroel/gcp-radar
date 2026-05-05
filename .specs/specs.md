@@ -717,9 +717,11 @@ names and official Google security evidence links aligned with its promoted
 feature card.
 Promoted service and feature artifact cards must keep their embedded slugs
 consistent with their artifact path and promotion manifest so final reports
-cannot aggregate a card under the wrong product or feature identity. Their
-`source_step08_card` provenance must also match the canonical Step 08 product
-card path being validated and resolve to an existing card.
+cannot aggregate a card under the wrong product or feature identity. Promoted
+service cards must carry both `product_slug` and `service_slug`, and both must
+match the artifact product directory. Their `source_step08_card` provenance
+must also match the canonical Step 08 product card path being validated and
+resolve to an existing card.
 Promotion manifests, promoted service cards, and promoted feature cards must
 use the current Step 09 artifact-promotion schema version.
 Promoted service and feature artifact cards must also keep their source-backed
