@@ -322,6 +322,67 @@ function promotionFeatureList(promotion, field) {
   return Array.isArray(promotion?.[field]) ? promotion[field] : [];
 }
 
+function collectSecurityCapabilityEvidenceLinks(capabilities) {
+  return [...new Set((capabilities || []).flatMap((capability) => capability?.evidence_links || []))];
+}
+
+function collectSupportingPageUrls(feature) {
+  return [...new Set((feature?.evidence?.supporting_pages || [])
+    .map((page) => page?.url)
+    .filter(Boolean))];
+}
+
+function collectNonOfficialUrls(urls) {
+  return [...new Set(urls || [])].filter((url) => !isOfficialGoogleUrl(url));
+}
+
+function collectUnacceptedWarningRules(feature, acceptedWarningRules) {
+  return [...new Set((feature?.validation?.findings || [])
+    .filter((finding) => finding?.severity === "warn")
+    .map((finding) => finding.rule)
+    .filter((rule) => rule && !acceptedWarningRules.has(rule)))]
+    .sort((left, right) => left.localeCompare(right));
+}
+
+function promotionDecisionForFeature(feature, acceptedWarningRules) {
+  const sourceLinks = feature?.evidence?.source_links || [];
+  const supportingPageUrls = collectSupportingPageUrls(feature);
+  const securityEvidenceLinks = collectSecurityCapabilityEvidenceLinks(feature?.security_capabilities || []);
+  const iamStatus = feature?.iam?.iam_mapping_status;
+
+  if (!feature?.validation?.step07_pass) {
+    return { promotable: false, reason: "step07_failure", blocking_warnings: [] };
+  }
+  if (Number(feature.validation.fail_count || 0) > 0) {
+    return { promotable: false, reason: "feature_has_failures", blocking_warnings: [] };
+  }
+  if (!String(feature.extended_definition || feature.summary || "").trim()) {
+    return { promotable: false, reason: "missing_summary", blocking_warnings: [] };
+  }
+  if (sourceLinks.length === 0) {
+    return { promotable: false, reason: "missing_source_links", blocking_warnings: [] };
+  }
+  if (!sourceLinks.every(isOfficialGoogleUrl)) {
+    return { promotable: false, reason: "non_official_source_link", blocking_warnings: [] };
+  }
+  if (collectNonOfficialUrls(supportingPageUrls).length > 0) {
+    return { promotable: false, reason: "non_official_supporting_page_link", blocking_warnings: [] };
+  }
+  if (collectNonOfficialUrls(securityEvidenceLinks).length > 0) {
+    return { promotable: false, reason: "non_official_security_evidence_link", blocking_warnings: [] };
+  }
+  if (!allowedIamMappingStatuses.has(iamStatus)) {
+    return { promotable: false, reason: "invalid_iam_mapping_status", blocking_warnings: [] };
+  }
+
+  const blockingWarnings = collectUnacceptedWarningRules(feature, acceptedWarningRules);
+  if (blockingWarnings.length > 0) {
+    return { promotable: false, reason: "blocking_warning", blocking_warnings: blockingWarnings };
+  }
+
+  return { promotable: true, reason: "promotable", blocking_warnings: [] };
+}
+
 function validatePromotionFeatureListOrdering(promotion, promotionPath, productSlug, field) {
   if (!Array.isArray(promotion?.[field])) {
     return [];
@@ -916,6 +977,54 @@ async function validateArtifacts() {
             expected: step08Feature.feature_name,
             actual: feature.feature_name || null,
           });
+        }
+        if (step08Feature) {
+          const expectedDecision = promotionDecisionForFeature(step08Feature, acceptedWarningRules);
+          const actualReason = String(feature.reason || "");
+          if (expectedDecision.promotable) {
+            findings.push({
+              severity: "error",
+              rule: "promotion_manifest_skipped_feature_is_promotable",
+              path: promotionPath,
+              product_slug: productSlug,
+              feature_slug: featureSlug,
+            });
+          }
+          if (actualReason !== expectedDecision.reason) {
+            findings.push({
+              severity: "error",
+              rule: "promotion_manifest_skipped_feature_reason_mismatch",
+              path: promotionPath,
+              product_slug: productSlug,
+              feature_slug: featureSlug,
+              expected: expectedDecision.reason,
+              actual: actualReason || null,
+            });
+          }
+          if (!Array.isArray(feature.blocking_warnings)) {
+            findings.push({
+              severity: "error",
+              rule: "promotion_manifest_skipped_feature_blocking_warnings_not_array",
+              path: promotionPath,
+              product_slug: productSlug,
+              feature_slug: featureSlug,
+              actual_type: feature.blocking_warnings === null ? "null" : typeof feature.blocking_warnings,
+            });
+          } else {
+            const actualBlockingWarnings = stringArray(feature.blocking_warnings)
+              .sort((left, right) => left.localeCompare(right));
+            if (!jsonEquals(actualBlockingWarnings, expectedDecision.blocking_warnings)) {
+              findings.push({
+                severity: "error",
+                rule: "promotion_manifest_skipped_feature_blocking_warnings_mismatch",
+                path: promotionPath,
+                product_slug: productSlug,
+                feature_slug: featureSlug,
+                expected: expectedDecision.blocking_warnings,
+                actual: actualBlockingWarnings,
+              });
+            }
+          }
         }
       }
       if (step08Card) {

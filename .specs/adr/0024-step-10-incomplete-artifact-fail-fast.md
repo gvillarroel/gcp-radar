@@ -41,7 +41,9 @@ also checks that the promotion manifest exposes
 `promoted_features` and `skipped_features` as arrays, that those arrays give
 every canonical Step 08 feature exactly one promoted or skipped disposition,
 that every entry in both arrays carries a non-empty `feature_slug`, that both
-arrays are sorted by `feature_slug`, and that
+arrays are sorted by `feature_slug`, that skipped feature entries keep the
+same skip reason and blocking warning list that Step 09 would compute from
+the current Step 08 feature card, and that
 `accepted_warning_rules` is a sorted duplicate-free array of non-empty string
 rule IDs before the manifest warning-review policy is used for promoted
 feature eligibility, that

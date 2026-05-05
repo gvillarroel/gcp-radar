@@ -775,6 +775,10 @@ arrays so final validation can audit every feature deterministically.
 Promotion manifests must also keep both feature inventories sorted by
 `feature_slug` so promotion review and downstream reports remain deterministic
 across reruns.
+Each skipped feature entry must keep its skip reason and blocking warning list
+aligned with the current Step 09 eligibility decision for the matching Step 08
+feature card, so a feature that becomes promotable cannot remain silently
+skipped.
 The Step 09 index, each promotion manifest, and each promoted service or
 feature artifact card must also record non-empty ISO 8601 `generated_at`
 timestamps so promotion metadata cannot silently lose run provenance.

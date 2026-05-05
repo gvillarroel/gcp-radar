@@ -206,6 +206,45 @@ function collectUnacceptedWarningRules(feature, promotion) {
     .sort(compareStrings);
 }
 
+function promotionDecisionForFeature(feature, promotion) {
+  const sourceLinks = feature?.evidence?.source_links || [];
+  const supportingPageUrls = collectSupportingPageUrls(feature);
+  const securityEvidenceLinks = collectSecurityCapabilityEvidenceLinks(feature?.security_capabilities || []);
+  const iamStatus = feature?.iam?.iam_mapping_status;
+
+  if (!feature?.validation?.step07_pass) {
+    return { promotable: false, reason: "step07_failure", blocking_warnings: [] };
+  }
+  if (Number(feature.validation.fail_count || 0) > 0) {
+    return { promotable: false, reason: "feature_has_failures", blocking_warnings: [] };
+  }
+  if (!String(feature.extended_definition || feature.summary || "").trim()) {
+    return { promotable: false, reason: "missing_summary", blocking_warnings: [] };
+  }
+  if (sourceLinks.length === 0) {
+    return { promotable: false, reason: "missing_source_links", blocking_warnings: [] };
+  }
+  if (!sourceLinks.every(isOfficialGoogleUrl)) {
+    return { promotable: false, reason: "non_official_source_link", blocking_warnings: [] };
+  }
+  if (collectNonOfficialUrls(supportingPageUrls).length > 0) {
+    return { promotable: false, reason: "non_official_supporting_page_link", blocking_warnings: [] };
+  }
+  if (collectNonOfficialUrls(securityEvidenceLinks).length > 0) {
+    return { promotable: false, reason: "non_official_security_evidence_link", blocking_warnings: [] };
+  }
+  if (!allowedIamMappingStatuses.has(iamStatus)) {
+    return { promotable: false, reason: "invalid_iam_mapping_status", blocking_warnings: [] };
+  }
+
+  const blockingWarnings = collectUnacceptedWarningRules(feature, promotion);
+  if (blockingWarnings.length > 0) {
+    return { promotable: false, reason: "blocking_warning", blocking_warnings: blockingWarnings };
+  }
+
+  return { promotable: true, reason: "promotable", blocking_warnings: [] };
+}
+
 function validatePromotedFeatureEligibility(productSlug, featureSlug, card, promotion, errors) {
   const validation = card?.validation || {};
   const sourceLinks = card?.evidence?.source_links || [];
@@ -731,6 +770,25 @@ async function loadArtifacts() {
         errors.push(`Promotion manifest skipped feature missing from Step 08 card for ${productSlug}/${feature.feature_slug}`);
       } else if (step08Feature && feature.feature_name !== step08Feature.feature_name) {
         errors.push(`Promotion manifest skipped feature_name mismatch for ${productSlug}/${feature.feature_slug}: expected ${step08Feature.feature_name}, got ${feature.feature_name || "missing"}`);
+      }
+      if (step08Feature) {
+        const expectedDecision = promotionDecisionForFeature(step08Feature, promotion);
+        const actualReason = String(feature.reason || "");
+        const actualBlockingWarnings = Array.isArray(feature.blocking_warnings)
+          ? [...feature.blocking_warnings].sort(compareStrings)
+          : [];
+        if (expectedDecision.promotable) {
+          errors.push(`Promotion manifest skipped feature is currently promotable for ${productSlug}/${feature.feature_slug}`);
+        }
+        if (actualReason !== expectedDecision.reason) {
+          errors.push(`Promotion manifest skipped feature reason mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedDecision.reason}, got ${actualReason || "missing"}`);
+        }
+        if (!Array.isArray(feature.blocking_warnings)) {
+          const actualType = feature.blocking_warnings === null ? "null" : typeof feature.blocking_warnings;
+          errors.push(`Promotion manifest skipped feature blocking_warnings must be an array for ${productSlug}/${feature.feature_slug}: got ${actualType}`);
+        } else if (!jsonEquals(actualBlockingWarnings, expectedDecision.blocking_warnings)) {
+          errors.push(`Promotion manifest skipped feature blocking_warnings mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedDecision.blocking_warnings.join(", ") || "none"}, got ${actualBlockingWarnings.join(", ") || "none"}`);
+        }
       }
     }
     if (step08Card) {

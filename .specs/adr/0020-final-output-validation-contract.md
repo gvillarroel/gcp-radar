@@ -170,6 +170,10 @@ The validator must check:
   rows are validated
 - each product promotion manifest keeps `promoted_features` and
   `skipped_features` sorted by `feature_slug`
+- each skipped feature entry in a product promotion manifest keeps its skip
+  reason and blocking warning list aligned with the current Step 09
+  eligibility decision recomputed from the matching Step 08 feature card, and
+  no currently promotable feature remains listed as skipped
 - each product promotion manifest has `source_step08_card` provenance that
   matches an existing canonical Step 08 product card path
 - each product promotion manifest has a skipped feature count that matches its
