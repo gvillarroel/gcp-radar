@@ -21,6 +21,11 @@ const acceptedWarningRules = new Set((process.env.GCP_RADAR_STEP09_ACCEPTED_WARN
   .split(",")
   .map((value) => value.trim())
   .filter(Boolean));
+const allowedIamMappingStatuses = new Set([
+  "explicit",
+  "derived_from_permission_prefix",
+  "unknown",
+]);
 const cleanProductArtifacts = process.env.GCP_RADAR_STEP09_CLEAN_PRODUCT_ARTIFACTS === "1";
 
 const officialGoogleHosts = [
@@ -142,6 +147,9 @@ function isFeaturePromotable(feature) {
   }
   if (collectNonOfficialUrls(securityEvidenceLinks).length > 0) {
     return { promotable: false, reason: "non_official_security_evidence_link" };
+  }
+  if (!allowedIamMappingStatuses.has(feature?.iam?.iam_mapping_status)) {
+    return { promotable: false, reason: "invalid_iam_mapping_status" };
   }
   if (blockingWarnings.length > 0) {
     return { promotable: false, reason: "blocking_warning", blocking_warnings: blockingWarnings.map((finding) => finding.rule) };

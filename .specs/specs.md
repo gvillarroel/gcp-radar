@@ -499,7 +499,9 @@ that product's promoted artifact set remains auditable as one unit.
 Features can be promoted only when they pass Step 07, have official Google
 evidence links, have a non-empty technical summary, do not carry unaccepted
 blocking warnings, do not contain non-official supporting page URLs, and do
-not contain non-official security capability evidence links.
+not contain non-official security capability evidence links. Their IAM mapping
+status must also be one of the documented Step 08 values: `explicit`,
+`derived_from_permission_prefix`, or `unknown`.
 
 Step 09 must also reject a processed product before writing promoted artifacts
 when its service card contains source links or security capability evidence

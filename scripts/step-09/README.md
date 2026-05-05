@@ -39,7 +39,7 @@ Default behavior:
 - writes one unique service card to `artifacts/<product-slug>/card.json`
 - removes stale feature artifact directories that are no longer promoted for each processed product
 - accepts the current Step 07 warning rules as reviewed non-blocking warnings
-- blocks features with Step 07 failures, missing summaries, missing official source links, or non-official source links
+- blocks features with Step 07 failures, missing summaries, missing official source links, non-official source links, or invalid IAM mapping statuses
 - renders security capability evidence links in promoted feature README files
 
 Optional controls:

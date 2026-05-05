@@ -40,6 +40,8 @@ A feature can be promoted when:
 - the technical summary or extended definition is non-empty
 - at least one official Google source link is present
 - all source links used for promotion are official Google URLs
+- the IAM mapping status is one of `explicit`,
+  `derived_from_permission_prefix`, or `unknown`
 - warning rules are accepted by the promotion policy or absent
 
 By default, Step 09 promotes every product card under
