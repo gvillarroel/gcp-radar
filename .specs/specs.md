@@ -556,6 +556,9 @@ malformed manifest entries during aggregation.
 Promotion manifests must also expose `accepted_warning_rules` as a sorted,
 duplicate-free array before Step 10 can use that warning-review policy to
 confirm promoted feature eligibility.
+Promotion manifests must also expose `stale_feature_artifact_dirs_removed` as
+a sorted, duplicate-free array, keep every removed path under the matching
+product artifact directory, and only list directories that no longer exist.
 Step 10 must also fail before rewriting reports when a product artifact
 directory contains feature directories that are not listed in the product
 promotion manifest's promoted feature inventory.
@@ -643,7 +646,10 @@ counts recorded in the index. Each per-product stale cleanup entry in the
 Step 09 index must also keep its removed-directory list as a sorted,
 duplicate-free array, keep its count aligned with that list, keep every path
 under the matching product artifact directory, and only list directories that
-no longer exist. The Step 10 index must also use
+no longer exist. Each product promotion manifest must also keep its own
+`stale_feature_artifact_dirs_removed` array sorted, duplicate-free, scoped to
+the matching product artifact directory, and limited to directories that no
+longer exist. The Step 10 index must also use
 the current Step 10 schema version, record the same artifacts root and radar
 root that final-output validation is checking, and its product report list must
 be sorted and must not contain duplicate entries.

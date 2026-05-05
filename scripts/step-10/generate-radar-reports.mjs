@@ -355,6 +355,36 @@ function validatePromotionWarningPolicy(productSlug, promotion, errors) {
   }
 }
 
+async function validatePromotionStaleFeatureCleanup(productSlug, promotion, errors) {
+  if (!Array.isArray(promotion.stale_feature_artifact_dirs_removed)) {
+    const actualType = promotion.stale_feature_artifact_dirs_removed === null ? "null" : typeof promotion.stale_feature_artifact_dirs_removed;
+    errors.push(`Promotion manifest stale_feature_artifact_dirs_removed must be an array for ${productSlug}: got ${actualType}`);
+    return;
+  }
+
+  const seen = new Set();
+  let previousDir = "";
+  for (const dirValue of promotion.stale_feature_artifact_dirs_removed) {
+    const staleDir = String(dirValue || "").replace(/\\/g, "/");
+    const expectedPrefix = `artifacts/${productSlug}/`;
+    if (seen.has(staleDir)) {
+      errors.push(`Promotion manifest stale_feature_artifact_dirs_removed has duplicate path for ${productSlug}: ${staleDir}`);
+    }
+    seen.add(staleDir);
+    if (previousDir && compareStrings(previousDir, staleDir) > 0) {
+      errors.push(`Promotion manifest stale_feature_artifact_dirs_removed must be sorted for ${productSlug}: ${previousDir} before ${staleDir}`);
+    }
+    previousDir = staleDir;
+    if (!staleDir.startsWith(expectedPrefix) || staleDir.split("/").length !== 3) {
+      errors.push(`Promotion manifest stale_feature_artifact_dirs_removed path mismatch for ${productSlug}: expected path under ${expectedPrefix}, got ${staleDir || "missing"}`);
+      continue;
+    }
+    if (await exists(path.resolve(process.cwd(), staleDir))) {
+      errors.push(`Promotion manifest stale_feature_artifact_dirs_removed path still exists for ${productSlug}: ${staleDir}`);
+    }
+  }
+}
+
 function formatRoles(roles, limit = 8) {
   return (roles || [])
     .slice(0, limit)
@@ -437,6 +467,7 @@ async function loadArtifacts() {
     validatePromotionFeatureLists(productSlug, promotion, errors);
     validatePromotionFeatureEntries(productSlug, promotion, errors);
     validatePromotionWarningPolicy(productSlug, promotion, errors);
+    await validatePromotionStaleFeatureCleanup(productSlug, promotion, errors);
     if (promotion.product_slug !== productSlug) {
       errors.push(`Promotion manifest product_slug mismatch for ${productSlug}: expected ${productSlug}, got ${promotion.product_slug || "missing"}`);
     }

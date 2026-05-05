@@ -419,7 +419,10 @@ before Step 10 can render reports from them, and every entry in those arrays
 must carry a non-empty `feature_slug`. Promotion manifest
 `accepted_warning_rules` must also be a sorted, duplicate-free array before
 Step 10 can use that warning-review policy to confirm promoted feature
-eligibility. It also rejects stale feature artifact directories that are not
+eligibility. Promotion manifest `stale_feature_artifact_dirs_removed` must
+also be a sorted, duplicate-free array, every listed path must stay under the
+matching product artifact directory, and every listed directory must no longer
+exist. It also rejects stale feature artifact directories that are not
 listed in the promotion manifest's promoted feature inventory. It also rejects
 manifests and promoted service or feature cards whose
 `generated_at` value is missing or is not a valid ISO 8601 timestamp. It also
@@ -479,7 +482,10 @@ cleanup count must match the sum of per-product cleanup counts. Each
 per-product stale cleanup entry must also expose a sorted, duplicate-free
 removed-directory list, keep its count aligned with that list, keep every path
 under the matching product artifact directory, and only list directories that
-no longer exist. The Step 10 index must record the same artifacts root and
+no longer exist. Each product promotion manifest must also keep its own stale
+feature cleanup list sorted, duplicate-free, scoped to the matching product
+artifact directory, and limited to directories that no longer exist. The Step
+10 index must record the same artifacts root and
 radar root being validated, use the current Step 10 schema version, and its
 product report list must be sorted and must not contain duplicate entries. It
 must also keep `fixed_report_count`, `product_report_count`, and

@@ -279,6 +279,71 @@ function validatePromotionFeatureListOrdering(promotion, promotionPath, productS
   return findings;
 }
 
+async function validatePromotionStaleFeatureCleanup(promotion, promotionPath, productSlug) {
+  const findings = [];
+  const staleDirs = promotion?.stale_feature_artifact_dirs_removed;
+  if (!Array.isArray(staleDirs)) {
+    findings.push({
+      severity: "error",
+      rule: "promotion_manifest_stale_feature_artifact_dirs_removed_not_array",
+      path: promotionPath,
+      product_slug: productSlug,
+      actual_type: staleDirs === null ? "null" : typeof staleDirs,
+    });
+    return findings;
+  }
+
+  const seenStaleDirs = new Set();
+  let previousStaleDir = "";
+  for (const staleDirValue of staleDirs) {
+    const staleDir = String(staleDirValue || "").replace(/\\/g, "/");
+    const expectedPrefix = `artifacts/${productSlug}/`;
+    if (seenStaleDirs.has(staleDir)) {
+      findings.push({
+        severity: "error",
+        rule: "promotion_manifest_duplicate_stale_feature_artifact_dir",
+        path: promotionPath,
+        product_slug: productSlug,
+        stale_feature_artifact_dir: staleDir,
+      });
+    }
+    seenStaleDirs.add(staleDir);
+    if (previousStaleDir && previousStaleDir.localeCompare(staleDir) > 0) {
+      findings.push({
+        severity: "error",
+        rule: "promotion_manifest_stale_feature_artifact_dirs_removed_not_sorted",
+        path: promotionPath,
+        product_slug: productSlug,
+        previous_stale_feature_artifact_dir: previousStaleDir,
+        stale_feature_artifact_dir: staleDir,
+      });
+    }
+    previousStaleDir = staleDir;
+    if (!staleDir.startsWith(expectedPrefix) || staleDir.split("/").length !== 3) {
+      findings.push({
+        severity: "error",
+        rule: "promotion_manifest_stale_feature_artifact_dir_path_mismatch",
+        path: promotionPath,
+        product_slug: productSlug,
+        expected_prefix: expectedPrefix,
+        actual: staleDir || null,
+      });
+      continue;
+    }
+    if (await exists(path.resolve(process.cwd(), staleDir))) {
+      findings.push({
+        severity: "error",
+        rule: "promotion_manifest_removed_stale_feature_artifact_dir_still_exists",
+        path: promotionPath,
+        product_slug: productSlug,
+        stale_feature_artifact_dir: staleDir,
+      });
+    }
+  }
+
+  return findings;
+}
+
 function escapeMarkdownLinkLabel(label) {
   return String(label || "").replace(/([\\[\]])/g, "\\$1");
 }
@@ -566,6 +631,7 @@ async function validateArtifacts() {
         }
         findings.push(...validatePromotionFeatureListOrdering(promotion, promotionPath, productSlug, field));
       }
+      findings.push(...await validatePromotionStaleFeatureCleanup(promotion, promotionPath, productSlug));
       if (promotion.product_slug !== productSlug) {
         findings.push({
           severity: "error",

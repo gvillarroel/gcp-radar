@@ -95,6 +95,9 @@ The validator must check:
   as a sorted, duplicate-free array, keeps its stale cleanup count aligned with
   that list, keeps every removed path under that product's artifact directory,
   and only lists directories that no longer exist
+- each product promotion manifest exposes `stale_feature_artifact_dirs_removed`
+  as a sorted, duplicate-free array, keeps every removed path under that
+  product's artifact directory, and only lists directories that no longer exist
 - every promotion manifest, promoted service card, and promoted feature card
   uses the current Step 09 artifact-promotion schema version
 - every promotion manifest, promoted service card, and promoted feature card
