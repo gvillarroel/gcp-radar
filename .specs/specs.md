@@ -667,6 +667,9 @@ generated Step 08 product cards.
 Its product entries must be sorted and duplicate-free, and every indexed
 Step 08 product must have both its generated `card.json` and generated
 `card.md` so the card layer remains reviewable before promotion.
+Each Step 08 product card's embedded service card must keep its service slug,
+service name, generated timestamp, feature count, and security capability count
+aligned with the enclosing product card.
 The Step 08 index and generated product cards must also record non-empty ISO
 8601 `generated_at` timestamps so card-construction metadata remains
 auditable. The Step 08 index timestamp must not be older than any generated

@@ -3335,6 +3335,55 @@ async function validateStep08IndexMatchesCards() {
         actual: card.feature_count,
       });
     }
+    const serviceCard = card.service_card || {};
+    const securityCapabilities = Array.isArray(serviceCard.security_capabilities)
+      ? serviceCard.security_capabilities
+      : [];
+    const serviceCardChecks = [
+      {
+        field: "service_slug",
+        rule: "step08_service_card_slug_mismatch",
+        expected: productSlug,
+        actual: serviceCard.service_slug || null,
+      },
+      {
+        field: "service_name",
+        rule: "step08_service_card_name_mismatch",
+        expected: card.product_name || "",
+        actual: serviceCard.service_name || null,
+      },
+      {
+        field: "feature_count",
+        rule: "step08_service_card_feature_count_mismatch",
+        expected: features.length,
+        actual: serviceCard.feature_count ?? null,
+      },
+      {
+        field: "generated_at",
+        rule: "step08_service_card_generated_at_mismatch",
+        expected: card.generated_at || "",
+        actual: serviceCard.generated_at || null,
+      },
+      {
+        field: "security_capability_count",
+        rule: "step08_service_card_security_capability_count_mismatch",
+        expected: securityCapabilities.length,
+        actual: serviceCard.security_capability_count ?? null,
+      },
+    ];
+    for (const check of serviceCardChecks) {
+      if (check.actual !== check.expected) {
+        findings.push({
+          severity: "error",
+          rule: check.rule,
+          path: cardPath,
+          product_slug: productSlug,
+          field: check.field,
+          expected: check.expected,
+          actual: check.actual,
+        });
+      }
+    }
     for (const [field, expected] of Object.entries(statusCounts)) {
       if (Number(card.iam_summary?.[field] || 0) !== expected) {
         findings.push({

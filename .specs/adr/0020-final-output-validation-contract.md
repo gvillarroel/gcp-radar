@@ -74,6 +74,9 @@ The validator must check:
   schema version
 - generated Step 08 product cards have a duplicate-free feature inventory, and
   every feature in that inventory has a non-empty feature slug
+- each generated Step 08 product card's embedded service card keeps its service
+  slug, service name, generated timestamp, feature count, and security
+  capability count aligned with the enclosing product card
 - Step 08 service-card source links, Step 08 feature source links, Step 08
   feature supporting page URLs, and Step 08 security capability evidence links
   use official Google HTTP(S) URLs when present

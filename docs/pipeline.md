@@ -504,6 +504,9 @@ product output directory. Final validation also checks that each Step 08
 product `card.md` still renders the product title, schema version, generation
 timestamp, Step 07 summary, corpus health, IAM summary, service-card summary,
 and feature rows from the matching `card.json`.
+Final validation also checks that each Step 08 product card's embedded service
+card keeps its service slug, service name, generated timestamp, feature count,
+and security capability count aligned with the enclosing product card.
 The Step 08 index and generated product cards must also record non-empty ISO
 8601 `generated_at` timestamps. The Step 08 index timestamp must not be older
 than any generated product card timestamp, because it summarizes the completed
