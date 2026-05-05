@@ -659,9 +659,11 @@ product report inventory.
 It must also record a non-empty ISO 8601 `generated_at` timestamp so report
 timestamp validation has a canonical run value to compare against.
 The Step 08 index must use the current Step 08 schema version, record the same
-Step 08 output root that final-output validation is checking, and keep its
-product inventory, feature totals, IAM status totals, card paths, and
-per-product summary fields aligned with the generated Step 08 product cards.
+Step 08 output root that final-output validation is checking, record the same
+Step 02, Step 04, Step 05, Step 06, and Step 07 input roots that final-output
+validation is checking, and keep its product inventory, feature totals, IAM
+status totals, card paths, and per-product summary fields aligned with the
+generated Step 08 product cards.
 Its product entries must be sorted and duplicate-free, and every indexed
 Step 08 product must have both its generated `card.json` and generated
 `card.md` so the card layer remains reviewable before promotion.

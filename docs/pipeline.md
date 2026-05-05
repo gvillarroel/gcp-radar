@@ -493,9 +493,11 @@ must also keep `fixed_report_count`, `product_report_count`, and
 product report inventory. It must also record a non-empty ISO 8601
 `generated_at` timestamp so generated report metadata is validated against a
 real Step 10 run value. The Step 08 index must record the same Step 08
-output root being validated, use the current Step 08 schema version, and keep
-its product inventory, feature totals, IAM status totals, card paths, and
-per-product summary fields aligned with the generated Step 08 product cards.
+output root being validated, record the same Step 02, Step 04, Step 05, Step
+06, and Step 07 input roots being validated, use the current Step 08 schema
+version, and keep its product inventory, feature totals, IAM status totals,
+card paths, and per-product summary fields aligned with the generated Step 08
+product cards.
 Its product entries must be sorted and duplicate-free, and every indexed
 product must still have both `card.json` and `card.md` under the Step 08
 product output directory. Final validation also checks that each Step 08

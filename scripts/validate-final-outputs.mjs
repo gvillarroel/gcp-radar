@@ -23,6 +23,11 @@ if (process.env.GCP_RADAR_VALIDATE_HEAP_REEXEC !== "1") {
 
 const artifactsRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_ARTIFACTS_ROOT || "artifacts");
 const radarRoot = path.resolve(process.env.GCP_RADAR_VALIDATE_RADAR_ROOT || "radar");
+const step02Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP02_ROOT || "data/step-02/current");
+const step04Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP04_ROOT || "data/step-04/current");
+const step05Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP05_ROOT || "data/step-05/current");
+const step06Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP06_ROOT || "data/step-06/current");
+const step07Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP07_ROOT || "data/step-07/current");
 const step08Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP08_ROOT || "data/step-08/current");
 const step09Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP09_ROOT || "data/step-09/current");
 const step10Root = path.resolve(process.env.GCP_RADAR_VALIDATE_STEP10_ROOT || "data/step-10/current");
@@ -3092,6 +3097,48 @@ async function validateStep08IndexMatchesCards() {
       expected: expectedOutputRoot,
       actual: actualOutputRoot || null,
     });
+  }
+
+  const expectedInputRoots = {
+    step02: path.relative(process.cwd(), step02Root).replace(/\\/g, "/") || ".",
+    step04: path.relative(process.cwd(), step04Root).replace(/\\/g, "/") || ".",
+    step05: path.relative(process.cwd(), step05Root).replace(/\\/g, "/") || ".",
+    step06: path.relative(process.cwd(), step06Root).replace(/\\/g, "/") || ".",
+    step07: path.relative(process.cwd(), step07Root).replace(/\\/g, "/") || ".",
+  };
+  if (!step08Index.input_roots || Array.isArray(step08Index.input_roots) || typeof step08Index.input_roots !== "object") {
+    findings.push({
+      severity: "error",
+      rule: "step08_index_input_roots_not_object",
+      path: step08IndexPath,
+      actual_type: step08Index.input_roots === null ? "null" : typeof step08Index.input_roots,
+    });
+  } else {
+    const expectedInputRootKeys = Object.keys(expectedInputRoots).sort((left, right) => left.localeCompare(right));
+    const actualInputRootKeys = Object.keys(step08Index.input_roots).sort((left, right) => left.localeCompare(right));
+    for (const key of actualInputRootKeys) {
+      if (!expectedInputRoots[key]) {
+        findings.push({
+          severity: "error",
+          rule: "step08_index_unknown_input_root",
+          path: step08IndexPath,
+          input_root: key,
+        });
+      }
+    }
+    for (const key of expectedInputRootKeys) {
+      const actualInputRoot = String(step08Index.input_roots[key] || "").replace(/\\/g, "/");
+      if (actualInputRoot !== expectedInputRoots[key]) {
+        findings.push({
+          severity: "error",
+          rule: "step08_index_input_root_mismatch",
+          path: step08IndexPath,
+          input_root: key,
+          expected: expectedInputRoots[key],
+          actual: actualInputRoot || null,
+        });
+      }
+    }
   }
 
   const productEntries = Array.isArray(step08Index.products) ? step08Index.products : [];

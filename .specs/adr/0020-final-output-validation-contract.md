@@ -52,6 +52,8 @@ The validator must check:
   `generated_at` timestamp
 - `data/step-08/current/index.json` records the same Step 08 output root that
   final-output validation is checking
+- `data/step-08/current/index.json` records the same Step 02, Step 04, Step
+  05, Step 06, and Step 07 input roots that final-output validation is checking
 - Step 08 product entries, feature totals, IAM status totals, card paths, and
   per-product summary fields match the generated Step 08 product cards
 - Step 08 product entries are sorted and duplicate-free
