@@ -281,6 +281,23 @@ function validateGeneratedAtMatchesPromotion(record, promotion, recordPath, rule
   }];
 }
 
+function validateGeneratedAtNotBefore(actualRecord, referenceRecord, recordPath, rule, extra = {}) {
+  if (!isIsoTimestamp(actualRecord?.generated_at) || !isIsoTimestamp(referenceRecord?.generated_at)) {
+    return [];
+  }
+  if (Date.parse(actualRecord.generated_at) >= Date.parse(referenceRecord.generated_at)) {
+    return [];
+  }
+  return [{
+    severity: "error",
+    rule,
+    path: recordPath,
+    expected_not_before: referenceRecord.generated_at,
+    actual: actualRecord.generated_at,
+    ...extra,
+  }];
+}
+
 function promotionFeatureList(promotion, field) {
   return Array.isArray(promotion?.[field]) ? promotion[field] : [];
 }
@@ -2776,11 +2793,17 @@ async function validateStep09IndexMatchesArtifacts() {
   }
 
   const expectedProducts = new Map();
+  let latestPromotion = null;
+  let latestPromotionPath = "";
   for (const productSlug of await listDirs(artifactsRoot)) {
     const promotionPath = path.join(artifactsRoot, productSlug, "promotion.json");
     const promotion = await readJson(promotionPath, null);
     if (!promotion) {
       continue;
+    }
+    if (isIsoTimestamp(promotion.generated_at) && (!latestPromotion || Date.parse(promotion.generated_at) > Date.parse(latestPromotion.generated_at))) {
+      latestPromotion = promotion;
+      latestPromotionPath = promotionPath;
     }
     expectedProducts.set(productSlug, {
       product_name: promotion.product_name || productSlug,
@@ -2790,6 +2813,11 @@ async function validateStep09IndexMatchesArtifacts() {
       promoted_feature_count: Number(promotion.promoted_feature_count || 0),
       skipped_feature_count: Number(promotion.skipped_feature_count || 0),
     });
+  }
+  if (latestPromotion) {
+    findings.push(...validateGeneratedAtNotBefore(step09Index, latestPromotion, step09IndexPath, "step09_index_generated_at_before_promotion_manifest", {
+      reference_path: latestPromotionPath,
+    }));
   }
 
   const indexProducts = Array.isArray(step09Index.products) ? step09Index.products : [];
@@ -3694,6 +3722,13 @@ async function validateRadarMatchesArtifacts() {
       path: step10IndexPath,
       actual: step10Index.generated_at,
     });
+  }
+  const step09IndexPath = path.join(step09Root, "index.json");
+  const step09Index = await readJson(step09IndexPath, null);
+  if (step09Index) {
+    findings.push(...validateGeneratedAtNotBefore(step10Index, step09Index, step10IndexPath, "step10_index_generated_at_before_step09_index", {
+      reference_path: step09IndexPath,
+    }));
   }
 
   const expectedArtifactsRoot = path.relative(process.cwd(), artifactsRoot).replace(/\\/g, "/") || ".";

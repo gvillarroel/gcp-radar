@@ -750,6 +750,9 @@ across reruns.
 The Step 09 index, each promotion manifest, and each promoted service or
 feature artifact card must also record non-empty ISO 8601 `generated_at`
 timestamps so promotion metadata cannot silently lose run provenance.
+The Step 09 index timestamp must not be older than any product promotion
+manifest timestamp, because the index is the reconciled metadata for the
+promotion run.
 Within each promoted product, the promoted service card and all promoted
 feature artifact cards must keep their `generated_at` timestamp aligned with
 the product promotion manifest.
@@ -807,7 +810,9 @@ Every generated radar Markdown report, including the root index, product
 reports, IAM report, security report, services report, and coverage report,
 must render the same `generated_at` timestamp recorded in
 `data/step-10/current/index.json` so final report metadata cannot drift from
-the Step 10 run metadata.
+the Step 10 run metadata. The Step 10 index timestamp must not be older than
+the Step 09 index timestamp, because final reports are generated after the
+promoted artifact inventory is reconciled.
 The security report must link every promoted feature artifact that contains
 security capability signals, must not retain stale promoted-feature links, and
 must include official Google evidence links for those security signals when

@@ -511,7 +511,9 @@ and each promoted service or feature artifact card must record non-empty ISO
 provenance before final reporting is accepted. Within each promoted product,
 final validation also checks that the promoted service card and every promoted
 feature card keep the same `generated_at` timestamp as the product promotion
-manifest.
+manifest. The Step 09 index timestamp must not be older than any product
+promotion manifest timestamp, because it summarizes the reconciled promotion
+inventory after product promotion files are written.
 Step 08 product cards must also carry a duplicate-free feature inventory with
 a non-empty `feature_slug` on every feature. Step 08 rejects duplicate feature
 slugs while building cards, and final validation rechecks that card layer
@@ -625,7 +627,10 @@ skipped, explicit IAM, derived IAM, and unknown IAM counts aligned with the
 promoted artifact manifests and feature cards.
 Every generated radar Markdown report must keep its rendered `generated_at`
 value aligned with `data/step-10/current/index.json`, because those files are
-the user-facing reports that expose Step 10 run metadata.
+the user-facing reports that expose Step 10 run metadata. Final validation
+also requires the Step 10 index timestamp to be the same as or newer than the
+Step 09 index timestamp, because reports must be generated from the current
+promoted artifact inventory.
 The security report must link every promoted feature with security capability
 signals, must not retain stale feature artifact links, and must include
 official Google evidence links for those signals when promoted feature cards

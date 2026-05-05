@@ -106,11 +106,15 @@ The validator must check:
   records a non-empty ISO 8601 `generated_at` timestamp
 - every promoted service card and promoted feature card records the same
   `generated_at` timestamp as its product promotion manifest
+- `data/step-09/current/index.json` records a `generated_at` timestamp that is
+  not older than any product promotion manifest timestamp
 - `data/step-10/current/index.json` product and feature counts match promoted
   artifacts
 - `data/step-10/current/index.json` uses the current Step 10 schema version
 - `data/step-10/current/index.json` records a non-empty ISO 8601
   `generated_at` timestamp
+- `data/step-10/current/index.json` records a `generated_at` timestamp that is
+  not older than the Step 09 index timestamp
 - `data/step-10/current/index.json` records the same artifacts root and radar
   root that final-output validation is checking
 - `data/step-10/current/index.json` keeps `fixed_report_count`,
