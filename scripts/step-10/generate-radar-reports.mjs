@@ -74,6 +74,14 @@ function relativeToCwd(target) {
   return path.relative(process.cwd(), target).replace(/\\/g, "/");
 }
 
+function relativeMarkdownPath(fromDir, target) {
+  const relativePath = path.relative(fromDir, target).replace(/\\/g, "/");
+  if (!relativePath || relativePath.startsWith(".") || relativePath.startsWith("/")) {
+    return relativePath || ".";
+  }
+  return `./${relativePath}`;
+}
+
 function markdownTableRow(values) {
   return `| ${values.map((value) => String(value ?? "").replace(/\n/g, " ").replace(/\|/g, "\\|")).join(" | ")} |`;
 }
@@ -366,7 +374,7 @@ async function validatePromotionStaleFeatureCleanup(productSlug, promotion, erro
   let previousDir = "";
   for (const dirValue of promotion.stale_feature_artifact_dirs_removed) {
     const staleDir = String(dirValue || "").replace(/\\/g, "/");
-    const expectedPrefix = `artifacts/${productSlug}/`;
+    const expectedPrefix = `${relativeToCwd(path.join(artifactsRoot, productSlug))}/`;
     if (seen.has(staleDir)) {
       errors.push(`Promotion manifest stale_feature_artifact_dirs_removed has duplicate path for ${productSlug}: ${staleDir}`);
     }
@@ -480,7 +488,7 @@ async function loadArtifacts() {
     if (!step08Card) {
       errors.push(`Missing Step 08 source card for ${productSlug}: ${expectedSourceStep08Card}`);
     }
-    const expectedServiceCard = `artifacts/${productSlug}/card.json`;
+    const expectedServiceCard = relativeToCwd(path.join(productDir, "card.json"));
     if (String(promotion.service_card || "").replace(/\\/g, "/") !== expectedServiceCard) {
       errors.push(`Promotion manifest service_card mismatch for ${productSlug}: expected ${expectedServiceCard}, got ${promotion.service_card || "missing"}`);
     }
@@ -614,11 +622,11 @@ async function loadArtifacts() {
       } else if (feature.feature_name !== step08Feature.feature_name) {
         errors.push(`Promotion manifest feature_name mismatch for ${productSlug}/${feature.feature_slug}: expected ${step08Feature.feature_name}, got ${feature.feature_name || "missing"}`);
       }
-      const expectedFeatureReadme = `artifacts/${productSlug}/${feature.feature_slug}/README.md`;
+      const expectedFeatureReadme = relativeToCwd(path.join(productDir, feature.feature_slug, "README.md"));
       if (String(feature.artifact_readme || "").replace(/\\/g, "/") !== expectedFeatureReadme) {
         errors.push(`Promotion manifest artifact_readme mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedFeatureReadme}, got ${feature.artifact_readme || "missing"}`);
       }
-      const expectedFeatureCard = `artifacts/${productSlug}/${feature.feature_slug}/card.json`;
+      const expectedFeatureCard = relativeToCwd(path.join(productDir, feature.feature_slug, "card.json"));
       if (String(feature.artifact_card || "").replace(/\\/g, "/") !== expectedFeatureCard) {
         errors.push(`Promotion manifest artifact_card mismatch for ${productSlug}/${feature.feature_slug}: expected ${expectedFeatureCard}, got ${feature.artifact_card || "missing"}`);
       }
@@ -744,7 +752,7 @@ function renderIndex(products, generatedAt) {
     "",
     `- Service cards: ${products.length}`,
     `- Promoted features: ${featureCount}`,
-    `- Source of truth: \`artifacts/\``,
+    `- Source of truth: \`${relativeToCwd(artifactsRoot)}/\``,
     "",
     "## Products",
     "",
@@ -758,7 +766,7 @@ function renderIndex(products, generatedAt) {
       product.features.length,
       product.service_card?.lifecycle?.latest_feature_date || "unknown",
       `[report](./products/${product.product_slug}.md)`,
-      markdownLink(`\`${product.product_slug}\``, `../artifacts/${product.product_slug}/card.json`),
+      markdownLink(`\`${product.product_slug}\``, relativeMarkdownPath(radarRoot, path.join(artifactsRoot, product.product_slug, "card.json"))),
     ]));
   }
 
@@ -766,14 +774,15 @@ function renderIndex(products, generatedAt) {
 }
 
 function renderProductReport(product, generatedAt) {
+  const reportDir = path.join(radarRoot, "products");
   const lines = [
     `# ${product.product_name}`,
     "",
     `Generated at: \`${generatedAt}\``,
     "",
-    `Service card: [card.json](../../artifacts/${product.product_slug}/card.json)`,
+    `Service card: [card.json](${relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, "card.json"))})`,
     "",
-    `Artifacts index: [${product.product_slug}](../../artifacts/${product.product_slug}/index.md)`,
+    `Artifacts index: [${product.product_slug}](${relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, "index.md"))})`,
     "",
     "## Summary",
     "",
@@ -792,7 +801,7 @@ function renderProductReport(product, generatedAt) {
     const sources = (feature.evidence?.source_links || []).slice(0, 3).map((url) => `[source](${url})`).join("<br>");
     const iam = feature.iam || {};
     lines.push(markdownTableRow([
-      markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
+      markdownLink(feature.feature_name, relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, feature.feature_slug, "README.md"))),
       iam.iam_mapping_status || "unknown",
       formatRoles(iam.explicit_roles),
       formatPermissions(iam.explicit_permissions),
@@ -807,6 +816,7 @@ function renderProductReport(product, generatedAt) {
 }
 
 function renderIamReport(products, generatedAt) {
+  const reportDir = path.join(radarRoot, "iam");
   const lines = [
     "# IAM Coverage",
     "",
@@ -823,7 +833,7 @@ function renderIamReport(products, generatedAt) {
       const iam = feature.iam || {};
       lines.push(markdownTableRow([
         product.product_name,
-        markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
+        markdownLink(feature.feature_name, relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, feature.feature_slug, "README.md"))),
         iam.iam_mapping_status || "unknown",
         formatRoles(iam.explicit_roles),
         formatPermissions(iam.explicit_permissions),
@@ -837,6 +847,7 @@ function renderIamReport(products, generatedAt) {
 }
 
 function renderSecurityReport(products, generatedAt) {
+  const reportDir = path.join(radarRoot, "security");
   const lines = [
     "# Security Capabilities",
     "",
@@ -860,7 +871,7 @@ function renderSecurityReport(products, generatedAt) {
         .join("<br>");
       lines.push(markdownTableRow([
         product.product_name,
-        markdownLink(feature.feature_name, `../../artifacts/${product.product_slug}/${feature.feature_slug}/README.md`),
+        markdownLink(feature.feature_name, relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, feature.feature_slug, "README.md"))),
         capabilities.map((capability) => capability.capability).join(", "),
         evidence,
       ]));
@@ -899,6 +910,7 @@ function renderCoverageReport(products, generatedAt) {
 }
 
 function renderServiceCardsReport(products, generatedAt) {
+  const reportDir = path.join(radarRoot, "services");
   const lines = [
     "# Service Cards",
     "",
@@ -914,7 +926,7 @@ function renderServiceCardsReport(products, generatedAt) {
     const service = product.service_card || {};
     const iam = service.iam_status_counts || {};
     lines.push(markdownTableRow([
-      markdownLink(product.product_name, `../../artifacts/${product.product_slug}/card.json`),
+      markdownLink(product.product_name, relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, "card.json"))),
       service.validation?.product_status || product.promotion?.product_status || "unknown",
       service.feature_count || product.features.length,
       service.lifecycle?.latest_feature_date || "unknown",

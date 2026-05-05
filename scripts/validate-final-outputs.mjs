@@ -187,6 +187,27 @@ function relativeToCwd(target) {
   return path.relative(process.cwd(), target).replace(/\\/g, "/") || ".";
 }
 
+function relativeMarkdownPath(fromDir, target) {
+  const relativePath = path.relative(fromDir, target).replace(/\\/g, "/");
+  if (!relativePath || relativePath.startsWith(".") || relativePath.startsWith("/")) {
+    return relativePath || ".";
+  }
+  return `./${relativePath}`;
+}
+
+function linkResolvesUnder(link, fromDir, rootDir, suffix = "") {
+  const normalizedLink = String(link || "").trim().replace(/\\/g, "/").split("#")[0];
+  if (!normalizedLink || /^[a-z][a-z0-9+.-]*:/i.test(normalizedLink) || normalizedLink.startsWith("#")) {
+    return false;
+  }
+  if (suffix && !normalizedLink.endsWith(suffix)) {
+    return false;
+  }
+  const resolved = path.resolve(fromDir, decodeURIComponent(normalizedLink));
+  const relativePath = path.relative(rootDir, resolved);
+  return Boolean(relativePath) && !relativePath.startsWith("..") && !path.isAbsolute(relativePath);
+}
+
 function normalizeForCompare(value) {
   if (Array.isArray(value)) {
     return value.map(normalizeForCompare);
@@ -303,7 +324,7 @@ async function validatePromotionStaleFeatureCleanup(promotion, promotionPath, pr
   let previousStaleDir = "";
   for (const staleDirValue of staleDirs) {
     const staleDir = String(staleDirValue || "").replace(/\\/g, "/");
-    const expectedPrefix = `artifacts/${productSlug}/`;
+    const expectedPrefix = `${relativeToCwd(path.join(artifactsRoot, productSlug))}/`;
     if (seenStaleDirs.has(staleDir)) {
       findings.push({
         severity: "error",
@@ -676,7 +697,7 @@ async function validateArtifacts() {
           actual: promotion.skipped_feature_count,
         });
       }
-      const expectedServiceCard = `artifacts/${productSlug}/card.json`;
+      const expectedServiceCard = relativeToCwd(path.join(productDir, "card.json"));
       const actualServiceCard = String(promotion.service_card || "").replace(/\\/g, "/");
       if (actualServiceCard !== expectedServiceCard) {
         findings.push({
@@ -744,8 +765,8 @@ async function validateArtifacts() {
             actual: feature.feature_name || null,
           });
         }
-        const expectedReadme = `artifacts/${productSlug}/${featureSlug}/README.md`;
-        const expectedCard = `artifacts/${productSlug}/${featureSlug}/card.json`;
+        const expectedReadme = relativeToCwd(path.join(productDir, featureSlug, "README.md"));
+        const expectedCard = relativeToCwd(path.join(productDir, featureSlug, "card.json"));
         const actualReadme = String(feature.artifact_readme || "").replace(/\\/g, "/");
         const actualCard = String(feature.artifact_card || "").replace(/\\/g, "/");
         if (actualReadme !== expectedReadme) {
@@ -1583,10 +1604,11 @@ async function validateRadarArtifactLinks() {
         continue;
       }
       const targetWithoutAnchor = rawLink.split("#")[0];
-      if (!targetWithoutAnchor.replace(/\\/g, "/").includes("artifacts/")) {
+      const resolved = path.resolve(path.dirname(file), decodeURIComponent(targetWithoutAnchor));
+      const artifactRelativePath = path.relative(artifactsRoot, resolved);
+      if (artifactRelativePath.startsWith("..") || path.isAbsolute(artifactRelativePath)) {
         continue;
       }
-      const resolved = path.resolve(path.dirname(file), decodeURIComponent(targetWithoutAnchor));
       if (!(await exists(resolved))) {
         findings.push({
           severity: "error",
@@ -1671,6 +1693,7 @@ async function validateRadarIamTablesSeparateExplicitAndDerived() {
 async function validateRadarIamReportMatchesArtifacts() {
   const findings = [];
   const iamReportPath = path.join(radarRoot, "iam", "index.md");
+  const iamReportDir = path.dirname(iamReportPath);
   if (!(await exists(iamReportPath))) {
     findings.push({
       severity: "error",
@@ -1682,7 +1705,8 @@ async function validateRadarIamReportMatchesArtifacts() {
 
   const expectedRows = new Map();
   for (const productSlug of await listDirs(artifactsRoot)) {
-    const promotion = await readJson(path.join(artifactsRoot, productSlug, "promotion.json"), null);
+    const productDir = path.join(artifactsRoot, productSlug);
+    const promotion = await readJson(path.join(productDir, "promotion.json"), null);
     if (!promotion) {
       continue;
     }
@@ -1691,12 +1715,12 @@ async function validateRadarIamReportMatchesArtifacts() {
       if (!featureSlug) {
         continue;
       }
-      const featureCard = await readJson(path.join(artifactsRoot, productSlug, featureSlug, "card.json"), null);
+      const featureCard = await readJson(path.join(productDir, featureSlug, "card.json"), null);
       if (!featureCard) {
         continue;
       }
       const iam = featureCard.iam || {};
-      expectedRows.set(`../../artifacts/${productSlug}/${featureSlug}/README.md`, {
+      expectedRows.set(relativeMarkdownPath(iamReportDir, path.join(productDir, featureSlug, "README.md")), {
         product_name: promotion.product_name || productSlug,
         mapping: iam.iam_mapping_status || "unknown",
         explicit_roles: formatRolesForReportValidation(iam.explicit_roles),
@@ -1714,7 +1738,7 @@ async function validateRadarIamReportMatchesArtifacts() {
   const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
   for (const match of report.matchAll(linkPattern)) {
     const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
-    if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
+    if (!linkResolvesUnder(link, iamReportDir, artifactsRoot, "/README.md")) {
       continue;
     }
     if (expectedRows.has(link)) {
@@ -1749,7 +1773,7 @@ async function validateRadarIamReportMatchesArtifacts() {
     }
     const featureLink = [...String(cells[1] || "").matchAll(linkPattern)]
       .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
-      .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/README.md"));
+      .find((link) => linkResolvesUnder(link, iamReportDir, artifactsRoot, "/README.md"));
     if (!featureLink) {
       findings.push({
         severity: "error",
@@ -1827,6 +1851,7 @@ async function validateRadarIamReportMatchesArtifacts() {
 async function validateRadarServicesReportMatchesArtifacts() {
   const findings = [];
   const servicesReportPath = path.join(radarRoot, "services", "index.md");
+  const servicesReportDir = path.dirname(servicesReportPath);
   if (!(await exists(servicesReportPath))) {
     findings.push({
       severity: "error",
@@ -1844,7 +1869,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
     }
     const serviceCard = await readJson(path.join(artifactsRoot, productSlug, "card.json"), null);
     const iam = serviceCard?.iam_status_counts || {};
-    expectedRows.set(`../../artifacts/${productSlug}/card.json`, {
+    expectedRows.set(relativeMarkdownPath(servicesReportDir, path.join(artifactsRoot, productSlug, "card.json")), {
       status: serviceCard?.validation?.product_status || promotion.product_status || "unknown",
       features: Number(serviceCard?.feature_count || promotion.promoted_feature_count || 0),
       latest_feature: serviceCard?.lifecycle?.latest_feature_date || "unknown",
@@ -1866,7 +1891,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
   for (const match of report.matchAll(linkPattern)) {
     const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
     reportLinks.add(link);
-    if (!link.startsWith("../../artifacts/") || !link.endsWith("/card.json")) {
+    if (!linkResolvesUnder(link, servicesReportDir, artifactsRoot, "/card.json")) {
       continue;
     }
     if (expectedRows.has(link)) {
@@ -1901,7 +1926,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
     }
     const serviceLink = [...String(cells[0] || "").matchAll(linkPattern)]
       .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
-      .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/card.json"));
+      .find((link) => linkResolvesUnder(link, servicesReportDir, artifactsRoot, "/card.json"));
     if (!serviceLink) {
       findings.push({
         severity: "error",
@@ -2011,6 +2036,7 @@ async function validateRadarServicesReportMatchesArtifacts() {
 async function validateRadarSecurityReportMatchesArtifacts() {
   const findings = [];
   const securityReportPath = path.join(radarRoot, "security", "index.md");
+  const securityReportDir = path.dirname(securityReportPath);
   if (!(await exists(securityReportPath))) {
     findings.push({
       severity: "error",
@@ -2038,7 +2064,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
       if (capabilities.length === 0) {
         continue;
       }
-      expectedFeatureLinks.set(`../../artifacts/${productSlug}/${featureSlug}/README.md`, {
+      expectedFeatureLinks.set(relativeMarkdownPath(securityReportDir, path.join(productDir, featureSlug, "README.md")), {
         product_name: promotion.product_name || productSlug,
         product_slug: productSlug,
         feature_slug: featureSlug,
@@ -2060,7 +2086,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
   for (const match of report.matchAll(linkPattern)) {
     const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
     reportLinks.add(link);
-    if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
+    if (!linkResolvesUnder(link, securityReportDir, artifactsRoot, "/README.md")) {
       continue;
     }
     if (expectedFeatureLinks.has(link)) {
@@ -2095,7 +2121,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
     }
     const featureLink = [...String(cells[1] || "").matchAll(linkPattern)]
       .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
-      .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/README.md"));
+      .find((link) => linkResolvesUnder(link, securityReportDir, artifactsRoot, "/README.md"));
     if (!featureLink) {
       findings.push({
         severity: "error",
@@ -2194,6 +2220,7 @@ async function validateRadarSecurityReportMatchesArtifacts() {
 async function validateRadarRootIndexMatchesArtifacts() {
   const findings = [];
   const rootIndexPath = path.join(radarRoot, "index.md");
+  const rootIndexDir = path.dirname(rootIndexPath);
   if (!(await exists(rootIndexPath))) {
     findings.push({
       severity: "error",
@@ -2216,7 +2243,7 @@ async function validateRadarRootIndexMatchesArtifacts() {
         product_name: promotion.product_name || productSlug,
         features: promotionFeatureList(promotion, "promoted_features").length,
         latest_feature: serviceCard?.lifecycle?.latest_feature_date || "unknown",
-        service_card: `../artifacts/${productSlug}/card.json`,
+        service_card: relativeMarkdownPath(rootIndexDir, path.join(artifactsRoot, productSlug, "card.json")),
       });
     }
   }
@@ -2269,7 +2296,7 @@ async function validateRadarRootIndexMatchesArtifacts() {
     [...artifactProductSlugs].sort().map((productSlug) => `./products/${productSlug}.md`)
   );
   const expectedServiceCardLinks = new Set(
-    [...artifactProductSlugs].sort().map((productSlug) => `../artifacts/${productSlug}/card.json`)
+    [...artifactProductSlugs].sort().map((productSlug) => relativeMarkdownPath(rootIndexDir, path.join(artifactsRoot, productSlug, "card.json")))
   );
   const actualProductReportLinks = new Set();
   const actualServiceCardLinks = new Set();
@@ -2289,7 +2316,7 @@ async function validateRadarRootIndexMatchesArtifacts() {
         staleProductReportLinks.add(link);
       }
     }
-    if (link.startsWith("../artifacts/") && link.endsWith("/card.json")) {
+    if (linkResolvesUnder(link, rootIndexDir, artifactsRoot, "/card.json")) {
       serviceCardLinkCounts.set(link, (serviceCardLinkCounts.get(link) || 0) + 1);
       if (expectedServiceCardLinks.has(link)) {
         actualServiceCardLinks.add(link);
@@ -2326,7 +2353,7 @@ async function validateRadarRootIndexMatchesArtifacts() {
       .find((link) => link.startsWith("./products/") && link.endsWith(".md"));
     const serviceCardLink = [...String(cells[4] || "").matchAll(linkPattern)]
       .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
-      .find((link) => link.startsWith("../artifacts/") && link.endsWith("/card.json"));
+      .find((link) => linkResolvesUnder(link, rootIndexDir, artifactsRoot, "/card.json"));
     if (!productReportLink) {
       findings.push({
         severity: "error",
@@ -2752,9 +2779,9 @@ async function validateStep09IndexMatchesArtifacts() {
     }
     expectedProducts.set(productSlug, {
       product_name: promotion.product_name || productSlug,
-      service_card: `artifacts/${productSlug}/card.json`,
-      product_index: `artifacts/${productSlug}/index.md`,
-      promotion_json: `artifacts/${productSlug}/promotion.json`,
+      service_card: relativeToCwd(path.join(artifactsRoot, productSlug, "card.json")),
+      product_index: relativeToCwd(path.join(artifactsRoot, productSlug, "index.md")),
+      promotion_json: relativeToCwd(path.join(artifactsRoot, productSlug, "promotion.json")),
       promoted_feature_count: Number(promotion.promoted_feature_count || 0),
       skipped_feature_count: Number(promotion.skipped_feature_count || 0),
     });
@@ -2926,7 +2953,7 @@ async function validateStep09IndexMatchesArtifacts() {
     let previousStaleDir = "";
     for (const staleDirValue of staleDirs) {
       const staleDir = String(staleDirValue || "").replace(/\\/g, "/");
-      const expectedPrefix = `artifacts/${productSlug}/`;
+      const expectedPrefix = `${relativeToCwd(path.join(artifactsRoot, productSlug))}/`;
       if (seenStaleDirs.has(staleDir)) {
         findings.push({
           severity: "error",
@@ -3345,6 +3372,7 @@ async function validateRadarMatchesArtifacts() {
     if (!(await exists(reportPath))) {
       continue;
     }
+    const reportDir = path.dirname(reportPath);
     const report = await readText(reportPath, "");
     findings.push(...await validateRadarGeneratedAt(reportPath, report, "radar_product_generated_at_mismatch"));
     const expectedTitle = `# ${product.product_name}`;
@@ -3357,9 +3385,9 @@ async function validateRadarMatchesArtifacts() {
         expected: expectedTitle,
       });
     }
-    const expectedFeatureLinks = new Set(product.feature_slugs.map((featureSlug) => `../../artifacts/${product.product_slug}/${featureSlug}/README.md`));
-    const expectedServiceCardLink = `../../artifacts/${product.product_slug}/card.json`;
-    const expectedArtifactIndexLink = `../../artifacts/${product.product_slug}/index.md`;
+    const expectedFeatureLinks = new Set(product.feature_slugs.map((featureSlug) => relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, featureSlug, "README.md"))));
+    const expectedServiceCardLink = relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, "card.json"));
+    const expectedArtifactIndexLink = relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, "index.md"));
     const expectedFeatureRows = new Map();
     const actualFeatureLinks = new Set();
     const staleFeatureLinks = new Set();
@@ -3370,7 +3398,7 @@ async function validateRadarMatchesArtifacts() {
       const link = String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0];
       reportLinks.add(link);
       reportLinkCounts.set(link, (reportLinkCounts.get(link) || 0) + 1);
-      if (!link.startsWith("../../artifacts/") || !link.endsWith("/README.md")) {
+      if (!linkResolvesUnder(link, reportDir, artifactsRoot, "/README.md")) {
         continue;
       }
       if (expectedFeatureLinks.has(link)) {
@@ -3501,7 +3529,7 @@ async function validateRadarMatchesArtifacts() {
       const featureCard = await readJson(featureCardPath, null);
       const officialSourceLinks = (featureCard?.evidence?.source_links || []).filter(isOfficialGoogleUrl);
       const iam = featureCard?.iam || {};
-      expectedFeatureRows.set(`../../artifacts/${product.product_slug}/${featureSlug}/README.md`, {
+      expectedFeatureRows.set(relativeMarkdownPath(reportDir, path.join(artifactsRoot, product.product_slug, featureSlug, "README.md")), {
         iam: iam.iam_mapping_status || "unknown",
         explicit_roles: formatRolesForReportValidation(iam.explicit_roles),
         explicit_permissions: formatPermissionsForReportValidation(iam.explicit_permissions),
@@ -3531,7 +3559,7 @@ async function validateRadarMatchesArtifacts() {
       }
       const featureLink = [...String(cells[0] || "").matchAll(linkPattern)]
         .map((match) => String(match[1] || "").trim().replace(/\\/g, "/").split("#")[0])
-        .find((link) => link.startsWith("../../artifacts/") && link.endsWith("/README.md"));
+        .find((link) => linkResolvesUnder(link, reportDir, artifactsRoot, "/README.md"));
       if (!featureLink) {
         findings.push({
           severity: "error",
@@ -3665,11 +3693,11 @@ async function validateRadarMatchesArtifacts() {
   }
 
   const expectedFixedReports = {
-    index: "radar/index.md",
-    iam: "radar/iam/index.md",
-    security: "radar/security/index.md",
-    services: "radar/services/index.md",
-    coverage: "radar/coverage.md",
+    index: relativeToCwd(path.join(radarRoot, "index.md")),
+    iam: relativeToCwd(path.join(radarRoot, "iam", "index.md")),
+    security: relativeToCwd(path.join(radarRoot, "security", "index.md")),
+    services: relativeToCwd(path.join(radarRoot, "services", "index.md")),
+    coverage: relativeToCwd(path.join(radarRoot, "coverage.md")),
   };
   const expectedFixedReportCount = Object.keys(expectedFixedReports).length;
   const expectedReportKeys = new Set([...Object.keys(expectedFixedReports), "products"]);
@@ -3709,7 +3737,7 @@ async function validateRadarMatchesArtifacts() {
     }
   }
 
-  const expectedReports = new Set([...artifactProductSlugs].sort().map((productSlug) => `radar/products/${productSlug}.md`));
+  const expectedReports = new Set([...artifactProductSlugs].sort().map((productSlug) => relativeToCwd(path.join(radarRoot, "products", `${productSlug}.md`))));
   const productReports = step10Index.reports?.products;
   if (!Array.isArray(productReports)) {
     findings.push({
