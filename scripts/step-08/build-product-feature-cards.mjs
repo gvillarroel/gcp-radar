@@ -374,9 +374,10 @@ function buildDerivedIamMapping(feature, productPermissionGroups, permissionsByG
 function detectSecurityCapabilities(feature) {
   const text = normalizeText(collectEvidenceText(feature));
   const found = securitySignals.filter((signal) => text.includes(signal));
+  const evidenceLinks = uniqueSorted(arrayOfStrings(feature.source_links).filter(isOfficialGoogleUrl)).slice(0, 4);
   return uniqueSorted(found).map((signal) => ({
     capability: signal,
-    evidence_links: arrayOfStrings(feature.source_links).filter(isOfficialGoogleUrl).slice(0, 4),
+    evidence_links: evidenceLinks,
   }));
 }
 

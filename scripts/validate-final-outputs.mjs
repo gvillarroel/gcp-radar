@@ -358,6 +358,41 @@ function collectNonOfficialUrls(urls) {
   return [...new Set(urls || [])].filter((url) => !isOfficialGoogleUrl(url));
 }
 
+function validateCanonicalStringArray(values, recordPath, rulePrefix, extra = {}) {
+  if (!Array.isArray(values)) {
+    return [];
+  }
+  const findings = [];
+  const seen = new Set();
+  let previous = "";
+  for (const [index, rawValue] of values.entries()) {
+    const value = String(rawValue || "");
+    if (seen.has(value)) {
+      findings.push({
+        severity: "error",
+        rule: `${rulePrefix}_duplicate`,
+        path: recordPath,
+        index,
+        value,
+        ...extra,
+      });
+    }
+    seen.add(value);
+    if (previous && previous.localeCompare(value) > 0) {
+      findings.push({
+        severity: "error",
+        rule: `${rulePrefix}_not_sorted`,
+        path: recordPath,
+        previous,
+        value,
+        ...extra,
+      });
+    }
+    previous = value;
+  }
+  return findings;
+}
+
 function collectUnacceptedWarningRules(feature, acceptedWarningRules) {
   return [...new Set((feature?.validation?.findings || [])
     .filter((finding) => finding?.severity === "warn")
@@ -620,6 +655,12 @@ function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, mar
 
 function validateStep08CardOfficialLinks(productSlug, cardPath, card) {
   const findings = [];
+  findings.push(...validateCanonicalStringArray(
+    card?.service_card?.official_source_links || [],
+    cardPath,
+    "step08_service_card_source_links",
+    { product_slug: productSlug }
+  ));
   for (const link of card?.service_card?.official_source_links || []) {
     if (!isOfficialGoogleUrl(link)) {
       findings.push({
@@ -632,6 +673,12 @@ function validateStep08CardOfficialLinks(productSlug, cardPath, card) {
     }
   }
   for (const capability of card?.service_card?.security_capabilities || []) {
+    findings.push(...validateCanonicalStringArray(
+      capability?.evidence_links || [],
+      cardPath,
+      "step08_service_card_security_evidence_links",
+      { product_slug: productSlug, capability: capability?.capability || null }
+    ));
     for (const link of capability?.evidence_links || []) {
       if (!isOfficialGoogleUrl(link)) {
         findings.push({
@@ -647,6 +694,12 @@ function validateStep08CardOfficialLinks(productSlug, cardPath, card) {
   }
   for (const feature of card?.features || []) {
     const featureSlug = feature?.feature_slug || null;
+    findings.push(...validateCanonicalStringArray(
+      feature?.evidence?.source_links || [],
+      cardPath,
+      "step08_feature_source_links",
+      { product_slug: productSlug, feature_slug: featureSlug }
+    ));
     for (const link of feature?.evidence?.source_links || []) {
       if (!isOfficialGoogleUrl(link)) {
         findings.push({
@@ -676,6 +729,12 @@ function validateStep08CardOfficialLinks(productSlug, cardPath, card) {
       }
     }
     for (const capability of feature?.security_capabilities || []) {
+      findings.push(...validateCanonicalStringArray(
+        capability?.evidence_links || [],
+        cardPath,
+        "step08_feature_security_evidence_links",
+        { product_slug: productSlug, feature_slug: featureSlug, capability: capability?.capability || null }
+      ));
       for (const link of capability?.evidence_links || []) {
         if (!isOfficialGoogleUrl(link)) {
           findings.push({
@@ -1137,12 +1196,24 @@ async function validateArtifacts() {
       findings.push(...validateGeneratedAtField(serviceCard, serviceCardPath, "service_card", { product_slug: productSlug }));
       findings.push(...validateGeneratedAtMatchesPromotion(serviceCard, promotion, serviceCardPath, "service_card_generated_at_mismatch", { product_slug: productSlug }));
     }
+    findings.push(...validateCanonicalStringArray(
+      serviceCard?.official_source_links || [],
+      serviceCardPath,
+      "service_card_source_links",
+      { product_slug: productSlug }
+    ));
     for (const link of serviceCard?.official_source_links || []) {
       if (!isOfficialGoogleUrl(link)) {
         findings.push({ severity: "error", rule: "non_official_service_source_link", path: serviceCardPath, link });
       }
     }
     for (const capability of serviceCard?.security_capabilities || []) {
+      findings.push(...validateCanonicalStringArray(
+        capability?.evidence_links || [],
+        serviceCardPath,
+        "service_card_security_evidence_links",
+        { product_slug: productSlug, capability: capability?.capability || null }
+      ));
       for (const link of capability.evidence_links || []) {
         if (!isOfficialGoogleUrl(link)) {
           findings.push({
@@ -1210,12 +1281,24 @@ async function validateArtifacts() {
       if (links.length === 0) {
         findings.push({ severity: "error", rule: "missing_source_links", path: cardPath });
       }
+      findings.push(...validateCanonicalStringArray(
+        links,
+        cardPath,
+        "feature_card_source_links",
+        { product_slug: productSlug, feature_slug: featureSlug }
+      ));
       for (const link of links) {
         if (!isOfficialGoogleUrl(link)) {
           findings.push({ severity: "error", rule: "non_official_source_link", path: cardPath, link });
         }
       }
       for (const capability of card.security_capabilities || []) {
+        findings.push(...validateCanonicalStringArray(
+          capability?.evidence_links || [],
+          cardPath,
+          "feature_card_security_evidence_links",
+          { product_slug: productSlug, feature_slug: featureSlug, capability: capability?.capability || null }
+        ));
         for (const link of capability.evidence_links || []) {
           if (!isOfficialGoogleUrl(link)) {
             findings.push({
