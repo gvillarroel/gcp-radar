@@ -58,42 +58,43 @@ const recursiveDirsCache = new Map();
 async function exists(target) {
   const resolved = path.resolve(target);
   if (existsCache.has(resolved)) {
-    return existsCache.get(resolved);
+    return await existsCache.get(resolved);
   }
-  try {
-    await access(resolved);
-    existsCache.set(resolved, true);
-    return true;
-  } catch {
-    existsCache.set(resolved, false);
-    return false;
-  }
+  const check = access(resolved)
+    .then(() => true)
+    .catch(() => false);
+  existsCache.set(resolved, check);
+  return await check;
 }
 
 async function readText(filePath, fallback = null) {
   const resolved = path.resolve(filePath);
   if (textCache.has(resolved)) {
-    return textCache.get(resolved);
+    return await textCache.get(resolved);
   }
-  if (!(await exists(resolved))) {
-    return fallback;
-  }
-  const text = await readFile(resolved, "utf8");
-  textCache.set(resolved, text);
-  return text;
+  const read = (async () => {
+    if (!(await exists(resolved))) {
+      return fallback;
+    }
+    return readFile(resolved, "utf8");
+  })();
+  textCache.set(resolved, read);
+  return await read;
 }
 
 async function readJson(filePath, fallback = null) {
   const resolved = path.resolve(filePath);
   if (jsonCache.has(resolved)) {
-    return jsonCache.get(resolved);
+    return await jsonCache.get(resolved);
   }
-  if (!(await exists(resolved))) {
-    return fallback;
-  }
-  const parsed = JSON.parse(await readFile(resolved, "utf8"));
-  jsonCache.set(resolved, parsed);
-  return parsed;
+  const read = (async () => {
+    if (!(await exists(resolved))) {
+      return fallback;
+    }
+    return JSON.parse(await readFile(resolved, "utf8"));
+  })();
+  jsonCache.set(resolved, read);
+  return await read;
 }
 
 async function validateRadarGeneratedAt(reportPath, reportText, rule) {
@@ -116,68 +117,71 @@ async function validateRadarGeneratedAt(reportPath, reportText, rule) {
 async function listDirs(directory) {
   const resolved = path.resolve(directory);
   if (directoryCache.has(resolved)) {
-    return directoryCache.get(resolved).dirs;
+    return (await directoryCache.get(resolved)).dirs;
   }
-  if (!(await exists(resolved))) {
-    return [];
-  }
-  const entries = await readdir(resolved, { withFileTypes: true });
-  const cached = {
-    dirs: entries
-      .filter((entry) => entry.isDirectory())
-      .map((entry) => entry.name)
-      .sort((left, right) => left.localeCompare(right)),
-    files: entries
-      .filter((entry) => entry.isFile())
-      .map((entry) => entry.name)
-      .sort((left, right) => left.localeCompare(right)),
-  };
-  directoryCache.set(resolved, cached);
-  return cached.dirs;
+  const read = (async () => {
+    if (!(await exists(resolved))) {
+      return { dirs: [], files: [] };
+    }
+    const entries = await readdir(resolved, { withFileTypes: true });
+    return {
+      dirs: entries
+        .filter((entry) => entry.isDirectory())
+        .map((entry) => entry.name)
+        .sort((left, right) => left.localeCompare(right)),
+      files: entries
+        .filter((entry) => entry.isFile())
+        .map((entry) => entry.name)
+        .sort((left, right) => left.localeCompare(right)),
+    };
+  })();
+  directoryCache.set(resolved, read);
+  return (await read).dirs;
 }
 
 async function listFilesRecursive(directory) {
   const resolved = path.resolve(directory);
   if (recursiveFilesCache.has(resolved)) {
-    return recursiveFilesCache.get(resolved);
+    return await recursiveFilesCache.get(resolved);
   }
-  if (!(await exists(resolved))) {
-    return [];
-  }
-  const entries = await readdir(resolved, { withFileTypes: true });
-  const files = [];
-  for (const entry of entries) {
-    const target = path.join(resolved, entry.name);
-    if (entry.isDirectory()) {
-      files.push(...await listFilesRecursive(target));
-    } else {
-      files.push(target);
+  const read = (async () => {
+    if (!(await exists(resolved))) {
+      return [];
     }
-  }
-  recursiveFilesCache.set(resolved, files);
-  return files;
+    const entries = await readdir(resolved, { withFileTypes: true });
+    const nestedFiles = await Promise.all(entries.map(async (entry) => {
+      const target = path.join(resolved, entry.name);
+      if (entry.isDirectory()) {
+        return listFilesRecursive(target);
+      }
+      return [target];
+    }));
+    return nestedFiles.flat();
+  })();
+  recursiveFilesCache.set(resolved, read);
+  return await read;
 }
 
 async function listDirsRecursive(directory) {
   const resolved = path.resolve(directory);
   if (recursiveDirsCache.has(resolved)) {
-    return recursiveDirsCache.get(resolved);
+    return await recursiveDirsCache.get(resolved);
   }
-  if (!(await exists(resolved))) {
-    return [];
-  }
-  const entries = await readdir(resolved, { withFileTypes: true });
-  const dirs = [];
-  for (const entry of entries) {
-    if (!entry.isDirectory()) {
-      continue;
+  const read = (async () => {
+    if (!(await exists(resolved))) {
+      return [];
     }
-    const target = path.join(resolved, entry.name);
-    dirs.push(target, ...await listDirsRecursive(target));
-  }
-  dirs.sort((left, right) => left.localeCompare(right));
-  recursiveDirsCache.set(resolved, dirs);
-  return dirs;
+    const entries = await readdir(resolved, { withFileTypes: true });
+    const nestedDirs = await Promise.all(entries
+      .filter((entry) => entry.isDirectory())
+      .map(async (entry) => {
+        const target = path.join(resolved, entry.name);
+        return [target, ...await listDirsRecursive(target)];
+      }));
+    return nestedDirs.flat().sort((left, right) => left.localeCompare(right));
+  })();
+  recursiveDirsCache.set(resolved, read);
+  return await read;
 }
 
 function isOfficialGoogleUrl(url) {
@@ -549,6 +553,7 @@ function expectedStep08MarkdownTableRow(feature) {
 function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, markdown, card) {
   const findings = [];
   const markdownText = String(markdown || "");
+  const markdownLines = new Set(markdownText.split(/\r?\n/));
   const expectedLines = [
     `# ${card.product_name || ""}`,
     `Schema version: \`${card.schema_version || ""}\``,
@@ -581,7 +586,7 @@ function validateStep08ProductMarkdownAgainstCard(productSlug, markdownPath, mar
   const expectedFeatureRows = features.map(expectedStep08MarkdownTableRow);
   for (const feature of features) {
     const expectedRow = expectedStep08MarkdownTableRow(feature);
-    if (!markdownText.includes(expectedRow)) {
+    if (!markdownLines.has(expectedRow)) {
       findings.push({
         severity: "error",
         rule: "step08_product_card_markdown_feature_row_mismatch",
@@ -1316,6 +1321,7 @@ async function validateArtifactProductIndexes() {
     }
 
     const indexMarkdown = await readText(productIndexPath, "");
+    const indexLines = new Set(indexMarkdown.split(/\r?\n/));
     const promotedFeatures = promotionFeatureList(promotion, "promoted_features")
       .map((feature) => feature?.feature_slug)
       .filter(Boolean)
@@ -1376,7 +1382,7 @@ async function validateArtifactProductIndexes() {
 
     for (const url of serviceCard?.official_source_links || []) {
       const expectedLine = `- ${expectedMarkdownLink(url, url)}`;
-      if (!indexMarkdown.includes(expectedLine)) {
+      if (!indexLines.has(expectedLine)) {
         findings.push({
           severity: "error",
           rule: "artifact_index_service_evidence_link_mismatch",
@@ -1393,7 +1399,7 @@ async function validateArtifactProductIndexes() {
         continue;
       }
       const expectedLine = `- ${expectedMarkdownLink(feature.feature_name || featureSlug, `./${featureSlug}/README.md`)}`;
-      if (!indexMarkdown.includes(expectedLine)) {
+      if (!indexLines.has(expectedLine)) {
         findings.push({
           severity: "error",
           rule: "artifact_index_feature_label_mismatch",
@@ -4199,25 +4205,47 @@ async function validateRadarMatchesArtifacts() {
 }
 
 async function main() {
-  const finalOutputDirectoryNameFindings = await validateFinalOutputDirectoryNamesAreLowercase();
-  const artifactValidation = await validateArtifacts();
-  const artifactIndexFindings = await validateArtifactProductIndexes();
-  const artifactMarkdownExternalLinkFindings = await validateArtifactMarkdownExternalLinksAreOfficial();
-  const step08MarkdownExternalLinkFindings = await validateStep08MarkdownExternalLinksAreOfficial();
-  const featureReadmeCardFindings = await validateFeatureReadmesMatchCards();
-  const promotedCardSourceFindings = await validatePromotedCardsMatchStep08Cards();
-  const radarFindings = await validateRadarDoesNotReferenceDataSteps();
-  const radarArtifactLinkFindings = await validateRadarArtifactLinks();
-  const radarExternalLinkFindings = await validateRadarExternalLinksAreOfficial();
-  const radarIamTableFindings = await validateRadarIamTablesSeparateExplicitAndDerived();
-  const radarIamReportFindings = await validateRadarIamReportMatchesArtifacts();
-  const radarServicesReportFindings = await validateRadarServicesReportMatchesArtifacts();
-  const radarSecurityReportFindings = await validateRadarSecurityReportMatchesArtifacts();
-  const radarRootIndexFindings = await validateRadarRootIndexMatchesArtifacts();
-  const radarCoverageReportFindings = await validateRadarCoverageReportMatchesArtifacts();
-  const step08IndexFindings = await validateStep08IndexMatchesCards();
-  const step09IndexFindings = await validateStep09IndexMatchesArtifacts();
-  const radarArtifactFindings = await validateRadarMatchesArtifacts();
+  const [
+    finalOutputDirectoryNameFindings,
+    artifactValidation,
+    artifactIndexFindings,
+    artifactMarkdownExternalLinkFindings,
+    step08MarkdownExternalLinkFindings,
+    featureReadmeCardFindings,
+    promotedCardSourceFindings,
+    radarFindings,
+    radarArtifactLinkFindings,
+    radarExternalLinkFindings,
+    radarIamTableFindings,
+    radarIamReportFindings,
+    radarServicesReportFindings,
+    radarSecurityReportFindings,
+    radarRootIndexFindings,
+    radarCoverageReportFindings,
+    step08IndexFindings,
+    step09IndexFindings,
+    radarArtifactFindings,
+  ] = await Promise.all([
+    validateFinalOutputDirectoryNamesAreLowercase(),
+    validateArtifacts(),
+    validateArtifactProductIndexes(),
+    validateArtifactMarkdownExternalLinksAreOfficial(),
+    validateStep08MarkdownExternalLinksAreOfficial(),
+    validateFeatureReadmesMatchCards(),
+    validatePromotedCardsMatchStep08Cards(),
+    validateRadarDoesNotReferenceDataSteps(),
+    validateRadarArtifactLinks(),
+    validateRadarExternalLinksAreOfficial(),
+    validateRadarIamTablesSeparateExplicitAndDerived(),
+    validateRadarIamReportMatchesArtifacts(),
+    validateRadarServicesReportMatchesArtifacts(),
+    validateRadarSecurityReportMatchesArtifacts(),
+    validateRadarRootIndexMatchesArtifacts(),
+    validateRadarCoverageReportMatchesArtifacts(),
+    validateStep08IndexMatchesCards(),
+    validateStep09IndexMatchesArtifacts(),
+    validateRadarMatchesArtifacts(),
+  ]);
   const findings = [
     ...finalOutputDirectoryNameFindings,
     ...artifactValidation.findings,
