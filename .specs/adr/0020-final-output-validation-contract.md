@@ -248,6 +248,8 @@ The validator must check:
   retain stale product rows, and keeps promoted, skipped, explicit IAM,
   derived IAM, and unknown IAM counts aligned with promoted manifests and
   feature cards
+- the Step 10 coverage report rows are sorted by product slug so coverage
+  report diffs remain deterministic
 - the Step 10 security report links every promoted feature artifact that has
   security capability signals, does not retain stale security feature links,
   includes official Google evidence links for those signals when promoted

@@ -849,7 +849,8 @@ must also keep the product name, promoted feature count, latest feature date,
 product report link, and service-card link aligned with promoted artifacts.
 The coverage report must include each promoted product slug and must keep its
 promoted, skipped, explicit IAM, derived IAM, and unknown IAM counts aligned
-with the promoted artifact manifests and feature cards.
+with the promoted artifact manifests and feature cards. Coverage rows must be
+sorted by product slug so regenerated reports remain deterministic.
 Every generated radar Markdown report, including the root index, product
 reports, IAM report, security report, services report, and coverage report,
 must render the same `generated_at` timestamp recorded in

@@ -671,7 +671,8 @@ product rows must also match promoted artifacts for product name, promoted
 feature count, latest feature date, product report link, and service-card link.
 The coverage report must include product slugs and must keep promoted,
 skipped, explicit IAM, derived IAM, and unknown IAM counts aligned with the
-promoted artifact manifests and feature cards.
+promoted artifact manifests and feature cards. Coverage rows must be sorted by
+product slug so regenerated reports remain deterministic.
 Every generated radar Markdown report must keep its rendered `generated_at`
 value aligned with `data/step-10/current/index.json`, because those files are
 the user-facing reports that expose Step 10 run metadata. Final validation

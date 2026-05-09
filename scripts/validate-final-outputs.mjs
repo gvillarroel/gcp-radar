@@ -2925,6 +2925,7 @@ async function validateRadarCoverageReportMatchesArtifacts() {
   }
 
   const actualRows = new Map();
+  let previousProductSlug = "";
   for (const cells of rows.slice(2)) {
     if (cells.length < expectedHeader.length) {
       continue;
@@ -2939,6 +2940,16 @@ async function validateRadarCoverageReportMatchesArtifacts() {
       });
       continue;
     }
+    if (previousProductSlug && previousProductSlug.localeCompare(productSlug) > 0) {
+      findings.push({
+        severity: "error",
+        rule: "radar_coverage_product_rows_not_sorted",
+        path: coverageReportPath,
+        previous_product_slug: previousProductSlug,
+        product_slug: productSlug,
+      });
+    }
+    previousProductSlug = productSlug;
     if (actualRows.has(productSlug)) {
       findings.push({
         severity: "error",
