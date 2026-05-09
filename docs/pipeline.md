@@ -448,6 +448,9 @@ validation data. Step 10 also rejects promoted service or feature cards whose
 source links, feature supporting page URLs, or security capability evidence
 links are not official Google HTTP(S) URLs before any radar Markdown is
 rewritten.
+It also rejects promoted service-card source links, promoted feature-card
+source links, and promoted service or feature security evidence links that are
+duplicated or not sorted before rewriting reports.
 Step 10 also rejects promoted feature cards that no longer satisfy the Step 09
 promotion eligibility contract before rewriting final reports. Promoted
 features must still have Step 07 pass status, zero failures, a non-empty

@@ -590,6 +590,9 @@ manifest, because Step 09 emits those files as one promotion unit.
 Step 10 must also fail before rewriting reports when promoted service or
 feature cards contain source links, feature supporting page URLs, or security
 capability evidence links that are not official Google HTTP(S) URLs.
+Step 10 must also fail before rewriting reports when promoted service-card
+source links, promoted feature-card source links, or promoted service or
+feature security evidence links contain duplicates or are not sorted.
 Step 10 must also fail before rewriting reports when a promoted feature card no
 longer satisfies the Step 09 promotion eligibility contract: Step 07 must have
 passed, failure count must be zero, a technical summary must be present, at

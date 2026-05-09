@@ -32,6 +32,12 @@ for:
 - promoted feature source links
 - promoted service and feature security evidence links
 
+Step 10 must also fail before rewriting radar reports when promoted service
+or feature artifact evidence arrays violate the same duplicate-free sorted
+ordering contract. This keeps report generation from proceeding with promoted
+artifacts that final-output validation would reject after files were already
+rewritten.
+
 The validation does not require supporting page arrays to be globally sorted,
 because those arrays preserve ranked evidence-page order from extraction.
 

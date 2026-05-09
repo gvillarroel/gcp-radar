@@ -161,6 +161,58 @@ function collectNonOfficialUrls(urls) {
     .filter((url) => !isOfficialGoogleUrl(url));
 }
 
+function validateCanonicalStringArray(values, label, errors) {
+  if (!Array.isArray(values)) {
+    return;
+  }
+
+  const seen = new Set();
+  let previous = "";
+  for (const [index, rawValue] of values.entries()) {
+    const value = String(rawValue || "");
+    if (seen.has(value)) {
+      errors.push(`${label} contains duplicate evidence link at index ${index}: ${value || "missing"}`);
+    }
+    seen.add(value);
+    if (previous && compareStrings(previous, value) > 0) {
+      errors.push(`${label} must be sorted: ${previous} before ${value || "missing"}`);
+    }
+    previous = value;
+  }
+}
+
+function validatePromotedEvidenceArrays(productSlug, card, label, errors) {
+  validateCanonicalStringArray(
+    card?.official_source_links,
+    `${label} source links for ${productSlug}`,
+    errors,
+  );
+
+  for (const capability of card?.security_capabilities || []) {
+    validateCanonicalStringArray(
+      capability?.evidence_links,
+      `${label} security evidence links for ${productSlug}/${capability?.capability || "unknown capability"}`,
+      errors,
+    );
+  }
+}
+
+function validatePromotedFeatureEvidenceArrays(productSlug, featureSlug, card, errors) {
+  validateCanonicalStringArray(
+    card?.evidence?.source_links,
+    `Promoted feature source links for ${productSlug}/${featureSlug}`,
+    errors,
+  );
+
+  for (const capability of card?.security_capabilities || []) {
+    validateCanonicalStringArray(
+      capability?.evidence_links,
+      `Promoted feature security evidence links for ${productSlug}/${featureSlug}/${capability?.capability || "unknown capability"}`,
+      errors,
+    );
+  }
+}
+
 function collectExternalMarkdownUrls(markdown) {
   const links = new Set();
   const linkPattern = /\[(?:\\.|[^\]\\])*\]\(([^)]+)\)/g;
@@ -658,6 +710,7 @@ async function loadArtifacts() {
       for (const url of collectNonOfficialUrls(serviceCard.official_source_links || [])) {
         errors.push(`Promoted service card has non-official source link for ${productSlug}: ${url}`);
       }
+      validatePromotedEvidenceArrays(productSlug, serviceCard, "Promoted service card", errors);
       for (const url of collectNonOfficialUrls(collectSecurityCapabilityEvidenceLinks(serviceCard.security_capabilities))) {
         errors.push(`Promoted service card has non-official security evidence link for ${productSlug}: ${url}`);
       }
@@ -730,6 +783,7 @@ async function loadArtifacts() {
         for (const url of collectNonOfficialUrls(card.evidence?.source_links || [])) {
           errors.push(`Promoted feature card has non-official source link for ${productSlug}/${feature.feature_slug}: ${url}`);
         }
+        validatePromotedFeatureEvidenceArrays(productSlug, feature.feature_slug, card, errors);
         for (const url of collectNonOfficialUrls(collectSupportingPageUrls(card))) {
           errors.push(`Promoted feature card has non-official supporting page link for ${productSlug}/${feature.feature_slug}: ${url}`);
         }

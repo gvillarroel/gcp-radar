@@ -76,6 +76,11 @@ Google host, Step 10 fails before rewriting final reports so artifact
 source-policy drift is caught at the report-generation boundary. Promoted
 feature card supporting page URLs preserved under `evidence.supporting_pages`
 must also be official Google HTTP(S) URLs before reports can be rewritten.
+Promoted service-card source links, promoted feature-card source links, and
+promoted service or feature security evidence links must also be
+duplicate-free and sorted before reports can be rewritten. This moves
+deterministic evidence-array drift to the same fail-fast boundary as
+non-official evidence links.
 
 Step 10 also checks promoted feature README content against the promoted
 feature card before rewriting reports. It rejects README drift in feature
