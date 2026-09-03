@@ -17,3 +17,9 @@ Current local contract:
 - `data/step-01/raw/google_cloud_release_notes/current/release_notes.parquet` as the canonical local file
 - `data/step-01/raw/google_cloud_release_notes/current/state.json` as the sync state
 - `data/step-01/raw/google_cloud_release_notes/deltas/<run_id>/` for downloaded Parquet deltas
+
+## Environment contract
+
+Step 01 validates required local configuration before starting BigQuery work. See
+[`ENVIRONMENT.md`](ENVIRONMENT.md) for the canonical list of required variables,
+arguments, credentials, and CLI tools.

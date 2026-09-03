@@ -1,5 +1,15 @@
 # gcp-radar Documentation
 
+## Start here
+
+- [Usage and setup](getting-started.md)
+- [Repository layout, maintenance, and validation](repository-guide.md)
+- [Agent instructions](../AGENTS.md)
+- [Pipeline manual](pipeline.md)
+- [Repository map](repository-map.md)
+- [Strategy and limitations](strategy-so-far.md)
+
+
 ## What This Project Is
 
 `gcp-radar` builds a traceable map of Google Cloud products and features from

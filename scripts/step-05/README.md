@@ -26,3 +26,16 @@ Useful environment variables:
 - `GCP_RADAR_STEP05_GCLOUD_BIN` to override the `gcloud` executable path when needed
 
 All script-facing documentation must be written in English.
+
+## Offline fixture validation
+
+Validate representative `gcloud iam roles list/describe` parsing without live GCP
+credentials:
+
+```bash
+node scripts/step-05/validate-fixture.mjs
+```
+
+Fixtures live under `data/step-05/fixtures/gcloud-iam/` and cover predefined
+roles, a custom-role-like name shape, included permissions, and missing/empty
+permission fields.

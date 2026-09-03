@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gvillarroel/gcp-radar/data/step-08/card.schema.json",
+  "title": "GCP Radar Step 08 Product Card",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generated_at",
+    "product_name",
+    "product_slug",
+    "feature_count",
+    "quality",
+    "feature_coverage",
+    "lifecycle_summary",
+    "security_signal_summary",
+    "inputs",
+    "features"
+  ],
+  "properties": {
+    "schema_version": { "const": "step-08-product-card-v1" },
+    "generated_at": { "type": "string", "minLength": 1 },
+    "product_name": { "type": "string", "minLength": 1 },
+    "product_slug": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "feature_count": { "type": "integer", "minimum": 0 },
+    "quality": {
+      "type": "object",
+      "required": ["product_status", "passed_feature_count", "warned_feature_count", "failed_feature_count", "fail_ratio"],
+      "properties": {
+        "product_status": { "type": "string", "minLength": 1 },
+        "passed_feature_count": { "type": ["integer", "null"], "minimum": 0 },
+        "warned_feature_count": { "type": ["integer", "null"], "minimum": 0 },
+        "failed_feature_count": { "type": ["integer", "null"], "minimum": 0 },
+        "fail_ratio": { "type": ["number", "null"], "minimum": 0 }
+      },
+      "additionalProperties": true
+    },
+    "feature_coverage": { "type": "object" },
+    "lifecycle_summary": { "type": "object" },
+    "security_signal_summary": {
+      "type": "object",
+      "required": ["features_with_security_signals", "signal_counts"],
+      "properties": {
+        "features_with_security_signals": { "type": "integer", "minimum": 0 },
+        "signal_counts": { "type": "object" }
+      },
+      "additionalProperties": true
+    },
+    "inputs": {
+      "type": "object",
+      "required": ["step06_extended_features", "step07_gate"],
+      "properties": {
+        "step06_extended_features": { "type": "string", "minLength": 1 },
+        "step07_gate": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "feature_name",
+          "feature_slug",
+          "lifecycle_status",
+          "coverage_status",
+          "gate_status",
+          "warning_count",
+          "failure_count",
+          "summary",
+          "definition",
+          "security_signals",
+          "evidence_urls"
+        ],
+        "properties": {
+          "feature_name": { "type": "string", "minLength": 1 },
+          "feature_slug": { "type": "string", "minLength": 1 },
+          "lifecycle_status": { "type": "string", "minLength": 1 },
+          "latest_feature_date": { "type": "string" },
+          "deprecation_date": { "type": "string" },
+          "coverage_status": { "type": "string", "minLength": 1 },
+          "gate_status": { "enum": ["PASS", "WARN", "FAIL"] },
+          "warning_count": { "type": "integer", "minimum": 0 },
+          "failure_count": { "type": "integer", "minimum": 0 },
+          "summary": { "type": "string" },
+          "definition": { "type": "string" },
+          "security_signals": { "type": "array", "items": { "type": "string" } },
+          "evidence_urls": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -50,3 +50,16 @@ Optional controls:
 - set `GCP_RADAR_STEP07_OUTPUT_ROOT` to override the Step 07 output root
 - set `GCP_RADAR_STEP07_MAX_FAIL_RATIO` to change the per-product fail ratio
   threshold
+
+## Quality summary
+
+Build a concise cross-product summary of unsupported or weak feature definitions:
+
+```bash
+node scripts/step-07/build-quality-summary.mjs
+```
+
+The command writes `data/step-07/current/quality-summary.json` and
+`data/step-07/current/quality-summary.md`. Each item includes product, feature,
+failure or warning reason, evidence URL status, and the suggested upstream stage
+to fix.
