@@ -11,6 +11,8 @@ A staged evidence pipeline for mapping Google Cloud products, features, lifecycl
 | `artifacts/` | Validated evidence organized by product and feature. |
 | `radar/` | Reports derived from validated artifacts. |
 | `knowledge/` | Reusable research and source mappings. |
+| `skills/` | Self-contained agent workflows, including Harbor dataset authoring. |
+| `evaluations/` | Harbor study controls and reviewed aggregate publications; private tasks and sealed evidence stay outside Git. |
 | `docs/` | Human manual, pipeline contracts, and maintenance. |
 | `.specs/` | Workflow specifications and architecture decisions. |
 
@@ -37,6 +39,6 @@ Run `node --check` on changed JavaScript/ZX files and the validator documented b
 
 ## Data and operating boundaries
 
-Use official Google sources as final evidence, retain provenance and prior evaluation outputs, and never commit populated `.env` files or cloud/API credentials. A linked worktree is not a separate product: publish one reviewed change to the shared remote main without merging unrelated branch histories.
+Use official Google sources as final evidence, retain provenance and prior evaluation outputs, and never commit populated `.env` files or cloud/API credentials. Treat the deterministic Step 07 quality gate and historical `data/step-06/tmp-validation/` snapshots as pipeline evidence, not as an independent Harbor validation split. Keep sealed Harbor tasks, solutions, seeds, verifiers, and case-level diagnostics outside Git; publish only their reviewed commitments and aggregate results after release. A linked worktree is not a separate product: publish one reviewed change to the shared remote main without merging unrelated branch histories.
 
 [Back to the documentation index](README.md).

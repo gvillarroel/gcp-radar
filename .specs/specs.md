@@ -880,7 +880,20 @@ Examples:
 
 ### Step 12: Skill Evaluation and Evolution
 
-Use Skill Arena to evaluate and improve the skills created for this repository.
+Use native Harbor jobs to evaluate and improve the skills created for this
+repository. Author leakage-resistant task roots with
+`skills/harbor-author-evaluation-datasets/` before study registration.
+
+Only a predeclared development split may influence diagnosis, mutation,
+ranking, merging, or selection. Keep validation sealed until one development
+winner is frozen and digest-bound, then release it once as a one-way gate. An
+optional holdout remains sealed until validation succeeds. Partition semantic
+families as units and materialize replayable response-surface variations before
+running baseline or candidate jobs.
+
+The deterministic Step 07 quality gate and historical
+`data/step-06/tmp-validation/` snapshots are pipeline evidence, not independent
+Harbor validation or holdout cohorts. Preserve them in place.
 
 Evaluation outputs should measure whether skills improve:
 
@@ -937,4 +950,4 @@ These are currently unresolved and should likely become ADRs:
 - Step 07 failure triage workflow
 - Step 07 warning classes that should block promotion
 - full-catalog workspace inventory summary format
-- evaluation dataset design for Skill Arena
+- first native Harbor study population and capability coverage

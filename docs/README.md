@@ -4,6 +4,7 @@
 
 - [Usage and setup](getting-started.md)
 - [Repository layout, maintenance, and validation](repository-guide.md)
+- [Harbor evaluation datasets and aggregate reports](../evaluations/README.md)
 - [Agent instructions](../AGENTS.md)
 - [Pipeline manual](pipeline.md)
 - [Repository map](repository-map.md)
